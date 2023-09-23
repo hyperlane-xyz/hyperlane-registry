@@ -1,0 +1,53 @@
+# Configs and artifacts for the deployment of core Hyperlane contracts
+# Consists of a map of chain names to lists of deployments
+# yaml-language-server: $schema=./core-deployments.schema.json
+---
+description: Hyperlane core deployment artifacts
+timestamp: 2023-09-23T16:00:00.000Z
+version:
+  major: 1
+  minor: 0
+  patch: 0
+data:
+  alfajores:
+    - timestamp: 2023-04-01T12:00:00.000Z
+      deployer: Abacus Works (Hyperlane)
+      config:
+        multisig: 
+          type: legacy-multisig
+          threshold: 2
+          validators:
+            - 0xe6072396568e73ce6803b12b7e04164e839f1e54
+            - 0x9f177f51289b22515f41f95872e1511391b8e105
+            - 0x15f77400845eb1c971ad08de050861d5508cad6c
+        hooks:
+          hookContractType: ism
+          nativeBridge: 0x4200000000000000000000000000000000000007
+        interchainGasPaymaster:
+          owner: TODO
+          oracleKey: TODO
+          beneficiary: TODO
+          gasOracleType: StorageGasOracle
+          overhead: TODO
+      artifacts:
+        create2Factory: 0xc97D8e6f57b0d64971453dDc6EB8483fec9d163a
+        storageGasOracle: 0x2E6a2Caa58a684f6200CEd24be31Eb6DAa154848
+        validatorAnnounce: 0x3Fc742696D5dc9846e04f7A1823D92cb51695f9a
+        proxyAdmin: 0x4e4D563e2cBFC35c4BC16003685443Fae2FA702f
+        mailbox: 0xCC737a94FecaeC165AbCf12dED095BB13F037685
+        interchainGasPaymaster: 0x8f9C3888bFC8a5B25AED115A82eCbb788b196d2a
+        defaultIsmInterchainGasPaymaster: 0xF90cB82a76492614D07B82a7658917f3aC811Ac1
+        multisigIsm: 0x4D06A1671A2a345B14B15cbD50027979A5D1d8C9
+        interchainAccountIsm: 0x0aA320a1bD450152B4C500613335CeBA4f6073cF
+        aggregationIsmFactory: 0xBEd8Fd6d5c6cBd878479C25f4725C7c842a43821
+        routingIsmFactory: 0x98F44EA5b9cA6aa02a5B75f31E0621083d9096a2
+        interchainQueryRouter: 0xc341cBC69745C541d698cb2cB4eDb91c2F0413aE
+        interchainAccountRouter: 0x2b0db6161f2f7aE86b7eA07711354575a6D99667
+        merkleRootMultisigIsmFactory: 0x6525Ac4008E38e0E70DaEf59d5f0e1721bd8aA83
+        messageIdMultisigIsmFactory: 0x4C739E01f295B70762C0bA9D86123E1775C2f703
+        # Optional core extensions:
+        helloworld: 0x477D860f8F41bC69dDD32821F2Bf2C2Af0243F16
+        liquidityLayerRouter: 0x2abe0860D81FB4242C748132bD69D125D88eaE26
+        testRecipient: 0x36FdA966CfffF8a9Cdc814f546db0e6378bFef35
+        testTokenRecipient: 0x85ac1164878e017b67660a74ff1f41f3D05C02Bb
+        testQuerySender: 0x96D7D6Eba6C635e3EaC12b593Ef8B2eE1F6E6683

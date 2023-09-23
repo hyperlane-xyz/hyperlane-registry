@@ -1,0 +1,42 @@
+# Configs and artifacts for the deployment of Hyperlane Warp Routes
+# Consists of a list of deployments
+# yaml-language-server: $schema=./warp-deployments.schema.json
+---
+description: Hyperlane Warp Route artifacts
+timestamp: 2023-09-23T16:00:00.000Z
+version:
+  major: 1
+  minor: 0
+  patch: 0
+data:
+  # Example deployment config and artifacts:
+  - timestamp: 2023-08-01T12:00:00.000Z
+    deployer: Abacus Works (Hyperlane)
+    config:
+      base:
+        chainName: anvil1
+        type: collateral 
+        address: 0x1234567890123456789012345678901234567890 # Required for collateral types
+        # isNft: true # If the token is an NFT (ERC721) set to true
+        # owner: 0x123 # Optional owner address for synthetic token
+        # mailbox: 0x123 # Optional mailbox address route
+        # interchainGasPaymaster: 0x123 # Optional interchainGasPaymaster address
+      synthetics:
+        - chainName: anvil2
+        # You can optionally set the token metadata otherwise the base tokens will be used
+        # name: "MySyntheticToken"
+        # symbol: "MST"
+        # totalSupply: 10000000
+    artifacts:
+      base:
+        type: collateral
+        chainName: anvil1
+        address: 0x1234567890123456789012345678901234567890
+        routerAddress: 0x1234567890123456789012345678901234567890
+        symbol: MYTOK
+        name: MyToken
+        decimals: 18
+      synthetics:
+        - chainName: anvil2
+          type: synthetic
+          routerAddress: 0x1234567890123456789012345678901234567890

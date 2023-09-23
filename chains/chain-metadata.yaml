@@ -1,0 +1,77 @@
+# Configs for describing chain metadata for use in Hyperlane deployments or apps
+# Consists of a map of chain names to metadata
+# yaml-language-server: $schema=./chain-metadata.schema.json
+---
+description: Chain metadata for use by Hyperlane utilities
+timestamp: 2023-09-23T16:00:00.000Z
+version:
+  major: 1
+  minor: 0
+  patch: 0
+data:
+  # Example config:
+  mychainname:
+    # Required fields:
+    chainId: 1234567890 # Number: Use EIP-155 for EVM chains
+    domainId: 1234567890 # Number: Recommend matching chainId when possible
+    name: mychainname # String: Unique identifier for the chain, must match key above
+    protocol: ethereum # ProtocolType: Ethereum, Sealevel, etc.
+    rpcUrls: # Array: List of RPC configs
+      # Required fields for RPCs::
+      - http: https://mychain.com/rpc # String: HTTP URL of the RPC endpoint (preferably HTTPS)
+        # Optional fields for RPCs:
+        pagination:
+          maxBlockRange: 1000 # Number
+          maxBlockAge: 1000 # Number
+          minBlockNumber: 1000 # Number
+        retry:
+          maxRequests: 5 # Number
+          baseRetryMs: 1000 # Number
+    # Optional fields, not required for Hyperlane deployments but useful for apps:
+    blockExplorers: # Array: List of BlockExplorer configs
+      # Required fields for block explorers:
+      - name: My Chain Explorer # String: Human-readable name for the explorer
+        url: https://mychain.com/explorer # String: Base URL for the explorer
+        apiUrl: https://mychain.com/api # String: Base URL for the explorer API
+        # Optional fields for block explorers:
+        apiKey: myapikey # String: API key for the explorer (optional)
+        family: etherscan # ExplorerFamily: See ExplorerFamily for valid values
+    nativeToken:
+      name: Eth # String
+      symbol: ETH # String
+      decimals: 18 # Number
+    blocks:
+      confirmations: 12 # Number: Blocks to wait before considering a transaction confirmed
+      reorgPeriod: 100 # Number: Blocks before a transaction has a near-zero chance of reverting
+      estimateBlockTime: 15 # Number: Rough estimate of time per block in seconds
+    displayName: My Chain Name # String: Human-readable name of the chain
+    displayNameShort: My Chain # String: A shorter human-readable name
+    logoURI: https://mychain.com/logo.png # String: URI to a logo image for the chain
+    isTestnet: false # Boolean: Whether the chain is considered a testnet or a mainnet
+
+  alfajores:
+    chainId: 44787
+    domainId: 44787
+    name: alfajores
+    protocol: ethereum 
+    nativeToken:
+      name: CELO 
+      symbol: CELO 
+      decimals: 18
+    rpcUrls:
+      - http: https://alfajores-forno.celo-testnet.org
+    blockExplorers:
+      - name: CeloScan
+        url: https://alfajores.celoscan.io
+        apiUrl: https://api-alfajores.celoscan.io/api
+        family: etherscan
+      - name: Blockscout
+        url: https://explorer.celo.org/alfajores
+        apiUrl: https://explorer.celo.org/alfajores/api
+        family: blockscout 
+    displayName: 'Alfajores'
+    blocks:
+      confirmations: 1
+      reorgPeriod: 0
+      estimateBlockTime: 5
+    isTestnet: true 
