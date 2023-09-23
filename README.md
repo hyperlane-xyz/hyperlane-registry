@@ -1,5 +1,7 @@
 # Hyperlane Registry
 
+**WORK IN PROGRESS, SUBJECT TO MAJOR CHANGES**
+
 A collection of configs, artifacts, and schemas for Hyperlane.
 
 ## Contents
