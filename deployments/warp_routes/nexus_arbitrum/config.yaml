@@ -1,0 +1,28 @@
+a# yaml-language-server: $schema=./core-deployments.schema.json
+---
+description: Warp config for Nexus Arbitrum route
+timestamp: 2023-09-23T16:00:00.000Z
+version:
+  major: 1
+  minor: 0
+  patch: 0
+data:
+  # The list of chains to deploy ISMs onto
+  chains:
+    - name: arbitrum
+    - name: neutron
+  
+  config:
+    - chainName: neutron
+      type: collateral
+      address: ibc/773B4D0A3CD667B2275D5A4A7A2F0909C0BA0F4059C0B9181E680DDF4965DCC7
+      ism: # reference nexus ISM
+      igp: # reference nexus IGP
+    - chainName: arbitrum
+      type: synthetic
+      ism: # reference nexus ISM
+      igp: # reference nexus IGP
+
+  owner:
+    mantapacific: "0x03ed2D65f2742193CeD99D48EbF1F1D6F12345B6" # multisig
+    neutron: "neutron1fqf5mprg3f5hytvzp3t7spmsum6rjrw80mq8zgkc0h6rxga0dtzqws3uu7" # multisig
