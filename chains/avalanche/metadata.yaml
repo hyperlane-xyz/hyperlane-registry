@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=../schema
+blockExplorers:
+  - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api
+    family: routescan
+    name: SnowTrace
+    url: https://snowtrace.io
+blocks:
+  confirmations: 3
+  estimateBlockTime: 2
+  reorgPeriod: 3
+chainId: 43114
+displayName: Avalanche
+domainId: 43114
+gasCurrencyCoinGeckoId: avalanche-2
+gnosisSafeTransactionServiceUrl: https://safe-transaction-avalanche.safe.global/
+name: avalanche
+nativeToken:
+  decimals: 18
+  name: Avalanche
+  symbol: AVAX
+protocol: ethereum
+rpcUrls:
+  - http: https://api.avax.network/ext/bc/C/rpc
+    pagination:
+      maxBlockRange: 100000
+      minBlockNumber: 6765067

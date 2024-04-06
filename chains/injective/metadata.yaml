@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=../schema
+bech32Prefix: inj
+blockExplorers: []
+blocks:
+  confirmations: 1
+  estimateBlockTime: 1
+  reorgPeriod: 10
+chainId: injective-1
+displayName: Injective
+domainId: 6909546
+gasCurrencyCoinGeckoId: injective-protocol
+grpcUrls:
+  - http: sentry.chain.grpc.injective.network:443
+name: injective
+nativeToken:
+  decimals: 18
+  denom: inj
+  name: Injective
+  symbol: INJ
+protocol: cosmos
+restUrls:
+  - http: https://sentry.lcd.injective.network:443
+rpcUrls:
+  - http: https://sentry.tm.injective.network:443
+slip44: 118

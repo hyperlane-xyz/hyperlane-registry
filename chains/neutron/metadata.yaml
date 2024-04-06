@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=../schema
+bech32Prefix: neutron
+blockExplorers:
+  - apiUrl: https://www.mintscan.io/neutron
+    family: other
+    name: Mintscan
+    url: https://www.mintscan.io/neutron
+blocks:
+  confirmations: 1
+  estimateBlockTime: 3
+  reorgPeriod: 1
+chainId: neutron-1
+displayName: Neutron
+domainId: 1853125230
+gasCurrencyCoinGeckoId: neutron-3
+grpcUrls:
+  - http: grpc-kralum.neutron-1.neutron.org:80
+isTestnet: false
+name: neutron
+nativeToken:
+  decimals: 6
+  denom: untrn
+  name: Neutron
+  symbol: NTRN
+protocol: cosmos
+restUrls:
+  - http: https://rest-lb.neutron.org
+rpcUrls:
+  - http: https://rpc-kralum.neutron-1.neutron.org
+slip44: 118
+transactionOverrides:
+  gasPrice: "0.0075"

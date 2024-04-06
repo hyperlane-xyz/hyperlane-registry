@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=../schema
+blockExplorers:
+  - apiUrl: https://api-alfajores.celoscan.io/api
+    family: etherscan
+    name: CeloScan
+    url: https://alfajores.celoscan.io
+  - apiUrl: https://explorer.celo.org/alfajores/api
+    family: blockscout
+    name: Blockscout
+    url: https://explorer.celo.org/alfajores
+blocks:
+  confirmations: 1
+  estimateBlockTime: 5
+  reorgPeriod: 0
+chainId: 44787
+displayName: Alfajores
+domainId: 44787
+isTestnet: true
+name: alfajores
+nativeToken:
+  decimals: 18
+  name: CELO
+  symbol: CELO
+protocol: ethereum
+rpcUrls:
+  - http: https://alfajores-forno.celo-testnet.org

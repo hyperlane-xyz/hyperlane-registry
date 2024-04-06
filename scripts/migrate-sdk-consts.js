@@ -1,0 +1,25 @@
+import fs from 'fs'
+import {stringify} from 'yaml'
+import {chainMetadata, hyperlaneContractAddresses} from '@hyperlane-xyz/sdk'
+
+const CHAIN_SCHEMA_REF = '# yaml-language-server: $schema=../schema'
+
+console.log('Converting chain metadata and addresses to YAML');
+for (const [name, metadata] of Object.entries(chainMetadata)) {
+  if (name.startsWith('test')) continue;
+
+  const dir = `./chains/${name}`;
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+
+  let metaYaml = stringify(metadata, {indent: 2,})
+  metaYaml = `${CHAIN_SCHEMA_REF}\n${metaYaml}`;
+  fs.writeFileSync(`${dir}/metadata.yaml`, metaYaml, 'utf8');
+
+  const addresses = hyperlaneContractAddresses[name]
+  if (!addresses) {
+    console.warn(`No addresses found for chain ${name}`)
+    continue
+  }
+  const addrYaml = stringify(addresses, {indent: 2,})
+  fs.writeFileSync(`${dir}/addresses.yaml`, addrYaml);
+};
