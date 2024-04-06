@@ -1,16 +1,52 @@
 {
   "name": "@hyperlane-xyz/registry",
-  "description": "A collection of configs, artifacts, and schemas for Hyperlane ",
+  "description": "A collection of configs, artifacts, and schemas for Hyperlane",
   "version": "1.0.0",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@hyperlane-xyz/sdk": "3.10.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^16.9.1",
+    "chai": "^4.3.6",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.8",
+    "tsx": "^4.7.1",
+    "typescript": "5.3.3",
+    "yaml": "^2.3.1"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./chains": "./dist/chains/index.js",
+    "./chains/js": "./dist/chains/index.js",
+    "./chains/json": "./dist/chains/index.json",
+    "./chains/yaml": "./dist/chains/index.yaml",
+    "./chains/svg": "./dist/chains/svg"
+  },
+  "types": "./dist/index.d.ts",
   "files": [
-    "/chains",
-    "/deployments"
+    "/dist"
   ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=16"
+  },
   "homepage": "https://www.hyperlane.xyz",
+  "repository": "https://github.com/hyperlane-xyz/hyperlane-registry",
   "keywords": [
     "Hyperlane",
-    "Registry"
+    "Registry",
+    "Chains",
+    "Deployments"
   ],
   "license": "MIT",
-  "repository": "https://github.com/hyperlane-xyz/hyperlane-registry"
+  "scripts": {
+    "prepare": "husky",
+    "clean": "rm -rf ./dist",
+    "prettier": "prettier --write ./chains ./deployments",
+    "test": "echo 'TODO'"
+  },
+  "packageManager": "yarn@4.0.2"
 }
