@@ -20,11 +20,8 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
-    "./chains": "./dist/chains/index.js",
-    "./chains/js": "./dist/chains/index.js",
-    "./chains/json": "./dist/chains/index.json",
-    "./chains/yaml": "./dist/chains/index.yaml",
-    "./chains/svg": "./dist/chains/svg"
+    "./chains/*": "./dist/chains/*",
+    "./chains/**": "./dist/chains/**"
   },
   "types": "./dist/index.d.ts",
   "files": [
@@ -44,7 +41,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf ./dist",
+    "clean": "rm -rf ./dist ./tmp",
+    "build": "tsx ./scripts/build.ts && tsc",
     "prettier": "prettier --write ./chains ./deployments",
     "test": "echo 'TODO'"
   },
