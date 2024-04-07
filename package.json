@@ -45,7 +45,8 @@
     "clean": "rm -rf ./dist ./tmp",
     "build": "tsx ./scripts/build.ts && tsc",
     "prettier": "prettier --write ./chains ./deployments",
-    "test": "mocha --config .mocharc.json './test/**/*.test.ts' --exit"
+    "test": "mocha --config .mocharc.json './test/**/*.test.ts' --exit",
+    "prepare": "husky"
   },
   "packageManager": "yarn@4.0.2"
 }

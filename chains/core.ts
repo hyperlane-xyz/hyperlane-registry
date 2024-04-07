@@ -1,5 +1,5 @@
 /**
- * An enumeration of chains managed by the Hyperlane core team.
+ * A list of chains managed by the Hyperlane core team.
  * Hyperlane can be deployed permissionlessly to any chain but for
  * convenience the core team maintains some deployments.
  */
@@ -74,7 +74,4 @@ export const CoreTestnets: Array<CoreChainName> = [
   CoreChain.eclipsetestnet,
 ];
 
-export const CoreChains: Array<CoreChainName> = [
-  ...CoreMainnets,
-  ...CoreTestnets,
-];
+export const CoreChains: Array<CoreChainName> = [...CoreMainnets, ...CoreTestnets];
