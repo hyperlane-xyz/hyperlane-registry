@@ -21,6 +21,7 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
+    "./chains/schema.json": "./dist/chains/schema.json",
     "./chains/*": "./dist/chains/*"
   },
   "types": "./dist/index.d.ts",
@@ -51,7 +52,7 @@
     "clean": "rm -rf ./dist ./tmp",
     "build": "tsx ./scripts/build.ts && tsc",
     "prettier": "prettier --write ./chains ./deployments",
-    "test": "mocha --config .mocharc.json './test/**/*.test.ts' --exit",
+    "test": "yarn build && mocha --config .mocharc.json './test/**/*.test.ts' --exit",
     "prepare": "husky"
   },
   "packageManager": "yarn@4.0.2"
