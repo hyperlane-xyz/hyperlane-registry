@@ -20,3 +20,18 @@ Configs and artifacts for [Hyperlane Core Contract](https://docs.hyperlane.xyz/d
 #### Warp
 
 Address artifacts for [Warp Route](https://docs.hyperlane.xyz/docs/deploy/deploy-warp-route) token deployments.
+
+## Usage
+
+### Via the NPM package
+
+```sh
+# With npm
+npm install @hyperlane-xyz/registry
+# Or with yarn
+yarn add @hyperlane-xyz/registry
+```
+
+### Via SDK utilities
+
+_Coming soon!_
