@@ -53,7 +53,10 @@
     "build": "tsx ./scripts/build.ts && tsc",
     "prettier": "prettier --write ./chains ./deployments",
     "test": "yarn build && mocha --config .mocharc.json './test/**/*.test.ts' --exit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "release": "yarn build && yarn changeset publish",
+    "version:prepare": "yarn changeset version && yarn install --no-immutable",
+    "version:check": "yarn changeset status"
   },
   "packageManager": "yarn@4.0.2"
 }
