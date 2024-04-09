@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "incremental": false,
+    "lib": [
+      "ES2015", "ES2016", "ES2017", "ES2018",
+      "ES2019", "ES2020","ES2021", "DOM"
+    ],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "noEmitOnError": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "./dist/",
+    "preserveSymlinks": true,
+    "preserveWatchOutput": true,
+    "pretty": false,
+    "resolveJsonModule": true,
+    "rootDir": "./tmp",
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "strict": true,
+    "target": "es2022",
+  },
+  "include": ["./tmp/**/*.ts"]
+}

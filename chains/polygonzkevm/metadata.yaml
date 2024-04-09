@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../schema
+blockExplorers:
+  - apiUrl: https://api-zkevm.polygonscan.com/api
+    family: etherscan
+    name: PolygonScan
+    url: https://zkevm.polygonscan.com
+blocks:
+  confirmations: 1
+  estimateBlockTime: 10
+  reorgPeriod: 1
+chainId: 1101
+displayName: Polygon zkEVM
+displayNameShort: zkEVM
+domainId: 1101
+gasCurrencyCoinGeckoId: ethereum
+name: polygonzkevm
+nativeToken:
+  decimals: 18
+  name: Ether
+  symbol: ETH
+protocol: ethereum
+rpcUrls:
+  - http: https://zkevm-rpc.com
+  - http: https://rpc.ankr.com/polygon_zkevm

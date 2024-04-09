@@ -1,0 +1,236 @@
+{
+  "$ref": "#/definitions/hyperlaneChainMetadata",
+  "definitions": {
+    "hyperlaneChainMetadata": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*$",
+          "description": "The unique string identifier of the chain, used as the key in ChainMap dictionaries."
+        },
+        "protocol": {
+          "type": "string",
+          "enum": ["ethereum", "sealevel", "fuel", "cosmos"],
+          "description": "The type of protocol used by this chain. See ProtocolType for valid values."
+        },
+        "chainId": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "exclusiveMinimum": 0
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "The chainId of the chain. Uses EIP-155 for EVM chains"
+        },
+        "domainId": {
+          "$ref": "#/definitions/hyperlaneChainMetadata/properties/chainId/anyOf/0",
+          "description": "The domainId of the chain, should generally default to `chainId`. Consumer of `ChainMetadata` should use this value if present, but otherwise fallback to `chainId`."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Human-readable name of the chain."
+        },
+        "displayNameShort": {
+          "type": "string",
+          "description": "A shorter human-readable name of the chain for use in user interfaces."
+        },
+        "technicalStack": {
+          "type": "string",
+          "enum": ["arbitrumnitro", "other"],
+          "description": "The technical stack of the chain. See ChainTechnicalStack for valid values."
+        },
+        "logoURI": {
+          "type": "string",
+          "description": "A URI to a logo image for this chain for use in user interfaces."
+        },
+        "nativeToken": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "symbol": {
+              "type": "string"
+            },
+            "decimals": {
+              "type": "integer",
+              "minimum": 0,
+              "exclusiveMaximum": 256
+            },
+            "denom": {
+              "type": "string"
+            }
+          },
+          "required": ["name", "symbol", "decimals"],
+          "additionalProperties": false,
+          "description": "The metadata of the native token of the chain (e.g. ETH for Ethereum)."
+        },
+        "rpcUrls": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "http": {
+                "type": "string",
+                "format": "uri",
+                "description": "The HTTP URL of the RPC endpoint (preferably HTTPS)."
+              },
+              "webSocket": {
+                "type": "string",
+                "description": "The WSS URL if the endpoint also supports websockets."
+              },
+              "pagination": {
+                "type": "object",
+                "properties": {
+                  "maxBlockRange": {
+                    "$ref": "#/definitions/hyperlaneChainMetadata/properties/chainId/anyOf/0",
+                    "description": "The maximum range between block numbers for which the RPC can query data"
+                  },
+                  "minBlockNumber": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "The absolute minimum block number that this RPC supports."
+                  },
+                  "maxBlockAge": {
+                    "$ref": "#/definitions/hyperlaneChainMetadata/properties/chainId/anyOf/0",
+                    "description": "The relative different from latest block that this RPC supports."
+                  }
+                },
+                "additionalProperties": false,
+                "description": "Limitations on the block range/age that can be queried."
+              },
+              "retry": {
+                "type": "object",
+                "properties": {
+                  "maxRequests": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "description": "The maximum number of requests to attempt before failing."
+                  },
+                  "baseRetryMs": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "description": "The base retry delay in milliseconds."
+                  }
+                },
+                "required": ["maxRequests", "baseRetryMs"],
+                "additionalProperties": false,
+                "description": "Default retry settings to be used by a provider such as MultiProvider."
+              }
+            },
+            "required": ["http"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "description": "The list of RPC endpoints for interacting with the chain."
+        },
+        "restUrls": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/hyperlaneChainMetadata/properties/rpcUrls/items"
+          },
+          "description": "For cosmos chains only, a list of Rest API URLs"
+        },
+        "grpcUrls": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/hyperlaneChainMetadata/properties/rpcUrls/items"
+          },
+          "description": "For cosmos chains only, a list of gRPC API URLs"
+        },
+        "customGrpcUrls": {
+          "type": "string",
+          "description": "Specify a comma separated list of custom GRPC URLs to use for this chain. If not specified, the default GRPC urls will be used."
+        },
+        "blockExplorers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "A human readable name for the explorer."
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "The base URL for the explorer."
+              },
+              "apiUrl": {
+                "type": "string",
+                "format": "uri",
+                "description": "The base URL for requests to the explorer API."
+              },
+              "apiKey": {
+                "type": "string",
+                "description": "An API key for the explorer (recommended for better reliability)."
+              },
+              "family": {
+                "type": "string",
+                "enum": ["etherscan", "blockscout", "routescan", "other"],
+                "description": "The type of the block explorer. See ExplorerFamily for valid values."
+              }
+            },
+            "required": ["name", "url", "apiUrl"],
+            "additionalProperties": false
+          },
+          "description": "A list of block explorers with data for this chain"
+        },
+        "blocks": {
+          "type": "object",
+          "properties": {
+            "confirmations": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of blocks to wait before considering a transaction confirmed."
+            },
+            "reorgPeriod": {
+              "$ref": "#/definitions/hyperlaneChainMetadata/properties/rpcUrls/items/properties/pagination/properties/minBlockNumber",
+              "description": "Number of blocks before a transaction has a near-zero chance of reverting."
+            },
+            "estimateBlockTime": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "description": "Rough estimate of time per block in seconds."
+            }
+          },
+          "required": ["confirmations"],
+          "additionalProperties": false,
+          "description": "Block settings for the chain/deployment."
+        },
+        "transactionOverrides": {
+          "type": "object",
+          "additionalProperties": {},
+          "description": "Properties to include when forming transaction requests."
+        },
+        "gasCurrencyCoinGeckoId": {
+          "type": "string",
+          "description": "The ID on CoinGecko of the token used for gas payments."
+        },
+        "gnosisSafeTransactionServiceUrl": {
+          "type": "string",
+          "description": "The URL of the gnosis safe transaction service."
+        },
+        "bech32Prefix": {
+          "type": "string",
+          "description": "The human readable address prefix for the chains using bech32."
+        },
+        "slip44": {
+          "type": "number",
+          "description": "The SLIP-0044 coin type."
+        },
+        "isTestnet": {
+          "type": "boolean",
+          "description": "Whether the chain is considered a testnet or a mainnet."
+        }
+      },
+      "required": ["name", "protocol", "chainId", "rpcUrls"],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
