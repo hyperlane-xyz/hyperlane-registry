@@ -6,9 +6,9 @@ import {
 } from '@hyperlane-xyz/sdk/dist/metadata/blockExplorer.js';
 import { Address, ProtocolType, sleep } from '@hyperlane-xyz/utils';
 import { expect } from 'chai';
-import { chainMetadata } from '../dist/index.js';
+import { chainMetadata } from '../../dist/index.js';
 
-const HEALTH_CHECK_TIMEOUT = 6_000; // 6s
+const HEALTH_CHECK_TIMEOUT = 10_000; // 10s
 const HEALTH_CHECK_DELAY = 3_000; // 3s
 
 const PROTOCOL_TO_ADDRESS: Record<ProtocolType, Address> = {

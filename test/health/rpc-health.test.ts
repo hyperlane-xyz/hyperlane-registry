@@ -10,11 +10,11 @@ import {
 } from '@hyperlane-xyz/sdk';
 import { sleep } from '@hyperlane-xyz/utils';
 import { expect } from 'chai';
-import { chainAddresses, chainMetadata } from '../dist/index.js';
+import { chainAddresses, chainMetadata } from '../../dist/index.js';
 
 import { Mailbox__factory } from '@hyperlane-xyz/core';
 
-const HEALTH_CHECK_TIMEOUT = 6_000; // 6s
+const HEALTH_CHECK_TIMEOUT = 10_000; // 10s
 const HEALTH_CHECK_DELAY = 3_000; // 3s
 
 async function isRpcHealthy(rpc: RpcUrl, metadata: ChainMetadata): Promise<boolean> {

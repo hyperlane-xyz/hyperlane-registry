@@ -1,6 +1,6 @@
 import { ChainMetadataSchema } from '@hyperlane-xyz/sdk';
 import { z } from 'zod';
-import { chainAddresses, chainMetadata } from '../dist/index.js';
+import { chainAddresses, chainMetadata } from '../../dist/index.js';
 
 describe('Chain metadata', () => {
   for (const [chain, metadata] of Object.entries(chainMetadata)) {
