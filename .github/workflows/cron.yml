@@ -1,0 +1,59 @@
+name: cron
+
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+on:
+  schedule:
+    - cron: '45 14 * * *'
+  workflow_dispatch:
+
+env:
+  LOG_LEVEL: DEBUG
+  LOG_FORMAT: PRETTY
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+            .yarn/cache
+          key: ${{ runner.os }}-yarn-cache-${{ hashFiles('./yarn.lock') }}
+      - name: yarn-install
+        run: yarn install
+
+  build:
+    runs-on: ubuntu-latest
+    needs: [install]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+            .yarn/cache
+          key: ${{ runner.os }}-yarn-cache-${{ hashFiles('./yarn.lock') }}
+      - name: build
+        run: yarn run build
+
+  metadata-health:
+      runs-on: ubuntu-latest
+      needs: [build]
+      steps:
+        - uses: actions/checkout@v3
+        - uses: actions/cache@v3
+          with:
+            path: |
+              **/node_modules
+              .yarn/cache
+            key: ${{ runner.os }}-yarn-cache-${{ hashFiles('./yarn.lock') }}
+
+        - name: Metadata Health Check
+          run: yarn test:health
+
+        - name: Post to discord webhook if metadata check fails
+          if: failure()
+          run: |
+            curl -X POST -H 'Content-type: application/json' --data '{"content":"SDK metadata check failed, see ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"}' ${{ secrets.DISCORD_WEBHOOK_URL }}

@@ -6,7 +6,17 @@ import { zodToJsonSchema } from 'zod-to-json-schema';
 import { CoreChains } from '../chains/core';
 
 function genJsExport(data, exportName) {
-  return `export const ${exportName} = ${JSON.stringify(data, null, 2)};`;
+  return `export const ${exportName} = ${JSON.stringify(data, null, 2)}`;
+}
+
+function genChainMetadataExport(data, exportName) {
+  return `import type { ChainMetadata } from '@hyperlane-xyz/sdk';
+${genJsExport(data, exportName)} as ChainMetadata`;
+}
+
+function genChainMetadataMapExport(data, exportName) {
+  return `import type { ChainMetadata, ChainMap } from '@hyperlane-xyz/sdk';
+${genJsExport(data, exportName)} as ChainMap<ChainMetadata>`;
 }
 
 let chainMetadata = {};
@@ -28,7 +38,7 @@ for (const file of fs.readdirSync('./chains')) {
   fs.mkdirSync(`${tsOutPath}`, { recursive: true });
   fs.copyFileSync(`${inDirPath}/metadata.yaml`, `${assetOutPath}/metadata.yaml`);
   fs.writeFileSync(`${assetOutPath}/metadata.json`, JSON.stringify(metadata, null, 2));
-  fs.writeFileSync(`${tsOutPath}/metadata.ts`, genJsExport(metadata, 'metadata'));
+  fs.writeFileSync(`${tsOutPath}/metadata.ts`, genChainMetadataExport(metadata, 'metadata'));
 
   // Convert and copy addresses if there are any
   if (fs.existsSync(`${inDirPath}/addresses.yaml`)) {
@@ -48,12 +58,18 @@ fs.mkdirSync(`./tmp`, { recursive: true });
 // Start with the contents of core.ts for the new index file
 fs.copyFileSync(`./chains/core.ts`, `./tmp/index.ts`);
 // Create files for the chain metadata and addresses maps
-fs.writeFileSync(`./tmp/chainMetadata.ts`, genJsExport(chainMetadata, 'chainMetadata'));
+fs.writeFileSync(
+  `./tmp/chainMetadata.ts`,
+  genChainMetadataMapExport(chainMetadata, 'chainMetadata'),
+);
 fs.writeFileSync(`./tmp/chainAddresses.ts`, genJsExport(chainAddresses, 'chainAddresses'));
 // And also alternate versions with just the core chains
 const coreChainMetadata = pick<any>(chainMetadata, CoreChains);
 const coreChainAddresses = pick<any>(chainAddresses, CoreChains);
-fs.writeFileSync(`./tmp/coreChainMetadata.ts`, genJsExport(coreChainMetadata, 'coreChainMetadata'));
+fs.writeFileSync(
+  `./tmp/coreChainMetadata.ts`,
+  genChainMetadataMapExport(coreChainMetadata, 'coreChainMetadata'),
+);
 fs.writeFileSync(
   `./tmp/coreChainAddresses.ts`,
   genJsExport(coreChainAddresses, 'coreChainAddresses'),
