@@ -3,7 +3,7 @@ import { pick } from '@hyperlane-xyz/utils';
 import fs from 'fs';
 import { parse } from 'yaml';
 import { zodToJsonSchema } from 'zod-to-json-schema';
-import { CoreChains } from '../chains/core';
+import { CoreChains } from '../src/core/chains';
 
 function genJsExport(data, exportName) {
   return `export const ${exportName} = ${JSON.stringify(data, null, 2)}`;
@@ -18,6 +18,11 @@ function genChainMetadataMapExport(data, exportName) {
   return `import type { ChainMetadata, ChainMap } from '@hyperlane-xyz/sdk';
 ${genJsExport(data, exportName)} as ChainMap<ChainMetadata>`;
 }
+
+console.log('Preparing tmp directory');
+if (fs.existsSync('./tmp')) fs.rmSync(`./tmp`, { recursive: true });
+// Start with the contents of src, which we will add to in this script
+fs.cpSync(`./src`, `./tmp`, { recursive: true });
 
 let chainMetadata = {};
 let chainAddresses = {};
@@ -54,9 +59,6 @@ for (const file of fs.readdirSync('./chains')) {
 }
 
 console.log('Assembling typescript code');
-fs.mkdirSync(`./tmp`, { recursive: true });
-// Start with the contents of core.ts for the new index file
-fs.copyFileSync(`./chains/core.ts`, `./tmp/index.ts`);
 // Create files for the chain metadata and addresses maps
 fs.writeFileSync(
   `./tmp/chainMetadata.ts`,
