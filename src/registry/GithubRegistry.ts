@@ -1,12 +1,10 @@
 import type { Logger } from 'pino';
 import { parse } from 'yaml';
 
-import { rootLogger } from '@hyperlane-xyz/utils';
-
-import { ChainMap, ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
 
 import { BaseRegistry } from './BaseRegistry.js';
-import { ChainAddresses, ChainFiles, IRegistry, RegistryContent } from './IRegistry.js';
+import type { ChainAddresses, ChainFiles, IRegistry, RegistryContent } from './IRegistry.js';
 
 const DEFAULT_REGISTRY = 'https://github.com/hyperlane-xyz/hyperlane-registry';
 const CHAIN_FILE_REGEX = /chains\/([a-z]+)\/([a-z]+)\.yaml/;
@@ -33,9 +31,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   public readonly repoName: string;
 
   constructor(options: GithubRegistryOptions = {}) {
-    super({
-      logger: options.logger ?? rootLogger.child({ module: 'GithubRegistry' }),
-    });
+    super({ logger: options.logger });
     this.url = new URL(options.url ?? DEFAULT_REGISTRY);
     this.branch = options.branch ?? 'main';
     const pathSegments = this.url.pathname.split('/');

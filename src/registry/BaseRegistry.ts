@@ -1,9 +1,7 @@
 import type { Logger } from 'pino';
 
-import { rootLogger } from '@hyperlane-xyz/utils';
-
-import { ChainMap, ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
-import { ChainAddresses, IRegistry, RegistryContent } from './IRegistry.js';
+import type { ChainMap, ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
+import type { ChainAddresses, IRegistry, RegistryContent } from './IRegistry.js';
 
 export abstract class BaseRegistry implements IRegistry {
   protected readonly logger: Logger;
@@ -13,8 +11,11 @@ export abstract class BaseRegistry implements IRegistry {
   protected metadataCache?: ChainMap<ChainMetadata>;
   protected addressCache?: ChainMap<ChainAddresses>;
 
-  constructor({ logger = rootLogger.child({ module: 'Registry' }) }: { logger?: Logger }) {
-    this.logger = logger;
+  constructor({ logger }: { logger?: Logger }) {
+    // @ts-ignore forcing in to avoid a @hyperlane-xyz/utils
+    // dependency here, which could bloat consumer bundles
+    // unnecessarily (e.g. they just want metadata)
+    this.logger = logger || console;
   }
 
   protected getChainsPath(): string {
