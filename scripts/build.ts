@@ -20,7 +20,7 @@ ${genJsExport(data, exportName)} as ChainMap<ChainMetadata>`;
 }
 
 console.log('Preparing tmp directory');
-fs.rmSync(`./tmp`, { recursive: true });
+if (fs.existsSync('./tmp')) fs.rmSync(`./tmp`, { recursive: true });
 // Start with the contents of src, which we will add to in this script
 fs.cpSync(`./src`, `./tmp`, { recursive: true });
 
