@@ -3,12 +3,7 @@ import path from 'path';
 import type { Logger } from 'pino';
 import { parse as yamlParse } from 'yaml';
 
-import {
-  ChainMetadataSchema,
-  type ChainMap,
-  type ChainMetadata,
-  type ChainName,
-} from '@hyperlane-xyz/sdk';
+import { type ChainMap, type ChainMetadata, type ChainName } from '@hyperlane-xyz/sdk';
 
 import { ChainAddresses, ChainAddressesSchema } from '../types.js';
 import { BaseRegistry, CHAIN_FILE_REGEX } from './BaseRegistry.js';
@@ -63,7 +58,7 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
     for (const [chainName, chainFiles] of Object.entries(repoContents.chains)) {
       if (!chainFiles.metadata) continue;
       const data = fs.readFileSync(chainFiles.metadata, 'utf8');
-      chainMetadata[chainName] = ChainMetadataSchema.parse(yamlParse(data));
+      chainMetadata[chainName] = yamlParse(data);
     }
     return (this.metadataCache = chainMetadata);
   }

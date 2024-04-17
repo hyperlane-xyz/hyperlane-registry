@@ -1,12 +1,7 @@
 import type { Logger } from 'pino';
 import { parse as yamlParse } from 'yaml';
 
-import {
-  ChainMetadataSchema,
-  type ChainMap,
-  type ChainMetadata,
-  type ChainName,
-} from '@hyperlane-xyz/sdk';
+import { type ChainMap, type ChainMetadata, type ChainName } from '@hyperlane-xyz/sdk';
 
 import { ChainAddresses, ChainAddressesSchema } from '../types.js';
 import { BaseRegistry, CHAIN_FILE_REGEX } from './BaseRegistry.js';
@@ -93,7 +88,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
       if (!chainFiles.metadata) continue;
       const response = await this.fetch(chainFiles.metadata);
       const data = await response.text();
-      chainMetadata[chainName] = ChainMetadataSchema.parse(yamlParse(data));
+      chainMetadata[chainName] = yamlParse(data);
     }
     return (this.metadataCache = chainMetadata);
   }
@@ -103,7 +98,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     const url = this.getRawContentUrl(`${this.getChainsPath()}/${chainName}/metadata.yaml`);
     const response = await this.fetch(url);
     const data = await response.text();
-    return ChainMetadataSchema.parse(yamlParse(data));
+    return yamlParse(data);
   }
 
   async getAddresses(): Promise<ChainMap<ChainAddresses>> {
