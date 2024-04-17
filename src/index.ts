@@ -2,4 +2,5 @@ export { CoreChain, CoreChainName, CoreChains, CoreMainnets, CoreTestnets } from
 
 export { BaseRegistry } from './registry/BaseRegistry.js';
 export { GithubRegistry, GithubRegistryOptions } from './registry/GithubRegistry.js';
-export { ChainAddresses, ChainFiles, IRegistry, RegistryContent } from './registry/IRegistry.js';
+export { ChainFiles, IRegistry, RegistryContent, RegistryType } from './registry/IRegistry.js';
+export { ChainAddresses, ChainAddressesSchema } from './types.js';

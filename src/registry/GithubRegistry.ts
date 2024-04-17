@@ -1,16 +1,26 @@
 import type { Logger } from 'pino';
-import { parse } from 'yaml';
+import { parse as yamlParse } from 'yaml';
 
-import type { ChainMap, ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
+import {
+  ChainMetadataSchema,
+  type ChainMap,
+  type ChainMetadata,
+  type ChainName,
+} from '@hyperlane-xyz/sdk';
 
-import { BaseRegistry } from './BaseRegistry.js';
-import type { ChainAddresses, ChainFiles, IRegistry, RegistryContent } from './IRegistry.js';
+import { ChainAddresses, ChainAddressesSchema } from '../types.js';
+import { BaseRegistry, CHAIN_FILE_REGEX } from './BaseRegistry.js';
+import {
+  RegistryType,
+  type ChainFiles,
+  type IRegistry,
+  type RegistryContent,
+} from './IRegistry.js';
 
 const DEFAULT_REGISTRY = 'https://github.com/hyperlane-xyz/hyperlane-registry';
-const CHAIN_FILE_REGEX = /chains\/([a-z]+)\/([a-z]+)\.yaml/;
 
 export interface GithubRegistryOptions {
-  url?: string;
+  uri?: string;
   branch?: string;
   authToken?: string;
   logger?: Logger;
@@ -25,6 +35,7 @@ interface TreeNode {
 }
 
 export class GithubRegistry extends BaseRegistry implements IRegistry {
+  public readonly type = RegistryType.Github;
   public readonly url: URL;
   public readonly branch: string;
   public readonly repoOwner: string;
@@ -32,7 +43,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
   constructor(options: GithubRegistryOptions = {}) {
     super({ logger: options.logger });
-    this.url = new URL(options.url ?? DEFAULT_REGISTRY);
+    this.url = new URL(options.uri ?? DEFAULT_REGISTRY);
     this.branch = options.branch ?? 'main';
     const pathSegments = this.url.pathname.split('/');
     if (pathSegments.length < 2) throw new Error('Invalid github url');
@@ -77,11 +88,12 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     if (this.metadataCache) return this.metadataCache;
     const chainMetadata: ChainMap<ChainMetadata> = {};
     const repoContents = await this.listRegistryContent();
+    // TODO use concurrentMap here when utils package is updated
     for (const [chainName, chainFiles] of Object.entries(repoContents.chains)) {
       if (!chainFiles.metadata) continue;
       const response = await this.fetch(chainFiles.metadata);
-      const metadata = parse(await response.text()) as ChainMetadata;
-      chainMetadata[chainName] = metadata;
+      const data = await response.text();
+      chainMetadata[chainName] = ChainMetadataSchema.parse(yamlParse(data));
     }
     return (this.metadataCache = chainMetadata);
   }
@@ -90,18 +102,20 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     if (this.metadataCache?.[chainName]) return this.metadataCache[chainName];
     const url = this.getRawContentUrl(`${this.getChainsPath()}/${chainName}/metadata.yaml`);
     const response = await this.fetch(url);
-    return parse(await response.text()) as ChainMetadata;
+    const data = await response.text();
+    return ChainMetadataSchema.parse(yamlParse(data));
   }
 
   async getAddresses(): Promise<ChainMap<ChainAddresses>> {
     if (this.addressCache) return this.addressCache;
     const chainAddresses: ChainMap<ChainAddresses> = {};
     const repoContents = await this.listRegistryContent();
+    // TODO use concurrentMap here when utils package is updated
     for (const [chainName, chainFiles] of Object.entries(repoContents.chains)) {
       if (!chainFiles.addresses) continue;
       const response = await this.fetch(chainFiles.addresses);
-      const addresses = parse(await response.text()) as ChainAddresses;
-      chainAddresses[chainName] = addresses;
+      const data = await response.text();
+      chainAddresses[chainName] = ChainAddressesSchema.parse(yamlParse(data));
     }
     return (this.addressCache = chainAddresses);
   }
@@ -110,7 +124,8 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     if (this.addressCache?.[chainName]) return this.addressCache[chainName];
     const url = this.getRawContentUrl(`${this.getChainsPath()}/${chainName}/addresses.yaml`);
     const response = await this.fetch(url);
-    return parse(await response.text()) as ChainAddresses;
+    const data = await response.text();
+    return ChainAddressesSchema.parse(yamlParse(data));
   }
 
   protected getRawContentUrl(path: string): string {

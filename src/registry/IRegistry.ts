@@ -1,6 +1,5 @@
-import type { Address } from '@hyperlane-xyz/utils';
-
 import type { ChainMap, ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
+import { ChainAddresses, MaybePromise } from '../types.js';
 
 export interface ChainFiles {
   metadata?: string;
@@ -14,14 +13,18 @@ export interface RegistryContent {
   };
 }
 
-export type ChainAddresses = Record<string, Address>;
+export enum RegistryType {
+  Github = 'github',
+  Local = 'local',
+}
 
 export interface IRegistry {
-  listRegistryContent(): Promise<RegistryContent>;
-  getChains(): Promise<Array<ChainName>>;
-  getMetadata(): Promise<ChainMap<ChainMetadata>>;
-  getChainMetadata(chainName: ChainName): Promise<ChainMetadata | null>;
-  getAddresses(): Promise<ChainMap<ChainAddresses>>;
-  getChainAddresses(chainName: ChainName): Promise<ChainAddresses | null>;
+  type: RegistryType;
+  listRegistryContent(): MaybePromise<RegistryContent>;
+  getChains(): MaybePromise<Array<ChainName>>;
+  getMetadata(): MaybePromise<ChainMap<ChainMetadata>>;
+  getChainMetadata(chainName: ChainName): MaybePromise<ChainMetadata | null>;
+  getAddresses(): MaybePromise<ChainMap<ChainAddresses>>;
+  getChainAddresses(chainName: ChainName): MaybePromise<ChainAddresses | null>;
   // TODO: Define write-related methods
 }
