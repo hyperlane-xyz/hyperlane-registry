@@ -11,12 +11,7 @@
         },
         "protocol": {
           "type": "string",
-          "enum": [
-            "ethereum",
-            "sealevel",
-            "fuel",
-            "cosmos"
-          ],
+          "enum": ["ethereum", "sealevel", "fuel", "cosmos"],
           "description": "The type of protocol used by this chain. See ProtocolType for valid values."
         },
         "chainId": {
@@ -45,10 +40,7 @@
         },
         "technicalStack": {
           "type": "string",
-          "enum": [
-            "arbitrumnitro",
-            "other"
-          ],
+          "enum": ["arbitrumnitro", "other"],
           "description": "The technical stack of the chain. See ChainTechnicalStack for valid values."
         },
         "logoURI": {
@@ -73,11 +65,7 @@
               "type": "string"
             }
           },
-          "required": [
-            "name",
-            "symbol",
-            "decimals"
-          ],
+          "required": ["name", "symbol", "decimals"],
           "additionalProperties": false,
           "description": "The metadata of the native token of the chain (e.g. ETH for Ethereum)."
         },
@@ -129,17 +117,12 @@
                     "description": "The base retry delay in milliseconds."
                   }
                 },
-                "required": [
-                  "maxRequests",
-                  "baseRetryMs"
-                ],
+                "required": ["maxRequests", "baseRetryMs"],
                 "additionalProperties": false,
                 "description": "Default retry settings to be used by a provider such as MultiProvider."
               }
             },
-            "required": [
-              "http"
-            ],
+            "required": ["http"],
             "additionalProperties": false
           },
           "minItems": 1,
@@ -188,20 +171,11 @@
               },
               "family": {
                 "type": "string",
-                "enum": [
-                  "etherscan",
-                  "blockscout",
-                  "routescan",
-                  "other"
-                ],
+                "enum": ["etherscan", "blockscout", "routescan", "other"],
                 "description": "The type of the block explorer. See ExplorerFamily for valid values."
               }
             },
-            "required": [
-              "name",
-              "url",
-              "apiUrl"
-            ],
+            "required": ["name", "url", "apiUrl"],
             "additionalProperties": false
           },
           "description": "A list of block explorers with data for this chain"
@@ -224,9 +198,7 @@
               "description": "Rough estimate of time per block in seconds."
             }
           },
-          "required": [
-            "confirmations"
-          ],
+          "required": ["confirmations"],
           "additionalProperties": false,
           "description": "Block settings for the chain/deployment."
         },
@@ -256,12 +228,7 @@
           "description": "Whether the chain is considered a testnet or a mainnet."
         }
       },
-      "required": [
-        "name",
-        "protocol",
-        "chainId",
-        "rpcUrls"
-      ],
+      "required": ["name", "protocol", "chainId", "rpcUrls"],
       "additionalProperties": false
     }
   },
