@@ -1,7 +1,7 @@
 import type { Logger } from 'pino';
 
 import type { ChainMap, ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
-import { ChainAddresses, MaybePromise } from '../types.js';
+import type { ChainAddresses, MaybePromise } from '../types.js';
 import type { IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
 
 export const CHAIN_FILE_REGEX = /chains\/([a-z]+)\/([a-z]+)\.yaml/;
@@ -36,4 +36,11 @@ export abstract class BaseRegistry implements IRegistry {
   abstract getChainMetadata(chainName: ChainName): MaybePromise<ChainMetadata | null>;
   abstract getAddresses(): MaybePromise<ChainMap<ChainAddresses>>;
   abstract getChainAddresses(chainName: ChainName): MaybePromise<ChainAddresses | null>;
+  abstract addChains(
+    chains: Array<{ chainName: ChainName; metadata?: ChainMetadata; addresses?: ChainAddresses }>,
+  ): MaybePromise<void>;
+  abstract updateChains(
+    chains: Array<{ chainName: ChainName; metadata?: ChainMetadata; addresses?: ChainAddresses }>,
+  ): MaybePromise<void>;
+  abstract removeChains(chains: Array<ChainName>): MaybePromise<void>;
 }

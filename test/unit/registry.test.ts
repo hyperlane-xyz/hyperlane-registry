@@ -1,7 +1,11 @@
 import { expect } from 'chai';
 
+import type { ChainMetadata } from '@hyperlane-xyz/sdk';
 import { GithubRegistry } from '../../src/registry/GithubRegistry.js';
 import { LocalRegistry } from '../../src/registry/LocalRegistry.js';
+import { ChainAddresses } from '../../src/types.js';
+
+const MOCK_CHAIN_NAME = 'mockchain';
 
 describe('Registry utilities', () => {
   const githubRegistry = new GithubRegistry();
@@ -48,5 +52,25 @@ describe('Registry utilities', () => {
       expect(Object.keys(addresses).length).to.be.greaterThan(0);
       // Note the short timeout to ensure result is coming from cache
     }).timeout(250);
+
+    // TODO remove this once GitHubRegistry methods are implemented
+    if (registry.type === 'github') continue;
+
+    it(`Adds a new chain for ${registry.type} registry`, async () => {
+      const mockMetadata: ChainMetadata = {
+        ...(await registry.getChainMetadata('ethereum')),
+        name: MOCK_CHAIN_NAME,
+      };
+      const mockAddresses: ChainAddresses = await registry.getChainAddresses('ethereum');
+      await registry.addChains([
+        { chainName: MOCK_CHAIN_NAME, metadata: mockMetadata, addresses: mockAddresses },
+      ]);
+      expect((await registry.getChains()).includes(MOCK_CHAIN_NAME)).to.be.true;
+    }).timeout(5_000);
+
+    it(`Removes a chain for ${registry.type} registry`, async () => {
+      await registry.removeChains(['mockchain']);
+      expect((await registry.getChains()).includes(MOCK_CHAIN_NAME)).to.be.false;
+    }).timeout(5_000);
   }
 });
