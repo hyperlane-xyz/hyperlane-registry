@@ -7,6 +7,7 @@ import type { ChainMap, ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
 
 import { CHAIN_SCHEMA_REF } from '../consts.js';
 import { ChainAddresses, ChainAddressesSchema } from '../types.js';
+import { toYamlString } from '../utils.js';
 import { BaseRegistry, CHAIN_FILE_REGEX } from './BaseRegistry.js';
 import {
   RegistryType,
@@ -14,7 +15,6 @@ import {
   type IRegistry,
   type RegistryContent,
 } from './IRegistry.js';
-import { toYamlString } from './utils.js';
 
 export interface LocalRegistryOptions {
   uri: string;
