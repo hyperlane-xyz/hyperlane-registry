@@ -64,7 +64,10 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
   }
 
   getChainMetadata(chainName: ChainName): ChainMetadata {
-    return this.getMetadata()[chainName];
+    const metadata = this.getMetadata();
+    if (!metadata[chainName])
+      throw new Error(`Metadata not found in registry for chain: ${chainName}`);
+    return metadata[chainName];
   }
 
   getAddresses(): ChainMap<ChainAddresses> {
@@ -80,7 +83,10 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
   }
 
   getChainAddresses(chainName: ChainName): ChainAddresses {
-    return this.getAddresses()[chainName];
+    const addresses = this.getAddresses();
+    if (!addresses[chainName])
+      throw new Error(`Addresses not found in registry for chain: ${chainName}`);
+    return addresses[chainName];
   }
 
   protected listFiles(dirPath: string): string[] {
