@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ChainMetadataSchemaObject } from '@hyperlane-xyz/sdk';
 import { pick } from '@hyperlane-xyz/utils';
 import fs from 'fs';
@@ -24,8 +25,8 @@ if (fs.existsSync('./tmp')) fs.rmSync(`./tmp`, { recursive: true });
 // Start with the contents of src, which we will add to in this script
 fs.cpSync(`./src`, `./tmp`, { recursive: true });
 
-let chainMetadata = {};
-let chainAddresses = {};
+const chainMetadata = {};
+const chainAddresses = {};
 
 console.log('Parsing and copying chain data');
 for (const file of fs.readdirSync('./chains')) {

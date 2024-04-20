@@ -62,14 +62,16 @@ describe('Registry utilities', () => {
         name: MOCK_CHAIN_NAME,
       };
       const mockAddresses: ChainAddresses = await registry.getChainAddresses('ethereum');
-      await registry.addChains([
-        { chainName: MOCK_CHAIN_NAME, metadata: mockMetadata, addresses: mockAddresses },
-      ]);
+      await registry.addChain({
+        chainName: MOCK_CHAIN_NAME,
+        metadata: mockMetadata,
+        addresses: mockAddresses,
+      });
       expect((await registry.getChains()).includes(MOCK_CHAIN_NAME)).to.be.true;
     }).timeout(5_000);
 
     it(`Removes a chain for ${registry.type} registry`, async () => {
-      await registry.removeChains(['mockchain']);
+      await registry.removeChain('mockchain');
       expect((await registry.getChains()).includes(MOCK_CHAIN_NAME)).to.be.false;
     }).timeout(5_000);
   }

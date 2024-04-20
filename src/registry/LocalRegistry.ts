@@ -91,63 +91,38 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
     return addresses[chainName];
   }
 
-  addChains(
-    chains: Array<{ chainName: ChainName; metadata?: ChainMetadata; addresses?: ChainAddresses }>,
-  ): void {
+  addChain(chain: {
+    chainName: ChainName;
+    metadata?: ChainMetadata;
+    addresses?: ChainAddresses;
+  }): void {
     const currentChains = this.listRegistryContent().chains;
-    for (const chain of chains) {
-      if (currentChains[chain.chainName])
-        throw new Error(`Chain ${chain.chainName} already exists in registry`);
-    }
+    if (currentChains[chain.chainName])
+      throw new Error(`Chain ${chain.chainName} already exists in registry`);
 
-    this.updateChains(chains);
+    this.createOrUpdateChain(chain);
   }
 
-  updateChains(
-    chains: Array<{ chainName: ChainName; metadata?: ChainMetadata; addresses?: ChainAddresses }>,
-  ): void {
-    for (const chain of chains) {
-      if (!chain.metadata && !chain.addresses)
-        throw new Error(
-          `Chain ${chain.chainName} must have metadata or addresses, preferably both`,
-        );
+  updateChain(chain: {
+    chainName: ChainName;
+    metadata?: ChainMetadata;
+    addresses?: ChainAddresses;
+  }): void {
+    const currentChains = this.listRegistryContent();
+    if (!currentChains.chains[chain.chainName]) {
+      this.logger.debug(`Chain ${chain.chainName} not found in registry, adding it now`);
     }
-
-    // Ensure caches are initialized and filled before making changes
-    this.listRegistryContent();
-    this.getMetadata();
-    this.getAddresses();
-
-    for (const chain of chains) {
-      const chainName = chain.chainName;
-      if (chain.metadata) {
-        this.createChainFile(
-          chainName,
-          'metadata',
-          chain.metadata,
-          this.metadataCache!,
-          CHAIN_SCHEMA_REF,
-        );
-      }
-      if (chain.addresses) {
-        this.createChainFile(chainName, 'addresses', chain.addresses, this.addressCache!);
-      }
-    }
+    this.createOrUpdateChain(chain);
   }
 
-  removeChains(chains: Array<ChainName>): void {
+  removeChain(chainName: ChainName): void {
     const currentChains = this.listRegistryContent().chains;
-    for (const chainName of chains) {
-      if (!currentChains[chainName])
-        throw new Error(`Chain ${chainName} does not exist in registry`);
-    }
+    if (!currentChains[chainName]) throw new Error(`Chain ${chainName} does not exist in registry`);
 
-    for (const chainName of chains) {
-      this.removeFiles(Object.values(currentChains[chainName]));
-      if (this.listContentCache?.chains[chainName]) delete this.listContentCache.chains[chainName];
-      if (this.metadataCache?.[chainName]) delete this.metadataCache[chainName];
-      if (this.addressCache?.[chainName]) delete this.addressCache[chainName];
-    }
+    this.removeFiles(Object.values(currentChains[chainName]));
+    if (this.listContentCache?.chains[chainName]) delete this.listContentCache.chains[chainName];
+    if (this.metadataCache?.[chainName]) delete this.metadataCache[chainName];
+    if (this.addressCache?.[chainName]) delete this.addressCache[chainName];
   }
 
   protected listFiles(dirPath: string): string[] {
@@ -161,13 +136,31 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
     return filePaths.flat();
   }
 
-  protected createFile(file: { filePath: string; data: string }): void {
-    const dirPath = path.dirname(file.filePath);
-    if (!fs.existsSync(dirPath))
-      fs.mkdirSync(dirPath, {
-        recursive: true,
-      });
-    fs.writeFileSync(file.filePath, file.data);
+  protected createOrUpdateChain(chain: {
+    chainName: ChainName;
+    metadata?: ChainMetadata;
+    addresses?: ChainAddresses;
+  }): void {
+    if (!chain.metadata && !chain.addresses)
+      throw new Error(`Chain ${chain.chainName} must have metadata or addresses, preferably both`);
+
+    const currentChains = this.listRegistryContent();
+    if (!currentChains.chains[chain.chainName]) {
+      this.logger.debug(`Chain ${chain.chainName} not found in registry, adding it now`);
+    }
+
+    if (chain.metadata) {
+      this.createChainFile(
+        chain.chainName,
+        'metadata',
+        chain.metadata,
+        this.getMetadata(),
+        CHAIN_SCHEMA_REF,
+      );
+    }
+    if (chain.addresses) {
+      this.createChainFile(chain.chainName, 'addresses', chain.addresses, this.getAddresses());
+    }
   }
 
   protected createChainFile(
@@ -178,10 +171,20 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
     prefix?: string,
   ) {
     const filePath = path.join(this.uri, this.getChainsPath(), chainName, `${fileName}.yaml`);
-    this.listContentCache!.chains[chainName] ||= {};
-    this.listContentCache!.chains[chainName][fileName] = filePath;
+    const currentChains = this.listRegistryContent().chains;
+    currentChains[chainName] ||= {};
+    currentChains[chainName][fileName] = filePath;
     cache[chainName] = data;
     this.createFile({ filePath, data: toYamlString(data, prefix) });
+  }
+
+  protected createFile(file: { filePath: string; data: string }): void {
+    const dirPath = path.dirname(file.filePath);
+    if (!fs.existsSync(dirPath))
+      fs.mkdirSync(dirPath, {
+        recursive: true,
+      });
+    fs.writeFileSync(file.filePath, file.data);
   }
 
   protected removeFiles(filePaths: string[]): void {

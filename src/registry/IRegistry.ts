@@ -26,13 +26,17 @@ export interface IRegistry {
   getChainMetadata(chainName: ChainName): MaybePromise<ChainMetadata | null>;
   getAddresses(): MaybePromise<ChainMap<ChainAddresses>>;
   getChainAddresses(chainName: ChainName): MaybePromise<ChainAddresses | null>;
-  addChains(
-    chains: Array<{ chainName: ChainName; metadata?: ChainMetadata; addresses?: ChainAddresses }>,
-  ): MaybePromise<void>;
-  updateChains(
-    chains: Array<{ chainName: ChainName; metadata?: ChainMetadata; addresses?: ChainAddresses }>,
-  ): MaybePromise<void>;
-  removeChains(chains: Array<ChainName>): MaybePromise<void>;
+  addChain(chains: {
+    chainName: ChainName;
+    metadata?: ChainMetadata;
+    addresses?: ChainAddresses;
+  }): MaybePromise<void>;
+  updateChain(chains: {
+    chainName: ChainName;
+    metadata?: ChainMetadata;
+    addresses?: ChainAddresses;
+  }): MaybePromise<void>;
+  removeChain(chains: ChainName): MaybePromise<void>;
 
   // TODO define deployment artifact related methods
 }
