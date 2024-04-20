@@ -1,9 +1,13 @@
 import type { Logger } from 'pino';
 
 import type { ChainMap, ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
-import type { ChainAddresses, IRegistry, RegistryContent } from './IRegistry.js';
+import { ChainAddresses, MaybePromise } from '../types.js';
+import type { IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
+
+export const CHAIN_FILE_REGEX = /chains\/([a-z]+)\/([a-z]+)\.yaml/;
 
 export abstract class BaseRegistry implements IRegistry {
+  abstract type: RegistryType;
   protected readonly logger: Logger;
 
   // Caches
@@ -26,10 +30,10 @@ export abstract class BaseRegistry implements IRegistry {
     return 'deployments/warp_routes';
   }
 
-  abstract listRegistryContent(): Promise<RegistryContent>;
-  abstract getChains(): Promise<Array<ChainName>>;
-  abstract getMetadata(): Promise<ChainMap<ChainMetadata>>;
-  abstract getChainMetadata(chainName: ChainName): Promise<ChainMetadata | null>;
-  abstract getAddresses(): Promise<ChainMap<ChainAddresses>>;
-  abstract getChainAddresses(chainName: ChainName): Promise<ChainAddresses | null>;
+  abstract listRegistryContent(): MaybePromise<RegistryContent>;
+  abstract getChains(): MaybePromise<Array<ChainName>>;
+  abstract getMetadata(): MaybePromise<ChainMap<ChainMetadata>>;
+  abstract getChainMetadata(chainName: ChainName): MaybePromise<ChainMetadata | null>;
+  abstract getAddresses(): MaybePromise<ChainMap<ChainAddresses>>;
+  abstract getChainAddresses(chainName: ChainName): MaybePromise<ChainAddresses | null>;
 }
