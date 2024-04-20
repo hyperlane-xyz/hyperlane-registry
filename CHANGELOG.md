@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 1.0.5
+
+### Patch Changes
+
+- 57c5310: Fix regex for identifying chains and mark proteustestnet as a testnet
+
 ## 1.0.4
 
 ### Patch Changes
