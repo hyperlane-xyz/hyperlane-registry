@@ -1,5 +1,5 @@
 import type { ChainMap, ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
-import { ChainAddresses, MaybePromise } from '../types.js';
+import type { ChainAddresses, MaybePromise } from '../types.js';
 
 export interface ChainFiles {
   metadata?: string;
@@ -26,5 +26,17 @@ export interface IRegistry {
   getChainMetadata(chainName: ChainName): MaybePromise<ChainMetadata | null>;
   getAddresses(): MaybePromise<ChainMap<ChainAddresses>>;
   getChainAddresses(chainName: ChainName): MaybePromise<ChainAddresses | null>;
-  // TODO: Define write-related methods
+  addChain(chains: {
+    chainName: ChainName;
+    metadata?: ChainMetadata;
+    addresses?: ChainAddresses;
+  }): MaybePromise<void>;
+  updateChain(chains: {
+    chainName: ChainName;
+    metadata?: ChainMetadata;
+    addresses?: ChainAddresses;
+  }): MaybePromise<void>;
+  removeChain(chains: ChainName): MaybePromise<void>;
+
+  // TODO define deployment artifact related methods
 }

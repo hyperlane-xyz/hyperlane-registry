@@ -123,6 +123,24 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     return ChainAddressesSchema.parse(yamlParse(data));
   }
 
+  async addChain(_chains: {
+    chainName: ChainName;
+    metadata?: ChainMetadata;
+    addresses?: ChainAddresses;
+  }): Promise<void> {
+    throw new Error('TODO: Implement');
+  }
+  async updateChain(_chains: {
+    chainName: ChainName;
+    metadata?: ChainMetadata;
+    addresses?: ChainAddresses;
+  }): Promise<void> {
+    throw new Error('TODO: Implement');
+  }
+  async removeChain(_chains: ChainName): Promise<void> {
+    throw new Error('TODO: Implement');
+  }
+
   protected getRawContentUrl(path: string): string {
     return `https://raw.githubusercontent.com/${this.repoOwner}/${this.repoName}/${this.branch}/${path}`;
   }
