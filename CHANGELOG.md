@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 1.0.6
+
+### Patch Changes
+
+- 049a67f: Fix chain file regex and add tests
+
 ## 1.0.5
 
 ### Patch Changes
