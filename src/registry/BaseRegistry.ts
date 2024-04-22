@@ -4,7 +4,7 @@ import type { ChainMap, ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
 import type { ChainAddresses, MaybePromise } from '../types.js';
 import type { IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
 
-export const CHAIN_FILE_REGEX = /chains\/([a-z]+)\/([a-z0-9]+)\.yaml/;
+export const CHAIN_FILE_REGEX = /chains\/([a-z0-9]+)\/([a-z]+)\.yaml/;
 
 export abstract class BaseRegistry implements IRegistry {
   abstract type: RegistryType;

@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 
 import type { ChainMetadata } from '@hyperlane-xyz/sdk';
+import { CHAIN_FILE_REGEX } from '../../src/registry/BaseRegistry.js';
 import { GithubRegistry } from '../../src/registry/GithubRegistry.js';
 import { LocalRegistry } from '../../src/registry/LocalRegistry.js';
 import { ChainAddresses } from '../../src/types.js';
@@ -75,4 +76,12 @@ describe('Registry utilities', () => {
       expect((await registry.getChains()).includes(MOCK_CHAIN_NAME)).to.be.false;
     }).timeout(5_000);
   }
+});
+
+describe('Registry regex', () => {
+  it('Matches chain file regex', () => {
+    expect(CHAIN_FILE_REGEX.test('chains/ethereum/metadata.yaml')).to.be.true;
+    expect(CHAIN_FILE_REGEX.test('chains/ancient8/addresses.yaml')).to.be.true;
+    expect(CHAIN_FILE_REGEX.test('chains/_NotAChain/addresses.yaml')).to.be.false;
+  });
 });
