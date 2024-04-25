@@ -124,8 +124,9 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
   }
 
   protected listFiles(dirPath: string): string[] {
-    const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+    if (!fs.existsSync(dirPath)) return [];
 
+    const entries = fs.readdirSync(dirPath, { withFileTypes: true });
     const filePaths = entries.map((entry) => {
       const fullPath = path.join(dirPath, entry.name);
       return entry.isDirectory() ? this.listFiles(fullPath) : fullPath;
