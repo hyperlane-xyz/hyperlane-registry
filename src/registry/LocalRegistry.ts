@@ -3,9 +3,9 @@ import path from 'path';
 import type { Logger } from 'pino';
 import { parse as yamlParse } from 'yaml';
 
-import type { ChainMap, ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 
-import { CHAIN_SCHEMA_REF } from '../consts.js';
+import { SCHEMA_REF } from '../consts.js';
 import { ChainAddresses, ChainAddressesSchema } from '../types.js';
 import { toYamlString } from '../utils.js';
 import { BaseRegistry, CHAIN_FILE_REGEX } from './BaseRegistry.js';
@@ -134,6 +134,11 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
     return filePaths.flat();
   }
 
+  addWarpRoute(config: WarpCoreConfig): void {
+    const filePath = path.join(this.uri, this.getWarpArtifactsPath(config));
+    this.createFile({ filePath, data: toYamlString(config, SCHEMA_REF) });
+  }
+
   protected createOrUpdateChain(chain: {
     chainName: ChainName;
     metadata?: ChainMetadata;
@@ -153,7 +158,7 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
         'metadata',
         chain.metadata,
         this.getMetadata(),
-        CHAIN_SCHEMA_REF,
+        SCHEMA_REF,
       );
     }
     if (chain.addresses) {

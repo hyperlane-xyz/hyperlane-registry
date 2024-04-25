@@ -1,12 +1,16 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { expect } from 'chai';
 
 import type { ChainMetadata } from '@hyperlane-xyz/sdk';
+import fs from 'fs';
 import { CHAIN_FILE_REGEX } from '../../src/registry/BaseRegistry.js';
 import { GithubRegistry } from '../../src/registry/GithubRegistry.js';
 import { LocalRegistry } from '../../src/registry/LocalRegistry.js';
 import { ChainAddresses } from '../../src/types.js';
 
 const MOCK_CHAIN_NAME = 'mockchain';
+const MOCK_CHAIN_NAME2 = 'mockchain2';
+const MOCK_SYMBOL = 'MOCK';
 
 describe('Registry utilities', () => {
   const githubRegistry = new GithubRegistry();
@@ -74,6 +78,25 @@ describe('Registry utilities', () => {
     it(`Removes a chain for ${registry.type} registry`, async () => {
       await registry.removeChain('mockchain');
       expect((await registry.getChains()).includes(MOCK_CHAIN_NAME)).to.be.false;
+    }).timeout(5_000);
+
+    it(`Adds a warp route for ${registry.type} registry`, async () => {
+      await registry.addWarpRoute({
+        tokens: [
+          { chainName: MOCK_CHAIN_NAME, symbol: MOCK_SYMBOL },
+          { chainName: MOCK_CHAIN_NAME2, symbol: MOCK_SYMBOL },
+        ] as any,
+        options: {},
+      });
+      expect(
+        fs.existsSync(
+          `deployments/warp_routes/${MOCK_SYMBOL}/${MOCK_CHAIN_NAME}-${MOCK_CHAIN_NAME2}.yaml`,
+        ),
+      ).to.be.true;
+      fs.unlinkSync(
+        `deployments/warp_routes/${MOCK_SYMBOL}/${MOCK_CHAIN_NAME}-${MOCK_CHAIN_NAME2}.yaml`,
+      );
+      fs.rmdirSync(`deployments/warp_routes/${MOCK_SYMBOL}`);
     }).timeout(5_000);
   }
 });

@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - chainName: neutron
+    standard: CwHypCollateral
+    decimals: 6
+    symbol: ECLIP
+    name: Eclipse Fi
+    addressOrDenom: neutron1dvzvf870mx9uf65uqhx40yzx9gu4xlqqq2pnx362a0ndmustww3smumrf5
+    collateralAddressOrDenom: factory/neutron10sr06r3qkhn7xzpw3339wuj77hu06mzna6uht0/eclip
+    igpTokenAddressOrDenom: ibc/773B4D0A3CD667B2275D5A4A7A2F0909C0BA0F4059C0B9181E680DDF4965DCC7
+    connections:
+      - token: ethereum|arbitrum|0x93ca0d85837FF83158Cd14D65B169CdB223b1921
+  - chainName: arbitrum
+    standard: EvmHypSynthetic
+    decimals: 6
+    symbol: ECLIP
+    name: Eclipse Fi
+    addressOrDenom: "0x93ca0d85837FF83158Cd14D65B169CdB223b1921"
+    logoURI: /logos/ECLIP.png
+    connections:
+      - token: cosmos|neutron|neutron1dvzvf870mx9uf65uqhx40yzx9gu4xlqqq2pnx362a0ndmustww3smumrf5
