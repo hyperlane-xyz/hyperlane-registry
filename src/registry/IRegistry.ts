@@ -20,23 +20,26 @@ export enum RegistryType {
 
 export interface IRegistry {
   type: RegistryType;
+  uri: string;
+
   listRegistryContent(): MaybePromise<RegistryContent>;
+
   getChains(): MaybePromise<Array<ChainName>>;
   getMetadata(): MaybePromise<ChainMap<ChainMetadata>>;
   getChainMetadata(chainName: ChainName): MaybePromise<ChainMetadata | null>;
   getAddresses(): MaybePromise<ChainMap<ChainAddresses>>;
   getChainAddresses(chainName: ChainName): MaybePromise<ChainAddresses | null>;
-  addChain(chains: {
+  addChain(chain: {
     chainName: ChainName;
     metadata?: ChainMetadata;
     addresses?: ChainAddresses;
   }): MaybePromise<void>;
-  updateChain(chains: {
+  updateChain(chain: {
     chainName: ChainName;
     metadata?: ChainMetadata;
     addresses?: ChainAddresses;
   }): MaybePromise<void>;
-  removeChain(chains: ChainName): MaybePromise<void>;
+  removeChain(chain: ChainName): MaybePromise<void>;
 
   // TODO define deployment artifact related methods
 }

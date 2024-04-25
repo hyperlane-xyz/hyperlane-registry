@@ -23,11 +23,9 @@ export interface LocalRegistryOptions {
 
 export class LocalRegistry extends BaseRegistry implements IRegistry {
   public readonly type = RegistryType.Local;
-  public readonly uri: string;
 
   constructor(options: LocalRegistryOptions) {
-    super({ logger: options.logger });
-    this.uri = options.uri;
+    super(options);
   }
 
   listRegistryContent(): RegistryContent {
