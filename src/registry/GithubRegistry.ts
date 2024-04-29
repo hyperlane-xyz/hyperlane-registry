@@ -1,9 +1,11 @@
 import type { Logger } from 'pino';
 import { parse as yamlParse } from 'yaml';
 
-import { type ChainMap, type ChainMetadata, type ChainName } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 
+import { DEFAULT_GITHUB_REGISTRY, GITHUB_FETCH_CONCURRENCY_LIMIT } from '../consts.js';
 import { ChainAddresses, ChainAddressesSchema } from '../types.js';
+import { concurrentMap } from '../utils.js';
 import { BaseRegistry, CHAIN_FILE_REGEX } from './BaseRegistry.js';
 import {
   RegistryType,
@@ -11,8 +13,6 @@ import {
   type IRegistry,
   type RegistryContent,
 } from './IRegistry.js';
-
-const DEFAULT_REGISTRY = 'https://github.com/hyperlane-xyz/hyperlane-registry';
 
 export interface GithubRegistryOptions {
   uri?: string;
@@ -37,8 +37,8 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   public readonly repoName: string;
 
   constructor(options: GithubRegistryOptions = {}) {
-    super({ logger: options.logger });
-    this.url = new URL(options.uri ?? DEFAULT_REGISTRY);
+    super({ uri: options.uri ?? DEFAULT_GITHUB_REGISTRY, logger: options.logger });
+    this.url = new URL(this.uri);
     this.branch = options.branch ?? 'main';
     const pathSegments = this.url.pathname.split('/');
     if (pathSegments.length < 2) throw new Error('Invalid github url');
@@ -81,15 +81,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
   async getMetadata(): Promise<ChainMap<ChainMetadata>> {
     if (this.metadataCache) return this.metadataCache;
-    const chainMetadata: ChainMap<ChainMetadata> = {};
-    const repoContents = await this.listRegistryContent();
-    // TODO use concurrentMap here when utils package is updated
-    for (const [chainName, chainFiles] of Object.entries(repoContents.chains)) {
-      if (!chainFiles.metadata) continue;
-      const response = await this.fetch(chainFiles.metadata);
-      const data = await response.text();
-      chainMetadata[chainName] = yamlParse(data);
-    }
+    const chainMetadata = await this.fetchChainFiles<ChainMetadata>('metadata');
     return (this.metadataCache = chainMetadata);
   }
 
@@ -103,15 +95,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
   async getAddresses(): Promise<ChainMap<ChainAddresses>> {
     if (this.addressCache) return this.addressCache;
-    const chainAddresses: ChainMap<ChainAddresses> = {};
-    const repoContents = await this.listRegistryContent();
-    // TODO use concurrentMap here when utils package is updated
-    for (const [chainName, chainFiles] of Object.entries(repoContents.chains)) {
-      if (!chainFiles.addresses) continue;
-      const response = await this.fetch(chainFiles.addresses);
-      const data = await response.text();
-      chainAddresses[chainName] = ChainAddressesSchema.parse(yamlParse(data));
-    }
+    const chainAddresses = await this.fetchChainFiles<ChainAddresses>('addresses');
     return (this.addressCache = chainAddresses);
   }
 
@@ -141,8 +125,35 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     throw new Error('TODO: Implement');
   }
 
+  async addWarpRoute(_config: WarpCoreConfig): Promise<void> {
+    throw new Error('TODO: Implement');
+  }
+
   protected getRawContentUrl(path: string): string {
     return `https://raw.githubusercontent.com/${this.repoOwner}/${this.repoName}/${this.branch}/${path}`;
+  }
+
+  protected async fetchChainFiles<T>(fileName: keyof ChainFiles): Promise<ChainMap<T>> {
+    const repoContents = await this.listRegistryContent();
+    const chainNames = Object.keys(repoContents.chains);
+
+    const fileUrls = chainNames.reduce<ChainMap<string>>((acc, chainName) => {
+      const fileUrl = repoContents.chains[chainName][fileName];
+      if (fileUrl) acc[chainName] = fileUrl;
+      return acc;
+    }, {});
+
+    const results = await concurrentMap(
+      GITHUB_FETCH_CONCURRENCY_LIMIT,
+      Object.entries(fileUrls),
+      async ([chainName, fileUrl]): Promise<[ChainName, T]> => {
+        const response = await this.fetch(fileUrl);
+        const data = await response.text();
+        return [chainName, yamlParse(data)];
+      },
+    );
+
+    return Object.fromEntries(results);
   }
 
   protected async fetch(url: string): Promise<Response> {
