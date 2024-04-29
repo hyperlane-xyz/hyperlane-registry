@@ -15,6 +15,7 @@ import {
   type IRegistry,
   type RegistryContent,
 } from './IRegistry.js';
+import { warpConfigToWarpAddresses } from './warp-utils.js';
 
 export interface LocalRegistryOptions {
   uri: string;
@@ -136,8 +137,14 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
   }
 
   addWarpRoute(config: WarpCoreConfig): void {
-    const filePath = path.join(this.uri, this.getWarpArtifactsPath(config));
-    this.createFile({ filePath, data: toYamlString(config, SCHEMA_REF) });
+    let { configPath, addressesPath } = this.getWarpArtifactsPaths(config);
+
+    configPath = path.join(this.uri, configPath);
+    this.createFile({ filePath: configPath, data: toYamlString(config, SCHEMA_REF) });
+
+    addressesPath = path.join(this.uri, addressesPath);
+    const addresses = warpConfigToWarpAddresses(config);
+    this.createFile({ filePath: addressesPath, data: toYamlString(addresses) });
   }
 
   protected createOrUpdateChain(chain: {

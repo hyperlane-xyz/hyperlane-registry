@@ -28,7 +28,7 @@ export abstract class BaseRegistry implements IRegistry {
     return 'chains';
   }
 
-  protected getWarpArtifactsPath({ tokens }: WarpCoreConfig): string {
+  protected getWarpArtifactsPaths({ tokens }: WarpCoreConfig) {
     if (!tokens.length) throw new Error('No tokens provided in config');
     const symbols = new Set<string>(tokens.map((token) => token.symbol.toUpperCase()));
     if (symbols.size !== 1)
@@ -38,7 +38,8 @@ export abstract class BaseRegistry implements IRegistry {
       .map((token) => token.chainName)
       .sort()
       .join('-');
-    return `deployments/warp_routes/${symbol}/${chains}.yaml`;
+    const basePath = `deployments/warp_routes/${symbol}/${chains}`;
+    return { configPath: `${basePath}-config.yaml`, addressesPath: `${basePath}-addresses.yaml` };
   }
 
   abstract listRegistryContent(): MaybePromise<RegistryContent>;
