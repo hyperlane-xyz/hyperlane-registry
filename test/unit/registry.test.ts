@@ -83,19 +83,18 @@ describe('Registry utilities', () => {
     it(`Adds a warp route for ${registry.type} registry`, async () => {
       await registry.addWarpRoute({
         tokens: [
-          { chainName: MOCK_CHAIN_NAME, symbol: MOCK_SYMBOL },
-          { chainName: MOCK_CHAIN_NAME2, symbol: MOCK_SYMBOL },
+          { chainName: MOCK_CHAIN_NAME, symbol: MOCK_SYMBOL, standard: 'EvmHypCollateral' },
+          { chainName: MOCK_CHAIN_NAME2, symbol: MOCK_SYMBOL, standard: 'EvmHypSynthetic' },
         ] as any,
         options: {},
       });
-      expect(
-        fs.existsSync(
-          `deployments/warp_routes/${MOCK_SYMBOL}/${MOCK_CHAIN_NAME}-${MOCK_CHAIN_NAME2}.yaml`,
-        ),
-      ).to.be.true;
-      fs.unlinkSync(
-        `deployments/warp_routes/${MOCK_SYMBOL}/${MOCK_CHAIN_NAME}-${MOCK_CHAIN_NAME2}.yaml`,
-      );
+      const outputBasePath = `deployments/warp_routes/${MOCK_SYMBOL}/${MOCK_CHAIN_NAME}-${MOCK_CHAIN_NAME2}-`;
+      const configPath = `${outputBasePath}config.yaml`;
+      const addressesPath = `${outputBasePath}addresses.yaml`;
+      expect(fs.existsSync(configPath)).to.be.true;
+      expect(fs.existsSync(addressesPath)).to.be.true;
+      fs.unlinkSync(configPath);
+      fs.unlinkSync(addressesPath);
       fs.rmdirSync(`deployments/warp_routes/${MOCK_SYMBOL}`);
     }).timeout(5_000);
   }
