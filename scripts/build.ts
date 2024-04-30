@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ChainMetadataSchemaObject } from '@hyperlane-xyz/sdk';
+import { ChainMetadataSchemaObject, WarpCoreConfigSchema } from '@hyperlane-xyz/sdk';
 import { pick } from '@hyperlane-xyz/utils';
 import fs from 'fs';
 import { parse } from 'yaml';
@@ -109,8 +109,13 @@ for (const name of Object.keys(chainMetadata)) {
   }
 }
 
-console.log('Updating & copying chain JSON schema');
-const schema = zodToJsonSchema(ChainMetadataSchemaObject, 'hyperlaneChainMetadata');
-const schemaStr = JSON.stringify(schema, null, 2);
-fs.writeFileSync(`./chains/schema.json`, schemaStr, 'utf8');
+console.log('Updating & copying chain JSON schemas');
+const chainSchema = zodToJsonSchema(ChainMetadataSchemaObject, 'hyperlaneChainMetadata');
+fs.writeFileSync(`./chains/schema.json`, JSON.stringify(chainSchema, null, 2), 'utf8');
 fs.copyFileSync(`./chains/schema.json`, `./dist/chains/schema.json`);
+const warpSchema = zodToJsonSchema(WarpCoreConfigSchema, 'hyperlaneWarpCoreConfig');
+fs.writeFileSync(
+  `./deployments/warp_routes/schema.json`,
+  JSON.stringify(warpSchema, null, 2),
+  'utf8',
+);

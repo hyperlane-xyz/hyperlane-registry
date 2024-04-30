@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - chainName: ethereum
+    standard: EvmHypCollateral
+    decimals: 6
+    symbol: USDT
+    name: USDT
+    addressOrDenom: "0x4221a16A01F61c2b38A03C52d828a7041f6AAA49"
+    collateralAddressOrDenom: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    connections:
+      - token: ethereum|viction|0x48083c69f5a42c6b69abbad48ae195bd36770ee2
+  - chainName: viction
+    standard: EvmHypSynthetic
+    decimals: 6
+    symbol: USDT
+    name: USDT
+    addressOrDenom: "0x48083c69f5a42c6b69abbad48ae195bd36770ee2"
+    connections:
+      - token: ethereum|ethereum|0x4221a16A01F61c2b38A03C52d828a7041f6AAA49

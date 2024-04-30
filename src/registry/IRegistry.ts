@@ -1,4 +1,4 @@
-import type { ChainMap, ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 import type { ChainAddresses, MaybePromise } from '../types.js';
 
 export interface ChainFiles {
@@ -41,5 +41,6 @@ export interface IRegistry {
   }): MaybePromise<void>;
   removeChain(chain: ChainName): MaybePromise<void>;
 
-  // TODO define deployment artifact related methods
+  addWarpRoute(config: WarpCoreConfig): MaybePromise<void>;
+  // TODO define more deployment artifact related methods
 }

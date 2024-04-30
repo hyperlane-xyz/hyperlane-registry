@@ -1,6 +1,6 @@
 import type { Logger } from 'pino';
 
-import type { ChainMap, ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 import type { ChainAddresses, MaybePromise } from '../types.js';
 import type { IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
 
@@ -28,8 +28,18 @@ export abstract class BaseRegistry implements IRegistry {
     return 'chains';
   }
 
-  protected getWarpArtifactsPath(): string {
-    return 'deployments/warp_routes';
+  protected getWarpArtifactsPaths({ tokens }: WarpCoreConfig) {
+    if (!tokens.length) throw new Error('No tokens provided in config');
+    const symbols = new Set<string>(tokens.map((token) => token.symbol.toUpperCase()));
+    if (symbols.size !== 1)
+      throw new Error('Only one token symbol per warp config is supported for now');
+    const symbol = symbols.values().next().value;
+    const chains = tokens
+      .map((token) => token.chainName)
+      .sort()
+      .join('-');
+    const basePath = `deployments/warp_routes/${symbol}/${chains}`;
+    return { configPath: `${basePath}-config.yaml`, addressesPath: `${basePath}-addresses.yaml` };
   }
 
   abstract listRegistryContent(): MaybePromise<RegistryContent>;
@@ -49,4 +59,5 @@ export abstract class BaseRegistry implements IRegistry {
     addresses?: ChainAddresses;
   }): MaybePromise<void>;
   abstract removeChain(chain: ChainName): MaybePromise<void>;
+  abstract addWarpRoute(config: WarpCoreConfig): MaybePromise<void>;
 }
