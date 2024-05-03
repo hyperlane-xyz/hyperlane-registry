@@ -1,5 +1,13 @@
 # @hyperlane-xyz/registry
 
+## 1.0.7
+
+### Patch Changes
+
+- 0001d30: Improve GithubRegistry parallelization
+- 8cbdff9: Warp Route add support
+- 166fca4: Added Blast and Mode addresses & metadata
+
 ## 1.0.6
 
 ### Patch Changes

@@ -3,9 +3,9 @@ import path from 'path';
 import type { Logger } from 'pino';
 import { parse as yamlParse } from 'yaml';
 
-import type { ChainMap, ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 
-import { CHAIN_SCHEMA_REF } from '../consts.js';
+import { SCHEMA_REF } from '../consts.js';
 import { ChainAddresses, ChainAddressesSchema } from '../types.js';
 import { toYamlString } from '../utils.js';
 import { BaseRegistry, CHAIN_FILE_REGEX } from './BaseRegistry.js';
@@ -15,6 +15,7 @@ import {
   type IRegistry,
   type RegistryContent,
 } from './IRegistry.js';
+import { warpConfigToWarpAddresses } from './warp-utils.js';
 
 export interface LocalRegistryOptions {
   uri: string;
@@ -124,14 +125,26 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
   }
 
   protected listFiles(dirPath: string): string[] {
-    const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+    if (!fs.existsSync(dirPath)) return [];
 
+    const entries = fs.readdirSync(dirPath, { withFileTypes: true });
     const filePaths = entries.map((entry) => {
       const fullPath = path.join(dirPath, entry.name);
       return entry.isDirectory() ? this.listFiles(fullPath) : fullPath;
     });
 
     return filePaths.flat();
+  }
+
+  addWarpRoute(config: WarpCoreConfig): void {
+    let { configPath, addressesPath } = this.getWarpArtifactsPaths(config);
+
+    configPath = path.join(this.uri, configPath);
+    this.createFile({ filePath: configPath, data: toYamlString(config, SCHEMA_REF) });
+
+    addressesPath = path.join(this.uri, addressesPath);
+    const addresses = warpConfigToWarpAddresses(config);
+    this.createFile({ filePath: addressesPath, data: toYamlString(addresses) });
   }
 
   protected createOrUpdateChain(chain: {
@@ -153,7 +166,7 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
         'metadata',
         chain.metadata,
         this.getMetadata(),
-        CHAIN_SCHEMA_REF,
+        SCHEMA_REF,
       );
     }
     if (chain.addresses) {
