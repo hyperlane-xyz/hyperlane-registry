@@ -1,10 +1,10 @@
 # Contributing
 
-This registry is maintained by the core Hyperlane team but community members are encouraged to add chain and deployment information here!
+This registry is maintained by the core Hyperlane team, but community members are encouraged to add chain and deployment information here!
 
 ## Benefits
 
-By adding chain metadata, deployment addresses, and other information here, you make it easier to use by Hyperlane tooling, such as the [Explorer](https://explorer.hyperlane.xyz) and the [CLI](https://docs.hyperlane.xyz/docs/reference/cli). For example, users will be able to search for messages to chains using [Permissionless Interoperability](https://docs.hyperlane.xyz/docs/reference/glossary#permissionless-interoperability) without having to specify the metadata themselves.
+By adding chain metadata, deployment addresses, and other information here, you make it easier to use with Hyperlane tooling, such as the [Explorer](https://explorer.hyperlane.xyz) and the [CLI](https://docs.hyperlane.xyz/docs/reference/cli). For example, users will be able to search for messages to chains using [Permissionless Interoperability](https://docs.hyperlane.xyz/docs/reference/glossary#permissionless-interoperability) without having to specify the metadata themselves.
 
 ## Process
 
@@ -17,4 +17,4 @@ Once you've opened a PR, the Hyperlane team will review it. If it meets the requ
 
 ## Documentation
 
-For more information about Hyperlane Registries the [documentation](https://docs.hyperlane.xyz/docs/reference/registries).
+For more information about Hyperlane Registries see the [documentation](https://docs.hyperlane.xyz/docs/reference/registries).

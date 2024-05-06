@@ -1,8 +1,10 @@
 ### Description
 
-<!--
-What's changes are included in this PR?
--->
+#### Type: <New | Updated> <Network | Warp Route>
+
+#### Network(s): <Network Name(s)>
+
+#### Other notes
 
 ### Backward compatibility
 
