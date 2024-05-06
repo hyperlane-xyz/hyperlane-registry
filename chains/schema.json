@@ -14,7 +14,6 @@
           "enum": [
             "ethereum",
             "sealevel",
-            "fuel",
             "cosmos"
           ],
           "description": "The type of protocol used by this chain. See ProtocolType for valid values."
@@ -90,6 +89,11 @@
                 "type": "string",
                 "format": "uri",
                 "description": "The HTTP URL of the RPC endpoint (preferably HTTPS)."
+              },
+              "concurrency": {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "description": "Maximum number of concurrent RPC requests."
               },
               "webSocket": {
                 "type": "string",
@@ -254,6 +258,17 @@
         "isTestnet": {
           "type": "boolean",
           "description": "Whether the chain is considered a testnet or a mainnet."
+        },
+        "index": {
+          "type": "object",
+          "properties": {
+            "from": {
+              "type": "number",
+              "description": "The block to start any indexing from."
+            }
+          },
+          "additionalProperties": false,
+          "description": "Indexing settings for the chain."
         }
       },
       "required": [

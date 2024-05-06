@@ -1,12 +1,13 @@
 import { ChainMetadata } from '@hyperlane-xyz/sdk';
+import { Address, ProtocolType, sleep } from '@hyperlane-xyz/utils';
+import { expect } from 'chai';
+import { chainMetadata } from '../../dist/index.js';
+// TODO export these from the SDK
 import {
   getExplorerAddressUrl,
   getExplorerBaseUrl,
   getExplorerTxUrl,
-} from '@hyperlane-xyz/sdk/dist/metadata/blockExplorer.js';
-import { Address, ProtocolType, sleep } from '@hyperlane-xyz/utils';
-import { expect } from 'chai';
-import { chainMetadata } from '../../dist/index.js';
+} from '../../node_modules/@hyperlane-xyz/sdk/dist/metadata/blockExplorer.js';
 
 const HEALTH_CHECK_TIMEOUT = 10_000; // 10s
 const HEALTH_CHECK_DELAY = 3_000; // 3s
@@ -15,7 +16,6 @@ const PROTOCOL_TO_ADDRESS: Record<ProtocolType, Address> = {
   [ProtocolType.Ethereum]: '0x0000000000000000000000000000000000000000',
   [ProtocolType.Sealevel]: '11111111111111111111111111111111',
   [ProtocolType.Cosmos]: 'cosmos100000000000000000000000000000000000000',
-  [ProtocolType.Fuel]: '',
 };
 
 const PROTOCOL_TO_TX_HASH: Record<ProtocolType, Address> = {
@@ -23,7 +23,6 @@ const PROTOCOL_TO_TX_HASH: Record<ProtocolType, Address> = {
   [ProtocolType.Sealevel]:
     '1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111',
   [ProtocolType.Cosmos]: '0000000000000000000000000000000000000000000000000000000000000000',
-  [ProtocolType.Fuel]: '',
 };
 
 export async function isBlockExplorerHealthy(
