@@ -1,6 +1,6 @@
 # Hyperlane Registry
 
-A collection of configs, artifacts, and schemas for Hyperlane.
+A collection of configs, artifacts, and schemas for Hyperlane. See the [documentation](https://docs.hyperlane.xyz/docs/reference/registries) for more information.
 
 ## Contents
 
@@ -11,8 +11,6 @@ Structured as a folder for each chain. Each folder should contain a `metadata.ya
 
 ### Deployments
 
-**WORK IN PROGRESS: Note, the shape and contents of the deployments folders are subject to change**
-
 #### Core
 
 Configs and artifacts for [Hyperlane Core Contract](https://docs.hyperlane.xyz/docs/deploy/deploy-hyperlane) deployments.
@@ -21,17 +19,6 @@ Configs and artifacts for [Hyperlane Core Contract](https://docs.hyperlane.xyz/d
 
 Address artifacts for [Warp Route](https://docs.hyperlane.xyz/docs/deploy/deploy-warp-route) token deployments.
 
-## Usage
+## Contributing
 
-### Via the NPM package
-
-```sh
-# With npm
-npm install @hyperlane-xyz/registry
-# Or with yarn
-yarn add @hyperlane-xyz/registry
-```
-
-### Via SDK utilities
-
-_Coming soon!_
+This registry is maintained by the core Hyperlane team but community members are encouraged to add chain and deployment information here! See the [Contribution Guide](./CONTRIBUTING.md) for more information.
