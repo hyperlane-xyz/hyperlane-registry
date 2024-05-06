@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 1.1.0
+
+### Minor Changes
+
+- fb7bc0c: Update to SDK 3.1.1
+
 ## 1.0.7
 
 ### Patch Changes
