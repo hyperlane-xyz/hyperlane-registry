@@ -36,7 +36,7 @@ describe('Registry utilities', () => {
 
     it(`Fetches single chain metadata for ${registry.type} registry`, async () => {
       const metadata = await registry.getChainMetadata('ethereum');
-      expect(metadata.chainId).to.eql(1);
+      expect(metadata!.chainId).to.eql(1);
     }).timeout(5_000);
 
     it(`Fetches chain addresses for ${registry.type} registry`, async () => {
@@ -47,7 +47,7 @@ describe('Registry utilities', () => {
 
     it(`Fetches single chain addresses for ${registry.type} registry`, async () => {
       const addresses = await registry.getChainAddresses('ethereum');
-      expect(addresses.mailbox.substring(0, 2)).to.eql('0x');
+      expect(addresses!.mailbox.substring(0, 2)).to.eql('0x');
     }).timeout(5_000);
 
     it(`Caches correctly for ${registry.type} registry`, async () => {
@@ -63,10 +63,10 @@ describe('Registry utilities', () => {
 
     it(`Adds a new chain for ${registry.type} registry`, async () => {
       const mockMetadata: ChainMetadata = {
-        ...(await registry.getChainMetadata('ethereum')),
+        ...(await registry.getChainMetadata('ethereum'))!,
         name: MOCK_CHAIN_NAME,
       };
-      const mockAddresses: ChainAddresses = await registry.getChainAddresses('ethereum');
+      const mockAddresses: ChainAddresses = await registry.getChainAddresses('ethereum')!;
       await registry.addChain({
         chainName: MOCK_CHAIN_NAME,
         metadata: mockMetadata,

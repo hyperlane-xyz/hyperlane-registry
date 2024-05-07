@@ -14,7 +14,9 @@ export abstract class BaseRegistry implements IRegistry {
   // Caches
   protected listContentCache?: RegistryContent;
   protected metadataCache?: ChainMap<ChainMetadata>;
+  protected isMetadataCacheFull: boolean = false;
   protected addressCache?: ChainMap<ChainAddresses>;
+  protected isAddressCacheFull: boolean = false;
 
   constructor({ uri, logger }: { uri: string; logger?: Logger }) {
     this.uri = uri;
