@@ -105,5 +105,7 @@ describe('Registry regex', () => {
     expect(CHAIN_FILE_REGEX.test('chains/ethereum/metadata.yaml')).to.be.true;
     expect(CHAIN_FILE_REGEX.test('chains/ancient8/addresses.yaml')).to.be.true;
     expect(CHAIN_FILE_REGEX.test('chains/_NotAChain/addresses.yaml')).to.be.false;
+    expect(CHAIN_FILE_REGEX.test('chains/foobar/logo.svg')).to.be.true;
+    expect(CHAIN_FILE_REGEX.test('chains/foobar/randomfile.txt')).to.be.false;
   });
 });

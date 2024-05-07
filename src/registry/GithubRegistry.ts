@@ -60,11 +60,11 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     const chains: ChainMap<ChainFiles> = {};
     for (const node of tree) {
       if (CHAIN_FILE_REGEX.test(node.path)) {
-        const [_, chainName, fileName] = node.path.match(CHAIN_FILE_REGEX)!;
+        const [_, chainName, fileName, extension] = node.path.match(CHAIN_FILE_REGEX)!;
         chains[chainName] ??= {};
         // @ts-ignore allow dynamic key assignment
         chains[chainName][fileName] = this.getRawContentUrl(
-          `${chainPath}/${chainName}/${fileName}.yaml`,
+          `${chainPath}/${chainName}/${fileName}.${extension}`,
         );
       }
 

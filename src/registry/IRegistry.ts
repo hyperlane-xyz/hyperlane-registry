@@ -4,6 +4,7 @@ import type { ChainAddresses, MaybePromise } from '../types.js';
 export interface ChainFiles {
   metadata?: string;
   addresses?: string;
+  logo?: string;
 }
 
 export interface RegistryContent {
@@ -25,10 +26,15 @@ export interface IRegistry {
   listRegistryContent(): MaybePromise<RegistryContent>;
 
   getChains(): MaybePromise<Array<ChainName>>;
+
   getMetadata(): MaybePromise<ChainMap<ChainMetadata>>;
   getChainMetadata(chainName: ChainName): MaybePromise<ChainMetadata | null>;
+
   getAddresses(): MaybePromise<ChainMap<ChainAddresses>>;
   getChainAddresses(chainName: ChainName): MaybePromise<ChainAddresses | null>;
+
+  getChainLogoUri(chainName: ChainName): Promise<string | null>;
+
   addChain(chain: {
     chainName: ChainName;
     metadata?: ChainMetadata;

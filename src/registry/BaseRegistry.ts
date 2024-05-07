@@ -4,7 +4,7 @@ import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperl
 import type { ChainAddresses, MaybePromise } from '../types.js';
 import type { IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
 
-export const CHAIN_FILE_REGEX = /chains\/([a-z0-9]+)\/([a-z]+)\.yaml/;
+export const CHAIN_FILE_REGEX = /chains\/([a-z0-9]+)\/([a-z]+)\.(yaml|svg)/;
 
 export abstract class BaseRegistry implements IRegistry {
   public abstract type: RegistryType;
@@ -43,11 +43,22 @@ export abstract class BaseRegistry implements IRegistry {
   }
 
   abstract listRegistryContent(): MaybePromise<RegistryContent>;
+
   abstract getChains(): MaybePromise<Array<ChainName>>;
+
   abstract getMetadata(): MaybePromise<ChainMap<ChainMetadata>>;
   abstract getChainMetadata(chainName: ChainName): MaybePromise<ChainMetadata | null>;
+
   abstract getAddresses(): MaybePromise<ChainMap<ChainAddresses>>;
   abstract getChainAddresses(chainName: ChainName): MaybePromise<ChainAddresses | null>;
+
+  async getChainLogoUri(chainName: ChainName): Promise<string | null> {
+    const registryContent = await this.listRegistryContent();
+    const chain = registryContent.chains[chainName];
+    if (chain?.logo) return chain.logo;
+    else return null;
+  }
+
   abstract addChain(chain: {
     chainName: ChainName;
     metadata?: ChainMetadata;
