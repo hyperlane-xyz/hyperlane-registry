@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 1.1.1
+
+### Patch Changes
+
+- 0d3d6ea: Add Holesky AVS deployment addresses
+
 ## 1.1.0
 
 ### Minor Changes
