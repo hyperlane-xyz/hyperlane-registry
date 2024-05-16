@@ -168,8 +168,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     chainName: ChainName,
   ): Promise<T | null> {
     const results = await this.fetchChainFiles<T>(fileName, [chainName]);
-    if (results[chainName]) return results[chainName];
-    else return null;
+    return results[chainName] ?? null;
   }
 
   protected async fetch(url: string): Promise<Response> {

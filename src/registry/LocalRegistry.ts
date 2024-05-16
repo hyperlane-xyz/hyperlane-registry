@@ -66,8 +66,7 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
 
   getChainMetadata(chainName: ChainName): ChainMetadata | null {
     const metadata = this.getMetadata();
-    if (metadata[chainName]) return metadata[chainName];
-    else return null;
+    return metadata[chainName] ?? null;
   }
 
   getAddresses(): ChainMap<ChainAddresses> {
@@ -84,8 +83,7 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
 
   getChainAddresses(chainName: ChainName): ChainAddresses | null {
     const addresses = this.getAddresses();
-    if (addresses[chainName]) return addresses[chainName];
-    else return null;
+    return addresses[chainName] ?? null;
   }
 
   addChain(chain: {

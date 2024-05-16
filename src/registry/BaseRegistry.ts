@@ -57,8 +57,7 @@ export abstract class BaseRegistry implements IRegistry {
   async getChainLogoUri(chainName: ChainName): Promise<string | null> {
     const registryContent = await this.listRegistryContent();
     const chain = registryContent.chains[chainName];
-    if (chain?.logo) return chain.logo;
-    else return null;
+    return chain?.logo ?? null;
   }
 
   abstract addChain(chain: {
