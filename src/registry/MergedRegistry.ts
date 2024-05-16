@@ -8,17 +8,28 @@ import { IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
 
 export interface MergedRegistryOptions {
   registries: Array<IRegistry>;
+  chainMetadataOverrides?: ChainMap<ChainMetadata>;
+  chainAddressesOverrides?: ChainMap<Partial<ChainAddresses>>;
   logger?: Logger;
 }
 
 export class MergedRegistry extends BaseRegistry implements IRegistry {
   public readonly type = RegistryType.Merged;
   public readonly registries: Array<IRegistry>;
+  public chainMetadataOverrides: ChainMap<Partial<ChainMetadata>>;
+  public chainAddressesOverrides: ChainMap<Partial<ChainAddresses>>;
 
-  constructor({ registries, logger }: MergedRegistryOptions) {
+  constructor({
+    registries,
+    chainMetadataOverrides,
+    chainAddressesOverrides,
+    logger,
+  }: MergedRegistryOptions) {
     super({ uri: '__merged_registry__', logger });
     if (!registries.length) throw new Error('At least one registry URI is required');
     this.registries = registries;
+    this.chainMetadataOverrides = chainMetadataOverrides || {};
+    this.chainAddressesOverrides = chainAddressesOverrides || {};
   }
 
   async listRegistryContent(): Promise<RegistryContent> {
@@ -34,8 +45,21 @@ export class MergedRegistry extends BaseRegistry implements IRegistry {
   }
 
   async getMetadata(): Promise<ChainMap<ChainMetadata>> {
-    const results = await this.multiRegistryRead((r) => r.getMetadata());
+    const results = await this.multiRegistryRead(
+      (r) => r.getMetadata(),
+      this.chainMetadataOverrides,
+    );
     return results.reduce((acc, content) => objMerge(acc, content), {});
+  }
+
+  getMetadataOverrides(): ChainMap<Partial<ChainMetadata>> {
+    return this.chainMetadataOverrides;
+  }
+
+  setMetadataOverrides(
+    overrides: ChainMap<Partial<ChainMetadata>>,
+  ): ChainMap<Partial<ChainMetadata>> {
+    return (this.chainMetadataOverrides = overrides);
   }
 
   async getChainMetadata(chainName: ChainName): Promise<ChainMetadata | null> {
@@ -43,8 +67,21 @@ export class MergedRegistry extends BaseRegistry implements IRegistry {
   }
 
   async getAddresses(): Promise<ChainMap<ChainAddresses>> {
-    const results = await this.multiRegistryRead((r) => r.getAddresses());
+    const results = await this.multiRegistryRead(
+      (r) => r.getAddresses(),
+      this.chainAddressesOverrides,
+    );
     return results.reduce((acc, content) => objMerge(acc, content), {});
+  }
+
+  getAddressesOverrides(): ChainMap<Partial<ChainAddresses>> {
+    return this.chainAddressesOverrides;
+  }
+
+  setAddressesOverrides(
+    overrides: ChainMap<Partial<ChainAddresses>>,
+  ): ChainMap<Partial<ChainAddresses>> {
+    return (this.chainAddressesOverrides = overrides);
   }
 
   async getChainAddresses(chainName: ChainName): Promise<ChainAddresses | null> {
@@ -87,8 +124,12 @@ export class MergedRegistry extends BaseRegistry implements IRegistry {
     );
   }
 
-  protected multiRegistryRead<R>(readFn: (registry: IRegistry) => Promise<R> | R) {
-    return Promise.all(this.registries.map(readFn));
+  protected async multiRegistryRead<R>(
+    readFn: (registry: IRegistry) => Promise<R> | R,
+    overrides?: Partial<R>,
+  ) {
+    const results = await Promise.all(this.registries.map(readFn));
+    return overrides ? [...results, overrides as R] : results;
   }
 
   protected async multiRegistryWrite(
