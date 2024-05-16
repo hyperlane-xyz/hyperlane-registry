@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 1.1.2
+
+### Patch Changes
+
+- 46b136f: Add getChainLogoUri method and improve caching
+
 ## 1.1.1
 
 ### Patch Changes
