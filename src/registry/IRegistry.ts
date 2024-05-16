@@ -17,6 +17,7 @@ export interface RegistryContent {
 export enum RegistryType {
   Github = 'github',
   Local = 'local',
+  Merged = 'merged',
 }
 
 export interface IRegistry {
