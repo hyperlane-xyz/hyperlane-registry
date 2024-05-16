@@ -8,7 +8,7 @@ import { IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
 
 export interface MergedRegistryOptions {
   registries: Array<IRegistry>;
-  chainMetadataOverrides?: ChainMap<ChainMetadata>;
+  chainMetadataOverrides?: ChainMap<Partial<ChainMetadata>>;
   chainAddressesOverrides?: ChainMap<Partial<ChainAddresses>>;
   logger?: Logger;
 }
