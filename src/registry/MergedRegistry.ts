@@ -100,7 +100,7 @@ export class MergedRegistry implements IRegistry {
     );
   }
 
-  protected async multiRegistryRead<R>(readFn: (registry: IRegistry) => Promise<R> | R) {
+  protected multiRegistryRead<R>(readFn: (registry: IRegistry) => Promise<R> | R) {
     return Promise.all(this.registries.map(readFn));
   }
 

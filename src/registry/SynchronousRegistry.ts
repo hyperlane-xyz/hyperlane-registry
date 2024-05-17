@@ -2,7 +2,7 @@ import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperl
 
 import { ChainAddresses } from '../types.js';
 import { BaseRegistry } from './BaseRegistry.js';
-import { type IRegistry, type RegistryContent } from './IRegistry.js';
+import { IRegistry, RegistryContent } from './IRegistry.js';
 
 /**
  * Shared code for sync registries like the FileSystem and Partial registries.

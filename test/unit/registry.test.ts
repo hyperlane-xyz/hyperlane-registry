@@ -48,6 +48,8 @@ describe('Registry utilities', () => {
       expect(metadata['ethereum'].chainId).to.eql(1);
       if (registry.type === RegistryType.Partial || registry.type === RegistryType.Merged) {
         expect(metadata['ethereum'].displayName).to.eql(MOCK_DISPLAY_NAME);
+      } else {
+        expect(metadata['ethereum'].displayName).to.eql('Ethereum');
       }
     }).timeout(10_000);
 
