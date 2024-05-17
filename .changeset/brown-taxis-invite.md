@@ -1,5 +1,6 @@
 ---
-'@hyperlane-xyz/registry': patch
+'@hyperlane-xyz/registry': minor
 ---
 
-Add override methods to MergedRegistry
+Add PartialRegistry class
+Add merge() method to IRegistry
