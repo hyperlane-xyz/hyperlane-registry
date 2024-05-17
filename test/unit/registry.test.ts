@@ -8,10 +8,12 @@ import { GithubRegistry } from '../../src/registry/GithubRegistry.js';
 import { RegistryType } from '../../src/registry/IRegistry.js';
 import { LocalRegistry } from '../../src/registry/LocalRegistry.js';
 import { MergedRegistry } from '../../src/registry/MergedRegistry.js';
+import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
 import { ChainAddresses } from '../../src/types.js';
 
 const MOCK_CHAIN_NAME = 'mockchain';
 const MOCK_CHAIN_NAME2 = 'mockchain2';
+const MOCK_DISPLAY_NAME = 'faketherum';
 const MOCK_SYMBOL = 'MOCK';
 const MOCK_ADDRESS = '0x0000000000000000000000000000000000000001';
 
@@ -24,9 +26,16 @@ describe('Registry utilities', () => {
   const localRegistry = new LocalRegistry({ uri: './' });
   expect(localRegistry.uri).to.be.a('string');
 
-  const mergedRegistry = new MergedRegistry({ registries: [githubRegistry, localRegistry] });
+  const partialRegistry = new PartialRegistry({
+    chainMetadata: { ethereum: { chainId: 1, displayName: MOCK_DISPLAY_NAME } },
+    chainAddresses: { ethereum: { mailbox: MOCK_ADDRESS } },
+  });
 
-  for (const registry of [githubRegistry, localRegistry, mergedRegistry]) {
+  const mergedRegistry = new MergedRegistry({
+    registries: [githubRegistry, localRegistry, partialRegistry],
+  });
+
+  for (const registry of [githubRegistry, localRegistry, partialRegistry, mergedRegistry]) {
     it(`Lists all chains for ${registry.type} registry`, async () => {
       const chains = await registry.getChains();
       expect(chains.length).to.be.greaterThan(0);
@@ -37,6 +46,9 @@ describe('Registry utilities', () => {
       const metadata = await registry.getMetadata();
       expect(Object.keys(metadata).length).to.be.greaterThan(0);
       expect(metadata['ethereum'].chainId).to.eql(1);
+      if (registry.type === RegistryType.Partial || registry.type === RegistryType.Merged) {
+        expect(metadata['ethereum'].displayName).to.eql(MOCK_DISPLAY_NAME);
+      }
     }).timeout(10_000);
 
     it(`Fetches single chain metadata for ${registry.type} registry`, async () => {
@@ -62,20 +74,6 @@ describe('Registry utilities', () => {
       expect(Object.keys(addresses).length).to.be.greaterThan(0);
       // Note the short timeout to ensure result is coming from cache
     }).timeout(250);
-
-    if (registry.type === RegistryType.Merged) {
-      it(`Handles metadata overrides for ${registry.type} registry`, async () => {
-        registry.setMetadataOverrides({ ethereum: { chainId: 2 } });
-        expect(registry.getMetadataOverrides()['ethereum'].chainId).to.eql(2);
-        expect((await registry.getChainMetadata('ethereum'))!.chainId).to.eql(2);
-      });
-
-      it(`Handles address overrides for ${registry.type} registry`, async () => {
-        registry.setAddressesOverrides({ ethereum: { fakecontract: MOCK_ADDRESS } });
-        expect(registry.getAddressesOverrides()['ethereum'].fakecontract).to.eql(MOCK_ADDRESS);
-        expect((await registry.getChainAddresses('ethereum'))!.fakecontract).to.eql(MOCK_ADDRESS);
-      });
-    }
 
     // TODO remove this once GitHubRegistry methods are implemented
     if (registry.type !== RegistryType.Local) continue;

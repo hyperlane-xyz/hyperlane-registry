@@ -18,6 +18,7 @@ export enum RegistryType {
   Github = 'github',
   Local = 'local',
   Merged = 'merged',
+  Partial = 'partial',
 }
 
 export interface IRegistry {
@@ -50,4 +51,6 @@ export interface IRegistry {
 
   addWarpRoute(config: WarpCoreConfig): MaybePromise<void>;
   // TODO define more deployment artifact related methods
+
+  merge(otherRegistry: IRegistry): IRegistry;
 }

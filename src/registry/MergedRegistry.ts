@@ -3,33 +3,30 @@ import type { Logger } from 'pino';
 import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 import { ChainAddresses } from '../types.js';
 import { objMerge } from '../utils.js';
-import { BaseRegistry } from './BaseRegistry.js';
 import { IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
 
 export interface MergedRegistryOptions {
   registries: Array<IRegistry>;
-  chainMetadataOverrides?: ChainMap<Partial<ChainMetadata>>;
-  chainAddressesOverrides?: ChainMap<Partial<ChainAddresses>>;
   logger?: Logger;
 }
 
-export class MergedRegistry extends BaseRegistry implements IRegistry {
+/**
+ * A registry that accepts multiple sub-registries.
+ * Read methods are performed on all sub-registries and the results are merged.
+ * Write methods are performed on all sub-registries.
+ * Can be created manually or by calling `.merge()` on an existing registry.
+ */
+export class MergedRegistry implements IRegistry {
   public readonly type = RegistryType.Merged;
+  public readonly uri = '__merged_registry__';
   public readonly registries: Array<IRegistry>;
-  public chainMetadataOverrides: ChainMap<Partial<ChainMetadata>>;
-  public chainAddressesOverrides: ChainMap<Partial<ChainAddresses>>;
+  protected readonly logger: Logger;
 
-  constructor({
-    registries,
-    chainMetadataOverrides,
-    chainAddressesOverrides,
-    logger,
-  }: MergedRegistryOptions) {
-    super({ uri: '__merged_registry__', logger });
+  constructor({ registries, logger }: MergedRegistryOptions) {
     if (!registries.length) throw new Error('At least one registry URI is required');
     this.registries = registries;
-    this.chainMetadataOverrides = chainMetadataOverrides || {};
-    this.chainAddressesOverrides = chainAddressesOverrides || {};
+    // @ts-ignore
+    this.logger = logger || console;
   }
 
   async listRegistryContent(): Promise<RegistryContent> {
@@ -45,21 +42,8 @@ export class MergedRegistry extends BaseRegistry implements IRegistry {
   }
 
   async getMetadata(): Promise<ChainMap<ChainMetadata>> {
-    const results = await this.multiRegistryRead(
-      (r) => r.getMetadata(),
-      this.chainMetadataOverrides,
-    );
+    const results = await this.multiRegistryRead((r) => r.getMetadata());
     return results.reduce((acc, content) => objMerge(acc, content), {});
-  }
-
-  getMetadataOverrides(): ChainMap<Partial<ChainMetadata>> {
-    return this.chainMetadataOverrides;
-  }
-
-  setMetadataOverrides(
-    overrides: ChainMap<Partial<ChainMetadata>>,
-  ): ChainMap<Partial<ChainMetadata>> {
-    return (this.chainMetadataOverrides = overrides);
   }
 
   async getChainMetadata(chainName: ChainName): Promise<ChainMetadata | null> {
@@ -67,25 +51,17 @@ export class MergedRegistry extends BaseRegistry implements IRegistry {
   }
 
   async getAddresses(): Promise<ChainMap<ChainAddresses>> {
-    const results = await this.multiRegistryRead(
-      (r) => r.getAddresses(),
-      this.chainAddressesOverrides,
-    );
+    const results = await this.multiRegistryRead((r) => r.getAddresses());
     return results.reduce((acc, content) => objMerge(acc, content), {});
-  }
-
-  getAddressesOverrides(): ChainMap<Partial<ChainAddresses>> {
-    return this.chainAddressesOverrides;
-  }
-
-  setAddressesOverrides(
-    overrides: ChainMap<Partial<ChainAddresses>>,
-  ): ChainMap<Partial<ChainAddresses>> {
-    return (this.chainAddressesOverrides = overrides);
   }
 
   async getChainAddresses(chainName: ChainName): Promise<ChainAddresses | null> {
     return (await this.getAddresses())[chainName] || null;
+  }
+
+  async getChainLogoUri(chainName: ChainName): Promise<string | null> {
+    const results = await this.multiRegistryRead((r) => r.getChainLogoUri(chainName));
+    return results.filter((uri) => uri !== null)[0] || null;
   }
 
   async addChain(chain: {
@@ -124,12 +100,8 @@ export class MergedRegistry extends BaseRegistry implements IRegistry {
     );
   }
 
-  protected async multiRegistryRead<R>(
-    readFn: (registry: IRegistry) => Promise<R> | R,
-    overrides?: Partial<R>,
-  ) {
-    const results = await Promise.all(this.registries.map(readFn));
-    return overrides ? [...results, overrides as R] : results;
+  protected async multiRegistryRead<R>(readFn: (registry: IRegistry) => Promise<R> | R) {
+    return Promise.all(this.registries.map(readFn));
   }
 
   protected async multiRegistryWrite(
@@ -151,5 +123,12 @@ export class MergedRegistry extends BaseRegistry implements IRegistry {
         this.logger.error(`Failure ${logMsg} at ${registry.type} registry`, error);
       }
     }
+  }
+
+  merge(otherRegistry: IRegistry): IRegistry {
+    return new MergedRegistry({
+      registries: [...this.registries, otherRegistry],
+      logger: this.logger,
+    });
   }
 }
