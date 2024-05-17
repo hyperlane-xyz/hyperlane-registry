@@ -18,7 +18,7 @@ import {
 import { SynchronousRegistry } from './SynchronousRegistry.js';
 import { warpConfigToWarpAddresses } from './warp-utils.js';
 
-export interface LocalRegistryOptions {
+export interface FileSystemRegistryOptions {
   uri: string;
   logger?: Logger;
 }
@@ -27,10 +27,10 @@ export interface LocalRegistryOptions {
  * A registry that uses a local file system path as its data source.
  * Requires file system access so it cannot be used in the browser.
  */
-export class LocalRegistry extends SynchronousRegistry implements IRegistry {
-  public readonly type = RegistryType.Local;
+export class FileSystemRegistry extends SynchronousRegistry implements IRegistry {
+  public readonly type = RegistryType.FileSystem;
 
-  constructor(options: LocalRegistryOptions) {
+  constructor(options: FileSystemRegistryOptions) {
     super(options);
   }
 
