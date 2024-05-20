@@ -5,7 +5,9 @@ import type { ChainMetadata } from '@hyperlane-xyz/sdk';
 import fs from 'fs';
 import { CHAIN_FILE_REGEX } from '../../src/registry/BaseRegistry.js';
 import { GithubRegistry } from '../../src/registry/GithubRegistry.js';
+import { RegistryType } from '../../src/registry/IRegistry.js';
 import { LocalRegistry } from '../../src/registry/LocalRegistry.js';
+import { MergedRegistry } from '../../src/registry/MergedRegistry.js';
 import { ChainAddresses } from '../../src/types.js';
 
 const MOCK_CHAIN_NAME = 'mockchain';
@@ -21,7 +23,9 @@ describe('Registry utilities', () => {
   const localRegistry = new LocalRegistry({ uri: './' });
   expect(localRegistry.uri).to.be.a('string');
 
-  for (const registry of [githubRegistry, localRegistry]) {
+  const mergedRegistry = new MergedRegistry({ registries: [githubRegistry, localRegistry] });
+
+  for (const registry of [githubRegistry, localRegistry, mergedRegistry]) {
     it(`Lists all chains for ${registry.type} registry`, async () => {
       const chains = await registry.getChains();
       expect(chains.length).to.be.greaterThan(0);
@@ -59,7 +63,7 @@ describe('Registry utilities', () => {
     }).timeout(250);
 
     // TODO remove this once GitHubRegistry methods are implemented
-    if (registry.type === 'github') continue;
+    if (registry.type !== RegistryType.Local) continue;
 
     it(`Adds a new chain for ${registry.type} registry`, async () => {
       const mockMetadata: ChainMetadata = {
