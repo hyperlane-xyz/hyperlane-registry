@@ -8,24 +8,29 @@ import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperl
 import { SCHEMA_REF } from '../consts.js';
 import { ChainAddresses, ChainAddressesSchema } from '../types.js';
 import { toYamlString } from '../utils.js';
-import { BaseRegistry, CHAIN_FILE_REGEX } from './BaseRegistry.js';
+import { CHAIN_FILE_REGEX } from './BaseRegistry.js';
 import {
   RegistryType,
   type ChainFiles,
   type IRegistry,
   type RegistryContent,
 } from './IRegistry.js';
+import { SynchronousRegistry } from './SynchronousRegistry.js';
 import { warpConfigToWarpAddresses } from './warp-utils.js';
 
-export interface LocalRegistryOptions {
+export interface FileSystemRegistryOptions {
   uri: string;
   logger?: Logger;
 }
 
-export class LocalRegistry extends BaseRegistry implements IRegistry {
-  public readonly type = RegistryType.Local;
+/**
+ * A registry that uses a local file system path as its data source.
+ * Requires file system access so it cannot be used in the browser.
+ */
+export class FileSystemRegistry extends SynchronousRegistry implements IRegistry {
+  public readonly type = RegistryType.FileSystem;
 
-  constructor(options: LocalRegistryOptions) {
+  constructor(options: FileSystemRegistryOptions) {
     super(options);
   }
 
@@ -48,10 +53,6 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
     return (this.listContentCache = { chains, deployments: {} });
   }
 
-  getChains(): Array<ChainName> {
-    return Object.keys(this.listRegistryContent().chains);
-  }
-
   getMetadata(): ChainMap<ChainMetadata> {
     if (this.metadataCache) return this.metadataCache;
     const chainMetadata: ChainMap<ChainMetadata> = {};
@@ -62,11 +63,6 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
       chainMetadata[chainName] = yamlParse(data);
     }
     return (this.metadataCache = chainMetadata);
-  }
-
-  getChainMetadata(chainName: ChainName): ChainMetadata | null {
-    const metadata = this.getMetadata();
-    return metadata[chainName] ?? null;
   }
 
   getAddresses(): ChainMap<ChainAddresses> {
@@ -81,43 +77,10 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
     return (this.addressCache = chainAddresses);
   }
 
-  getChainAddresses(chainName: ChainName): ChainAddresses | null {
-    const addresses = this.getAddresses();
-    return addresses[chainName] ?? null;
-  }
-
-  addChain(chain: {
-    chainName: ChainName;
-    metadata?: ChainMetadata;
-    addresses?: ChainAddresses;
-  }): void {
-    const currentChains = this.listRegistryContent().chains;
-    if (currentChains[chain.chainName])
-      throw new Error(`Chain ${chain.chainName} already exists in registry`);
-
-    this.createOrUpdateChain(chain);
-  }
-
-  updateChain(chain: {
-    chainName: ChainName;
-    metadata?: ChainMetadata;
-    addresses?: ChainAddresses;
-  }): void {
-    const currentChains = this.listRegistryContent();
-    if (!currentChains.chains[chain.chainName]) {
-      this.logger.debug(`Chain ${chain.chainName} not found in registry, adding it now`);
-    }
-    this.createOrUpdateChain(chain);
-  }
-
   removeChain(chainName: ChainName): void {
-    const currentChains = this.listRegistryContent().chains;
-    if (!currentChains[chainName]) throw new Error(`Chain ${chainName} does not exist in registry`);
-
-    this.removeFiles(Object.values(currentChains[chainName]));
-    if (this.listContentCache?.chains[chainName]) delete this.listContentCache.chains[chainName];
-    if (this.metadataCache?.[chainName]) delete this.metadataCache[chainName];
-    if (this.addressCache?.[chainName]) delete this.addressCache[chainName];
+    const chainFiles = this.listRegistryContent().chains[chainName];
+    super.removeChain(chainName);
+    this.removeFiles(Object.values(chainFiles));
   }
 
   protected listFiles(dirPath: string): string[] {

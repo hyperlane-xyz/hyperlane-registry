@@ -3,6 +3,7 @@ import type { Logger } from 'pino';
 import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 import type { ChainAddresses, MaybePromise } from '../types.js';
 import type { IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
+import { MergedRegistry } from './MergedRegistry.js';
 
 export const CHAIN_FILE_REGEX = /chains\/([a-z0-9]+)\/([a-z]+)\.(yaml|svg)/;
 
@@ -72,4 +73,8 @@ export abstract class BaseRegistry implements IRegistry {
   }): MaybePromise<void>;
   abstract removeChain(chain: ChainName): MaybePromise<void>;
   abstract addWarpRoute(config: WarpCoreConfig): MaybePromise<void>;
+
+  merge(otherRegistry: IRegistry): IRegistry {
+    return new MergedRegistry({ registries: [this, otherRegistry], logger: this.logger });
+  }
 }

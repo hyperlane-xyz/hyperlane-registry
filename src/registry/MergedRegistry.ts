@@ -3,7 +3,6 @@ import type { Logger } from 'pino';
 import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 import { ChainAddresses } from '../types.js';
 import { objMerge } from '../utils.js';
-import { BaseRegistry } from './BaseRegistry.js';
 import { IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
 
 export interface MergedRegistryOptions {
@@ -11,14 +10,23 @@ export interface MergedRegistryOptions {
   logger?: Logger;
 }
 
-export class MergedRegistry extends BaseRegistry implements IRegistry {
+/**
+ * A registry that accepts multiple sub-registries.
+ * Read methods are performed on all sub-registries and the results are merged.
+ * Write methods are performed on all sub-registries.
+ * Can be created manually or by calling `.merge()` on an existing registry.
+ */
+export class MergedRegistry implements IRegistry {
   public readonly type = RegistryType.Merged;
+  public readonly uri = '__merged_registry__';
   public readonly registries: Array<IRegistry>;
+  protected readonly logger: Logger;
 
   constructor({ registries, logger }: MergedRegistryOptions) {
-    super({ uri: '__merged_registry__', logger });
     if (!registries.length) throw new Error('At least one registry URI is required');
     this.registries = registries;
+    // @ts-ignore
+    this.logger = logger || console;
   }
 
   async listRegistryContent(): Promise<RegistryContent> {
@@ -49,6 +57,11 @@ export class MergedRegistry extends BaseRegistry implements IRegistry {
 
   async getChainAddresses(chainName: ChainName): Promise<ChainAddresses | null> {
     return (await this.getAddresses())[chainName] || null;
+  }
+
+  async getChainLogoUri(chainName: ChainName): Promise<string | null> {
+    const results = await this.multiRegistryRead((r) => r.getChainLogoUri(chainName));
+    return results.find((uri) => !!uri) || null;
   }
 
   async addChain(chain: {
@@ -110,5 +123,12 @@ export class MergedRegistry extends BaseRegistry implements IRegistry {
         this.logger.error(`Failure ${logMsg} at ${registry.type} registry`, error);
       }
     }
+  }
+
+  merge(otherRegistry: IRegistry): IRegistry {
+    return new MergedRegistry({
+      registries: [...this.registries, otherRegistry],
+      logger: this.logger,
+    });
   }
 }
