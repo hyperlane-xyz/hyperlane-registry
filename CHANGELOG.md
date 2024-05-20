@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 1.2.0
+
+### Minor Changes
+
+- 3d8a8d0: Added holesky chain metadata and core artifacts
+
 ## 1.1.2
 
 ### Patch Changes
