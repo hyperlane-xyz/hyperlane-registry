@@ -61,7 +61,7 @@ export class MergedRegistry implements IRegistry {
 
   async getChainLogoUri(chainName: ChainName): Promise<string | null> {
     const results = await this.multiRegistryRead((r) => r.getChainLogoUri(chainName));
-    return results.filter((uri) => uri !== null)[0] || null;
+    return results.find((uri) => !!uri) || null;
   }
 
   async addChain(chain: {
