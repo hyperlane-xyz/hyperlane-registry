@@ -4,9 +4,9 @@ import { expect } from 'chai';
 import type { ChainMetadata } from '@hyperlane-xyz/sdk';
 import fs from 'fs';
 import { CHAIN_FILE_REGEX } from '../../src/registry/BaseRegistry.js';
+import { FileSystemRegistry } from '../../src/registry/FileSystemRegistry.js';
 import { GithubRegistry } from '../../src/registry/GithubRegistry.js';
 import { RegistryType } from '../../src/registry/IRegistry.js';
-import { LocalRegistry } from '../../src/registry/LocalRegistry.js';
 import { MergedRegistry } from '../../src/registry/MergedRegistry.js';
 import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
 import { ChainAddresses } from '../../src/types.js';
@@ -23,7 +23,7 @@ describe('Registry utilities', () => {
   expect(githubRegistry.repoName).to.eql('hyperlane-registry');
   expect(githubRegistry.branch).to.eql('main');
 
-  const localRegistry = new LocalRegistry({ uri: './' });
+  const localRegistry = new FileSystemRegistry({ uri: './' });
   expect(localRegistry.uri).to.be.a('string');
 
   const partialRegistry = new PartialRegistry({
@@ -78,7 +78,7 @@ describe('Registry utilities', () => {
     }).timeout(250);
 
     // TODO remove this once GitHubRegistry methods are implemented
-    if (registry.type !== RegistryType.Local) continue;
+    if (registry.type !== RegistryType.FileSystem) continue;
 
     it(`Adds a new chain for ${registry.type} registry`, async () => {
       const mockMetadata: ChainMetadata = {

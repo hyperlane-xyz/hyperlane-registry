@@ -16,7 +16,7 @@ export interface RegistryContent {
 
 export enum RegistryType {
   Github = 'github',
-  Local = 'local',
+  FileSystem = 'filesystem',
   Merged = 'merged',
   Partial = 'partial',
 }
