@@ -4,7 +4,7 @@ import { parse as yamlParse } from 'yaml';
 import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 
 import { DEFAULT_GITHUB_REGISTRY, GITHUB_FETCH_CONCURRENCY_LIMIT } from '../consts.js';
-import { ChainAddresses, ChainAddressesSchema } from '../types.js';
+import { ChainAddresses } from '../types.js';
 import { concurrentMap } from '../utils.js';
 import { BaseRegistry, CHAIN_FILE_REGEX } from './BaseRegistry.js';
 import {
@@ -29,6 +29,11 @@ interface TreeNode {
   url: string;
 }
 
+/**
+ * A registry that uses a github repository as its data source.
+ * Reads are performed via the github API and github's raw content URLs.
+ * Writes are not yet supported (TODO)
+ */
 export class GithubRegistry extends BaseRegistry implements IRegistry {
   public readonly type = RegistryType.Github;
   public readonly url: URL;
@@ -60,11 +65,11 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     const chains: ChainMap<ChainFiles> = {};
     for (const node of tree) {
       if (CHAIN_FILE_REGEX.test(node.path)) {
-        const [_, chainName, fileName] = node.path.match(CHAIN_FILE_REGEX)!;
+        const [_, chainName, fileName, extension] = node.path.match(CHAIN_FILE_REGEX)!;
         chains[chainName] ??= {};
         // @ts-ignore allow dynamic key assignment
         chains[chainName][fileName] = this.getRawContentUrl(
-          `${chainPath}/${chainName}/${fileName}.yaml`,
+          `${chainPath}/${chainName}/${fileName}.${extension}`,
         );
       }
 
@@ -80,31 +85,33 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   }
 
   async getMetadata(): Promise<ChainMap<ChainMetadata>> {
-    if (this.metadataCache) return this.metadataCache;
+    if (this.metadataCache && this.isMetadataCacheFull) return this.metadataCache;
     const chainMetadata = await this.fetchChainFiles<ChainMetadata>('metadata');
+    this.isMetadataCacheFull = true;
     return (this.metadataCache = chainMetadata);
   }
 
-  async getChainMetadata(chainName: ChainName): Promise<ChainMetadata> {
+  async getChainMetadata(chainName: ChainName): Promise<ChainMetadata | null> {
     if (this.metadataCache?.[chainName]) return this.metadataCache[chainName];
-    const url = this.getRawContentUrl(`${this.getChainsPath()}/${chainName}/metadata.yaml`);
-    const response = await this.fetch(url);
-    const data = await response.text();
-    return yamlParse(data);
+    const data = await this.fetchSingleChainFile<ChainMetadata>('metadata', chainName);
+    if (!data) return null;
+    this.metadataCache = { ...this.metadataCache, [chainName]: data };
+    return data;
   }
 
   async getAddresses(): Promise<ChainMap<ChainAddresses>> {
-    if (this.addressCache) return this.addressCache;
+    if (this.addressCache && this.isAddressCacheFull) return this.addressCache;
     const chainAddresses = await this.fetchChainFiles<ChainAddresses>('addresses');
+    this.isAddressCacheFull = true;
     return (this.addressCache = chainAddresses);
   }
 
-  async getChainAddresses(chainName: ChainName): Promise<ChainAddresses> {
+  async getChainAddresses(chainName: ChainName): Promise<ChainAddresses | null> {
     if (this.addressCache?.[chainName]) return this.addressCache[chainName];
-    const url = this.getRawContentUrl(`${this.getChainsPath()}/${chainName}/addresses.yaml`);
-    const response = await this.fetch(url);
-    const data = await response.text();
-    return ChainAddressesSchema.parse(yamlParse(data));
+    const data = await this.fetchSingleChainFile<ChainAddresses>('addresses', chainName);
+    if (!data) return null;
+    this.addressCache = { ...this.addressCache, [chainName]: data };
+    return data;
   }
 
   async addChain(_chains: {
@@ -133,9 +140,14 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     return `https://raw.githubusercontent.com/${this.repoOwner}/${this.repoName}/${this.branch}/${path}`;
   }
 
-  protected async fetchChainFiles<T>(fileName: keyof ChainFiles): Promise<ChainMap<T>> {
+  // Fetches all files of a particular type in parallel
+  // Defaults to all known chains if chainNames is not provided
+  protected async fetchChainFiles<T>(
+    fileName: keyof ChainFiles,
+    chainNames?: ChainName[],
+  ): Promise<ChainMap<T>> {
     const repoContents = await this.listRegistryContent();
-    const chainNames = Object.keys(repoContents.chains);
+    chainNames ||= Object.keys(repoContents.chains);
 
     const fileUrls = chainNames.reduce<ChainMap<string>>((acc, chainName) => {
       const fileUrl = repoContents.chains[chainName][fileName];
@@ -154,6 +166,14 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     );
 
     return Object.fromEntries(results);
+  }
+
+  protected async fetchSingleChainFile<T>(
+    fileName: keyof ChainFiles,
+    chainName: ChainName,
+  ): Promise<T | null> {
+    const results = await this.fetchChainFiles<T>(fileName, [chainName]);
+    return results[chainName] ?? null;
   }
 
   protected async fetch(url: string): Promise<Response> {

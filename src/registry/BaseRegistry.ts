@@ -3,8 +3,9 @@ import type { Logger } from 'pino';
 import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 import type { ChainAddresses, MaybePromise } from '../types.js';
 import type { IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
+import { MergedRegistry } from './MergedRegistry.js';
 
-export const CHAIN_FILE_REGEX = /chains\/([a-z0-9]+)\/([a-z]+)\.yaml/;
+export const CHAIN_FILE_REGEX = /chains\/([a-z0-9]+)\/([a-z]+)\.(yaml|svg)/;
 
 export abstract class BaseRegistry implements IRegistry {
   public abstract type: RegistryType;
@@ -14,7 +15,9 @@ export abstract class BaseRegistry implements IRegistry {
   // Caches
   protected listContentCache?: RegistryContent;
   protected metadataCache?: ChainMap<ChainMetadata>;
+  protected isMetadataCacheFull: boolean = false;
   protected addressCache?: ChainMap<ChainAddresses>;
+  protected isAddressCacheFull: boolean = false;
 
   constructor({ uri, logger }: { uri: string; logger?: Logger }) {
     this.uri = uri;
@@ -43,11 +46,21 @@ export abstract class BaseRegistry implements IRegistry {
   }
 
   abstract listRegistryContent(): MaybePromise<RegistryContent>;
+
   abstract getChains(): MaybePromise<Array<ChainName>>;
+
   abstract getMetadata(): MaybePromise<ChainMap<ChainMetadata>>;
   abstract getChainMetadata(chainName: ChainName): MaybePromise<ChainMetadata | null>;
+
   abstract getAddresses(): MaybePromise<ChainMap<ChainAddresses>>;
   abstract getChainAddresses(chainName: ChainName): MaybePromise<ChainAddresses | null>;
+
+  async getChainLogoUri(chainName: ChainName): Promise<string | null> {
+    const registryContent = await this.listRegistryContent();
+    const chain = registryContent.chains[chainName];
+    return chain?.logo ?? null;
+  }
+
   abstract addChain(chain: {
     chainName: ChainName;
     metadata?: ChainMetadata;
@@ -60,4 +73,8 @@ export abstract class BaseRegistry implements IRegistry {
   }): MaybePromise<void>;
   abstract removeChain(chain: ChainName): MaybePromise<void>;
   abstract addWarpRoute(config: WarpCoreConfig): MaybePromise<void>;
+
+  merge(otherRegistry: IRegistry): IRegistry {
+    return new MergedRegistry({ registries: [this, otherRegistry], logger: this.logger });
+  }
 }
