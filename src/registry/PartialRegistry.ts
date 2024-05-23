@@ -1,9 +1,10 @@
 import type { Logger } from 'pino';
 
 import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
-import { ChainAddresses } from '../types.js';
+import { ChainAddresses, RecursivePartial, WarpRouteId } from '../types.js';
 import { ChainFiles, IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
 import { SynchronousRegistry } from './SynchronousRegistry.js';
+import { warpRouteConfigToId } from './warp-utils.js';
 
 const PARTIAL_URI_PLACEHOLDER = '__partial_registry__';
 
@@ -12,21 +13,24 @@ const PARTIAL_URI_PLACEHOLDER = '__partial_registry__';
  * Useful for merging with other registries force overrides of subsets of data.
  */
 export interface PartialRegistryOptions {
-  chainMetadata?: ChainMap<Partial<ChainMetadata>>;
-  chainAddresses?: ChainMap<Partial<ChainAddresses>>;
+  chainMetadata?: ChainMap<RecursivePartial<ChainMetadata>>;
+  chainAddresses?: ChainMap<RecursivePartial<ChainAddresses>>;
+  warpRoutes?: Array<RecursivePartial<WarpCoreConfig>>;
   // TODO add more fields here as needed
   logger?: Logger;
 }
 
 export class PartialRegistry extends SynchronousRegistry implements IRegistry {
   public readonly type = RegistryType.Partial;
-  public chainMetadata: ChainMap<Partial<ChainMetadata>>;
-  public chainAddresses: ChainMap<Partial<ChainAddresses>>;
+  public chainMetadata: ChainMap<RecursivePartial<ChainMetadata>>;
+  public chainAddresses: ChainMap<RecursivePartial<ChainAddresses>>;
+  public warpRoutes: Array<RecursivePartial<WarpCoreConfig>>;
 
-  constructor({ chainMetadata, chainAddresses, logger }: PartialRegistryOptions) {
+  constructor({ chainMetadata, chainAddresses, warpRoutes, logger }: PartialRegistryOptions) {
     super({ uri: PARTIAL_URI_PLACEHOLDER, logger });
     this.chainMetadata = chainMetadata || {};
     this.chainAddresses = chainAddresses || {};
+    this.warpRoutes = warpRoutes || [];
   }
 
   listRegistryContent(): RegistryContent {
@@ -39,9 +43,22 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
       chains[c] ||= {};
       chains[c].addresses = PARTIAL_URI_PLACEHOLDER;
     });
+
+    const warpRoutes = this.warpRoutes.reduce<RegistryContent['deployments']['warpRoutes']>(
+      (acc, r) => {
+        // Cast is useful because this handles partials and safe because the fn validates data
+        const id = warpRouteConfigToId(r as WarpCoreConfig);
+        acc[id] = PARTIAL_URI_PLACEHOLDER;
+        return acc;
+      },
+      {},
+    );
+
     return {
       chains,
-      deployments: {},
+      deployments: {
+        warpRoutes,
+      },
     };
   }
 
@@ -61,6 +78,13 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
 
   addWarpRoute(_config: WarpCoreConfig): void {
     throw new Error('Method not implemented.');
+  }
+
+  protected getWarpRoutesForIds(ids: WarpRouteId[]): WarpCoreConfig[] {
+    return this.warpRoutes.filter((r) => {
+      const id = warpRouteConfigToId(r as WarpCoreConfig);
+      return ids.includes(id);
+    }) as WarpCoreConfig[];
   }
 
   protected createOrUpdateChain(chain: {

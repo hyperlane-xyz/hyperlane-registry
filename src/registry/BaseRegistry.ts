@@ -2,10 +2,15 @@ import type { Logger } from 'pino';
 
 import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 import type { ChainAddresses, MaybePromise } from '../types.js';
-import type { IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
+import { WarpRouteConfigMap } from '../types.js';
+import type {
+  IRegistry,
+  RegistryContent,
+  RegistryType,
+  UpdateChainParams,
+  WarpRouteFilterParams,
+} from './IRegistry.js';
 import { MergedRegistry } from './MergedRegistry.js';
-
-export const CHAIN_FILE_REGEX = /chains\/([a-z0-9]+)\/([a-z]+)\.(yaml|svg)/;
 
 export abstract class BaseRegistry implements IRegistry {
   public abstract type: RegistryType;
@@ -31,7 +36,11 @@ export abstract class BaseRegistry implements IRegistry {
     return 'chains';
   }
 
-  protected getWarpArtifactsPaths({ tokens }: WarpCoreConfig) {
+  protected getWarpRoutesPath(): string {
+    return 'deployments/warp_routes';
+  }
+
+  protected getWarpRoutesArtifactPaths({ tokens }: WarpCoreConfig) {
     if (!tokens.length) throw new Error('No tokens provided in config');
     const symbols = new Set<string>(tokens.map((token) => token.symbol.toUpperCase()));
     if (symbols.size !== 1)
@@ -41,7 +50,7 @@ export abstract class BaseRegistry implements IRegistry {
       .map((token) => token.chainName)
       .sort()
       .join('-');
-    const basePath = `deployments/warp_routes/${symbol}/${chains}`;
+    const basePath = `${this.getWarpRoutesPath()}/${symbol}/${chains}`;
     return { configPath: `${basePath}-config.yaml`, addressesPath: `${basePath}-addresses.yaml` };
   }
 
@@ -61,17 +70,12 @@ export abstract class BaseRegistry implements IRegistry {
     return chain?.logo ?? null;
   }
 
-  abstract addChain(chain: {
-    chainName: ChainName;
-    metadata?: ChainMetadata;
-    addresses?: ChainAddresses;
-  }): MaybePromise<void>;
-  abstract updateChain(chain: {
-    chainName: ChainName;
-    metadata?: ChainMetadata;
-    addresses?: ChainAddresses;
-  }): MaybePromise<void>;
+  abstract addChain(chain: UpdateChainParams): MaybePromise<void>;
+  abstract updateChain(chain: UpdateChainParams): MaybePromise<void>;
   abstract removeChain(chain: ChainName): MaybePromise<void>;
+
+  abstract getWarpRoute(routeId: string): MaybePromise<WarpCoreConfig | null>;
+  abstract getWarpRoutes(filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap>;
   abstract addWarpRoute(config: WarpCoreConfig): MaybePromise<void>;
 
   merge(otherRegistry: IRegistry): IRegistry {

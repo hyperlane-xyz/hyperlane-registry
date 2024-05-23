@@ -1,5 +1,5 @@
 import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
-import type { ChainAddresses, MaybePromise } from '../types.js';
+import { ChainAddresses, MaybePromise, WarpRouteConfigMap, WarpRouteId } from '../types.js';
 
 export interface ChainFiles {
   metadata?: string;
@@ -10,8 +10,20 @@ export interface ChainFiles {
 export interface RegistryContent {
   chains: ChainMap<ChainFiles>;
   deployments: {
-    // TODO define deployment artifact shape here
+    // Map of warp route ID to config URI
+    warpRoutes: Record<WarpRouteId, string>;
   };
+}
+
+export interface UpdateChainParams {
+  chainName: ChainName;
+  metadata?: ChainMetadata;
+  addresses?: ChainAddresses;
+}
+
+export interface WarpRouteFilterParams {
+  symbol?: string;
+  chainName?: ChainName;
 }
 
 export enum RegistryType {
@@ -37,19 +49,14 @@ export interface IRegistry {
 
   getChainLogoUri(chainName: ChainName): Promise<string | null>;
 
-  addChain(chain: {
-    chainName: ChainName;
-    metadata?: ChainMetadata;
-    addresses?: ChainAddresses;
-  }): MaybePromise<void>;
-  updateChain(chain: {
-    chainName: ChainName;
-    metadata?: ChainMetadata;
-    addresses?: ChainAddresses;
-  }): MaybePromise<void>;
+  addChain(chain: UpdateChainParams): MaybePromise<void>;
+  updateChain(chain: UpdateChainParams): MaybePromise<void>;
   removeChain(chain: ChainName): MaybePromise<void>;
 
+  getWarpRoute(routeId: string): MaybePromise<WarpCoreConfig | null>;
+  getWarpRoutes(filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap>;
   addWarpRoute(config: WarpCoreConfig): MaybePromise<void>;
+
   // TODO define more deployment artifact related methods
 
   merge(otherRegistry: IRegistry): IRegistry;

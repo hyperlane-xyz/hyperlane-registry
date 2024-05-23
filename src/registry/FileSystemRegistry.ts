@@ -5,18 +5,18 @@ import { parse as yamlParse } from 'yaml';
 
 import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 
-import { SCHEMA_REF } from '../consts.js';
-import { ChainAddresses, ChainAddressesSchema } from '../types.js';
+import { CHAIN_FILE_REGEX, SCHEMA_REF, WARP_ROUTE_CONFIG_FILE_REGEX } from '../consts.js';
+import { ChainAddresses, ChainAddressesSchema, WarpRouteId } from '../types.js';
 import { toYamlString } from '../utils.js';
-import { CHAIN_FILE_REGEX } from './BaseRegistry.js';
 import {
   RegistryType,
+  UpdateChainParams,
   type ChainFiles,
   type IRegistry,
   type RegistryContent,
 } from './IRegistry.js';
 import { SynchronousRegistry } from './SynchronousRegistry.js';
-import { warpConfigToWarpAddresses } from './warp-utils.js';
+import { warpConfigToWarpAddresses, warpRouteConfigPathToId } from './warp-utils.js';
 
 export interface FileSystemRegistryOptions {
   uri: string;
@@ -39,18 +39,24 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
 
     const chainFileList = this.listFiles(path.join(this.uri, this.getChainsPath()));
     const chains: ChainMap<ChainFiles> = {};
-    for (const chainFilePath of chainFileList) {
-      const matches = chainFilePath.match(CHAIN_FILE_REGEX);
+    for (const filePath of chainFileList) {
+      const matches = filePath.match(CHAIN_FILE_REGEX);
       if (!matches) continue;
       const [_, chainName, fileName] = matches;
       chains[chainName] ??= {};
       // @ts-ignore allow dynamic key assignment
-      chains[chainName][fileName] = chainFilePath;
+      chains[chainName][fileName] = filePath;
     }
 
-    // TODO add handling for deployment artifact files here too
+    const warpRoutes: RegistryContent['deployments']['warpRoutes'] = {};
+    const warpRouteFiles = this.listFiles(path.join(this.uri, this.getWarpRoutesPath()));
+    for (const filePath of warpRouteFiles) {
+      if (!WARP_ROUTE_CONFIG_FILE_REGEX.test(filePath)) continue;
+      const routeId = warpRouteConfigPathToId(filePath);
+      warpRoutes[routeId] = filePath;
+    }
 
-    return (this.listContentCache = { chains, deployments: {} });
+    return (this.listContentCache = { chains, deployments: { warpRoutes } });
   }
 
   getMetadata(): ChainMap<ChainMetadata> {
@@ -83,6 +89,17 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
     this.removeFiles(Object.values(chainFiles));
   }
 
+  addWarpRoute(config: WarpCoreConfig): void {
+    let { configPath, addressesPath } = this.getWarpRoutesArtifactPaths(config);
+
+    configPath = path.join(this.uri, configPath);
+    this.createFile({ filePath: configPath, data: toYamlString(config, SCHEMA_REF) });
+
+    addressesPath = path.join(this.uri, addressesPath);
+    const addresses = warpConfigToWarpAddresses(config);
+    this.createFile({ filePath: addressesPath, data: toYamlString(addresses) });
+  }
+
   protected listFiles(dirPath: string): string[] {
     if (!fs.existsSync(dirPath)) return [];
 
@@ -95,22 +112,7 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
     return filePaths.flat();
   }
 
-  addWarpRoute(config: WarpCoreConfig): void {
-    let { configPath, addressesPath } = this.getWarpArtifactsPaths(config);
-
-    configPath = path.join(this.uri, configPath);
-    this.createFile({ filePath: configPath, data: toYamlString(config, SCHEMA_REF) });
-
-    addressesPath = path.join(this.uri, addressesPath);
-    const addresses = warpConfigToWarpAddresses(config);
-    this.createFile({ filePath: addressesPath, data: toYamlString(addresses) });
-  }
-
-  protected createOrUpdateChain(chain: {
-    chainName: ChainName;
-    metadata?: ChainMetadata;
-    addresses?: ChainAddresses;
-  }): void {
+  protected createOrUpdateChain(chain: UpdateChainParams): void {
     if (!chain.metadata && !chain.addresses)
       throw new Error(`Chain ${chain.chainName} must have metadata or addresses, preferably both`);
 
@@ -165,5 +167,16 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
     if (fs.readdirSync(parentDir).length === 0) {
       fs.rmdirSync(parentDir);
     }
+  }
+
+  protected getWarpRoutesForIds(ids: WarpRouteId[]): WarpCoreConfig[] {
+    const configs: WarpCoreConfig[] = [];
+    const warpRoutes = this.listRegistryContent().deployments.warpRoutes;
+    for (const [id, filePath] of Object.entries(warpRoutes)) {
+      if (!ids.includes(id)) continue;
+      const data = fs.readFileSync(filePath, 'utf8');
+      configs.push(yamlParse(data));
+    }
+    return configs;
   }
 }
