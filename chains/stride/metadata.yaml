@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: stride
+blockExplorers:
+  - apiUrl: https://www.mintscan.io/stride
+    family: other
+    name: Mintscan
+    url: https://www.mintscan.io/stride
+blocks:
+  confirmations: 1
+  estimateBlockTime: 5
+  reorgPeriod: 1
+chainId: stride-1
+displayName: Stride
+domainId: 745
+gasCurrencyCoinGeckoId: stride
+grpcUrls:
+  - http: stride-grpc.polkachu.com:12290
+isTestnet: false
+name: stride
+nativeToken:
+  decimals: 6
+  denom: ustrd
+  name: Stride
+  symbol: STRD
+protocol: cosmos
+restUrls:
+  - http: https://stride-api.polkachu.com
+rpcUrls:
+  - http: https://stride-rpc.polkachu.com
+slip44: 118
+transactionOverrides:
+  gasPrice: "0.0025"
