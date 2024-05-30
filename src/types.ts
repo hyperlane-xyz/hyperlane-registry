@@ -10,10 +10,8 @@ export type ChainAddresses = z.infer<typeof ChainAddressesSchema>;
 export type WarpRouteId = string;
 export type WarpRouteConfigMap = Record<WarpRouteId, WarpCoreConfig>;
 
-export type RecursivePartial<T> = {
-  [P in keyof T]?: T[P] extends (infer U)[]
-    ? RecursivePartial<U>[]
-    : T[P] extends readonly (infer U)[]
-    ? readonly RecursivePartial<U>[]
-    : RecursivePartial<T[P]>;
-};
+export type DeepPartial<T> = T extends object
+  ? {
+      [P in keyof T]?: DeepPartial<T[P]>;
+    }
+  : T;

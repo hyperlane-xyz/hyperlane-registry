@@ -7,7 +7,7 @@ import {
   warpRouteConfigToId,
 } from '../../src/registry/warp-utils.js';
 
-const WARP_ROUTE_ID = 'USDT|arbitrum-ethereum';
+const WARP_ROUTE_ID = 'USDT/arbitrum-ethereum';
 
 describe('Warp utils', () => {
   it('Computes a warp ID from a config path', () => {

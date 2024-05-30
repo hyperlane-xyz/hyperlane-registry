@@ -1,7 +1,7 @@
 import type { Logger } from 'pino';
 
 import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
-import { ChainAddresses, RecursivePartial, WarpRouteId } from '../types.js';
+import { ChainAddresses, DeepPartial, WarpRouteId } from '../types.js';
 import { ChainFiles, IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
 import { SynchronousRegistry } from './SynchronousRegistry.js';
 import { warpRouteConfigToId } from './warp-utils.js';
@@ -13,18 +13,18 @@ const PARTIAL_URI_PLACEHOLDER = '__partial_registry__';
  * Useful for merging with other registries force overrides of subsets of data.
  */
 export interface PartialRegistryOptions {
-  chainMetadata?: ChainMap<RecursivePartial<ChainMetadata>>;
-  chainAddresses?: ChainMap<RecursivePartial<ChainAddresses>>;
-  warpRoutes?: Array<RecursivePartial<WarpCoreConfig>>;
+  chainMetadata?: ChainMap<DeepPartial<ChainMetadata>>;
+  chainAddresses?: ChainMap<DeepPartial<ChainAddresses>>;
+  warpRoutes?: Array<DeepPartial<WarpCoreConfig>>;
   // TODO add more fields here as needed
   logger?: Logger;
 }
 
 export class PartialRegistry extends SynchronousRegistry implements IRegistry {
   public readonly type = RegistryType.Partial;
-  public chainMetadata: ChainMap<RecursivePartial<ChainMetadata>>;
-  public chainAddresses: ChainMap<RecursivePartial<ChainAddresses>>;
-  public warpRoutes: Array<RecursivePartial<WarpCoreConfig>>;
+  public chainMetadata: ChainMap<DeepPartial<ChainMetadata>>;
+  public chainAddresses: ChainMap<DeepPartial<ChainAddresses>>;
+  public warpRoutes: Array<DeepPartial<WarpCoreConfig>>;
 
   constructor({ chainMetadata, chainAddresses, warpRoutes, logger }: PartialRegistryOptions) {
     super({ uri: PARTIAL_URI_PLACEHOLDER, logger });
