@@ -34,6 +34,11 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
     super(options);
   }
 
+  getUri(itemPath?: string): string {
+    if (!itemPath) return super.getUri();
+    return path.join(this.uri, itemPath);
+  }
+
   listRegistryContent(): RegistryContent {
     if (this.listContentCache) return this.listContentCache;
 

@@ -37,6 +37,8 @@ export interface IRegistry {
   type: RegistryType;
   uri: string;
 
+  getUri(itemPath?: string): string;
+
   listRegistryContent(): MaybePromise<RegistryContent>;
 
   getChains(): MaybePromise<Array<ChainName>>;

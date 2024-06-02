@@ -10,7 +10,7 @@ import {
   WARP_ROUTE_CONFIG_FILE_REGEX,
 } from '../consts.js';
 import { ChainAddresses, WarpRouteConfigMap, WarpRouteId } from '../types.js';
-import { concurrentMap } from '../utils.js';
+import { concurrentMap, stripLeadingSlash } from '../utils.js';
 import { BaseRegistry } from './BaseRegistry.js';
 import {
   ChainFiles,
@@ -57,6 +57,11 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     if (pathSegments.length < 2) throw new Error('Invalid github url');
     this.repoOwner = pathSegments.at(-2)!;
     this.repoName = pathSegments.at(-1)!;
+  }
+
+  getUri(itemPath?: string): string {
+    if (!itemPath) return super.getUri();
+    return this.getRawContentUrl(itemPath);
   }
 
   async listRegistryContent(): Promise<RegistryContent> {
@@ -156,6 +161,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   }
 
   protected getRawContentUrl(path: string): string {
+    path = stripLeadingSlash(path);
     return `https://raw.githubusercontent.com/${this.repoOwner}/${this.repoName}/${this.branch}/${path}`;
   }
 

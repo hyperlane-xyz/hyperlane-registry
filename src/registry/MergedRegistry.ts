@@ -35,6 +35,10 @@ export class MergedRegistry implements IRegistry {
     this.logger = logger || console;
   }
 
+  getUri(): string {
+    throw new Error('getUri method not applicable to MergedRegistry');
+  }
+
   async listRegistryContent(): Promise<RegistryContent> {
     const results = await this.multiRegistryRead((r) => r.listRegistryContent());
     return results.reduce((acc, content) => objMerge(acc, content), {

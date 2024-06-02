@@ -3,6 +3,7 @@ import type { Logger } from 'pino';
 import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 import type { ChainAddresses, MaybePromise } from '../types.js';
 import { WarpRouteConfigMap } from '../types.js';
+import { stripLeadingSlash } from '../utils.js';
 import type {
   IRegistry,
   RegistryContent,
@@ -30,6 +31,11 @@ export abstract class BaseRegistry implements IRegistry {
     // dependency here, which could bloat consumer bundles
     // unnecessarily (e.g. they just want metadata)
     this.logger = logger || console;
+  }
+
+  getUri(itemPath?: string): string {
+    if (itemPath) itemPath = stripLeadingSlash(itemPath);
+    return itemPath ? `${this.uri}/${itemPath}` : this.uri;
   }
 
   protected getChainsPath(): string {
