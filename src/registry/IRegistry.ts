@@ -8,9 +8,10 @@ export interface ChainFiles {
 }
 
 export interface RegistryContent {
+  // Chain name to file type to file URI
   chains: ChainMap<ChainFiles>;
   deployments: {
-    // Map of warp route ID to config URI
+    // Warp route ID to config URI
     warpRoutes: Record<WarpRouteId, string>;
   };
 }
