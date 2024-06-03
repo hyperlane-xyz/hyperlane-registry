@@ -3,7 +3,7 @@ import { expect } from 'chai';
 
 import type { ChainMetadata } from '@hyperlane-xyz/sdk';
 import fs from 'fs';
-import { CHAIN_FILE_REGEX } from '../../src/registry/BaseRegistry.js';
+import { CHAIN_FILE_REGEX } from '../../src/consts.js';
 import { FileSystemRegistry } from '../../src/registry/FileSystemRegistry.js';
 import { GithubRegistry } from '../../src/registry/GithubRegistry.js';
 import { RegistryType } from '../../src/registry/IRegistry.js';
@@ -29,6 +29,7 @@ describe('Registry utilities', () => {
   const partialRegistry = new PartialRegistry({
     chainMetadata: { ethereum: { chainId: 1, displayName: MOCK_DISPLAY_NAME } },
     chainAddresses: { ethereum: { mailbox: MOCK_ADDRESS } },
+    warpRoutes: [{ tokens: [{ chainName: 'ethereum', symbol: 'USDT' }] }],
   });
 
   const mergedRegistry = new MergedRegistry({
@@ -76,6 +77,16 @@ describe('Registry utilities', () => {
       expect(Object.keys(addresses).length).to.be.greaterThan(0);
       // Note the short timeout to ensure result is coming from cache
     }).timeout(250);
+
+    it(`Fetches warp route configs for ${registry.type} registry`, async () => {
+      const routes = await registry.getWarpRoutes();
+      const routeIds = Object.keys(routes);
+      expect(routeIds.length).to.be.greaterThan(0);
+      const firstRoute = await registry.getWarpRoute(routeIds[0]);
+      expect(firstRoute!.tokens.length).to.be.greaterThan(0);
+      const noRoutes = await registry.getWarpRoutes({ symbol: 'NOTFOUND' });
+      expect(Object.keys(noRoutes).length).to.eql(0);
+    });
 
     // TODO remove this once GitHubRegistry methods are implemented
     if (registry.type !== RegistryType.FileSystem) continue;
