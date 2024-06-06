@@ -96,7 +96,7 @@ function createWarpConfigFiles() {
       warpRouteConfigs[id] = config;
       fs.mkdirSync(`${assetOutPath}`, { recursive: true });
       fs.mkdirSync(`${tsOutPath}`, { recursive: true });
-      fs.copyFileSync(`${inDirPath}/${warpFileName}.yaml`, `${assetOutPath}/${warpFile}.yaml`);
+      fs.copyFileSync(`${inDirPath}/${warpFileName}.yaml`, `${assetOutPath}/${warpFileName}.yaml`);
       fs.writeFileSync(`${assetOutPath}/${warpFileName}.json`, JSON.stringify(config, null, 2));
       fs.writeFileSync(
         `${tsOutPath}/${warpFileName}.ts`,
