@@ -1,5 +1,23 @@
 # @hyperlane-xyz/registry
 
+## 2.0.0
+
+### Major Changes
+
+- 05815a7: Add support for reading warp route configs from registries
+  Add getURI method to registry classes
+
+### Minor Changes
+
+- 296ef58: Add token logos
+
+### Patch Changes
+
+- 725c795: Added Stride chain
+- 23138d8: Add more arbitrum rpcUrls
+- 23138d8: Added mantapacific gnosisSafeTransactionServiceUrl
+- 984dc5d: Add black border to Blast logo.svg
+
 ## 1.3.0
 
 ### Minor Changes
