@@ -47,8 +47,8 @@ export function warpRouteConfigToId(config: WarpCoreConfig): WarpRouteId {
   if (!config?.tokens?.length) throw new Error('Cannot generate ID for empty warp config');
   const tokenSymbol = config.tokens[0].symbol;
   if (!tokenSymbol) throw new Error('Cannot generate warp config ID without a token symbol');
-  const chains = config.tokens.map((token) => token.chainName);
-  return createWarpRouteConfigId(tokenSymbol, chains);
+  const chains = new Set(config.tokens.map((token) => token.chainName));
+  return createWarpRouteConfigId(tokenSymbol, [...chains.values()]);
 }
 
 export function createWarpRouteConfigId(tokenSymbol: string, chains: ChainName[]): WarpRouteId {
