@@ -1,5 +1,13 @@
 # @hyperlane-xyz/registry
 
+## 2.0.1
+
+### Patch Changes
+
+- 0984dc1: Rename Polygon native token to Matic
+- ab47121: Add missing neutron token definitions to warp route configs
+- e2c9d3c: Remove broken TIA Stride warp route
+
 ## 2.0.0
 
 ### Major Changes
