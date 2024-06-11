@@ -1,25 +1,25 @@
 # yaml-language-server: $schema=../schema.json
+options:
+  interchainFeeConstants:
+    - addressOrDenom: ibc/D79E7D83AB399BFFF93433E54FAA480C191248FC556924A2A8351AE2638B3877
+      amount: 840000
+      destination: mantapacific
+      origin: osmosis
 tokens:
-  - chainName: osmosis
-    standard: CwHypCollateral
-    decimals: 6
-    symbol: TIA.o
-    name: TIA.o
-    addressOrDenom: osmo1h4y9xjcvs8lrx4z8ha48uq9a338w74dpl2ly3tf74fzvugp2kj4q9l0jkw
+  - addressOrDenom: osmo1h4y9xjcvs8lrx4z8ha48uq9a338w74dpl2ly3tf74fzvugp2kj4q9l0jkw
+    chainName: osmosis
     collateralAddressOrDenom: ibc/D79E7D83AB399BFFF93433E54FAA480C191248FC556924A2A8351AE2638B3877
     connections:
       - token: ethereum|mantapacific|0x88410F3D8135b4D23b98dC37C4652C6969a5B1a8
-  - chainName: mantapacific
-    standard: EvmHypSynthetic
     decimals: 6
-    symbol: TIA.o
     name: TIA.o
-    addressOrDenom: "0x88410F3D8135b4D23b98dC37C4652C6969a5B1a8"
+    standard: CwHypCollateral
+    symbol: TIA.o
+  - addressOrDenom: "0x88410F3D8135b4D23b98dC37C4652C6969a5B1a8"
+    chainName: mantapacific
     connections:
       - token: cosmos|osmosis|osmo1h4y9xjcvs8lrx4z8ha48uq9a338w74dpl2ly3tf74fzvugp2kj4q9l0jkw
-options:
-  interchainFeeConstants:
-    - origin: osmosis
-      destination: mantapacific
-      amount: 840000
-      addressOrDenom: ibc/D79E7D83AB399BFFF93433E54FAA480C191248FC556924A2A8351AE2638B3877
+    decimals: 6
+    name: TIA.o
+    standard: EvmHypSynthetic
+    symbol: TIA.o
