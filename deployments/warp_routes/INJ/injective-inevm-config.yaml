@@ -1,29 +1,31 @@
 # yaml-language-server: $schema=../schema.json
+options:
+  interchainFeeConstants:
+    - addressOrDenom: inj
+      amount: "30000000000000000"
+      destination: inevm
+      origin: injective
+  localFeeConstants:
+    - addressOrDenom: inj
+      amount: "1000000000000000"
+      destination: inevm
+      origin: injective
 tokens:
-  - chainName: injective
-    standard: CwHypNative
-    decimals: 18
-    symbol: INJ
-    name: Injective Coin
-    addressOrDenom: inj1mv9tjvkaw7x8w8y9vds8pkfq46g2vcfkjehc6k
+  - addressOrDenom: inj1mv9tjvkaw7x8w8y9vds8pkfq46g2vcfkjehc6k
+    chainName: injective
     connections:
       - token: ethereum|inevm|0x26f32245fCF5Ad53159E875d5Cae62aEcf19c2d4
-  - chainName: inevm
-    standard: EvmHypNative
     decimals: 18
-    symbol: INJ
+    logoURI: /deployments/warp_routes/INJ/logo.svg
     name: Injective Coin
-    addressOrDenom: "0x26f32245fCF5Ad53159E875d5Cae62aEcf19c2d4"
+    standard: CwHypNative
+    symbol: INJ
+  - addressOrDenom: "0x26f32245fCF5Ad53159E875d5Cae62aEcf19c2d4"
+    chainName: inevm
     connections:
       - token: cosmos|injective|inj1mv9tjvkaw7x8w8y9vds8pkfq46g2vcfkjehc6k
-options:
-  localFeeConstants:
-    - origin: injective
-      destination: inevm
-      amount: "1000000000000000"
-      addressOrDenom: inj
-  interchainFeeConstants:
-    - origin: injective
-      destination: inevm
-      amount: "30000000000000000"
-      addressOrDenom: inj
+    decimals: 18
+    logoURI: /deployments/warp_routes/INJ/logo.svg
+    name: Injective Coin
+    standard: EvmHypNative
+    symbol: INJ

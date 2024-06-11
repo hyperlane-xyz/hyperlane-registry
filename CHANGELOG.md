@@ -1,5 +1,56 @@
 # @hyperlane-xyz/registry
 
+## 2.0.1
+
+### Patch Changes
+
+- 0984dc1: Rename Polygon native token to Matic
+- ab47121: Add missing neutron token definitions to warp route configs
+- e2c9d3c: Remove broken TIA Stride warp route
+
+## 2.0.0
+
+### Major Changes
+
+- 05815a7: Add support for reading warp route configs from registries
+  Add getURI method to registry classes
+
+### Minor Changes
+
+- 296ef58: Add token logos
+
+### Patch Changes
+
+- 725c795: Added Stride chain
+- 23138d8: Add more arbitrum rpcUrls
+- 23138d8: Added mantapacific gnosisSafeTransactionServiceUrl
+- 984dc5d: Add black border to Blast logo.svg
+
+## 1.3.0
+
+### Minor Changes
+
+- 1b7c0f5: Add PartialRegistry class
+  Add merge() method to IRegistry
+- 4db8e36: Rename LocalRegistry to FileSystemRegistry
+- ab3dbb0: Add MergedRegistry class
+
+### Patch Changes
+
+- 2e990b1: Added Zetachain & Redstone addresses & metadata; minor changes to addresses and metadata following a deploy
+
+## 1.2.0
+
+### Minor Changes
+
+- 3d8a8d0: Added holesky chain metadata and core artifacts
+
+## 1.1.2
+
+### Patch Changes
+
+- 46b136f: Add getChainLogoUri method and improve caching
+
 ## 1.1.1
 
 ### Patch Changes

@@ -3,16 +3,24 @@ import { parse as yamlParse } from 'yaml';
 
 import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 
-import { DEFAULT_GITHUB_REGISTRY, GITHUB_FETCH_CONCURRENCY_LIMIT } from '../consts.js';
-import { ChainAddresses, ChainAddressesSchema } from '../types.js';
-import { concurrentMap } from '../utils.js';
-import { BaseRegistry, CHAIN_FILE_REGEX } from './BaseRegistry.js';
 import {
+  CHAIN_FILE_REGEX,
+  DEFAULT_GITHUB_REGISTRY,
+  GITHUB_FETCH_CONCURRENCY_LIMIT,
+  WARP_ROUTE_CONFIG_FILE_REGEX,
+} from '../consts.js';
+import { ChainAddresses, WarpRouteConfigMap, WarpRouteId } from '../types.js';
+import { concurrentMap, stripLeadingSlash } from '../utils.js';
+import { BaseRegistry } from './BaseRegistry.js';
+import {
+  ChainFiles,
+  IRegistry,
+  RegistryContent,
   RegistryType,
-  type ChainFiles,
-  type IRegistry,
-  type RegistryContent,
+  UpdateChainParams,
+  WarpRouteFilterParams,
 } from './IRegistry.js';
+import { filterWarpRoutesIds, warpRouteConfigPathToId } from './warp-utils.js';
 
 export interface GithubRegistryOptions {
   uri?: string;
@@ -29,6 +37,11 @@ interface TreeNode {
   url: string;
 }
 
+/**
+ * A registry that uses a github repository as its data source.
+ * Reads are performed via the github API and github's raw content URLs.
+ * Writes are not yet supported (TODO)
+ */
 export class GithubRegistry extends BaseRegistry implements IRegistry {
   public readonly type = RegistryType.Github;
   public readonly url: URL;
@@ -46,6 +59,11 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     this.repoName = pathSegments.at(-1)!;
   }
 
+  getUri(itemPath?: string): string {
+    if (!itemPath) return super.getUri();
+    return this.getRawContentUrl(itemPath);
+  }
+
   async listRegistryContent(): Promise<RegistryContent> {
     if (this.listContentCache) return this.listContentCache;
 
@@ -57,21 +75,25 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     const tree = result.tree as TreeNode[];
 
     const chainPath = this.getChainsPath();
-    const chains: ChainMap<ChainFiles> = {};
+    const chains: RegistryContent['chains'] = {};
+    const warpRoutes: RegistryContent['deployments']['warpRoutes'] = {};
     for (const node of tree) {
       if (CHAIN_FILE_REGEX.test(node.path)) {
-        const [_, chainName, fileName] = node.path.match(CHAIN_FILE_REGEX)!;
+        const [_, chainName, fileName, extension] = node.path.match(CHAIN_FILE_REGEX)!;
         chains[chainName] ??= {};
         // @ts-ignore allow dynamic key assignment
         chains[chainName][fileName] = this.getRawContentUrl(
-          `${chainPath}/${chainName}/${fileName}.yaml`,
+          `${chainPath}/${chainName}/${fileName}.${extension}`,
         );
       }
 
-      // TODO add handling for deployment artifact files here too
+      if (WARP_ROUTE_CONFIG_FILE_REGEX.test(node.path)) {
+        const routeId = warpRouteConfigPathToId(node.path);
+        warpRoutes[routeId] = this.getRawContentUrl(node.path);
+      }
     }
 
-    return (this.listContentCache = { chains, deployments: {} });
+    return (this.listContentCache = { chains, deployments: { warpRoutes } });
   }
 
   async getChains(): Promise<Array<ChainName>> {
@@ -80,49 +102,58 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   }
 
   async getMetadata(): Promise<ChainMap<ChainMetadata>> {
-    if (this.metadataCache) return this.metadataCache;
+    if (this.metadataCache && this.isMetadataCacheFull) return this.metadataCache;
     const chainMetadata = await this.fetchChainFiles<ChainMetadata>('metadata');
+    this.isMetadataCacheFull = true;
     return (this.metadataCache = chainMetadata);
   }
 
-  async getChainMetadata(chainName: ChainName): Promise<ChainMetadata> {
+  async getChainMetadata(chainName: ChainName): Promise<ChainMetadata | null> {
     if (this.metadataCache?.[chainName]) return this.metadataCache[chainName];
-    const url = this.getRawContentUrl(`${this.getChainsPath()}/${chainName}/metadata.yaml`);
-    const response = await this.fetch(url);
-    const data = await response.text();
-    return yamlParse(data);
+    const data = await this.fetchChainFile<ChainMetadata>('metadata', chainName);
+    if (!data) return null;
+    this.metadataCache = { ...this.metadataCache, [chainName]: data };
+    return data;
   }
 
   async getAddresses(): Promise<ChainMap<ChainAddresses>> {
-    if (this.addressCache) return this.addressCache;
+    if (this.addressCache && this.isAddressCacheFull) return this.addressCache;
     const chainAddresses = await this.fetchChainFiles<ChainAddresses>('addresses');
+    this.isAddressCacheFull = true;
     return (this.addressCache = chainAddresses);
   }
 
-  async getChainAddresses(chainName: ChainName): Promise<ChainAddresses> {
+  async getChainAddresses(chainName: ChainName): Promise<ChainAddresses | null> {
     if (this.addressCache?.[chainName]) return this.addressCache[chainName];
-    const url = this.getRawContentUrl(`${this.getChainsPath()}/${chainName}/addresses.yaml`);
-    const response = await this.fetch(url);
-    const data = await response.text();
-    return ChainAddressesSchema.parse(yamlParse(data));
+    const data = await this.fetchChainFile<ChainAddresses>('addresses', chainName);
+    if (!data) return null;
+    this.addressCache = { ...this.addressCache, [chainName]: data };
+    return data;
   }
 
-  async addChain(_chains: {
-    chainName: ChainName;
-    metadata?: ChainMetadata;
-    addresses?: ChainAddresses;
-  }): Promise<void> {
+  async addChain(_chains: UpdateChainParams): Promise<void> {
     throw new Error('TODO: Implement');
   }
-  async updateChain(_chains: {
-    chainName: ChainName;
-    metadata?: ChainMetadata;
-    addresses?: ChainAddresses;
-  }): Promise<void> {
+  async updateChain(_chains: UpdateChainParams): Promise<void> {
     throw new Error('TODO: Implement');
   }
   async removeChain(_chains: ChainName): Promise<void> {
     throw new Error('TODO: Implement');
+  }
+
+  async getWarpRoute(routeId: string): Promise<WarpCoreConfig | null> {
+    const repoContents = await this.listRegistryContent();
+    const routeConfigUrl = repoContents.deployments.warpRoutes[routeId];
+    if (!routeConfigUrl) return null;
+    return this.fetchYamlFile(routeConfigUrl);
+  }
+
+  async getWarpRoutes(filter?: WarpRouteFilterParams): Promise<WarpRouteConfigMap> {
+    const warpRoutes = (await this.listRegistryContent()).deployments.warpRoutes;
+    const { ids: routeIds, values: routeConfigUrls } = filterWarpRoutesIds(warpRoutes, filter);
+    const configs = await this.fetchYamlFiles<WarpCoreConfig>(routeConfigUrls);
+    const idsWithConfigs = routeIds.map((id, i): [WarpRouteId, WarpCoreConfig] => [id, configs[i]]);
+    return Object.fromEntries(idsWithConfigs);
   }
 
   async addWarpRoute(_config: WarpCoreConfig): Promise<void> {
@@ -130,12 +161,18 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   }
 
   protected getRawContentUrl(path: string): string {
+    path = stripLeadingSlash(path);
     return `https://raw.githubusercontent.com/${this.repoOwner}/${this.repoName}/${this.branch}/${path}`;
   }
 
-  protected async fetchChainFiles<T>(fileName: keyof ChainFiles): Promise<ChainMap<T>> {
+  // Fetches all files of a particular type in parallel
+  // Defaults to all known chains if chainNames is not provided
+  protected async fetchChainFiles<T>(
+    fileName: keyof ChainFiles,
+    chainNames?: ChainName[],
+  ): Promise<ChainMap<T>> {
     const repoContents = await this.listRegistryContent();
-    const chainNames = Object.keys(repoContents.chains);
+    chainNames ||= Object.keys(repoContents.chains);
 
     const fileUrls = chainNames.reduce<ChainMap<string>>((acc, chainName) => {
       const fileUrl = repoContents.chains[chainName][fileName];
@@ -143,17 +180,30 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
       return acc;
     }, {});
 
-    const results = await concurrentMap(
-      GITHUB_FETCH_CONCURRENCY_LIMIT,
-      Object.entries(fileUrls),
-      async ([chainName, fileUrl]): Promise<[ChainName, T]> => {
-        const response = await this.fetch(fileUrl);
-        const data = await response.text();
-        return [chainName, yamlParse(data)];
-      },
-    );
+    const results = await this.fetchYamlFiles<T>(Object.values(fileUrls));
+    const chainNameWithResult = chainNames.map((chainName, i): [ChainName, T] => [
+      chainName,
+      results[i],
+    ]);
+    return Object.fromEntries(chainNameWithResult);
+  }
 
-    return Object.fromEntries(results);
+  protected async fetchChainFile<T>(
+    fileName: keyof ChainFiles,
+    chainName: ChainName,
+  ): Promise<T | null> {
+    const results = await this.fetchChainFiles<T>(fileName, [chainName]);
+    return results[chainName] ?? null;
+  }
+
+  protected fetchYamlFiles<T>(urls: string[]): Promise<T[]> {
+    return concurrentMap(GITHUB_FETCH_CONCURRENCY_LIMIT, urls, (url) => this.fetchYamlFile<T>(url));
+  }
+
+  protected async fetchYamlFile<T>(url: string): Promise<T> {
+    const response = await this.fetch(url);
+    const data = await response.text();
+    return yamlParse(data);
   }
 
   protected async fetch(url: string): Promise<Response> {

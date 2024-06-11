@@ -5,28 +5,38 @@ import { parse as yamlParse } from 'yaml';
 
 import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 
-import { SCHEMA_REF } from '../consts.js';
-import { ChainAddresses, ChainAddressesSchema } from '../types.js';
+import { CHAIN_FILE_REGEX, SCHEMA_REF, WARP_ROUTE_CONFIG_FILE_REGEX } from '../consts.js';
+import { ChainAddresses, ChainAddressesSchema, WarpRouteId } from '../types.js';
 import { toYamlString } from '../utils.js';
-import { BaseRegistry, CHAIN_FILE_REGEX } from './BaseRegistry.js';
 import {
   RegistryType,
+  UpdateChainParams,
   type ChainFiles,
   type IRegistry,
   type RegistryContent,
 } from './IRegistry.js';
-import { warpConfigToWarpAddresses } from './warp-utils.js';
+import { SynchronousRegistry } from './SynchronousRegistry.js';
+import { warpConfigToWarpAddresses, warpRouteConfigPathToId } from './warp-utils.js';
 
-export interface LocalRegistryOptions {
+export interface FileSystemRegistryOptions {
   uri: string;
   logger?: Logger;
 }
 
-export class LocalRegistry extends BaseRegistry implements IRegistry {
-  public readonly type = RegistryType.Local;
+/**
+ * A registry that uses a local file system path as its data source.
+ * Requires file system access so it cannot be used in the browser.
+ */
+export class FileSystemRegistry extends SynchronousRegistry implements IRegistry {
+  public readonly type = RegistryType.FileSystem;
 
-  constructor(options: LocalRegistryOptions) {
+  constructor(options: FileSystemRegistryOptions) {
     super(options);
+  }
+
+  getUri(itemPath?: string): string {
+    if (!itemPath) return super.getUri();
+    return path.join(this.uri, itemPath);
   }
 
   listRegistryContent(): RegistryContent {
@@ -34,22 +44,24 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
 
     const chainFileList = this.listFiles(path.join(this.uri, this.getChainsPath()));
     const chains: ChainMap<ChainFiles> = {};
-    for (const chainFilePath of chainFileList) {
-      const matches = chainFilePath.match(CHAIN_FILE_REGEX);
+    for (const filePath of chainFileList) {
+      const matches = filePath.match(CHAIN_FILE_REGEX);
       if (!matches) continue;
       const [_, chainName, fileName] = matches;
       chains[chainName] ??= {};
       // @ts-ignore allow dynamic key assignment
-      chains[chainName][fileName] = chainFilePath;
+      chains[chainName][fileName] = filePath;
     }
 
-    // TODO add handling for deployment artifact files here too
+    const warpRoutes: RegistryContent['deployments']['warpRoutes'] = {};
+    const warpRouteFiles = this.listFiles(path.join(this.uri, this.getWarpRoutesPath()));
+    for (const filePath of warpRouteFiles) {
+      if (!WARP_ROUTE_CONFIG_FILE_REGEX.test(filePath)) continue;
+      const routeId = warpRouteConfigPathToId(filePath);
+      warpRoutes[routeId] = filePath;
+    }
 
-    return (this.listContentCache = { chains, deployments: {} });
-  }
-
-  getChains(): Array<ChainName> {
-    return Object.keys(this.listRegistryContent().chains);
+    return (this.listContentCache = { chains, deployments: { warpRoutes } });
   }
 
   getMetadata(): ChainMap<ChainMetadata> {
@@ -64,13 +76,6 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
     return (this.metadataCache = chainMetadata);
   }
 
-  getChainMetadata(chainName: ChainName): ChainMetadata {
-    const metadata = this.getMetadata();
-    if (!metadata[chainName])
-      throw new Error(`Metadata not found in registry for chain: ${chainName}`);
-    return metadata[chainName];
-  }
-
   getAddresses(): ChainMap<ChainAddresses> {
     if (this.addressCache) return this.addressCache;
     const chainAddresses: ChainMap<ChainAddresses> = {};
@@ -83,45 +88,21 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
     return (this.addressCache = chainAddresses);
   }
 
-  getChainAddresses(chainName: ChainName): ChainAddresses {
-    const addresses = this.getAddresses();
-    if (!addresses[chainName])
-      throw new Error(`Addresses not found in registry for chain: ${chainName}`);
-    return addresses[chainName];
-  }
-
-  addChain(chain: {
-    chainName: ChainName;
-    metadata?: ChainMetadata;
-    addresses?: ChainAddresses;
-  }): void {
-    const currentChains = this.listRegistryContent().chains;
-    if (currentChains[chain.chainName])
-      throw new Error(`Chain ${chain.chainName} already exists in registry`);
-
-    this.createOrUpdateChain(chain);
-  }
-
-  updateChain(chain: {
-    chainName: ChainName;
-    metadata?: ChainMetadata;
-    addresses?: ChainAddresses;
-  }): void {
-    const currentChains = this.listRegistryContent();
-    if (!currentChains.chains[chain.chainName]) {
-      this.logger.debug(`Chain ${chain.chainName} not found in registry, adding it now`);
-    }
-    this.createOrUpdateChain(chain);
-  }
-
   removeChain(chainName: ChainName): void {
-    const currentChains = this.listRegistryContent().chains;
-    if (!currentChains[chainName]) throw new Error(`Chain ${chainName} does not exist in registry`);
+    const chainFiles = this.listRegistryContent().chains[chainName];
+    super.removeChain(chainName);
+    this.removeFiles(Object.values(chainFiles));
+  }
 
-    this.removeFiles(Object.values(currentChains[chainName]));
-    if (this.listContentCache?.chains[chainName]) delete this.listContentCache.chains[chainName];
-    if (this.metadataCache?.[chainName]) delete this.metadataCache[chainName];
-    if (this.addressCache?.[chainName]) delete this.addressCache[chainName];
+  addWarpRoute(config: WarpCoreConfig): void {
+    let { configPath, addressesPath } = this.getWarpRoutesArtifactPaths(config);
+
+    configPath = path.join(this.uri, configPath);
+    this.createFile({ filePath: configPath, data: toYamlString(config, SCHEMA_REF) });
+
+    addressesPath = path.join(this.uri, addressesPath);
+    const addresses = warpConfigToWarpAddresses(config);
+    this.createFile({ filePath: addressesPath, data: toYamlString(addresses) });
   }
 
   protected listFiles(dirPath: string): string[] {
@@ -136,22 +117,7 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
     return filePaths.flat();
   }
 
-  addWarpRoute(config: WarpCoreConfig): void {
-    let { configPath, addressesPath } = this.getWarpArtifactsPaths(config);
-
-    configPath = path.join(this.uri, configPath);
-    this.createFile({ filePath: configPath, data: toYamlString(config, SCHEMA_REF) });
-
-    addressesPath = path.join(this.uri, addressesPath);
-    const addresses = warpConfigToWarpAddresses(config);
-    this.createFile({ filePath: addressesPath, data: toYamlString(addresses) });
-  }
-
-  protected createOrUpdateChain(chain: {
-    chainName: ChainName;
-    metadata?: ChainMetadata;
-    addresses?: ChainAddresses;
-  }): void {
+  protected createOrUpdateChain(chain: UpdateChainParams): void {
     if (!chain.metadata && !chain.addresses)
       throw new Error(`Chain ${chain.chainName} must have metadata or addresses, preferably both`);
 
@@ -206,5 +172,16 @@ export class LocalRegistry extends BaseRegistry implements IRegistry {
     if (fs.readdirSync(parentDir).length === 0) {
       fs.rmdirSync(parentDir);
     }
+  }
+
+  protected getWarpRoutesForIds(ids: WarpRouteId[]): WarpCoreConfig[] {
+    const configs: WarpCoreConfig[] = [];
+    const warpRoutes = this.listRegistryContent().deployments.warpRoutes;
+    for (const [id, filePath] of Object.entries(warpRoutes)) {
+      if (!ids.includes(id)) continue;
+      const data = fs.readFileSync(filePath, 'utf8');
+      configs.push(yamlParse(data));
+    }
+    return configs;
   }
 }
