@@ -28,7 +28,7 @@ export abstract class BaseRegistry implements IRegistry {
     return 'chains';
   }
 
-  protected getWarpArtifactsPaths({ tokens }: WarpCoreConfig) {
+  getWarpArtifactsPaths({ tokens }: WarpCoreConfig) {
     if (!tokens.length) throw new Error('No tokens provided in config');
     const symbols = new Set<string>(tokens.map((token) => token.symbol.toUpperCase()));
     if (symbols.size !== 1)

@@ -43,4 +43,5 @@ export interface IRegistry {
 
   addWarpRoute(config: WarpCoreConfig): MaybePromise<void>;
   // TODO define more deployment artifact related methods
+  getWarpArtifactsPaths(config: WarpCoreConfig): MaybePromise<{ configPath: string; addressesPath: string }>;
 }
