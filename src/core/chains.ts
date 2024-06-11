@@ -14,10 +14,12 @@ export enum CoreChain {
   celo = 'celo',
   chiado = 'chiado',
   ethereum = 'ethereum',
+  fraxtal = 'fraxtal',
   fuji = 'fuji',
   gnosis = 'gnosis',
   inevm = 'inevm',
   injective = 'injective',
+  linea = 'linea',
   mantapacific = 'mantapacific',
   moonbeam = 'moonbeam',
   nautilus = 'nautilus',
@@ -27,14 +29,17 @@ export enum CoreChain {
   polygon = 'polygon',
   polygonzkevm = 'polygonzkevm',
   proteustestnet = 'proteustestnet',
+  redstone = 'redstone',
   scroll = 'scroll',
   scrollsepolia = 'scrollsepolia',
+  sei = 'sei',
   sepolia = 'sepolia',
   solana = 'solana',
   solanadevnet = 'solanadevnet',
   solanatestnet = 'solanatestnet',
   eclipsetestnet = 'eclipsetestnet',
   viction = 'viction',
+  zetachain = 'zetachain'
 }
 
 export type CoreChainName = keyof typeof CoreChain;
