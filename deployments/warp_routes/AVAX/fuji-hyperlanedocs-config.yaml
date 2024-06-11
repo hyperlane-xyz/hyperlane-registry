@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - chainName: yourchain
+    standard: EvmHypNative
+    totalSupply: 0
+    decimals: 18
+    name: yourchain
+    symbol: ETH
+    isNft: false
+    type: native
+    owner: "0x16F4898F47c085C41d7Cc6b1dc72B91EA617dcBb"
+    mailbox: "0x5F58d75A9caDE4e2b191313223978dF049f93b81"
+    interchainSecurityModule:
+      type: staticAggregationIsm
+      modules:
+        - type: trustedRelayerIsm
+          relayer: "0x16F4898F47c085C41d7Cc6b1dc72B91EA617dcBb"
+        - owner: "0x16F4898F47c085C41d7Cc6b1dc72B91EA617dcBb"
+          type: defaultFallbackRoutingIsm
+          domains: {}
+      threshold: 1
+    addressOrDenom: "0x282c3B7C852cDfC19f749d6951c1e5502a60B6c3"
+    connections:
+      - token: ethereum|fuji|0xE82cC7b7D93939f6A112B636897FEf52D224AEeb
+  - chainName: fuji
+    standard: EvmHypNative
+    totalSupply: 0
+    decimals: 18
+    name: Avalanche
+    symbol: AVAX
+    isNft: false
+    type: native
+    owner: "0x16F4898F47c085C41d7Cc6b1dc72B91EA617dcBb"
+    mailbox: "0x5b6CFf85442B851A8e6eaBd2A4E4507B5135B3B0"
+    interchainSecurityModule:
+      type: staticAggregationIsm
+      modules:
+        - type: trustedRelayerIsm
+          relayer: "0x16F4898F47c085C41d7Cc6b1dc72B91EA617dcBb"
+        - owner: "0x16F4898F47c085C41d7Cc6b1dc72B91EA617dcBb"
+          type: defaultFallbackRoutingIsm
+          domains: {}
+      threshold: 1
+    addressOrDenom: "0xE82cC7b7D93939f6A112B636897FEf52D224AEeb"
+    connections:
+      - token: ethereum|yourchain|0x282c3B7C852cDfC19f749d6951c1e5502a60B6c3
