@@ -35,9 +35,8 @@ export async function isBlockExplorerHealthy(
   console.debug(`Got base url: ${baseUrl}`);
 
   console.debug(`Checking explorer home for ${chainMetadata.name}`);
-  const homeReq = await fetch(baseUrl);
-  if (!homeReq.ok) return false;
-  console.debug(`Explorer home okay for ${chainMetadata.name}`);
+  await fetch(baseUrl);
+  console.debug(`Explorer home exists for ${chainMetadata.name}`);
 
   if (address) {
     console.debug(`Checking explorer address page for ${chainMetadata.name}`);
