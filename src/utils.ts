@@ -5,6 +5,10 @@ export function toYamlString(data: any, prefix?: string): string {
   return prefix ? `${prefix}\n${yamlString}` : yamlString;
 }
 
+export function stripLeadingSlash(path: string): string {
+  return path.startsWith('/') || path.startsWith('\\') ? path.slice(1) : path;
+}
+
 export async function concurrentMap<A, B>(
   concurrency: number,
   xs: A[],
