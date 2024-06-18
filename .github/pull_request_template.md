@@ -9,7 +9,7 @@
 ### Backward compatibility
 
 <!--
-Are these changes backward compatible? Note, that additions are backwards compatible.
+Are these changes backward compatible? Note that additions are backwards compatible.
 
 Yes/No
 -->
