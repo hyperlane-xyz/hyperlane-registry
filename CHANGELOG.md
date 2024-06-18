@@ -1,5 +1,18 @@
 # @hyperlane-xyz/registry
 
+## 2.1.0
+
+### Minor Changes
+
+- a484456: Add Osmosis metadata
+
+### Patch Changes
+
+- 750c136: Add blast to CoreChain enum
+- 594b14e: Fixes for some neutron warp route configs
+- e89a6d3: Add metadata and addresses for fraxtal, linea and sei.
+  Update addresses after adding support for osmosis remote.
+
 ## 2.0.1
 
 ### Patch Changes
