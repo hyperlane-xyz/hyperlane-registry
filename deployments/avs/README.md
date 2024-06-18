@@ -10,4 +10,4 @@ Coming soon.
 
 ## Contributing
 
-New challenegers can be added manually.
+New challengers can be added manually.
