@@ -900,121 +900,121 @@ tokens:
     standard: EvmHypXERC20Lockbox
     name: Renzo Restaked ETH
     symbol: ezETH
-    totalSupply: "2814825071443376154203"
+    # totalSupply: "2814825071443376154203"
     decimals: 18
-    isNft: false
-    type: xERC20Lockbox
-    token: "0xC8140dA31E6bCa19b287cC35531c2212763C2059"
-    owner: "0x0000000000000000000000000000000000000001"
-    mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
-    interchainSecurityModule:
-      type: staticAggregationIsm
-      modules:
-        - owner: "0x0000000000000000000000000000000000000001"
-          type: domainRoutingIsm
-          domains:
-            arbitrum:
-              type: staticAggregationIsm
-              modules:
-                - validators:
-                    - "0xc27032c6bbd48c20005f552af3aaa0dbf14260f3"
-                    - "0x9bCcFAd3BD12Ef0Ee8aE839dD9ED7835BcCaDc9D"
-                  threshold: 1
-                  type: messageIdMultisigIsm
-                - validators:
-                    - "0xc27032c6bbd48c20005f552af3aaa0dbf14260f3"
-                    - "0x9bCcFAd3BD12Ef0Ee8aE839dD9ED7835BcCaDc9D"
-                  threshold: 1
-                  type: merkleRootMultisigIsm
-              threshold: 1
-            optimism:
-              type: staticAggregationIsm
-              modules:
-                - validators:
-                    - "0xe2593D205F5E7F74A50fA900824501084E092eBd"
-                    - "0x6f4cb8e96db5d44422a4495faa73fffb9d30e9e2"
-                  threshold: 1
-                  type: messageIdMultisigIsm
-                - validators:
-                    - "0xe2593D205F5E7F74A50fA900824501084E092eBd"
-                    - "0x6f4cb8e96db5d44422a4495faa73fffb9d30e9e2"
-                  threshold: 1
-                  type: merkleRootMultisigIsm
-              threshold: 1
-            base:
-              type: staticAggregationIsm
-              modules:
-                - validators:
-                    - "0x25BA4eE5268CbfB8D69BAc531Aa10368778702BD"
-                    - "0x9ec803b503e9c7d2611e231521ef3fde73f7a21c"
-                  threshold: 1
-                  type: messageIdMultisigIsm
-                - validators:
-                    - "0x25BA4eE5268CbfB8D69BAc531Aa10368778702BD"
-                    - "0x9ec803b503e9c7d2611e231521ef3fde73f7a21c"
-                  threshold: 1
-                  type: merkleRootMultisigIsm
-              threshold: 1
-            blast:
-              type: staticAggregationIsm
-              modules:
-                - validators:
-                    - "0x54Bb0036F777202371429e062FE6AEE0d59442F9"
-                    - "0x1652d8ba766821cf01aeea34306dfc1cab964a32"
-                  threshold: 1
-                  type: messageIdMultisigIsm
-                - validators:
-                    - "0x54Bb0036F777202371429e062FE6AEE0d59442F9"
-                    - "0x1652d8ba766821cf01aeea34306dfc1cab964a32"
-                  threshold: 1
-                  type: merkleRootMultisigIsm
-              threshold: 1
-            bsc:
-              type: staticAggregationIsm
-              modules:
-                - validators:
-                    - "0x3156Db97a3B3e2dcc3D69FdDfD3e12dc7c937b6D"
-                    - "0x9a0326c43e4713ae2477f09e0f28ffedc24d8266"
-                  threshold: 1
-                  type: messageIdMultisigIsm
-                - validators:
-                    - "0x3156Db97a3B3e2dcc3D69FdDfD3e12dc7c937b6D"
-                    - "0x9a0326c43e4713ae2477f09e0f28ffedc24d8266"
-                  threshold: 1
-                  type: merkleRootMultisigIsm
-              threshold: 1
-            mode:
-              type: staticAggregationIsm
-              modules:
-                - validators:
-                    - "0x7e29608C6E5792bBf9128599ca309Be0728af7B4"
-                    - "0x456fbbe05484fc9f2f38ea09648424f54d6872be"
-                  threshold: 1
-                  type: messageIdMultisigIsm
-                - validators:
-                    - "0x7e29608C6E5792bBf9128599ca309Be0728af7B4"
-                    - "0x456fbbe05484fc9f2f38ea09648424f54d6872be"
-                  threshold: 1
-                  type: merkleRootMultisigIsm
-              threshold: 1
-            linea:
-              type: staticAggregationIsm
-              modules:
-                - validators:
-                    - "0xcb3e44EdD2229860bDBaA58Ba2c3817D111bEE9A"
-                    - "0x06a5a2a429560034d38bf62ca6d470942535947e"
-                  threshold: 1
-                  type: messageIdMultisigIsm
-                - validators:
-                    - "0xcb3e44EdD2229860bDBaA58Ba2c3817D111bEE9A"
-                    - "0x06a5a2a429560034d38bf62ca6d470942535947e"
-                  threshold: 1
-                  type: merkleRootMultisigIsm
-              threshold: 1
-        - owner: "0x0000000000000000000000000000000000000001"
-          type: defaultFallbackRoutingIsm
-          domains: {}
-      threshold: 2
+    # isNft: false
+    # type: xERC20Lockbox
+    # token: "0xC8140dA31E6bCa19b287cC35531c2212763C2059"
+    # owner: "0x0000000000000000000000000000000000000001"
+    # mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
+    # interchainSecurityModule:
+    #   type: staticAggregationIsm
+    #   modules:
+    #     - owner: "0x0000000000000000000000000000000000000001"
+    #       type: domainRoutingIsm
+    #       domains:
+    #         arbitrum:
+    #           type: staticAggregationIsm
+    #           modules:
+    #             - validators:
+    #                 - "0xc27032c6bbd48c20005f552af3aaa0dbf14260f3"
+    #                 - "0x9bCcFAd3BD12Ef0Ee8aE839dD9ED7835BcCaDc9D"
+    #               threshold: 1
+    #               type: messageIdMultisigIsm
+    #             - validators:
+    #                 - "0xc27032c6bbd48c20005f552af3aaa0dbf14260f3"
+    #                 - "0x9bCcFAd3BD12Ef0Ee8aE839dD9ED7835BcCaDc9D"
+    #               threshold: 1
+    #               type: merkleRootMultisigIsm
+    #           threshold: 1
+    #         optimism:
+    #           type: staticAggregationIsm
+    #           modules:
+    #             - validators:
+    #                 - "0xe2593D205F5E7F74A50fA900824501084E092eBd"
+    #                 - "0x6f4cb8e96db5d44422a4495faa73fffb9d30e9e2"
+    #               threshold: 1
+    #               type: messageIdMultisigIsm
+    #             - validators:
+    #                 - "0xe2593D205F5E7F74A50fA900824501084E092eBd"
+    #                 - "0x6f4cb8e96db5d44422a4495faa73fffb9d30e9e2"
+    #               threshold: 1
+    #               type: merkleRootMultisigIsm
+    #           threshold: 1
+    #         base:
+    #           type: staticAggregationIsm
+    #           modules:
+    #             - validators:
+    #                 - "0x25BA4eE5268CbfB8D69BAc531Aa10368778702BD"
+    #                 - "0x9ec803b503e9c7d2611e231521ef3fde73f7a21c"
+    #               threshold: 1
+    #               type: messageIdMultisigIsm
+    #             - validators:
+    #                 - "0x25BA4eE5268CbfB8D69BAc531Aa10368778702BD"
+    #                 - "0x9ec803b503e9c7d2611e231521ef3fde73f7a21c"
+    #               threshold: 1
+    #               type: merkleRootMultisigIsm
+    #           threshold: 1
+    #         blast:
+    #           type: staticAggregationIsm
+    #           modules:
+    #             - validators:
+    #                 - "0x54Bb0036F777202371429e062FE6AEE0d59442F9"
+    #                 - "0x1652d8ba766821cf01aeea34306dfc1cab964a32"
+    #               threshold: 1
+    #               type: messageIdMultisigIsm
+    #             - validators:
+    #                 - "0x54Bb0036F777202371429e062FE6AEE0d59442F9"
+    #                 - "0x1652d8ba766821cf01aeea34306dfc1cab964a32"
+    #               threshold: 1
+    #               type: merkleRootMultisigIsm
+    #           threshold: 1
+    #         bsc:
+    #           type: staticAggregationIsm
+    #           modules:
+    #             - validators:
+    #                 - "0x3156Db97a3B3e2dcc3D69FdDfD3e12dc7c937b6D"
+    #                 - "0x9a0326c43e4713ae2477f09e0f28ffedc24d8266"
+    #               threshold: 1
+    #               type: messageIdMultisigIsm
+    #             - validators:
+    #                 - "0x3156Db97a3B3e2dcc3D69FdDfD3e12dc7c937b6D"
+    #                 - "0x9a0326c43e4713ae2477f09e0f28ffedc24d8266"
+    #               threshold: 1
+    #               type: merkleRootMultisigIsm
+    #           threshold: 1
+    #         mode:
+    #           type: staticAggregationIsm
+    #           modules:
+    #             - validators:
+    #                 - "0x7e29608C6E5792bBf9128599ca309Be0728af7B4"
+    #                 - "0x456fbbe05484fc9f2f38ea09648424f54d6872be"
+    #               threshold: 1
+    #               type: messageIdMultisigIsm
+    #             - validators:
+    #                 - "0x7e29608C6E5792bBf9128599ca309Be0728af7B4"
+    #                 - "0x456fbbe05484fc9f2f38ea09648424f54d6872be"
+    #               threshold: 1
+    #               type: merkleRootMultisigIsm
+    #           threshold: 1
+    #         linea:
+    #           type: staticAggregationIsm
+    #           modules:
+    #             - validators:
+    #                 - "0xcb3e44EdD2229860bDBaA58Ba2c3817D111bEE9A"
+    #                 - "0x06a5a2a429560034d38bf62ca6d470942535947e"
+    #               threshold: 1
+    #               type: messageIdMultisigIsm
+    #             - validators:
+    #                 - "0xcb3e44EdD2229860bDBaA58Ba2c3817D111bEE9A"
+    #                 - "0x06a5a2a429560034d38bf62ca6d470942535947e"
+    #               threshold: 1
+    #               type: merkleRootMultisigIsm
+    #           threshold: 1
+    #     - owner: "0x0000000000000000000000000000000000000001"
+    #       type: defaultFallbackRoutingIsm
+    #       domains: {}
+    #   threshold: 2
     addressOrDenom: "0xdFf621F952c23972dFD3A9E5d7B9f6339e9c078B"
     connections:
       - token: ethereum|bsc|0x6266e803057fa68C35018C3FB0B59db7129C23BB
