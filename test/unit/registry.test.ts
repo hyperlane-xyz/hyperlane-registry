@@ -17,6 +17,10 @@ const MOCK_DISPLAY_NAME = 'faketherum';
 const MOCK_SYMBOL = 'MOCK';
 const MOCK_ADDRESS = '0x0000000000000000000000000000000000000001';
 
+// Used to verify the GithubRegistry is fetching the correct data
+// Must be kept in sync with value in canonical registry's main branch
+const ETH_MAILBOX_ADDRESS = '0xc005dc82818d67AF737725bD4bf75435d065D239';
+
 describe('Registry utilities', () => {
   const githubRegistry = new GithubRegistry();
   expect(githubRegistry.repoOwner).to.eql('hyperlane-xyz');
@@ -63,6 +67,9 @@ describe('Registry utilities', () => {
       const addresses = await registry.getAddresses();
       expect(Object.keys(addresses).length).to.be.greaterThan(0);
       expect(addresses['ethereum'].mailbox.substring(0, 2)).to.eql('0x');
+      if (registry.type === RegistryType.Github) {
+        expect(addresses['ethereum'].mailbox).to.eql(ETH_MAILBOX_ADDRESS);
+      }
     }).timeout(10_000);
 
     it(`Fetches single chain addresses for ${registry.type} registry`, async () => {
