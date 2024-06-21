@@ -140,22 +140,22 @@ describe('Registry utilities', () => {
     it('Merges metadata from multiple registries', async () => {
       const mergedMetadata = await mergedRegistry.getMetadata();
       const localMetadata = await localRegistry.getMetadata();
-      expect(mergedMetadata.ethereum.chainId).to.eql(1);
+      expect(mergedMetadata['ethereum'].chainId).to.eql(1);
       // Confirm the partial registry metadata is merged
-      expect(mergedMetadata.ethereum.displayName).to.eql(MOCK_DISPLAY_NAME);
-      expect(localMetadata.ethereum.displayName).to.not.eql(MOCK_DISPLAY_NAME);
+      expect(mergedMetadata['ethereum'].displayName).to.eql(MOCK_DISPLAY_NAME);
+      expect(localMetadata['ethereum'].displayName).to.not.eql(MOCK_DISPLAY_NAME);
       // Confirm other chains are not affected
-      expect(mergedMetadata.arbitrum).to.eql(localMetadata.arbitrum);
+      expect(mergedMetadata['arbitrum']).to.eql(localMetadata['arbitrum']);
     });
 
     it('Merges addresses from multiple registries', async () => {
       const mergedAddresses = await mergedRegistry.getAddresses();
       const localAddresses = await localRegistry.getAddresses();
       // Confirm the partial registry metadata is merged
-      expect(mergedAddresses.ethereum.mailbox).to.eql(MOCK_ADDRESS);
-      expect(localAddresses.ethereum.mailbox).to.not.eql(MOCK_ADDRESS);
+      expect(mergedAddresses['ethereum'].mailbox).to.eql(MOCK_ADDRESS);
+      expect(localAddresses['ethereum'].mailbox).to.not.eql(MOCK_ADDRESS);
       // Confirm other chains are not affected
-      expect(localAddresses.arbitrum).to.eql(localAddresses.arbitrum);
+      expect(localAddresses['arbitrum']).to.eql(localAddresses['arbitrum']);
     });
   });
 });
