@@ -1,5 +1,13 @@
 # @hyperlane-xyz/registry
 
+## 2.1.1
+
+### Patch Changes
+
+- d712147: Add `gnosisSafeTransactionServiceUrl` for `blast` and `mode` networks
+- e03890d: Added core deployment for arbitrum sepolia
+- 499ffe7: Fix bug with GithubRegistry file fetching
+
 ## 2.1.0
 
 ### Minor Changes
