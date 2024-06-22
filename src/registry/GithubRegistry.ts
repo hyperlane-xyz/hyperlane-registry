@@ -180,8 +180,10 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
       return acc;
     }, {});
 
-    const results = await this.fetchYamlFiles<T>(Object.values(fileUrls));
-    const chainNameWithResult = chainNames.map((chainName, i): [ChainName, T] => [
+    const chainsToFetch = Object.keys(fileUrls);
+    const filesToFetch = chainsToFetch.map((c) => fileUrls[c]);
+    const results = await this.fetchYamlFiles<T>(filesToFetch);
+    const chainNameWithResult = chainsToFetch.map((chainName, i): [ChainName, T] => [
       chainName,
       results[i],
     ]);
