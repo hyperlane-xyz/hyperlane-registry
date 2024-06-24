@@ -1,9 +1,10 @@
 ---
 blockExplorers:
-  - apiUrl: https://api.taikoscan.io/api //rate limit of 1/5sec applied, need API key
+  # rate limit of 1/5sec applied, api key needed
+  - apiUrl: https://api.taikoscan.io/api
     family: etherscan
     name: Taikoscan
-    url: https://taikoscan.io/
+    url: https://taikoscan.io
 blocks:
   confirmations: 1
   estimateBlockTime: 2
@@ -12,7 +13,6 @@ chainId: 167000
 displayName: Taiko
 domainId: 167000
 gasCurrencyCoinGeckoId: ethereum
-gnosisSafeTransactionServiceUrl:
 name: taiko
 nativeToken:
   decimals: 18
