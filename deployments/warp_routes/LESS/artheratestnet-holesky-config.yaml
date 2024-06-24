@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - chainName: artheratestnet
+    standard: EvmHypCollateral
+    name: Lessgas
+    symbol: LESS
+    totalSupply: "1003008000000000000000000"
+    decimals: 18
+    isNft: false
+    type: collateral
+    token: "0xcae706200441f8D3f8E880B7C977c57f0c4747d5"
+    owner: "0xC34ad0296f606749Ff8F77b75A7d577eB2CDF846"
+    mailbox: "0x2201B4cC55c82EE23554C9CDA5CFF62BBa01c69D"
+    interchainSecurityModule:
+      type: staticAggregationIsm
+      modules:
+        - type: trustedRelayerIsm
+          relayer: "0xC34ad0296f606749Ff8F77b75A7d577eB2CDF846"
+        - owner: "0xC34ad0296f606749Ff8F77b75A7d577eB2CDF846"
+          type: defaultFallbackRoutingIsm
+          domains: {}
+      threshold: 1
+    addressOrDenom: "0x48867511B5c9c6A0E28b36553cd0DC9A0A95A6D2"
+    collateralAddressOrDenom: "0xcae706200441f8D3f8E880B7C977c57f0c4747d5"
+    connections:
+      - token: ethereum|holesky|0x2201B4cC55c82EE23554C9CDA5CFF62BBa01c69D
+  - chainName: holesky
+    standard: EvmHypSynthetic
+    name: Lessgas
+    symbol: LESS
+    totalSupply: "1003008000000000000000000"
+    decimals: 18
+    isNft: false
+    type: synthetic
+    owner: "0xC34ad0296f606749Ff8F77b75A7d577eB2CDF846"
+    mailbox: "0x46f7C5D896bbeC89bE1B19e4485e59b4Be49e9Cc"
+    interchainSecurityModule:
+      type: staticAggregationIsm
+      modules:
+        - type: trustedRelayerIsm
+          relayer: "0xC34ad0296f606749Ff8F77b75A7d577eB2CDF846"
+        - owner: "0xC34ad0296f606749Ff8F77b75A7d577eB2CDF846"
+          type: defaultFallbackRoutingIsm
+          domains: {}
+      threshold: 1
+    addressOrDenom: "0x2201B4cC55c82EE23554C9CDA5CFF62BBa01c69D"
+    connections:
+      - token: ethereum|artheratestnet|0x48867511B5c9c6A0E28b36553cd0DC9A0A95A6D2
