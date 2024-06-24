@@ -1,24 +1,24 @@
 ---
 blockExplorers:
-  - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/81457/etherscan/api
-    family: routescan
-    name: Blast Explorer
-    url: https://blastexplorer.io
+  - apiUrl: https://api.taikoscan.io/api //rate limit of 1/5sec applied, need API key
+    family: etherscan
+    name: Taikoscan
+    url: https://taikoscan.io/
 blocks:
   confirmations: 1
   estimateBlockTime: 2
   reorgPeriod: 1
-chainId: 81457
-displayName: Blast
-domainId: 81457
+chainId: 167000
+displayName: Taiko
+domainId: 167000
 gasCurrencyCoinGeckoId: ethereum
-gnosisSafeTransactionServiceUrl: https://transaction.blast-safe.io
-name: blast
+gnosisSafeTransactionServiceUrl:
+name: taiko
 nativeToken:
   decimals: 18
   name: Ether
   symbol: ETH
 protocol: ethereum
 rpcUrls:
-  - http: https://rpc.blast.io
+  - http: https://rpc.mainnet.taiko.xyz
 technicalStack: other
