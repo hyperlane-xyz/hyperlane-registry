@@ -2,9 +2,9 @@ name: combine
 
 on:
   push:
+    branches-ignore:
+      - main
   pull_request:
-    types: [synchronize, opened, reopened]
-    branches: [main]
   # Allows you to run this workflow manually
   workflow_dispatch:
 
@@ -12,7 +12,6 @@ jobs:
   combine:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
       - uses: actions/checkout@v3
       - uses: actions/cache@v3
         with:
@@ -21,7 +20,7 @@ jobs:
             .yarn/cache
           key: ${{ runner.os }}-yarn-cache-${{ hashFiles('./yarn.lock') }}
 
-      - name: Yarn install
+      - name: yarn-install
         run: |
             yarn install
             CHANGES=$(git status -s)
@@ -31,17 +30,17 @@ jobs:
               exit 1
             fi
 
-      - name: Configure Git
+      - name: configure-git
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - name: Combine data
+      - name: combine-data
         run: |
           echo "Assembling chain metadata and addresses together..."
           yarn build
 
-      - name: Commit changes
+      - name: commit-changes
         run: |
           git add .
           git commit -m "Update chain metadata and address files"
