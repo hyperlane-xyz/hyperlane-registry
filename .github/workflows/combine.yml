@@ -1,4 +1,4 @@
-name: assemble-data
+name: combine
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  modify-and-push:
+  combine:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
