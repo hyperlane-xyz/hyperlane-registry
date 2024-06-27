@@ -1,4 +1,30 @@
 # AUTO-GENERATED; DO NOT EDIT MANUALLY
+alfajores:
+  blockExplorers:
+    - apiUrl: https://api-alfajores.celoscan.io/api
+      family: etherscan
+      name: CeloScan
+      url: https://alfajores.celoscan.io
+    - apiUrl: https://explorer.celo.org/alfajores/api
+      family: blockscout
+      name: Blockscout
+      url: https://explorer.celo.org/alfajores
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 5
+    reorgPeriod: 0
+  chainId: 44787
+  displayName: Alfajores
+  domainId: 44787
+  isTestnet: true
+  name: alfajores
+  nativeToken:
+    decimals: 18
+    name: CELO
+    symbol: CELO
+  protocol: ethereum
+  rpcUrls:
+    - http: https://alfajores-forno.celo-testnet.org
 ancient8:
   blockExplorers:
     - apiUrl: https://scan.ancient8.gg/api
@@ -77,30 +103,6 @@ arbitrumsepolia:
     - http: https://public.stackup.sh/api/v1/node/arbitrum-sepolia
     - http: https://arbitrum-sepolia.blockpi.network/v1/rpc/public
   technicalStack: arbitrumnitro
-artheratestnet:
-  blockExplorers:
-    - apiUrl: https://explorer-test.arthera.net/api
-      family: blockscout
-      name: Blockscout
-      url: https://explorer-test.arthera.net
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 1
-    reorgPeriod: 0
-  chainId: 10243
-  displayName: Arthera Testnet
-  domainId: 10243
-  isTestnet: true
-  name: artheratestnet
-  nativeToken:
-    decimals: 18
-    name: Arthera
-    symbol: AA
-  protocol: ethereum
-  rpcUrls:
-    - http: https://rpc-test.arthera.net
-      pagination:
-        maxBlockRange: 10000
 avalanche:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api
