@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x2201B4cC55c82EE23554C9CDA5CFF62BBa01c69D"
+    chainName: celo
+    connections:
+      - token: ethereum|arthera|0xa6D019ea6D132FF091d5bef0B077EC1e045c9461
+    decimals: 18
+    isNft: false
+    mailbox: "0x50da3B3907A08a24fe4999F4Dcf337E8dC7954bb"
+    name: Lessgas
+    owner: "0xC34ad0296f606749Ff8F77b75A7d577eB2CDF846"
+    standard: EvmHypSynthetic
+    symbol: LESS
+    totalSupply: 0
+    type: synthetic
+  - addressOrDenom: "0xa6D019ea6D132FF091d5bef0B077EC1e045c9461"
+    chainName: arthera
+    collateralAddressOrDenom: "0xdc93F137EdfB14133686e90de9C845A7c7Fca3De"
+    connections:
+      - token: ethereum|celo|0x2201B4cC55c82EE23554C9CDA5CFF62BBa01c69D
+    decimals: 18
+    isNft: false
+    mailbox: "0x52F3da3e4eDB7C5BDd6a65f6Fd3bd9b41F3d729d"
+    name: Lessgas
+    owner: "0xC34ad0296f606749Ff8F77b75A7d577eB2CDF846"
+    standard: EvmHypCollateral
+    symbol: LESS
+    token: "0xdc93F137EdfB14133686e90de9C845A7c7Fca3De"
+    totalSupply: 0
+    type: collateral
