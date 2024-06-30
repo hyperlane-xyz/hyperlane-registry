@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://explorer.execution.mainnet.lukso.network/api
+    family: blockscout
+    name: LUKSOExplorer
+    url: https://explorer.execution.mainnet.lukso.network/
+name: lukso
+displayName: LUKSO
+chainId: 42
+domainId: 42
+protocol: ethereum
+rpcUrls:
+  - http: https://42.rpc.thirdweb.com
+blocks:
+  confirmations: 1
+  reorgPeriod: 14
+  estimateBlockTime: 12
+nativeToken:
+  symbol: LYX
+  name: LYX
+  decimals: 18
