@@ -49,8 +49,8 @@ export enum CoreChain {
 export type CoreChainName = keyof typeof CoreChain;
 
 export const CoreMainnets: Array<CoreChainName> = [
-  CoreChain.arbitrum,
   CoreChain.ancient8,
+  CoreChain.arbitrum,
   CoreChain.avalanche,
   CoreChain.base,
   CoreChain.blast,
@@ -58,19 +58,24 @@ export const CoreMainnets: Array<CoreChainName> = [
   CoreChain.bsc,
   CoreChain.celo,
   CoreChain.ethereum,
+  CoreChain.fraxtal,
   CoreChain.gnosis,
   CoreChain.inevm,
   CoreChain.injective,
-  CoreChain.neutron,
+  CoreChain.linea,
   CoreChain.mantapacific,
   CoreChain.mantle,
   CoreChain.moonbeam,
+  CoreChain.neutron,
   CoreChain.optimism,
   CoreChain.polygon,
   CoreChain.polygonzkevm,
+  CoreChain.redstone,
   CoreChain.scroll,
+  CoreChain.sei,
   CoreChain.taiko,
   CoreChain.viction,
+  CoreChain.zetachain,
   // CoreChains.solana,
 ];
 
@@ -81,6 +86,7 @@ export const CoreTestnets: Array<CoreChainName> = [
   CoreChain.eclipsetestnet,
   CoreChain.fuji,
   CoreChain.plumetestnet,
+  CoreChain.proteustestnet,
   CoreChain.scrollsepolia,
   CoreChain.sepolia,
   CoreChain.solanadevnet,
