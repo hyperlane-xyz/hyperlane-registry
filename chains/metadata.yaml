@@ -103,6 +103,30 @@ arbitrumsepolia:
     - http: https://public.stackup.sh/api/v1/node/arbitrum-sepolia
     - http: https://arbitrum-sepolia.blockpi.network/v1/rpc/public
   technicalStack: arbitrumnitro
+artheratestnet:
+  blockExplorers:
+    - apiUrl: https://explorer-test.arthera.net/api
+      family: blockscout
+      name: Blockscout
+      url: https://explorer-test.arthera.net
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 10243
+  displayName: Arthera Testnet
+  domainId: 10243
+  isTestnet: true
+  name: artheratestnet
+  nativeToken:
+    decimals: 18
+    name: Arthera
+    symbol: AA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc-test.arthera.net
+      pagination:
+        maxBlockRange: 10000
 avalanche:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api
@@ -201,6 +225,30 @@ blast:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.blast.io
+  technicalStack: other
+bob:
+  blockExplorers:
+    - apiUrl: https://explorer.gobob.xyz/api
+      family: blockscout
+      name: BOB Explorer
+      url: https://explorer.gobob.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 60808
+  displayName: BOB
+  domainId: 60808
+  gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://transaction.safe.gobob.xyz
+  name: bob
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.gobob.xyz
   technicalStack: other
 bsc:
   blockExplorers:
@@ -389,6 +437,27 @@ fuji:
     - http: https://api.avax-test.network/ext/bc/C/rpc
       pagination:
         maxBlockRange: 2048
+fuse:
+  blockExplorers:
+    - apiUrl: https://explorer.fuse.io/api
+      family: etherscan
+      name: FuseExplorer
+      url: https://explorer.fuse.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 5
+  chainId: 122
+  displayName: Fuse
+  domainId: 122
+  gasCurrencyCoinGeckoId: fuse-network-token
+  name: fuse
+  nativeToken:
+    decimals: 18
+    name: FUSE
+    symbol: FUSE
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.fuse.io
 gnosis:
   blockExplorers:
     - apiUrl: https://api.gnosisscan.io/api
@@ -533,6 +602,30 @@ mantapacific:
   protocol: ethereum
   rpcUrls:
     - http: https://pacific-rpc.manta.network/http
+mantle:
+  blockExplorers:
+    - apiUrl: https://explorer.mantle.xyz/api
+      family: blockscout
+      name: Mantle Mainnet Explorer
+      url: https://explorer.mantle.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 5000
+  displayName: Mantle
+  domainId: 5000
+  gasCurrencyCoinGeckoId: mantle
+  gnosisSafeTransactionServiceUrl: https://transaction.multisig.mantle.xyz
+  name: mantle
+  nativeToken:
+    decimals: 18
+    name: Mantle
+    symbol: MNT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.mantle.xyz
+  technicalStack: other
 mode:
   blockExplorers:
     - apiUrl: https://explorer.mode.network/api
@@ -1005,6 +1098,30 @@ stride:
   slip44: 118
   transactionOverrides:
     gasPrice: "0.0025"
+taiko:
+  blockExplorers:
+    - apiUrl: https://api.taikoscan.io/api
+      family: etherscan
+      name: Taikoscan
+      url: https://taikoscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 12
+    reorgPeriod: 1
+  chainId: 167000
+  displayName: Taiko
+  domainId: 167000
+  gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://transaction.safe.taiko.xyz
+  name: taiko
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.mainnet.taiko.xyz
+  technicalStack: other
 viction:
   blockExplorers:
     - apiUrl: https://www.vicscan.xyz/api
@@ -1051,3 +1168,25 @@ zetachain:
   rpcUrls:
     - http: https://zetachain-evm.blockpi.network/v1/rpc/public
     - http: https://zetachain-athens-evm.blockpi.network/v1/rpc/public
+zora:
+  blockExplorers:
+    - apiUrl: https://explorer.zora.energy/api
+      family: blockscout
+      name: Zora Explorer
+      url: https://explorer.zora.energy
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 7777777
+  displayName: Zora
+  domainId: 7777777
+  gasCurrencyCoinGeckoId: ethereum
+  name: zora
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.zora.energy
