@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x48867511B5c9c6A0E28b36553cd0DC9A0A95A6D2"
+    chainName: artheratestnet
+    collateralAddressOrDenom: "0xcae706200441f8D3f8E880B7C977c57f0c4747d5"
+    connections:
+      - token: ethereum|holesky|0x2201B4cC55c82EE23554C9CDA5CFF62BBa01c69D
+    decimals: 18
+    logoURI: /deployments/warp_routes/LESS/logo.svg
+    name: Lessgas
+    standard: EvmHypCollateral
+    symbol: LESS
+  - addressOrDenom: "0x2201B4cC55c82EE23554C9CDA5CFF62BBa01c69D"
+    chainName: holesky
+    connections:
+      - token: ethereum|artheratestnet|0x48867511B5c9c6A0E28b36553cd0DC9A0A95A6D2
+    decimals: 18
+    logoURI: /deployments/warp_routes/LESS/logo.svg
+    name: Lessgas
+    standard: EvmHypSynthetic
+    symbol: LESS
