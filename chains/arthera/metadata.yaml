@@ -1,4 +1,9 @@
 # yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://explorer.arthera.net/api
+    family: blockscout
+    name: Blockscout
+    url: https://explorer.arthera.net
 blocks:
   confirmations: 1
   estimateBlockTime: 1
@@ -14,3 +19,5 @@ nativeToken:
 protocol: ethereum
 rpcUrls:
   - http: https://rpc.arthera.net
+    pagination:
+      maxBlockRange: 10000
