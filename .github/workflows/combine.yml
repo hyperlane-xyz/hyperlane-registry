@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.head_ref || github.sha }}
           # This action secret contains a fine-grained personal access token with permissions to read/write repo content
           # It is necessary because the default GITHUB_TOKEN cannot re-trigger workflows after pushing
           token: ${{ secrets.COMBINE_CI_TOKEN }}
