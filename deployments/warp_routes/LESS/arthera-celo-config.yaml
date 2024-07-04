@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xa6D019ea6D132FF091d5bef0B077EC1e045c9461"
+    chainName: arthera
+    collateralAddressOrDenom: "0xdc93F137EdfB14133686e90de9C845A7c7Fca3De"
+    connections:
+      - token: ethereum|celo|0x2201B4cC55c82EE23554C9CDA5CFF62BBa01c69D
+    decimals: 18
+    logoURI: /deployments/warp_routes/LESS/logo.svg
+    name: Lessgas
+    standard: EvmHypCollateral
+    symbol: LESS
+  - addressOrDenom: "0x2201B4cC55c82EE23554C9CDA5CFF62BBa01c69D"
+    chainName: celo
+    connections:
+      - token: ethereum|arthera|0xa6D019ea6D132FF091d5bef0B077EC1e045c9461
+    decimals: 18
+    logoURI: /deployments/warp_routes/LESS/logo.svg
+    name: Lessgas
+    standard: EvmHypSynthetic
+    symbol: LESS
