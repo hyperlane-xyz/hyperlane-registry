@@ -600,6 +600,49 @@ linea:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.linea.build
+lukso:
+  blockExplorers:
+    - apiUrl: https://explorer.execution.mainnet.lukso.network/api
+      family: blockscout
+      name: LUKSO Mainnet Explorer
+      url: https://explorer.execution.mainnet.lukso.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 12
+    reorgPeriod: 14
+  chainId: 42
+  displayName: LUKSO
+  domainId: 42
+  name: lukso
+  nativeToken:
+    decimals: 18
+    name: LYX
+    symbol: LYX
+  protocol: ethereum
+  rpcUrls:
+    - http: https://42.rpc.thirdweb.com
+luksotestnet:
+  blockExplorers:
+    - apiUrl: https://api.explorer.execution.testnet.lukso.network/api
+      family: blockscout
+      name: LUKSO Testnet Explorer
+      url: https://explorer.execution.testnet.lukso.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 12
+    reorgPeriod: 14
+  chainId: 4201
+  displayName: LUKSO Testnet
+  domainId: 4201
+  isTestnet: true
+  name: luksotestnet
+  nativeToken:
+    decimals: 18
+    name: LYXt
+    symbol: LYXt
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.testnet.lukso.network
 mantapacific:
   blockExplorers:
     - apiUrl: https://pacific-explorer.manta.network/api
