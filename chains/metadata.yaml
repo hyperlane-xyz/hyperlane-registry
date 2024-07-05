@@ -10,7 +10,7 @@ alfajores:
       name: Blockscout
       url: https://explorer.celo.org/alfajores
   blocks:
-    confirmations: 1
+    confirmations: 2
     estimateBlockTime: 5
     reorgPeriod: 0
   chainId: 44787
@@ -103,6 +103,29 @@ arbitrumsepolia:
     - http: https://public.stackup.sh/api/v1/node/arbitrum-sepolia
     - http: https://arbitrum-sepolia.blockpi.network/v1/rpc/public
   technicalStack: arbitrumnitro
+arthera:
+  blockExplorers:
+    - apiUrl: https://explorer.arthera.net/api
+      family: blockscout
+      name: Blockscout
+      url: https://explorer.arthera.net
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 10242
+  displayName: Arthera
+  domainId: 10242
+  name: arthera
+  nativeToken:
+    decimals: 18
+    name: Arthera
+    symbol: AA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.arthera.net
+      pagination:
+        maxBlockRange: 10000
 artheratestnet:
   blockExplorers:
     - apiUrl: https://explorer-test.arthera.net/api
@@ -609,7 +632,7 @@ mantle:
       name: Mantle Mainnet Explorer
       url: https://explorer.mantle.xyz
   blocks:
-    confirmations: 1
+    confirmations: 3
     estimateBlockTime: 2
     reorgPeriod: 1
   chainId: 5000
