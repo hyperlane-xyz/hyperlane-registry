@@ -11,6 +11,9 @@ import { MergedRegistry } from '../../src/registry/MergedRegistry.js';
 import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
 import { ChainAddresses } from '../../src/types.js';
 
+// TODO switch back to 'main' once PR #78 is merged
+const GITHUB_REGISTRY_BRANCH = 'rossy/combined-chain-data';
+
 const MOCK_CHAIN_NAME = 'mockchain';
 const MOCK_CHAIN_NAME2 = 'mockchain2';
 const MOCK_DISPLAY_NAME = 'faketherum';
@@ -22,10 +25,10 @@ const MOCK_ADDRESS = '0x0000000000000000000000000000000000000001';
 const ETH_MAILBOX_ADDRESS = '0xc005dc82818d67AF737725bD4bf75435d065D239';
 
 describe('Registry utilities', () => {
-  const githubRegistry = new GithubRegistry();
+  const githubRegistry = new GithubRegistry({ branch: GITHUB_REGISTRY_BRANCH });
   expect(githubRegistry.repoOwner).to.eql('hyperlane-xyz');
   expect(githubRegistry.repoName).to.eql('hyperlane-registry');
-  expect(githubRegistry.branch).to.eql('main');
+  expect(githubRegistry.branch).to.eql(GITHUB_REGISTRY_BRANCH);
 
   const localRegistry = new FileSystemRegistry({ uri: './' });
   expect(localRegistry.uri).to.be.a('string');

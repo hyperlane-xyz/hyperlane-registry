@@ -2,7 +2,7 @@
 import { ChainMetadataSchemaObject, WarpCoreConfigSchema } from '@hyperlane-xyz/sdk';
 import { pick } from '@hyperlane-xyz/utils';
 import fs from 'fs';
-import { parse } from 'yaml';
+import { parse, stringify } from 'yaml';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import { CoreChains } from '../src/core/chains';
 import { warpRouteConfigToId } from '../src/registry/warp-utils';
@@ -73,6 +73,17 @@ function createChainFiles() {
     // Copy the logo file
     fs.copyFileSync(`${inDirPath}/logo.svg`, `${assetOutPath}/logo.svg`);
   }
+}
+
+// Update the combined metadata and addresses files
+// These reduce the fetches needed to get all chain data
+function updateCombinedChainFiles() {
+  console.log('Updating combined chain metadata and addresses files');
+  const AUTO_GEN_PREFIX = '# AUTO-GENERATED; DO NOT EDIT MANUALLY';
+  const combinedMetadata = stringify(chainMetadata, { sortMapEntries: true });
+  const combinedAddresses = stringify(chainAddresses, { sortMapEntries: true });
+  fs.writeFileSync('./chains/metadata.yaml', `${AUTO_GEN_PREFIX}\n${combinedMetadata}`);
+  fs.writeFileSync('./chains/addresses.yaml', `${AUTO_GEN_PREFIX}\n${combinedAddresses}`);
 }
 
 function createWarpConfigFiles() {
@@ -190,6 +201,7 @@ function updateJsonSchemas() {
 
 createTmpDir();
 createChainFiles();
+updateCombinedChainFiles();
 createWarpConfigFiles();
 generateChainTsCode();
 generateWarpConfigTsCode();
