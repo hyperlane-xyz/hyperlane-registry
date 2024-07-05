@@ -1,5 +1,18 @@
 # @hyperlane-xyz/registry
 
+## 2.3.0
+
+### Minor Changes
+
+- 860a47f: Add combined chain address and metadata files
+- b49e5f8: Add LUKSO and LUKSO testnet chains
+- e38ce13: Added core deployment for `arthera` mainnet and LESS warp route between `arthera`-`celo`
+- 979cede: Update to @hyperlane/sdk 4.1.0 and add deployer details for each chain
+
+### Patch Changes
+
+- 8f71149: Sort entries in YAML as required by CI
+
 ## 2.2.1
 
 ### Patch Changes
