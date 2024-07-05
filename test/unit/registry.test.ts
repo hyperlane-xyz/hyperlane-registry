@@ -11,8 +11,7 @@ import { MergedRegistry } from '../../src/registry/MergedRegistry.js';
 import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
 import { ChainAddresses } from '../../src/types.js';
 
-// TODO switch back to 'main' once PR #78 is merged
-const GITHUB_REGISTRY_BRANCH = 'rossy/combined-chain-data';
+const GITHUB_REGISTRY_BRANCH = 'main';
 
 const MOCK_CHAIN_NAME = 'mockchain';
 const MOCK_CHAIN_NAME2 = 'mockchain2';
