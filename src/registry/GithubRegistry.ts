@@ -103,7 +103,8 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
   async getMetadata(): Promise<ChainMap<ChainMetadata>> {
     if (this.metadataCache && this.isMetadataCacheFull) return this.metadataCache;
-    const chainMetadata = await this.fetchChainFiles<ChainMetadata>('metadata');
+    const combinedDataUrl = this.getRawContentUrl(`${this.getChainsPath()}/metadata.yaml`);
+    const chainMetadata = await this.fetchYamlFile<ChainMap<ChainMetadata>>(combinedDataUrl);
     this.isMetadataCacheFull = true;
     return (this.metadataCache = chainMetadata);
   }
@@ -118,7 +119,8 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
   async getAddresses(): Promise<ChainMap<ChainAddresses>> {
     if (this.addressCache && this.isAddressCacheFull) return this.addressCache;
-    const chainAddresses = await this.fetchChainFiles<ChainAddresses>('addresses');
+    const combinedDataUrl = this.getRawContentUrl(`${this.getChainsPath()}/addresses.yaml`);
+    const chainAddresses = await this.fetchYamlFile<ChainMap<ChainAddresses>>(combinedDataUrl);
     this.isAddressCacheFull = true;
     return (this.addressCache = chainAddresses);
   }
@@ -165,37 +167,14 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     return `https://raw.githubusercontent.com/${this.repoOwner}/${this.repoName}/${this.branch}/${path}`;
   }
 
-  // Fetches all files of a particular type in parallel
-  // Defaults to all known chains if chainNames is not provided
-  protected async fetchChainFiles<T>(
-    fileName: keyof ChainFiles,
-    chainNames?: ChainName[],
-  ): Promise<ChainMap<T>> {
-    const repoContents = await this.listRegistryContent();
-    chainNames ||= Object.keys(repoContents.chains);
-
-    const fileUrls = chainNames.reduce<ChainMap<string>>((acc, chainName) => {
-      const fileUrl = repoContents.chains[chainName][fileName];
-      if (fileUrl) acc[chainName] = fileUrl;
-      return acc;
-    }, {});
-
-    const chainsToFetch = Object.keys(fileUrls);
-    const filesToFetch = chainsToFetch.map((c) => fileUrls[c]);
-    const results = await this.fetchYamlFiles<T>(filesToFetch);
-    const chainNameWithResult = chainsToFetch.map((chainName, i): [ChainName, T] => [
-      chainName,
-      results[i],
-    ]);
-    return Object.fromEntries(chainNameWithResult);
-  }
-
   protected async fetchChainFile<T>(
     fileName: keyof ChainFiles,
     chainName: ChainName,
   ): Promise<T | null> {
-    const results = await this.fetchChainFiles<T>(fileName, [chainName]);
-    return results[chainName] ?? null;
+    const repoContents = await this.listRegistryContent();
+    const fileUrl = repoContents.chains[chainName]?.[fileName];
+    if (!fileUrl) return null;
+    return this.fetchYamlFile<T>(fileUrl);
   }
 
   protected fetchYamlFiles<T>(urls: string[]): Promise<T[]> {
