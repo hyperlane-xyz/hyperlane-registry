@@ -2,20 +2,20 @@
 blockExplorers:
   - apiUrl: https://explorer.execution.mainnet.lukso.network/api
     family: blockscout
-    name: LUKSOExplorer
+    name: LUKSO Mainnet Explorer
     url: https://explorer.execution.mainnet.lukso.network/
-name: lukso
-displayName: LUKSO
+blocks:
+  confirmations: 1
+  estimateBlockTime: 12
+  reorgPeriod: 14
 chainId: 42
+displayName: LUKSO
 domainId: 42
+name: lukso
+nativeToken:
+  decimals: 18
+  name: LYX
+  symbol: LYX
 protocol: ethereum
 rpcUrls:
   - http: https://42.rpc.thirdweb.com
-blocks:
-  confirmations: 1
-  reorgPeriod: 14
-  estimateBlockTime: 12
-nativeToken:
-  symbol: LYX
-  name: LYX
-  decimals: 18

@@ -2,21 +2,21 @@
 blockExplorers:
   - apiUrl: https://api.explorer.execution.testnet.lukso.network/api
     family: blockscout
-    name: LUKSOExplorer
+    name: LUKSO Testnet Explorer
     url: https://explorer.execution.testnet.lukso.network
-name: luksotestnet
-displayName: LUKSO Testnet
-chainId: 4201
-domainId: 4201
-protocol: ethereum
-isTestnet: true
-rpcUrls:
-  - http: https://rpc.testnet.lukso.network
 blocks:
   confirmations: 1
-  reorgPeriod: 14
   estimateBlockTime: 12
+  reorgPeriod: 14
+chainId: 4201
+displayName: LUKSO Testnet
+domainId: 4201
+isTestnet: true
+name: luksotestnet
 nativeToken:
-  symbol: LYXt
-  name: LYXt
   decimals: 18
+  name: LYXt
+  symbol: LYXt
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.testnet.lukso.network
