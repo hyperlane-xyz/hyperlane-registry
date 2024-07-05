@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 2.2.1
+
+### Patch Changes
+
+- fd10d86: Increase `confirmations` on mantle from 1 to 3
+
 ## 2.2.0
 
 ### Minor Changes
