@@ -1,5 +1,25 @@
 # @hyperlane-xyz/registry
 
+## 2.2.1
+
+### Patch Changes
+
+- fd10d86: Increase `confirmations` on mantle from 1 to 3
+
+## 2.2.0
+
+### Minor Changes
+
+- b6e2136: Add core deployment for Fuse chain
+- 145f085: Adding config for Zora chain to registry
+- a9403b0: Added core deployment for arthera testnet
+- fef0561: Add Base Sepolia chain
+- 0f636ee: Add metadata for BOB, Mantle and Taiko
+
+### Patch Changes
+
+- 414fc5b: Mark Aribtrum Sepolia as testnet
+
 ## 2.1.1
 
 ### Patch Changes
