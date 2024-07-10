@@ -1,21 +1,21 @@
 # yaml-language-server: $schema=../schema.json
-name: endurance
-displayName: Endurance
-chainId: 648
-domainId: 648
-protocol: ethereum
-rpcUrls:
-  - http: https://rpc-endurance.fusionist.io/
-blocks:
-  confirmations: 7
-  reorgPeriod: 14
-  estimateBlockTime: 12
-nativeToken:
-  symbol: ACE
-  name: ACE
-  decimals: 18
 blockExplorers:
-  - apiUrl: https://explorer-endurance.fusionist.io/api/
+  - apiUrl: https://explorer-endurance.fusionist.io/api
     family: blockscout
     name: Endurance Explorer
-    url: https://explorer-endurance.fusionist.io/
+    url: https://explorer-endurance.fusionist.io
+blocks:
+  confirmations: 7
+  estimateBlockTime: 12
+  reorgPeriod: 14
+chainId: 648
+displayName: Endurance
+domainId: 648
+protocol: ethereum
+name: endurance
+nativeToken:
+  decimals: 18
+  name: ACE
+  symbol: ACE
+rpcUrls:
+  - http: https://rpc-endurance.fusionist.io
