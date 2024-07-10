@@ -1,17 +1,17 @@
 # yaml-language-server: $schema=../schema.json
-name: mintsepoliatest
-displayName: Mint Sepolia Testnet
-chainId: 1687
-domainId: 1687
-protocol: ethereum
-rpcUrls:
-  - http: https://sepolia-testnet-rpc.mintchain.io
-nativeToken:
-  symbol: ETH
-  name: Ether
-  decimals: 18
 blockExplorers:
-  - apiUrl: https://sepolia-testnet-explorer.mintchain.io/api-docs
+  - apiUrl: https://sepolia-testnet-explorer.mintchain.io/api/v2/
     family: blockscout
     name: Mint Sepolia Testnet explorer
     url: https://sepolia-testnet-explorer.mintchain.io
+chainId: 1687
+displayName: Mint Sepolia Testnet
+domainId: 1687
+name: mintsepoliatest
+nativeToken:
+  decimals: 18
+  name: Ether
+  symbol: ETH
+protocol: ethereum
+rpcUrls:
+  - http: https://sepolia-testnet-rpc.mintchain.io
