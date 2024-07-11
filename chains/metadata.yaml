@@ -924,6 +924,28 @@ neutron:
   slip44: 118
   transactionOverrides:
     gasPrice: "0.0075"
+oortdev:
+  blockExplorers:
+    family: other
+    name: OORT Dev Explorer
+    url: https://dev-scan.oortech.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 9700
+  deployer:
+    email: novacypher@oortech.com
+  displayName: OORT DEVNET
+  domainId: 9700
+  name: oortdev
+  nativeToken:
+    decimals: 18
+    name: OORT
+    symbol: OORT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://dev-rpc.oortech.com
 optimism:
   blockExplorers:
     - apiUrl: https://api-optimistic.etherscan.io/api
