@@ -56,4 +56,4 @@ jobs:
         - name: Post to discord webhook if metadata check fails
           if: failure()
           run: |
-            curl -X POST -H 'Content-type: application/json' --data '{"content":"SDK metadata check failed, see ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"}' ${{ secrets.DISCORD_WEBHOOK_URL }}
+            curl -X POST -H 'Content-type: application/json' --data '{"content":"Registry metadata check failed, see ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"}' ${{ secrets.DISCORD_WEBHOOK_URL }}
