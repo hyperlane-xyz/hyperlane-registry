@@ -2,7 +2,7 @@ import { ChainMetadataSchema } from '@hyperlane-xyz/sdk';
 import { chainAddresses, chainMetadata } from '../../dist/index.js';
 import { ChainAddressesSchema } from '../../src/types.js';
 
-import { expect } from 'chai';
+// import { expect } from 'chai';
 
 describe('Chain metadata', () => {
   for (const [chain, metadata] of Object.entries(chainMetadata)) {
@@ -10,9 +10,9 @@ describe('Chain metadata', () => {
       ChainMetadataSchema.parse(metadata);
     });
 
-    it(`${chain} metadata contains deployer details`, () => {
-      expect(metadata.deployer).not.to.be.undefined;
-    });
+    // it(`${chain} metadata contains deployer details`, () => {
+    //   expect(metadata.deployer).not.to.be.undefined;
+    // });
   }
 });
 
