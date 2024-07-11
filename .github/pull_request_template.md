@@ -2,7 +2,7 @@
 
 <!--
 Summary of change.
-Example: Add YOUR_CHAIN chain
+Example: Add sepolia chain
 -->
 
 ### Backward compatibility
