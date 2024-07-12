@@ -1,10 +1,9 @@
 ### Description
 
-#### Type: <New | Updated> <Network | Warp Route>
-
-#### Network(s): <Network Name(s)>
-
-#### Other notes
+<!--
+Summary of change.
+Example: Add sepolia chain
+-->
 
 ### Backward compatibility
 
