@@ -1,20 +1,20 @@
-name: connextsepolia
-chainId: 6398
-domainId: 6398
-protocol: ethereum
-rpcUrls:
-  - http: https://rpc.connext-sepolia.gelato.digital
-nativeToken:
-  name: Ether
-  symbol: ETH
-  decimals: 18
 blockExplorers:
   - apiUrl: https://connext-sepolia.blockscout.com/api
     family: blockscout
     name: Connext Explorer
     url: https://connext-sepolia.blockscout.com
+chainId: 6398
 deployer:
   name: Everclear
   url: https://everclear.org
-isTestnet: true
 displayName: Connext Sepolia
+domainId: 6398
+isTestnet: true
+name: connextsepolia
+nativeToken:
+  decimals: 18
+  name: Ether
+  symbol: ETH
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.connext-sepolia.gelato.digital
