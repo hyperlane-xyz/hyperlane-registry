@@ -1,13 +1,12 @@
-name: 	X Layer mainnet
-chainId: 196
-domainId: 196
+name: Connext Sepolia
+chainId: 6398
+domainId: 6398
 protocol: ethereum
 rpcUrls:
-  - http: https://rpc.xlayer.tech
-  - http: https://xlayerrpc.okx.com
+  - http: https://rpc.connext-sepolia.gelato.digital
 nativeToken:
-  name: OKB
-  symbol: OKB
+  name: Ether
+  symbol: ETH
   decimals: 18
 blockExplorers:
 - apiUrl: https://connext-sepolia.blockscout.com/api #/api-docs for methods
@@ -15,5 +14,7 @@ blockExplorers:
   name: Connext Explorer
   url: https://connext-sepolia.blockscout.com/
 deployer:
-  name: Abacus Works
-displayName: X Layer
+  name: Everclear
+  url: https://everclear.org
+isTestnet: true
+displayName: Connext Sepolia
