@@ -83,7 +83,7 @@ export const CoreMainnets: Array<CoreChainName> = [
   CoreChain.taiko,
   CoreChain.viction,
   CoreChain.zetachain,
-  CoreChain.zoramainnet
+  CoreChain.zoramainnet,
   // CoreChains.solana,
 ];
 
