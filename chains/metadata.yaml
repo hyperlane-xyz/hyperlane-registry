@@ -421,6 +421,10 @@ connextsepolia:
       family: blockscout
       name: Connext Explorer
       url: https://connext-sepolia.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 10
+    reorgPeriod: 1
   chainId: 6398
   deployer:
     name: Everclear
@@ -1371,6 +1375,28 @@ stride:
   slip44: 118
   transactionOverrides:
     gasPrice: "0.0025"
+superpositiontestnet:
+  blockExplorers:
+    - apiUrl: https://testnet-explorer.superposition.so/api
+      family: blockscout
+      name: CatScan
+      url: https://testnet-explorer.superposition.so
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 98985
+  displayName: Superposition Testnet
+  domainId: 98985
+  isTestnet: true
+  name: superpositiontestnet
+  nativeToken:
+    decimals: 18
+    name: Superposition
+    symbol: SPN
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet-rpc.superposition.so
 taiko:
   blockExplorers:
     - apiUrl: https://api.taikoscan.io/api
