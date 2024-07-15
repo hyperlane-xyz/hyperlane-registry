@@ -571,7 +571,7 @@ fuji:
     - http: https://api.avax-test.network/ext/bc/C/rpc
       pagination:
         maxBlockRange: 2048
-fuse:
+fusemainnet:
   blockExplorers:
     - apiUrl: https://explorer.fuse.io/api
       family: etherscan
@@ -589,7 +589,7 @@ fuse:
   domainId: 122
   gasCurrencyCoinGeckoId: fuse-network-token
   gnosisSafeTransactionServiceUrl: https://transaction-fuse.safe.fuse.io
-  name: fuse
+  name: fusemainnet
   nativeToken:
     decimals: 18
     name: FUSE
@@ -1486,7 +1486,7 @@ zetachain:
   rpcUrls:
     - http: https://zetachain-evm.blockpi.network/v1/rpc/public
     - http: https://zetachain-athens-evm.blockpi.network/v1/rpc/public
-zora:
+zoramainnet:
   blockExplorers:
     - apiUrl: https://explorer.zora.energy/api
       family: blockscout
@@ -1504,7 +1504,7 @@ zora:
   domainId: 7777777
   gasCurrencyCoinGeckoId: ethereum
   gnosisSafeTransactionServiceUrl: https://transaction-zora.safe.optimism.io
-  name: zora
+  name: zoramainnet
   nativeToken:
     decimals: 18
     name: Ether

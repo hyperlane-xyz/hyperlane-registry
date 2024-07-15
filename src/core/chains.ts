@@ -21,7 +21,7 @@ export enum CoreChain {
   ethereum = 'ethereum',
   fraxtal = 'fraxtal',
   fuji = 'fuji',
-  fuse = 'fuse',
+  fusemainnet = 'fusemainnet',
   gnosis = 'gnosis',
   inevm = 'inevm',
   injective = 'injective',
@@ -48,7 +48,7 @@ export enum CoreChain {
   taiko = 'taiko',
   viction = 'viction',
   zetachain = 'zetachain',
-  zora = 'zora',
+  zoramainnet = 'zoramainnet',
 }
 
 export type CoreChainName = keyof typeof CoreChain;
@@ -65,7 +65,7 @@ export const CoreMainnets: Array<CoreChainName> = [
   CoreChain.endurance,
   CoreChain.ethereum,
   CoreChain.fraxtal,
-  CoreChain.fuse,
+  CoreChain.fusemainnet,
   CoreChain.gnosis,
   CoreChain.inevm,
   CoreChain.injective,
@@ -83,7 +83,7 @@ export const CoreMainnets: Array<CoreChainName> = [
   CoreChain.taiko,
   CoreChain.viction,
   CoreChain.zetachain,
-  CoreChain.zora
+  CoreChain.zoramainnet
   // CoreChains.solana,
 ];
 
