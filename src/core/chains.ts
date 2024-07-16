@@ -15,6 +15,7 @@ export enum CoreChain {
   bsctestnet = 'bsctestnet',
   celo = 'celo',
   chiado = 'chiado',
+  connextsepolia = 'connextsepolia',
   eclipsetestnet = 'eclipsetestnet',
   ethereum = 'ethereum',
   fraxtal = 'fraxtal',
@@ -41,6 +42,7 @@ export enum CoreChain {
   solana = 'solana',
   solanadevnet = 'solanadevnet',
   solanatestnet = 'solanatestnet',
+  superpositiontestnet = 'superpositiontestnet',
   taiko = 'taiko',
   viction = 'viction',
   zetachain = 'zetachain',
@@ -83,6 +85,7 @@ export const CoreTestnets: Array<CoreChainName> = [
   CoreChain.alfajores,
   CoreChain.bsctestnet,
   CoreChain.chiado,
+  CoreChain.connextsepolia,
   CoreChain.eclipsetestnet,
   CoreChain.fuji,
   CoreChain.plumetestnet,
@@ -91,6 +94,7 @@ export const CoreTestnets: Array<CoreChainName> = [
   CoreChain.sepolia,
   CoreChain.solanadevnet,
   CoreChain.solanatestnet,
+  CoreChain.superpositiontestnet,
 ];
 
 export const CoreChains: Array<CoreChainName> = [...CoreMainnets, ...CoreTestnets];
