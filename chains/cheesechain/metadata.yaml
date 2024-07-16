@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../schema.json
+name: cheesechain
+displayName: CheeseChain
+chainId: 383353
+domainId: 383353
+protocol: ethereum
+rpcUrls:
+  - http: https://cheesechain.calderachain.xyz/http
+nativeToken:
+  symbol: CHEESE
+  name: CHEESE
+  decimals: 18
+blockExplorers:
+  - apiUrl: https://fetascan.io/api
+    family: blockscout #explorer you're using, also supporting routescan or blockscout
+    name: Fetascan
+    url: https://fetascan.io
+

@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - chainName: cheesechain
+    standard: EvmHypSynthetic
+    decimals: 6
+    symbol: USDC
+    name: USDC
+    addressOrDenom: "0xE48Cb69A070F03187a013278A9BC279Fb67D508C"
+    connections:
+      - token: ethereum|ethereum|0xE0d5A9bA110134cE5D2B1f30124f85C5b29C18fB
+  - chainName: ethereum
+    standard: EvmHypCollateral
+    decimals: 6
+    symbol: USDC
+    name: USDC
+    addressOrDenom: "0xE0d5A9bA110134cE5D2B1f30124f85C5b29C18fB"
+    connections:
+      - token: ethereum|cheesechain|0xE48Cb69A070F03187a013278A9BC279Fb67D508C
