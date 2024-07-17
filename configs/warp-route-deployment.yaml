@@ -13,6 +13,11 @@ pulsetest:
         type: defaultFallbackRoutingIsm
         domains: {}
     threshold: 1
+  blockExplorers:
+    - apiUrl: https://rpc-testnet-pulsechain.g4mm4.io
+      family: blockscout
+      name: scanPulsechain
+      url: https://scan.pulsechain.com/
 arbitrumsepolia:
   isNft: false
   type: collateral
