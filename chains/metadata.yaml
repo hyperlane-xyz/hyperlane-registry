@@ -470,12 +470,17 @@ endurance:
       name: Endurance Explorer
       url: https://explorer-endurance.fusionist.io
   blocks:
-    confirmations: 7
+    confirmations: 1
     estimateBlockTime: 12
     reorgPeriod: 14
   chainId: 648
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Endurance
   domainId: 648
+  gasCurrencyCoinGeckoId: endurance
+  gnosisSafeTransactionServiceUrl: https://safewallet.fusionist.io/cgw/api
   name: endurance
   nativeToken:
     decimals: 18
@@ -566,7 +571,7 @@ fuji:
     - http: https://api.avax-test.network/ext/bc/C/rpc
       pagination:
         maxBlockRange: 2048
-fuse:
+fusemainnet:
   blockExplorers:
     - apiUrl: https://explorer.fuse.io/api
       family: etherscan
@@ -575,14 +580,16 @@ fuse:
   blocks:
     confirmations: 1
     estimateBlockTime: 5
+    reorgPeriod: 1
   chainId: 122
   deployer:
-    name: Fuse
-    url: https://www.fuse.io
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Fuse
   domainId: 122
   gasCurrencyCoinGeckoId: fuse-network-token
-  name: fuse
+  gnosisSafeTransactionServiceUrl: https://transaction-fuse.safe.fuse.io
+  name: fusemainnet
   nativeToken:
     decimals: 18
     name: FUSE
@@ -1479,7 +1486,7 @@ zetachain:
   rpcUrls:
     - http: https://zetachain-evm.blockpi.network/v1/rpc/public
     - http: https://zetachain-athens-evm.blockpi.network/v1/rpc/public
-zora:
+zoramainnet:
   blockExplorers:
     - apiUrl: https://explorer.zora.energy/api
       family: blockscout
@@ -1491,13 +1498,13 @@ zora:
     reorgPeriod: 1
   chainId: 7777777
   deployer:
-    email: merklylabs@proton.me
-    name: Merkly Labs
-    url: https://merkly.com
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Zora
   domainId: 7777777
   gasCurrencyCoinGeckoId: ethereum
-  name: zora
+  gnosisSafeTransactionServiceUrl: https://transaction-zora.safe.optimism.io
+  name: zoramainnet
   nativeToken:
     decimals: 18
     name: Ether
