@@ -117,6 +117,9 @@ jobs:
     needs: [install]
     steps:
       - uses: actions/checkout@v3
+        with:
+          # check out full history
+          fetch-depth: 0
       - uses: actions/cache@v3
         with:
           path: |
@@ -124,4 +127,4 @@ jobs:
             .yarn/cache
           key: ${{ runner.os }}-yarn-cache-${{ hashFiles('./yarn.lock') }}
       - name: changeset
-        run: yarn changeset status --since=main
+        run: yarn changeset status --since origin/main
