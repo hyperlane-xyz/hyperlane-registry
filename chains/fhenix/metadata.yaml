@@ -1,12 +1,16 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://api.helium.fhenix.zone/
+  - apiUrl: https://api.helium.fhenix.zone
     family: blockscout
     name: Fhenix Explorer
     url: https://explorer.helium.fhenix.zone
 chainId: 8008135
+deployer:
+  name: d0x471b
+  url: https://t.me/d0x471b
 displayName: Fhenix
 domainId: 8008135
+isTestnet: true
 name: fhenix
 nativeToken:
   decimals: 18
@@ -14,7 +18,4 @@ nativeToken:
   symbol: tFHE
 protocol: ethereum
 rpcUrls:
-  - http: https://api.helium.fhenix.zone/
-deployer:
-  name: d0x471b
-  contact: https://t.me/d0x471b
+  - http: https://api.helium.fhenix.zone
