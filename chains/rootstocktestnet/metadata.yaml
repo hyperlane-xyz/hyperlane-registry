@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://rootstock-testnet.blockscout.com/api
+    family: blockscout
+    name: Blockscout
+    url: https://rootstock-testnet.blockscout.com
+blocks:
+  confirmations: 1
+  estimateBlockTime: 30
+  reorgPeriod: 4
+chainId: 31
+deployer:
+  name: Rootstock
+  url: https://rootstock.io
+displayName: Rootstock Testnet
+domainId: 31
+isTestnet: true
+name: rootstocktestnet
+nativeToken:
+  decimals: 18
+  name: tRBTC
+  symbol: tRBTC
+protocol: ethereum
+rpcUrls:
+  - http: https://public-node.testnet.rsk.co
+transactionOverrides:
+  gasLimit: 6800000
