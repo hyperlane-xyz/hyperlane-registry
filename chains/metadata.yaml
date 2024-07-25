@@ -45,6 +45,7 @@ ancient8:
   displayName: Ancient8
   domainId: 888888888
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://safe.ancient8.gg/txs/
   isTestnet: false
   name: ancient8
   nativeToken:
@@ -519,6 +520,27 @@ ethereum:
   rpcUrls:
     - http: https://ethereum.publicnode.com
     - http: https://cloudflare-eth.com
+fhenix:
+  blockExplorers:
+    - apiUrl: https://api.helium.fhenix.zone
+      family: blockscout
+      name: Fhenix Explorer
+      url: https://explorer.helium.fhenix.zone
+  chainId: 8008135
+  deployer:
+    name: d0x471b
+    url: https://t.me/d0x471b
+  displayName: Fhenix
+  domainId: 8008135
+  isTestnet: true
+  name: fhenix
+  nativeToken:
+    decimals: 18
+    name: tFHE
+    symbol: tFHE
+  protocol: ethereum
+  rpcUrls:
+    - http: https://api.helium.fhenix.zone
 fraxtal:
   blockExplorers:
     - apiUrl: https://api.fraxscan.com/api
@@ -536,6 +558,7 @@ fraxtal:
   displayName: Fraxtal
   domainId: 252
   gasCurrencyCoinGeckoId: frax-ether
+  gnosisSafeTransactionServiceUrl: https://transaction-frax.safe.optimism.io
   name: fraxtal
   nativeToken:
     decimals: 18
@@ -1141,6 +1164,7 @@ redstone:
   displayName: Redstone
   domainId: 690
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://transaction-redstone.safe.optimism.io
   name: redstone
   nativeToken:
     decimals: 18
@@ -1217,6 +1241,7 @@ sei:
   displayName: Sei
   domainId: 1329
   gasCurrencyCoinGeckoId: sei-network
+  gnosisSafeTransactionServiceUrl: https://transaction.sei-safe.protofire.io
   name: sei
   nativeToken:
     decimals: 18
@@ -1477,6 +1502,7 @@ zetachain:
   displayName: ZetaChain
   domainId: 7000
   gasCurrencyCoinGeckoId: zetachain
+  gnosisSafeTransactionServiceUrl: https://transaction.safe.zetachain.com
   name: zetachain
   nativeToken:
     decimals: 18
