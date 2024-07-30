@@ -128,7 +128,7 @@ describe('Registry utilities', () => {
         options: {},
       });
       const outputBasePath = `deployments/warp_routes/${MOCK_SYMBOL}/${MOCK_CHAIN_NAME}-${MOCK_CHAIN_NAME2}-`;
-      const configPath = `${outputBasePath}config.yaml`;
+      const configPath = `${outputBasePath}deployment.yaml`;
       const addressesPath = `${outputBasePath}addresses.yaml`;
       expect(fs.existsSync(configPath)).to.be.true;
       expect(fs.existsSync(addressesPath)).to.be.true;

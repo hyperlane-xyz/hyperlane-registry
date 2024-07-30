@@ -28,7 +28,7 @@ function getWarpAddressKey(standard: TokenStandard): string | null {
 /**
  * Gets a warp route ID from a warp route config path.
  * @param configRelativePath A relative path in the deployments dir
- *    (e.g. `warp_routes/USDC/ethereum-arbitrum-config.yaml`)
+ *    (e.g. `warp_routes/USDC/ethereum-arbitrum-deployment.yaml`)
  */
 export function warpRouteConfigPathToId(configRelativePath: string): WarpRouteId {
   const matches = configRelativePath.match(WARP_ROUTE_CONFIG_FILE_REGEX);

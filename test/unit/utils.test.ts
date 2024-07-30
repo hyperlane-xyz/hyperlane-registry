@@ -11,7 +11,7 @@ const WARP_ROUTE_ID = 'USDT/arbitrum-ethereum';
 
 describe('Warp utils', () => {
   it('Computes a warp ID from a config path', () => {
-    expect(warpRouteConfigPathToId('warp_routes/USDT/arbitrum-ethereum-config.yaml')).to.eql(
+    expect(warpRouteConfigPathToId('warp_routes/USDT/arbitrum-ethereum-deployment.yaml')).to.eql(
       WARP_ROUTE_ID,
     );
   });
