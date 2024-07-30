@@ -391,6 +391,31 @@ celo:
   protocol: ethereum
   rpcUrls:
     - http: https://forno.celo.org
+cheesechain:
+  blockExplorers:
+    - apiUrl: https://fetascan.io/api
+      family: blockscout
+      name: Fetascan
+      url: https://fetascan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 90
+    reorgPeriod: 0
+  chainId: 383353
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: CheeseChain
+  domainId: 383353
+  gasCurrencyCoinGeckoId: cheese-2
+  name: cheesechain
+  nativeToken:
+    decimals: 18
+    name: CHEESE
+    symbol: CHEESE
+  protocol: ethereum
+  rpcUrls:
+    - http: https://cheesechain.calderachain.xyz/http
 chiado:
   blockExplorers:
     - apiUrl: https://gnosis-chiado.blockscout.com/api
@@ -443,6 +468,34 @@ connextsepolia:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.connext-sepolia.gelato.digital
+  technicalStack: arbitrumnitro
+dodotestnet:
+  blockExplorers:
+    - apiUrl: https://testnet-scan.dodochain.com/api
+      family: blockscout
+      name: DODOchain Explorer
+      url: https://testnet-scan.dodochain.com
+  blocks:
+    confirmations: 0
+    estimateBlockTime: 13
+    reorgPeriod: 0
+  chainId: 53457
+  deployer:
+    name: DODO
+    url: http://dodoex.io
+  displayName: DODOChain
+  domainId: 53457
+  index:
+    from: 2000
+  isTestnet: true
+  name: dodotestnet
+  nativeToken:
+    decimals: 18
+    name: DODO
+    symbol: DODO
+  protocol: ethereum
+  rpcUrls:
+    - http: https://dodochain-testnet.alt.technology
   technicalStack: arbitrumnitro
 eclipsetestnet:
   blocks:
@@ -1485,6 +1538,59 @@ viction:
   rpcUrls:
     - http: https://rpc.tomochain.com
     - http: https://viction.blockpi.network/v1/rpc/public
+worldchain:
+  blockExplorers:
+    - apiUrl: https://worldchain-mainnet-explorer.alchemy.com/api
+      family: blockscout
+      name: World Chain explorer
+      url: https://worldchain-mainnet-explorer.alchemy.com/
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 480
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: World Chain
+  domainId: 480
+  gasCurrencyCoinGeckoId: ethereum
+  name: worldchain
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://raas-backend.alchemy.com/rpc/worldchain-mainnet/rollup
+xlayer:
+  blockExplorers:
+    - apiUrl: https://www.oklink.com/api
+      family: other
+      name: X Layer Explorer
+      url: https://www.oklink.com/xlayer
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 10
+    reorgPeriod: 1
+  chainId: 196
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: XLayer
+  displayNameShort: XLayer
+  domainId: 196
+  gasCurrencyCoinGeckoId: okb
+  gnosisSafeTransactionServiceUrl: https://app.safe.global/welcome?chain=xlayer
+  name: xlayer
+  nativeToken:
+    decimals: 18
+    name: OKB
+    symbol: OKB
+  protocol: ethereum
+  rpcUrls:
+    - http: https://xlayerrpc.okx.com
+    - http: https://rpc.xlayer.tech
 zetachain:
   blockExplorers:
     - apiUrl: https://explorer.zetachain.com
