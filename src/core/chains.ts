@@ -7,7 +7,6 @@ export enum CoreChain {
   alfajores = 'alfajores',
   ancient8 = 'ancient8',
   arbitrum = 'arbitrum',
-  arthera = 'arthera',
   avalanche = 'avalanche',
   base = 'base',
   blast = 'blast',
@@ -60,7 +59,6 @@ export type CoreChainName = keyof typeof CoreChain;
 export const CoreMainnets: Array<CoreChainName> = [
   CoreChain.ancient8,
   CoreChain.arbitrum,
-  CoreChain.arthera,
   CoreChain.avalanche,
   CoreChain.base,
   CoreChain.blast,
