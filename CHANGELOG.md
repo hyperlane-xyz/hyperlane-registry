@@ -1,5 +1,27 @@
 # @hyperlane-xyz/registry
 
+## 2.4.0
+
+### Minor Changes
+
+- 9add749: Add Connext Sepolia chain
+- 10394fd: Add Endurance chain
+- 574d998: Add cheesechain
+  Add worldchain
+  Add xlayer
+- 6e8f406: Add DODOchain Testnet chain
+- 07ebc9c: Deploy to connextsepolia + superpositiontestnet
+- 0a59848: add Mint Sepolia Testnet
+- 884f3ea: Add Superposition Testnet
+- 7c6bfef: Deploy to endurance, fusemainnet, zoramainnet
+- d1bb3b7: Add Fhenix Testnet chain
+
+### Patch Changes
+
+- 6670f82: Updated Fraxtal Safe transaction service URL
+- 0f09484: Fix Redstone Safe transaction service URL
+- 6ae344e: Add "updated" Renzo warp route including Fraxtal
+
 ## 2.3.0
 
 ### Minor Changes
