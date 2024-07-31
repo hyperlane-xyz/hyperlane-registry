@@ -127,5 +127,10 @@ jobs:
             **/node_modules
             .yarn/cache
           key: ${{ runner.os }}-yarn-cache-${{ hashFiles('./yarn.lock') }}
-      - name: changeset
-        run: yarn changeset status --since origin/main
+      - name: Check branch prefix and run changeset status
+        run: |
+          if [[ "${GITHUB_REF_NAME}" == changeset-release* ]]; then
+            echo "Branch name matches prefix 'changeset-release'. Exiting with status 0."
+            exit 0
+          fi
+          yarn changeset status --since origin/main
