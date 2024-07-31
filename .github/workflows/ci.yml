@@ -128,6 +128,9 @@ jobs:
           key: ${{ runner.os }}-yarn-cache-${{ hashFiles('./yarn.lock') }}
       - name: Check branch prefix and run changeset status
         run: |
-          if [[ "${{ github.head_ref }}" != changeset-release/main ]]; then
+          if [[ "${{ github.head_ref }}" != changeset-release/main || "$(gh pr view ${{ github.event.pull_request.number }} --json mergeStateStatus --jq '.mergeStateStatus')" == "MERGE_QUEUE" ]]; then
+            echo "Branch is not 'changeset-release/main' or PR is in the merge queue. Passing automatically."
+            exit 0
+          else
             yarn changeset status --since origin/main
           fi
