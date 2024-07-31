@@ -128,8 +128,6 @@ jobs:
           key: ${{ runner.os }}-yarn-cache-${{ hashFiles('./yarn.lock') }}
       - name: Check branch prefix and run changeset status
         run: |
-          if [[ "${GITHUB_REF_NAME}" == changeset-release/pbiotest ]]; then
-            echo "Branch name matches prefix 'changeset-release/pbiotest'. Exiting with status 0."
-            exit 0
+          if [[ "${GITHUB_REF_NAME}" != changeset-release/pbiotest ]]; then
+            yarn changeset status --since origin/main
           fi
-          yarn changeset status --since origin/main
