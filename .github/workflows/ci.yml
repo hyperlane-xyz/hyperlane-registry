@@ -134,3 +134,5 @@ jobs:
           else
             yarn changeset status --since origin/main
           fi
+        env:
+          GH_TOKEN: ${{ github.token }}
