@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../schema.json
+name: zircuit
+displayName: Zircuit
+chainId: 48899
+domainId: 48899
+protocol: ethereum
+rpcUrls:
+  - http: https://zircuit1.p2pify.com
+nativeToken:
+  symbol: ETH
+  name: Ether
+  decimals: 18
+blockExplorers:
+  - apiUrl: https://explorer.zircuit.com/contractVerifyHardhat
+    name: ZircuitExplorer
+    url: https://explorer.zircuit.com/
