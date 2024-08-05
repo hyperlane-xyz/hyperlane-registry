@@ -16,21 +16,19 @@ for chain_dir in chains/*/; do
 
         if [ -n "$rpc_urls" ]; then
             nitro_marker=""
-            for rpc_url in $rpc_urls; do
-                # Call cast code 0x000000000000000000000000000000000000006c should return 0xfe for nitro chains
-                nitro_marker=$(cast code 0x000000000000000000000000000000000000006c --rpc-url "$rpc_url" 2>/dev/null)
+            rpc_url=$(echo "$rpc_urls" | head -n 1)
+            # Call cast code 0x000000000000000000000000000000000000006c should return 0xfe for nitro chains
+            nitro_marker=$(cast code 0x000000000000000000000000000000000000006c --rpc-url "$rpc_url" 2>/dev/null)
 
-                if [ $? -eq 0 ]; then
-                    if [ "$nitro_marker" = "0xfe" ]; then
-                        nitro_chains+=("$chain_name")
-                        yq e '.technicalStack = "arbitrumnitro"' -i "$metadata_file"
-                    fi
-                    break
+            if [ $? -eq 0 ]; then
+                if [ "$nitro_marker" = "0xfe" ]; then
+                    nitro_chains+=("$chain_name")
+                    yq e '.technicalStack = "arbitrumnitro"' -i "$metadata_file"
                 fi
-            done
+            fi
 
             if [ -z "$nitro_marker" ]; then
-                echo "$chain_name: Error fetching block number from all RPC URLs"
+                echo "$chain_name: Error fetching block number"
             fi
         else
             echo "$chain_name: No RPC URLs found"
