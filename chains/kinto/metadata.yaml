@@ -1,12 +1,12 @@
 blockExplorers:
   - apiUrl: https://explorer.kinto.xyz/api-docs
-    family: routescan
+    family: blockscout
     name: Kinto Explorer
     url: https://explorer.kinto.xyz
 blocks:
-  confirmations:
-  estimateBlockTime:
-  reorgPeriod:
+  confirmations: 1
+  estimateBlockTime: 5
+  reorgPeriod: 0
 chainId: 7887
 deployer:
   name: Abacus Works
@@ -22,3 +22,4 @@ nativeToken:
 protocol: ethereum
 rpcUrls:
   - http: https://rpc.kinto.xyz/http
+technicalStack: arbitrumnitro
