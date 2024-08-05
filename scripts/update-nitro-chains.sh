@@ -15,20 +15,22 @@ for chain_dir in chains/*/; do
         rpc_urls=$(yq e '.rpcUrls[].http' "$metadata_file")
 
         if [ -n "$rpc_urls" ]; then
-            nitro_marker=""
+            # Use the first RPC URL to check if the chain is a nitro chain
             rpc_url=$(echo "$rpc_urls" | head -n 1)
-            # Call cast code 0x000000000000000000000000000000000000006c should return 0xfe for nitro chains
+            # Should return 0xfe for nitro chains
             nitro_marker=$(cast code 0x000000000000000000000000000000000000006c --rpc-url "$rpc_url" 2>/dev/null)
 
-            if [ $? -eq 0 ]; then
-                if [ "$nitro_marker" = "0xfe" ]; then
-                    nitro_chains+=("$chain_name")
-                    yq e '.technicalStack = "arbitrumnitro"' -i "$metadata_file"
-                fi
+            # Check if `cast` was successfully and whether its value equals "0xfe"
+            if [ $? -eq 0 ] && [ "$nitro_marker" = "0xfe" ]; then
+                # Add chain to nitro_chains array
+                nitro_chains+=("$chain_name")
+                # Ensure metadata.yaml includes "technicalStack" field
+                yq e '.technicalStack = "arbitrumnitro"' -i "$metadata_file"
             fi
 
+            # Log error if nitro marker is not found
             if [ -z "$nitro_marker" ]; then
-                echo "$chain_name: Error fetching block number"
+                echo "$chain_name: Error fetching nitro marker"
             fi
         else
             echo "$chain_name: No RPC URLs found"
