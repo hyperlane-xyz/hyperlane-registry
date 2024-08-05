@@ -391,6 +391,31 @@ celo:
   protocol: ethereum
   rpcUrls:
     - http: https://forno.celo.org
+celodango:
+  blockExplorers:
+    - apiUrl: https://celo-dango.blockscout.com/api-docs
+      family: blockscout
+      name: Dango Blockscout Explorer
+      url: https://celo-dango.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 447877
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Celo Dango Testnet
+  domainId: 447877
+  isTestnet: true
+  name: celodango
+  nativeToken:
+    decimals: 18
+    name: CELO
+    symbol: CELO
+  protocol: ethereum
+  rpcUrls:
+    - http: https://forno.dango.celo-testnet.org
 cheesechain:
   blockExplorers:
     - apiUrl: https://fetascan.io/api
