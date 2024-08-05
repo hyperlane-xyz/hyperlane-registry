@@ -391,31 +391,6 @@ celo:
   protocol: ethereum
   rpcUrls:
     - http: https://forno.celo.org
-celodango:
-  blockExplorers:
-    - apiUrl: https://celo-dango.blockscout.com/api-docs
-      family: blockscout
-      name: Dango Blockscout Explorer
-      url: https://celo-dango.blockscout.com
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 2
-    reorgPeriod: 0
-  chainId: 44787
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
-  displayName: Celo Dango Testnet
-  domainId: 44787
-  isTestnet: true
-  name: celodango
-  nativeToken:
-    decimals: 18
-    name: CELO
-    symbol: CELO
-  protocol: ethereum
-  rpcUrls:
-    - http: https://forno.dango.celo-testnet.org
 cheesechain:
   blockExplorers:
     - apiUrl: https://fetascan.io/api
@@ -898,6 +873,8 @@ kinto:
   displayName: Kinto
   domainId: 7887
   gasCurrencyCoinGeckoId: ethereum
+  index:
+    from: 215193
   name: kinto
   nativeToken:
     decimals: 18
@@ -905,7 +882,7 @@ kinto:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.kinto.xyz/http
+    - http: https://kinto-mainnet.calderachain.xyz/http
   technicalStack: arbitrumnitro
 kroma:
   blockExplorers:
@@ -1129,6 +1106,8 @@ metis:
   displayName: Metis Andromeda
   domainId: 1088
   gasCurrencyCoinGeckoId: metis-token
+  index:
+    from: 17966274
   name: metis
   nativeToken:
     decimals: 18
@@ -1545,6 +1524,8 @@ real:
   displayName: re.al
   domainId: 111188
   gasCurrencyCoinGeckoId: real-ether
+  index:
+    from: 363159
   name: real
   nativeToken:
     decimals: 18
@@ -1597,6 +1578,8 @@ sanko:
   displayName: Sanko
   domainId: 1996
   gasCurrencyCoinGeckoId: dream-machine-token
+  index:
+    from: 937117
   name: sanko
   nativeToken:
     decimals: 18
@@ -1961,6 +1944,8 @@ xai:
   displayName: Xai
   domainId: 660279
   gasCurrencyCoinGeckoId: xai-blockchain
+  index:
+    from: 24395308
   name: xai
   nativeToken:
     decimals: 18
