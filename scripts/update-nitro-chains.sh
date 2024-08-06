@@ -20,7 +20,7 @@ for chain_dir in chains/*/; do
             # Should return 0xfe for nitro chains
             nitro_marker=$(cast code 0x000000000000000000000000000000000000006c --rpc-url "$rpc_url" 2>/dev/null)
 
-            # Check if `cast` was successfully and whether its value equals "0xfe"
+            # Check if `cast` was successful and whether its value equals "0xfe"
             if [ $? -eq 0 ] && [ "$nitro_marker" = "0xfe" ]; then
                 # Add chain to nitro_chains array
                 nitro_chains+=("$chain_name")
