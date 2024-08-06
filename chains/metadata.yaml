@@ -573,6 +573,31 @@ eclipsetestnet:
   protocol: sealevel
   rpcUrls:
     - http: https://testnet.dev2.eclipsenetwork.xyz
+ecotestnet:
+  blockExplorers:
+    - apiUrl: https://eco-testnet.explorer.caldera.xyz/api
+      family: blockscout
+      name: ECO Testnet explorer
+      url: https://eco-testnet.explorer.caldera.xyz/
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 471923
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Eco Testnet
+  domainId: 471923
+  isTestnet: true
+  name: ecotestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://eco-testnet.rpc.caldera.xyz/http
 endurance:
   blockExplorers:
     - apiUrl: https://explorer-endurance.fusionist.io/api
@@ -984,8 +1009,8 @@ lukso:
     reorgPeriod: 14
   chainId: 42
   deployer:
-    name: Hashi
-    url: https://crosschain-alliance.gitbook.io/hashi
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: LUKSO
   domainId: 42
   name: lukso
@@ -1906,6 +1931,9 @@ tangle:
     estimateBlockTime: 6
     reorgPeriod: 0
   chainId: 5845
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Tangle
   domainId: 5845
   gasCurrencyCoinGeckoId: tangle-network
@@ -1929,6 +1957,9 @@ tangletestnet:
     estimateBlockTime: 6
     reorgPeriod: 0
   chainId: 3799
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Tangle Testnet
   domainId: 3799
   isTestnet: true
