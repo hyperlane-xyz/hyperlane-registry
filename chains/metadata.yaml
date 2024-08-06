@@ -391,31 +391,6 @@ celo:
   protocol: ethereum
   rpcUrls:
     - http: https://forno.celo.org
-celodango:
-  blockExplorers:
-    - apiUrl: https://celo-dango.blockscout.com/api-docs
-      family: blockscout
-      name: Dango Blockscout Explorer
-      url: https://celo-dango.blockscout.com
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 2
-    reorgPeriod: 0
-  chainId: 447877
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
-  displayName: Celo Dango Testnet
-  domainId: 447877
-  isTestnet: true
-  name: celodango
-  nativeToken:
-    decimals: 18
-    name: CELO
-    symbol: CELO
-  protocol: ethereum
-  rpcUrls:
-    - http: https://forno.dango.celo-testnet.org
 cheesechain:
   blockExplorers:
     - apiUrl: https://fetascan.io/api
@@ -1920,6 +1895,51 @@ taiko:
   rpcUrls:
     - http: https://rpc.mainnet.taiko.xyz
   technicalStack: other
+tangle:
+  blockExplorers:
+    - apiUrl: https://explorer.tangle.tools/api
+      family: blockscout
+      name: Tangle EVM Explorer
+      url: https://explorer.tangle.tools
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 0
+  chainId: 5845
+  displayName: Tangle
+  domainId: 5845
+  gasCurrencyCoinGeckoId: tangle-network
+  isTestnet: false
+  name: tangle
+  nativeToken:
+    decimals: 18
+    name: Tangle Network Token
+    symbol: TNT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.tangle.tools
+tangletestnet:
+  blockExplorers:
+    - apiUrl: https://testnet-explorer.tangle.tools/api
+      family: blockscout
+      name: Tangle Test Network Explorer
+      url: https://testnet-explorer.tangle.tools/
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 0
+  chainId: 3799
+  displayName: Tangle Testnet
+  domainId: 3799
+  isTestnet: true
+  name: tangletestnet
+  nativeToken:
+    decimals: 18
+    name: Tangle Network Token
+    symbol: tTNT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet-rpc.tangle.tools
 viction:
   blockExplorers:
     - apiUrl: https://www.vicscan.xyz/api
