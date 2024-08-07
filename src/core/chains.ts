@@ -51,6 +51,7 @@ export enum CoreChain {
   worldchain = 'worldchain',
   xlayer = 'xlayer',
   zetachain = 'zetachain',
+  zircuit = 'zircuit',
   zoramainnet = 'zoramainnet',
 }
 
@@ -89,6 +90,7 @@ export const CoreMainnets: Array<CoreChainName> = [
   CoreChain.worldchain,
   CoreChain.xlayer,
   CoreChain.zetachain,
+  CoreChain.zircuit,
   CoreChain.zoramainnet,
   // CoreChains.solana,
 ];
