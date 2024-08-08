@@ -15,7 +15,7 @@ describe('Chain metadata', () => {
     // });
 
     it(`${chain} metadata has gasCurrencyCoinGeckoId if deployer is Abacus Works it is a mainnet`, () => {
-      if (metadata.deployer?.name === "Abacus Works" && (metadata.isTestnet === undefined || metadata.isTestnet === false)) {
+      if (metadata.deployer?.name === "Abacus Works" && !metadata.isTestnet) {
         expect(metadata.gasCurrencyCoinGeckoId).not.to.be.undefined;
       }
     });
