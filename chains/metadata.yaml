@@ -194,6 +194,31 @@ astar:
   protocol: ethereum
   rpcUrls:
     - http: https://evm.astar.network
+astarzkevm:
+  blockExplorers:
+    - apiUrl: https://zkevm.astar.network/api-docs
+      family: blockscout
+      name: Astar zkEVM Explorer
+      url: https://zkevm.astar.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 3776
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Astar zkEVM
+  domainId: 3776
+  gasCurrencyCoinGeckoId: ethereum
+  name: astarzkevm
+  nativeToken:
+    decimals: 18
+    name: Ethereum
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://zkevm.astar.network
 avalanche:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api
