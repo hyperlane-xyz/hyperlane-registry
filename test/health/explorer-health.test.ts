@@ -9,8 +9,8 @@ import {
   getExplorerTxUrl,
 } from '../../node_modules/@hyperlane-xyz/sdk/dist/metadata/blockExplorer.js';
 
-const HEALTH_CHECK_TIMEOUT = 10_000; // 10s
-const HEALTH_CHECK_DELAY = 3_000; // 3s
+const HEALTH_CHECK_TIMEOUT = 15_000; // 15s
+const HEALTH_CHECK_DELAY = 5_000; // 5s
 
 const PROTOCOL_TO_ADDRESS: Record<ProtocolType, Address> = {
   [ProtocolType.Ethereum]: '0x0000000000000000000000000000000000000000',
@@ -18,10 +18,8 @@ const PROTOCOL_TO_ADDRESS: Record<ProtocolType, Address> = {
   [ProtocolType.Cosmos]: 'cosmos100000000000000000000000000000000000000',
 };
 
-const PROTOCOL_TO_TX_HASH: Record<ProtocolType, Address> = {
+const PROTOCOL_TO_TX_HASH: Partial<Record<ProtocolType, Address>> = {
   [ProtocolType.Ethereum]: '0x0000000000000000000000000000000000000000000000000000000000000000',
-  [ProtocolType.Sealevel]:
-    '1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111',
   [ProtocolType.Cosmos]: '0000000000000000000000000000000000000000000000000000000000000000',
 };
 
