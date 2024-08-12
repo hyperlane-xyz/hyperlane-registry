@@ -169,6 +169,31 @@ artheratestnet:
     - http: https://rpc-test.arthera.net
       pagination:
         maxBlockRange: 10000
+astar:
+  blockExplorers:
+    - apiUrl: https://astar.blockscout.com/api
+      family: blockscout
+      name: Astar Explorer
+      url: https://astar.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 592
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Astar
+  domainId: 592
+  gasCurrencyCoinGeckoId: astar
+  name: astar
+  nativeToken:
+    decimals: 18
+    name: Astar
+    symbol: ASTR
+  protocol: ethereum
+  rpcUrls:
+    - http: https://evm.astar.network
 avalanche:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api
