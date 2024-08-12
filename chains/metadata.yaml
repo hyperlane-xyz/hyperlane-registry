@@ -239,8 +239,8 @@ basesepolia:
     reorgPeriod: 1
   chainId: 84532
   deployer:
-    name: Toucan Protocol
-    url: https://toucan.earth
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Base Sepolia
   domainId: 84532
   isTestnet: true
@@ -1350,32 +1350,6 @@ neutron:
   slip44: 118
   transactionOverrides:
     gasPrice: "0.0075"
-opsepolia:
-  blockExplorers:
-    - apiUrl: https://api-sepolia-optimistic.etherscan.io/api
-      family: etherscan
-      name: OP Sepolia Explorer
-      url: https://sepolia-optimistic.etherscan.io
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 2
-    reorgPeriod: 0
-  chainId: 11155420
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
-  displayName: OP Sepolia
-  domainId: 11155420
-  gasCurrencyCoinGeckoId: ethereum
-  isTestnet: true
-  name: opsepolia
-  nativeToken:
-    decimals: 18
-    name: Ether
-    symbol: ETH
-  protocol: ethereum
-  rpcUrls:
-    - http: https://sepolia.optimism.io
 optimism:
   blockExplorers:
     - apiUrl: https://api-optimistic.etherscan.io/api
@@ -1402,6 +1376,32 @@ optimism:
   protocol: ethereum
   rpcUrls:
     - http: https://mainnet.optimism.io
+optimismsepolia:
+  blockExplorers:
+    - apiUrl: https://api-sepolia-optimistic.etherscan.io/api
+      family: etherscan
+      name: OP Sepolia Explorer
+      url: https://sepolia-optimistic.etherscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 11155420
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Optimism Sepolia
+  domainId: 11155420
+  gasCurrencyCoinGeckoId: ethereum
+  isTestnet: true
+  name: optimismsepolia
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://sepolia.optimism.io
 osmosis:
   bech32Prefix: osmo
   blockExplorers:
