@@ -9,6 +9,10 @@ import {
   getExplorerTxUrl,
 } from '../../node_modules/@hyperlane-xyz/sdk/dist/metadata/blockExplorer.js';
 
+const CHAINS_TO_SKIP = [
+  'base', // explorer works but has extremely strict rate limits
+];
+
 const HEALTH_CHECK_TIMEOUT = 15_000; // 15s
 const HEALTH_CHECK_DELAY = 5_000; // 5s
 
@@ -61,7 +65,7 @@ export async function isBlockExplorerHealthy(
 
 describe('Chain block explorer health', async () => {
   for (const [chain, metadata] of Object.entries(chainMetadata)) {
-    if (!metadata.blockExplorers?.length) continue;
+    if (!metadata.blockExplorers?.length || CHAINS_TO_SKIP.includes(chain)) continue;
     it(`${chain} default explorer is healthy`, async () => {
       const isHealthy = await isBlockExplorerHealthy(
         metadata,
