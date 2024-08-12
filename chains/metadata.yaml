@@ -1500,7 +1500,7 @@ polygonamoy:
       name: Polygon Amoy Explorer
       url: https://amoy.polygonscan.com
   blocks:
-    confirmations: 200
+    confirmations: 10
     estimateBlockTime: 2
     reorgPeriod: 256
   chainId: 80002
@@ -1518,6 +1518,9 @@ polygonamoy:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc-amoy.polygon.technology
+    - http: https://polygon-amoy-bor-rpc.publicnode.com
+    - http: https://polygon-amoy.blockpi.network/v1/rpc/public
+    - http: https://rpc.ankr.com/polygon_amoy
 polygonzkevm:
   blockExplorers:
     - apiUrl: https://api-zkevm.polygonscan.com/api
@@ -1727,6 +1730,10 @@ scrollsepolia:
   protocol: ethereum
   rpcUrls:
     - http: https://sepolia-rpc.scroll.io
+    - http: https://rpc.ankr.com/scroll_sepolia_testnet
+    - http: https://scroll-sepolia.blockpi.network/v1/rpc/public
+    - http: https://scroll-sepolia.chainstacklabs.com
+    - http: https://scroll-public.scroll-testnet.quiknode.pro
 sei:
   blockExplorers:
     - apiUrl: https://seitrace.com/pacific-1/api
