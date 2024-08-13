@@ -33,10 +33,18 @@ jobs:
               exit 1
             fi
 
+      - name: foundry-install
+        uses: foundry-rs/foundry-toolchain@v1
+
       - name: configure-git
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: update-nitro-chains
+        run: |
+          echo "Updating Nitro chains..."
+          ./scripts/update-nitro-chains.sh
 
       - name: combine-data
         run: |

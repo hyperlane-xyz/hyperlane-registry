@@ -239,8 +239,8 @@ basesepolia:
     reorgPeriod: 1
   chainId: 84532
   deployer:
-    name: Toucan Protocol
-    url: https://toucan.earth
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Base Sepolia
   domainId: 84532
   isTestnet: true
@@ -382,6 +382,7 @@ celo:
     url: https://www.hyperlane.xyz
   displayName: Celo
   domainId: 42220
+  gasCurrencyCoinGeckoId: celo
   gnosisSafeTransactionServiceUrl: https://safe-transaction-celo.safe.global/
   name: celo
   nativeToken:
@@ -564,6 +565,7 @@ eclipse:
     url: https://www.hyperlane.xyz
   displayName: Eclipse
   domainId: 1408864445
+  gasCurrencyCoinGeckoId: ethereum
   name: eclipse
   nativeToken:
     decimals: 9
@@ -663,6 +665,7 @@ ethereum:
     url: https://www.hyperlane.xyz
   displayName: Ethereum
   domainId: 1
+  gasCurrencyCoinGeckoId: ethereum
   gnosisSafeTransactionServiceUrl: https://safe-transaction-mainnet.safe.global/
   name: ethereum
   nativeToken:
@@ -776,6 +779,27 @@ fusemainnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.fuse.io
+galadrieldevnet:
+  blockExplorers:
+    - apiUrl: https://explorer.galadriel.com/
+      family: blockscout
+      name: Galadriel Devnet explorer
+      url: https://explorer.galadriel.com/
+  chainId: 696969
+  deployer:
+    name: remsee
+    url: https://t.me/remsee90
+  displayName: Galadriel Devnet
+  domainId: 696969
+  isTestnet: true
+  name: galadrieldevnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://devnet.galadriel.com
 gnosis:
   blockExplorers:
     - apiUrl: https://api.gnosisscan.io/api
@@ -1265,6 +1289,7 @@ moonbeam:
     url: https://www.hyperlane.xyz
   displayName: Moonbeam
   domainId: 1284
+  gasCurrencyCoinGeckoId: moonbeam
   gnosisSafeTransactionServiceUrl: https://transaction.multisig.moonbeam.network
   name: moonbeam
   nativeToken:
@@ -1285,6 +1310,7 @@ nautilus:
     url: https://www.hyperlane.xyz
   displayName: Nautilus
   domainId: 22222
+  gasCurrencyCoinGeckoId: zebec-protocol
   name: nautilus
   nativeToken:
     decimals: 18
@@ -1328,32 +1354,6 @@ neutron:
   slip44: 118
   transactionOverrides:
     gasPrice: "0.0075"
-opsepolia:
-  blockExplorers:
-    - apiUrl: https://api-sepolia-optimistic.etherscan.io/api
-      family: etherscan
-      name: OP Sepolia Explorer
-      url: https://sepolia-optimistic.etherscan.io
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 2
-    reorgPeriod: 0
-  chainId: 11155420
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
-  displayName: OP Sepolia
-  domainId: 11155420
-  gasCurrencyCoinGeckoId: ethereum
-  isTestnet: true
-  name: opsepolia
-  nativeToken:
-    decimals: 18
-    name: Ether
-    symbol: ETH
-  protocol: ethereum
-  rpcUrls:
-    - http: https://sepolia.optimism.io
 optimism:
   blockExplorers:
     - apiUrl: https://api-optimistic.etherscan.io/api
@@ -1380,6 +1380,32 @@ optimism:
   protocol: ethereum
   rpcUrls:
     - http: https://mainnet.optimism.io
+optimismsepolia:
+  blockExplorers:
+    - apiUrl: https://api-sepolia-optimistic.etherscan.io/api
+      family: etherscan
+      name: OP Sepolia Explorer
+      url: https://sepolia-optimistic.etherscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 11155420
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Optimism Sepolia
+  domainId: 11155420
+  gasCurrencyCoinGeckoId: ethereum
+  isTestnet: true
+  name: optimismsepolia
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://sepolia.optimism.io
 osmosis:
   bech32Prefix: osmo
   blockExplorers:
@@ -1478,9 +1504,9 @@ polygonamoy:
       name: Polygon Amoy Explorer
       url: https://amoy.polygonscan.com
   blocks:
-    confirmations: 200
+    confirmations: 5
     estimateBlockTime: 2
-    reorgPeriod: 256
+    reorgPeriod: 10
   chainId: 80002
   deployer:
     name: Abacus Works
@@ -1496,6 +1522,9 @@ polygonamoy:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc-amoy.polygon.technology
+    - http: https://polygon-amoy-bor-rpc.publicnode.com
+    - http: https://polygon-amoy.blockpi.network/v1/rpc/public
+    - http: https://rpc.ankr.com/polygon_amoy
 polygonzkevm:
   blockExplorers:
     - apiUrl: https://api-zkevm.polygonscan.com/api
@@ -1705,6 +1734,10 @@ scrollsepolia:
   protocol: ethereum
   rpcUrls:
     - http: https://sepolia-rpc.scroll.io
+    - http: https://rpc.ankr.com/scroll_sepolia_testnet
+    - http: https://scroll-sepolia.blockpi.network/v1/rpc/public
+    - http: https://scroll-sepolia.chainstacklabs.com
+    - http: https://scroll-public.scroll-testnet.quiknode.pro
 sei:
   blockExplorers:
     - apiUrl: https://seitrace.com/pacific-1/api
@@ -1797,6 +1830,7 @@ solana:
     url: https://www.hyperlane.xyz
   displayName: Solana
   domainId: 1399811149
+  gasCurrencyCoinGeckoId: solana
   name: solana
   nativeToken:
     decimals: 9
