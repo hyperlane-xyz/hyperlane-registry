@@ -497,7 +497,7 @@ cyber:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://cyber-chain.net/rpc
+    - http: https://cyber-mainnet-archive.alt.technology
 degenchain:
   blockExplorers:
     - apiUrl: https://explorer.degen.tips/api/eth-rpc
@@ -988,7 +988,9 @@ kroma:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
+    - http: https://rpc-kroma.rockx.com
     - http: https://api.kroma.network
+    - http: https://1rpc.io/kroma
 linea:
   blockExplorers:
     - apiUrl: https://api.lineascan.build/api
@@ -1022,7 +1024,7 @@ lisk:
       name: Lisk Explorer
       url: https://blockscout.lisk.com
   blocks:
-    confirmations: 1
+    confirmations: 3
     estimateBlockTime: 2
     reorgPeriod: 0
   chainId: 1135
@@ -1031,7 +1033,7 @@ lisk:
     url: https://www.hyperlane.xyz
   displayName: Lisk
   domainId: 1135
-  gasCurrencyCoinGeckoId: lisk
+  gasCurrencyCoinGeckoId: ethereum
   name: lisk
   nativeToken:
     decimals: 18
@@ -1064,6 +1066,8 @@ lukso:
     symbol: LYX
   protocol: ethereum
   rpcUrls:
+    - http: https://rpc.mainnet.lukso.network
+    - http: https://rpc.lukso.sigmacore.io
     - http: https://42.rpc.thirdweb.com
 luksotestnet:
   blockExplorers:
@@ -1170,6 +1174,7 @@ merlin:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.merlinchain.io
+    - http: https://merlin.blockpi.network/v1/rpc/public
 metis:
   blockExplorers:
     - apiUrl: https://andromeda-explorer.metis.io/api/eth-rpc
