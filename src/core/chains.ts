@@ -95,7 +95,7 @@ export const CoreMainnets: Array<CoreChainName> = [
   CoreChain.lukso,
   CoreChain.mantapacific,
   CoreChain.mantle,
-  // CoreChain.merlin, temporarily disabled
+  CoreChain.merlin,
   CoreChain.metis,
   CoreChain.mint,
   CoreChain.moonbeam,
