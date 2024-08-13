@@ -1,5 +1,5 @@
 ---
-'@hyperlane-xyz/registry': major
+'@hyperlane-xyz/registry': patch
 ---
 
-Remove Worldchain due to lack of RPCs and add backup RPCs for some EVM chains
+Add backup RPCs for some EVM chains
