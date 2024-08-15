@@ -1,11 +1,11 @@
 blockExplorers:
-  - apiUrl: https://scan.coredao.org/api-docs
-    family: blockscout
+  - apiUrl: https://scan.coredao.org/api
+    family: other
     name: Core Explorer
     url: https://scan.coredao.org
 blocks:
   confirmations: 1
-  estimateBlockTime: 2
+  estimateBlockTime: 3
   reorgPeriod: 0
 chainId: 1116
 deployer:
@@ -13,7 +13,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Core
 domainId: 1116
-gasCurrencyCoinGeckoId: coredao
+gasCurrencyCoinGeckoId: coredaoorg
 name: core
 nativeToken:
   decimals: 18
@@ -23,4 +23,3 @@ protocol: ethereum
 rpcUrls:
   - http: https://rpc.coredao.org
   - http: https://core.public.infstones.com/16741450
-  - ws: wss://ws.coredao.org

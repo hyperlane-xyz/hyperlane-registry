@@ -1,11 +1,11 @@
 blockExplorers:
-  - apiUrl: https://explorer.kava.io/api-docs
+  - apiUrl: https://explorer.kava.io/api
     family: blockscout
     name: Kava Explorer
     url: https://explorer.kava.io
 blocks:
   confirmations: 1
-  estimateBlockTime: 2
+  estimateBlockTime: 6
   reorgPeriod: 0
 chainId: 2222
 deployer:
@@ -22,3 +22,7 @@ nativeToken:
 protocol: ethereum
 rpcUrls:
   - http: https://evm.kava-rpc.com
+  - http: https://evm.kava.chainstacklabs.com
+  - http: https://rpc.ankr.com/kava_evm
+  - http: https://evm.kava.io
+  - http: https://kava.drpc.org

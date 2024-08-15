@@ -1,11 +1,11 @@
 blockExplorers:
-  - apiUrl: https://www.btrscan.com/api-docs
-    family: blockscout
+  - apiUrl: https://api.btrscan.com/scan/api
+    family: other
     name: Bitlayer Explorer
     url: https://www.btrscan.com
 blocks:
   confirmations: 1
-  estimateBlockTime: 2
+  estimateBlockTime: 3
   reorgPeriod: 0
 chainId: 200901
 deployer:
@@ -24,5 +24,3 @@ rpcUrls:
   - http: https://rpc.bitlayer.org
   - http: https://rpc.bitlayer-rpc.com
   - http: https://rpc.ankr.com/bitlayer
-  - ws: wss://ws.bitlayer.org
-  - ws: wss://ws.bitlayer-rpc.com

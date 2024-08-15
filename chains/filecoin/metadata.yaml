@@ -1,11 +1,11 @@
 blockExplorers:
-  - apiUrl: https://filscan.io/api-docs
+  - apiUrl: https://filecoin.blockscout.com/api
     family: blockscout
-    name: Filscan Explorer
-    url: https://filscan.io
+    name: Filecoin Virtual Machine Explorer
+    url: https://filecoin.blockscout.com
 blocks:
   confirmations: 1
-  estimateBlockTime: 2
+  estimateBlockTime: 30
   reorgPeriod: 0
 chainId: 314
 deployer:
@@ -22,6 +22,4 @@ nativeToken:
 protocol: ethereum
 rpcUrls:
   - http: https://api.node.glif.io/rpc/v1
-  - http: https://filecoin.chainup.net/rpc/v1
-  - http: https://infura.sftproject.io/filecoin/rpc/v1
   - http: https://rpc.ankr.com/filecoin

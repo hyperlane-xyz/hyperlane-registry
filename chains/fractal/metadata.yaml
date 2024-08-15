@@ -1,19 +1,19 @@
 blockExplorers:
-  - apiUrl: https://evm.fractal.org/api-docs
+  - apiUrl: https://evmscan.fra.tech/api
     family: blockscout
     name: Fractal Confluence Explorer
-    url: https://evm.fractal.org
+    url: https://evmscan.fra.tech
 blocks:
   confirmations: 1
-  estimateBlockTime: 2
+  estimateBlockTime: 24
   reorgPeriod: 0
-chainId: 12788
+chainId: 2152
 deployer:
   name: Abacus Works
   url: https://www.hyperlane.xyz
 displayName: Fractal Confluence
-domainId: 12788
-gasCurrencyCoinGeckoId: fractal
+domainId: 2152
+gasCurrencyCoinGeckoId: findora
 name: fractalconfluence
 nativeToken:
   decimals: 18
@@ -21,4 +21,5 @@ nativeToken:
   symbol: FRA
 protocol: ethereum
 rpcUrls:
-  - http: https://rpc.fractal.org
+  - http: https://rpc-mainnet.fra.tech
+  - http: https://mainnet.fra.tech:8545
