@@ -723,28 +723,6 @@ forma:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.forma.art
-formasketchpad:
-  blockExplorers:
-    - apiUrl: https://explorer.sketchpad-1.forma.art/api
-      family: blockscout
-      name: Forma Sketchpad Explorer
-      url: https://explorer.sketchpad-1.forma.art
-  chainId: 984123
-  deployer:
-    name: Codecrafting Labs
-    url: https://cclabs.tech
-  displayName: Forma Sketchpad
-  displayNameShort: Sketchpad
-  domainId: 984123
-  isTestnet: true
-  name: formasketchpad
-  nativeToken:
-    decimals: 18
-    name: TIA
-    symbol: TIA
-  protocol: ethereum
-  rpcUrls:
-    - http: https://rpc.sketchpad-1.forma.art
 fraxtal:
   blockExplorers:
     - apiUrl: https://api.fraxscan.com/api
@@ -1846,6 +1824,28 @@ sepolia:
     - http: https://ethereum-sepolia.publicnode.com
     - http: https://ethereum-sepolia.blockpi.network/v1/rpc/public
     - http: https://rpc.sepolia.org
+sketchpad:
+  blockExplorers:
+    - apiUrl: https://explorer.sketchpad-1.forma.art/api
+      family: blockscout
+      name: Forma Sketchpad Explorer
+      url: https://explorer.sketchpad-1.forma.art
+  chainId: 984123
+  deployer:
+    name: Codecrafting Labs
+    url: https://cclabs.tech
+  displayName: Forma Sketchpad
+  displayNameShort: Sketchpad
+  domainId: 984123
+  isTestnet: true
+  name: sketchpad
+  nativeToken:
+    decimals: 18
+    name: TIA
+    symbol: TIA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.sketchpad-1.forma.art
 solana:
   blockExplorers:
     - apiUrl: https://explorer.solana.com?cluster=mainnet-beta
