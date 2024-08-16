@@ -113,8 +113,8 @@ arbitrumsepolia:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://public.stackup.sh/api/v1/node/arbitrum-sepolia
     - http: https://arbitrum-sepolia.blockpi.network/v1/rpc/public
+    - http: https://sepolia-rollup.arbitrum.io/rpc
   technicalStack: arbitrumnitro
 arthera:
   blockExplorers:
@@ -1692,6 +1692,33 @@ redstone:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.redstonechain.com
+rootstocktestnet:
+  blockExplorers:
+    - apiUrl: https://rootstock-testnet.blockscout.com/api
+      family: blockscout
+      name: Blockscout
+      url: https://rootstock-testnet.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 30
+    reorgPeriod: 4
+  chainId: 31
+  deployer:
+    name: Rootstock
+    url: https://rootstock.io
+  displayName: Rootstock Testnet
+  domainId: 31
+  isTestnet: true
+  name: rootstocktestnet
+  nativeToken:
+    decimals: 18
+    name: tRBTC
+    symbol: tRBTC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.testnet.rootstock.io/YZIZHxGCQAryubOWH7LjdtjNkSDb5J-T
+  transactionOverrides:
+    gasLimit: 6800000
 sanko:
   blockExplorers:
     - apiUrl: https://explorer.sanko.xyz/api/eth-rpc
