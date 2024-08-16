@@ -3,28 +3,73 @@
 options:
   interchainFeeConstants:
     - addressOrDenom: ibc/BF3B4F53F3694B66E13C23107C84B6485BD2B96296BB7EC680EA77BBA75B4801
-      amount: 10000
+      amount: 20000
       destination: forma
       origin: stride
-    - addressOrDenom: atia
-      amount: 10000000000000000
+    - addressOrDenom: utia
+      amount: 20000
+      destination: forma
+      origin: celestia
+    - addressOrDenom: "0x832d26B6904BA7539248Db4D58614251FD63dC05"
+      amount: 20000000000000000
       destination: stride
       origin: forma
+    - addressOrDenom: "0x832d26B6904BA7539248Db4D58614251FD63dC05"
+      amount: 20000000000000000
+      destination: celestia
+      origin: forma
 tokens:
+  # TIA Celestia to Stride
+  - addressOrDenom: utia
+    chainName: celestia
+    connections:
+      - intermediateChainName: stride
+        intermediateIbcDenom: ibc/BF3B4F53F3694B66E13C23107C84B6485BD2B96296BB7EC680EA77BBA75B4801
+        intermediateRouterAddress: stride1h4rhlwcmdwnnd99agxm3gp7uqkr4vcjd73m4586hcuklh3vdtldqgqmjxc
+        sourceChannel: channel-4
+        sourcePort: transfer
+        token: ethereum|forma|0x832d26B6904BA7539248Db4D58614251FD63dC05
+        type: IbcHyperlane
+      - sourceChannel: channel-4
+        sourcePort: transfer
+        token: cosmos|stride|ibc/BF3B4F53F3694B66E13C23107C84B6485BD2B96296BB7EC680EA77BBA75B4801
+        type: Ibc
+    decimals: 6
+    logoURI: /logos/celestia.png
+    name: TIA
+    standard: CosmosIbc
+    symbol: TIA
+  # TIA on Stride to Forma
   - addressOrDenom: stride1h4rhlwcmdwnnd99agxm3gp7uqkr4vcjd73m4586hcuklh3vdtldqgqmjxc
     chainName: stride
     collateralAddressOrDenom: ibc/BF3B4F53F3694B66E13C23107C84B6485BD2B96296BB7EC680EA77BBA75B4801
     connections:
       - token: ethereum|forma|0x832d26B6904BA7539248Db4D58614251FD63dC05
     decimals: 6
+    logoURI: /logos/celestia.png
     name: TIA
     standard: CwHypCollateral
     symbol: TIA
+  # TIA on Forma from Stride
   - addressOrDenom: "0x832d26B6904BA7539248Db4D58614251FD63dC05"
     chainName: forma
     connections:
       - token: cosmos|stride|stride1h4rhlwcmdwnnd99agxm3gp7uqkr4vcjd73m4586hcuklh3vdtldqgqmjxc
     decimals: 18
+    logoURI: /logos/celestia.png
     name: TIA
-    standard: EvmHypNative
+    standard: EvmNative
+    symbol: TIA
+  # TIA on Stride from Celestia
+  - addressOrDenom: ibc/BF3B4F53F3694B66E13C23107C84B6485BD2B96296BB7EC680EA77BBA75B4801
+    chainName: stride
+    connections:
+      - sourceChannel: channel-4
+        sourcePort: transfer
+        token: cosmos|celestia|utia
+        type: Ibc
+    decimals: 6
+    logoURI: /logos/celestia.png
+    name: TIA
+    standard: CosmosIbc
     symbol: TIA
