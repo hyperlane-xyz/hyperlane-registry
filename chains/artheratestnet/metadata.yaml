@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://explorer-test.arthera.net/api
+    family: blockscout
+    name: Blockscout
+    url: https://explorer-test.arthera.net
+blocks:
+  confirmations: 1
+  estimateBlockTime: 1
+  reorgPeriod: 0
+chainId: 10243
+deployer:
+  name: Arthera
+  url: https://www.arthera.net
+displayName: Arthera Testnet
+domainId: 10243
+isTestnet: true
+name: artheratestnet
+nativeToken:
+  decimals: 18
+  name: Arthera
+  symbol: AA
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc-test.arthera.net
+    pagination:
+      maxBlockRange: 10000

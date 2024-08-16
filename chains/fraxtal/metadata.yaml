@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://api.fraxscan.com/api
+    family: etherscan
+    name: Fraxscan
+    url: https://fraxscan.com
+blocks:
+  confirmations: 1
+  estimateBlockTime: 2
+  reorgPeriod: 1
+chainId: 252
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Fraxtal
+domainId: 252
+gasCurrencyCoinGeckoId: frax-ether
+gnosisSafeTransactionServiceUrl: https://transaction-frax.safe.optimism.io
+name: fraxtal
+nativeToken:
+  decimals: 18
+  name: Frax Ether
+  symbol: frxETH
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.frax.com
+  - http: https://fraxtal.drpc.org

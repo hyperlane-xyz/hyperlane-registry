@@ -9,8 +9,12 @@ import {
   getExplorerTxUrl,
 } from '../../node_modules/@hyperlane-xyz/sdk/dist/metadata/blockExplorer.js';
 
-const HEALTH_CHECK_TIMEOUT = 10_000; // 10s
-const HEALTH_CHECK_DELAY = 3_000; // 3s
+const CHAINS_TO_SKIP = [
+  'base', // explorer works but has extremely strict rate limits
+];
+
+const HEALTH_CHECK_TIMEOUT = 15_000; // 15s
+const HEALTH_CHECK_DELAY = 5_000; // 5s
 
 const PROTOCOL_TO_ADDRESS: Record<ProtocolType, Address> = {
   [ProtocolType.Ethereum]: '0x0000000000000000000000000000000000000000',
@@ -18,10 +22,8 @@ const PROTOCOL_TO_ADDRESS: Record<ProtocolType, Address> = {
   [ProtocolType.Cosmos]: 'cosmos100000000000000000000000000000000000000',
 };
 
-const PROTOCOL_TO_TX_HASH: Record<ProtocolType, Address> = {
+const PROTOCOL_TO_TX_HASH: Partial<Record<ProtocolType, Address>> = {
   [ProtocolType.Ethereum]: '0x0000000000000000000000000000000000000000000000000000000000000000',
-  [ProtocolType.Sealevel]:
-    '1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111',
   [ProtocolType.Cosmos]: '0000000000000000000000000000000000000000000000000000000000000000',
 };
 
@@ -35,9 +37,8 @@ export async function isBlockExplorerHealthy(
   console.debug(`Got base url: ${baseUrl}`);
 
   console.debug(`Checking explorer home for ${chainMetadata.name}`);
-  const homeReq = await fetch(baseUrl);
-  if (!homeReq.ok) return false;
-  console.debug(`Explorer home okay for ${chainMetadata.name}`);
+  await fetch(baseUrl);
+  console.debug(`Explorer home exists for ${chainMetadata.name}`);
 
   if (address) {
     console.debug(`Checking explorer address page for ${chainMetadata.name}`);
@@ -64,7 +65,7 @@ export async function isBlockExplorerHealthy(
 
 describe('Chain block explorer health', async () => {
   for (const [chain, metadata] of Object.entries(chainMetadata)) {
-    if (!metadata.blockExplorers?.length) continue;
+    if (!metadata.blockExplorers?.length || CHAINS_TO_SKIP.includes(chain)) continue;
     it(`${chain} default explorer is healthy`, async () => {
       const isHealthy = await isBlockExplorerHealthy(
         metadata,

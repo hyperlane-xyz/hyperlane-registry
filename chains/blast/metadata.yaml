@@ -9,9 +9,13 @@ blocks:
   estimateBlockTime: 2
   reorgPeriod: 1
 chainId: 81457
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
 displayName: Blast
 domainId: 81457
 gasCurrencyCoinGeckoId: ethereum
+gnosisSafeTransactionServiceUrl: https://transaction.blast-safe.io
 name: blast
 nativeToken:
   decimals: 18
@@ -20,4 +24,5 @@ nativeToken:
 protocol: ethereum
 rpcUrls:
   - http: https://rpc.blast.io
+  - http: https://rpc.ankr.com/blast
 technicalStack: other

@@ -1,0 +1,28 @@
+---
+blockExplorers:
+  # rate limit of 1/5sec applied, api key needed
+  - apiUrl: https://api.taikoscan.io/api
+    family: etherscan
+    name: Taikoscan
+    url: https://taikoscan.io
+blocks:
+  confirmations: 1
+  estimateBlockTime: 12
+  reorgPeriod: 1
+chainId: 167000
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Taiko
+domainId: 167000
+gasCurrencyCoinGeckoId: ethereum
+gnosisSafeTransactionServiceUrl: https://transaction.safe.taiko.xyz
+name: taiko
+nativeToken:
+  decimals: 18
+  name: Ether
+  symbol: ETH
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.mainnet.taiko.xyz
+technicalStack: other

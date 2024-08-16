@@ -1,7 +1,7 @@
 import { stringify } from 'yaml';
 
 export function toYamlString(data: any, prefix?: string): string {
-  const yamlString = stringify(data);
+  const yamlString = stringify(data, { indent: 2, sortMapEntries: true });
   return prefix ? `${prefix}\n${yamlString}` : yamlString;
 }
 

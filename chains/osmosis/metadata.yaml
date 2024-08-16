@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: osmo
+blockExplorers:
+  - apiUrl: https://www.mintscan.io/osmosis
+    family: other
+    name: Mintscan
+    url: https://www.mintscan.io/osmosis
+blocks:
+  confirmations: 1
+  estimateBlockTime: 3
+  reorgPeriod: 1
+chainId: osmosis-1
+deployer:
+  name: Mitosis
+  url: https://mitosis.org
+displayName: Osmosis
+domainId: 875
+gasCurrencyCoinGeckoId: osmosis
+grpcUrls:
+  - http: osmosis-grpc.publicnode.com:443
+isTestnet: false
+name: osmosis
+nativeToken:
+  decimals: 6
+  denom: uosmo
+  name: Osmosis
+  symbol: OSMO
+protocol: cosmos
+restUrls:
+  - http: https://osmosis-rest.publicnode.com
+rpcUrls:
+  - http: https://osmosis-rpc.publicnode.com
+slip44: 118
+transactionOverrides:
+  gasPrice: "0.025"

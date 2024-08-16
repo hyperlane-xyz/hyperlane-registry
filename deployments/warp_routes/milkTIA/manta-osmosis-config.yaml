@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=../schema.json
+options:
+  interchainFeeConstants:
+    - addressOrDenom: factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA
+      amount: 840000
+      destination: mantapacific
+      origin: osmosis
+tokens:
+  - addressOrDenom: osmo17xuecsykqw2xcxwv8cau7uy4hgdwqt0u4qxflyc2yshhggpazfjs6kfqd3
+    chainName: osmosis
+    collateralAddressOrDenom: factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA
+    connections:
+      - token: ethereum|mantapacific|0x32474653127048d9fC20000e21dEd396b47968E8
+    decimals: 6
+    name: milkTIA.o
+    standard: CwHypCollateral
+    symbol: milkTIA.o
+  - addressOrDenom: "0x32474653127048d9fC20000e21dEd396b47968E8"
+    chainName: mantapacific
+    connections:
+      - token: cosmos|osmosis|osmo17xuecsykqw2xcxwv8cau7uy4hgdwqt0u4qxflyc2yshhggpazfjs6kfqd3
+    decimals: 6
+    name: milkTIA.o
+    standard: EvmHypSynthetic
+    symbol: milkTIA.o

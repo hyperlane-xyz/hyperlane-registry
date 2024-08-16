@@ -1,0 +1,63 @@
+name: combine
+
+on:
+  pull_request:
+  # Allows you to run this workflow manually
+  workflow_dispatch:
+
+jobs:
+  combine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || 'main' }}
+          # This action secret contains a fine-grained personal access token with permissions to read/write repo content
+          # It is necessary because the default GITHUB_TOKEN cannot re-trigger workflows after pushing
+          token: ${{ secrets.COMBINE_CI_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - uses: actions/cache@v4
+        with:
+          path: |
+            **/node_modules
+            .yarn/cache
+          key: ${{ runner.os }}-yarn-cache-${{ hashFiles('./yarn.lock') }}
+
+      - name: yarn-install
+        run: |
+            yarn install
+            CHANGES=$(git status -s)
+            if [[ ! -z $CHANGES ]]; then
+              echo "Changes found: $CHANGES"
+              git diff
+              exit 1
+            fi
+
+      - name: foundry-install
+        uses: foundry-rs/foundry-toolchain@v1
+
+      - name: configure-git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: update-nitro-chains
+        run: |
+          echo "Updating Nitro chains..."
+          ./scripts/update-nitro-chains.sh
+
+      - name: combine-data
+        run: |
+          echo "Assembling chain metadata and addresses together..."
+          yarn build
+
+      - name: commit-changes
+        run: |
+          CHANGES=$(git status -s)
+          if [[ ! -z $CHANGES ]]; then
+            git add .
+            git commit -m "Update chain metadata and address files"
+            git push
+          else
+            echo "No changes to commit."
+          fi

@@ -2,7 +2,7 @@
 import { ChainMetadataSchemaObject, WarpCoreConfigSchema } from '@hyperlane-xyz/sdk';
 import { pick } from '@hyperlane-xyz/utils';
 import fs from 'fs';
-import { parse } from 'yaml';
+import { parse, stringify } from 'yaml';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import { CoreChains } from '../src/core/chains';
 import { warpRouteConfigToId } from '../src/registry/warp-utils';
@@ -75,6 +75,17 @@ function createChainFiles() {
   }
 }
 
+// Update the combined metadata and addresses files
+// These reduce the fetches needed to get all chain data
+function updateCombinedChainFiles() {
+  console.log('Updating combined chain metadata and addresses files');
+  const AUTO_GEN_PREFIX = '# AUTO-GENERATED; DO NOT EDIT MANUALLY';
+  const combinedMetadata = stringify(chainMetadata, { sortMapEntries: true });
+  const combinedAddresses = stringify(chainAddresses, { sortMapEntries: true });
+  fs.writeFileSync('./chains/metadata.yaml', `${AUTO_GEN_PREFIX}\n${combinedMetadata}`);
+  fs.writeFileSync('./chains/addresses.yaml', `${AUTO_GEN_PREFIX}\n${combinedAddresses}`);
+}
+
 function createWarpConfigFiles() {
   console.log('Parsing and copying warp config data');
   const warpPathBase = 'deployments/warp_routes';
@@ -96,7 +107,7 @@ function createWarpConfigFiles() {
       warpRouteConfigs[id] = config;
       fs.mkdirSync(`${assetOutPath}`, { recursive: true });
       fs.mkdirSync(`${tsOutPath}`, { recursive: true });
-      fs.copyFileSync(`${inDirPath}/${warpFileName}.yaml`, `${assetOutPath}/${warpFile}.yaml`);
+      fs.copyFileSync(`${inDirPath}/${warpFileName}.yaml`, `${assetOutPath}/${warpFileName}.yaml`);
       fs.writeFileSync(`${assetOutPath}/${warpFileName}.json`, JSON.stringify(config, null, 2));
       fs.writeFileSync(
         `${tsOutPath}/${warpFileName}.ts`,
@@ -190,6 +201,7 @@ function updateJsonSchemas() {
 
 createTmpDir();
 createChainFiles();
+updateCombinedChainFiles();
 createWarpConfigFiles();
 generateChainTsCode();
 generateWarpConfigTsCode();

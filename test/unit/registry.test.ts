@@ -11,17 +11,23 @@ import { MergedRegistry } from '../../src/registry/MergedRegistry.js';
 import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
 import { ChainAddresses } from '../../src/types.js';
 
+const GITHUB_REGISTRY_BRANCH = 'main';
+
 const MOCK_CHAIN_NAME = 'mockchain';
 const MOCK_CHAIN_NAME2 = 'mockchain2';
 const MOCK_DISPLAY_NAME = 'faketherum';
 const MOCK_SYMBOL = 'MOCK';
 const MOCK_ADDRESS = '0x0000000000000000000000000000000000000001';
 
+// Used to verify the GithubRegistry is fetching the correct data
+// Must be kept in sync with value in canonical registry's main branch
+const ETH_MAILBOX_ADDRESS = '0xc005dc82818d67AF737725bD4bf75435d065D239';
+
 describe('Registry utilities', () => {
-  const githubRegistry = new GithubRegistry();
+  const githubRegistry = new GithubRegistry({ branch: GITHUB_REGISTRY_BRANCH });
   expect(githubRegistry.repoOwner).to.eql('hyperlane-xyz');
   expect(githubRegistry.repoName).to.eql('hyperlane-registry');
-  expect(githubRegistry.branch).to.eql('main');
+  expect(githubRegistry.branch).to.eql(GITHUB_REGISTRY_BRANCH);
 
   const localRegistry = new FileSystemRegistry({ uri: './' });
   expect(localRegistry.uri).to.be.a('string');
@@ -63,6 +69,9 @@ describe('Registry utilities', () => {
       const addresses = await registry.getAddresses();
       expect(Object.keys(addresses).length).to.be.greaterThan(0);
       expect(addresses['ethereum'].mailbox.substring(0, 2)).to.eql('0x');
+      if (registry.type === RegistryType.Github) {
+        expect(addresses['ethereum'].mailbox).to.eql(ETH_MAILBOX_ADDRESS);
+      }
     }).timeout(10_000);
 
     it(`Fetches single chain addresses for ${registry.type} registry`, async () => {
@@ -128,6 +137,29 @@ describe('Registry utilities', () => {
       fs.rmdirSync(`deployments/warp_routes/${MOCK_SYMBOL}`);
     }).timeout(5_000);
   }
+
+  describe('MergedRegistry', async () => {
+    it('Merges metadata from multiple registries', async () => {
+      const mergedMetadata = await mergedRegistry.getMetadata();
+      const localMetadata = await localRegistry.getMetadata();
+      expect(mergedMetadata['ethereum'].chainId).to.eql(1);
+      // Confirm the partial registry metadata is merged
+      expect(mergedMetadata['ethereum'].displayName).to.eql(MOCK_DISPLAY_NAME);
+      expect(localMetadata['ethereum'].displayName).to.not.eql(MOCK_DISPLAY_NAME);
+      // Confirm other chains are not affected
+      expect(mergedMetadata['arbitrum']).to.eql(localMetadata['arbitrum']);
+    });
+
+    it('Merges addresses from multiple registries', async () => {
+      const mergedAddresses = await mergedRegistry.getAddresses();
+      const localAddresses = await localRegistry.getAddresses();
+      // Confirm the partial registry metadata is merged
+      expect(mergedAddresses['ethereum'].mailbox).to.eql(MOCK_ADDRESS);
+      expect(localAddresses['ethereum'].mailbox).to.not.eql(MOCK_ADDRESS);
+      // Confirm other chains are not affected
+      expect(localAddresses['arbitrum']).to.eql(localAddresses['arbitrum']);
+    });
+  });
 });
 
 describe('Registry regex', () => {

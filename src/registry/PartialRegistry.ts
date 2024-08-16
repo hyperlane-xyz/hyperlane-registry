@@ -46,7 +46,7 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
 
     const warpRoutes = this.warpRoutes.reduce<RegistryContent['deployments']['warpRoutes']>(
       (acc, r) => {
-        // Cast is useful because this handles partials and safe because the fn validates data
+        // Cast is useful because this handles partials and is safe because the fn validates data
         const id = warpRouteConfigToId(r as WarpCoreConfig);
         acc[id] = PARTIAL_URI_PLACEHOLDER;
         return acc;
