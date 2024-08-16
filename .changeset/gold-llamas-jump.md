@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-New ICA deployments for core EVM chains
+Update core testnets to match AW infra

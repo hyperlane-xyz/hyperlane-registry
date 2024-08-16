@@ -113,8 +113,8 @@ arbitrumsepolia:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://public.stackup.sh/api/v1/node/arbitrum-sepolia
     - http: https://arbitrum-sepolia.blockpi.network/v1/rpc/public
+    - http: https://sepolia-rollup.arbitrum.io/rpc
   technicalStack: arbitrumnitro
 arthera:
   blockExplorers:
@@ -289,8 +289,8 @@ basesepolia:
     reorgPeriod: 1
   chainId: 84532
   deployer:
-    name: Toucan Protocol
-    url: https://toucan.earth
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Base Sepolia
   domainId: 84532
   isTestnet: true
@@ -329,6 +329,7 @@ blast:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.blast.io
+    - http: https://rpc.ankr.com/blast
   technicalStack: other
 bob:
   blockExplorers:
@@ -547,7 +548,8 @@ cyber:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://cyber-chain.net/rpc
+    - http: https://rpc.cyber.co
+    - http: https://cyber.alt.technology
 degenchain:
   blockExplorers:
     - apiUrl: https://explorer.degen.tips/api/eth-rpc
@@ -776,6 +778,7 @@ fraxtal:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.frax.com
+    - http: https://fraxtal.drpc.org
 fuji:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/testnet/evm/43113/etherscan/api
@@ -829,6 +832,9 @@ fusemainnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.fuse.io
+    - http: https://fuse.drpc.org
+    - http: https://fuse.liquify.com
+    - http: https://fuse-pokt.nodies.app
 galadrieldevnet:
   blockExplorers:
     - apiUrl: https://explorer.galadriel.com/
@@ -957,6 +963,7 @@ inevm:
   protocol: ethereum
   rpcUrls:
     - http: https://inevm.calderachain.xyz/http
+    - http: https://mainnet.rpc.inevm.com/http
   technicalStack: arbitrumnitro
 injective:
   bech32Prefix: inj
@@ -1038,7 +1045,9 @@ kroma:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
+    - http: https://rpc-kroma.rockx.com
     - http: https://api.kroma.network
+    - http: https://1rpc.io/kroma
 linea:
   blockExplorers:
     - apiUrl: https://api.lineascan.build/api
@@ -1065,6 +1074,7 @@ linea:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.linea.build
+    - http: https://linea.drpc.org
 lisk:
   blockExplorers:
     - apiUrl: https://blockscout.lisk.com/api/eth-rpc
@@ -1072,7 +1082,7 @@ lisk:
       name: Lisk Explorer
       url: https://blockscout.lisk.com
   blocks:
-    confirmations: 1
+    confirmations: 3
     estimateBlockTime: 2
     reorgPeriod: 0
   chainId: 1135
@@ -1081,7 +1091,7 @@ lisk:
     url: https://www.hyperlane.xyz
   displayName: Lisk
   domainId: 1135
-  gasCurrencyCoinGeckoId: lisk
+  gasCurrencyCoinGeckoId: ethereum
   name: lisk
   nativeToken:
     decimals: 18
@@ -1114,6 +1124,8 @@ lukso:
     symbol: LYX
   protocol: ethereum
   rpcUrls:
+    - http: https://rpc.mainnet.lukso.network
+    - http: https://rpc.lukso.sigmacore.io
     - http: https://42.rpc.thirdweb.com
 luksotestnet:
   blockExplorers:
@@ -1168,6 +1180,7 @@ mantapacific:
   protocol: ethereum
   rpcUrls:
     - http: https://pacific-rpc.manta.network/http
+    - http: https://manta.nirvanalabs.xyz/mantapublic
 mantle:
   blockExplorers:
     - apiUrl: https://explorer.mantle.xyz/api
@@ -1220,6 +1233,7 @@ merlin:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.merlinchain.io
+    - http: https://merlin.blockpi.network/v1/rpc/public
 metis:
   blockExplorers:
     - apiUrl: https://andromeda-explorer.metis.io/api/eth-rpc
@@ -1318,6 +1332,7 @@ mode:
   protocol: ethereum
   rpcUrls:
     - http: https://mainnet.mode.network
+    - http: https://mode.drpc.org
   technicalStack: other
 moonbeam:
   blockExplorers:
@@ -1400,32 +1415,6 @@ neutron:
   slip44: 118
   transactionOverrides:
     gasPrice: "0.0075"
-opsepolia:
-  blockExplorers:
-    - apiUrl: https://api-sepolia-optimistic.etherscan.io/api
-      family: etherscan
-      name: OP Sepolia Explorer
-      url: https://sepolia-optimistic.etherscan.io
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 2
-    reorgPeriod: 0
-  chainId: 11155420
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
-  displayName: OP Sepolia
-  domainId: 11155420
-  gasCurrencyCoinGeckoId: ethereum
-  isTestnet: true
-  name: opsepolia
-  nativeToken:
-    decimals: 18
-    name: Ether
-    symbol: ETH
-  protocol: ethereum
-  rpcUrls:
-    - http: https://sepolia.optimism.io
 optimism:
   blockExplorers:
     - apiUrl: https://api-optimistic.etherscan.io/api
@@ -1452,6 +1441,32 @@ optimism:
   protocol: ethereum
   rpcUrls:
     - http: https://mainnet.optimism.io
+optimismsepolia:
+  blockExplorers:
+    - apiUrl: https://api-sepolia-optimistic.etherscan.io/api
+      family: etherscan
+      name: OP Sepolia Explorer
+      url: https://sepolia-optimistic.etherscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 11155420
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Optimism Sepolia
+  domainId: 11155420
+  gasCurrencyCoinGeckoId: ethereum
+  isTestnet: true
+  name: optimismsepolia
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://sepolia.optimism.io
 osmosis:
   bech32Prefix: osmo
   blockExplorers:
@@ -1550,9 +1565,9 @@ polygonamoy:
       name: Polygon Amoy Explorer
       url: https://amoy.polygonscan.com
   blocks:
-    confirmations: 200
+    confirmations: 5
     estimateBlockTime: 2
-    reorgPeriod: 256
+    reorgPeriod: 10
   chainId: 80002
   deployer:
     name: Abacus Works
@@ -1568,6 +1583,9 @@ polygonamoy:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc-amoy.polygon.technology
+    - http: https://polygon-amoy-bor-rpc.publicnode.com
+    - http: https://polygon-amoy.blockpi.network/v1/rpc/public
+    - http: https://rpc.ankr.com/polygon_amoy
 polygonzkevm:
   blockExplorers:
     - apiUrl: https://api-zkevm.polygonscan.com/api
@@ -1698,6 +1716,33 @@ redstone:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.redstonechain.com
+rootstocktestnet:
+  blockExplorers:
+    - apiUrl: https://rootstock-testnet.blockscout.com/api
+      family: blockscout
+      name: Blockscout
+      url: https://rootstock-testnet.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 30
+    reorgPeriod: 4
+  chainId: 31
+  deployer:
+    name: Rootstock
+    url: https://rootstock.io
+  displayName: Rootstock Testnet
+  domainId: 31
+  isTestnet: true
+  name: rootstocktestnet
+  nativeToken:
+    decimals: 18
+    name: tRBTC
+    symbol: tRBTC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.testnet.rootstock.io/YZIZHxGCQAryubOWH7LjdtjNkSDb5J-T
+  transactionOverrides:
+    gasLimit: 6800000
 sanko:
   blockExplorers:
     - apiUrl: https://explorer.sanko.xyz/api/eth-rpc
@@ -1777,6 +1822,10 @@ scrollsepolia:
   protocol: ethereum
   rpcUrls:
     - http: https://sepolia-rpc.scroll.io
+    - http: https://rpc.ankr.com/scroll_sepolia_testnet
+    - http: https://scroll-sepolia.blockpi.network/v1/rpc/public
+    - http: https://scroll-sepolia.chainstacklabs.com
+    - http: https://scroll-public.scroll-testnet.quiknode.pro
 sei:
   blockExplorers:
     - apiUrl: https://seitrace.com/pacific-1/api
@@ -1962,6 +2011,41 @@ stride:
     - http: https://stride-api.polkachu.com
   rpcUrls:
     - http: https://stride-rpc.polkachu.com
+  slip44: 118
+  transactionOverrides:
+    gasPrice: "0.0025"
+stridetestnet:
+  bech32Prefix: stride
+  blockExplorers:
+    - apiUrl: https://testnet.ping.pub/stride
+      family: other
+      name: Mintscan
+      url: https://testnet.ping.pub/stride
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 5
+    reorgPeriod: 1
+  chainId: stride-internal-1
+  deployer:
+    name: Stride Labs
+    url: https://www.stride.zone
+  displayName: Stride Testnet
+  domainId: 1651
+  gasCurrencyCoinGeckoId: stride
+  grpcUrls:
+    - http: stride-testnet-grpc.polkachu.com:12290
+  isTestnet: true
+  name: stridetestnet
+  nativeToken:
+    decimals: 6
+    denom: ustrd
+    name: Stride
+    symbol: STRD
+  protocol: cosmos
+  restUrls:
+    - http: https://stride-testnet-api.polkachu.com
+  rpcUrls:
+    - http: https://stride-testnet-rpc.polkachu.com
   slip44: 118
   transactionOverrides:
     gasPrice: "0.0025"

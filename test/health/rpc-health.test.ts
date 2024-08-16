@@ -14,6 +14,10 @@ import { chainAddresses, chainMetadata } from '../../dist/index.js';
 
 import { Mailbox__factory } from '@hyperlane-xyz/core';
 
+const CHAINS_TO_SKIP = [
+  'worldchain', // only allows private RPC access
+];
+
 const HEALTH_CHECK_TIMEOUT = 10_000; // 10s
 const HEALTH_CHECK_DELAY = 3_000; // 3s
 
@@ -78,6 +82,7 @@ async function isCosmJsProviderHealthy(
 
 describe('Chain RPC health', async () => {
   for (const [chain, metadata] of Object.entries(chainMetadata)) {
+    if (CHAINS_TO_SKIP.includes(chain)) continue;
     metadata.rpcUrls.map((rpc, i) => {
       it(`${chain} RPC number ${i} is healthy`, async () => {
         const isHealthy = await isRpcHealthy(rpc, metadata);

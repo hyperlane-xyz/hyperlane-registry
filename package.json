@@ -1,7 +1,7 @@
 {
   "name": "@hyperlane-xyz/registry",
   "description": "A collection of configs, artifacts, and schemas for Hyperlane",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "dependencies": {
     "yaml": "^2",
     "zod": "^3.21.2"
@@ -66,7 +66,7 @@
     "prepare": "husky",
     "release": "yarn build && yarn changeset publish",
     "test:unit": "yarn build && mocha --config .mocharc.json './test/unit/*.test.ts' --exit",
-    "test:health": "yarn build && mocha --config .mocharc.json './test/health/*.test.ts' --exit",
+    "test:health": "yarn build && mocha --config .mocharc.json './test/health/*.test.ts' --exit --parallel",
     "version:prepare": "yarn changeset version && yarn install --no-immutable",
     "version:check": "yarn changeset status"
   },

@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add Eclipse
+Add Eclipse SOL token metadata
