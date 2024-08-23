@@ -1,6 +1,6 @@
 blockExplorers:
-  - apiUrl: https://explorer.zircuit.com/api
-    family: other
+  - apiUrl: https://explorer.zircuit.com/api/contractVerifyHardhat
+    family: etherscan
     name: Zircuit Eplorer
     url: https://explorer.zircuit.com
 blocks:
@@ -14,7 +14,7 @@ deployer:
 displayName: Zircuit
 domainId: 48900
 gasCurrencyCoinGeckoId: ethereum
-gnosisSafeTransactionServiceUrl: https://gateway.safe.zircuit.com/api
+gnosisSafeTransactionServiceUrl: https://transaction.safe.zircuit.com
 name: zircuit
 nativeToken:
   decimals: 18
@@ -24,3 +24,4 @@ protocol: ethereum
 rpcUrls:
   - http: https://zircuit1-mainnet.p2pify.com
   - http: https://zircuit1-mainnet.liquify.com
+  - http: https://zircuit-mainnet.drpc.org
