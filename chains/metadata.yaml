@@ -388,7 +388,7 @@ celo:
   name: celo
   nativeToken:
     decimals: 18
-    name: CELO
+    name: Celo
     symbol: CELO
   protocol: ethereum
   rpcUrls:
@@ -415,7 +415,7 @@ cheesechain:
   name: cheesechain
   nativeToken:
     decimals: 18
-    name: CHEESE
+    name: Cheese
     symbol: CHEESE
   protocol: ethereum
   rpcUrls:
@@ -522,7 +522,7 @@ degenchain:
   name: degenchain
   nativeToken:
     decimals: 18
-    name: Degen Chain
+    name: Degen
     symbol: DEGEN
   protocol: ethereum
   rpcUrls:
@@ -642,7 +642,7 @@ endurance:
   name: endurance
   nativeToken:
     decimals: 18
-    name: ACE
+    name: Fusionist
     symbol: ACE
   protocol: ethereum
   rpcUrls:
@@ -678,25 +678,25 @@ ethereum:
   rpcUrls:
     - http: https://ethereum.publicnode.com
     - http: https://cloudflare-eth.com
-fhenix:
+fhenixtestnet:
   blockExplorers:
     - apiUrl: https://api.helium.fhenix.zone
       family: blockscout
-      name: Fhenix Explorer
+      name: Fhenix Helium Testnet Explorer
       url: https://explorer.helium.fhenix.zone
   chainId: 8008135
   deployer:
     name: d0x471b
     url: https://t.me/d0x471b
-  displayName: Fhenix
+  displayName: Fhenix Helium Testnet
   domainId: 8008135
   index:
     from: 140556
   isTestnet: true
-  name: fhenix
+  name: fhenixtestnet
   nativeToken:
     decimals: 18
-    name: tFHE
+    name: Testnet Fhenix
     symbol: tFHE
   protocol: ethereum
   rpcUrls:
@@ -906,7 +906,7 @@ immutablezkevm:
   name: immutablezkevm
   nativeToken:
     decimals: 18
-    name: IMX
+    name: Immutable
     symbol: IMX
   protocol: ethereum
   rpcUrls:
@@ -1096,7 +1096,7 @@ lukso:
   name: lukso
   nativeToken:
     decimals: 18
-    name: LYX
+    name: LUKSO
     symbol: LYX
   protocol: ethereum
   rpcUrls:
@@ -1123,7 +1123,7 @@ luksotestnet:
   name: luksotestnet
   nativeToken:
     decimals: 18
-    name: LYXt
+    name: Testnet LUKSO
     symbol: LYXt
   protocol: ethereum
   rpcUrls:
@@ -1204,7 +1204,7 @@ merlin:
   name: merlin
   nativeToken:
     decimals: 18
-    name: BTC
+    name: Bitcoin
     symbol: BTC
   protocol: ethereum
   rpcUrls:
@@ -1331,7 +1331,7 @@ moonbeam:
   name: moonbeam
   nativeToken:
     decimals: 18
-    name: GLMR
+    name: Moonbeam
     symbol: GLMR
   protocol: ethereum
   rpcUrls:
@@ -1513,7 +1513,7 @@ polygon:
       name: PolygonScan
       url: https://polygonscan.com
   blocks:
-    confirmations: 200
+    confirmations: 3
     estimateBlockTime: 2
     reorgPeriod: 256
   chainId: 137
@@ -1554,7 +1554,7 @@ polygonamoy:
   name: polygonamoy
   nativeToken:
     decimals: 18
-    name: MATIC
+    name: Matic
     symbol: MATIC
   protocol: ethereum
   rpcUrls:
@@ -1660,7 +1660,7 @@ real:
   name: real
   nativeToken:
     decimals: 18
-    name: reETH
+    name: Real Ether
     symbol: reETH
   protocol: ethereum
   rpcUrls:
@@ -1692,6 +1692,36 @@ redstone:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.redstonechain.com
+rootstock:
+  blockExplorers:
+    - apiUrl: https://rootstock.blockscout.com/api
+      family: blockscout
+      name: Blockscout
+      url: https://rootstock.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 30
+    reorgPeriod: 4
+  chainId: 30
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Rootstock
+  domainId: 30
+  gasCurrencyCoinGeckoId: rootstock
+  name: rootstock
+  nativeToken:
+    decimals: 18
+    name: Rootstock Smart Bitcoin
+    symbol: RBTC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.mainnet.rootstock.io/kXhXHf6TnnfW1POvr4UT0YUvujmuju-M
+    - http: https://public-node.rsk.co
+    - http: https://rootstock.drpc.org
+    - http: https://mycrypto.rsk.co
+  transactionOverrides:
+    gasLimit: 6800000
 rootstocktestnet:
   blockExplorers:
     - apiUrl: https://rootstock-testnet.blockscout.com/api
@@ -1712,7 +1742,7 @@ rootstocktestnet:
   name: rootstocktestnet
   nativeToken:
     decimals: 18
-    name: tRBTC
+    name: Testnet Rootstock Smart Bitcoin
     symbol: tRBTC
   protocol: ethereum
   rpcUrls:
@@ -1741,7 +1771,7 @@ sanko:
   name: sanko
   nativeToken:
     decimals: 18
-    name: DMT
+    name: Dream Machine Token
     symbol: DMT
   protocol: ethereum
   rpcUrls:
@@ -1878,7 +1908,7 @@ sketchpad:
   name: sketchpad
   nativeToken:
     decimals: 18
-    name: TIA
+    name: Celestia
     symbol: TIA
   protocol: ethereum
   rpcUrls:
@@ -1903,7 +1933,7 @@ solana:
   name: solana
   nativeToken:
     decimals: 9
-    name: Sol
+    name: Solana
     symbol: SOL
   protocol: sealevel
   rpcUrls:
@@ -1929,7 +1959,7 @@ solanadevnet:
   name: solanadevnet
   nativeToken:
     decimals: 9
-    name: Sol
+    name: Solana
     symbol: SOL
   protocol: sealevel
   rpcUrls:
@@ -1955,7 +1985,7 @@ solanatestnet:
   name: solanatestnet
   nativeToken:
     decimals: 9
-    name: Sol
+    name: Solana
     symbol: SOL
   protocol: sealevel
   rpcUrls:
@@ -2269,8 +2299,8 @@ zetachain:
     - http: https://zetachain-mainnet.g.allthatnode.com/archive/evm
 zircuit:
   blockExplorers:
-    - apiUrl: https://explorer.zircuit.com/api
-      family: other
+    - apiUrl: https://explorer.zircuit.com/api/contractVerifyHardhat
+      family: etherscan
       name: Zircuit Eplorer
       url: https://explorer.zircuit.com
   blocks:
@@ -2284,7 +2314,7 @@ zircuit:
   displayName: Zircuit
   domainId: 48900
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://gateway.safe.zircuit.com/api
+  gnosisSafeTransactionServiceUrl: https://transaction.safe.zircuit.com
   name: zircuit
   nativeToken:
     decimals: 18
@@ -2294,6 +2324,7 @@ zircuit:
   rpcUrls:
     - http: https://zircuit1-mainnet.p2pify.com
     - http: https://zircuit1-mainnet.liquify.com
+    - http: https://zircuit-mainnet.drpc.org
 zoramainnet:
   blockExplorers:
     - apiUrl: https://explorer.zora.energy/api
