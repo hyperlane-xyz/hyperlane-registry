@@ -251,6 +251,8 @@ astar:
   protocol: ethereum
   rpcUrls:
     - http: https://evm.astar.network
+  transactionOverrides:
+    gasLimit: 15000000
 astarzkevm:
   blockExplorers:
     - apiUrl: https://astar-zkevm.explorer.startale.com/api
