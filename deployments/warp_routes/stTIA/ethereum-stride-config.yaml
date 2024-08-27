@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../schema.json
+options:
+  interchainFeeConstants:
+    - addressOrDenom: ibc/BF3B4F53F3694B66E13C23107C84B6485BD2B96296BB7EC680EA77BBA75B4801
+      amount: 1050000
+      destination: ethereum
+      origin: stride
+tokens:
+  # stTIA on Stride to Ethereum
+  - addressOrDenom: stride1z3lz9n0549v95q6yllghezugdra6ezm68jtf4ve5hsz8k867k9cq3pc2f8
+    chainName: stride
+    collateralAddressOrDenom: stutia
+    connections:
+      - token: ethereum|ethereum|0x48A612A6da945205a221E94BB9F40B0550Cd2C4e
+    decimals: 6
+    logoURI: /deployments/warp_routes/stTIA/logo.svg
+    name: stTIA
+    standard: CwHypCollateral
+    symbol: stTIA
+  # stTIA on Ethereum to Stride
+  - addressOrDenom: "0x48A612A6da945205a221E94BB9F40B0550Cd2C4e"
+    chainName: ethereum
+    connections:
+      - token: cosmos|stride|stride1z3lz9n0549v95q6yllghezugdra6ezm68jtf4ve5hsz8k867k9cq3pc2f8
+    decimals: 6
+    logoURI: /deployments/warp_routes/stTIA/logo.svg
+    name: stTIA
+    standard: EvmHypSynthetic
+    symbol: stTIA
