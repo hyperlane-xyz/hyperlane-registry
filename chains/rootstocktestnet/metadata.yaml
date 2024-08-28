@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://rootstock-testnet.blockscout.com/api
+    family: blockscout
+    name: Blockscout
+    url: https://rootstock-testnet.blockscout.com
+blocks:
+  confirmations: 1
+  estimateBlockTime: 30
+  reorgPeriod: 4
+chainId: 31
+deployer:
+  name: Rootstock
+  url: https://rootstock.io
+displayName: Rootstock Testnet
+domainId: 31
+isTestnet: true
+name: rootstocktestnet
+nativeToken:
+  decimals: 18
+  name: Testnet Rootstock Smart Bitcoin
+  symbol: tRBTC
+protocol: ethereum
+rpcUrls:
+  # Note: Using Rootstock RPC api here which contains APIKEY in url.
+  # Recommended way is to get a new APIKEY whoever wants to run Hyperlane on Rootstock.
+  # RPC API Dashboard: https://dashboard.rpc.rootstock.io
+  - http: https://rpc.testnet.rootstock.io/YZIZHxGCQAryubOWH7LjdtjNkSDb5J-T
+transactionOverrides:
+  gasLimit: 6800000

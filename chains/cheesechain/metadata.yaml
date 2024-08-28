@@ -1,17 +1,28 @@
-# yaml-language-server: $schema=../schema.json
-name: cheesechain
-displayName: CheeseChain
-chainId: 383353
-domainId: 383353
-protocol: ethereum
-rpcUrls:
-  - http: https://cheesechain.calderachain.xyz/http
-nativeToken:
-  symbol: CHEESE
-  name: CHEESE
-  decimals: 18
 blockExplorers:
   - apiUrl: https://fetascan.io/api
     family: blockscout
     name: Fetascan
     url: https://fetascan.io
+blocks:
+  confirmations: 1
+  estimateBlockTime: 90
+  reorgPeriod: 0
+chainId: 383353
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: CheeseChain
+domainId: 383353
+gasCurrencyCoinGeckoId: cheese-2
+gnosisSafeTransactionServiceUrl: https://prod.cheese.transaction.keypersafe.xyz/
+index:
+  from: 50650
+name: cheesechain
+nativeToken:
+  decimals: 18
+  name: Cheese
+  symbol: CHEESE
+protocol: ethereum
+rpcUrls:
+  - http: https://cheesechain.calderachain.xyz/http
+technicalStack: arbitrumnitro

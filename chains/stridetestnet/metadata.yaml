@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: stride
+blockExplorers:
+  - apiUrl: https://testnet.ping.pub/stride
+    family: other
+    name: Mintscan
+    url: https://testnet.ping.pub/stride
+blocks:
+  confirmations: 1
+  estimateBlockTime: 5
+  reorgPeriod: 1
+chainId: stride-internal-1
+deployer:
+  name: Stride Labs
+  url: https://www.stride.zone
+displayName: Stride Testnet
+domainId: 1651
+gasCurrencyCoinGeckoId: stride
+grpcUrls:
+  - http: stride-testnet-grpc.polkachu.com:12290
+isTestnet: true
+name: stridetestnet
+nativeToken:
+  decimals: 6
+  denom: ustrd
+  name: Stride
+  symbol: STRD
+protocol: cosmos
+restUrls:
+  - http: https://stride-testnet-api.polkachu.com
+rpcUrls:
+  - http: https://stride-testnet-rpc.polkachu.com
+slip44: 118
+transactionOverrides:
+  gasPrice: "0.0025"

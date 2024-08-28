@@ -22,6 +22,8 @@ function getWarpAddressKey(standard: TokenStandard): string | null {
   if (standardValue.includes('collateral')) return 'collateral';
   if (standardValue.includes('synthetic')) return 'synthetic';
   if (standardValue.includes('native')) return 'native';
+  if (standardValue.includes('xerc20lockbox')) return 'xERC20Lockbox';
+  if (standardValue.includes('xerc20')) return 'xERC20';
   else return null;
 }
 

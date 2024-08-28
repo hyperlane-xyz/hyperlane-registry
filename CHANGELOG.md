@@ -1,5 +1,48 @@
 # @hyperlane-xyz/registry
 
+## 2.5.0
+
+### Minor Changes
+
+- a3d5c02: Add missing coingecko ID for Abacus Works chains
+- 29f4901: Support xERC20 in getWarpAddressKey, add renzo warp deployment addresses
+- bc4b989: Deploy to arbitrumsepolia, basesepolia, ecotestnet, optimismsepolia, polygonamoy
+- 531d7c3: Deploy to zircuit
+- baba8f1: Add metadata for celodango, cyber, degenchain, immutablezkevm, kinto, kroma, lisk, merlin, metis, mint, opsepolia, plumetestnet, polygonamoy, proofofplay, real, sanko, xai, zircuit
+- cf3b629: Deploy to cyber degenchain kroma lisk lukso merlin metis mint proofofplay real sanko tangle xai
+- d764fd5: Add Eclipse
+- 883d75f: Add testRecipient for merlin
+
+### Patch Changes
+
+- d9fea91: Added the Safe transaction service URL for sepolia
+- 7e652ef: New ICA deployments for core EVM chains
+- 65ef674: Add backup RPCs for some EVM chains
+- d9fea91: Replace a testnet Zetachain URL from the mainnet metadata
+- 7233d73: Add Galadriel devnet
+
+## 2.4.0
+
+### Minor Changes
+
+- 9add749: Add Connext Sepolia chain
+- 10394fd: Add Endurance chain
+- 574d998: Add cheesechain
+  Add worldchain
+  Add xlayer
+- 6e8f406: Add DODOchain Testnet chain
+- 07ebc9c: Deploy to connextsepolia + superpositiontestnet
+- 0a59848: add Mint Sepolia Testnet
+- 884f3ea: Add Superposition Testnet
+- 7c6bfef: Deploy to endurance, fusemainnet, zoramainnet
+- d1bb3b7: Add Fhenix Testnet chain
+
+### Patch Changes
+
+- 6670f82: Updated Fraxtal Safe transaction service URL
+- 0f09484: Fix Redstone Safe transaction service URL
+- 6ae344e: Add "updated" Renzo warp route including Fraxtal
+
 ## 2.3.0
 
 ### Minor Changes
