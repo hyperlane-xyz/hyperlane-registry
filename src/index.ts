@@ -1,5 +1,3 @@
-export { CoreChain, CoreChainName, CoreChains, CoreMainnets, CoreTestnets } from './core/chains.js';
-
 export {
   CHAIN_FILE_REGEX,
   DEFAULT_GITHUB_REGISTRY,
