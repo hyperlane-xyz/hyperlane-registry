@@ -22,7 +22,3 @@ nativeToken:
 protocol: ethereum
 rpcUrls:
   - http: https://evm.astar.network
-transactionOverrides:
-  # Block gas limit is 15 million. Can be set upto 10x block gas limit (150 million).
-  # RPCs will complain that "provided gas limit is too high" if this is not set explicitly.
-  gasLimit: 15000000
