@@ -1,11 +1,15 @@
 blockExplorers:
   - apiUrl: https://api.scan.pulsechain.com/api
     family: blockscout
-    name: PulseChain Explorer
-    url: https://scan.pulsechainfoundation.org
+    name: Pulsechain Explorer
+    url: https://oldscan.gopulse.com/#/
+  - apiUrl: https://api.scan.pulsechain.com/api
+    family: other
+    name: Otterscan
+    url: https://otter.pulsechain.com
 blocks:
   confirmations: 1
-  estimateBlockTime: 2
+  estimateBlockTime: 10
   reorgPeriod: 0
 chainId: 369
 deployer:
@@ -14,6 +18,7 @@ deployer:
 displayName: PulseChain
 domainId: 369
 gasCurrencyCoinGeckoId: pulsechain
+isTestnet: false
 name: pulsechain
 nativeToken:
   decimals: 18
@@ -21,4 +26,5 @@ nativeToken:
   symbol: PLS
 protocol: ethereum
 rpcUrls:
+  - http: https://pulsechain-rpc.publicnode.com
   - http: https://rpc.pulsechain.com
