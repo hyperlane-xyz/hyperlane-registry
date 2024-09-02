@@ -1,5 +1,45 @@
 # @hyperlane-xyz/registry
 
+## 3.0.0
+
+### Major Changes
+
+- 93dc4c0: Remove CoreChains enum and metadata maps
+- a7ffbaa: Add `mainnet` suffix to solana and eclipse
+
+### Minor Changes
+
+- 88367b3: Add Molten network
+- 084db3d: Added stake weighted multisigism factory addresses
+- 8b5b0a4: Deploy core contracts to astar astarzkevm bitlayer coredao dogechain flare molten shibarium
+- 5502be8: Add new renzo warp deployment config and addresses that include zircuit
+- a000b2a: Enroll worldchain, xlayer, cheesechain, zircuit validators to default ISMs
+- d1dcf32: Enroll new validators for cyber degenchain kroma lisk lukso merlin metis mint proofofplay real sanko tangle xai taiko
+- 17926af: add rootstock mainnet
+- 488c6eb: Add new renzo warp config and addresses
+- 3f260fa: Rename fhenix to fhenixtestnet, and update some native token names.
+- a4076ee: Add metadata for alephzero, arbitrumova, astar, astarzkevm, b3, bitlayer, carbon, clique, confluxespace, coredao, cronos, cronoszkevm, dogechain, ebi, filecoin, flare, fractalconfluence, funki, ham, kava, ngmi, orderly, polynomial, pulsechain, rari, ronin, saakuru, shibarium, tenet
+- 262b5d3: Add Berachain bArtio config
+- 96c6ed7: Added Stride to Ethereum stTIA warp route
+- 06faae6: Update zircuit safe tx url
+- dd206c3: Add cheesechain USDC Collateral Vault warp route
+- 43866ce: Add Rootstock testnet chain
+- b552ee4: Update zircuit explorer metadata
+- e356395: Add forma mainnet addresses.
+- b661127: Add Eclipse SOL token metadata
+- f50d153: Add stride testnet
+- 78b26eb: Fix TIA-mantapacific-neutron warp config by removing reference to the TIA arbitrum neutron HypCollateral router
+
+### Patch Changes
+
+- 492b545: Changed Polygon confirmations 200 -> 3
+- 59c02da: Reduce Ethereum confirmations wait
+- c5402da: Update core testnets to match AW infra
+- e005548: Update pulsechain metadata
+- 4176768: Replace Molten logo with real SVG
+- 7a12c35: Replace broken arbitrum sepolia RPC
+- f642dfe: Added an archive node RPC for Neutron
+
 ## 2.5.0
 
 ### Minor Changes
