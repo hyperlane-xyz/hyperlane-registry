@@ -935,7 +935,7 @@ eclipsemainnet:
   displayName: Eclipse
   domainId: 1408864445
   gasCurrencyCoinGeckoId: ethereum
-  name: eclipse
+  name: eclipsemainnet
   nativeToken:
     decimals: 9
     name: Ether
@@ -2275,11 +2275,15 @@ pulsechain:
   blockExplorers:
     - apiUrl: https://api.scan.pulsechain.com/api
       family: blockscout
-      name: PulseChain Explorer
-      url: https://scan.pulsechainfoundation.org
+      name: Pulsechain Explorer
+      url: https://oldscan.gopulse.com/#/
+    - apiUrl: https://api.scan.pulsechain.com/api
+      family: other
+      name: Otterscan
+      url: https://otter.pulsechain.com
   blocks:
     confirmations: 1
-    estimateBlockTime: 2
+    estimateBlockTime: 10
     reorgPeriod: 0
   chainId: 369
   deployer:
@@ -2288,6 +2292,7 @@ pulsechain:
   displayName: PulseChain
   domainId: 369
   gasCurrencyCoinGeckoId: pulsechain
+  isTestnet: false
   name: pulsechain
   nativeToken:
     decimals: 18
@@ -2295,6 +2300,7 @@ pulsechain:
     symbol: PLS
   protocol: ethereum
   rpcUrls:
+    - http: https://pulsechain-rpc.publicnode.com
     - http: https://rpc.pulsechain.com
 rari:
   blockExplorers:
@@ -2675,31 +2681,6 @@ sketchpad:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.sketchpad-1.forma.art
-solanamainnet:
-  blockExplorers:
-    - apiUrl: https://explorer.solana.com?cluster=mainnet-beta
-      family: other
-      name: Solana Explorer
-      url: https://explorer.solana.com?cluster=mainnet-beta
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 0.4
-    reorgPeriod: 0
-  chainId: 1399811149
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
-  displayName: Solana
-  domainId: 1399811149
-  gasCurrencyCoinGeckoId: solana
-  name: solana
-  nativeToken:
-    decimals: 9
-    name: Solana
-    symbol: SOL
-  protocol: sealevel
-  rpcUrls:
-    - http: https://api.mainnet-beta.solana.com
 solanadevnet:
   blockExplorers:
     - apiUrl: https://explorer.solana.com?cluster=devnet
@@ -2726,6 +2707,31 @@ solanadevnet:
   protocol: sealevel
   rpcUrls:
     - http: https://api.devnet.solana.com
+solanamainnet:
+  blockExplorers:
+    - apiUrl: https://explorer.solana.com?cluster=mainnet-beta
+      family: other
+      name: Solana Explorer
+      url: https://explorer.solana.com?cluster=mainnet-beta
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 0.4
+    reorgPeriod: 0
+  chainId: 1399811149
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Solana
+  domainId: 1399811149
+  gasCurrencyCoinGeckoId: solana
+  name: solanamainnet
+  nativeToken:
+    decimals: 9
+    name: Solana
+    symbol: SOL
+  protocol: sealevel
+  rpcUrls:
+    - http: https://api.mainnet-beta.solana.com
 solanatestnet:
   blockExplorers:
     - apiUrl: https://explorer.solana.com?cluster=testnet
