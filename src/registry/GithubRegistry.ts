@@ -72,7 +72,6 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
     // This uses the tree API instead of the simpler directory list API because it
     // allows us to get a full view of all files in one request.
-    console.log("REGISTRY LOG")
     const apiUrl = this.getApiUrl();
     const response = await this.fetch(apiUrl);
     const result = await response.json();
