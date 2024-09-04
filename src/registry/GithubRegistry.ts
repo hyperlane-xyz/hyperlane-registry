@@ -50,6 +50,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   public readonly repoName: string;
 
   constructor(options: GithubRegistryOptions = {}) {
+    console.log("REGISTRY constructor LOG")
     super({ uri: options.uri ?? DEFAULT_GITHUB_REGISTRY, logger: options.logger });
     this.url = new URL(this.uri);
     this.branch = options.branch ?? 'main';
@@ -69,6 +70,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
     // This uses the tree API instead of the simpler directory list API because it
     // allows us to get a full view of all files in one request.
+    console.log("REGISTRY LOG")
     const apiUrl = `https://api.github.com/repos/${this.repoOwner}/${this.repoName}/git/trees/${this.branch}?recursive=true`;
     const response = await this.fetch(apiUrl);
     const result = await response.json();
