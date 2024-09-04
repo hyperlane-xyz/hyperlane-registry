@@ -24,6 +24,7 @@ import { filterWarpRoutesIds, warpRouteConfigPathToId } from './warp-utils.js';
 
 export interface GithubRegistryOptions {
   uri?: string;
+  proxyUrl?: string;
   branch?: string;
   authToken?: string;
   logger?: Logger;
@@ -48,9 +49,9 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   public readonly branch: string;
   public readonly repoOwner: string;
   public readonly repoName: string;
+  public readonly proxyUrl: string | undefined;
 
   constructor(options: GithubRegistryOptions = {}) {
-    console.log("REGISTRY constructor LOG")
     super({ uri: options.uri ?? DEFAULT_GITHUB_REGISTRY, logger: options.logger });
     this.url = new URL(this.uri);
     this.branch = options.branch ?? 'main';
@@ -58,6 +59,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     if (pathSegments.length < 2) throw new Error('Invalid github url');
     this.repoOwner = pathSegments.at(-2)!;
     this.repoName = pathSegments.at(-1)!;
+    this.proxyUrl = options.proxyUrl;
   }
 
   getUri(itemPath?: string): string {
@@ -71,7 +73,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     // This uses the tree API instead of the simpler directory list API because it
     // allows us to get a full view of all files in one request.
     console.log("REGISTRY LOG")
-    const apiUrl = `https://api.github.com/repos/${this.repoOwner}/${this.repoName}/git/trees/${this.branch}?recursive=true`;
+    const apiUrl = this.getApiUrl();
     const response = await this.fetch(apiUrl);
     const result = await response.json();
     const tree = result.tree as TreeNode[];
@@ -167,6 +169,11 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   protected getRawContentUrl(path: string): string {
     path = stripLeadingSlash(path);
     return `https://raw.githubusercontent.com/${this.repoOwner}/${this.repoName}/${this.branch}/${path}`;
+  }
+
+  protected getApiUrl(): string {
+    const githubApiUrl = `https://api.github.com/repos/${this.repoOwner}/${this.repoName}/git/trees/${this.branch}?recursive=true`;
+    return this.proxyUrl ? `${this.proxyUrl}/${githubApiUrl}` : githubApiUrl;
   }
 
   protected async fetchChainFile<T>(
