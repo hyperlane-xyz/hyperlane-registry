@@ -171,8 +171,8 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   }
 
   protected getApiUrl(): string {
-    const githubApiUrl = `https://api.github.com/repos/${this.repoOwner}/${this.repoName}/git/trees/${this.branch}?recursive=true`;
-    return this.proxyUrl ? `${this.proxyUrl}/${githubApiUrl}` : githubApiUrl;
+    const apiHost=  this.proxyUrl ? `${this.proxyUrl}` : 'https://api.github.com';
+    return `${apiHost}/repos/${this.repoOwner}/${this.repoName}/git/trees/${this.branch}?recursive=true`
   }
 
   protected async fetchChainFile<T>(
