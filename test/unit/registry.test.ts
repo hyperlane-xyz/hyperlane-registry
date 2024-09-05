@@ -162,7 +162,6 @@ describe('Registry utilities', () => {
     });
   });
 
-
   describe('ProxiedGithubRegistry', () => {
     const proxyUrl = 'http://proxy.hyperlane.xyz';
     let proxiedGithubRegistry;
@@ -183,9 +182,7 @@ describe('Registry utilities', () => {
       getApiRateLimitStub.returns({ remaining: 0 } );
       expect(await proxiedGithubRegistry.getApiUrl()).to.equal(`${proxyUrl}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`);
     })
-  })
-
-  
+  })  
 });
 
 describe('Registry regex', () => {
