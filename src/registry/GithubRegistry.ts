@@ -38,6 +38,18 @@ interface TreeNode {
   url: string;
 }
 
+type GithubRateResponse = { 
+  resources : { 
+    core: {
+      limit: number,
+      used: number,
+      remaining: number,
+      reset: number
+    } 
+  }
+}
+
+export const GITHUB_API_URL = 'https://api.github.com';
 /**
  * A registry that uses a github repository as its data source.
  * Reads are performed via the github API and github's raw content URLs.
@@ -72,7 +84,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
     // This uses the tree API instead of the simpler directory list API because it
     // allows us to get a full view of all files in one request.
-    const apiUrl = this.getApiUrl();
+    const apiUrl = await this.getApiUrl();
     const response = await this.fetch(apiUrl);
     const result = await response.json();
     const tree = result.tree as TreeNode[];
@@ -165,14 +177,30 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     throw new Error('TODO: Implement');
   }
 
+  public async getApiUrl(): Promise<string> {
+    const { remaining, reset } = await this.getApiRateLimit();
+    let apiHost = GITHUB_API_URL;
+    if (remaining === 0) {
+      if (!this.proxyUrl)
+        throw new Error(`Github API rate remaining: ${remaining}, limit reset at ${reset}. Consider adding a proxy address.`);
+      apiHost = this.proxyUrl;
+    }
+    return `${apiHost}/repos/${this.repoOwner}/${this.repoName}/git/trees/${this.branch}?recursive=true`
+  }
+
+  public async getApiRateLimit(): Promise<GithubRateResponse['resources']['core']> {
+    const response = await fetch(`${GITHUB_API_URL}/rate_limit`, {
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
+    })
+    const { resources } = await response.json() as GithubRateResponse;
+    return resources.core;
+  }
+
   protected getRawContentUrl(path: string): string {
     path = stripLeadingSlash(path);
     return `https://raw.githubusercontent.com/${this.repoOwner}/${this.repoName}/${this.branch}/${path}`;
-  }
-
-  protected getApiUrl(): string {
-    const apiHost=  this.proxyUrl ? `${this.proxyUrl}` : 'https://api.github.com';
-    return `${apiHost}/repos/${this.repoOwner}/${this.repoName}/git/trees/${this.branch}?recursive=true`
   }
 
   protected async fetchChainFile<T>(
