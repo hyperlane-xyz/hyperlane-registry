@@ -182,7 +182,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     let apiHost = GITHUB_API_URL;
     if (remaining === 0) {
       if (!this.proxyUrl)
-        throw new Error(`Github API rate remaining: ${remaining}, limit reset at ${reset}. Consider adding a proxy address.`);
+        throw new Error(`Github API rate remaining: ${remaining}, limit reset at ${reset}.`);
       apiHost = this.proxyUrl;
     }
     return `${apiHost}/repos/${this.repoOwner}/${this.repoName}/git/trees/${this.branch}?recursive=true`
