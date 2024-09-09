@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://xt4scan.ngd.network/api
+    family: blockscout
+    name: xt4scan
+    url: https://xt4scan.ngd.network
+blocks:
+  confirmations: 1
+  estimateBlockTime: 15
+  reorgPeriod: 12
+chainId: 12227332
+deployer:
+  name: Neo Global Development
+  url: https://x.neo.org
+displayName: NeoX T4
+domainId: 12227332
+isTestnet: true
+name: neoxt4
+nativeToken:
+  decimals: 18
+  name: GAS
+  symbol: GAS
+protocol: ethereum
+rpcUrls:
+  - http: https://neoxt4seed1.ngd.network
+  - http: https://testnet.rpc.banelabs.org
+transactionOverrides:
+  maxFeePerGas: 40000000000
+  maxPriorityFeePerGas: 20000000000

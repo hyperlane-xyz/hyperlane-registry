@@ -386,6 +386,29 @@ basesepolia:
   rpcUrls:
     - http: https://sepolia.base.org
     - http: https://base-sepolia-rpc.publicnode.com
+berabartio:
+  blockExplorers:
+    - apiUrl: https://api.routescan.io/v2/network/testnet/evm/80084/etherscan/api/
+      family: routescan
+      name: Bartio Testnet Explorer
+      url: https://bartio.beratrail.io/
+  chainId: 80084
+  deployer:
+    name: Henez Foundation
+    url: https://www.henez.fi/
+  displayName: Berachain bArtio
+  domainId: 80084
+  isTestnet: true
+  name: berabartio
+  nativeToken:
+    decimals: 18
+    name: BERA
+    symbol: BERA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://bartio.rpc.berachain.com/
+    - http: https://bartio.drpc.org
+    - http: https://bera-testnet.nodeinfra.com
 bitlayer:
   blockExplorers:
     - apiUrl: https://api.btrscan.com/scan/api
@@ -595,6 +618,7 @@ cheesechain:
   displayName: CheeseChain
   domainId: 383353
   gasCurrencyCoinGeckoId: cheese-2
+  gnosisSafeTransactionServiceUrl: https://prod.cheese.transaction.keypersafe.xyz/
   index:
     from: 50650
   name: cheesechain
@@ -606,31 +630,6 @@ cheesechain:
   rpcUrls:
     - http: https://cheesechain.calderachain.xyz/http
   technicalStack: arbitrumnitro
-chiado:
-  blockExplorers:
-    - apiUrl: https://gnosis-chiado.blockscout.com/api
-      family: blockscout
-      name: GnosisScan
-      url: https://gnosis-chiado.blockscout.com
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 5
-    reorgPeriod: 14
-  chainId: 10200
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
-  displayName: Chiado
-  domainId: 10200
-  isTestnet: true
-  name: chiado
-  nativeToken:
-    decimals: 18
-    name: xDai
-    symbol: xDai
-  protocol: ethereum
-  rpcUrls:
-    - http: https://gnosis-chiado.publicnode.com
 clique:
   blockExplorers:
     - apiUrl: https://explorer.myclique.io/api
@@ -895,10 +894,6 @@ dogechain:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.dogechain.dog
-    - http: https://rpc01-sg.dogechain.dog
-    - http: https://rpc-us.dogechain.dog
-    - http: https://rpc02-sg.dogechain.dog
-    - http: https://rpc03-sg.dogechain.dog
 ebi:
   blockExplorers:
     - apiUrl: https://explorer.ebi.xyz/api
@@ -927,7 +922,7 @@ ebi:
   rpcUrls:
     - http: https://rpc.ebi.xyz
   technicalStack: arbitrumnitro
-eclipse:
+eclipsemainnet:
   blocks:
     confirmations: 1
     estimateBlockTime: 0.4
@@ -939,7 +934,7 @@ eclipse:
   displayName: Eclipse
   domainId: 1408864445
   gasCurrencyCoinGeckoId: ethereum
-  name: eclipse
+  name: eclipsemainnet
   nativeToken:
     decimals: 9
     name: Ether
@@ -1029,7 +1024,7 @@ ethereum:
       name: Blockscout
       url: https://blockscout.com/eth/mainnet
   blocks:
-    confirmations: 7
+    confirmations: 2
     estimateBlockTime: 13
     reorgPeriod: 14
   chainId: 1
@@ -1124,6 +1119,9 @@ flare:
   protocol: ethereum
   rpcUrls:
     - http: https://flare-api.flare.network/ext/C/rpc
+    - http: https://flare.solidifi.app/ext/C/rpc
+    - http: https://flare.rpc.thirdweb.com
+    - http: https://rpc.ankr.com/flare
 forma:
   blockExplorers:
     - apiUrl: https://explorer.forma.art/api
@@ -1359,6 +1357,30 @@ ham:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.ham.fun
+heneztestnet:
+  blockExplorers:
+    - apiUrl: https://henez-testnet.explorer.caldera.xyz/api/eth-rpc
+      family: blockscout
+      name: Henez Testnet Explorer
+      url: https://explorer.henez.fi
+  chainId: 91111
+  deployer:
+    name: Henez Foundation
+    url: https://www.henez.fi
+  displayName: Henez Testnet
+  domainId: 91111
+  index:
+    from: 1714457
+  isTestnet: true
+  name: heneztestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://henez-testnet.rpc.caldera.xyz/http
+  technicalStack: arbitrumnitro
 holesky:
   blockExplorers:
     - apiUrl: https://api-holesky.etherscan.io/api
@@ -1913,6 +1935,35 @@ nautilus:
   protocol: ethereum
   rpcUrls:
     - http: https://api.nautilus.nautchain.xyz
+neoxt4:
+  blockExplorers:
+    - apiUrl: https://xt4scan.ngd.network/api
+      family: blockscout
+      name: xt4scan
+      url: https://xt4scan.ngd.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 15
+    reorgPeriod: 12
+  chainId: 12227332
+  deployer:
+    name: Neo Global Development
+    url: https://x.neo.org
+  displayName: NeoX T4
+  domainId: 12227332
+  isTestnet: true
+  name: neoxt4
+  nativeToken:
+    decimals: 18
+    name: GAS
+    symbol: GAS
+  protocol: ethereum
+  rpcUrls:
+    - http: https://neoxt4seed1.ngd.network
+    - http: https://testnet.rpc.banelabs.org
+  transactionOverrides:
+    maxFeePerGas: 40000000000
+    maxPriorityFeePerGas: 20000000000
 neutron:
   bech32Prefix: neutron
   blockExplorers:
@@ -1944,6 +1995,7 @@ neutron:
   restUrls:
     - http: https://rest-lb.neutron.org
   rpcUrls:
+    - http: https://rpc-arch.mainnet.neutron.tm.p2p.org
     - http: https://rpc-kralum.neutron-1.neutron.org
   slip44: 118
   transactionOverrides:
@@ -2130,13 +2182,13 @@ polygon:
     url: https://www.hyperlane.xyz
   displayName: Polygon
   domainId: 137
-  gasCurrencyCoinGeckoId: matic-network
+  gasCurrencyCoinGeckoId: polygon-ecosystem-token
   gnosisSafeTransactionServiceUrl: https://safe-transaction-polygon.safe.global/
   name: polygon
   nativeToken:
     decimals: 18
-    name: Matic
-    symbol: MATIC
+    name: Polygon Ecosystem Token
+    symbol: POL
   protocol: ethereum
   rpcUrls:
     - http: https://polygon-bor.publicnode.com
@@ -2162,8 +2214,8 @@ polygonamoy:
   name: polygonamoy
   nativeToken:
     decimals: 18
-    name: Matic
-    symbol: MATIC
+    name: Polygon Ecosystem Token
+    symbol: POL
   protocol: ethereum
   rpcUrls:
     - http: https://rpc-amoy.polygon.technology
@@ -2251,35 +2303,19 @@ proofofplay:
   rpcUrls:
     - http: https://rpc.apex.proofofplay.com
   technicalStack: arbitrumnitro
-proteustestnet:
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 1
-    reorgPeriod: 1
-  chainId: 88002
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
-  displayName: Proteus Testnet
-  domainId: 88002
-  isTestnet: true
-  name: proteustestnet
-  nativeToken:
-    decimals: 18
-    name: Zebec
-    symbol: ZBC
-  protocol: ethereum
-  rpcUrls:
-    - http: https://api.proteus.nautchain.xyz/solana
 pulsechain:
   blockExplorers:
     - apiUrl: https://api.scan.pulsechain.com/api
       family: blockscout
-      name: PulseChain Explorer
-      url: https://scan.pulsechainfoundation.org
+      name: Pulsechain Explorer
+      url: https://oldscan.gopulse.com/#/
+    - apiUrl: https://api.scan.pulsechain.com/api
+      family: other
+      name: Otterscan
+      url: https://otter.pulsechain.com
   blocks:
     confirmations: 1
-    estimateBlockTime: 2
+    estimateBlockTime: 10
     reorgPeriod: 0
   chainId: 369
   deployer:
@@ -2288,6 +2324,7 @@ pulsechain:
   displayName: PulseChain
   domainId: 369
   gasCurrencyCoinGeckoId: pulsechain
+  isTestnet: false
   name: pulsechain
   nativeToken:
     decimals: 18
@@ -2295,6 +2332,7 @@ pulsechain:
     symbol: PLS
   protocol: ethereum
   rpcUrls:
+    - http: https://pulsechain-rpc.publicnode.com
     - http: https://rpc.pulsechain.com
 rari:
   blockExplorers:
@@ -2522,7 +2560,7 @@ scroll:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 1
+    reorgPeriod: 30
   chainId: 534352
   deployer:
     name: Abacus Works
@@ -2675,31 +2713,6 @@ sketchpad:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.sketchpad-1.forma.art
-solana:
-  blockExplorers:
-    - apiUrl: https://explorer.solana.com?cluster=mainnet-beta
-      family: other
-      name: Solana Explorer
-      url: https://explorer.solana.com?cluster=mainnet-beta
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 0.4
-    reorgPeriod: 0
-  chainId: 1399811149
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
-  displayName: Solana
-  domainId: 1399811149
-  gasCurrencyCoinGeckoId: solana
-  name: solana
-  nativeToken:
-    decimals: 9
-    name: Solana
-    symbol: SOL
-  protocol: sealevel
-  rpcUrls:
-    - http: https://api.mainnet-beta.solana.com
 solanadevnet:
   blockExplorers:
     - apiUrl: https://explorer.solana.com?cluster=devnet
@@ -2726,6 +2739,31 @@ solanadevnet:
   protocol: sealevel
   rpcUrls:
     - http: https://api.devnet.solana.com
+solanamainnet:
+  blockExplorers:
+    - apiUrl: https://explorer.solana.com?cluster=mainnet-beta
+      family: other
+      name: Solana Explorer
+      url: https://explorer.solana.com?cluster=mainnet-beta
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 0.4
+    reorgPeriod: 0
+  chainId: 1399811149
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Solana
+  domainId: 1399811149
+  gasCurrencyCoinGeckoId: solana
+  name: solanamainnet
+  nativeToken:
+    decimals: 9
+    name: Solana
+    symbol: SOL
+  protocol: sealevel
+  rpcUrls:
+    - http: https://api.mainnet-beta.solana.com
 solanatestnet:
   blockExplorers:
     - apiUrl: https://explorer.solana.com?cluster=testnet
