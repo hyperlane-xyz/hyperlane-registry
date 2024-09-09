@@ -1,5 +1,26 @@
 # @hyperlane-xyz/registry
 
+## 4.0.0
+
+### Major Changes
+
+- d92f8be: Remove chiado and proteustestnet, as they are not currently AW-supported.
+
+### Minor Changes
+
+- 9ab1370: Add proxyUrl and function to generate it
+- 66124ea: Add NeoX T4 testnet chain
+- d9a46f9: Add Henez testnet config
+- 33a13d3: Add Eclipse USDC token metadata
+
+### Patch Changes
+
+- 1d43e33: Update scroll reorg period
+- 7fb63da: Change Polygon native token from MATIC to POL
+- af9b94b: Update Moonbeam logo
+- c4b28b2: Deploy ICAs to all AW mainnets
+- 8753a2a: Add index.from for heneztestnet, fixing schema validation
+
 ## 3.0.0
 
 ### Major Changes
