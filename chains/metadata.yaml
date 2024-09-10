@@ -2053,6 +2053,31 @@ ngmi:
   protocol: ethereum
   rpcUrls:
     - http: https://ngmi-2712765173321000-1.jsonrpc.sagarpc.io
+oort:
+  blockExplorers:
+    - apiUrl: https://mainnet-scan.oortech.com/api
+      family: other
+      name: Oort Olympus Explorer
+      url: https://mainnet-scan.oortech.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 970
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Oort
+  domainId: 970
+  gasCurrencyCoinGeckoId: oort
+  name: oort
+  nativeToken:
+    decimals: 18
+    name: Oort
+    symbol: OORT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet-rpc.oortech.com
 optimism:
   blockExplorers:
     - apiUrl: https://api-optimistic.etherscan.io/api
