@@ -1044,6 +1044,34 @@ ethereum:
   rpcUrls:
     - http: https://ethereum.publicnode.com
     - http: https://cloudflare-eth.com
+everclear:
+  blockExplorers:
+    - apiUrl: https://everclear.cloud.blockscout.com/api
+      family: blockscout
+      name: Everclear Explorer
+      url: https://everclear.cloud.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 25327
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Everclear
+  domainId: 25327
+  gasCurrencyCoinGeckoId: ethereum
+  index:
+    from: 37
+  name: everclear
+  nativeToken:
+    decimals: 18
+    name: Ethereum
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.everclear.raas.gelato.cloud
+  technicalStack: arbitrumnitro
 fhenixtestnet:
   blockExplorers:
     - apiUrl: https://api.helium.fhenix.zone
