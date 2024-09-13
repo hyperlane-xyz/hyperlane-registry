@@ -3,28 +3,28 @@ tokens:
   - addressOrDenom: "0xFc8F5272d690cf19732a7eD6f246aDF5fB8708dB"
     chainName: ethereum
     collateralAddressOrDenom: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+    connections:
+      - token: sealevel|eclipsemainnet|D6k6T3G74ij6atCtBiWBs5TbFa1hFVcrFUSGZHuV7q3Z
     decimals: 6
     name: USD Coin
     standard: EvmHypCollateral
     symbol: USDC
-    connections:
-      - token: sealevel|eclipsemainnet|D6k6T3G74ij6atCtBiWBs5TbFa1hFVcrFUSGZHuV7q3Z
-  - addressOrDenom: "D6k6T3G74ij6atCtBiWBs5TbFa1hFVcrFUSGZHuV7q3Z"
+  - addressOrDenom: D6k6T3G74ij6atCtBiWBs5TbFa1hFVcrFUSGZHuV7q3Z
     chainName: eclipsemainnet
+    connections:
+      - token: ethereum|ethereum|0xFc8F5272d690cf19732a7eD6f246aDF5fB8708dB
+      - token: sealevel|solanamainnet|Fefw54S6NDdwNbPngPePvW4tiFTFQDT7gBPvFoDFeGqg
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
     name: USDC
     standard: SealevelHypSynthetic
     symbol: USDC
-    connections:
-      - token: ethereum|ethereum|0xFc8F5272d690cf19732a7eD6f246aDF5fB8708dB
-      - token: sealevel|solanamainnet|Fefw54S6NDdwNbPngPePvW4tiFTFQDT7gBPvFoDFeGqg
-  - addressOrDenom: "Fefw54S6NDdwNbPngPePvW4tiFTFQDT7gBPvFoDFeGqg"
+  - addressOrDenom: Fefw54S6NDdwNbPngPePvW4tiFTFQDT7gBPvFoDFeGqg
     chainName: solanamainnet
+    connections:
+      - token: sealevel|eclipsemainnet|D6k6T3G74ij6atCtBiWBs5TbFa1hFVcrFUSGZHuV7q3Z
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
     name: USDC
     standard: SealevelHypCollateral
     symbol: USDC
-    connections:
-      - token: sealevel|eclipsemainnet|D6k6T3G74ij6atCtBiWBs5TbFa1hFVcrFUSGZHuV7q3Z

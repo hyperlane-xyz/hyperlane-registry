@@ -1,20 +1,20 @@
 # yaml-language-server: $schema=../schema.json
 tokens:
-  - addressOrDenom: "GLpdg3jt6w4eVYiCMhokVZ4mX6hmRvPhcL5RoCjzGr5k"
+  - addressOrDenom: GLpdg3jt6w4eVYiCMhokVZ4mX6hmRvPhcL5RoCjzGr5k
     chainName: eclipsemainnet
+    connections:
+      - token: sealevel|solanamainnet|4UMNyNWW75zo69hxoJaRX5iXNUa5FdRPZZa9vDVCiESg
     decimals: 9
     logoURI: /deployments/warp_routes/SOL/logo.svg
     name: Solana
     standard: SealevelHypSynthetic
     symbol: SOL
-    connections:
-      - token: sealevel|solanamainnet|4UMNyNWW75zo69hxoJaRX5iXNUa5FdRPZZa9vDVCiESg
-  - addressOrDenom: "4UMNyNWW75zo69hxoJaRX5iXNUa5FdRPZZa9vDVCiESg"
+  - addressOrDenom: 4UMNyNWW75zo69hxoJaRX5iXNUa5FdRPZZa9vDVCiESg
     chainName: solanamainnet
+    connections:
+      - token: sealevel|eclipsemainnet|GLpdg3jt6w4eVYiCMhokVZ4mX6hmRvPhcL5RoCjzGr5k
     decimals: 9
     logoURI: /deployments/warp_routes/SOL/logo.svg
     name: Solana
     standard: SealevelHypCollateral
     symbol: SOL
-    connections:
-      - token: sealevel|eclipsemainnet|GLpdg3jt6w4eVYiCMhokVZ4mX6hmRvPhcL5RoCjzGr5k
