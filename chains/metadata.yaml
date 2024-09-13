@@ -1044,6 +1044,34 @@ ethereum:
   rpcUrls:
     - http: https://ethereum.publicnode.com
     - http: https://cloudflare-eth.com
+everclear:
+  blockExplorers:
+    - apiUrl: https://everclear.cloud.blockscout.com/api
+      family: blockscout
+      name: Everclear Explorer
+      url: https://everclear.cloud.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 25327
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Everclear
+  domainId: 25327
+  gasCurrencyCoinGeckoId: ethereum
+  index:
+    from: 37
+  name: everclear
+  nativeToken:
+    decimals: 18
+    name: Ethereum
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.everclear.raas.gelato.cloud
+  technicalStack: arbitrumnitro
 fhenixtestnet:
   blockExplorers:
     - apiUrl: https://api.helium.fhenix.zone
@@ -2025,6 +2053,31 @@ ngmi:
   protocol: ethereum
   rpcUrls:
     - http: https://ngmi-2712765173321000-1.jsonrpc.sagarpc.io
+oortmainnet:
+  blockExplorers:
+    - apiUrl: https://mainnet-scan.oortech.com/api
+      family: other
+      name: Oort Olympus Explorer
+      url: https://mainnet-scan.oortech.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 970
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Oort
+  domainId: 970
+  gasCurrencyCoinGeckoId: oort
+  name: oortmainnet
+  nativeToken:
+    decimals: 18
+    name: Oort
+    symbol: OORT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet-rpc.oortech.com
 optimism:
   blockExplorers:
     - apiUrl: https://api-optimistic.etherscan.io/api
@@ -2138,6 +2191,31 @@ osmosis:
   slip44: 118
   transactionOverrides:
     gasPrice: "0.025"
+piccadilly:
+  blockExplorers:
+    - apiUrl: https://piccadilly.autonity.org/api
+      family: blockscout
+      name: BlockScout
+      url: https://piccadilly.autonity.org
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+  chainId: 65100003
+  deployer:
+    name: M8B
+    url: https://m8b.dev
+  displayName: Autonity Piccadilly
+  displayNameShort: Piccadilly
+  domainId: 65100003
+  isTestnet: true
+  name: piccadilly
+  nativeToken:
+    decimals: 18
+    name: Auton
+    symbol: ATN
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc1.piccadilly.autonity.org
 plumetestnet:
   blockExplorers:
     - apiUrl: https://plume-testnet.explorer.caldera.xyz/api
