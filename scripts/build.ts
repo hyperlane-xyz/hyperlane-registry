@@ -1,10 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ChainMetadataSchemaObject, WarpCoreConfigSchema } from '@hyperlane-xyz/sdk';
-import { pick } from '@hyperlane-xyz/utils';
 import fs from 'fs';
 import { parse, stringify } from 'yaml';
 import { zodToJsonSchema } from 'zod-to-json-schema';
-import { CoreChains } from '../src/core/chains';
 import { warpRouteConfigToId } from '../src/registry/warp-utils';
 
 const chainMetadata = {};
@@ -125,25 +123,12 @@ function generateChainTsCode() {
     genChainMetadataMapExport(chainMetadata, 'chainMetadata'),
   );
   fs.writeFileSync(`./tmp/chainAddresses.ts`, genJsExport(chainAddresses, 'chainAddresses'));
-  // And also alternate versions with just the core chains
-  const coreChainMetadata = pick<any>(chainMetadata, CoreChains);
-  const coreChainAddresses = pick<any>(chainAddresses, CoreChains);
-  fs.writeFileSync(
-    `./tmp/coreChainMetadata.ts`,
-    genChainMetadataMapExport(coreChainMetadata, 'coreChainMetadata'),
-  );
-  fs.writeFileSync(
-    `./tmp/coreChainAddresses.ts`,
-    genJsExport(coreChainAddresses, 'coreChainAddresses'),
-  );
   // Add the exports for new files to the index file
   fs.appendFileSync(
     `./tmp/index.ts`,
     `
   export { chainMetadata } from './chainMetadata.js';
-  export { coreChainMetadata } from './coreChainMetadata.js';
   export { chainAddresses } from './chainAddresses.js';
-  export { coreChainAddresses } from './coreChainAddresses.js';
   `,
   );
   // Also create individual js files for each chain

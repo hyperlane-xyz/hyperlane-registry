@@ -24,6 +24,7 @@ import { filterWarpRoutesIds, warpRouteConfigPathToId } from './warp-utils.js';
 
 export interface GithubRegistryOptions {
   uri?: string;
+  proxyUrl?: string;
   branch?: string;
   authToken?: string;
   logger?: Logger;
@@ -37,6 +38,18 @@ interface TreeNode {
   url: string;
 }
 
+type GithubRateResponse = { 
+  resources : { 
+    core: {
+      limit: number,
+      used: number,
+      remaining: number,
+      reset: number
+    } 
+  }
+}
+
+export const GITHUB_API_URL = 'https://api.github.com';
 /**
  * A registry that uses a github repository as its data source.
  * Reads are performed via the github API and github's raw content URLs.
@@ -48,6 +61,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   public readonly branch: string;
   public readonly repoOwner: string;
   public readonly repoName: string;
+  public readonly proxyUrl: string | undefined;
 
   constructor(options: GithubRegistryOptions = {}) {
     super({ uri: options.uri ?? DEFAULT_GITHUB_REGISTRY, logger: options.logger });
@@ -57,6 +71,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     if (pathSegments.length < 2) throw new Error('Invalid github url');
     this.repoOwner = pathSegments.at(-2)!;
     this.repoName = pathSegments.at(-1)!;
+    this.proxyUrl = options.proxyUrl;
   }
 
   getUri(itemPath?: string): string {
@@ -69,7 +84,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
     // This uses the tree API instead of the simpler directory list API because it
     // allows us to get a full view of all files in one request.
-    const apiUrl = `https://api.github.com/repos/${this.repoOwner}/${this.repoName}/git/trees/${this.branch}?recursive=true`;
+    const apiUrl = await this.getApiUrl();
     const response = await this.fetch(apiUrl);
     const result = await response.json();
     const tree = result.tree as TreeNode[];
@@ -160,6 +175,27 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
   async addWarpRoute(_config: WarpCoreConfig): Promise<void> {
     throw new Error('TODO: Implement');
+  }
+
+  public async getApiUrl(): Promise<string> {
+    const { remaining, reset } = await this.getApiRateLimit();
+    let apiHost = GITHUB_API_URL;
+    if (remaining === 0) {
+      if (!this.proxyUrl)
+        throw new Error(`Github API rate remaining: ${remaining}, limit reset at ${reset}.`);
+      apiHost = this.proxyUrl;
+    }
+    return `${apiHost}/repos/${this.repoOwner}/${this.repoName}/git/trees/${this.branch}?recursive=true`
+  }
+
+  public async getApiRateLimit(): Promise<GithubRateResponse['resources']['core']> {
+    const response = await fetch(`${GITHUB_API_URL}/rate_limit`, {
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
+    })
+    const { resources } = await response.json() as GithubRateResponse;
+    return resources.core;
   }
 
   protected getRawContentUrl(path: string): string {
