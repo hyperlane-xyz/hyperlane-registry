@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { expect } from 'chai';
+import sinon from 'sinon';
 
 import type { ChainMetadata } from '@hyperlane-xyz/sdk';
 import fs from 'fs';
 import { CHAIN_FILE_REGEX } from '../../src/consts.js';
 import { FileSystemRegistry } from '../../src/registry/FileSystemRegistry.js';
-import { GithubRegistry } from '../../src/registry/GithubRegistry.js';
+import { GITHUB_API_URL, GithubRegistry } from '../../src/registry/GithubRegistry.js';
 import { RegistryType } from '../../src/registry/IRegistry.js';
 import { MergedRegistry } from '../../src/registry/MergedRegistry.js';
 import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
@@ -160,6 +161,28 @@ describe('Registry utilities', () => {
       expect(localAddresses['arbitrum']).to.eql(localAddresses['arbitrum']);
     });
   });
+
+  describe('ProxiedGithubRegistry', () => {
+    const proxyUrl = 'http://proxy.hyperlane.xyz';
+    let proxiedGithubRegistry;
+    let getApiRateLimitStub;
+    beforeEach(() => {
+      proxiedGithubRegistry = new GithubRegistry({ branch: GITHUB_REGISTRY_BRANCH, proxyUrl });
+      getApiRateLimitStub = sinon.stub(proxiedGithubRegistry, 'getApiRateLimit');
+    })
+    afterEach(() => {
+      sinon.restore();
+    });
+    it('always uses the public api if rate limit has been not been hit', async ()=> {
+      getApiRateLimitStub.returns({ remaining: 10 } );
+      expect(await proxiedGithubRegistry.getApiUrl()).to.equal(`${GITHUB_API_URL}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`);
+    })
+  
+    it('should fallback to proxy url if public rate limit has been hit', async () => {
+      getApiRateLimitStub.returns({ remaining: 0 } );
+      expect(await proxiedGithubRegistry.getApiUrl()).to.equal(`${proxyUrl}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`);
+    })
+  })  
 });
 
 describe('Registry regex', () => {

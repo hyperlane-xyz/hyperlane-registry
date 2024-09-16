@@ -1,5 +1,48 @@
 # @hyperlane-xyz/registry
 
+## 4.1.1
+
+### Patch Changes
+
+- ebb3a77: Add eclipse mainnet block explorer
+
+## 4.1.0
+
+### Minor Changes
+
+- b24c14d: Add tangletestnet deployment addresses
+- 7ccdd62: Add piccadilly testnet chain
+- 8e93ecb: Deploy to oort mainnet
+- 9b1bb59: Adds Solanamainnet and Eclipsemainnet core deployment addresses
+- 7512eac: Deploy to everclear
+- dfd6f66: Enroll new chains and validators to default ISMs
+- 912fce6: Add Eclipse warp route artifacts (USDC and SOL)
+
+### Patch Changes
+
+- 4de3ccf: Update Celo chain logo
+
+## 4.0.0
+
+### Major Changes
+
+- d92f8be: Remove chiado and proteustestnet, as they are not currently AW-supported.
+
+### Minor Changes
+
+- 9ab1370: Add proxyUrl and function to generate it
+- 66124ea: Add NeoX T4 testnet chain
+- d9a46f9: Add Henez testnet config
+- 33a13d3: Add Eclipse USDC token metadata
+
+### Patch Changes
+
+- 1d43e33: Update scroll reorg period
+- 7fb63da: Change Polygon native token from MATIC to POL
+- af9b94b: Update Moonbeam logo
+- c4b28b2: Deploy ICAs to all AW mainnets
+- 8753a2a: Add index.from for heneztestnet, fixing schema validation
+
 ## 3.0.0
 
 ### Major Changes
