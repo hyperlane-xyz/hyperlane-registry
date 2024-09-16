@@ -1,5 +1,27 @@
 # @hyperlane-xyz/registry
 
+## 4.1.1
+
+### Patch Changes
+
+- ebb3a77: Add eclipse mainnet block explorer
+
+## 4.1.0
+
+### Minor Changes
+
+- b24c14d: Add tangletestnet deployment addresses
+- 7ccdd62: Add piccadilly testnet chain
+- 8e93ecb: Deploy to oort mainnet
+- 9b1bb59: Adds Solanamainnet and Eclipsemainnet core deployment addresses
+- 7512eac: Deploy to everclear
+- dfd6f66: Enroll new chains and validators to default ISMs
+- 912fce6: Add Eclipse warp route artifacts (USDC and SOL)
+
+### Patch Changes
+
+- 4de3ccf: Update Celo chain logo
+
 ## 4.0.0
 
 ### Major Changes
