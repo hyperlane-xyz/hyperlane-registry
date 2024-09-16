@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 4.1.1
+
+### Patch Changes
+
+- ebb3a77: Add eclipse mainnet block explorer
+
 ## 4.1.0
 
 ### Minor Changes
