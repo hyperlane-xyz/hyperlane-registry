@@ -1,4 +1,4 @@
-import { ChainMetadataSchema } from '@hyperlane-xyz/sdk';
+import { ChainMetadataSchema, ChainTechnicalStack} from '@hyperlane-xyz/sdk';
 import { chainAddresses, chainMetadata } from '../../dist/index.js';
 import { ChainAddressesSchema } from '../../src/types.js';
 
@@ -13,6 +13,12 @@ describe('Chain metadata', () => {
     // it(`${chain} metadata contains deployer details`, () => {
     //   expect(metadata.deployer).not.to.be.undefined;
     // });
+
+    it(`${chain} metadata has 'index.from' defined if technicalStack is arbitrumnitro`, () => {
+      if (metadata.technicalStack === ChainTechnicalStack.ArbitrumNitro) {
+        expect(metadata.index?.from).to.be.not.undefined;
+      }
+    });
 
     it(`${chain} metadata has gasCurrencyCoinGeckoId if deployer is Abacus Works it is a mainnet`, () => {
       if (metadata.deployer?.name === "Abacus Works" && !metadata.isTestnet) {
