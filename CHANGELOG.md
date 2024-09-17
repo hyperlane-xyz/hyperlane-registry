@@ -1,5 +1,17 @@
 # @hyperlane-xyz/registry
 
+## 4.2.0
+
+### Minor Changes
+
+- cee6f8c: Update pulsechain metadata
+
+### Patch Changes
+
+- b4bc397: Transfer ownership on everclear and oortmainnet to ICAs
+- 6a324fb: Adds missing collateral addresses to eclipse warp routes
+- 6a324fb: Add mailbox addresses to the chain metadata of SVM chains to get the warp UI working
+
 ## 4.1.1
 
 ### Patch Changes
