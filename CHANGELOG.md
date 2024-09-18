@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 4.3.3
+
+### Patch Changes
+
+- d1ff6d4: Add missing logoURI values to warp configs
+
 ## 4.3.2
 
 ### Patch Changes
