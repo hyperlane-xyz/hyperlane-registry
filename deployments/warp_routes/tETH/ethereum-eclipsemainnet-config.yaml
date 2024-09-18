@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x3Ac6A6Cca0b49C3f3f06D12F46e8d88EEfbB7415"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x19e099B7aEd41FA52718D780dDA74678113C0b32"
+    connections:
+      - token: sealevel|eclipsemainnet|BJa3fPvvjKx8gRCWunoSrWBbsmieub37gsGpjp4BfTfW
+    decimals: 18
+    name: Eclipse Turbo ETH
+    standard: EvmHypCollateral
+    symbol: tETH
+  - addressOrDenom: BJa3fPvvjKx8gRCWunoSrWBbsmieub37gsGpjp4BfTfW
+    chainName: eclipsemainnet
+    connections:
+      - token: ethereum|ethereum|0x3Ac6A6Cca0b49C3f3f06D12F46e8d88EEfbB7415
+    decimals: 9
+    foreignDecimals: 18
+    logoURI: /deployments/warp_routes/TETH/logo.svg
+    name: tETH
+    standard: SealevelHypSynthetic
+    symbol: tETH
