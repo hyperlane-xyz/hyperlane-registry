@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 4.3.1
+
+### Patch Changes
+
+- 75cdf82: Fixes missing collateral address from TETH warp route
+
 ## 4.3.0
 
 ### Minor Changes
