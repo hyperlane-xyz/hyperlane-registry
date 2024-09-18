@@ -1,5 +1,48 @@
 # @hyperlane-xyz/registry
 
+## 4.3.3
+
+### Patch Changes
+
+- d1ff6d4: Add missing logoURI values to warp configs
+
+## 4.3.2
+
+### Patch Changes
+
+- 0e4d875: Fix logo url in tETH warp config
+
+## 4.3.1
+
+### Patch Changes
+
+- 75cdf82: Fixes missing collateral address from TETH warp route
+
+## 4.3.0
+
+### Minor Changes
+
+- 77a04c0: Add tETH synthetic token metadata
+- c700c09: Add WIF warp route artifacts
+- b9b8b61: Add Turbo Eth warp route artifacts
+- 9b9b07c: Add WIF token metadata
+
+### Patch Changes
+
+- 2e82f99: Fix everclear explorer URLs
+
+## 4.2.0
+
+### Minor Changes
+
+- cee6f8c: Update pulsechain metadata
+
+### Patch Changes
+
+- b4bc397: Transfer ownership on everclear and oortmainnet to ICAs
+- 6a324fb: Adds missing collateral addresses to eclipse warp routes
+- 6a324fb: Add mailbox addresses to the chain metadata of SVM chains to get the warp UI working
+
 ## 4.1.1
 
 ### Patch Changes
