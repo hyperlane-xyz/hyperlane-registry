@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 4.3.2
+
+### Patch Changes
+
+- 0e4d875: Fix logo url in tETH warp config
+
 ## 4.3.1
 
 ### Patch Changes
