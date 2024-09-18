@@ -1,5 +1,18 @@
 # @hyperlane-xyz/registry
 
+## 4.3.0
+
+### Minor Changes
+
+- 77a04c0: Add tETH synthetic token metadata
+- c700c09: Add WIF warp route artifacts
+- b9b8b61: Add Turbo Eth warp route artifacts
+- 9b9b07c: Add WIF token metadata
+
+### Patch Changes
+
+- 2e82f99: Fix everclear explorer URLs
+
 ## 4.2.0
 
 ### Minor Changes
