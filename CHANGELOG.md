@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 4.3.6
+
+### Patch Changes
+
+- 0d56f2a: Update ethereum / eclipse tETH warp config and addresses
+
 ## 4.3.5
 
 ### Patch Changes
