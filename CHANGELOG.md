@@ -1,5 +1,13 @@
 # @hyperlane-xyz/registry
 
+## 4.3.4
+
+### Patch Changes
+
+- d93560a: Update eclipse logo
+- 8a7811d: Update cheesechain type to EvmHypOwnerCollateral
+- d057c3b: update sol/eclipse warp route addresses
+
 ## 4.3.3
 
 ### Patch Changes
