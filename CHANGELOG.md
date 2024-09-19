@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 4.3.5
+
+### Patch Changes
+
+- be597b0: Update Solana/Eclipse/Ethereum USDC warp route addresses
+
 ## 4.3.4
 
 ### Patch Changes
