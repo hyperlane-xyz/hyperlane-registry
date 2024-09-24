@@ -398,8 +398,8 @@ berabartio:
       url: https://bartio.beratrail.io/
   chainId: 80084
   deployer:
-    name: Henez Foundation
-    url: https://www.henez.fi/
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Berachain bArtio
   domainId: 80084
   isTestnet: true
@@ -635,6 +635,27 @@ cheesechain:
   rpcUrls:
     - http: https://cheesechain.calderachain.xyz/http
   technicalStack: arbitrumnitro
+citreatestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.testnet.citrea.xyz/api
+      family: blockscout
+      name: Citrea Testnet Explorer
+      url: https://explorer.testnet.citrea.xyz
+  chainId: 5115
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Citrea Testnet
+  domainId: 5115
+  isTestnet: true
+  name: citreatestnet
+  nativeToken:
+    decimals: 18
+    name: Citrea BTC
+    symbol: cBTC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.testnet.citrea.xyz
 clique:
   blockExplorers:
     - apiUrl: https://explorer.myclique.io/api
@@ -1449,6 +1470,27 @@ holesky:
   protocol: ethereum
   rpcUrls:
     - http: https://ethereum-holesky-rpc.publicnode.com
+hyperliquidevmtestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.hyperliquid.xyz/api
+      family: other
+      name: Hyperliquid EVM Testnet Explorer
+      url: https://explorer.hyperliquid.xyz
+  chainId: 998
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Hyperliquid EVM Testnet
+  domainId: 998
+  isTestnet: true
+  name: hyperliquidevmtestnet
+  nativeToken:
+    decimals: 18
+    name: Ethereum
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://api.hyperliquid-testnet.xyz/evm
 immutablezkevm:
   blockExplorers:
     - apiUrl: https://explorer.immutable.com/api/eth-rpc
@@ -1832,6 +1874,27 @@ metis:
   rpcUrls:
     - http: https://andromeda.metis.io/?owner=1088
   technicalStack: arbitrumnitro
+mevmdevnet:
+  blockExplorers:
+    - apiUrl: https://explorer.devnet.imola.movementlabs.xyz/api
+      family: other
+      name: Movement EVM Testnet Explorer
+      url: https://explorer.devnet.imola.movementlabs.xyz
+  chainId: 30732
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Movement EVM Devnet
+  domainId: 30732
+  isTestnet: true
+  name: mevmdevnet
+  nativeToken:
+    decimals: 18
+    name: Movement
+    symbol: MOVE
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mevm.devnet.imola.movementlabs.xyz
 mint:
   blockExplorers:
     - apiUrl: https://explorer.mintchain.io/api/eth-rpc
