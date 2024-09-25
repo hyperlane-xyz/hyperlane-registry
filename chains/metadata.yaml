@@ -556,6 +556,29 @@ bsctestnet:
   rpcUrls:
     - http: https://bsc-testnet.publicnode.com
     - http: https://bsc-testnet.blockpi.network/v1/rpc/public
+camptestnet:
+  blockExplorers:
+    - apiUrl: https://camp-network-testnet.blockscout.com/api
+      family: blockscout
+      name: Camp Network Testnet Explorer
+      url: https://camp-network-testnet.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 325000
+  displayName: Camp Network Testnet V2
+  domainId: 325000
+  gasCurrencyCoinGeckoId: ethereum
+  isTestnet: true
+  name: camptestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc-campnetwork.xyz
 carbon:
   blockExplorers:
     - apiUrl: https://evm-scan.carbon.network/api
@@ -1220,6 +1243,29 @@ forma:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.forma.art
+formtestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.form.network/api
+      family: blockscout
+      name: Form Testnet Explorer
+      url: https://explorer.form.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 132902
+  displayName: Form Testnet
+  domainId: 132902
+  gasCurrencyCoinGeckoId: ethereum
+  isTestnet: true
+  name: formtestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet-rpc.form.network/http
 fractalconfluence:
   blockExplorers:
     - apiUrl: https://evmscan.fra.tech/api
@@ -2974,6 +3020,29 @@ solanatestnet:
   protocol: sealevel
   rpcUrls:
     - http: https://api.testnet.solana.com
+soneiumtestnet:
+  blockExplorers:
+    - apiUrl: https://explorer-testnet.soneium.org/api
+      family: blockscout
+      name: Soneium Minato Testnet Explorer
+      url: https://explorer-testnet.soneium.org
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 1946
+  displayName: Soneium Minato Testnet
+  domainId: 1946
+  gasCurrencyCoinGeckoId: ethereum
+  isTestnet: true
+  name: soneiumtestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.minato.soneium.org
 stride:
   bech32Prefix: stride
   blockExplorers:
@@ -3044,6 +3113,29 @@ stridetestnet:
   slip44: 118
   transactionOverrides:
     gasPrice: "0.0025"
+suavetoliman:
+  blockExplorers:
+    - apiUrl: https://explorer.toliman.suave.flashbots.net/api
+      family: blockscout
+      name: SUAVE Toliman Testnet Explorer
+      url: https://explorer.toliman.suave.flashbots.net
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 4
+    reorgPeriod: 1
+  chainId: 33626250
+  displayName: SUAVE Toliman Testnet
+  domainId: 33626250
+  gasCurrencyCoinGeckoId: ethereum
+  isTestnet: true
+  name: suavetoliman
+  nativeToken:
+    decimals: 18
+    name: TEEth
+    symbol: TEEth
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.toliman.suave.flashbots.net
 superpositiontestnet:
   blockExplorers:
     - apiUrl: https://testnet-explorer.superposition.so/api
