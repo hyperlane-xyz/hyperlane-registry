@@ -1,5 +1,19 @@
 # @hyperlane-xyz/registry
 
+## 4.4.0
+
+### Minor Changes
+
+- bab634d: Deploy to berabartio hyperliquidevmtestnet citreatestnet camptestnet formtestnet soneiumtestnet suavetoliman
+
+### Patch Changes
+
+- 3df435f: Update plumetestnet logo
+- d7dc44d: Add gasCurrencyCoinGeckoId for AW testnets
+- d139fd1: Change `displayName` for Aleph Zero EVM
+- 234d74c: Update solana explorer to solscan
+- a87a555: Update default ISMs on testnet
+
 ## 4.3.6
 
 ### Patch Changes
