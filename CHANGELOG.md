@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 4.4.1
+
+### Patch Changes
+
+- 2f4ca2f: Set deployer names for known AW testnets
+
 ## 4.4.0
 
 ### Minor Changes
