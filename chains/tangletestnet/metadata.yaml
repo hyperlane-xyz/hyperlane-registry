@@ -1,23 +1,21 @@
+# yaml-language-server: $schema=../schema.json
 blockExplorers:
   - apiUrl: https://testnet-explorer.tangle.tools/api
     family: blockscout
-    name: Tangle Test Network Explorer
-    url: https://testnet-explorer.tangle.tools/
+    name: Tangle Testnet Explorer
+    url: https://testnet-explorer.tangle.tools
 blocks:
-  confirmations: 1
+  confirmations: 4
   estimateBlockTime: 6
-  reorgPeriod: 0
+  reorgPeriod: 4
 chainId: 3799
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: Tangle Testnet
 domainId: 3799
 isTestnet: true
 name: tangletestnet
 nativeToken:
   decimals: 18
-  name: Tangle Network Token
+  name: Tangle Testnet Token
   symbol: tTNT
 protocol: ethereum
 rpcUrls:

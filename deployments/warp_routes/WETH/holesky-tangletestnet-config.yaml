@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x8813560eF91bDE8E3631c54274bC4EB9F8bc682C"
+    chainName: holesky
+    collateralAddressOrDenom: "0x94373a4919B3240D86eA41593D5eBa789FEF3848"
+    connections:
+      - token: ethereum|tangletestnet|0xa7Eb9988DDe20b8E550F025cf3f188207EAbD792
+    decimals: 18
+    name: Wrapped Ether
+    standard: EvmHypCollateral
+    symbol: WETH
+  - addressOrDenom: "0xa7Eb9988DDe20b8E550F025cf3f188207EAbD792"
+    chainName: tangletestnet
+    connections:
+      - token: ethereum|holesky|0x8813560eF91bDE8E3631c54274bC4EB9F8bc682C
+    decimals: 18
+    name: Wrapped Ether
+    standard: EvmHypSynthetic
+    symbol: WETH
