@@ -1,5 +1,5 @@
 # AUTO-GENERATED; DO NOT EDIT MANUALLY
-alephzero:
+alephzeroevm:
   blockExplorers:
     - apiUrl: https://evm-explorer.alephzero.org/api
       family: blockscout
@@ -7,7 +7,7 @@ alephzero:
       url: https://evm-explorer.alephzero.org
   blocks:
     confirmations: 1
-    estimateBlockTime: 2
+    estimateBlockTime: 3
     reorgPeriod: 0
   chainId: 41455
   deployer:
@@ -18,8 +18,8 @@ alephzero:
   domainId: 41455
   gasCurrencyCoinGeckoId: aleph-zero
   index:
-    from: 1705101
-  name: alephzero
+    from: 3421962
+  name: alephzeroevm
   nativeToken:
     decimals: 18
     name: AZERO
@@ -666,6 +666,31 @@ cheesechain:
   rpcUrls:
     - http: https://cheesechain.calderachain.xyz/http
   technicalStack: arbitrumnitro
+chiliz:
+  blockExplorers:
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/88888/etherscan/api
+      family: routescan
+      name: Chiliscan
+      url: https://chiliscan.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 3
+    reorgPeriod: 1
+  chainId: 88888
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Chiliz
+  domainId: 88888
+  gasCurrencyCoinGeckoId: chiliz
+  name: chiliz
+  nativeToken:
+    decimals: 18
+    name: Chiliz
+    symbol: CHZ
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.ankr.com/chiliz
 citreatestnet:
   blockExplorers:
     - apiUrl: https://explorer.testnet.citrea.xyz/api
@@ -1567,7 +1592,7 @@ immutablezkevm:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 1
   chainId: 13371
   deployer:
     name: Abacus Works
@@ -1583,6 +1608,8 @@ immutablezkevm:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.immutable.com
+    - http: https://immutable.gateway.tenderly.co
+    - http: https://immutable-zkevm.drpc.org
 inevm:
   blockExplorers:
     - apiUrl: https://inevm.calderaexplorer.xyz/api
@@ -1831,6 +1858,31 @@ luksotestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.testnet.lukso.network
+lumia:
+  blockExplorers:
+    - apiUrl: https://explorer.lumia.org/api/eth-rpc
+      family: blockscout
+      name: Lumia Prism Explorer
+      url: https://explorer.lumia.org
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 4
+    reorgPeriod: 1
+  chainId: 994873017
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Lumia Prism
+  domainId: 994873017
+  gasCurrencyCoinGeckoId: orion-protocol
+  name: lumia
+  nativeToken:
+    decimals: 18
+    name: Lumia
+    symbol: LUMIA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://994873017.rpc.thirdweb.com
 mantapacific:
   blockExplorers:
     - apiUrl: https://pacific-explorer.manta.network/api
@@ -2576,16 +2628,16 @@ rari:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 1
   chainId: 1380012617
   deployer:
     name: Abacus Works
     url: https://www.hyperlane.xyz
-  displayName: Rari
+  displayName: RARI Chain
   domainId: 1380012617
   gasCurrencyCoinGeckoId: ethereum
   index:
-    from: 443173
+    from: 541753
   name: rari
   nativeToken:
     decimals: 18
@@ -3148,11 +3200,39 @@ suavetoliman:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.toliman.suave.flashbots.net
+superposition:
+  blockExplorers:
+    - apiUrl: https://explorer.superposition.so/api
+      family: blockscout
+      name: Superposition Explorer
+      url: https://explorer.superposition.so/
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 55244
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Superposition
+  domainId: 55244
+  gasCurrencyCoinGeckoId: ethereum
+  index:
+    from: 1201
+  name: superposition
+  nativeToken:
+    decimals: 18
+    name: Ethereum
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.superposition.so
+  technicalStack: arbitrumnitro
 superpositiontestnet:
   blockExplorers:
     - apiUrl: https://testnet-explorer.superposition.so/api
       family: blockscout
-      name: CatScan
+      name: Superposition Testnet Explorer
       url: https://testnet-explorer.superposition.so
   blocks:
     confirmations: 1
