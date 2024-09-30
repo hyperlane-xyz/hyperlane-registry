@@ -10,9 +10,11 @@ describe('Chain metadata', () => {
       ChainMetadataSchema.parse(metadata);
     });
 
-    // it(`${chain} metadata contains deployer details`, () => {
-    //   expect(metadata.deployer).not.to.be.undefined;
-    // });
+    it(`${chain} metadata contains deployer details if mailbox address is defined`, () => {
+      if (chainAddresses[chain] && chainAddresses[chain].mailboxAddress) {
+        expect(metadata.deployer).not.to.be.undefined;
+      }
+    });
 
     it(`${chain} metadata has 'index.from' defined if technicalStack is arbitrumnitro`, () => {
       if (metadata.technicalStack === ChainTechnicalStack.ArbitrumNitro) {
