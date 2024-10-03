@@ -25,5 +25,7 @@ rpcUrls:
   - http: https://immutable.gateway.tenderly.co
 # As provided in https://docs.immutable.com/platform/zkEVM/chain-config#setting-pricing-details-on-a-transaction
 transactionOverrides:
-  maxPriorityFeePerGas: 10000000000, # 10e9 aka 10 gwei
-  maxFeePerGas: 15000000000, # 15e9
+  # 15e9
+  maxFeePerGas: 15000000000
+  # 10e9 aka 10 gwei
+  maxPriorityFeePerGas: 10000000000
