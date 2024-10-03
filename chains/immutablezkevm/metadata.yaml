@@ -23,9 +23,7 @@ protocol: ethereum
 rpcUrls:
   - http: https://rpc.immutable.com
   - http: https://immutable.gateway.tenderly.co
-# As provided in https://docs.immutable.com/platform/zkEVM/chain-config#setting-pricing-details-on-a-transaction
+# Taken from https://docs.immutable.com/tutorials/zkEVM/deploy-contracts/deploy?deploy-scripts=erc721-deploy#deploy
 transactionOverrides:
-  # 15e9
-  maxFeePerGas: 15000000000
-  # 10e9 aka 10 gwei
-  maxPriorityFeePerGas: 10000000000
+  maxFeePerGas: 100000000000
+  maxPriorityFeePerGas: 100000000000
