@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x14CFC15Da10d5cfC6A494E183c795067573C7F51"
+    chainName: arbitrum
+    connections:
+      - token: ethereum|bsc|0xF29AD0640731c50d0c7C999D1f8d5Ffb9E2A3da3
+      - token: ethereum|kalychain|0xfdbB253753dDE60b11211B169dC872AaE672879b
+      - token: ethereum|polygon|0xb974461a9ef2Ff3F408798f551929647ceaB13b4
+    decimals: 18
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH
+  - addressOrDenom: "0xF29AD0640731c50d0c7C999D1f8d5Ffb9E2A3da3"
+    chainName: bsc
+    collateralAddressOrDenom: "0x2170Ed0880ac9A755fd29B2688956BD959F933F8"
+    connections:
+      - token: ethereum|arbitrum|0x14CFC15Da10d5cfC6A494E183c795067573C7F51
+      - token: ethereum|kalychain|0xfdbB253753dDE60b11211B169dC872AaE672879b
+      - token: ethereum|polygon|0xb974461a9ef2Ff3F408798f551929647ceaB13b4
+    decimals: 18
+    name: Ether
+    standard: EvmHypCollateral
+    symbol: ETH
+  - addressOrDenom: "0xfdbB253753dDE60b11211B169dC872AaE672879b"
+    chainName: kalychain
+    connections:
+      - token: ethereum|arbitrum|0x14CFC15Da10d5cfC6A494E183c795067573C7F51
+      - token: ethereum|bsc|0xF29AD0640731c50d0c7C999D1f8d5Ffb9E2A3da3
+      - token: ethereum|polygon|0xb974461a9ef2Ff3F408798f551929647ceaB13b4
+    decimals: 18
+    name: Ether
+    standard: EvmHypSynthetic
+    symbol: ETH
+  - addressOrDenom: "0xb974461a9ef2Ff3F408798f551929647ceaB13b4"
+    chainName: polygon
+    collateralAddressOrDenom: "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619"
+    connections:
+      - token: ethereum|arbitrum|0x14CFC15Da10d5cfC6A494E183c795067573C7F51
+      - token: ethereum|bsc|0xF29AD0640731c50d0c7C999D1f8d5Ffb9E2A3da3
+      - token: ethereum|kalychain|0xfdbB253753dDE60b11211B169dC872AaE672879b
+    decimals: 18
+    name: Ether
+    standard: EvmHypCollateral
+    symbol: ETH

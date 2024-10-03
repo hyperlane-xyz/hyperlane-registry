@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xFDb3307a16442ed5A7C040AE1600a3B3D3C8e7D9"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+    connections:
+      - token: ethereum|bsc|0xf4f62eC5C9d4e5464A9D1Dd738e3f50b1d652101
+      - token: ethereum|kalychain|0x2CA775C77B922A51FcF3097F52bFFdbc0250D99A
+      - token: ethereum|polygon|0x2f7c83FC82A0e39A997c262e5BAB13176C275104
+    decimals: 6
+    name: Tether USD
+    standard: EvmHypCollateral
+    symbol: USDT
+  - addressOrDenom: "0xf4f62eC5C9d4e5464A9D1Dd738e3f50b1d652101"
+    chainName: bsc
+    collateralAddressOrDenom: "0x55d398326f99059fF775485246999027B3197955"
+    connections:
+      - token: ethereum|arbitrum|0xFDb3307a16442ed5A7C040AE1600a3B3D3C8e7D9
+      - token: ethereum|kalychain|0x2CA775C77B922A51FcF3097F52bFFdbc0250D99A
+      - token: ethereum|polygon|0x2f7c83FC82A0e39A997c262e5BAB13176C275104
+    decimals: 6
+    name: Tether USD
+    standard: EvmHypCollateral
+    symbol: USDT
+  - addressOrDenom: "0x2CA775C77B922A51FcF3097F52bFFdbc0250D99A"
+    chainName: kalychain
+    connections:
+      - token: ethereum|arbitrum|0xFDb3307a16442ed5A7C040AE1600a3B3D3C8e7D9
+      - token: ethereum|bsc|0xf4f62eC5C9d4e5464A9D1Dd738e3f50b1d652101
+      - token: ethereum|polygon|0x2f7c83FC82A0e39A997c262e5BAB13176C275104
+    decimals: 6
+    name: Tether USD
+    standard: EvmHypSynthetic
+    symbol: USDT
+  - addressOrDenom: "0x2f7c83FC82A0e39A997c262e5BAB13176C275104"
+    chainName: polygon
+    collateralAddressOrDenom: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
+    connections:
+      - token: ethereum|arbitrum|0xFDb3307a16442ed5A7C040AE1600a3B3D3C8e7D9
+      - token: ethereum|bsc|0xf4f62eC5C9d4e5464A9D1Dd738e3f50b1d652101
+      - token: ethereum|kalychain|0x2CA775C77B922A51FcF3097F52bFFdbc0250D99A
+    decimals: 6
+    name: Tether USD
+    standard: EvmHypCollateral
+    symbol: USDT
