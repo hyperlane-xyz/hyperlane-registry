@@ -1,27 +1,28 @@
+# yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://mainnet.explorer.rarichain.org/api
+  - apiUrl: https://explorer.superposition.so/api
     family: blockscout
-    name: Rari Mainnet Explorer
-    url: https://mainnet.explorer.rarichain.org
+    name: Superposition Explorer
+    url: https://explorer.superposition.so/
 blocks:
   confirmations: 1
   estimateBlockTime: 2
   reorgPeriod: 1
-chainId: 1380012617
+chainId: 55244
 deployer:
   name: Abacus Works
   url: https://www.hyperlane.xyz
-displayName: RARI Chain
-domainId: 1380012617
+displayName: Superposition
+domainId: 55244
 gasCurrencyCoinGeckoId: ethereum
 index:
-  from: 541753
-name: rari
+  from: 1201
+name: superposition
 nativeToken:
   decimals: 18
   name: Ethereum
   symbol: ETH
 protocol: ethereum
 rpcUrls:
-  - http: https://mainnet.rpc.rarichain.org/http
+  - http: https://rpc.superposition.so
 technicalStack: arbitrumnitro
