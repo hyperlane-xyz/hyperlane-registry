@@ -1,5 +1,20 @@
 # @hyperlane-xyz/registry
 
+## 4.5.0
+
+### Minor Changes
+
+- 74163f5: Register information of Euphoria Testnet and add testing token
+- 69b496b: Add metadata for u2u nebulas testnet
+- 8c8cc0d: Add deployments for chains: immutablezkevm, rari, rootstock, alephzeroevm, chiliz, lumia, and superposition
+- e7e1f2d: Adding KalyChain mainnet
+
+### Patch Changes
+
+- 181c3bd: Update alfajores logo
+- 2d48627: Update xai logo
+- a82d5d5: Add Moonbase Testnet
+
 ## 4.4.1
 
 ### Patch Changes
