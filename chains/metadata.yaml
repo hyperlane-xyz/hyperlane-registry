@@ -1140,6 +1140,28 @@ ethereum:
   rpcUrls:
     - http: https://ethereum.publicnode.com
     - http: https://cloudflare-eth.com
+euphoria:
+  blockExplorers:
+    - apiUrl: https://euphoria-api.aurascan.io
+      family: other
+      name: AuraScan
+      url: https://euphoria.aurascan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 0
+  chainId: 6321
+  displayName: Euphoria Testnet
+  domainId: 6321
+  isTestnet: true
+  name: euphoria
+  nativeToken:
+    decimals: 18
+    name: Euphoria Aura
+    symbol: EAURA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://jsonrpc.euphoria.aura.network
 everclear:
   blockExplorers:
     - apiUrl: https://scan.everclear.org/api
@@ -1671,6 +1693,30 @@ injective:
   rpcUrls:
     - http: https://sentry.tm.injective.network:443
   slip44: 118
+kalychain:
+  blockExplorers:
+    - apiUrl: https://kalyscan.io/api
+      family: blockscout
+      name: KalyScan
+      url: https://kalyscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 2
+  chainId: 3888
+  deployer:
+    name: Kaly Chain
+    url: https://www.kalychain.io
+  displayName: KalyChain
+  domainId: 3888
+  name: kalychain
+  nativeToken:
+    decimals: 18
+    name: KalyCoin
+    symbol: KLC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.kalychain.io/rpc
 kava:
   blockExplorers:
     - apiUrl: https://explorer.kava.io/api
@@ -2123,6 +2169,29 @@ molten:
   rpcUrls:
     - http: https://molten.calderachain.xyz/http
   technicalStack: arbitrumnitro
+moonbase:
+  blockExplorers:
+    - apiUrl: https://api-moonbase.moonscan.io/api
+      family: etherscan
+      name: Moonbase Alpha Testnet Explorer
+      url: https://moonbase.moonscan.io
+  chainId: 1287
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Moonbase Testnet
+  isTestnet: true
+  name: moonbase
+  nativeToken:
+    decimals: 18
+    name: Dev
+    symbol: DEV
+  protocol: ethereum
+  rpcUrls:
+    - http: https://moonbase-alpha.public.blastapi.io
+    - http: https://moonbase.unitedbloc.com
+    - http: https://rpc.testnet.moonbeam.network
+    - http: https://rpc.testnet.moonbeam.network
 moonbeam:
   blockExplorers:
     - apiUrl: https://api-moonbeam.moonscan.io/api
