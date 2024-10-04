@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x1e59F72de6c00c456f7F42708FE8b6b0782E84C6"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1"
+    connections:
+      - token: ethereum|bsc|0x7379A18963039eA1284050b585f422e8156c9eC0
+      - token: ethereum|kalychain|0x6E92CAC380F7A7B86f4163fad0df2F277B16Edc6
+      - token: ethereum|polygon|0x1E71a8d870F0C491d4fCC965A59493b8B7564949
+    decimals: 18
+    name: Dai Stablecoin
+    standard: EvmHypCollateral
+    symbol: DAI
+  - addressOrDenom: "0x7379A18963039eA1284050b585f422e8156c9eC0"
+    chainName: bsc
+    collateralAddressOrDenom: "0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3"
+    connections:
+      - token: ethereum|arbitrum|0x1e59F72de6c00c456f7F42708FE8b6b0782E84C6
+      - token: ethereum|kalychain|0x6E92CAC380F7A7B86f4163fad0df2F277B16Edc6
+      - token: ethereum|polygon|0x1E71a8d870F0C491d4fCC965A59493b8B7564949
+    decimals: 18
+    name: Dai Stablecoin
+    standard: EvmHypCollateral
+    symbol: DAI
+  - addressOrDenom: "0x6E92CAC380F7A7B86f4163fad0df2F277B16Edc6"
+    chainName: kalychain
+    connections:
+      - token: ethereum|arbitrum|0x1e59F72de6c00c456f7F42708FE8b6b0782E84C6
+      - token: ethereum|bsc|0x7379A18963039eA1284050b585f422e8156c9eC0
+      - token: ethereum|polygon|0x1E71a8d870F0C491d4fCC965A59493b8B7564949
+    decimals: 18
+    name: Dai Stablecoin
+    standard: EvmHypSynthetic
+    symbol: DAI
+  - addressOrDenom: "0x1E71a8d870F0C491d4fCC965A59493b8B7564949"
+    chainName: polygon
+    collateralAddressOrDenom: "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063"
+    connections:
+      - token: ethereum|arbitrum|0x1e59F72de6c00c456f7F42708FE8b6b0782E84C6
+      - token: ethereum|bsc|0x7379A18963039eA1284050b585f422e8156c9eC0
+      - token: ethereum|kalychain|0x6E92CAC380F7A7B86f4163fad0df2F277B16Edc6
+    decimals: 18
+    name: Dai Stablecoin
+    standard: EvmHypCollateral
+    symbol: DAI
