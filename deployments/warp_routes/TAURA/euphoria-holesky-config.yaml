@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xcB86cc5E22Ff0d2e1cC9e55c80271D0F530E9E1A"
+    chainName: holesky
+    collateralAddressOrDenom: "0x89C17409dc7222E378A433CE75DDd4dF8a1c4874"
+    connections:
+      - token: ethereum|euphoria|0x4cbff016739911729D4b3F34ca688F6Bb0954037
+    decimals: 18
+    name: Aura Testing
+    standard: EvmHypCollateral
+    symbol: tAURA
+  - addressOrDenom: "0x4cbff016739911729D4b3F34ca688F6Bb0954037"
+    chainName: euphoria
+    connections:
+      - token: ethereum|holesky|0xcB86cc5E22Ff0d2e1cC9e55c80271D0F530E9E1A
+    decimals: 18
+    name: Aura Testing
+    standard: EvmHypSynthetic
+    symbol: tAURA
