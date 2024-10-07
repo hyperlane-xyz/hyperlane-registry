@@ -1,19 +1,19 @@
 # yaml-language-server: $schema=../schema.json
 tokens:
-  - addressOrDenom: "0x3A2e96403d076e9f953166A9E4c61bcD9D164CFe"
+  - addressOrDenom: "0xA82b568B5058556396fEAc49c9FA7de6b843fF03"
     chainName: ethereum
     collateralAddressOrDenom: "0x15700B564Ca08D9439C58cA5053166E8317aa138"
     connections:
-      - token: ethereum|mode|0x1BE19a70922Db767E903489CdFacfb567C975BD8
+      - token: ethereum|mode|0x9fD42Eb21f3Eb3A005Ca8E0Ad2e4B5594B06183F
     decimals: 18
     name: deUSD
     standard: EvmHypCollateral
     symbol: deUSD
-  - addressOrDenom: "0x1BE19a70922Db767E903489CdFacfb567C975BD8"
+  - addressOrDenom: "0x9fD42Eb21f3Eb3A005Ca8E0Ad2e4B5594B06183F"
     chainName: mode
     connections:
-      - token: ethereum|ethereum|0x3A2e96403d076e9f953166A9E4c61bcD9D164CFe
+      - token: ethereum|ethereum|0xA82b568B5058556396fEAc49c9FA7de6b843fF03
     decimals: 18
-    name: supUSD
+    name: deUSD
     standard: EvmHypSynthetic
-    symbol: supUSD
+    symbol: deUSD
