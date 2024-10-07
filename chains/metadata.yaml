@@ -770,10 +770,10 @@ confluxespace:
     - http: https://evm.confluxrpc.com
 connextsepolia:
   blockExplorers:
-    - apiUrl: https://connext-sepolia.blockscout.com/api
+    - apiUrl: https://scan.testnet.everclear.org/api
       family: blockscout
-      name: Connext Explorer
-      url: https://connext-sepolia.blockscout.com
+      name: Everclear Testnet Explorer
+      url: https://scan.testnet.everclear.org/
   blocks:
     confirmations: 1
     estimateBlockTime: 10
@@ -782,7 +782,7 @@ connextsepolia:
   deployer:
     name: Everclear
     url: https://everclear.org
-  displayName: Connext Sepolia
+  displayName: Everclear Sepolia
   domainId: 6398
   gasCurrencyCoinGeckoId: ethereum
   index:
@@ -1476,6 +1476,27 @@ galadrieldevnet:
   protocol: ethereum
   rpcUrls:
     - http: https://devnet.galadriel.com
+glidexp:
+  blockExplorers:
+    apiUrl: https://blockchain-explorer.glideprotocol.xyz/api
+    family: blockscout
+    name: Glide Explorer
+    url: https://blockchain-explorer.glideprotocol.xyz/
+  chainId: 253
+  deployer:
+    name: avenbreaks
+    url: https://github.com/avenbreaks
+  displayName: Glide
+  domainId: 253
+  isTestnet: false
+  name: glidexp
+  nativeToken:
+    decimals: 18
+    name: GlideXP
+    symbol: GLXP
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc-api.glideprotocol.xyz/l2-rpc/
 gnosis:
   blockExplorers:
     - apiUrl: https://api.gnosisscan.io/api

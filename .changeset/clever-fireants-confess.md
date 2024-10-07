@@ -1,5 +1,5 @@
 ---
-"@hyperlane-xyz/registry": patch
+'@hyperlane-xyz/registry': minor
 ---
 
-Update connextsepolia metadata
+add Glide L2 Protocol XP
