@@ -690,8 +690,8 @@ chiliz:
     symbol: CHZ
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.chiliz.com
     - http: https://rpc.ankr.com/chiliz
+    - http: https://chiliz.publicnode.com
 citreatestnet:
   blockExplorers:
     - apiUrl: https://explorer.testnet.citrea.xyz/api
@@ -770,10 +770,10 @@ confluxespace:
     - http: https://evm.confluxrpc.com
 connextsepolia:
   blockExplorers:
-    - apiUrl: https://connext-sepolia.blockscout.com/api
+    - apiUrl: https://scan.testnet.everclear.org/api
       family: blockscout
-      name: Connext Explorer
-      url: https://connext-sepolia.blockscout.com
+      name: Everclear Testnet Explorer
+      url: https://scan.testnet.everclear.org/
   blocks:
     confirmations: 1
     estimateBlockTime: 10
@@ -782,7 +782,7 @@ connextsepolia:
   deployer:
     name: Everclear
     url: https://everclear.org
-  displayName: Connext Sepolia
+  displayName: Everclear Sepolia
   domainId: 6398
   gasCurrencyCoinGeckoId: ethereum
   index:
