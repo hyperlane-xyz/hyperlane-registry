@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 4.6.0
+
+### Minor Changes
+
+- 14268ea: Add pzETH between ethereum and zircuit
+
+### Patch Changes
+
+- aac55d5: Remove gasLimit override for rootstock and roostocktestnet
+
 ## 4.5.0
 
 ### Minor Changes

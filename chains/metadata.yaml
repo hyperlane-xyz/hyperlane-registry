@@ -690,8 +690,10 @@ chiliz:
     symbol: CHZ
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.chiliz.com
     - http: https://rpc.ankr.com/chiliz
+    - http: https://chiliz.publicnode.com
+  transactionOverrides:
+    maxPriorityFeePerGas: 1000000000
 citreatestnet:
   blockExplorers:
     - apiUrl: https://explorer.testnet.citrea.xyz/api
@@ -770,10 +772,10 @@ confluxespace:
     - http: https://evm.confluxrpc.com
 connextsepolia:
   blockExplorers:
-    - apiUrl: https://connext-sepolia.blockscout.com/api
+    - apiUrl: https://scan.testnet.everclear.org/api
       family: blockscout
-      name: Connext Explorer
-      url: https://connext-sepolia.blockscout.com
+      name: Everclear Testnet Explorer
+      url: https://scan.testnet.everclear.org/
   blocks:
     confirmations: 1
     estimateBlockTime: 10
@@ -782,7 +784,7 @@ connextsepolia:
   deployer:
     name: Everclear
     url: https://everclear.org
-  displayName: Connext Sepolia
+  displayName: Everclear Sepolia
   domainId: 6398
   gasCurrencyCoinGeckoId: ethereum
   index:
@@ -2826,8 +2828,6 @@ rootstock:
     - http: https://rpc.mainnet.rootstock.io/kXhXHf6TnnfW1POvr4UT0YUvujmuju-M
     - http: https://public-node.rsk.co
     - http: https://mycrypto.rsk.co
-  transactionOverrides:
-    gasLimit: 6800000
 rootstocktestnet:
   blockExplorers:
     - apiUrl: https://rootstock-testnet.blockscout.com/api
@@ -2853,8 +2853,6 @@ rootstocktestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.testnet.rootstock.io/YZIZHxGCQAryubOWH7LjdtjNkSDb5J-T
-  transactionOverrides:
-    gasLimit: 6800000
 saakuru:
   blockExplorers:
     - apiUrl: https://explorer.saakuru.network/api
