@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Update hyperliquidevmtestnet explorer
+Updating the hyperliquid testnet explorer URL and ISM addresses after enabling `hyperliquidevmetestnet`.
