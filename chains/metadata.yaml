@@ -1611,10 +1611,10 @@ holesky:
     - http: https://ethereum-holesky-rpc.publicnode.com
 hyperliquidevmtestnet:
   blockExplorers:
-    - apiUrl: https://explorer.hyperliquid.xyz/api
-      family: other
+    - apiUrl: https://explorer.hyperlend.finance/api
+      family: blockscout
       name: Hyperliquid EVM Testnet Explorer
-      url: https://explorer.hyperliquid.xyz
+      url: https://explorer.hyperlend.finance
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -3402,6 +3402,28 @@ taiko:
   rpcUrls:
     - http: https://rpc.mainnet.taiko.xyz
   technicalStack: other
+taikohekla:
+  blockExplorers:
+    - apiUrl: https://api.routescan.io/v2/network/testnet/evm/167009/etherscan/api
+      family: etherscan
+      name: Taiko Hekla Explorer
+      url: https://hekla.taikoscan.network
+  chainId: 167009
+  deployer:
+    name: tmr
+    url: https://t.me/netimer
+  displayName: Taiko Hekla
+  domainId: 167009
+  isTestnet: true
+  name: taikohekla
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://taiko-hekla.drpc.org
+    - http: https://rpc.hekla.taiko.xyz
 tangle:
   blockExplorers:
     - apiUrl: https://explorer.tangle.tools/api
