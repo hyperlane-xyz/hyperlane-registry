@@ -1,5 +1,5 @@
 # AUTO-GENERATED; DO NOT EDIT MANUALLY
-alephzero:
+alephzeroevm:
   blockExplorers:
     - apiUrl: https://evm-explorer.alephzero.org/api
       family: blockscout
@@ -7,18 +7,19 @@ alephzero:
       url: https://evm-explorer.alephzero.org
   blocks:
     confirmations: 1
-    estimateBlockTime: 2
-    reorgPeriod: 0
+    estimateBlockTime: 3
+    reorgPeriod: 1
   chainId: 41455
   deployer:
     name: Abacus Works
     url: https://www.hyperlane.xyz
-  displayName: Aleph Zero
+  displayName: Aleph Zero EVM
+  displayNameShort: Aleph Zero EVM
   domainId: 41455
   gasCurrencyCoinGeckoId: aleph-zero
   index:
-    from: 1705101
-  name: alephzero
+    from: 3421962
+  name: alephzeroevm
   nativeToken:
     decimals: 18
     name: AZERO
@@ -48,6 +49,7 @@ alfajores:
     url: https://www.hyperlane.xyz
   displayName: Alfajores
   domainId: 44787
+  gasCurrencyCoinGeckoId: celo
   isTestnet: true
   name: alfajores
   nativeToken:
@@ -160,6 +162,7 @@ arbitrumsepolia:
     url: https://www.hyperlane.xyz
   displayName: Arbitrum Sepolia
   domainId: 421614
+  gasCurrencyCoinGeckoId: ethereum
   index:
     from: 49690504
   isTestnet: true
@@ -376,6 +379,7 @@ basesepolia:
     url: https://www.hyperlane.xyz
   displayName: Base Sepolia
   domainId: 84532
+  gasCurrencyCoinGeckoId: ethereum
   isTestnet: true
   name: basesepolia
   nativeToken:
@@ -392,12 +396,17 @@ berabartio:
       family: routescan
       name: Bartio Testnet Explorer
       url: https://bartio.beratrail.io/
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 3
+    reorgPeriod: 1
   chainId: 80084
   deployer:
-    name: Henez Foundation
-    url: https://www.henez.fi/
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Berachain bArtio
   domainId: 80084
+  gasCurrencyCoinGeckoId: berachain
   isTestnet: true
   name: berabartio
   nativeToken:
@@ -536,6 +545,7 @@ bsctestnet:
     url: https://www.hyperlane.xyz
   displayName: BSC Testnet
   domainId: 97
+  gasCurrencyCoinGeckoId: binancecoin
   isTestnet: true
   name: bsctestnet
   nativeToken:
@@ -546,6 +556,32 @@ bsctestnet:
   rpcUrls:
     - http: https://bsc-testnet.publicnode.com
     - http: https://bsc-testnet.blockpi.network/v1/rpc/public
+camptestnet:
+  blockExplorers:
+    - apiUrl: https://camp-network-testnet.blockscout.com/api
+      family: blockscout
+      name: Camp Network Testnet Explorer
+      url: https://camp-network-testnet.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 325000
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Camp Network Testnet V2
+  domainId: 325000
+  gasCurrencyCoinGeckoId: ethereum
+  isTestnet: true
+  name: camptestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc-campnetwork.xyz
 carbon:
   blockExplorers:
     - apiUrl: https://evm-scan.carbon.network/api
@@ -630,31 +666,60 @@ cheesechain:
   rpcUrls:
     - http: https://cheesechain.calderachain.xyz/http
   technicalStack: arbitrumnitro
-chiado:
+chiliz:
   blockExplorers:
-    - apiUrl: https://gnosis-chiado.blockscout.com/api
-      family: blockscout
-      name: GnosisScan
-      url: https://gnosis-chiado.blockscout.com
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/88888/etherscan/api
+      family: routescan
+      name: Chiliscan
+      url: https://chiliscan.com
   blocks:
     confirmations: 1
-    estimateBlockTime: 5
-    reorgPeriod: 14
-  chainId: 10200
+    estimateBlockTime: 3
+    reorgPeriod: 1
+  chainId: 88888
   deployer:
     name: Abacus Works
     url: https://www.hyperlane.xyz
-  displayName: Chiado
-  domainId: 10200
-  isTestnet: true
-  name: chiado
+  displayName: Chiliz
+  domainId: 88888
+  gasCurrencyCoinGeckoId: chiliz
+  name: chiliz
   nativeToken:
     decimals: 18
-    name: xDai
-    symbol: xDai
+    name: Chiliz
+    symbol: CHZ
   protocol: ethereum
   rpcUrls:
-    - http: https://gnosis-chiado.publicnode.com
+    - http: https://rpc.ankr.com/chiliz
+    - http: https://chiliz.publicnode.com
+  transactionOverrides:
+    maxPriorityFeePerGas: 1000000000
+citreatestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.testnet.citrea.xyz/api
+      family: blockscout
+      name: Citrea Testnet Explorer
+      url: https://explorer.testnet.citrea.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 5115
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Citrea Testnet
+  domainId: 5115
+  gasCurrencyCoinGeckoId: bitcoin
+  isTestnet: true
+  name: citreatestnet
+  nativeToken:
+    decimals: 18
+    name: Citrea BTC
+    symbol: cBTC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.testnet.citrea.xyz
 clique:
   blockExplorers:
     - apiUrl: https://explorer.myclique.io/api
@@ -707,10 +772,10 @@ confluxespace:
     - http: https://evm.confluxrpc.com
 connextsepolia:
   blockExplorers:
-    - apiUrl: https://connext-sepolia.blockscout.com/api
+    - apiUrl: https://scan.testnet.everclear.org/api
       family: blockscout
-      name: Connext Explorer
-      url: https://connext-sepolia.blockscout.com
+      name: Everclear Testnet Explorer
+      url: https://scan.testnet.everclear.org/
   blocks:
     confirmations: 1
     estimateBlockTime: 10
@@ -719,8 +784,9 @@ connextsepolia:
   deployer:
     name: Everclear
     url: https://everclear.org
-  displayName: Connext Sepolia
+  displayName: Everclear Sepolia
   domainId: 6398
+  gasCurrencyCoinGeckoId: ethereum
   index:
     from: 4950
   isTestnet: true
@@ -948,6 +1014,11 @@ ebi:
     - http: https://rpc.ebi.xyz
   technicalStack: arbitrumnitro
 eclipsemainnet:
+  blockExplorers:
+    - apiUrl: https://explorer.eclipse.xyz/api
+      family: other
+      name: Eclipse Explorer
+      url: https://explorer.eclipse.xyz/
   blocks:
     confirmations: 1
     estimateBlockTime: 0.4
@@ -978,6 +1049,7 @@ eclipsetestnet:
     url: https://www.hyperlane.xyz
   displayName: Eclipse Testnet
   domainId: 239092742
+  gasCurrencyCoinGeckoId: ethereum
   isTestnet: true
   name: eclipsetestnet
   nativeToken:
@@ -1003,6 +1075,7 @@ ecotestnet:
     url: https://www.hyperlane.xyz
   displayName: Eco Testnet
   domainId: 471923
+  gasCurrencyCoinGeckoId: ethereum
   isTestnet: true
   name: ecotestnet
   nativeToken:
@@ -1069,6 +1142,83 @@ ethereum:
   rpcUrls:
     - http: https://ethereum.publicnode.com
     - http: https://cloudflare-eth.com
+euphoria:
+  blockExplorers:
+    - apiUrl: https://euphoria-api.aurascan.io
+      family: other
+      name: AuraScan
+      url: https://euphoria.aurascan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 0
+  chainId: 6321
+  displayName: Euphoria Testnet
+  domainId: 6321
+  isTestnet: true
+  name: euphoria
+  nativeToken:
+    decimals: 18
+    name: Euphoria Aura
+    symbol: EAURA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://jsonrpc.euphoria.aura.network
+everclear:
+  blockExplorers:
+    - apiUrl: https://scan.everclear.org/api
+      family: blockscout
+      name: Everclear Explorer
+      url: https://scan.everclear.org
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 25327
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Everclear
+  domainId: 25327
+  gasCurrencyCoinGeckoId: ethereum
+  index:
+    from: 37
+  name: everclear
+  nativeToken:
+    decimals: 18
+    name: Ethereum
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.everclear.raas.gelato.cloud
+  technicalStack: arbitrumnitro
+fantom:
+  blockExplorers:
+    - apiUrl: https://api.ftmscan.com/api
+      family: etherscan
+      name: FTMScan
+      url: https://ftmscan.com
+  chainId: 250
+  deployer:
+    name: Joe
+    url: https://github.com/joooeoeee
+  displayName: Fantom Opera
+  domainId: 250
+  isTestnet: false
+  name: fantom
+  nativeToken:
+    decimals: 18
+    name: Fantom
+    symbol: FTM
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpcapi.fantom.network
+    - http: https://fantom-rpc.publicnode.com
+    - http: https://fantom-pokt.nodies.app
+    - http: https://fantom-rpc.publicnode.com
+    - http: https://rpc.fantom.network
+    - http: https://rpc2.fantom.network
+    - http: https://rpc3.fantom.network
 fhenixtestnet:
   blockExplorers:
     - apiUrl: https://api.helium.fhenix.zone
@@ -1173,6 +1323,32 @@ forma:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.forma.art
+formtestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.form.network/api
+      family: blockscout
+      name: Form Testnet Explorer
+      url: https://explorer.form.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 132902
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Form Testnet
+  domainId: 132902
+  gasCurrencyCoinGeckoId: ethereum
+  isTestnet: true
+  name: formtestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet-rpc.form.network/http
 fractalconfluence:
   blockExplorers:
     - apiUrl: https://evmscan.fra.tech/api
@@ -1242,6 +1418,7 @@ fuji:
     url: https://www.hyperlane.xyz
   displayName: Fuji
   domainId: 43113
+  gasCurrencyCoinGeckoId: avalanche-2
   isTestnet: true
   name: fuji
   nativeToken:
@@ -1382,6 +1559,30 @@ ham:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.ham.fun
+heneztestnet:
+  blockExplorers:
+    - apiUrl: https://henez-testnet.explorer.caldera.xyz/api/eth-rpc
+      family: blockscout
+      name: Henez Testnet Explorer
+      url: https://explorer.henez.fi
+  chainId: 91111
+  deployer:
+    name: Henez Foundation
+    url: https://www.henez.fi
+  displayName: Henez Testnet
+  domainId: 91111
+  index:
+    from: 1714457
+  isTestnet: true
+  name: heneztestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://henez-testnet.rpc.caldera.xyz/http
+  technicalStack: arbitrumnitro
 holesky:
   blockExplorers:
     - apiUrl: https://api-holesky.etherscan.io/api
@@ -1398,6 +1599,7 @@ holesky:
     url: https://www.hyperlane.xyz
   displayName: Holesky
   domainId: 17000
+  gasCurrencyCoinGeckoId: ethereum
   isTestnet: true
   name: holesky
   nativeToken:
@@ -1407,6 +1609,32 @@ holesky:
   protocol: ethereum
   rpcUrls:
     - http: https://ethereum-holesky-rpc.publicnode.com
+hyperliquidevmtestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.hyperliquid.xyz/api
+      family: other
+      name: Hyperliquid EVM Testnet Explorer
+      url: https://explorer.hyperliquid.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 998
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Hyperliquid EVM Testnet
+  domainId: 998
+  gasCurrencyCoinGeckoId: ethereum
+  isTestnet: true
+  name: hyperliquidevmtestnet
+  nativeToken:
+    decimals: 18
+    name: Ethereum
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://api.hyperliquid-testnet.xyz/evm
 immutablezkevm:
   blockExplorers:
     - apiUrl: https://explorer.immutable.com/api/eth-rpc
@@ -1416,7 +1644,7 @@ immutablezkevm:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 1
   chainId: 13371
   deployer:
     name: Abacus Works
@@ -1432,6 +1660,10 @@ immutablezkevm:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.immutable.com
+    - http: https://immutable.gateway.tenderly.co
+  transactionOverrides:
+    maxFeePerGas: 100000000000
+    maxPriorityFeePerGas: 100000000000
 inevm:
   blockExplorers:
     - apiUrl: https://inevm.calderaexplorer.xyz/api
@@ -1490,6 +1722,30 @@ injective:
   rpcUrls:
     - http: https://sentry.tm.injective.network:443
   slip44: 118
+kalychain:
+  blockExplorers:
+    - apiUrl: https://kalyscan.io/api
+      family: blockscout
+      name: KalyScan
+      url: https://kalyscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 2
+  chainId: 3888
+  deployer:
+    name: Kaly Chain
+    url: https://www.kalychain.io
+  displayName: KalyChain
+  domainId: 3888
+  name: kalychain
+  nativeToken:
+    decimals: 18
+    name: KalyCoin
+    symbol: KLC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.kalychain.io/rpc
 kava:
   blockExplorers:
     - apiUrl: https://explorer.kava.io/api
@@ -1680,6 +1936,32 @@ luksotestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.testnet.lukso.network
+lumia:
+  blockExplorers:
+    - apiUrl: https://explorer.lumia.org/api/eth-rpc
+      family: blockscout
+      name: Lumia Prism Explorer
+      url: https://explorer.lumia.org
+  blocks:
+    confirmations: 3
+    estimateBlockTime: 4
+    reorgPeriod: 1
+  chainId: 994873017
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Lumia Prism
+  domainId: 994873017
+  gasCurrencyCoinGeckoId: orion-protocol
+  name: lumia
+  nativeToken:
+    decimals: 18
+    name: Lumia
+    symbol: LUMIA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://994873017.rpc.thirdweb.com
+    - http: https://mainnet-rpc.lumia.org
 mantapacific:
   blockExplorers:
     - apiUrl: https://pacific-explorer.manta.network/api
@@ -1790,6 +2072,32 @@ metis:
   rpcUrls:
     - http: https://andromeda.metis.io/?owner=1088
   technicalStack: arbitrumnitro
+mevmdevnet:
+  blockExplorers:
+    - apiUrl: https://explorer.devnet.imola.movementlabs.xyz/api
+      family: other
+      name: Movement EVM Testnet Explorer
+      url: https://explorer.devnet.imola.movementlabs.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 30732
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Movement EVM Devnet
+  domainId: 30732
+  gasCurrencyCoinGeckoId: movement
+  isTestnet: true
+  name: mevmdevnet
+  nativeToken:
+    decimals: 18
+    name: Movement
+    symbol: MOVE
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mevm.devnet.imola.movementlabs.xyz
 mint:
   blockExplorers:
     - apiUrl: https://explorer.mintchain.io/api/eth-rpc
@@ -1890,6 +2198,29 @@ molten:
   rpcUrls:
     - http: https://molten.calderachain.xyz/http
   technicalStack: arbitrumnitro
+moonbase:
+  blockExplorers:
+    - apiUrl: https://api-moonbase.moonscan.io/api
+      family: etherscan
+      name: Moonbase Alpha Testnet Explorer
+      url: https://moonbase.moonscan.io
+  chainId: 1287
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Moonbase Testnet
+  isTestnet: true
+  name: moonbase
+  nativeToken:
+    decimals: 18
+    name: Dev
+    symbol: DEV
+  protocol: ethereum
+  rpcUrls:
+    - http: https://moonbase-alpha.public.blastapi.io
+    - http: https://moonbase.unitedbloc.com
+    - http: https://rpc.testnet.moonbeam.network
+    - http: https://rpc.testnet.moonbeam.network
 moonbeam:
   blockExplorers:
     - apiUrl: https://api-moonbeam.moonscan.io/api
@@ -2026,6 +2357,52 @@ ngmi:
   protocol: ethereum
   rpcUrls:
     - http: https://ngmi-2712765173321000-1.jsonrpc.sagarpc.io
+oortmainnet:
+  blockExplorers:
+    - apiUrl: https://mainnet-scan.oortech.com/api
+      family: other
+      name: Oort Olympus Explorer
+      url: https://mainnet-scan.oortech.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 970
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Oort
+  domainId: 970
+  gasCurrencyCoinGeckoId: oort
+  name: oortmainnet
+  nativeToken:
+    decimals: 18
+    name: Oort
+    symbol: OORT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet-rpc.oortech.com
+opbnb:
+  blockExplorers:
+    - apiUrl: https://api-opbnb.bscscan.com/api
+      family: etherscan
+      name: opBNB Scan
+      url: https://opbnb.bscscan.com
+  chainId: 204
+  deployer:
+    name: JunayedMh
+    url: https://github.com/JunayedMh
+  displayName: opBNB
+  domainId: 204
+  isTestnet: false
+  name: opbnb
+  nativeToken:
+    decimals: 18
+    name: BNB
+    symbol: BNB
+  protocol: ethereum
+  rpcUrls:
+    - http: https://opbnb-rpc.publicnode.com
 optimism:
   blockExplorers:
     - apiUrl: https://api-optimistic.etherscan.io/api
@@ -2139,6 +2516,31 @@ osmosis:
   slip44: 118
   transactionOverrides:
     gasPrice: "0.025"
+piccadilly:
+  blockExplorers:
+    - apiUrl: https://piccadilly.autonity.org/api
+      family: blockscout
+      name: BlockScout
+      url: https://piccadilly.autonity.org
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+  chainId: 65100003
+  deployer:
+    name: M8B
+    url: https://m8b.dev
+  displayName: Autonity Piccadilly
+  displayNameShort: Piccadilly
+  domainId: 65100003
+  isTestnet: true
+  name: piccadilly
+  nativeToken:
+    decimals: 18
+    name: Auton
+    symbol: ATN
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc1.piccadilly.autonity.org
 plumetestnet:
   blockExplorers:
     - apiUrl: https://plume-testnet.explorer.caldera.xyz/api
@@ -2155,6 +2557,7 @@ plumetestnet:
     url: https://www.hyperlane.xyz
   displayName: Plume Testnet
   domainId: 161221135
+  gasCurrencyCoinGeckoId: ethereum
   index:
     from: 5284139
   isTestnet: true
@@ -2211,6 +2614,7 @@ polygonamoy:
     url: https://www.hyperlane.xyz
   displayName: Polygon Amoy
   domainId: 80002
+  gasCurrencyCoinGeckoId: polygon-ecosystem-token
   isTestnet: true
   name: polygonamoy
   nativeToken:
@@ -2304,26 +2708,6 @@ proofofplay:
   rpcUrls:
     - http: https://rpc.apex.proofofplay.com
   technicalStack: arbitrumnitro
-proteustestnet:
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 1
-    reorgPeriod: 1
-  chainId: 88002
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
-  displayName: Proteus Testnet
-  domainId: 88002
-  isTestnet: true
-  name: proteustestnet
-  nativeToken:
-    decimals: 18
-    name: Zebec
-    symbol: ZBC
-  protocol: ethereum
-  rpcUrls:
-    - http: https://api.proteus.nautchain.xyz/solana
 pulsechain:
   blockExplorers:
     - apiUrl: https://api.scan.pulsechain.com/api
@@ -2353,8 +2737,11 @@ pulsechain:
     symbol: PLS
   protocol: ethereum
   rpcUrls:
-    - http: https://pulsechain-rpc.publicnode.com
     - http: https://rpc.pulsechain.com
+    - http: https://pulsechain-rpc.publicnode.com
+  transactionOverrides:
+    maxFeePerGas: 800000000000000
+    maxPriorityFeePerGas: 2500000000
 rari:
   blockExplorers:
     - apiUrl: https://mainnet.explorer.rarichain.org/api
@@ -2364,16 +2751,16 @@ rari:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 1
   chainId: 1380012617
   deployer:
     name: Abacus Works
     url: https://www.hyperlane.xyz
-  displayName: Rari
+  displayName: RARI Chain
   domainId: 1380012617
   gasCurrencyCoinGeckoId: ethereum
   index:
-    from: 443173
+    from: 541753
   name: rari
   nativeToken:
     decimals: 18
@@ -2488,10 +2875,7 @@ rootstock:
   rpcUrls:
     - http: https://rpc.mainnet.rootstock.io/kXhXHf6TnnfW1POvr4UT0YUvujmuju-M
     - http: https://public-node.rsk.co
-    - http: https://rootstock.drpc.org
     - http: https://mycrypto.rsk.co
-  transactionOverrides:
-    gasLimit: 6800000
 rootstocktestnet:
   blockExplorers:
     - apiUrl: https://rootstock-testnet.blockscout.com/api
@@ -2517,8 +2901,6 @@ rootstocktestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.testnet.rootstock.io/YZIZHxGCQAryubOWH7LjdtjNkSDb5J-T
-  transactionOverrides:
-    gasLimit: 6800000
 saakuru:
   blockExplorers:
     - apiUrl: https://explorer.saakuru.network/api
@@ -2581,7 +2963,7 @@ scroll:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 1
+    reorgPeriod: 30
   chainId: 534352
   deployer:
     name: Abacus Works
@@ -2614,6 +2996,7 @@ scrollsepolia:
     url: https://www.hyperlane.xyz
   displayName: Scroll Sepolia
   domainId: 534351
+  gasCurrencyCoinGeckoId: ethereum
   isTestnet: true
   name: scrollsepolia
   nativeToken:
@@ -2669,6 +3052,7 @@ sepolia:
     url: https://www.hyperlane.xyz
   displayName: Sepolia
   domainId: 11155111
+  gasCurrencyCoinGeckoId: ethereum
   gnosisSafeTransactionServiceUrl: https://safe-transaction-sepolia.safe.global
   isTestnet: true
   name: sepolia
@@ -2762,10 +3146,10 @@ solanadevnet:
     - http: https://api.devnet.solana.com
 solanamainnet:
   blockExplorers:
-    - apiUrl: https://explorer.solana.com?cluster=mainnet-beta
+    - apiUrl: https://solscan.io
       family: other
       name: Solana Explorer
-      url: https://explorer.solana.com?cluster=mainnet-beta
+      url: https://solscan.io
   blocks:
     confirmations: 1
     estimateBlockTime: 0.4
@@ -2802,6 +3186,7 @@ solanatestnet:
   displayName: Solana Testnet
   displayNameShort: Sol Testnet
   domainId: 1399811150
+  gasCurrencyCoinGeckoId: solana
   isTestnet: true
   name: solanatestnet
   nativeToken:
@@ -2811,6 +3196,32 @@ solanatestnet:
   protocol: sealevel
   rpcUrls:
     - http: https://api.testnet.solana.com
+soneiumtestnet:
+  blockExplorers:
+    - apiUrl: https://explorer-testnet.soneium.org/api
+      family: blockscout
+      name: Soneium Minato Testnet Explorer
+      url: https://explorer-testnet.soneium.org
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 1946
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Soneium Minato Testnet
+  domainId: 1946
+  gasCurrencyCoinGeckoId: ethereum
+  isTestnet: true
+  name: soneiumtestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.minato.soneium.org
 stride:
   bech32Prefix: stride
   blockExplorers:
@@ -2881,19 +3292,77 @@ stridetestnet:
   slip44: 118
   transactionOverrides:
     gasPrice: "0.0025"
+suavetoliman:
+  blockExplorers:
+    - apiUrl: https://explorer.toliman.suave.flashbots.net/api
+      family: blockscout
+      name: SUAVE Toliman Testnet Explorer
+      url: https://explorer.toliman.suave.flashbots.net
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 4
+    reorgPeriod: 1
+  chainId: 33626250
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: SUAVE Toliman Testnet
+  domainId: 33626250
+  gasCurrencyCoinGeckoId: ethereum
+  isTestnet: true
+  name: suavetoliman
+  nativeToken:
+    decimals: 18
+    name: TEEth
+    symbol: TEEth
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.toliman.suave.flashbots.net
+superposition:
+  blockExplorers:
+    - apiUrl: https://explorer.superposition.so/api
+      family: blockscout
+      name: Superposition Explorer
+      url: https://explorer.superposition.so/
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 55244
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Superposition
+  domainId: 55244
+  gasCurrencyCoinGeckoId: ethereum
+  index:
+    from: 1201
+  name: superposition
+  nativeToken:
+    decimals: 18
+    name: Ethereum
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.superposition.so
+  technicalStack: arbitrumnitro
 superpositiontestnet:
   blockExplorers:
     - apiUrl: https://testnet-explorer.superposition.so/api
       family: blockscout
-      name: CatScan
+      name: Superposition Testnet Explorer
       url: https://testnet-explorer.superposition.so
   blocks:
     confirmations: 1
     estimateBlockTime: 1
     reorgPeriod: 1
   chainId: 98985
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Superposition Testnet
   domainId: 98985
+  gasCurrencyCoinGeckoId: superposition
   index:
     from: 3111622
   isTestnet: true
@@ -3010,6 +3479,24 @@ tenet:
   rpcUrls:
     - http: https://rpc.tenet.org
     - http: https://tenet-evm.publicnode.com
+u2utestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.u2uscan.xyz/api
+      family: blockscout
+      name: u2uscan
+      url: https://testnet.u2uscan.xyz
+  chainId: 2484
+  displayName: U2U Testnet
+  domainId: 2484
+  isTestnet: true
+  name: u2utestnet
+  nativeToken:
+    decimals: 18
+    name: Union Ultra
+    symbol: U2U
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc-nebulas-testnet.uniultra.xyz
 viction:
   blockExplorers:
     - apiUrl: https://www.vicscan.xyz/api
@@ -3036,6 +3523,27 @@ viction:
   rpcUrls:
     - http: https://rpc.tomochain.com
     - http: https://viction.blockpi.network/v1/rpc/public
+wanchaintestnet:
+  blockExplorers:
+    - apiUrl: https://api-xdc.blocksscan.io/api
+      family: etherscan
+      name: Wanchain Explorer
+      url: https://wanexplorer.io
+  chainId: 999
+  deployer:
+    name: JaunePomme
+    url: https://github.com/JaunePomme
+  displayName: Wanchain Testnet
+  domainId: 999
+  isTestnet: true
+  name: wanchaintestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://gwan-ssl.wandevs.org:46891
 worldchain:
   blockExplorers:
     - apiUrl: https://worldchain-mainnet-explorer.alchemy.com/api

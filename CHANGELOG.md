@@ -1,5 +1,156 @@
 # @hyperlane-xyz/registry
 
+## 4.6.0
+
+### Minor Changes
+
+- 14268ea: Add pzETH between ethereum and zircuit
+
+### Patch Changes
+
+- aac55d5: Remove gasLimit override for rootstock and roostocktestnet
+
+## 4.5.0
+
+### Minor Changes
+
+- 74163f5: Register information of Euphoria Testnet and add testing token
+- 69b496b: Add metadata for u2u nebulas testnet
+- 8c8cc0d: Add deployments for chains: immutablezkevm, rari, rootstock, alephzeroevm, chiliz, lumia, and superposition
+- e7e1f2d: Adding KalyChain mainnet
+
+### Patch Changes
+
+- 181c3bd: Update alfajores logo
+- 2d48627: Update xai logo
+- a82d5d5: Add Moonbase Testnet
+
+## 4.4.1
+
+### Patch Changes
+
+- 2f4ca2f: Set deployer names for known AW testnets
+
+## 4.4.0
+
+### Minor Changes
+
+- bab634d: Deploy to berabartio hyperliquidevmtestnet citreatestnet camptestnet formtestnet soneiumtestnet suavetoliman
+
+### Patch Changes
+
+- 3df435f: Update plumetestnet logo
+- d7dc44d: Add gasCurrencyCoinGeckoId for AW testnets
+- d139fd1: Change `displayName` for Aleph Zero EVM
+- 234d74c: Update solana explorer to solscan
+- a87a555: Update default ISMs on testnet
+
+## 4.3.6
+
+### Patch Changes
+
+- 0d56f2a: Update ethereum / eclipse tETH warp config and addresses
+
+## 4.3.5
+
+### Patch Changes
+
+- be597b0: Update Solana/Eclipse/Ethereum USDC warp route addresses
+
+## 4.3.4
+
+### Patch Changes
+
+- d93560a: Update eclipse logo
+- 8a7811d: Update cheesechain type to EvmHypOwnerCollateral
+- d057c3b: update sol/eclipse warp route addresses
+
+## 4.3.3
+
+### Patch Changes
+
+- d1ff6d4: Add missing logoURI values to warp configs
+
+## 4.3.2
+
+### Patch Changes
+
+- 0e4d875: Fix logo url in tETH warp config
+
+## 4.3.1
+
+### Patch Changes
+
+- 75cdf82: Fixes missing collateral address from TETH warp route
+
+## 4.3.0
+
+### Minor Changes
+
+- 77a04c0: Add tETH synthetic token metadata
+- c700c09: Add WIF warp route artifacts
+- b9b8b61: Add Turbo Eth warp route artifacts
+- 9b9b07c: Add WIF token metadata
+
+### Patch Changes
+
+- 2e82f99: Fix everclear explorer URLs
+
+## 4.2.0
+
+### Minor Changes
+
+- cee6f8c: Update pulsechain metadata
+
+### Patch Changes
+
+- b4bc397: Transfer ownership on everclear and oortmainnet to ICAs
+- 6a324fb: Adds missing collateral addresses to eclipse warp routes
+- 6a324fb: Add mailbox addresses to the chain metadata of SVM chains to get the warp UI working
+
+## 4.1.1
+
+### Patch Changes
+
+- ebb3a77: Add eclipse mainnet block explorer
+
+## 4.1.0
+
+### Minor Changes
+
+- b24c14d: Add tangletestnet deployment addresses
+- 7ccdd62: Add piccadilly testnet chain
+- 8e93ecb: Deploy to oort mainnet
+- 9b1bb59: Adds Solanamainnet and Eclipsemainnet core deployment addresses
+- 7512eac: Deploy to everclear
+- dfd6f66: Enroll new chains and validators to default ISMs
+- 912fce6: Add Eclipse warp route artifacts (USDC and SOL)
+
+### Patch Changes
+
+- 4de3ccf: Update Celo chain logo
+
+## 4.0.0
+
+### Major Changes
+
+- d92f8be: Remove chiado and proteustestnet, as they are not currently AW-supported.
+
+### Minor Changes
+
+- 9ab1370: Add proxyUrl and function to generate it
+- 66124ea: Add NeoX T4 testnet chain
+- d9a46f9: Add Henez testnet config
+- 33a13d3: Add Eclipse USDC token metadata
+
+### Patch Changes
+
+- 1d43e33: Update scroll reorg period
+- 7fb63da: Change Polygon native token from MATIC to POL
+- af9b94b: Update Moonbeam logo
+- c4b28b2: Deploy ICAs to all AW mainnets
+- 8753a2a: Add index.from for heneztestnet, fixing schema validation
+
 ## 3.0.0
 
 ### Major Changes

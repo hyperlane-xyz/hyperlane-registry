@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xD0a1d1b8E10625eE7Ed4Be4Aa7afA7f169411FBd"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+    connections:
+      - token: ethereum|bsc|0x3d7d707Df6390adB61e0Ec3eA91A8FC20E519dd0
+      - token: ethereum|kalychain|0x9cAb0c396cF0F4325913f2269a0b72BD4d46E3A9
+      - token: ethereum|polygon|0xB3dF48224FA257D55e01342592f9A24cefc2628e
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x3d7d707Df6390adB61e0Ec3eA91A8FC20E519dd0"
+    chainName: bsc
+    collateralAddressOrDenom: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
+    connections:
+      - token: ethereum|arbitrum|0xD0a1d1b8E10625eE7Ed4Be4Aa7afA7f169411FBd
+      - token: ethereum|kalychain|0x9cAb0c396cF0F4325913f2269a0b72BD4d46E3A9
+      - token: ethereum|polygon|0xB3dF48224FA257D55e01342592f9A24cefc2628e
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x9cAb0c396cF0F4325913f2269a0b72BD4d46E3A9"
+    chainName: kalychain
+    connections:
+      - token: ethereum|arbitrum|0xD0a1d1b8E10625eE7Ed4Be4Aa7afA7f169411FBd
+      - token: ethereum|bsc|0x3d7d707Df6390adB61e0Ec3eA91A8FC20E519dd0
+      - token: ethereum|polygon|0xB3dF48224FA257D55e01342592f9A24cefc2628e
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypSynthetic
+    symbol: USDC
+  - addressOrDenom: "0xB3dF48224FA257D55e01342592f9A24cefc2628e"
+    chainName: polygon
+    collateralAddressOrDenom: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+    connections:
+      - token: ethereum|arbitrum|0xD0a1d1b8E10625eE7Ed4Be4Aa7afA7f169411FBd
+      - token: ethereum|bsc|0x3d7d707Df6390adB61e0Ec3eA91A8FC20E519dd0
+      - token: ethereum|kalychain|0x9cAb0c396cF0F4325913f2269a0b72BD4d46E3A9
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC

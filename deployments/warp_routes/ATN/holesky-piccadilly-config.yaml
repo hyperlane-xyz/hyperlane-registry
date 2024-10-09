@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x123B520fDd5De936bd94A73a2D6225C1276771c9"
+    chainName: holesky
+    connections:
+      - token: ethereum|piccadilly|0xB7A40dBEcf4b970BA58AFEC95f484CbCaEB6b234
+    decimals: 18
+    name: Auton
+    standard: EvmHypSynthetic
+    symbol: ATN
+  - addressOrDenom: "0xB7A40dBEcf4b970BA58AFEC95f484CbCaEB6b234"
+    chainName: piccadilly
+    connections:
+      - token: ethereum|holesky|0x123B520fDd5De936bd94A73a2D6225C1276771c9
+    decimals: 18
+    name: Auton
+    standard: EvmHypNative
+    symbol: ATN

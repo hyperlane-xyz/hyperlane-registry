@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x7f8C02dA6A2f56bD5ae52524717477B7d79F8D5C"
+    chainName: holesky
+    connections:
+      - token: ethereum|piccadilly|0x49195E6251aFa947319F29351be4bDfA617C6720
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH
+  - addressOrDenom: "0x49195E6251aFa947319F29351be4bDfA617C6720"
+    chainName: piccadilly
+    connections:
+      - token: ethereum|holesky|0x7f8C02dA6A2f56bD5ae52524717477B7d79F8D5C
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: EvmHypSynthetic
+    symbol: ETH
