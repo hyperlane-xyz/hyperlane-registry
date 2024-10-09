@@ -56,6 +56,8 @@ export interface IRegistry {
   updateChain(chain: UpdateChainParams): MaybePromise<void>;
   removeChain(chain: ChainName): MaybePromise<void>;
 
+  getLabel(chain: ChainName, address: string): Promise<string | null>;
+
   getWarpRoute(routeId: string): MaybePromise<WarpCoreConfig | null>;
   getWarpRoutes(filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap>;
   addWarpRoute(config: WarpCoreConfig): MaybePromise<void>;
