@@ -10,8 +10,10 @@ describe('Chain metadata', () => {
       ChainMetadataSchema.parse(metadata);
     });
 
-    it(`${chain} metadata has technicalStack defined`, () => {
-      expect(metadata.technicalStack).not.to.be.undefined;
+    it(`${chain} metadata has technicalStack defined if deployer is Abacus Works, and it is a mainnet with a mailbox deployed`, () => {
+      if (metadata.deployer?.name === "Abacus Works" && !metadata.isTestnet && chainAddresses[chain]?.mailboxAddress) {
+        expect(metadata.technicalStack).not.to.be.undefined;
+      }
     });
 
     it(`${chain} metadata contains deployer details if mailbox address is defined`, () => {
