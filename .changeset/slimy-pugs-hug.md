@@ -2,4 +2,4 @@
 "@hyperlane-xyz/registry": patch
 ---
 
-Update connextsepolia metadata
+Update Fetascan explorer TLD

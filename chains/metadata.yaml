@@ -31,16 +31,12 @@ alephzeroevm:
   technicalStack: arbitrumnitro
 alfajores:
   blockExplorers:
-    - apiUrl: https://api-alfajores.celoscan.io/api
-      family: etherscan
-      name: CeloScan
-      url: https://alfajores.celoscan.io
     - apiUrl: https://explorer.celo.org/alfajores/api
       family: blockscout
       name: Blockscout
       url: https://explorer.celo.org/alfajores
   blocks:
-    confirmations: 1
+    confirmations: 3
     estimateBlockTime: 5
     reorgPeriod: 0
   chainId: 44787
@@ -176,6 +172,28 @@ arbitrumsepolia:
     - http: https://arbitrum-sepolia.blockpi.network/v1/rpc/public
     - http: https://sepolia-rollup.arbitrum.io/rpc
   technicalStack: arbitrumnitro
+arcadiatestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.khalani.network/api
+      family: blockscout
+      name: Arcadia Testnet Explorer
+      url: https://explorer.khalani.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 1098411886
+  displayName: Arcadia Testnet
+  domainId: 1098411886
+  isTestnet: true
+  name: arcadiatestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.khalani.network
 arthera:
   blockExplorers:
     - apiUrl: https://explorer.arthera.net/api
@@ -639,10 +657,10 @@ celo:
     - http: https://forno.celo.org
 cheesechain:
   blockExplorers:
-    - apiUrl: https://fetascan.io/api
+    - apiUrl: https://fetascan.xyz/api
       family: blockscout
       name: Fetascan
-      url: https://fetascan.io
+      url: https://fetascan.xyz
   blocks:
     confirmations: 1
     estimateBlockTime: 90
@@ -690,8 +708,10 @@ chiliz:
     symbol: CHZ
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.chiliz.com
     - http: https://rpc.ankr.com/chiliz
+    - http: https://chiliz.publicnode.com
+  transactionOverrides:
+    maxPriorityFeePerGas: 1000000000
 citreatestnet:
   blockExplorers:
     - apiUrl: https://explorer.testnet.citrea.xyz/api
@@ -770,10 +790,10 @@ confluxespace:
     - http: https://evm.confluxrpc.com
 connextsepolia:
   blockExplorers:
-    - apiUrl: https://connext-sepolia.blockscout.com/api
+    - apiUrl: https://scan.testnet.everclear.org/api
       family: blockscout
-      name: Connext Explorer
-      url: https://connext-sepolia.blockscout.com
+      name: Everclear Testnet Explorer
+      url: https://scan.testnet.everclear.org/
   blocks:
     confirmations: 1
     estimateBlockTime: 10
@@ -782,7 +802,7 @@ connextsepolia:
   deployer:
     name: Everclear
     url: https://everclear.org
-  displayName: Connext Sepolia
+  displayName: Everclear Sepolia
   domainId: 6398
   gasCurrencyCoinGeckoId: ethereum
   index:
@@ -1190,6 +1210,33 @@ everclear:
   rpcUrls:
     - http: https://rpc.everclear.raas.gelato.cloud
   technicalStack: arbitrumnitro
+fantom:
+  blockExplorers:
+    - apiUrl: https://api.ftmscan.com/api
+      family: etherscan
+      name: FTMScan
+      url: https://ftmscan.com
+  chainId: 250
+  deployer:
+    name: Joe
+    url: https://github.com/joooeoeee
+  displayName: Fantom Opera
+  domainId: 250
+  isTestnet: false
+  name: fantom
+  nativeToken:
+    decimals: 18
+    name: Fantom
+    symbol: FTM
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpcapi.fantom.network
+    - http: https://fantom-rpc.publicnode.com
+    - http: https://fantom-pokt.nodies.app
+    - http: https://fantom-rpc.publicnode.com
+    - http: https://rpc.fantom.network
+    - http: https://rpc2.fantom.network
+    - http: https://rpc3.fantom.network
 fhenixtestnet:
   blockExplorers:
     - apiUrl: https://api.helium.fhenix.zone
@@ -1301,7 +1348,7 @@ formtestnet:
       name: Form Testnet Explorer
       url: https://explorer.form.network
   blocks:
-    confirmations: 1
+    confirmations: 3
     estimateBlockTime: 2
     reorgPeriod: 1
   chainId: 132902
@@ -1582,10 +1629,10 @@ holesky:
     - http: https://ethereum-holesky-rpc.publicnode.com
 hyperliquidevmtestnet:
   blockExplorers:
-    - apiUrl: https://explorer.hyperliquid.xyz/api
-      family: other
+    - apiUrl: https://explorer.hyperlend.finance/api
+      family: blockscout
       name: Hyperliquid EVM Testnet Explorer
-      url: https://explorer.hyperliquid.xyz
+      url: https://explorer.hyperlend.finance
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -1774,6 +1821,27 @@ kinto:
   rpcUrls:
     - http: https://kinto-mainnet.calderachain.xyz/http
   technicalStack: arbitrumnitro
+koitestnet:
+  blockExplorers:
+    - apiUrl: https://koi-scan.darwinia.network/api
+      family: blockscout
+      name: Koi Explorer
+      url: https://koi-scan.darwinia.network/
+  chainId: 701
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Koi Testnet
+  domainId: 701
+  isTestnet: true
+  name: koitestnet
+  nativeToken:
+    decimals: 18
+    name: kring
+    symbol: KRING
+  protocol: ethereum
+  rpcUrls:
+    - http: https://koi-rpc.darwinia.network
 kroma:
   blockExplorers:
     - apiUrl: https://blockscout.kroma.network/api
@@ -1989,6 +2057,27 @@ mantle:
   rpcUrls:
     - http: https://rpc.mantle.xyz
   technicalStack: other
+mantlesepolia:
+  blockExplorers:
+    - apiUrl: https://api-sepolia.mantlescan.xyz/api
+      family: etherscan
+      name: Mantle Testnet Explorer
+      url: https://sepolia.mantlescan.xyz/
+  chainId: 5003
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Mantle Sepolia
+  domainId: 5003
+  isTestnet: true
+  name: mantlesepolia
+  nativeToken:
+    decimals: 18
+    name: Mantle
+    symbol: MNT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.sepolia.mantle.xyz
 merlin:
   blockExplorers:
     - apiUrl: https://scan.merlinchain.io/api
@@ -2015,6 +2104,27 @@ merlin:
   rpcUrls:
     - http: https://rpc.merlinchain.io
     - http: https://merlin.blockpi.network/v1/rpc/public
+metertestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.meter.io
+      family: other
+      name: Meter Testnet Explorer
+      url: https://scan.meter.io/
+  chainId: 83
+  deployers:
+    name: JaunePomme
+    url: https://github.com/JaunePomme
+  displayName: Meter testnet
+  domainId: 83
+  isTestnet: true
+  name: metertestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpctest.meter.io
 metis:
   blockExplorers:
     - apiUrl: https://andromeda-explorer.metis.io/api/eth-rpc
@@ -2353,6 +2463,27 @@ oortmainnet:
   protocol: ethereum
   rpcUrls:
     - http: https://mainnet-rpc.oortech.com
+opbnb:
+  blockExplorers:
+    - apiUrl: https://api-opbnb.bscscan.com/api
+      family: etherscan
+      name: opBNB Scan
+      url: https://opbnb.bscscan.com
+  chainId: 204
+  deployer:
+    name: JunayedMh
+    url: https://github.com/JunayedMh
+  displayName: opBNB
+  domainId: 204
+  isTestnet: false
+  name: opbnb
+  nativeToken:
+    decimals: 18
+    name: BNB
+    symbol: BNB
+  protocol: ethereum
+  rpcUrls:
+    - http: https://opbnb-rpc.publicnode.com
 optimism:
   blockExplorers:
     - apiUrl: https://api-optimistic.etherscan.io/api
@@ -3172,6 +3303,28 @@ soneiumtestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.minato.soneium.org
+sonictestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.soniclabs.com/api
+      family: routescan
+      name: Sonic Testnet Explorer
+      url: https://testnet.soniclabs.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 64165
+  displayName: Sonic Testnet
+  domainId: 64165
+  isTestnet: true
+  name: sonictestnet
+  nativeToken:
+    decimals: 18
+    name: Sonic
+    symbol: S
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.testnet.soniclabs.com
 stride:
   bech32Prefix: stride
   blockExplorers:
@@ -3352,6 +3505,28 @@ taiko:
   rpcUrls:
     - http: https://rpc.mainnet.taiko.xyz
   technicalStack: other
+taikohekla:
+  blockExplorers:
+    - apiUrl: https://api.routescan.io/v2/network/testnet/evm/167009/etherscan/api
+      family: etherscan
+      name: Taiko Hekla Explorer
+      url: https://hekla.taikoscan.network
+  chainId: 167009
+  deployer:
+    name: tmr
+    url: https://t.me/netimer
+  displayName: Taiko Hekla
+  domainId: 167009
+  isTestnet: true
+  name: taikohekla
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://taiko-hekla.drpc.org
+    - http: https://rpc.hekla.taiko.xyz
 tangle:
   blockExplorers:
     - apiUrl: https://explorer.tangle.tools/api
@@ -3429,6 +3604,46 @@ tenet:
   rpcUrls:
     - http: https://rpc.tenet.org
     - http: https://tenet-evm.publicnode.com
+u2utestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.u2uscan.xyz/api
+      family: blockscout
+      name: u2uscan
+      url: https://testnet.u2uscan.xyz
+  chainId: 2484
+  displayName: U2U Testnet
+  domainId: 2484
+  isTestnet: true
+  name: u2utestnet
+  nativeToken:
+    decimals: 18
+    name: Union Ultra
+    symbol: U2U
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc-nebulas-testnet.uniultra.xyz
+unichaintestnet:
+  blockExplorers:
+    - apiUrl: https://unichain-sepolia.blockscout.com/api
+      family: blockscout
+      name: Unichain Sepolia Testnet Explorer
+      url: https://unichain-sepolia.blockscout.com
+  blocks:
+    confirmations: 3
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 1301
+  displayName: Unichain Testnet
+  domainId: 1301
+  isTestnet: true
+  name: unichaintestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://sepolia.unichain.org
 viction:
   blockExplorers:
     - apiUrl: https://www.vicscan.xyz/api
@@ -3455,6 +3670,27 @@ viction:
   rpcUrls:
     - http: https://rpc.tomochain.com
     - http: https://viction.blockpi.network/v1/rpc/public
+wanchaintestnet:
+  blockExplorers:
+    - apiUrl: https://api-xdc.blocksscan.io/api
+      family: etherscan
+      name: Wanchain Explorer
+      url: https://wanexplorer.io
+  chainId: 999
+  deployer:
+    name: JaunePomme
+    url: https://github.com/JaunePomme
+  displayName: Wanchain Testnet
+  domainId: 999
+  isTestnet: true
+  name: wanchaintestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://gwan-ssl.wandevs.org:46891
 worldchain:
   blockExplorers:
     - apiUrl: https://worldchain-mainnet-explorer.alchemy.com/api
