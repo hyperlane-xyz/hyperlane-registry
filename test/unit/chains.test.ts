@@ -10,6 +10,10 @@ describe('Chain metadata', () => {
       ChainMetadataSchema.parse(metadata);
     });
 
+    it(`${chain} metadata has technicalStack defined`, () => {
+      expect(metadata.technicalStack).not.to.be.undefined;
+    });
+
     it(`${chain} metadata contains deployer details if mailbox address is defined`, () => {
       if (chainAddresses[chain] && chainAddresses[chain].mailboxAddress) {
         expect(metadata.deployer).not.to.be.undefined;
