@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xf2aCC7a8Cd1fAA7a178B1569e11505372ea7943B"
+    chainName: base
+    collateralAddressOrDenom: "0xb8d98a102b0079b69ffbc760c8d857a31653e56e"
+    connections:
+      - token: ethereum|optimism|0xf2aCC7a8Cd1fAA7a178B1569e11505372ea7943B
+    decimals: 18
+    logoURI: /deployments/warp_routes/TOBY/logo.svg
+    name: Toby ToadGod
+    standard: EvmHypCollateral
+    symbol: TOBY
+  - addressOrDenom: "0xf2aCC7a8Cd1fAA7a178B1569e11505372ea7943B"
+    chainName: optimism
+    connections:
+      - token: ethereum|base|0xf2aCC7a8Cd1fAA7a178B1569e11505372ea7943B
+    decimals: 18
+    logoURI: /deployments/warp_routes/TOBY/logo.svg
+    name: Toby ToadGod
+    standard: EvmHypSynthetic
+    symbol: TOBY
