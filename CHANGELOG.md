@@ -1,5 +1,23 @@
 # @hyperlane-xyz/registry
 
+## 4.7.0
+
+### Minor Changes
+
+- 16d8ecd: add Wanchain testnet
+- 37ffc66: Add deUSD warp route
+- 8e9a20a: add opBNB Mainnet
+- bbc830c: feat: add Fantom Opera
+- a40f086: add Taiko Hekla testnet
+- 644321a: Add Renzo deploy artifacts
+
+### Patch Changes
+
+- ac69560: Update connextsepolia metadata
+- 8afda06: Update chiliz RPCs
+- c2b72b2: Add maxPriorityFeePerGas override for chiliz
+- 315e8cf: Updating the hyperliquid testnet explorer URL and ISM addresses after enabling `hyperliquidevmetestnet`.
+
 ## 4.6.0
 
 ### Minor Changes
