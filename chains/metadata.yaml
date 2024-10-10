@@ -31,16 +31,12 @@ alephzeroevm:
   technicalStack: arbitrumnitro
 alfajores:
   blockExplorers:
-    - apiUrl: https://api-alfajores.celoscan.io/api
-      family: etherscan
-      name: CeloScan
-      url: https://alfajores.celoscan.io
     - apiUrl: https://explorer.celo.org/alfajores/api
       family: blockscout
       name: Blockscout
       url: https://explorer.celo.org/alfajores
   blocks:
-    confirmations: 1
+    confirmations: 3
     estimateBlockTime: 5
     reorgPeriod: 0
   chainId: 44787
@@ -176,6 +172,28 @@ arbitrumsepolia:
     - http: https://arbitrum-sepolia.blockpi.network/v1/rpc/public
     - http: https://sepolia-rollup.arbitrum.io/rpc
   technicalStack: arbitrumnitro
+arcadiatestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.khalani.network/api
+      family: blockscout
+      name: Arcadia Testnet Explorer
+      url: https://explorer.khalani.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 1098411886
+  displayName: Arcadia Testnet
+  domainId: 1098411886
+  isTestnet: true
+  name: arcadiatestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.khalani.network
 arthera:
   blockExplorers:
     - apiUrl: https://explorer.arthera.net/api
@@ -1330,7 +1348,7 @@ formtestnet:
       name: Form Testnet Explorer
       url: https://explorer.form.network
   blocks:
-    confirmations: 1
+    confirmations: 3
     estimateBlockTime: 2
     reorgPeriod: 1
   chainId: 132902
@@ -3222,6 +3240,28 @@ soneiumtestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.minato.soneium.org
+sonictestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.soniclabs.com/api
+      family: routescan
+      name: Sonic Testnet Explorer
+      url: https://testnet.soniclabs.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 64165
+  displayName: Sonic Testnet
+  domainId: 64165
+  isTestnet: true
+  name: sonictestnet
+  nativeToken:
+    decimals: 18
+    name: Sonic
+    symbol: S
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.testnet.soniclabs.com
 stride:
   bech32Prefix: stride
   blockExplorers:
@@ -3519,6 +3559,28 @@ u2utestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc-nebulas-testnet.uniultra.xyz
+unichaintestnet:
+  blockExplorers:
+    - apiUrl: https://unichain-sepolia.blockscout.com/api
+      family: blockscout
+      name: Unichain Sepolia Testnet Explorer
+      url: https://unichain-sepolia.blockscout.com
+  blocks:
+    confirmations: 3
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 1301
+  displayName: Unichain Testnet
+  domainId: 1301
+  isTestnet: true
+  name: unichaintestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://sepolia.unichain.org
 viction:
   blockExplorers:
     - apiUrl: https://www.vicscan.xyz/api
