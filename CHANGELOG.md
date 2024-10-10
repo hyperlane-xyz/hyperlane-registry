@@ -1,5 +1,21 @@
 # @hyperlane-xyz/registry
 
+## 4.8.0
+
+### Minor Changes
+
+- 4f390e0: feat: add Mode Testnet
+- 44d1e91: add Meter testnet
+- 9d22284: feat: add Koi chain Testnet
+  feat: add Mantle Sepolia
+- cb1b0f3: Add base and op warp routes for USDC, DOG, and TOBY
+- e3330d5: Add deployments for testnets: arcadiatestnet, sonictestnet, unichaintestnet
+
+### Patch Changes
+
+- 6a3e1c1: Add deployer names for sonic/arcadia/unichain testnets
+- 35ae586: Update Fetascan explorer TLD
+
 ## 4.7.0
 
 ### Minor Changes
