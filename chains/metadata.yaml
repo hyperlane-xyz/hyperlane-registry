@@ -657,10 +657,10 @@ celo:
     - http: https://forno.celo.org
 cheesechain:
   blockExplorers:
-    - apiUrl: https://fetascan.io/api
+    - apiUrl: https://fetascan.xyz/api
       family: blockscout
       name: Fetascan
-      url: https://fetascan.io
+      url: https://fetascan.xyz
   blocks:
     confirmations: 1
     estimateBlockTime: 90
@@ -1821,6 +1821,27 @@ kinto:
   rpcUrls:
     - http: https://kinto-mainnet.calderachain.xyz/http
   technicalStack: arbitrumnitro
+koitestnet:
+  blockExplorers:
+    - apiUrl: https://koi-scan.darwinia.network/api
+      family: blockscout
+      name: Koi Explorer
+      url: https://koi-scan.darwinia.network/
+  chainId: 701
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Koi Testnet
+  domainId: 701
+  isTestnet: true
+  name: koitestnet
+  nativeToken:
+    decimals: 18
+    name: kring
+    symbol: KRING
+  protocol: ethereum
+  rpcUrls:
+    - http: https://koi-rpc.darwinia.network
 kroma:
   blockExplorers:
     - apiUrl: https://blockscout.kroma.network/api
@@ -2036,6 +2057,27 @@ mantle:
   rpcUrls:
     - http: https://rpc.mantle.xyz
   technicalStack: other
+mantlesepolia:
+  blockExplorers:
+    - apiUrl: https://api-sepolia.mantlescan.xyz/api
+      family: etherscan
+      name: Mantle Testnet Explorer
+      url: https://sepolia.mantlescan.xyz/
+  chainId: 5003
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Mantle Sepolia
+  domainId: 5003
+  isTestnet: true
+  name: mantlesepolia
+  nativeToken:
+    decimals: 18
+    name: Mantle
+    symbol: MNT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.sepolia.mantle.xyz
 merlin:
   blockExplorers:
     - apiUrl: https://scan.merlinchain.io/api
@@ -2062,6 +2104,27 @@ merlin:
   rpcUrls:
     - http: https://rpc.merlinchain.io
     - http: https://merlin.blockpi.network/v1/rpc/public
+metertestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.meter.io
+      family: other
+      name: Meter Testnet Explorer
+      url: https://scan.meter.io/
+  chainId: 83
+  deployers:
+    name: JaunePomme
+    url: https://github.com/JaunePomme
+  displayName: Meter testnet
+  domainId: 83
+  isTestnet: true
+  name: metertestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpctest.meter.io
 metis:
   blockExplorers:
     - apiUrl: https://andromeda-explorer.metis.io/api/eth-rpc
