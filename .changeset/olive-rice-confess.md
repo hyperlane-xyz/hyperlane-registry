@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-add Wanchain testnet
+add Meter testnet
