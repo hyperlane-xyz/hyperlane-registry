@@ -82,7 +82,7 @@ ancient8:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.ancient8.gg
-  technicalStack: other
+  technicalStack: opstack
 arbitrum:
   blockExplorers:
     - apiUrl: https://api.arbiscan.io/api
@@ -275,6 +275,7 @@ astar:
   protocol: ethereum
   rpcUrls:
     - http: https://evm.astar.network
+  technicalStack: polkadotsubstrate
 astarzkevm:
   blockExplorers:
     - apiUrl: https://astar-zkevm.explorer.startale.com/api
@@ -301,6 +302,7 @@ astarzkevm:
   rpcUrls:
     - http: https://rpc.startale.com/astar-zkevm
     - http: https://astar-zkevm-rpc.dwellir.com
+  technicalStack: polygoncdk
 avalanche:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api
@@ -331,6 +333,7 @@ avalanche:
       pagination:
         maxBlockRange: 100000
         minBlockNumber: 6765067
+  technicalStack: other
 b3:
   blockExplorers:
     - apiUrl: https://explorer.b3.fun/api
@@ -384,6 +387,7 @@ base:
     - http: https://base.publicnode.com/
     - http: https://mainnet.base.org
     - http: https://base.blockpi.network/v1/rpc/public
+  technicalStack: opstack
 basesepolia:
   blockExplorers:
     - apiUrl: https://api-sepolia.basescan.org/api
@@ -466,6 +470,7 @@ bitlayer:
     - http: https://rpc.bitlayer.org
     - http: https://rpc.bitlayer-rpc.com
     - http: https://rpc.ankr.com/bitlayer
+  technicalStack: other
 blast:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/81457/etherscan/api
@@ -493,7 +498,7 @@ blast:
   rpcUrls:
     - http: https://rpc.blast.io
     - http: https://rpc.ankr.com/blast
-  technicalStack: other
+  technicalStack: opstack
 bob:
   blockExplorers:
     - apiUrl: https://explorer.gobob.xyz/api
@@ -520,7 +525,7 @@ bob:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.gobob.xyz
-  technicalStack: other
+  technicalStack: opstack
 bsc:
   blockExplorers:
     - apiUrl: https://api.bscscan.com/api
@@ -550,6 +555,7 @@ bsc:
     - http: https://rpc.ankr.com/bsc
     - http: https://bsc.drpc.org
     - http: https://bscrpc.com
+  technicalStack: other
 bsctestnet:
   blockExplorers:
     - apiUrl: https://api-testnet.bscscan.com/api
@@ -658,6 +664,7 @@ celo:
   protocol: ethereum
   rpcUrls:
     - http: https://forno.celo.org
+  technicalStack: other
 cheesechain:
   blockExplorers:
     - apiUrl: https://fetascan.xyz/api
@@ -713,6 +720,7 @@ chiliz:
   rpcUrls:
     - http: https://rpc.ankr.com/chiliz
     - http: https://chiliz.publicnode.com
+  technicalStack: other
   transactionOverrides:
     maxPriorityFeePerGas: 1000000000
 citreatestnet:
@@ -849,6 +857,7 @@ coredao:
     - http: https://rpc.ankr.com/core
     - http: https://core.drpc.org
     - http: https://rpc-core.icecreamswap.com
+  technicalStack: other
 cronos:
   blockExplorers:
     - apiUrl: https://api.cronoscan.com/api
@@ -925,6 +934,7 @@ cyber:
   rpcUrls:
     - http: https://rpc.cyber.co
     - http: https://cyber.alt.technology
+  technicalStack: opstack
 degenchain:
   blockExplorers:
     - apiUrl: https://explorer.degen.tips/api/eth-rpc
@@ -1006,6 +1016,7 @@ dogechain:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.dogechain.dog
+  technicalStack: polygoncdk
 ebi:
   blockExplorers:
     - apiUrl: https://explorer.ebi.xyz/api
@@ -1059,6 +1070,7 @@ eclipsemainnet:
   protocol: sealevel
   rpcUrls:
     - http: https://mainnetbeta-rpc.eclipse.xyz
+  technicalStack: other
 eclipsetestnet:
   blocks:
     confirmations: 1
@@ -1132,6 +1144,7 @@ endurance:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc-endurance.fusionist.io
+  technicalStack: other
 ethereum:
   blockExplorers:
     - apiUrl: https://api.etherscan.io/api
@@ -1163,6 +1176,7 @@ ethereum:
   rpcUrls:
     - http: https://ethereum.publicnode.com
     - http: https://cloudflare-eth.com
+  technicalStack: other
 euphoria:
   blockExplorers:
     - apiUrl: https://euphoria-api.aurascan.io
@@ -1318,6 +1332,7 @@ flare:
     - http: https://flare.solidifi.app/ext/C/rpc
     - http: https://flare.rpc.thirdweb.com
     - http: https://rpc.ankr.com/flare
+  technicalStack: other
 flow:
   blockExplorers:
     - apiUrl: https://evm.flowscan.io/api
@@ -1451,6 +1466,7 @@ fraxtal:
   rpcUrls:
     - http: https://rpc.frax.com
     - http: https://fraxtal.drpc.org
+  technicalStack: opstack
 fuji:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/testnet/evm/43113/etherscan/api
@@ -1533,6 +1549,7 @@ fusemainnet:
     - http: https://fuse.drpc.org
     - http: https://fuse.liquify.com
     - http: https://fuse-pokt.nodies.app
+  technicalStack: other
 galadrieldevnet:
   blockExplorers:
     - apiUrl: https://explorer.galadriel.com/
@@ -1583,6 +1600,7 @@ gnosis:
       pagination:
         maxBlockRange: 10000
         minBlockNumber: 25997478
+  technicalStack: other
 ham:
   blockExplorers:
     - apiUrl: https://explorer.ham.fun/api
@@ -1710,6 +1728,7 @@ immutablezkevm:
   rpcUrls:
     - http: https://rpc.immutable.com
     - http: https://immutable.gateway.tenderly.co
+  technicalStack: polygoncdk
   transactionOverrides:
     maxFeePerGas: 100000000000
     maxPriorityFeePerGas: 100000000000
@@ -1771,6 +1790,7 @@ injective:
   rpcUrls:
     - http: https://sentry.tm.injective.network:443
   slip44: 118
+  technicalStack: other
 kalychain:
   blockExplorers:
     - apiUrl: https://kalyscan.io/api
@@ -1900,6 +1920,7 @@ kroma:
     - http: https://rpc-kroma.rockx.com
     - http: https://api.kroma.network
     - http: https://1rpc.io/kroma
+  technicalStack: opstack
 linea:
   blockExplorers:
     - apiUrl: https://api.lineascan.build/api
@@ -1929,6 +1950,7 @@ linea:
     - http: https://linea.blockpi.network/v1/rpc/public
     - http: https://1rpc.io/linea
     - http: https://linea.drpc.org
+  technicalStack: other
 lisk:
   blockExplorers:
     - apiUrl: https://blockscout.lisk.com/api/eth-rpc
@@ -1954,6 +1976,7 @@ lisk:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.api.lisk.com
+  technicalStack: opstack
 lukso:
   blockExplorers:
     - apiUrl: https://explorer.execution.mainnet.lukso.network/api
@@ -1981,6 +2004,7 @@ lukso:
     - http: https://rpc.mainnet.lukso.network
     - http: https://rpc.lukso.sigmacore.io
     - http: https://42.rpc.thirdweb.com
+  technicalStack: other
 luksotestnet:
   blockExplorers:
     - apiUrl: https://api.explorer.execution.testnet.lukso.network/api
@@ -2032,6 +2056,7 @@ lumia:
   rpcUrls:
     - http: https://994873017.rpc.thirdweb.com
     - http: https://mainnet-rpc.lumia.org
+  technicalStack: polygoncdk
 mantapacific:
   blockExplorers:
     - apiUrl: https://pacific-explorer.manta.network/api
@@ -2061,6 +2086,7 @@ mantapacific:
   rpcUrls:
     - http: https://pacific-rpc.manta.network/http
     - http: https://manta.nirvanalabs.xyz/mantapublic
+  technicalStack: opstack
 mantle:
   blockExplorers:
     - apiUrl: https://explorer.mantle.xyz/api
@@ -2087,7 +2113,7 @@ mantle:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.mantle.xyz
-  technicalStack: other
+  technicalStack: opstack
 mantlesepolia:
   blockExplorers:
     - apiUrl: https://api-sepolia.mantlescan.xyz/api
@@ -2135,6 +2161,7 @@ merlin:
   rpcUrls:
     - http: https://rpc.merlinchain.io
     - http: https://merlin.blockpi.network/v1/rpc/public
+  technicalStack: polygoncdk
 metall2:
   blockExplorers:
     - apiUrl: https://explorer.metall2.com/api
@@ -2209,7 +2236,7 @@ metis:
   protocol: ethereum
   rpcUrls:
     - http: https://andromeda.metis.io/?owner=1088
-  technicalStack: arbitrumnitro
+  technicalStack: opstack
 mevmdevnet:
   blockExplorers:
     - apiUrl: https://explorer.devnet.imola.movementlabs.xyz/api
@@ -2262,6 +2289,7 @@ mint:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.mintchain.io
+  technicalStack: opstack
 mintsepoliatest:
   blockExplorers:
     - apiUrl: https://sepolia-testnet-explorer.mintchain.io/api/v2/
@@ -2307,7 +2335,7 @@ mode:
   rpcUrls:
     - http: https://mainnet.mode.network
     - http: https://mode.drpc.org
-  technicalStack: other
+  technicalStack: opstack
 modetestnet:
   blockExplorers:
     - apiUrl: https://testnet.modescan.io/api
@@ -2406,6 +2434,7 @@ moonbeam:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.api.moonbeam.network
+  technicalStack: polkadotsubstrate
 nautilus:
   blocks:
     confirmations: 1
@@ -2489,6 +2518,7 @@ neutron:
     - http: https://rpc-arch.mainnet.neutron.tm.p2p.org
     - http: https://rpc-kralum.neutron-1.neutron.org
   slip44: 118
+  technicalStack: other
   transactionOverrides:
     gasPrice: "0.0075"
 ngmi:
@@ -2566,6 +2596,7 @@ oortmainnet:
   protocol: ethereum
   rpcUrls:
     - http: https://mainnet-rpc.oortech.com
+  technicalStack: other
 opbnb:
   blockExplorers:
     - apiUrl: https://api-opbnb.bscscan.com/api
@@ -2613,6 +2644,7 @@ optimism:
   protocol: ethereum
   rpcUrls:
     - http: https://mainnet.optimism.io
+  technicalStack: opstack
 optimismsepolia:
   blockExplorers:
     - apiUrl: https://api-sepolia-optimistic.etherscan.io/api
@@ -2698,6 +2730,7 @@ osmosis:
   rpcUrls:
     - http: https://osmosis-rpc.publicnode.com
   slip44: 118
+  technicalStack: other
   transactionOverrides:
     gasPrice: "0.025"
 piccadilly:
@@ -2782,6 +2815,7 @@ polygon:
     - http: https://polygon-bor.publicnode.com
     - http: https://polygon-rpc.com
     - http: https://rpc.ankr.com/polygon
+  technicalStack: other
 polygonamoy:
   blockExplorers:
     - apiUrl: https://api-amoy.polygonscan.com/api
@@ -2839,6 +2873,7 @@ polygonzkevm:
   rpcUrls:
     - http: https://zkevm-rpc.com
     - http: https://rpc.ankr.com/polygon_zkevm
+  technicalStack: polygoncdk
 polynomial:
   blockExplorers:
     - apiUrl: https://polynomialscan.io/api
@@ -3008,6 +3043,7 @@ redstone:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.redstonechain.com
+  technicalStack: opstack
 ronin:
   blockExplorers:
     - apiUrl: https://app.roninchain.com/api
@@ -3060,6 +3096,7 @@ rootstock:
     - http: https://rpc.mainnet.rootstock.io/kXhXHf6TnnfW1POvr4UT0YUvujmuju-M
     - http: https://public-node.rsk.co
     - http: https://mycrypto.rsk.co
+  technicalStack: other
 rootstocktestnet:
   blockExplorers:
     - apiUrl: https://rootstock-testnet.blockscout.com/api
@@ -3164,6 +3201,7 @@ scroll:
   protocol: ethereum
   rpcUrls:
     - http: https://scroll.blockpi.network/v1/rpc/public
+  technicalStack: other
 scrollsepolia:
   blockExplorers:
     - apiUrl: https://api-sepolia.scrollscan.com/api
@@ -3220,6 +3258,7 @@ sei:
   protocol: ethereum
   rpcUrls:
     - http: https://evm-rpc.sei-apis.com
+  technicalStack: other
 sepolia:
   blockExplorers:
     - apiUrl: https://api-sepolia.etherscan.io/api
@@ -3275,6 +3314,7 @@ shibarium:
   rpcUrls:
     - http: https://www.shibrpc.com
     - http: https://rpc.shibrpc.com
+  technicalStack: other
 sketchpad:
   blockExplorers:
     - apiUrl: https://explorer.sketchpad-1.forma.art/api
@@ -3353,6 +3393,7 @@ solanamainnet:
   protocol: sealevel
   rpcUrls:
     - http: https://api.mainnet-beta.solana.com
+  technicalStack: other
 solanatestnet:
   blockExplorers:
     - apiUrl: https://explorer.solana.com?cluster=testnet
@@ -3659,6 +3700,7 @@ tangle:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.tangle.tools
+  technicalStack: polkadotsubstrate
 tangletestnet:
   blockExplorers:
     - apiUrl: https://testnet-explorer.tangle.tools/api
@@ -3779,6 +3821,7 @@ viction:
   rpcUrls:
     - http: https://rpc.tomochain.com
     - http: https://viction.blockpi.network/v1/rpc/public
+  technicalStack: other
 wanchaintestnet:
   blockExplorers:
     - apiUrl: https://api-xdc.blocksscan.io/api
@@ -3825,6 +3868,7 @@ worldchain:
   protocol: ethereum
   rpcUrls:
     - http: https://raas-backend.alchemy.com/rpc/worldchain-mainnet/rollup
+  technicalStack: opstack
 xai:
   blockExplorers:
     - apiUrl: https://explorer.xai-chain.net/api
@@ -3881,6 +3925,7 @@ xlayer:
   rpcUrls:
     - http: https://xlayerrpc.okx.com
     - http: https://rpc.xlayer.tech
+  technicalStack: polygoncdk
 zetachain:
   blockExplorers:
     - apiUrl: https://explorer.zetachain.com
@@ -3908,6 +3953,7 @@ zetachain:
   rpcUrls:
     - http: https://zetachain-evm.blockpi.network/v1/rpc/public
     - http: https://zetachain-mainnet.g.allthatnode.com/archive/evm
+  technicalStack: other
 zircuit:
   blockExplorers:
     - apiUrl: https://explorer.zircuit.com/api/contractVerifyHardhat
@@ -3936,6 +3982,7 @@ zircuit:
     - http: https://zircuit1-mainnet.p2pify.com
     - http: https://zircuit1-mainnet.liquify.com
     - http: https://zircuit-mainnet.drpc.org
+  technicalStack: opstack
 zoramainnet:
   blockExplorers:
     - apiUrl: https://explorer.zora.energy/api
@@ -3962,3 +4009,4 @@ zoramainnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.zora.energy
+  technicalStack: opstack
