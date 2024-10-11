@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x91f016B43A73DFF60f5D910c530338f69Fa3FD0b"
+    chainName: base
+    collateralAddressOrDenom: "0xafb89a09d82fbde58f18ac6437b3fc81724e4df6"
+    connections:
+      - token: ethereum|optimism|0x8da914daf9fc05D0e31435f7bd9633ffFC41f20B
+    decimals: 18
+    logoURI: /deployments/warp_routes/DOG/logo.jpg
+    name: The Doge NFT
+    standard: EvmHypCollateral
+    symbol: DOG
+  - addressOrDenom: "0x8da914daf9fc05D0e31435f7bd9633ffFC41f20B"
+    chainName: optimism
+    connections:
+      - token: ethereum|base|0x91f016B43A73DFF60f5D910c530338f69Fa3FD0b
+    decimals: 18
+    logoURI: /deployments/warp_routes/DOG/logo.jpg
+    name: The Doge NFT
+    standard: EvmHypSynthetic
+    symbol: DOG

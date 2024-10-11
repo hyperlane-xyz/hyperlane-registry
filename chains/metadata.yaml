@@ -183,6 +183,9 @@ arcadiatestnet:
     estimateBlockTime: 1
     reorgPeriod: 1
   chainId: 1098411886
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Arcadia Testnet
   domainId: 1098411886
   isTestnet: true
@@ -2251,6 +2254,27 @@ mode:
     - http: https://mainnet.mode.network
     - http: https://mode.drpc.org
   technicalStack: other
+modetestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.modescan.io/api
+      family: etherscan
+      name: Mode Testnet Explorer
+      url: https://testnet.modescan.io/
+  chainId: 919
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Mode Testnet
+  domainId: 919
+  isTestnet: true
+  name: modetestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://sepolia.mode.network
 molten:
   blockExplorers:
     - apiUrl: https://molten.calderaexplorer.xyz/api
@@ -2438,6 +2462,31 @@ ngmi:
   protocol: ethereum
   rpcUrls:
     - http: https://ngmi-2712765173321000-1.jsonrpc.sagarpc.io
+odysseytestnet:
+  blockExplorers:
+    - apiUrl: https://odyssey-explorer.ithaca.xyz/api
+      family: blockscout
+      name: Odyssey Explorer
+      url: https://odyssey-explorer.ithaca.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 911867
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Odyssey Testnet
+  domainId: 911867
+  isTestnet: true
+  name: odysseytestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://odyssey.ithaca.xyz
 oortmainnet:
   blockExplorers:
     - apiUrl: https://mainnet-scan.oortech.com/api
@@ -3314,6 +3363,9 @@ sonictestnet:
     estimateBlockTime: 1
     reorgPeriod: 1
   chainId: 64165
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Sonic Testnet
   domainId: 64165
   isTestnet: true
@@ -3633,6 +3685,9 @@ unichaintestnet:
     estimateBlockTime: 1
     reorgPeriod: 1
   chainId: 1301
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Unichain Testnet
   domainId: 1301
   isTestnet: true
