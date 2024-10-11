@@ -8,7 +8,7 @@ alephzeroevm:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 1
+    reorgPeriod: 5
   chainId: 41455
   deployer:
     name: Abacus Works
@@ -92,7 +92,7 @@ arbitrum:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 42161
   deployer:
     name: Abacus Works
@@ -116,14 +116,14 @@ arbitrum:
   technicalStack: arbitrumnitro
 arbitrumnova:
   blockExplorers:
-    - apiUrl: https://nova-explorer.arbitrum.io/api
+    - apiUrl: https://api-nova.arbiscan.io/api
       family: etherscan
-      name: Arbitrum Nova Explorer
-      url: https://nova-explorer.arbitrum.io
+      name: Arbiscan Nova
+      url: https://nova.arbiscan.io/
   blocks:
     confirmations: 1
-    estimateBlockTime: 4
-    reorgPeriod: 0
+    estimateBlockTime: 2
+    reorgPeriod: 5
   chainId: 42170
   deployer:
     name: Abacus Works
@@ -312,7 +312,7 @@ avalanche:
   blocks:
     confirmations: 3
     estimateBlockTime: 2
-    reorgPeriod: 3
+    reorgPeriod: 0
   chainId: 43114
   deployer:
     name: Abacus Works
@@ -452,7 +452,7 @@ bitlayer:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 0
+    reorgPeriod: 21
   chainId: 200901
   deployer:
     name: Abacus Works
@@ -673,7 +673,7 @@ cheesechain:
       url: https://fetascan.xyz
   blocks:
     confirmations: 1
-    estimateBlockTime: 90
+    estimateBlockTime: 30
     reorgPeriod: 0
   chainId: 383353
   deployer:
@@ -837,7 +837,7 @@ coredao:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 0
+    reorgPeriod: 23
   chainId: 1116
   deployer:
     name: Abacus Works
@@ -944,7 +944,7 @@ degenchain:
   blocks:
     confirmations: 1
     estimateBlockTime: 10
-    reorgPeriod: 0
+    reorgPeriod: 3
   chainId: 666666666
   deployer:
     name: Abacus Works
@@ -1208,7 +1208,7 @@ everclear:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 3
   chainId: 25327
   deployer:
     name: Abacus Works
@@ -1741,7 +1741,7 @@ inevm:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 2525
   deployer:
     name: Abacus Works
@@ -1768,7 +1768,7 @@ injective:
   blocks:
     confirmations: 1
     estimateBlockTime: 1
-    reorgPeriod: 10
+    reorgPeriod: 0
   chainId: injective-1
   deployer:
     name: Abacus Works
@@ -2365,7 +2365,7 @@ molten:
       url: https://molten.calderaexplorer.xyz
   blocks:
     confirmations: 1
-    estimateBlockTime: 1
+    estimateBlockTime: 30
     reorgPeriod: 0
   chainId: 360
   deployer:
@@ -2494,7 +2494,7 @@ neutron:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 1
+    reorgPeriod: 0
   chainId: neutron-1
   deployer:
     name: Abacus Works
@@ -2707,7 +2707,7 @@ osmosis:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 1
+    reorgPeriod: 0
   chainId: osmosis-1
   deployer:
     name: Mitosis
@@ -2908,7 +2908,7 @@ proofofplay:
   blocks:
     confirmations: 1
     estimateBlockTime: 1
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 70700
   deployer:
     name: Abacus Works
@@ -2969,7 +2969,7 @@ rari:
       url: https://mainnet.explorer.rarichain.org
   blocks:
     confirmations: 1
-    estimateBlockTime: 2
+    estimateBlockTime: 30
     reorgPeriod: 0
   chainId: 1380012617
   deployer:
@@ -2997,7 +2997,7 @@ real:
       url: https://explorer.re.al
   blocks:
     confirmations: 1
-    estimateBlockTime: 4
+    estimateBlockTime: 30
     reorgPeriod: 0
   chainId: 111188
   deployer:
@@ -3155,8 +3155,8 @@ sanko:
       url: https://explorer.sanko.xyz
   blocks:
     confirmations: 1
-    estimateBlockTime: 10
-    reorgPeriod: 0
+    estimateBlockTime: 15
+    reorgPeriod: 3
   chainId: 1996
   deployer:
     name: Abacus Works
@@ -3184,7 +3184,7 @@ scroll:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 30
+    reorgPeriod: 17
   chainId: 534352
   deployer:
     name: Abacus Works
@@ -3241,7 +3241,7 @@ sei:
   blocks:
     confirmations: 1
     estimateBlockTime: 1
-    reorgPeriod: 1
+    reorgPeriod: 0
   chainId: 1329
   deployer:
     name: Abacus Works
@@ -3297,7 +3297,7 @@ shibarium:
   blocks:
     confirmations: 1
     estimateBlockTime: 5
-    reorgPeriod: 0
+    reorgPeriod: 100
   chainId: 109
   deployer:
     name: Abacus Works
@@ -3576,7 +3576,7 @@ superposition:
       url: https://explorer.superposition.so/
   blocks:
     confirmations: 1
-    estimateBlockTime: 2
+    estimateBlockTime: 60
     reorgPeriod: 0
   chainId: 55244
   deployer:
@@ -3804,7 +3804,7 @@ viction:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 2
   chainId: 88
   deployer:
     name: Abacus Works
@@ -3878,7 +3878,7 @@ xai:
   blocks:
     confirmations: 1
     estimateBlockTime: 1
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 660279
   deployer:
     name: Abacus Works
