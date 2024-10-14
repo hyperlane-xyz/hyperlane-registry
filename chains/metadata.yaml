@@ -1344,6 +1344,8 @@ flowevm:
   protocol: ethereum
   rpcUrls:
     - http: https://mainnet.evm.nodes.onflow.org
+  transactionOverrides:
+    gasPrice: 100000000
 forma:
   blockExplorers:
     - apiUrl: https://explorer.forma.art/api
