@@ -40,9 +40,15 @@ describe('Chain metadata', () => {
 
       // Only enforce mainnet reorg period values
       if (!metadata.isTestnet) {
-        it(`${chain} metadata has reorgPeriod of 5 if technicalStack is opstack`, () => {
+        it(`${chain} metadata has reorgPeriod set if technicalStack is opstack`, () => {
           if (metadata.technicalStack === ChainTechnicalStack.OpStack) {
-            expect(metadata.blocks?.reorgPeriod).to.equal(5);
+            if (chain === 'base' || chain === 'optimism') {
+              expect(metadata.blocks?.reorgPeriod).to.equal(10);
+            } else if (chain === 'mantle') {
+              expect(metadata.blocks?.reorgPeriod).to.equal(2);
+            } else {
+              expect(metadata.blocks?.reorgPeriod).to.equal(5);
+            }
           }
         });
 
@@ -52,9 +58,14 @@ describe('Chain metadata', () => {
           }
         });
 
-        it(`${chain} metadata has reorgPeriod of 10 if technicalStack is polkadotsubtrate`, () => {
+        it(`${chain} metadata has reorgPeriod set if technicalStack is polkadotsubtrate`, () => {
           if (metadata.technicalStack === ChainTechnicalStack.PolkadotSubstrate) {
-            expect(metadata.blocks?.reorgPeriod).to.equal(10);
+            // Want a higher reorg period for astar
+            if (chain === 'astar') {
+              expect(metadata.blocks?.reorgPeriod).to.equal(32);
+            } else {
+              expect(metadata.blocks?.reorgPeriod).to.equal(10);
+            }
           }
         });
 
