@@ -703,7 +703,7 @@ chiliz:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 1
+    reorgPeriod: 15
   chainId: 88888
   deployer:
     name: Abacus Works
@@ -1359,6 +1359,7 @@ flow:
   protocol: ethereum
   rpcUrls:
     - http: https://mainnet.evm.nodes.onflow.org
+  technicalStack: other
   transactionOverrides:
     gasPrice: 100000000
 forma:
@@ -1711,7 +1712,7 @@ immutablezkevm:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 5
+    reorgPeriod: 20
   chainId: 13371
   deployer:
     name: Abacus Works
@@ -1728,7 +1729,7 @@ immutablezkevm:
   rpcUrls:
     - http: https://rpc.immutable.com
     - http: https://immutable.gateway.tenderly.co
-  technicalStack: polygoncdk
+  technicalStack: other
   transactionOverrides:
     maxFeePerGas: 100000000000
     maxPriorityFeePerGas: 100000000000
@@ -2171,7 +2172,7 @@ metall2:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 1750
   deployer:
     name: Abacus Works
@@ -2188,6 +2189,7 @@ metall2:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.metall2.com
+  technicalStack: opstack
 metertestnet:
   blockExplorers:
     - apiUrl: https://testnet.meter.io
@@ -2883,7 +2885,7 @@ polynomial:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 8008
   deployer:
     name: Abacus Works
@@ -2899,6 +2901,7 @@ polynomial:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.polynomial.fi
+  technicalStack: opstack
 proofofplay:
   blockExplorers:
     - apiUrl: https://explorer.apex.proofofplay.com/api/eth-rpc

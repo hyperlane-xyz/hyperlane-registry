@@ -6,7 +6,7 @@ blockExplorers:
 blocks:
   confirmations: 1
   estimateBlockTime: 2
-  reorgPeriod: 5
+  reorgPeriod: 20
 chainId: 13371
 deployer:
   name: Abacus Works
@@ -23,7 +23,7 @@ protocol: ethereum
 rpcUrls:
   - http: https://rpc.immutable.com
   - http: https://immutable.gateway.tenderly.co
-technicalStack: polygoncdk
+technicalStack: other
 # Taken from https://docs.immutable.com/tutorials/zkEVM/deploy-contracts/deploy?deploy-scripts=erc721-deploy#deploy
 transactionOverrides:
   maxFeePerGas: 100000000000
