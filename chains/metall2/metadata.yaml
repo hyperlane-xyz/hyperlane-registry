@@ -1,28 +1,26 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://explorer.superposition.so/api
+  - apiUrl: https://explorer.metall2.com/api
     family: blockscout
-    name: Superposition Explorer
-    url: https://explorer.superposition.so/
+    name: Metal L2 Explorer
+    url: https://explorer.metall2.com
 blocks:
   confirmations: 1
   estimateBlockTime: 2
   reorgPeriod: 0
-chainId: 55244
+chainId: 1750
 deployer:
   name: Abacus Works
   url: https://www.hyperlane.xyz
-displayName: Superposition
-domainId: 55244
+displayName: Metal L2
+domainId: 1750
 gasCurrencyCoinGeckoId: ethereum
-index:
-  from: 1201
-name: superposition
+isTestnet: false
+name: metall2
 nativeToken:
   decimals: 18
-  name: Ethereum
+  name: Ether
   symbol: ETH
 protocol: ethereum
 rpcUrls:
-  - http: https://rpc.superposition.so
-technicalStack: arbitrumnitro
+  - http: https://rpc.metall2.com
