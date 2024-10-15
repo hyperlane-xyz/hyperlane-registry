@@ -1,5 +1,157 @@
 # @hyperlane-xyz/registry
 
+## 4.8.0
+
+### Minor Changes
+
+- 7d27647: Add Sei Token information to Renzo Warp Route config
+- 8583d08: Update technicalStack and reorgPeriod for core Abacus Works mainnet chains
+- 4f390e0: feat: add Mode Testnet
+- 44d1e91: add Meter testnet
+- 9d22284: feat: add Koi chain Testnet
+  feat: add Mantle Sepolia
+- cb1b0f3: Add base and op warp routes for USDC, DOG, and TOBY
+- 3b9f67a: Deploy to odysseytestnet
+- 3cd5d81: Add deployments for mainnets: flow, metall2, polynomial
+- e3330d5: Add deployments for testnets: arcadiatestnet, sonictestnet, unichaintestnet
+
+### Patch Changes
+
+- 6a3e1c1: Add deployer names for sonic/arcadia/unichain testnets
+- 35ae586: Update Fetascan explorer TLD
+
+## 4.7.0
+
+### Minor Changes
+
+- 16d8ecd: add Wanchain testnet
+- 37ffc66: Add deUSD warp route
+- 8e9a20a: add opBNB Mainnet
+- bbc830c: feat: add Fantom Opera
+- a40f086: add Taiko Hekla testnet
+- 644321a: Add Renzo deploy artifacts
+
+### Patch Changes
+
+- ac69560: Update connextsepolia metadata
+- 8afda06: Update chiliz RPCs
+- c2b72b2: Add maxPriorityFeePerGas override for chiliz
+- 315e8cf: Updating the hyperliquid testnet explorer URL and ISM addresses after enabling `hyperliquidevmetestnet`.
+
+## 4.6.0
+
+### Minor Changes
+
+- 14268ea: Add pzETH between ethereum and zircuit
+
+### Patch Changes
+
+- aac55d5: Remove gasLimit override for rootstock and roostocktestnet
+
+## 4.5.0
+
+### Minor Changes
+
+- 74163f5: Register information of Euphoria Testnet and add testing token
+- 69b496b: Add metadata for u2u nebulas testnet
+- 8c8cc0d: Add deployments for chains: immutablezkevm, rari, rootstock, alephzeroevm, chiliz, lumia, and superposition
+- e7e1f2d: Adding KalyChain mainnet
+
+### Patch Changes
+
+- 181c3bd: Update alfajores logo
+- 2d48627: Update xai logo
+- a82d5d5: Add Moonbase Testnet
+
+## 4.4.1
+
+### Patch Changes
+
+- 2f4ca2f: Set deployer names for known AW testnets
+
+## 4.4.0
+
+### Minor Changes
+
+- bab634d: Deploy to berabartio hyperliquidevmtestnet citreatestnet camptestnet formtestnet soneiumtestnet suavetoliman
+
+### Patch Changes
+
+- 3df435f: Update plumetestnet logo
+- d7dc44d: Add gasCurrencyCoinGeckoId for AW testnets
+- d139fd1: Change `displayName` for Aleph Zero EVM
+- 234d74c: Update solana explorer to solscan
+- a87a555: Update default ISMs on testnet
+
+## 4.3.6
+
+### Patch Changes
+
+- 0d56f2a: Update ethereum / eclipse tETH warp config and addresses
+
+## 4.3.5
+
+### Patch Changes
+
+- be597b0: Update Solana/Eclipse/Ethereum USDC warp route addresses
+
+## 4.3.4
+
+### Patch Changes
+
+- d93560a: Update eclipse logo
+- 8a7811d: Update cheesechain type to EvmHypOwnerCollateral
+- d057c3b: update sol/eclipse warp route addresses
+
+## 4.3.3
+
+### Patch Changes
+
+- d1ff6d4: Add missing logoURI values to warp configs
+
+## 4.3.2
+
+### Patch Changes
+
+- 0e4d875: Fix logo url in tETH warp config
+
+## 4.3.1
+
+### Patch Changes
+
+- 75cdf82: Fixes missing collateral address from TETH warp route
+
+## 4.3.0
+
+### Minor Changes
+
+- 77a04c0: Add tETH synthetic token metadata
+- c700c09: Add WIF warp route artifacts
+- b9b8b61: Add Turbo Eth warp route artifacts
+- 9b9b07c: Add WIF token metadata
+
+### Patch Changes
+
+- 2e82f99: Fix everclear explorer URLs
+
+## 4.2.0
+
+### Minor Changes
+
+- cee6f8c: Update pulsechain metadata
+
+### Patch Changes
+
+- b4bc397: Transfer ownership on everclear and oortmainnet to ICAs
+- 6a324fb: Adds missing collateral addresses to eclipse warp routes
+- 6a324fb: Add mailbox addresses to the chain metadata of SVM chains to get the warp UI working
+
+## 4.1.1
+
+### Patch Changes
+
+- ebb3a77: Add eclipse mainnet block explorer
+
 ## 4.1.0
 
 ### Minor Changes
