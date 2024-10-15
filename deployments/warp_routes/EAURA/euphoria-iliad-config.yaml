@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x14736700537DD9804a5470C602A46d75BcE56c5C"
+    chainName: euphoria
+    connections:
+      - token: ethereum|iliad|0x40B1A85c1Dc1E668F93b049fa8A94064e5ed3fbE
+    decimals: 18
+    name: Euphoria Aura
+    standard: EvmHypNative
+    symbol: EAURA
+  - addressOrDenom: "0x40B1A85c1Dc1E668F93b049fa8A94064e5ed3fbE"
+    chainName: iliad
+    connections:
+      - token: ethereum|euphoria|0x14736700537DD9804a5470C602A46d75BcE56c5C
+    decimals: 18
+    name: Euphoria Aura
+    standard: EvmHypSynthetic
+    symbol: EAURA
