@@ -2435,6 +2435,17 @@ neutron:
     - http: https://rpc-arch.mainnet.neutron.tm.p2p.org
     - http: https://rpc-kralum.neutron-1.neutron.org
   slip44: 118
+  supportedCurrencies:
+    - description: It is not TIA on Celestia chain. It is TIA bridged to Neutron chain.
+      identifier: ibc/773B4D0A3CD667B2275D5A4A7A2F0909C0BA0F4059C0B9181E680DDF4965DCC7
+      symbol: TIA
+      uuid: 0b03525c-ec50-4176-9318-b70636e0c054
+    - identifier: ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9
+      symbol: ATOM
+      uuid: 5b606c8a-795b-4d82-ad8e-4181943a2ef9
+    - identifier: ibc/F082B65C88E4B6D5EF1DB243CDA1D331D002759E938A0F5CD3FFDC5D53B3E349
+      symbol: USDC.AXL
+      uuid: 3315c687-7e20-4a43-a9f2-3f118da7f77b
   transactionOverrides:
     gasPrice: "0.0075"
 ngmi:

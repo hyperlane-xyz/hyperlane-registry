@@ -293,32 +293,6 @@
           "type": "object",
           "additionalProperties": {},
           "description": "Properties to include when forming transaction requests."
-        },
-        "supportedCurrencies": {
-          "type": "array",
-          "description": "Contains an array of crypto currencies which can be used to express transaction fees in this particular chain as well as being transferred on this chain.",
-          "items": {
-            "type": "object",
-            "description": "Mapping from identifier of a crypto currency used in chain transaction to UUID specifically generated for this crypto currency.",
-            "properties": {
-              "symbol": {
-                "type": "string",
-                "description": "The symbol of the crypto currency so that human can understand what crypto currency is it."
-              },
-              "description": {
-                "type": "string",
-                "description": "Free form field for any additional information about the crypto currency for human users in the case when symbol is not enough."
-              },
-              "identifier": {
-                "type": "string",
-                "description": "The identifier from chain transaction. It can be any string. Scraper should be able to generate the identifier using the data available on a transaction."
-              },
-              "uuid": {
-                "type": "string",
-                "description": "UUID generated specifically to represent this crypto currency on this chain."
-              }
-            }
-          }
         }
       },
       "required": [
