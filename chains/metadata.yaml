@@ -8,7 +8,7 @@ alephzeroevm:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 1
+    reorgPeriod: 5
   chainId: 41455
   deployer:
     name: Abacus Works
@@ -31,16 +31,12 @@ alephzeroevm:
   technicalStack: arbitrumnitro
 alfajores:
   blockExplorers:
-    - apiUrl: https://api-alfajores.celoscan.io/api
-      family: etherscan
-      name: CeloScan
-      url: https://alfajores.celoscan.io
     - apiUrl: https://explorer.celo.org/alfajores/api
       family: blockscout
       name: Blockscout
       url: https://explorer.celo.org/alfajores
   blocks:
-    confirmations: 1
+    confirmations: 3
     estimateBlockTime: 5
     reorgPeriod: 0
   chainId: 44787
@@ -68,7 +64,7 @@ ancient8:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 888888888
   deployer:
     name: Abacus Works
@@ -86,7 +82,7 @@ ancient8:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.ancient8.gg
-  technicalStack: other
+  technicalStack: opstack
 arbitrum:
   blockExplorers:
     - apiUrl: https://api.arbiscan.io/api
@@ -96,7 +92,7 @@ arbitrum:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 42161
   deployer:
     name: Abacus Works
@@ -120,14 +116,14 @@ arbitrum:
   technicalStack: arbitrumnitro
 arbitrumnova:
   blockExplorers:
-    - apiUrl: https://nova-explorer.arbitrum.io/api
+    - apiUrl: https://api-nova.arbiscan.io/api
       family: etherscan
-      name: Arbitrum Nova Explorer
-      url: https://nova-explorer.arbitrum.io
+      name: Arbiscan Nova
+      url: https://nova.arbiscan.io/
   blocks:
     confirmations: 1
-    estimateBlockTime: 4
-    reorgPeriod: 0
+    estimateBlockTime: 2
+    reorgPeriod: 5
   chainId: 42170
   deployer:
     name: Abacus Works
@@ -176,6 +172,31 @@ arbitrumsepolia:
     - http: https://arbitrum-sepolia.blockpi.network/v1/rpc/public
     - http: https://sepolia-rollup.arbitrum.io/rpc
   technicalStack: arbitrumnitro
+arcadiatestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.khalani.network/api
+      family: blockscout
+      name: Arcadia Testnet Explorer
+      url: https://explorer.khalani.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 1098411886
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Arcadia Testnet
+  domainId: 1098411886
+  isTestnet: true
+  name: arcadiatestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.khalani.network
 arthera:
   blockExplorers:
     - apiUrl: https://explorer.arthera.net/api
@@ -238,7 +259,7 @@ astar:
   blocks:
     confirmations: 1
     estimateBlockTime: 13
-    reorgPeriod: 0
+    reorgPeriod: 32
   chainId: 592
   deployer:
     name: Abacus Works
@@ -254,6 +275,7 @@ astar:
   protocol: ethereum
   rpcUrls:
     - http: https://evm.astar.network
+  technicalStack: polkadotsubstrate
 astarzkevm:
   blockExplorers:
     - apiUrl: https://astar-zkevm.explorer.startale.com/api
@@ -263,7 +285,7 @@ astarzkevm:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 3776
   deployer:
     name: Abacus Works
@@ -280,6 +302,7 @@ astarzkevm:
   rpcUrls:
     - http: https://rpc.startale.com/astar-zkevm
     - http: https://astar-zkevm-rpc.dwellir.com
+  technicalStack: polygoncdk
 avalanche:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api
@@ -310,6 +333,7 @@ avalanche:
       pagination:
         maxBlockRange: 100000
         minBlockNumber: 6765067
+  technicalStack: other
 b3:
   blockExplorers:
     - apiUrl: https://explorer.b3.fun/api
@@ -344,7 +368,7 @@ base:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 1
+    reorgPeriod: 10
   chainId: 8453
   deployer:
     name: Abacus Works
@@ -363,6 +387,7 @@ base:
     - http: https://base.publicnode.com/
     - http: https://mainnet.base.org
     - http: https://base.blockpi.network/v1/rpc/public
+  technicalStack: opstack
 basesepolia:
   blockExplorers:
     - apiUrl: https://api-sepolia.basescan.org/api
@@ -427,7 +452,7 @@ bitlayer:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 0
+    reorgPeriod: 20
   chainId: 200901
   deployer:
     name: Abacus Works
@@ -445,6 +470,7 @@ bitlayer:
     - http: https://rpc.bitlayer.org
     - http: https://rpc.bitlayer-rpc.com
     - http: https://rpc.ankr.com/bitlayer
+  technicalStack: other
 blast:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/81457/etherscan/api
@@ -454,7 +480,7 @@ blast:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 1
+    reorgPeriod: 5
   chainId: 81457
   deployer:
     name: Abacus Works
@@ -472,7 +498,7 @@ blast:
   rpcUrls:
     - http: https://rpc.blast.io
     - http: https://rpc.ankr.com/blast
-  technicalStack: other
+  technicalStack: opstack
 bob:
   blockExplorers:
     - apiUrl: https://explorer.gobob.xyz/api
@@ -482,7 +508,7 @@ bob:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 1
+    reorgPeriod: 5
   chainId: 60808
   deployer:
     name: Abacus Works
@@ -499,7 +525,7 @@ bob:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.gobob.xyz
-  technicalStack: other
+  technicalStack: opstack
 bsc:
   blockExplorers:
     - apiUrl: https://api.bscscan.com/api
@@ -529,6 +555,7 @@ bsc:
     - http: https://rpc.ankr.com/bsc
     - http: https://bsc.drpc.org
     - http: https://bscrpc.com
+  technicalStack: other
 bsctestnet:
   blockExplorers:
     - apiUrl: https://api-testnet.bscscan.com/api
@@ -637,16 +664,17 @@ celo:
   protocol: ethereum
   rpcUrls:
     - http: https://forno.celo.org
+  technicalStack: other
 cheesechain:
   blockExplorers:
-    - apiUrl: https://fetascan.io/api
+    - apiUrl: https://fetascan.xyz/api
       family: blockscout
       name: Fetascan
-      url: https://fetascan.io
+      url: https://fetascan.xyz
   blocks:
     confirmations: 1
-    estimateBlockTime: 90
-    reorgPeriod: 0
+    estimateBlockTime: 30
+    reorgPeriod: 1
   chainId: 383353
   deployer:
     name: Abacus Works
@@ -675,7 +703,7 @@ chiliz:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 1
+    reorgPeriod: 9
   chainId: 88888
   deployer:
     name: Abacus Works
@@ -692,6 +720,7 @@ chiliz:
   rpcUrls:
     - http: https://rpc.ankr.com/chiliz
     - http: https://chiliz.publicnode.com
+  technicalStack: other
   transactionOverrides:
     maxPriorityFeePerGas: 1000000000
 citreatestnet:
@@ -808,7 +837,7 @@ coredao:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 0
+    reorgPeriod: 21
   chainId: 1116
   deployer:
     name: Abacus Works
@@ -828,6 +857,7 @@ coredao:
     - http: https://rpc.ankr.com/core
     - http: https://core.drpc.org
     - http: https://rpc-core.icecreamswap.com
+  technicalStack: other
 cronos:
   blockExplorers:
     - apiUrl: https://api.cronoscan.com/api
@@ -887,7 +917,7 @@ cyber:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 7560
   deployer:
     name: Abacus Works
@@ -904,6 +934,7 @@ cyber:
   rpcUrls:
     - http: https://rpc.cyber.co
     - http: https://cyber.alt.technology
+  technicalStack: opstack
 degenchain:
   blockExplorers:
     - apiUrl: https://explorer.degen.tips/api/eth-rpc
@@ -913,7 +944,7 @@ degenchain:
   blocks:
     confirmations: 1
     estimateBlockTime: 10
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 666666666
   deployer:
     name: Abacus Works
@@ -969,7 +1000,7 @@ dogechain:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 2000
   deployer:
     name: Abacus Works
@@ -985,6 +1016,7 @@ dogechain:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.dogechain.dog
+  technicalStack: polygoncdk
 ebi:
   blockExplorers:
     - apiUrl: https://explorer.ebi.xyz/api
@@ -1038,6 +1070,7 @@ eclipsemainnet:
   protocol: sealevel
   rpcUrls:
     - http: https://mainnetbeta-rpc.eclipse.xyz
+  technicalStack: other
 eclipsetestnet:
   blocks:
     confirmations: 1
@@ -1094,7 +1127,7 @@ endurance:
   blocks:
     confirmations: 1
     estimateBlockTime: 12
-    reorgPeriod: 14
+    reorgPeriod: 15
   chainId: 648
   deployer:
     name: Abacus Works
@@ -1111,6 +1144,7 @@ endurance:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc-endurance.fusionist.io
+  technicalStack: other
 ethereum:
   blockExplorers:
     - apiUrl: https://api.etherscan.io/api
@@ -1124,7 +1158,7 @@ ethereum:
   blocks:
     confirmations: 2
     estimateBlockTime: 13
-    reorgPeriod: 14
+    reorgPeriod: 15
   chainId: 1
   deployer:
     name: Abacus Works
@@ -1142,6 +1176,7 @@ ethereum:
   rpcUrls:
     - http: https://ethereum.publicnode.com
     - http: https://cloudflare-eth.com
+  technicalStack: other
 euphoria:
   blockExplorers:
     - apiUrl: https://euphoria-api.aurascan.io
@@ -1173,7 +1208,7 @@ everclear:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 2
   chainId: 25327
   deployer:
     name: Abacus Works
@@ -1278,7 +1313,7 @@ flare:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 3
   chainId: 14
   deployer:
     name: Abacus Works
@@ -1297,6 +1332,36 @@ flare:
     - http: https://flare.solidifi.app/ext/C/rpc
     - http: https://flare.rpc.thirdweb.com
     - http: https://rpc.ankr.com/flare
+  technicalStack: other
+flow:
+  blockExplorers:
+    - apiUrl: https://evm.flowscan.io/api
+      family: blockscout
+      name: EVM on Flow Explorer
+      url: https://evm.flowscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 25
+  chainId: 747
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: EVM on Flow
+  domainId: 747
+  gasCurrencyCoinGeckoId: flow
+  isTestnet: false
+  name: flow
+  nativeToken:
+    decimals: 18
+    name: Flow
+    symbol: FLOW
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet.evm.nodes.onflow.org
+  technicalStack: other
+  transactionOverrides:
+    gasPrice: 100000000
 forma:
   blockExplorers:
     - apiUrl: https://explorer.forma.art/api
@@ -1330,7 +1395,7 @@ formtestnet:
       name: Form Testnet Explorer
       url: https://explorer.form.network
   blocks:
-    confirmations: 1
+    confirmations: 3
     estimateBlockTime: 2
     reorgPeriod: 1
   chainId: 132902
@@ -1384,7 +1449,7 @@ fraxtal:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 1
+    reorgPeriod: 5
   chainId: 252
   deployer:
     name: Abacus Works
@@ -1402,6 +1467,7 @@ fraxtal:
   rpcUrls:
     - http: https://rpc.frax.com
     - http: https://fraxtal.drpc.org
+  technicalStack: opstack
 fuji:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/testnet/evm/43113/etherscan/api
@@ -1464,7 +1530,7 @@ fusemainnet:
   blocks:
     confirmations: 1
     estimateBlockTime: 5
-    reorgPeriod: 1
+    reorgPeriod: 19
   chainId: 122
   deployer:
     name: Abacus Works
@@ -1484,6 +1550,7 @@ fusemainnet:
     - http: https://fuse.drpc.org
     - http: https://fuse.liquify.com
     - http: https://fuse-pokt.nodies.app
+  technicalStack: other
 galadrieldevnet:
   blockExplorers:
     - apiUrl: https://explorer.galadriel.com/
@@ -1514,7 +1581,7 @@ gnosis:
   blocks:
     confirmations: 1
     estimateBlockTime: 5
-    reorgPeriod: 14
+    reorgPeriod: 5
   chainId: 100
   deployer:
     name: Abacus Works
@@ -1534,6 +1601,7 @@ gnosis:
       pagination:
         maxBlockRange: 10000
         minBlockNumber: 25997478
+  technicalStack: other
 ham:
   blockExplorers:
     - apiUrl: https://explorer.ham.fun/api
@@ -1611,10 +1679,10 @@ holesky:
     - http: https://ethereum-holesky-rpc.publicnode.com
 hyperliquidevmtestnet:
   blockExplorers:
-    - apiUrl: https://explorer.hyperliquid.xyz/api
-      family: other
+    - apiUrl: https://explorer.hyperlend.finance/api
+      family: blockscout
       name: Hyperliquid EVM Testnet Explorer
-      url: https://explorer.hyperliquid.xyz
+      url: https://explorer.hyperlend.finance
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -1644,7 +1712,7 @@ immutablezkevm:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 1
+    reorgPeriod: 20
   chainId: 13371
   deployer:
     name: Abacus Works
@@ -1661,6 +1729,7 @@ immutablezkevm:
   rpcUrls:
     - http: https://rpc.immutable.com
     - http: https://immutable.gateway.tenderly.co
+  technicalStack: other
   transactionOverrides:
     maxFeePerGas: 100000000000
     maxPriorityFeePerGas: 100000000000
@@ -1673,7 +1742,7 @@ inevm:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 0
+    reorgPeriod: 3
   chainId: 2525
   deployer:
     name: Abacus Works
@@ -1722,6 +1791,7 @@ injective:
   rpcUrls:
     - http: https://sentry.tm.injective.network:443
   slip44: 118
+  technicalStack: other
 kalychain:
   blockExplorers:
     - apiUrl: https://kalyscan.io/api
@@ -1803,6 +1873,27 @@ kinto:
   rpcUrls:
     - http: https://kinto-mainnet.calderachain.xyz/http
   technicalStack: arbitrumnitro
+koitestnet:
+  blockExplorers:
+    - apiUrl: https://koi-scan.darwinia.network/api
+      family: blockscout
+      name: Koi Explorer
+      url: https://koi-scan.darwinia.network/
+  chainId: 701
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Koi Testnet
+  domainId: 701
+  isTestnet: true
+  name: koitestnet
+  nativeToken:
+    decimals: 18
+    name: kring
+    symbol: KRING
+  protocol: ethereum
+  rpcUrls:
+    - http: https://koi-rpc.darwinia.network
 kroma:
   blockExplorers:
     - apiUrl: https://blockscout.kroma.network/api
@@ -1812,7 +1903,7 @@ kroma:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 255
   deployer:
     name: Abacus Works
@@ -1830,6 +1921,7 @@ kroma:
     - http: https://rpc-kroma.rockx.com
     - http: https://api.kroma.network
     - http: https://1rpc.io/kroma
+  technicalStack: opstack
 linea:
   blockExplorers:
     - apiUrl: https://api.lineascan.build/api
@@ -1839,7 +1931,7 @@ linea:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 1
+    reorgPeriod: 5
   chainId: 59144
   deployer:
     name: Abacus Works
@@ -1859,6 +1951,7 @@ linea:
     - http: https://linea.blockpi.network/v1/rpc/public
     - http: https://1rpc.io/linea
     - http: https://linea.drpc.org
+  technicalStack: other
 lisk:
   blockExplorers:
     - apiUrl: https://blockscout.lisk.com/api/eth-rpc
@@ -1868,7 +1961,7 @@ lisk:
   blocks:
     confirmations: 3
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 1135
   deployer:
     name: Abacus Works
@@ -1884,6 +1977,7 @@ lisk:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.api.lisk.com
+  technicalStack: opstack
 lukso:
   blockExplorers:
     - apiUrl: https://explorer.execution.mainnet.lukso.network/api
@@ -1893,7 +1987,7 @@ lukso:
   blocks:
     confirmations: 1
     estimateBlockTime: 12
-    reorgPeriod: 14
+    reorgPeriod: 15
   chainId: 42
   deployer:
     name: Abacus Works
@@ -1911,6 +2005,7 @@ lukso:
     - http: https://rpc.mainnet.lukso.network
     - http: https://rpc.lukso.sigmacore.io
     - http: https://42.rpc.thirdweb.com
+  technicalStack: other
 luksotestnet:
   blockExplorers:
     - apiUrl: https://api.explorer.execution.testnet.lukso.network/api
@@ -1945,7 +2040,7 @@ lumia:
   blocks:
     confirmations: 3
     estimateBlockTime: 4
-    reorgPeriod: 1
+    reorgPeriod: 5
   chainId: 994873017
   deployer:
     name: Abacus Works
@@ -1962,6 +2057,7 @@ lumia:
   rpcUrls:
     - http: https://994873017.rpc.thirdweb.com
     - http: https://mainnet-rpc.lumia.org
+  technicalStack: polygoncdk
 mantapacific:
   blockExplorers:
     - apiUrl: https://pacific-explorer.manta.network/api
@@ -1971,7 +2067,7 @@ mantapacific:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 1
+    reorgPeriod: 5
   chainId: 169
   deployer:
     name: Abacus Works
@@ -1991,6 +2087,7 @@ mantapacific:
   rpcUrls:
     - http: https://pacific-rpc.manta.network/http
     - http: https://manta.nirvanalabs.xyz/mantapublic
+  technicalStack: opstack
 mantle:
   blockExplorers:
     - apiUrl: https://explorer.mantle.xyz/api
@@ -2000,7 +2097,7 @@ mantle:
   blocks:
     confirmations: 3
     estimateBlockTime: 2
-    reorgPeriod: 1
+    reorgPeriod: 2
   chainId: 5000
   deployer:
     name: Abacus Works
@@ -2017,7 +2114,28 @@ mantle:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.mantle.xyz
-  technicalStack: other
+  technicalStack: opstack
+mantlesepolia:
+  blockExplorers:
+    - apiUrl: https://api-sepolia.mantlescan.xyz/api
+      family: etherscan
+      name: Mantle Testnet Explorer
+      url: https://sepolia.mantlescan.xyz/
+  chainId: 5003
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Mantle Sepolia
+  domainId: 5003
+  isTestnet: true
+  name: mantlesepolia
+  nativeToken:
+    decimals: 18
+    name: Mantle
+    symbol: MNT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.sepolia.mantle.xyz
 merlin:
   blockExplorers:
     - apiUrl: https://scan.merlinchain.io/api
@@ -2027,7 +2145,7 @@ merlin:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 4200
   deployer:
     name: Abacus Works
@@ -2044,6 +2162,55 @@ merlin:
   rpcUrls:
     - http: https://rpc.merlinchain.io
     - http: https://merlin.blockpi.network/v1/rpc/public
+  technicalStack: polygoncdk
+metall2:
+  blockExplorers:
+    - apiUrl: https://explorer.metall2.com/api
+      family: blockscout
+      name: Metal L2 Explorer
+      url: https://explorer.metall2.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 1750
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Metal L2
+  domainId: 1750
+  gasCurrencyCoinGeckoId: ethereum
+  isTestnet: false
+  name: metall2
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.metall2.com
+  technicalStack: opstack
+metertestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.meter.io
+      family: other
+      name: Meter Testnet Explorer
+      url: https://scan.meter.io/
+  chainId: 83
+  deployers:
+    name: JaunePomme
+    url: https://github.com/JaunePomme
+  displayName: Meter testnet
+  domainId: 83
+  isTestnet: true
+  name: metertestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpctest.meter.io
 metis:
   blockExplorers:
     - apiUrl: https://andromeda-explorer.metis.io/api/eth-rpc
@@ -2053,7 +2220,7 @@ metis:
   blocks:
     confirmations: 1
     estimateBlockTime: 5
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 1088
   deployer:
     name: Abacus Works
@@ -2071,7 +2238,7 @@ metis:
   protocol: ethereum
   rpcUrls:
     - http: https://andromeda.metis.io/?owner=1088
-  technicalStack: arbitrumnitro
+  technicalStack: opstack
 mevmdevnet:
   blockExplorers:
     - apiUrl: https://explorer.devnet.imola.movementlabs.xyz/api
@@ -2107,7 +2274,7 @@ mint:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 185
   deployer:
     name: Abacus Works
@@ -2124,6 +2291,7 @@ mint:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.mintchain.io
+  technicalStack: opstack
 mintsepoliatest:
   blockExplorers:
     - apiUrl: https://sepolia-testnet-explorer.mintchain.io/api/v2/
@@ -2151,7 +2319,7 @@ mode:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 1
+    reorgPeriod: 5
   chainId: 34443
   deployer:
     name: Abacus Works
@@ -2169,7 +2337,28 @@ mode:
   rpcUrls:
     - http: https://mainnet.mode.network
     - http: https://mode.drpc.org
-  technicalStack: other
+  technicalStack: opstack
+modetestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.modescan.io/api
+      family: etherscan
+      name: Mode Testnet Explorer
+      url: https://testnet.modescan.io/
+  chainId: 919
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Mode Testnet
+  domainId: 919
+  isTestnet: true
+  name: modetestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://sepolia.mode.network
 molten:
   blockExplorers:
     - apiUrl: https://molten.calderaexplorer.xyz/api
@@ -2178,7 +2367,7 @@ molten:
       url: https://molten.calderaexplorer.xyz
   blocks:
     confirmations: 1
-    estimateBlockTime: 1
+    estimateBlockTime: 30
     reorgPeriod: 0
   chainId: 360
   deployer:
@@ -2230,7 +2419,7 @@ moonbeam:
   blocks:
     confirmations: 2
     estimateBlockTime: 12
-    reorgPeriod: 2
+    reorgPeriod: 10
   chainId: 1284
   deployer:
     name: Abacus Works
@@ -2247,6 +2436,7 @@ moonbeam:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.api.moonbeam.network
+  technicalStack: polkadotsubstrate
 nautilus:
   blocks:
     confirmations: 1
@@ -2330,6 +2520,7 @@ neutron:
     - http: https://rpc-arch.mainnet.neutron.tm.p2p.org
     - http: https://rpc-kralum.neutron-1.neutron.org
   slip44: 118
+  technicalStack: other
   transactionOverrides:
     gasPrice: "0.0075"
 ngmi:
@@ -2357,6 +2548,31 @@ ngmi:
   protocol: ethereum
   rpcUrls:
     - http: https://ngmi-2712765173321000-1.jsonrpc.sagarpc.io
+odysseytestnet:
+  blockExplorers:
+    - apiUrl: https://odyssey-explorer.ithaca.xyz/api
+      family: blockscout
+      name: Odyssey Explorer
+      url: https://odyssey-explorer.ithaca.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 911867
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Odyssey Testnet
+  domainId: 911867
+  isTestnet: true
+  name: odysseytestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://odyssey.ithaca.xyz
 oortmainnet:
   blockExplorers:
     - apiUrl: https://mainnet-scan.oortech.com/api
@@ -2382,6 +2598,7 @@ oortmainnet:
   protocol: ethereum
   rpcUrls:
     - http: https://mainnet-rpc.oortech.com
+  technicalStack: other
 opbnb:
   blockExplorers:
     - apiUrl: https://api-opbnb.bscscan.com/api
@@ -2412,7 +2629,7 @@ optimism:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 0
+    reorgPeriod: 10
   chainId: 10
   deployer:
     name: Abacus Works
@@ -2429,6 +2646,7 @@ optimism:
   protocol: ethereum
   rpcUrls:
     - http: https://mainnet.optimism.io
+  technicalStack: opstack
 optimismsepolia:
   blockExplorers:
     - apiUrl: https://api-sepolia-optimistic.etherscan.io/api
@@ -2514,6 +2732,7 @@ osmosis:
   rpcUrls:
     - http: https://osmosis-rpc.publicnode.com
   slip44: 118
+  technicalStack: other
   transactionOverrides:
     gasPrice: "0.025"
 piccadilly:
@@ -2598,6 +2817,7 @@ polygon:
     - http: https://polygon-bor.publicnode.com
     - http: https://polygon-rpc.com
     - http: https://rpc.ankr.com/polygon
+  technicalStack: other
 polygonamoy:
   blockExplorers:
     - apiUrl: https://api-amoy.polygonscan.com/api
@@ -2636,7 +2856,7 @@ polygonzkevm:
   blocks:
     confirmations: 1
     estimateBlockTime: 10
-    reorgPeriod: 1
+    reorgPeriod: 5
   chainId: 1101
   deployer:
     name: Abacus Works
@@ -2655,6 +2875,7 @@ polygonzkevm:
   rpcUrls:
     - http: https://zkevm-rpc.com
     - http: https://rpc.ankr.com/polygon_zkevm
+  technicalStack: polygoncdk
 polynomial:
   blockExplorers:
     - apiUrl: https://polynomialscan.io/api
@@ -2664,7 +2885,7 @@ polynomial:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 8008
   deployer:
     name: Abacus Works
@@ -2680,6 +2901,7 @@ polynomial:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.polynomial.fi
+  technicalStack: opstack
 proofofplay:
   blockExplorers:
     - apiUrl: https://explorer.apex.proofofplay.com/api/eth-rpc
@@ -2689,7 +2911,7 @@ proofofplay:
   blocks:
     confirmations: 1
     estimateBlockTime: 1
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 70700
   deployer:
     name: Abacus Works
@@ -2750,8 +2972,8 @@ rari:
       url: https://mainnet.explorer.rarichain.org
   blocks:
     confirmations: 1
-    estimateBlockTime: 2
-    reorgPeriod: 1
+    estimateBlockTime: 30
+    reorgPeriod: 0
   chainId: 1380012617
   deployer:
     name: Abacus Works
@@ -2778,7 +3000,7 @@ real:
       url: https://explorer.re.al
   blocks:
     confirmations: 1
-    estimateBlockTime: 4
+    estimateBlockTime: 30
     reorgPeriod: 0
   chainId: 111188
   deployer:
@@ -2807,7 +3029,7 @@ redstone:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 690
   deployer:
     name: Abacus Works
@@ -2824,6 +3046,7 @@ redstone:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.redstonechain.com
+  technicalStack: opstack
 ronin:
   blockExplorers:
     - apiUrl: https://app.roninchain.com/api
@@ -2876,6 +3099,7 @@ rootstock:
     - http: https://rpc.mainnet.rootstock.io/kXhXHf6TnnfW1POvr4UT0YUvujmuju-M
     - http: https://public-node.rsk.co
     - http: https://mycrypto.rsk.co
+  technicalStack: other
 rootstocktestnet:
   blockExplorers:
     - apiUrl: https://rootstock-testnet.blockscout.com/api
@@ -2934,8 +3158,8 @@ sanko:
       url: https://explorer.sanko.xyz
   blocks:
     confirmations: 1
-    estimateBlockTime: 10
-    reorgPeriod: 0
+    estimateBlockTime: 15
+    reorgPeriod: 1
   chainId: 1996
   deployer:
     name: Abacus Works
@@ -2963,7 +3187,7 @@ scroll:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 30
+    reorgPeriod: 17
   chainId: 534352
   deployer:
     name: Abacus Works
@@ -2980,6 +3204,7 @@ scroll:
   protocol: ethereum
   rpcUrls:
     - http: https://scroll.blockpi.network/v1/rpc/public
+  technicalStack: other
 scrollsepolia:
   blockExplorers:
     - apiUrl: https://api-sepolia.scrollscan.com/api
@@ -3036,6 +3261,7 @@ sei:
   protocol: ethereum
   rpcUrls:
     - http: https://evm-rpc.sei-apis.com
+  technicalStack: other
 sepolia:
   blockExplorers:
     - apiUrl: https://api-sepolia.etherscan.io/api
@@ -3074,7 +3300,7 @@ shibarium:
   blocks:
     confirmations: 1
     estimateBlockTime: 5
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 109
   deployer:
     name: Abacus Works
@@ -3091,6 +3317,7 @@ shibarium:
   rpcUrls:
     - http: https://www.shibrpc.com
     - http: https://rpc.shibrpc.com
+  technicalStack: other
 sketchpad:
   blockExplorers:
     - apiUrl: https://explorer.sketchpad-1.forma.art/api
@@ -3169,6 +3396,7 @@ solanamainnet:
   protocol: sealevel
   rpcUrls:
     - http: https://api.mainnet-beta.solana.com
+  technicalStack: other
 solanatestnet:
   blockExplorers:
     - apiUrl: https://explorer.solana.com?cluster=testnet
@@ -3222,6 +3450,31 @@ soneiumtestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.minato.soneium.org
+sonictestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.soniclabs.com/api
+      family: routescan
+      name: Sonic Testnet Explorer
+      url: https://testnet.soniclabs.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 64165
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Sonic Testnet
+  domainId: 64165
+  isTestnet: true
+  name: sonictestnet
+  nativeToken:
+    decimals: 18
+    name: Sonic
+    symbol: S
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.testnet.soniclabs.com
 stride:
   bech32Prefix: stride
   blockExplorers:
@@ -3326,8 +3579,8 @@ superposition:
       url: https://explorer.superposition.so/
   blocks:
     confirmations: 1
-    estimateBlockTime: 2
-    reorgPeriod: 1
+    estimateBlockTime: 60
+    reorgPeriod: 0
   chainId: 55244
   deployer:
     name: Abacus Works
@@ -3384,7 +3637,7 @@ taiko:
   blocks:
     confirmations: 1
     estimateBlockTime: 12
-    reorgPeriod: 1
+    reorgPeriod: 5
   chainId: 167000
   deployer:
     name: Abacus Works
@@ -3402,6 +3655,28 @@ taiko:
   rpcUrls:
     - http: https://rpc.mainnet.taiko.xyz
   technicalStack: other
+taikohekla:
+  blockExplorers:
+    - apiUrl: https://api.routescan.io/v2/network/testnet/evm/167009/etherscan/api
+      family: etherscan
+      name: Taiko Hekla Explorer
+      url: https://hekla.taikoscan.network
+  chainId: 167009
+  deployer:
+    name: tmr
+    url: https://t.me/netimer
+  displayName: Taiko Hekla
+  domainId: 167009
+  isTestnet: true
+  name: taikohekla
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://taiko-hekla.drpc.org
+    - http: https://rpc.hekla.taiko.xyz
 tangle:
   blockExplorers:
     - apiUrl: https://explorer.tangle.tools/api
@@ -3411,7 +3686,7 @@ tangle:
   blocks:
     confirmations: 1
     estimateBlockTime: 6
-    reorgPeriod: 0
+    reorgPeriod: 10
   chainId: 5845
   deployer:
     name: Abacus Works
@@ -3428,6 +3703,7 @@ tangle:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.tangle.tools
+  technicalStack: polkadotsubstrate
 tangletestnet:
   blockExplorers:
     - apiUrl: https://testnet-explorer.tangle.tools/api
@@ -3497,6 +3773,31 @@ u2utestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc-nebulas-testnet.uniultra.xyz
+unichaintestnet:
+  blockExplorers:
+    - apiUrl: https://unichain-sepolia.blockscout.com/api
+      family: blockscout
+      name: Unichain Sepolia Testnet Explorer
+      url: https://unichain-sepolia.blockscout.com
+  blocks:
+    confirmations: 3
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 1301
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Unichain Testnet
+  domainId: 1301
+  isTestnet: true
+  name: unichaintestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://sepolia.unichain.org
 viction:
   blockExplorers:
     - apiUrl: https://www.vicscan.xyz/api
@@ -3506,7 +3807,7 @@ viction:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 3
   chainId: 88
   deployer:
     name: Abacus Works
@@ -3523,6 +3824,7 @@ viction:
   rpcUrls:
     - http: https://rpc.tomochain.com
     - http: https://viction.blockpi.network/v1/rpc/public
+  technicalStack: other
 wanchaintestnet:
   blockExplorers:
     - apiUrl: https://api-xdc.blocksscan.io/api
@@ -3553,7 +3855,7 @@ worldchain:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 1
+    reorgPeriod: 5
   chainId: 480
   deployer:
     name: Abacus Works
@@ -3569,6 +3871,7 @@ worldchain:
   protocol: ethereum
   rpcUrls:
     - http: https://raas-backend.alchemy.com/rpc/worldchain-mainnet/rollup
+  technicalStack: opstack
 xai:
   blockExplorers:
     - apiUrl: https://explorer.xai-chain.net/api
@@ -3578,7 +3881,7 @@ xai:
   blocks:
     confirmations: 1
     estimateBlockTime: 1
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 660279
   deployer:
     name: Abacus Works
@@ -3606,7 +3909,7 @@ xlayer:
   blocks:
     confirmations: 1
     estimateBlockTime: 10
-    reorgPeriod: 1
+    reorgPeriod: 5
   chainId: 196
   deployer:
     name: Abacus Works
@@ -3625,6 +3928,7 @@ xlayer:
   rpcUrls:
     - http: https://xlayerrpc.okx.com
     - http: https://rpc.xlayer.tech
+  technicalStack: polygoncdk
 zetachain:
   blockExplorers:
     - apiUrl: https://explorer.zetachain.com
@@ -3652,6 +3956,7 @@ zetachain:
   rpcUrls:
     - http: https://zetachain-evm.blockpi.network/v1/rpc/public
     - http: https://zetachain-mainnet.g.allthatnode.com/archive/evm
+  technicalStack: other
 zircuit:
   blockExplorers:
     - apiUrl: https://explorer.zircuit.com/api/contractVerifyHardhat
@@ -3661,7 +3966,7 @@ zircuit:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 48900
   deployer:
     name: Abacus Works
@@ -3680,6 +3985,7 @@ zircuit:
     - http: https://zircuit1-mainnet.p2pify.com
     - http: https://zircuit1-mainnet.liquify.com
     - http: https://zircuit-mainnet.drpc.org
+  technicalStack: opstack
 zoramainnet:
   blockExplorers:
     - apiUrl: https://explorer.zora.energy/api
@@ -3689,7 +3995,7 @@ zoramainnet:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 1
+    reorgPeriod: 5
   chainId: 7777777
   deployer:
     name: Abacus Works
@@ -3706,3 +4012,4 @@ zoramainnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.zora.energy
+  technicalStack: opstack
