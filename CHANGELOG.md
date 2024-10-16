@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 4.8.1
+
+### Patch Changes
+
+- 4c8a8ea: Update ezEth name for Sei to redEth
+
 ## 4.8.0
 
 ### Minor Changes
