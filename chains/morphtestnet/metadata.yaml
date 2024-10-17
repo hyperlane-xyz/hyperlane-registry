@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://explorer-api-holesky.morphl2.io/api/v2/transactions?
+    family: blockscout
+    name: holeskymorph
+    url: https://explorer-holesky.morphl2.io/
+blocks:
+  confirmations: 100
+  estimateBlockTime: 1
+  reorgPeriod: 100
+chainId: 2810
+displayName: Morphtestnet
+domainId: 2810
+isTestnet: true
+name: morphtestnet
+nativeToken:
+  decimals: 18
+  name: Ether
+  symbol: ETH
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc-quicknode-holesky.morphl2.io/
+transactionOverrides:
+  gasPrice: 1000000000
