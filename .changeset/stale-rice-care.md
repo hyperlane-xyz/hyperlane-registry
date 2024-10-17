@@ -2,4 +2,4 @@
 "@hyperlane-xyz/registry": minor
 ---
 
-add opBNB Mainnet
+feat: add Story Testnet
