@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://testnet.storyscan.xyz/api
+    family: blockscout
+    name: storyexplorer
+    url: https://testnet.storyscan.xyz
+chainId: 1513
+deployer:
+  name: atuser14
+  url: https://github.com/atuser14
+displayName: Story Testnet
+domainId: 1513
+isTestnet: true
+name: storytestnet
+nativeToken:
+  decimals: 18
+  name: IP
+  symbol: IP
+protocol: ethereum
+rpcUrls:
+  - http: https://story-testnet-evm.itrocket.net
+  - http: https://story-rpc.oneiricts.com:8445
+  - http: https://testnet.storyrpc.io
+transactionOverrides:
+  gasPrice: 16000000000

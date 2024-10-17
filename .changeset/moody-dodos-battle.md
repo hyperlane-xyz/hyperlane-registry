@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-add Meter testnet
+add lumia warp route
