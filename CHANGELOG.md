@@ -1,5 +1,14 @@
 # @hyperlane-xyz/registry
 
+## 4.9.0
+
+### Minor Changes
+
+- 2ff303e: feat: add Zora Testnet
+  feat: add Canto Mainnet
+- 8acf720: add lumia warp route
+- 46fd86a: feat: add Story Testnet
+
 ## 4.8.1
 
 ### Patch Changes
