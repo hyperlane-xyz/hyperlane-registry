@@ -26,11 +26,16 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
   public chainAddresses: ChainMap<DeepPartial<ChainAddresses>>;
   public warpRoutes: Array<DeepPartial<WarpCoreConfig>>;
 
-  constructor({ chainMetadata, chainAddresses, warpRoutes, logger }: PartialRegistryOptions) {
+  constructor({
+    chainMetadata = {},
+    chainAddresses = {},
+    warpRoutes = [],
+    logger,
+  }: PartialRegistryOptions) {
     super({ uri: PARTIAL_URI_PLACEHOLDER, logger });
-    this.chainMetadata = chainMetadata || {};
-    this.chainAddresses = chainAddresses || {};
-    this.warpRoutes = warpRoutes || [];
+    this.chainMetadata = chainMetadata;
+    this.chainAddresses = chainAddresses;
+    this.warpRoutes = warpRoutes;
   }
 
   listRegistryContent(): RegistryContent {
@@ -71,9 +76,13 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
   }
 
   removeChain(chainName: ChainName): void {
-    super.removeChain(chainName);
-    if (this.chainMetadata?.[chainName]) delete this.chainMetadata[chainName];
-    if (this.chainAddresses?.[chainName]) delete this.chainAddresses[chainName];
+    try {
+      super.removeChain(chainName); 
+      delete this.chainMetadata?.[chainName]; 
+      delete this.chainAddresses?.[chainName]; 
+    } catch (error) {
+      this.logger.error(`Failed to remove chain: ${chainName}`, error);
+    }
   }
 
   addWarpRoute(_config: WarpCoreConfig): void {

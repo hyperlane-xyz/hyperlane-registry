@@ -35,8 +35,7 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
   }
 
   getUri(itemPath?: string): string {
-    if (!itemPath) return super.getUri();
-    return path.join(this.uri, itemPath);
+    return itemPath ? path.join(this.uri, itemPath) : super.getUri();
   }
 
   listRegistryContent(): RegistryContent {
