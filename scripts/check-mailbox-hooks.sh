@@ -24,13 +24,13 @@ for chain_dir in chains/*/; do
 
     # Check if the chain is an Ethereum protocol type
     if ! yq e '.deployer.name == "Abacus Works"' "$metadata_file" | grep -q true; then
-        # echo "$chain_name: Not Abacus Works, skipping."
+        echo "$chain_name: Not Abacus Works, skipping."
         continue
     fi
 
     # Check if there are addresses for the chain
     if [ ! -f "$addresses_file" ]; then
-        # echo "$chain_name: No addresses found, skipping."
+        echo "$chain_name: No addresses found, skipping."
         continue
     fi
 
@@ -50,7 +50,7 @@ for chain_dir in chains/*/; do
 
     # Check if the chain is an Ethereum protocol type
     if ! yq e '.protocol == "ethereum"' "$metadata_file" | grep -q true; then
-        # echo "$chain_name: Not EVM, skipping."
+        echo "$chain_name: Not EVM, skipping."
         continue
     fi
 
