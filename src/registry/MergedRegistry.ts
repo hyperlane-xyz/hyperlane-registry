@@ -50,30 +50,63 @@ export class MergedRegistry implements IRegistry {
   }
 
   async getChains(): Promise<Array<ChainName>> {
-    return Object.keys(await this.getMetadata());
+    try {
+      const metadata = await this.getMetadata();
+      return Object.keys(metadata); 
+    } catch (error) {
+      this.logger.error('Failed to retrieve chains', error);
+      return []; 
+    }
   }
 
   async getMetadata(): Promise<ChainMap<ChainMetadata>> {
-    const results = await this.multiRegistryRead((r) => r.getMetadata());
-    return results.reduce((acc, content) => objMerge(acc, content), {});
+    try {
+      const results = await this.multiRegistryRead((r) => r.getMetadata());
+      return results.reduce((acc, content) => objMerge(acc, content), {}); 
+    } catch (error) {
+      this.logger.error('Failed to retrieve metadata', error);
+      return {}; 
+    }
   }
 
   async getChainMetadata(chainName: ChainName): Promise<ChainMetadata | null> {
-    return (await this.getMetadata())[chainName] || null;
+    try {
+      const metadata = await this.getMetadata();
+      return metadata[chainName] ?? null; 
+    } catch (error) {
+      this.logger.error(`Failed to get metadata for chain: ${chainName}`, error);
+      return null; 
+    }
   }
 
   async getAddresses(): Promise<ChainMap<ChainAddresses>> {
-    const results = await this.multiRegistryRead((r) => r.getAddresses());
-    return results.reduce((acc, content) => objMerge(acc, content), {});
+    try {
+      const results = await this.multiRegistryRead((r) => r.getAddresses());
+      return results.reduce((acc, content) => objMerge(acc, content), {}); 
+    } catch (error) {
+      this.logger.error('Failed to retrieve addresses', error);
+      return {}; 
+    }
   }
 
   async getChainAddresses(chainName: ChainName): Promise<ChainAddresses | null> {
-    return (await this.getAddresses())[chainName] || null;
+    try {
+      const addresses = await this.getAddresses();
+      return addresses[chainName] ?? null; 
+    } catch (error) {
+      this.logger.error(`Failed to retrieve addresses for chain: ${chainName}`, error);
+      return null; 
+    }
   }
 
   async getChainLogoUri(chainName: ChainName): Promise<string | null> {
-    const results = await this.multiRegistryRead((r) => r.getChainLogoUri(chainName));
-    return results.find((uri) => !!uri) || null;
+    try {
+      const results = await this.multiRegistryRead((r) => r.getChainLogoUri(chainName));
+      return results.find((uri) => !!uri) ?? null; 
+    } catch (error) {
+      this.logger.error(`Failed to retrieve logo URI for chain: ${chainName}`, error);
+      return null; 
+    }
   }
 
   async addChain(chain: UpdateChainParams): Promise<void> {
@@ -98,13 +131,23 @@ export class MergedRegistry implements IRegistry {
   }
 
   async getWarpRoute(id: WarpRouteId): Promise<WarpCoreConfig | null> {
-    const results = await this.multiRegistryRead((r) => r.getWarpRoute(id));
-    return results.find((r) => !!r) || null;
+    try {
+      const results = await this.multiRegistryRead((r) => r.getWarpRoute(id));
+      return results.find((r) => !!r) ?? null;
+    } catch (error) {
+      this.logger.error(`Failed to retrieve warp route for ID: ${id}`, error);
+      return null; 
+    }
   }
 
   async getWarpRoutes(filter?: WarpRouteFilterParams): Promise<WarpRouteConfigMap> {
-    const results = await this.multiRegistryRead((r) => r.getWarpRoutes(filter));
-    return results.reduce((acc, content) => objMerge(acc, content), {});
+    try {
+      const results = await this.multiRegistryRead((r) => r.getWarpRoutes(filter));
+      return results.reduce((acc, content) => objMerge(acc, content), {}); 
+    } catch (error) {
+      this.logger.error('Failed to retrieve warp routes', error);
+      return {}; 
+    }
   }
 
   async addWarpRoute(config: WarpCoreConfig): Promise<void> {
