@@ -499,27 +499,6 @@ blast:
     - http: https://rpc.blast.io
     - http: https://rpc.ankr.com/blast
   technicalStack: opstack
-blastsepolia:
-  blockExplorers:
-    - apiUrl: https://api-sepolia.blastscan.io/api
-      family: etherscan
-      name: Blast Sepolia Testnet Explorer
-      url: https://sepolia.blastscan.io/
-  chainId: 168587773
-  deployer:
-    name: tmr
-    url: https://t.me/netimer
-  displayName: Blast Sepolia Testnet
-  domainId: 168587773
-  isTestnet: true
-  name: blastsepolia
-  nativeToken:
-    decimals: 18
-    name: Ether
-    symbol: ETH
-  protocol: ethereum
-  rpcUrls:
-    - http: https://sepolia.blast.io
 blockworkstestnet:
   blockExplorers:
     - apiUrl: https://explorer.blockworks-chain.t.raas.gelato.cloud/api
@@ -572,70 +551,6 @@ bob:
   rpcUrls:
     - http: https://rpc.gobob.xyz
   technicalStack: opstack
-boba:
-  blockExplorers:
-    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/288/etherscan/api
-      family: routescan
-      name: bobascan
-      url: https://bobascan.com
-  chainId: 288
-  deployer:
-    name: Boba Network
-    url: https://boba.network
-  displayName: Boba Mainnet
-  domainId: 288
-  isTestnet: false
-  name: boba
-  nativeToken:
-    decimals: 18
-    name: Ether
-    symbol: ETH
-  protocol: ethereum
-  rpcUrls:
-    - http: https://mainnet.boba.network
-bobabnb:
-  blockExplorers:
-    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/56288/etherscan/api
-      family: routescan
-      name: bobascan
-      url: https://bobascan.com
-  chainId: 56288
-  deployer:
-    name: Boba Network
-    url: https://boba.network
-  displayName: Boba BNB
-  domainId: 56288
-  gnosisSafeTransactionServiceUrl: https://transaction.safe.boba.network/
-  isTestnet: false
-  name: bobabnb
-  nativeToken:
-    decimals: 18
-    name: Boba Token
-    symbol: BOBA
-  protocol: ethereum
-  rpcUrls:
-    - http: https://bnb.boba.network
-bobabnbtestnet:
-  blockExplorers:
-    - apiUrl: https://api.routescan.io/v2/network/testnet/evm/9728/etherscan/api
-      family: routescan
-      name: bobascan
-      url: https://testnet.bobascan.com
-  chainId: 9728
-  deployer:
-    name: Boba Network
-    url: https://boba.network
-  displayName: Boba BNB Testnet
-  domainId: 9728
-  isTestnet: true
-  name: bobabnbtestnet
-  nativeToken:
-    decimals: 18
-    name: Boba Token
-    symbol: BOBA
-  protocol: ethereum
-  rpcUrls:
-    - http: https://testnet.bnb.boba.network
 bsc:
   blockExplorers:
     - apiUrl: https://api.bscscan.com/api
@@ -742,28 +657,6 @@ canto:
     - http: https://canto-rpc.ansybl.io
     - http: https://mainnode.plexnode.org:8545
     - http: https://canto.slingshot.finance
-cantotestnet:
-  blockExplorers:
-    - apiUrl: https://testnet.tuber.build/api
-      family: blockscout
-      name: Canto Testnet Explorer
-      url: https://testnet.tuber.build/
-  chainId: 7701
-  deployer:
-    name: guy93354
-    url: https://github.com/guy93354
-  displayName: Canto Testnet
-  domainId: 7701
-  isTestnet: true
-  name: cantotestnet
-  nativeToken:
-    decimals: 18
-    name: Canto
-    symbol: CANTO
-  protocol: ethereum
-  rpcUrls:
-    - http: https://canto-testnet.plexnode.wtf
-    - http: https://testnet-archive.plexnode.wtf
 carbon:
   blockExplorers:
     - apiUrl: https://evm-scan.carbon.network/api
@@ -1623,27 +1516,6 @@ fraxtal:
     - http: https://rpc.frax.com
     - http: https://fraxtal.drpc.org
   technicalStack: opstack
-fraxtaltestnet:
-  blockExplorers:
-    - apiUrl: https://api-holesky.fraxscan.com/api
-      family: etherscan
-      name: Fraxtal Testnet Explorer
-      url: https://holesky.fraxscan.com/
-  chainId: 2522
-  deployer:
-    name: guy93354
-    url: https://github.com/guy93354
-  displayName: Fraxtal Testnet
-  domainId: 2522
-  isTestnet: true
-  name: fraxtaltestnet
-  nativeToken:
-    decimals: 18
-    name: Frax Ether
-    symbol: frxETH
-  protocol: ethereum
-  rpcUrls:
-    - http: https://rpc.testnet.frax.com
 fuji:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/testnet/evm/43113/etherscan/api
@@ -1803,27 +1675,6 @@ ham:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.ham.fun
-harmonytestnet:
-  blockExplorers:
-    - apiUrl: https://explorer.testnet.harmony.one/api/v2
-      family: blockscout
-      name: Harmony Testnet Explorer
-      url: https://explorer.testnet.harmony.one/
-  chainId: 1666700000
-  deployer:
-    name: JaunePomme
-    url: https://github.com/JaunePomme
-  displayName: Harmony Testnet
-  domainId: 1666700000
-  isTestnet: true
-  name: harmonytestnet
-  nativeToken:
-    decimals: 18
-    name: ONE
-    symbol: ONE
-  protocol: ethereum
-  rpcUrls:
-    - http: https://api.s0.b.hmny.io
 heneztestnet:
   blockExplorers:
     - apiUrl: https://henez-testnet.explorer.caldera.xyz/api/eth-rpc
@@ -2175,27 +2026,6 @@ lisk:
   rpcUrls:
     - http: https://rpc.api.lisk.com
   technicalStack: opstack
-lisksepolia:
-  blockExplorers:
-    - apiUrl: https://sepolia-blockscout.lisk.com/api
-      family: blockscout
-      name: Lisk Sepolia Testnet Explorer
-      url: https://sepolia-blockscout.lisk.com/
-  chainId: 4202
-  deployer:
-    name: guy93354
-    url: https://github.com/guy93354
-  displayName: Lisk Sepolia
-  domainId: 4202
-  isTestnet: true
-  name: lisksepolia
-  nativeToken:
-    decimals: 18
-    name: Ether
-    symbol: ETH
-  protocol: ethereum
-  rpcUrls:
-    - http: https://rpc.sepolia-api.lisk.com
 lukso:
   blockExplorers:
     - apiUrl: https://explorer.execution.mainnet.lukso.network/api
@@ -2838,28 +2668,6 @@ opbnb:
   protocol: ethereum
   rpcUrls:
     - http: https://opbnb-rpc.publicnode.com
-opbnbtestnet:
-  blockExplorers:
-    - apiUrl: https://opbnb-testnet.bscscan.com/api
-      family: etherscan
-      name: opbnbscan
-      url: https://opbnb-testnet.bscscan.com/
-  chainId: 5611
-  deployer:
-    name: JunayedMh
-    url: https://github.com/JunayedMh
-  displayName: Op Bnb Testnet
-  domainId: 5611
-  isTestnet: true
-  name: opbnbtestnet
-  nativeToken:
-    decimals: 18
-    name: Binance
-    symbol: tBNB
-  protocol: ethereum
-  rpcUrls:
-    - http: https://opbnb-testnet-rpc.publicnode.com
-    - http: https://opbnb-testnet-rpc.bnbchain.org
 optimism:
   blockExplorers:
     - apiUrl: https://api-optimistic.etherscan.io/api
