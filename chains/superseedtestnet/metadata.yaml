@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://sepolia-explorer.superseed.xyz/api/v2/transactions?
+    family: blockscout
+    name: seedexplorer
+    url: https://sepolia-explorer.superseed.xyz/
+blocks:
+  confirmations: 1
+  estimateBlockTime: 1
+  reorgPeriod: 1
+chainId: 53302
+displayName: Superseedtestnet
+domainId: 53302
+isTestnet: true
+name: superseedtestnet
+nativeToken:
+  decimals: 18
+  name: Ether
+  symbol: ETH
+protocol: ethereum
+rpcUrls:
+  - http: https://sepolia.superseed.xyz/
+transactionOverrides:
+  gasPrice: 1000000000
