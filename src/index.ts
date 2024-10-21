@@ -13,5 +13,6 @@ export {
   warpConfigToWarpAddresses,
   warpRouteConfigPathToId,
   warpRouteConfigToId,
+  createWarpRouteConfigId,
 } from './registry/warp-utils.js';
 export { ChainAddresses, ChainAddressesSchema } from './types.js';
