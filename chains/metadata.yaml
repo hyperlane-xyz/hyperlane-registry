@@ -3586,16 +3586,23 @@ stride:
     confirmations: 1
     estimateBlockTime: 5
     reorgPeriod: 1
+  canonicalAsset: ustrd
   chainId: stride-1
+  contractAddressBytes: 32
   deployer:
     name: Stride Labs
     url: https://www.stride.zone
   displayName: Stride
   domainId: 745
   gasCurrencyCoinGeckoId: stride
+  gasPrice:
+    amount: "0.025"
+    denom: ustrd
   grpcUrls:
     - http: https://stride-grpc.publicnode.com:443
-  isTestnet: false
+  index:
+    chunk: 5
+    from: 9152000
   name: stride
   nativeToken:
     decimals: 6
