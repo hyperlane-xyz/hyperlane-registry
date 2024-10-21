@@ -22,6 +22,12 @@ for chain_dir in chains/*/; do
     metadata_file="$chain_dir/metadata.yaml"
     addresses_file="$chain_dir/addresses.yaml"
 
+    # Check if the chain is an Ethereum protocol type
+    if ! yq e '.deployer.name == "Abacus Works"' "$metadata_file" | grep -q true; then
+        echo "$chain_name: Not Abacus Works, skipping."
+        continue
+    fi
+
     # Check if there are addresses for the chain
     if [ ! -f "$addresses_file" ]; then
         echo "$chain_name: No addresses found, skipping."
@@ -32,6 +38,13 @@ for chain_dir in chains/*/; do
     merkle_tree_hook=$(yq e '.merkleTreeHook' "$addresses_file")
     if [ "$merkle_tree_hook" = "null" ]; then
         echo "$chain_name: No address for merkleTreeHook, skipping."
+        continue
+    fi
+
+    # Check if addresses.yaml has a fallbackRoutingHook entry
+    fallback_routing_hook=$(yq e '.fallbackRoutingHook' "$addresses_file")
+    if [ "$merkle_tree_hook" = "null" ]; then
+        echo "$chain_name: No address for fallbackRoutingHook, skipping."
         continue
     fi
 
@@ -51,7 +64,7 @@ for chain_dir in chains/*/; do
     # Get mailbox address from addresses.yaml
     mailbox=$(yq e '.mailbox' "$addresses_file")
     if [ -z "$mailbox" ]; then
-        echo "$chain_name: No mailbox address found"
+        # echo "$chain_name: No mailbox address found"
         continue
     fi
 
@@ -60,6 +73,15 @@ for chain_dir in chains/*/; do
     if [ -z "$default_hook" ]; then
         echo "$chain_name: Error calling defaultHook"
         continue
+    fi
+
+    # Normalize addresses by removing '0x' prefix, ensuring 40 characters, and converting to lowercase
+    normalized_default_hook=$(echo "$default_hook" | sed 's/^0x//' | awk '{print substr("0000000000000000000000000000000000000000" $0, length($0) + 1, 40)}' | tr '[:upper:]' '[:lower:]')
+    normalized_fallback_routing_hook=$(echo "$fallback_routing_hook" | sed 's/^0x//' | awk '{print substr("0000000000000000000000000000000000000000" $0, length($0) + 1, 40)}' | tr '[:upper:]' '[:lower:]')
+
+    # Compare normalized addresses
+    if [ "$normalized_default_hook" != "$normalized_fallback_routing_hook" ]; then
+        echo "$chain_name: Mismatch - defaultHook: $normalized_default_hook, fallbackRoutingHook: $normalized_fallback_routing_hook"
     fi
 
     # Truncate the default_hook to the last 40 characters (20 bytes)
@@ -80,9 +102,7 @@ for chain_dir in chains/*/; do
     normalized_merkle_tree_hook=$(echo "$merkle_tree_hook" | sed 's/^0x//' | awk '{print substr("0000000000000000000000000000000000000000" $0, length($0) + 1, 40)}' | tr '[:upper:]' '[:lower:]')
 
     # Compare normalized addresses
-    if [ "$normalized_fallback_hook" = "$normalized_merkle_tree_hook" ]; then
-        echo "$chain_name: fallbackHook matches merkleTreeHook"
-    else
+    if [ "$normalized_fallback_hook" != "$normalized_merkle_tree_hook" ]; then
         echo "$chain_name: Mismatch - fallbackHook: $normalized_fallback_hook, merkleTreeHook: $normalized_merkle_tree_hook"
         # Update the merkleTreeHook in addresses.yaml with the new fallback_hook value
         # yq e -i ".merkleTreeHook = \"$fallback_hook\"" "$addresses_file"

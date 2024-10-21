@@ -1,5 +1,26 @@
 # @hyperlane-xyz/registry
 
+## 4.10.0
+
+### Minor Changes
+
+- e7c13b4: Export createWarpRouteConfigId function
+- cc9f11f: Add blockworkstestnet metadata
+
+### Patch Changes
+
+- c04d52f: Fix inevm fallbackRoutingHook address
+- 3a534a6: Update default ISMs with newly enrolled chains & validators
+
+## 4.9.0
+
+### Minor Changes
+
+- 2ff303e: feat: add Zora Testnet
+  feat: add Canto Mainnet
+- 8acf720: add lumia warp route
+- 46fd86a: feat: add Story Testnet
+
 ## 4.8.1
 
 ### Patch Changes
