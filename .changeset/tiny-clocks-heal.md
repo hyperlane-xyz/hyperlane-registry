@@ -2,4 +2,4 @@
 "@hyperlane-xyz/registry": minor
 ---
 
-feat: add Story Testnet
+feat: add Boba Eth Mainnet

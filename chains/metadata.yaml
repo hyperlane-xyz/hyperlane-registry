@@ -499,6 +499,31 @@ blast:
     - http: https://rpc.blast.io
     - http: https://rpc.ankr.com/blast
   technicalStack: opstack
+blockworkstestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.blockworks-chain.t.raas.gelato.cloud/api
+      family: blockscout
+      name: Blockworks Chain Testnet Explorer
+      url: https://explorer.blockworks-chain.t.raas.gelato.cloud
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 123420000549
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Blockworks Chain Testnet
+  domainId: 123420000549
+  isTestnet: true
+  name: blockworkstestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.blockworks-chain.t.raas.gelato.cloud
 bob:
   blockExplorers:
     - apiUrl: https://explorer.gobob.xyz/api
@@ -609,6 +634,29 @@ camptestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc-campnetwork.xyz
+canto:
+  blockExplorers:
+    - apiUrl: https://explorer.plexnode.wtf/api
+      family: blockscout
+      name: Canto Explorer
+      url: https://explorer.plexnode.wtf/
+  chainId: 7700
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Canto
+  domainId: 7700
+  isTestnet: false
+  name: canto
+  nativeToken:
+    decimals: 18
+    name: Canto
+    symbol: CANTO
+  protocol: ethereum
+  rpcUrls:
+    - http: https://canto-rpc.ansybl.io
+    - http: https://mainnode.plexnode.org:8545
+    - http: https://canto.slingshot.finance
 carbon:
   blockExplorers:
     - apiUrl: https://evm-scan.carbon.network/api
@@ -3475,6 +3523,31 @@ sonictestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.testnet.soniclabs.com
+storytestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.storyscan.xyz/api
+      family: blockscout
+      name: storyexplorer
+      url: https://testnet.storyscan.xyz
+  chainId: 1513
+  deployer:
+    name: atuser14
+    url: https://github.com/atuser14
+  displayName: Story Testnet
+  domainId: 1513
+  isTestnet: true
+  name: storytestnet
+  nativeToken:
+    decimals: 18
+    name: IP
+    symbol: IP
+  protocol: ethereum
+  rpcUrls:
+    - http: https://story-testnet-evm.itrocket.net
+    - http: https://story-rpc.oneiricts.com:8445
+    - http: https://testnet.storyrpc.io
+  transactionOverrides:
+    gasPrice: 16000000000
 stride:
   bech32Prefix: stride
   blockExplorers:
@@ -4013,3 +4086,24 @@ zoramainnet:
   rpcUrls:
     - http: https://rpc.zora.energy
   technicalStack: opstack
+zoratestnet:
+  blockExplorers:
+    - apiUrl: https://sepolia.explorer.zora.energy/api
+      family: blockscout
+      name: Zora Testnet Explorer
+      url: https://sepolia.explorer.zora.energy/
+  chainId: 999999999
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Zora Testnet
+  domainId: 999999999
+  isTestnet: true
+  name: zoratestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://sepolia.rpc.zora.energy
