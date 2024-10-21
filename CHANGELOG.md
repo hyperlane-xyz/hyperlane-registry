@@ -1,5 +1,70 @@
 # @hyperlane-xyz/registry
 
+## 4.10.0
+
+### Minor Changes
+
+- e7c13b4: Export createWarpRouteConfigId function
+- cc9f11f: Add blockworkstestnet metadata
+
+### Patch Changes
+
+- c04d52f: Fix inevm fallbackRoutingHook address
+- 3a534a6: Update default ISMs with newly enrolled chains & validators
+
+## 4.9.0
+
+### Minor Changes
+
+- 2ff303e: feat: add Zora Testnet
+  feat: add Canto Mainnet
+- 8acf720: add lumia warp route
+- 46fd86a: feat: add Story Testnet
+
+## 4.8.1
+
+### Patch Changes
+
+- 4c8a8ea: Update ezEth name for Sei to redEth
+
+## 4.8.0
+
+### Minor Changes
+
+- 7d27647: Add Sei Token information to Renzo Warp Route config
+- 8583d08: Update technicalStack and reorgPeriod for core Abacus Works mainnet chains
+- 4f390e0: feat: add Mode Testnet
+- 44d1e91: add Meter testnet
+- 9d22284: feat: add Koi chain Testnet
+  feat: add Mantle Sepolia
+- cb1b0f3: Add base and op warp routes for USDC, DOG, and TOBY
+- 3b9f67a: Deploy to odysseytestnet
+- 3cd5d81: Add deployments for mainnets: flow, metall2, polynomial
+- e3330d5: Add deployments for testnets: arcadiatestnet, sonictestnet, unichaintestnet
+
+### Patch Changes
+
+- 6a3e1c1: Add deployer names for sonic/arcadia/unichain testnets
+- 35ae586: Update Fetascan explorer TLD
+
+## 4.7.0
+
+### Minor Changes
+
+- 16d8ecd: add Wanchain testnet
+- 37ffc66: Add deUSD warp route
+- 8e9a20a: add opBNB Mainnet
+- bbc830c: feat: add Fantom Opera
+- a40f086: add Taiko Hekla testnet
+- 644321a: Add Renzo deploy artifacts
+
+### Patch Changes
+
+- ac69560: Update connextsepolia metadata
+- 8afda06: Update chiliz RPCs
+- c2b72b2: Add maxPriorityFeePerGas override for chiliz
+- 315e8cf: Updating the hyperliquid testnet explorer URL and ISM addresses after enabling `hyperliquidevmetestnet`.
+
 ## 4.6.0
 
 ### Minor Changes
