@@ -1818,15 +1818,23 @@ injective:
     confirmations: 1
     estimateBlockTime: 1
     reorgPeriod: 10
+  canonicalAsset: inj
   chainId: injective-1
+  contractAddressBytes: 20
   deployer:
     name: Abacus Works
     url: https://www.hyperlane.xyz
   displayName: Injective
   domainId: 6909546
   gasCurrencyCoinGeckoId: injective-protocol
+  gasPrice:
+    amount: "700000000"
+    denom: inj
   grpcUrls:
-    - http: sentry.chain.grpc.injective.network:443
+    - http: https://injective-grpc.goldenratiostaking.net:443
+  index:
+    chunk: 25
+    from: 58419500
   name: injective
   nativeToken:
     decimals: 18
@@ -2545,16 +2553,23 @@ neutron:
     confirmations: 1
     estimateBlockTime: 3
     reorgPeriod: 1
+  canonicalAsset: untrn
   chainId: neutron-1
+  contractAddressBytes: 32
   deployer:
     name: Abacus Works
     url: https://www.hyperlane.xyz
   displayName: Neutron
   domainId: 1853125230
   gasCurrencyCoinGeckoId: neutron-3
+  gasPrice:
+    amount: "0.0053"
+    denom: untrn
   grpcUrls:
-    - http: grpc-kralum.neutron-1.neutron.org:80
-  isTestnet: false
+    - http: http://grpc-kralum.neutron-1.neutron.org:80
+  index:
+    chunk: 5
+    from: 4000000
   name: neutron
   nativeToken:
     decimals: 6
@@ -2758,15 +2773,23 @@ osmosis:
     confirmations: 1
     estimateBlockTime: 3
     reorgPeriod: 1
+  canonicalAsset: uosmo
   chainId: osmosis-1
+  contractAddressBytes: 32
   deployer:
     name: Mitosis
     url: https://mitosis.org
   displayName: Osmosis
   domainId: 875
   gasCurrencyCoinGeckoId: osmosis
+  gasPrice:
+    amount: "0.025"
+    denom: uosmo
   grpcUrls:
-    - http: osmosis-grpc.publicnode.com:443
+    - http: https://osmosis-grpc.publicnode.com:443
+  index:
+    chunk: 10
+    from: 14389169
   isTestnet: false
   name: osmosis
   nativeToken:
