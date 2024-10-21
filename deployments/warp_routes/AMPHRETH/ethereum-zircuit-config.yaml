@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xA4e45cB601d43818518FB6023b8070d2564b935f"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x5fD13359Ba15A84B76f7F87568309040176167cd"
+    connections:
+      - token: ethereum|zircuit|0xCE8260c1b5cF2fAD15bb4B6542716b050Fdf35c9
+    decimals: 18
+    logoURI: /deployments/warp_routes/AMPHRETH/logo.svg
+    name: Amphor Restaked ETH
+    standard: EvmHypCollateral
+    symbol: amphrETH
+  - addressOrDenom: "0xCE8260c1b5cF2fAD15bb4B6542716b050Fdf35c9"
+    chainName: zircuit
+    connections:
+      - token: ethereum|ethereum|0xA4e45cB601d43818518FB6023b8070d2564b935f
+    decimals: 18
+    logoURI: /deployments/warp_routes/AMPHRETH/logo.svg
+    name: Amphor Restaked ETH
+    standard: EvmHypSynthetic
+    symbol: amphrETH
