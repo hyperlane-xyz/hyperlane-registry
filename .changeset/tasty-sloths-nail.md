@@ -2,4 +2,5 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-add Harmony testnet
+Add superseed testnet
+add Morph Holesky Testnet
