@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x6D251aADfc6Ff69031e01eA39bE3cb5BABf8438f"
+    chainName: arbitrum
+    connections:
+      - token: ethereum|ethereum|0xdc89990a6fdC1C922b841f1d977835628A24Ed57
+      - token: ethereum|zircuit|0x7D5a79539d7B1c9aE5e54d18EEE188840f1Fe4CC
+    decimals: 18
+    logoURI: /deployments/warp_routes/AMPHRETH/logo.svg
+    name: Amphor Restaked ETH
+    standard: EvmHypSynthetic
+    symbol: amphrETH
+  - addressOrDenom: "0xdc89990a6fdC1C922b841f1d977835628A24Ed57"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x5fD13359Ba15A84B76f7F87568309040176167cd"
+    connections:
+      - token: ethereum|arbitrum|0x6D251aADfc6Ff69031e01eA39bE3cb5BABf8438f
+      - token: ethereum|zircuit|0x7D5a79539d7B1c9aE5e54d18EEE188840f1Fe4CC
+    decimals: 18
+    logoURI: /deployments/warp_routes/AMPHRETH/logo.svg
+    name: Amphor Restaked ETH
+    standard: EvmHypCollateral
+    symbol: amphrETH
+  - addressOrDenom: "0x7D5a79539d7B1c9aE5e54d18EEE188840f1Fe4CC"
+    chainName: zircuit
+    connections:
+      - token: ethereum|arbitrum|0x6D251aADfc6Ff69031e01eA39bE3cb5BABf8438f
+      - token: ethereum|ethereum|0xdc89990a6fdC1C922b841f1d977835628A24Ed57
+    decimals: 18
+    logoURI: /deployments/warp_routes/AMPHRETH/logo.svg
+    name: Amphor Restaked ETH
+    standard: EvmHypSynthetic
+    symbol: amphrETH
