@@ -1,4 +1,4 @@
-import { ChainMetadataSchema, ChainTechnicalStack} from '@hyperlane-xyz/sdk';
+import { ChainMetadataSchema, ChainTechnicalStack, EthJsonRpcBlockParameterTag } from '@hyperlane-xyz/sdk';
 import { chainAddresses, chainMetadata } from '../../dist/index.js';
 import { ChainAddressesSchema } from '../../src/types.js';
 
@@ -25,6 +25,22 @@ describe('Chain metadata', () => {
     it(`${chain} metadata has gasCurrencyCoinGeckoId if deployer is Abacus Works it is a mainnet`, () => {
       if (metadata.deployer?.name === "Abacus Works" && !metadata.isTestnet) {
         expect(metadata.gasCurrencyCoinGeckoId).not.to.be.undefined;
+      }
+    });
+
+    it(`${chain} metadata has valid reorgPeriod`, () => {
+      const reorgPeriod = metadata.blocks?.reorgPeriod;
+      if (reorgPeriod === undefined) {
+        return;
+      }
+
+      if (typeof reorgPeriod === 'string') {
+        expect(Object.values(EthJsonRpcBlockParameterTag)).to.include(reorgPeriod);
+      } else if (typeof reorgPeriod === 'number') {
+        expect(reorgPeriod).to.be.at.least(0);
+        expect(reorgPeriod).to.be.at.most(500);
+      } else {
+        throw new Error(`Invalid reorgPeriod type for ${chain}`);
       }
     });
 
@@ -60,12 +76,7 @@ describe('Chain metadata', () => {
 
         it(`${chain} metadata has reorgPeriod set if technicalStack is polkadotsubtrate`, () => {
           if (metadata.technicalStack === ChainTechnicalStack.PolkadotSubstrate) {
-            // Want a higher reorg period for astar
-            if (chain === 'astar') {
-              expect(metadata.blocks?.reorgPeriod).to.equal(32);
-            } else {
-              expect(metadata.blocks?.reorgPeriod).to.equal(10);
-            }
+            expect(metadata.blocks?.reorgPeriod).to.equal('finalized');
           }
         });
 

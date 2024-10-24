@@ -9,16 +9,23 @@ blocks:
   confirmations: 1
   estimateBlockTime: 3
   reorgPeriod: 1
+canonicalAsset: untrn
 chainId: neutron-1
+contractAddressBytes: 32
 deployer:
   name: Abacus Works
   url: https://www.hyperlane.xyz
 displayName: Neutron
 domainId: 1853125230
 gasCurrencyCoinGeckoId: neutron-3
+gasPrice:
+  amount: "0.0053"
+  denom: untrn
 grpcUrls:
-  - http: grpc-kralum.neutron-1.neutron.org:80
-isTestnet: false
+  - http: http://grpc-kralum.neutron-1.neutron.org:80
+index:
+  chunk: 5
+  from: 4000000
 name: neutron
 nativeToken:
   decimals: 6
