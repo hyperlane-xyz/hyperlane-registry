@@ -17,14 +17,22 @@ export function warpConfigToWarpAddresses(config: WarpCoreConfig): ChainMap<Chai
   }, {});
 }
 
+const COLLATERAL_KEY = 'collateral';
+const SYNTHETIC_KEY = 'synthetic';
+const NATIVE_KEY = 'native';
+const XERC20_LOCKBOX_KEY = 'xERC20Lockbox';
+const XERC20_KEY = 'xERC20';
+
 function getWarpAddressKey(standard: TokenStandard): string | null {
   const standardValue = standard.toLowerCase();
-  if (standardValue.includes('collateral')) return 'collateral';
-  if (standardValue.includes('synthetic')) return 'synthetic';
-  if (standardValue.includes('native')) return 'native';
-  if (standardValue.includes('xerc20lockbox')) return 'xERC20Lockbox';
-  if (standardValue.includes('xerc20')) return 'xERC20';
-  else return null;
+  
+  if (standardValue.includes(COLLATERAL_KEY)) return COLLATERAL_KEY;
+  if (standardValue.includes(SYNTHETIC_KEY)) return SYNTHETIC_KEY;
+  if (standardValue.includes(NATIVE_KEY)) return NATIVE_KEY;
+  if (standardValue.includes(XERC20_LOCKBOX_KEY.toLowerCase())) return XERC20_LOCKBOX_KEY;
+  if (standardValue.includes(XERC20_KEY.toLowerCase())) return XERC20_KEY;
+  
+  return null;
 }
 
 /**
@@ -54,8 +62,7 @@ export function warpRouteConfigToId(config: WarpCoreConfig): WarpRouteId {
 }
 
 export function createWarpRouteConfigId(tokenSymbol: string, chains: ChainName[]): WarpRouteId {
-  const sortedChains = [...chains].sort();
-  return `${tokenSymbol}/${sortedChains.join('-')}`;
+  return `${tokenSymbol}/${chains.sort().join('-')}`;
 }
 
 export function parseWarpRouteConfigId(routeId: WarpRouteId): {

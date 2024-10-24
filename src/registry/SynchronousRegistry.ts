@@ -52,11 +52,13 @@ export abstract class SynchronousRegistry extends BaseRegistry implements IRegis
 
   removeChain(chainName: ChainName): void {
     const currentChains = this.listRegistryContent().chains;
-    if (!currentChains[chainName]) throw new Error(`Chain ${chainName} does not exist in registry`);
-
-    if (this.listContentCache?.chains[chainName]) delete this.listContentCache.chains[chainName];
-    if (this.metadataCache?.[chainName]) delete this.metadataCache[chainName];
-    if (this.addressCache?.[chainName]) delete this.addressCache[chainName];
+    if (!currentChains[chainName]) {
+      throw new Error(`Chain ${chainName} does not exist in registry`);
+    }
+  
+    delete this.listContentCache?.chains[chainName];
+    delete this.metadataCache?.[chainName];
+    delete this.addressCache?.[chainName];
   }
 
   getWarpRoute(routeId: string): WarpCoreConfig | null {
