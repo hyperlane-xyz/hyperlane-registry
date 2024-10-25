@@ -4,6 +4,8 @@ import { ChainAddressesSchema } from '../../src/types.js';
 
 import { expect } from 'chai';
 
+const ABACUS_WORKS_DEPLOYER_NAME = "Abacus Works";
+
 describe('Chain metadata', () => {
   for (const [chain, metadata] of Object.entries(chainMetadata)) {
     it(`${chain} metadata is valid`, () => {
@@ -44,12 +46,26 @@ describe('Chain metadata', () => {
       }
     });
 
+    // Ensure all Abacus Works mainnets have gasCurrencyCoinGeckoId defined
+    it(`${chain} metadata has gasCurrencyCoinGeckoId defined if deployer is ${ABACUS_WORKS_DEPLOYER_NAME}`, () => {
+      if (metadata.deployer?.name === ABACUS_WORKS_DEPLOYER_NAME && !metadata.isTestnet) {
+        expect(metadata.gasCurrencyCoinGeckoId).not.to.be.undefined;
+      }
+    });
+
     // Values derived from reorg period assessment framework
     // https://www.notion.so/hyperlanexyz/Reorg-period-assessment-framework-1126d35200d680cbb5f2c67b8b492d62
     describe('Reorg period', () => {
+      // Ensure all Abacus Works mainnets have blocks defined
+      it(`${chain} metadata has blocks defined if deployer is ${ABACUS_WORKS_DEPLOYER_NAME}`, () => {
+        if (metadata.deployer?.name === ABACUS_WORKS_DEPLOYER_NAME && !metadata.isTestnet) {
+          expect(metadata.blocks).not.to.be.undefined;
+        }
+      });
+
       // Ensure all Abacus Works mainnets have technicalStack defined
-      it(`${chain} metadata has technicalStack defined if deployer is Abacus Works`, () => {
-        if (metadata.deployer?.name === "Abacus Works" && !metadata.isTestnet) {
+      it(`${chain} metadata has technicalStack defined if deployer is ${ABACUS_WORKS_DEPLOYER_NAME}`, () => {
+        if (metadata.deployer?.name === ABACUS_WORKS_DEPLOYER_NAME && !metadata.isTestnet) {
           expect(metadata.technicalStack).not.to.be.undefined;
         }
       });
