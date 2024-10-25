@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 4.11.1
+
+### Patch Changes
+
+- c7d9a40: Add TIA token for IGP support in UI
+
 ## 4.11.0
 
 ### Minor Changes
