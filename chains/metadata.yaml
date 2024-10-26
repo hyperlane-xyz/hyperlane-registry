@@ -259,7 +259,7 @@ astar:
   blocks:
     confirmations: 1
     estimateBlockTime: 13
-    reorgPeriod: 32
+    reorgPeriod: finalized
   chainId: 592
   deployer:
     name: Abacus Works
@@ -499,6 +499,52 @@ blast:
     - http: https://rpc.blast.io
     - http: https://rpc.ankr.com/blast
   technicalStack: opstack
+blastsepolia:
+  blockExplorers:
+    - apiUrl: https://api-sepolia.blastscan.io/api
+      family: etherscan
+      name: Blast Sepolia Testnet Explorer
+      url: https://sepolia.blastscan.io/
+  chainId: 168587773
+  deployer:
+    name: tmr
+    url: https://t.me/netimer
+  displayName: Blast Sepolia Testnet
+  domainId: 168587773
+  isTestnet: true
+  name: blastsepolia
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://sepolia.blast.io
+blockworkstestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.blockworks-chain.t.raas.gelato.cloud/api
+      family: blockscout
+      name: Blockworks Chain Testnet Explorer
+      url: https://explorer.blockworks-chain.t.raas.gelato.cloud
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 123420000549
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Blockworks Chain Testnet
+  domainId: 123420000549
+  isTestnet: true
+  name: blockworkstestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.blockworks-chain.t.raas.gelato.cloud
 bob:
   blockExplorers:
     - apiUrl: https://explorer.gobob.xyz/api
@@ -526,6 +572,70 @@ bob:
   rpcUrls:
     - http: https://rpc.gobob.xyz
   technicalStack: opstack
+boba:
+  blockExplorers:
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/288/etherscan/api
+      family: routescan
+      name: bobascan
+      url: https://bobascan.com
+  chainId: 288
+  deployer:
+    name: Boba Network
+    url: https://boba.network
+  displayName: Boba Mainnet
+  domainId: 288
+  isTestnet: false
+  name: boba
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet.boba.network
+bobabnb:
+  blockExplorers:
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/56288/etherscan/api
+      family: routescan
+      name: bobascan
+      url: https://bobascan.com
+  chainId: 56288
+  deployer:
+    name: Boba Network
+    url: https://boba.network
+  displayName: Boba BNB
+  domainId: 56288
+  gnosisSafeTransactionServiceUrl: https://transaction.safe.boba.network/
+  isTestnet: false
+  name: bobabnb
+  nativeToken:
+    decimals: 18
+    name: Boba Token
+    symbol: BOBA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://bnb.boba.network
+bobabnbtestnet:
+  blockExplorers:
+    - apiUrl: https://api.routescan.io/v2/network/testnet/evm/9728/etherscan/api
+      family: routescan
+      name: bobascan
+      url: https://testnet.bobascan.com
+  chainId: 9728
+  deployer:
+    name: Boba Network
+    url: https://boba.network
+  displayName: Boba BNB Testnet
+  domainId: 9728
+  isTestnet: true
+  name: bobabnbtestnet
+  nativeToken:
+    decimals: 18
+    name: Boba Token
+    symbol: BOBA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet.bnb.boba.network
 bsc:
   blockExplorers:
     - apiUrl: https://api.bscscan.com/api
@@ -535,7 +645,7 @@ bsc:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 15
+    reorgPeriod: finalized
   chainId: 56
   deployer:
     name: Abacus Works
@@ -609,6 +719,51 @@ camptestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc-campnetwork.xyz
+canto:
+  blockExplorers:
+    - apiUrl: https://explorer.plexnode.wtf/api
+      family: blockscout
+      name: Canto Explorer
+      url: https://explorer.plexnode.wtf/
+  chainId: 7700
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Canto
+  domainId: 7700
+  isTestnet: false
+  name: canto
+  nativeToken:
+    decimals: 18
+    name: Canto
+    symbol: CANTO
+  protocol: ethereum
+  rpcUrls:
+    - http: https://canto-rpc.ansybl.io
+    - http: https://mainnode.plexnode.org:8545
+    - http: https://canto.slingshot.finance
+cantotestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.tuber.build/api
+      family: blockscout
+      name: Canto Testnet Explorer
+      url: https://testnet.tuber.build/
+  chainId: 7701
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Canto Testnet
+  domainId: 7701
+  isTestnet: true
+  name: cantotestnet
+  nativeToken:
+    decimals: 18
+    name: Canto
+    symbol: CANTO
+  protocol: ethereum
+  rpcUrls:
+    - http: https://canto-testnet.plexnode.wtf
+    - http: https://testnet-archive.plexnode.wtf
 carbon:
   blockExplorers:
     - apiUrl: https://evm-scan.carbon.network/api
@@ -1177,7 +1332,7 @@ ethereum:
     - http: https://ethereum.publicnode.com
     - http: https://cloudflare-eth.com
   technicalStack: other
-euphoria:
+euphoriatestnet:
   blockExplorers:
     - apiUrl: https://euphoria-api.aurascan.io
       family: other
@@ -1188,10 +1343,13 @@ euphoria:
     estimateBlockTime: 6
     reorgPeriod: 0
   chainId: 6321
+  deployer:
+    name: hoanm
+    url: https://github.com/hoanm
   displayName: Euphoria Testnet
   domainId: 6321
   isTestnet: true
-  name: euphoria
+  name: euphoriatestnet
   nativeToken:
     decimals: 18
     name: Euphoria Aura
@@ -1468,6 +1626,27 @@ fraxtal:
     - http: https://rpc.frax.com
     - http: https://fraxtal.drpc.org
   technicalStack: opstack
+fraxtaltestnet:
+  blockExplorers:
+    - apiUrl: https://api-holesky.fraxscan.com/api
+      family: etherscan
+      name: Fraxtal Testnet Explorer
+      url: https://holesky.fraxscan.com/
+  chainId: 2522
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Fraxtal Testnet
+  domainId: 2522
+  isTestnet: true
+  name: fraxtaltestnet
+  nativeToken:
+    decimals: 18
+    name: Frax Ether
+    symbol: frxETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.testnet.frax.com
 fuji:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/testnet/evm/43113/etherscan/api
@@ -1627,6 +1806,27 @@ ham:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.ham.fun
+harmonytestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.testnet.harmony.one/api/v2
+      family: blockscout
+      name: Harmony Testnet Explorer
+      url: https://explorer.testnet.harmony.one/
+  chainId: 1666700000
+  deployer:
+    name: JaunePomme
+    url: https://github.com/JaunePomme
+  displayName: Harmony Testnet
+  domainId: 1666700000
+  isTestnet: true
+  name: harmonytestnet
+  nativeToken:
+    decimals: 18
+    name: ONE
+    symbol: ONE
+  protocol: ethereum
+  rpcUrls:
+    - http: https://api.s0.b.hmny.io
 heneztestnet:
   blockExplorers:
     - apiUrl: https://henez-testnet.explorer.caldera.xyz/api/eth-rpc
@@ -1677,6 +1877,27 @@ holesky:
   protocol: ethereum
   rpcUrls:
     - http: https://ethereum-holesky-rpc.publicnode.com
+humanitytestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.testnet.humanity.org/api
+      family: blockscout
+      name: Humanity Protocol Testnet Explorer
+      url: https://explorer.testnet.humanity.org
+  chainId: 1942999413
+  deployer:
+    name: JunayedMh
+    url: https://github.com/JunayedMh
+  displayName: Humanity Protocol Testnet
+  domainId: 1942999413
+  isTestnet: true
+  name: humanitytestnet
+  nativeToken:
+    decimals: 18
+    name: Humanity Protocol
+    symbol: tHP
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.testnet.humanity.org
 hyperliquidevmtestnet:
   blockExplorers:
     - apiUrl: https://explorer.hyperlend.finance/api
@@ -1765,20 +1986,32 @@ inevm:
   technicalStack: arbitrumnitro
 injective:
   bech32Prefix: inj
-  blockExplorers: []
+  blockExplorers:
+    - apiUrl: https://www.mintscan.io/injective
+      family: other
+      name: Mintscan
+      url: https://www.mintscan.io/injective
   blocks:
     confirmations: 1
     estimateBlockTime: 1
     reorgPeriod: 10
+  canonicalAsset: inj
   chainId: injective-1
+  contractAddressBytes: 20
   deployer:
     name: Abacus Works
     url: https://www.hyperlane.xyz
   displayName: Injective
   domainId: 6909546
   gasCurrencyCoinGeckoId: injective-protocol
+  gasPrice:
+    amount: "700000000"
+    denom: inj
   grpcUrls:
-    - http: sentry.chain.grpc.injective.network:443
+    - http: https://injective-grpc.goldenratiostaking.net:443
+  index:
+    chunk: 25
+    from: 58419500
   name: injective
   nativeToken:
     decimals: 18
@@ -1978,6 +2211,27 @@ lisk:
   rpcUrls:
     - http: https://rpc.api.lisk.com
   technicalStack: opstack
+lisksepolia:
+  blockExplorers:
+    - apiUrl: https://sepolia-blockscout.lisk.com/api
+      family: blockscout
+      name: Lisk Sepolia Testnet Explorer
+      url: https://sepolia-blockscout.lisk.com/
+  chainId: 4202
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Lisk Sepolia
+  domainId: 4202
+  isTestnet: true
+  name: lisksepolia
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.sepolia-api.lisk.com
 lukso:
   blockExplorers:
     - apiUrl: https://explorer.execution.mainnet.lukso.network/api
@@ -2088,6 +2342,27 @@ mantapacific:
     - http: https://pacific-rpc.manta.network/http
     - http: https://manta.nirvanalabs.xyz/mantapublic
   technicalStack: opstack
+mantapacifictestnet:
+  blockExplorers:
+    - apiUrl: https://pacific-explorer.sepolia-testnet.manta.network/api
+      family: blockscout
+      name: Manta Sepolia Explorer
+      url: https://pacific-explorer.sepolia-testnet.manta.network
+  chainId: 3441006
+  deployer:
+    name: JaunePomme
+    url: https://github.com/JaunePomme
+  displayName: Manta Pacific Testnet
+  domainId: 3441006
+  isTestnet: true
+  name: mantapacifictestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://pacific-rpc.sepolia-testnet.manta.network/http
 mantle:
   blockExplorers:
     - apiUrl: https://explorer.mantle.xyz/api
@@ -2419,7 +2694,7 @@ moonbeam:
   blocks:
     confirmations: 2
     estimateBlockTime: 12
-    reorgPeriod: 10
+    reorgPeriod: finalized
   chainId: 1284
   deployer:
     name: Abacus Works
@@ -2497,16 +2772,23 @@ neutron:
     confirmations: 1
     estimateBlockTime: 3
     reorgPeriod: 1
+  canonicalAsset: untrn
   chainId: neutron-1
+  contractAddressBytes: 32
   deployer:
     name: Abacus Works
     url: https://www.hyperlane.xyz
   displayName: Neutron
   domainId: 1853125230
   gasCurrencyCoinGeckoId: neutron-3
+  gasPrice:
+    amount: "0.0053"
+    denom: untrn
   grpcUrls:
-    - http: grpc-kralum.neutron-1.neutron.org:80
-  isTestnet: false
+    - http: http://grpc-kralum.neutron-1.neutron.org:80
+  index:
+    chunk: 5
+    from: 4000000
   name: neutron
   nativeToken:
     decimals: 6
@@ -2620,6 +2902,28 @@ opbnb:
   protocol: ethereum
   rpcUrls:
     - http: https://opbnb-rpc.publicnode.com
+opbnbtestnet:
+  blockExplorers:
+    - apiUrl: https://opbnb-testnet.bscscan.com/api
+      family: etherscan
+      name: opbnbscan
+      url: https://opbnb-testnet.bscscan.com/
+  chainId: 5611
+  deployer:
+    name: JunayedMh
+    url: https://github.com/JunayedMh
+  displayName: Op Bnb Testnet
+  domainId: 5611
+  isTestnet: true
+  name: opbnbtestnet
+  nativeToken:
+    decimals: 18
+    name: Binance
+    symbol: tBNB
+  protocol: ethereum
+  rpcUrls:
+    - http: https://opbnb-testnet-rpc.publicnode.com
+    - http: https://opbnb-testnet-rpc.bnbchain.org
 optimism:
   blockExplorers:
     - apiUrl: https://api-optimistic.etherscan.io/api
@@ -2710,15 +3014,23 @@ osmosis:
     confirmations: 1
     estimateBlockTime: 3
     reorgPeriod: 1
+  canonicalAsset: uosmo
   chainId: osmosis-1
+  contractAddressBytes: 32
   deployer:
     name: Mitosis
     url: https://mitosis.org
   displayName: Osmosis
   domainId: 875
   gasCurrencyCoinGeckoId: osmosis
+  gasPrice:
+    amount: "0.025"
+    denom: uosmo
   grpcUrls:
-    - http: osmosis-grpc.publicnode.com:443
+    - http: https://osmosis-grpc.publicnode.com:443
+  index:
+    chunk: 10
+    from: 14389169
   isTestnet: false
   name: osmosis
   nativeToken:
@@ -2798,7 +3110,7 @@ polygon:
   blocks:
     confirmations: 3
     estimateBlockTime: 2
-    reorgPeriod: 256
+    reorgPeriod: finalized
   chainId: 137
   deployer:
     name: Abacus Works
@@ -3300,7 +3612,7 @@ shibarium:
   blocks:
     confirmations: 1
     estimateBlockTime: 5
-    reorgPeriod: 5
+    reorgPeriod: finalized
   chainId: 109
   deployer:
     name: Abacus Works
@@ -3345,6 +3657,32 @@ sketchpad:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.sketchpad-1.forma.art
+smartbch:
+  blockExplorers:
+    - apiUrl: https://smartscout.cash/api
+      family: blockscout
+      name: SmartBCH Explorer
+      url: https://smartscout.cash
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 3
+    reorgPeriod: 15
+  chainId: 10000
+  deployer:
+    name: Goblins Cash
+    url: https://goblins.cash
+  displayName: Smartbch
+  domainId: 10000
+  isTestnet: false
+  name: smartbch
+  nativeToken:
+    decimals: 18
+    name: BCH
+    symbol: BCH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://smartbch.greyh.at
+    - http: https://rpc.smartbch.org
 solanadevnet:
   blockExplorers:
     - apiUrl: https://explorer.solana.com?cluster=devnet
@@ -3475,6 +3813,31 @@ sonictestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.testnet.soniclabs.com
+storytestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.storyscan.xyz/api
+      family: blockscout
+      name: storyexplorer
+      url: https://testnet.storyscan.xyz
+  chainId: 1513
+  deployer:
+    name: atuser14
+    url: https://github.com/atuser14
+  displayName: Story Testnet
+  domainId: 1513
+  isTestnet: true
+  name: storytestnet
+  nativeToken:
+    decimals: 18
+    name: IP
+    symbol: IP
+  protocol: ethereum
+  rpcUrls:
+    - http: https://story-testnet-evm.itrocket.net
+    - http: https://story-rpc.oneiricts.com:8445
+    - http: https://testnet.storyrpc.io
+  transactionOverrides:
+    gasPrice: 16000000000
 stride:
   bech32Prefix: stride
   blockExplorers:
@@ -3486,16 +3849,23 @@ stride:
     confirmations: 1
     estimateBlockTime: 5
     reorgPeriod: 1
+  canonicalAsset: ustrd
   chainId: stride-1
+  contractAddressBytes: 32
   deployer:
     name: Stride Labs
     url: https://www.stride.zone
   displayName: Stride
   domainId: 745
   gasCurrencyCoinGeckoId: stride
+  gasPrice:
+    amount: "0.025"
+    denom: ustrd
   grpcUrls:
-    - http: stride-grpc.polkachu.com:12290
-  isTestnet: false
+    - http: https://stride-grpc.publicnode.com:443
+  index:
+    chunk: 5
+    from: 9152000
   name: stride
   nativeToken:
     decimals: 6
@@ -3628,6 +3998,27 @@ superpositiontestnet:
   rpcUrls:
     - http: https://testnet-rpc.superposition.so
   technicalStack: arbitrumnitro
+superseedtestnet:
+  blockExplorers:
+    - apiUrl: https://sepolia-explorer.superseed.xyz/api
+      family: blockscout
+      name: Superseed Sepolia Explorer
+      url: https://sepolia-explorer.superseed.xyz
+  chainId: 53302
+  deployer:
+    name: Fazleiw
+    url: https://github.com/Fazleiw
+  displayName: Superseed Testnet
+  domainId: 53302
+  isTestnet: true
+  name: superseedtestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://sepolia.superseed.xyz
 taiko:
   blockExplorers:
     - apiUrl: https://api.taikoscan.io/api
@@ -3686,7 +4077,7 @@ tangle:
   blocks:
     confirmations: 1
     estimateBlockTime: 6
-    reorgPeriod: 10
+    reorgPeriod: finalized
   chainId: 5845
   deployer:
     name: Abacus Works
@@ -4013,3 +4404,24 @@ zoramainnet:
   rpcUrls:
     - http: https://rpc.zora.energy
   technicalStack: opstack
+zoratestnet:
+  blockExplorers:
+    - apiUrl: https://sepolia.explorer.zora.energy/api
+      family: blockscout
+      name: Zora Testnet Explorer
+      url: https://sepolia.explorer.zora.energy/
+  chainId: 999999999
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Zora Testnet
+  domainId: 999999999
+  isTestnet: true
+  name: zoratestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://sepolia.rpc.zora.energy

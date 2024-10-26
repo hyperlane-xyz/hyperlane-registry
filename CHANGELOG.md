@@ -1,5 +1,68 @@
 # @hyperlane-xyz/registry
 
+## 4.11.1
+
+### Patch Changes
+
+- c7d9a40: Add TIA token for IGP support in UI
+
+## 4.11.0
+
+### Minor Changes
+
+- 5b4334a: Update hyperlane SDK version + leverage `finalized` block param for selected chains: astar, bsc, chiliz, moonbeam, polygon, shibarium, and tangle.
+- 664ed0a: add Superseed sepolia testnet
+- 686065a: add Manta Pacific Sepolia Testnet
+- 76e4aab: replace arbitrum-cheesechain usdc route
+- 6d61a4a: Add token metadata for TIA and stTIA
+- 7645008: - added smartbch chain
+- 5e020e7: Add amphrETH warp route
+- 38e5c37: feat: add opBNB Testnet
+- c94bfc1: feat: add humanity protocol
+- c3d00a5: feat: add Canto Testnet, Fraxtal Testnet, Lisk Sepolia Testnet
+- bf522c3: add Blast Sepolia Testnet
+- d006d5c: feat: add Boba BNB
+- 59bb360: add Harmony testnet
+- 3888f6d: Update name and information of Euphoria Testnet
+- 69e214b: feat: add Boba Eth Mainnet
+- 07eaad9: feat: add Boba BNB Testnet
+
+### Patch Changes
+
+- 65b3c54: Revert chiliz reorg period back to 9
+- b21b785: chore(deps): bump secp256k1 from 4.0.3 to 4.0.4
+- dee5818: Add cosmos chain addresses
+- 1866626: Adds the Abacus Works owned IGP for Stride
+- c3e81c3: Added TIA and stTIA deployed on Eclipse and Stride
+- c2cdaaf: Redeploy amphrETH route
+
+## 4.10.0
+
+### Minor Changes
+
+- e7c13b4: Export createWarpRouteConfigId function
+- cc9f11f: Add blockworkstestnet metadata
+
+### Patch Changes
+
+- c04d52f: Fix inevm fallbackRoutingHook address
+- 3a534a6: Update default ISMs with newly enrolled chains & validators
+
+## 4.9.0
+
+### Minor Changes
+
+- 2ff303e: feat: add Zora Testnet
+  feat: add Canto Mainnet
+- 8acf720: add lumia warp route
+- 46fd86a: feat: add Story Testnet
+
+## 4.8.1
+
+### Patch Changes
+
+- 4c8a8ea: Update ezEth name for Sei to redEth
+
 ## 4.8.0
 
 ### Minor Changes
