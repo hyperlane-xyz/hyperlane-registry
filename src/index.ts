@@ -16,3 +16,4 @@ export {
   createWarpRouteConfigId,
 } from './registry/warp-utils.js';
 export { ChainAddresses, ChainAddressesSchema } from './types.js';
+export { isAbacusWorksChain } from './utils.js';
