@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x8EBcE4C909F5525E3926F848ce17F6Ec5144Fe6f"
+    chainName: bsc
+    collateralAddressOrDenom: "0x4d2d32d8652058bf98c772953e1df5c5c85d9f45"
+    connections:
+      - token: ethereum|polygon|0x4f49a6CB8821E231f30b0685026d2B06bBB4D17B
+    decimals: 18
+    name: DAO Maker
+    standard: EvmHypCollateral
+    symbol: DAO
+  - addressOrDenom: "0x4f49a6CB8821E231f30b0685026d2B06bBB4D17B"
+    chainName: polygon
+    connections:
+      - token: ethereum|bsc|0x8EBcE4C909F5525E3926F848ce17F6Ec5144Fe6f
+    decimals: 18
+    name: DAO Maker
+    standard: EvmHypSynthetic
+    symbol: DAO
