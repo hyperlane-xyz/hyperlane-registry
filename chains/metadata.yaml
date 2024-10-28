@@ -1332,7 +1332,7 @@ ethereum:
     - http: https://ethereum.publicnode.com
     - http: https://cloudflare-eth.com
   technicalStack: other
-euphoria:
+euphoriatestnet:
   blockExplorers:
     - apiUrl: https://euphoria-api.aurascan.io
       family: other
@@ -1343,10 +1343,13 @@ euphoria:
     estimateBlockTime: 6
     reorgPeriod: 0
   chainId: 6321
+  deployer:
+    name: hoanm
+    url: https://github.com/hoanm
   displayName: Euphoria Testnet
   domainId: 6321
   isTestnet: true
-  name: euphoria
+  name: euphoriatestnet
   nativeToken:
     decimals: 18
     name: Euphoria Aura
@@ -1874,6 +1877,27 @@ holesky:
   protocol: ethereum
   rpcUrls:
     - http: https://ethereum-holesky-rpc.publicnode.com
+humanitytestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.testnet.humanity.org/api
+      family: blockscout
+      name: Humanity Protocol Testnet Explorer
+      url: https://explorer.testnet.humanity.org
+  chainId: 1942999413
+  deployer:
+    name: JunayedMh
+    url: https://github.com/JunayedMh
+  displayName: Humanity Protocol Testnet
+  domainId: 1942999413
+  isTestnet: true
+  name: humanitytestnet
+  nativeToken:
+    decimals: 18
+    name: Humanity Protocol
+    symbol: tHP
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.testnet.humanity.org
 hyperliquidevmtestnet:
   blockExplorers:
     - apiUrl: https://explorer.hyperlend.finance/api
@@ -2318,6 +2342,27 @@ mantapacific:
     - http: https://pacific-rpc.manta.network/http
     - http: https://manta.nirvanalabs.xyz/mantapublic
   technicalStack: opstack
+mantapacifictestnet:
+  blockExplorers:
+    - apiUrl: https://pacific-explorer.sepolia-testnet.manta.network/api
+      family: blockscout
+      name: Manta Sepolia Explorer
+      url: https://pacific-explorer.sepolia-testnet.manta.network
+  chainId: 3441006
+  deployer:
+    name: JaunePomme
+    url: https://github.com/JaunePomme
+  displayName: Manta Pacific Testnet
+  domainId: 3441006
+  isTestnet: true
+  name: mantapacifictestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://pacific-rpc.sepolia-testnet.manta.network/http
 mantle:
   blockExplorers:
     - apiUrl: https://explorer.mantle.xyz/api
@@ -3612,6 +3657,32 @@ sketchpad:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.sketchpad-1.forma.art
+smartbch:
+  blockExplorers:
+    - apiUrl: https://smartscout.cash/api
+      family: blockscout
+      name: SmartBCH Explorer
+      url: https://smartscout.cash
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 3
+    reorgPeriod: 15
+  chainId: 10000
+  deployer:
+    name: Goblins Cash
+    url: https://goblins.cash
+  displayName: Smartbch
+  domainId: 10000
+  isTestnet: false
+  name: smartbch
+  nativeToken:
+    decimals: 18
+    name: BCH
+    symbol: BCH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://smartbch.greyh.at
+    - http: https://rpc.smartbch.org
 solanadevnet:
   blockExplorers:
     - apiUrl: https://explorer.solana.com?cluster=devnet
@@ -3927,6 +3998,27 @@ superpositiontestnet:
   rpcUrls:
     - http: https://testnet-rpc.superposition.so
   technicalStack: arbitrumnitro
+superseedtestnet:
+  blockExplorers:
+    - apiUrl: https://sepolia-explorer.superseed.xyz/api
+      family: blockscout
+      name: Superseed Sepolia Explorer
+      url: https://sepolia-explorer.superseed.xyz
+  chainId: 53302
+  deployer:
+    name: Fazleiw
+    url: https://github.com/Fazleiw
+  displayName: Superseed Testnet
+  domainId: 53302
+  isTestnet: true
+  name: superseedtestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://sepolia.superseed.xyz
 taiko:
   blockExplorers:
     - apiUrl: https://api.taikoscan.io/api
