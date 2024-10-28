@@ -1,26 +1,26 @@
+# yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://explorer.orderly.network/api
+  - apiUrl: https://explorer.snaxchain.io/api
     family: blockscout
-    name: Orderly L2 Explorer
-    url: https://explorer.orderly.network
+    name: Snaxchain Mainnet Explorer
+    url: https://explorer.snaxchain.io
 blocks:
   confirmations: 1
   estimateBlockTime: 2
   reorgPeriod: 5
-chainId: 291
+chainId: 2192
 deployer:
   name: Abacus Works
   url: https://www.hyperlane.xyz
-displayName: Orderly L2
-domainId: 291
+displayName: SnaxChain
+domainId: 2192
 gasCurrencyCoinGeckoId: ethereum
-name: orderly
+name: snaxchain
 nativeToken:
   decimals: 18
-  name: Ethereum
+  name: Ether
   symbol: ETH
 protocol: ethereum
 rpcUrls:
-  - http: https://rpc.orderly.network
-  - http: https://l2-orderly-mainnet-0.t.conduit.xyz
+  - http: https://mainnet.snaxchain.io
 technicalStack: opstack
