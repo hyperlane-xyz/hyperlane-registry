@@ -1,11 +1,13 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiKey: abc
-    apiUrl: https://scan.dreyerx.com/api
+  - apiUrl: https://scan.dreyerx.com/api
     family: blockscout
     name: DreyerX Scan
     url: https://scan.dreyerx.com
 chainId: 23451
+deployer:
+  name: billalxcode
+  url: https://github.com/billalxcode
 displayName: DreyerX
 domainId: 23451
 isTestnet: false
@@ -14,9 +16,6 @@ nativeToken:
   decimals: 18
   name: DreyerX
   symbol: DRX
-deployer:
-  name: billalxcode
-  url: https://github.com/billalxcode
 protocol: ethereum
 rpcUrls:
   - http: https://rpc.dreyerx.com
