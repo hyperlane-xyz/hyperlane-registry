@@ -2,4 +2,4 @@
 "@hyperlane-xyz/registry": minor
 ---
 
-feat: add humanity protocol
+feat: add aurora testnet
