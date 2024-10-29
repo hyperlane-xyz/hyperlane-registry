@@ -60,9 +60,16 @@
               "description": "Number of blocks to wait before considering a transaction confirmed."
             },
             "reorgPeriod": {
-              "type": "integer",
-              "minimum": 0,
-              "description": "Number of blocks before a transaction has a near-zero chance of reverting."
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Number of blocks before a transaction has a near-zero chance of reverting or block tag."
             },
             "estimateBlockTime": {
               "type": "number",
@@ -163,7 +170,7 @@
                     "description": "The maximum range between block numbers for which the RPC can query data"
                   },
                   "minBlockNumber": {
-                    "$ref": "#/definitions/hyperlaneChainMetadata/properties/blocks/properties/reorgPeriod",
+                    "$ref": "#/definitions/hyperlaneChainMetadata/properties/blocks/properties/reorgPeriod/anyOf/0",
                     "description": "The absolute minimum block number that this RPC supports."
                   },
                   "maxBlockAge": {

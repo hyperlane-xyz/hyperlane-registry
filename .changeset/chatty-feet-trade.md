@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add amphrETH warp route
+fix: worldchain RPC fix since its invalid
