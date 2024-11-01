@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 5.0.1
+
+### Patch Changes
+
+- b8850ac: Eclipse warp route fixes
+- 01506ea: Fix unit test flake timeout
+
 ## 5.0.0
 
 ### Major Changes
