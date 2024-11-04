@@ -1,5 +1,5 @@
 ---
-'@hyperlane-xyz/registry': major
+'@hyperlane-xyz/registry': patch
 ---
 
-Ensure domainIds are required
+Add missing domainId for moonbase testnet
