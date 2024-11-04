@@ -3,9 +3,12 @@ import { expect } from 'chai';
 import { MultiProtocolProvider, WarpCore } from '@hyperlane-xyz/sdk';
 import { FileSystemRegistry } from '../../src/registry/FileSystemRegistry.js';
 import { parseWarpRouteConfigId } from '../../src/registry/warp-utils.js';
+import path from 'path';
+import fs from 'fs';
 
 describe('Warp Route Configs', () => {
-  const localRegistry = new FileSystemRegistry({ uri: './' });
+  const BASE_URI = './';
+  const localRegistry = new FileSystemRegistry({ uri: BASE_URI });
   const chainMetadata = localRegistry.getMetadata();
   const multiProvider = new MultiProtocolProvider(chainMetadata);
   const routes = localRegistry.getWarpRoutes();
@@ -34,6 +37,15 @@ describe('Warp Route Configs', () => {
       // Verify chains are in alphabetical order
       const sortedChains = [...chainNames].sort();
       expect(chainNames).to.deep.equal(sortedChains, 'Chain names must be in alphabetical order');
+    });
+
+    it(`Route ${id} has valid token logoURIs`, () => {
+      const config = routes[id];
+      config.tokens.forEach((token) => {
+        if (token.logoURI) {
+          expect(fs.existsSync(path.join(BASE_URI, token.logoURI)), `Logo file ${token.logoURI} not found`).to.be.true;
+        }
+      });
     });
   }
 });
