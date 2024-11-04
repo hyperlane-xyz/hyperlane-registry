@@ -2,7 +2,7 @@ import { expect } from 'chai';
 
 import { MultiProtocolProvider, WarpCore } from '@hyperlane-xyz/sdk';
 import { FileSystemRegistry } from '../../src/registry/FileSystemRegistry.js';
-import { parseWarpRouteConfigId } from '../../src/registry/warp-utils.js';
+import { createWarpRouteConfigId, parseWarpRouteConfigId } from '../../src/registry/warp-utils.js';
 import path from 'path';
 import fs from 'fs';
 
@@ -46,6 +46,26 @@ describe('Warp Route Configs', () => {
           expect(fs.existsSync(path.join(BASE_URI, token.logoURI)), `Logo file ${token.logoURI} not found`).to.be.true;
         }
       });
+    });
+
+    it(`Route ${id} matches derived id from config`, () => {
+      // Skip check on TIA/forma-stride to avoid breaking changes to forma
+      if (id === 'TIA/forma-stride') {
+        return;
+      }
+
+      // Get the symbol and chain names from the config
+      const config = routes[id];
+      const { chainNames } = parseWarpRouteConfigId(id);
+
+      // Create the ID from the config
+      const symbol = config.tokens[0].symbol;
+      const tokenChains = [...new Set(config.tokens.map((token) => token.chainName))];
+      const derivedId = createWarpRouteConfigId(symbol, tokenChains);
+      const { chainNames: derivedChainNames } = parseWarpRouteConfigId(derivedId);
+
+      // Verify the chain names match
+      expect(chainNames).to.deep.equal(derivedChainNames, 'Chain names in ID must match derived chain names');
     });
   }
 });
