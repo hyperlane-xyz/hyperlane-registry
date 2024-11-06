@@ -29,6 +29,34 @@ alephzeroevm:
     - http: https://rpc.alephzero.raas.gelato.cloud
     - http: https://alephzero.drpc.org
   technicalStack: arbitrumnitro
+alephzeroevmtestnet:
+  blockExplorers:
+    - apiUrl: https://evm-explorer-testnet.alephzero.org/api
+      family: blockscout
+      name: Aleph Zero EVM Testnet Explorer
+      url: https://evm-explorer-testnet.alephzero.org
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 3
+    reorgPeriod: 5
+  chainId: 2039
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Aleph Zero EVM Testnet
+  domainId: 2039
+  index:
+    from: 1380870
+  isTestnet: true
+  name: alephzeroevmtestnet
+  nativeToken:
+    decimals: 18
+    name: Testnet AZERO
+    symbol: TZERO
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.alephzero-testnet.gelato.digital
+  technicalStack: arbitrumnitro
 alfajores:
   blockExplorers:
     - apiUrl: https://explorer.celo.org/alfajores/api
@@ -200,7 +228,7 @@ arbitrumsepolia:
     - http: https://arbitrum-sepolia.blockpi.network/v1/rpc/public
     - http: https://sepolia-rollup.arbitrum.io/rpc
   technicalStack: arbitrumnitro
-arcadiatestnet:
+arcadiatestnet2:
   blockExplorers:
     - apiUrl: https://explorer.khalani.network/api
       family: blockscout
@@ -214,10 +242,10 @@ arcadiatestnet:
   deployer:
     name: Abacus Works
     url: https://www.hyperlane.xyz
-  displayName: Arcadia Testnet
+  displayName: Arcadia Testnet v2
   domainId: 1098411886
   isTestnet: true
-  name: arcadiatestnet
+  name: arcadiatestnet2
   nativeToken:
     decimals: 18
     name: Ether
@@ -225,6 +253,32 @@ arcadiatestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.khalani.network
+artelatestnet:
+  blockExplorers:
+    - apiUrl: https://betanet-scan.artela.network/api
+      family: blockscout
+      name: Artela Testnet Explorer
+      url: https://betanet-scan.artela.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 11822
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Artela Testnet
+  domainId: 11822
+  isTestnet: true
+  name: artelatestnet
+  nativeToken:
+    decimals: 18
+    name: Testnet Artela
+    symbol: ART
+  protocol: ethereum
+  rpcUrls:
+    - http: https://betanet-rpc1.artela.network
+    - http: https://betanet-rpc2.artela.network
 arthera:
   blockExplorers:
     - apiUrl: https://explorer.arthera.net/api
@@ -2089,6 +2143,32 @@ injective:
     - http: https://sentry.tm.injective.network:443
   slip44: 118
   technicalStack: other
+inksepolia:
+  blockExplorers:
+    - apiUrl: https://explorer-sepolia.inkonchain.com/api
+      family: blockscout
+      name: https://explorer-sepolia.inkonchain.com
+      url: https://explorer-sepolia.inkonchain.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 763373
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Ink Sepolia
+  domainId: 763373
+  isTestnet: true
+  name: inksepolia
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc-qnd-sepolia.inkonchain.com
+  technicalStack: opstack
 kaia:
   blockExplorers:
     - apiUrl: https://api-cypress.klaytnscope.com/api
