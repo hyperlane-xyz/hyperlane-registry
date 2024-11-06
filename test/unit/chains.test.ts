@@ -7,6 +7,11 @@ import { expect } from 'chai';
 
 describe('Chain metadata', () => {
   for (const [chain, metadata] of Object.entries(chainMetadata)) {
+    it(`${chain} metadata has name and domain defined`, () => {
+      expect(metadata.name).not.to.be.undefined;
+      expect(metadata.domainId).not.to.be.undefined;
+    });
+
     it(`${chain} metadata is valid`, () => {
       ChainMetadataSchema.parse(metadata);
     });
