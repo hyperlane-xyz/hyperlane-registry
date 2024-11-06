@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x4955bd8b462f652C5c17497D9401144DD1A90A56"
+    chainName: dreyerxtestnet
+    collateralAddressOrDenom: "0x9DE1245b3e1a8cFFb3Fbd5cb52B991DB25a66553"
+    connections:
+      - token: ethereum|holesky|0x167B6d7AadDab0ED0b161AA5125331f23bdBFfFd
+    decimals: 18
+    name: Fake Token Bridge
+    standard: EvmHypCollateral
+    symbol: FakeBRIDGE
+  - addressOrDenom: "0x167B6d7AadDab0ED0b161AA5125331f23bdBFfFd"
+    chainName: holesky
+    collateralAddressOrDenom: "0x785423A9A68D7059140C0eDc9d897Cd00ae0652d"
+    connections:
+      - token: ethereum|dreyerxtestnet|0x4955bd8b462f652C5c17497D9401144DD1A90A56
+    decimals: 18
+    name: Fake Token Bridge
+    standard: EvmHypCollateral
+    symbol: FakeBRIDGE
