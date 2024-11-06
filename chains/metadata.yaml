@@ -1734,6 +1734,32 @@ filecoin:
   rpcUrls:
     - http: https://api.node.glif.io/rpc/v1
     - http: https://rpc.ankr.com/filecoin
+flame:
+  blockExplorers:
+    - apiUrl: https://explorer.flame.astria.org/api
+      family: blockscout
+      name: Astria Flame Explorer
+      url: https://explorer.flame.astria.org
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 253368190
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Flame
+  domainId: 253368190
+  gasCurrencyCoinGeckoId: celestia
+  name: flame
+  nativeToken:
+    decimals: 18
+    name: Celestia
+    symbol: TIA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.flame.astria.org
+  technicalStack: other
 flare:
   blockExplorers:
     - apiUrl: https://flare-explorer.flare.network/api
@@ -3613,6 +3639,32 @@ polynomialfi:
   rpcUrls:
     - http: https://rpc.polynomial.fi
   technicalStack: opstack
+prom:
+  blockExplorers:
+    - apiUrl: https://prom-blockscout.eu-north-2.gateway.fm/api/eth-rpc
+      family: blockscout
+      name: Prom Explorer
+      url: https://prom-blockscout.eu-north-2.gateway.fm
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 5
+  chainId: 227
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Prom
+  domainId: 227
+  gasCurrencyCoinGeckoId: prometeus
+  name: prom
+  nativeToken:
+    decimals: 18
+    name: Prom
+    symbol: PROM
+  protocol: ethereum
+  rpcUrls:
+    - http: https://prom-rpc.eu-north-2.gateway.fm
+  technicalStack: polygoncdk
 proofofplay:
   blockExplorers:
     - apiUrl: https://explorer.apex.proofofplay.com/api/eth-rpc
