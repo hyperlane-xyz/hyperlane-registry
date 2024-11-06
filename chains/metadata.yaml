@@ -29,6 +29,34 @@ alephzeroevm:
     - http: https://rpc.alephzero.raas.gelato.cloud
     - http: https://alephzero.drpc.org
   technicalStack: arbitrumnitro
+alephzeroevmtestnet:
+  blockExplorers:
+    - apiUrl: https://evm-explorer-testnet.alephzero.org/api
+      family: blockscout
+      name: Aleph Zero EVM Testnet Explorer
+      url: https://evm-explorer-testnet.alephzero.org
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 3
+    reorgPeriod: 5
+  chainId: 2039
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Aleph Zero EVM Testnet
+  domainId: 2039
+  index:
+    from: 1380870
+  isTestnet: true
+  name: alephzeroevmtestnet
+  nativeToken:
+    decimals: 18
+    name: Testnet AZERO
+    symbol: TZERO
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.alephzero-testnet.gelato.digital
+  technicalStack: arbitrumnitro
 alfajores:
   blockExplorers:
     - apiUrl: https://explorer.celo.org/alfajores/api
@@ -225,6 +253,32 @@ arcadiatestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.khalani.network
+artelatestnet:
+  blockExplorers:
+    - apiUrl: https://betanet-scan.artela.network/api
+      family: blockscout
+      name: Artela Testnet Explorer
+      url: https://betanet-scan.artela.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 11822
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Artela Testnet
+  domainId: 11822
+  isTestnet: true
+  name: artelatestnet
+  nativeToken:
+    decimals: 18
+    name: Testnet Artela
+    symbol: ART
+  protocol: ethereum
+  rpcUrls:
+    - http: https://betanet-rpc1.artela.network
+    - http: https://betanet-rpc2.artela.network
 arthera:
   blockExplorers:
     - apiUrl: https://explorer.arthera.net/api
@@ -3534,8 +3588,8 @@ rootstocktestnet:
     reorgPeriod: 4
   chainId: 31
   deployer:
-    name: Rootstock
-    url: https://rootstock.io
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Rootstock Testnet
   domainId: 31
   isTestnet: true
