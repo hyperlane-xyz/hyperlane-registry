@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Deploy to alephzeroevmtestnet, redeploy to arcadiatestnet.
+Deploy to alephzeroevmtestnet and inksepolia, redeploy to arcadiatestnet.
