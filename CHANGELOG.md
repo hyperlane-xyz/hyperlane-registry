@@ -1,5 +1,18 @@
 # @hyperlane-xyz/registry
 
+## 5.1.0
+
+### Minor Changes
+
+- 8dfc4c0: Update default ISMs on core Abacus Works chains
+
+### Patch Changes
+
+- 6ce62e9: Add weETHs logo and metadata
+- 0921b6d: Add missing domainId for moonbase testnet
+- 094e425: Fix misnamed warp routes
+- 8ca7431: Add weETHs deploy config and addresses
+
 ## 5.0.1
 
 ### Patch Changes
