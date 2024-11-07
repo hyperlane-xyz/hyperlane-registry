@@ -50,6 +50,12 @@ describe('Chain metadata', () => {
       }
     });
 
+    it(`${chain} metadata has domainId within uint32 limits`, () => {
+      const domainId = metadata.domainId;
+      expect(domainId).to.be.at.least(0);
+      expect(domainId).to.be.at.most(4294967295); // 2^32 - 1
+    });
+
     // Ensure all Abacus Works mainnets have gasCurrencyCoinGeckoId defined
     it(`${chain} metadata has gasCurrencyCoinGeckoId defined if deployer is Abacus Works`, () => {
       if (isAbacusWorksChain(metadata) && !metadata.isTestnet) {

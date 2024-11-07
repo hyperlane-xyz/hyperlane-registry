@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/88888/etherscan/api
+    family: routescan
+    name: Chiliscan
+    url: https://chiliscan.com
+blocks:
+  confirmations: 1
+  estimateBlockTime: 3
+  reorgPeriod: 9
+chainId: 88888
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Chiliz
+domainId: 1000088888
+gasCurrencyCoinGeckoId: chiliz
+name: chilizmainnet
+nativeToken:
+  decimals: 18
+  name: Chiliz
+  symbol: CHZ
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.ankr.com/chiliz
+  - http: https://chiliz.publicnode.com
+technicalStack: other
+transactionOverrides:
+  maxPriorityFeePerGas: 1000000000
