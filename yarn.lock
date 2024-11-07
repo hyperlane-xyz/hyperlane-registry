@@ -1878,13 +1878,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyperlane-xyz/core@npm:5.5.0":
-  version: 5.5.0
-  resolution: "@hyperlane-xyz/core@npm:5.5.0"
+"@hyperlane-xyz/core@npm:5.7.1":
+  version: 5.7.1
+  resolution: "@hyperlane-xyz/core@npm:5.7.1"
   dependencies:
     "@arbitrum/nitro-contracts": "npm:^1.2.1"
     "@eth-optimism/contracts": "npm:^0.6.0"
-    "@hyperlane-xyz/utils": "npm:5.6.0"
+    "@hyperlane-xyz/utils": "npm:6.0.0"
     "@layerzerolabs/lz-evm-oapp-v2": "npm:2.0.2"
     "@openzeppelin/contracts": "npm:^4.9.3"
     "@openzeppelin/contracts-upgradeable": "npm:^v4.9.3"
@@ -1893,7 +1893,7 @@ __metadata:
     "@ethersproject/abi": "*"
     "@ethersproject/providers": "*"
     "@types/sinon-chai": "*"
-  checksum: 55c458e2dc9f58145256f47319936c483cb1415cfed3b25d6cee348d4b2d3b3dfe8658577b98ea896d2ff4a9f4af8e30709395c46c2d562794436b18a4f24b2f
+  checksum: 53fa047cb0d417b8453cbe422a385e804d9c84758dba10f3e1408a76b88ac57024be3aa0f942f404702e6e680da1e41aaf540155b5ce9cfca2896d244e2ef6d1
   languageName: node
   linkType: hard
 
@@ -1903,7 +1903,7 @@ __metadata:
   dependencies:
     "@changesets/cli": "npm:^2.26.2"
     "@eslint/js": "npm:^9.1.1"
-    "@hyperlane-xyz/sdk": "npm:5.6.0"
+    "@hyperlane-xyz/sdk": "npm:6.0.0"
     "@types/mocha": "npm:^10.0.1"
     "@types/node": "npm:^16.9.1"
     "@typescript-eslint/parser": "npm:^7.7.0"
@@ -1925,25 +1925,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@hyperlane-xyz/sdk@npm:5.6.0":
-  version: 5.6.0
-  resolution: "@hyperlane-xyz/sdk@npm:5.6.0"
+"@hyperlane-xyz/sdk@npm:6.0.0":
+  version: 6.0.0
+  resolution: "@hyperlane-xyz/sdk@npm:6.0.0"
   dependencies:
     "@arbitrum/sdk": "npm:^4.0.0"
     "@aws-sdk/client-s3": "npm:^3.74.0"
     "@cosmjs/cosmwasm-stargate": "npm:^0.32.4"
     "@cosmjs/stargate": "npm:^0.32.4"
-    "@hyperlane-xyz/core": "npm:5.5.0"
-    "@hyperlane-xyz/utils": "npm:5.6.0"
+    "@hyperlane-xyz/core": "npm:5.7.1"
+    "@hyperlane-xyz/utils": "npm:6.0.0"
     "@safe-global/api-kit": "npm:1.3.0"
     "@safe-global/protocol-kit": "npm:1.3.0"
     "@safe-global/safe-deployments": "npm:1.37.8"
     "@solana/spl-token": "npm:^0.3.8"
     "@solana/web3.js": "npm:^1.78.0"
-    "@types/coingecko-api": "npm:^1.0.10"
     "@wagmi/chains": "npm:^1.8.0"
     bignumber.js: "npm:^9.1.1"
-    coingecko-api: "npm:^1.0.10"
+    coingecko-api-v3: "npm:^0.0.29"
     cosmjs-types: "npm:^0.9.0"
     cross-fetch: "npm:^3.1.5"
     ethers: "npm:^5.7.2"
@@ -1953,13 +1952,13 @@ __metadata:
   peerDependencies:
     "@ethersproject/abi": "*"
     "@ethersproject/providers": "*"
-  checksum: f57aa01e9c111ffab778873547da79e54d944c9cdf9d9f896420270333717b635933db99fd69e83679ac538c1a29ed6b6614057f11dbdd211d16d548d0450f21
+  checksum: 5d8ca83c7c52cd6ada1a3b4684ff5770ec9568e281c9b8d306b46ab61d188d88a1d22ec04e4024ef32fb92df158951201b3e900bb29955d416417415f53c035c
   languageName: node
   linkType: hard
 
-"@hyperlane-xyz/utils@npm:5.6.0":
-  version: 5.6.0
-  resolution: "@hyperlane-xyz/utils@npm:5.6.0"
+"@hyperlane-xyz/utils@npm:6.0.0":
+  version: 6.0.0
+  resolution: "@hyperlane-xyz/utils@npm:6.0.0"
   dependencies:
     "@cosmjs/encoding": "npm:^0.32.4"
     "@solana/web3.js": "npm:^1.78.0"
@@ -1968,7 +1967,7 @@ __metadata:
     lodash-es: "npm:^4.17.21"
     pino: "npm:^8.19.0"
     yaml: "npm:2.4.5"
-  checksum: 2c24556b1447eda2a838651af6c06114fbb280f073e230ba7971b562669c1895bcec164cf85bf55e9af0ff2d28c6814e22e7ac8a729fbaac38adbbf4969fd83e
+  checksum: bc75da2dfdec1ee26d7fb29db211d457b3ec07226059c9d2ea91602297547fecb0e369d0301fa0545bb2b89c77ca63d11434e8fb6b498fa1906082c4fcd8b3ba
   languageName: node
   linkType: hard
 
@@ -3222,13 +3221,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/coingecko-api@npm:^1.0.10":
-  version: 1.0.13
-  resolution: "@types/coingecko-api@npm:1.0.13"
-  checksum: 18f3f5270b41e6e11694d01ba01bd15bb21a94d5cdca27100247b60d4785cc57d5d04f7bdd4013897e4c5fc646e5c896884443d236f39684a7417d9f69f13427
-  languageName: node
-  linkType: hard
-
 "@types/connect@npm:^3.4.33":
   version: 3.4.38
   resolution: "@types/connect@npm:3.4.38"
@@ -4470,10 +4462,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"coingecko-api@npm:^1.0.10":
-  version: 1.0.10
-  resolution: "coingecko-api@npm:1.0.10"
-  checksum: e0000df5aebbeee508f25824485fe8e4be57cd07825b3cfbf2dc3c51b646200eefd336c833e81747d4a209bf10c32019baef1070fb2bfbcdbae099420954d1fa
+"coingecko-api-v3@npm:^0.0.29":
+  version: 0.0.29
+  resolution: "coingecko-api-v3@npm:0.0.29"
+  dependencies:
+    https: "npm:^1.0.0"
+  checksum: e60a0996472419232a144ec77028c060bd9c289f799dd40d46dbb7229cff3d868a3e35bf88724059dc25767b8136d794789e4dd31711592fa73a7be1ca2fcbc7
   languageName: node
   linkType: hard
 
@@ -6730,6 +6724,13 @@ __metadata:
     agent-base: "npm:^7.0.2"
     debug: "npm:4"
   checksum: 405fe582bba461bfe5c7e2f8d752b384036854488b828ae6df6a587c654299cbb2c50df38c4b6ab303502c3c5e029a793fbaac965d1e86ee0be03faceb554d63
+  languageName: node
+  linkType: hard
+
+"https@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "https@npm:1.0.0"
+  checksum: ccea8a8363a018d4b241db7748cff3a85c9f5b71bf80639e9c37dc6823f590f35dda098b80b726930e9f945387c8bfd6b1461df25cab5bf65a31903d81875b5d
   languageName: node
   linkType: hard
 

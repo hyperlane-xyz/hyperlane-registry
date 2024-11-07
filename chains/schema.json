@@ -132,8 +132,9 @@
           "description": "A shorter human-readable name of the chain for use in user interfaces."
         },
         "domainId": {
-          "$ref": "#/definitions/hyperlaneChainMetadata/properties/chainId/anyOf/0",
-          "description": "The domainId of the chain, should generally default to `chainId`. Consumer of `ChainMetadata` should use this value if present, but otherwise fallback to `chainId`."
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "description": "The domainId of the chain, should generally default to `chainId`. Consumer of `ChainMetadata` should use this value or `name` as a unique identifier."
         },
         "gasCurrencyCoinGeckoId": {
           "type": "string",
@@ -308,6 +309,7 @@
       },
       "required": [
         "chainId",
+        "domainId",
         "name",
         "protocol",
         "rpcUrls"
