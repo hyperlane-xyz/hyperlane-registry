@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 6.0.0
+
+### Major Changes
+
+- b4a2bb2: Metadata migration for sept26 abacus works chains. Enforce domainId is within uint32 range.
+
+### Minor Changes
+
+- 4e52093: Deploy to alephzeroevmtestnet and inksepolia, redeploy to arcadiatestnet.
+
 ## 5.1.0
 
 ### Minor Changes
