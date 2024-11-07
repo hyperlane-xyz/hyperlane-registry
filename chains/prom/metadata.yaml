@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://prom-blockscout.eu-north-2.gateway.fm/api/eth-rpc
+    family: blockscout
+    name: Prom Explorer
+    url: https://prom-blockscout.eu-north-2.gateway.fm
+blocks:
+  confirmations: 1
+  estimateBlockTime: 6
+  reorgPeriod: 5
+chainId: 227
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Prom
+domainId: 227
+gasCurrencyCoinGeckoId: prometeus
+name: prom
+nativeToken:
+  decimals: 18
+  name: Prom
+  symbol: PROM
+protocol: ethereum
+rpcUrls:
+  - http: https://prom-rpc.eu-north-2.gateway.fm
+technicalStack: polygoncdk
