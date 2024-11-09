@@ -1,0 +1,27 @@
+blockExplorers:
+  - apiUrl: https://explorer.immutable.com/api/eth-rpc
+    family: blockscout
+    name: Immutable Explorer
+    url: https://explorer.immutable.com
+blocks:
+  confirmations: 1
+  estimateBlockTime: 2
+  reorgPeriod: 20
+chainId: 13371
+displayName: DEPRECATED Immutable zkEVM
+domainId: 13371
+gasCurrencyCoinGeckoId: immutable-x
+name: deprecatedimmutablezkevm
+nativeToken:
+  decimals: 18
+  name: Immutable
+  symbol: IMX
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.immutable.com
+  - http: https://immutable.gateway.tenderly.co
+technicalStack: other
+# Taken from https://docs.immutable.com/tutorials/zkEVM/deploy-contracts/deploy?deploy-scripts=erc721-deploy#deploy
+transactionOverrides:
+  maxFeePerGas: 100000000000
+  maxPriorityFeePerGas: 100000000000

@@ -1,5 +1,28 @@
 # @hyperlane-xyz/registry
 
+## 6.0.0
+
+### Major Changes
+
+- b4a2bb2: Metadata migration for sept26 abacus works chains. Enforce domainId is within uint32 range.
+
+### Minor Changes
+
+- 4e52093: Deploy to alephzeroevmtestnet and inksepolia, redeploy to arcadiatestnet.
+
+## 5.1.0
+
+### Minor Changes
+
+- 8dfc4c0: Update default ISMs on core Abacus Works chains
+
+### Patch Changes
+
+- 6ce62e9: Add weETHs logo and metadata
+- 0921b6d: Add missing domainId for moonbase testnet
+- 094e425: Fix misnamed warp routes
+- 8ca7431: Add weETHs deploy config and addresses
+
 ## 5.0.1
 
 ### Patch Changes
