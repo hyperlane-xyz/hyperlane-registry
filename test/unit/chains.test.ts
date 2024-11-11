@@ -1,11 +1,17 @@
 import { ChainMetadataSchema, ChainTechnicalStack, EthJsonRpcBlockParameterTag } from '@hyperlane-xyz/sdk';
 import { chainAddresses, chainMetadata } from '../../dist/index.js';
 import { ChainAddressesSchema } from '../../src/types.js';
+import { isAbacusWorksChain } from '../../src/utils.js';
 
 import { expect } from 'chai';
 
 describe('Chain metadata', () => {
   for (const [chain, metadata] of Object.entries(chainMetadata)) {
+    it(`${chain} metadata has name and domain defined`, () => {
+      expect(metadata.name).not.to.be.undefined;
+      expect(metadata.domainId).not.to.be.undefined;
+    });
+
     it(`${chain} metadata is valid`, () => {
       ChainMetadataSchema.parse(metadata);
     });
@@ -44,12 +50,32 @@ describe('Chain metadata', () => {
       }
     });
 
+    it(`${chain} metadata has domainId within uint32 limits`, () => {
+      const domainId = metadata.domainId;
+      expect(domainId).to.be.at.least(0);
+      expect(domainId).to.be.at.most(4294967295); // 2^32 - 1
+    });
+
+    // Ensure all Abacus Works mainnets have gasCurrencyCoinGeckoId defined
+    it(`${chain} metadata has gasCurrencyCoinGeckoId defined if deployer is Abacus Works`, () => {
+      if (isAbacusWorksChain(metadata) && !metadata.isTestnet) {
+        expect(metadata.gasCurrencyCoinGeckoId).not.to.be.undefined;
+      }
+    });
+
     // Values derived from reorg period assessment framework
     // https://www.notion.so/hyperlanexyz/Reorg-period-assessment-framework-1126d35200d680cbb5f2c67b8b492d62
     describe('Reorg period', () => {
+      // Ensure all Abacus Works mainnets have blocks defined
+      it(`${chain} metadata has blocks defined if deployer is Abacus Works`, () => {
+        if (isAbacusWorksChain(metadata) && !metadata.isTestnet) {
+          expect(metadata.blocks).not.to.be.undefined;
+        }
+      });
+
       // Ensure all Abacus Works mainnets have technicalStack defined
-      it(`${chain} metadata has technicalStack defined if deployer is Abacus Works, and it is a mainnet with a mailbox deployed`, () => {
-        if (metadata.deployer?.name === "Abacus Works" && !metadata.isTestnet && chainAddresses[chain]?.mailboxAddress) {
+      it(`${chain} metadata has technicalStack defined if deployer is Abacus Works`, () => {
+        if (isAbacusWorksChain(metadata) && !metadata.isTestnet) {
           expect(metadata.technicalStack).not.to.be.undefined;
         }
       });
