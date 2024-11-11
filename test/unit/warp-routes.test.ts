@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import { MultiProtocolProvider, WarpCore } from '@hyperlane-xyz/sdk';
+import { MultiProtocolProvider, TOKEN_COLLATERALIZED_STANDARDS, TokenStandard, WarpCore } from '@hyperlane-xyz/sdk';
 import { FileSystemRegistry } from '../../src/registry/FileSystemRegistry.js';
 import { createWarpRouteConfigId, parseWarpRouteConfigId } from '../../src/registry/warp-utils.js';
 import path from 'path';
@@ -66,6 +66,31 @@ describe('Warp Route Configs', () => {
 
       // Verify the chain names match
       expect(chainNames).to.deep.equal(derivedChainNames, 'Chain names in ID must match derived chain names');
+    });
+
+    it(`Route ${id} only specifies a coinGeckoId for tokens that escrow tokens`, () => {
+      const config = routes[id];
+
+      const warpCore = WarpCore.FromConfig(multiProvider, config);
+      
+      for (const token of warpCore.tokens) {
+        if (token.coinGeckoId === undefined) {
+          continue;
+        }
+        // At the moment, the collateralized standards defined in the SDK
+        // have some gaps - as a shortcut, just check if the token standard
+        // is a Synthetic by looking for a substring
+        expect(
+          ![
+            TokenStandard.CwHypSynthetic,
+            TokenStandard.SealevelHypSynthetic,
+            TokenStandard.EvmHypSynthetic,
+            TokenStandard.EvmHypSyntheticRebase,
+            TokenStandard.EvmHypXERC20,
+          ].includes(token.standard),
+          `Token standard ${token.standard} should not have a coinGeckoId`
+        ).to.be.true;
+      }
     });
   }
 });
