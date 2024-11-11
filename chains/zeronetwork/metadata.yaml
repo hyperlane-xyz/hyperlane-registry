@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://zero-network-api.calderaexplorer.xyz/api
+  - apiUrl: https://zero-network.calderaexplorer.xyz/verification/contract_verification
     family: etherscan
     name: Zero Network Explorer
     url: https://zerion-explorer.vercel.app
@@ -15,6 +15,7 @@ deployer:
 displayName: Zero Network
 domainId: 543210
 gasCurrencyCoinGeckoId: ethereum
+gnosisSafeTransactionServiceUrl: https://prod.zeronet-mainnet.transaction.keypersafe.xyz
 name: zeronetwork
 nativeToken:
   decimals: 18
