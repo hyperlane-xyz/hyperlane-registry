@@ -96,7 +96,7 @@ describe('Registry utilities', () => {
       expect(firstRoute!.tokens.length).to.be.greaterThan(0);
       const noRoutes = await registry.getWarpRoutes({ symbol: 'NOTFOUND' });
       expect(Object.keys(noRoutes).length).to.eql(0);
-    });
+    }).timeout(10_000);
 
     // TODO remove this once GitHubRegistry methods are implemented
     if (registry.type !== RegistryType.FileSystem) continue;
@@ -169,20 +169,24 @@ describe('Registry utilities', () => {
     beforeEach(() => {
       proxiedGithubRegistry = new GithubRegistry({ branch: GITHUB_REGISTRY_BRANCH, proxyUrl });
       getApiRateLimitStub = sinon.stub(proxiedGithubRegistry, 'getApiRateLimit');
-    })
+    });
     afterEach(() => {
       sinon.restore();
     });
-    it('always uses the public api if rate limit has been not been hit', async ()=> {
-      getApiRateLimitStub.returns({ remaining: 10 } );
-      expect(await proxiedGithubRegistry.getApiUrl()).to.equal(`${GITHUB_API_URL}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`);
-    })
-  
+    it('always uses the public api if rate limit has been not been hit', async () => {
+      getApiRateLimitStub.returns({ remaining: 10 });
+      expect(await proxiedGithubRegistry.getApiUrl()).to.equal(
+        `${GITHUB_API_URL}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`,
+      );
+    });
+
     it('should fallback to proxy url if public rate limit has been hit', async () => {
-      getApiRateLimitStub.returns({ remaining: 0 } );
-      expect(await proxiedGithubRegistry.getApiUrl()).to.equal(`${proxyUrl}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`);
-    })
-  })  
+      getApiRateLimitStub.returns({ remaining: 0 });
+      expect(await proxiedGithubRegistry.getApiUrl()).to.equal(
+        `${proxyUrl}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`,
+      );
+    });
+  });
 });
 
 describe('Registry regex', () => {

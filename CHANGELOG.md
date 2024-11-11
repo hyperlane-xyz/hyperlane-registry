@@ -1,5 +1,55 @@
 # @hyperlane-xyz/registry
 
+## 6.0.0
+
+### Major Changes
+
+- b4a2bb2: Metadata migration for sept26 abacus works chains. Enforce domainId is within uint32 range.
+
+### Minor Changes
+
+- 4e52093: Deploy to alephzeroevmtestnet and inksepolia, redeploy to arcadiatestnet.
+
+## 5.1.0
+
+### Minor Changes
+
+- 8dfc4c0: Update default ISMs on core Abacus Works chains
+
+### Patch Changes
+
+- 6ce62e9: Add weETHs logo and metadata
+- 0921b6d: Add missing domainId for moonbase testnet
+- 094e425: Fix misnamed warp routes
+- 8ca7431: Add weETHs deploy config and addresses
+
+## 5.0.1
+
+### Patch Changes
+
+- b8850ac: Eclipse warp route fixes
+- 01506ea: Fix unit test flake timeout
+
+## 5.0.0
+
+### Major Changes
+
+- cc457fb: Remove previous chain deploy addresses
+
+### Minor Changes
+
+- 716c10f: fix: worldchain RPC fix since its invalid
+- e966856: add support for zksync testnet and sophon testnet
+- 06f0026: Add token metadatas for ORCA, WBTC, USDT
+- f4809d9: Add chain metadata for apechain, gravity, harmony, kaia, morph, snaxchain, zeronetwork, zksync. Update deployer details for chains not being deployed to.
+- d6aaeae: feat: add Story Odyssey testnet
+- 3af6f03: Add eclipse batch #2 warp artifacts
+- 302be48: Deploy to apechain,arbitrumnova,b3,fantom,gravity,harmony,kaia,morph,orderly,snaxchain,zeronetwork,zksync. Add deployer info to morph metadata.
+
+### Patch Changes
+
+- 13ef3e3: Update teth synthetic logo
+
 ## 4.11.1
 
 ### Patch Changes
