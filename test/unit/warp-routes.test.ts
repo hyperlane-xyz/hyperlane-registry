@@ -77,9 +77,8 @@ describe('Warp Route Configs', () => {
         if (token.coinGeckoId === undefined) {
           continue;
         }
-        // At the moment, the collateralized standards defined in the SDK
-        // have some gaps - as a shortcut, just check if the token standard
-        // is a Synthetic by looking for a substring
+        // At the moment, the SDK doesn't have a super clean way
+        // to determine if a token is synthetic, so we have a list here for now.
         expect(
           ![
             TokenStandard.CwHypSynthetic,
