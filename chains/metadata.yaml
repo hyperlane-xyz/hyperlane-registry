@@ -597,7 +597,7 @@ blast:
   displayName: Blast
   domainId: 81457
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://transaction.blast-safe.io
+  gnosisSafeTransactionServiceUrl: https://safe-transaction-blast.safe.global
   name: blast
   nativeToken:
     decimals: 18
@@ -2594,7 +2594,7 @@ linea:
   displayName: Linea
   domainId: 59144
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://transaction.safe.linea.build
+  gnosisSafeTransactionServiceUrl: https://safe-transaction-linea.safe.global
   name: linea
   nativeToken:
     decimals: 18
@@ -4892,7 +4892,7 @@ xlayer:
   technicalStack: polygoncdk
 zeronetwork:
   blockExplorers:
-    - apiUrl: https://zero-network-api.calderaexplorer.xyz/api
+    - apiUrl: https://zero-network.calderaexplorer.xyz/verification/contract_verification
       family: etherscan
       name: Zero Network Explorer
       url: https://zerion-explorer.vercel.app
@@ -4907,6 +4907,7 @@ zeronetwork:
   displayName: Zero Network
   domainId: 543210
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://prod.zeronet-mainnet.transaction.keypersafe.xyz
   name: zeronetwork
   nativeToken:
     decimals: 18
@@ -4975,12 +4976,12 @@ zircuit:
   technicalStack: opstack
 zksync:
   blockExplorers:
-    - apiUrl: https://block-explorer-api.mainnet.zksync.io/api
+    - apiUrl: https://zksync2-mainnet-explorer.zksync.io/contract_verification
       family: etherscan
       name: zkSync Explorer
       url: https://explorer.zksync.io
   blocks:
-    confirmations: 2
+    confirmations: 1
     estimateBlockTime: 1
     reorgPeriod: 0
   chainId: 324
