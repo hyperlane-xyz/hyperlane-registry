@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://explorer.wvm.dev/api
+    family: blockscout
+    name: WeaveVM Alphanet Explorer
+    url: https://explorer.wvm.dev
+blocks:
+  confirmations: 1
+  estimateBlockTime: 1
+  reorgPeriod: 1
+chainId: 9496
+displayName: WeaveVM
+domainId: 9496
+isTestnet: true
+name: weavevm
+nativeToken:
+  decimals: 18
+  name: Testnet WeaveVM
+  symbol: tWVM
+protocol: ethereum
+rpcUrls:
+  - http: https://testnet-rpc.wvm.dev
+transactionOverrides:
+  maxFeePerGas: 1000000000
+  maxPriorityFeePerGas: 1000000000
