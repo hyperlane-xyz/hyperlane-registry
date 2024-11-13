@@ -12,10 +12,11 @@ blocks:
 canonicalAsset: uatom
 chainId: cosmoshub-4
 displayName: Cosmos Hub
-domainId: 1234567890
+domainId: 1234567890 # TODO replace with actual domainId if/when there's a hyperlane deployment here
 gasCurrencyCoinGeckoId: cosmos
 grpcUrls:
   - http: grpc-cosmoshub-ia.cosmosia.notional.ventures:443
+  - http: cosmos-grpc.polkachu.com:14990
 name: cosmoshub
 nativeToken:
   decimals: 6
@@ -24,8 +25,10 @@ nativeToken:
   symbol: ATOM
 protocol: cosmos
 restUrls:
-  - http: https://lcd-cosmoshub.blockapsis.com
+  - http: https://cosmos-lcd.quickapi.com:443
+  - http: https://rest.cosmoshub.goldenratiostaking.net
 rpcUrls:
-  - http: https://rpc-cosmoshub.blockapsis.com
+  - http: https://cosmos-rpc.quickapi.com:443
+  - http: https://rpc-cosmoshub.ecostake.com
 slip44: 118
 technicalStack: other
