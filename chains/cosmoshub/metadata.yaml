@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: cosmos
+blockExplorers:
+  - apiUrl: https://www.mintscan.io/cosmos
+    family: other
+    name: MintScan
+    url: https://www.mintscan.io/cosmos
+blocks:
+  confirmations: 1
+  estimateBlockTime: 6
+  reorgPeriod: 1
+canonicalAsset: uatom
+chainId: cosmoshub-4
+displayName: Cosmos Hub
+domainId: 1234567890
+gasCurrencyCoinGeckoId: cosmos
+grpcUrls:
+  - http: grpc-cosmoshub-ia.cosmosia.notional.ventures:443
+name: cosmoshub
+nativeToken:
+  decimals: 6
+  denom: uatom
+  name: Atom
+  symbol: ATOM
+protocol: cosmos
+restUrls:
+  - http: https://lcd-cosmoshub.blockapsis.com
+rpcUrls:
+  - http: https://rpc-cosmoshub.blockapsis.com
+slip44: 118
+technicalStack: other
