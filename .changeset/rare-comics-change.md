@@ -3,3 +3,4 @@
 ---
 
 Add cosmoshub chain definition
+Update mintscan api urls
