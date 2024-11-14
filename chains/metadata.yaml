@@ -1088,6 +1088,40 @@ coredao:
     - http: https://core.drpc.org
     - http: https://rpc-core.icecreamswap.com
   technicalStack: other
+cosmoshub:
+  bech32Prefix: cosmos
+  blockExplorers:
+    - apiUrl: https://apis.mintscan.io/v1/cosmos
+      family: other
+      name: MintScan
+      url: https://www.mintscan.io/cosmos
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 1
+  canonicalAsset: uatom
+  chainId: cosmoshub-4
+  displayName: Cosmos Hub
+  domainId: 1668248429
+  gasCurrencyCoinGeckoId: cosmos
+  grpcUrls:
+    - http: grpc-cosmoshub-ia.cosmosia.notional.ventures:443
+    - http: cosmos-grpc.polkachu.com:14990
+  name: cosmoshub
+  nativeToken:
+    decimals: 6
+    denom: uatom
+    name: Atom
+    symbol: ATOM
+  protocol: cosmos
+  restUrls:
+    - http: https://cosmos-lcd.quickapi.com:443
+    - http: https://rest.cosmoshub.goldenratiostaking.net
+  rpcUrls:
+    - http: https://cosmos-rpc.quickapi.com:443
+    - http: https://rpc-cosmoshub.ecostake.com
+  slip44: 118
+  technicalStack: other
 cronos:
   blockExplorers:
     - apiUrl: https://api.cronoscan.com/api
@@ -2360,7 +2394,7 @@ inevm:
 injective:
   bech32Prefix: inj
   blockExplorers:
-    - apiUrl: https://www.mintscan.io/injective
+    - apiUrl: https://apis.mintscan.io/v1/injective
       family: other
       name: Mintscan
       url: https://www.mintscan.io/injective
@@ -3241,7 +3275,7 @@ neoxt4:
 neutron:
   bech32Prefix: neutron
   blockExplorers:
-    - apiUrl: https://www.mintscan.io/neutron
+    - apiUrl: https://apis.mintscan.io/v1/neutron
       family: other
       name: Mintscan
       url: https://www.mintscan.io/neutron
@@ -3459,7 +3493,7 @@ orderly:
 osmosis:
   bech32Prefix: osmo
   blockExplorers:
-    - apiUrl: https://www.mintscan.io/osmosis
+    - apiUrl: https://apis.mintscan.io/v1/osmosis
       family: other
       name: Mintscan
       url: https://www.mintscan.io/osmosis
@@ -4387,7 +4421,7 @@ storytestnet:
 stride:
   bech32Prefix: stride
   blockExplorers:
-    - apiUrl: https://www.mintscan.io/stride
+    - apiUrl: https://apis.mintscan.io/v1/stride
       family: other
       name: Mintscan
       url: https://www.mintscan.io/stride
