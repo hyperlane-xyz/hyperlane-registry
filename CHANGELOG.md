@@ -1,5 +1,22 @@
 # @hyperlane-xyz/registry
 
+## 6.1.0
+
+### Minor Changes
+
+- 14cd80b: Update default ISMs on core Abacus Works chains for Nov 8 batch. Update gnosisSafeTransactionServiceUrl for blast, linea and zeronetwork.
+- a797d72: Redeploy to alephzeroevmmainnet, chilizmainnet, flowmainnet, immutablezkevmmainnet, metal, polynomialfi, rarichain, rootstockmainnet, superpositionmainnet. Deploy to flame, prom.
+- 10fdae0: Add coinGeckoId to collateralized warp routes deployed by Abacus Works, update to SDK 7.0.0
+- f124f9a: Add sepolia to alfajores warp route
+- d71eb5f: Deploy to abstracttestnet, treasuretopaz.
+- 0a0707c: Add cosmoshub chain definition
+  Update mintscan api urls
+
+### Patch Changes
+
+- 3e366ea: Add coinGeckoId for ORCA collateral
+- e70f527: Specify coinGeckoId for Solana warp route under collateral
+
 ## 6.0.0
 
 ### Major Changes
