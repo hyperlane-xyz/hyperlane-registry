@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x1CF975C9bF2DF76c43a14405066007f8393142E9"
+    chainName: blast
+    collateralAddressOrDenom: "0x4300000000000000000000000000000000000003"
+    connections:
+      - token: ethereum|zeronetwork|0xB11a9606f3e470abD00b1bbB28AffAC3126c2Acb
+    decimals: 18
+    logoURI: /deployments/warp_routes/USDB/logo.svg
+    name: USDB
+    standard: EvmHypCollateral
+    symbol: USDB
+  - addressOrDenom: "0xB11a9606f3e470abD00b1bbB28AffAC3126c2Acb"
+    chainName: zeronetwork
+    connections:
+      - token: ethereum|blast|0x1CF975C9bF2DF76c43a14405066007f8393142E9
+    decimals: 18
+    logoURI: /deployments/warp_routes/USDB/logo.svg
+    name: USDB
+    standard: EvmHypSynthetic
+    symbol: USDB
