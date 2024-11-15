@@ -12,6 +12,8 @@ tokens:
     symbol: fastUSD
   - addressOrDenom: "0x9AD81058c6C3Bf552C9014CB30E824717A0ee21b"
     chainName: ethereum
+    # Unique setup where deUSD is deposited as collateral on Ethereum and fastUSD is minted as a synthetic on Sei
+    coinGeckoId: elixir-deusd
     collateralAddressOrDenom: "0x15700B564Ca08D9439C58cA5053166E8317aa138"
     connections:
       - token: ethereum|sei|0xeA895A7Ff45d8d3857A04c1E38A362f3bd9a076f

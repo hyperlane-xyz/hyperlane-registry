@@ -7,6 +7,11 @@ import { expect } from 'chai';
 
 describe('Chain metadata', () => {
   for (const [chain, metadata] of Object.entries(chainMetadata)) {
+    it(`${chain} metadata has name and domain defined`, () => {
+      expect(metadata.name).not.to.be.undefined;
+      expect(metadata.domainId).not.to.be.undefined;
+    });
+
     it(`${chain} metadata is valid`, () => {
       ChainMetadataSchema.parse(metadata);
     });
@@ -43,6 +48,12 @@ describe('Chain metadata', () => {
       } else {
         throw new Error(`Invalid reorgPeriod type for ${chain}`);
       }
+    });
+
+    it(`${chain} metadata has domainId within uint32 limits`, () => {
+      const domainId = metadata.domainId;
+      expect(domainId).to.be.at.least(0);
+      expect(domainId).to.be.at.most(4294967295); // 2^32 - 1
     });
 
     // Ensure all Abacus Works mainnets have gasCurrencyCoinGeckoId defined

@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xef899e92DA472E014bE795Ecce948308958E25A2"
+    chainName: ethereum
+    coinGeckoId: etherfi-weeths
+    collateralAddressOrDenom: "0x917cee801a67f933f2e6b33fc0cd1ed2d5909d88"
+    connections:
+      - token: sealevel|eclipsemainnet|7Zx4wU1QAw98MfvnPFqRh1oyumek7G5VAX6TKB3U1tcn
+    decimals: 18
+    logoURI: /deployments/warp_routes/weETHs/logo.svg
+    name: Super Symbiotic LRT
+    standard: EvmHypCollateral
+    symbol: weETHs
+  - addressOrDenom: 7Zx4wU1QAw98MfvnPFqRh1oyumek7G5VAX6TKB3U1tcn
+    chainName: eclipsemainnet
+    collateralAddressOrDenom: F72PqK74jc28zjC7kWDk6ykJ2ZAbjNzn2jaAY9v9M6om
+    connections:
+      - token: ethereum|ethereum|0xef899e92DA472E014bE795Ecce948308958E25A2
+    decimals: 9
+    logoURI: /deployments/warp_routes/weETHs/logo.svg
+    name: Super Symbiotic LRT
+    standard: SealevelHypSynthetic
+    symbol: weETHs
