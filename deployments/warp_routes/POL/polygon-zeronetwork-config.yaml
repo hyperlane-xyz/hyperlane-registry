@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x76Af114f7Ebe96C02a3e4AB10f1511a7A66057A1"
+    chainName: polygon
+    connections:
+      - token: ethereum|zeronetwork|0x3d7dBc3dab88C0e3c3Dcb6901a6163bb02417e6B
+    decimals: 18
+    logoURI: /deployments/warp_routes/POL/logo.svg
+    name: Polygon Ecosystem Token
+    standard: EvmHypNative
+    symbol: POL
+  - addressOrDenom: "0x3d7dBc3dab88C0e3c3Dcb6901a6163bb02417e6B"
+    chainName: zeronetwork
+    connections:
+      - token: ethereum|polygon|0x76Af114f7Ebe96C02a3e4AB10f1511a7A66057A1
+    decimals: 18
+    logoURI: /deployments/warp_routes/POL/logo.svg
+    name: Polygon Ecosystem Token
+    standard: EvmHypSynthetic
+    symbol: POL
