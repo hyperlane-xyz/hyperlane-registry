@@ -411,6 +411,27 @@ astarzkevm:
     - http: https://rpc.startale.com/astar-zkevm
     - http: https://astar-zkevm-rpc.dwellir.com
   technicalStack: polygoncdk
+auroratestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.testnet.aurora.dev/api
+      family: blockscout
+      name: auroratestnetscan
+      url: https://explorer.testnet.aurora.dev
+  chainId: 1313161555
+  deployer:
+    name: JunayedMh
+    url: https://github.com/JunayedMh
+  displayName: Aurora Testnet
+  domainId: 1313161555
+  isTestnet: true
+  name: auroratestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: AETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet.aurora.dev
 avalanche:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api
@@ -1087,6 +1108,40 @@ coredao:
     - http: https://rpc.ankr.com/core
     - http: https://core.drpc.org
     - http: https://rpc-core.icecreamswap.com
+  technicalStack: other
+cosmoshub:
+  bech32Prefix: cosmos
+  blockExplorers:
+    - apiUrl: https://apis.mintscan.io/v1/cosmos
+      family: other
+      name: MintScan
+      url: https://www.mintscan.io/cosmos
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 1
+  canonicalAsset: uatom
+  chainId: cosmoshub-4
+  displayName: Cosmos Hub
+  domainId: 1668248429
+  gasCurrencyCoinGeckoId: cosmos
+  grpcUrls:
+    - http: grpc-cosmoshub-ia.cosmosia.notional.ventures:443
+    - http: cosmos-grpc.polkachu.com:14990
+  name: cosmoshub
+  nativeToken:
+    decimals: 6
+    denom: uatom
+    name: Atom
+    symbol: ATOM
+  protocol: cosmos
+  restUrls:
+    - http: https://cosmos-lcd.quickapi.com:443
+    - http: https://rest.cosmoshub.goldenratiostaking.net
+  rpcUrls:
+    - http: https://cosmos-rpc.quickapi.com:443
+    - http: https://rpc-cosmoshub.ecostake.com
+  slip44: 118
   technicalStack: other
 cronos:
   blockExplorers:
@@ -2360,7 +2415,7 @@ inevm:
 injective:
   bech32Prefix: inj
   blockExplorers:
-    - apiUrl: https://www.mintscan.io/injective
+    - apiUrl: https://apis.mintscan.io/v1/injective
       family: other
       name: Mintscan
       url: https://www.mintscan.io/injective
@@ -2914,6 +2969,27 @@ metal:
   rpcUrls:
     - http: https://rpc.metall2.com
   technicalStack: opstack
+metall2testnet:
+  blockExplorers:
+    - apiUrl: https://testnet.explorer.metall2.com/api
+      family: blockscout
+      name: Metal L2 Testnet Explorer
+      url: https://testnet.explorer.metall2.com
+  chainId: 1740
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Metal L2 Testnet
+  domainId: 1740
+  isTestnet: true
+  name: metall2testnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet.rpc.metall2.com
 metertestnet:
   blockExplorers:
     - apiUrl: https://testnet.meter.io
@@ -3162,6 +3238,32 @@ moonbeam:
   rpcUrls:
     - http: https://rpc.api.moonbeam.network
   technicalStack: polkadotsubstrate
+moonriver:
+  blockExplorers:
+    - apiUrl: https://api-moonriver.moonscan.io/api
+      family: etherscan
+      name: Moonriver Chain Explorer
+      url: https://moonriver.moonscan.io
+  chainId: 1285
+  deployer:
+    name: guy93354
+    url: https://github.com/guy93354
+  displayName: Moonriver
+  domainId: 1285
+  isTestnet: false
+  name: moonriver
+  nativeToken:
+    decimals: 18
+    name: Moonriver
+    symbol: MOVR
+  protocol: ethereum
+  rpcUrls:
+    - http: https://moonriver.public.blastapi.io
+    - http: https://moonriver-rpc.dwellir.com
+    - http: https://moonriver.api.onfinality.io/public
+    - http: https://moonriver.unitedbloc.com:2000
+    - http: https://rpc.api.moonriver.moonbeam.network
+    - http: https://moonriver.drpc.org
 morph:
   blockExplorers:
     - apiUrl: https://explorer-api.morphl2.io/api
@@ -3241,7 +3343,7 @@ neoxt4:
 neutron:
   bech32Prefix: neutron
   blockExplorers:
-    - apiUrl: https://www.mintscan.io/neutron
+    - apiUrl: https://apis.mintscan.io/v1/neutron
       family: other
       name: Mintscan
       url: https://www.mintscan.io/neutron
@@ -3459,7 +3561,7 @@ orderly:
 osmosis:
   bech32Prefix: osmo
   blockExplorers:
-    - apiUrl: https://www.mintscan.io/osmosis
+    - apiUrl: https://apis.mintscan.io/v1/osmosis
       family: other
       name: Mintscan
       url: https://www.mintscan.io/osmosis
@@ -4387,7 +4489,7 @@ storytestnet:
 stride:
   bech32Prefix: stride
   blockExplorers:
-    - apiUrl: https://www.mintscan.io/stride
+    - apiUrl: https://apis.mintscan.io/v1/stride
       family: other
       name: Mintscan
       url: https://www.mintscan.io/stride

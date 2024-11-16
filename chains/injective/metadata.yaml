@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../schema.json
 bech32Prefix: inj
 blockExplorers:
-  - apiUrl: https://www.mintscan.io/injective
+  - apiUrl: https://apis.mintscan.io/v1/injective
     family: other
     name: Mintscan
     url: https://www.mintscan.io/injective
@@ -16,6 +16,7 @@ deployer:
   name: Abacus Works
   url: https://www.hyperlane.xyz
 displayName: Injective
+# Generated from: console.log(parseInt('0x'+Buffer.from('inj').toString('hex')))
 domainId: 6909546
 gasCurrencyCoinGeckoId: injective-protocol
 gasPrice:
