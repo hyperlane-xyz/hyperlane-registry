@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xb11d99AD37872068B14b5b9eeb3CE1A4E2244744"
+    chainName: bsc
+    connections:
+      - token: ethereum|zeronetwork|0xa32ea8B73C03eb21A8dC6126D9D0D65D1F8FC65d
+    decimals: 18
+    logoURI: /deployments/warp_routes/BNB/logo.svg
+    name: BNB
+    standard: EvmHypNative
+    symbol: BNB
+  - addressOrDenom: "0xa32ea8B73C03eb21A8dC6126D9D0D65D1F8FC65d"
+    chainName: zeronetwork
+    connections:
+      - token: ethereum|bsc|0xb11d99AD37872068B14b5b9eeb3CE1A4E2244744
+    decimals: 18
+    logoURI: /deployments/warp_routes/BNB/logo.svg
+    name: BNB
+    standard: EvmHypSynthetic
+    symbol: BNB

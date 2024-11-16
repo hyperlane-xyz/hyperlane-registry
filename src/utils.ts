@@ -1,4 +1,6 @@
 import { stringify } from 'yaml';
+import { ABACUS_WORKS_DEPLOYER_NAME } from './consts.js';
+import { ChainMetadata } from '@hyperlane-xyz/sdk';
 
 export function toYamlString(data: any, prefix?: string): string {
   const yamlString = stringify(data, { indent: 2, sortMapEntries: true });
@@ -52,4 +54,8 @@ export function objMerge(a: Record<string, any>, b: Record<string, any>, max_dep
   } else {
     return b ? b : a;
   }
+}
+
+export function isAbacusWorksChain(metadata: ChainMetadata): boolean {
+  return metadata.deployer?.name?.toLowerCase() === ABACUS_WORKS_DEPLOYER_NAME.toLowerCase();
 }

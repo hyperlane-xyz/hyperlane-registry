@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: 8CvWJS7SPtauAXinJUURkBDLsGUXWiiTdENkEFUPjQ9j
+    chainName: eclipsemainnet
+    collateralAddressOrDenom: 2tGbYEm4nuPFyS6zjDTELzEhvVKizgKewi6xT7AaSKzn
+    connections:
+      - token: sealevel|solanamainnet|8acihSm2QTGswniKgdgr4JBvJihZ1cakfvbqWCPBLoSp
+    decimals: 6
+    logoURI: /deployments/warp_routes/ORCA/logo.svg
+    name: Orca
+    standard: SealevelHypSynthetic
+    symbol: ORCA
+  - addressOrDenom: 8acihSm2QTGswniKgdgr4JBvJihZ1cakfvbqWCPBLoSp
+    chainName: solanamainnet
+    coinGeckoId: orca
+    collateralAddressOrDenom: orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE
+    connections:
+      - token: sealevel|eclipsemainnet|8CvWJS7SPtauAXinJUURkBDLsGUXWiiTdENkEFUPjQ9j
+    decimals: 6
+    logoURI: /deployments/warp_routes/ORCA/logo.svg
+    name: Orca
+    standard: SealevelHypCollateral
+    symbol: ORCA

@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../schema.json
+options:
+  interchainFeeConstants:
+    - addressOrDenom: ibc/BF3B4F53F3694B66E13C23107C84B6485BD2B96296BB7EC680EA77BBA75B4801
+      amount: 120000
+      destination: eclipsemainnet
+      origin: stride
+tokens:
+  # TIA on Stride to Eclipsemainnet
+  - addressOrDenom: stride1pvtesu3ve7qn7ctll2x495mrqf2ysp6fws68grvcu6f7n2ajghgsh2jdj6
+    chainName: stride
+    coinGeckoId: celestia
+    collateralAddressOrDenom: ibc/BF3B4F53F3694B66E13C23107C84B6485BD2B96296BB7EC680EA77BBA75B4801
+    connections:
+      - token: sealevel|eclipsemainnet|BpXHAiktwjx7fN6M9ST9wr6qKAsH27wZFhdHEhReJsR6
+    decimals: 6
+    logoURI: /deployments/warp_routes/TIA/logo.svg
+    name: Celestia
+    standard: CwHypCollateral
+    symbol: TIA
+  # TIA on Eclipsemainnet to Stride
+  - addressOrDenom: BpXHAiktwjx7fN6M9ST9wr6qKAsH27wZFhdHEhReJsR6
+    chainName: eclipsemainnet
+    collateralAddressOrDenom: 9RryNMhAVJpAwAGjCAMKbbTFwgjapqPkzpGMfTQhEjf8
+    connections:
+      - token: cosmos|stride|stride1pvtesu3ve7qn7ctll2x495mrqf2ysp6fws68grvcu6f7n2ajghgsh2jdj6
+    decimals: 6
+    logoURI: /deployments/warp_routes/TIA/logo.svg
+    name: Celestia
+    standard: SealevelHypSynthetic
+    symbol: TIA
+  # TIA, required for the IGP payment but not connected to any other chain
+  - addressOrDenom: ibc/BF3B4F53F3694B66E13C23107C84B6485BD2B96296BB7EC680EA77BBA75B4801
+    chainName: stride
+    decimals: 6
+    logoURI: /deployments/warp_routes/TIA/logo.svg
+    name: Celestia
+    standard: CosmosIbc
+    symbol: TIA

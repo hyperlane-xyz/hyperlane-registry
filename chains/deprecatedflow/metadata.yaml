@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://evm.flowscan.io/api
+    family: blockscout
+    name: EVM on Flow Explorer
+    url: https://evm.flowscan.io
+blocks:
+  confirmations: 1
+  estimateBlockTime: 1
+  reorgPeriod: 25
+chainId: 747
+displayName: DEPRECATED Flow EVM
+domainId: 747
+gasCurrencyCoinGeckoId: flow
+isTestnet: false
+name: deprecatedflow
+nativeToken:
+  decimals: 18
+  name: Flow
+  symbol: FLOW
+protocol: ethereum
+rpcUrls:
+  - http: https://mainnet.evm.nodes.onflow.org
+technicalStack: other
+transactionOverrides:
+  # the minimum accepted gas price for transactions is: 100000000 aka 0.1 gwei
+  gasPrice: 100000000
