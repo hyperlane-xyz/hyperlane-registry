@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Deploy to gnosis chiado testnet
+add Linea Sepolia Testnet and gnosis chiado testnet
