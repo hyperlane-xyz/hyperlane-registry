@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x647eeD57dFDd335f9B6f2a9DbDFe09f166b1AdaC"
+    chainName: bsc
+    collateralAddressOrDenom: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
+    connections:
+      - token: ethereum|polygon|0xFDf46770Da4F907c09aEd92299552DC9c7996d99
+      - token: ethereum|prom|0x424712Bec7c94a0F804c50F77B641A24F33A138e
+    decimals: 18
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0xFDf46770Da4F907c09aEd92299552DC9c7996d99"
+    chainName: polygon
+    connections:
+      - token: ethereum|bsc|0x647eeD57dFDd335f9B6f2a9DbDFe09f166b1AdaC
+      - token: ethereum|prom|0x424712Bec7c94a0F804c50F77B641A24F33A138e
+    decimals: 18
+    name: USD Coin
+    standard: EvmHypSynthetic
+    symbol: USDC
+  - addressOrDenom: "0x424712Bec7c94a0F804c50F77B641A24F33A138e"
+    chainName: prom
+    collateralAddressOrDenom: "0xcd1D86a6fDb32e9525C40a1a91892F33A0617E13"
+    connections:
+      - token: ethereum|bsc|0x647eeD57dFDd335f9B6f2a9DbDFe09f166b1AdaC
+      - token: ethereum|polygon|0xFDf46770Da4F907c09aEd92299552DC9c7996d99
+    decimals: 18
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
