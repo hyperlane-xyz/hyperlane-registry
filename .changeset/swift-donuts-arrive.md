@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add sepolia to alfajores warp route
+Add wbtc, bsc, pol, usdb for zeronetwork
