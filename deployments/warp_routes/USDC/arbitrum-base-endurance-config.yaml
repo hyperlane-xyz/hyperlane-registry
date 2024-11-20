@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xa66a9C0112a428d407388Db87659E9C66F3eF29c"
+    chainName: arbitrum
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+    connections:
+      - token: ethereum|endurance|0xa66a9C0112a428d407388Db87659E9C66F3eF29c
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0xa66a9C0112a428d407388Db87659E9C66F3eF29c"
+    chainName: base
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    connections:
+      - token: ethereum|endurance|0xa66a9C0112a428d407388Db87659E9C66F3eF29c
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0xa66a9C0112a428d407388Db87659E9C66F3eF29c"
+    chainName: endurance
+    connections:
+      - token: ethereum|arbitrum|0xa66a9C0112a428d407388Db87659E9C66F3eF29c
+      - token: ethereum|base|0xa66a9C0112a428d407388Db87659E9C66F3eF29c
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateralFiat
+    symbol: USDC
