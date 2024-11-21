@@ -1,26 +1,26 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/288/etherscan/api
-    family: routescan
-    name: bobascan
-    url: https://bobascan.com
+  - apiUrl: https://explorer.superseed.xyz/api
+    family: blockscout
+    name: Superseed Explorer
+    url: https://explorer.superseed.xyz
 blocks:
   confirmations: 1
   estimateBlockTime: 2
   reorgPeriod: 5
-chainId: 288
+chainId: 5330
 deployer:
   name: Abacus Works
   url: https://www.hyperlane.xyz
-displayName: Boba Mainnet
-domainId: 288
+displayName: Superseed
+domainId: 5330
 gasCurrencyCoinGeckoId: ethereum
-name: boba
+name: superseed
 nativeToken:
   decimals: 18
   name: Ether
   symbol: ETH
 protocol: ethereum
 rpcUrls:
-  - http: https://mainnet.boba.network
+  - http: https://mainnet.superseed.xyz
 technicalStack: opstack
