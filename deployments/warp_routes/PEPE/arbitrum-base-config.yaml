@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xf515f2DC76D736502Ff6272CA267C111FF91737F"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0x25d887ce7a35172c62febfd67a1856f20faebb00"
+    connections:
+      - token: ethereum|base|0x3bf2fFaC623C8e21BEC9A02678489f9CE588dE89
+    decimals: 18
+    name: Pepe
+    standard: EvmHypCollateral
+    symbol: PEPE
+  - addressOrDenom: "0x3bf2fFaC623C8e21BEC9A02678489f9CE588dE89"
+    chainName: base
+    connections:
+      - token: ethereum|arbitrum|0xf515f2DC76D736502Ff6272CA267C111FF91737F
+    decimals: 18
+    name: Pepe
+    standard: EvmHypSynthetic
+    symbol: PEPE
