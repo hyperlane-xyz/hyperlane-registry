@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x76501699684C542A5b0FDf0A4a026e735e99f543"
+    chainName: arbitrum
+    connections:
+      - token: ethereum|base|0x352eD517260402684B9591586e1804E9dC54480B
+    decimals: 18
+    name: MANTRA
+    standard: EvmHypSynthetic
+    symbol: OM
+  - addressOrDenom: "0x352eD517260402684B9591586e1804E9dC54480B"
+    chainName: base
+    collateralAddressOrDenom: "0x3992b27da26848c2b19cea6fd25ad5568b68ab98"
+    connections:
+      - token: ethereum|arbitrum|0x76501699684C542A5b0FDf0A4a026e735e99f543
+    decimals: 18
+    name: MANTRA
+    standard: EvmHypCollateral
+    symbol: OM
