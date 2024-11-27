@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add coinGeckoIds for more warp routes
+feat: add DeepBrainChain testnet

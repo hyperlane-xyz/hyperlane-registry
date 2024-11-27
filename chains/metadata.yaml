@@ -683,13 +683,17 @@ boba:
       family: routescan
       name: bobascan
       url: https://bobascan.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
   chainId: 288
   deployer:
-    name: Boba Network
-    url: https://boba.network
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Boba Mainnet
   domainId: 288
-  isTestnet: false
+  gasCurrencyCoinGeckoId: ethereum
   name: boba
   nativeToken:
     decimals: 18
@@ -698,6 +702,7 @@ boba:
   protocol: ethereum
   rpcUrls:
     - http: https://mainnet.boba.network
+  technicalStack: opstack
 bobabnb:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/56288/etherscan/api
@@ -798,6 +803,35 @@ bsctestnet:
   rpcUrls:
     - http: https://bsc-testnet.publicnode.com
     - http: https://bsc-testnet.blockpi.network/v1/rpc/public
+bsquared:
+  blockExplorers:
+    - apiUrl: https://explorer.bsquared.network/api
+      family: etherscan
+      name: B² Network Explorer
+      url: https://explorer.bsquared.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 3
+    reorgPeriod: 5
+  chainId: 223
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: B² Network
+  domainId: 223
+  gasCurrencyCoinGeckoId: bitcoin
+  name: bsquared
+  nativeToken:
+    decimals: 18
+    name: Bitcoin
+    symbol: BTC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.bsquared.network
+    - http: https://rpc.ankr.com/b2
+    - http: https://mainnet.b2-rpc.com
+    - http: https://b2-mainnet.alt.technology
+  technicalStack: other
 camptestnet:
   blockExplorers:
     - apiUrl: https://camp-network-testnet.blockscout.com/api
@@ -1524,6 +1558,35 @@ dogechain:
   rpcUrls:
     - http: https://rpc.dogechain.dog
   technicalStack: polygoncdk
+duckchain:
+  blockExplorers:
+    - apiUrl: https://scan.duckchain.io/api
+      family: blockscout
+      name: DuckChain Explorer
+      url: https://scan.duckchain.io
+  blocks:
+    confirmations: 3
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 5545
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: DuckChain
+  domainId: 5545
+  gasCurrencyCoinGeckoId: the-open-network
+  index:
+    from: 1149918
+  name: duckchain
+  nativeToken:
+    decimals: 18
+    name: Toncoin
+    symbol: TON
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.duckchain.io
+    - http: https://rpc-hk.duckchain.io
+  technicalStack: arbitrumnitro
 ebi:
   blockExplorers:
     - apiUrl: https://explorer.ebi.xyz/api
@@ -3067,7 +3130,7 @@ mevmdevnet:
     - http: https://mevm.devnet.imola.movementlabs.xyz
 mint:
   blockExplorers:
-    - apiUrl: https://explorer.mintchain.io/api/eth-rpc
+    - apiUrl: https://explorer.mintchain.io/api
       family: blockscout
       name: Mint Explorer
       url: https://explorer.mintchain.io
@@ -4646,6 +4709,32 @@ superpositiontestnet:
   rpcUrls:
     - http: https://testnet-rpc.superposition.so
   technicalStack: arbitrumnitro
+superseed:
+  blockExplorers:
+    - apiUrl: https://explorer.superseed.xyz/api
+      family: blockscout
+      name: Superseed Explorer
+      url: https://explorer.superseed.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 5330
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Superseed
+  domainId: 5330
+  gasCurrencyCoinGeckoId: ethereum
+  name: superseed
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet.superseed.xyz
+  technicalStack: opstack
 superseedtestnet:
   blockExplorers:
     - apiUrl: https://sepolia-explorer.superseed.xyz/api
@@ -4836,6 +4925,32 @@ u2utestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc-nebulas-testnet.uniultra.xyz
+unichain:
+  blockExplorers:
+    - apiUrl: https://unichain.blockscout.com/api
+      family: blockscout
+      name: Unichain Explorer
+      url: https://unichain.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 130
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Unichain
+  domainId: 130
+  gasCurrencyCoinGeckoId: ethereum
+  name: unichain
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet.unichain.org
+  technicalStack: opstack
 unichaintestnet:
   blockExplorers:
     - apiUrl: https://unichain-sepolia.blockscout.com/api
@@ -4861,6 +4976,32 @@ unichaintestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://sepolia.unichain.org
+vana:
+  blockExplorers:
+    - apiUrl: https://vanascan.io/api/eth-rpc
+      family: blockscout
+      name: Vana Explorer
+      url: https://vanascan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 5
+  chainId: 1480
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Vana
+  domainId: 1480
+  gasCurrencyCoinGeckoId: vana
+  name: vana
+  nativeToken:
+    decimals: 18
+    name: Vana
+    symbol: VANA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.vana.org
+  technicalStack: other
 viction:
   blockExplorers:
     - apiUrl: https://www.vicscan.xyz/api
