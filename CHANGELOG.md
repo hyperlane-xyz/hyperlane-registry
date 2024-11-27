@@ -1,5 +1,24 @@
 # @hyperlane-xyz/registry
 
+## 6.2.0
+
+### Minor Changes
+
+- 773fedb: feat: add aurora testnet
+- aa0abe3: add cbBTC,USDC,USDT adn ETH warp routes on zero
+- 069afd6: Add USDC Endurance <> Arbitrum <> Base deployment
+- d50740e: update the zeronetwork eth warp route to add lisk network and replace usdc route with new one
+- 9870896: Add coinGeckoId to a bunch of new warp routes, set Endurance USDC token to EvmHypCollateral
+- fa13e99: Deploy to B² Network ("bsquared").
+- 3cd1c7d: Deploy new core chains: boba, duckchain, superseed, unichain, vana.
+- 385b839: Add apxETH and ezSOL deploys to Eclipse
+- b76c898: Added cbBTC between Ethereum and Flowmainnet
+- ae7df1b: Add apxETH and ezSOL logos & metadata
+- a5e34c8: feat: add Moonriver, Metal L2 Testnet
+- f897db2: Add wbtc, bsc, pol, usdb for zeronetwork
+- 8201350: Add coinGeckoIds for more warp routes
+- 0dbee4c: removed usdt on bsc for usdt route for zeronetwork
+
 ## 6.1.0
 
 ### Minor Changes
