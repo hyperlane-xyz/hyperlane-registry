@@ -1248,6 +1248,31 @@ cyber:
     - http: https://rpc.cyber.co
     - http: https://cyber.alt.technology
   technicalStack: opstack
+deepbrainchaintestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.dbcscan.io/api
+      family: blockscout
+      name: DeepBrainChain Testnet
+      url: https://testnet.dbcscan.io
+  blocks:
+    confirmations: 2
+    estimateBlockTime: 6
+    reorgPeriod: finalized
+  chainId: 19850818
+  deployer:
+    name: frank0528
+    url: https://github.com/frank0528
+  displayName: DeepBrainChain Testnet
+  domainId: 19850818
+  isTestnet: true
+  name: deepbrainchaintestnet
+  nativeToken:
+    decimals: 18
+    name: DeepBrainChain
+    symbol: tDBC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc-testnet.dbcwallet.io
 degenchain:
   blockExplorers:
     - apiUrl: https://explorer.degen.tips/api/eth-rpc
@@ -3948,6 +3973,31 @@ rarichain:
   rpcUrls:
     - http: https://mainnet.rpc.rarichain.org/http
   technicalStack: arbitrumnitro
+reactivekopli:
+  blockExplorers:
+    - apiUrl: https://kopli-api.reactscan.net
+      family: other
+      name: Kopli Reactscan
+      url: https://kopli.reactscan.net
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 7
+    reorgPeriod: safe
+  chainId: 5318008
+  deployer:
+    name: Reactive Network
+    url: https://reactive.network
+  displayName: Kopli Reactive
+  domainId: 5318008
+  isTestnet: true
+  name: reactivekopli
+  nativeToken:
+    decimals: 18
+    name: Kopli React
+    symbol: kREACT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://kopli-rpc.rkt.ink
 real:
   blockExplorers:
     - apiUrl: https://explorer.re.al/api/eth-rpc
@@ -4756,6 +4806,32 @@ superseedtestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://sepolia.superseed.xyz
+swell:
+  blockExplorers:
+    - apiUrl: https://explorer.swellnetwork.io/api
+      family: blockscout
+      name: Swell Explorer
+      url: https://explorer.swellnetwork.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 1923
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Swell
+  domainId: 1923
+  gasCurrencyCoinGeckoId: ethereum
+  name: swell
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://swell-mainnet.alt.technology
+  technicalStack: opstack
 taiko:
   blockExplorers:
     - apiUrl: https://api.taikoscan.io/api
