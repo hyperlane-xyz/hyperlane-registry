@@ -4956,6 +4956,33 @@ tenet:
   rpcUrls:
     - http: https://rpc.tenet.org
     - http: https://tenet-evm.publicnode.com
+treasure:
+  blockExplorers:
+    - apiUrl: https://rpc-explorer-verify.treasure.lol/contract_verification
+      family: etherscan
+      name: Treasurescan
+      url: https://treasurescan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 61166
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Treasure
+  displayNameShort: Treasure
+  domainId: 61166
+  gasCurrencyCoinGeckoId: magic
+  name: treasure
+  nativeToken:
+    decimals: 18
+    name: MAGIC
+    symbol: MAGIC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.treasure.lol
+  technicalStack: zksync
 treasuretopaz:
   blockExplorers:
     - apiUrl: https://rpc-explorer-verify.topaz.treasure.lol/contract_verification
@@ -5293,6 +5320,34 @@ zircuit:
     - http: https://zircuit1-mainnet.liquify.com
     - http: https://zircuit-mainnet.drpc.org
   technicalStack: opstack
+zklink:
+  blockExplorers:
+    - apiUrl: https://explorer.zklink.io/contract_verification
+      family: etherscan
+      name: zkLink Nova Block Explorer
+      url: https://explorer.zklink.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 810180
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: zkLink Nova
+  displayNameShort: zkLink
+  domainId: 810180
+  gasCurrencyCoinGeckoId: ethereum
+  name: zklink
+  nativeToken:
+    decimals: 18
+    name: Ethereum
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.zklink.io
+    - http: https://rpc.zklink.network
+  technicalStack: zksync
 zksync:
   blockExplorers:
     - apiUrl: https://zksync2-mainnet-explorer.zksync.io/contract_verification
