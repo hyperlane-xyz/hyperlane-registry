@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Deploy to treasure, zklink.
+Deploy to appchain, treasure, zklink.
