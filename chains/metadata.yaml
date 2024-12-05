@@ -165,6 +165,34 @@ apechain:
   rpcUrls:
     - http: https://rpc.apechain.com/http
   technicalStack: arbitrumnitro
+appchain:
+  blockExplorers:
+    - apiUrl: https://explorer.appchain.xyz/api
+      family: blockscout
+      name: AppChain Explorer
+      url: https://explorer.appchain.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 466
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: AppChain
+  domainId: 466
+  gasCurrencyCoinGeckoId: ethereum
+  index:
+    from: 190
+  name: appchain
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://appchain.calderachain.xyz/http
+  technicalStack: arbitrumnitro
 arbitrum:
   blockExplorers:
     - apiUrl: https://api.arbiscan.io/api
@@ -4971,7 +4999,6 @@ treasure:
     name: Abacus Works
     url: https://www.hyperlane.xyz
   displayName: Treasure
-  displayNameShort: Treasure
   domainId: 61166
   gasCurrencyCoinGeckoId: magic
   name: treasure
