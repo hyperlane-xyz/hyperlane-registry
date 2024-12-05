@@ -165,6 +165,34 @@ apechain:
   rpcUrls:
     - http: https://rpc.apechain.com/http
   technicalStack: arbitrumnitro
+appchain:
+  blockExplorers:
+    - apiUrl: https://explorer.appchain.xyz/api
+      family: blockscout
+      name: AppChain Explorer
+      url: https://explorer.appchain.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 466
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: AppChain
+  domainId: 466
+  gasCurrencyCoinGeckoId: ethereum
+  index:
+    from: 190
+  name: appchain
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://appchain.calderachain.xyz/http
+  technicalStack: arbitrumnitro
 arbitrum:
   blockExplorers:
     - apiUrl: https://api.arbiscan.io/api
@@ -4823,6 +4851,7 @@ swell:
   displayName: Swell
   domainId: 1923
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://trx-swell.safe.protofire.io
   name: swell
   nativeToken:
     decimals: 18
@@ -4956,6 +4985,32 @@ tenet:
   rpcUrls:
     - http: https://rpc.tenet.org
     - http: https://tenet-evm.publicnode.com
+treasure:
+  blockExplorers:
+    - apiUrl: https://rpc-explorer-verify.treasure.lol/contract_verification
+      family: etherscan
+      name: Treasurescan
+      url: https://treasurescan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 61166
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Treasure
+  domainId: 61166
+  gasCurrencyCoinGeckoId: magic
+  name: treasure
+  nativeToken:
+    decimals: 18
+    name: MAGIC
+    symbol: MAGIC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.treasure.lol
+  technicalStack: zksync
 treasuretopaz:
   blockExplorers:
     - apiUrl: https://rpc-explorer-verify.topaz.treasure.lol/contract_verification
@@ -5293,6 +5348,34 @@ zircuit:
     - http: https://zircuit1-mainnet.liquify.com
     - http: https://zircuit-mainnet.drpc.org
   technicalStack: opstack
+zklink:
+  blockExplorers:
+    - apiUrl: https://explorer.zklink.io/contract_verification
+      family: etherscan
+      name: zkLink Nova Block Explorer
+      url: https://explorer.zklink.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 810180
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: zkLink Nova
+  displayNameShort: zkLink
+  domainId: 810180
+  gasCurrencyCoinGeckoId: ethereum
+  name: zklink
+  nativeToken:
+    decimals: 18
+    name: Ethereum
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.zklink.io
+    - http: https://rpc.zklink.network
+  technicalStack: zksync
 zksync:
   blockExplorers:
     - apiUrl: https://zksync2-mainnet-explorer.zksync.io/contract_verification
