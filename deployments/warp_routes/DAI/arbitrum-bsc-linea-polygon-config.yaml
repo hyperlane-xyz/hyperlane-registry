@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xEb881635A2Dd87d2b7C0F7B206810fa2A1956552"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1"
+    connections:
+      - token: ethereum|bsc|0xEb881635A2Dd87d2b7C0F7B206810fa2A1956552
+      - token: ethereum|linea|0xdF17853b7a56499d7d6CAe0cEa3003EfC8257B5b
+      - token: ethereum|polygon|0xEb881635A2Dd87d2b7C0F7B206810fa2A1956552
+    decimals: 18
+    logoURI: /deployments/warp_routes/DAI/logo.svg
+    name: Dai Stablecoin
+    standard: EvmHypCollateral
+    symbol: DAI
+  - addressOrDenom: "0xEb881635A2Dd87d2b7C0F7B206810fa2A1956552"
+    chainName: bsc
+    collateralAddressOrDenom: "0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3"
+    connections:
+      - token: ethereum|arbitrum|0xEb881635A2Dd87d2b7C0F7B206810fa2A1956552
+      - token: ethereum|linea|0xdF17853b7a56499d7d6CAe0cEa3003EfC8257B5b
+      - token: ethereum|polygon|0xEb881635A2Dd87d2b7C0F7B206810fa2A1956552
+    decimals: 18
+    logoURI: /deployments/warp_routes/DAI/logo.svg
+    name: Dai Stablecoin
+    standard: EvmHypCollateral
+    symbol: DAI
+  - addressOrDenom: "0xdF17853b7a56499d7d6CAe0cEa3003EfC8257B5b"
+    chainName: linea
+    connections:
+      - token: ethereum|arbitrum|0xEb881635A2Dd87d2b7C0F7B206810fa2A1956552
+      - token: ethereum|bsc|0xEb881635A2Dd87d2b7C0F7B206810fa2A1956552
+      - token: ethereum|polygon|0xEb881635A2Dd87d2b7C0F7B206810fa2A1956552
+    decimals: 18
+    logoURI: /deployments/warp_routes/DAI/logo.svg
+    name: Dai Stablecoin
+    standard: EvmHypSynthetic
+    symbol: DAI
+  - addressOrDenom: "0xEb881635A2Dd87d2b7C0F7B206810fa2A1956552"
+    chainName: polygon
+    collateralAddressOrDenom: "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063"
+    connections:
+      - token: ethereum|arbitrum|0xEb881635A2Dd87d2b7C0F7B206810fa2A1956552
+      - token: ethereum|bsc|0xEb881635A2Dd87d2b7C0F7B206810fa2A1956552
+      - token: ethereum|linea|0xdF17853b7a56499d7d6CAe0cEa3003EfC8257B5b
+    decimals: 18
+    logoURI: /deployments/warp_routes/DAI/logo.svg
+    name: Dai Stablecoin
+    standard: EvmHypCollateral
+    symbol: DAI
