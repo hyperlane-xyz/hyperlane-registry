@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xB9D49E18c69628C6D6B12Ab06F1918C4c4fe9546"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9"
+    connections:
+      - token: ethereum|ethereum|0xBA18df45758a09647F1902a06807844EA5DD47b4
+      - token: ethereum|optimism|0xE9ef49e77c9f4751fBb0176836da70D062bBae02
+      - token: ethereum|polygon|0x009eA8aBe4CE04fFA4A2b2Ec62cBAC859fc48B19
+      - token: ethereum|prom|0x7e942605B5028E3B751dBB5Ef8afC5CF85a5A7eD
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypCollateral
+    symbol: USDT
+  - addressOrDenom: "0xBA18df45758a09647F1902a06807844EA5DD47b4"
+    chainName: ethereum
+    collateralAddressOrDenom: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+    connections:
+      - token: ethereum|arbitrum|0xB9D49E18c69628C6D6B12Ab06F1918C4c4fe9546
+      - token: ethereum|optimism|0xE9ef49e77c9f4751fBb0176836da70D062bBae02
+      - token: ethereum|polygon|0x009eA8aBe4CE04fFA4A2b2Ec62cBAC859fc48B19
+      - token: ethereum|prom|0x7e942605B5028E3B751dBB5Ef8afC5CF85a5A7eD
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypCollateral
+    symbol: USDT
+  - addressOrDenom: "0xE9ef49e77c9f4751fBb0176836da70D062bBae02"
+    chainName: optimism
+    collateralAddressOrDenom: "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58"
+    connections:
+      - token: ethereum|arbitrum|0xB9D49E18c69628C6D6B12Ab06F1918C4c4fe9546
+      - token: ethereum|ethereum|0xBA18df45758a09647F1902a06807844EA5DD47b4
+      - token: ethereum|polygon|0x009eA8aBe4CE04fFA4A2b2Ec62cBAC859fc48B19
+      - token: ethereum|prom|0x7e942605B5028E3B751dBB5Ef8afC5CF85a5A7eD
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypCollateral
+    symbol: USDT
+  - addressOrDenom: "0x009eA8aBe4CE04fFA4A2b2Ec62cBAC859fc48B19"
+    chainName: polygon
+    collateralAddressOrDenom: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
+    connections:
+      - token: ethereum|arbitrum|0xB9D49E18c69628C6D6B12Ab06F1918C4c4fe9546
+      - token: ethereum|ethereum|0xBA18df45758a09647F1902a06807844EA5DD47b4
+      - token: ethereum|optimism|0xE9ef49e77c9f4751fBb0176836da70D062bBae02
+      - token: ethereum|prom|0x7e942605B5028E3B751dBB5Ef8afC5CF85a5A7eD
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypCollateral
+    symbol: USDT
+  - addressOrDenom: "0x7e942605B5028E3B751dBB5Ef8afC5CF85a5A7eD"
+    chainName: prom
+    connections:
+      - token: ethereum|arbitrum|0xB9D49E18c69628C6D6B12Ab06F1918C4c4fe9546
+      - token: ethereum|ethereum|0xBA18df45758a09647F1902a06807844EA5DD47b4
+      - token: ethereum|optimism|0xE9ef49e77c9f4751fBb0176836da70D062bBae02
+      - token: ethereum|polygon|0x009eA8aBe4CE04fFA4A2b2Ec62cBAC859fc48B19
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypSynthetic
+    symbol: USDT

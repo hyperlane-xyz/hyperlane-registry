@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x700b9322F6Cce0c8EFF4754bE9AcE88Ce6582821"
+    chainName: bsc
+    collateralAddressOrDenom: "0xaf53d56ff99f1322515e54fdde93ff8b3b7dafd5"
+    connections:
+      - token: ethereum|polygon|0x23Ae469604E3c1b581ADabf07c035472FbdB5Ee1
+      - token: ethereum|prom|0xc1f4b896B94bd57dEfB7b6e630Bb91995b86CbAC
+    decimals: 18
+    logoURI: /deployments/warp_routes/PROM/logo.svg
+    name: Prometeus
+    standard: EvmHypCollateral
+    symbol: PROM
+  - addressOrDenom: "0x23Ae469604E3c1b581ADabf07c035472FbdB5Ee1"
+    chainName: polygon
+    connections:
+      - token: ethereum|bsc|0x700b9322F6Cce0c8EFF4754bE9AcE88Ce6582821
+      - token: ethereum|prom|0xc1f4b896B94bd57dEfB7b6e630Bb91995b86CbAC
+    decimals: 18
+    logoURI: /deployments/warp_routes/PROM/logo.svg
+    name: Prometeus
+    standard: EvmHypSynthetic
+    symbol: PROM
+  - addressOrDenom: "0xc1f4b896B94bd57dEfB7b6e630Bb91995b86CbAC"
+    chainName: prom
+    connections:
+      - token: ethereum|bsc|0x700b9322F6Cce0c8EFF4754bE9AcE88Ce6582821
+      - token: ethereum|polygon|0x23Ae469604E3c1b581ADabf07c035472FbdB5Ee1
+    decimals: 18
+    logoURI: /deployments/warp_routes/PROM/logo.svg
+    name: Prometeus
+    standard: EvmHypNative
+    symbol: PROM
