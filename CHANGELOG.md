@@ -1,5 +1,20 @@
 # @hyperlane-xyz/registry
 
+## 6.3.0
+
+### Minor Changes
+
+- c7891cd: Deploy to appchain, treasure, zklink. Add `gnosisSafeTransactionServiceUrl` for `swell`.
+- 98b8950: feat: add reactive kopli chain
+- 7b1601f: Add OORT Warp routes
+- 1591e4a: Deploy new core chains: swell, lumiaprism.
+- b044eca: feat: add DeepBrainChain testnet
+
+### Patch Changes
+
+- 7fb8d51: Update default ISMs for Nov 21 chain deploy batch.
+- e2cc33e: removed the usdc route to zeronetwork that did not include lisk mainnet
+
 ## 6.2.0
 
 ### Minor Changes
