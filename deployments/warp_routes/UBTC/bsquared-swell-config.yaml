@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xC4F464C89184c7870858A8B12ca822daB6ed04F3"
+    chainName: bsquared
+    collateralAddressOrDenom: "0x796e4D53067FF374B89b2Ac101ce0c1f72ccaAc2"
+    connections:
+      - token: ethereum|swell|0xb5668713E9BA8bC96f97D691663E70b54CE90b0A
+    decimals: 18
+    name: uBTC
+    standard: EvmHypCollateral
+    symbol: uBTC
+  - addressOrDenom: "0xb5668713E9BA8bC96f97D691663E70b54CE90b0A"
+    chainName: swell
+    connections:
+      - token: ethereum|bsquared|0xC4F464C89184c7870858A8B12ca822daB6ed04F3
+    decimals: 18
+    name: uBTC
+    standard: EvmHypSynthetic
+    symbol: uBTC
