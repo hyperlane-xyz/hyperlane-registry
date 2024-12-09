@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x15366f1a7c71baa6fd1c8FAB56b30faf98d56a3B"
+    chainName: bsc
+    collateralAddressOrDenom: "0x5651fA7a726B9Ec0cAd00Ee140179912B6E73599"
+    connections:
+      - token: ethereum|oortmainnet|0x15366f1a7c71baa6fd1c8FAB56b30faf98d56a3B
+      - token: ethereum|ethereum|0x70f34d5cC2527Cd81de9F6e7C9208f26f7252697
+    decimals: 18
+    logoURI: /deployments/warp_routes/OORT/logo.svg
+    name: OORT
+    standard: EvmHypCollateral
+    symbol: OORT
+  - addressOrDenom: "0x15366f1a7c71baa6fd1c8FAB56b30faf98d56a3B"
+    chainName: oortmainnet
+    connections:
+      - token: ethereum|bsc|0x15366f1a7c71baa6fd1c8FAB56b30faf98d56a3B
+      - token: ethereum|ethereum|0x70f34d5cC2527Cd81de9F6e7C9208f26f7252697
+    decimals: 18
+    logoURI: /deployments/warp_routes/OORT/logo.svg
+    name: OORT
+    standard: EvmHypNative
+    symbol: OORT
+  - addressOrDenom: "0x70f34d5cC2527Cd81de9F6e7C9208f26f7252697"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x5651fA7a726B9Ec0cAd00Ee140179912B6E73599"
+    connections:
+      - token: ethereum|bsc|0x15366f1a7c71baa6fd1c8FAB56b30faf98d56a3B
+      - token: ethereum|oortmainnet|0x15366f1a7c71baa6fd1c8FAB56b30faf98d56a3B
+    decimals: 18
+    logoURI: /deployments/warp_routes/OORT/logo.svg
+    name: OORT
+    standard: EvmHypCollateral
+    symbol: OORT

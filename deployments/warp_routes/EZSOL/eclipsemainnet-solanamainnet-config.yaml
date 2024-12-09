@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: CshTfxXWMvnRAwBTCjQ4577bkP5po5ZuNG1QTuQxA5Au
+    chainName: eclipsemainnet
+    collateralAddressOrDenom: Fu5P5ikrnQ8BKZECJ1XeeDAaTgWJUrcjw8JmFrNA8TJk
+    connections:
+      - token: sealevel|solanamainnet|b5pMgizA9vrGRt3hVqnU7vUVGBQUnLpwPzcJhG1ucyQ
+    decimals: 9
+    logoURI: /deployments/warp_routes/EZSOL/logo.svg
+    name: Renzo Restaked SOL
+    standard: SealevelHypSynthetic
+    symbol: ezSOL
+  - addressOrDenom: b5pMgizA9vrGRt3hVqnU7vUVGBQUnLpwPzcJhG1ucyQ
+    chainName: solanamainnet
+    coinGeckoId: renzo-restaked-sol
+    collateralAddressOrDenom: ezSoL6fY1PVdJcJsUpe5CM3xkfmy3zoVCABybm5WtiC
+    connections:
+      - token: sealevel|eclipsemainnet|CshTfxXWMvnRAwBTCjQ4577bkP5po5ZuNG1QTuQxA5Au
+    decimals: 9
+    logoURI: /deployments/warp_routes/EZSOL/logo.svg
+    name: Renzo Restaked SOL
+    standard: SealevelHypCollateral
+    symbol: ezSOL

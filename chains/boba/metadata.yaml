@@ -4,13 +4,17 @@ blockExplorers:
     family: routescan
     name: bobascan
     url: https://bobascan.com
+blocks:
+  confirmations: 1
+  estimateBlockTime: 2
+  reorgPeriod: 5
 chainId: 288
 deployer:
-  name: Boba Network
-  url: https://boba.network
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
 displayName: Boba Mainnet
 domainId: 288
-isTestnet: false
+gasCurrencyCoinGeckoId: ethereum
 name: boba
 nativeToken:
   decimals: 18
@@ -19,3 +23,4 @@ nativeToken:
 protocol: ethereum
 rpcUrls:
   - http: https://mainnet.boba.network
+technicalStack: opstack
