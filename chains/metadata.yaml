@@ -307,6 +307,31 @@ arcadiatestnet2:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.khalani.network
+argochaintestnet:
+  blockExplorers:
+    - apiUrl: https://test-scanner.devolvedai.com/api
+      family: other
+      name: Argochain Testnet Explorer
+      url: https://test-scanner.devolvedai.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 20
+  chainId: 1298
+  deployer:
+    name: pavondunbar
+    url: https://github.com/pavondunbar
+  displayName: Argochain Testnet
+  domainId: 1298
+  isTestnet: true
+  name: argochaintestnet
+  nativeToken:
+    decimals: 18
+    name: Argocoin
+    symbol: AGC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc-testnet.devolvedai.com
 artelatestnet:
   blockExplorers:
     - apiUrl: https://betanet-scan.artela.network/api
@@ -1797,6 +1822,7 @@ ethereum:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
+    - http: https://rpc.ankr.com/eth
     - http: https://ethereum.publicnode.com
     - http: https://cloudflare-eth.com
   technicalStack: other
@@ -2270,6 +2296,32 @@ gnosis:
         maxBlockRange: 10000
         minBlockNumber: 25997478
   technicalStack: other
+gnosischiadotestnet:
+  blockExplorers:
+    - apiUrl: https://gnosis-chiado.blockscout.com/api
+      family: blockscout
+      name: Chiado Explorer
+      url: https://gnosis-chiado.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 5
+    reorgPeriod: 5
+  chainId: 10200
+  deployer:
+    name: k4ctuss
+    url: https://github.com/k4ctuss
+  displayName: Gnosis Chiado Testnet
+  domainId: 10200
+  isTestnet: true
+  name: gnosischiadotestnet
+  nativeToken:
+    decimals: 18
+    name: xDai
+    symbol: xDai
+  protocol: ethereum
+  rpcUrls:
+    - http: https://gnosis-chiado-rpc.publicnode.com
+  technicalStack: other
 gravity:
   blockExplorers:
     - apiUrl: https://explorer.gravity.xyz/api
@@ -2498,6 +2550,32 @@ immutablezkevmmainnet:
   transactionOverrides:
     maxFeePerGas: 100000000000
     maxPriorityFeePerGas: 100000000000
+inclusivelayertestnet:
+  blockExplorers:
+    - apiUrl: http://192.241.245.190/api
+      family: blockscout
+      name: Inclusive Layer Testnet Explorer
+      url: http://192.241.245.190
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 60
+    reorgPeriod: 1
+  chainId: 71461164656
+  deployer:
+    name: aditya172926
+    url: https://github.com/aditya172926
+  displayName: Inclusive Layer Testnet
+  domainId: 3461164656
+  isTestnet: true
+  name: inclusivelayertestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: http://192.241.245.190:18449
+  technicalStack: arbitrumnitro
 inevm:
   blockExplorers:
     - apiUrl: https://inevm.calderaexplorer.xyz/api
@@ -2778,6 +2856,29 @@ linea:
     - http: https://1rpc.io/linea
     - http: https://linea.drpc.org
   technicalStack: other
+lineasepolia:
+  blockExplorers:
+    - apiUrl: https://api-sepolia.lineascan.build/api
+      family: etherscan
+      name: Linea Sepolia Explorer
+      url: https://sepolia.lineascan.build
+  chainId: 59141
+  deployer:
+    name: k4ctuss
+    url: https://github.com/k4ctuss
+  displayName: Linea Sepolia
+  domainId: 59141
+  isTestnet: true
+  name: lineasepolia
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.sepolia.linea.build
+    - http: https://linea-sepolia-rpc.publicnode.com
+    - http: https://linea-sepolia.blockpi.network/v1/rpc/public
 lisk:
   blockExplorers:
     - apiUrl: https://blockscout.lisk.com/api/eth-rpc
@@ -3226,6 +3327,27 @@ mintsepoliatest:
   protocol: ethereum
   rpcUrls:
     - http: https://sepolia-testnet-rpc.mintchain.io
+mitosistestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.mitosiscan.xyz/api
+      family: routescan
+      name: Mitosis Testnet Scan
+      url: https://testnet.mitosiscan.xyz
+  chainId: 124832
+  deployer:
+    name: JunayedMh
+    url: https://github.com/JunayedMh
+  displayName: Mitosis Testnet
+  domainId: 124832
+  isTestnet: true
+  name: mitosistestnet
+  nativeToken:
+    decimals: 18
+    name: mitosis
+    symbol: mito
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.testnet.mitosis.org
 mode:
   blockExplorers:
     - apiUrl: https://explorer.mode.network/api
@@ -3594,6 +3716,31 @@ opbnbtestnet:
   rpcUrls:
     - http: https://opbnb-testnet-rpc.publicnode.com
     - http: https://opbnb-testnet-rpc.bnbchain.org
+opengradienttestnet:
+  blockExplorers:
+    - apiUrl: http://3.145.62.2/api
+      family: blockscout
+      name: Opengradient Testnet Explorer
+      url: http://3.145.62.2
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 30
+    reorgPeriod: 0
+  chainId: 2970285607590380
+  deployer:
+    name: Opengradient team
+    url: https://opengradient.ai
+  displayName: Opengradient Testnet
+  domainId: 297028
+  isTestnet: true
+  name: opengradienttestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: http://18.218.115.248:8545
 optimism:
   blockExplorers:
     - apiUrl: https://api-optimistic.etherscan.io/api
