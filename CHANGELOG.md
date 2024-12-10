@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 6.5.1
+
+### Patch Changes
+
+- a852cb9: Full rebuild of metadata.yaml.
+
 ## 6.5.0
 
 ### Minor Changes
