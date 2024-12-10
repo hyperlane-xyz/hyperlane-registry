@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 6.5.0
+
+### Minor Changes
+
+- 61de602: Add Swell to PZETH warp route
+- 61de602: Add usdc and usdt swell
+
 ## 6.4.0
 
 ### Minor Changes
