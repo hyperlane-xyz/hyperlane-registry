@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xCf2D543345728da295CC5d3A3d54B117979643f8"
+    chainName: bsc
+    collateralAddressOrDenom: "0x55d398326f99059fF775485246999027B3197955"
+    connections:
+      - token: ethereum|prom|0x6064C9028d069a7822d30EF17065A57524A5FcAb
+    decimals: 18
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypCollateral
+    symbol: USDT
+  - addressOrDenom: "0x6064C9028d069a7822d30EF17065A57524A5FcAb"
+    chainName: prom
+    connections:
+      - token: ethereum|bsc|0xCf2D543345728da295CC5d3A3d54B117979643f8
+    decimals: 18
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypSynthetic
+    symbol: USDT
