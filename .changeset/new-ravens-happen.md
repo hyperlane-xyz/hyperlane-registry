@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Use correct apxETH logo
+Full rebuild of metadata.yaml.

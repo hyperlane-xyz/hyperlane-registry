@@ -1,5 +1,28 @@
 # @hyperlane-xyz/registry
 
+## 6.5.0
+
+### Minor Changes
+
+- 61de602: Add Swell to PZETH warp route
+- 61de602: Add usdc and usdt swell
+
+## 6.4.0
+
+### Minor Changes
+
+- 826a73e: Adding Argochain Testnet to the Official Hyperlane Github Registry
+- 3c7d40a: feat: add mitosis testnet
+- 63c6477: add opengradient testnet
+- c25ff9a: add Linea Sepolia Testnet and gnosis chiado testnet
+- ea15712: Added LINEA mainnet route for DAI, accessible from Arbitrum, BSC, Polygon
+- c07c6cf: add prom network routes for PROM, USDT and USDC
+- 4c085f6: Add inclusive layer testnet
+
+### Patch Changes
+
+- 538e714: Use correct apxETH logo
+
 ## 6.3.0
 
 ### Minor Changes
