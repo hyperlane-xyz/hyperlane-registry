@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 6.6.0
+
+### Minor Changes
+
+- 75e91df: Add Swell to PZETH warp route
+- 75e91df: Add Swell to EZETH warp route
+
 ## 6.5.1
 
 ### Patch Changes
