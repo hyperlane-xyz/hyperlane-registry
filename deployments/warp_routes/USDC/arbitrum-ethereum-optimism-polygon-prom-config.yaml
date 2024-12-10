@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x736f1150203E88E6aBA183f216A4a51b6ca12156"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xaf88d065e77c8cc2239327c5edb3a432268e5831"
+    connections:
+      - token: ethereum|ethereum|0x424712Bec7c94a0F804c50F77B641A24F33A138e
+      - token: ethereum|optimism|0xEa1A15ed2710f860a38091877c6A84b18206b501
+      - token: ethereum|polygon|0x93b637AEA6a0dF51E8E24E49C62da34f616491c5
+      - token: ethereum|prom|0xd9c95e2ad330E11D7Dfa58f18504049f625E955e
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x424712Bec7c94a0F804c50F77B641A24F33A138e"
+    chainName: ethereum
+    collateralAddressOrDenom: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+    connections:
+      - token: ethereum|arbitrum|0x736f1150203E88E6aBA183f216A4a51b6ca12156
+      - token: ethereum|optimism|0xEa1A15ed2710f860a38091877c6A84b18206b501
+      - token: ethereum|polygon|0x93b637AEA6a0dF51E8E24E49C62da34f616491c5
+      - token: ethereum|prom|0xd9c95e2ad330E11D7Dfa58f18504049f625E955e
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0xEa1A15ed2710f860a38091877c6A84b18206b501"
+    chainName: optimism
+    collateralAddressOrDenom: "0x0b2c639c533813f4aa9d7837caf62653d097ff85"
+    connections:
+      - token: ethereum|arbitrum|0x736f1150203E88E6aBA183f216A4a51b6ca12156
+      - token: ethereum|ethereum|0x424712Bec7c94a0F804c50F77B641A24F33A138e
+      - token: ethereum|polygon|0x93b637AEA6a0dF51E8E24E49C62da34f616491c5
+      - token: ethereum|prom|0xd9c95e2ad330E11D7Dfa58f18504049f625E955e
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x93b637AEA6a0dF51E8E24E49C62da34f616491c5"
+    chainName: polygon
+    collateralAddressOrDenom: "0x3c499c542cef5e3811e1192ce70d8cc03d5c3359"
+    connections:
+      - token: ethereum|arbitrum|0x736f1150203E88E6aBA183f216A4a51b6ca12156
+      - token: ethereum|ethereum|0x424712Bec7c94a0F804c50F77B641A24F33A138e
+      - token: ethereum|optimism|0xEa1A15ed2710f860a38091877c6A84b18206b501
+      - token: ethereum|prom|0xd9c95e2ad330E11D7Dfa58f18504049f625E955e
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0xd9c95e2ad330E11D7Dfa58f18504049f625E955e"
+    chainName: prom
+    connections:
+      - token: ethereum|arbitrum|0x736f1150203E88E6aBA183f216A4a51b6ca12156
+      - token: ethereum|ethereum|0x424712Bec7c94a0F804c50F77B641A24F33A138e
+      - token: ethereum|optimism|0xEa1A15ed2710f860a38091877c6A84b18206b501
+      - token: ethereum|polygon|0x93b637AEA6a0dF51E8E24E49C62da34f616491c5
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypSynthetic
+    symbol: USDC

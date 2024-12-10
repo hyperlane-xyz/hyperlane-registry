@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-feat: add DeepBrainChain testnet
+Add inclusive layer testnet
