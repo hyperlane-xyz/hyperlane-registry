@@ -1,0 +1,18 @@
+tokens:
+  - chainName: ethereum
+    standard: EvmHypCollateral
+    decimals: 18
+    symbol: Re7LRT
+    name: Re7 Labs LRT
+    addressOrDenom: "0x7D77702f1c7A1662923FD654f904127988Caa3fD"
+    collateralAddressOrDenom: "0x84631c0d0081FDe56DeB72F6DE77abBbF6A9f93a"
+    connections:
+      - token: ethereum|zircuit|0x4d08A785212Ce848cFc35e198E86F5ebcb388c86
+  - chainName: zircuit
+    standard: EvmHypSynthetic
+    decimals: 18
+    symbol: Re7LRT
+    name: Re7 Labs LRT
+    addressOrDenom: "0x4d08A785212Ce848cFc35e198E86F5ebcb388c86"
+    connections:
+      - token: ethereum|ethereum|0x7D77702f1c7A1662923FD654f904127988Caa3fD
