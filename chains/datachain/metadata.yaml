@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+chainId: 7474
+deployer:
+  name: TokenDAO
+  url: https://tkn.xyz/
+displayName: Datachain
+domainId: 7474
+isTestnet: true
+name: datachain
+nativeToken:
+  decimals: 18
+  name: TokenDAO
+  symbol: TKN
+protocol: ethereum
+rpcUrls:
+  - http: https://datachain-sepolia.rpc.caldera.xyz/http
+blockExplorers:
+  - apiUrl: https://datachain-sepolia.explorer.caldera.xyz/api/
+    family: blockscout
+    name: Datachain Sepolia explorer
+    url: https://datachain-sepolia.explorer.caldera.xyz/
+technicalStack: opstack
