@@ -1,5 +1,20 @@
 # @hyperlane-xyz/registry
 
+## 6.7.0
+
+### Minor Changes
+
+- bde63f7: Adding MAGIC/arbitrum-treasure warp deployment artefacts
+- 0c4f8e0: Add Vana <> Ethereum ETH warp route
+- 01f2271: Add VANA warp route between Ethereum and Vana
+- b3c93e2: Add RE7LRT deployment
+
+### Patch Changes
+
+- 995e745: add jitoSOL and kySOL metadta and logo
+- 9d6a3bb: Enroll appchain, treasure, zklink on default ISMs.
+- 3aeee15: Deployed pumpBTC route ethereum<>sei
+
 ## 6.6.0
 
 ### Minor Changes
