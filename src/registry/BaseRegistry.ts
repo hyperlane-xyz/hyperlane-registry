@@ -71,9 +71,8 @@ export abstract class BaseRegistry implements IRegistry {
   abstract getChainAddresses(chainName: ChainName): MaybePromise<ChainAddresses | null>;
 
   async getChainLogoUri(chainName: ChainName): Promise<string | null> {
-    const registryContent = await this.listRegistryContent();
-    const chain = registryContent.chains[chainName];
-    return chain?.logo ?? null;
+    const { chains } = await this.listRegistryContent();
+    return chains[chainName]?.logo ?? null;
   }
 
   abstract addChain(chain: UpdateChainParams): MaybePromise<void>;
