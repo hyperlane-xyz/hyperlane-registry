@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x177778F19E89dD1012BdBe603F144088A95C4B53"
+    chainName: ethereum
+    connections:
+      - token: ethereum|vana|0x96b572D2d880cf2Fa2563651BD23ADE6f5516652
+    decimals: 18
+    name: Vana
+    standard: EvmHypSynthetic
+    symbol: VANA
+  - addressOrDenom: "0x96b572D2d880cf2Fa2563651BD23ADE6f5516652"
+    chainName: vana
+    connections:
+      - token: ethereum|ethereum|0x177778F19E89dD1012BdBe603F144088A95C4B53
+    decimals: 18
+    name: Vana
+    standard: EvmHypNative
+    symbol: VANA
