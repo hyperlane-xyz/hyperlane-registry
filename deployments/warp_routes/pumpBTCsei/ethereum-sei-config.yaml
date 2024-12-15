@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x179149B7E74910d2A58b2a737e1a8B6F44388882"
+    chainName: ethereum
+    coinGeckoId: bitcoin
+    collateralAddressOrDenom: "0xe9ebd666954B7F0B5B044704c86B126651f6235d"
+    connections:
+      - token: ethereum|sei|0x64310A6176979ac8a752fFC98c0FBbC4CF861ACe
+    decimals: 8
+    logoURI: /deployments/warp_routes/pumpBTCsei/pumpBTCsei-logo.svg
+    name: pumpBTC.sei
+    standard: EvmHypCollateral
+    symbol: pumpBTC.sei
+  - addressOrDenom: "0x64310A6176979ac8a752fFC98c0FBbC4CF861ACe"
+    chainName: sei
+    connections:
+      - token: ethereum|ethereum|0x179149B7E74910d2A58b2a737e1a8B6F44388882
+    decimals: 8
+    logoURI: /deployments/warp_routes/pumpBTCsei/redBTC-logo.svg
+    name: redBTC
+    standard: EvmHypSynthetic
+    symbol: redBTC
