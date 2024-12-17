@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://www.teloscan.io/api
+    family: other
+    name: Teloscan
+    url: https://www.teloscan.io
+blocks:
+  confirmations: 1
+  estimateBlockTime: 1
+  reorgPeriod: finalized
+chainId: 40
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Telos EVM
+domainId: 40
+gasCurrencyCoinGeckoId: telos
+name: telos
+nativeToken:
+  decimals: 18
+  name: Telos
+  symbol: TLOS
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.telos.net
+  - http: https://telos.drpc.org
+technicalStack: other

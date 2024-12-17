@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://www.mintscan.io/evmos/api
+    family: other
+    name: Mintscan
+    url: https://www.mintscan.io/evmos
+blocks:
+  confirmations: 1
+  estimateBlockTime: 2
+  reorgPeriod: 5
+chainId: 9001
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Evmos EVM
+domainId: 9001
+gasCurrencyCoinGeckoId: evmos
+name: evmos
+nativeToken:
+  decimals: 18
+  name: Evmos
+  symbol: EVMOS
+protocol: ethereum
+rpcUrls:
+  - http: https://evmos.lava.build
+  - http: https://evmos-json-rpc.stakely.io
+  - http: https://rpc-evm.evmos.dragonstake.io
+  - http: https://evmos.drpc.org
+technicalStack: other
