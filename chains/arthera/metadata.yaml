@@ -2,18 +2,19 @@
 blockExplorers:
   - apiUrl: https://explorer.arthera.net/api
     family: blockscout
-    name: Blockscout
+    name: Arthera Explorer
     url: https://explorer.arthera.net
 blocks:
   confirmations: 1
   estimateBlockTime: 1
-  reorgPeriod: 0
+  reorgPeriod: 5
 chainId: 10242
 deployer:
-  name: Arthera
-  url: https://www.arthera.net
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
 displayName: Arthera
 domainId: 10242
+gasCurrencyCoinGeckoId: arthera
 name: arthera
 nativeToken:
   decimals: 18
@@ -24,3 +25,4 @@ rpcUrls:
   - http: https://rpc.arthera.net
     pagination:
       maxBlockRange: 10000
+technicalStack: other

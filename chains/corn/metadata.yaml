@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/21000000/etherscan/api
+    family: routescan
+    name: Cornscan
+    url: https://cornscan.io
+blocks:
+  confirmations: 1
+  estimateBlockTime: 20
+  reorgPeriod: 5
+chainId: 21000000
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Corn
+domainId: 21000000
+gasCurrencyCoinGeckoId: bitcoin
+index:
+  from: 55636
+name: corn
+nativeToken:
+  decimals: 18
+  name: Bitcorn
+  symbol: BTCN
+protocol: ethereum
+rpcUrls:
+  - http: https://mainnet.corn-rpc.com
+  - http: https://maizenet-rpc.usecorn.com
+  - http: https://rpc.ankr.com/corn_maizenet
+technicalStack: arbitrumnitro
