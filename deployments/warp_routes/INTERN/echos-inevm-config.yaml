@@ -2,13 +2,13 @@
 tokens:
   # INTERN on Echos to inEVM
   - addressOrDenom: "0xEad0F28bDCEdb19698C4D9f64fd69c70d24ec0D5"
-    collateralAddressOrDenom: "0x7cd386bd75f2a5d7706c39da56bc5d52544b5617"
     chainName: echos
+    collateralAddressOrDenom: "0x7cd386bd75f2a5d7706c39da56bc5d52544b5617"
     connections:
       - token: ethereum|inevm|0xFd2fCfee83bDB31c6f9bee4013FAEe0c675f2Dd5
     decimals: 18
     logoURI: /deployments/warp_routes/INTERN/logo.svg
-    name: "Injective Intern"
+    name: Injective Intern
     standard: EvmHypCollateral
     symbol: INTERN
   # INTERN on inEVM to Echos
@@ -18,6 +18,6 @@ tokens:
       - token: ethereum|echos|0xEad0F28bDCEdb19698C4D9f64fd69c70d24ec0D5
     decimals: 18
     logoURI: /deployments/warp_routes/INTERN/logo.svg
-    name: "Injective Intern"
+    name: Injective Intern
     standard: EvmHypSynthetic
     symbol: INTERN
