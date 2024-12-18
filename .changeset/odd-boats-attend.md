@@ -1,5 +1,5 @@
 ---
-"@hyperlane-xyz/registry": patch
+"@hyperlane-xyz/registry": minor
 ---
 
 Added echos chain and INTERN warp route
