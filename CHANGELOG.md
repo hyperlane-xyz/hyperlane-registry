@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 6.9.1
+
+### Patch Changes
+
+- 35f11e1: updated usdc appchain base route addresses
+
 ## 6.9.0
 
 ### Minor Changes
