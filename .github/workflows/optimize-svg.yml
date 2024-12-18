@@ -1,0 +1,41 @@
+name: optimize-svg
+
+on:
+  pull_request:
+  # Allows you to run this workflow manually
+  workflow_dispatch:
+
+jobs:
+  combine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || 'main' }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/cache@v4
+        with:
+          path: |
+            **/node_modules
+            .yarn/cache
+          key: ${{ runner.os }}-yarn-cache-${{ hashFiles('./yarn.lock') }}
+
+      - name: yarn-install
+        run: |
+          yarn install
+          CHANGES=$(git status -s)
+          if [[ ! -z $CHANGES ]]; then
+            echo "Changes found: $CHANGES"
+            git diff
+            exit 1
+          fi
+
+      - name: setup-node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: validate-optimize-svgs
+        run: |
+          node ./scripts/optimize-svg.js

@@ -25,13 +25,13 @@ jobs:
 
       - name: yarn-install
         run: |
-            yarn install
-            CHANGES=$(git status -s)
-            if [[ ! -z $CHANGES ]]; then
-              echo "Changes found: $CHANGES"
-              git diff
-              exit 1
-            fi
+          yarn install
+          CHANGES=$(git status -s)
+          if [[ ! -z $CHANGES ]]; then
+            echo "Changes found: $CHANGES"
+            git diff
+            exit 1
+          fi
 
       - name: foundry-install
         uses: foundry-rs/foundry-toolchain@v1
