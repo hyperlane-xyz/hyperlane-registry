@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 6.9.0
+
+### Minor Changes
+
+- 7c44de7: Added echos chain and INTERN warp route
+
+### Patch Changes
+
+- a320c1c: Enroll Dec 13 batch of chains on default ISMs.
+
 ## 6.8.0
 
 ### Minor Changes
