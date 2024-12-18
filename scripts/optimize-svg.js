@@ -10,12 +10,12 @@ function isValidSvg(filePath) {
 
   if (!fileName.endsWith('logo.svg')) {
     console.error(`Error: File does not end with 'logo.svg' -> ${filePath}`);
-    // process.exit(1); // Exit immediately if criteria is not met
+    process.exit(1); // Exit immediately if criteria is not met
   }
 
   if (stats.size > MAX_FILE_SIZE) {
     console.error(`Error: File size exceeds 20KBs -> ${filePath}`);
-    // process.exit(1); // Exit immediately if criteria is not met
+    process.exit(1); // Exit immediately if criteria is not met
   }
 }
 
