@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 6.8.0
+
+### Minor Changes
+
+- d3e1e71: Deploy to new chains: arthera, aurora, conflux, conwai, corn, evmos, form, ink, rivalz, soneium, sonic, telos.
+- 65d30cb: added usdc route appchain->base and ubtc route boba->bsquared->swell
+
 ## 6.7.0
 
 ### Minor Changes
