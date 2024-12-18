@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xFA3198ecF05303a6d96E57a45E6c815055D255b1"
+    chainName: appchain
+    connections:
+      - token: ethereum|base|0x5C85B5F1446F27f4F71B8EE1Df2075f361054533
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypSynthetic
+    symbol: USDC
+  - addressOrDenom: "0x5C85B5F1446F27f4F71B8EE1Df2075f361054533"
+    chainName: base
+    collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    connections:
+      - token: ethereum|appchain|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
