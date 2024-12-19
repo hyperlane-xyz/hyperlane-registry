@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 6.10.0
+
+### Minor Changes
+
+- d93024c: add jitoSOL and kySOL warp route configs
+
+### Patch Changes
+
+- 63930a4: Update ink mainnet RPC and more scroll RPCs.
+
 ## 6.9.1
 
 ### Patch Changes
