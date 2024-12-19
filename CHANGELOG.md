@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 6.9.2
+
+### Patch Changes
+
+- 63930a4: Update ink mainnet RPC and more scroll RPCs.
+
 ## 6.9.1
 
 ### Patch Changes
