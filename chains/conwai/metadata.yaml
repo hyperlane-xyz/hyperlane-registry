@@ -1,5 +1,6 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
+<<<<<<< HEAD
   - apiUrl: https://conwai.calderaexplorer.xyz/api
     family: blockscout
     name: Conwai Explorer
@@ -17,6 +18,17 @@ domainId: 668668
 gasCurrencyCoinGeckoId: conwai
 index:
   from: 73
+=======
+  - apiUrl: https://conwai.calderaexplorer.xyz/api/v2/
+    family: blockscout
+    name: conwaiscan
+    url: https://conwai.calderaexplorer.xyz/
+chainId: 668668
+displayName: Conwai
+domainId: 668668
+gnosisSafeTransactionServiceUrl: https://safe.conwai.net
+isTestnet: false
+>>>>>>> cf71f80 (adding conwai)
 name: conwai
 nativeToken:
   decimals: 18
@@ -25,4 +37,11 @@ nativeToken:
 protocol: ethereum
 rpcUrls:
   - http: https://conwai.calderachain.xyz/http
+<<<<<<< HEAD
 technicalStack: arbitrumnitro
+=======
+transactionOverrides:
+  gasPrice: 7000000000 # 7 gwei
+  maxFeePerGas: 150000000000 # 150 gwei
+  maxPriorityFeePerGas: 40000000000 # 40 gwei
+>>>>>>> cf71f80 (adding conwai)
