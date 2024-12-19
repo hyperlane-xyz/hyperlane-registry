@@ -1,5 +1,28 @@
 # @hyperlane-xyz/registry
 
+## 6.9.1
+
+### Patch Changes
+
+- 35f11e1: updated usdc appchain base route addresses
+
+## 6.9.0
+
+### Minor Changes
+
+- 7c44de7: Added echos chain and INTERN warp route
+
+### Patch Changes
+
+- a320c1c: Enroll Dec 13 batch of chains on default ISMs.
+
+## 6.8.0
+
+### Minor Changes
+
+- d3e1e71: Deploy to new chains: arthera, aurora, conflux, conwai, corn, evmos, form, ink, rivalz, soneium, sonic, telos.
+- 65d30cb: added usdc route appchain->base and ubtc route boba->bsquared->swell
+
 ## 6.7.0
 
 ### Minor Changes

@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xFA3198ecF05303a6d96E57a45E6c815055D255b1"
+    chainName: boba
+    connections:
+      - token: ethereum|bsquared|0x0FC41a92F526A8CD22060A4052e156502D6B9db0
+      - token: ethereum|swell|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+    decimals: 18
+    logoURI: /deployments/warp_routes/UBTC/logo.svg
+    name: uBTC
+    standard: EvmHypSynthetic
+    symbol: uBTC
+  - addressOrDenom: "0x0FC41a92F526A8CD22060A4052e156502D6B9db0"
+    chainName: bsquared
+    collateralAddressOrDenom: "0x796e4D53067FF374B89b2Ac101ce0c1f72ccaAc2"
+    connections:
+      - token: ethereum|boba|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+      - token: ethereum|swell|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+    decimals: 18
+    logoURI: /deployments/warp_routes/UBTC/logo.svg
+    name: uBTC
+    standard: EvmHypCollateral
+    symbol: uBTC
+  - addressOrDenom: "0xFA3198ecF05303a6d96E57a45E6c815055D255b1"
+    chainName: swell
+    connections:
+      - token: ethereum|boba|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+      - token: ethereum|bsquared|0x0FC41a92F526A8CD22060A4052e156502D6B9db0
+    decimals: 18
+    logoURI: /deployments/warp_routes/UBTC/logo.svg
+    name: uBTC
+    standard: EvmHypSynthetic
+    symbol: uBTC
