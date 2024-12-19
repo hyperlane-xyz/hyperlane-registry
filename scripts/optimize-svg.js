@@ -91,7 +91,6 @@ function optimizeSVGs(svgPaths) {
         console.error(`Error optimizing ${filePath}: ${result.error}`);
         return; // Log the error and continue with the next file
       }
-
       fs.writeFileSync(filePath, result.data, 'utf8');
       console.log(`Optimized: ${filePath}`);
     } catch (error) {
