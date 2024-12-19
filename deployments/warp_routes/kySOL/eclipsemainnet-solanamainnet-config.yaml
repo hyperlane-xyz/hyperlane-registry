@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: 5XbuBdh4V5hmqQrazmGLXJBoLUE2jtvYhwMbGNoLNvG2
+    chainName: eclipsemainnet
+    collateralAddressOrDenom: 8jN7xMDqJucigQphWHvqAPQPAmk7VJKKsqLmgCkE7XzP
+    connections:
+      - token: sealevel|solanamainnet|9JdgDXPZtPdDpgiTvo8zuWmEXWUYL9eghvpGXLb31k2f
+    decimals: 9
+    logoURI: /deployments/warp_routes/kySOL/logo.svg
+    name: Kyros Restaked SOL
+    standard: SealevelHypSynthetic
+    symbol: kySOL
+  - addressOrDenom: 9JdgDXPZtPdDpgiTvo8zuWmEXWUYL9eghvpGXLb31k2f
+    chainName: solanamainnet
+    coinGeckoId: kyros-restaked-sol
+    collateralAddressOrDenom: kySo1nETpsZE2NWe5vj2C64mPSciH1SppmHb4XieQ7B
+    connections:
+      - token: sealevel|eclipsemainnet|5XbuBdh4V5hmqQrazmGLXJBoLUE2jtvYhwMbGNoLNvG2
+    decimals: 9
+    logoURI: /deployments/warp_routes/kySOL/logo.svg
+    name: Kyros Restaked SOL
+    standard: SealevelHypCollateral
+    symbol: kySOL
