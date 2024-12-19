@@ -5,7 +5,7 @@ const directories = ['./chains', './deployments'];
 const MAX_FILE_SIZE = 100 * 1024; // 100KBs
 const RASTER_IMAGE_REGEX = /<image[^>]*>/i;
 
-function isValidSvg(filePath, fileContent) {
+function isValidSvg(filePath) {
   const fileName = path.basename(filePath);
   const stats = fs.statSync(filePath);
   const currentFileSize = (stats.size / 1024).toFixed(2);
@@ -22,6 +22,7 @@ function isValidSvg(filePath, fileContent) {
     process.exit(1);
   }
 
+  const fileContent = fs.readFileSync(filePath, 'utf8');
   if (RASTER_IMAGE_REGEX.test(fileContent)) {
     console.error(
       `Error: File contains an <image> tag, likely embedding a raster image -> ${filePath}`,
@@ -30,27 +31,50 @@ function isValidSvg(filePath, fileContent) {
   }
 }
 
-function findAndProcessSVGs(directory) {
+// Finds all svgs, validates and return all paths found that has svgs
+function findAndValidateSVGs(directory) {
   const files = fs.readdirSync(directory);
 
-  files.forEach((file) => {
+  return files.flatMap((file) => {
     const fullPath = path.join(directory, file);
     const stats = fs.statSync(fullPath);
 
     if (stats.isDirectory()) {
-      findAndProcessSVGs(fullPath); // Recurse into subdirectories
+      return findAndValidateSVGs(fullPath); // Recurse into subdirectories
     } else if (path.extname(fullPath) === '.svg') {
-      const content = fs.readFileSync(fullPath, 'utf8');
-      isValidSvg(fullPath, content); // Validate file, exits on failure
+      isValidSvg(fullPath); // Validate file, exits on failure
+      return fullPath;
     }
+
+    return [];
   });
 }
 
-directories.forEach((directory) => {
-  if (fs.existsSync(directory)) {
-    console.log(`Checking directory: ${directory}`);
-    findAndProcessSVGs(directory);
-  } else {
-    console.log(`Directory does not exist: ${directory}`);
-  }
-});
+// Get all svg paths that are validated
+function getSVGPaths() {
+  const svgPaths = directories
+    .filter((directory) => {
+      if (fs.existsSync(directory)) {
+        console.log(`Checking directory: ${directory}`);
+        return true;
+      } else {
+        console.log(`Directory does not exist: ${directory}`);
+        return false;
+      }
+    })
+    .flatMap((directory) => findAndValidateSVGs(directory));
+
+  return svgPaths;
+}
+
+// Optimize svg in given path
+function optimizeSVGs(svgPaths) {
+  console.log('Paths', svgPaths);
+}
+
+function main() {
+  const svgPaths = getSVGPaths();
+  optimizeSVGs(svgPaths);
+}
+
+main();
