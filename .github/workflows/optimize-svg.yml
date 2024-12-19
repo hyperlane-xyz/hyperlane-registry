@@ -39,3 +39,19 @@ jobs:
       - name: validate-optimize-svgs
         run: |
           node ./scripts/optimize-svg.js
+
+      - name: configure-git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: commit-changes
+        run: |
+          CHANGES=$(git status -s)
+          if [[ ! -z $CHANGES ]]; then
+            git add .
+            git commit -m "Optimize SVG files" 
+            git push
+          else
+            echo "No changes to commit."
+          fi

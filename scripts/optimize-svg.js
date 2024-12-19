@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { optimize } from 'svgo';
 
 const directories = ['./chains', './deployments'];
 const MAX_FILE_SIZE = 100 * 1024; // 100KBs
@@ -52,7 +53,7 @@ function findAndValidateSVGs(directory) {
 
 // Get all svg paths that are validated
 function getSVGPaths() {
-  const svgPaths = directories
+  return directories
     .filter((directory) => {
       if (fs.existsSync(directory)) {
         console.log(`Checking directory: ${directory}`);
@@ -63,13 +64,41 @@ function getSVGPaths() {
       }
     })
     .flatMap((directory) => findAndValidateSVGs(directory));
-
-  return svgPaths;
 }
 
 // Optimize svg in given path
 function optimizeSVGs(svgPaths) {
-  console.log('Paths', svgPaths);
+  svgPaths.forEach((filePath) => {
+    try {
+      const fileContent = fs.readFileSync(filePath, 'utf8');
+      const result = optimize(fileContent, {
+        path: filePath,
+        multipass: true,
+        plugins: [
+          {
+            name: 'preset-default',
+            params: {
+              overrides: {
+                removeViewBox: false,
+              },
+            },
+          },
+          'removeScriptElement',
+        ],
+      });
+
+      if (result.error) {
+        console.error(`Error optimizing ${filePath}: ${result.error}`);
+        return; // Log the error and continue with the next file
+      }
+
+      fs.writeFileSync(filePath, result.data, 'utf8');
+      console.log(`Optimized: ${filePath}`);
+    } catch (error) {
+      console.error(`Error processing ${filePath}: ${error.message}`);
+      // Log the error and continue with the next file
+    }
+  });
 }
 
 function main() {
