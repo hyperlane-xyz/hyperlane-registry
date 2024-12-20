@@ -6,21 +6,21 @@ const directories = ['./chains', './deployments'];
 const MAX_FILE_SIZE = 100 * 1024; // 100KBs
 const RASTER_IMAGE_REGEX = /<image[^>]*>/i;
 
+let isValid = true;
+
 function isValidSvg(filePath) {
   const fileName = path.basename(filePath);
   const stats = fs.statSync(filePath);
-  const currentFileSize = (stats.size / 1024).toFixed(2);
+  const fileSize = (stats.size / 1024).toFixed(2);
 
   if (!fileName.endsWith('logo.svg')) {
     console.error(`Error: File does not end with 'logo.svg' -> ${filePath}`);
-    process.exit(1);
+    isValid = false;
   }
 
   if (stats.size > MAX_FILE_SIZE) {
-    console.error(
-      `Error: File size exceeds 100KBs (Current size: ${currentFileSize}KB) -> ${filePath}`,
-    );
-    process.exit(1);
+    console.error(`Error: File size exceeds 100KBs (Current size: ${fileSize}KB) -> ${filePath}`);
+    isValid = false;
   }
 
   const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -28,7 +28,7 @@ function isValidSvg(filePath) {
     console.error(
       `Error: File contains an <image> tag, likely embedding a raster image -> ${filePath}`,
     );
-    process.exit(1);
+    isValid = false;
   }
 }
 
@@ -102,6 +102,10 @@ function optimizeSVGs(svgPaths) {
 
 function main() {
   const svgPaths = getSVGPaths();
+  if (!isValid) {
+    console.error('SVGs have errors, exiting.');
+    process.exit(1);
+  }
   optimizeSVGs(svgPaths);
 }
 
