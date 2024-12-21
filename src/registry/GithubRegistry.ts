@@ -159,10 +159,8 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   }
 
   async getWarpRoute(routeId: string): Promise<WarpCoreConfig | null> {
-    const repoContents = await this.listRegistryContent();
-    const routeConfigUrl = repoContents.deployments.warpRoutes[routeId];
-    if (!routeConfigUrl) return null;
-    return this.fetchYamlFile(routeConfigUrl);
+    const routeConfigUrl = (await this.listRegistryContent()).deployments.warpRoutes[routeId];
+    return routeConfigUrl ? this.fetchYamlFile(routeConfigUrl) : null;
   }
 
   async getWarpRoutes(filter?: WarpRouteFilterParams): Promise<WarpRouteConfigMap> {
