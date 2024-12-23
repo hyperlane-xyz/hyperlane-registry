@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: G3hWozA3c4iK5oSX9rTWFFDo5rS9W49bjhWDgg3gDPk8
+    chainName: eclipsemainnet
+    collateralAddressOrDenom: JAh5pFYn1Kbh7kCuqZab8viVFdNgTmpS6hzFstSGNBvG
+    connections:
+      - token: sealevel|solanamainnet|8EMWCPyv6AxgRtMFEZxmxKfhmLmLvi3XbHHendLAUKUF
+    decimals: 9
+    logoURI: /deployments/warp_routes/jitoSOL/logo.svg
+    name: Jito Staked SOL
+    standard: SealevelHypSynthetic
+    symbol: JitoSOL
+  - addressOrDenom: 8EMWCPyv6AxgRtMFEZxmxKfhmLmLvi3XbHHendLAUKUF
+    chainName: solanamainnet
+    coinGeckoId: jito-staked-sol
+    collateralAddressOrDenom: J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn
+    connections:
+      - token: sealevel|eclipsemainnet|G3hWozA3c4iK5oSX9rTWFFDo5rS9W49bjhWDgg3gDPk8
+    decimals: 9
+    logoURI: /deployments/warp_routes/jitoSOL/logo.svg
+    name: Jito Staked SOL
+    standard: SealevelHypCollateral
+    symbol: JitoSOL
