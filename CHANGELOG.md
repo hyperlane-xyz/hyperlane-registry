@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 6.11.0
+
+### Minor Changes
+
+- 36b4c5f: Add workflow to validate and optimize SVGs, update SVGs with optimized version
+
 ## 6.10.0
 
 ### Minor Changes
