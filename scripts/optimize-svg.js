@@ -6,7 +6,9 @@ const directories = ['./chains', './deployments'];
 const MAX_FILE_SIZE = 100 * 1024; // 100KBs
 const RASTER_IMAGE_REGEX = /<image[^>]*>/i;
 
-let isValid = true;
+const invalidNameSVGs = [];
+const invalidSizeSVGs = [];
+const rasterImgSVGs = [];
 
 function isValidSvg(filePath) {
   const fileName = path.basename(filePath);
@@ -14,21 +16,16 @@ function isValidSvg(filePath) {
   const fileSize = (stats.size / 1024).toFixed(2);
 
   if (!fileName.endsWith('logo.svg')) {
-    console.error(`Error: File does not end with 'logo.svg' -> ${filePath}`);
-    isValid = false;
+    invalidNameSVGs.push(filePath);
   }
 
   if (stats.size > MAX_FILE_SIZE) {
-    console.error(`Error: File size exceeds 100KBs (Current size: ${fileSize}KB) -> ${filePath}`);
-    isValid = false;
+    invalidSizeSVGs.push({ filePath, fileSize: `${fileSize}KBs` });
   }
 
   const fileContent = fs.readFileSync(filePath, 'utf8');
   if (RASTER_IMAGE_REGEX.test(fileContent)) {
-    console.error(
-      `Error: File contains an <image> tag, likely embedding a raster image -> ${filePath}`,
-    );
-    isValid = false;
+    rasterImgSVGs.push(filePath);
   }
 }
 
@@ -43,7 +40,7 @@ function findAndValidateSVGs(directory) {
     if (stats.isDirectory()) {
       return findAndValidateSVGs(fullPath); // Recurse into subdirectories
     } else if (path.extname(fullPath) === '.svg') {
-      isValidSvg(fullPath); // Validate file, exits on failure
+      isValidSvg(fullPath);
       return fullPath;
     }
 
@@ -66,6 +63,32 @@ function getSVGPaths() {
     .flatMap((directory) => findAndValidateSVGs(directory));
 }
 
+function validateErrors() {
+  const errorCount = invalidNameSVGs.length + invalidSizeSVGs.length + rasterImgSVGs.length;
+  if (errorCount === 0) return;
+
+  console.error(`Number of errors found: ${errorCount}`);
+
+  if (invalidNameSVGs.length > 0) {
+    console.error(
+      "Error: Files do not end with 'logo.svg' in the following paths:",
+      invalidNameSVGs,
+    );
+  }
+
+  if (invalidSizeSVGs.length > 0) {
+    console.error('Error: Files size exceed 100KBs in:', invalidSizeSVGs);
+  }
+
+  if (rasterImgSVGs.length > 0) {
+    console.error(
+      'Error: Files contain an <image> tag, likely embedding a raster image in the following paths:',
+      rasterImgSVGs,
+    );
+  }
+
+  process.exit(1);
+}
 // Optimize svg in given path
 function optimizeSVGs(svgPaths) {
   svgPaths.forEach((filePath) => {
@@ -88,24 +111,19 @@ function optimizeSVGs(svgPaths) {
       });
 
       if (result.error) {
-        console.error(`Error optimizing ${filePath}: ${result.error}`);
-        return; // Log the error and continue with the next file
+        throw new Error(result.error);
       }
       fs.writeFileSync(filePath, result.data, 'utf8');
       console.log(`Optimized: ${filePath}`);
     } catch (error) {
       console.error(`Error processing ${filePath}: ${error.message}`);
-      // Log the error and continue with the next file
     }
   });
 }
 
 function main() {
   const svgPaths = getSVGPaths();
-  if (!isValid) {
-    console.error('SVGs have errors, exiting.');
-    process.exit(1);
-  }
+  validateErrors();
   optimizeSVGs(svgPaths);
 }
 
