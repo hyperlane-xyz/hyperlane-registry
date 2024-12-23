@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add workflow to validate an optimize SVGs, update SVGs with optimized version
+Add workflow to validate and optimize SVGs, update SVGs with optimized version
