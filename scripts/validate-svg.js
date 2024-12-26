@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { getFilePaths } from './common.js';
+import { getFilePaths } from './utils.js';
 
 const directories = ['./chains', './deployments'];
 const MAX_FILE_SIZE = 100 * 1024; // 100KBs

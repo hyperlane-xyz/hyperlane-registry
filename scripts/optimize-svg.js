@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { optimize } from 'svgo';
-import { getFilePaths } from './common.js';
+import { getFilePaths } from './utils.js';
 
 const directories = ['./chains', './deployments'];
 

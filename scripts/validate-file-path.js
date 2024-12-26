@@ -1,4 +1,4 @@
-import { getFilePaths } from './common.js';
+import { getFilePaths } from './utils.js';
 
 const directories = [
   { paths: ['./src'], recursive: true },
