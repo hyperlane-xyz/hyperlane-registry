@@ -4,7 +4,7 @@ import { getFilePaths } from './common.js';
 
 const directories = ['./chains', './deployments'];
 
-// Optimize svg in given path
+// Optimize svg in given paths
 function optimizeSVGs(svgPaths) {
   svgPaths.forEach((filePath) => {
     try {

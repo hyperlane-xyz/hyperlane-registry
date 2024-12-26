@@ -18,7 +18,7 @@ function findFiles(directory, fileTypes = [], isRecursive = true) {
   });
 }
 
-// Get all fille paths for given directorie and given file types
+// Get all fille paths for given directories and given file types
 export function getFilePaths(directories = [], fileTypes = [], isRecursive = true) {
   return directories
     .filter((directory) => {
