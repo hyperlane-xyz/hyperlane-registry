@@ -1,51 +1,24 @@
-import fs from 'fs';
-import path from 'path';
+import { getFilePaths } from './common.js';
 
 const directories = [
-  { path: './src', recursive: true },
-  { path: './', recursive: false },
+  { paths: ['./src'], recursive: true },
+  { paths: ['./'], recursive: false },
 ];
 
-const invalidFilePath = [];
-const invalidExtensions = ['.svg', '.yaml'];
+const fileExtensions = ['.svg', '.yaml'];
 
-function findFilesInDirectory(directory, isRecursive = true) {
-  const files = fs.readdirSync(directory);
+function main() {
+  const invalidFilesPaths = directories.flatMap((directory) =>
+    getFilePaths(directory.paths, fileExtensions, directory.recursive),
+  );
 
-  files.forEach((file) => {
-    const fullPath = path.join(directory, file);
-    const stats = fs.statSync(fullPath);
-
-    if (stats.isDirectory() && isRecursive) {
-      // Recurse into subdirectories if allowed
-      findFilesInDirectory(fullPath, isRecursive);
-    } else if (invalidExtensions.includes(path.extname(fullPath))) {
-      invalidFilePath.push(fullPath);
-    }
-  });
-}
-
-function validateFilesPath() {
-  directories.forEach(({ path, recursive }) => {
-    if (fs.existsSync(path)) {
-      console.log(`Checking directory: ${path}`);
-      findFilesInDirectory(path, recursive);
-    } else {
-      console.log(`Directory does not exist: ${path}`);
-    }
-  });
-
-  if (invalidFilePath.length === 0) return;
+  if (invalidFilesPaths.length === 0) return;
 
   console.error(
     'Error: invalid file paths found, make sure they are in the proper directories (chains or deployments):',
-    invalidFilePath,
+    invalidFilesPaths,
   );
   process.exit(1);
-}
-
-function main() {
-  validateFilesPath();
 }
 
 main();
