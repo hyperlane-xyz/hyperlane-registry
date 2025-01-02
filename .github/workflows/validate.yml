@@ -2,7 +2,7 @@ name: validate-files
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
   pull_request:
     # Allows you to run this workflow manually
   workflow_dispatch:
@@ -43,3 +43,7 @@ jobs:
       - name: validate-svg
         run: |
           node ./scripts/validate-svg.js
+
+      - name: validate-file-data
+        run: |
+          node ./scripts/validate-file-data.js
