@@ -117,7 +117,7 @@ function validateWarpRoutes() {
       const entryPath = path.join(warpRoutesDir, entry.name);
 
       // check if logo file exists
-      const logoFile = fs.readdirSync(entryPath).find((file) => file.includes('logo'));
+      const logoFile = fs.readdirSync(entryPath).find((file) => file.includes('logo.svg'));
       if (!logoFile) noLogoFileError.push(entryPath);
 
       validateConfigFiles(entryPath);
@@ -154,7 +154,8 @@ function validateErrors() {
   if (noConfigFileError.length > 0)
     console.error('Error: no config file at paths:', noConfigFileError);
 
-  if (noLogoFileError.length > 0) console.error('Error: logo file missing at:', noLogoFileError);
+  if (noLogoFileError.length > 0)
+    console.error('Error: logo.svg file missing at:', noLogoFileError);
 
   if (noLogoURIError.length > 0) console.error('Error: Missing field logoURI at:', noLogoURIError);
 
