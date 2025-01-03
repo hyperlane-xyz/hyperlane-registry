@@ -12,7 +12,7 @@ const invalidTestnetChains = [];
 // warp routes errors
 const noConfigFileError = [];
 const noLogoFileError = [];
-const noLogoURIError = [];
+const logoURIError = [];
 const unorderedChainNamesError = [];
 
 function validateChains() {
@@ -91,15 +91,20 @@ function validateConfigFiles(entryPath) {
     const configFilePath = path.join(entryPath, configFile);
     const configData = readYaml(configFilePath);
 
+    let foundLogoURIs = 0;
+
     if ('tokens' in configData) {
       configData.tokens.forEach((token) => {
         if (!('logoURI' in token)) {
-          noLogoURIError.push({
-            chainName: token.chainName || 'unknown',
-            path: configFilePath,
-          });
+          foundLogoURIs++;
         }
       });
+
+      // if no entry found, skip check
+      if (foundLogoURIs === 0) return;
+
+      // otherwise all tokens must contain logoURI,
+      if (foundLogoURIs !== configData.tokens.length) logoURIError.push(configFilePath);
     }
   });
 }
@@ -117,7 +122,7 @@ function validateWarpRoutes() {
       const entryPath = path.join(warpRoutesDir, entry.name);
 
       // check if logo file exists
-      const logoFile = fs.readdirSync(entryPath).find((file) => file.includes('logo.svg'));
+      const logoFile = fs.readdirSync(entryPath).find((file) => file.includes('logo'));
       if (!logoFile) noLogoFileError.push(entryPath);
 
       validateConfigFiles(entryPath);
@@ -132,7 +137,7 @@ function validateErrors() {
     invalidTestnetChains.length +
     noConfigFileError.length +
     noLogoFileError.length +
-    noLogoURIError.length +
+    logoURIError.length +
     unorderedChainNamesError.length;
 
   if (errorCount === 0) return;
@@ -154,10 +159,10 @@ function validateErrors() {
   if (noConfigFileError.length > 0)
     console.error('Error: no config file at paths:', noConfigFileError);
 
-  if (noLogoFileError.length > 0)
-    console.error('Error: logo.svg file missing at:', noLogoFileError);
+  if (noLogoFileError.length > 0) console.error('Error: logo file missing at:', noLogoFileError);
 
-  if (noLogoURIError.length > 0) console.error('Error: Missing field logoURI at:', noLogoURIError);
+  if (logoURIError.length > 0)
+    console.error('Error: All tokens must contain logoURI field:', logoURIError);
 
   if (unorderedChainNamesError.length > 0)
     console.error(
