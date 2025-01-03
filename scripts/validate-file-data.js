@@ -8,10 +8,10 @@ const warpRoutesDir = './deployments/warp_routes';
 // chains errors
 const missingDeployerField = [];
 const invalidTestnetChains = [];
+const noLogoFileError = [];
 
 // warp routes errors
 const noConfigFileError = [];
-const noLogoFileError = [];
 const logoURIError = [];
 const unorderedChainNamesError = [];
 
@@ -24,27 +24,29 @@ function validateChains() {
   const entries = fs.readdirSync(chainsDir, { withFileTypes: true });
 
   entries.forEach((entry) => {
-    if (entry.isDirectory()) {
-      const entryPath = path.join(chainsDir, entry.name);
-      const addressesPath = path.join(entryPath, 'addresses.yaml');
-      const metadataPath = path.join(entryPath, 'metadata.yaml');
+    if (!entry.isDirectory()) return;
 
-      if (fs.existsSync(metadataPath)) {
-        // if addresses.yaml exists, check if deployer field is missing in metadata.yaml
-        const metadata = readYaml(metadataPath);
-        if (fs.existsSync(addressesPath)) {
-          if (!('deployer' in metadata)) {
-            missingDeployerField.push(metadataPath);
-          }
-        }
+    const entryPath = path.join(chainsDir, entry.name);
+    const addressesPath = path.join(entryPath, 'addresses.yaml');
+    const metadataPath = path.join(entryPath, 'metadata.yaml');
 
-        // check if isTestNet is set properly for chains that could be testnets
-        // PD: this only works to check chains that have "test" on their name
-        if ('name' in metadata && metadata['name'].includes('test')) {
-          if (!('isTestnet' in metadata) || !metadata['isTestnet']) {
-            invalidTestnetChains.push(metadataPath);
-          }
-        }
+    // check if logo file exists
+    const logoFile = fs.readdirSync(entryPath).find((file) => file.includes('logo.svg'));
+    if (!logoFile) noLogoFileError.push(entryPath);
+
+    if (!fs.existsSync(metadataPath)) return;
+
+    // if addresses.yaml exists, check if deployer field is missing in metadata.yaml
+    const metadata = readYaml(metadataPath);
+    if (fs.existsSync(addressesPath)) {
+      if (!Object.keys(metadata).includes('deployer')) missingDeployerField.push(metadataPath);
+    }
+
+    // check if isTestNet is set properly for chains that could be testnets
+    // PD: this only works to check chains that have "test" on their name
+    if ('name' in metadata && metadata['name'].includes('test')) {
+      if (!('isTestnet' in metadata) || !metadata['isTestnet']) {
+        invalidTestnetChains.push(metadataPath);
       }
     }
   });
@@ -62,17 +64,12 @@ function validateChainNameOrder(entryPath) {
     const match = filename.match(filenameRegex);
     const filePath = path.join(entryPath, filename);
 
-    if (match) {
-      const chains = match[1].split('-');
+    if (!match) return;
 
-      for (let i = 0; i < chains.length - 1; i++) {
-        // Combine conditions: skip comparison for the last word
-        if (i !== chains.length - 1 && chains[i] > chains[i + 1]) {
-          unorderedChainNamesError.push(filePath);
-          return;
-        }
-      }
-    }
+    const chains = match[1];
+    const sortedChains = [...chains.split('-')].sort().join('-');
+
+    if (chains !== sortedChains) unorderedChainNamesError.push(filePath);
   });
 }
 
@@ -93,9 +90,10 @@ function validateConfigFiles(entryPath) {
 
     let foundLogoURIs = 0;
 
-    if ('tokens' in configData) {
-      configData.tokens.forEach((token) => {
-        if (!('logoURI' in token)) {
+    if (Object.keys(configData).includes('tokens')) {
+      const tokens = configData.tokens;
+      tokens.forEach((token) => {
+        if (!Object.keys(token).includes('logoURI')) {
           foundLogoURIs++;
         }
       });
@@ -104,7 +102,7 @@ function validateConfigFiles(entryPath) {
       if (foundLogoURIs === 0) return;
 
       // otherwise all tokens must contain logoURI,
-      if (foundLogoURIs !== configData.tokens.length) logoURIError.push(configFilePath);
+      if (foundLogoURIs !== tokens.length) logoURIError.push(configFilePath);
     }
   });
 }
@@ -118,16 +116,12 @@ function validateWarpRoutes() {
   const entries = fs.readdirSync(warpRoutesDir, { withFileTypes: true });
 
   entries.forEach((entry) => {
-    if (entry.isDirectory()) {
-      const entryPath = path.join(warpRoutesDir, entry.name);
+    if (!entry.isDirectory()) return;
 
-      // check if logo file exists
-      const logoFile = fs.readdirSync(entryPath).find((file) => file.includes('logo'));
-      if (!logoFile) noLogoFileError.push(entryPath);
+    const entryPath = path.join(warpRoutesDir, entry.name);
 
-      validateConfigFiles(entryPath);
-      validateChainNameOrder(entryPath);
-    }
+    validateConfigFiles(entryPath);
+    validateChainNameOrder(entryPath);
   });
 }
 
@@ -156,10 +150,10 @@ function validateErrors() {
       invalidTestnetChains,
     );
 
+  if (noLogoFileError.length > 0) console.error('Error: logo file missing at:', noLogoFileError);
+
   if (noConfigFileError.length > 0)
     console.error('Error: no config file at paths:', noConfigFileError);
-
-  if (noLogoFileError.length > 0) console.error('Error: logo file missing at:', noLogoFileError);
 
   if (logoURIError.length > 0)
     console.error('Error: All tokens must contain logoURI field:', logoURIError);
