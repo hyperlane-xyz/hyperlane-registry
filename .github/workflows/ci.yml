@@ -27,13 +27,13 @@ jobs:
         # Check out the lockfile from main, reinstall, and then
         # verify the lockfile matches what was committed.
         run: |
-            yarn install
-            CHANGES=$(git status -s)
-            if [[ ! -z $CHANGES ]]; then
-              echo "Changes found: $CHANGES"
-              git diff
-              exit 1
-            fi
+          yarn install
+          CHANGES=$(git status -s)
+          if [[ ! -z $CHANGES ]]; then
+            echo "Changes found: $CHANGES"
+            git diff
+            exit 1
+          fi
 
   build:
     runs-on: ubuntu-latest
@@ -97,6 +97,17 @@ jobs:
       - name: test
         run: yarn run test:unit
 
+      - name: validate-file-path
+        run: |
+          node ./scripts/validate-file-path.js
+
+      - name: validate-svg
+        run: |
+          node ./scripts/validate-svg.js
+
+      - name: validate-file-data
+        run: |
+          node ./scripts/validate-file-data.js
 
   # health:
   #   runs-on: ubuntu-latest
