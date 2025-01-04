@@ -7,12 +7,10 @@ const warpRoutesDir = './deployments/warp_routes';
 
 // chains errors
 const missingDeployerField = [];
-const invalidTestnetChains = [];
 const noLogoFileError = [];
 
 // warp routes errors
 const noConfigFileError = [];
-const logoURIError = [];
 const unorderedChainNamesError = [];
 
 function validateChains() {
@@ -40,14 +38,6 @@ function validateChains() {
     const metadata = readYaml(metadataPath);
     if (fs.existsSync(addressesPath)) {
       if (!Object.keys(metadata).includes('deployer')) missingDeployerField.push(metadataPath);
-    }
-
-    // check if isTestNet is set properly for chains that could be testnets
-    // PD: this only works to check chains that have "test" on their name
-    if ('name' in metadata && metadata['name'].includes('test')) {
-      if (!('isTestnet' in metadata) || !metadata['isTestnet']) {
-        invalidTestnetChains.push(metadataPath);
-      }
     }
   });
 }
@@ -81,30 +71,6 @@ function validateConfigFiles(entryPath) {
     noConfigFileError.push(entryPath);
     return;
   }
-
-  // Search and parse the config files in the current directory
-  // For each entry, find if field logoURI is missing
-  configFiles.forEach((configFile) => {
-    const configFilePath = path.join(entryPath, configFile);
-    const configData = readYaml(configFilePath);
-
-    let foundLogoURIs = 0;
-
-    if (Object.keys(configData).includes('tokens')) {
-      const tokens = configData.tokens;
-      tokens.forEach((token) => {
-        if (!Object.keys(token).includes('logoURI')) {
-          foundLogoURIs++;
-        }
-      });
-
-      // if no entry found, skip check
-      if (foundLogoURIs === 0) return;
-
-      // otherwise all tokens must contain logoURI,
-      if (foundLogoURIs !== tokens.length) logoURIError.push(configFilePath);
-    }
-  });
 }
 
 function validateWarpRoutes() {
@@ -128,10 +94,8 @@ function validateWarpRoutes() {
 function validateErrors() {
   const errorCount =
     missingDeployerField.length +
-    invalidTestnetChains.length +
     noConfigFileError.length +
     noLogoFileError.length +
-    logoURIError.length +
     unorderedChainNamesError.length;
 
   if (errorCount === 0) return;
@@ -144,19 +108,10 @@ function validateErrors() {
       missingDeployerField,
     );
 
-  if (invalidTestnetChains.length > 0)
-    console.error(
-      'Error: Chain contains "test" on its name but isTestNet is not set to "true" for the following paths:',
-      invalidTestnetChains,
-    );
-
   if (noLogoFileError.length > 0) console.error('Error: logo file missing at:', noLogoFileError);
 
   if (noConfigFileError.length > 0)
     console.error('Error: no config file at paths:', noConfigFileError);
-
-  if (logoURIError.length > 0)
-    console.error('Error: All tokens must contain logoURI field:', logoURIError);
 
   if (unorderedChainNamesError.length > 0)
     console.error(

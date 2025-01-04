@@ -1,6 +1,11 @@
 import { expect } from 'chai';
 
-import { MultiProtocolProvider, TOKEN_COLLATERALIZED_STANDARDS, TokenStandard, WarpCore } from '@hyperlane-xyz/sdk';
+import {
+  MultiProtocolProvider,
+  TOKEN_COLLATERALIZED_STANDARDS,
+  TokenStandard,
+  WarpCore,
+} from '@hyperlane-xyz/sdk';
 import { FileSystemRegistry } from '../../src/registry/FileSystemRegistry.js';
 import { createWarpRouteConfigId, parseWarpRouteConfigId } from '../../src/registry/warp-utils.js';
 import path from 'path';
@@ -27,7 +32,8 @@ describe('Warp Route Configs', () => {
 
       // Verify each chain exists in registry
       for (const chain of chainNames) {
-        expect(localRegistry.getChainMetadata(chain), `Chain ${chain} not found in registry`).to.not.be.null;
+        expect(localRegistry.getChainMetadata(chain), `Chain ${chain} not found in registry`).to.not
+          .be.null;
       }
     });
 
@@ -43,9 +49,27 @@ describe('Warp Route Configs', () => {
       const config = routes[id];
       config.tokens.forEach((token) => {
         if (token.logoURI) {
-          expect(fs.existsSync(path.join(BASE_URI, token.logoURI)), `Logo file ${token.logoURI} not found`).to.be.true;
+          expect(
+            fs.existsSync(path.join(BASE_URI, token.logoURI)),
+            `Logo file ${token.logoURI} not found`,
+          ).to.be.true;
         }
       });
+    });
+
+    it(`Route ${id} tokens has consistent logoURI presence`, () => {
+      const config = routes[id];
+      let foundLogoURI = 0;
+      config.tokens.forEach((token) => {
+        if (token.logoURI) {
+          foundLogoURI++;
+        }
+      });
+
+      expect(
+        foundLogoURI === 0 || foundLogoURI === config.tokens.length,
+        `Tokens must all or none have logoURI. Found ${foundLogoURI} with logoURI out of ${config.tokens.length}`,
+      ).to.be.true;
     });
 
     it(`Route ${id} matches derived id from config`, () => {
@@ -65,14 +89,17 @@ describe('Warp Route Configs', () => {
       const { chainNames: derivedChainNames } = parseWarpRouteConfigId(derivedId);
 
       // Verify the chain names match
-      expect(chainNames).to.deep.equal(derivedChainNames, 'Chain names in ID must match derived chain names');
+      expect(chainNames).to.deep.equal(
+        derivedChainNames,
+        'Chain names in ID must match derived chain names',
+      );
     });
 
     it(`Route ${id} only specifies a coinGeckoId for tokens that escrow tokens`, () => {
       const config = routes[id];
 
       const warpCore = WarpCore.FromConfig(multiProvider, config);
-      
+
       for (const token of warpCore.tokens) {
         if (token.coinGeckoId === undefined) {
           continue;
@@ -88,7 +115,7 @@ describe('Warp Route Configs', () => {
             TokenStandard.EvmHypSyntheticRebase,
             TokenStandard.EvmHypXERC20,
           ].includes(token.standard),
-          `Token standard ${token.standard} should not have a coinGeckoId`
+          `Token standard ${token.standard} should not have a coinGeckoId`,
         ).to.be.true;
       }
     });
