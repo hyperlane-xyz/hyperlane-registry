@@ -1,4 +1,8 @@
-import { ChainMetadataSchema, ChainTechnicalStack, EthJsonRpcBlockParameterTag } from '@hyperlane-xyz/sdk';
+import {
+  ChainMetadataSchema,
+  ChainTechnicalStack,
+  EthJsonRpcBlockParameterTag,
+} from '@hyperlane-xyz/sdk';
 import { chainAddresses, chainMetadata } from '../../dist/index.js';
 import { ChainAddressesSchema } from '../../src/types.js';
 import { isAbacusWorksChain } from '../../src/utils.js';
@@ -16,6 +20,14 @@ describe('Chain metadata', () => {
       ChainMetadataSchema.parse(metadata);
     });
 
+    // check if isTestNet is set properly for chains that could be testnets
+    // PD: this only works to check chains that have "test" on their name
+    it(`${chain} isTestnet is set to true when name contains test`, () => {
+      if (metadata.name.includes('test')) {
+        expect(metadata.isTestnet).to.be.true;
+      }
+    });
+
     it(`${chain} metadata contains deployer details if mailbox address is defined`, () => {
       if (chainAddresses[chain] && chainAddresses[chain].mailboxAddress) {
         expect(metadata.deployer).not.to.be.undefined;
@@ -29,7 +41,7 @@ describe('Chain metadata', () => {
     });
 
     it(`${chain} metadata has gasCurrencyCoinGeckoId if deployer is Abacus Works it is a mainnet`, () => {
-      if (metadata.deployer?.name === "Abacus Works" && !metadata.isTestnet) {
+      if (metadata.deployer?.name === 'Abacus Works' && !metadata.isTestnet) {
         expect(metadata.gasCurrencyCoinGeckoId).not.to.be.undefined;
       }
     });

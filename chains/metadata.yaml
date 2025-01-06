@@ -3422,7 +3422,7 @@ metertestnet:
       name: Meter Testnet Explorer
       url: https://scan.meter.io/
   chainId: 83
-  deployers:
+  deployer:
     name: JaunePomme
     url: https://github.com/JaunePomme
   displayName: Meter testnet
@@ -4891,6 +4891,27 @@ solanatestnet:
   protocol: sealevel
   rpcUrls:
     - http: https://api.testnet.solana.com
+solotestnet:
+  blockExplorers:
+    - apiUrl: https://solo-testnet.explorer.caldera.xyz/api
+      family: blockscout
+      name: Solo Testnet Explorer
+      url: https://solo-testnet.explorer.caldera.xyz/
+  chainId: 8884571
+  deployer:
+    name: Solo Chain
+    url: https://solo.tech/
+  displayName: Solo Testnet
+  domainId: 8884571
+  isTestnet: true
+  name: solotestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://solo-testnet.rpc.caldera.xyz/http
 soneium:
   blockExplorers:
     - apiUrl: https://explorer.soneium.org/api
@@ -5511,6 +5532,9 @@ u2utestnet:
       name: u2uscan
       url: https://testnet.u2uscan.xyz
   chainId: 2484
+  deployer:
+    name: junayedmh
+    url: https://github.com/JunayedMh
   displayName: U2U Testnet
   domainId: 2484
   isTestnet: true
