@@ -4891,6 +4891,27 @@ solanatestnet:
   protocol: sealevel
   rpcUrls:
     - http: https://api.testnet.solana.com
+solotestnet:
+  blockExplorers:
+    - apiUrl: https://solo-testnet.explorer.caldera.xyz/api
+      family: blockscout
+      name: Solo Testnet Explorer
+      url: https://solo-testnet.explorer.caldera.xyz/
+  chainId: 8884571
+  deployer:
+    name: Solo Chain
+    url: https://solo.tech/
+  displayName: Solo Testnet
+  domainId: 8884571
+  isTestnet: true
+  name: solotestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://solo-testnet.rpc.caldera.xyz/http
 soneium:
   blockExplorers:
     - apiUrl: https://explorer.soneium.org/api
