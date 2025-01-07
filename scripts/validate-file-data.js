@@ -9,8 +9,8 @@ const warpRoutesDir = './deployments/warp_routes';
 const missingDeployerField = [];
 const noLogoFileError = [];
 
-// warp routes errors
-const noConfigFileError = [];
+// warp route warnings / errors
+const noConfigFileWarning = [];
 const unorderedChainNamesError = [];
 
 function validateChains() {
@@ -68,7 +68,7 @@ function validateConfigFiles(entryPath) {
   const configFiles = fs.readdirSync(entryPath).filter((file) => file.includes('-config.yaml'));
 
   if (configFiles.length === 0) {
-    noConfigFileError.push(entryPath);
+    noConfigFileWarning.push(entryPath);
     return;
   }
 }
@@ -92,9 +92,18 @@ function validateWarpRoutes() {
 }
 
 function validateErrors() {
+  // First, warnings
+
+  // There's a chicken and egg problem for SVM warp routes: we need to
+  // merge the SVM metadata.json of a new token into main so we get a perma-link
+  // prior to deploying the token. This means we generally submit a first PR with the
+  // metadata and a follow-up PR with the addresses / config.
+  if (noConfigFileWarning.length > 0)
+    console.warn('Error: no config file at paths:', noConfigFileWarning);
+
+  // Then, errors
   const errorCount =
     missingDeployerField.length +
-    noConfigFileError.length +
     noLogoFileError.length +
     unorderedChainNamesError.length;
 
@@ -109,9 +118,6 @@ function validateErrors() {
     );
 
   if (noLogoFileError.length > 0) console.error('Error: logo file missing at:', noLogoFileError);
-
-  if (noConfigFileError.length > 0)
-    console.error('Error: no config file at paths:', noConfigFileError);
 
   if (unorderedChainNamesError.length > 0)
     console.error(
