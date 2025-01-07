@@ -1,5 +1,20 @@
 # @hyperlane-xyz/registry
 
+## 6.11.0
+
+### Minor Changes
+
+- a7e6702: feat: add solo testnet
+- 36b4c5f: Add workflow to validate and optimize SVGs, update SVGs with optimized version
+- f9699c4: Deploy PNDR warp route
+
+### Patch Changes
+
+- 23186f9: Warp Routes: add logoURI for tokens that did not have it and rename chain names that were not sorted alphabetically
+  Chains: Add missing deployer field
+- fac1e34: Improve CI workflow by separating concerns
+- 69f3abb: Upgrade yarn to 4.5.1
+
 ## 6.10.0
 
 ### Minor Changes
