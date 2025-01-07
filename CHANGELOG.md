@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 6.12.0-http.2
+
+### Patch Changes
+
+- Implement more endpoints
+
 ## 6.12.0-http.1
 
 ### Minor Changes

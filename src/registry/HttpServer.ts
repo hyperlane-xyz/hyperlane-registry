@@ -1,5 +1,5 @@
 import { ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
-import express, { Express, Router } from 'express';
+import express, { Express } from 'express';
 import { IRegistry } from './IRegistry.js';
 
 export class HttpServer {
@@ -7,10 +7,9 @@ export class HttpServer {
 
   constructor(registry: IRegistry) {
     this.app = express();
-    const router = Router();
     this.app.use(express.json());
 
-    router.get('/metadata', async (req, res) => {
+    this.app.get('/metadata', async (req, res) => {
       try {
         const metadata = await registry.getMetadata();
         if (!metadata) {
@@ -24,7 +23,7 @@ export class HttpServer {
     });
 
     // Get chain metadata
-    router.get('/metadata/:chain', async (req, res) => {
+    this.app.get('/chain/:chain/metadata', async (req, res) => {
       try {
         const chainName = req.params.chain as ChainName;
         const metadata = await registry.getChainMetadata(chainName);
@@ -38,7 +37,7 @@ export class HttpServer {
       }
     });
 
-    router.post('/metadata/:chain', async (req, res) => {
+    this.app.post('/chain/:chain/metadata', async (req, res) => {
       try {
         const chainName = req.params.chain as ChainName;
         const metadata = req.body as ChainMetadata;
@@ -53,7 +52,7 @@ export class HttpServer {
       }
     });
 
-    router.get('/addresses', async (req, res) => {
+    this.app.get('/addresses', async (req, res) => {
       try {
         const addresses = await registry.getAddresses();
         if (!addresses) {

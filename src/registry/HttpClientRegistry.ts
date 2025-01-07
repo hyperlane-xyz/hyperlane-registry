@@ -15,12 +15,20 @@ export class HttpClientRegistry implements IRegistry {
     this.baseUrl = baseUrl;
   }
 
+  getMetadata(): MaybePromise<ChainMap<ChainMetadata>> {
+    return this.fetchJson<ChainMap<ChainMetadata>>('/metadata');
+  }
+
+  getAddresses(): MaybePromise<ChainMap<ChainAddresses>> {
+    return this.fetchJson<ChainMap<ChainAddresses>>('/addresses');
+  }
+
   getChainMetadata(chainName: ChainName): MaybePromise<ChainMetadata> {
-    return this.fetchJson<ChainMetadata>(`/metadata/${chainName}`);
+    return this.fetchJson<ChainMetadata>(`/chain/${chainName}/metadata`);
   }
 
   updateChain(update: UpdateChainParams): MaybePromise<void> {
-    return this.fetchJson<void>(`/metadata/${update.chainName}`, {
+    return this.fetchJson<void>(`/chain/${update.chainName}/metadata`, {
       method: 'POST',
       body: JSON.stringify(update.metadata),
     });
@@ -42,12 +50,6 @@ export class HttpClientRegistry implements IRegistry {
   }
   getChains(): MaybePromise<Array<ChainName>> {
     throw new Error('Method not implemented.');
-  }
-  getMetadata(): MaybePromise<ChainMap<ChainMetadata>> {
-    return this.fetchJson<ChainMap<ChainMetadata>>('/metadata');
-  }
-  getAddresses(): MaybePromise<ChainMap<ChainAddresses>> {
-    return this.fetchJson<ChainMap<ChainAddresses>>('/addresses');
   }
   getChainAddresses(chainName: ChainName): MaybePromise<ChainAddresses | null> {
     throw new Error('Method not implemented.');
@@ -84,8 +86,7 @@ export class HttpClientRegistry implements IRegistry {
     });
 
     if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.error || 'Request failed');
+      throw new Error(`HTTP error: ${response.status} ${response.statusText}`);
     }
 
     return response.json();
