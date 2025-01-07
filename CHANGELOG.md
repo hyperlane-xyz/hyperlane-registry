@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 6.12.0-http.0
+
+### Minor Changes
+
+- 9a11b8b: Add SOON chain, add Bonk logo and metadata, make warp deploys without a config a warning
+
 ## 6.11.0
 
 ### Minor Changes
