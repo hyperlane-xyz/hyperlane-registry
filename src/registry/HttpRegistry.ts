@@ -35,6 +35,20 @@ export class HttpRegistry {
       }
     });
 
+    // Get metadata
+    router.get('/metadata', async (req, res) => {
+      try {
+        const metadata = await registry.getMetadata();
+        if (!metadata) {
+          return res.status(404).json({ error: 'Metadata not found' });
+        }
+        return res.json(metadata);
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+        return res.status(500).json({ error: errorMessage });
+      }
+    });
+
     // Get chain metadata
     router.get('/metadata/:chain', async (req, res) => {
       try {
@@ -44,6 +58,20 @@ export class HttpRegistry {
           return res.status(404).json({ error: 'Chain metadata not found' });
         }
         return res.json(metadata);
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+        return res.status(500).json({ error: errorMessage });
+      }
+    });
+
+    // Get addresses
+    router.get('/addresses', async (req, res) => {
+      try {
+        const addresses = await registry.getAddresses();
+        if (!addresses) {
+          return res.status(404).json({ error: 'Chain addresses not found' });
+        }
+        return res.json(addresses);
       } catch (error) {
         const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
         return res.status(500).json({ error: errorMessage });
