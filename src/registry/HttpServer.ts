@@ -4,11 +4,24 @@ import { IRegistry } from './IRegistry.js';
 
 export class HttpServer {
   app: Express;
-  
+
   constructor(registry: IRegistry) {
     this.app = express();
     const router = Router();
     this.app.use(express.json());
+
+    router.get('/metadata', async (req, res) => {
+      try {
+        const metadata = await registry.getMetadata();
+        if (!metadata) {
+          return res.status(404).json({ error: 'Metadata not found' });
+        }
+        return res.json(metadata);
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+        return res.status(500).json({ error: errorMessage });
+      }
+    });
 
     // Get chain metadata
     router.get('/metadata/:chain', async (req, res) => {
@@ -34,6 +47,19 @@ export class HttpServer {
           metadata,
         });
         return res.status(200).json({ message: 'Chain metadata updated successfully' });
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+        return res.status(500).json({ error: errorMessage });
+      }
+    });
+
+    router.get('/addresses', async (req, res) => {
+      try {
+        const addresses = await registry.getAddresses();
+        if (!addresses) {
+          return res.status(404).json({ error: 'Addresses not found' });
+        }
+        return res.json(addresses);
       } catch (error) {
         const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
         return res.status(500).json({ error: errorMessage });

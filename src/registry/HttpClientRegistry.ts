@@ -44,10 +44,10 @@ export class HttpClientRegistry implements IRegistry {
     throw new Error('Method not implemented.');
   }
   getMetadata(): MaybePromise<ChainMap<ChainMetadata>> {
-    throw new Error('Method not implemented.');
+    return this.fetchJson<ChainMap<ChainMetadata>>('/metadata');
   }
   getAddresses(): MaybePromise<ChainMap<ChainAddresses>> {
-    throw new Error('Method not implemented.');
+    return this.fetchJson<ChainMap<ChainAddresses>>('/addresses');
   }
   getChainAddresses(chainName: ChainName): MaybePromise<ChainAddresses | null> {
     throw new Error('Method not implemented.');
