@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x0Ea3C23A4dC198c289D5443ac302335aBc86E6b1"
+    chainName: optimism
+    coinGeckoId: optimism
+    collateralAddressOrDenom: "0x4200000000000000000000000000000000000042"
+    connections:
+      - token: ethereum|superseed|0x4e128A1b613A9C9Ecf650FeE461c353612559fcf
+    decimals: 18
+    logoURI: /deployments/warp_routes/OP/logo.svg
+    name: Optimism
+    standard: EvmHypCollateral
+    symbol: OP
+  - addressOrDenom: "0x4e128A1b613A9C9Ecf650FeE461c353612559fcf"
+    chainName: superseed
+    connections:
+      - token: ethereum|optimism|0x0Ea3C23A4dC198c289D5443ac302335aBc86E6b1
+    decimals: 18
+    logoURI: /deployments/warp_routes/OP/logo.svg
+    name: Optimism
+    standard: EvmHypSynthetic
+    symbol: OP
