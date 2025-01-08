@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x9C417D68dE6Acb6a9b0fBeD56767F1f3548A48a1"
+    chainName: base
+    coinGeckoId: mister-miggles
+    collateralAddressOrDenom: "0xB1a03EdA10342529bBF8EB700a06C60441fEf25d"
+    connections:
+      - token: ethereum|zeronetwork|0xEE7bF7bB7575163edd413e36E9f06a124b51B9fa
+    decimals: 18
+    logoURI: /deployments/warp_routes/MIGGLES/logo.svg
+    name: Mister Miggles
+    standard: EvmHypCollateral
+    symbol: MIGGLES
+  - addressOrDenom: "0xEE7bF7bB7575163edd413e36E9f06a124b51B9fa"
+    chainName: zeronetwork
+    connections:
+      - token: ethereum|base|0x9C417D68dE6Acb6a9b0fBeD56767F1f3548A48a1
+    decimals: 18
+    logoURI: /deployments/warp_routes/MIGGLES/logo.svg
+    name: Mister Miggles
+    standard: EvmHypSynthetic
+    symbol: MIGGLES
