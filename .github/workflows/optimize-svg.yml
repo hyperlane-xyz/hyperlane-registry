@@ -14,7 +14,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref || 'main' }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # This action secret contains a fine-grained personal access token with permissions to read/write repo content
+          # It is necessary because the default GITHUB_TOKEN cannot re-trigger workflows after pushing
+          token: ${{ secrets.COMBINE_CI_TOKEN || secrets.GITHUB_TOKEN }}
 
       - uses: actions/cache@v4
         with:
@@ -38,7 +40,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: validate-optimize-svgs
+      - name: optimize-svgs
         run: |
           node ./scripts/optimize-svg.js
 
@@ -52,7 +54,7 @@ jobs:
           CHANGES=$(git status -s)
           if [[ ! -z $CHANGES ]]; then
             git add .
-            git commit -m "Optimize SVG files [skip-ci]" 
+            git commit -m "Optimize SVG files" 
             git push
           else
             echo "No changes to commit."
