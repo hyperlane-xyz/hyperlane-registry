@@ -8,6 +8,8 @@ export { GithubRegistry, GithubRegistryOptions } from './registry/GithubRegistry
 export { ChainFiles, IRegistry, RegistryContent, RegistryType } from './registry/IRegistry.js';
 export { MergedRegistry, MergedRegistryOptions } from './registry/MergedRegistry.js';
 export { PartialRegistry, PartialRegistryOptions } from './registry/PartialRegistry.js';
+export { HttpClientRegistry } from './registry/HttpClientRegistry.js';
+export { HttpServer } from './registry/HttpServer.js';
 export {
   filterWarpRoutesIds,
   warpConfigToWarpAddresses,
