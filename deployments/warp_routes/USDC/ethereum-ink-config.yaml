@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xAf4f3329D271655a4287882310dE25Fb77Dc0a14"
+    chainName: ethereum
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    connections:
+      - token: ethereum|ink|0x23f63C65c474f2A5BF80ea845Ca496Da3689A2B9
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x23f63C65c474f2A5BF80ea845Ca496Da3689A2B9"
+    chainName: ink
+    connections:
+      - token: ethereum|ethereum|0xAf4f3329D271655a4287882310dE25Fb77Dc0a14
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypSynthetic
+    symbol: USDC
