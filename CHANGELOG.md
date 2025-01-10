@@ -1,5 +1,17 @@
 # @hyperlane-xyz/registry
 
+## 6.13.0
+
+### Minor Changes
+
+- 9491843: Add rstETH/ethereum-zircuit Warp Route
+- 08a37ba: Add SOL and Bonk warp routes to Soon, update Solana ISM
+- 690e049: add new form warp routes for GAME WBTC aixBT and wstETH
+
+### Patch Changes
+
+- c04a948: Add PNDR/bsc-ethereum-lumiaprism logoURI field"
+
 ## 6.12.0
 
 ### Minor Changes
