@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Deploy to torus.
+Add rstETH/ethereum-zircuit Warp Route

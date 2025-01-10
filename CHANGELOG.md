@@ -1,5 +1,22 @@
 # @hyperlane-xyz/registry
 
+## 6.12.0
+
+### Minor Changes
+
+- 243f404: add the USDT warp route from ethereum to superseed
+- 9a11b8b: Add SOON chain, add Bonk logo and metadata, make warp deploys without a config a warning
+- c8234fd: Deploy to torus.
+- 68bd1b1: add OP warp route to connect optimism and superseed
+
+### Patch Changes
+
+- 62ccc4d: Add ethereum-ink USDC artifacts
+- 25dc7ff: update injective rpc URL
+- 33bc5bb: Add JC to Base and Zero
+- b5b1276: Add Miggles to Zero Network
+- 7c652c3: Add Brett artifacts
+
 ## 6.11.0
 
 ### Minor Changes
