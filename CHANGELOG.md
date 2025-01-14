@@ -1,5 +1,18 @@
 # @hyperlane-xyz/registry
 
+## 6.14.0
+
+### Minor Changes
+
+- 58e4ea1: Deploy to new chains: artela, guru, hemi, nero, xpla.
+- 52f72b3: added the ethereum form usdt warp route
+- 9872274: Add Artela metadata and logo
+
+### Patch Changes
+
+- eabe2dc: Enroll new chains: artela, guru, hemi, nero, torus, xpla.
+- 53cf28e: Update soneium block explorer.
+
 ## 6.13.0
 
 ### Minor Changes
