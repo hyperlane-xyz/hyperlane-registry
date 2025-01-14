@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x9Fe693789E93319cc0F8A00FB4597Ea4fD4b08cA"
+    chainName: base
+    coinGeckoId: based-brett
+    collateralAddressOrDenom: "0x532f27101965dd16442E59d40670FaF5eBB142E4"
+    connections:
+      - token: ethereum|zeronetwork|0xf7F253769c36CC7e1B01988CFf3aE198dea2c172
+    decimals: 18
+    logoURI: /deployments/warp_routes/BRETT/logo.svg
+    name: Brett
+    standard: EvmHypCollateral
+    symbol: BRETT
+  - addressOrDenom: "0xf7F253769c36CC7e1B01988CFf3aE198dea2c172"
+    chainName: zeronetwork
+    connections:
+      - token: ethereum|base|0x9Fe693789E93319cc0F8A00FB4597Ea4fD4b08cA
+    decimals: 18
+    logoURI: /deployments/warp_routes/BRETT/logo.svg
+    name: Brett
+    standard: EvmHypSynthetic
+    symbol: BRETT

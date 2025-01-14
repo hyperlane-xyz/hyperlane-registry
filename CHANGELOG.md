@@ -1,5 +1,62 @@
 # @hyperlane-xyz/registry
 
+## 6.14.0
+
+### Minor Changes
+
+- 58e4ea1: Deploy to new chains: artela, guru, hemi, nero, xpla.
+- 52f72b3: added the ethereum form usdt warp route
+- 9872274: Add Artela metadata and logo
+
+### Patch Changes
+
+- eabe2dc: Enroll new chains: artela, guru, hemi, nero, torus, xpla.
+- 53cf28e: Update soneium block explorer.
+
+## 6.13.0
+
+### Minor Changes
+
+- 9491843: Add rstETH/ethereum-zircuit Warp Route
+- 08a37ba: Add SOL and Bonk warp routes to Soon, update Solana ISM
+- 690e049: add new form warp routes for GAME WBTC aixBT and wstETH
+
+### Patch Changes
+
+- c04a948: Add PNDR/bsc-ethereum-lumiaprism logoURI field"
+
+## 6.12.0
+
+### Minor Changes
+
+- 243f404: add the USDT warp route from ethereum to superseed
+- 9a11b8b: Add SOON chain, add Bonk logo and metadata, make warp deploys without a config a warning
+- c8234fd: Deploy to torus.
+- 68bd1b1: add OP warp route to connect optimism and superseed
+
+### Patch Changes
+
+- 62ccc4d: Add ethereum-ink USDC artifacts
+- 25dc7ff: update injective rpc URL
+- 33bc5bb: Add JC to Base and Zero
+- b5b1276: Add Miggles to Zero Network
+- 7c652c3: Add Brett artifacts
+
+## 6.11.0
+
+### Minor Changes
+
+- a7e6702: feat: add solo testnet
+- 36b4c5f: Add workflow to validate and optimize SVGs, update SVGs with optimized version
+- f9699c4: Deploy PNDR warp route
+
+### Patch Changes
+
+- 23186f9: Warp Routes: add logoURI for tokens that did not have it and rename chain names that were not sorted alphabetically
+  Chains: Add missing deployer field
+- fac1e34: Improve CI workflow by separating concerns
+- 69f3abb: Upgrade yarn to 4.5.1
+
 ## 6.10.0
 
 ### Minor Changes

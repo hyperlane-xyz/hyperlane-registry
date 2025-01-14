@@ -1,7 +1,9 @@
 name: combine
 
 on:
-  pull_request:
+  push:
+    branches:
+      - main
   # Allows you to run this workflow manually
   workflow_dispatch:
 

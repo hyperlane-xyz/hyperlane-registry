@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x5CBD4c5f9CD55747285652f815Cc7b9A2Ef6c586"
+    chainName: form
+    connections:
+      - token: ethereum|ethereum|0x9c7e8dc6b35E66873dA683aF2dE1BaB4cabc98B5
+    decimals: 18
+    logoURI: /deployments/warp_routes/WSTETH/logo.svg
+    name: Wrapped liquid staked Ether 2.0
+    standard: EvmHypSynthetic
+    symbol: wstETH
+  - addressOrDenom: "0x9c7e8dc6b35E66873dA683aF2dE1BaB4cabc98B5"
+    chainName: ethereum
+    coinGeckoId: wrapped-steth
+    collateralAddressOrDenom: "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
+    connections:
+      - token: ethereum|form|0x5CBD4c5f9CD55747285652f815Cc7b9A2Ef6c586
+    decimals: 18
+    logoURI: /deployments/warp_routes/WSTETH/logo.svg
+    name: Wrapped liquid staked Ether 2.0
+    standard: EvmHypCollateral
+    symbol: wstETH

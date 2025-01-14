@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x96D51cc3f7500d501bAeB1A2a62BB96fa03532F8"
+    chainName: form
+    connections:
+      - token: ethereum|base|0x6a5579ABECE07b73d4d92a8bBFF51aF827bB21f1
+    decimals: 18
+    logoURI: /deployments/warp_routes/GAME/logo.svg
+    name: GAME by Virtuals
+    standard: EvmHypSynthetic
+    symbol: GAME
+  - addressOrDenom: "0x6a5579ABECE07b73d4d92a8bBFF51aF827bB21f1"
+    chainName: base
+    coinGeckoId: game-by-virtuals
+    collateralAddressOrDenom: "0x1C4CcA7C5DB003824208aDDA61Bd749e55F463a3"
+    connections:
+      - token: ethereum|form|0x96D51cc3f7500d501bAeB1A2a62BB96fa03532F8
+    decimals: 18
+    logoURI: /deployments/warp_routes/GAME/logo.svg
+    name: GAME by Virtuals
+    standard: EvmHypCollateral
+    symbol: GAME
