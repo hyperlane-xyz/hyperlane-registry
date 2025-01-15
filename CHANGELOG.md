@@ -1,5 +1,24 @@
 # @hyperlane-xyz/registry
 
+## 6.16.0
+
+### Minor Changes
+
+- e95e1d6: Add TONY metadata and logo
+- 1a9cc25: Add TONY artifacts
+
+## 6.15.0
+
+### Minor Changes
+
+- 4da27b6: Add Artela/Base USDC and WETH warp route artifacts
+- 9d7868f: Add sonicsvmtestnet, add solanatestnet addresses
+
+### Patch Changes
+
+- 195c073: add missing coingecko id to form usdt and usdc routes
+- be18353: Add SuperSeed FiatToken warp route
+
 ## 6.14.0
 
 ### Minor Changes
