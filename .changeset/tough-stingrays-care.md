@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add Artela and base artifacts
+Add ART/artela-base-solanamainnet artifacts
