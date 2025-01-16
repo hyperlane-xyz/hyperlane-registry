@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 6.17.0
+
+### Minor Changes
+
+- 28b8d3e: Add ART/artela-base-solanamainnet artifacts
+
 ## 6.16.0
 
 ### Minor Changes
