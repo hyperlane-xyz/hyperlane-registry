@@ -150,7 +150,7 @@ function validateErrors() {
 
   if (invalidLogoURIPathError.length > 0) {
     console.error(
-      'Error: Invalid logoURI path at, verify this file exists:',
+      'Error: Invalid logoURI paths, verify that files exist:',
       invalidLogoURIPathError,
     );
   }
