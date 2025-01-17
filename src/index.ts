@@ -5,7 +5,13 @@ export {
 } from './consts.js';
 export { BaseRegistry } from './registry/BaseRegistry.js';
 export { GithubRegistry, GithubRegistryOptions } from './registry/GithubRegistry.js';
-export { ChainFiles, IRegistry, RegistryContent, RegistryType } from './registry/IRegistry.js';
+export {
+  ChainFiles,
+  IRegistry,
+  RegistryContent,
+  RegistryType,
+  WarpRouteOptions,
+} from './registry/IRegistry.js';
 export { MergedRegistry, MergedRegistryOptions } from './registry/MergedRegistry.js';
 export { PartialRegistry, PartialRegistryOptions } from './registry/PartialRegistry.js';
 export {
@@ -17,3 +23,4 @@ export {
 } from './registry/warp-utils.js';
 export { ChainAddresses, ChainAddressesSchema } from './types.js';
 export { isAbacusWorksChain } from './utils.js';
+//testing this

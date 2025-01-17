@@ -10,6 +10,7 @@ import type {
   RegistryType,
   UpdateChainParams,
   WarpRouteFilterParams,
+  WarpRouteOptions,
 } from './IRegistry.js';
 import { MergedRegistry } from './MergedRegistry.js';
 
@@ -46,12 +47,14 @@ export abstract class BaseRegistry implements IRegistry {
     return 'deployments/warp_routes';
   }
 
-  protected getWarpRoutesArtifactPaths({ tokens }: WarpCoreConfig) {
+  protected getWarpRoutesArtifactPaths({ tokens }: WarpCoreConfig, options?: WarpRouteOptions) {
     if (!tokens.length) throw new Error('No tokens provided in config');
     const symbols = new Set<string>(tokens.map((token) => token.symbol.toUpperCase()));
-    if (symbols.size !== 1)
-      throw new Error('Only one token symbol per warp config is supported for now');
-    const symbol = symbols.values().next().value;
+    if (!options?.symbol && symbols.size !== 1)
+      throw new Error(
+        'Only one token symbol per warp config is supported for now. Consider passing a symbol as a parameter',
+      );
+    const symbol = options?.symbol || symbols.values().next().value;
     const chains = tokens
       .map((token) => token.chainName)
       .sort()

@@ -7,6 +7,7 @@ import {
   RegistryContent,
   UpdateChainParams,
   WarpRouteFilterParams,
+  WarpRouteOptions,
 } from './IRegistry.js';
 import { filterWarpRoutesIds } from './warp-utils.js';
 
@@ -71,7 +72,7 @@ export abstract class SynchronousRegistry extends BaseRegistry implements IRegis
     return Object.fromEntries(idsWithConfigs);
   }
 
-  abstract addWarpRoute(config: WarpCoreConfig): void;
+  abstract addWarpRoute(config: WarpCoreConfig, options?: WarpRouteOptions): void;
 
   protected abstract createOrUpdateChain(chain: UpdateChainParams): void;
 

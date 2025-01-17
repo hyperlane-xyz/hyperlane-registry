@@ -34,6 +34,10 @@ export enum RegistryType {
   Partial = 'partial',
 }
 
+export interface WarpRouteOptions {
+  symbol?: string;
+}
+
 export interface IRegistry {
   type: RegistryType;
   uri: string;
@@ -58,7 +62,7 @@ export interface IRegistry {
 
   getWarpRoute(routeId: string): MaybePromise<WarpCoreConfig | null>;
   getWarpRoutes(filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap>;
-  addWarpRoute(config: WarpCoreConfig): MaybePromise<void>;
+  addWarpRoute(config: WarpCoreConfig, options?: WarpRouteOptions): MaybePromise<void>;
 
   // TODO define more deployment artifact related methods
 

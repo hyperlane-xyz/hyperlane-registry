@@ -9,6 +9,7 @@ import {
   RegistryType,
   UpdateChainParams,
   WarpRouteFilterParams,
+  WarpRouteOptions,
 } from './IRegistry.js';
 
 export interface MergedRegistryOptions {
@@ -107,9 +108,9 @@ export class MergedRegistry implements IRegistry {
     return results.reduce((acc, content) => objMerge(acc, content), {});
   }
 
-  async addWarpRoute(config: WarpCoreConfig): Promise<void> {
+  async addWarpRoute(config: WarpCoreConfig, options?: WarpRouteOptions): Promise<void> {
     return this.multiRegistryWrite(
-      async (registry) => await registry.addWarpRoute(config),
+      async (registry) => await registry.addWarpRoute(config, options),
       'adding warp route',
     );
   }
