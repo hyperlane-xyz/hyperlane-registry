@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Deploy to flametestnet.
+Deploy to flametestnet, sonicblaze.
