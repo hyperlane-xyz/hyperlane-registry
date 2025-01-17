@@ -54,8 +54,6 @@ export const GITHUB_API_URL = 'https://api.github.com';
  * A registry that uses a github repository as its data source.
  * Reads are performed via the github API and github's raw content URLs.
  * Writes are not yet supported (TODO)
- *
- * Hello
  */
 export class GithubRegistry extends BaseRegistry implements IRegistry {
   public readonly type = RegistryType.Github;
