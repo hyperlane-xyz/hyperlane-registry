@@ -6,11 +6,11 @@ export {
 export { BaseRegistry } from './registry/BaseRegistry.js';
 export { GithubRegistry, GithubRegistryOptions } from './registry/GithubRegistry.js';
 export {
+  AddWarpRouteOptions,
   ChainFiles,
   IRegistry,
   RegistryContent,
   RegistryType,
-  WarpRouteOptions,
 } from './registry/IRegistry.js';
 export { MergedRegistry, MergedRegistryOptions } from './registry/MergedRegistry.js';
 export { PartialRegistry, PartialRegistryOptions } from './registry/PartialRegistry.js';

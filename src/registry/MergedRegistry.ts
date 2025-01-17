@@ -4,12 +4,12 @@ import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperl
 import { ChainAddresses, WarpRouteConfigMap, WarpRouteId } from '../types.js';
 import { objMerge } from '../utils.js';
 import {
+  AddWarpRouteOptions,
   IRegistry,
   RegistryContent,
   RegistryType,
   UpdateChainParams,
   WarpRouteFilterParams,
-  WarpRouteOptions,
 } from './IRegistry.js';
 
 export interface MergedRegistryOptions {
@@ -108,7 +108,7 @@ export class MergedRegistry implements IRegistry {
     return results.reduce((acc, content) => objMerge(acc, content), {});
   }
 
-  async addWarpRoute(config: WarpCoreConfig, options?: WarpRouteOptions): Promise<void> {
+  async addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): Promise<void> {
     return this.multiRegistryWrite(
       async (registry) => await registry.addWarpRoute(config, options),
       'adding warp route',

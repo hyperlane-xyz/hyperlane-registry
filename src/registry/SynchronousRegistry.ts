@@ -3,11 +3,11 @@ import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperl
 import { ChainAddresses, WarpRouteConfigMap, WarpRouteId } from '../types.js';
 import { BaseRegistry } from './BaseRegistry.js';
 import {
+  AddWarpRouteOptions,
   IRegistry,
   RegistryContent,
   UpdateChainParams,
   WarpRouteFilterParams,
-  WarpRouteOptions,
 } from './IRegistry.js';
 import { filterWarpRoutesIds } from './warp-utils.js';
 
@@ -72,7 +72,7 @@ export abstract class SynchronousRegistry extends BaseRegistry implements IRegis
     return Object.fromEntries(idsWithConfigs);
   }
 
-  abstract addWarpRoute(config: WarpCoreConfig, options?: WarpRouteOptions): void;
+  abstract addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): void;
 
   protected abstract createOrUpdateChain(chain: UpdateChainParams): void;
 

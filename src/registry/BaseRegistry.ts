@@ -5,12 +5,12 @@ import type { ChainAddresses, MaybePromise } from '../types.js';
 import { WarpRouteConfigMap } from '../types.js';
 import { stripLeadingSlash } from '../utils.js';
 import type {
+  AddWarpRouteOptions,
   IRegistry,
   RegistryContent,
   RegistryType,
   UpdateChainParams,
   WarpRouteFilterParams,
-  WarpRouteOptions,
 } from './IRegistry.js';
 import { MergedRegistry } from './MergedRegistry.js';
 
@@ -47,7 +47,7 @@ export abstract class BaseRegistry implements IRegistry {
     return 'deployments/warp_routes';
   }
 
-  protected getWarpRoutesArtifactPaths({ tokens }: WarpCoreConfig, options?: WarpRouteOptions) {
+  protected getWarpRoutesArtifactPaths({ tokens }: WarpCoreConfig, options?: AddWarpRouteOptions) {
     if (!tokens.length) throw new Error('No tokens provided in config');
     const symbols = new Set<string>(tokens.map((token) => token.symbol.toUpperCase()));
     if (!options?.symbol && symbols.size !== 1)
