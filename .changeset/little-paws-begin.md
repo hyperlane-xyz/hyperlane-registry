@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Include AddWarpRouteOptions to addWarpRoute function
+Add param of `AddWarpRouteOptions` to `addWarpRoute` methods
