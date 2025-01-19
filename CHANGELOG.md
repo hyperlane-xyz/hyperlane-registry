@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 6.18.0
+
+### Minor Changes
+
+- b3d0a00: Add param of `AddWarpRouteOptions` to `addWarpRoute` methods
+
+### Patch Changes
+
+- a5145e0: Add TRUMP-base-solanamainnet
+
 ## 6.17.0
 
 ### Minor Changes
