@@ -1,5 +1,16 @@
 # @hyperlane-xyz/registry
 
+## 6.19.0
+
+### Minor Changes
+
+- 0797d4d: Deploy to flametestnet, sonicblaze.
+- 3334558: Deploy to trumpchain.
+
+### Patch Changes
+
+- fb0fcd6: feat: Add more chains to TRUMP
+
 ## 6.18.0
 
 ### Minor Changes
