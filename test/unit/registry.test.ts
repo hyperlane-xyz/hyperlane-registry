@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { expect } from 'chai';
+import { use as chaiUse, expect } from 'chai';
+import chaiAsPromised from 'chai-as-promised';
 import sinon from 'sinon';
 
 import type { ChainMetadata } from '@hyperlane-xyz/sdk';
@@ -23,6 +24,8 @@ const MOCK_ADDRESS = '0x0000000000000000000000000000000000000001';
 // Used to verify the GithubRegistry is fetching the correct data
 // Must be kept in sync with value in canonical registry's main branch
 const ETH_MAILBOX_ADDRESS = '0xc005dc82818d67AF737725bD4bf75435d065D239';
+
+chaiUse(chaiAsPromised);
 
 describe('Registry utilities', () => {
   const githubRegistry = new GithubRegistry({ branch: GITHUB_REGISTRY_BRANCH });
@@ -186,7 +189,7 @@ describe('Registry utilities', () => {
 
   describe('ProxiedGithubRegistry', () => {
     const proxyUrl = 'http://proxy.hyperlane.xyz';
-    let proxiedGithubRegistry;
+    let proxiedGithubRegistry: GithubRegistry;
     let getApiRateLimitStub;
     beforeEach(() => {
       proxiedGithubRegistry = new GithubRegistry({ branch: GITHUB_REGISTRY_BRANCH, proxyUrl });
@@ -207,6 +210,56 @@ describe('Registry utilities', () => {
       expect(await proxiedGithubRegistry.getApiUrl()).to.equal(
         `${proxyUrl}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`,
       );
+    });
+  });
+
+  describe('Authenticated GithubRegistry', () => {
+    const proxyUrl = 'http://proxy.hyperlane.xyz';
+    let authenticatedGithubRegistry;
+    let invalidTokenGithubRegistry;
+    let getApiRateLimitStub;
+    before(function () {
+      if (!process.env.GITHUB_TOKEN) {
+        console.log('Skipping tests because GITHUB_TOKEN is not defined');
+        this.skip();
+      }
+    });
+    beforeEach(() => {
+      authenticatedGithubRegistry = new GithubRegistry({
+        branch: GITHUB_REGISTRY_BRANCH,
+        proxyUrl,
+        authToken: process.env.GITHUB_TOKEN,
+      });
+      invalidTokenGithubRegistry = new GithubRegistry({
+        branch: GITHUB_REGISTRY_BRANCH,
+        proxyUrl,
+        authToken: 'invalid_token',
+      });
+      getApiRateLimitStub = sinon.stub(authenticatedGithubRegistry, 'getApiRateLimit');
+    });
+    afterEach(() => {
+      sinon.restore();
+    });
+    it('always uses the authenticated api if rate limit has been not been hit', async () => {
+      getApiRateLimitStub.returns({ remaining: 10 });
+      expect(await authenticatedGithubRegistry.getApiUrl()).to.equal(
+        `${GITHUB_API_URL}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`,
+      );
+    });
+
+    it('should fallback to proxy url if public rate limit has been hit', async () => {
+      getApiRateLimitStub.returns({ remaining: 0 });
+      expect(await authenticatedGithubRegistry.getApiUrl()).to.equal(
+        `${proxyUrl}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`,
+      );
+    });
+
+    it('should fetch chains with authenticated token', async () => {
+      expect(invalidTokenGithubRegistry.getChains()).to.eventually.be.fulfilled;
+    });
+
+    it('should fail fetching chains with invalid authentication token', async () => {
+      expect(invalidTokenGithubRegistry.getChains()).to.eventually.be.rejected;
     });
   });
 });
