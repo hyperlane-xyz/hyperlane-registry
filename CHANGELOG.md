@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 6.19.1
+
+### Patch Changes
+
+- 80023dd: Add OP extension and Trumpchain warp route
+
 ## 6.19.0
 
 ### Minor Changes
