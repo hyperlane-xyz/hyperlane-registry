@@ -231,12 +231,11 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
   protected async fetch(url: string): Promise<Response> {
     this.logger.debug(`Fetching from github: ${url}`);
-    const baseHeader = {
-      'X-GitHub-Api-Version': '2022-11-28',
-    };
     const useToken = !(this.proxyUrl && url.startsWith(this.proxyUrl)) && !!this.authToken;
     const response = await fetch(url, {
-      headers: useToken ? { ...baseHeader, Authorization: `token ${this.authToken}` } : baseHeader,
+      headers: useToken
+        ? { 'X-GitHub-Api-Version': '2022-11-28', Authorization: `token ${this.authToken}` }
+        : undefined,
     });
     if (!response.ok)
       throw new Error(`Failed to fetch from github: ${response.status} ${response.statusText}`);
