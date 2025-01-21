@@ -19,7 +19,6 @@ import {
 } from './IRegistry.js';
 import { SynchronousRegistry } from './SynchronousRegistry.js';
 import { warpConfigToWarpAddresses, warpRouteConfigPathToId } from './warp-utils.js';
-import { stringifyObject } from '@hyperlane-xyz/utils';
 
 export interface FileSystemRegistryOptions {
   uri: string;
@@ -110,7 +109,7 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
 
   addWarpRouteConfig(warpConfig: WarpRouteDeployConfig, fileName: string): void {
     const filePath = path.join(this.uri, this.getWarpRoutesConfigPath(), fileName);
-    this.createFile({ filePath, data: stringifyObject(warpConfig)})
+    this.createFile({ filePath, data: toYamlString(warpConfig)})
   }
 
   protected listFiles(dirPath: string): string[] {
