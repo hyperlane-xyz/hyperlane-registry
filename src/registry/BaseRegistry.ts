@@ -39,6 +39,10 @@ export abstract class BaseRegistry implements IRegistry {
     return itemPath ? `${this.uri}/${itemPath}` : this.uri;
   }
 
+  getWarpRoutesConfigPath(): string {
+    return 'configs/warp_routes';
+  }
+
   protected getChainsPath(): string {
     return 'chains';
   }
