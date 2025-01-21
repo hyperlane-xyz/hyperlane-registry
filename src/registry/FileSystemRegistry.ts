@@ -11,6 +11,7 @@ import { toYamlString } from '../utils.js';
 import {
   RegistryType,
   UpdateChainParams,
+  type AddWarpRouteOptions,
   type ChainFiles,
   type IRegistry,
   type RegistryContent,
@@ -94,8 +95,8 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
     this.removeFiles(Object.values(chainFiles));
   }
 
-  addWarpRoute(config: WarpCoreConfig): void {
-    let { configPath, addressesPath } = this.getWarpRoutesArtifactPaths(config);
+  addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): void {
+    let { configPath, addressesPath } = this.getWarpRoutesArtifactPaths(config, options);
 
     configPath = path.join(this.uri, configPath);
     this.createFile({ filePath: configPath, data: toYamlString(config, SCHEMA_REF) });

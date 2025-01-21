@@ -1,5 +1,32 @@
 # @hyperlane-xyz/registry
 
+## 6.19.1
+
+### Patch Changes
+
+- 80023dd: Add OP extension and Trumpchain warp route
+
+## 6.19.0
+
+### Minor Changes
+
+- 0797d4d: Deploy to flametestnet, sonicblaze.
+- 3334558: Deploy to trumpchain.
+
+### Patch Changes
+
+- fb0fcd6: feat: Add more chains to TRUMP
+
+## 6.18.0
+
+### Minor Changes
+
+- b3d0a00: Add param of `AddWarpRouteOptions` to `addWarpRoute` methods
+
+### Patch Changes
+
+- a5145e0: Add TRUMP-base-solanamainnet
+
 ## 6.17.0
 
 ### Minor Changes

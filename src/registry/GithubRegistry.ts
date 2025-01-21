@@ -38,16 +38,16 @@ interface TreeNode {
   url: string;
 }
 
-type GithubRateResponse = { 
-  resources : { 
+type GithubRateResponse = {
+  resources: {
     core: {
-      limit: number,
-      used: number,
-      remaining: number,
-      reset: number
-    } 
-  }
-}
+      limit: number;
+      used: number;
+      remaining: number;
+      reset: number;
+    };
+  };
+};
 
 export const GITHUB_API_URL = 'https://api.github.com';
 /**
@@ -185,16 +185,16 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
         throw new Error(`Github API rate remaining: ${remaining}, limit reset at ${reset}.`);
       apiHost = this.proxyUrl;
     }
-    return `${apiHost}/repos/${this.repoOwner}/${this.repoName}/git/trees/${this.branch}?recursive=true`
+    return `${apiHost}/repos/${this.repoOwner}/${this.repoName}/git/trees/${this.branch}?recursive=true`;
   }
 
   public async getApiRateLimit(): Promise<GithubRateResponse['resources']['core']> {
     const response = await fetch(`${GITHUB_API_URL}/rate_limit`, {
       headers: {
-        'X-GitHub-Api-Version': '2022-11-28'
-      }
-    })
-    const { resources } = await response.json() as GithubRateResponse;
+        'X-GitHub-Api-Version': '2022-11-28',
+      },
+    });
+    const { resources } = (await response.json()) as GithubRateResponse;
     return resources.core;
   }
 
