@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 6.20.0
+
+### Minor Changes
+
+- 4cb64c5: Update Stride fees
+
 ## 6.19.1
 
 ### Patch Changes
