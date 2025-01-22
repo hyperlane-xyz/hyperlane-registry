@@ -3,11 +3,12 @@ import path from 'path';
 import type { Logger } from 'pino';
 import { parse as yamlParse } from 'yaml';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
 
 import { CHAIN_FILE_REGEX, SCHEMA_REF, WARP_ROUTE_CONFIG_FILE_REGEX } from '../consts.js';
 import { ChainAddresses, ChainAddressesSchema, WarpRouteId } from '../types.js';
 import { toYamlString } from '../utils.js';
+
 import {
   RegistryType,
   UpdateChainParams,
@@ -104,6 +105,11 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
     addressesPath = path.join(this.uri, addressesPath);
     const addresses = warpConfigToWarpAddresses(config);
     this.createFile({ filePath: addressesPath, data: toYamlString(addresses) });
+  }
+
+  addWarpRouteConfig(warpConfig: WarpRouteDeployConfig, fileName: string): void {
+    const filePath = path.join(this.uri, this.getWarpRoutesPath(), fileName);
+    this.createFile({ filePath, data: toYamlString(warpConfig)})
   }
 
   protected listFiles(dirPath: string): string[] {
