@@ -60,7 +60,7 @@ export abstract class BaseRegistry implements IRegistry {
       .sort()
       .join('-');
     const basePath = `${this.getWarpRoutesPath()}/${symbol}/${chains}`;
-    return { configPath: `${basePath}-config.yaml`, addressesPath: `${basePath}-addresses.yaml` };
+    return { configPath: `${basePath}-config.yaml` };
   }
 
   abstract listRegistryContent(): MaybePromise<RegistryContent>;
