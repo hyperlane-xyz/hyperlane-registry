@@ -17,7 +17,7 @@ import {
   type RegistryContent,
 } from './IRegistry.js';
 import { SynchronousRegistry } from './SynchronousRegistry.js';
-import { warpConfigToWarpAddresses, warpRouteConfigPathToId } from './warp-utils.js';
+import { warpRouteConfigPathToId } from './warp-utils.js';
 
 export interface FileSystemRegistryOptions {
   uri: string;
@@ -96,14 +96,9 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
   }
 
   addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): void {
-    let { configPath, addressesPath } = this.getWarpRoutesArtifactPaths(config, options);
-
+    let { configPath } = this.getWarpRoutesArtifactPaths(config, options);
     configPath = path.join(this.uri, configPath);
     this.createFile({ filePath: configPath, data: toYamlString(config, SCHEMA_REF) });
-
-    addressesPath = path.join(this.uri, addressesPath);
-    const addresses = warpConfigToWarpAddresses(config);
-    this.createFile({ filePath: addressesPath, data: toYamlString(addresses) });
   }
 
   protected listFiles(dirPath: string): string[] {
