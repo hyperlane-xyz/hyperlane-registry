@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 7.0.0
+
+### Major Changes
+
+- 2b3f78f: Replace old TONY with the new TONY deploy
+
 ## 6.20.0
 
 ### Minor Changes
