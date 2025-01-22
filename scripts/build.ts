@@ -98,7 +98,7 @@ function createWarpConfigFiles() {
 
     // Inner loop for individual warp route configs
     for (const warpFile of fs.readdirSync(inDirPath)) {
-      if (!warpFile.endsWith('config.yaml')) continue;
+      if (!warpFile.endsWith('config.yaml') || warpFile.endsWith('deploy-config.yaml')) continue;
       const [warpFileName] = warpFile.split('.');
       const config = parse(fs.readFileSync(`${inDirPath}/${warpFile}`, 'utf8'));
       const id = warpRouteConfigToId(config);
