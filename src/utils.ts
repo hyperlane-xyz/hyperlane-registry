@@ -3,7 +3,7 @@ import { ABACUS_WORKS_DEPLOYER_NAME } from './consts.js';
 import { ChainMetadata } from '@hyperlane-xyz/sdk';
 
 export function toYamlString(data: any, prefix?: string): string {
-  const yamlString = stringify(data, { indent: 2 });
+  const yamlString = stringify(data, { indent: 2, sortMapEntries: true });
   return prefix ? `${prefix}\n${yamlString}` : yamlString;
 }
 
