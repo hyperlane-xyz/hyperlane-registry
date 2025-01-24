@@ -11,7 +11,7 @@ export interface RegistryContent {
   // Chain name to file type to file URI
   chains: ChainMap<ChainFiles>;
   deployments: {
-    // Warp route ID to artifact URI
+    // Warp route ID to config URI
     warpRoutes: Record<WarpRouteId, string>;
 
     // Warp route ID to warp deploy config URI
