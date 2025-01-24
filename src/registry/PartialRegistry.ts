@@ -1,6 +1,6 @@
 import type { Logger } from 'pino';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
 import { ChainAddresses, DeepPartial, WarpRouteId } from '../types.js';
 import { ChainFiles, IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
 import { SynchronousRegistry } from './SynchronousRegistry.js';
@@ -58,6 +58,7 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
       chains,
       deployments: {
         warpRoutes,
+        warpDeploys: warpRoutes
       },
     };
   }
@@ -85,6 +86,10 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
       const id = warpRouteConfigToId(r as WarpCoreConfig);
       return ids.includes(id);
     }) as WarpCoreConfig[];
+  }
+
+  protected getWarpDeploysForIds(_ids: WarpRouteId[]): WarpRouteDeployConfig[] {
+    throw new Error('Method not implemented.');
   }
 
   protected createOrUpdateChain(chain: {
