@@ -209,12 +209,12 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
    * @returns An array of config objects.
    */
   protected readConfigsForIds<Config>(ids: WarpRouteId[], registryDeployments: Record<WarpRouteId, string> ): Config[] {
-    const deployConfigs: Config[] = [];
+    const configs: Config[] = [];
     for (const [id, filePath] of Object.entries(registryDeployments)) {
       if (!ids.includes(id)) continue;
       const data = fs.readFileSync(filePath, 'utf8');
-      deployConfigs.push(yamlParse(data));
+      configs.push(yamlParse(data));
     }
-    return deployConfigs;
+    return configs;
   }
 }
