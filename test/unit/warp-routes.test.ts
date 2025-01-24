@@ -11,15 +11,15 @@ import { createWarpRouteConfigId, parseWarpRouteConfigId } from '../../src/regis
 import path from 'path';
 import fs from 'fs';
 
-describe('Warp Route Configs', () => {
-  const BASE_URI = './';
+const BASE_URI = './';
+describe('Warp Core Configs', () => {
   const localRegistry = new FileSystemRegistry({ uri: BASE_URI });
   const chainMetadata = localRegistry.getMetadata();
   const multiProvider = new MultiProtocolProvider(chainMetadata);
   const routes = localRegistry.getWarpRoutes();
 
   for (const id of Object.keys(routes)) {
-    it(`Core Config ${id} is valid`, async () => {
+    it(`WarpCore ${id} is valid`, async () => {
       const config = routes[id];
       // WarpCore will validate the config
       const warpCore = WarpCore.FromConfig(multiProvider, config);
@@ -27,7 +27,7 @@ describe('Warp Route Configs', () => {
       expect(warpCore.tokens.length).to.be.greaterThan(0);
     });
 
-    it(`Core Config ${id} has valid chain names`, () => {
+    it(`WarpCore ${id} has valid chain names`, () => {
       const { chainNames } = parseWarpRouteConfigId(id);
 
       // Verify each chain exists in registry
@@ -37,7 +37,7 @@ describe('Warp Route Configs', () => {
       }
     });
 
-    it(`Core Config ${id} has chain names in alphabetical order`, () => {
+    it(`WarpCore ${id} has chain names in alphabetical order`, () => {
       const { chainNames } = parseWarpRouteConfigId(id);
 
       // Verify chains are in alphabetical order
@@ -45,7 +45,7 @@ describe('Warp Route Configs', () => {
       expect(chainNames).to.deep.equal(sortedChains, 'Chain names must be in alphabetical order');
     });
 
-    it(`Core Config ${id} has valid token logoURIs`, () => {
+    it(`WarpCore ${id} has valid token logoURIs`, () => {
       const config = routes[id];
       config.tokens.forEach((token) => {
         if (token.logoURI) {
@@ -57,7 +57,7 @@ describe('Warp Route Configs', () => {
       });
     });
 
-    it(`Core Config ${id} tokens has consistent logoURI presence`, () => {
+    it(`WarpCore ${id} tokens has consistent logoURI presence`, () => {
       const config = routes[id];
       let foundLogoURI = 0;
       config.tokens.forEach((token) => {
@@ -72,7 +72,7 @@ describe('Warp Route Configs', () => {
       ).to.be.true;
     });
 
-    it(`Core Config ${id} matches derived id from config`, () => {
+    it(`WarpCore ${id} matches derived id from config`, () => {
       // Skip check on TIA/forma-stride to avoid breaking changes to forma
       if (id === 'TIA/forma-stride') {
         return;
@@ -95,7 +95,7 @@ describe('Warp Route Configs', () => {
       );
     });
 
-    it(`Core Config ${id} only specifies a coinGeckoId for tokens that escrow tokens`, () => {
+    it(`WarpCore ${id} only specifies a coinGeckoId for tokens that escrow tokens`, () => {
       const config = routes[id];
 
       const warpCore = WarpCore.FromConfig(multiProvider, config);
@@ -120,8 +120,10 @@ describe('Warp Route Configs', () => {
       }
     });
   }
+});
 
-
+describe('Warp Deploy Configs', () => {
+  const localRegistry = new FileSystemRegistry({ uri: BASE_URI });
   const warpDeploys = localRegistry.getWarpDeploys();
 
   // These Ids do not validate due to owner
@@ -142,4 +144,4 @@ describe('Warp Route Configs', () => {
       WarpRouteDeployConfigSchema.parse(warpDeploys[id]);
     });
   }
-});
+})
