@@ -14,8 +14,8 @@ export interface RegistryContent {
     // Warp route ID to artifact URI
     warpRoutes: Record<WarpRouteId, string>;
 
-    // Warp route ID to warp config URI
-    warpDeploys: Record<WarpRouteId, string>;
+    // Warp route ID to warp deploy config URI
+    warpDeployConfigURIs: Record<WarpRouteId, string>;
   };
 }
 

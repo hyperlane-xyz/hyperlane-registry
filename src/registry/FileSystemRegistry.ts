@@ -66,15 +66,15 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
       warpRoutes[routeId] = filePath;
     }
 
-    const warpDeploys: RegistryContent['deployments']['warpDeploys'] = {};
+    const warpDeployConfigURIs: RegistryContent['deployments']['warpDeployConfigURIs'] = {};
     const warpDeployFiles = this.listFiles(path.join(this.uri, this.getWarpRoutesPath()));
     for (const filePath of warpDeployFiles) {
       if (!WARP_ROUTE_DEPLOY_FILE_REGEX.test(filePath)) continue;
       const routeId = warpRouteDeployConfigPathToId(filePath);
-      warpDeploys[routeId] = filePath;
+      warpDeployConfigURIs[routeId] = filePath;
     }
     
-    return (this.listContentCache = { chains, deployments: { warpRoutes, warpDeploys } });
+    return (this.listContentCache = { chains, deployments: { warpRoutes, warpDeployConfigURIs } });
   }
 
   getMetadata(): ChainMap<ChainMetadata> {
@@ -198,19 +198,19 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
   }
 
   protected getWarpDeploysForIds(ids: WarpRouteId[]): WarpRouteDeployConfig[] {
-    const warpDeploys = this.listRegistryContent().deployments.warpDeploys;
-    return this.readConfigsForIds(ids, warpDeploys);
+    const warpDeployConfigURIs = this.listRegistryContent().deployments.warpDeployConfigURIs;
+    return this.readConfigsForIds(ids, warpDeployConfigURIs);
   }
 
   /**
    * Reads config files for the given WarpRouteIds.
    * @param ids - The WarpRouteIds to read configs for.
-   * @param registryDeployments - A mapping of WarpRouteIds to file paths where the configs are stored.
+   * @param configURIs - A mapping of WarpRouteIds to file paths where the configs are stored.
    * @returns An array of config objects.
    */
-  protected readConfigsForIds<Config>(ids: WarpRouteId[], registryDeployments: Record<WarpRouteId, string> ): Config[] {
+  protected readConfigsForIds<Config>(ids: WarpRouteId[], configURIs: Record<WarpRouteId, string> ): Config[] {
     const configs: Config[] = [];
-    for (const [id, filePath] of Object.entries(registryDeployments)) {
+    for (const [id, filePath] of Object.entries(configURIs)) {
       if (!ids.includes(id)) continue;
       const data = fs.readFileSync(filePath, 'utf8');
       configs.push(yamlParse(data));

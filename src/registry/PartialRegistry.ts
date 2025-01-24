@@ -58,7 +58,7 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
       chains,
       deployments: {
         warpRoutes,
-        warpDeploys: warpRoutes
+        warpDeployConfigURIs: {}
       },
     };
   }

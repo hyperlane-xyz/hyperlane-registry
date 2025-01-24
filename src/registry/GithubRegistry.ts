@@ -108,7 +108,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
       }
     }
 
-    return (this.listContentCache = { chains, deployments: { warpRoutes } });
+    return (this.listContentCache = { chains, deployments: { warpRoutes, warpDeployConfigURIs: {} } });
   }
 
   async getChains(): Promise<Array<ChainName>> {
