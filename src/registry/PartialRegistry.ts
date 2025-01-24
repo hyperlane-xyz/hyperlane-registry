@@ -58,7 +58,7 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
       chains,
       deployments: {
         warpRoutes,
-        warpDeployConfigURIs: {}
+        warpDeployConfigURIs: {} // TODO: This cannot be implemented without deriving the token symbol from config.token
       },
     };
   }
@@ -89,6 +89,8 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
   }
 
   protected getWarpDeployConfigForIds(_ids: WarpRouteId[]): WarpRouteDeployConfig[] {
+    // TODO: This cannot be implemented without deriving the token symbol from config.token
+    // We will revisit once we merge the configs
     throw new Error('Method not implemented.');
   }
 
