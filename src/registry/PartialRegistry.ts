@@ -88,7 +88,7 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
     }) as WarpCoreConfig[];
   }
 
-  protected getWarpDeploysForIds(_ids: WarpRouteId[]): WarpRouteDeployConfig[] {
+  protected getWarpDeployConfigForIds(_ids: WarpRouteId[]): WarpRouteDeployConfig[] {
     throw new Error('Method not implemented.');
   }
 

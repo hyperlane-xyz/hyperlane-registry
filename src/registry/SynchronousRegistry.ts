@@ -78,10 +78,10 @@ export abstract class SynchronousRegistry extends BaseRegistry implements IRegis
   /**
    * Retrieves a map of all the warp routes deployment configs
    */
-  getWarpDeploys() {
+  getWarpDeployConfigs() {
     const warpDeploy = this.listRegistryContent().deployments.warpDeployConfigURIs;
     const allRouteIds = Object.keys(warpDeploy);
-    const configs = this.getWarpDeploysForIds(allRouteIds);
+    const configs = this.getWarpDeployConfigForIds(allRouteIds);
     const idsWithConfigs = allRouteIds.map((id, i): [WarpRouteId, WarpRouteDeployConfig] => [id, configs[i]])
     return Object.fromEntries(idsWithConfigs);
   }
@@ -91,5 +91,5 @@ export abstract class SynchronousRegistry extends BaseRegistry implements IRegis
   protected abstract createOrUpdateChain(chain: UpdateChainParams): void;
 
   protected abstract getWarpRoutesForIds(ids: WarpRouteId[]): WarpCoreConfig[];
-  protected abstract getWarpDeploysForIds(ids: WarpRouteId[]): WarpRouteDeployConfig[];
+  protected abstract getWarpDeployConfigForIds(ids: WarpRouteId[]): WarpRouteDeployConfig[];
 }

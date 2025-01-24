@@ -124,7 +124,7 @@ describe('Warp Core Configs', () => {
 
 describe('Warp Deploy Configs', () => {
   const localRegistry = new FileSystemRegistry({ uri: BASE_URI });
-  const warpDeploys = localRegistry.getWarpDeploys();
+  const warpDeploys = localRegistry.getWarpDeployConfigs();
 
   // These Ids do not validate due to owner
   // Remove after https://github.com/hyperlane-xyz/hyperlane-monorepo/issues/5292

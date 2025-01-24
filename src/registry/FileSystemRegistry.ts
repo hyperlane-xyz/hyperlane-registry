@@ -197,7 +197,7 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
     return this.readConfigsForIds(ids, warpRoutes);
   }
 
-  protected getWarpDeploysForIds(ids: WarpRouteId[]): WarpRouteDeployConfig[] {
+  protected getWarpDeployConfigForIds(ids: WarpRouteId[]): WarpRouteDeployConfig[] {
     const warpDeployConfigURIs = this.listRegistryContent().deployments.warpDeployConfigURIs;
     return this.readConfigsForIds(ids, warpDeployConfigURIs);
   }
