@@ -2,9 +2,9 @@ import { expect } from 'chai';
 
 import {
   MultiProtocolProvider,
-  TOKEN_COLLATERALIZED_STANDARDS,
   TokenStandard,
   WarpCore,
+  WarpRouteDeployConfigSchema,
 } from '@hyperlane-xyz/sdk';
 import { FileSystemRegistry } from '../../src/registry/FileSystemRegistry.js';
 import { createWarpRouteConfigId, parseWarpRouteConfigId } from '../../src/registry/warp-utils.js';
@@ -19,7 +19,7 @@ describe('Warp Route Configs', () => {
   const routes = localRegistry.getWarpRoutes();
 
   for (const id of Object.keys(routes)) {
-    it(`Route ${id} is valid`, async () => {
+    it(`Core Config ${id} is valid`, async () => {
       const config = routes[id];
       // WarpCore will validate the config
       const warpCore = WarpCore.FromConfig(multiProvider, config);
@@ -27,7 +27,7 @@ describe('Warp Route Configs', () => {
       expect(warpCore.tokens.length).to.be.greaterThan(0);
     });
 
-    it(`Route ${id} has valid chain names`, () => {
+    it(`Core Config ${id} has valid chain names`, () => {
       const { chainNames } = parseWarpRouteConfigId(id);
 
       // Verify each chain exists in registry
@@ -37,7 +37,7 @@ describe('Warp Route Configs', () => {
       }
     });
 
-    it(`Route ${id} has chain names in alphabetical order`, () => {
+    it(`Core Config ${id} has chain names in alphabetical order`, () => {
       const { chainNames } = parseWarpRouteConfigId(id);
 
       // Verify chains are in alphabetical order
@@ -45,7 +45,7 @@ describe('Warp Route Configs', () => {
       expect(chainNames).to.deep.equal(sortedChains, 'Chain names must be in alphabetical order');
     });
 
-    it(`Route ${id} has valid token logoURIs`, () => {
+    it(`Core Config ${id} has valid token logoURIs`, () => {
       const config = routes[id];
       config.tokens.forEach((token) => {
         if (token.logoURI) {
@@ -57,7 +57,7 @@ describe('Warp Route Configs', () => {
       });
     });
 
-    it(`Route ${id} tokens has consistent logoURI presence`, () => {
+    it(`Core Config ${id} tokens has consistent logoURI presence`, () => {
       const config = routes[id];
       let foundLogoURI = 0;
       config.tokens.forEach((token) => {
@@ -72,7 +72,7 @@ describe('Warp Route Configs', () => {
       ).to.be.true;
     });
 
-    it(`Route ${id} matches derived id from config`, () => {
+    it(`Core Config ${id} matches derived id from config`, () => {
       // Skip check on TIA/forma-stride to avoid breaking changes to forma
       if (id === 'TIA/forma-stride') {
         return;
@@ -95,7 +95,7 @@ describe('Warp Route Configs', () => {
       );
     });
 
-    it(`Route ${id} only specifies a coinGeckoId for tokens that escrow tokens`, () => {
+    it(`Core Config ${id} only specifies a coinGeckoId for tokens that escrow tokens`, () => {
       const config = routes[id];
 
       const warpCore = WarpCore.FromConfig(multiProvider, config);
@@ -118,6 +118,28 @@ describe('Warp Route Configs', () => {
           `Token standard ${token.standard} should not have a coinGeckoId`,
         ).to.be.true;
       }
+    });
+  }
+
+
+  const warpDeploys = localRegistry.getWarpDeploys();
+
+  // These Ids do not validate due to owner
+  // Remove after https://github.com/hyperlane-xyz/hyperlane-monorepo/issues/5292
+  const excludeIds = [
+    'ECLIP/arbitrum-neutron', 
+    'INJ/inevm-injective', 
+    'TIA/arbitrum-neutron', 
+    'INJ/inevm-injective', 
+    'TIA/arbitrum-neutron', 
+    'TIA/eclipsemainnet-stride', 
+    'TIA/mantapacific-neutron', 
+    'stTIA/eclipsemainnet-stride'
+  ];
+  const configs = Object.keys(warpDeploys).filter(id =>!excludeIds.includes(id));
+  for (const id of configs) {
+    it(`Deploy config ${id} is valid`, async () => {
+      WarpRouteDeployConfigSchema.parse(warpDeploys[id]);
     });
   }
 });
