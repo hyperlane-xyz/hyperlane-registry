@@ -1,4 +1,4 @@
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
 
 import { ChainAddresses, WarpRouteConfigMap, WarpRouteId } from '../types.js';
 import { BaseRegistry } from './BaseRegistry.js';
@@ -64,6 +64,9 @@ export abstract class SynchronousRegistry extends BaseRegistry implements IRegis
     return this.getWarpRoutesForIds([routeId])[0] || null;
   }
 
+  /**
+   * Retrieves a filtered map of the warp routes artifacts
+   */
   getWarpRoutes(filter?: WarpRouteFilterParams): WarpRouteConfigMap {
     const warpRoutes = this.listRegistryContent().deployments.warpRoutes;
     const { ids: routeIds } = filterWarpRoutesIds(warpRoutes, filter);
@@ -72,9 +75,21 @@ export abstract class SynchronousRegistry extends BaseRegistry implements IRegis
     return Object.fromEntries(idsWithConfigs);
   }
 
+  /**
+   * Retrieves a map of all the warp routes deployment configs
+   */
+  getWarpDeploys() {
+    const warpDeploy = this.listRegistryContent().deployments.warpDeploys;
+    const allRouteIds = Object.keys(warpDeploy);
+    const configs = this.getWarpDeploysForIds(allRouteIds);
+    const idsWithConfigs = allRouteIds.map((id, i): [WarpRouteId, WarpRouteDeployConfig] => [id, configs[i]])
+    return Object.fromEntries(idsWithConfigs);
+  }
+
   abstract addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): void;
 
   protected abstract createOrUpdateChain(chain: UpdateChainParams): void;
 
   protected abstract getWarpRoutesForIds(ids: WarpRouteId[]): WarpCoreConfig[];
+  protected abstract getWarpDeploysForIds(ids: WarpRouteId[]): WarpRouteDeployConfig[];
 }
