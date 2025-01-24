@@ -46,6 +46,7 @@ export class MergedRegistry implements IRegistry {
       chains: {},
       deployments: {
         warpRoutes: {},
+        warpDeploys: {}
       },
     });
   }
