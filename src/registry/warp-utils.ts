@@ -1,5 +1,5 @@
 import type { ChainMap, ChainName, TokenStandard, WarpCoreConfig } from '@hyperlane-xyz/sdk';
-import { WARP_ROUTE_CONFIG_FILE_REGEX } from '../consts.js';
+import { WARP_ROUTE_CONFIG_FILE_REGEX, WARP_ROUTE_DEPLOY_FILE_REGEX } from '../consts.js';
 import { ChainAddresses, WarpRouteId } from '../types.js';
 import { WarpRouteFilterParams } from './IRegistry.js';
 
@@ -33,7 +33,26 @@ function getWarpAddressKey(standard: TokenStandard): string | null {
  *    (e.g. `warp_routes/USDC/ethereum-arbitrum-config.yaml`)
  */
 export function warpRouteConfigPathToId(configRelativePath: string): WarpRouteId {
-  const matches = configRelativePath.match(WARP_ROUTE_CONFIG_FILE_REGEX);
+  return parseWarpRouteConfigPath(configRelativePath, WARP_ROUTE_CONFIG_FILE_REGEX);
+}
+
+/**
+ * Gets a warp route ID from a warp deploy config path.
+ * @param configRelativePath A relative path in the deployments dir
+ *    (e.g. `warp_routes/USDC/ethereum-arbitrum-config.yaml`)
+ */
+export function warpRouteDeployConfigPathToId(configRelativePath: string): WarpRouteId {
+  return parseWarpRouteConfigPath(configRelativePath, WARP_ROUTE_DEPLOY_FILE_REGEX);
+}
+
+/**
+ * Gets a warp route ID from a warp route config path.
+ * @param configRelativePath A relative path in the deployments dir
+ *    (e.g. `warp_routes/USDC/ethereum-arbitrum-config.yaml`)
+ * @param regex regex of the config filename
+ */
+function parseWarpRouteConfigPath(configRelativePath: string, regex: RegExp) {
+  const matches =  configRelativePath.match(regex);
   if (!matches || matches.length < 3)
     throw new Error(`Invalid warp route config path: ${configRelativePath}`);
   const [_, tokenSymbol, chains] = matches;
