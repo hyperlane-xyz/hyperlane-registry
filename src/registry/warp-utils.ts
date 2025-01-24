@@ -1,4 +1,4 @@
-import type { ChainMap, ChainName, TokenStandard, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainName, TokenStandard, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 import { WARP_ROUTE_CONFIG_FILE_REGEX, WARP_ROUTE_DEPLOY_FILE_REGEX } from '../consts.js';
 import { ChainAddresses, WarpRouteId } from '../types.js';
 import { WarpRouteFilterParams } from './IRegistry.js';
