@@ -16,6 +16,7 @@ export interface PartialRegistryOptions {
   chainMetadata?: ChainMap<DeepPartial<ChainMetadata>>;
   chainAddresses?: ChainMap<DeepPartial<ChainAddresses>>;
   warpRoutes?: Array<DeepPartial<WarpCoreConfig>>;
+  warpDeployConfigs?: Array<DeepPartial<WarpRouteDeployConfig>>;
   // TODO add more fields here as needed
   logger?: Logger;
 }
@@ -25,12 +26,14 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
   public chainMetadata: ChainMap<DeepPartial<ChainMetadata>>;
   public chainAddresses: ChainMap<DeepPartial<ChainAddresses>>;
   public warpRoutes: Array<DeepPartial<WarpCoreConfig>>;
+  public warpDeployConfigs: Array<DeepPartial<WarpRouteDeployConfig>>;
 
-  constructor({ chainMetadata, chainAddresses, warpRoutes, logger }: PartialRegistryOptions) {
+  constructor({ chainMetadata, chainAddresses, warpRoutes, warpDeployConfigs, logger }: PartialRegistryOptions) {
     super({ uri: PARTIAL_URI_PLACEHOLDER, logger });
     this.chainMetadata = chainMetadata || {};
     this.chainAddresses = chainAddresses || {};
     this.warpRoutes = warpRoutes || [];
+    this.warpDeployConfigs = warpDeployConfigs || [];
   }
 
   listRegistryContent(): RegistryContent {
@@ -89,9 +92,10 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
   }
 
   protected getWarpDeployConfigForIds(_ids: WarpRouteId[]): WarpRouteDeployConfig[] {
-    // TODO: This cannot be implemented without deriving the token symbol from config.token
+    // TODO: Right now this returns an empty array
+    // This cannot be implemented without deriving the token symbol from config.token
     // We will revisit once we merge the configs
-    throw new Error('Method not implemented.');
+    return this.warpDeployConfigs as WarpRouteDeployConfig[];
   }
 
   protected createOrUpdateChain(chain: {
