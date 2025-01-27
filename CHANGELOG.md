@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 7.2.1
+
+### Patch Changes
+
+- 4b5d60f: Update toYamlString to not use aliasDuplicateObjects due to alias errors.
+
 ## 7.2.0
 
 ### Minor Changes
