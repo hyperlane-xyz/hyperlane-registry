@@ -5,7 +5,7 @@ import { parse as yamlParse } from 'yaml';
 
 import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
 
-import { CHAIN_FILE_REGEX, SCHEMA_REF, WARP_ROUTE_CONFIG_FILE_REGEX } from '../consts.js';
+import { CHAIN_FILE_REGEX, SCHEMA_REF, WARP_ROUTE_CONFIG_FILE_REGEX, WARP_ROUTE_DEPLOY_FILE_REGEX, } from '../consts.js';
 import { ChainAddresses, ChainAddressesSchema, WarpRouteId } from '../types.js';
 import { toYamlString } from '../utils.js';
 
@@ -18,7 +18,7 @@ import {
   type RegistryContent,
 } from './IRegistry.js';
 import { SynchronousRegistry } from './SynchronousRegistry.js';
-import { warpConfigToWarpAddresses, warpRouteConfigPathToId } from './warp-utils.js';
+import { warpConfigToWarpAddresses, warpRouteConfigPathToId, warpRouteDeployConfigPathToId } from './warp-utils.js';
 
 export interface FileSystemRegistryOptions {
   uri: string;
@@ -41,6 +41,9 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
     return path.join(this.uri, itemPath);
   }
 
+  /**
+   * Retrieves filepaths for chains, warp core, and warp deploy configs 
+   */
   listRegistryContent(): RegistryContent {
     if (this.listContentCache) return this.listContentCache;
 
@@ -63,7 +66,15 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
       warpRoutes[routeId] = filePath;
     }
 
-    return (this.listContentCache = { chains, deployments: { warpRoutes } });
+    const warpDeployConfig: RegistryContent['deployments']['warpDeployConfig'] = {};
+    const warpDeployFiles = this.listFiles(path.join(this.uri, this.getWarpRoutesPath()));
+    for (const filePath of warpDeployFiles) {
+      if (!WARP_ROUTE_DEPLOY_FILE_REGEX.test(filePath)) continue;
+      const routeId = warpRouteDeployConfigPathToId(filePath);
+      warpDeployConfig[routeId] = filePath;
+    }
+    
+    return (this.listContentCache = { chains, deployments: { warpRoutes, warpDeployConfig } });
   }
 
   getMetadata(): ChainMap<ChainMetadata> {
@@ -182,9 +193,24 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
   }
 
   protected getWarpRoutesForIds(ids: WarpRouteId[]): WarpCoreConfig[] {
-    const configs: WarpCoreConfig[] = [];
     const warpRoutes = this.listRegistryContent().deployments.warpRoutes;
-    for (const [id, filePath] of Object.entries(warpRoutes)) {
+    return this.readConfigsForIds(ids, warpRoutes);
+  }
+
+  protected getWarpDeployConfigForIds(ids: WarpRouteId[]): WarpRouteDeployConfig[] {
+    const warpDeployConfig = this.listRegistryContent().deployments.warpDeployConfig;
+    return this.readConfigsForIds(ids, warpDeployConfig);
+  }
+
+  /**
+   * Reads config files for the given WarpRouteIds.
+   * @param ids - The WarpRouteIds to read configs for.
+   * @param configURIs - A mapping of WarpRouteIds to file paths where the configs are stored.
+   * @returns An array of config objects.
+   */
+  protected readConfigsForIds<Config>(ids: WarpRouteId[], configURIs: Record<WarpRouteId, string> ): Config[] {
+    const configs: Config[] = [];
+    for (const [id, filePath] of Object.entries(configURIs)) {
       if (!ids.includes(id)) continue;
       const data = fs.readFileSync(filePath, 'utf8');
       configs.push(yamlParse(data));
