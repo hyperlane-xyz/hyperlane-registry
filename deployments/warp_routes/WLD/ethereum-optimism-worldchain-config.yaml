@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x946E9f4540E032a9fAc038AE58187eFcad9DE952"
+    chainName: worldchain
+    collateralAddressOrDenom: "0x2cFc85d8E48F8EAB294be644d9E25C3030863003"
+    connections:
+      - token: ethereum|ethereum|0xbEa59b481dd7fA7b33D718f569be93b8e2091db6
+      - token: ethereum|optimism|0x0B5A47D8f4646754b2f8e4dec4Bfc9834DB03d49
+    decimals: 18
+    name: Worldcoin
+    standard: EvmHypCollateral
+    symbol: WLD
+  - addressOrDenom: "0xbEa59b481dd7fA7b33D718f569be93b8e2091db6"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x163f8C2467924be0ae7B5347228CABF260318753"
+    connections:
+      - token: ethereum|worldchain|0x946E9f4540E032a9fAc038AE58187eFcad9DE952
+      - token: ethereum|optimism|0x0B5A47D8f4646754b2f8e4dec4Bfc9834DB03d49
+    decimals: 18
+    name: Worldcoin
+    standard: EvmHypCollateral
+    symbol: WLD
+  - addressOrDenom: "0x0B5A47D8f4646754b2f8e4dec4Bfc9834DB03d49"
+    chainName: optimism
+    collateralAddressOrDenom: "0xdc6ff44d5d932cbd77b52e5612ba0529dc6226f1"
+    connections:
+      - token: ethereum|worldchain|0x946E9f4540E032a9fAc038AE58187eFcad9DE952
+      - token: ethereum|ethereum|0xbEa59b481dd7fA7b33D718f569be93b8e2091db6
+    decimals: 18
+    name: Worldcoin
+    standard: EvmHypCollateral
+    symbol: WLD
