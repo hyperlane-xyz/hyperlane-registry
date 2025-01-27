@@ -93,7 +93,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     const chainPath = this.getChainsPath();
     const chains: RegistryContent['chains'] = {};
     const warpRoutes: RegistryContent['deployments']['warpRoutes'] = {};
-    const warpDeployConfigURIs: RegistryContent['deployments']['warpDeployConfigURIs'] = {};
+    const warpDeployConfig: RegistryContent['deployments']['warpDeployConfig'] = {};
     for (const node of tree) {
       if (CHAIN_FILE_REGEX.test(node.path)) {
         const [_, chainName, fileName, extension] = node.path.match(CHAIN_FILE_REGEX)!;
@@ -111,11 +111,11 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
       if (WARP_ROUTE_DEPLOY_FILE_REGEX.test(node.path)) {
         const routeId = warpRouteDeployConfigPathToId(node.path);
-        warpDeployConfigURIs[routeId] = this.getRawContentUrl(node.path);
+        warpDeployConfig[routeId] = this.getRawContentUrl(node.path);
       }
     }
 
-    return (this.listContentCache = { chains, deployments: { warpRoutes, warpDeployConfigURIs } });
+    return (this.listContentCache = { chains, deployments: { warpRoutes, warpDeployConfig } });
   }
 
   async getChains(): Promise<Array<ChainName>> {
@@ -174,7 +174,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
   async getWarpDeployConfig(routeId: string): Promise<WarpRouteDeployConfig | null> {
     const repoContents = await this.listRegistryContent();
-    const routeConfigUrl = repoContents.deployments.warpDeployConfigURIs[routeId];
+    const routeConfigUrl = repoContents.deployments.warpDeployConfig[routeId];
     if (!routeConfigUrl) return null;
     return this.fetchYamlFile(routeConfigUrl);
   }
@@ -186,8 +186,8 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   }
 
   async getWarpDeployConfigs(filter?: WarpRouteFilterParams): Promise<WarpDeployConfigMap> {
-    const { warpDeployConfigURIs } = (await this.listRegistryContent()).deployments;
-    const { ids: routeIds, values: routeConfigUrls } = filterWarpRoutesIds(warpDeployConfigURIs, filter);
+    const { warpDeployConfig } = (await this.listRegistryContent()).deployments;
+    const { ids: routeIds, values: routeConfigUrls } = filterWarpRoutesIds(warpDeployConfig, filter);
     return this.readConfigs(routeIds, routeConfigUrls)
   }
 

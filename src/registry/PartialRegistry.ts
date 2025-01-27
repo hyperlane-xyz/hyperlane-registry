@@ -61,7 +61,7 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
       chains,
       deployments: {
         warpRoutes,
-        warpDeployConfigURIs: {} // TODO: This cannot be implemented without deriving the token symbol from config.token
+        warpDeployConfig: {} // TODO: This cannot be implemented without deriving the token symbol from config.token
       },
     };
   }

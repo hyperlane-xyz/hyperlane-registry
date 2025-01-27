@@ -66,15 +66,15 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
       warpRoutes[routeId] = filePath;
     }
 
-    const warpDeployConfigURIs: RegistryContent['deployments']['warpDeployConfigURIs'] = {};
+    const warpDeployConfig: RegistryContent['deployments']['warpDeployConfig'] = {};
     const warpDeployFiles = this.listFiles(path.join(this.uri, this.getWarpRoutesPath()));
     for (const filePath of warpDeployFiles) {
       if (!WARP_ROUTE_DEPLOY_FILE_REGEX.test(filePath)) continue;
       const routeId = warpRouteDeployConfigPathToId(filePath);
-      warpDeployConfigURIs[routeId] = filePath;
+      warpDeployConfig[routeId] = filePath;
     }
     
-    return (this.listContentCache = { chains, deployments: { warpRoutes, warpDeployConfigURIs } });
+    return (this.listContentCache = { chains, deployments: { warpRoutes, warpDeployConfig } });
   }
 
   getMetadata(): ChainMap<ChainMetadata> {
@@ -198,8 +198,8 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
   }
 
   protected getWarpDeployConfigForIds(ids: WarpRouteId[]): WarpRouteDeployConfig[] {
-    const warpDeployConfigURIs = this.listRegistryContent().deployments.warpDeployConfigURIs;
-    return this.readConfigsForIds(ids, warpDeployConfigURIs);
+    const warpDeployConfig = this.listRegistryContent().deployments.warpDeployConfig;
+    return this.readConfigsForIds(ids, warpDeployConfig);
   }
 
   /**
