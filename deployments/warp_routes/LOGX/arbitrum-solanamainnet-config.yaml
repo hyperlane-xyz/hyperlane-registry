@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x79EdA6DAfB2B9531930CbD9240A73B5eF0e8c9E2"
+    chainName: arbitrum
+    coinGeckoId: logx
+    collateralAddressOrDenom: "0x59062301Fb510F4ea2417B67404CB16D31E604BA"
+    connections:
+      - token: sealevel|solanamainnet|975wpF9KmWTVnh398Qs6VcnDtYZsXVWtKiSkXfWH22GP
+    decimals: 18
+    logoURI: /deployments/warp_routes/LOGX/logo.png
+    name: LogX Network
+    standard: EvmHypCollateral
+    symbol: LOGX
+  - addressOrDenom: 975wpF9KmWTVnh398Qs6VcnDtYZsXVWtKiSkXfWH22GP
+    chainName: solanamainnet
+    collateralAddressOrDenom: 7cHJTPkhnCKesVFijmMXVFVY4HjpkLd9qYjg6neb74yD
+    connections:
+      - token: ethereum|arbitrum|0x79EdA6DAfB2B9531930CbD9240A73B5eF0e8c9E2
+    decimals: 9
+    logoURI: /deployments/warp_routes/LOGX/logo.png
+    name: LogX Network
+    standard: SealevelHypSynthetic
+    symbol: LOGX
