@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 7.2.2
+
+### Patch Changes
+
+- 2459730: Update TRUMP, CBBTC, LUMIA, USDC (zeronetwork), USDC (zeronetwork) warp configs with the latest changes from Infra Checker
+
 ## 7.2.1
 
 ### Patch Changes
