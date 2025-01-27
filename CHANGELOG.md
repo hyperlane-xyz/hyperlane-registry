@@ -1,5 +1,14 @@
 # @hyperlane-xyz/registry
 
+## 7.2.0
+
+### Minor Changes
+
+- 528011e: Deploy Sonic SVM
+- a589dad: Add warp deploy configs reader functions `getWarpDeployConfigs()` and `getWarpDeployConfig()` within Partial, Github, Filesystem, Merged Registries. Refactor duplicate logic with existing warpRoute functions
+- 944f99c: Deploy to abstract, glue, matchain, unitzero.
+- 8d3f1e4: adds LOGX EVM - SVM route
+
 ## 7.1.0
 
 ### Minor Changes
