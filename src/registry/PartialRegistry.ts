@@ -1,6 +1,6 @@
 import type { Logger } from 'pino';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
 import { ChainAddresses, DeepPartial, WarpRouteId } from '../types.js';
 import { ChainFiles, IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
 import { SynchronousRegistry } from './SynchronousRegistry.js';
@@ -16,6 +16,7 @@ export interface PartialRegistryOptions {
   chainMetadata?: ChainMap<DeepPartial<ChainMetadata>>;
   chainAddresses?: ChainMap<DeepPartial<ChainAddresses>>;
   warpRoutes?: Array<DeepPartial<WarpCoreConfig>>;
+  warpDeployConfigs?: Array<DeepPartial<WarpRouteDeployConfig>>;
   // TODO add more fields here as needed
   logger?: Logger;
 }
@@ -25,12 +26,14 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
   public chainMetadata: ChainMap<DeepPartial<ChainMetadata>>;
   public chainAddresses: ChainMap<DeepPartial<ChainAddresses>>;
   public warpRoutes: Array<DeepPartial<WarpCoreConfig>>;
+  public warpDeployConfigs: Array<DeepPartial<WarpRouteDeployConfig>>;
 
-  constructor({ chainMetadata, chainAddresses, warpRoutes, logger }: PartialRegistryOptions) {
+  constructor({ chainMetadata, chainAddresses, warpRoutes, warpDeployConfigs, logger }: PartialRegistryOptions) {
     super({ uri: PARTIAL_URI_PLACEHOLDER, logger });
     this.chainMetadata = chainMetadata || {};
     this.chainAddresses = chainAddresses || {};
     this.warpRoutes = warpRoutes || [];
+    this.warpDeployConfigs = warpDeployConfigs || [];
   }
 
   listRegistryContent(): RegistryContent {
@@ -58,6 +61,7 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
       chains,
       deployments: {
         warpRoutes,
+        warpDeployConfig: {} // TODO: This cannot be implemented without deriving the token symbol from config.token
       },
     };
   }
@@ -85,6 +89,13 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
       const id = warpRouteConfigToId(r as WarpCoreConfig);
       return ids.includes(id);
     }) as WarpCoreConfig[];
+  }
+
+  protected getWarpDeployConfigForIds(_ids: WarpRouteId[]): WarpRouteDeployConfig[] {
+    // TODO: Right now this returns an empty array
+    // This cannot be implemented without deriving the token symbol from config.token
+    // We will revisit once we merge the configs
+    return this.warpDeployConfigs as WarpRouteDeployConfig[];
   }
 
   protected createOrUpdateChain(chain: {

@@ -1,5 +1,26 @@
 # @hyperlane-xyz/registry
 
+## 7.2.2
+
+### Patch Changes
+
+- 2459730: Update TRUMP, CBBTC, LUMIA, USDC (zeronetwork), USDC (zeronetwork) warp configs with the latest changes from Infra Checker
+
+## 7.2.1
+
+### Patch Changes
+
+- 4b5d60f: Update toYamlString to not use aliasDuplicateObjects due to alias errors.
+
+## 7.2.0
+
+### Minor Changes
+
+- 528011e: Deploy Sonic SVM
+- a589dad: Add warp deploy configs reader functions `getWarpDeployConfigs()` and `getWarpDeployConfig()` within Partial, Github, Filesystem, Merged Registries. Refactor duplicate logic with existing warpRoute functions
+- 944f99c: Deploy to abstract, glue, matchain, unitzero.
+- 8d3f1e4: adds LOGX EVM - SVM route
+
 ## 7.1.0
 
 ### Minor Changes
