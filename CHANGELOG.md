@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 7.3.0
+
+### Minor Changes
+
+- 83cd45d: Add gnosisSafeTransactionServiceUrl for zksync-stack mainnets.
+
+### Patch Changes
+
+- b7b0034: Removes ownerOverrides for CBBTC, ETH (viction), PumpBTC (Sei)
+
 ## 7.2.2
 
 ### Patch Changes
