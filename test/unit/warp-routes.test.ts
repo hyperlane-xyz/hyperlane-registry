@@ -10,13 +10,30 @@ import { FileSystemRegistry } from '../../src/registry/FileSystemRegistry.js';
 import { createWarpRouteConfigId, parseWarpRouteConfigId } from '../../src/registry/warp-utils.js';
 import path from 'path';
 import fs from 'fs';
+import { WARP_ROUTE_SYMBOL_DIRECTORY_REGEX } from '../../src/consts.js';
 
 const BASE_URI = './';
+
 describe('Warp Core Configs', () => {
   const localRegistry = new FileSystemRegistry({ uri: BASE_URI });
   const chainMetadata = localRegistry.getMetadata();
   const multiProvider = new MultiProtocolProvider(chainMetadata);
   const routes = localRegistry.getWarpRoutes();
+
+  console.log('routes', routes);
+
+  it('All warp route symbol directories meet regex requirement', () => {
+    const warpRoutesPath = path.join(BASE_URI, 'deployments', 'warp_routes');
+    const symbolDirs = fs
+      .readdirSync(warpRoutesPath, { withFileTypes: true })
+      .filter((entry) => entry.isDirectory())
+      // Convert to a path within the deployments directory, as expected by the regex
+      .map((entry) => path.join('warp_routes', entry.name));
+    
+    for (const symbolDir of symbolDirs) {
+      expect(WARP_ROUTE_SYMBOL_DIRECTORY_REGEX.test(symbolDir), `Symbol directory ${symbolDir} does not meet expected regex`).to.be.true;
+    }
+  });
 
   for (const id of Object.keys(routes)) {
     it(`WarpCore ${id} is valid`, async () => {
@@ -129,16 +146,16 @@ describe('Warp Deploy Configs', () => {
   // These Ids do not validate due to owner
   // Remove after https://github.com/hyperlane-xyz/hyperlane-monorepo/issues/5292
   const excludeIds = [
-    'ECLIP/arbitrum-neutron', 
-    'INJ/inevm-injective', 
-    'TIA/arbitrum-neutron', 
-    'INJ/inevm-injective', 
-    'TIA/arbitrum-neutron', 
-    'TIA/eclipsemainnet-stride', 
-    'TIA/mantapacific-neutron', 
+    'ECLIP/arbitrum-neutron',
+    'INJ/inevm-injective',
+    'TIA/arbitrum-neutron',
+    'INJ/inevm-injective',
+    'TIA/arbitrum-neutron',
+    'TIA/eclipsemainnet-stride',
+    'TIA/mantapacific-neutron',
     'stTIA/eclipsemainnet-stride'
   ];
-  const configs = Object.keys(warpDeploys).filter(id =>!excludeIds.includes(id));
+  const configs = Object.keys(warpDeploys).filter(id => !excludeIds.includes(id));
   for (const id of configs) {
     it(`Deploy config ${id} is valid`, async () => {
       WarpRouteDeployConfigSchema.parse(warpDeploys[id]);
