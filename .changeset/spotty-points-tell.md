@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add SMOL warp route config
+Add solanamainnet to SMOL warp route config
