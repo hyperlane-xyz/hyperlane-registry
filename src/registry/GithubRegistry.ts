@@ -1,7 +1,7 @@
 import type { Logger } from 'pino';
 import { parse as yamlParse } from 'yaml';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfigWithoutMailbox } from '@hyperlane-xyz/sdk';
 
 import {
   CHAIN_FILE_REGEX,
@@ -172,7 +172,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     return this.fetchYamlFile(routeConfigUrl);
   }
 
-  async getWarpDeployConfig(routeId: string): Promise<WarpRouteDeployConfig | null> {
+  async getWarpDeployConfig(routeId: string): Promise<WarpRouteDeployConfigWithoutMailbox | null> {
     const repoContents = await this.listRegistryContent();
     const routeConfigUrl = repoContents.deployments.warpDeployConfig[routeId];
     if (!routeConfigUrl) return null;

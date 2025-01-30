@@ -1,6 +1,6 @@
 import type { Logger } from 'pino';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfigWithoutMailbox } from '@hyperlane-xyz/sdk';
 import { ChainAddresses, DeepPartial, WarpRouteId } from '../types.js';
 import { ChainFiles, IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
 import { SynchronousRegistry } from './SynchronousRegistry.js';
@@ -16,7 +16,7 @@ export interface PartialRegistryOptions {
   chainMetadata?: ChainMap<DeepPartial<ChainMetadata>>;
   chainAddresses?: ChainMap<DeepPartial<ChainAddresses>>;
   warpRoutes?: Array<DeepPartial<WarpCoreConfig>>;
-  warpDeployConfigs?: Array<DeepPartial<WarpRouteDeployConfig>>;
+  warpDeployConfigs?: Array<DeepPartial<WarpRouteDeployConfigWithoutMailbox>>;
   // TODO add more fields here as needed
   logger?: Logger;
 }
@@ -26,7 +26,7 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
   public chainMetadata: ChainMap<DeepPartial<ChainMetadata>>;
   public chainAddresses: ChainMap<DeepPartial<ChainAddresses>>;
   public warpRoutes: Array<DeepPartial<WarpCoreConfig>>;
-  public warpDeployConfigs: Array<DeepPartial<WarpRouteDeployConfig>>;
+  public warpDeployConfigs: Array<DeepPartial<WarpRouteDeployConfigWithoutMailbox>>;
 
   constructor({ chainMetadata, chainAddresses, warpRoutes, warpDeployConfigs, logger }: PartialRegistryOptions) {
     super({ uri: PARTIAL_URI_PLACEHOLDER, logger });
@@ -91,11 +91,11 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
     }) as WarpCoreConfig[];
   }
 
-  protected getWarpDeployConfigForIds(_ids: WarpRouteId[]): WarpRouteDeployConfig[] {
+  protected getWarpDeployConfigForIds(_ids: WarpRouteId[]): WarpRouteDeployConfigWithoutMailbox[] {
     // TODO: Right now this returns an empty array
     // This cannot be implemented without deriving the token symbol from config.token
     // We will revisit once we merge the configs
-    return this.warpDeployConfigs as WarpRouteDeployConfig[];
+    return this.warpDeployConfigs as WarpRouteDeployConfigWithoutMailbox[];
   }
 
   protected createOrUpdateChain(chain: {

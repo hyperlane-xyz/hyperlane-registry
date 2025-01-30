@@ -1,6 +1,6 @@
 import type { Logger } from 'pino';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfigWithoutMailbox } from '@hyperlane-xyz/sdk';
 import type { ChainAddresses, MaybePromise, WarpDeployConfigMap } from '../types.js';
 import { WarpRouteConfigMap } from '../types.js';
 import { stripLeadingSlash } from '../utils.js';
@@ -87,7 +87,7 @@ export abstract class BaseRegistry implements IRegistry {
   abstract getWarpRoutes(filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap>;
   abstract addWarpRoute(config: WarpCoreConfig): MaybePromise<void>;
 
-  abstract getWarpDeployConfig(routeId: string): MaybePromise<WarpRouteDeployConfig | null>;
+  abstract getWarpDeployConfig(routeId: string): MaybePromise<WarpRouteDeployConfigWithoutMailbox | null>;
   abstract getWarpDeployConfigs(filter?: WarpRouteFilterParams): MaybePromise<WarpDeployConfigMap>;
 
   merge(otherRegistry: IRegistry): IRegistry {

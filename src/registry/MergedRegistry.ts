@@ -1,6 +1,6 @@
 import type { Logger } from 'pino';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfigWithoutMailbox } from '@hyperlane-xyz/sdk';
 import { ChainAddresses, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
 import { objMerge } from '../utils.js';
 import {
@@ -104,7 +104,7 @@ export class MergedRegistry implements IRegistry {
     return results.find((r) => !!r) || null;
   }
 
-  async getWarpDeployConfig(id: WarpRouteId): Promise<WarpRouteDeployConfig | null> {
+  async getWarpDeployConfig(id: WarpRouteId): Promise<WarpRouteDeployConfigWithoutMailbox | null> {
     const results = await this.multiRegistryRead((r) => r.getWarpDeployConfig(id));
     return results.find((r) => !!r) || null;
   }
