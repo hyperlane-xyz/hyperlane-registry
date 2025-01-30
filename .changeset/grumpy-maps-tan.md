@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Addng chronicleyellowstone chain metadata
+Add SMOL config and metadata

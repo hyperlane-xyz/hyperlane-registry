@@ -1,5 +1,16 @@
 # @hyperlane-xyz/registry
 
+## 7.4.0
+
+### Minor Changes
+
+- 9649368: Add metadata.json and logos for sSOL, USD\*, and SONIC
+- c5ca52b: Addng chronicleyellowstone chain metadata
+
+### Patch Changes
+
+- f8903b4: Update configs according to https://github.com/hyperlane-xyz/hyperlane-monorepo/pull/5316, which moves ownerOverride to its own proxyAdmin. Reverts removal of ownerOverride for some routes.
+
 ## 7.3.0
 
 ### Minor Changes
