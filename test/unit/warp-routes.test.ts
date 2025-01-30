@@ -20,8 +20,6 @@ describe('Warp Core Configs', () => {
   const multiProvider = new MultiProtocolProvider(chainMetadata);
   const routes = localRegistry.getWarpRoutes();
 
-  console.log('routes', routes);
-
   it('All warp route symbol directories meet regex requirement', () => {
     const warpRoutesPath = path.join(BASE_URI, 'deployments', 'warp_routes');
     const symbolDirs = fs
