@@ -1,4 +1,4 @@
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfigWithoutMailbox } from '@hyperlane-xyz/sdk';
 
 import { ChainAddresses, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
 import { BaseRegistry } from './BaseRegistry.js';
@@ -64,7 +64,7 @@ export abstract class SynchronousRegistry extends BaseRegistry implements IRegis
     return this.getWarpRoutesForIds([routeId])[0] || null;
   }
 
-  getWarpDeployConfig(routeId: string): WarpRouteDeployConfig | null {
+  getWarpDeployConfig(routeId: string): WarpRouteDeployConfigWithoutMailbox | null {
     return this.getWarpDeployConfigForIds([routeId])[0] || null;
   }
 
@@ -86,7 +86,7 @@ export abstract class SynchronousRegistry extends BaseRegistry implements IRegis
     const warpDeployConfig = this.listRegistryContent().deployments.warpDeployConfig;
     const { ids: routeIds } = filterWarpRoutesIds(warpDeployConfig, filter);
     const configs = this.getWarpDeployConfigForIds(routeIds);
-    const idsWithConfigs = routeIds.map((id, i): [WarpRouteId, WarpRouteDeployConfig] => [id, configs[i]])
+    const idsWithConfigs = routeIds.map((id, i): [WarpRouteId, WarpRouteDeployConfigWithoutMailbox] => [id, configs[i]])
     return Object.fromEntries(idsWithConfigs);
   }
 
@@ -95,5 +95,5 @@ export abstract class SynchronousRegistry extends BaseRegistry implements IRegis
   protected abstract createOrUpdateChain(chain: UpdateChainParams): void;
 
   protected abstract getWarpRoutesForIds(ids: WarpRouteId[]): WarpCoreConfig[];
-  protected abstract getWarpDeployConfigForIds(ids: WarpRouteId[]): WarpRouteDeployConfig[];
+  protected abstract getWarpDeployConfigForIds(ids: WarpRouteId[]): WarpRouteDeployConfigWithoutMailbox[];
 }

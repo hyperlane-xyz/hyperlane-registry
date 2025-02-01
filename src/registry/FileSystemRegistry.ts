@@ -3,7 +3,7 @@ import path from 'path';
 import type { Logger } from 'pino';
 import { parse as yamlParse } from 'yaml';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfigWithoutMailbox } from '@hyperlane-xyz/sdk';
 
 import { CHAIN_FILE_REGEX, SCHEMA_REF, WARP_ROUTE_CONFIG_FILE_REGEX, WARP_ROUTE_DEPLOY_FILE_REGEX, } from '../consts.js';
 import { ChainAddresses, ChainAddressesSchema, WarpRouteId } from '../types.js';
@@ -118,7 +118,7 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
     this.createFile({ filePath: addressesPath, data: toYamlString(addresses) });
   }
 
-  addWarpRouteConfig(warpConfig: WarpRouteDeployConfig, fileName: string): void {
+  addWarpRouteConfig(warpConfig: WarpRouteDeployConfigWithoutMailbox, fileName: string): void {
     const filePath = path.join(this.uri, this.getWarpRoutesPath(), fileName);
     this.createFile({ filePath, data: toYamlString(warpConfig)})
   }
@@ -197,7 +197,7 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
     return this.readConfigsForIds(ids, warpRoutes);
   }
 
-  protected getWarpDeployConfigForIds(ids: WarpRouteId[]): WarpRouteDeployConfig[] {
+  protected getWarpDeployConfigForIds(ids: WarpRouteId[]): WarpRouteDeployConfigWithoutMailbox[] {
     const warpDeployConfig = this.listRegistryContent().deployments.warpDeployConfig;
     return this.readConfigsForIds(ids, warpDeployConfig);
   }

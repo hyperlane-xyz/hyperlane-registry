@@ -1,4 +1,4 @@
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfigWithoutMailbox } from '@hyperlane-xyz/sdk';
 import { ChainAddresses, MaybePromise, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
 
 export interface ChainFiles {
@@ -67,7 +67,7 @@ export interface IRegistry {
   getWarpRoutes(filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap>;
   addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): MaybePromise<void>;
 
-  getWarpDeployConfig(routeId: string): MaybePromise<WarpRouteDeployConfig | null>;
+  getWarpDeployConfig(routeId: string): MaybePromise<WarpRouteDeployConfigWithoutMailbox | null>;
   getWarpDeployConfigs(filter?: WarpRouteFilterParams): MaybePromise<WarpDeployConfigMap>;
 
   // TODO define more deployment artifact related methods
