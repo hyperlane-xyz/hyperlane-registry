@@ -233,3 +233,33 @@ describe('Registry regex', () => {
     expect(CHAIN_FILE_REGEX.test('chains/foobar/randomfile.txt')).to.be.false;
   });
 });
+
+describe('Warp routes file structure', () => {
+  const localRegistry = new FileSystemRegistry({ uri: './' });
+  const WARP_ROUTES_PATH = 'deployments/warp_routes';
+
+  const findAddressesYaml = (dir: string): string | null => {
+    try {
+      const files = fs.readdirSync(dir);
+      for (const file of files) {
+        const path = `${dir}/${file}`;
+        if (file === 'addresses.yaml') return path;
+        if (fs.statSync(path).isDirectory()) {
+          const result = findAddressesYaml(path);
+          if (result) return result;
+        }
+      }
+      return null;
+    } catch {
+      return null;
+    }
+  };
+
+  it('should not contain addresses.yaml files', async () => {
+    const warpRoutes = await localRegistry.getWarpRoutes();
+    expect(Object.keys(warpRoutes).length).to.be.greaterThan(0);
+
+    const foundPath = findAddressesYaml(WARP_ROUTES_PATH);
+    expect(foundPath, foundPath ? `Found addresses.yaml at: ${foundPath}` : '').to.be.null;
+  });
+});
