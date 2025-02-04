@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xf376247BdE9763808034567E7E87c84970e81E8F"
+    chainName: appchain
+    connections:
+      - token: ethereum|arbitrum|0x489aF6385699DA4eE9427EFe65419B60fC205bDb
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypSynthetic
+    symbol: USDC
+  - addressOrDenom: "0x489aF6385699DA4eE9427EFe65419B60fC205bDb"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+    connections:
+      - token: ethereum|appchain|0xf376247BdE9763808034567E7E87c84970e81E8F
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
