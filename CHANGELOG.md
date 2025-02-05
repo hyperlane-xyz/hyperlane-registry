@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 9.0.0
+
+### Major Changes
+
+- d9fe44a: Modifies LUMIA warp route, moving to new lumiaprism router instead of old lumia one
+
 ## 8.0.0
 
 ### Major Changes
