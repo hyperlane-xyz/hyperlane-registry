@@ -1,5 +1,13 @@
 # @hyperlane-xyz/registry
 
+## 9.1.0
+
+### Minor Changes
+
+- c4e5717: Enroll new chain validators on default ISMs. Update gnosis safe transaction service urls on treasure, zksync, abstract, and zklink.
+- 7dd7ac2: Add EZETHSTAGE config to be used for EZETH staging
+- 7889556: Deploy to berachain.
+
 ## 9.0.0
 
 ### Major Changes
