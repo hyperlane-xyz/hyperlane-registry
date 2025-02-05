@@ -1,5 +1,28 @@
 # @hyperlane-xyz/registry
 
+## 9.0.0
+
+### Major Changes
+
+- d9fe44a: Modifies LUMIA warp route, moving to new lumiaprism router instead of old lumia one
+
+## 8.0.0
+
+### Major Changes
+
+- 8b0e4de: Remove separate warp route address yaml files and consolidate addresses into config files
+- 5234cde: Remove more addresses-yaml files
+
+### Minor Changes
+
+- 0659f91: Update OP mainnet logo
+- 5e76a6b: Add SMOL config and metadata
+- 46eadc4: Add SMOL deploy config
+- 427974d: Add sSOL, USDStar, USDC, USDT, and SONIC bridged between Solana and Sonic. Rename USD\* -> USDStar.
+- 7e3e72f: Deploy to chronicleyellowstone. Add subtensortestnet metadata.
+- 63363b7: Add solanamainnet to SMOL warp route config
+- 6d23642: Add logo for SMOL
+
 ## 7.4.0
 
 ### Minor Changes

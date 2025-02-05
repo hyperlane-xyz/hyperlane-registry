@@ -3,9 +3,20 @@ import path from 'path';
 import type { Logger } from 'pino';
 import { parse as yamlParse } from 'yaml';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type {
+  ChainMap,
+  ChainMetadata,
+  ChainName,
+  WarpCoreConfig,
+  WarpRouteDeployConfig,
+} from '@hyperlane-xyz/sdk';
 
-import { CHAIN_FILE_REGEX, SCHEMA_REF, WARP_ROUTE_CONFIG_FILE_REGEX, WARP_ROUTE_DEPLOY_FILE_REGEX, } from '../consts.js';
+import {
+  CHAIN_FILE_REGEX,
+  SCHEMA_REF,
+  WARP_ROUTE_CONFIG_FILE_REGEX,
+  WARP_ROUTE_DEPLOY_FILE_REGEX,
+} from '../consts.js';
 import { ChainAddresses, ChainAddressesSchema, WarpRouteId } from '../types.js';
 import { toYamlString } from '../utils.js';
 
@@ -18,7 +29,7 @@ import {
   type RegistryContent,
 } from './IRegistry.js';
 import { SynchronousRegistry } from './SynchronousRegistry.js';
-import { warpConfigToWarpAddresses, warpRouteConfigPathToId, warpRouteDeployConfigPathToId } from './warp-utils.js';
+import { warpRouteConfigPathToId, warpRouteDeployConfigPathToId } from './warp-utils.js';
 
 export interface FileSystemRegistryOptions {
   uri: string;
@@ -42,7 +53,7 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
   }
 
   /**
-   * Retrieves filepaths for chains, warp core, and warp deploy configs 
+   * Retrieves filepaths for chains, warp core, and warp deploy configs
    */
   listRegistryContent(): RegistryContent {
     if (this.listContentCache) return this.listContentCache;
@@ -73,7 +84,7 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
       const routeId = warpRouteDeployConfigPathToId(filePath);
       warpDeployConfig[routeId] = filePath;
     }
-    
+
     return (this.listContentCache = { chains, deployments: { warpRoutes, warpDeployConfig } });
   }
 
@@ -108,19 +119,14 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
   }
 
   addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): void {
-    let { configPath, addressesPath } = this.getWarpRoutesArtifactPaths(config, options);
-
+    let { configPath } = this.getWarpRoutesArtifactPaths(config, options);
     configPath = path.join(this.uri, configPath);
     this.createFile({ filePath: configPath, data: toYamlString(config, SCHEMA_REF) });
-
-    addressesPath = path.join(this.uri, addressesPath);
-    const addresses = warpConfigToWarpAddresses(config);
-    this.createFile({ filePath: addressesPath, data: toYamlString(addresses) });
   }
 
   addWarpRouteConfig(warpConfig: WarpRouteDeployConfig, fileName: string): void {
     const filePath = path.join(this.uri, this.getWarpRoutesPath(), fileName);
-    this.createFile({ filePath, data: toYamlString(warpConfig)})
+    this.createFile({ filePath, data: toYamlString(warpConfig) });
   }
 
   protected listFiles(dirPath: string): string[] {
@@ -208,7 +214,10 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
    * @param configURIs - A mapping of WarpRouteIds to file paths where the configs are stored.
    * @returns An array of config objects.
    */
-  protected readConfigsForIds<Config>(ids: WarpRouteId[], configURIs: Record<WarpRouteId, string> ): Config[] {
+  protected readConfigsForIds<Config>(
+    ids: WarpRouteId[],
+    configURIs: Record<WarpRouteId, string>,
+  ): Config[] {
     const configs: Config[] = [];
     for (const [id, filePath] of Object.entries(configURIs)) {
       if (!ids.includes(id)) continue;

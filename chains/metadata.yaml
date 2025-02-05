@@ -5620,7 +5620,30 @@ subtensor:
     symbol: TAO
   protocol: ethereum
   rpcUrls:
-    - http: https://lite.chain.opentensor.ai
+    - http: https://archive.chain.opentensor.ai
+    - http: https://bittensor-finney.api.onfinality.io/public
+  technicalStack: other
+subtensortestnet:
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 12
+    reorgPeriod: 1
+  chainId: 945
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Subtensor Testnet
+  domainId: 945
+  gasCurrencyCoinGeckoId: bittensor
+  isTestnet: true
+  name: subtensortestnet
+  nativeToken:
+    decimals: 18
+    name: Bittensor
+    symbol: TAO
+  protocol: ethereum
+  rpcUrls:
+    - http: https://test.finney.opentensor.ai
   technicalStack: other
 superpositionmainnet:
   blockExplorers:

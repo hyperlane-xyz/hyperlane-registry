@@ -149,11 +149,8 @@ describe('Registry utilities', () => {
       });
       const outputBasePath = `deployments/warp_routes/${MOCK_SYMBOL}/${MOCK_CHAIN_NAME}-${MOCK_CHAIN_NAME2}-`;
       const configPath = `${outputBasePath}config.yaml`;
-      const addressesPath = `${outputBasePath}addresses.yaml`;
       expect(fs.existsSync(configPath)).to.be.true;
-      expect(fs.existsSync(addressesPath)).to.be.true;
       fs.unlinkSync(configPath);
-      fs.unlinkSync(addressesPath);
       fs.rmdirSync(`deployments/warp_routes/${MOCK_SYMBOL}`);
     }).timeout(5_000);
 
@@ -171,11 +168,8 @@ describe('Registry utilities', () => {
       );
       const outputBasePath = `deployments/warp_routes/${MOCKED_OPTION_SYMBOL}/${MOCK_CHAIN_NAME}-${MOCK_CHAIN_NAME2}-`;
       const configPath = `${outputBasePath}config.yaml`;
-      const addressesPath = `${outputBasePath}addresses.yaml`;
       expect(fs.existsSync(configPath)).to.be.true;
-      expect(fs.existsSync(addressesPath)).to.be.true;
       fs.unlinkSync(configPath);
-      fs.unlinkSync(addressesPath);
       fs.rmdirSync(`deployments/warp_routes/${MOCKED_OPTION_SYMBOL}`);
     }).timeout(5_000);
   }
@@ -237,5 +231,35 @@ describe('Registry regex', () => {
     expect(CHAIN_FILE_REGEX.test('chains/_NotAChain/addresses.yaml')).to.be.false;
     expect(CHAIN_FILE_REGEX.test('chains/foobar/logo.svg')).to.be.true;
     expect(CHAIN_FILE_REGEX.test('chains/foobar/randomfile.txt')).to.be.false;
+  });
+});
+
+describe('Warp routes file structure', () => {
+  const localRegistry = new FileSystemRegistry({ uri: './' });
+  const WARP_ROUTES_PATH = 'deployments/warp_routes';
+
+  const findAddressesYaml = (dir: string): string | null => {
+    try {
+      const files = fs.readdirSync(dir);
+      for (const file of files) {
+        const path = `${dir}/${file}`;
+        if (file === 'addresses.yaml') return path;
+        if (fs.statSync(path).isDirectory()) {
+          const result = findAddressesYaml(path);
+          if (result) return result;
+        }
+      }
+      return null;
+    } catch {
+      return null;
+    }
+  };
+
+  it('should not contain addresses.yaml files', async () => {
+    const warpRoutes = await localRegistry.getWarpRoutes();
+    expect(Object.keys(warpRoutes).length).to.be.greaterThan(0);
+
+    const foundPath = findAddressesYaml(WARP_ROUTES_PATH);
+    expect(foundPath, foundPath ? `Found addresses.yaml at: ${foundPath}` : '').to.be.null;
   });
 });
