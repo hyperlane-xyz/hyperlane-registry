@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { parse as yamlParse } from 'yaml';
 
 function findFiles(directory, fileTypes = [], isRecursive = true) {
   const files = fs.readdirSync(directory);
@@ -31,4 +32,8 @@ export function getFilePaths(directories = [], fileTypes = [], isRecursive = tru
       }
     })
     .flatMap((directory) => findFiles(directory, fileTypes, isRecursive));
+}
+
+export function readYaml(filePath) {
+  return yamlParse(fs.readFileSync(filePath, 'utf-8'));
 }

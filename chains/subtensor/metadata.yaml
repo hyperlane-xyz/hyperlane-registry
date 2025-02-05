@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://evm.taostats.io/api
+    family: blockscout
+    name: TaoStats EVM
+    url: https://evm.taostats.io
+blocks:
+  confirmations: 1
+  estimateBlockTime: 12
+  reorgPeriod: 5
+chainId: 964
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Subtensor
+domainId: 964
+gasCurrencyCoinGeckoId: bittensor
+name: subtensor
+nativeToken:
+  decimals: 18
+  name: Bittensor
+  symbol: TAO
+protocol: ethereum
+rpcUrls:
+  - http: https://archive.chain.opentensor.ai
+  - http: https://bittensor-finney.api.onfinality.io/public
+technicalStack: other

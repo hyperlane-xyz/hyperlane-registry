@@ -1,5 +1,5 @@
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
-import { ChainAddresses, MaybePromise, WarpRouteConfigMap, WarpRouteId } from '../types.js';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import { ChainAddresses, MaybePromise, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
 
 export interface ChainFiles {
   metadata?: string;
@@ -13,6 +13,9 @@ export interface RegistryContent {
   deployments: {
     // Warp route ID to config URI
     warpRoutes: Record<WarpRouteId, string>;
+
+    // Warp route ID to warp deploy config URI
+    warpDeployConfig: Record<WarpRouteId, string>;
   };
 }
 
@@ -32,6 +35,10 @@ export enum RegistryType {
   FileSystem = 'filesystem',
   Merged = 'merged',
   Partial = 'partial',
+}
+
+export interface AddWarpRouteOptions {
+  symbol?: string;
 }
 
 export interface IRegistry {
@@ -58,7 +65,10 @@ export interface IRegistry {
 
   getWarpRoute(routeId: string): MaybePromise<WarpCoreConfig | null>;
   getWarpRoutes(filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap>;
-  addWarpRoute(config: WarpCoreConfig): MaybePromise<void>;
+  addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): MaybePromise<void>;
+
+  getWarpDeployConfig(routeId: string): MaybePromise<WarpRouteDeployConfig | null>;
+  getWarpDeployConfigs(filter?: WarpRouteFilterParams): MaybePromise<WarpDeployConfigMap>;
 
   // TODO define more deployment artifact related methods
 

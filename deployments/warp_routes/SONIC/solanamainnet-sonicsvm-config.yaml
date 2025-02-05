@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: 2e6hyJbUpbhqbJzorDZ1m4QVTj5oPhsn2H3KBaMFVXAz
+    chainName: solanamainnet
+    coinGeckoId: sonic-svm
+    collateralAddressOrDenom: SonicxvLud67EceaEzCLRnMTBqzYUUYNr93DBkBdDES
+    connections:
+      - token: sealevel|sonicsvm|5sPRiRLfmohVmtkgiGV6scrzy2C6qEZRGRUiePZf1Fs2
+    decimals: 9
+    logoURI: /deployments/warp_routes/SONIC/logo.svg
+    name: Sonic SVM
+    standard: SealevelHypCollateral
+    symbol: SONIC
+  - addressOrDenom: 5sPRiRLfmohVmtkgiGV6scrzy2C6qEZRGRUiePZf1Fs2
+    chainName: sonicsvm
+    collateralAddressOrDenom: mrujEYaN1oyQXDHeYNxBYpxWKVkQ2XsGxfznpifu4aL
+    connections:
+      - token: sealevel|solanamainnet|2e6hyJbUpbhqbJzorDZ1m4QVTj5oPhsn2H3KBaMFVXAz
+    decimals: 9
+    logoURI: /deployments/warp_routes/SONIC/logo.svg
+    name: Sonic SVM
+    standard: SealevelHypSynthetic
+    symbol: SONIC

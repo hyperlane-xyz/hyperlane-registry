@@ -1,9 +1,10 @@
 import type { Logger } from 'pino';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
-import { ChainAddresses, WarpRouteConfigMap, WarpRouteId } from '../types.js';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import { ChainAddresses, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
 import { objMerge } from '../utils.js';
 import {
+  AddWarpRouteOptions,
   IRegistry,
   RegistryContent,
   RegistryType,
@@ -45,6 +46,7 @@ export class MergedRegistry implements IRegistry {
       chains: {},
       deployments: {
         warpRoutes: {},
+        warpDeployConfig: {}
       },
     });
   }
@@ -102,14 +104,24 @@ export class MergedRegistry implements IRegistry {
     return results.find((r) => !!r) || null;
   }
 
+  async getWarpDeployConfig(id: WarpRouteId): Promise<WarpRouteDeployConfig | null> {
+    const results = await this.multiRegistryRead((r) => r.getWarpDeployConfig(id));
+    return results.find((r) => !!r) || null;
+  }
+
   async getWarpRoutes(filter?: WarpRouteFilterParams): Promise<WarpRouteConfigMap> {
     const results = await this.multiRegistryRead((r) => r.getWarpRoutes(filter));
     return results.reduce((acc, content) => objMerge(acc, content), {});
   }
 
-  async addWarpRoute(config: WarpCoreConfig): Promise<void> {
+  async getWarpDeployConfigs(filter?: WarpRouteFilterParams): Promise<WarpDeployConfigMap> {
+    const results = await this.multiRegistryRead((r) => r.getWarpDeployConfigs(filter));
+    return results.reduce((acc, content) => objMerge(acc, content), {});
+  }
+
+  async addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): Promise<void> {
     return this.multiRegistryWrite(
-      async (registry) => await registry.addWarpRoute(config),
+      async (registry) => await registry.addWarpRoute(config, options),
       'adding warp route',
     );
   }

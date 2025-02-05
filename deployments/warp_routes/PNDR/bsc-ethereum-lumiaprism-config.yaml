@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xC868Ea07031eE67dCE475D535F1AA0e5571Ba92a"
+    chainName: ethereum
+    coinGeckoId: ponder-one
+    collateralAddressOrDenom: "0x73624d2dEF952C77a1f3B5AD995eef53E49639EC"
+    connections:
+      - token: ethereum|bsc|0xDcE63e8cc7f1E2Ed25a226166abE3217c19d0BF1
+      - token: ethereum|lumiaprism|0x1fdfD1486b8339638C6b92f8a96D698D8182D2b1
+    decimals: 18
+    logoURI: /deployments/warp_routes/PNDR/logo.jpeg
+    name: Ponder
+    standard: EvmHypCollateral
+    symbol: PNDR
+  - addressOrDenom: "0xDcE63e8cc7f1E2Ed25a226166abE3217c19d0BF1"
+    chainName: bsc
+    connections:
+      - token: ethereum|ethereum|0xC868Ea07031eE67dCE475D535F1AA0e5571Ba92a
+      - token: ethereum|lumiaprism|0x1fdfD1486b8339638C6b92f8a96D698D8182D2b1
+    decimals: 18
+    logoURI: /deployments/warp_routes/PNDR/logo.jpeg
+    name: Ponder
+    standard: EvmHypSynthetic
+    symbol: PNDR
+  - addressOrDenom: "0x1fdfD1486b8339638C6b92f8a96D698D8182D2b1"
+    chainName: lumiaprism
+    connections:
+      - token: ethereum|ethereum|0xC868Ea07031eE67dCE475D535F1AA0e5571Ba92a
+      - token: ethereum|bsc|0xDcE63e8cc7f1E2Ed25a226166abE3217c19d0BF1
+    decimals: 18
+    logoURI: /deployments/warp_routes/PNDR/logo.jpeg
+    name: Ponder
+    standard: EvmHypSynthetic
+    symbol: PNDR

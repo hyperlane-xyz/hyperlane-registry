@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x18E5D2ae4fb6F5Cf4e6C5D493C4d0F027FAe5054"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x7a4EffD87C2f3C55CA251080b1343b605f327E3a"
+    connections:
+      - token: ethereum|zircuit|0xc701aE35d83c812822c992aB293E4e3fAF6E9D3B
+    decimals: 18
+    name: Restaking Vault ETH
+    standard: EvmHypCollateral
+    symbol: rstETH
+  - addressOrDenom: "0xc701aE35d83c812822c992aB293E4e3fAF6E9D3B"
+    chainName: zircuit
+    connections:
+      - token: ethereum|ethereum|0x18E5D2ae4fb6F5Cf4e6C5D493C4d0F027FAe5054
+    decimals: 18
+    name: Restaking Vault ETH
+    standard: EvmHypSynthetic
+    symbol: rstETH
