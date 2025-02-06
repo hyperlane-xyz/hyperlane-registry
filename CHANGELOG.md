@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 9.2.0
+
+### Minor Changes
+
+- 3141571: Enroll berachain on default ISMs.
+
 ## 9.1.0
 
 ### Minor Changes
