@@ -4227,20 +4227,20 @@ opbnbtestnet:
     - http: https://opbnb-testnet-rpc.bnbchain.org
 opengradienttestnet:
   blockExplorers:
-    - apiUrl: http://3.145.62.2/api
+    - apiUrl: https://explorer.opengradient.ai/api
       family: blockscout
       name: Opengradient Testnet Explorer
-      url: http://3.145.62.2
+      url: https://explorer.opengradient.ai/
   blocks:
     confirmations: 1
     estimateBlockTime: 30
     reorgPeriod: 0
-  chainId: 2970285607590380
+  chainId: 10744
   deployer:
     name: Opengradient team
     url: https://opengradient.ai
   displayName: Opengradient Testnet
-  domainId: 297028
+  domainId: 10744
   isTestnet: true
   name: opengradienttestnet
   nativeToken:
@@ -4249,7 +4249,7 @@ opengradienttestnet:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: http://18.218.115.248:8545
+    - http: http://18.188.176.119:8545
 optimism:
   blockExplorers:
     - apiUrl: https://api-optimistic.etherscan.io/api
