@@ -1,5 +1,17 @@
 # @hyperlane-xyz/registry
 
+## 9.3.0
+
+### Minor Changes
+
+- 0496f9d: added ES token metadata
+- 657c7fa: Deploy to subtensortestnet.
+- 64eae96: Add EZETHSTAGE config and artifact
+
+### Patch Changes
+
+- 208e223: Update ART coinGeckoId
+
 ## 9.2.0
 
 ### Minor Changes
