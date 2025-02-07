@@ -235,7 +235,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     const useToken = !(this.proxyUrl && url.startsWith(this.proxyUrl)) && !!this.authToken;
     const response = await fetch(url, {
       headers: useToken
-        ? { ...this.baseApiHeaders, Authorization: `token ${this.authToken}` }
+        ? { ...this.baseApiHeaders, Authorization: `Bearer ${this.authToken}` }
         : undefined,
     });
     if (!response.ok)
