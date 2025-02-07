@@ -16,7 +16,7 @@ abstract:
   displayName: Abstract
   domainId: 2741
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://transaction.abstract-safe.protofire.io/
+  gnosisSafeTransactionServiceUrl: https://transaction.abstract-safe.protofire.io
   index:
     from: 201749
   name: abstract
@@ -737,6 +737,33 @@ berabartio:
     - http: https://bartio.rpc.berachain.com/
     - http: https://bartio.drpc.org
     - http: https://bera-testnet.nodeinfra.com
+berachain:
+  blockExplorers:
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/80094/etherscan/api/
+      family: routescan
+      name: Berachain Explorer
+      url: https://beratrail.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 80094
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Berachain
+  domainId: 80094
+  gasCurrencyCoinGeckoId: berachain-bera
+  gnosisSafeTransactionServiceUrl: https://transaction.safe.berachain.com
+  name: berachain
+  nativeToken:
+    decimals: 18
+    name: BERA
+    symbol: BERA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.berachain.com
+  technicalStack: other
 bitlayer:
   blockExplorers:
     - apiUrl: https://api.btrscan.com/scan/api
@@ -1257,7 +1284,7 @@ clique:
 conflux:
   blockExplorers:
     - apiUrl: https://evmapi.confluxscan.net/api
-      family: blockscout
+      family: other
       name: ConfluxScan eSpace
       url: https://evm.confluxscan.net
   blocks:
@@ -5945,7 +5972,7 @@ treasure:
   displayName: Treasure
   domainId: 61166
   gasCurrencyCoinGeckoId: magic
-  gnosisSafeTransactionServiceUrl: https://prod.treasure.keypersafe.xyz/
+  gnosisSafeTransactionServiceUrl: https://prod.treasure.keypersafe.xyz
   name: treasure
   nativeToken:
     decimals: 18
@@ -6393,7 +6420,7 @@ zklink:
   displayNameShort: zkLink
   domainId: 810180
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://transaction.safe.zklink.io/
+  gnosisSafeTransactionServiceUrl: https://transaction.safe.zklink.io
   name: zklink
   nativeToken:
     decimals: 18
@@ -6421,7 +6448,7 @@ zksync:
   displayName: zkSync
   domainId: 324
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-zksync.safe.global/
+  gnosisSafeTransactionServiceUrl: https://safe-transaction-zksync.safe.global
   name: zksync
   nativeToken:
     decimals: 18

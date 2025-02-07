@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add SMOL config and metadata
+added ES token metadata
