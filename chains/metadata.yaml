@@ -3905,6 +3905,32 @@ molten:
   rpcUrls:
     - http: https://molten.calderachain.xyz/http
   technicalStack: arbitrumnitro
+monadtestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.monad-testnet.category.xyz/api
+      family: blockscout
+      name: Monad Testnet Explorer
+      url: https://explorer.monad-testnet.category.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 10143
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Monad Testnet
+  domainId: 10143
+  isTestnet: true
+  name: monadtestnet
+  nativeToken:
+    decimals: 18
+    name: MON
+    symbol: MON
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet-rpc.monad.xyz
+  technicalStack: other
 moonbase:
   blockExplorers:
     - apiUrl: https://api-moonbase.moonscan.io/api
@@ -6209,6 +6235,32 @@ wanchaintestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://gwan-ssl.wandevs.org:46891
+weavevmtestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.wvm.dev/api
+      family: blockscout
+      name: WeaveVM Testnet Explorer
+      url: https://explorer.wvm.dev
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 9496
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Weave VM Testnet
+  domainId: 9496
+  isTestnet: true
+  name: weavevmtestnet
+  nativeToken:
+    decimals: 18
+    name: tWVM
+    symbol: tWVM
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet-rpc.wvm.dev
+  technicalStack: other
 worldchain:
   blockExplorers:
     - apiUrl: https://worldchain-mainnet-explorer.alchemy.com/api
