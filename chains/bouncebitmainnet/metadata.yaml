@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://fullnode-mainnet.bouncebitapi.com/
+    family: other
+    name: bbscan
+    url: https://bbscan.io/
+chainId: 6001
+displayName: Bouncebitmainnet
+domainId: 6001
+isTestnet: false
+name: bouncebitmainnet
+nativeToken:
+  decimals: 18
+  name: BounceBit
+  symbol: BB
+protocol: ethereum
+rpcUrls:
+  - http: https://docs.bouncebit.io/infrastructure/bouncebit-pos-chain
+transactionOverrides:
+  gasPrice: 10000000000
