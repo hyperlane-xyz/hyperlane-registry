@@ -1,5 +1,16 @@
 # @hyperlane-xyz/registry
 
+## 9.4.0
+
+### Minor Changes
+
+- 30ca799: Add EZETH and EZETHSTAGE with unichain and bercachain
+- 7718583: Deploy to monadtestnet, weavevmtestnet.
+
+### Patch Changes
+
+- 3f304ec: Update explorers for unichain and worldchain.
+
 ## 9.3.0
 
 ### Minor Changes
