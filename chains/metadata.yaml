@@ -4917,6 +4917,32 @@ sanko:
   rpcUrls:
     - http: https://mainnet.sanko.xyz
   technicalStack: arbitrumnitro
+sapphiretestnet:
+  blockExplorers:
+    - apiUrl: https://nexus.oasis.io/v1/
+      family: other
+      name: Oasis Explorer
+      url: https://explorer.oasis.io/testnet/sapphire
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 0
+  chainId: 23295
+  deployer:
+    name: Oasis Protocol Foundation
+    url: https://oasisprotocol.org/
+  displayName: Sapphire Testnet
+  domainId: 23295
+  isTestnet: true
+  name: sapphiretestnet
+  nativeToken:
+    decimals: 18
+    name: TEST
+    symbol: TEST
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet.sapphire.oasis.io
+  technicalStack: other
 scroll:
   blockExplorers:
     - apiUrl: https://api.scrollscan.com/api
