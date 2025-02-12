@@ -1,5 +1,16 @@
 # @hyperlane-xyz/registry
 
+## 9.5.0
+
+### Minor Changes
+
+- 04e3605: Add precommit to check for secrets using gitleaks
+- 983c3e5: Add Sapphire Testnet
+
+### Patch Changes
+
+- 03d0217: Update EZETSTAGE unichain owner to safe
+
 ## 9.4.0
 
 ### Minor Changes
