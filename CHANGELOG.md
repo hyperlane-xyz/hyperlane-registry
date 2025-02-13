@@ -1,11 +1,5 @@
 # @hyperlane-xyz/registry
 
-## 9.5.1
-
-### Patch Changes
-
-- 2575aa5: Revert husky.
-
 ## 9.5.0
 
 ### Minor Changes
