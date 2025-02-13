@@ -54,6 +54,7 @@ export class MergedRegistry implements IRegistry {
    * and an override one (such as a local directory)
    * @returns a new MergedRegistry
    */
+
   static fromUris(registryUris: string[], enableProxy: boolean, logger?: Logger): MergedRegistry {
     const registryLogger = logger?.child({ module: 'MergedRegistry' });
     const registries = registryUris
