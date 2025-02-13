@@ -19,10 +19,6 @@ Configs and artifacts for [Hyperlane Core Contract](https://docs.hyperlane.xyz/d
 
 Address artifacts for [Warp Route](https://docs.hyperlane.xyz/docs/deploy/deploy-warp-route) token deployments.
 
-#### Install `gitleaks`
-
-You need `gitleaks` installed on your machine. You can download it from [official page](https://github.com/gitleaks/gitleaks) or use a package manager of your choice.
-
 ## Contributing
 
 This registry is maintained by the core Hyperlane team but community members are encouraged to add chain and deployment information here! See the [Contribution Guide](./CONTRIBUTING.md) for more information.
