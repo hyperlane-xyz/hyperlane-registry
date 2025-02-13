@@ -1,0 +1,88 @@
+# Global allowlist
+[allowlist]
+paths = [
+    '''node_modules''',
+    '''.git'''
+]
+
+# Custom rules
+[[rules]]
+id = "alchemy-api-key"
+description = "Alchemy API Key"
+regex = '''https://[a-zA-Z0-9-]+\.g\.alchemy\.com/v2/[a-zA-Z0-9_-]+'''
+keywords = [
+    "alchemy",
+    "alchemy.com"
+]
+tags = ["key", "Alchemy"]
+
+[[rules]]
+id = "ankr-api-key"
+description = "Ankr API Key"
+regex = '''https://rpc\.ankr\.com/[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+'''
+keywords = [
+    "ankr",
+    "rpc.ankr.com"
+]
+tags = ["key", "Ankr"]
+
+
+[[rules]]
+id = "tenderly-api-key"
+description = "Tenderly API Key"
+regex = '''https://[a-zA-Z0-9-]+\.gateway\.tenderly\.co/[a-zA-Z0-9_-]+'''
+keywords = [
+    "tenderly",
+    "gateway.tenderly.co"
+]
+tags = ["key", "Tenderly"]
+
+[[rules]]
+id = "quicknode-api-key"
+description = "QuickNode API Key"
+regex = '''https://[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+\.quiknode\.pro/[a-zA-Z0-9]+'''
+keywords = [
+    "quiknode",
+    "quiknode.pro"
+]
+tags = ["key", "QuickNode"]
+
+[[rules]]
+id = "drpc-api-key"
+description = "DRPC API Key"
+regex = '''https://lb\.drpc\.org/[a-zA-Z0-9]+\?.*dkey=[a-zA-Z0-9]+'''
+keywords = [
+    "drpc",
+    "drpc.org"
+]
+tags = ["key", "DRPC"]
+
+[[rules]]
+id = "dwellir-api-key"
+description = "Dwellir API Key"
+regex = '''https://api-.*\.dwellir\.com/[a-zA-Z0-9-]+'''
+keywords = [
+    "dwellir",
+    "dwellir.com"
+]
+tags = ["key", "Dwellir"]
+
+[[rules]]
+id = "startale-api-key"
+description = "Startale API Key"
+regex = '''https://[a-zA-Z0-9.-]+\.startale\.com.*\?apikey=[a-zA-Z0-9]+'''
+keywords = [
+    "startale",
+    "startale.com"
+]
+tags = ["key", "Startale"]
+
+[[rules]]
+id = "grove-city-api-key"
+description = "Grove City API Key"
+regex = '''https://[a-zA-Z0-9-]+\.rpc\.grove\.city/v1/[a-zA-Z0-9]+'''
+keywords = [
+    "grove",
+    "grove.city"
+]
+tags = ["key", "Grove City"]
