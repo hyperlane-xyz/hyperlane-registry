@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 9.6.0
+
+### Minor Changes
+
+- 7682689: Add drpc fallback rpc to ethereum metadata.
+
+### Patch Changes
+
+- fd41924: Revert husky.
+
 ## 9.5.0
 
 ### Minor Changes
