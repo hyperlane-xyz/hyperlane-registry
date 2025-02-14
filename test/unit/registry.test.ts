@@ -3,14 +3,16 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 
 import type { ChainMetadata } from '@hyperlane-xyz/sdk';
+import type { Logger } from 'pino';
 import fs from 'fs';
-import { CHAIN_FILE_REGEX } from '../../src/consts.js';
+import { CHAIN_FILE_REGEX, DEFAULT_GITHUB_REGISTRY, PROXY_DEPLOYED_URL } from '../../src/consts.js';
 import { FileSystemRegistry } from '../../src/registry/FileSystemRegistry.js';
 import { GITHUB_API_URL, GithubRegistry } from '../../src/registry/GithubRegistry.js';
 import { RegistryType } from '../../src/registry/IRegistry.js';
 import { MergedRegistry } from '../../src/registry/MergedRegistry.js';
 import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
 import { ChainAddresses } from '../../src/types.js';
+import { RegistryFactory } from '../../src/registry/RegistryFactory.js';
 
 const GITHUB_REGISTRY_BRANCH = 'main';
 
@@ -260,5 +262,76 @@ describe('Warp routes file structure', () => {
 
     const foundPath = findAddressesYaml(WARP_ROUTES_PATH);
     expect(foundPath, foundPath ? `Found addresses.yaml at: ${foundPath}` : '').to.be.null;
+  });
+});
+
+describe('RegistryFactory', () => {
+  let registryFactory: RegistryFactory;
+  // Mock logger
+  const logger: Logger = {
+    child: () => ({ info: () => {}, child: () => ({ info: () => {} }) }),
+  } as any;
+
+  beforeEach(() => {
+    registryFactory = new RegistryFactory(false, logger);
+  });
+
+  describe('createRegistry', () => {
+    it('creates GithubRegistry for HTTPS URLs', () => {
+      const httpsUri = 'https://github.com/hyperlane-xyz/hyperlane-registry';
+      const registry = registryFactory.createRegistry(httpsUri);
+      expect(registry).to.be.instanceOf(GithubRegistry);
+    });
+
+    it('creates FileSystemRegistry for non-HTTPS URIs', () => {
+      const localUri = './local/path';
+      const registry = registryFactory.createRegistry(localUri);
+      expect(registry).to.be.instanceOf(FileSystemRegistry);
+    });
+
+    it('throws error for empty URI', () => {
+      expect(() => registryFactory.createRegistry('')).to.throw('Empty registry URI');
+      expect(() => registryFactory.createRegistry('  ')).to.throw('Empty registry URI');
+    });
+
+    it('creates GithubRegistry with proxy when enabled for canonical repo', () => {
+      const proxyEnabledFactory = new RegistryFactory(true, logger as Logger);
+      const registry = proxyEnabledFactory.createRegistry(
+        DEFAULT_GITHUB_REGISTRY,
+      ) as GithubRegistry;
+      expect(registry).to.be.instanceOf(GithubRegistry);
+      // @ts-ignore - accessing private property for testing
+      expect(registry.proxyUrl).to.equal(PROXY_DEPLOYED_URL);
+    });
+
+    it('creates GithubRegistry without proxy for non-canonical repos', () => {
+      const proxyEnabledFactory = new RegistryFactory(true, logger as Logger);
+      const registry = proxyEnabledFactory.createRegistry(
+        'https://github.com/other/repo',
+      ) as GithubRegistry;
+      expect(registry).to.be.instanceOf(GithubRegistry);
+      // @ts-ignore - accessing private property for testing
+      expect(registry.proxyUrl).to.be.undefined;
+    });
+  });
+
+  describe('createMergedRegistry', () => {
+    it('creates MergedRegistry with multiple URIs', () => {
+      const uris = ['https://github.com/hyperlane-xyz/hyperlane-registry', './local/path'];
+      const registry = registryFactory.createMergedRegistry(uris);
+      expect(registry).to.be.instanceOf(MergedRegistry);
+      // @ts-ignore - accessing private property for testing
+      expect(registry.registries.length).to.equal(2);
+      // @ts-ignore - accessing private property for testing
+      expect(registry.registries[0]).to.be.instanceOf(GithubRegistry);
+      // @ts-ignore - accessing private property for testing
+      expect(registry.registries[1]).to.be.instanceOf(FileSystemRegistry);
+    });
+
+    it('throws error for empty URIs array', () => {
+      expect(() => registryFactory.createMergedRegistry([])).to.throw(
+        'At least one registry URI is required',
+      );
+    });
   });
 });
