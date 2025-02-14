@@ -1,5 +1,5 @@
 import { stringify } from 'yaml';
-import { ABACUS_WORKS_DEPLOYER_NAME, DEFAULT_GITHUB_REGISTRY } from './consts.js';
+import { ABACUS_WORKS_DEPLOYER_NAME } from './consts.js';
 import { ChainMetadata } from '@hyperlane-xyz/sdk';
 
 export function toYamlString(data: any, prefix?: string): string {
@@ -62,18 +62,4 @@ export function objMerge(a: Record<string, any>, b: Record<string, any>, max_dep
 
 export function isAbacusWorksChain(metadata: ChainMetadata): boolean {
   return metadata.deployer?.name?.toLowerCase() === ABACUS_WORKS_DEPLOYER_NAME.toLowerCase();
-}
-
-export function isHttpsUrl(value?: string | null) {
-  try {
-    if (!value) return false;
-    const url = new URL(value);
-    return url.protocol === 'https:';
-  } catch {
-    return false;
-  }
-}
-
-export function isCanonicalRepoUrl(url: string) {
-  return url === DEFAULT_GITHUB_REGISTRY;
 }

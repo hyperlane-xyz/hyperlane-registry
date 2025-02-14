@@ -14,6 +14,7 @@ export {
 } from './registry/IRegistry.js';
 export { MergedRegistry, MergedRegistryOptions } from './registry/MergedRegistry.js';
 export { PartialRegistry, PartialRegistryOptions } from './registry/PartialRegistry.js';
+export { RegistryFactory } from './registry/RegistryFactory.js';
 export {
   filterWarpRoutesIds,
   warpConfigToWarpAddresses,

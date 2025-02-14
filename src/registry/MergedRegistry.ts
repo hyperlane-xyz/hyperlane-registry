@@ -8,7 +8,7 @@ import type {
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
 import { ChainAddresses, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
-import { isCanonicalRepoUrl, isHttpsUrl, objMerge } from '../utils.js';
+import { objMerge } from '../utils.js';
 import {
   AddWarpRouteOptions,
   IRegistry,
@@ -17,11 +17,6 @@ import {
   UpdateChainParams,
   WarpRouteFilterParams,
 } from './IRegistry.js';
-import { GithubRegistry } from './GithubRegistry.js';
-import { FileSystemRegistry } from './FileSystemRegistry.js';
-
-// Constants
-const PROXY_DEPLOYED_URL = process.env.PROXY_DEPLOYED_URL;
 
 export interface MergedRegistryOptions {
   registries: Array<IRegistry>;
@@ -45,41 +40,6 @@ export class MergedRegistry implements IRegistry {
     this.registries = registries;
     // @ts-ignore
     this.logger = logger || console;
-  }
-
-  /**
-   * Creates a new MergedRegistry using the provided URIs
-   * The intention of the MergedRegistry is to join the common data
-   * from a primary URI (such as the Hyperlane default Github repo)
-   * and an override one (such as a local directory)
-   * @returns a new MergedRegistry
-   */
-
-  static fromUris(registryUris: string[], enableProxy: boolean, logger?: Logger): MergedRegistry {
-    const registryLogger = logger?.child({ module: 'MergedRegistry' });
-    const registries = registryUris
-      .map((uri) => uri.trim())
-      .filter((uri) => !!uri)
-      .map((uri, index) => {
-        const childLogger = registryLogger?.child({ uri, index }) ?? (console as unknown as Logger);
-
-        if (isHttpsUrl(uri)) {
-          return new GithubRegistry({
-            uri,
-            logger: childLogger,
-            proxyUrl: enableProxy && isCanonicalRepoUrl(uri) ? PROXY_DEPLOYED_URL : undefined,
-          });
-        } else {
-          return new FileSystemRegistry({
-            uri,
-            logger: childLogger,
-          });
-        }
-      });
-    return new MergedRegistry({
-      registries,
-      logger: registryLogger,
-    });
   }
 
   getUri(): string {
