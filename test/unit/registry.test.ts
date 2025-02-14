@@ -341,6 +341,7 @@ describe('Registry Utils', () => {
       expect(registry).to.be.instanceOf(MergedRegistry);
       expect(registry.registries[0]).to.be.instanceOf(GithubRegistry);
       expect(registry.registries[0].uri).to.equal(DEFAULT_GITHUB_REGISTRY);
+      expect((registry.registries[0] as GithubRegistry).proxyUrl).to.equal(PROXY_DEPLOYED_URL);
     });
 
     it('properly initializes registries with logger', () => {
