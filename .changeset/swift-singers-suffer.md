@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add EZETHSTAGE deploy and core config
+Add EZETH deploy and EZETHSTAGE deploy and core config
