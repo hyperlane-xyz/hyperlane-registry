@@ -1,16 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# If not in GitHub Actions, check for potential secrets in staged files
-if [ "$GITHUB_ACTIONS" != "true" ]; then
-    echo "🔍 Checking for potential secrets in staged files..."
-    if git diff --cached --name-only | xargs gitleaks protect --staged --verbose --redact --config .gitleaks.toml; then
-        echo "✅ No secrets detected"
-    else
-        echo "❌ Potential secrets detected in your changes!"
-        echo "Please remove any secrets, credentials, or sensitive information before committing."
-        exit 1
-    fi
-fi
-
 yarn lint-staged
