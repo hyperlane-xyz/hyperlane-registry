@@ -1,12 +1,6 @@
 import type { Logger } from 'pino';
 
-import type {
-  ChainMap,
-  ChainMetadata,
-  ChainName,
-  WarpCoreConfig,
-  WarpRouteDeployConfig,
-} from '@hyperlane-xyz/sdk';
+import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
 import { ChainAddresses, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
 import { objMerge } from '../utils.js';
 import {
@@ -52,7 +46,7 @@ export class MergedRegistry implements IRegistry {
       chains: {},
       deployments: {
         warpRoutes: {},
-        warpDeployConfig: {},
+        warpDeployConfig: {}
       },
     });
   }
