@@ -1,5 +1,13 @@
 # @hyperlane-xyz/registry
 
+## 9.7.0
+
+### Minor Changes
+
+- f7d238e: Deploy CDX/base-solanamainnet
+- 57be335: Add FORM warp route ethereum<>form
+- cc87e1e: Add CDX logo and metadata
+
 ## 9.6.0
 
 ### Minor Changes
