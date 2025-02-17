@@ -19,43 +19,32 @@ const isCanonicalRepoUrl = (url: string): boolean => {
   return url === DEFAULT_GITHUB_REGISTRY;
 };
 
-export const getRegistry = (uri: string, logger?: Logger, enableProxy = false): IRegistry => {
-  const trimmedUri = uri.trim();
-
-  if (!trimmedUri) {
-    throw new Error('Empty registry URI');
-  }
-
-  if (isHttpsUrl(trimmedUri)) {
-    return new GithubRegistry({
-      uri: trimmedUri,
-      logger,
-      proxyUrl: enableProxy && isCanonicalRepoUrl(trimmedUri) ? PROXY_DEPLOYED_URL : undefined,
-    });
-  }
-
-  return new FileSystemRegistry({
-    uri: trimmedUri,
-    logger,
-  });
-};
-
-export const getMergedRegistry = (
+export function getRegistry(
   registryUris: string[],
+  enableProxy: boolean,
   logger?: Logger,
-  enableProxy?: boolean,
-): MergedRegistry => {
-  if (!registryUris.length) {
-    throw new Error('At least one registry URI is required');
-  }
-
+): IRegistry {
   const registryLogger = logger?.child({ module: 'MergedRegistry' });
-  const registries = registryUris.map((uri, index) =>
-    getRegistry(uri, registryLogger?.child({ uri, index }), enableProxy),
-  );
-
+  const registries = registryUris
+    .map((uri) => uri.trim())
+    .filter((uri) => !!uri)
+    .map((uri, index) => {
+      const childLogger = registryLogger?.child({ uri, index });
+      if (isHttpsUrl(uri)) {
+        return new GithubRegistry({
+          uri,
+          logger: childLogger,
+          proxyUrl: enableProxy && isCanonicalRepoUrl(uri) ? PROXY_DEPLOYED_URL : undefined,
+        });
+      } else {
+        return new FileSystemRegistry({
+          uri,
+          logger: childLogger,
+        });
+      }
+    });
   return new MergedRegistry({
     registries,
-    logger: registryLogger,
+    logger,
   });
-};
+}
