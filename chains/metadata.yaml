@@ -337,6 +337,32 @@ arbitrumsepolia:
     - http: https://arbitrum-sepolia.blockpi.network/v1/rpc/public
     - http: https://sepolia-rollup.arbitrum.io/rpc
   technicalStack: arbitrumnitro
+arcadia:
+  blockExplorers:
+    - apiUrl: https://explorer.arcadia.khalani.network/api
+      family: blockscout
+      name: Arcadia Explorer
+      url: https://explorer.arcadia.khalani.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 27428843902232930
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Arcadia
+  domainId: 1002232929
+  gasCurrencyCoinGeckoId: khalani-aip
+  name: arcadia
+  nativeToken:
+    decimals: 18
+    name: AIP
+    symbol: AIP
+  protocol: ethereum
+  rpcUrls:
+    - http: https://arcadia.khalani.network
+  technicalStack: other
 arcadiatestnet2:
   blockExplorers:
     - apiUrl: https://explorer.khalani.network/api
@@ -937,6 +963,32 @@ bobabnbtestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://testnet.bnb.boba.network
+bouncebit:
+  blockExplorers:
+    - apiUrl: https://bbscan.io/api
+      family: other
+      name: BBScan
+      url: https://bbscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 4
+    reorgPeriod: 5
+  chainId: 6001
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: BounceBit
+  domainId: 6001
+  gasCurrencyCoinGeckoId: bouncebit
+  name: bouncebit
+  nativeToken:
+    decimals: 18
+    name: BounceBit
+    symbol: BB
+  protocol: ethereum
+  rpcUrls:
+    - http: https://fullnode-mainnet.bouncebitapi.com
+  technicalStack: other
 bsc:
   blockExplorers:
     - apiUrl: https://api.bscscan.com/api
@@ -4800,10 +4852,13 @@ ronin:
       name: Ronin Explorer
       url: https://app.roninchain.com
   blocks:
-    confirmations: 15
+    confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 2020
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Ronin
   domainId: 2020
   gasCurrencyCoinGeckoId: ronin
@@ -4815,6 +4870,8 @@ ronin:
   protocol: ethereum
   rpcUrls:
     - http: https://api.roninchain.com/rpc
+    - http: https://ronin.drpc.org
+  technicalStack: other
 rootstockmainnet:
   blockExplorers:
     - apiUrl: https://rootstock.blockscout.com/api
@@ -5475,6 +5532,33 @@ soon:
   rpcUrls:
     - http: https://rpc.mainnet.soo.network/rpc
   technicalStack: other
+sophon:
+  blockExplorers:
+    - apiUrl: https://verification-explorer.sophon.xyz/contract_verification
+      family: etherscan
+      name: Sophon Explorer
+      url: https://explorer.sophon.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 50104
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Sophon
+  domainId: 50104
+  gasCurrencyCoinGeckoId: sophon
+  name: sophon
+  nativeToken:
+    decimals: 18
+    name: sophon
+    symbol: SOPH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.sophon.xyz
+    - http: https://sophon-mainnet-public.unifra.io
+  technicalStack: zksync
 sophonsepolia:
   blockExplorers:
     - apiUrl: https://api-explorer-verify.testnet.sophon.xyz/contract_verification
@@ -5497,6 +5581,32 @@ sophonsepolia:
   rpcUrls:
     - http: https://rpc.testnet.sophon.xyz
   technicalStack: zksync
+story:
+  blockExplorers:
+    - apiUrl: https://www.storyscan.xyz/api
+      family: blockscout
+      name: Storyscan
+      url: https://www.storyscan.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 3
+    reorgPeriod: 5
+  chainId: 1514
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Story Mainnet
+  domainId: 1514
+  gasCurrencyCoinGeckoId: story-2
+  name: story
+  nativeToken:
+    decimals: 18
+    name: IP
+    symbol: IP
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet.storyrpc.io
+  technicalStack: other
 storyodysseytestnet:
   blockExplorers:
     - apiUrl: https://odyssey-testnet-explorer.storyscan.xyz/api
@@ -5653,7 +5763,7 @@ suavetoliman:
 subtensor:
   blockExplorers:
     - apiUrl: https://evm.taostats.io/api
-      family: blockscout
+      family: other
       name: TaoStats EVM
       url: https://evm.taostats.io
   blocks:
