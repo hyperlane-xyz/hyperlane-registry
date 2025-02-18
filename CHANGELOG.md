@@ -200,7 +200,7 @@
 ### Patch Changes
 
 - 195c073: add missing coingecko id to form usdt and usdc routes
-- be18353: Add SuperSeed FiatToken warp route
+- be18353: Add supersede FiatToken warp route
 
 ## 6.14.0
 
@@ -231,10 +231,10 @@
 
 ### Minor Changes
 
-- 243f404: add the USDT warp route from ethereum to superseed
+- 243f404: add the USDT warp route from ethereum to supersede
 - 9a11b8b: Add SOON chain, add Bonk logo and metadata, make warp deploys without a config a warning
 - c8234fd: Deploy to torus.
-- 68bd1b1: add OP warp route to connect optimism and superseed
+- 68bd1b1: add OP warp route to connect optimism and supersede
 
 ### Patch Changes
 
@@ -303,7 +303,7 @@
 
 ### Patch Changes
 
-- 995e745: add jitoSOL and kySOL metadta and logo
+- 995e745: add jitoSOL and kySOL metadata and logo
 - 9d6a3bb: Enroll appchain, treasure, zklink on default ISMs.
 - 3aeee15: Deployed pumpBTC route ethereum<>sei
 
@@ -368,7 +368,7 @@
 - d50740e: update the zeronetwork eth warp route to add lisk network and replace usdc route with new one
 - 9870896: Add coinGeckoId to a bunch of new warp routes, set Endurance USDC token to EvmHypCollateral
 - fa13e99: Deploy to B² Network ("bsquared").
-- 3cd1c7d: Deploy new core chains: boba, duckchain, superseed, unichain, vana.
+- 3cd1c7d: Deploy new core chains: boba, duckchain, supersede, unichain, vana.
 - 385b839: Add apxETH and ezSOL deploys to Eclipse
 - b76c898: Added cbBTC between Ethereum and Flowmainnet
 - ae7df1b: Add apxETH and ezSOL logos & metadata
