@@ -1,26 +1,26 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://explorer.hyperlend.finance/api
+  - apiUrl: https://hyperliquid.cloud.blockscout.com/api
     family: blockscout
-    name: Hyperliquid EVM Testnet Explorer
-    url: https://explorer.hyperlend.finance
+    name: HyperEVM Explorer
+    url: https://hyperliquid.cloud.blockscout.com
 blocks:
   confirmations: 1
   estimateBlockTime: 2
-  reorgPeriod: 1
-chainId: 998
+  reorgPeriod: 5
+chainId: 999
 deployer:
   name: Abacus Works
   url: https://www.hyperlane.xyz
-displayName: Hyperliquid EVM Testnet
-domainId: 998
+displayName: HyperEVM
+domainId: 999
 gasCurrencyCoinGeckoId: hyperliquid
-isTestnet: true
-name: hyperliquidevmtestnet
+name: hyperevm
 nativeToken:
   decimals: 18
   name: Hyperliquid
   symbol: HYPE
 protocol: ethereum
 rpcUrls:
-  - http: https://api.hyperliquid-testnet.xyz/evm
+  - http: https://rpc.hyperliquid.xyz/evm
+technicalStack: other
