@@ -2971,6 +2971,32 @@ humanitytestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.testnet.humanity.org
+hyperevm:
+  blockExplorers:
+    - apiUrl: https://hyperliquid.cloud.blockscout.com/api
+      family: blockscout
+      name: HyperEVM Explorer
+      url: https://hyperliquid.cloud.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 999
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: HyperEVM
+  domainId: 999
+  gasCurrencyCoinGeckoId: hyperliquid
+  name: hyperevm
+  nativeToken:
+    decimals: 18
+    name: Hyperliquid
+    symbol: HYPE
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.hyperliquid.xyz/evm
+  technicalStack: other
 hyperliquidevmtestnet:
   blockExplorers:
     - apiUrl: https://explorer.hyperlend.finance/api
@@ -2987,13 +3013,13 @@ hyperliquidevmtestnet:
     url: https://www.hyperlane.xyz
   displayName: Hyperliquid EVM Testnet
   domainId: 998
-  gasCurrencyCoinGeckoId: ethereum
+  gasCurrencyCoinGeckoId: hyperliquid
   isTestnet: true
   name: hyperliquidevmtestnet
   nativeToken:
     decimals: 18
-    name: Ethereum
-    symbol: ETH
+    name: Hyperliquid
+    symbol: HYPE
   protocol: ethereum
   rpcUrls:
     - http: https://api.hyperliquid-testnet.xyz/evm
@@ -6351,27 +6377,6 @@ viction:
     - http: https://rpc.tomochain.com
     - http: https://viction.blockpi.network/v1/rpc/public
   technicalStack: other
-wanchaintestnet:
-  blockExplorers:
-    - apiUrl: https://api-xdc.blocksscan.io/api
-      family: etherscan
-      name: Wanchain Explorer
-      url: https://wanexplorer.io
-  chainId: 999
-  deployer:
-    name: JaunePomme
-    url: https://github.com/JaunePomme
-  displayName: Wanchain Testnet
-  domainId: 999
-  isTestnet: true
-  name: wanchaintestnet
-  nativeToken:
-    decimals: 18
-    name: Ether
-    symbol: ETH
-  protocol: ethereum
-  rpcUrls:
-    - http: https://gwan-ssl.wandevs.org:46891
 weavevmtestnet:
   blockExplorers:
     - apiUrl: https://explorer.wvm.dev/api
