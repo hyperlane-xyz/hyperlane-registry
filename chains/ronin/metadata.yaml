@@ -4,10 +4,13 @@ blockExplorers:
     name: Ronin Explorer
     url: https://app.roninchain.com
 blocks:
-  confirmations: 15
+  confirmations: 1
   estimateBlockTime: 3
-  reorgPeriod: 0
+  reorgPeriod: 5
 chainId: 2020
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
 displayName: Ronin
 domainId: 2020
 gasCurrencyCoinGeckoId: ronin
@@ -19,3 +22,5 @@ nativeToken:
 protocol: ethereum
 rpcUrls:
   - http: https://api.roninchain.com/rpc
+  - http: https://ronin.drpc.org
+technicalStack: other
