@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-hevm warp routes
+Add Ethereum<>HyperEVM warp routes for ETH, WBTC, USDT
