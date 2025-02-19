@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 10.1.0
+
+### Minor Changes
+
+- d474b7f: Add SOL/hyperevm-solanamainnet
+
 ## 10.0.0
 
 ### Major Changes
