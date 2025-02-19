@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+options: {}
+tokens:
+  - addressOrDenom: "0x3c216fa6cd30498c75354124288426a152dea8a5"
+    chainName: sepolia
+    connections:
+      - token: starknet|starknetsepolia|0x023c94984d150656cb584597d85b2d349b0f26612852b54f7511bb77644ffe40
+    decimals: 18
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH
+  - addressOrDenom: "0x023c94984d150656cb584597d85b2d349b0f26612852b54f7511bb77644ffe40"
+    chainName: starknetsepolia
+    connections:
+      - token: ethereum|sepolia|0x3c216fa6cd30498c75354124288426a152dea8a5
+    decimals: 18
+    name: Ether
+    standard: StarknetHypSynthetic
+    symbol: ETH
