@@ -196,11 +196,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   }
 
   public async getApiRateLimit(): Promise<GithubRateResponse['resources']['core']> {
-    const response = await fetch(`${GITHUB_API_URL}/rate_limit`, {
-      headers: this.authToken
-        ? { ...this.baseApiHeaders, Authorization: `Bearer ${this.authToken}` }
-        : this.baseApiHeaders,
-    });
+    const response = await this.fetch(`${GITHUB_API_URL}/rate_limit`);
     const { resources } = (await response.json()) as GithubRateResponse;
     return resources.core;
   }
@@ -236,7 +232,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     const response = await fetch(url, {
       headers: useToken
         ? { ...this.baseApiHeaders, Authorization: `Bearer ${this.authToken}` }
-        : undefined,
+        : this.baseApiHeaders,
     });
     if (!response.ok)
       throw new Error(`Failed to fetch from github: ${response.status} ${response.statusText}`);
