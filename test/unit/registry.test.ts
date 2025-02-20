@@ -213,17 +213,11 @@ describe('Registry utilities', () => {
     });
   });
 
-  describe('Authenticated GithubRegistry', () => {
+  describe.only('Authenticated GithubRegistry', () => {
     const proxyUrl = 'http://proxy.hyperlane.xyz';
     let authenticatedGithubRegistry: GithubRegistry;
     let invalidTokenGithubRegistry: GithubRegistry;
     let getApiRateLimitStub: sinon.SinonStub;
-    before(function () {
-      if (!process.env.GITHUB_TOKEN) {
-        console.log('Skipping tests because GITHUB_TOKEN is not defined');
-        this.skip();
-      }
-    });
     beforeEach(() => {
       authenticatedGithubRegistry = new GithubRegistry({
         branch: GITHUB_REGISTRY_BRANCH,
@@ -239,7 +233,11 @@ describe('Registry utilities', () => {
     afterEach(() => {
       sinon.restore();
     });
-    it('should fetch chains with authenticated token', async () => {
+    it('should fetch chains with authenticated token', async function () {
+      if (!process.env.GITHUB_TOKEN) {
+        console.log('Skipping this test because GITHUB_TOKEN is not defined');
+        this.skip();
+      }
       return expect(authenticatedGithubRegistry.getChains()).to.eventually.be.fulfilled;
     });
 
