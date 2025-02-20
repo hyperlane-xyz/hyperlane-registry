@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: CKrNt2y1e2H9728mHRVYyF2owy9eKreepRKpTMj2j8JG
+    chainName: solanamainnet
+    coinGeckoId: tether
+    collateralAddressOrDenom: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+    connections:
+      - token: sealevel|sonicsvm|BGW8geBw12Yyp4rW7Fp97a3CQRA4Czi8PdtuV2Ec3Vdy
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: USDT
+    standard: SealevelHypCollateral
+    symbol: USDT
+  - addressOrDenom: BGW8geBw12Yyp4rW7Fp97a3CQRA4Czi8PdtuV2Ec3Vdy
+    chainName: sonicsvm
+    collateralAddressOrDenom: qPzdrTCvxK3bxoh2YoTZtDcGVgRUwm37aQcC3abFgBy
+    connections:
+      - token: sealevel|solanamainnet|CKrNt2y1e2H9728mHRVYyF2owy9eKreepRKpTMj2j8JG
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: USDT
+    standard: SealevelHypSynthetic
+    symbol: USDT
