@@ -215,9 +215,9 @@ describe('Registry utilities', () => {
 
   describe('Authenticated GithubRegistry', () => {
     const proxyUrl = 'http://proxy.hyperlane.xyz';
-    let authenticatedGithubRegistry;
-    let invalidTokenGithubRegistry;
-    let getApiRateLimitStub;
+    let authenticatedGithubRegistry: GithubRegistry;
+    let invalidTokenGithubRegistry: GithubRegistry;
+    let getApiRateLimitStub: sinon.SinonStub;
     before(function () {
       if (!process.env.GITHUB_TOKEN) {
         console.log('Skipping tests because GITHUB_TOKEN is not defined');
@@ -235,31 +235,35 @@ describe('Registry utilities', () => {
         proxyUrl,
         authToken: 'invalid_token',
       });
-      getApiRateLimitStub = sinon.stub(authenticatedGithubRegistry, 'getApiRateLimit');
     });
     afterEach(() => {
       sinon.restore();
     });
-    it('always uses the authenticated api if rate limit has been not been hit', async () => {
-      getApiRateLimitStub.returns({ remaining: 10 });
-      expect(await authenticatedGithubRegistry.getApiUrl()).to.equal(
-        `${GITHUB_API_URL}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`,
-      );
-    });
-
-    it('should fallback to proxy url if public rate limit has been hit', async () => {
-      getApiRateLimitStub.returns({ remaining: 0 });
-      expect(await authenticatedGithubRegistry.getApiUrl()).to.equal(
-        `${proxyUrl}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`,
-      );
-    });
-
     it('should fetch chains with authenticated token', async () => {
-      expect(invalidTokenGithubRegistry.getChains()).to.eventually.be.fulfilled;
+      return expect(authenticatedGithubRegistry.getChains()).to.eventually.be.fulfilled;
     });
 
     it('should fail fetching chains with invalid authentication token', async () => {
-      expect(invalidTokenGithubRegistry.getChains()).to.eventually.be.rejected;
+      return expect(invalidTokenGithubRegistry.getChains()).to.eventually.be.rejected;
+    });
+
+    describe('GitHub API rate limit handling and fallback behavior:', () => {
+      beforeEach(() => {
+        getApiRateLimitStub = sinon.stub(authenticatedGithubRegistry, 'getApiRateLimit');
+      });
+      it('always uses the authenticated api if rate limit has been not been hit', async () => {
+        getApiRateLimitStub.resolves({ limit: 100, used: 90, remaining: 10, reset: 1234567890 });
+        expect(await authenticatedGithubRegistry.getApiUrl()).to.equal(
+          `${GITHUB_API_URL}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`,
+        );
+      });
+
+      it('should fallback to proxy url if public rate limit has been hit', async () => {
+        getApiRateLimitStub.resolves({ limit: 100, used: 100, remaining: 0, reset: 1234567890 });
+        expect(await authenticatedGithubRegistry.getApiUrl()).to.equal(
+          `${proxyUrl}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`,
+        );
+      });
     });
   });
 });
