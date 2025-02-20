@@ -1,5 +1,44 @@
 # @hyperlane-xyz/registry
 
+## 10.2.0
+
+### Minor Changes
+
+- 9b1aae1: Update default ISMs for Feb 17 batch enrollment. Update safe tx API URLs for fraxtal and hyperevm. Update default RPCs for subtensor.
+
+### Patch Changes
+
+- 2c1cae3: Deployed CCIP Hook/ISMs
+
+## 10.1.0
+
+### Minor Changes
+
+- d474b7f: Add SOL/hyperevm-solanamainnet
+
+## 10.0.0
+
+### Major Changes
+
+- a1758ee: Remove wanchaintestnet. Add hyperevm.
+
+### Minor Changes
+
+- 61ebec2: Deploy to bouncebit, arcadia, ronin, sophon, story, subtensor.
+- be10c5b: Add Ethereum<>HyperEVM warp routes for ETH, WBTC, USDT
+
+### Patch Changes
+
+- 3bac225: Add gnosis safe URL for sophon.
+
+## 9.7.0
+
+### Minor Changes
+
+- f7d238e: Deploy CDX/base-solanamainnet
+- 57be335: Add FORM warp route ethereum<>form
+- cc87e1e: Add CDX logo and metadata
+
 ## 9.6.0
 
 ### Minor Changes
