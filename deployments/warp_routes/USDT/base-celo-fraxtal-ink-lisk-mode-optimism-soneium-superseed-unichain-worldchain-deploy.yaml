@@ -64,8 +64,8 @@ base:
   xERC20:
     extraLockboxLimits:
       - limits:
-          bufferCap: "20000000000000"
-          rateLimitPerSecond: "5000000000"
+          bufferCap: "0"
+          rateLimitPerSecond: "0"
         lockbox: "0x9d922c23d78179c2e75fe394fc8e49363f2dda85"
       - limits:
           bufferCap: "20000000000000"
@@ -132,8 +132,8 @@ ink:
   type: xERC20
   xERC20:
     warpRouteLimits:
-      bufferCap: "2000000000000"
-      rateLimitPerSecond: "500000000"
+      bufferCap: "0"
+      rateLimitPerSecond: "0"
 lisk:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -287,8 +287,8 @@ optimism:
   xERC20:
     extraLockboxLimits:
       - limits:
-          bufferCap: "20000000000000"
-          rateLimitPerSecond: "5000000000"
+          bufferCap: "0"
+          rateLimitPerSecond: "0"
         lockbox: "0x07e437d73e9e43ceece6ea14085b26159e3f7f31"
       - limits:
           bufferCap: "20000000000000"
@@ -377,4 +377,3 @@ worldchain:
     warpRouteLimits:
       bufferCap: "0"
       rateLimitPerSecond: "0"
-
