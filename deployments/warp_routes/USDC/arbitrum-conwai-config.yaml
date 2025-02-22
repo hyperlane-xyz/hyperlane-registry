@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xCB40A1d748da0755E82eCA86328D011A0a1f931C"
+    chainName: conwai
+    connections:
+      - token: ethereum|arbitrum|0xcb40a1d748da0755e82eca86328d011a0a1f931c
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USDC
+    standard: EvmHypSynthetic
+    symbol: USDC
+  - addressOrDenom: "0xcb40a1d748da0755e82eca86328d011a0a1f931c"
+    chainName: arbitrum
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+    connections:
+      - token: ethereum|conwai|0xCB40A1d748da0755E82eCA86328D011A0a1f931C
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USDC
+    standard: EvmHypOwnerCollateral
+    symbol: USDC
