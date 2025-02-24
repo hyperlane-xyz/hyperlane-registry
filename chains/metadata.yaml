@@ -16,7 +16,7 @@ abstract:
   displayName: Abstract
   domainId: 2741
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://transaction.abstract-safe.protofire.io/
+  gnosisSafeTransactionServiceUrl: https://transaction.abstract-safe.protofire.io
   index:
     from: 201749
   name: abstract
@@ -337,6 +337,32 @@ arbitrumsepolia:
     - http: https://arbitrum-sepolia.blockpi.network/v1/rpc/public
     - http: https://sepolia-rollup.arbitrum.io/rpc
   technicalStack: arbitrumnitro
+arcadia:
+  blockExplorers:
+    - apiUrl: https://explorer.arcadia.khalani.network/api
+      family: blockscout
+      name: Arcadia Explorer
+      url: https://explorer.arcadia.khalani.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 4278608
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Arcadia
+  domainId: 4278608
+  gasCurrencyCoinGeckoId: khalani-aip
+  name: arcadia
+  nativeToken:
+    decimals: 18
+    name: AIP
+    symbol: AIP
+  protocol: ethereum
+  rpcUrls:
+    - http: https://arcadia.khalani.network
+  technicalStack: other
 arcadiatestnet2:
   blockExplorers:
     - apiUrl: https://explorer.khalani.network/api
@@ -737,6 +763,33 @@ berabartio:
     - http: https://bartio.rpc.berachain.com/
     - http: https://bartio.drpc.org
     - http: https://bera-testnet.nodeinfra.com
+berachain:
+  blockExplorers:
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/80094/etherscan/api/
+      family: routescan
+      name: Berachain Explorer
+      url: https://beratrail.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 80094
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Berachain
+  domainId: 80094
+  gasCurrencyCoinGeckoId: berachain-bera
+  gnosisSafeTransactionServiceUrl: https://transaction.safe.berachain.com
+  name: berachain
+  nativeToken:
+    decimals: 18
+    name: BERA
+    symbol: BERA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.berachain.com
+  technicalStack: other
 bitlayer:
   blockExplorers:
     - apiUrl: https://api.btrscan.com/scan/api
@@ -910,6 +963,32 @@ bobabnbtestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://testnet.bnb.boba.network
+bouncebit:
+  blockExplorers:
+    - apiUrl: https://bbscan.io/api
+      family: other
+      name: BBScan
+      url: https://bbscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 4
+    reorgPeriod: 5
+  chainId: 6001
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: BounceBit
+  domainId: 6001
+  gasCurrencyCoinGeckoId: bouncebit
+  name: bouncebit
+  nativeToken:
+    decimals: 18
+    name: BounceBit
+    symbol: BB
+  protocol: ethereum
+  rpcUrls:
+    - http: https://fullnode-mainnet.bouncebitapi.com
+  technicalStack: other
 bsc:
   blockExplorers:
     - apiUrl: https://api.bscscan.com/api
@@ -1257,7 +1336,7 @@ clique:
 conflux:
   blockExplorers:
     - apiUrl: https://evmapi.confluxscan.net/api
-      family: blockscout
+      family: other
       name: ConfluxScan eSpace
       url: https://evm.confluxscan.net
   blocks:
@@ -2056,6 +2135,7 @@ ethereum:
     - http: https://rpc.ankr.com/eth
     - http: https://ethereum.publicnode.com
     - http: https://cloudflare-eth.com
+    - http: https://eth.drpc.org
   technicalStack: other
 euphoriatestnet:
   blockExplorers:
@@ -2452,7 +2532,7 @@ fraxtal:
   displayName: Fraxtal
   domainId: 252
   gasCurrencyCoinGeckoId: frax-ether
-  gnosisSafeTransactionServiceUrl: https://transaction-frax.safe.optimism.io
+  gnosisSafeTransactionServiceUrl: https://safe.mainnet.frax.com/txs
   name: fraxtal
   nativeToken:
     decimals: 18
@@ -2891,6 +2971,33 @@ humanitytestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.testnet.humanity.org
+hyperevm:
+  blockExplorers:
+    - apiUrl: https://hyperliquid.cloud.blockscout.com/api
+      family: blockscout
+      name: HyperEVM Explorer
+      url: https://hyperliquid.cloud.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 999
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: HyperEVM
+  domainId: 999
+  gasCurrencyCoinGeckoId: hyperliquid
+  gnosisSafeTransactionServiceUrl: https://prod.hyperliquid.keypersafe.xyz
+  name: hyperevm
+  nativeToken:
+    decimals: 18
+    name: Hyperliquid
+    symbol: HYPE
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.hyperliquid.xyz/evm
+  technicalStack: other
 hyperliquidevmtestnet:
   blockExplorers:
     - apiUrl: https://explorer.hyperlend.finance/api
@@ -2907,13 +3014,13 @@ hyperliquidevmtestnet:
     url: https://www.hyperlane.xyz
   displayName: Hyperliquid EVM Testnet
   domainId: 998
-  gasCurrencyCoinGeckoId: ethereum
+  gasCurrencyCoinGeckoId: hyperliquid
   isTestnet: true
   name: hyperliquidevmtestnet
   nativeToken:
     decimals: 18
-    name: Ethereum
-    symbol: ETH
+    name: Hyperliquid
+    symbol: HYPE
   protocol: ethereum
   rpcUrls:
     - http: https://api.hyperliquid-testnet.xyz/evm
@@ -3323,6 +3430,7 @@ lisk:
   displayName: Lisk
   domainId: 1135
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://transaction-lisk.safe.optimism.io
   name: lisk
   nativeToken:
     decimals: 18
@@ -3878,6 +3986,32 @@ molten:
   rpcUrls:
     - http: https://molten.calderachain.xyz/http
   technicalStack: arbitrumnitro
+monadtestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.monad-testnet.category.xyz/api
+      family: blockscout
+      name: Monad Testnet Explorer
+      url: https://explorer.monad-testnet.category.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 10143
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Monad Testnet
+  domainId: 10143
+  isTestnet: true
+  name: monadtestnet
+  nativeToken:
+    decimals: 18
+    name: MON
+    symbol: MON
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet-rpc.monad.xyz
+  technicalStack: other
 moonbase:
   blockExplorers:
     - apiUrl: https://api-moonbase.moonscan.io/api
@@ -4746,10 +4880,13 @@ ronin:
       name: Ronin Explorer
       url: https://app.roninchain.com
   blocks:
-    confirmations: 15
+    confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 0
+    reorgPeriod: 5
   chainId: 2020
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Ronin
   domainId: 2020
   gasCurrencyCoinGeckoId: ronin
@@ -4761,6 +4898,8 @@ ronin:
   protocol: ethereum
   rpcUrls:
     - http: https://api.roninchain.com/rpc
+    - http: https://ronin.drpc.org
+  technicalStack: other
 rootstockmainnet:
   blockExplorers:
     - apiUrl: https://rootstock.blockscout.com/api
@@ -4864,6 +5003,32 @@ sanko:
   rpcUrls:
     - http: https://mainnet.sanko.xyz
   technicalStack: arbitrumnitro
+sapphiretestnet:
+  blockExplorers:
+    - apiUrl: https://nexus.oasis.io/v1/
+      family: other
+      name: Oasis Explorer
+      url: https://explorer.oasis.io/testnet/sapphire
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 0
+  chainId: 23295
+  deployer:
+    name: Oasis Protocol Foundation
+    url: https://oasisprotocol.org/
+  displayName: Sapphire Testnet
+  domainId: 23295
+  isTestnet: true
+  name: sapphiretestnet
+  nativeToken:
+    decimals: 18
+    name: TEST
+    symbol: TEST
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet.sapphire.oasis.io
+  technicalStack: other
 scroll:
   blockExplorers:
     - apiUrl: https://api.scrollscan.com/api
@@ -5204,6 +5369,7 @@ soneium:
   displayName: Soneium
   domainId: 1868
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://trx-soneium-stg.safe.protofire.io
   name: soneium
   nativeToken:
     decimals: 18
@@ -5395,6 +5561,34 @@ soon:
   rpcUrls:
     - http: https://rpc.mainnet.soo.network/rpc
   technicalStack: other
+sophon:
+  blockExplorers:
+    - apiUrl: https://verification-explorer.sophon.xyz/contract_verification
+      family: etherscan
+      name: Sophon Explorer
+      url: https://explorer.sophon.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 50104
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Sophon
+  domainId: 50104
+  gasCurrencyCoinGeckoId: sophon
+  gnosisSafeTransactionServiceUrl: https://transaction.safe.sophon.xyz
+  name: sophon
+  nativeToken:
+    decimals: 18
+    name: sophon
+    symbol: SOPH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.sophon.xyz
+    - http: https://sophon-mainnet-public.unifra.io
+  technicalStack: zksync
 sophonsepolia:
   blockExplorers:
     - apiUrl: https://api-explorer-verify.testnet.sophon.xyz/contract_verification
@@ -5417,6 +5611,32 @@ sophonsepolia:
   rpcUrls:
     - http: https://rpc.testnet.sophon.xyz
   technicalStack: zksync
+story:
+  blockExplorers:
+    - apiUrl: https://www.storyscan.xyz/api
+      family: blockscout
+      name: Storyscan
+      url: https://www.storyscan.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 3
+    reorgPeriod: 5
+  chainId: 1514
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Story Mainnet
+  domainId: 1514
+  gasCurrencyCoinGeckoId: story-2
+  name: story
+  nativeToken:
+    decimals: 18
+    name: IP
+    symbol: IP
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet.storyrpc.io
+  technicalStack: other
 storyodysseytestnet:
   blockExplorers:
     - apiUrl: https://odyssey-testnet-explorer.storyscan.xyz/api
@@ -5573,7 +5793,7 @@ suavetoliman:
 subtensor:
   blockExplorers:
     - apiUrl: https://evm.taostats.io/api
-      family: blockscout
+      family: other
       name: TaoStats EVM
       url: https://evm.taostats.io
   blocks:
@@ -5594,7 +5814,6 @@ subtensor:
     symbol: TAO
   protocol: ethereum
   rpcUrls:
-    - http: https://archive.chain.opentensor.ai
     - http: https://bittensor-finney.api.onfinality.io/public
   technicalStack: other
 subtensortestnet:
@@ -5693,6 +5912,7 @@ superseed:
   displayName: Superseed
   domainId: 5330
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://trx-superseed.safe.protofire.io
   name: superseed
   nativeToken:
     decimals: 18
@@ -5945,7 +6165,7 @@ treasure:
   displayName: Treasure
   domainId: 61166
   gasCurrencyCoinGeckoId: magic
-  gnosisSafeTransactionServiceUrl: https://prod.treasure.keypersafe.xyz/
+  gnosisSafeTransactionServiceUrl: https://prod.treasure.keypersafe.xyz
   name: treasure
   nativeToken:
     decimals: 18
@@ -6033,10 +6253,10 @@ u2utestnet:
     - http: https://rpc-nebulas-testnet.uniultra.xyz
 unichain:
   blockExplorers:
-    - apiUrl: https://unichain.blockscout.com/api
-      family: blockscout
+    - apiUrl: https://api.uniscan.xyz/api
+      family: etherscan
       name: Unichain Explorer
-      url: https://unichain.blockscout.com
+      url: https://uniscan.xyz
   blocks:
     confirmations: 1
     estimateBlockTime: 1
@@ -6048,6 +6268,7 @@ unichain:
   displayName: Unichain
   domainId: 130
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://safe-transaction-unichain.safe.global
   name: unichain
   nativeToken:
     decimals: 18
@@ -6161,33 +6382,38 @@ viction:
     - http: https://rpc.tomochain.com
     - http: https://viction.blockpi.network/v1/rpc/public
   technicalStack: other
-wanchaintestnet:
+weavevmtestnet:
   blockExplorers:
-    - apiUrl: https://api-xdc.blocksscan.io/api
-      family: etherscan
-      name: Wanchain Explorer
-      url: https://wanexplorer.io
-  chainId: 999
+    - apiUrl: https://explorer.wvm.dev/api
+      family: blockscout
+      name: WeaveVM Testnet Explorer
+      url: https://explorer.wvm.dev
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 9496
   deployer:
-    name: JaunePomme
-    url: https://github.com/JaunePomme
-  displayName: Wanchain Testnet
-  domainId: 999
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Weave VM Testnet
+  domainId: 9496
   isTestnet: true
-  name: wanchaintestnet
+  name: weavevmtestnet
   nativeToken:
     decimals: 18
-    name: Ether
-    symbol: ETH
+    name: tWVM
+    symbol: tWVM
   protocol: ethereum
   rpcUrls:
-    - http: https://gwan-ssl.wandevs.org:46891
+    - http: https://testnet-rpc.wvm.dev
+  technicalStack: other
 worldchain:
   blockExplorers:
-    - apiUrl: https://worldchain-mainnet-explorer.alchemy.com/api
-      family: blockscout
-      name: World Chain explorer
-      url: https://worldchain-mainnet-explorer.alchemy.com
+    - apiUrl: https://api.worldscan.org/api
+      family: etherscan
+      name: Worldscan
+      url: https://worldscan.org
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -6199,6 +6425,7 @@ worldchain:
   displayName: World Chain
   domainId: 480
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://safe-transaction-worldchain.safe.global
   name: worldchain
   nativeToken:
     decimals: 18
@@ -6393,7 +6620,7 @@ zklink:
   displayNameShort: zkLink
   domainId: 810180
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://transaction.safe.zklink.io/
+  gnosisSafeTransactionServiceUrl: https://transaction.safe.zklink.io
   name: zklink
   nativeToken:
     decimals: 18
@@ -6421,7 +6648,7 @@ zksync:
   displayName: zkSync
   domainId: 324
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-zksync.safe.global/
+  gnosisSafeTransactionServiceUrl: https://safe-transaction-zksync.safe.global
   name: zksync
   nativeToken:
     decimals: 18

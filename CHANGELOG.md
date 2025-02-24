@@ -1,5 +1,102 @@
 # @hyperlane-xyz/registry
 
+## 10.2.0
+
+### Minor Changes
+
+- 9b1aae1: Update default ISMs for Feb 17 batch enrollment. Update safe tx API URLs for fraxtal and hyperevm. Update default RPCs for subtensor.
+
+### Patch Changes
+
+- 2c1cae3: Deployed CCIP Hook/ISMs
+
+## 10.1.0
+
+### Minor Changes
+
+- d474b7f: Add SOL/hyperevm-solanamainnet
+
+## 10.0.0
+
+### Major Changes
+
+- a1758ee: Remove wanchaintestnet. Add hyperevm.
+
+### Minor Changes
+
+- 61ebec2: Deploy to bouncebit, arcadia, ronin, sophon, story, subtensor.
+- be10c5b: Add Ethereum<>HyperEVM warp routes for ETH, WBTC, USDT
+
+### Patch Changes
+
+- 3bac225: Add gnosis safe URL for sophon.
+
+## 9.7.0
+
+### Minor Changes
+
+- f7d238e: Deploy CDX/base-solanamainnet
+- 57be335: Add FORM warp route ethereum<>form
+- cc87e1e: Add CDX logo and metadata
+
+## 9.6.0
+
+### Minor Changes
+
+- 7682689: Add drpc fallback rpc to ethereum metadata.
+
+### Patch Changes
+
+- fd41924: Revert husky.
+
+## 9.5.0
+
+### Minor Changes
+
+- 04e3605: Add precommit to check for secrets using gitleaks
+- 983c3e5: Add Sapphire Testnet
+
+### Patch Changes
+
+- 03d0217: Update EZETSTAGE unichain owner to safe
+
+## 9.4.0
+
+### Minor Changes
+
+- 30ca799: Add EZETH and EZETHSTAGE with unichain and bercachain
+- 7718583: Deploy to monadtestnet, weavevmtestnet.
+
+### Patch Changes
+
+- 3f304ec: Update explorers for unichain and worldchain.
+
+## 9.3.0
+
+### Minor Changes
+
+- 0496f9d: added ES token metadata
+- 657c7fa: Deploy to subtensortestnet.
+- 64eae96: Add EZETHSTAGE config and artifact
+
+### Patch Changes
+
+- 208e223: Update ART coinGeckoId
+
+## 9.2.0
+
+### Minor Changes
+
+- 3141571: Enroll berachain on default ISMs.
+
+## 9.1.0
+
+### Minor Changes
+
+- c4e5717: Enroll new chain validators on default ISMs. Update gnosis safe transaction service urls on treasure, zksync, abstract, and zklink.
+- 7dd7ac2: Add EZETHSTAGE config to be used for EZETH staging
+- 7889556: Deploy to berachain.
+
 ## 9.0.0
 
 ### Major Changes

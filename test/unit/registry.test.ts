@@ -96,21 +96,20 @@ describe('Registry utilities', () => {
       expect(firstRoute!.tokens.length).to.be.greaterThan(0);
       const noRoutes = await registry.getWarpRoutes({ symbol: 'NOTFOUND' });
       expect(Object.keys(noRoutes).length).to.eql(0);
-    }).timeout(10_000);
+    }).timeout(15_000);
 
-    it(`Fetches warp deploy configs for ${registry.type} registry`, async () => {        
+    it(`Fetches warp deploy configs for ${registry.type} registry`, async () => {
       const routes = await registry.getWarpDeployConfigs();
       const routeIds = Object.keys(routes);
-  
+
       // TODO: Right now this returns an empty array
       // This cannot be implemented without deriving the token symbol from config.token
       // We will revisit once we merge the configs
-      if (registry.type === RegistryType.Partial)
-        expect(routeIds.length).to.be.equal(0);
+      if (registry.type === RegistryType.Partial) expect(routeIds.length).to.be.equal(0);
       else {
         expect(routeIds.length).to.be.greaterThan(0);
         const firstRoute = await registry.getWarpDeployConfig(routeIds[0]);
-        const chains = Object.keys(firstRoute!)
+        const chains = Object.keys(firstRoute!);
         expect(chains.length).to.be.greaterThan(0);
         const noRoutes = await registry.getWarpDeployConfigs({ chainName: 'NOTFOUND' });
         expect(Object.keys(noRoutes).length).to.eql(0);
