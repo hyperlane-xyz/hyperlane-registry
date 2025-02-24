@@ -225,7 +225,7 @@ describe('Registry utilities', () => {
     });
   });
 
-  describe.only('Authenticated GithubRegistry', () => {
+  describe('Authenticated GithubRegistry', () => {
     const proxyUrl = 'http://proxy.hyperlane.xyz';
     let authenticatedGithubRegistry: GithubRegistry;
     let invalidTokenGithubRegistry: GithubRegistry;
