@@ -276,38 +276,87 @@ describe('Registry Utils', () => {
   const githubUrl = 'https://github.com/hyperlane-xyz/hyperlane-registry';
 
   describe('getRegistry', () => {
-    it('creates MergedRegistry with FileSystemRegistry for local path', () => {
-      const registry = getRegistry([localPath], false, logger) as MergedRegistry;
-      expect(registry).to.be.instanceOf(MergedRegistry);
-      expect(registry.registries.length).to.equal(1);
-      expect(registry.registries[0]).to.be.instanceOf(FileSystemRegistry);
-      expect(registry.registries[0].uri).to.equal(localPath);
-    });
+    type TestCase = {
+      name: string;
+      uris: string[];
+      useProxy: boolean;
+      expectedRegistries: {
+        type: any;
+        uri: string;
+        proxyUrl?: string;
+      }[];
+    };
 
-    it('creates MergedRegistry with GithubRegistry for HTTPS URLs', () => {
-      const registry = getRegistry([githubUrl], false, logger) as MergedRegistry;
-      expect(registry).to.be.instanceOf(MergedRegistry);
-      expect(registry.registries.length).to.equal(1);
-      expect(registry.registries[0]).to.be.instanceOf(GithubRegistry);
-      expect(registry.registries[0].uri).to.equal(githubUrl);
-    });
+    const testCases: TestCase[] = [
+      {
+        name: 'FileSystemRegistry for local path',
+        uris: [localPath],
+        useProxy: false,
+        expectedRegistries: [{ type: FileSystemRegistry, uri: localPath }],
+      },
+      {
+        name: 'GithubRegistry for HTTPS URLs',
+        uris: [githubUrl],
+        useProxy: false,
+        expectedRegistries: [{ type: GithubRegistry, uri: githubUrl }],
+      },
+      {
+        name: 'proxied GithubRegistry for canonical repo',
+        uris: [DEFAULT_GITHUB_REGISTRY],
+        useProxy: true,
+        expectedRegistries: [
+          { type: GithubRegistry, uri: DEFAULT_GITHUB_REGISTRY, proxyUrl: PROXY_DEPLOYED_URL },
+        ],
+      },
+      {
+        name: 'non-proxied GithubRegistry for non-canonical repos',
+        uris: ['https://github.com/test'],
+        useProxy: true,
+        expectedRegistries: [{ type: GithubRegistry, uri: 'https://github.com/test' }],
+      },
+      {
+        name: 'FileSystemRegistry for non-HTTPS URLs',
+        uris: ['http://example.com'],
+        useProxy: false,
+        expectedRegistries: [{ type: FileSystemRegistry, uri: 'http://example.com' }],
+      },
+      {
+        name: 'multiple URIs with mixed types',
+        uris: [githubUrl, localPath],
+        useProxy: false,
+        expectedRegistries: [
+          { type: GithubRegistry, uri: githubUrl },
+          { type: FileSystemRegistry, uri: localPath },
+        ],
+      },
+      {
+        name: 'mixed registry types with proxy settings',
+        uris: [DEFAULT_GITHUB_REGISTRY, localPath, 'https://github.com/test'],
+        useProxy: true,
+        expectedRegistries: [
+          { type: GithubRegistry, uri: DEFAULT_GITHUB_REGISTRY, proxyUrl: PROXY_DEPLOYED_URL },
+          { type: FileSystemRegistry, uri: localPath },
+          { type: GithubRegistry, uri: 'https://github.com/test' },
+        ],
+      },
+    ];
 
-    it('creates MergedRegistry with proxied GithubRegistry for canonical repo', () => {
-      const registry = getRegistry([DEFAULT_GITHUB_REGISTRY], true, logger) as MergedRegistry;
-      expect(registry).to.be.instanceOf(MergedRegistry);
-      expect(registry.registries.length).to.equal(1);
-      expect(registry.registries[0]).to.be.instanceOf(GithubRegistry);
-      expect(registry.registries[0].uri).to.equal(DEFAULT_GITHUB_REGISTRY);
-      expect((registry.registries[0] as GithubRegistry).proxyUrl).to.equal(PROXY_DEPLOYED_URL);
-    });
+    testCases.forEach(({ name, uris, useProxy, expectedRegistries }) => {
+      it(name, () => {
+        const registry = getRegistry(uris, useProxy, logger) as MergedRegistry;
+        expect(registry).to.be.instanceOf(MergedRegistry);
+        expect(registry.registries.length).to.equal(expectedRegistries.length);
 
-    it('creates MergedRegistry with non-proxied GithubRegistry for non-canonical repos', () => {
-      const registry = getRegistry(['https://github.com/test'], true, logger) as MergedRegistry;
-      expect(registry).to.be.instanceOf(MergedRegistry);
-      expect(registry.registries.length).to.equal(1);
-      expect(registry.registries[0]).to.be.instanceOf(GithubRegistry);
-      expect(registry.registries[0].uri).to.equal('https://github.com/test');
-      expect((registry.registries[0] as GithubRegistry).proxyUrl).to.be.undefined;
+        registry.registries.forEach((reg, idx) => {
+          const expected = expectedRegistries[idx];
+          expect(reg).to.be.instanceOf(expected.type);
+          expect(reg.uri).to.equal(expected.uri);
+          if (reg instanceof GithubRegistry) {
+            expect(reg.proxyUrl).to.equal(expected.proxyUrl);
+          }
+          expect(reg).to.have.property('logger');
+        });
+      });
     });
 
     it('throws error for empty URIs array', () => {
@@ -318,46 +367,6 @@ describe('Registry Utils', () => {
       expect(() => getRegistry(['   '], true, logger)).to.throw(
         'At least one registry URI is required',
       );
-    });
-
-    it('creates MergedRegistry with FileSystemRegistry for non-HTTPS URLs', () => {
-      const nonHttpsUrl = 'http://example.com';
-      const registry = getRegistry([nonHttpsUrl], false, logger) as MergedRegistry;
-      expect(registry).to.be.instanceOf(MergedRegistry);
-      expect(registry.registries.length).to.equal(1);
-      expect(registry.registries[0]).to.be.instanceOf(FileSystemRegistry);
-      expect(registry.registries[0].uri).to.equal(nonHttpsUrl);
-    });
-
-    it('creates MergedRegistry with multiple URIs', () => {
-      const uris = [githubUrl, localPath];
-      const registry = getRegistry(uris, false, logger) as MergedRegistry;
-      expect(registry).to.be.instanceOf(MergedRegistry);
-      expect(registry.registries.length).to.equal(2);
-      expect(registry.registries[0]).to.be.instanceOf(GithubRegistry);
-      expect(registry.registries[1]).to.be.instanceOf(FileSystemRegistry);
-    });
-
-    it('creates MergedRegistry with mixed registry types and proxy settings', () => {
-      const uris = [DEFAULT_GITHUB_REGISTRY, localPath, 'https://github.com/test'];
-      const registry = getRegistry(uris, true, logger) as MergedRegistry;
-      expect(registry).to.be.instanceOf(MergedRegistry);
-      expect(registry.registries.length).to.equal(3);
-      expect(registry.registries[0]).to.be.instanceOf(GithubRegistry);
-      expect((registry.registries[0] as GithubRegistry).proxyUrl).to.equal(PROXY_DEPLOYED_URL);
-      expect(registry.registries[1]).to.be.instanceOf(FileSystemRegistry);
-      expect(registry.registries[2]).to.be.instanceOf(GithubRegistry);
-      expect((registry.registries[2] as GithubRegistry).proxyUrl).to.be.undefined;
-    });
-
-    it('properly initializes all registries with logger', () => {
-      const uris = [githubUrl, localPath];
-      const registry = getRegistry(uris, false, logger) as MergedRegistry;
-      expect(registry).to.be.instanceOf(MergedRegistry);
-      expect(registry.registries.length).to.equal(2);
-      expect(registry).to.have.property('logger');
-      expect(registry.registries[0]).to.have.property('logger');
-      expect(registry.registries[1]).to.have.property('logger');
     });
   });
 });
