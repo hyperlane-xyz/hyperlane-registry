@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add sonicSOL and lrtsSOL
+Add sonicSOL and lrtsSOL metadata
