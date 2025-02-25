@@ -1,5 +1,13 @@
 # @hyperlane-xyz/registry
 
+## 10.3.0
+
+### Minor Changes
+
+- 6b878f6: Add safe tx service urls for lisk, worldchain, superseed, soneium and unichain
+- fd5d055: Add pumpBTC/ethereum-unichain warp route deployment
+- a28c0fb: add logoURI to pumpBTCuni/ethereum-unichain deployment
+
 ## 10.2.0
 
 ### Minor Changes
