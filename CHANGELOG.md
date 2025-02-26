@@ -1,5 +1,14 @@
 # @hyperlane-xyz/registry
 
+## 10.4.0
+
+### Minor Changes
+
+- d984e81: Added mint token warp route artifacts
+- 4f8a60d: Add sonicSOL and lrtsSOL config, update sonicSOL logo
+- fdf4cef: add mint token route metadata
+- 7d6ce89: Add sonicSOL and lrtsSOL metadata
+
 ## 10.3.0
 
 ### Minor Changes
