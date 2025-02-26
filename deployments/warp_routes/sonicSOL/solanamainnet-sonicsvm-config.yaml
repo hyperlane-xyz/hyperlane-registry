@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: Fhqa36L7sFJDiMdu54WUah9stAwRacycqHJYm3b3Geje
+    chainName: solanamainnet
+    collateralAddressOrDenom: sonickAJFiVLcYXx25X9vpF293udaWqDMUCiGtk7dg2
+    connections:
+      - token: sealevel|sonicsvm|BGmt6P5djRc3Teo3WLwXfZbEvN9pVJt7wAMgzcCc2idf
+    decimals: 9
+    logoURI: /deployments/warp_routes/sonicSOL/logo.png
+    name: Sonic Restaked SOL
+    standard: SealevelHypCollateral
+    symbol: sonicSOL
+  - addressOrDenom: BGmt6P5djRc3Teo3WLwXfZbEvN9pVJt7wAMgzcCc2idf
+    chainName: sonicsvm
+    collateralAddressOrDenom: CCaj4n3kbuqsGvx4KxiXBfoQPtAgww6fwinHTAPqV5dS
+    connections:
+      - token: sealevel|solanamainnet|Fhqa36L7sFJDiMdu54WUah9stAwRacycqHJYm3b3Geje
+    decimals: 9
+    logoURI: /deployments/warp_routes/sonicSOL/logo.png
+    name: Sonic Restaked SOL
+    standard: SealevelHypSynthetic
+    symbol: sonicSOL
