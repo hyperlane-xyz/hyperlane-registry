@@ -3,6 +3,7 @@ import tseslint from 'typescript-eslint';
 import tsparser from '@typescript-eslint/parser';
 import eslintPluginYml from 'eslint-plugin-yml';
 import yamlParser from 'yaml-eslint-parser';
+import customPlugin from './.eslint/index.js';
 
 export default tseslint.config(
   eslint.configs.recommended,
@@ -49,6 +50,30 @@ export default tseslint.config(
     },
     rules: {
       'yml/sort-keys': ['error'],
+      'yml/sort-sequence-values': [
+        'error',
+        {
+          pathPattern: '.*',
+          order: {
+            type: 'asc',
+            caseSensitive: true,
+            natural: false,
+          },
+          minValues: 2,
+        },
+      ],
+      'custom/sort-yaml-arrays': [
+        'error',
+        {
+          arrays: [
+            { path: 'tokens', sortKey: 'chainName' },
+            { path: 'tokens[].connections', sortKey: 'token' },
+          ],
+        },
+      ],
+    },
+    plugins: {
+      custom: customPlugin,
     },
   },
 );
