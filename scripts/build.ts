@@ -182,6 +182,7 @@ function updateJsonSchemas() {
     JSON.stringify(warpSchema, null, 2),
     'utf8',
   );
+  // Warp Deploy schema should not be attempted until this is resolved: https://github.com/StefanTerdell/zod-to-json-schema/issues/68
 }
 
 createTmpDir();

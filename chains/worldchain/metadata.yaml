@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://worldchain-mainnet-explorer.alchemy.com/api
-    family: blockscout
-    name: World Chain explorer
-    url: https://worldchain-mainnet-explorer.alchemy.com
+  - apiUrl: https://api.worldscan.org/api
+    family: etherscan
+    name: Worldscan
+    url: https://worldscan.org
 blocks:
   confirmations: 1
   estimateBlockTime: 2
@@ -15,6 +15,7 @@ deployer:
 displayName: World Chain
 domainId: 480
 gasCurrencyCoinGeckoId: ethereum
+gnosisSafeTransactionServiceUrl: https://safe-transaction-worldchain.safe.global
 name: worldchain
 nativeToken:
   decimals: 18
