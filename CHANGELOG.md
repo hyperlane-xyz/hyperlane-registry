@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 10.5.0
+
+### Minor Changes
+
+- 8f7b03a: Fix sSOL/solanamainnet-sonicsvm collateralAddressOrDenom
+
 ## 10.4.0
 
 ### Minor Changes
