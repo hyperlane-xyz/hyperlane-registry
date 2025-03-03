@@ -12,33 +12,60 @@ function sortArrayByKey(array, sortKey) {
 
 // Process object based on sort configuration
 function processObjectWithConfig(data, sortConfig) {
-  const modifiedData = { ...data };
+  if (!data || typeof data !== 'object') return data;
+
+  // Handle arrays
+  if (Array.isArray(data)) {
+    return data.map((item) => processObjectWithConfig(item, sortConfig));
+  }
+
+  let result = { ...data };
 
   // Process each array configuration
   sortConfig.arrays.forEach((arrayConfig) => {
     const { path, sortKey } = arrayConfig;
+    const pathParts = path.split('.');
 
-    if (path.includes('[]')) {
-      // Handle nested arrays (e.g., tokens[].connections)
-      const [parentArrayPath, childArrayPath] = path.split('[].');
+    // Helper function to traverse and sort nested objects
+    function traverseAndSort(obj, parts) {
+      if (!obj || typeof obj !== 'object') return obj;
 
-      if (modifiedData[parentArrayPath] && Array.isArray(modifiedData[parentArrayPath])) {
-        modifiedData[parentArrayPath] = modifiedData[parentArrayPath].map((item) => {
-          if (item[childArrayPath] && Array.isArray(item[childArrayPath])) {
-            item[childArrayPath] = sortArrayByKey(item[childArrayPath], sortKey);
-          }
-          return item;
-        });
+      if (parts.length === 1) {
+        const key = parts[0];
+        if (obj[key] && Array.isArray(obj[key])) {
+          const newObj = { ...obj };
+          newObj[key] = sortArrayByKey(obj[key], sortKey);
+          return newObj;
+        }
+        return obj;
       }
-    } else {
-      // Handle top-level arrays
-      if (modifiedData[path] && Array.isArray(modifiedData[path])) {
-        modifiedData[path] = sortArrayByKey(modifiedData[path], sortKey);
+
+      const [current, ...rest] = parts;
+
+      if (Array.isArray(obj)) {
+        return obj.map((item) => traverseAndSort(item, parts));
       }
+
+      if (obj[current]) {
+        const newObj = { ...obj };
+        newObj[current] = traverseAndSort(obj[current], rest);
+        return newObj;
+      }
+
+      return obj;
+    }
+
+    result = traverseAndSort(result, pathParts);
+  });
+
+  // Recursively process all nested objects and arrays
+  Object.keys(result).forEach((key) => {
+    if (typeof result[key] === 'object') {
+      result[key] = processObjectWithConfig(result[key], sortConfig);
     }
   });
 
-  return modifiedData;
+  return result;
 }
 
 export default {
