@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 10.6.0
+
+### Minor Changes
+
+- 0ceadb5: Add oUSDT logo
+
 ## 10.5.0
 
 ### Minor Changes
