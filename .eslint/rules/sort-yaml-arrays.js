@@ -32,7 +32,19 @@ function processObjectWithConfig(data, sortConfig) {
 
       if (parts.length === 1) {
         const key = parts[0];
-        if (obj[key] && Array.isArray(obj[key])) {
+        if (key === '*') {
+          // Handle wildcard - apply to all properties
+          if (typeof obj === 'object' && !Array.isArray(obj)) {
+            const newObj = { ...obj };
+            Object.keys(obj).forEach((propKey) => {
+              if (Array.isArray(obj[propKey])) {
+                newObj[propKey] = sortArrayByKey(obj[propKey], sortKey);
+              }
+            });
+            return newObj;
+          }
+          return obj;
+        } else if (obj[key] && Array.isArray(obj[key])) {
           const newObj = { ...obj };
           newObj[key] = sortArrayByKey(obj[key], sortKey);
           return newObj;
@@ -41,6 +53,30 @@ function processObjectWithConfig(data, sortConfig) {
       }
 
       const [current, ...rest] = parts;
+
+      // Handle wildcard in the middle of a path
+      if (current === '*') {
+        if (typeof obj === 'object' && !Array.isArray(obj)) {
+          const newObj = { ...obj };
+          Object.keys(obj).forEach((key) => {
+            newObj[key] = traverseAndSort(obj[key], rest);
+          });
+          return newObj;
+        } else if (Array.isArray(obj)) {
+          return obj.map((item) => traverseAndSort(item, rest));
+        }
+        return obj;
+      }
+
+      // Handle array notation (e.g., "tokens[]")
+      if (current.endsWith('[]')) {
+        const arrayKey = current.slice(0, -2);
+        if (obj[arrayKey] && Array.isArray(obj[arrayKey])) {
+          const newObj = { ...obj };
+          newObj[arrayKey] = obj[arrayKey].map((item) => traverseAndSort(item, rest));
+          return newObj;
+        }
+      }
 
       if (Array.isArray(obj)) {
         return obj.map((item) => traverseAndSort(item, parts));
