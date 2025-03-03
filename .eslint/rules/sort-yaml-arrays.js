@@ -1,6 +1,5 @@
 import YAML from 'yaml';
 
-// Sort array by the specified key
 function sortArrayByKey(array, sortKey) {
   return [...array].sort((a, b) => {
     if (a[sortKey] && b[sortKey]) {
@@ -14,7 +13,6 @@ function sortArrayByKey(array, sortKey) {
 function processObjectWithConfig(data, sortConfig) {
   if (!data || typeof data !== 'object') return data;
 
-  // Handle arrays
   if (Array.isArray(data)) {
     return data.map((item) => processObjectWithConfig(item, sortConfig));
   }
@@ -26,7 +24,6 @@ function processObjectWithConfig(data, sortConfig) {
     const { path, sortKey } = arrayConfig;
     const pathParts = path.split('.');
 
-    // Helper function to traverse and sort nested objects
     function traverseAndSort(obj, parts) {
       if (!obj || typeof obj !== 'object') return obj;
 
@@ -111,7 +108,7 @@ export default {
       description: 'Sort YAML arrays based on specified keys',
       category: 'Stylistic Issues',
       recommended: true,
-      url: null, // URL to the documentation page for this rule
+      url: null,
     },
     fixable: 'code',
     schema: [
@@ -142,7 +139,6 @@ export default {
     };
 
     return {
-      // This targets YAML documents
       Program(node) {
         // Only process YAML files
         if (!context.filename.endsWith('.yaml') && !context.filename.endsWith('.yml')) {
@@ -163,12 +159,10 @@ export default {
           const originalYaml = YAML.stringify(yamlData);
 
           if (sortedYaml !== originalYaml) {
-            // Report the issue and provide a fix
             context.report({
               node,
               message: 'YAML arrays should be sorted by specified keys',
               fix(fixer) {
-                // Create a new YAML document to preserve comments and formatting
                 const doc = new YAML.Document();
                 doc.contents = sortedData;
                 return fixer.replaceText(node, doc.toString());
@@ -176,7 +170,6 @@ export default {
             });
           }
         } catch (error) {
-          // If there's an error in processing, report it but don't try to fix
           context.report({
             node,
             message: `Error processing YAML: ${error.message}`,
