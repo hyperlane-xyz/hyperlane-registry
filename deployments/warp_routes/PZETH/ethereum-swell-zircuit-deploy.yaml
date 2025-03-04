@@ -11,16 +11,19 @@ ethereum:
     type: aggregationHook
   interchainSecurityModule:
     modules:
+      - domains: {}
+        owner: "0xD1e6626310fD54Eceb5b9a51dA2eC329D6D4B68A"
+        type: defaultFallbackRoutingIsm
       - domains:
           swell:
             modules:
               - threshold: 1
-                type: messageIdMultisigIsm
+                type: merkleRootMultisigIsm
                 validators:
                   - "0x9eadf9217be22d9878e0e464727a2176d5c69ff8"
                   - "0xb6b9b4bd4eb6eb3aef5e9826e7f8b8455947f67c"
               - threshold: 1
-                type: merkleRootMultisigIsm
+                type: messageIdMultisigIsm
                 validators:
                   - "0x9eadf9217be22d9878e0e464727a2176d5c69ff8"
                   - "0xb6b9b4bd4eb6eb3aef5e9826e7f8b8455947f67c"
@@ -29,12 +32,12 @@ ethereum:
           zircuit:
             modules:
               - threshold: 1
-                type: messageIdMultisigIsm
+                type: merkleRootMultisigIsm
                 validators:
                   - "0x1da9176c2ce5cc7115340496fa7d1800a98911ce"
                   - "0x7ac6584c068eb2a72d4db82a7b7cd5ab34044061"
               - threshold: 1
-                type: merkleRootMultisigIsm
+                type: messageIdMultisigIsm
                 validators:
                   - "0x1da9176c2ce5cc7115340496fa7d1800a98911ce"
                   - "0x7ac6584c068eb2a72d4db82a7b7cd5ab34044061"
@@ -42,9 +45,6 @@ ethereum:
             type: staticAggregationIsm
         owner: "0xD1e6626310fD54Eceb5b9a51dA2eC329D6D4B68A"
         type: domainRoutingIsm
-      - domains: {}
-        owner: "0xD1e6626310fD54Eceb5b9a51dA2eC329D6D4B68A"
-        type: defaultFallbackRoutingIsm
     threshold: 2
     type: staticAggregationIsm
   isNft: false
@@ -68,16 +68,19 @@ swell:
     type: aggregationHook
   interchainSecurityModule:
     modules:
+      - domains: {}
+        owner: "0x435E8c9652Da151292F3981bbf663EBEB6668501"
+        type: defaultFallbackRoutingIsm
       - domains:
           ethereum:
             modules:
               - threshold: 1
-                type: messageIdMultisigIsm
+                type: merkleRootMultisigIsm
                 validators:
                   - "0x1fd889337f60986aa57166bc5ac121efd13e4fdd"
                   - "0xc7f7b94a6baf2fffa54dfe1dde6e5fcbb749e04f"
               - threshold: 1
-                type: merkleRootMultisigIsm
+                type: messageIdMultisigIsm
                 validators:
                   - "0x1fd889337f60986aa57166bc5ac121efd13e4fdd"
                   - "0xc7f7b94a6baf2fffa54dfe1dde6e5fcbb749e04f"
@@ -86,12 +89,12 @@ swell:
           zircuit:
             modules:
               - threshold: 1
-                type: messageIdMultisigIsm
+                type: merkleRootMultisigIsm
                 validators:
                   - "0x1da9176c2ce5cc7115340496fa7d1800a98911ce"
                   - "0x7ac6584c068eb2a72d4db82a7b7cd5ab34044061"
               - threshold: 1
-                type: merkleRootMultisigIsm
+                type: messageIdMultisigIsm
                 validators:
                   - "0x1da9176c2ce5cc7115340496fa7d1800a98911ce"
                   - "0x7ac6584c068eb2a72d4db82a7b7cd5ab34044061"
@@ -99,9 +102,6 @@ swell:
             type: staticAggregationIsm
         owner: "0x435E8c9652Da151292F3981bbf663EBEB6668501"
         type: domainRoutingIsm
-      - domains: {}
-        owner: "0x435E8c9652Da151292F3981bbf663EBEB6668501"
-        type: defaultFallbackRoutingIsm
     threshold: 2
     type: staticAggregationIsm
   isNft: false
@@ -122,16 +122,19 @@ zircuit:
     type: aggregationHook
   interchainSecurityModule:
     modules:
+      - domains: {}
+        owner: "0x8410927C286A38883BC23721e640F31D3E3E79F8"
+        type: defaultFallbackRoutingIsm
       - domains:
           ethereum:
             modules:
               - threshold: 1
-                type: messageIdMultisigIsm
+                type: merkleRootMultisigIsm
                 validators:
                   - "0x1fd889337f60986aa57166bc5ac121efd13e4fdd"
                   - "0xc7f7b94a6baf2fffa54dfe1dde6e5fcbb749e04f"
               - threshold: 1
-                type: merkleRootMultisigIsm
+                type: messageIdMultisigIsm
                 validators:
                   - "0x1fd889337f60986aa57166bc5ac121efd13e4fdd"
                   - "0xc7f7b94a6baf2fffa54dfe1dde6e5fcbb749e04f"
@@ -140,12 +143,12 @@ zircuit:
           swell:
             modules:
               - threshold: 1
-                type: messageIdMultisigIsm
+                type: merkleRootMultisigIsm
                 validators:
                   - "0x9eadf9217be22d9878e0e464727a2176d5c69ff8"
                   - "0xb6b9b4bd4eb6eb3aef5e9826e7f8b8455947f67c"
               - threshold: 1
-                type: merkleRootMultisigIsm
+                type: messageIdMultisigIsm
                 validators:
                   - "0x9eadf9217be22d9878e0e464727a2176d5c69ff8"
                   - "0xb6b9b4bd4eb6eb3aef5e9826e7f8b8455947f67c"
@@ -153,9 +156,6 @@ zircuit:
             type: staticAggregationIsm
         owner: "0x8410927C286A38883BC23721e640F31D3E3E79F8"
         type: domainRoutingIsm
-      - domains: {}
-        owner: "0x8410927C286A38883BC23721e640F31D3E3E79F8"
-        type: defaultFallbackRoutingIsm
     threshold: 2
     type: staticAggregationIsm
   isNft: false
