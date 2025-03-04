@@ -1,17 +1,4 @@
-# yaml-language-server: $schema=../schema.json
 tokens:
-  - addressOrDenom: "0xd34FE1685c28A68Bb4B8fAaadCb2769962AE737c"
-    chainName: ethereum
-    # Not directly listed on Coingecko, but Ethereum is a close approximation
-    coinGeckoId: ethereum
-    collateralAddressOrDenom: "0x9ba021b0a9b958b5e75ce9f6dff97c7ee52cb3e6"
-    connections:
-      - token: sealevel|eclipsemainnet|9pEgj7m2VkwLtJHPtTw5d8vbB7kfjzcXXCRgdwruW7C2
-    decimals: 18
-    logoURI: /deployments/warp_routes/APXETH/logo.svg
-    name: Autocompounding Pirex Ether
-    standard: EvmHypCollateral
-    symbol: apxETH
   - addressOrDenom: 9pEgj7m2VkwLtJHPtTw5d8vbB7kfjzcXXCRgdwruW7C2
     chainName: eclipsemainnet
     collateralAddressOrDenom: 6AjQBsySS1FtQmA7a4oYc6GYpHBTDqtSswptsVSTz3Tv
@@ -21,4 +8,15 @@ tokens:
     logoURI: /deployments/warp_routes/APXETH/logo.svg
     name: Autocompounding Pirex Ether
     standard: SealevelHypSynthetic
+    symbol: apxETH
+  - addressOrDenom: "0xd34FE1685c28A68Bb4B8fAaadCb2769962AE737c"
+    chainName: ethereum
+    coinGeckoId: ethereum
+    collateralAddressOrDenom: "0x9ba021b0a9b958b5e75ce9f6dff97c7ee52cb3e6"
+    connections:
+      - token: sealevel|eclipsemainnet|9pEgj7m2VkwLtJHPtTw5d8vbB7kfjzcXXCRgdwruW7C2
+    decimals: 18
+    logoURI: /deployments/warp_routes/APXETH/logo.svg
+    name: Autocompounding Pirex Ether
+    standard: EvmHypCollateral
     symbol: apxETH

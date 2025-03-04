@@ -1,17 +1,4 @@
-# yaml-language-server: $schema=../schema.json
 tokens:
-  - addressOrDenom: "0xc2495f3183F043627CAECD56dAaa726e3B2D9c09"
-    chainName: ethereum
-    # tETH is not yet on Coingecko, and at the current rate is close to the price of ETH
-    coinGeckoId: ethereum
-    collateralAddressOrDenom: "0x19e099B7aEd41FA52718D780dDA74678113C0b32"
-    connections:
-      - token: sealevel|eclipsemainnet|6GM7hy6M6LjhadG1xuKXPQ3jPC1eieEszR8DforoRzUp
-    decimals: 18
-    logoURI: /deployments/warp_routes/tETH/logo.svg
-    name: Eclipse Turbo ETH
-    standard: EvmHypCollateral
-    symbol: tETH
   - addressOrDenom: 6GM7hy6M6LjhadG1xuKXPQ3jPC1eieEszR8DforoRzUp
     chainName: eclipsemainnet
     collateralAddressOrDenom: GU7NS9xCwgNPiAdJ69iusFrRfawjDDPjeMBovhV1d4kn
@@ -21,4 +8,15 @@ tokens:
     logoURI: /deployments/warp_routes/tETH/logo.svg
     name: tETH
     standard: SealevelHypSynthetic
+    symbol: tETH
+  - addressOrDenom: "0xc2495f3183F043627CAECD56dAaa726e3B2D9c09"
+    chainName: ethereum
+    coinGeckoId: ethereum
+    collateralAddressOrDenom: "0x19e099B7aEd41FA52718D780dDA74678113C0b32"
+    connections:
+      - token: sealevel|eclipsemainnet|6GM7hy6M6LjhadG1xuKXPQ3jPC1eieEszR8DforoRzUp
+    decimals: 18
+    logoURI: /deployments/warp_routes/tETH/logo.svg
+    name: Eclipse Turbo ETH
+    standard: EvmHypCollateral
     symbol: tETH

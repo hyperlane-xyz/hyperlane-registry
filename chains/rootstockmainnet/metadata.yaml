@@ -1,4 +1,3 @@
-# yaml-language-server: $schema=../schema.json
 blockExplorers:
   - apiUrl: https://rootstock.blockscout.com/api
     family: blockscout
@@ -22,11 +21,7 @@ nativeToken:
   symbol: RBTC
 protocol: ethereum
 rpcUrls:
-  # Note: Using Rootstock RPC api here which contains APIKEY in url.
-  # Recommended way is to get a new APIKEY whoever wants to run Hyperlane on Rootstock.
-  # RPC API Dashboard: https://dashboard.rpc.rootstock.io
-  # Developer Documentation: https://dev.rootstock.io
-  - http: https://rpc.mainnet.rootstock.io/kXhXHf6TnnfW1POvr4UT0YUvujmuju-M
-  - http: https://public-node.rsk.co
   - http: https://mycrypto.rsk.co
+  - http: https://public-node.rsk.co
+  - http: https://rpc.mainnet.rootstock.io/kXhXHf6TnnfW1POvr4UT0YUvujmuju-M
 technicalStack: other

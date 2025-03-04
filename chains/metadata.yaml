@@ -1,4 +1,3 @@
-# AUTO-GENERATED; DO NOT EDIT MANUALLY
 abstract:
   blockExplorers:
     - apiUrl: https://api.abscan.org/api
@@ -107,8 +106,8 @@ alephzeroevmmainnet:
     symbol: AZERO
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.alephzero.raas.gelato.cloud
     - http: https://alephzero.drpc.org
+    - http: https://rpc.alephzero.raas.gelato.cloud
   technicalStack: arbitrumnitro
 alephzeroevmtestnet:
   blockExplorers:
@@ -275,9 +274,9 @@ arbitrum:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
+    - http: https://arb1.arbitrum.io/rpc
     - http: https://arbitrum.llamarpc.com
     - http: https://rpc.ankr.com/arbitrum
-    - http: https://arb1.arbitrum.io/rpc
   technicalStack: arbitrumnitro
 arbitrumnova:
   blockExplorers:
@@ -571,8 +570,8 @@ astarzkevm:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.startale.com/astar-zkevm
     - http: https://astar-zkevm-rpc.dwellir.com
+    - http: https://rpc.startale.com/astar-zkevm
   technicalStack: polygoncdk
 aurora:
   blockExplorers:
@@ -598,8 +597,8 @@ aurora:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://mainnet.aurora.dev
     - http: https://aurora.drpc.org
+    - http: https://mainnet.aurora.dev
   technicalStack: other
 auroratestnet:
   blockExplorers:
@@ -647,11 +646,11 @@ avalanche:
     symbol: AVAX
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.ankr.com/avalanche
     - http: https://api.avax.network/ext/bc/C/rpc
       pagination:
         maxBlockRange: 100000
         minBlockNumber: 6765067
+    - http: https://rpc.ankr.com/avalanche
   technicalStack: other
 b3:
   blockExplorers:
@@ -704,9 +703,9 @@ base:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
+    - http: https://base.blockpi.network/v1/rpc/public
     - http: https://base.publicnode.com/
     - http: https://mainnet.base.org
-    - http: https://base.blockpi.network/v1/rpc/public
   technicalStack: opstack
 basesepolia:
   blockExplorers:
@@ -733,8 +732,8 @@ basesepolia:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://sepolia.base.org
     - http: https://base-sepolia-rpc.publicnode.com
+    - http: https://sepolia.base.org
 berabartio:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/testnet/evm/80084/etherscan/api/
@@ -760,8 +759,8 @@ berabartio:
     symbol: BERA
   protocol: ethereum
   rpcUrls:
-    - http: https://bartio.rpc.berachain.com/
     - http: https://bartio.drpc.org
+    - http: https://bartio.rpc.berachain.com/
     - http: https://bera-testnet.nodeinfra.com
 berachain:
   blockExplorers:
@@ -814,9 +813,9 @@ bitlayer:
     symbol: BTC
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.bitlayer.org
-    - http: https://rpc.bitlayer-rpc.com
     - http: https://rpc.ankr.com/bitlayer
+    - http: https://rpc.bitlayer-rpc.com
+    - http: https://rpc.bitlayer.org
   technicalStack: other
 blast:
   blockExplorers:
@@ -843,8 +842,8 @@ blast:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.blast.io
     - http: https://rpc.ankr.com/blast
+    - http: https://rpc.blast.io
   technicalStack: opstack
 blastsepolia:
   blockExplorers:
@@ -1015,9 +1014,9 @@ bsc:
     symbol: BNB
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.ankr.com/bsc
     - http: https://bsc.drpc.org
     - http: https://bscrpc.com
+    - http: https://rpc.ankr.com/bsc
   technicalStack: other
 bsctestnet:
   blockExplorers:
@@ -1044,8 +1043,8 @@ bsctestnet:
     symbol: BNB
   protocol: ethereum
   rpcUrls:
-    - http: https://bsc-testnet.publicnode.com
     - http: https://bsc-testnet.blockpi.network/v1/rpc/public
+    - http: https://bsc-testnet.publicnode.com
 bsquared:
   blockExplorers:
     - apiUrl: https://explorer.bsquared.network/api
@@ -1070,10 +1069,10 @@ bsquared:
     symbol: BTC
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.bsquared.network
-    - http: https://rpc.ankr.com/b2
-    - http: https://mainnet.b2-rpc.com
     - http: https://b2-mainnet.alt.technology
+    - http: https://mainnet.b2-rpc.com
+    - http: https://rpc.ankr.com/b2
+    - http: https://rpc.bsquared.network
   technicalStack: other
 camptestnet:
   blockExplorers:
@@ -1122,8 +1121,8 @@ canto:
   protocol: ethereum
   rpcUrls:
     - http: https://canto-rpc.ansybl.io
-    - http: https://mainnode.plexnode.org:8545
     - http: https://canto.slingshot.finance
+    - http: https://mainnode.plexnode.org:8545
 cantotestnet:
   blockExplorers:
     - apiUrl: https://testnet.tuber.build/api
@@ -1170,14 +1169,14 @@ carbon:
     - http: https://evm-api.carbon.network
 celo:
   blockExplorers:
-    - apiUrl: https://api.celoscan.io/api
-      family: etherscan
-      name: CeloScan
-      url: https://celoscan.io
     - apiUrl: https://explorer.celo.org/mainnet/api
       family: blockscout
       name: Blockscout
       url: https://explorer.celo.org
+    - apiUrl: https://api.celoscan.io/api
+      family: etherscan
+      name: CeloScan
+      url: https://celoscan.io
   blocks:
     confirmations: 1
     estimateBlockTime: 5
@@ -1252,8 +1251,8 @@ chilizmainnet:
     symbol: CHZ
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.ankr.com/chiliz
     - http: https://chiliz.publicnode.com
+    - http: https://rpc.ankr.com/chiliz
   technicalStack: other
   transactionOverrides:
     maxPriorityFeePerGas: 1000000000
@@ -1357,9 +1356,9 @@ conflux:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://evm.confluxrpc.com
     - http: https://conflux-espace-public.unifra.io
     - http: https://conflux-espace.blockpi.network/v1/rpc/public
+    - http: https://evm.confluxrpc.com
   technicalStack: other
 connextsepolia:
   blockExplorers:
@@ -1442,11 +1441,11 @@ coredao:
     symbol: CORE
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.coredao.org
-    - http: https://core.public.infstones.com
-    - http: https://rpc.ankr.com/core
     - http: https://core.drpc.org
+    - http: https://core.public.infstones.com
     - http: https://rpc-core.icecreamswap.com
+    - http: https://rpc.ankr.com/core
+    - http: https://rpc.coredao.org
   technicalStack: other
 corn:
   blockExplorers:
@@ -1580,8 +1579,8 @@ cyber:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.cyber.co
     - http: https://cyber.alt.technology
+    - http: https://rpc.cyber.co
   technicalStack: opstack
 deepbrainchaintestnet:
   blockExplorers:
@@ -1660,8 +1659,8 @@ deprecatedalephzeroevm:
     symbol: AZERO
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.alephzero.raas.gelato.cloud
     - http: https://alephzero.drpc.org
+    - http: https://rpc.alephzero.raas.gelato.cloud
   technicalStack: arbitrumnitro
 deprecatedchiliz:
   blockExplorers:
@@ -1684,8 +1683,8 @@ deprecatedchiliz:
     symbol: CHZ
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.ankr.com/chiliz
     - http: https://chiliz.publicnode.com
+    - http: https://rpc.ankr.com/chiliz
   technicalStack: other
   transactionOverrides:
     maxPriorityFeePerGas: 1000000000
@@ -1736,8 +1735,8 @@ deprecatedimmutablezkevm:
     symbol: IMX
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.immutable.com
     - http: https://immutable.gateway.tenderly.co
+    - http: https://rpc.immutable.com
   technicalStack: other
   transactionOverrides:
     maxFeePerGas: 100000000000
@@ -1835,9 +1834,9 @@ deprecatedrootstock:
     symbol: RBTC
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.mainnet.rootstock.io/kXhXHf6TnnfW1POvr4UT0YUvujmuju-M
-    - http: https://public-node.rsk.co
     - http: https://mycrypto.rsk.co
+    - http: https://public-node.rsk.co
+    - http: https://rpc.mainnet.rootstock.io/kXhXHf6TnnfW1POvr4UT0YUvujmuju-M
   technicalStack: other
 deprecatedsuperposition:
   blockExplorers:
@@ -1944,8 +1943,8 @@ duckchain:
     symbol: TON
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.duckchain.io
     - http: https://rpc-hk.duckchain.io
+    - http: https://rpc.duckchain.io
   technicalStack: arbitrumnitro
 ebi:
   blockExplorers:
@@ -2105,14 +2104,14 @@ endurance:
   technicalStack: other
 ethereum:
   blockExplorers:
-    - apiUrl: https://api.etherscan.io/api
-      family: etherscan
-      name: Etherscan
-      url: https://etherscan.io
     - apiUrl: https://eth.blockscout.com/api
       family: blockscout
       name: Blockscout
       url: https://blockscout.com/eth/mainnet
+    - apiUrl: https://api.etherscan.io/api
+      family: etherscan
+      name: Etherscan
+      url: https://etherscan.io
   blocks:
     confirmations: 2
     estimateBlockTime: 13
@@ -2132,10 +2131,10 @@ ethereum:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.ankr.com/eth
-    - http: https://ethereum.publicnode.com
     - http: https://cloudflare-eth.com
     - http: https://eth.drpc.org
+    - http: https://ethereum.publicnode.com
+    - http: https://rpc.ankr.com/eth
   technicalStack: other
 euphoriatestnet:
   blockExplorers:
@@ -2214,10 +2213,10 @@ evmos:
     symbol: EVMOS
   protocol: ethereum
   rpcUrls:
-    - http: https://evmos.lava.build
     - http: https://evmos-json-rpc.stakely.io
-    - http: https://rpc-evm.evmos.dragonstake.io
     - http: https://evmos.drpc.org
+    - http: https://evmos.lava.build
+    - http: https://rpc-evm.evmos.dragonstake.io
   technicalStack: other
 fantom:
   blockExplorers:
@@ -2243,12 +2242,12 @@ fantom:
     symbol: FTM
   protocol: ethereum
   rpcUrls:
-    - http: https://rpcapi.fantom.network
-    - http: https://fantom-rpc.publicnode.com
     - http: https://fantom-pokt.nodies.app
+    - http: https://fantom-rpc.publicnode.com
     - http: https://rpc.fantom.network
     - http: https://rpc2.fantom.network
     - http: https://rpc3.fantom.network
+    - http: https://rpcapi.fantom.network
   technicalStack: other
 fhenixtestnet:
   blockExplorers:
@@ -2376,8 +2375,8 @@ flare:
   protocol: ethereum
   rpcUrls:
     - http: https://flare-api.flare.network/ext/C/rpc
-    - http: https://flare.solidifi.app/ext/C/rpc
     - http: https://flare.rpc.thirdweb.com
+    - http: https://flare.solidifi.app/ext/C/rpc
     - http: https://rpc.ankr.com/flare
   technicalStack: other
 flowmainnet:
@@ -2540,8 +2539,8 @@ fraxtal:
     symbol: frxETH
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.frax.com
     - http: https://fraxtal.drpc.org
+    - http: https://rpc.frax.com
   technicalStack: opstack
 fraxtaltestnet:
   blockExplorers:
@@ -2639,10 +2638,10 @@ fusemainnet:
     symbol: FUSE
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.fuse.io
+    - http: https://fuse-pokt.nodies.app
     - http: https://fuse.drpc.org
     - http: https://fuse.liquify.com
-    - http: https://fuse-pokt.nodies.app
+    - http: https://rpc.fuse.io
   technicalStack: other
 galadrieldevnet:
   blockExplorers:
@@ -2848,9 +2847,9 @@ harmony:
     symbol: ONE
   protocol: ethereum
   rpcUrls:
+    - http: https://1rpc.io/one
     - http: https://api.harmony.one
     - http: https://api.s0.t.hmny.io
-    - http: https://1rpc.io/one
     - http: https://rpc.ankr.com/harmony
   technicalStack: other
 harmonytestnet:
@@ -3048,8 +3047,8 @@ immutablezkevmmainnet:
     symbol: IMX
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.immutable.com
     - http: https://immutable.gateway.tenderly.co
+    - http: https://rpc.immutable.com
   technicalStack: other
   transactionOverrides:
     maxFeePerGas: 100000000000
@@ -3280,9 +3279,9 @@ kava:
   rpcUrls:
     - http: https://evm.kava-rpc.com
     - http: https://evm.kava.chainstacklabs.com
-    - http: https://rpc.ankr.com/kava_evm
     - http: https://evm.kava.io
     - http: https://kava.drpc.org
+    - http: https://rpc.ankr.com/kava_evm
 kinto:
   blockExplorers:
     - apiUrl: https://explorer.kinto.xyz/api/eth-rpc
@@ -3356,9 +3355,9 @@ kroma:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc-kroma.rockx.com
-    - http: https://api.kroma.network
     - http: https://1rpc.io/kroma
+    - http: https://api.kroma.network
+    - http: https://rpc-kroma.rockx.com
   technicalStack: opstack
 linea:
   blockExplorers:
@@ -3385,10 +3384,10 @@ linea:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.linea.build
-    - http: https://linea.blockpi.network/v1/rpc/public
     - http: https://1rpc.io/linea
+    - http: https://linea.blockpi.network/v1/rpc/public
     - http: https://linea.drpc.org
+    - http: https://rpc.linea.build
   technicalStack: other
 lineasepolia:
   blockExplorers:
@@ -3410,9 +3409,9 @@ lineasepolia:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.sepolia.linea.build
     - http: https://linea-sepolia-rpc.publicnode.com
     - http: https://linea-sepolia.blockpi.network/v1/rpc/public
+    - http: https://rpc.sepolia.linea.build
 lisk:
   blockExplorers:
     - apiUrl: https://blockscout.lisk.com/api/eth-rpc
@@ -3485,9 +3484,9 @@ lukso:
     symbol: LYX
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.mainnet.lukso.network
-    - http: https://rpc.lukso.sigmacore.io
     - http: https://42.rpc.thirdweb.com
+    - http: https://rpc.lukso.sigmacore.io
+    - http: https://rpc.mainnet.lukso.network
   technicalStack: other
 luksotestnet:
   blockExplorers:
@@ -3595,8 +3594,8 @@ mantapacific:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://pacific-rpc.manta.network/http
     - http: https://manta.nirvanalabs.xyz/mantapublic
+    - http: https://pacific-rpc.manta.network/http
   technicalStack: opstack
 mantapacifictestnet:
   blockExplorers:
@@ -3717,8 +3716,8 @@ merlin:
     symbol: BTC
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.merlinchain.io
     - http: https://merlin.blockpi.network/v1/rpc/public
+    - http: https://rpc.merlinchain.io
   technicalStack: polygoncdk
 metal:
   blockExplorers:
@@ -4083,12 +4082,12 @@ moonriver:
     symbol: MOVR
   protocol: ethereum
   rpcUrls:
-    - http: https://moonriver.public.blastapi.io
     - http: https://moonriver-rpc.dwellir.com
     - http: https://moonriver.api.onfinality.io/public
+    - http: https://moonriver.drpc.org
+    - http: https://moonriver.public.blastapi.io
     - http: https://moonriver.unitedbloc.com:2000
     - http: https://rpc.api.moonriver.moonbeam.network
-    - http: https://moonriver.drpc.org
 morph:
   blockExplorers:
     - apiUrl: https://explorer-api.morphl2.io/api
@@ -4331,8 +4330,8 @@ opbnbtestnet:
     symbol: tBNB
   protocol: ethereum
   rpcUrls:
-    - http: https://opbnb-testnet-rpc.publicnode.com
     - http: https://opbnb-testnet-rpc.bnbchain.org
+    - http: https://opbnb-testnet-rpc.publicnode.com
 opengradienttestnet:
   blockExplorers:
     - apiUrl: http://3.145.62.2/api
@@ -4435,8 +4434,8 @@ orderly:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.orderly.network
     - http: https://l2-orderly-mainnet-0.t.conduit.xyz
+    - http: https://rpc.orderly.network
   technicalStack: opstack
 osmosis:
   bech32Prefix: osmo
@@ -4590,9 +4589,9 @@ polygonamoy:
     symbol: POL
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc-amoy.polygon.technology
     - http: https://polygon-amoy-bor-rpc.publicnode.com
     - http: https://polygon-amoy.blockpi.network/v1/rpc/public
+    - http: https://rpc-amoy.polygon.technology
     - http: https://rpc.ankr.com/polygon_amoy
 polygonzkevm:
   blockExplorers:
@@ -4620,8 +4619,8 @@ polygonzkevm:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://zkevm-rpc.com
     - http: https://rpc.ankr.com/polygon_zkevm
+    - http: https://zkevm-rpc.com
   technicalStack: polygoncdk
 polynomialfi:
   blockExplorers:
@@ -4706,13 +4705,13 @@ proofofplay:
 pulsechain:
   blockExplorers:
     - apiUrl: https://api.scan.pulsechain.com/api
-      family: blockscout
-      name: Pulsechain Explorer
-      url: https://oldscan.gopulse.com/#/
-    - apiUrl: https://api.scan.pulsechain.com/api
       family: other
       name: Otterscan
       url: https://otter.pulsechain.com
+    - apiUrl: https://api.scan.pulsechain.com/api
+      family: blockscout
+      name: Pulsechain Explorer
+      url: https://oldscan.gopulse.com/#/
   blocks:
     confirmations: 1
     estimateBlockTime: 10
@@ -4732,8 +4731,8 @@ pulsechain:
     symbol: PLS
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.pulsechain.com
     - http: https://pulsechain-rpc.publicnode.com
+    - http: https://rpc.pulsechain.com
   transactionOverrides:
     maxFeePerGas: 800000000000000
     maxPriorityFeePerGas: 2500000000
@@ -4924,9 +4923,9 @@ rootstockmainnet:
     symbol: RBTC
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.mainnet.rootstock.io/kXhXHf6TnnfW1POvr4UT0YUvujmuju-M
-    - http: https://public-node.rsk.co
     - http: https://mycrypto.rsk.co
+    - http: https://public-node.rsk.co
+    - http: https://rpc.mainnet.rootstock.io/kXhXHf6TnnfW1POvr4UT0YUvujmuju-M
   technicalStack: other
 rootstocktestnet:
   blockExplorers:
@@ -5054,11 +5053,11 @@ scroll:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.scroll.io
+    - http: https://1rpc.io/scroll
     - http: https://rpc.ankr.com/scroll
+    - http: https://rpc.scroll.io
     - http: https://scroll-mainnet.chainstacklabs.com
     - http: https://scroll.drpc.org
-    - http: https://1rpc.io/scroll
   technicalStack: other
 scrollsepolia:
   blockExplorers:
@@ -5085,11 +5084,11 @@ scrollsepolia:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://sepolia-rpc.scroll.io
     - http: https://rpc.ankr.com/scroll_sepolia_testnet
+    - http: https://scroll-public.scroll-testnet.quiknode.pro
     - http: https://scroll-sepolia.blockpi.network/v1/rpc/public
     - http: https://scroll-sepolia.chainstacklabs.com
-    - http: https://scroll-public.scroll-testnet.quiknode.pro
+    - http: https://sepolia-rpc.scroll.io
 sei:
   blockExplorers:
     - apiUrl: https://seitrace.com/pacific-1/api
@@ -5143,8 +5142,8 @@ sepolia:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://ethereum-sepolia.publicnode.com
     - http: https://ethereum-sepolia.blockpi.network/v1/rpc/public
+    - http: https://ethereum-sepolia.publicnode.com
     - http: https://rpc.sepolia.org
 shibarium:
   blockExplorers:
@@ -5170,8 +5169,8 @@ shibarium:
     symbol: BONE
   protocol: ethereum
   rpcUrls:
-    - http: https://www.shibrpc.com
     - http: https://rpc.shibrpc.com
+    - http: https://www.shibrpc.com
   technicalStack: other
 sketchpad:
   blockExplorers:
@@ -5224,8 +5223,8 @@ smartbch:
     symbol: BCH
   protocol: ethereum
   rpcUrls:
-    - http: https://smartbch.greyh.at
     - http: https://rpc.smartbch.org
+    - http: https://smartbch.greyh.at
 snaxchain:
   blockExplorers:
     - apiUrl: https://explorer.snaxchain.io/api
@@ -5456,8 +5455,8 @@ sonicblaze:
     symbol: S
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.blaze.soniclabs.com
     - http: https://rpc.ankr.com/sonic_blaze_testnet
+    - http: https://rpc.blaze.soniclabs.com
 sonicsvm:
   blockExplorers:
     - apiUrl: https://explorer.sonic.game/?cluster=custom&customUrl=https%3A%2F%2Fapi.mainnet-alpha.sonic.game
@@ -5682,8 +5681,8 @@ storytestnet:
     symbol: IP
   protocol: ethereum
   rpcUrls:
-    - http: https://story-testnet-evm.itrocket.net
     - http: https://story-rpc.oneiricts.com:8445
+    - http: https://story-testnet-evm.itrocket.net
     - http: https://testnet.storyrpc.io
   transactionOverrides:
     gasPrice: 16000000000
@@ -6017,8 +6016,8 @@ taikohekla:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://taiko-hekla.drpc.org
     - http: https://rpc.hekla.taiko.xyz
+    - http: https://taiko-hekla.drpc.org
 tangle:
   blockExplorers:
     - apiUrl: https://explorer.tangle.tools/api
@@ -6489,8 +6488,8 @@ xlayer:
     symbol: OKB
   protocol: ethereum
   rpcUrls:
-    - http: https://xlayerrpc.okx.com
     - http: https://rpc.xlayer.tech
+    - http: https://xlayerrpc.okx.com
   technicalStack: polygoncdk
 xpla:
   blockExplorers:
@@ -6598,9 +6597,9 @@ zircuit:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://zircuit1-mainnet.p2pify.com
-    - http: https://zircuit1-mainnet.liquify.com
     - http: https://zircuit-mainnet.drpc.org
+    - http: https://zircuit1-mainnet.liquify.com
+    - http: https://zircuit1-mainnet.p2pify.com
   technicalStack: opstack
 zklink:
   blockExplorers:

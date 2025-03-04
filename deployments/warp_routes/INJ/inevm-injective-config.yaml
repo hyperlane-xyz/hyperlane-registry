@@ -1,4 +1,3 @@
-# yaml-language-server: $schema=../schema.json
 options:
   interchainFeeConstants:
     - addressOrDenom: inj
@@ -11,6 +10,15 @@ options:
       destination: inevm
       origin: injective
 tokens:
+  - addressOrDenom: "0x26f32245fCF5Ad53159E875d5Cae62aEcf19c2d4"
+    chainName: inevm
+    connections:
+      - token: cosmos|injective|inj1mv9tjvkaw7x8w8y9vds8pkfq46g2vcfkjehc6k
+    decimals: 18
+    logoURI: /deployments/warp_routes/INJ/logo.svg
+    name: Injective Coin
+    standard: EvmHypNative
+    symbol: INJ
   - addressOrDenom: inj1mv9tjvkaw7x8w8y9vds8pkfq46g2vcfkjehc6k
     chainName: injective
     coinGeckoId: injective-protocol
@@ -20,13 +28,4 @@ tokens:
     logoURI: /deployments/warp_routes/INJ/logo.svg
     name: Injective Coin
     standard: CwHypNative
-    symbol: INJ
-  - addressOrDenom: "0x26f32245fCF5Ad53159E875d5Cae62aEcf19c2d4"
-    chainName: inevm
-    connections:
-      - token: cosmos|injective|inj1mv9tjvkaw7x8w8y9vds8pkfq46g2vcfkjehc6k
-    decimals: 18
-    logoURI: /deployments/warp_routes/INJ/logo.svg
-    name: Injective Coin
-    standard: EvmHypNative
     symbol: INJ
