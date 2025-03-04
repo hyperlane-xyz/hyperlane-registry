@@ -1,7 +1,13 @@
 import type { Logger } from 'pino';
 import { parse as yamlParse } from 'yaml';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type {
+  ChainMap,
+  ChainMetadata,
+  ChainName,
+  WarpCoreConfig,
+  WarpRouteDeployConfig,
+} from '@hyperlane-xyz/sdk';
 
 import {
   CHAIN_FILE_REGEX,
@@ -21,7 +27,11 @@ import {
   UpdateChainParams,
   WarpRouteFilterParams,
 } from './IRegistry.js';
-import { filterWarpRoutesIds, warpRouteConfigPathToId, warpRouteDeployConfigPathToId } from './warp-utils.js';
+import {
+  filterWarpRoutesIds,
+  warpRouteConfigPathToId,
+  warpRouteDeployConfigPathToId,
+} from './warp-utils.js';
 
 export interface GithubRegistryOptions {
   uri?: string;
@@ -182,16 +192,22 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   async getWarpRoutes(filter?: WarpRouteFilterParams): Promise<WarpRouteConfigMap> {
     const { warpRoutes } = (await this.listRegistryContent()).deployments;
     const { ids: routeIds, values: routeConfigUrls } = filterWarpRoutesIds(warpRoutes, filter);
-    return this.readConfigs(routeIds, routeConfigUrls)
+    return this.readConfigs(routeIds, routeConfigUrls);
   }
 
   async getWarpDeployConfigs(filter?: WarpRouteFilterParams): Promise<WarpDeployConfigMap> {
     const { warpDeployConfig } = (await this.listRegistryContent()).deployments;
-    const { ids: routeIds, values: routeConfigUrls } = filterWarpRoutesIds(warpDeployConfig, filter);
-    return this.readConfigs(routeIds, routeConfigUrls)
+    const { ids: routeIds, values: routeConfigUrls } = filterWarpRoutesIds(
+      warpDeployConfig,
+      filter,
+    );
+    return this.readConfigs(routeIds, routeConfigUrls);
   }
 
-  protected async readConfigs<ConfigMap>(routeIds: string[], routeConfigUrls: string[]): Promise<Record<string, ConfigMap>> {
+  protected async readConfigs<ConfigMap>(
+    routeIds: string[],
+    routeConfigUrls: string[],
+  ): Promise<Record<string, ConfigMap>> {
     const configs = await this.fetchYamlFiles<ConfigMap>(routeConfigUrls);
     const idsWithConfigs = routeIds.map((id, i): [WarpRouteId, ConfigMap] => [id, configs[i]]);
     return Object.fromEntries(idsWithConfigs);
