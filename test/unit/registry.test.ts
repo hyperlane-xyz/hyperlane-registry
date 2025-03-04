@@ -316,9 +316,9 @@ describe('Registry Utils', () => {
       },
       {
         name: 'FileSystemRegistry for non-HTTPS URLs',
-        uris: ['http://example.com'],
+        uris: ['local/path'],
         useProxy: false,
-        expectedRegistries: [{ type: FileSystemRegistry, uri: 'http://example.com' }],
+        expectedRegistries: [{ type: FileSystemRegistry, uri: 'local/path' }],
       },
       {
         name: 'multiple URIs with mixed types',
