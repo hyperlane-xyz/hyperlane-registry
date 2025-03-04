@@ -27,9 +27,12 @@ describe('Warp Core Configs', () => {
       .filter((entry) => entry.isDirectory())
       // Convert to a path within the deployments directory, as expected by the regex
       .map((entry) => path.join('warp_routes', entry.name));
-    
+
     for (const symbolDir of symbolDirs) {
-      expect(WARP_ROUTE_SYMBOL_DIRECTORY_REGEX.test(symbolDir), `Symbol directory ${symbolDir} does not meet expected regex`).to.be.true;
+      expect(
+        WARP_ROUTE_SYMBOL_DIRECTORY_REGEX.test(symbolDir),
+        `Symbol directory ${symbolDir} does not meet expected regex`,
+      ).to.be.true;
     }
   });
 
@@ -151,12 +154,12 @@ describe('Warp Deploy Configs', () => {
     'TIA/arbitrum-neutron',
     'TIA/eclipsemainnet-stride',
     'TIA/mantapacific-neutron',
-    'stTIA/eclipsemainnet-stride'
+    'stTIA/eclipsemainnet-stride',
   ];
-  const configs = Object.keys(warpDeploys).filter(id => !excludeIds.includes(id));
+  const configs = Object.keys(warpDeploys).filter((id) => !excludeIds.includes(id));
   for (const id of configs) {
     it(`Deploy config ${id} is valid`, async () => {
       WarpRouteDeployConfigSchema.parse(warpDeploys[id]);
     });
   }
-})
+});
