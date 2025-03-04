@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 10.7.0
+
+### Minor Changes
+
+- 1bb7961: Add oUSDT warp routes config
+
 ## 10.6.0
 
 ### Minor Changes
