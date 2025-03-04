@@ -19,6 +19,32 @@ const isCanonicalRepoUrl = (url: string): boolean => {
   return url === DEFAULT_GITHUB_REGISTRY;
 };
 
+const isValidFilePath = (path: string): boolean => {
+  try {
+    // Check for invalid characters in path
+    // These are generally invalid in most file systems
+    const invalidChars = /[<>:"|?*\x00-\x1F]/g;
+    if (invalidChars.test(path)) return false;
+
+    // For paths with protocol, validate they're file:// protocol
+    if (path.includes('://')) {
+      try {
+        const url = new URL(path);
+        return url.protocol === 'file:';
+      } catch {
+        return false;
+      }
+    }
+
+    // Basic check: path should not contain null bytes
+    if (path.includes('\0')) return false;
+
+    return true;
+  } catch {
+    return false;
+  }
+};
+
 export function getRegistry(
   registryUris: string[],
   enableProxy: boolean,
@@ -37,6 +63,10 @@ export function getRegistry(
           proxyUrl: enableProxy && isCanonicalRepoUrl(uri) ? PROXY_DEPLOYED_URL : undefined,
         });
       } else {
+        if (!isValidFilePath(uri)) {
+          throw new Error(`Invalid file system path: ${uri}`);
+        }
+
         return new FileSystemRegistry({
           uri,
           logger: childLogger,
