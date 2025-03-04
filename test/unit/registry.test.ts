@@ -3,6 +3,7 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 
 import type { ChainMetadata } from '@hyperlane-xyz/sdk';
+import type { Logger } from 'pino';
 import fs from 'fs';
 import { CHAIN_FILE_REGEX } from '../../src/consts.js';
 import { FileSystemRegistry } from '../../src/registry/FileSystemRegistry.js';
@@ -11,6 +12,8 @@ import { RegistryType } from '../../src/registry/IRegistry.js';
 import { MergedRegistry } from '../../src/registry/MergedRegistry.js';
 import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
 import { ChainAddresses } from '../../src/types.js';
+import { getRegistry } from '../../src/registry/registry-utils.js';
+import { DEFAULT_GITHUB_REGISTRY, PROXY_DEPLOYED_URL } from '../../src/consts.js';
 
 const GITHUB_REGISTRY_BRANCH = 'main';
 
@@ -260,5 +263,110 @@ describe('Warp routes file structure', () => {
 
     const foundPath = findAddressesYaml(WARP_ROUTES_PATH);
     expect(foundPath, foundPath ? `Found addresses.yaml at: ${foundPath}` : '').to.be.null;
+  });
+});
+
+describe('Registry Utils', () => {
+  // Mock logger
+  const logger: Logger = {
+    child: () => ({ info: () => {}, child: () => ({ info: () => {} }) }),
+  } as any;
+
+  const localPath = './';
+  const githubUrl = 'https://github.com/hyperlane-xyz/hyperlane-registry';
+
+  describe('getRegistry', () => {
+    type TestCase = {
+      name: string;
+      uris: string[];
+      useProxy: boolean;
+      expectedRegistries: {
+        type: any;
+        uri: string;
+        proxyUrl?: string;
+      }[];
+    };
+
+    const testCases: TestCase[] = [
+      {
+        name: 'FileSystemRegistry for local path',
+        uris: [localPath],
+        useProxy: false,
+        expectedRegistries: [{ type: FileSystemRegistry, uri: localPath }],
+      },
+      {
+        name: 'GithubRegistry for HTTPS URLs',
+        uris: [githubUrl],
+        useProxy: false,
+        expectedRegistries: [{ type: GithubRegistry, uri: githubUrl }],
+      },
+      {
+        name: 'proxied GithubRegistry for canonical repo',
+        uris: [DEFAULT_GITHUB_REGISTRY],
+        useProxy: true,
+        expectedRegistries: [
+          { type: GithubRegistry, uri: DEFAULT_GITHUB_REGISTRY, proxyUrl: PROXY_DEPLOYED_URL },
+        ],
+      },
+      {
+        name: 'non-proxied GithubRegistry for non-canonical repos',
+        uris: ['https://github.com/test'],
+        useProxy: true,
+        expectedRegistries: [{ type: GithubRegistry, uri: 'https://github.com/test' }],
+      },
+      {
+        name: 'FileSystemRegistry for non-HTTPS URLs',
+        uris: ['local/path'],
+        useProxy: false,
+        expectedRegistries: [{ type: FileSystemRegistry, uri: 'local/path' }],
+      },
+      {
+        name: 'multiple URIs with mixed types',
+        uris: [githubUrl, localPath],
+        useProxy: false,
+        expectedRegistries: [
+          { type: GithubRegistry, uri: githubUrl },
+          { type: FileSystemRegistry, uri: localPath },
+        ],
+      },
+      {
+        name: 'mixed registry types with proxy settings',
+        uris: [DEFAULT_GITHUB_REGISTRY, localPath, 'https://github.com/test'],
+        useProxy: true,
+        expectedRegistries: [
+          { type: GithubRegistry, uri: DEFAULT_GITHUB_REGISTRY, proxyUrl: PROXY_DEPLOYED_URL },
+          { type: FileSystemRegistry, uri: localPath },
+          { type: GithubRegistry, uri: 'https://github.com/test' },
+        ],
+      },
+    ];
+
+    testCases.forEach(({ name, uris, useProxy, expectedRegistries }) => {
+      it(name, () => {
+        const registry = getRegistry(uris, useProxy, logger) as MergedRegistry;
+        expect(registry).to.be.instanceOf(MergedRegistry);
+        expect(registry.registries.length).to.equal(expectedRegistries.length);
+
+        registry.registries.forEach((reg, idx) => {
+          const expected = expectedRegistries[idx];
+          expect(reg).to.be.instanceOf(expected.type);
+          expect(reg.uri).to.equal(expected.uri);
+          if (reg instanceof GithubRegistry) {
+            expect(reg.proxyUrl).to.equal(expected.proxyUrl);
+          }
+          expect(reg).to.have.property('logger');
+        });
+      });
+    });
+
+    it('throws error for empty URIs array', () => {
+      expect(() => getRegistry([], true, logger)).to.throw('At least one registry URI is required');
+      expect(() => getRegistry([''], true, logger)).to.throw(
+        'At least one registry URI is required',
+      );
+      expect(() => getRegistry(['   '], true, logger)).to.throw(
+        'At least one registry URI is required',
+      );
+    });
   });
 });
