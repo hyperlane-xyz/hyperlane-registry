@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../schema.json
 blockExplorers:
   - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api
     family: routescan
@@ -22,9 +23,9 @@ nativeToken:
   symbol: AVAX
 protocol: ethereum
 rpcUrls:
+  - http: https://rpc.ankr.com/avalanche
   - http: https://api.avax.network/ext/bc/C/rpc
     pagination:
       maxBlockRange: 100000
       minBlockNumber: 6765067
-  - http: https://rpc.ankr.com/avalanche
 technicalStack: other

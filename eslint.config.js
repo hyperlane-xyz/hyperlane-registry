@@ -68,7 +68,6 @@ export default tseslint.config(
           arrays: [
             { path: 'tokens', sortKey: 'chainName' },
             { path: 'tokens[].connections', sortKey: 'token' },
-            { path: 'rpcUrls', sortKey: 'http' },
             { path: '*.blockExplorers', sortKey: 'name' },
             { path: '*.interchainSecurityModule.modules', sortKey: 'type' },
             { path: '*.interchainSecurityModule.modules[].domains.*.modules', sortKey: 'type' },

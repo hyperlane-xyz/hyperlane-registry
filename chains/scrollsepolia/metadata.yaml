@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../schema.json
 blockExplorers:
   - apiUrl: https://api-sepolia.scrollscan.com/api
     family: etherscan
@@ -22,8 +23,8 @@ nativeToken:
   symbol: ETH
 protocol: ethereum
 rpcUrls:
+  - http: https://sepolia-rpc.scroll.io
   - http: https://rpc.ankr.com/scroll_sepolia_testnet
-  - http: https://scroll-public.scroll-testnet.quiknode.pro
   - http: https://scroll-sepolia.blockpi.network/v1/rpc/public
   - http: https://scroll-sepolia.chainstacklabs.com
-  - http: https://sepolia-rpc.scroll.io
+  - http: https://scroll-public.scroll-testnet.quiknode.pro

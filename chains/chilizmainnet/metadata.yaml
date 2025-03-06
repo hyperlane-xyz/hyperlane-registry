@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../schema.json
 blockExplorers:
   - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/88888/etherscan/api
     family: routescan
@@ -21,8 +22,8 @@ nativeToken:
   symbol: CHZ
 protocol: ethereum
 rpcUrls:
-  - http: https://chiliz.publicnode.com
   - http: https://rpc.ankr.com/chiliz
+  - http: https://chiliz.publicnode.com
 technicalStack: other
 transactionOverrides:
   maxPriorityFeePerGas: 1000000000

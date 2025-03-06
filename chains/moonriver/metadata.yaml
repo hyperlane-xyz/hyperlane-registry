@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../schema.json
 blockExplorers:
   - apiUrl: https://api-moonriver.moonscan.io/api
     family: etherscan
@@ -17,9 +18,9 @@ nativeToken:
   symbol: MOVR
 protocol: ethereum
 rpcUrls:
+  - http: https://moonriver.public.blastapi.io
   - http: https://moonriver-rpc.dwellir.com
   - http: https://moonriver.api.onfinality.io/public
-  - http: https://moonriver.drpc.org
-  - http: https://moonriver.public.blastapi.io
   - http: https://moonriver.unitedbloc.com:2000
   - http: https://rpc.api.moonriver.moonbeam.network
+  - http: https://moonriver.drpc.org
