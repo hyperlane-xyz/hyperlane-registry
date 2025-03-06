@@ -21,10 +21,12 @@ const isCanonicalRepoUrl = (url: string): boolean => {
 
 const isValidFilePath = (path: string): boolean => {
   try {
-    // Check for invalid characters in path
-    // These are generally invalid in most file systems
-    const invalidChars = /[<>:"|?*\x00-\x1F]/g;
-    if (invalidChars.test(path)) return false;
+    // Check for control characters (0-31) and DEL (127) without using regex
+    const hasControlChars = Array.from(path).some((char) => {
+      const code = char.charCodeAt(0);
+      return (code >= 0 && code <= 31) || code === 127;
+    });
+    if (hasControlChars) return false;
 
     // For paths with protocol, validate they're file:// protocol
     if (path.includes('://')) {
@@ -35,9 +37,6 @@ const isValidFilePath = (path: string): boolean => {
         return false;
       }
     }
-
-    // Basic check: path should not contain null bytes
-    if (path.includes('\0')) return false;
 
     return true;
   } catch {
