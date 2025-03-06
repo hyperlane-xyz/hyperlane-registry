@@ -43,7 +43,7 @@ for chain_dir in chains/*/; do
 
     # Check if addresses.yaml has a fallbackRoutingHook entry
     fallback_routing_hook=$(yq e '.fallbackRoutingHook' "$addresses_file")
-    if [ "$merkle_tree_hook" = "null" ]; then
+    if [ "$fallback_routing_hook" = "null" ]; then
         echo "$chain_name: No address for fallbackRoutingHook, skipping."
         continue
     fi
