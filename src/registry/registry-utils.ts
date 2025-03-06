@@ -67,8 +67,11 @@ export function getRegistry(
           throw new Error(`Invalid file system path: ${uri}`);
         }
 
+        // Extract path from file:// URL if needed
+        const fsPath = uri.includes('://') ? new URL(uri).pathname : uri;
+
         return new FileSystemRegistry({
-          uri,
+          uri: fsPath,
           logger: childLogger,
         });
       }
