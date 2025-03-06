@@ -23,3 +23,4 @@ export {
 } from './registry/warp-utils.js';
 export { ChainAddresses, ChainAddressesSchema } from './types.js';
 export { isAbacusWorksChain } from './utils.js';
+export { getRegistry } from './registry/registry-utils.js';
