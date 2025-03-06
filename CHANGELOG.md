@@ -1,5 +1,44 @@
 # @hyperlane-xyz/registry
 
+## 10.5.0
+
+### Minor Changes
+
+- 8f7b03a: Fix sSOL/solanamainnet-sonicsvm collateralAddressOrDenom
+
+## 10.4.0
+
+### Minor Changes
+
+- d984e81: Added mint token warp route artifacts
+- 4f8a60d: Add sonicSOL and lrtsSOL config, update sonicSOL logo
+- fdf4cef: add mint token route metadata
+- 7d6ce89: Add sonicSOL and lrtsSOL metadata
+
+## 10.3.0
+
+### Minor Changes
+
+- 6b878f6: Add safe tx service urls for lisk, worldchain, superseed, soneium and unichain
+- fd5d055: Add pumpBTC/ethereum-unichain warp route deployment
+- a28c0fb: add logoURI to pumpBTCuni/ethereum-unichain deployment
+
+## 10.2.0
+
+### Minor Changes
+
+- 9b1aae1: Update default ISMs for Feb 17 batch enrollment. Update safe tx API URLs for fraxtal and hyperevm. Update default RPCs for subtensor.
+
+### Patch Changes
+
+- 2c1cae3: Deployed CCIP Hook/ISMs
+
+## 10.1.0
+
+### Minor Changes
+
+- d474b7f: Add SOL/hyperevm-solanamainnet
+
 ## 10.0.0
 
 ### Major Changes
