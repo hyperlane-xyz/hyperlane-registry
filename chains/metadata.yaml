@@ -1,3 +1,4 @@
+# AUTO-GENERATED; DO NOT EDIT MANUALLY
 abstract:
   blockExplorers:
     - apiUrl: https://api.abscan.org/api
@@ -1169,14 +1170,14 @@ carbon:
     - http: https://evm-api.carbon.network
 celo:
   blockExplorers:
-    - apiUrl: https://explorer.celo.org/mainnet/api
-      family: blockscout
-      name: Blockscout
-      url: https://explorer.celo.org
     - apiUrl: https://api.celoscan.io/api
       family: etherscan
       name: CeloScan
       url: https://celoscan.io
+    - apiUrl: https://explorer.celo.org/mainnet/api
+      family: blockscout
+      name: Blockscout
+      url: https://explorer.celo.org
   blocks:
     confirmations: 1
     estimateBlockTime: 5
@@ -2104,14 +2105,14 @@ endurance:
   technicalStack: other
 ethereum:
   blockExplorers:
-    - apiUrl: https://eth.blockscout.com/api
-      family: blockscout
-      name: Blockscout
-      url: https://blockscout.com/eth/mainnet
     - apiUrl: https://api.etherscan.io/api
       family: etherscan
       name: Etherscan
       url: https://etherscan.io
+    - apiUrl: https://eth.blockscout.com/api
+      family: blockscout
+      name: Blockscout
+      url: https://blockscout.com/eth/mainnet
   blocks:
     confirmations: 2
     estimateBlockTime: 13
@@ -4705,13 +4706,13 @@ proofofplay:
 pulsechain:
   blockExplorers:
     - apiUrl: https://api.scan.pulsechain.com/api
-      family: other
-      name: Otterscan
-      url: https://otter.pulsechain.com
-    - apiUrl: https://api.scan.pulsechain.com/api
       family: blockscout
       name: Pulsechain Explorer
       url: https://oldscan.gopulse.com/#/
+    - apiUrl: https://api.scan.pulsechain.com/api
+      family: other
+      name: Otterscan
+      url: https://otter.pulsechain.com
   blocks:
     confirmations: 1
     estimateBlockTime: 10
