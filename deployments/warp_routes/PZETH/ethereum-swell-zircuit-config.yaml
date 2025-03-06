@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x0220b1EA1b56ECE8e2b62c8965659f0A621e9ebd"
+    chainName: ethereum
+    coinGeckoId: renzo-restaked-lst
+    collateralAddressOrDenom: "0xbC5511354C4A9a50DE928F56DB01DD327c4e56d5"
+    connections:
+      - token: ethereum|zircuit|0x8303Ce0E207BB44a3D3B2313AC219d0fC73b3764
+      - token: ethereum|swell|0x982AbBb04F91acc47aD0CB0A11f29d50c5007934
+    decimals: 18
+    logoURI: /deployments/warp_routes/PZETH/logo.svg
+    name: "Renzo Restaked LST "
+    standard: EvmHypXERC20Lockbox
+    symbol: pzETH
+  - addressOrDenom: "0x8303Ce0E207BB44a3D3B2313AC219d0fC73b3764"
+    chainName: zircuit
+    collateralAddressOrDenom: "0x9cb41CD74D01ae4b4f640EC40f7A60cA1bCF83E7"
+    connections:
+      - token: ethereum|ethereum|0x0220b1EA1b56ECE8e2b62c8965659f0A621e9ebd
+      - token: ethereum|swell|0x982AbBb04F91acc47aD0CB0A11f29d50c5007934
+    decimals: 18
+    logoURI: /deployments/warp_routes/PZETH/logo.svg
+    name: "Renzo Restaked LST "
+    standard: EvmHypXERC20
+    symbol: pzETH
+  - addressOrDenom: "0x982AbBb04F91acc47aD0CB0A11f29d50c5007934"
+    chainName: swell
+    collateralAddressOrDenom: "0x9cb41CD74D01ae4b4f640EC40f7A60cA1bCF83E7"
+    connections:
+      - token: ethereum|ethereum|0x0220b1EA1b56ECE8e2b62c8965659f0A621e9ebd
+      - token: ethereum|zircuit|0x8303Ce0E207BB44a3D3B2313AC219d0fC73b3764
+    decimals: 18
+    logoURI: /deployments/warp_routes/PZETH/logo.svg
+    name: "Renzo Restaked LST "
+    standard: EvmHypXERC20
+    symbol: pzETH
