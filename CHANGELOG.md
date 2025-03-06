@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 10.8.1
+
+### Patch Changes
+
+- 967fb84: Reverts PR #643 due to not exporting to index-fs.ts
+
 ## 10.8.0
 
 ### Minor Changes
