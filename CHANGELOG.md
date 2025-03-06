@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 10.10.0
+
+### Minor Changes
+
+- c093d06: Add `branch` to getRegistry to allow reading of specific commit/branches. Also up the SDK version
+
 ## 10.9.0
 
 ### Minor Changes
