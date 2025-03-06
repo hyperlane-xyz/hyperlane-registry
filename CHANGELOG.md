@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 10.8.0
+
+### Minor Changes
+
+- b71797b: Add REZ configs
+- cfba620: Add getRegistry function
+
 ## 10.7.0
 
 ### Minor Changes
