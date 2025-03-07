@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { expect } from 'chai';
 import sinon from 'sinon';
-
+import { faker } from '@faker-js/faker';
 import type { ChainMetadata } from '@hyperlane-xyz/sdk';
 import type { Logger } from 'pino';
 import fs from 'fs';
@@ -14,6 +14,7 @@ import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
 import { ChainAddresses } from '../../src/types.js';
 import { getRegistry } from '../../src/registry/registry-utils.js';
 import { DEFAULT_GITHUB_REGISTRY, PROXY_DEPLOYED_URL } from '../../src/consts.js';
+import { parseGitHubPath } from '../../src/utils.js';
 
 const GITHUB_REGISTRY_BRANCH = 'main';
 
@@ -310,9 +311,9 @@ describe('Registry Utils', () => {
       },
       {
         name: 'non-proxied GithubRegistry for non-canonical repos',
-        uris: ['https://github.com/test'],
+        uris: ['https://github.com/user/test'],
         useProxy: true,
-        expectedRegistries: [{ type: GithubRegistry, uri: 'https://github.com/test' }],
+        expectedRegistries: [{ type: GithubRegistry, uri: 'https://github.com/user/test' }],
       },
       {
         name: 'FileSystemRegistry for non-HTTPS URLs',
@@ -331,12 +332,12 @@ describe('Registry Utils', () => {
       },
       {
         name: 'mixed registry types with proxy settings',
-        uris: [DEFAULT_GITHUB_REGISTRY, localPath, 'https://github.com/test'],
+        uris: [DEFAULT_GITHUB_REGISTRY, localPath, 'https://github.com/user/test'],
         useProxy: true,
         expectedRegistries: [
           { type: GithubRegistry, uri: DEFAULT_GITHUB_REGISTRY, proxyUrl: PROXY_DEPLOYED_URL },
           { type: FileSystemRegistry, uri: localPath },
-          { type: GithubRegistry, uri: 'https://github.com/test' },
+          { type: GithubRegistry, uri: 'https://github.com/user/test' },
         ],
       },
     ];
@@ -357,6 +358,35 @@ describe('Registry Utils', () => {
           expect(reg).to.have.property('logger');
         });
       });
+    });
+
+    const randomOwner = faker.internet.displayName(); // example: 'cross-platform'
+    const randomName = faker.internet.domainWord();
+
+    it(`should be able to parse a pathname with no branch`, () => {
+      const url = `https://github.com/${randomOwner}/${randomName}`;
+      const { repoOwner, repoName, repoBranch } = parseGitHubPath(url);
+      expect(repoOwner).to.equal(randomOwner);
+      expect(repoName).to.equal(randomName);
+      expect(repoBranch).to.be.undefined;
+    });
+
+    it(`should be able to parse a pathname with commit hash`, () => {
+      const randomCommitHash = faker.string.hexadecimal({ length: 40 });
+      const url = `https://github.com/${randomOwner}/${randomName}/tree/${randomCommitHash}`;
+      const { repoOwner, repoName, repoBranch } = parseGitHubPath(url);
+      expect(repoOwner).to.equal(randomOwner);
+      expect(repoName).to.equal(randomName);
+      expect(repoBranch).to.equal(randomCommitHash);
+    });
+
+    it(`should be able to parse user with branch name`, () => {
+      const randomBranch = faker.git.branch();
+      const url = `https://github.com/${randomOwner}/${randomName}/tree/${randomBranch}`;
+      const { repoOwner, repoName, repoBranch } = parseGitHubPath(url);
+      expect(repoOwner).to.equal(randomOwner);
+      expect(repoName).to.equal(randomName);
+      expect(repoBranch).to.equal(randomBranch);
     });
 
     it('throws error for empty URIs array', () => {
