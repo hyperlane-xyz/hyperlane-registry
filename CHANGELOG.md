@@ -1,5 +1,27 @@
 # @hyperlane-xyz/registry
 
+## 10.10.0
+
+### Minor Changes
+
+- c093d06: Add `branch` to getRegistry to allow reading of specific commit/branches. Also up the SDK version
+
+## 10.9.0
+
+### Minor Changes
+
+- 6031ff9: Add getRegistry function
+
+### Patch Changes
+
+- dedd673: Update REZ logo
+
+## 10.8.1
+
+### Patch Changes
+
+- 967fb84: Reverts PR #643 due to not exporting to index-fs.ts
+
 ## 10.8.0
 
 ### Minor Changes

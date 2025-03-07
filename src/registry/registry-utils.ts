@@ -22,6 +22,7 @@ const isCanonicalRepoUrl = (url: string): boolean => {
 export function getRegistry(
   registryUris: string[],
   enableProxy: boolean,
+  branch?: string,
   logger?: Logger,
 ): IRegistry {
   const registryLogger = logger?.child({ module: 'MergedRegistry' });
@@ -33,6 +34,7 @@ export function getRegistry(
       if (isHttpsUrl(uri)) {
         return new GithubRegistry({
           uri,
+          branch,
           logger: childLogger,
           proxyUrl: enableProxy && isCanonicalRepoUrl(uri) ? PROXY_DEPLOYED_URL : undefined,
         });
