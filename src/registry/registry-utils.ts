@@ -4,6 +4,7 @@ import { FileSystemRegistry } from './FileSystemRegistry.js';
 import { IRegistry } from './IRegistry.js';
 import { DEFAULT_GITHUB_REGISTRY, PROXY_DEPLOYED_URL } from '../consts.js';
 import { MergedRegistry } from './MergedRegistry.js';
+import { parseGitHubPath } from '../utils.js';
 
 const isHttpsUrl = (value: string): boolean => {
   try {
@@ -16,7 +17,10 @@ const isHttpsUrl = (value: string): boolean => {
 };
 
 const isCanonicalRepoUrl = (url: string): boolean => {
-  return url === DEFAULT_GITHUB_REGISTRY;
+  const { repoOwner: defaultRepoOwner, repoName: defaultRepoName } =
+    parseGitHubPath(DEFAULT_GITHUB_REGISTRY);
+  const { repoOwner: urlRepoOwner, repoName: urlRepoName } = parseGitHubPath(url);
+  return defaultRepoOwner === urlRepoOwner && defaultRepoName === urlRepoName;
 };
 
 const isValidFilePath = (path: string): boolean => {
