@@ -19,9 +19,35 @@ const isCanonicalRepoUrl = (url: string): boolean => {
   return url === DEFAULT_GITHUB_REGISTRY;
 };
 
+const isValidFilePath = (path: string): boolean => {
+  try {
+    // Check for control characters (0-31) and DEL (127) without using regex
+    const hasControlChars = Array.from(path).some((char) => {
+      const code = char.charCodeAt(0);
+      return (code >= 0 && code <= 31) || code === 127;
+    });
+    if (hasControlChars) return false;
+
+    // For paths with protocol, validate they're file:// protocol
+    if (path.includes('://')) {
+      try {
+        const url = new URL(path);
+        return url.protocol === 'file:';
+      } catch {
+        return false;
+      }
+    }
+
+    return true;
+  } catch {
+    return false;
+  }
+};
+
 export function getRegistry(
   registryUris: string[],
   enableProxy: boolean,
+  branch?: string,
   logger?: Logger,
 ): IRegistry {
   const registryLogger = logger?.child({ module: 'MergedRegistry' });
@@ -33,12 +59,20 @@ export function getRegistry(
       if (isHttpsUrl(uri)) {
         return new GithubRegistry({
           uri,
+          branch,
           logger: childLogger,
           proxyUrl: enableProxy && isCanonicalRepoUrl(uri) ? PROXY_DEPLOYED_URL : undefined,
         });
       } else {
+        if (!isValidFilePath(uri)) {
+          throw new Error(`Invalid file system path: ${uri}`);
+        }
+
+        // Extract path from file:// URL if needed
+        const fsPath = uri.includes('://') ? new URL(uri).pathname : uri;
+
         return new FileSystemRegistry({
-          uri,
+          uri: fsPath,
           logger: childLogger,
         });
       }
