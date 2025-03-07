@@ -360,7 +360,7 @@ describe('Registry Utils', () => {
       });
     });
 
-    const randomOwner = faker.internet.displayName(); // example: 'cross-platform'
+    const randomOwner = faker.internet.displayName();
     const randomName = faker.internet.domainWord();
 
     it(`should be able to parse a pathname with no branch`, () => {
