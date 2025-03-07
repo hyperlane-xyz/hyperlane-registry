@@ -67,7 +67,7 @@ export function isAbacusWorksChain(metadata: ChainMetadata): boolean {
 export function parseGitHubPath(uri: string): {
   repoOwner: string;
   repoName: string;
-  repoBranch: string;
+  repoBranch: string | undefined;
 } {
   // /{user}/{repo}/tree/{branch}
   const { pathname } = new URL(uri);
