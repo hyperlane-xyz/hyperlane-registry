@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 10.11.1
+
+### Patch Changes
+
+- 679bff6: Add missing ETH/base-ethereum-lumiaprism deploy config
+
 ## 10.11.0
 
 ### Minor Changes
