@@ -343,7 +343,11 @@ describe('Registry Utils', () => {
 
     testCases.forEach(({ name, uris, useProxy, expectedRegistries }) => {
       it(name, () => {
-        const registry = getRegistry(uris, useProxy, logger) as MergedRegistry;
+        const registry = getRegistry({
+          registryUris: uris,
+          enableProxy: useProxy,
+          logger,
+        }) as MergedRegistry;
         expect(registry).to.be.instanceOf(MergedRegistry);
         expect(registry.registries.length).to.equal(expectedRegistries.length);
 
@@ -360,11 +364,13 @@ describe('Registry Utils', () => {
     });
 
     it('throws error for empty URIs array', () => {
-      expect(() => getRegistry([], true, logger)).to.throw('At least one registry URI is required');
-      expect(() => getRegistry([''], true, logger)).to.throw(
+      expect(() => getRegistry({ registryUris: [], enableProxy: true, logger })).to.throw(
         'At least one registry URI is required',
       );
-      expect(() => getRegistry(['   '], true, logger)).to.throw(
+      expect(() => getRegistry({ registryUris: [''], enableProxy: true, logger })).to.throw(
+        'At least one registry URI is required',
+      );
+      expect(() => getRegistry({ registryUris: ['   '], enableProxy: true, logger })).to.throw(
         'At least one registry URI is required',
       );
     });
