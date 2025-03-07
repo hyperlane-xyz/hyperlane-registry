@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add getRegistry function
+adds taraxa mainnet support
