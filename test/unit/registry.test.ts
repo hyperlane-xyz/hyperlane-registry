@@ -381,7 +381,7 @@ describe('Registry Utils', () => {
     });
 
     it(`should be able to parse user with branch name`, () => {
-      const randomBranch = faker.git.branch();
+      const randomBranch = `owner/asset/${faker.git.branch()}`;
       const url = `https://github.com/${randomOwner}/${randomName}/tree/${randomBranch}`;
       const { repoOwner, repoName, repoBranch } = parseGitHubPath(url);
       expect(repoOwner).to.equal(randomOwner);
