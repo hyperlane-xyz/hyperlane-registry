@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xe63844Ca06Ce8E6D4097Cb33E9b3d62704122307"
+    chainName: infinityvmmonza
+    connections:
+      - token: sealevel|solanatestnet|26oMREEgB1SgQ1wHmuXzh81C2uXvnudyTZ1E4HWqALLB
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypSynthetic
+    symbol: USDC
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+  - addressOrDenom: 26oMREEgB1SgQ1wHmuXzh81C2uXvnudyTZ1E4HWqALLB
+    chainName: solanatestnet
+    collateralAddressOrDenom: Gh9ZwEmdLJ8DscKNTkTqPbNwLNNBjuSzaG9Vp2KGtKJr
+    connections:
+      - token: ethereum|infinityvmmonza|0xe63844Ca06Ce8E6D4097Cb33E9b3d62704122307
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: SealevelHypCollateral
+    symbol: USDC
