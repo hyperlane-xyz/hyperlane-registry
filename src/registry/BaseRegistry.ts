@@ -1,6 +1,12 @@
 import type { Logger } from 'pino';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type {
+  ChainMap,
+  ChainMetadata,
+  ChainName,
+  WarpCoreConfig,
+  WarpRouteDeployConfig,
+} from '@hyperlane-xyz/sdk';
 import type { ChainAddresses, MaybePromise, WarpDeployConfigMap } from '../types.js';
 import { WarpRouteConfigMap } from '../types.js';
 import { stripLeadingSlash } from '../utils.js';
@@ -47,6 +53,10 @@ export abstract class BaseRegistry implements IRegistry {
     return 'deployments/warp_routes';
   }
 
+  protected createWarpId(chains: string[], symbol: string): string {
+    return `${symbol}/${chains.sort().join('-')}`;
+  }
+
   protected getWarpRoutesArtifactPaths({ tokens }: WarpCoreConfig, options?: AddWarpRouteOptions) {
     if (!tokens.length) throw new Error('No tokens provided in config');
     const symbols = new Set<string>(tokens.map((token) => token.symbol.toUpperCase()));
@@ -55,12 +65,23 @@ export abstract class BaseRegistry implements IRegistry {
         'Only one token symbol per warp config is supported for now. Consider passing a symbol as a parameter',
       );
     const symbol = options?.symbol || symbols.values().next().value;
-    const chains = tokens
-      .map((token) => token.chainName)
-      .sort()
-      .join('-');
-    const basePath = `${this.getWarpRoutesPath()}/${symbol}/${chains}`;
-    return { configPath: `${basePath}-config.yaml` };
+    if (!symbol) throw new Error('No symbol provided in config');
+
+    const chains = tokens.map((token) => token.chainName);
+    return {
+      configPath: `${this.getWarpRoutesPath()}/${this.createWarpId(chains, symbol)}-config.yaml`,
+    };
+  }
+
+  protected getWarpDeployArtifactPaths(
+    deployConfig: WarpDeployConfigMap,
+    symbol: string,
+    configBasePath: string = './configs',
+  ) {
+    const chains = Object.keys(deployConfig);
+    return {
+      configPath: `${configBasePath}/${this.createWarpId(chains, symbol)}-deploy-config.yaml`,
+    };
   }
 
   abstract listRegistryContent(): MaybePromise<RegistryContent>;
