@@ -44,12 +44,17 @@ const isValidFilePath = (path: string): boolean => {
   }
 };
 
-export function getRegistry(
-  registryUris: string[],
-  enableProxy: boolean,
-  branch?: string,
-  logger?: Logger,
-): IRegistry {
+export function getRegistry({
+  registryUris,
+  enableProxy,
+  branch,
+  logger,
+}: {
+  registryUris: string[];
+  enableProxy: boolean;
+  branch?: string;
+  logger?: Logger;
+}): IRegistry {
   const registryLogger = logger?.child({ module: 'MergedRegistry' });
   const registries = registryUris
     .map((uri) => uri.trim())
