@@ -69,9 +69,9 @@ export function parseGitHubPath(uri: string): {
   repoName: string;
   repoBranch: string | undefined;
 } {
-  // /{user}/{repo}/tree/{branch}
   const { pathname } = new URL(uri);
 
+  // Intended pattern: /{user}/{repo}/tree/{branch}
   const regex = /\/([^/]+)\/([^/]+)(?:\/tree\/(.*))?/;
   const match = pathname.match(regex);
 
