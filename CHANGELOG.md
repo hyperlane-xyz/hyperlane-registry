@@ -1,5 +1,78 @@
 # @hyperlane-xyz/registry
 
+## 10.11.0
+
+### Minor Changes
+
+- 5cca0bb: Deploy to new testnets: carrchaintestnet, somniatestnet, infinityvmmonza.
+- c478f87: Add ETH/base-ethereum-lumiaprism warp route deployment
+- 10d02e5: Add file path string validation
+- beb15a6: adds taraxa mainnet support
+
+## 10.10.0
+
+### Minor Changes
+
+- c093d06: Add `branch` to getRegistry to allow reading of specific commit/branches. Also up the SDK version
+
+## 10.9.0
+
+### Minor Changes
+
+- 6031ff9: Add getRegistry function
+
+### Patch Changes
+
+- dedd673: Update REZ logo
+
+## 10.8.1
+
+### Patch Changes
+
+- 967fb84: Reverts PR #643 due to not exporting to index-fs.ts
+
+## 10.8.0
+
+### Minor Changes
+
+- b71797b: Add REZ configs
+- cfba620: Add getRegistry function
+
+## 10.7.0
+
+### Minor Changes
+
+- 1bb7961: Add oUSDT warp routes config
+
+## 10.6.0
+
+### Minor Changes
+
+- 0ceadb5: Add oUSDT logo
+
+## 10.5.0
+
+### Minor Changes
+
+- 8f7b03a: Fix sSOL/solanamainnet-sonicsvm collateralAddressOrDenom
+
+## 10.4.0
+
+### Minor Changes
+
+- d984e81: Added mint token warp route artifacts
+- 4f8a60d: Add sonicSOL and lrtsSOL config, update sonicSOL logo
+- fdf4cef: add mint token route metadata
+- 7d6ce89: Add sonicSOL and lrtsSOL metadata
+
+## 10.3.0
+
+### Minor Changes
+
+- 6b878f6: Add safe tx service urls for lisk, worldchain, superseed, soneium and unichain
+- fd5d055: Add pumpBTC/ethereum-unichain warp route deployment
+- a28c0fb: add logoURI to pumpBTCuni/ethereum-unichain deployment
+
 ## 10.2.0
 
 ### Minor Changes
