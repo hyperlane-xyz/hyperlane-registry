@@ -1,5 +1,130 @@
 # @hyperlane-xyz/registry
 
+## 10.12.0
+
+### Minor Changes
+
+- 961012e: Update GithubRegistry to be able to parse branch from URI.
+- 5234258: Refactor the getRegistry function to use an object parameter
+
+## 10.11.1
+
+### Patch Changes
+
+- 679bff6: Add missing ETH/base-ethereum-lumiaprism deploy config
+
+## 10.11.0
+
+### Minor Changes
+
+- 5cca0bb: Deploy to new testnets: carrchaintestnet, somniatestnet, infinityvmmonza.
+- c478f87: Add ETH/base-ethereum-lumiaprism warp route deployment
+- 10d02e5: Add file path string validation
+- beb15a6: adds taraxa mainnet support
+
+## 10.10.0
+
+### Minor Changes
+
+- c093d06: Add `branch` to getRegistry to allow reading of specific commit/branches. Also up the SDK version
+
+## 10.9.0
+
+### Minor Changes
+
+- 6031ff9: Add getRegistry function
+
+### Patch Changes
+
+- dedd673: Update REZ logo
+
+## 10.8.1
+
+### Patch Changes
+
+- 967fb84: Reverts PR #643 due to not exporting to index-fs.ts
+
+## 10.8.0
+
+### Minor Changes
+
+- b71797b: Add REZ configs
+- cfba620: Add getRegistry function
+
+## 10.7.0
+
+### Minor Changes
+
+- 1bb7961: Add oUSDT warp routes config
+
+## 10.6.0
+
+### Minor Changes
+
+- 0ceadb5: Add oUSDT logo
+
+## 10.5.0
+
+### Minor Changes
+
+- 8f7b03a: Fix sSOL/solanamainnet-sonicsvm collateralAddressOrDenom
+
+## 10.4.0
+
+### Minor Changes
+
+- d984e81: Added mint token warp route artifacts
+- 4f8a60d: Add sonicSOL and lrtsSOL config, update sonicSOL logo
+- fdf4cef: add mint token route metadata
+- 7d6ce89: Add sonicSOL and lrtsSOL metadata
+
+## 10.3.0
+
+### Minor Changes
+
+- 6b878f6: Add safe tx service urls for lisk, worldchain, superseed, soneium and unichain
+- fd5d055: Add pumpBTC/ethereum-unichain warp route deployment
+- a28c0fb: add logoURI to pumpBTCuni/ethereum-unichain deployment
+
+## 10.2.0
+
+### Minor Changes
+
+- 9b1aae1: Update default ISMs for Feb 17 batch enrollment. Update safe tx API URLs for fraxtal and hyperevm. Update default RPCs for subtensor.
+
+### Patch Changes
+
+- 2c1cae3: Deployed CCIP Hook/ISMs
+
+## 10.1.0
+
+### Minor Changes
+
+- d474b7f: Add SOL/hyperevm-solanamainnet
+
+## 10.0.0
+
+### Major Changes
+
+- a1758ee: Remove wanchaintestnet. Add hyperevm.
+
+### Minor Changes
+
+- 61ebec2: Deploy to bouncebit, arcadia, ronin, sophon, story, subtensor.
+- be10c5b: Add Ethereum<>HyperEVM warp routes for ETH, WBTC, USDT
+
+### Patch Changes
+
+- 3bac225: Add gnosis safe URL for sophon.
+
+## 9.7.0
+
+### Minor Changes
+
+- f7d238e: Deploy CDX/base-solanamainnet
+- 57be335: Add FORM warp route ethereum<>form
+- cc87e1e: Add CDX logo and metadata
+
 ## 9.6.0
 
 ### Minor Changes

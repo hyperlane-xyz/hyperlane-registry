@@ -2120,6 +2120,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@faker-js/faker@npm:^9.6.0":
+  version: 9.6.0
+  resolution: "@faker-js/faker@npm:9.6.0"
+  checksum: 10/f53aeca972a16e7cbb26024c457cea7e1c6bff9dd60561f942a48eb3233863ed7b5fbb1392eb98a0901cb5bea23cf7dbb0793a30c1655478c6a76a43ebb6c360
+  languageName: node
+  linkType: hard
+
 "@fastify/busboy@npm:^2.0.0":
   version: 2.1.1
   resolution: "@fastify/busboy@npm:2.1.1"
@@ -2183,14 +2190,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyperlane-xyz/core@npm:5.12.0-ccip.2":
-  version: 5.12.0-ccip.2
-  resolution: "@hyperlane-xyz/core@npm:5.12.0-ccip.2"
+"@hyperlane-xyz/core@npm:5.12.0":
+  version: 5.12.0
+  resolution: "@hyperlane-xyz/core@npm:5.12.0"
   dependencies:
     "@arbitrum/nitro-contracts": "npm:^1.2.1"
     "@chainlink/contracts-ccip": "npm:^1.5.0"
     "@eth-optimism/contracts": "npm:^0.6.0"
-    "@hyperlane-xyz/utils": "npm:8.7.0-ccip.2"
+    "@hyperlane-xyz/utils": "npm:8.9.0"
     "@layerzerolabs/lz-evm-oapp-v2": "npm:2.0.2"
     "@openzeppelin/contracts": "npm:^4.9.3"
     "@openzeppelin/contracts-upgradeable": "npm:^4.9.3"
@@ -2199,7 +2206,7 @@ __metadata:
     "@ethersproject/abi": "*"
     "@ethersproject/providers": "*"
     "@types/sinon-chai": "*"
-  checksum: 10/155062ce73ccd13118eaebba32633a40af01cb70c86bfefba5e5030ed051d7c53fe4a54513f6a4f8713a135f949e7dd130d8efaa4b1b879f5fb8f9e0474c91cb
+  checksum: 10/9f28ca2d4f3f4baf1d3daed961b8a07d22a3c2c6ab3377620312c5fa3a3084cb17fb4c95e7e3fcf9f273f22d47e361deba3c1f3ea00d46142485d6f432be5211
   languageName: node
   linkType: hard
 
@@ -2209,7 +2216,8 @@ __metadata:
   dependencies:
     "@changesets/cli": "npm:^2.26.2"
     "@eslint/js": "npm:^9.1.1"
-    "@hyperlane-xyz/sdk": "npm:8.7.0-ccip.2"
+    "@faker-js/faker": "npm:^9.6.0"
+    "@hyperlane-xyz/sdk": "npm:8.9.0"
     "@types/mocha": "npm:^10.0.1"
     "@types/node": "npm:^16.9.1"
     "@typescript-eslint/parser": "npm:^7.7.0"
@@ -2232,17 +2240,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@hyperlane-xyz/sdk@npm:8.7.0-ccip.2":
-  version: 8.7.0-ccip.2
-  resolution: "@hyperlane-xyz/sdk@npm:8.7.0-ccip.2"
+"@hyperlane-xyz/sdk@npm:8.9.0":
+  version: 8.9.0
+  resolution: "@hyperlane-xyz/sdk@npm:8.9.0"
   dependencies:
     "@arbitrum/sdk": "npm:^4.0.0"
     "@aws-sdk/client-s3": "npm:^3.577.0"
     "@chain-registry/types": "npm:^0.50.14"
     "@cosmjs/cosmwasm-stargate": "npm:^0.32.4"
     "@cosmjs/stargate": "npm:^0.32.4"
-    "@hyperlane-xyz/core": "npm:5.12.0-ccip.2"
-    "@hyperlane-xyz/utils": "npm:8.7.0-ccip.2"
+    "@hyperlane-xyz/core": "npm:5.12.0"
+    "@hyperlane-xyz/utils": "npm:8.9.0"
     "@safe-global/api-kit": "npm:1.3.0"
     "@safe-global/protocol-kit": "npm:1.3.0"
     "@safe-global/safe-deployments": "npm:1.37.23"
@@ -2258,13 +2266,13 @@ __metadata:
   peerDependencies:
     "@ethersproject/abi": "*"
     "@ethersproject/providers": "*"
-  checksum: 10/a19ecb7b5dd3b971fbefbb9432f65ff2ec6a295cb130beabb168efc774e77cfce9ed45967d48be975011f3cfee3ce4a1b9ca747770eb85145aabbf4c7cc2cc81
+  checksum: 10/3d4ac411963f0e4975cda85936bc2ffa85c22015066390e6593807e1b26cd1365f5adab037925a42aed6cd5f4ade46d3b006b17f27f67b1765a66683306c93d1
   languageName: node
   linkType: hard
 
-"@hyperlane-xyz/utils@npm:8.7.0-ccip.2":
-  version: 8.7.0-ccip.2
-  resolution: "@hyperlane-xyz/utils@npm:8.7.0-ccip.2"
+"@hyperlane-xyz/utils@npm:8.9.0":
+  version: 8.9.0
+  resolution: "@hyperlane-xyz/utils@npm:8.9.0"
   dependencies:
     "@cosmjs/encoding": "npm:^0.32.4"
     "@solana/web3.js": "npm:^1.95.4"
@@ -2273,7 +2281,7 @@ __metadata:
     lodash-es: "npm:^4.17.21"
     pino: "npm:^8.19.0"
     yaml: "npm:2.4.5"
-  checksum: 10/88e8ac46032318399bc4b7fd1a3c38f55bd2d018af35b2dd10a72a4a6020b237d304a1bf5e969f9dac5708a40315ada9cb90df16a61fbb942d915625502fb5bd
+  checksum: 10/49b06a286b1ed9be1198c05c5de45591b55f69f41864397e961686393a428d31a701208b20c62c5897e39dd667cd1bec8b927982ec371d830160522ff96a2892
   languageName: node
   linkType: hard
 

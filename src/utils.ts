@@ -3,7 +3,11 @@ import { ABACUS_WORKS_DEPLOYER_NAME } from './consts.js';
 import { ChainMetadata } from '@hyperlane-xyz/sdk';
 
 export function toYamlString(data: any, prefix?: string): string {
-  const yamlString = stringify(data, { indent: 2, sortMapEntries: true, aliasDuplicateObjects: false });
+  const yamlString = stringify(data, {
+    indent: 2,
+    sortMapEntries: true,
+    aliasDuplicateObjects: false,
+  });
   return prefix ? `${prefix}\n${yamlString}` : yamlString;
 }
 
@@ -58,4 +62,22 @@ export function objMerge(a: Record<string, any>, b: Record<string, any>, max_dep
 
 export function isAbacusWorksChain(metadata: ChainMetadata): boolean {
   return metadata.deployer?.name?.toLowerCase() === ABACUS_WORKS_DEPLOYER_NAME.toLowerCase();
+}
+
+export function parseGitHubPath(uri: string): {
+  repoOwner: string;
+  repoName: string;
+  repoBranch: string | undefined;
+} {
+  const { pathname } = new URL(uri);
+
+  // Intended pattern: /{user}/{repo}/tree/{branch}
+  const regex = /\/([^/]+)\/([^/]+)(?:\/tree\/(.*))?/;
+  const match = pathname.match(regex);
+
+  if (!match) {
+    throw new Error('Invalid github url');
+  }
+  const [, repoOwner, repoName, repoBranch] = match;
+  return { repoOwner, repoName, repoBranch };
 }
