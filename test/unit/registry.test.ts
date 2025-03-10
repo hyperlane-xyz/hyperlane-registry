@@ -388,7 +388,12 @@ describe('Registry Utils', () => {
 
     testCases.forEach(({ name, uris, useProxy, branch, expectedRegistries }) => {
       it(name, () => {
-        const registry = getRegistry(uris, useProxy, branch, logger) as MergedRegistry;
+        const registry = getRegistry({
+          registryUris: uris,
+          enableProxy: useProxy,
+          branch,
+          logger,
+        }) as MergedRegistry;
         expect(registry).to.be.instanceOf(MergedRegistry);
         expect(registry.registries.length).to.equal(expectedRegistries.length);
 
@@ -435,18 +440,24 @@ describe('Registry Utils', () => {
     });
 
     it('throws error for empty URIs array', () => {
-      expect(() => getRegistry([], true, logger)).to.throw('At least one registry URI is required');
-      expect(() => getRegistry([''], true, logger)).to.throw(
+      expect(() => getRegistry({ registryUris: [], enableProxy: true, logger })).to.throw(
         'At least one registry URI is required',
       );
-      expect(() => getRegistry(['   '], true, logger)).to.throw(
+      expect(() => getRegistry({ registryUris: [''], enableProxy: true, logger })).to.throw(
+        'At least one registry URI is required',
+      );
+      expect(() => getRegistry({ registryUris: ['   '], enableProxy: true, logger })).to.throw(
         'At least one registry URI is required',
       );
     });
 
     it('throws error if both option.branch is set and url includes a branch for GithubRegistry', () => {
       expect(() =>
-        getRegistry(['https://github.com/user/test/tree/branch'], false, 'main'),
+        getRegistry({
+          registryUris: ['https://github.com/user/test/tree/branch'],
+          enableProxy: false,
+          branch: 'main',
+        }),
       ).to.throw('Branch is set in both options and url.');
     });
   });

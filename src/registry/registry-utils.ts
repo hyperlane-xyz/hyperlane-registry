@@ -52,12 +52,17 @@ const isValidFilePath = (path: string): boolean => {
  * @param logger - An optional logger instance to use for logging.
  * @returns An `IRegistry` instance that combines the specified registries.
  */
-export function getRegistry(
-  registryUris: string[],
-  enableProxy: boolean,
-  branch?: string,
-  logger?: Logger,
-): IRegistry {
+export function getRegistry({
+  registryUris,
+  enableProxy,
+  branch,
+  logger,
+}: {
+  registryUris: string[];
+  enableProxy: boolean;
+  branch?: string;
+  logger?: Logger;
+}): IRegistry {
   const registryLogger = logger?.child({ module: 'MergedRegistry' });
   const registries = registryUris
     .map((uri) => uri.trim())
