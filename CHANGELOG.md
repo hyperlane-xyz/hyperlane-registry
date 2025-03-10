@@ -1,5 +1,68 @@
 # @hyperlane-xyz/registry
 
+## 10.12.0
+
+### Minor Changes
+
+- 961012e: Update GithubRegistry to be able to parse branch from URI.
+- 5234258: Refactor the getRegistry function to use an object parameter
+
+## 10.11.1
+
+### Patch Changes
+
+- 679bff6: Add missing ETH/base-ethereum-lumiaprism deploy config
+
+## 10.11.0
+
+### Minor Changes
+
+- 5cca0bb: Deploy to new testnets: carrchaintestnet, somniatestnet, infinityvmmonza.
+- c478f87: Add ETH/base-ethereum-lumiaprism warp route deployment
+- 10d02e5: Add file path string validation
+- beb15a6: adds taraxa mainnet support
+
+## 10.10.0
+
+### Minor Changes
+
+- c093d06: Add `branch` to getRegistry to allow reading of specific commit/branches. Also up the SDK version
+
+## 10.9.0
+
+### Minor Changes
+
+- 6031ff9: Add getRegistry function
+
+### Patch Changes
+
+- dedd673: Update REZ logo
+
+## 10.8.1
+
+### Patch Changes
+
+- 967fb84: Reverts PR #643 due to not exporting to index-fs.ts
+
+## 10.8.0
+
+### Minor Changes
+
+- b71797b: Add REZ configs
+- cfba620: Add getRegistry function
+
+## 10.7.0
+
+### Minor Changes
+
+- 1bb7961: Add oUSDT warp routes config
+
+## 10.6.0
+
+### Minor Changes
+
+- 0ceadb5: Add oUSDT logo
+
 ## 10.5.0
 
 ### Minor Changes
