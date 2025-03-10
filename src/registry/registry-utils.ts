@@ -40,6 +40,18 @@ const isValidFilePath = (path: string): boolean => {
   }
 };
 
+/**
+ * Retrieves a registry instance based on the provided registry URIs.
+ * The registry can be either a GitHub registry or a file system registry,
+ * and the returned instance is a `MergedRegistry` that combines all the
+ * specified registries.
+ *
+ * @param registryUris - An array of registry URIs to use for creating the registry.
+ * @param enableProxy - If enabled, forwards all requests to Hyperlane Registry, with higher read limits.
+ * @param branch - An optional branch name to use for the GitHub registry.
+ * @param logger - An optional logger instance to use for logging.
+ * @returns An `IRegistry` instance that combines the specified registries.
+ */
 export function getRegistry(
   registryUris: string[],
   enableProxy: boolean,
