@@ -351,7 +351,12 @@ describe('Registry Utils', () => {
             branch: 'main',
           },
           { type: FileSystemRegistry, uri: localPath },
-          { type: GithubRegistry, uri: 'https://github.com/user/test', branch: 'main' },
+          {
+            type: GithubRegistry,
+            uri: 'https://github.com/user/test',
+            branch: 'main',
+            proxyUrl: PROXY_DEPLOYED_URL,
+          },
         ],
       },
       {
