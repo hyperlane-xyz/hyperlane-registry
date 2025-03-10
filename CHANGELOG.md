@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 10.12.0
+
+### Minor Changes
+
+- 961012e: Update GithubRegistry to be able to parse branch from URI.
+- 5234258: Refactor the getRegistry function to use an object parameter
+
 ## 10.11.1
 
 ### Patch Changes
