@@ -68,7 +68,6 @@ export function warpRouteConfigToId(config: WarpCoreConfig, symbol?: string): Wa
   if (!config?.tokens?.length) throw new Error('Cannot generate ID for empty warp config');
   const symbols = new Set<string>(config.tokens.map((token) => token.symbol.toUpperCase()));
   if (!symbol && symbols.size !== 1) {
-    console.log({ symbols, tokens: config.tokens });
     throw new Error(
       'Only one token symbol per warp config is supported for now. Consider passing a symbol as a parameter',
     );
