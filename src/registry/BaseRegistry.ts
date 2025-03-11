@@ -19,6 +19,7 @@ import type {
   WarpRouteFilterParams,
 } from './IRegistry.js';
 import { MergedRegistry } from './MergedRegistry.js';
+import { createWarpRouteConfigId, warpRouteConfigToId } from './warp-utils.js';
 
 export abstract class BaseRegistry implements IRegistry {
   public abstract type: RegistryType;
@@ -53,34 +54,23 @@ export abstract class BaseRegistry implements IRegistry {
     return 'deployments/warp_routes';
   }
 
-  protected createWarpId(chains: string[], symbol: string): string {
-    return `${symbol}/${chains.sort().join('-')}`;
-  }
-
-  protected getWarpRoutesArtifactPaths({ tokens }: WarpCoreConfig, options?: AddWarpRouteOptions) {
-    if (!tokens.length) throw new Error('No tokens provided in config');
-    const symbols = new Set<string>(tokens.map((token) => token.symbol.toUpperCase()));
-    if (!options?.symbol && symbols.size !== 1)
-      throw new Error(
-        'Only one token symbol per warp config is supported for now. Consider passing a symbol as a parameter',
-      );
-    const symbol = options?.symbol || symbols.values().next().value;
-    if (!symbol) throw new Error('No symbol provided in config');
-
-    const chains = tokens.map((token) => token.chainName);
+  protected getWarpRoutesArtifactPaths(config: WarpCoreConfig, options?: AddWarpRouteOptions) {
     return {
-      configPath: `${this.getWarpRoutesPath()}/${this.createWarpId(chains, symbol)}-config.yaml`,
+      configPath: `${this.getWarpRoutesPath()}/${warpRouteConfigToId(
+        config,
+        options?.symbol,
+      )}-config.yaml`,
     };
   }
 
-  protected getWarpDeployArtifactPaths(
+  static getWarpDeployArtifactPaths(
     deployConfig: WarpDeployConfigMap,
     symbol: string,
     configBasePath: string = './configs',
   ) {
     const chains = Object.keys(deployConfig);
     return {
-      configPath: `${configBasePath}/${this.createWarpId(chains, symbol)}-deploy-config.yaml`,
+      configPath: `${configBasePath}/${createWarpRouteConfigId(symbol, chains)}-deploy-config.yaml`,
     };
   }
 
