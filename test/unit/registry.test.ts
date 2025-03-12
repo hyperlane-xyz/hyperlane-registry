@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { expect } from 'chai';
 import sinon from 'sinon';
-
+import { faker } from '@faker-js/faker';
 import type { ChainMetadata } from '@hyperlane-xyz/sdk';
 import type { Logger } from 'pino';
 import fs from 'fs';
@@ -14,6 +14,7 @@ import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
 import { ChainAddresses } from '../../src/types.js';
 import { getRegistry } from '../../src/registry/registry-utils.js';
 import { DEFAULT_GITHUB_REGISTRY, PROXY_DEPLOYED_URL } from '../../src/consts.js';
+import { parseGitHubPath } from '../../src/utils.js';
 
 const GITHUB_REGISTRY_BRANCH = 'main';
 
@@ -280,10 +281,12 @@ describe('Registry Utils', () => {
       name: string;
       uris: string[];
       useProxy: boolean;
+      branch?: string;
       expectedRegistries: {
         type: any;
         uri: string;
         proxyUrl?: string;
+        branch?: string;
       }[];
     };
 
@@ -298,21 +301,28 @@ describe('Registry Utils', () => {
         name: 'GithubRegistry for HTTPS URLs',
         uris: [githubUrl],
         useProxy: false,
-        expectedRegistries: [{ type: GithubRegistry, uri: githubUrl }],
+        expectedRegistries: [{ type: GithubRegistry, uri: githubUrl, branch: 'main' }],
       },
       {
         name: 'proxied GithubRegistry for canonical repo',
         uris: [DEFAULT_GITHUB_REGISTRY],
         useProxy: true,
         expectedRegistries: [
-          { type: GithubRegistry, uri: DEFAULT_GITHUB_REGISTRY, proxyUrl: PROXY_DEPLOYED_URL },
+          {
+            type: GithubRegistry,
+            uri: DEFAULT_GITHUB_REGISTRY,
+            proxyUrl: PROXY_DEPLOYED_URL,
+            branch: 'main',
+          },
         ],
       },
       {
         name: 'non-proxied GithubRegistry for non-canonical repos',
-        uris: ['https://github.com/test'],
-        useProxy: true,
-        expectedRegistries: [{ type: GithubRegistry, uri: 'https://github.com/test' }],
+        uris: ['https://github.com/user/test'],
+        useProxy: false,
+        expectedRegistries: [
+          { type: GithubRegistry, uri: 'https://github.com/user/test', branch: 'main' },
+        ],
       },
       {
         name: 'FileSystemRegistry for non-HTTPS URLs',
@@ -325,27 +335,63 @@ describe('Registry Utils', () => {
         uris: [githubUrl, localPath],
         useProxy: false,
         expectedRegistries: [
-          { type: GithubRegistry, uri: githubUrl },
+          { type: GithubRegistry, uri: githubUrl, branch: 'main' },
           { type: FileSystemRegistry, uri: localPath },
         ],
       },
       {
         name: 'mixed registry types with proxy settings',
-        uris: [DEFAULT_GITHUB_REGISTRY, localPath, 'https://github.com/test'],
+        uris: [DEFAULT_GITHUB_REGISTRY, localPath, 'https://github.com/user/test'],
         useProxy: true,
         expectedRegistries: [
-          { type: GithubRegistry, uri: DEFAULT_GITHUB_REGISTRY, proxyUrl: PROXY_DEPLOYED_URL },
+          {
+            type: GithubRegistry,
+            uri: DEFAULT_GITHUB_REGISTRY,
+            proxyUrl: PROXY_DEPLOYED_URL,
+            branch: 'main',
+          },
           { type: FileSystemRegistry, uri: localPath },
-          { type: GithubRegistry, uri: 'https://github.com/test' },
+          {
+            type: GithubRegistry,
+            uri: 'https://github.com/user/test',
+            branch: 'main',
+            proxyUrl: PROXY_DEPLOYED_URL,
+          },
+        ],
+      },
+      {
+        name: 'non-proxied GithubRegistry with branch',
+        uris: ['https://github.com/user/test/tree/branch'],
+        useProxy: false,
+        expectedRegistries: [
+          {
+            type: GithubRegistry,
+            uri: 'https://github.com/user/test/tree/branch',
+            branch: 'branch',
+          },
+        ],
+      },
+      {
+        name: 'non-proxied GithubRegistry with branch in constructor',
+        uris: ['https://github.com/user/test'],
+        useProxy: false,
+        branch: 'constructor-branch',
+        expectedRegistries: [
+          {
+            type: GithubRegistry,
+            uri: 'https://github.com/user/test',
+            branch: 'constructor-branch',
+          },
         ],
       },
     ];
 
-    testCases.forEach(({ name, uris, useProxy, expectedRegistries }) => {
+    testCases.forEach(({ name, uris, useProxy, branch, expectedRegistries }) => {
       it(name, () => {
         const registry = getRegistry({
           registryUris: uris,
           enableProxy: useProxy,
+          branch,
           logger,
         }) as MergedRegistry;
         expect(registry).to.be.instanceOf(MergedRegistry);
@@ -357,10 +403,40 @@ describe('Registry Utils', () => {
           expect(reg.uri).to.equal(expected.uri);
           if (reg instanceof GithubRegistry) {
             expect(reg.proxyUrl).to.equal(expected.proxyUrl);
+            expect(reg.branch).to.equal(expected.branch);
           }
           expect(reg).to.have.property('logger');
         });
       });
+    });
+
+    const randomOwner = faker.internet.displayName();
+    const randomName = faker.internet.domainWord();
+
+    it(`should be able to parse a pathname with no branch`, () => {
+      const url = `https://github.com/${randomOwner}/${randomName}`;
+      const { repoOwner, repoName, repoBranch } = parseGitHubPath(url);
+      expect(repoOwner).to.equal(randomOwner);
+      expect(repoName).to.equal(randomName);
+      expect(repoBranch).to.be.undefined;
+    });
+
+    it(`should be able to parse a pathname with commit hash`, () => {
+      const randomCommitHash = faker.string.hexadecimal({ length: 40 });
+      const url = `https://github.com/${randomOwner}/${randomName}/tree/${randomCommitHash}`;
+      const { repoOwner, repoName, repoBranch } = parseGitHubPath(url);
+      expect(repoOwner).to.equal(randomOwner);
+      expect(repoName).to.equal(randomName);
+      expect(repoBranch).to.equal(randomCommitHash);
+    });
+
+    it(`should be able to parse user with branch name`, () => {
+      const randomBranch = `owner/asset/${faker.git.branch()}`;
+      const url = `https://github.com/${randomOwner}/${randomName}/tree/${randomBranch}`;
+      const { repoOwner, repoName, repoBranch } = parseGitHubPath(url);
+      expect(repoOwner).to.equal(randomOwner);
+      expect(repoName).to.equal(randomName);
+      expect(repoBranch).to.equal(randomBranch);
     });
 
     it('throws error for empty URIs array', () => {
@@ -373,6 +449,16 @@ describe('Registry Utils', () => {
       expect(() => getRegistry({ registryUris: ['   '], enableProxy: true, logger })).to.throw(
         'At least one registry URI is required',
       );
+    });
+
+    it('throws error if both option.branch is set and url includes a branch for GithubRegistry', () => {
+      expect(() =>
+        getRegistry({
+          registryUris: ['https://github.com/user/test/tree/branch'],
+          enableProxy: false,
+          branch: 'main',
+        }),
+      ).to.throw('Branch is set in both options and url.');
     });
   });
 });
