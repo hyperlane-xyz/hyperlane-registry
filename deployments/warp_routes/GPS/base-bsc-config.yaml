@@ -1,0 +1,21 @@
+tokens:
+  - addressOrDenom: "0x0f318DDd7b7af11dE1335B55dc5528b79cc4E0aE"
+    chainName: base
+    coinGeckoId: goplus-security
+    collateralAddressOrDenom: "0x0c1dc73159e30c4b06170f2593d3118968a0dca5"
+    connections:
+      - token: ethereum|bsc|0xFF0948a6e1aAFfB7131844cC3944a11e969543d0
+    decimals: 18
+    logoURI: /deployments/warp_routes/GPS/logo.svg
+    name: GoPlus Security
+    standard: EvmHypCollateral
+    symbol: GPS
+  - addressOrDenom: "0xFF0948a6e1aAFfB7131844cC3944a11e969543d0"
+    chainName: bsc
+    connections:
+      - token: ethereum|base|0x0f318DDd7b7af11dE1335B55dc5528b79cc4E0aE
+    decimals: 18
+    logoURI: /deployments/warp_routes/GPS/logo.svg
+    name: GoPlus Security
+    standard: EvmHypSynthetic
+    symbol: GPS

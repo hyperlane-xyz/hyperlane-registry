@@ -1,5 +1,28 @@
 # @hyperlane-xyz/registry
 
+## 10.13.0
+
+### Minor Changes
+
+- 0e6f08e: Add GPS configs
+
+### Patch Changes
+
+- 554b99d: oUSDT warp route artifacts
+
+## 10.12.0
+
+### Minor Changes
+
+- 961012e: Update GithubRegistry to be able to parse branch from URI.
+- 5234258: Refactor the getRegistry function to use an object parameter
+
+## 10.11.1
+
+### Patch Changes
+
+- 679bff6: Add missing ETH/base-ethereum-lumiaprism deploy config
+
 ## 10.11.0
 
 ### Minor Changes

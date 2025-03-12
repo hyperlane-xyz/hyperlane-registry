@@ -17,7 +17,7 @@ import {
   WARP_ROUTE_DEPLOY_FILE_REGEX,
 } from '../consts.js';
 import { ChainAddresses, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
-import { concurrentMap, stripLeadingSlash } from '../utils.js';
+import { concurrentMap, parseGitHubPath, stripLeadingSlash } from '../utils.js';
 import { BaseRegistry } from './BaseRegistry.js';
 import {
   ChainFiles,
@@ -83,11 +83,14 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   constructor(options: GithubRegistryOptions = {}) {
     super({ uri: options.uri ?? DEFAULT_GITHUB_REGISTRY, logger: options.logger });
     this.url = new URL(this.uri);
-    this.branch = options.branch ?? 'main';
-    const pathSegments = this.url.pathname.split('/');
-    if (pathSegments.length < 2) throw new Error('Invalid github url');
-    this.repoOwner = pathSegments.at(-2)!;
-    this.repoName = pathSegments.at(-1)!;
+
+    const { repoOwner, repoName, repoBranch } = parseGitHubPath(this.uri);
+
+    this.repoOwner = repoOwner;
+    this.repoName = repoName;
+    if (options.branch && repoBranch) throw new Error('Branch is set in both options and url.');
+
+    this.branch = options.branch ?? repoBranch ?? 'main';
     this.proxyUrl = options.proxyUrl;
     this.authToken = options.authToken;
   }
