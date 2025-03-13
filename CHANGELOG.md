@@ -1,5 +1,16 @@
 # @hyperlane-xyz/registry
 
+## 10.15.0
+
+### Minor Changes
+
+- 0ccd510: Deploy to infinityvm, plume.
+- 044a7dd: Add Turtle warp routes config
+
+### Patch Changes
+
+- e9427b2: Update GPS to latest deployment to fix totalSupply
+
 ## 10.14.0
 
 ### Minor Changes
