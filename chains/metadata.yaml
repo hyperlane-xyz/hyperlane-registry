@@ -3140,6 +3140,29 @@ inevm:
     - http: https://inevm.calderachain.xyz/http
     - http: https://mainnet.rpc.inevm.com/http
   technicalStack: arbitrumnitro
+infinityvm:
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 1032009
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Infinity VM
+  domainId: 1032009
+  gasCurrencyCoinGeckoId: infinityvm
+  index:
+    from: 157889
+  name: infinityvm
+  nativeToken:
+    decimals: 18
+    name: INF
+    symbol: INF
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet-endpoint.infinityvm.xyz
+  technicalStack: other
 infinityvmmonza:
   blocks:
     confirmations: 1
@@ -4584,6 +4607,34 @@ piccadilly:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc1.piccadilly.autonity.org
+plume:
+  blockExplorers:
+    - apiUrl: https://phoenix-explorer.plumenetwork.xyz/api
+      family: blockscout
+      name: Plume Explorer
+      url: https://phoenix-explorer.plumenetwork.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 98866
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Plume
+  domainId: 98866
+  gasCurrencyCoinGeckoId: plume
+  index:
+    from: 9588
+  name: plume
+  nativeToken:
+    decimals: 18
+    name: Plume
+    symbol: PLUME
+  protocol: ethereum
+  rpcUrls:
+    - http: https://phoenix-rpc.plumenetwork.xyz
+  technicalStack: arbitrumnitro
 plumetestnet:
   blockExplorers:
     - apiUrl: https://plume-testnet.explorer.caldera.xyz/api
