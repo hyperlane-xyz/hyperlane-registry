@@ -1,5 +1,25 @@
 # @hyperlane-xyz/registry
 
+## 10.14.0
+
+### Minor Changes
+
+- 14e800b: Add warp deployments artifacts for enzoBTC/bsc-hyperevm and stBTC/bsc-hyperevm
+
+### Patch Changes
+
+- 176ece4: Remove Lorenzo routes default ISM config
+
+## 10.13.0
+
+### Minor Changes
+
+- 0e6f08e: Add GPS configs
+
+### Patch Changes
+
+- 554b99d: oUSDT warp route artifacts
+
 ## 10.12.0
 
 ### Minor Changes
