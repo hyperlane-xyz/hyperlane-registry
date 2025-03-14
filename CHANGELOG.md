@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 10.16.0
+
+### Minor Changes
+
+- 4abd4ec: feat: authenticated github registry
+
 ## 10.15.0
 
 ### Minor Changes
