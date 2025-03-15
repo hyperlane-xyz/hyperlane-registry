@@ -121,7 +121,7 @@ function validateErrors() {
   // prior to deploying the token. This means we generally submit a first PR with the
   // metadata and a follow-up PR with the addresses / config.
   if (noConfigFileWarning.length > 0)
-    console.warn('Error: no config file at paths:', noConfigFileWarning);
+    console.warn('Warning: no config file at paths:', noConfigFileWarning);
 
   // Then, errors
   const errorCount =
