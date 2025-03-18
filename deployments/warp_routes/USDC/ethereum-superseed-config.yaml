@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xc927767CF7bddc5e8b996A0f957e5F22250A2F67"
+    chainName: ethereum
+    collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    connections:
+      - token: ethereum|superseed|0xa7D6042eEf06E81168e640b5C41632eE5295227D
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0xa7D6042eEf06E81168e640b5C41632eE5295227D"
+    chainName: superseed
+    collateralAddressOrDenom: "0xc316c8252b5f2176d0135ebb0999e99296998f2e"
+    connections:
+      - token: ethereum|ethereum|0xc927767CF7bddc5e8b996A0f957e5F22250A2F67
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateralFiat
+    symbol: USDC
