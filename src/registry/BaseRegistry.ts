@@ -1,6 +1,12 @@
 import type { Logger } from 'pino';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type {
+  ChainMap,
+  ChainMetadata,
+  ChainName,
+  WarpCoreConfig,
+  WarpRouteDeployConfig,
+} from '@hyperlane-xyz/sdk';
 import type { ChainAddresses, MaybePromise, WarpDeployConfigMap } from '../types.js';
 import { WarpRouteConfigMap } from '../types.js';
 import { stripLeadingSlash } from '../utils.js';
@@ -13,6 +19,7 @@ import type {
   WarpRouteFilterParams,
 } from './IRegistry.js';
 import { MergedRegistry } from './MergedRegistry.js';
+import { createWarpRouteConfigId, warpRouteConfigToId } from './warp-utils.js';
 
 export abstract class BaseRegistry implements IRegistry {
   public abstract type: RegistryType;
@@ -47,20 +54,24 @@ export abstract class BaseRegistry implements IRegistry {
     return 'deployments/warp_routes';
   }
 
-  protected getWarpRoutesArtifactPaths({ tokens }: WarpCoreConfig, options?: AddWarpRouteOptions) {
-    if (!tokens.length) throw new Error('No tokens provided in config');
-    const symbols = new Set<string>(tokens.map((token) => token.symbol.toUpperCase()));
-    if (!options?.symbol && symbols.size !== 1)
-      throw new Error(
-        'Only one token symbol per warp config is supported for now. Consider passing a symbol as a parameter',
-      );
-    const symbol = options?.symbol || symbols.values().next().value;
-    const chains = tokens
-      .map((token) => token.chainName)
-      .sort()
-      .join('-');
-    const basePath = `${this.getWarpRoutesPath()}/${symbol}/${chains}`;
-    return { configPath: `${basePath}-config.yaml` };
+  protected getWarpRoutesArtifactPaths(config: WarpCoreConfig, options?: AddWarpRouteOptions) {
+    return {
+      configPath: `${this.getWarpRoutesPath()}/${warpRouteConfigToId(
+        config,
+        options?.symbol,
+      )}-config.yaml`,
+    };
+  }
+
+  static getWarpDeployArtifactPaths(
+    deployConfig: WarpDeployConfigMap,
+    symbol: string,
+    configBasePath: string = './configs',
+  ) {
+    const chains = Object.keys(deployConfig);
+    return {
+      configPath: `${configBasePath}/${createWarpRouteConfigId(symbol, chains)}-deploy-config.yaml`,
+    };
   }
 
   abstract listRegistryContent(): MaybePromise<RegistryContent>;
