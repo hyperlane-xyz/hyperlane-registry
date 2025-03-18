@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xba06D7f285C6B0d5EacC50ceA931163B23Ab889c"
+    chainName: bsc
+    # queries to lorenzo-wrapped-bitcoin fails, using a very similar 1:1 wrapped BTC token
+    coinGeckoId: lorenzo-stbtc
+    collateralAddressOrDenom: "0x6A9A65B84843F5fD4aC9a0471C4fc11AFfFBce4a"
+    connections:
+      - token: ethereum|hyperevm|0xcb98BD947B58445Fc4815f10285F44De42129918
+    decimals: 8
+    logoURI: /deployments/warp_routes/enzoBTC/logo.svg
+    name: Lorenzo Wrapped Bitcoin
+    standard: EvmHypCollateral
+    symbol: enzoBTC
+  - addressOrDenom: "0xcb98BD947B58445Fc4815f10285F44De42129918"
+    chainName: hyperevm
+    connections:
+      - token: ethereum|bsc|0xba06D7f285C6B0d5EacC50ceA931163B23Ab889c
+    decimals: 8
+    logoURI: /deployments/warp_routes/enzoBTC/logo.svg
+    name: Lorenzo Wrapped Bitcoin
+    standard: EvmHypSynthetic
+    symbol: enzoBTC
