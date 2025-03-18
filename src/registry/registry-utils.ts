@@ -57,11 +57,13 @@ export function getRegistry({
   enableProxy,
   branch,
   logger,
+  authToken,
 }: {
   registryUris: string[];
   enableProxy: boolean;
   branch?: string;
   logger?: Logger;
+  authToken?: string;
 }): IRegistry {
   const registryLogger = logger?.child({ module: 'MergedRegistry' });
   const registries = registryUris
@@ -75,6 +77,7 @@ export function getRegistry({
           branch,
           logger: childLogger,
           proxyUrl: enableProxy ? PROXY_DEPLOYED_URL : undefined,
+          authToken,
         });
       } else {
         if (!isValidFilePath(uri)) {
