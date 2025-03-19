@@ -37,134 +37,87 @@ export default {
     schema: [],
   },
   create(context) {
-    const resolvedPath = (relativePath) => path.resolve(context.cwd, relativePath);
+    const resolvePathFromCwd = (relativePath) => path.resolve(context.cwd, relativePath);
 
-    // Get all exports from index.ts
-    const indexTsPath = resolvedPath('./src/index.ts');
-    let indexExports = [];
-    let fsIndexExports = [];
+    const extractNamedExports = (content) => {
+      const exportBlocks = content.match(/export\s+\{[^}]+\}/g) || [];
 
-    try {
-      const indexTsContent = fs.readFileSync(indexTsPath, 'utf8');
-      const exportMatches = indexTsContent.match(/export\s+\{[^}]+\}/g);
-      if (exportMatches) {
-        indexExports = exportMatches
-          .join(' ')
-          .match(/[a-zA-Z0-9_]+(?=\s*[,}])/g)
-          .map((name) => name.trim());
+      const namedExports = exportBlocks.join(' ').match(/[a-zA-Z0-9_]+(?=\s*[,}])/g) || [];
+
+      return namedExports.map((name) => name.trim());
+    };
+
+    const extractReExports = (content, basePath) => {
+      const reExportMatches = content.match(/export\s+.*\s+from\s+['"](.+)['"]/g) || [];
+
+      const reExportPaths = reExportMatches
+        .map((match) => {
+          const pathMatch = match.match(/from\s+['"](.+)['"]/);
+          return pathMatch ? pathMatch[1] : null;
+        })
+        .filter(Boolean)
+        .filter((exportPath) => exportPath.startsWith('./') || exportPath.startsWith('../'));
+
+      return reExportPaths.map((exportPath) => {
+        const resolvedPath = exportPath.endsWith('.js')
+          ? exportPath.replace(/\.js$/, '.ts')
+          : exportPath;
+
+        return path.resolve(path.dirname(basePath), resolvedPath);
+      });
+    };
+
+    const extractExportsFromFile = (filePath) => {
+      try {
+        const content = fs.readFileSync(filePath, 'utf8');
+        return [...extractNamedExports(content), ...extractReExports(content, filePath)];
+      } catch (error) {
+        return [];
       }
+    };
 
-      // Get re-exports
-      const reExportMatches = indexTsContent.match(/export\s+.*\s+from\s+['"](.+)['"]/g);
-      if (reExportMatches) {
-        const reExportPaths = reExportMatches
-          .map((match) => {
-            const pathMatch = match.match(/from\s+['"](.+)['"]/);
-            return pathMatch ? pathMatch[1] : null;
-          })
-          .filter(Boolean);
+    const isPathPartOfExport = (filePath, exportPath) =>
+      typeof exportPath === 'string' &&
+      exportPath.includes('/') &&
+      filePath.includes(exportPath.replace(/\.ts$/, ''));
 
-        reExportPaths.forEach((exportPath) => {
-          let resolvedExportPath = exportPath;
-          if (!exportPath.startsWith('./') && !exportPath.startsWith('../')) {
-            return; // External module, not our concern
-          }
+    const indexTsPath = resolvePathFromCwd('./src/index.ts');
+    const indexFsPath = resolvePathFromCwd('./src/index-fs.ts');
 
-          // Convert path to absolute file path
-          if (exportPath.endsWith('.js')) {
-            resolvedExportPath = exportPath.replace(/\.js$/, '.ts');
-          }
+    const indexExports = extractExportsFromFile(indexTsPath);
+    const fsIndexExports = extractExportsFromFile(indexFsPath);
 
-          const fullPath = path.resolve(path.dirname(indexTsPath), resolvedExportPath);
-          indexExports.push(fullPath);
-        });
-      }
+    const isFileExportedFromIndex = (filePath) =>
+      indexExports.some((exportPath) => isPathPartOfExport(filePath, exportPath));
 
-      // Get all exports from index-fs.ts
-      const indexFsPath = resolvedPath('./src/index-fs.ts');
-      const indexFsContent = fs.readFileSync(indexFsPath, 'utf8');
-
-      const fsExportMatches = indexFsContent.match(/export\s+\{[^}]+\}/g);
-      if (fsExportMatches) {
-        fsIndexExports = fsExportMatches
-          .join(' ')
-          .match(/[a-zA-Z0-9_]+(?=\s*[,}])/g)
-          .map((name) => name.trim());
-      }
-
-      // Get re-exports from index-fs.ts
-      const fsReExportMatches = indexFsContent.match(/export\s+.*\s+from\s+['"](.+)['"]/g);
-      if (fsReExportMatches) {
-        const fsReExportPaths = fsReExportMatches
-          .map((match) => {
-            const pathMatch = match.match(/from\s+['"](.+)['"]/);
-            return pathMatch ? pathMatch[1] : null;
-          })
-          .filter(Boolean);
-
-        fsReExportPaths.forEach((exportPath) => {
-          let resolvedExportPath = exportPath;
-          if (!exportPath.startsWith('./') && !exportPath.startsWith('../')) {
-            return; // External module, not our concern
-          }
-
-          // Convert path to absolute file path
-          if (exportPath.endsWith('.js')) {
-            resolvedExportPath = exportPath.replace(/\.js$/, '.ts');
-          }
-
-          const fullPath = path.resolve(path.dirname(indexFsPath), resolvedExportPath);
-          fsIndexExports.push(fullPath);
-        });
-      }
-    } catch (error) {
-      // If file doesn't exist or can't be read, continue with empty arrays
-    }
+    const isExportedFromFsIndex = (importPath) =>
+      fsIndexExports.some((fsExport) => isPathPartOfExport(importPath, fsExport));
 
     return {
       ImportDeclaration(node) {
         const currentFilePath = context.getFilename();
-        const isExportedFile = indexExports.some((exportPath) => {
-          if (typeof exportPath === 'string' && exportPath.includes('/')) {
-            return currentFilePath.includes(exportPath.replace(/\.ts$/, ''));
-          }
-          return false;
-        });
 
-        if (!isExportedFile) {
-          return; // Not an exported file, ignore
-        }
+        if (!isFileExportedFromIndex(currentFilePath)) return;
 
         const importSource = node.source.value;
 
-        // Check Node.js built-in modules
         if (NODE_BUILTIN_MODULES.includes(importSource)) {
           context.report({
             node,
             messageId: 'restrictedNodeImport',
-            data: {
-              moduleName: importSource,
-            },
+            data: { moduleName: importSource },
           });
         }
 
-        // Check index-fs.ts exports
         if (typeof importSource === 'string' && importSource.startsWith('.')) {
-          const importPath = path.resolve(path.dirname(currentFilePath), importSource);
+          const resolvedImportPath = path.resolve(path.dirname(currentFilePath), importSource);
 
-          for (const fsExport of fsIndexExports) {
-            if (typeof fsExport === 'string' && fsExport.includes('/')) {
-              if (importPath.includes(fsExport.replace(/\.ts$/, ''))) {
-                context.report({
-                  node,
-                  messageId: 'restrictedFsImport',
-                  data: {
-                    moduleName: importSource,
-                  },
-                });
-                return;
-              }
-            }
+          if (isExportedFromFsIndex(resolvedImportPath)) {
+            context.report({
+              node,
+              messageId: 'restrictedFsImport',
+              data: { moduleName: importSource },
+            });
           }
         }
       },
