@@ -5,12 +5,14 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 
 describe('no-restricted-imports-from-exports rule', () => {
+  // Mock file contents to simulate index exports
   const exportedFileContents = {
     './src/index.ts':
       "export { componentA } from './components/componentA';\nexport { componentB } from './components/componentB';",
     './src/index-fs.ts': "export { fileUtil } from './utils/fileUtil';",
   };
 
+  // Path mapping for test fixtures
   const pathMappings = {
     './src/index.ts': './src/index.ts',
     './src/index-fs.ts': './src/index-fs.ts',
@@ -24,8 +26,10 @@ describe('no-restricted-imports-from-exports rule', () => {
   };
 
   function setupStubs() {
+    // Stub fs.readFileSync to return mock file contents
     sinon.stub(fs, 'readFileSync').callsFake((filePath) => exportedFileContents[filePath] || '');
 
+    // Stub path.resolve to simplify path resolution in tests
     sinon.stub(path, 'resolve').callsFake(function () {
       const lastArg = arguments[arguments.length - 1];
 
@@ -47,6 +51,7 @@ describe('no-restricted-imports-from-exports rule', () => {
       .callsFake((filePath) => filePath.substring(0, filePath.lastIndexOf('/') || 0));
   }
 
+  // Helper function to test import validations in different scenarios
   function verifyImport({ sourceFile, importPath, expectedError = null, shouldPass = false }) {
     const errors = [];
     const context = {
