@@ -4,6 +4,55 @@
     "hyperlaneChainMetadata": {
       "type": "object",
       "properties": {
+        "availability": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "const": "disabled",
+                  "description": "The status that represents the chain availability. See ChainStatus for valid values."
+                },
+                "reasons": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "badrpc",
+                      "deprecated",
+                      "private",
+                      "unavailable",
+                      "other"
+                    ]
+                  },
+                  "minItems": 1,
+                  "description": "List of reasons explaining why the chain is disabled."
+                }
+              },
+              "required": [
+                "status",
+                "reasons"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "const": "live",
+                  "description": "The status that represents the chain availability. See ChainStatus for valid values."
+                }
+              },
+              "required": [
+                "status"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Specifies if the chain is available and the reasons why it is disabled."
+        },
         "bech32Prefix": {
           "type": "string",
           "description": "The human readable address prefix for the chains using bech32."
@@ -37,6 +86,7 @@
                   "etherscan",
                   "blockscout",
                   "routescan",
+                  "voyager",
                   "other"
                 ],
                 "description": "The type of the block explorer. See ExplorerFamily for valid values."
@@ -266,7 +316,8 @@
           "enum": [
             "ethereum",
             "sealevel",
-            "cosmos"
+            "cosmos",
+            "starknet"
           ],
           "description": "The type of protocol used by this chain. See ProtocolType for valid values."
         },

@@ -1,7 +1,13 @@
 import type { Logger } from 'pino';
 import { parse as yamlParse } from 'yaml';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type {
+  ChainMap,
+  ChainMetadata,
+  ChainName,
+  WarpCoreConfig,
+  WarpRouteDeployConfig,
+} from '@hyperlane-xyz/sdk';
 
 import {
   CHAIN_FILE_REGEX,
@@ -11,7 +17,7 @@ import {
   WARP_ROUTE_DEPLOY_FILE_REGEX,
 } from '../consts.js';
 import { ChainAddresses, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
-import { concurrentMap, stripLeadingSlash } from '../utils.js';
+import { concurrentMap, parseGitHubPath, stripLeadingSlash } from '../utils.js';
 import { BaseRegistry } from './BaseRegistry.js';
 import {
   ChainFiles,
@@ -21,7 +27,11 @@ import {
   UpdateChainParams,
   WarpRouteFilterParams,
 } from './IRegistry.js';
-import { filterWarpRoutesIds, warpRouteConfigPathToId, warpRouteDeployConfigPathToId } from './warp-utils.js';
+import {
+  filterWarpRoutesIds,
+  warpRouteConfigPathToId,
+  warpRouteDeployConfigPathToId,
+} from './warp-utils.js';
 
 export interface GithubRegistryOptions {
   uri?: string;
@@ -51,6 +61,7 @@ type GithubRateResponse = {
 };
 
 export const GITHUB_API_URL = 'https://api.github.com';
+export const GITHUB_API_VERSION = '2022-11-28';
 /**
  * A registry that uses a github repository as its data source.
  * Reads are performed via the github API and github's raw content URLs.
@@ -63,16 +74,25 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   public readonly repoOwner: string;
   public readonly repoName: string;
   public readonly proxyUrl: string | undefined;
+  private readonly authToken: string | undefined;
+
+  private readonly baseApiHeaders: Record<string, string> = {
+    'X-GitHub-Api-Version': GITHUB_API_VERSION,
+  };
 
   constructor(options: GithubRegistryOptions = {}) {
     super({ uri: options.uri ?? DEFAULT_GITHUB_REGISTRY, logger: options.logger });
     this.url = new URL(this.uri);
-    this.branch = options.branch ?? 'main';
-    const pathSegments = this.url.pathname.split('/');
-    if (pathSegments.length < 2) throw new Error('Invalid github url');
-    this.repoOwner = pathSegments.at(-2)!;
-    this.repoName = pathSegments.at(-1)!;
+
+    const { repoOwner, repoName, repoBranch } = parseGitHubPath(this.uri);
+
+    this.repoOwner = repoOwner;
+    this.repoName = repoName;
+    if (options.branch && repoBranch) throw new Error('Branch is set in both options and url.');
+
+    this.branch = options.branch ?? repoBranch ?? 'main';
     this.proxyUrl = options.proxyUrl;
+    this.authToken = options.authToken;
   }
 
   getUri(itemPath?: string): string {
@@ -182,16 +202,22 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   async getWarpRoutes(filter?: WarpRouteFilterParams): Promise<WarpRouteConfigMap> {
     const { warpRoutes } = (await this.listRegistryContent()).deployments;
     const { ids: routeIds, values: routeConfigUrls } = filterWarpRoutesIds(warpRoutes, filter);
-    return this.readConfigs(routeIds, routeConfigUrls)
+    return this.readConfigs(routeIds, routeConfigUrls);
   }
 
   async getWarpDeployConfigs(filter?: WarpRouteFilterParams): Promise<WarpDeployConfigMap> {
     const { warpDeployConfig } = (await this.listRegistryContent()).deployments;
-    const { ids: routeIds, values: routeConfigUrls } = filterWarpRoutesIds(warpDeployConfig, filter);
-    return this.readConfigs(routeIds, routeConfigUrls)
+    const { ids: routeIds, values: routeConfigUrls } = filterWarpRoutesIds(
+      warpDeployConfig,
+      filter,
+    );
+    return this.readConfigs(routeIds, routeConfigUrls);
   }
 
-  protected async readConfigs<ConfigMap>(routeIds: string[], routeConfigUrls: string[]): Promise<Record<string, ConfigMap>> {
+  protected async readConfigs<ConfigMap>(
+    routeIds: string[],
+    routeConfigUrls: string[],
+  ): Promise<Record<string, ConfigMap>> {
     const configs = await this.fetchYamlFiles<ConfigMap>(routeConfigUrls);
     const idsWithConfigs = routeIds.map((id, i): [WarpRouteId, ConfigMap] => [id, configs[i]]);
     return Object.fromEntries(idsWithConfigs);
@@ -213,11 +239,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   }
 
   public async getApiRateLimit(): Promise<GithubRateResponse['resources']['core']> {
-    const response = await fetch(`${GITHUB_API_URL}/rate_limit`, {
-      headers: {
-        'X-GitHub-Api-Version': '2022-11-28',
-      },
-    });
+    const response = await this.fetch(`${GITHUB_API_URL}/rate_limit`);
     const { resources } = (await response.json()) as GithubRateResponse;
     return resources.core;
   }
@@ -249,7 +271,14 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
   protected async fetch(url: string): Promise<Response> {
     this.logger.debug(`Fetching from github: ${url}`);
-    const response = await fetch(url);
+    const isProxiedRequest = this.proxyUrl && url.startsWith(this.proxyUrl);
+    const headers =
+      !isProxiedRequest && !!this.authToken
+        ? { ...this.baseApiHeaders, Authorization: `Bearer ${this.authToken}` }
+        : this.baseApiHeaders;
+    const response = await fetch(url, {
+      headers,
+    });
     if (!response.ok)
       throw new Error(`Failed to fetch from github: ${response.status} ${response.statusText}`);
     return response;

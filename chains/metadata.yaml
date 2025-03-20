@@ -1168,6 +1168,34 @@ carbon:
   protocol: ethereum
   rpcUrls:
     - http: https://evm-api.carbon.network
+carrchaintestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.carrscan.io/api/v1
+      family: etherscan
+      name: CarrScan Testnet
+      url: https://testnet.carrscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 76672
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: CarrChain Testnet
+  domainId: 76672
+  index:
+    from: 117
+  isTestnet: true
+  name: carrchaintestnet
+  nativeToken:
+    decimals: 18
+    name: CARR
+    symbol: CARR
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc-testnet.carrchain.io
+  technicalStack: arbitrumnitro
 celo:
   blockExplorers:
     - apiUrl: https://api.celoscan.io/api
@@ -3112,6 +3140,52 @@ inevm:
     - http: https://inevm.calderachain.xyz/http
     - http: https://mainnet.rpc.inevm.com/http
   technicalStack: arbitrumnitro
+infinityvm:
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 1032009
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Infinity VM
+  domainId: 1032009
+  gasCurrencyCoinGeckoId: infinityvm
+  index:
+    from: 157889
+  name: infinityvm
+  nativeToken:
+    decimals: 18
+    name: INF
+    symbol: INF
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet-endpoint.infinityvm.xyz
+  technicalStack: other
+infinityvmmonza:
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 96025
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Infinity VM Monza Testnet
+  domainId: 96025
+  index:
+    from: 338182
+  isTestnet: true
+  name: infinityvmmonza
+  nativeToken:
+    decimals: 18
+    name: INF
+    symbol: INF
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.monza.infinityvm.xyz
+  technicalStack: other
 injective:
   bech32Prefix: inj
   blockExplorers:
@@ -3693,6 +3767,32 @@ matchain:
   rpcUrls:
     - http: https://rpc.matchain.io
   technicalStack: opstack
+megaethtestnet:
+  blockExplorers:
+    - apiUrl: https://www.megaexplorer.xyz/api
+      family: other
+      name: Mega Explorer
+      url: https://www.megaexplorer.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 6342
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: MegaETH Testnet
+  domainId: 6342
+  isTestnet: true
+  name: megaethtestnet
+  nativeToken:
+    decimals: 18
+    name: MegaETH Testnet ETH
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://carrot.megaeth.com/rpc
+  technicalStack: other
 merlin:
   blockExplorers:
     - apiUrl: https://scan.merlinchain.io/api
@@ -4507,6 +4607,34 @@ piccadilly:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc1.piccadilly.autonity.org
+plume:
+  blockExplorers:
+    - apiUrl: https://phoenix-explorer.plumenetwork.xyz/api
+      family: blockscout
+      name: Plume Explorer
+      url: https://phoenix-explorer.plumenetwork.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 98866
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Plume
+  domainId: 98866
+  gasCurrencyCoinGeckoId: plume
+  index:
+    from: 9588
+  name: plume
+  nativeToken:
+    decimals: 18
+    name: Plume
+    symbol: PLUME
+  protocol: ethereum
+  rpcUrls:
+    - http: https://phoenix-rpc.plumenetwork.xyz
+  technicalStack: arbitrumnitro
 plumetestnet:
   blockExplorers:
     - apiUrl: https://plume-testnet.explorer.caldera.xyz/api
@@ -4873,6 +5001,32 @@ rivalz:
   rpcUrls:
     - http: https://rivalz.calderachain.xyz/http
   technicalStack: arbitrumnitro
+rometestnet:
+  blockExplorers:
+    - apiUrl: https://node1.testnet.romeprotocol.xyz:1000/api
+      family: blockscout
+      name: Rome Testnet Explorer
+      url: https://node1.testnet.romeprotocol.xyz:1000
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 4
+    reorgPeriod: 1
+  chainId: 200018
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Rome Testnet
+  domainId: 200018
+  isTestnet: true
+  name: rometestnet
+  nativeToken:
+    decimals: 18
+    name: ROME
+    symbol: ROME
+  protocol: ethereum
+  rpcUrls:
+    - http: https://node1.testnet.romeprotocol.xyz
+  technicalStack: other
 ronin:
   blockExplorers:
     - apiUrl: https://app.roninchain.com/api
@@ -5352,6 +5506,32 @@ solotestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://solo-testnet.rpc.caldera.xyz/http
+somniatestnet:
+  blockExplorers:
+    - apiUrl: https://shannon-explorer.somnia.network/api
+      family: blockscout
+      name: https://shannon-explorer.somnia.network
+      url: https://shannon-explorer.somnia.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 50312
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Somnia Testnet
+  domainId: 50312
+  isTestnet: true
+  name: somniatestnet
+  nativeToken:
+    decimals: 18
+    name: STT
+    symbol: STT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://vsf-rpc.somnia.network
+  technicalStack: other
 soneium:
   blockExplorers:
     - apiUrl: https://soneium.blockscout.com/api
@@ -6071,6 +6251,33 @@ tangletestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://testnet-rpc.tangle.tools
+taraxa:
+  blockExplorers:
+    - apiUrl: https://tara.to/api
+      family: blockscout
+      name: tarato
+      url: https://tara.to
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 841
+  deployer:
+    name: VargaElod23
+    url: https://github.com/VargaElod23
+  displayName: Taraxa
+  domainId: 841
+  gasCurrencyCoinGeckoId: tara
+  isTestnet: false
+  name: taraxa
+  nativeToken:
+    decimals: 18
+    name: Taraxa
+    symbol: TARA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.mainnet.taraxa.io
+  technicalStack: other
 telos:
   blockExplorers:
     - apiUrl: https://www.teloscan.io/api
