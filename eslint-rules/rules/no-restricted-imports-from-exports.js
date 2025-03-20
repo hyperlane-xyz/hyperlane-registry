@@ -22,7 +22,7 @@ const NODE_BUILTIN_MODULES = [
 
 export default {
   meta: {
-    type: 'suggestion',
+    type: 'problem',
     docs: {
       description: 'Disallow client-restricted imports in files exported from index.ts',
       category: 'Best Practices',
@@ -48,7 +48,7 @@ export default {
     };
 
     const extractReExports = (content, basePath) => {
-      const reExportMatches = content.match(/export\s+.*\s+from\s+['"](.+)['"]/g) || [];
+      const reExportMatches = content.match(/export\s+(?:[\s\S]*?)\s+from\s+['"](.+)['"]/g) || [];
 
       const reExportPaths = reExportMatches
         .map((match) => {
