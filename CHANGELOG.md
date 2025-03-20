@@ -1,5 +1,28 @@
 # @hyperlane-xyz/registry
 
+## 11.0.0
+
+### Major Changes
+
+- 987918c: Update to latest major hyperlane SDK v9.0.0. Includes support for "starknet" ProtocolType.
+
+### Minor Changes
+
+- 243040f: Add authToken parameter to getRegistry function
+- 4abd4ec: feat: authenticated github registry
+- ae39e7b: Add oUSDT coingeckoId
+
+## 10.15.0
+
+### Minor Changes
+
+- 0ccd510: Deploy to infinityvm, plume.
+- 044a7dd: Add Turtle warp routes config
+
+### Patch Changes
+
+- e9427b2: Update GPS to latest deployment to fix totalSupply
+
 ## 10.14.0
 
 ### Minor Changes
