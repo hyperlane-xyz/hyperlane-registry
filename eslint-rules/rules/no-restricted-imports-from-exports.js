@@ -93,6 +93,15 @@ export default {
     const isExportedFromFsIndex = (importPath) =>
       fsIndexExports.some((fsExport) => isPathPartOfExport(importPath, fsExport));
 
+    const isNodeBuiltinModuleOrSubpath = (importSource) => {
+      if (NODE_BUILTIN_MODULES.includes(importSource)) {
+        return true;
+      }
+
+      const parts = importSource.split('/');
+      return NODE_BUILTIN_MODULES.includes(parts[0]) && parts.length > 1;
+    };
+
     return {
       ImportDeclaration(node) {
         const currentFilePath = context.getFilename();
@@ -101,7 +110,7 @@ export default {
 
         const importSource = node.source.value;
 
-        if (NODE_BUILTIN_MODULES.includes(importSource)) {
+        if (isNodeBuiltinModuleOrSubpath(importSource)) {
           context.report({
             node,
             messageId: 'restrictedNodeImport',
