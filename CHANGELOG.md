@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 11.2.0
+
+### Minor Changes
+
+- 263494c: updated the CDX route to add the sophon extension
+- ea5247e: Update default ISMs with new validators for infinityvm, plume, fuse.
+
 ## 11.1.0
 
 ### Minor Changes
