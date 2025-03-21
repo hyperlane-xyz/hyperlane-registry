@@ -1,5 +1,23 @@
 # @hyperlane-xyz/registry
 
+## 11.1.0
+
+### Minor Changes
+
+- 6aa6d64: Remove totalSupply from warp route deployments
+
+## 11.0.0
+
+### Major Changes
+
+- 987918c: Update to latest major hyperlane SDK v9.0.0. Includes support for "starknet" ProtocolType.
+
+### Minor Changes
+
+- 243040f: Add authToken parameter to getRegistry function
+- 4abd4ec: feat: authenticated github registry
+- ae39e7b: Add oUSDT coingeckoId
+
 ## 10.15.0
 
 ### Minor Changes
