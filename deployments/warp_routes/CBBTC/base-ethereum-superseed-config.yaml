@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xE48BBE822adE6baB32F2f88F836c62F0052fA2AE"
+    chainName: ethereum
+    collateralAddressOrDenom: "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf"
+    connections:
+      - token: ethereum|superseed|0xdFdf9b8B608e7d2bF7fC2E464c1cDd284ec43858
+      - token: ethereum|base|0x4fa96B3667C276FEC8F674EcD12e09D7ff3a16A2
+    decimals: 8
+    name: Coinbase Wrapped BTC
+    standard: EvmHypCollateral
+    symbol: cbBTC
+  - addressOrDenom: "0xdFdf9b8B608e7d2bF7fC2E464c1cDd284ec43858"
+    chainName: superseed
+    collateralAddressOrDenom: "0x6f36dbd829de9b7e077db8a35b480d4329ceb331"
+    connections:
+      - token: ethereum|ethereum|0xE48BBE822adE6baB32F2f88F836c62F0052fA2AE
+      - token: ethereum|base|0x4fa96B3667C276FEC8F674EcD12e09D7ff3a16A2
+    decimals: 8
+    name: Coinbase Wrapped BTC
+    standard: EvmHypCollateralFiat
+    symbol: cbBTC
+  - addressOrDenom: "0x4fa96B3667C276FEC8F674EcD12e09D7ff3a16A2"
+    chainName: base
+    collateralAddressOrDenom: "0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf"
+    connections:
+      - token: ethereum|ethereum|0xE48BBE822adE6baB32F2f88F836c62F0052fA2AE
+      - token: ethereum|superseed|0xdFdf9b8B608e7d2bF7fC2E464c1cDd284ec43858
+    decimals: 8
+    name: Coinbase Wrapped BTC
+    standard: EvmHypCollateral
+    symbol: cbBTC
