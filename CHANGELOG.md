@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 11.1.0
+
+### Minor Changes
+
+- 6aa6d64: Remove totalSupply from warp route deployments
+
 ## 11.0.0
 
 ### Major Changes
