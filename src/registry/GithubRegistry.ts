@@ -61,6 +61,7 @@ type GithubRateResponse = {
 };
 
 export const GITHUB_API_URL = 'https://api.github.com';
+export const GITHUB_API_VERSION = '2022-11-28';
 /**
  * A registry that uses a github repository as its data source.
  * Reads are performed via the github API and github's raw content URLs.
@@ -73,6 +74,11 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   public readonly repoOwner: string;
   public readonly repoName: string;
   public readonly proxyUrl: string | undefined;
+  private readonly authToken: string | undefined;
+
+  private readonly baseApiHeaders: Record<string, string> = {
+    'X-GitHub-Api-Version': GITHUB_API_VERSION,
+  };
 
   constructor(options: GithubRegistryOptions = {}) {
     super({ uri: options.uri ?? DEFAULT_GITHUB_REGISTRY, logger: options.logger });
@@ -86,6 +92,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
     this.branch = options.branch ?? repoBranch ?? 'main';
     this.proxyUrl = options.proxyUrl;
+    this.authToken = options.authToken;
   }
 
   getUri(itemPath?: string): string {
@@ -232,11 +239,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   }
 
   public async getApiRateLimit(): Promise<GithubRateResponse['resources']['core']> {
-    const response = await fetch(`${GITHUB_API_URL}/rate_limit`, {
-      headers: {
-        'X-GitHub-Api-Version': '2022-11-28',
-      },
-    });
+    const response = await this.fetch(`${GITHUB_API_URL}/rate_limit`);
     const { resources } = (await response.json()) as GithubRateResponse;
     return resources.core;
   }
@@ -268,7 +271,14 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
   protected async fetch(url: string): Promise<Response> {
     this.logger.debug(`Fetching from github: ${url}`);
-    const response = await fetch(url);
+    const isProxiedRequest = this.proxyUrl && url.startsWith(this.proxyUrl);
+    const headers =
+      !isProxiedRequest && !!this.authToken
+        ? { ...this.baseApiHeaders, Authorization: `Bearer ${this.authToken}` }
+        : this.baseApiHeaders;
+    const response = await fetch(url, {
+      headers,
+    });
     if (!response.ok)
       throw new Error(`Failed to fetch from github: ${response.status} ${response.statusText}`);
     return response;
