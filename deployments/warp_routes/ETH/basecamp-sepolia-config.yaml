@@ -3,13 +3,13 @@ tokens:
   - addressOrDenom: native
     chainName: basecamp
     connections:
-      - token: ethereum|sepolia|${DEPLOYED_ADDRESS}
+      - token: ethereum|sepolia|0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9
     decimals: 18
     logoURI: /deployments/warp_routes/ETH/logo.svg
     name: Ether
     standard: EvmHypNative
     symbol: ETH
-  - addressOrDenom: ${DEPLOYED_ADDRESS}
+  - addressOrDenom: "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9"
     chainName: sepolia
     connections:
       - token: ethereum|basecamp|native
