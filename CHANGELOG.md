@@ -1,5 +1,20 @@
 # @hyperlane-xyz/registry
 
+## 11.2.0
+
+### Minor Changes
+
+- 263494c: updated the CDX route to add the sophon extension
+- ea5247e: Update default ISMs with new validators for infinityvm, plume, fuse.
+- bf65725: Extending cbBTC with Base.
+- 9bd7090: Add coingeckoIDs for a set of warp route configs
+- 37a6493: Updated the ubtc route to include the soneium extension
+- 6346eb9: Add Superseed ext to base, arbitrum, optimism, solana, ink for USDC
+
+### Patch Changes
+
+- 1eb8c79: Set forma IGP to 0x0.
+
 ## 11.1.0
 
 ### Minor Changes
