@@ -1,5 +1,19 @@
 # @hyperlane-xyz/registry
 
+## 11.3.1
+
+### Patch Changes
+
+- f1a019c: Remove connection to worldchain in oUSDT deployment
+
+## 11.3.0
+
+### Minor Changes
+
+- 3f20f57: Added token metadata for first batch of soon depl
+- b7183d4: Adding SPICE metadata.
+- 812f349: Change oUSDT tokens standard from XERC20 to VSXERC20 and remove ink connection
+
 ## 11.2.0
 
 ### Minor Changes
