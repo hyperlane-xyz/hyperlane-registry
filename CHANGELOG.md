@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 11.3.1
+
+### Patch Changes
+
+- f1a019c: Remove connection to worldchain in oUSDT deployment
+
 ## 11.3.0
 
 ### Minor Changes
