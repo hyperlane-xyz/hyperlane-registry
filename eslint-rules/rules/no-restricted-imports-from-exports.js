@@ -24,19 +24,39 @@ export default {
   meta: {
     type: 'problem',
     docs: {
-      description: 'Disallow client-restricted imports in files exported from index.ts',
+      description:
+        'Disallow client-restricted imports in files exported from specified entry points',
       category: 'Best Practices',
       recommended: true,
     },
     messages: {
       restrictedFsImport:
-        'Files exported from index.ts should not import "{{ moduleName }}" which is exported from index-fs.ts',
+        'Files exported from {{ mainEntry }} should not import "{{ moduleName }}" which is exported from {{ restrictedEntry }}',
       restrictedNodeImport:
-        'Files exported from index.ts should not import Node.js built-in module "{{ moduleName }}"',
+        'Files exported from {{ mainEntry }} should not import Node.js built-in module "{{ moduleName }}"',
     },
-    schema: [],
+    schema: [
+      {
+        type: 'object',
+        properties: {
+          mainEntry: {
+            type: 'string',
+            default: './src/index.ts',
+          },
+          restrictedEntry: {
+            type: 'string',
+            default: './src/index-fs.ts',
+          },
+        },
+        additionalProperties: false,
+      },
+    ],
   },
   create(context) {
+    const options = context.options[0] || {};
+    const mainEntry = options.mainEntry || './src/index.ts';
+    const restrictedEntry = options.restrictedEntry || './src/index-fs.ts';
+
     const resolvePathFromCwd = (relativePath) => path.resolve(context.cwd, relativePath);
 
     const extractNamedExports = (content) => {
@@ -81,8 +101,8 @@ export default {
       exportPath.includes('/') &&
       filePath.includes(exportPath.replace(/\.ts$/, ''));
 
-    const indexTsPath = resolvePathFromCwd('./src/index.ts');
-    const indexFsPath = resolvePathFromCwd('./src/index-fs.ts');
+    const indexTsPath = resolvePathFromCwd(mainEntry);
+    const indexFsPath = resolvePathFromCwd(restrictedEntry);
 
     const indexExports = extractExportsFromFile(indexTsPath);
     const fsIndexExports = extractExportsFromFile(indexFsPath);
@@ -114,7 +134,10 @@ export default {
           context.report({
             node,
             messageId: 'restrictedNodeImport',
-            data: { moduleName: importSource },
+            data: {
+              moduleName: importSource,
+              mainEntry,
+            },
           });
         }
 
@@ -125,7 +148,11 @@ export default {
             context.report({
               node,
               messageId: 'restrictedFsImport',
-              data: { moduleName: importSource },
+              data: {
+                moduleName: importSource,
+                mainEntry,
+                restrictedEntry,
+              },
             });
           }
         }

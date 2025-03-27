@@ -42,7 +42,13 @@ export default tseslint.config(
           caughtErrorsIgnorePattern: '^_',
         },
       ],
-      'custom/no-restricted-imports-from-exports': ['error'],
+      'custom/no-restricted-imports-from-exports': [
+        'error',
+        {
+          mainEntry: './src/index.ts',
+          restrictedEntry: './src/index-fs.ts',
+        },
+      ],
     },
     ignores: ['node_modules', 'dist', 'tmp'],
   },
