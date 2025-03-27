@@ -4,7 +4,7 @@ import fs from 'fs';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-describe('no-restricted-imports-from-exports rule', () => {
+describe.only('no-restricted-imports-from-exports rule', () => {
   // Mock file contents to simulate index exports
   const exportedFileContents = {
     './src/index.ts':
@@ -52,12 +52,19 @@ describe('no-restricted-imports-from-exports rule', () => {
   }
 
   // Helper function to test import validations in different scenarios
-  function verifyImport({ sourceFile, importPath, expectedError = null, shouldPass = false }) {
+  function verifyImport({
+    sourceFile,
+    importPath,
+    expectedError = null,
+    shouldPass = false,
+    options = {}, // Add options parameter
+  }) {
     const errors = [];
     const context = {
       getFilename: () => sourceFile,
       cwd: () => '.',
       report: (err) => errors.push(err),
+      options: [options], // Add options to context
     };
 
     rule.create(context).ImportDeclaration({ source: { value: importPath } });
@@ -236,6 +243,58 @@ describe('no-restricted-imports-from-exports rule', () => {
         sourceFile: exportedComponentFile,
         importPath: './non-existent-file',
         shouldPass: true,
+      });
+    });
+  });
+
+  describe('Custom entry points', () => {
+    const customExportedFileContents = {
+      './src/main.ts': "export { customComponent } from './components/customComponent';",
+      './src/restricted.ts': "export { restrictedUtil } from './utils/restrictedUtil';",
+    };
+
+    beforeEach(() => {
+      // Add custom file contents to the existing exportedFileContents
+      Object.assign(exportedFileContents, customExportedFileContents);
+
+      // Add custom path mappings
+      Object.assign(pathMappings, {
+        './src/main.ts': './src/main.ts',
+        './src/restricted.ts': './src/restricted.ts',
+        'components/customComponent': './src/components/customComponent',
+        'utils/restrictedUtil': './src/utils/restrictedUtil',
+      });
+    });
+
+    it('should respect custom main and restricted entry points', () => {
+      const options = {
+        mainEntry: './src/main.ts',
+        restrictedEntry: './src/restricted.ts',
+      };
+
+      // Test with custom entry points
+      verifyImport({
+        sourceFile: './src/components/customComponent.ts',
+        importPath: './utils/restrictedUtil',
+        expectedError: 'restrictedFsImport',
+        options,
+      });
+
+      // Should still work for node modules
+      verifyImport({
+        sourceFile: './src/components/customComponent.ts',
+        importPath: 'fs',
+        expectedError: 'restrictedNodeImport',
+        options,
+      });
+    });
+
+    it('should fall back to defaults when no options provided', () => {
+      // Test with default entry points
+      verifyImport({
+        sourceFile: './src/components/componentA.ts',
+        importPath: './utils/fileUtil',
+        expectedError: 'restrictedFsImport',
       });
     });
   });
