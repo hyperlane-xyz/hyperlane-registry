@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 11.4.0
+
+### Minor Changes
+
+- dd0fd9f: Add SPICE warp route config
+
 ## 11.3.1
 
 ### Patch Changes
