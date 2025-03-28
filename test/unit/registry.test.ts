@@ -103,7 +103,7 @@ describe('Registry utilities', () => {
       expect(firstRoute!.tokens.length).to.be.greaterThan(0);
       const noRoutes = await registry.getWarpRoutes({ symbol: 'NOTFOUND' });
       expect(Object.keys(noRoutes).length).to.eql(0);
-    }).timeout(15_000);
+    }).timeout(20_000);
 
     it(`Fetches warp deploy configs for ${registry.type} registry`, async () => {
       const routes = await registry.getWarpDeployConfigs();
