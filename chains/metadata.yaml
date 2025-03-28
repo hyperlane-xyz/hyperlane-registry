@@ -1566,6 +1566,33 @@ coti:
   rpcUrls:
     - http: https://mainnet.coti.io/rpc
   technicalStack: other
+cotitestnet:
+  blockExplorers:
+    - apiUrl: https://mainnet.cotiscan.io/api
+      family: other
+      name: Cotiscan
+      url: https://testnet.cotiscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 5
+    reorgPeriod: 1
+  chainId: 7082400
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Coti Testnet
+  domainId: 7082400
+  gasCurrencyCoinGeckoId: coti
+  isTestnet: true
+  name: cotitestnet
+  nativeToken:
+    decimals: 18
+    name: COTI
+    symbol: COTI
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet.coti.io/rpc
+  technicalStack: other
 cronos:
   blockExplorers:
     - apiUrl: https://api.cronoscan.com/api
@@ -4091,10 +4118,14 @@ mode:
   technicalStack: opstack
 modetestnet:
   blockExplorers:
-    - apiUrl: https://testnet.modescan.io/api
+    - apiUrl: https://api.routescan.io/v2/network/testnet/evm/919/etherscan/api
       family: etherscan
       name: Mode Testnet Explorer
-      url: https://testnet.modescan.io/
+      url: https://testnet.modescan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
   chainId: 919
   deployer:
     name: guy93354
@@ -4110,6 +4141,7 @@ modetestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://sepolia.mode.network
+  technicalStack: opstack
 molten:
   blockExplorers:
     - apiUrl: https://molten.calderaexplorer.xyz/api
@@ -4721,34 +4753,34 @@ plume:
   rpcUrls:
     - http: https://phoenix-rpc.plumenetwork.xyz
   technicalStack: arbitrumnitro
-plumetestnet:
+plumetestnet2:
   blockExplorers:
-    - apiUrl: https://plume-testnet.explorer.caldera.xyz/api
+    - apiUrl: https://testnet-explorer.plumenetwork.xyz/api
       family: blockscout
-      name: Plume Testnet Explorer
-      url: https://plume-testnet.explorer.caldera.xyz
+      name: Plume Explorer
+      url: https://testnet-explorer.plumenetwork.xyz
   blocks:
     confirmations: 1
-    estimateBlockTime: 5
+    estimateBlockTime: 2
     reorgPeriod: 0
-  chainId: 161221135
+  chainId: 98867
   deployer:
     name: Abacus Works
     url: https://www.hyperlane.xyz
   displayName: Plume Testnet
-  domainId: 161221135
-  gasCurrencyCoinGeckoId: ethereum
+  domainId: 98867
+  gasCurrencyCoinGeckoId: plume
   index:
-    from: 5284139
+    from: 126532
   isTestnet: true
-  name: plumetestnet
+  name: plumetestnet2
   nativeToken:
     decimals: 18
-    name: Ether
-    symbol: ETH
+    name: Plume
+    symbol: PLUME
   protocol: ethereum
   rpcUrls:
-    - http: https://plume-testnet.rpc.caldera.xyz/http
+    - http: https://testnet-rpc.plumenetwork.xyz
   technicalStack: arbitrumnitro
 polygon:
   blockExplorers:
