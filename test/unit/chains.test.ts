@@ -112,7 +112,7 @@ describe('Chain metadata', () => {
           }
         });
 
-        it(`${chain} metadata has reorgPeriod set if technicalStack is polkadotsubtrate`, () => {
+        it(`${chain} metadata has reorgPeriod set if technicalStack is polkadotsubstrate`, () => {
           if (metadata.technicalStack === ChainTechnicalStack.PolkadotSubstrate) {
             expect(metadata.blocks?.reorgPeriod).to.equal('finalized');
           }
