@@ -1540,6 +1540,32 @@ cosmoshub:
     - http: https://rpc-cosmoshub.ecostake.com
   slip44: 118
   technicalStack: other
+coti:
+  blockExplorers:
+    - apiUrl: https://mainnet.cotiscan.io/api
+      family: blockscout
+      name: Cotiscan
+      url: https://mainnet.cotiscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 5
+    reorgPeriod: 5
+  chainId: 2632500
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Coti
+  domainId: 2632500
+  gasCurrencyCoinGeckoId: coti
+  name: coti
+  nativeToken:
+    decimals: 18
+    name: COTI
+    symbol: COTI
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet.coti.io/rpc
+  technicalStack: other
 cronos:
   blockExplorers:
     - apiUrl: https://api.cronoscan.com/api
@@ -1611,6 +1637,32 @@ cyber:
     - http: https://rpc.cyber.co
     - http: https://cyber.alt.technology
   technicalStack: opstack
+deepbrainchain:
+  blockExplorers:
+    - apiUrl: https://www.dbcscan.io/api
+      family: blockscout
+      name: dbcscan
+      url: https://www.dbcscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: finalized
+  chainId: 19880818
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Deep Brain Chain
+  domainId: 19880818
+  gasCurrencyCoinGeckoId: deepbrain-chain
+  name: deepbrainchain
+  nativeToken:
+    decimals: 18
+    name: DBC
+    symbol: DBC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.dbcwallet.io
+  technicalStack: polkadotsubstrate
 deepbrainchaintestnet:
   blockExplorers:
     - apiUrl: https://testnet.dbcscan.io/api
@@ -4339,6 +4391,32 @@ neutron:
   technicalStack: other
   transactionOverrides:
     gasPrice: "0.0075"
+nibiru:
+  blockExplorers:
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/6900/etherscan/api
+      family: routescan
+      name: nibiscan
+      url: https://nibiscan.io
+  blocks:
+    confirmations: 7
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 6900
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Nibiru
+  domainId: 6900
+  gasCurrencyCoinGeckoId: nibiru
+  name: nibiru
+  nativeToken:
+    decimals: 18
+    name: NIBI
+    symbol: NIBI
+  protocol: ethereum
+  rpcUrls:
+    - http: https://evm-rpc.nibiru.fi
+  technicalStack: other
 odysseytestnet:
   blockExplorers:
     - apiUrl: https://odyssey-explorer.ithaca.xyz/api
@@ -4396,13 +4474,17 @@ opbnb:
       family: etherscan
       name: opBNB Scan
       url: https://opbnb.bscscan.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
   chainId: 204
   deployer:
-    name: JunayedMh
-    url: https://github.com/JunayedMh
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: opBNB
   domainId: 204
-  isTestnet: false
+  gasCurrencyCoinGeckoId: binancecoin
   name: opbnb
   nativeToken:
     decimals: 18
@@ -4410,7 +4492,11 @@ opbnb:
     symbol: BNB
   protocol: ethereum
   rpcUrls:
-    - http: https://opbnb-rpc.publicnode.com
+    - http: https://opbnb-mainnet-rpc.bnbchain.org
+    - http: https://opbnb-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3
+    - http: https://opbnb-mainnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5
+    - http: https://opbnb.publicnode.com
+  technicalStack: opstack
 opbnbtestnet:
   blockExplorers:
     - apiUrl: https://opbnb-testnet.bscscan.com/api
@@ -4893,6 +4979,32 @@ rarichain:
   rpcUrls:
     - http: https://mainnet.rpc.rarichain.org/http
   technicalStack: arbitrumnitro
+reactive:
+  blockExplorers:
+    - apiUrl: https://reactscan.net/api
+      family: other
+      name: Reactscan
+      url: https://reactscan.net
+  blocks:
+    confirmations: 3
+    estimateBlockTime: 7
+    reorgPeriod: 5
+  chainId: 1597
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Reactive Mainnet
+  domainId: 1597
+  gasCurrencyCoinGeckoId: reactive-network
+  name: reactive
+  nativeToken:
+    decimals: 18
+    name: REACT
+    symbol: REACT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet-rpc.rnk.dev
+  technicalStack: other
 reactivekopli:
   blockExplorers:
     - apiUrl: https://kopli-api.reactscan.net
