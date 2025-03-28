@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 12.0.0
+
+### Major Changes
+
+- d11c317: Deploy to cotitestnet. Remove existing deployment and redeploy on plumetestnet2 and modetestnet.
+
+### Minor Changes
+
+- 432e8ba: Deploy to coti, deepbrainchain, nibiru, opbnb, reactive.
+
 ## 11.4.0
 
 ### Minor Changes
