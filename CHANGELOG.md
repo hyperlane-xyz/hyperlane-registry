@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 12.1.0
+
+### Minor Changes
+
+- 4d162ad: Rename staging USDC route with proper symbol
+
 ## 12.0.0
 
 ### Major Changes
