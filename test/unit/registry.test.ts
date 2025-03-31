@@ -214,7 +214,7 @@ describe('Registry utilities', () => {
     afterEach(() => {
       sinon.restore();
     });
-    it('always uses the public api if rate limit has been not been hit', async () => {
+    it('always uses the public api if rate limit has not been hit', async () => {
       getApiRateLimitStub.returns({ remaining: 10 });
       expect(await proxiedGithubRegistry.getApiUrl()).to.equal(
         `${GITHUB_API_URL}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`,
