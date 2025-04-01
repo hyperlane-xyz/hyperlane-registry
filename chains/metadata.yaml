@@ -1540,6 +1540,59 @@ cosmoshub:
     - http: https://rpc-cosmoshub.ecostake.com
   slip44: 118
   technicalStack: other
+coti:
+  blockExplorers:
+    - apiUrl: https://mainnet.cotiscan.io/api
+      family: blockscout
+      name: Cotiscan
+      url: https://mainnet.cotiscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 5
+    reorgPeriod: 5
+  chainId: 2632500
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Coti
+  domainId: 2632500
+  gasCurrencyCoinGeckoId: coti
+  name: coti
+  nativeToken:
+    decimals: 18
+    name: COTI
+    symbol: COTI
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet.coti.io/rpc
+  technicalStack: other
+cotitestnet:
+  blockExplorers:
+    - apiUrl: https://mainnet.cotiscan.io/api
+      family: other
+      name: Cotiscan
+      url: https://testnet.cotiscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 5
+    reorgPeriod: 1
+  chainId: 7082400
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Coti Testnet
+  domainId: 7082400
+  gasCurrencyCoinGeckoId: coti
+  isTestnet: true
+  name: cotitestnet
+  nativeToken:
+    decimals: 18
+    name: COTI
+    symbol: COTI
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet.coti.io/rpc
+  technicalStack: other
 cronos:
   blockExplorers:
     - apiUrl: https://api.cronoscan.com/api
@@ -1611,6 +1664,32 @@ cyber:
     - http: https://rpc.cyber.co
     - http: https://cyber.alt.technology
   technicalStack: opstack
+deepbrainchain:
+  blockExplorers:
+    - apiUrl: https://www.dbcscan.io/api
+      family: blockscout
+      name: dbcscan
+      url: https://www.dbcscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: finalized
+  chainId: 19880818
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Deep Brain Chain
+  domainId: 19880818
+  gasCurrencyCoinGeckoId: deepbrain-chain
+  name: deepbrainchain
+  nativeToken:
+    decimals: 18
+    name: DBC
+    symbol: DBC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.dbcwallet.io
+  technicalStack: polkadotsubstrate
 deepbrainchaintestnet:
   blockExplorers:
     - apiUrl: https://testnet.dbcscan.io/api
@@ -3434,6 +3513,49 @@ kroma:
     - http: https://api.kroma.network
     - http: https://1rpc.io/kroma
   technicalStack: opstack
+kyvetestnet:
+  bech32Prefix: kyve
+  blockExplorers:
+    - apiUrl: https://explorer.kyve.network/kaon
+      family: other
+      name: Ping.Pub
+      url: https://explorer.kyve.network/kaon
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 1
+  canonicalAsset: tkyve
+  chainId: kaon-1
+  contractAddressBytes: 32
+  deployer:
+    name: KYVE
+    url: https://kyve.network
+  displayName: KYVE Testnet
+  domainId: 1262571342
+  gasPrice:
+    amount: "2.0"
+    denom: tkyve
+  grpcUrls:
+    - http: https://grpc-raw.kaon.kyve.network
+  index:
+    chunk: 10
+    from: 11470395
+  isTestnet: true
+  name: kyvetestnet
+  nativeToken:
+    decimals: 6
+    denom: tkyve
+    name: KYVE
+    symbol: KYVE
+  protocol: cosmos
+  restUrls:
+    - http: https://api.kaon.kyve.network
+  rpcUrls:
+    - http: https://rpc.kaon.kyve.network
+  slip44: 118
+  technicalStack: other
+  transactionOverrides:
+    gasPrice: "2.0"
 linea:
   blockExplorers:
     - apiUrl: https://api.lineascan.build/api
@@ -4039,10 +4161,14 @@ mode:
   technicalStack: opstack
 modetestnet:
   blockExplorers:
-    - apiUrl: https://testnet.modescan.io/api
+    - apiUrl: https://api.routescan.io/v2/network/testnet/evm/919/etherscan/api
       family: etherscan
       name: Mode Testnet Explorer
-      url: https://testnet.modescan.io/
+      url: https://testnet.modescan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
   chainId: 919
   deployer:
     name: guy93354
@@ -4058,6 +4184,7 @@ modetestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://sepolia.mode.network
+  technicalStack: opstack
 molten:
   blockExplorers:
     - apiUrl: https://molten.calderaexplorer.xyz/api
@@ -4339,6 +4466,32 @@ neutron:
   technicalStack: other
   transactionOverrides:
     gasPrice: "0.0075"
+nibiru:
+  blockExplorers:
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/6900/etherscan/api
+      family: routescan
+      name: nibiscan
+      url: https://nibiscan.io
+  blocks:
+    confirmations: 7
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 6900
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Nibiru
+  domainId: 6900
+  gasCurrencyCoinGeckoId: nibiru
+  name: nibiru
+  nativeToken:
+    decimals: 18
+    name: NIBI
+    symbol: NIBI
+  protocol: ethereum
+  rpcUrls:
+    - http: https://evm-rpc.nibiru.fi
+  technicalStack: other
 odysseytestnet:
   blockExplorers:
     - apiUrl: https://odyssey-explorer.ithaca.xyz/api
@@ -4396,13 +4549,17 @@ opbnb:
       family: etherscan
       name: opBNB Scan
       url: https://opbnb.bscscan.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
   chainId: 204
   deployer:
-    name: JunayedMh
-    url: https://github.com/JunayedMh
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: opBNB
   domainId: 204
-  isTestnet: false
+  gasCurrencyCoinGeckoId: binancecoin
   name: opbnb
   nativeToken:
     decimals: 18
@@ -4410,7 +4567,11 @@ opbnb:
     symbol: BNB
   protocol: ethereum
   rpcUrls:
-    - http: https://opbnb-rpc.publicnode.com
+    - http: https://opbnb-mainnet-rpc.bnbchain.org
+    - http: https://opbnb-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3
+    - http: https://opbnb-mainnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5
+    - http: https://opbnb.publicnode.com
+  technicalStack: opstack
 opbnbtestnet:
   blockExplorers:
     - apiUrl: https://opbnb-testnet.bscscan.com/api
@@ -4635,34 +4796,34 @@ plume:
   rpcUrls:
     - http: https://phoenix-rpc.plumenetwork.xyz
   technicalStack: arbitrumnitro
-plumetestnet:
+plumetestnet2:
   blockExplorers:
-    - apiUrl: https://plume-testnet.explorer.caldera.xyz/api
+    - apiUrl: https://testnet-explorer.plumenetwork.xyz/api
       family: blockscout
-      name: Plume Testnet Explorer
-      url: https://plume-testnet.explorer.caldera.xyz
+      name: Plume Explorer
+      url: https://testnet-explorer.plumenetwork.xyz
   blocks:
     confirmations: 1
-    estimateBlockTime: 5
+    estimateBlockTime: 2
     reorgPeriod: 0
-  chainId: 161221135
+  chainId: 98867
   deployer:
     name: Abacus Works
     url: https://www.hyperlane.xyz
   displayName: Plume Testnet
-  domainId: 161221135
-  gasCurrencyCoinGeckoId: ethereum
+  domainId: 98867
+  gasCurrencyCoinGeckoId: plume
   index:
-    from: 5284139
+    from: 126532
   isTestnet: true
-  name: plumetestnet
+  name: plumetestnet2
   nativeToken:
     decimals: 18
-    name: Ether
-    symbol: ETH
+    name: Plume
+    symbol: PLUME
   protocol: ethereum
   rpcUrls:
-    - http: https://plume-testnet.rpc.caldera.xyz/http
+    - http: https://testnet-rpc.plumenetwork.xyz
   technicalStack: arbitrumnitro
 polygon:
   blockExplorers:
@@ -4893,6 +5054,32 @@ rarichain:
   rpcUrls:
     - http: https://mainnet.rpc.rarichain.org/http
   technicalStack: arbitrumnitro
+reactive:
+  blockExplorers:
+    - apiUrl: https://reactscan.net/api
+      family: other
+      name: Reactscan
+      url: https://reactscan.net
+  blocks:
+    confirmations: 3
+    estimateBlockTime: 7
+    reorgPeriod: 5
+  chainId: 1597
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Reactive Mainnet
+  domainId: 1597
+  gasCurrencyCoinGeckoId: reactive-network
+  name: reactive
+  nativeToken:
+    decimals: 18
+    name: REACT
+    symbol: REACT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet-rpc.rnk.dev
+  technicalStack: other
 reactivekopli:
   blockExplorers:
     - apiUrl: https://kopli-api.reactscan.net
