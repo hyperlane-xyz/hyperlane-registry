@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: kyve
+blockExplorers:
+  - apiUrl: https://explorer.kyve.network/koan
+    family: other
+    name: Ping.Pub
+    url: https://explorer.kyve.network/koan
+blocks:
+  confirmations: 1
+  estimateBlockTime: 6
+  reorgPeriod: 1
+canonicalAsset: tkyve
+chainId: koan-1
+contractAddressBytes: 32
+deployer:
+  name: KYVE
+  url: https://kyve.network
+displayName: KYVE Testnet
+# Generated from: console.log(parseInt('0x'+Buffer.from('KAON').toString('hex')))
+domainId: 1262571342
+gasPrice:
+  amount: '2.0'
+  denom: tkyve
+grpcUrls:
+  - http: https://grpc-raw.koan.kyve.network
+index:
+  chunk: 10
+  from: 11470395
+isTestnet: true
+name: kyvetestnet
+nativeToken:
+  decimals: 6
+  denom: tkyve
+  name: KYVE
+  symbol: KYVE
+protocol: cosmos
+restUrls:
+  - http: https://api.koan.kyve.network
+rpcUrls:
+  - http: https://rpc.koan.kyve.network
+technicalStack: other
+transactionOverrides:
+  gasPrice: '2.0'
