@@ -1,16 +1,16 @@
 # yaml-language-server: $schema=../schema.json
 bech32Prefix: kyve
 blockExplorers:
-  - apiUrl: https://explorer.kyve.network/koan
+  - apiUrl: https://explorer.kyve.network/kaon
     family: other
     name: Ping.Pub
-    url: https://explorer.kyve.network/koan
+    url: https://explorer.kyve.network/kaon
 blocks:
   confirmations: 1
   estimateBlockTime: 6
   reorgPeriod: 1
 canonicalAsset: tkyve
-chainId: koan-1
+chainId: kaon-1
 contractAddressBytes: 32
 deployer:
   name: KYVE
@@ -22,7 +22,7 @@ gasPrice:
   amount: "2.0"
   denom: tkyve
 grpcUrls:
-  - http: https://grpc-raw.koan.kyve.network
+  - http: https://grpc-raw.kaon.kyve.network
 index:
   chunk: 10
   from: 11470395
@@ -35,9 +35,9 @@ nativeToken:
   symbol: KYVE
 protocol: cosmos
 restUrls:
-  - http: https://api.koan.kyve.network
+  - http: https://api.kaon.kyve.network
 rpcUrls:
-  - http: https://rpc.koan.kyve.network
+  - http: https://rpc.kaon.kyve.network
 slip44: 118
 technicalStack: other
 transactionOverrides:
