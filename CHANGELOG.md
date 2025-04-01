@@ -1,5 +1,17 @@
 # @hyperlane-xyz/registry
 
+## 12.2.0
+
+### Minor Changes
+
+- 48ea375: add `kyvetestnet` metadata to chains
+- 9357948: add ai16z, WIF, ELIZA, MEW, Pnut soon tokens
+- 2251c09: add `kyvetestnet` addresses to chains
+
+### Patch Changes
+
+- 9266157: Update Superseed ownership
+
 ## 12.1.0
 
 ### Minor Changes
