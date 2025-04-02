@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 13.1.0
+
+### Minor Changes
+
+- 5941065: Hot fix GithubRefistry CORS error
+
+### Patch Changes
+
+- aec938e: Rotate default ethereum RPC to llamarpc.
+
 ## 13.0.0
 
 ### Major Changes
