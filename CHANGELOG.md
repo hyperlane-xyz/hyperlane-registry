@@ -1,5 +1,38 @@
 # @hyperlane-xyz/registry
 
+## 13.1.0
+
+### Minor Changes
+
+- 5941065: Hot fix GithubRefistry CORS error
+
+### Patch Changes
+
+- aec938e: Rotate default ethereum RPC to llamarpc.
+
+## 13.0.0
+
+### Major Changes
+
+- 5a83d04: Update to Hyperlane SDK 11.0.0, which includes support for the new "cosmosnative" ProtocolType.
+
+### Minor Changes
+
+- 0067c33: Enroll kyvetestnet on default ISMs.
+- c15dab3: Update default ISMs for March 31st chain deploy batch.
+
+## 12.2.0
+
+### Minor Changes
+
+- 48ea375: add `kyvetestnet` metadata to chains
+- 9357948: add ai16z, WIF, ELIZA, MEW, Pnut soon tokens
+- 2251c09: add `kyvetestnet` addresses to chains
+
+### Patch Changes
+
+- 9266157: Update Superseed ownership
+
 ## 12.1.0
 
 ### Minor Changes
