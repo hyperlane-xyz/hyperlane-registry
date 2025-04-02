@@ -2190,15 +2190,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyperlane-xyz/core@npm:6.0.0":
-  version: 6.0.0
-  resolution: "@hyperlane-xyz/core@npm:6.0.0"
+"@hyperlane-xyz/core@npm:6.1.0":
+  version: 6.1.0
+  resolution: "@hyperlane-xyz/core@npm:6.1.0"
   dependencies:
     "@arbitrum/nitro-contracts": "npm:^1.2.1"
     "@chainlink/contracts-ccip": "npm:^1.5.0"
     "@eth-optimism/contracts": "npm:^0.6.0"
-    "@hyperlane-xyz/utils": "npm:9.0.0"
+    "@hyperlane-xyz/utils": "npm:11.0.0"
     "@layerzerolabs/lz-evm-oapp-v2": "npm:2.0.2"
+    "@matterlabs/hardhat-zksync-solc": "npm:1.2.5"
+    "@matterlabs/hardhat-zksync-verify": "npm:1.7.1"
     "@openzeppelin/contracts": "npm:^4.9.3"
     "@openzeppelin/contracts-upgradeable": "npm:^4.9.3"
     fx-portal: "npm:^1.0.3"
@@ -2206,7 +2208,7 @@ __metadata:
     "@ethersproject/abi": "*"
     "@ethersproject/providers": "*"
     "@types/sinon-chai": "*"
-  checksum: 10/8e2a535eb930644f83d315e409a2528111bf1e64f8e7c3b68d1f541f26172c363becd09c349d3e15ef1fc2b5d631af5c146b861524f0b3364c8d1d9565f4d72e
+  checksum: 10/a45eb1ae30b240f345b8873d6d8f2ee98cca6701fcbe1ef2bcd62f9d47ce7399137b2d4c5ab6abee41ffde6ae5892af54158b9e39394509781a9a9e6acd8ece1
   languageName: node
   linkType: hard
 
@@ -2217,7 +2219,7 @@ __metadata:
     "@changesets/cli": "npm:^2.26.2"
     "@eslint/js": "npm:^9.1.1"
     "@faker-js/faker": "npm:^9.6.0"
-    "@hyperlane-xyz/sdk": "npm:9.0.0"
+    "@hyperlane-xyz/sdk": "npm:11.0.0"
     "@types/chai-as-promised": "npm:^8"
     "@types/mocha": "npm:^10.0.1"
     "@types/node": "npm:^16.9.1"
@@ -2243,17 +2245,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@hyperlane-xyz/sdk@npm:9.0.0":
-  version: 9.0.0
-  resolution: "@hyperlane-xyz/sdk@npm:9.0.0"
+"@hyperlane-xyz/sdk@npm:11.0.0":
+  version: 11.0.0
+  resolution: "@hyperlane-xyz/sdk@npm:11.0.0"
   dependencies:
     "@arbitrum/sdk": "npm:^4.0.0"
     "@aws-sdk/client-s3": "npm:^3.577.0"
     "@chain-registry/types": "npm:^0.50.14"
     "@cosmjs/cosmwasm-stargate": "npm:^0.32.4"
     "@cosmjs/stargate": "npm:^0.32.4"
-    "@hyperlane-xyz/core": "npm:6.0.0"
-    "@hyperlane-xyz/utils": "npm:9.0.0"
+    "@hyperlane-xyz/core": "npm:6.1.0"
+    "@hyperlane-xyz/utils": "npm:11.0.0"
     "@safe-global/api-kit": "npm:1.3.0"
     "@safe-global/protocol-kit": "npm:1.3.0"
     "@safe-global/safe-deployments": "npm:1.37.23"
@@ -2270,13 +2272,13 @@ __metadata:
   peerDependencies:
     "@ethersproject/abi": "*"
     "@ethersproject/providers": "*"
-  checksum: 10/a35dea5ea80932dc2f93fc2dcc6a488dbbba859c8459341d081fb05e3404e9c9152342d29ad06a8636edde6e05090709d7688b7ecb4fe397a26771404f25a5b3
+  checksum: 10/35c26c37be707af86a847b335399d8dbeb15b18c486ddf9e79a5f7b96b38a4282e89e551ef5018d0a05a11c7d120989e2e918d08b16dd7d54e46c7c9b6df2267
   languageName: node
   linkType: hard
 
-"@hyperlane-xyz/utils@npm:9.0.0":
-  version: 9.0.0
-  resolution: "@hyperlane-xyz/utils@npm:9.0.0"
+"@hyperlane-xyz/utils@npm:11.0.0":
+  version: 11.0.0
+  resolution: "@hyperlane-xyz/utils@npm:11.0.0"
   dependencies:
     "@cosmjs/encoding": "npm:^0.32.4"
     "@solana/web3.js": "npm:^1.95.4"
@@ -2285,7 +2287,7 @@ __metadata:
     lodash-es: "npm:^4.17.21"
     pino: "npm:^8.19.0"
     yaml: "npm:2.4.5"
-  checksum: 10/60d12df1b37bda63b2baa58290b325e4ab8533310057d0a7a56ec8ec04b9a351b536620523e04b609b4af572362b4cfe8a646018211aac1912553f01c78ecfef
+  checksum: 10/1f605c1280b23877ff696a31d325c0869af4671f7b3658ae0a31c2359b971c970e180cb91257732cf23f239fc5e70f6b1bc9dd05d959b698a2599e466c04fca0
   languageName: node
   linkType: hard
 
@@ -2393,7 +2395,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@matterlabs/hardhat-zksync-solc@npm:^1.2.5":
+"@matterlabs/hardhat-zksync-solc@npm:1.2.5, @matterlabs/hardhat-zksync-solc@npm:^1.2.5":
   version: 1.2.5
   resolution: "@matterlabs/hardhat-zksync-solc@npm:1.2.5"
   dependencies:
@@ -2414,7 +2416,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@matterlabs/hardhat-zksync-verify@npm:^1.6.0":
+"@matterlabs/hardhat-zksync-verify@npm:1.7.1, @matterlabs/hardhat-zksync-verify@npm:^1.6.0":
   version: 1.7.1
   resolution: "@matterlabs/hardhat-zksync-verify@npm:1.7.1"
   dependencies:

@@ -1,5 +1,74 @@
 # @hyperlane-xyz/registry
 
+## 13.1.0
+
+### Minor Changes
+
+- 5941065: Hot fix GithubRefistry CORS error
+
+### Patch Changes
+
+- aec938e: Rotate default ethereum RPC to llamarpc.
+
+## 13.0.0
+
+### Major Changes
+
+- 5a83d04: Update to Hyperlane SDK 11.0.0, which includes support for the new "cosmosnative" ProtocolType.
+
+### Minor Changes
+
+- 0067c33: Enroll kyvetestnet on default ISMs.
+- c15dab3: Update default ISMs for March 31st chain deploy batch.
+
+## 12.2.0
+
+### Minor Changes
+
+- 48ea375: add `kyvetestnet` metadata to chains
+- 9357948: add ai16z, WIF, ELIZA, MEW, Pnut soon tokens
+- 2251c09: add `kyvetestnet` addresses to chains
+
+### Patch Changes
+
+- 9266157: Update Superseed ownership
+
+## 12.1.0
+
+### Minor Changes
+
+- 4d162ad: Rename staging USDC route with proper symbol
+
+## 12.0.0
+
+### Major Changes
+
+- d11c317: Deploy to cotitestnet. Remove existing deployment and redeploy on plumetestnet2 and modetestnet.
+
+### Minor Changes
+
+- 432e8ba: Deploy to coti, deepbrainchain, nibiru, opbnb, reactive.
+
+## 11.4.0
+
+### Minor Changes
+
+- dd0fd9f: Add SPICE warp route config
+
+## 11.3.1
+
+### Patch Changes
+
+- f1a019c: Remove connection to worldchain in oUSDT deployment
+
+## 11.3.0
+
+### Minor Changes
+
+- 3f20f57: Added token metadata for first batch of soon depl
+- b7183d4: Adding SPICE metadata.
+- 812f349: Change oUSDT tokens standard from XERC20 to VSXERC20 and remove ink connection
+
 ## 11.2.0
 
 ### Minor Changes
