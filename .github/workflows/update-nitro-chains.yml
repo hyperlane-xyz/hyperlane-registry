@@ -1,4 +1,4 @@
-name: combine
+name: update-nitro-chains
 
 on:
   push:
@@ -43,6 +43,11 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
+      - name: update-nitro-chains
+        run: |
+          echo "Updating Nitro chains..."
+          ./scripts/update-nitro-chains.sh
+
       - name: combine-data
         run: |
           echo "Assembling chain metadata and addresses together..."
@@ -53,7 +58,7 @@ jobs:
           CHANGES=$(git status -s)
           if [[ ! -z $CHANGES ]]; then
             git add .
-            git commit -m "Update chain metadata and address files"
+            git commit -m "Update chain metadata for nitro chains"
             git push
           else
             echo "No changes to commit."
