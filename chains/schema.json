@@ -1,5 +1,5 @@
 {
-  "$ref": "#/definitions/hyperlaneChainMetadata",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "hyperlaneChainMetadata": {
       "type": "object",
@@ -113,7 +113,8 @@
               "anyOf": [
                 {
                   "type": "integer",
-                  "minimum": 0
+                  "minimum": 0,
+                  "description": "A number of blocks before a transaction has a near-zero chance of reverting or block tag."
                 },
                 {
                   "type": "string"
@@ -123,7 +124,8 @@
             },
             "estimateBlockTime": {
               "type": "number",
-              "exclusiveMinimum": 0,
+              "minimum": 0,
+              "exclusiveMinimum": true,
               "description": "Rough estimate of time per block in seconds."
             }
           },
@@ -137,7 +139,9 @@
           "anyOf": [
             {
               "type": "integer",
-              "exclusiveMinimum": 0
+              "minimum": 0,
+              "exclusiveMinimum": true,
+              "description": "Integer chainId must be greater than 0."
             },
             {
               "type": "string"
@@ -183,7 +187,8 @@
         },
         "domainId": {
           "type": "integer",
-          "exclusiveMinimum": 0,
+          "minimum": 0,
+          "exclusiveMinimum": true,
           "description": "The domainId of the chain, should generally default to `chainId`. Consumer of `ChainMetadata` should use this value or `name` as a unique identifier."
         },
         "gasCurrencyCoinGeckoId": {
@@ -206,7 +211,8 @@
               },
               "concurrency": {
                 "type": "integer",
-                "exclusiveMinimum": 0,
+                "minimum": 0,
+                "exclusiveMinimum": true,
                 "description": "Maximum number of concurrent RPC requests."
               },
               "webSocket": {
@@ -226,7 +232,7 @@
                   },
                   "maxBlockAge": {
                     "$ref": "#/definitions/hyperlaneChainMetadata/properties/chainId/anyOf/0",
-                    "description": "The relative different from latest block that this RPC supports."
+                    "description": "The relative difference from latest block that this RPC supports."
                   }
                 },
                 "additionalProperties": false,
@@ -237,12 +243,14 @@
                 "properties": {
                   "maxRequests": {
                     "type": "integer",
-                    "exclusiveMinimum": 0,
+                    "minimum": 0,
+                    "exclusiveMinimum": true,
                     "description": "The maximum number of requests to attempt before failing."
                   },
                   "baseRetryMs": {
                     "type": "integer",
-                    "exclusiveMinimum": 0,
+                    "minimum": 0,
+                    "exclusiveMinimum": true,
                     "description": "The base retry delay in milliseconds."
                   }
                 },
@@ -297,7 +305,9 @@
             "decimals": {
               "type": "integer",
               "minimum": 0,
-              "exclusiveMaximum": 256
+              "maximum": 256,
+              "exclusiveMaximum": true,
+              "description": "The number of decimals (must be less than 256)."
             },
             "denom": {
               "type": "string"
@@ -368,5 +378,9 @@
       "additionalProperties": false
     }
   },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "allOf": [
+    {
+      "$ref": "#/definitions/hyperlaneChainMetadata"
+    }
+  ]
 }
