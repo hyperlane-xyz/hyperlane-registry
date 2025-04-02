@@ -271,11 +271,11 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
 
   protected async fetch(url: string): Promise<Response> {
     this.logger.debug(`Fetching from github: ${url}`);
-    const isProxiedRequest = this.proxyUrl && url.startsWith(this.proxyUrl);
+    const isGithubApiRequest = url.startsWith(GITHUB_API_URL);
     const headers =
-      !isProxiedRequest && !!this.authToken
+      isGithubApiRequest && !!this.authToken
         ? { ...this.baseApiHeaders, Authorization: `Bearer ${this.authToken}` }
-        : this.baseApiHeaders;
+        : undefined;
     const response = await fetch(url, {
       headers,
     });
