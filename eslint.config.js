@@ -3,6 +3,7 @@ import tseslint from 'typescript-eslint';
 import tsparser from '@typescript-eslint/parser';
 import eslintPluginYml from 'eslint-plugin-yml';
 import yamlParser from 'yaml-eslint-parser';
+import customPlugin from './eslint-rules/index.js';
 
 export default tseslint.config(
   eslint.configs.recommended,
@@ -16,6 +17,9 @@ export default tseslint.config(
         sourceType: 'module',
         project: './tsconfig.json',
       },
+    },
+    plugins: {
+      custom: customPlugin,
     },
     rules: {
       'no-console': ['error'],
@@ -36,6 +40,13 @@ export default tseslint.config(
           argsIgnorePattern: '^_',
           varsIgnorePattern: '^_',
           caughtErrorsIgnorePattern: '^_',
+        },
+      ],
+      'custom/no-restricted-imports-from-exports': [
+        'error',
+        {
+          mainEntry: './src/index.ts',
+          restrictedEntry: './src/index-fs.ts',
         },
       ],
     },
