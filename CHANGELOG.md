@@ -1,5 +1,17 @@
 # @hyperlane-xyz/registry
 
+## 13.2.0
+
+### Minor Changes
+
+- 6dd7494: added second soon wr deployment batch metadata
+- f774fd3: Add PZETH deploy and PZETHSTAGE deploy and warp core config
+- 4b7aa08: added registry artifacts for soon wr second batch
+
+### Patch Changes
+
+- cd66a33: Update oUSDT config to include ownerOverrides for collateralToken and collateralProxyadmin
+
 ## 13.1.0
 
 ### Minor Changes
