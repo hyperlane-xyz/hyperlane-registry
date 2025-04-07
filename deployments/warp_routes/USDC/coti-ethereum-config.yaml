@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xAAeb91195C025C9D35F8FF70e13049D8cD25703D"
+    chainName: coti
+    connections:
+      - token: ethereum|ethereum|0xB37b7186B07BEBA590e7439faD55c5b7E1E7e4CE
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypSynthetic
+    symbol: USDC
+  - addressOrDenom: "0xB37b7186B07BEBA590e7439faD55c5b7E1E7e4CE"
+    chainName: ethereum
+    coinGeckoId: usdc
+    collateralAddressOrDenom: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+    connections:
+      - token: ethereum|coti|0xAAeb91195C025C9D35F8FF70e13049D8cD25703D
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
