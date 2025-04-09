@@ -74,6 +74,26 @@ base:
     warpRouteLimits:
       bufferCap: "25000000000"
       rateLimitPerSecond: "120000000"
+bitlayer:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      bufferCap: "25000000000"
+      rateLimitPerSecond: "120000000"
 celo:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -89,6 +109,26 @@ celo:
   mailbox: "0x50da3B3907A08a24fe4999F4Dcf337E8dC7954bb"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x9a3D8d7E931679374448FB2B661F664D42d05057"
+  type: xERC20Lockbox
+  xERC20:
+    warpRouteLimits:
+      bufferCap: "25000000000"
+      rateLimitPerSecond: "120000000"
+ethereum:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  token: "0x935EAaAb78B491Cd9281f438E413767893913983"
   type: xERC20Lockbox
   xERC20:
     warpRouteLimits:
@@ -134,7 +174,87 @@ ink:
     warpRouteLimits:
       bufferCap: "25000000000"
       rateLimitPerSecond: "120000000"
+linea:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  mailbox: "0x02d16BC51af6BfD153d67CA61754cF912E82C4d9"
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      bufferCap: "25000000000"
+      rateLimitPerSecond: "120000000"
 lisk:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  mailbox: "0x2f2aFaE1139Ce54feFC03593FeE8AB2aDF4a85A7"
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      bufferCap: "25000000000"
+      rateLimitPerSecond: "120000000"
+mantle:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  mailbox: "0x398633D19f4371e1DB5a8EFE90468eB70B1176AA"
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      bufferCap: "25000000000"
+      rateLimitPerSecond: "120000000"
+metal:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  mailbox: "0x730f8a4128Fa8c53C777B62Baa1abeF94cAd34a9"
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      bufferCap: "25000000000"
+      rateLimitPerSecond: "120000000"
+metis:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -297,7 +417,47 @@ optimism:
     warpRouteLimits:
       bufferCap: "25000000000"
       rateLimitPerSecond: "120000000"
+ronin:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      bufferCap: "25000000000"
+      rateLimitPerSecond: "120000000"
 soneium:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      bufferCap: "25000000000"
+      rateLimitPerSecond: "120000000"
+sonic:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
