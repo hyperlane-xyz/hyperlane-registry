@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 13.3.0
+
+### Minor Changes
+
+- 0946efd: Update hyperlane SDK.
+
+### Patch Changes
+
+- cdd6a74: Remove routing between base and ethereum
+
 ## 13.2.0
 
 ### Minor Changes
