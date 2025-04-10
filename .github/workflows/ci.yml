@@ -37,7 +37,6 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    needs: [install]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/cache@v3
@@ -51,7 +50,6 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
-    needs: [install]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/cache@v3
@@ -65,7 +63,6 @@ jobs:
 
   prettier:
     runs-on: ubuntu-latest
-    needs: [install]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/cache@v3
@@ -85,7 +82,6 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    needs: [build]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/cache@v3
@@ -111,7 +107,6 @@ jobs:
 
   # health:
   #   runs-on: ubuntu-latest
-  #   needs: [build]
   #   steps:
   #     - uses: actions/checkout@v3
   #     - uses: actions/cache@v3
@@ -126,7 +121,6 @@ jobs:
   changeset:
     if: ${{ github.event_name == 'pull_request' && github.head_ref != 'changeset-release/main' }}
     runs-on: ubuntu-latest
-    needs: [install]
     steps:
       - uses: actions/checkout@v3
         with:
