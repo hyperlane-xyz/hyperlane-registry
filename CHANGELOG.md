@@ -1,5 +1,48 @@
 # @hyperlane-xyz/registry
 
+## 13.3.0
+
+### Minor Changes
+
+- 0946efd: Update hyperlane SDK.
+
+### Patch Changes
+
+- cdd6a74: Remove routing between base and ethereum
+
+## 13.2.0
+
+### Minor Changes
+
+- 6dd7494: added second soon wr deployment batch metadata
+- f774fd3: Add PZETH deploy and PZETHSTAGE deploy and warp core config
+- 4b7aa08: added registry artifacts for soon wr second batch
+
+### Patch Changes
+
+- cd66a33: Update oUSDT config to include ownerOverrides for collateralToken and collateralProxyadmin
+
+## 13.1.0
+
+### Minor Changes
+
+- 5941065: Hot fix GithubRefistry CORS error
+
+### Patch Changes
+
+- aec938e: Rotate default ethereum RPC to llamarpc.
+
+## 13.0.0
+
+### Major Changes
+
+- 5a83d04: Update to Hyperlane SDK 11.0.0, which includes support for the new "cosmosnative" ProtocolType.
+
+### Minor Changes
+
+- 0067c33: Enroll kyvetestnet on default ISMs.
+- c15dab3: Update default ISMs for March 31st chain deploy batch.
+
 ## 12.2.0
 
 ### Minor Changes
