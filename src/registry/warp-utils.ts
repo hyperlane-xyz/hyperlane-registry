@@ -52,7 +52,7 @@ export function warpRouteDeployConfigPathToId(configRelativePath: string): WarpR
  * @param regex regex of the config filename
  */
 function parseWarpRouteConfigPath(configRelativePath: string, regex: RegExp) {
-  const matches =  configRelativePath.match(regex);
+  const matches = configRelativePath.match(regex);
   if (!matches || matches.length < 3)
     throw new Error(`Invalid warp route config path: ${configRelativePath}`);
   const [_, tokenSymbol, chains] = matches;
@@ -61,7 +61,7 @@ function parseWarpRouteConfigPath(configRelativePath: string, regex: RegExp) {
 
 /**
  * Gets a warp route ID from a warp route config.
- * This uses the first symbol in the lift. Situations where a config contains multiple
+ * This uses the first symbol in the list. Situations where a config contains multiple
  * symbols are not officially supported yet.
  */
 export function warpRouteConfigToId(config: WarpCoreConfig): WarpRouteId {
