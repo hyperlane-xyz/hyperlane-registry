@@ -69,7 +69,7 @@ export function warpRouteConfigToId(config: WarpCoreConfig, symbol?: string): Wa
   const symbols = new Set<string>(config.tokens.map((token) => token.symbol.toUpperCase()));
   if (!symbol && symbols.size !== 1) {
     throw new Error(
-      'Only one token symbol per warp config is supported for now. Consider passing a symbol as a parameter',
+      `Only one token symbol per warp config is supported for now. Found: [${[...symbols].join()}]`,
     );
   }
   const tokenSymbol = symbol || symbols.values().next().value;
