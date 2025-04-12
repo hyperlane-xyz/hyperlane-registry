@@ -64,7 +64,7 @@ export abstract class BaseRegistry implements IRegistry {
   }
 
   static getWarpDeployArtifactPaths(
-    deployConfig: WarpDeployConfigMap,
+    deployConfig: WarpRouteDeployConfig,
     symbol: string,
     configBasePath: string = './configs',
   ) {
