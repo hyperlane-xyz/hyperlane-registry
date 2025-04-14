@@ -1,5 +1,17 @@
 # @hyperlane-xyz/registry
 
+## 13.4.0
+
+### Minor Changes
+
+- 5fca08b: Update kyvetestnet protocol from cosmos to cosmosnative.
+
+### Patch Changes
+
+- 58b2338: Update polygon RPCs, removing default ankr one.
+- a68c1e1: Update hyperevm configs to include explicit proxyAdmin to resolve check-deploy violations
+- 8c18d62: Update modetestnet deployer.
+
 ## 13.3.0
 
 ### Minor Changes
