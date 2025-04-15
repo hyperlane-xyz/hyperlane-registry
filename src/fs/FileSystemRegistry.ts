@@ -27,9 +27,9 @@ import {
   type ChainFiles,
   type IRegistry,
   type RegistryContent,
-} from './IRegistry.js';
-import { SynchronousRegistry } from './SynchronousRegistry.js';
-import { warpRouteConfigPathToId, warpRouteDeployConfigPathToId } from './warp-utils.js';
+} from '../registry/IRegistry.js';
+import { SynchronousRegistry } from '../registry/SynchronousRegistry.js';
+import { warpRouteConfigPathToId, warpRouteDeployConfigPathToId } from '../registry/warp-utils.js';
 
 export interface FileSystemRegistryOptions {
   uri: string;

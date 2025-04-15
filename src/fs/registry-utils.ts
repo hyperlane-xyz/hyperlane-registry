@@ -1,9 +1,9 @@
 import type { Logger } from 'pino';
-import { GithubRegistry } from './GithubRegistry.js';
+import { GithubRegistry } from '../registry/GithubRegistry.js';
 import { FileSystemRegistry } from './FileSystemRegistry.js';
-import { IRegistry } from './IRegistry.js';
+import { IRegistry } from '../registry/IRegistry.js';
 import { PROXY_DEPLOYED_URL } from '../consts.js';
-import { MergedRegistry } from './MergedRegistry.js';
+import { MergedRegistry } from '../registry/MergedRegistry.js';
 
 const isHttpsUrl = (value: string): boolean => {
   try {
