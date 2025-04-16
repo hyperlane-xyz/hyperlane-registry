@@ -61,7 +61,7 @@ function parseWarpRouteConfigPath(configRelativePath: string, regex: RegExp) {
 
 /**
  * Gets a warp route ID from a warp route config.
- * This uses the first symbol in the lift. Situations where a config contains multiple
+ * This uses the first symbol in the list. Situations where a config contains multiple
  * symbols are not officially supported yet.
  */
 export function warpRouteConfigToId(config: WarpCoreConfig, symbol?: string): WarpRouteId {

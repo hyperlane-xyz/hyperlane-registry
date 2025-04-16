@@ -86,6 +86,7 @@
                   "etherscan",
                   "blockscout",
                   "routescan",
+                  "voyager",
                   "other"
                 ],
                 "description": "The type of the block explorer. See ExplorerFamily for valid values."
@@ -251,6 +252,10 @@
                 ],
                 "additionalProperties": false,
                 "description": "Default retry settings to be used by a provider such as MultiProvider."
+              },
+              "public": {
+                "type": "boolean",
+                "description": "Flag if the RPC is publicly available."
               }
             },
             "required": [
@@ -315,7 +320,9 @@
           "enum": [
             "ethereum",
             "sealevel",
-            "cosmos"
+            "cosmos",
+            "cosmosnative",
+            "starknet"
           ],
           "description": "The type of protocol used by this chain. See ProtocolType for valid values."
         },
