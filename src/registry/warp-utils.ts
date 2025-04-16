@@ -66,7 +66,7 @@ function parseWarpRouteConfigPath(configRelativePath: string, regex: RegExp) {
  */
 export function warpRouteConfigToId(config: WarpCoreConfig, symbol?: string): WarpRouteId {
   if (!config?.tokens?.length) throw new Error('Cannot generate ID for empty warp config');
-  const symbols = new Set<string>(config.tokens.map((token) => token.symbol.toUpperCase()));
+  const symbols = new Set(config.tokens.map((token) => token.symbol.toUpperCase()));
   if (!symbol && symbols.size !== 1) {
     throw new Error(
       `Only one token symbol per warp config is supported for now. Found: [${[...symbols].join()}]`,
