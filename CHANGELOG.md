@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 13.5.0
+
+### Minor Changes
+
+- b09f287: Add USDT/ethereum-lumia for Lumia Prisim
+- d9520ae: Add USDC/ethereum-lumiaprism warp route artifacts
+
 ## 13.4.0
 
 ### Minor Changes
