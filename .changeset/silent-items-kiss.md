@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add `getWarpDeployArtifactPaths` function to BaseRegistry
+Added `getWarpRouteDeployConfigPath` function to BaseRegistry

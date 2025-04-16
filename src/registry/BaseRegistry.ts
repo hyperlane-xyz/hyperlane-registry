@@ -11,6 +11,7 @@ import type { ChainAddresses, MaybePromise, WarpDeployConfigMap } from '../types
 import { WarpRouteConfigMap } from '../types.js';
 import { stripLeadingSlash } from '../utils.js';
 import type {
+  AddWarpRouteConfigOptions,
   AddWarpRouteOptions,
   IRegistry,
   RegistryContent,
@@ -54,24 +55,24 @@ export abstract class BaseRegistry implements IRegistry {
     return 'deployments/warp_routes';
   }
 
-  protected getWarpRoutesArtifactPaths(config: WarpCoreConfig, options?: AddWarpRouteOptions) {
-    return {
-      configPath: `${this.getWarpRoutesPath()}/${warpRouteConfigToId(
-        config,
-        options?.symbol,
-      )}-config.yaml`,
-    };
+  protected getWarpRouteCoreConfigPath(config: WarpCoreConfig, options?: AddWarpRouteOptions) {
+    return `${this.getWarpRoutesPath()}/${warpRouteConfigToId(
+      config,
+      options?.symbol,
+    )}-config.yaml`;
   }
 
-  static getWarpDeployArtifactPaths(
-    deployConfig: WarpRouteDeployConfig,
-    symbol: string,
-    configBasePath: string = './configs',
+  protected getWarpRouteDeployConfigPath(
+    config: WarpRouteDeployConfig,
+    options: AddWarpRouteConfigOptions,
   ) {
-    const chains = Object.keys(deployConfig);
-    return {
-      configPath: `${configBasePath}/${createWarpRouteConfigId(symbol, chains)}-deploy-config.yaml`,
-    };
+    const chains = Object.keys(config);
+    const routeId =
+      'warpRouteId' in options
+        ? options.warpRouteId
+        : createWarpRouteConfigId(options.symbol, chains);
+
+    return `${this.getWarpRoutesPath()}/${routeId}-deploy.yaml`;
   }
 
   abstract listRegistryContent(): MaybePromise<RegistryContent>;
