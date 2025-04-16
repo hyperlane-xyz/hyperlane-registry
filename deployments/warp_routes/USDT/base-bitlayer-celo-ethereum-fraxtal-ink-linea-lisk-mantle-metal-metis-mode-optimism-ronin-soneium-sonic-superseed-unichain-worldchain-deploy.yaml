@@ -65,15 +65,6 @@ base:
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
-    extraBridges:
-      - limits:
-          bufferCap: "0"
-          rateLimitPerSecond: "0"
-        lockbox: "0x9d922c23d78179c2e75fe394fc8e49363f2dda85"
-      - limits:
-          bufferCap: "20000000000000"
-          rateLimitPerSecond: "5000000000"
-        lockbox: "0xe92e51d99ae33114c60d9621fb2e1ec0acea7e30"
     warpRouteLimits:
       bufferCap: "20000000000000"
       rateLimitPerSecond: "5000000000"
@@ -98,8 +89,8 @@ bitlayer:
   type: xERC20
   xERC20:
     warpRouteLimits:
-      bufferCap: "0"
-      rateLimitPerSecond: "0"
+      bufferCap: "2000000000000"
+      rateLimitPerSecond: "500000000"
 celo:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -144,8 +135,8 @@ ethereum:
   type: xERC20Lockbox
   xERC20:
     warpRouteLimits:
-      bufferCap: "0"
-      rateLimitPerSecond: "0"
+      bufferCap: "20000000000000"
+      rateLimitPerSecond: "5000000000"
 fraxtal:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -213,8 +204,8 @@ linea:
   type: xERC20
   xERC20:
     warpRouteLimits:
-      bufferCap: "0"
-      rateLimitPerSecond: "0"
+      bufferCap: "2000000000000"
+      rateLimitPerSecond: "500000000"
 lisk:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -259,8 +250,8 @@ mantle:
   type: xERC20
   xERC20:
     warpRouteLimits:
-      bufferCap: "0"
-      rateLimitPerSecond: "0"
+      bufferCap: "8000000000000"
+      rateLimitPerSecond: "2000000000"
 metal:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -282,8 +273,8 @@ metal:
   type: xERC20
   xERC20:
     warpRouteLimits:
-      bufferCap: "0"
-      rateLimitPerSecond: "0"
+      bufferCap: "2000000000000"
+      rateLimitPerSecond: "500000000"
 metis:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -305,8 +296,8 @@ metis:
   type: xERC20
   xERC20:
     warpRouteLimits:
-      bufferCap: "0"
-      rateLimitPerSecond: "0"
+      bufferCap: "2000000000000"
+      rateLimitPerSecond: "500000000"
 mode:
   hook:
     domains:
@@ -444,15 +435,6 @@ optimism:
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
-    extraBridges:
-      - limits:
-          bufferCap: "0"
-          rateLimitPerSecond: "0"
-        lockbox: "0x07e437d73e9e43ceece6ea14085b26159e3f7f31"
-      - limits:
-          bufferCap: "20000000000000"
-          rateLimitPerSecond: "5000000000"
-        lockbox: "0x18c4cdc2d774c047eac8375bb09853c4d6d6df36"
     warpRouteLimits:
       bufferCap: "20000000000000"
       rateLimitPerSecond: "5000000000"
@@ -477,8 +459,8 @@ ronin:
   type: xERC20
   xERC20:
     warpRouteLimits:
-      bufferCap: "0"
-      rateLimitPerSecond: "0"
+      bufferCap: "2000000000000"
+      rateLimitPerSecond: "500000000"
 soneium:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -523,8 +505,8 @@ sonic:
   type: xERC20
   xERC20:
     warpRouteLimits:
-      bufferCap: "0"
-      rateLimitPerSecond: "0"
+      bufferCap: "8000000000000"
+      rateLimitPerSecond: "2000000000"
 superseed:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
