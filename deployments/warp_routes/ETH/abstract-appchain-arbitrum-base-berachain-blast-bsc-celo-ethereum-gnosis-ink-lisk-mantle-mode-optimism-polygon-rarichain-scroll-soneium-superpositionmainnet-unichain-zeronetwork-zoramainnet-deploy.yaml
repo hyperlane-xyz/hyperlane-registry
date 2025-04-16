@@ -1,3 +1,17 @@
+abstract:
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  mailbox: "0x9BbDf86b272d224323136E15594fdCe487F40ce7"
+  owner: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  ownerOverrides:
+    proxyAdmin: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  type: native
+appchain:
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
+  owner: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  ownerOverrides:
+    proxyAdmin: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  type: native
 arbitrum:
   interchainSecurityModule: "0x0000000000000000000000000000000000000000"
   mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
@@ -16,6 +30,14 @@ base:
   ownerOverrides:
     proxyAdmin: "0x5b234E48a3dD867f0DdA9DAd1DBd554eCE823cA0"
   type: native
+berachain:
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  mailbox: "0x7f50C5776722630a0024fAE05fDe8b47571D7B39"
+  owner: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  ownerOverrides:
+    proxyAdmin: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  token: "0x2F6F07CDcf3588944Bf4C42aC74ff24bF56e7590"
+  type: collateral
 blast:
   interchainSecurityModule: "0x0000000000000000000000000000000000000000"
   mailbox: "0x3a867fCfFeC2B790970eeBDC9023E75B0a172aa7"
@@ -30,6 +52,14 @@ bsc:
   ownerOverrides:
     proxyAdmin: "0x5b234E48a3dD867f0DdA9DAd1DBd554eCE823cA0"
   token: "0x2170Ed0880ac9A755fd29B2688956BD959F933F8"
+  type: collateral
+celo:
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  mailbox: "0x50da3B3907A08a24fe4999F4Dcf337E8dC7954bb"
+  owner: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  ownerOverrides:
+    proxyAdmin: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  token: "0x66803FB87aBd4aaC3cbB3fAd7C3aa01f6F3FB207"
   type: collateral
 ethereum:
   interchainSecurityModule: "0x0000000000000000000000000000000000000000"
@@ -46,6 +76,13 @@ gnosis:
     proxyAdmin: "0x5b234E48a3dD867f0DdA9DAd1DBd554eCE823cA0"
   token: "0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1"
   type: collateral
+ink:
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  mailbox: "0x7f50C5776722630a0024fAE05fDe8b47571D7B39"
+  owner: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  ownerOverrides:
+    proxyAdmin: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  type: native
 lisk:
   interchainSecurityModule: "0x0000000000000000000000000000000000000000"
   mailbox: "0x2f2aFaE1139Ce54feFC03593FeE8AB2aDF4a85A7"
@@ -83,12 +120,40 @@ polygon:
     proxyAdmin: "0x5b234E48a3dD867f0DdA9DAd1DBd554eCE823cA0"
   token: "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619"
   type: collateral
+rarichain:
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  mailbox: "0x65dCf8F6b3f6a0ECEdf3d0bdCB036AEa47A1d615"
+  owner: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  ownerOverrides:
+    proxyAdmin: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  type: native
 scroll:
   interchainSecurityModule: "0x0000000000000000000000000000000000000000"
   mailbox: "0x2f2aFaE1139Ce54feFC03593FeE8AB2aDF4a85A7"
   owner: "0x5b234E48a3dD867f0DdA9DAd1DBd554eCE823cA0"
   ownerOverrides:
     proxyAdmin: "0x5b234E48a3dD867f0DdA9DAd1DBd554eCE823cA0"
+  type: native
+soneium:
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
+  owner: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  ownerOverrides:
+    proxyAdmin: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  type: native
+superpositionmainnet:
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  mailbox: "0x5e8a0fCc0D1DF583322943e01F02cB243e5300f6"
+  owner: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  ownerOverrides:
+    proxyAdmin: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  type: native
+unichain:
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
+  owner: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
+  ownerOverrides:
+    proxyAdmin: "0x00002a0c642a314eb6DD34c5Be2DA6504129969e"
   type: native
 zeronetwork:
   interchainSecurityModule: "0x0000000000000000000000000000000000000000"
