@@ -16,7 +16,6 @@ import { ChainAddresses } from '../../src/types.js';
 import { getRegistry } from '../../src/registry/registry-utils.js';
 import { DEFAULT_GITHUB_REGISTRY, PROXY_DEPLOYED_URL } from '../../src/consts.js';
 import { parseGitHubPath } from '../../src/utils.js';
-import { BaseRegistry } from '../../src/registry/BaseRegistry.js';
 
 const GITHUB_REGISTRY_BRANCH = 'main';
 
