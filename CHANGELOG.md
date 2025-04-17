@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 13.5.1
+
+### Patch Changes
+
+- 10bb5bd: Revert "chore: fix configs with violations (#765)" due to mailbox removal
+- 0796402: Reorder BSC rpc urls
+
 ## 13.5.0
 
 ### Minor Changes
