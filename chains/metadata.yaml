@@ -275,9 +275,9 @@ arbitrum:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
+    - http: https://arb1.arbitrum.io/rpc
     - http: https://arbitrum.llamarpc.com
     - http: https://rpc.ankr.com/arbitrum
-    - http: https://arb1.arbitrum.io/rpc
   technicalStack: arbitrumnitro
 arbitrumnova:
   blockExplorers:
@@ -1015,9 +1015,9 @@ bsc:
     symbol: BNB
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.ankr.com/bsc
     - http: https://bsc.drpc.org
     - http: https://bscrpc.com
+    - http: https://rpc.ankr.com/bsc
   technicalStack: other
 bsctestnet:
   blockExplorers:
@@ -3547,7 +3547,7 @@ kyvetestnet:
     denom: tkyve
     name: KYVE
     symbol: KYVE
-  protocol: cosmos
+  protocol: cosmosnative
   restUrls:
     - http: https://api.kaon.kyve.network
   rpcUrls:
@@ -4171,8 +4171,8 @@ modetestnet:
     reorgPeriod: 1
   chainId: 919
   deployer:
-    name: guy93354
-    url: https://github.com/guy93354
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Mode Testnet
   domainId: 919
   isTestnet: true
@@ -4852,7 +4852,8 @@ polygon:
   rpcUrls:
     - http: https://polygon-bor.publicnode.com
     - http: https://polygon-rpc.com
-    - http: https://rpc.ankr.com/polygon
+    - http: https://polygon.drpc.org
+    - http: https://polygon-pokt.nodies.app
   technicalStack: other
 polygonamoy:
   blockExplorers:
