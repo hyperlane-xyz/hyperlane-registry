@@ -1,5 +1,5 @@
 ---
-"@hyperlane-xyz/registry": patch
+'@hyperlane-xyz/registry': patch
 ---
 
 Reorder BSC rpc urls
