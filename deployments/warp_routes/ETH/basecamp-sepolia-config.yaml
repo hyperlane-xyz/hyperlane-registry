@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: native
+    chainName: basecamp
+    connections:
+      - token: ethereum|sepolia|0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH
+  - addressOrDenom: "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9"
+    chainName: sepolia
+    connections:
+      - token: ethereum|basecamp|native
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: EvmHypSynthetic
+    symbol: ETH 
