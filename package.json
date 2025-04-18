@@ -11,6 +11,7 @@
     "@eslint/js": "^9.1.1",
     "@faker-js/faker": "^9.6.0",
     "@hyperlane-xyz/sdk": "12.0.0",
+    "@hyperlane-xyz/utils": "12.0.0",
     "@types/chai-as-promised": "^8",
     "@types/mocha": "^10.0.1",
     "@types/node": "^16.9.1",
@@ -73,6 +74,7 @@
     "release": "yarn build && yarn changeset publish",
     "test:unit": "yarn build && mocha --require dotenv/config --config .mocharc.json './test/unit/*.test.ts' --exit",
     "test:health": "yarn build && mocha --config .mocharc.json './test/health/*.test.ts' --exit --parallel",
+    "test:eslint-rules": "mocha './test/eslint-rules/*.test.js' --exit",
     "version:prepare": "yarn changeset version && yarn install --no-immutable",
     "version:check": "yarn changeset status"
   },
