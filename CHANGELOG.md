@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 13.7.0
+
+### Minor Changes
+
+- 18b9ed8: remove higly rate limited rpcs for arb, base, bsc, op and ethereum
+
 ## 13.6.0
 
 ### Minor Changes
