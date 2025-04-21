@@ -3,7 +3,7 @@ import { ChainMetadataSchemaObject, WarpCoreConfigSchema } from '@hyperlane-xyz/
 import fs from 'fs';
 import { parse, stringify } from 'yaml';
 import { zodToJsonSchema } from 'zod-to-json-schema';
-import { warpRouteConfigToId } from '../src/registry/warp-utils';
+import { warpRouteConfigPathToId } from '../src/registry/warp-utils';
 
 const chainMetadata = {};
 const chainAddresses = {};
@@ -101,7 +101,7 @@ function createWarpConfigFiles() {
       if (!warpFile.endsWith('config.yaml')) continue;
       const [warpFileName] = warpFile.split('.');
       const config = parse(fs.readFileSync(`${inDirPath}/${warpFile}`, 'utf8'));
-      const id = warpRouteConfigToId(config);
+      const id = warpRouteConfigPathToId(`${inDirPath}/${warpFile}`);
       warpRouteConfigs[id] = config;
       fs.mkdirSync(`${assetOutPath}`, { recursive: true });
       fs.mkdirSync(`${tsOutPath}`, { recursive: true });

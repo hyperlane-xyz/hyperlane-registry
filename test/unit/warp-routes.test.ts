@@ -6,11 +6,10 @@ import {
   WarpCore,
   WarpRouteDeployConfigSchema,
 } from '@hyperlane-xyz/sdk';
-import { FileSystemRegistry } from '../../src/registry/FileSystemRegistry.js';
-import { createWarpRouteConfigId, parseWarpRouteConfigId } from '../../src/registry/warp-utils.js';
-import path from 'path';
 import fs from 'fs';
+import path from 'path';
 import { WARP_ROUTE_SYMBOL_DIRECTORY_REGEX } from '../../src/consts.js';
+import { FileSystemRegistry } from '../../src/registry/FileSystemRegistry.js';
 
 const BASE_URI = './';
 
@@ -27,9 +26,12 @@ describe('Warp Core Configs', () => {
       .filter((entry) => entry.isDirectory())
       // Convert to a path within the deployments directory, as expected by the regex
       .map((entry) => path.join('warp_routes', entry.name));
-    
+
     for (const symbolDir of symbolDirs) {
-      expect(WARP_ROUTE_SYMBOL_DIRECTORY_REGEX.test(symbolDir), `Symbol directory ${symbolDir} does not meet expected regex`).to.be.true;
+      expect(
+        WARP_ROUTE_SYMBOL_DIRECTORY_REGEX.test(symbolDir),
+        `Symbol directory ${symbolDir} does not meet expected regex`,
+      ).to.be.true;
     }
   });
 
@@ -40,24 +42,6 @@ describe('Warp Core Configs', () => {
       const warpCore = WarpCore.FromConfig(multiProvider, config);
       expect(warpCore).to.be.an.instanceOf(WarpCore);
       expect(warpCore.tokens.length).to.be.greaterThan(0);
-    });
-
-    it(`WarpCore ${id} has valid chain names`, () => {
-      const { chainNames } = parseWarpRouteConfigId(id);
-
-      // Verify each chain exists in registry
-      for (const chain of chainNames) {
-        expect(localRegistry.getChainMetadata(chain), `Chain ${chain} not found in registry`).to.not
-          .be.null;
-      }
-    });
-
-    it(`WarpCore ${id} has chain names in alphabetical order`, () => {
-      const { chainNames } = parseWarpRouteConfigId(id);
-
-      // Verify chains are in alphabetical order
-      const sortedChains = [...chainNames].sort();
-      expect(chainNames).to.deep.equal(sortedChains, 'Chain names must be in alphabetical order');
     });
 
     it(`WarpCore ${id} has valid token logoURIs`, () => {
@@ -85,29 +69,6 @@ describe('Warp Core Configs', () => {
         foundLogoURI === 0 || foundLogoURI === config.tokens.length,
         `Tokens must all or none have logoURI. Found ${foundLogoURI} with logoURI out of ${config.tokens.length}`,
       ).to.be.true;
-    });
-
-    it(`WarpCore ${id} matches derived id from config`, () => {
-      // Skip check on TIA/forma-stride to avoid breaking changes to forma
-      if (id === 'TIA/forma-stride') {
-        return;
-      }
-
-      // Get the symbol and chain names from the config
-      const config = routes[id];
-      const { chainNames } = parseWarpRouteConfigId(id);
-
-      // Create the ID from the config
-      const symbol = config.tokens[0].symbol;
-      const tokenChains = [...new Set(config.tokens.map((token) => token.chainName))];
-      const derivedId = createWarpRouteConfigId(symbol, tokenChains);
-      const { chainNames: derivedChainNames } = parseWarpRouteConfigId(derivedId);
-
-      // Verify the chain names match
-      expect(chainNames).to.deep.equal(
-        derivedChainNames,
-        'Chain names in ID must match derived chain names',
-      );
     });
 
     it(`WarpCore ${id} only specifies a coinGeckoId for tokens that escrow tokens`, () => {
@@ -151,12 +112,12 @@ describe('Warp Deploy Configs', () => {
     'TIA/arbitrum-neutron',
     'TIA/eclipsemainnet-stride',
     'TIA/mantapacific-neutron',
-    'stTIA/eclipsemainnet-stride'
+    'stTIA/eclipsemainnet-stride',
   ];
-  const configs = Object.keys(warpDeploys).filter(id => !excludeIds.includes(id));
+  const configs = Object.keys(warpDeploys).filter((id) => !excludeIds.includes(id));
   for (const id of configs) {
     it(`Deploy config ${id} is valid`, async () => {
       WarpRouteDeployConfigSchema.parse(warpDeploys[id]);
     });
   }
-})
+});

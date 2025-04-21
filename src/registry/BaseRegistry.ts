@@ -1,6 +1,12 @@
 import type { Logger } from 'pino';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type {
+  ChainMap,
+  ChainMetadata,
+  ChainName,
+  WarpCoreConfig,
+  WarpRouteDeployConfig,
+} from '@hyperlane-xyz/sdk';
 import type { ChainAddresses, MaybePromise, WarpDeployConfigMap } from '../types.js';
 import { WarpRouteConfigMap } from '../types.js';
 import { stripLeadingSlash } from '../utils.js';
@@ -13,6 +19,7 @@ import type {
   WarpRouteFilterParams,
 } from './IRegistry.js';
 import { MergedRegistry } from './MergedRegistry.js';
+import { createWarpRouteConfigId } from './warp-utils.js';
 
 export abstract class BaseRegistry implements IRegistry {
   public abstract type: RegistryType;
@@ -54,12 +61,19 @@ export abstract class BaseRegistry implements IRegistry {
       throw new Error(
         'Only one token symbol per warp config is supported for now. Consider passing a symbol as a parameter',
       );
-    const symbol = options?.symbol || symbols.values().next().value;
-    const chains = tokens
-      .map((token) => token.chainName)
-      .sort()
-      .join('-');
-    const basePath = `${this.getWarpRoutesPath()}/${symbol}/${chains}`;
+
+    let warpRouteId: string;
+    if (options?.id) {
+      warpRouteId = options.id;
+    } else {
+      const symbol = options?.symbol || symbols.values().next().value;
+      warpRouteId = createWarpRouteConfigId(
+        symbol!,
+        tokens.map((token) => token.chainName),
+      );
+    }
+
+    const basePath = `${this.getWarpRoutesPath()}/${warpRouteId}`;
     return { configPath: `${basePath}-config.yaml` };
   }
 
