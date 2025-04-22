@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 13.8.0
+
+### Minor Changes
+
+- f738580: Remove mailbox configs from warp route deployments
+
+### Patch Changes
+
+- a72d34c: Extend LUMIA with arbitrum, avalanche, base, optimism, polygon
+
 ## 13.7.1
 
 ### Patch Changes
