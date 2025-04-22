@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xf0c8c5fc69fCC3fA49C319Fdf422D8279756afE2"
+    chainName: bsc
+    connections:
+      - token: ethereum|ethereum|0x0C919509663cb273E156B706f065b9F7e6331891
+    decimals: 18
+    name: Staked HYPER
+    standard: EvmHypSyntheticRebase
+    symbol: stHYPERSTAGE
+  - addressOrDenom: "0x0C919509663cb273E156B706f065b9F7e6331891"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x9FB258cbd8415C4Fda62092003FCB54F60Af670B"
+    connections:
+      - token: ethereum|bsc|0xf0c8c5fc69fCC3fA49C319Fdf422D8279756afE2
+    decimals: 18
+    name: Staked HYPER
+    standard: EvmHypRebaseCollateral
+    symbol: stHYPERSTAGE
