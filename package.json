@@ -74,7 +74,8 @@
     "test:unit": "yarn build && mocha --require dotenv/config --config .mocharc.json './test/unit/*.test.ts' --exit",
     "test:health": "yarn build && mocha --config .mocharc.json './test/health/*.test.ts' --exit --parallel",
     "version:prepare": "yarn changeset version && yarn install --no-immutable",
-    "version:check": "yarn changeset status"
+    "version:check": "yarn changeset status",
+    "sort-yaml": "eslint --fix chains/**/*.yaml deployments/**/*.yaml"
   },
   "packageManager": "yarn@4.5.1"
 }
