@@ -1,5 +1,60 @@
 # @hyperlane-xyz/registry
 
+## 13.7.1
+
+### Patch Changes
+
+- 23259fd: Add logoURI for COTI USDC
+
+## 13.7.0
+
+### Minor Changes
+
+- 18b9ed8: remove higly rate limited rpcs for arb, base, bsc, op and ethereum
+
+## 13.6.0
+
+### Minor Changes
+
+- 4d2c28d: Added the USDC/coti-ethereum warp route
+- 53c4667: Add production and staging warp route config for HYPER and stHYPER
+- 17630ed: Add the SUPR configs and logo
+
+### Patch Changes
+
+- 10bb5bd: Revert "chore: fix configs with violations (#765)" due to mailbox removal
+- 079da1c: add missing coingecko id to hyper tokens
+- 0796402: Reorder BSC rpc urls
+
+## 13.5.0
+
+### Minor Changes
+
+- b09f287: Add USDT/ethereum-lumia for Lumia Prisim
+- d9520ae: Add USDC/ethereum-lumiaprism warp route artifacts
+
+## 13.4.0
+
+### Minor Changes
+
+- 5fca08b: Update kyvetestnet protocol from cosmos to cosmosnative.
+
+### Patch Changes
+
+- 58b2338: Update polygon RPCs, removing default ankr one.
+- a68c1e1: Update hyperevm configs to include explicit proxyAdmin to resolve check-deploy violations
+- 8c18d62: Update modetestnet deployer.
+
+## 13.3.0
+
+### Minor Changes
+
+- 0946efd: Update hyperlane SDK.
+
+### Patch Changes
+
+- cdd6a74: Remove routing between base and ethereum
+
 ## 13.2.0
 
 ### Minor Changes
