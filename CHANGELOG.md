@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 13.7.1
+
+### Patch Changes
+
+- 23259fd: Add logoURI for COTI USDC
+
 ## 13.7.0
 
 ### Minor Changes
