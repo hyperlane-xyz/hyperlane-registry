@@ -14,9 +14,9 @@ import { chainAddresses, chainMetadata } from '../../dist/index.js';
 
 import { Mailbox__factory } from '@hyperlane-xyz/core';
 
-const CHAINS_TO_SKIP = [
+const CHAINS_TO_SKIP = new Set([
   'worldchain', // only allows private RPC access
-];
+]);
 
 const HEALTH_CHECK_TIMEOUT = 10_000; // 10s
 const HEALTH_CHECK_DELAY = 3_000; // 3s
@@ -24,6 +24,8 @@ const HEALTH_CHECK_DELAY = 3_000; // 3s
 async function isRpcHealthy(rpc: RpcUrl, metadata: ChainMetadata): Promise<boolean> {
   const builder = protocolToDefaultProviderBuilder[metadata.protocol];
   const provider = builder([rpc], metadata.chainId);
+
+  console.debug(`Checking RPC health for chain ${metadata.name} (${rpc.http})`);
   if (provider.type === ProviderType.EthersV5)
     return isEthersV5ProviderHealthy(provider.provider, metadata);
   else if (provider.type === ProviderType.SolanaWeb3)
@@ -82,9 +84,9 @@ async function isCosmJsProviderHealthy(
 
 describe('Chain RPC health', async () => {
   for (const [chain, metadata] of Object.entries(chainMetadata)) {
-    if (CHAINS_TO_SKIP.includes(chain)) continue;
+    if (CHAINS_TO_SKIP.has(chain)) continue;
     metadata.rpcUrls.map((rpc, i) => {
-      it(`${chain} RPC number ${i} is healthy`, async () => {
+      it(`${chain} RPC number ${i} is healthy (${rpc.http})`, async () => {
         const isHealthy = await isRpcHealthy(rpc, metadata);
         if (!isHealthy) await sleep(HEALTH_CHECK_DELAY);
         expect(isHealthy).to.be.true;
