@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xF80dcED2488Add147E60561F8137338F7f3976e1"
+    chainName: arbitrum
+    connections:
+      - token: ethereum|base|0x830B15a1986C75EaF8e048442a13715693CBD8bD
+      - token: ethereum|bsc|0x9537c772c6092DB4B93cFBA93659bB5a8c0E133D
+      - token: ethereum|ethereum|0xC10c27afcb915439C27cAe54F5F46Da48cd71190
+      - token: ethereum|optimism|0x31cD131F5F6e1Cc0d6743F695Fc023B70D0aeAd8
+    decimals: 18
+    name: Hyperlane
+    standard: EvmHypSynthetic
+    symbol: HYPERSTAGE
+  - addressOrDenom: "0x830B15a1986C75EaF8e048442a13715693CBD8bD"
+    chainName: base
+    connections:
+      - token: ethereum|arbitrum|0xF80dcED2488Add147E60561F8137338F7f3976e1
+      - token: ethereum|bsc|0x9537c772c6092DB4B93cFBA93659bB5a8c0E133D
+      - token: ethereum|ethereum|0xC10c27afcb915439C27cAe54F5F46Da48cd71190
+      - token: ethereum|optimism|0x31cD131F5F6e1Cc0d6743F695Fc023B70D0aeAd8
+    decimals: 18
+    name: Hyperlane
+    standard: EvmHypSynthetic
+    symbol: HYPERSTAGE
+  - addressOrDenom: "0x9537c772c6092DB4B93cFBA93659bB5a8c0E133D"
+    chainName: bsc
+    connections:
+      - token: ethereum|arbitrum|0xF80dcED2488Add147E60561F8137338F7f3976e1
+      - token: ethereum|base|0x830B15a1986C75EaF8e048442a13715693CBD8bD
+      - token: ethereum|ethereum|0xC10c27afcb915439C27cAe54F5F46Da48cd71190
+      - token: ethereum|optimism|0x31cD131F5F6e1Cc0d6743F695Fc023B70D0aeAd8
+    decimals: 18
+    name: Hyperlane
+    standard: EvmHypSynthetic
+    symbol: HYPERSTAGE
+  - addressOrDenom: "0xC10c27afcb915439C27cAe54F5F46Da48cd71190"
+    chainName: ethereum
+    connections:
+      - token: ethereum|arbitrum|0xF80dcED2488Add147E60561F8137338F7f3976e1
+      - token: ethereum|base|0x830B15a1986C75EaF8e048442a13715693CBD8bD
+      - token: ethereum|bsc|0x9537c772c6092DB4B93cFBA93659bB5a8c0E133D
+      - token: ethereum|optimism|0x31cD131F5F6e1Cc0d6743F695Fc023B70D0aeAd8
+    decimals: 18
+    name: Hyperlane
+    standard: EvmHypSynthetic
+    symbol: HYPERSTAGE
+  - addressOrDenom: "0x31cD131F5F6e1Cc0d6743F695Fc023B70D0aeAd8"
+    chainName: optimism
+    connections:
+      - token: ethereum|arbitrum|0xF80dcED2488Add147E60561F8137338F7f3976e1
+      - token: ethereum|base|0x830B15a1986C75EaF8e048442a13715693CBD8bD
+      - token: ethereum|bsc|0x9537c772c6092DB4B93cFBA93659bB5a8c0E133D
+      - token: ethereum|ethereum|0xC10c27afcb915439C27cAe54F5F46Da48cd71190
+    decimals: 18
+    name: Hyperlane
+    standard: EvmHypSynthetic
+    symbol: HYPERSTAGE

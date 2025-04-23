@@ -275,9 +275,9 @@ arbitrum:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://arbitrum.llamarpc.com
-    - http: https://rpc.ankr.com/arbitrum
     - http: https://arb1.arbitrum.io/rpc
+    - http: https://arbitrum.rpc.subquery.network/public
+    - http: https://arbitrum.drpc.org
   technicalStack: arbitrumnitro
 arbitrumnova:
   blockExplorers:
@@ -707,6 +707,10 @@ base:
     - http: https://base.publicnode.com/
     - http: https://mainnet.base.org
     - http: https://base.blockpi.network/v1/rpc/public
+    - http: https://base.drpc.org
+    - http: https://base.llamarpc.com
+    - http: https://1rpc.io/base
+    - http: https://base-pokt.nodies.app
   technicalStack: opstack
 basesepolia:
   blockExplorers:
@@ -1015,9 +1019,11 @@ bsc:
     symbol: BNB
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.ankr.com/bsc
     - http: https://bsc.drpc.org
-    - http: https://bscrpc.com
+    - http: https://bnb.rpc.subquery.network/public
+    - http: https://binance.llamarpc.com
+    - http: https://bsc.blockrazor.xyz
+    - http: https://bsc-pokt.nodies.app
   technicalStack: other
 bsctestnet:
   blockExplorers:
@@ -2241,8 +2247,10 @@ ethereum:
   rpcUrls:
     - http: https://eth.llamarpc.com
     - http: https://ethereum.publicnode.com
-    - http: https://cloudflare-eth.com
     - http: https://eth.drpc.org
+    - http: https://rpc.flashbots.net
+    - http: https://eth.blockrazor.xyz
+    - http: https://eth-pokt.nodies.app
   technicalStack: other
 euphoriatestnet:
   blockExplorers:
@@ -3547,7 +3555,7 @@ kyvetestnet:
     denom: tkyve
     name: KYVE
     symbol: KYVE
-  protocol: cosmos
+  protocol: cosmosnative
   restUrls:
     - http: https://api.kaon.kyve.network
   rpcUrls:
@@ -4171,8 +4179,8 @@ modetestnet:
     reorgPeriod: 1
   chainId: 919
   deployer:
-    name: guy93354
-    url: https://github.com/guy93354
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Mode Testnet
   domainId: 919
   isTestnet: true
@@ -4645,6 +4653,9 @@ optimism:
   protocol: ethereum
   rpcUrls:
     - http: https://mainnet.optimism.io
+    - http: https://optimism.drpc.org
+    - http: https://optimism-rpc.publicnode.com
+    - http: https://op-pokt.nodies.app
   technicalStack: opstack
 optimismsepolia:
   blockExplorers:
@@ -4852,7 +4863,8 @@ polygon:
   rpcUrls:
     - http: https://polygon-bor.publicnode.com
     - http: https://polygon-rpc.com
-    - http: https://rpc.ankr.com/polygon
+    - http: https://polygon.drpc.org
+    - http: https://polygon-pokt.nodies.app
   technicalStack: other
 polygonamoy:
   blockExplorers:
