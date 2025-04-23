@@ -143,6 +143,11 @@ ethereum:
   token: "0x6D265C7dD8d76F25155F1a7687C693FDC1220D12"
   type: xERC20Lockbox
   xERC20:
+    extraBridges:
+      - limits:
+          bufferCap: "20000000000000"
+          rateLimitPerSecond: "5000000000"
+        lockbox: "0x6D265C7dD8d76F25155F1a7687C693FDC1220D12"
     warpRouteLimits:
       bufferCap: "20000000000000"
       rateLimitPerSecond: "5000000000"
