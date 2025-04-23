@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 13.9.0
+
+### Minor Changes
+
+- 79a90e0: Add ETH/arbitrum-base-ethereum-lumiaprism-optimism-polygon configs
+
 ## 13.8.0
 
 ### Minor Changes
