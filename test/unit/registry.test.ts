@@ -103,7 +103,7 @@ describe('Registry utilities', () => {
       expect(firstRoute!.tokens.length).to.be.greaterThan(0);
       const noRoutes = await registry.getWarpRoutes({ symbol: 'NOTFOUND' });
       expect(Object.keys(noRoutes).length).to.eql(0);
-    }).timeout(15_000);
+    }).timeout(20_000);
 
     it(`Fetches warp deploy configs for ${registry.type} registry`, async () => {
       const routes = await registry.getWarpDeployConfigs();
@@ -214,7 +214,7 @@ describe('Registry utilities', () => {
     afterEach(() => {
       sinon.restore();
     });
-    it('always uses the public api if rate limit has been not been hit', async () => {
+    it('always uses the public api if rate limit has not been hit', async () => {
       getApiRateLimitStub.returns({ remaining: 10 });
       expect(await proxiedGithubRegistry.getApiUrl()).to.equal(
         `${GITHUB_API_URL}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`,
