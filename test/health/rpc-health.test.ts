@@ -15,7 +15,23 @@ import { chainAddresses, chainMetadata } from '../../dist/index.js';
 import { Mailbox__factory } from '@hyperlane-xyz/core';
 
 const CHAINS_TO_SKIP = new Set([
-  'worldchain', // only allows private RPC access
+  // only allows private RPC access
+  'worldchain',
+  // No Healthy RPC
+  'artheratestnet',
+  'astarzkevm',
+  'galadrieldevnet',
+  'ebi',
+  'fhenixtestnet',
+  'koitestnet',
+  'mevmdevnet',
+  'mitosistestnet',
+  'nautilus',
+  'opengradienttestnet',
+  'piccadilly',
+  'sonictestnet',
+  // Flaky RPC
+  'infinityvm',
 ]);
 
 const HEALTH_CHECK_TIMEOUT = 10_000; // 10s
