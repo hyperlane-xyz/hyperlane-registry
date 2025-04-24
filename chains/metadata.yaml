@@ -334,7 +334,8 @@ arbitrumsepolia:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://arbitrum-sepolia.blockpi.network/v1/rpc/public
+    - http: https://arbitrum-sepolia.drpc.org
+    - http: https://arbitrum-sepolia.gateway.tenderly.co
     - http: https://sepolia-rollup.arbitrum.io/rpc
   technicalStack: arbitrumnitro
 arcadia:
@@ -412,7 +413,7 @@ argochaintestnet:
     symbol: AGC
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc-testnet.devolvedai.com
+    - http: https://test-rpc.devolvedai.com
 artela:
   blockExplorers:
     - apiUrl: https://artscan.artela.network/api
@@ -647,7 +648,9 @@ avalanche:
     symbol: AVAX
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.ankr.com/avalanche
+    - http: https://avalanche.drpc.org
+    - http: https://1rpc.io/avax/c
+    - http: https://avalanche-c-chain-rpc.publicnode.com
     - http: https://api.avax.network/ext/bc/C/rpc
       pagination:
         maxBlockRange: 100000
@@ -764,9 +767,7 @@ berabartio:
     symbol: BERA
   protocol: ethereum
   rpcUrls:
-    - http: https://bartio.rpc.berachain.com/
-    - http: https://bartio.drpc.org
-    - http: https://bera-testnet.nodeinfra.com
+    - http: https://berachain-testnet-rpc.publicnode.com
 berachain:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/80094/etherscan/api/
@@ -1051,7 +1052,7 @@ bsctestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://bsc-testnet.publicnode.com
-    - http: https://bsc-testnet.blockpi.network/v1/rpc/public
+    - http: https://bsc-testnet.drpc.org
 bsquared:
   blockExplorers:
     - apiUrl: https://explorer.bsquared.network/api
@@ -1477,7 +1478,6 @@ coredao:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.coredao.org
-    - http: https://core.public.infstones.com
     - http: https://rpc.ankr.com/core
     - http: https://core.drpc.org
     - http: https://rpc-core.icecreamswap.com
@@ -2491,6 +2491,8 @@ flare:
   protocol: ethereum
   rpcUrls:
     - http: https://flare-api.flare.network/ext/C/rpc
+      pagination:
+        maxBlockRange: 30
     - http: https://flare.solidifi.app/ext/C/rpc
     - http: https://flare.rpc.thirdweb.com
     - http: https://rpc.ankr.com/flare
@@ -2966,7 +2968,6 @@ harmony:
     - http: https://api.harmony.one
     - http: https://api.s0.t.hmny.io
     - http: https://1rpc.io/one
-    - http: https://rpc.ankr.com/harmony
   technicalStack: other
 harmonytestnet:
   blockExplorers:
@@ -3138,7 +3139,7 @@ hyperliquidevmtestnet:
     symbol: HYPE
   protocol: ethereum
   rpcUrls:
-    - http: https://api.hyperliquid-testnet.xyz/evm
+    - http: https://rpc.hyperliquid-testnet.xyz/evm
 immutablezkevmmainnet:
   blockExplorers:
     - apiUrl: https://explorer.immutable.com/api/eth-rpc
@@ -3440,7 +3441,6 @@ kava:
   protocol: ethereum
   rpcUrls:
     - http: https://evm.kava-rpc.com
-    - http: https://evm.kava.chainstacklabs.com
     - http: https://rpc.ankr.com/kava_evm
     - http: https://evm.kava.io
     - http: https://kava.drpc.org
@@ -3590,7 +3590,6 @@ linea:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.linea.build
-    - http: https://linea.blockpi.network/v1/rpc/public
     - http: https://1rpc.io/linea
     - http: https://linea.drpc.org
   technicalStack: other
@@ -3616,7 +3615,7 @@ lineasepolia:
   rpcUrls:
     - http: https://rpc.sepolia.linea.build
     - http: https://linea-sepolia-rpc.publicnode.com
-    - http: https://linea-sepolia.blockpi.network/v1/rpc/public
+    - http: https://linea-sepolia.drpc.org
 lisk:
   blockExplorers:
     - apiUrl: https://blockscout.lisk.com/api/eth-rpc
@@ -4343,9 +4342,7 @@ moonbase:
     symbol: DEV
   protocol: ethereum
   rpcUrls:
-    - http: https://moonbase-alpha.public.blastapi.io
-    - http: https://moonbase.unitedbloc.com
-    - http: https://rpc.testnet.moonbeam.network
+    - http: https://moonbase-alpha.drpc.org
     - http: https://rpc.testnet.moonbeam.network
 moonbeam:
   blockExplorers:
@@ -4394,10 +4391,8 @@ moonriver:
     symbol: MOVR
   protocol: ethereum
   rpcUrls:
-    - http: https://moonriver.public.blastapi.io
     - http: https://moonriver-rpc.dwellir.com
     - http: https://moonriver.api.onfinality.io/public
-    - http: https://moonriver.unitedbloc.com:2000
     - http: https://rpc.api.moonriver.moonbeam.network
     - http: https://moonriver.drpc.org
 morph:
@@ -4784,7 +4779,6 @@ orderly:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.orderly.network
-    - http: https://l2-orderly-mainnet-0.t.conduit.xyz
   technicalStack: opstack
 osmosis:
   bech32Prefix: osmo
@@ -4969,8 +4963,8 @@ polygonamoy:
   rpcUrls:
     - http: https://rpc-amoy.polygon.technology
     - http: https://polygon-amoy-bor-rpc.publicnode.com
-    - http: https://polygon-amoy.blockpi.network/v1/rpc/public
-    - http: https://rpc.ankr.com/polygon_amoy
+    - http: https://polygon-amoy.drpc.org
+    - http: https://polygon-amoy.gateway.tenderly.co
 polygonzkevm:
   blockExplorers:
     - apiUrl: https://api-zkevm.polygonscan.com/api
@@ -5192,7 +5186,7 @@ reactivekopli:
     symbol: kREACT
   protocol: ethereum
   rpcUrls:
-    - http: https://kopli-rpc.rkt.ink
+    - http: https://kopli-rpc.rnk.dev
 real:
   blockExplorers:
     - apiUrl: https://explorer.re.al/api/eth-rpc
@@ -5219,7 +5213,8 @@ real:
     symbol: reETH
   protocol: ethereum
   rpcUrls:
-    - http: https://real.drpc.org
+    - http: https://rpc.realforreal.gelato.digital
+    - http: https://tangible-real.gateway.tenderly.co
   technicalStack: arbitrumnitro
 redstone:
   blockExplorers:
@@ -5354,8 +5349,6 @@ rootstockmainnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.mainnet.rootstock.io/kXhXHf6TnnfW1POvr4UT0YUvujmuju-M
-    - http: https://public-node.rsk.co
-    - http: https://mycrypto.rsk.co
   technicalStack: other
 rootstocktestnet:
   blockExplorers:
@@ -5516,7 +5509,6 @@ scrollsepolia:
   rpcUrls:
     - http: https://sepolia-rpc.scroll.io
     - http: https://rpc.ankr.com/scroll_sepolia_testnet
-    - http: https://scroll-sepolia.blockpi.network/v1/rpc/public
     - http: https://scroll-sepolia.chainstacklabs.com
     - http: https://scroll-public.scroll-testnet.quiknode.pro
 sei:
@@ -5573,8 +5565,9 @@ sepolia:
   protocol: ethereum
   rpcUrls:
     - http: https://ethereum-sepolia.publicnode.com
-    - http: https://ethereum-sepolia.blockpi.network/v1/rpc/public
-    - http: https://rpc.sepolia.org
+    - http: https://gateway.tenderly.co/public/sepolia
+    - http: https://sepolia.drpc.org
+    - http: https://1rpc.io/sepolia
 shibarium:
   blockExplorers:
     - apiUrl: https://shibariumscan.io/api
@@ -5805,7 +5798,7 @@ somniatestnet:
     symbol: STT
   protocol: ethereum
   rpcUrls:
-    - http: https://vsf-rpc.somnia.network
+    - http: https://dream-rpc.somnia.network
   technicalStack: other
 soneium:
   blockExplorers:
@@ -6116,7 +6109,9 @@ storyodysseytestnet:
     symbol: IP
   protocol: ethereum
   rpcUrls:
-    - http: https://odyssey.storyrpc.io
+    - http: https://evm-rpc.story.testnet.dteam.tech
+    - http: https://evm-rpc-story.josephtran.xyz
+    - http: https://lightnode-json-rpc-story.grandvalleys.com
 storytestnet:
   blockExplorers:
     - apiUrl: https://testnet.storyscan.xyz/api
@@ -6137,9 +6132,8 @@ storytestnet:
     symbol: IP
   protocol: ethereum
   rpcUrls:
-    - http: https://story-testnet-evm.itrocket.net
-    - http: https://story-rpc.oneiricts.com:8445
-    - http: https://testnet.storyrpc.io
+    - http: https://evm-rpc-story.josephtran.xyz
+    - http: https://lightnode-json-rpc-story.grandvalleys.com
   transactionOverrides:
     gasPrice: 16000000000
 stride:
@@ -6887,7 +6881,8 @@ viction:
     symbol: VIC
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.tomochain.com
+    - http: https://rpc.viction.xyz
+    - http: https://viction.drpc.org
     - http: https://viction.blockpi.network/v1/rpc/public
   technicalStack: other
 weavevmtestnet:
@@ -7137,7 +7132,6 @@ zklink:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.zklink.io
-    - http: https://rpc.zklink.network
   technicalStack: zksync
 zksync:
   blockExplorers:
