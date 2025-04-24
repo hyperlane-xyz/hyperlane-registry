@@ -14,28 +14,26 @@ import { chainAddresses, chainMetadata } from '../../dist/index.js';
 
 import { Mailbox__factory } from '@hyperlane-xyz/core';
 
-// const CHAINS_TO_SKIP = new Set([
-//   // only allows private RPC access
-//   'worldchain',
-//   // No Healthy RPC
-//   'artheratestnet',
-//   'astarzkevm',
-//   'galadrieldevnet',
-//   'ebi',
-//   'fhenixtestnet',
-//   'koitestnet',
-//   'mevmdevnet',
-//   'mitosistestnet',
-//   'nautilus',
-//   'opengradienttestnet',
-//   'piccadilly',
-//   'sonictestnet',
-//   // Flaky RPC
-//   'infinityvm',
-//   'humanitytestnet',
-// ]);
-
-const CHAINS_TO_SKIP = new Set(['kyvetestnet']);
+const CHAINS_TO_SKIP = new Set([
+  // only allows private RPC access
+  'worldchain',
+  // No Healthy RPC
+  'artheratestnet',
+  'astarzkevm',
+  'galadrieldevnet',
+  'ebi',
+  'fhenixtestnet',
+  'koitestnet',
+  'mevmdevnet',
+  'mitosistestnet',
+  'nautilus',
+  'opengradienttestnet',
+  'piccadilly',
+  'sonictestnet',
+  // Flaky RPC
+  'infinityvm',
+  'humanitytestnet',
+]);
 
 const HEALTH_CHECK_TIMEOUT = 10_000; // 10s
 const HEALTH_CHECK_DELAY = 3_000; // 3s
@@ -107,7 +105,7 @@ async function isCosmJsProviderHealthy(
 
 describe('Chain RPC health', async () => {
   for (const [chain, metadata] of Object.entries(chainMetadata)) {
-    if (!CHAINS_TO_SKIP.has(chain)) continue;
+    if (CHAINS_TO_SKIP.has(chain)) continue;
     metadata.rpcUrls.map((rpc, i) => {
       it(`${chain} RPC number ${i} is healthy (${rpc.http})`, async () => {
         const isHealthy = await isRpcHealthy(rpc, metadata);
