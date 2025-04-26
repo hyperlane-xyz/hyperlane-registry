@@ -1,18 +1,5 @@
 # @hyperlane-xyz/registry
 
-## 13.12.0
-
-### Minor Changes
-
-- 39199c0: Add MILK/bsc-milkyway route.
-
-## 13.11.0
-
-### Minor Changes
-
-- 1599da7: Add milkyway chain metadata and addresses.
-- 86a9916: Update to hyperlane SDK 12.3.0.
-
 ## 13.10.0
 
 ### Minor Changes
