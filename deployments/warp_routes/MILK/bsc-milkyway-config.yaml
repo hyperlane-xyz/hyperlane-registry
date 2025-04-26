@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: 'milk1326ley07fm6rpeqgxmxevnqevrsjfew2akzupg'
+    chainName: milkyway
+    connections:
+      - token: ethereum|bsc|0x7b4Bf9fEcCfF207eF2CB7101Ceb15b8516021AcD
+    decimals: 6
+    logoURI: /deployments/warp_routes/MILK/logo.svg
+    name: MilkyWay
+    standard: CosmosNativeHypCollateral
+    symbol: MILK
+  - addressOrDenom: '0x7b4Bf9fEcCfF207eF2CB7101Ceb15b8516021AcD'
+    chainName: bsc
+    connections:
+      - token: cosmosnative|milkyway|milk1326ley07fm6rpeqgxmxevnqevrsjfew2akzupg
+    decimals: 6
+    logoURI: /deployments/warp_routes/MILK/logo.svg
+    name: MilkyWay
+    standard: EvmHypSynthetic
+    symbol: MILK
