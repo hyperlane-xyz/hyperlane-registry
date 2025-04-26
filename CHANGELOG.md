@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 13.11.0
+
+### Minor Changes
+
+- 1599da7: Add milkyway chain metadata and addresses.
+- 86a9916: Update to hyperlane SDK 12.3.0.
+
 ## 13.10.0
 
 ### Minor Changes
