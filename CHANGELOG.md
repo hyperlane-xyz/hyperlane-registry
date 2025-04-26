@@ -1,5 +1,20 @@
 # @hyperlane-xyz/registry
 
+## 13.10.0
+
+### Minor Changes
+
+- ccbed07: added milkywaytestnet chain deployment
+
+### Patch Changes
+
+- 1227be2: Update ZeroNetwork USDT owners, and remove extraneous ownerOverrides
+- 8a88ab6: Updated `remoteRouters` in `-deploy.yaml` to reflect non-fully connected deployments and synchronised the `connections` property in `-config.yaml`.
+- c958338: Add lumia Logo
+- e080b2d: Update USDC zeronetwork owners
+- 3eea825: Default ISM updates.
+- f4e41f2: Adding wfragJTO and wfragSOL metadata.
+
 ## 13.9.0
 
 ### Minor Changes
