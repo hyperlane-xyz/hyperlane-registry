@@ -32,6 +32,7 @@ const CHAINS_TO_SKIP = new Set([
   'sonictestnet',
   // Flaky RPC
   'infinityvm',
+  'humanitytestnet',
 ]);
 
 const HEALTH_CHECK_TIMEOUT = 10_000; // 10s
