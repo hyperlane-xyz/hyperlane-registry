@@ -1,5 +1,82 @@
 # @hyperlane-xyz/registry
 
+## 13.12.0
+
+### Minor Changes
+
+- 39199c0: Add MILK/bsc-milkyway route.
+
+## 13.11.0
+
+### Minor Changes
+
+- 1599da7: Add milkyway chain metadata and addresses.
+- 86a9916: Update to hyperlane SDK 12.3.0.
+
+## 13.10.0
+
+### Minor Changes
+
+- ccbed07: added milkywaytestnet chain deployment
+
+### Patch Changes
+
+- 1227be2: Update ZeroNetwork USDT owners, and remove extraneous ownerOverrides
+- 8a88ab6: Updated `remoteRouters` in `-deploy.yaml` to reflect non-fully connected deployments and synchronised the `connections` property in `-config.yaml`.
+- c958338: Add lumia Logo
+- e080b2d: Update USDC zeronetwork owners
+- 3eea825: Default ISM updates.
+- f4e41f2: Adding wfragJTO and wfragSOL metadata.
+
+## 13.9.0
+
+### Minor Changes
+
+- 79a90e0: Add ETH/arbitrum-base-ethereum-lumiaprism-optimism-polygon configs
+
+## 13.8.0
+
+### Minor Changes
+
+- f738580: Remove mailbox configs from warp route deployments
+
+### Patch Changes
+
+- a72d34c: Extend LUMIA with arbitrum, avalanche, base, optimism, polygon
+
+## 13.7.1
+
+### Patch Changes
+
+- 23259fd: Add logoURI for COTI USDC
+
+## 13.7.0
+
+### Minor Changes
+
+- 18b9ed8: remove higly rate limited rpcs for arb, base, bsc, op and ethereum
+
+## 13.6.0
+
+### Minor Changes
+
+- 4d2c28d: Added the USDC/coti-ethereum warp route
+- 53c4667: Add production and staging warp route config for HYPER and stHYPER
+- 17630ed: Add the SUPR configs and logo
+
+### Patch Changes
+
+- 10bb5bd: Revert "chore: fix configs with violations (#765)" due to mailbox removal
+- 079da1c: add missing coingecko id to hyper tokens
+- 0796402: Reorder BSC rpc urls
+
+## 13.5.0
+
+### Minor Changes
+
+- b09f287: Add USDT/ethereum-lumia for Lumia Prisim
+- d9520ae: Add USDC/ethereum-lumiaprism warp route artifacts
+
 ## 13.4.0
 
 ### Minor Changes

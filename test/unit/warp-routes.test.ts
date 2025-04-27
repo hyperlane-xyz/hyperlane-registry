@@ -87,7 +87,8 @@ describe('Warp Core Configs', () => {
           ![
             TokenStandard.CwHypSynthetic,
             TokenStandard.SealevelHypSynthetic,
-            TokenStandard.EvmHypSynthetic,
+            // TODO: re-add after updating sdk with the latest version
+            // TokenStandard.EvmHypSynthetic,
             TokenStandard.EvmHypSyntheticRebase,
             TokenStandard.EvmHypXERC20,
           ].includes(token.standard),

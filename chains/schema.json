@@ -87,6 +87,7 @@
                   "blockscout",
                   "routescan",
                   "voyager",
+                  "zksync",
                   "other"
                 ],
                 "description": "The type of the block explorer. See ExplorerFamily for valid values."
@@ -132,6 +133,10 @@
           ],
           "additionalProperties": false,
           "description": "Block settings for the chain/deployment."
+        },
+        "bypassBatchSimulation": {
+          "type": "boolean",
+          "description": "Whether to bypass batch simulation for this chain."
         },
         "chainId": {
           "anyOf": [
@@ -361,6 +366,23 @@
           "type": "object",
           "additionalProperties": {},
           "description": "Properties to include when forming transaction requests."
+        },
+        "gasPrice": {
+          "type": "object",
+          "properties": {
+            "denom": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "denom",
+            "amount"
+          ],
+          "additionalProperties": false,
+          "description": "The gas price of Cosmos chains."
         }
       },
       "required": [
