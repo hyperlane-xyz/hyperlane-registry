@@ -15,11 +15,10 @@ import { chainAddresses, chainMetadata } from '../../dist/index.js';
 import { Mailbox__factory } from '@hyperlane-xyz/core';
 
 const CHAINS_TO_SKIP = new Set([
-  // only allows private RPC access
-  'worldchain',
   // No Healthy RPC
   'artheratestnet',
   'astarzkevm',
+  'berabartio',
   'galadrieldevnet',
   'ebi',
   'fhenixtestnet',
@@ -47,7 +46,11 @@ async function isRpcHealthy(rpc: RpcUrl, metadata: ChainMetadata): Promise<boole
     return isEthersV5ProviderHealthy(provider.provider, metadata);
   else if (provider.type === ProviderType.SolanaWeb3)
     return isSolanaWeb3ProviderHealthy(provider.provider, metadata);
-  else if (provider.type === ProviderType.CosmJsWasm || provider.type === ProviderType.CosmJs)
+  else if (
+    provider.type === ProviderType.CosmJsWasm ||
+    provider.type === ProviderType.CosmJs ||
+    provider.type === ProviderType.CosmJsNative
+  )
     return isCosmJsProviderHealthy(provider.provider, metadata);
   else throw new Error(`Unsupported provider type ${provider.type}, new health check required`);
 }
@@ -57,6 +60,13 @@ async function isEthersV5ProviderHealthy(
   metadata: ChainMetadata,
 ): Promise<boolean> {
   const chainName = metadata.name;
+
+  const { chainId } = await provider.getNetwork();
+  if (chainId !== metadata.chainId) {
+    return false;
+  }
+  console.debug(`ChainId is okay for ${chainName}`);
+
   const blockNumber = await provider.getBlockNumber();
   if (!blockNumber || blockNumber < 0) return false;
   console.debug(`Block number is okay for ${chainName}`);
@@ -96,6 +106,13 @@ async function isCosmJsProviderHealthy(
   const blockNumber = await readyProvider.getHeight();
   if (!blockNumber || blockNumber < 0) return false;
   console.debug(`Block number is okay for ${metadata.name}`);
+
+  const chainId = await readyProvider.getChainId();
+  if (chainId !== metadata.chainId) {
+    return false;
+  }
+  console.debug(`ChainId is okay for ${metadata.name}`);
+
   return true;
 }
 
