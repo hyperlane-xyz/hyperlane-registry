@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 13.12.0
+
+### Minor Changes
+
+- 39199c0: Add MILK/bsc-milkyway route.
+
 ## 13.11.0
 
 ### Minor Changes
