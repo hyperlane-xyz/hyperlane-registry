@@ -60,6 +60,7 @@ export default tseslint.config(
     },
     rules: {
       'yml/sort-keys': ['error'],
+      'yml/flow-mapping-curly-spacing': ['error', 'always'],
     },
   },
 );
