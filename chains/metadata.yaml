@@ -607,10 +607,14 @@ auroratestnet:
       family: blockscout
       name: auroratestnetscan
       url: https://explorer.testnet.aurora.dev
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
   chainId: 1313161555
   deployer:
-    name: JunayedMh
-    url: https://github.com/JunayedMh
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Aurora Testnet
   domainId: 1313161555
   isTestnet: true
@@ -622,6 +626,9 @@ auroratestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://testnet.aurora.dev
+    - http: https://endpoints.omniatech.io/v1/aurora/testnet/public
+    - http: https://aurora-testnet.drpc.org
+  technicalStack: other
 avalanche:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api
@@ -5797,6 +5804,8 @@ somniatestnet:
     url: https://www.hyperlane.xyz
   displayName: Somnia Testnet
   domainId: 50312
+  index:
+    from: 12593277
   isTestnet: true
   name: somniatestnet
   nativeToken:
