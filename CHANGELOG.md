@@ -1,5 +1,17 @@
 # @hyperlane-xyz/registry
 
+## 13.13.0
+
+### Minor Changes
+
+- 3774ce1: Deploy to auroratestnet. Add milkywaytestnet to default ISMs.
+
+### Patch Changes
+
+- cbfbf23: Fix `from` block from milkyway
+- 4f572b8: Update to latest worldchain logo.
+- 5ca6777: Update EZETH and EZETH stage with worldchain extension
+
 ## 13.12.0
 
 ### Minor Changes
