@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: 22z73A4E7QjwjTsHGJptnALgBGuovEabCcQtPdBaQPpJ
+    chainName: solanamainnet
+    coinGeckoId: wrapped-fragsol
+    collateralAddressOrDenom: WFRGSWjaz8tbAxsJitmbfRuFV2mSNwy7BMWcCwaA28U
+    connections:
+      - token: sealevel|eclipsemainnet|FF6PWPjiY1hwy3Kt5qTDoqhZ3PbmaXKYPzADEjZbK9iN
+      - token: sealevel|soon|6trL4uE7KANMqrPT5rw4uiN6TSTw7c5Ssv4GdAkhTzVc
+    decimals: 9
+    logoURI: /deployments/warp_routes/WFRAGSOL/logo.svg
+    name: Wrapped Fragmetric Restaked SOL
+    standard: SealevelHypCollateral
+    symbol: wfragSOL
+  - addressOrDenom: FF6PWPjiY1hwy3Kt5qTDoqhZ3PbmaXKYPzADEjZbK9iN
+    chainName: eclipsemainnet
+    collateralAddressOrDenom: 97UNrMjduqbHhnZ5T5w3DifYnxwM2LAEpYxfoMcMjXK1
+    connections:
+      - token: sealevel|solanamainnet|22z73A4E7QjwjTsHGJptnALgBGuovEabCcQtPdBaQPpJ
+    decimals: 9
+    logoURI: /deployments/warp_routes/WFRAGSOL/logo.svg
+    name: Wrapped Fragmetric Restaked SOL
+    standard: SealevelHypSynthetic
+    symbol: wfragSOL
+  - addressOrDenom: 6trL4uE7KANMqrPT5rw4uiN6TSTw7c5Ssv4GdAkhTzVc
+    chainName: soon
+    collateralAddressOrDenom: 7T9sawCGJAV4wC49CjHpw8TGL3ZuPAbZipNq86YXGecy
+    connections:
+      - token: sealevel|solanamainnet|22z73A4E7QjwjTsHGJptnALgBGuovEabCcQtPdBaQPpJ
+    decimals: 9
+    logoURI: /deployments/warp_routes/WFRAGSOL/logo.svg
+    name: Wrapped Fragmetric Restaked SOL
+    standard: SealevelHypSynthetic
+    symbol: wfragSOL
