@@ -3,6 +3,7 @@ import tseslint from 'typescript-eslint';
 import tsparser from '@typescript-eslint/parser';
 import eslintPluginYml from 'eslint-plugin-yml';
 import yamlParser from 'yaml-eslint-parser';
+import importPlugin from 'eslint-plugin-import';
 
 export default tseslint.config(
   eslint.configs.recommended,
@@ -50,6 +51,27 @@ export default tseslint.config(
     rules: {
       'yml/sort-keys': ['error'],
       'yml/flow-mapping-curly-spacing': ['error', 'always'],
+    },
+  },
+  {
+    files: ['src/**/*.ts'],
+    ignores: ['src/fs/**/*.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['*/**/fs/**/*'],
+              message: 'Importing from src/fs is not allowed on non fs files',
+            },
+          ],
+        },
+      ],
+      'import/no-nodejs-modules': ['error'],
+    },
+    plugins: {
+      import: importPlugin,
     },
   },
 );

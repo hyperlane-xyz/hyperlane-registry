@@ -101,7 +101,8 @@ function createWarpConfigFiles() {
       if (!warpFile.endsWith('config.yaml')) continue;
       const [warpFileName] = warpFile.split('.');
       const config = parse(fs.readFileSync(`${inDirPath}/${warpFile}`, 'utf8'));
-      const id = warpRouteConfigToId(config);
+      //Situations where a config contains multiple symbols are not officially supported yet.
+      const id = warpRouteConfigToId(config, config.tokens[0].symbol);
       warpRouteConfigs[id] = config;
       fs.mkdirSync(`${assetOutPath}`, { recursive: true });
       fs.mkdirSync(`${tsOutPath}`, { recursive: true });

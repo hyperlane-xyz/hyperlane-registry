@@ -3,19 +3,25 @@ import { use as chaiUse, expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import sinon from 'sinon';
 import { faker } from '@faker-js/faker';
-import type { ChainMetadata } from '@hyperlane-xyz/sdk';
+import type { ChainMetadata, WarpRouteDeployConfig, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 import type { Logger } from 'pino';
 import fs from 'fs';
 import { CHAIN_FILE_REGEX } from '../../src/consts.js';
-import { FileSystemRegistry } from '../../src/registry/FileSystemRegistry.js';
+import { FileSystemRegistry } from '../../src/fs/FileSystemRegistry.js';
 import { GITHUB_API_URL, GithubRegistry } from '../../src/registry/GithubRegistry.js';
-import { RegistryType } from '../../src/registry/IRegistry.js';
+import {
+  RegistryType,
+  AddWarpRouteConfigOptions,
+  RegistryContent,
+  AddWarpRouteOptions,
+} from '../../src/registry/IRegistry.js';
 import { MergedRegistry } from '../../src/registry/MergedRegistry.js';
 import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
 import { ChainAddresses } from '../../src/types.js';
-import { getRegistry } from '../../src/registry/registry-utils.js';
+import { getRegistry } from '../../src/fs/registry-utils.js';
 import { DEFAULT_GITHUB_REGISTRY, PROXY_DEPLOYED_URL } from '../../src/consts.js';
 import { parseGitHubPath } from '../../src/utils.js';
+import { BaseRegistry } from '../../src/registry/BaseRegistry.js';
 
 const GITHUB_REGISTRY_BRANCH = 'main';
 
@@ -514,6 +520,187 @@ describe('Registry Utils', () => {
           branch: 'main',
         }),
       ).to.throw('Branch is set in both options and url.');
+    });
+  });
+});
+
+// Test class to expose protected methods
+class TestBaseRegistry extends BaseRegistry {
+  public type = RegistryType.FileSystem;
+
+  // Expose protected method for testing
+  public exposeGetWarpRouteDeployConfigPath(
+    config: WarpRouteDeployConfig,
+    options: AddWarpRouteConfigOptions,
+  ) {
+    return this.getWarpRouteDeployConfigPath(config, options);
+  }
+
+  // Expose getWarpRouteCoreConfigPath for testing
+  public exposeGetWarpRouteCoreConfigPath(config: WarpCoreConfig, options?: AddWarpRouteOptions) {
+    return this.getWarpRouteCoreConfigPath(config, options);
+  }
+
+  async listRegistryContent(): Promise<RegistryContent> {
+    return {
+      chains: {},
+      deployments: {
+        warpRoutes: {},
+        warpDeployConfig: {},
+      },
+    };
+  }
+  async getChains() {
+    return [];
+  }
+  async getMetadata() {
+    return {};
+  }
+  async getChainMetadata() {
+    return null;
+  }
+  async getAddresses() {
+    return {};
+  }
+  async getChainAddresses() {
+    return null;
+  }
+  async addChain() {}
+  async updateChain() {}
+  async removeChain() {}
+  async getWarpRoute() {
+    return null;
+  }
+  async getWarpRoutes() {
+    return {};
+  }
+  async addWarpRoute() {}
+  async getWarpDeployConfig() {
+    return null;
+  }
+  async getWarpDeployConfigs() {
+    return {};
+  }
+}
+
+describe('BaseRegistry protected methods', () => {
+  const testRegistry = new TestBaseRegistry({ uri: './test' });
+
+  describe('getWarpRouteCoreConfigPath', () => {
+    it('should use symbol from options when provided', () => {
+      const config = {
+        tokens: [
+          { chainName: 'ethereum', symbol: 'TOKEN' },
+          { chainName: 'polygon', symbol: 'TOKEN' },
+        ],
+      } as WarpCoreConfig;
+      const options = { symbol: 'CUSTOM' };
+
+      const path = testRegistry.exposeGetWarpRouteCoreConfigPath(config, options);
+
+      expect(path).to.equal('deployments/warp_routes/CUSTOM/ethereum-polygon-config.yaml');
+    });
+
+    it('should use symbol from tokens when options symbol is not provided', () => {
+      const config = {
+        tokens: [
+          { chainName: 'ethereum', symbol: 'TOKEN' },
+          { chainName: 'polygon', symbol: 'TOKEN' },
+        ],
+      } as WarpCoreConfig;
+
+      const path = testRegistry.exposeGetWarpRouteCoreConfigPath(config);
+
+      expect(path).to.equal('deployments/warp_routes/TOKEN/ethereum-polygon-config.yaml');
+    });
+
+    it('should handle multiple chains in alphabetical order', () => {
+      const config = {
+        tokens: [
+          { chainName: 'arbitrum', symbol: 'TOKEN' },
+          { chainName: 'polygon', symbol: 'TOKEN' },
+          { chainName: 'ethereum', symbol: 'TOKEN' },
+        ],
+      } as WarpCoreConfig;
+
+      const path = testRegistry.exposeGetWarpRouteCoreConfigPath(config);
+
+      expect(path).to.equal('deployments/warp_routes/TOKEN/arbitrum-ethereum-polygon-config.yaml');
+    });
+
+    it('should throw error for empty tokens array', () => {
+      const config = {
+        tokens: [],
+      } as WarpCoreConfig;
+
+      expect(() => testRegistry.exposeGetWarpRouteCoreConfigPath(config)).to.throw(
+        'Cannot generate ID for empty warp config',
+      );
+    });
+
+    it('should throw error for multiple different symbols without option', () => {
+      const config = {
+        tokens: [
+          { chainName: 'ethereum', symbol: 'TOKEN1' },
+          { chainName: 'polygon', symbol: 'TOKEN2' },
+        ],
+      } as WarpCoreConfig;
+
+      expect(() => testRegistry.exposeGetWarpRouteCoreConfigPath(config)).to.throw(
+        'Only one token symbol per warp config is supported for now',
+      );
+    });
+
+    it('should normalize symbols to uppercase', () => {
+      const config = {
+        tokens: [
+          { chainName: 'ethereum', symbol: 'token' },
+          { chainName: 'polygon', symbol: 'token' },
+        ],
+      } as WarpCoreConfig;
+
+      const path = testRegistry.exposeGetWarpRouteCoreConfigPath(config);
+
+      expect(path).to.equal('deployments/warp_routes/TOKEN/ethereum-polygon-config.yaml');
+    });
+  });
+
+  describe('getWarpRouteDeployConfigPath', () => {
+    it('should use warpRouteId from options when provided', () => {
+      const config = {
+        ethereum: {},
+        polygon: {},
+      } as unknown as WarpRouteDeployConfig;
+      const options = { warpRouteId: 'custom-route-id' };
+
+      const path = testRegistry.exposeGetWarpRouteDeployConfigPath(config, options);
+
+      expect(path).to.equal('deployments/warp_routes/custom-route-id-deploy.yaml');
+    });
+
+    it('should create route ID from symbol and chains when warpRouteId is not provided', () => {
+      const config = {
+        ethereum: {},
+        polygon: {},
+      } as unknown as WarpRouteDeployConfig;
+      const options = { symbol: 'TEST' };
+
+      const path = testRegistry.exposeGetWarpRouteDeployConfigPath(config, options);
+
+      expect(path).to.equal('deployments/warp_routes/TEST/ethereum-polygon-deploy.yaml');
+    });
+
+    it('should handle multiple chains in alphabetical order', () => {
+      const config = {
+        arbitrum: {},
+        polygon: {},
+        ethereum: {},
+      } as unknown as WarpRouteDeployConfig;
+      const options = { symbol: 'MULTI' };
+
+      const path = testRegistry.exposeGetWarpRouteDeployConfigPath(config, options);
+
+      expect(path).to.equal('deployments/warp_routes/MULTI/arbitrum-ethereum-polygon-deploy.yaml');
     });
   });
 });
