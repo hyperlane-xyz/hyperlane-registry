@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Add lumia Logo
+Fix `from` block from milkyway

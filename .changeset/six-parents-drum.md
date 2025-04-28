@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Update USDC zeronetwork owners
+Update to latest worldchain logo.
