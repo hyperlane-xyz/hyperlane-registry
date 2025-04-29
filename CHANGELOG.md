@@ -1,5 +1,13 @@
 # @hyperlane-xyz/registry
 
+## 13.13.0-starknet.0
+
+### Minor Changes
+
+- 3774ce1: Deploy to auroratestnet. Add milkywaytestnet to default ISMs.
+- 6399495: Added paradexsepolia deployments
+- e249c4f: Added core and warp deployment for starknetsepolia
+
 ## 13.12.0
 
 ### Minor Changes
