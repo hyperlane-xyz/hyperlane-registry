@@ -1,0 +1,49 @@
+base:
+  owner: "0x0BaC59Fc3865226b1e95602cBc9A5d2880F76030"
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    address: "0x5DBb94c7B8DB4fdfB3a305048f727f32AC0B6eD5"
+    type: staticAggregationIsm
+    modules:
+      - owner: "0x0BaC59Fc3865226b1e95602cBc9A5d2880F76030"
+        address: "0x64CB3d89f9c1c2a80aA256c8B59002FA0B00939a"
+        type: defaultFallbackRoutingIsm
+        domains: {}
+    threshold: 1
+  type: synthetic
+  name: Foxy
+  symbol: FOXY
+  decimals: 18
+  remoteRouters:
+    "59144":
+      address: "0xa7a0289c3A8bC46c54b7F9dAf990518bBa28771B"
+  proxyAdmin:
+    address: "0x24AEf9a42506B740D63cfd5e62C18d6D206EA01c"
+    owner: "0x0BaC59Fc3865226b1e95602cBc9A5d2880F76030"
+  destinationGas:
+    "59144": "68000"
+linea:
+  owner: "0x0BaC59Fc3865226b1e95602cBc9A5d2880F76030"
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    address: "0xec234961857a55A239F49C3d59c7836045AebB84"
+    type: staticAggregationIsm
+    modules:
+      - owner: "0x0BaC59Fc3865226b1e95602cBc9A5d2880F76030"
+        address: "0x8715d8B29521848380B3DA71B6989983CE585474"
+        type: defaultFallbackRoutingIsm
+        domains: {}
+    threshold: 1
+  type: collateral
+  name: Foxy
+  symbol: FOXY
+  decimals: 18
+  token: "0x5FBDF89403270a1846F5ae7D113A989F850d1566"
+  remoteRouters:
+    "8453":
+      address: "0xf058377fDD1BEbff09c0503D696eE419BBA6eD7d"
+  proxyAdmin:
+    address: "0x4869A3a975f2708a7EBf18c63789733a576Fe3Ad"
+    owner: "0x0BaC59Fc3865226b1e95602cBc9A5d2880F76030"
+  destinationGas:
+    "8453": "64000"
