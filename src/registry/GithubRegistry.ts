@@ -78,6 +78,8 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   private readonly authToken: string | undefined;
   // In-memory cache of archive file entries (relative path -> content as ArrayBuffer)
   private archiveEntries?: Map<string, ArrayBuffer>;
+  // Promise tracking an in-flight archive download/unpack to dedupe parallel calls
+  private archiveEntriesPromise?: Promise<void>;
 
   private readonly baseApiHeaders: Record<string, string> = {
     'X-GitHub-Api-Version': GITHUB_API_VERSION,
@@ -268,26 +270,37 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   /**
    * Ensure the repository archive is downloaded and entries are cached in memory.
    */
-  private async ensureArchiveEntries(): Promise<void> {
-    if (this.archiveEntries) return;
-    const apiUrl = await this.getApiUrl();
-    const origin = new URL(apiUrl).origin;
-    const archiveUrl = `${origin}/repos/${this.repoOwner}/${this.repoName}/zipball/${this.branch}`;
-    const response = await this.fetch(archiveUrl);
-    const arrayBuffer = await response.arrayBuffer();
-    const zip = await JSZip.loadAsync(arrayBuffer);
-    const entries = new Map<string, ArrayBuffer>();
-    for (const filePath of Object.keys(zip.files)) {
-      const zipEntry = zip.files[filePath];
-      if (zipEntry.dir) continue;
-      const parts = filePath.split('/');
-      // Remove top-level folder (owner-repo-sha)
-      parts.shift();
-      const relativePath = parts.join('/');
-      const contentArray = await zipEntry.async('arraybuffer');
-      entries.set(relativePath, contentArray as ArrayBuffer);
-    }
-    this.archiveEntries = entries;
+  private ensureArchiveEntries(): Promise<void> {
+    if (this.archiveEntries) return Promise.resolve();
+    if (this.archiveEntriesPromise) return this.archiveEntriesPromise;
+    // Kick off a single inflight download/unpack
+    this.archiveEntriesPromise = (async () => {
+      try {
+        const apiUrl = await this.getApiUrl();
+        const origin = new URL(apiUrl).origin;
+        const archiveUrl = `${origin}/repos/${this.repoOwner}/${this.repoName}/zipball/${this.branch}`;
+        const response = await this.fetch(archiveUrl);
+        const arrayBuffer = await response.arrayBuffer();
+        const zip = await JSZip.loadAsync(arrayBuffer);
+        const entries = new Map<string, ArrayBuffer>();
+        for (const filePath of Object.keys(zip.files)) {
+          const zipEntry = zip.files[filePath];
+          if (zipEntry.dir) continue;
+          const parts = filePath.split('/');
+          // Remove top-level folder (owner-repo-sha)
+          parts.shift();
+          const relativePath = parts.join('/');
+          const contentArray = await zipEntry.async('arraybuffer');
+          entries.set(relativePath, contentArray as ArrayBuffer);
+        }
+        this.archiveEntries = entries;
+      } catch (err) {
+        // Reset on failure to allow retry
+        this.archiveEntriesPromise = undefined;
+        throw err;
+      }
+    })();
+    return this.archiveEntriesPromise;
   }
 
   /**
