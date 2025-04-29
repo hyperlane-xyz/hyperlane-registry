@@ -80,8 +80,13 @@ function updateCombinedChainFiles() {
   const AUTO_GEN_PREFIX = '# AUTO-GENERATED; DO NOT EDIT MANUALLY';
   const combinedMetadata = stringify(chainMetadata, { sortMapEntries: true });
   const combinedAddresses = stringify(chainAddresses, { sortMapEntries: true });
+  const combinedWarpRoutes = stringify(warpRouteConfigs, { sortMapEntries: true });
   fs.writeFileSync('./chains/metadata.yaml', `${AUTO_GEN_PREFIX}\n${combinedMetadata}`);
   fs.writeFileSync('./chains/addresses.yaml', `${AUTO_GEN_PREFIX}\n${combinedAddresses}`);
+  fs.writeFileSync(
+    './deployments/warp_routes/warp-routes.yaml',
+    `${AUTO_GEN_PREFIX}\n${combinedWarpRoutes}`,
+  );
 }
 
 function createWarpConfigFiles() {
@@ -187,8 +192,8 @@ function updateJsonSchemas() {
 
 createTmpDir();
 createChainFiles();
-updateCombinedChainFiles();
 createWarpConfigFiles();
+updateCombinedChainFiles();
 generateChainTsCode();
 generateWarpConfigTsCode();
 updateJsonSchemas();
