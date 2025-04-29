@@ -1,5 +1,6 @@
 import type { Logger } from 'pino';
 import { parse as yamlParse } from 'yaml';
+import JSZip from 'jszip';
 
 import type {
   ChainMap,
@@ -75,6 +76,8 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   public readonly repoName: string;
   public readonly proxyUrl: string | undefined;
   private readonly authToken: string | undefined;
+  // In-memory cache of archive file entries (relative path -> content as ArrayBuffer)
+  private archiveEntries?: Map<string, ArrayBuffer>;
 
   private readonly baseApiHeaders: Record<string, string> = {
     'X-GitHub-Api-Version': GITHUB_API_VERSION,
@@ -262,8 +265,45 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   protected fetchYamlFiles<T>(urls: string[]): Promise<T[]> {
     return concurrentMap(GITHUB_FETCH_CONCURRENCY_LIMIT, urls, (url) => this.fetchYamlFile<T>(url));
   }
+  /**
+   * Ensure the repository archive is downloaded and entries are cached in memory.
+   */
+  private async ensureArchiveEntries(): Promise<void> {
+    if (this.archiveEntries) return;
+    const apiUrl = await this.getApiUrl();
+    const origin = new URL(apiUrl).origin;
+    const archiveUrl = `${origin}/repos/${this.repoOwner}/${this.repoName}/zipball/${this.branch}`;
+    const response = await this.fetch(archiveUrl);
+    const arrayBuffer = await response.arrayBuffer();
+    const zip = await JSZip.loadAsync(arrayBuffer);
+    const entries = new Map<string, ArrayBuffer>();
+    for (const filePath of Object.keys(zip.files)) {
+      const zipEntry = zip.files[filePath];
+      if (zipEntry.dir) continue;
+      const parts = filePath.split('/');
+      // Remove top-level folder (owner-repo-sha)
+      parts.shift();
+      const relativePath = parts.join('/');
+      const contentArray = await zipEntry.async('arraybuffer');
+      entries.set(relativePath, contentArray as ArrayBuffer);
+    }
+    this.archiveEntries = entries;
+  }
 
+  /**
+   * Fetch a YAML file, using in-memory archive if available for raw content paths.
+   */
   protected async fetchYamlFile<T>(url: string): Promise<T> {
+    const rawBase = `https://raw.githubusercontent.com/${this.repoOwner}/${this.repoName}/${this.branch}/`;
+    if (url.startsWith(rawBase)) {
+      await this.ensureArchiveEntries();
+      const relativePath = url.substring(rawBase.length);
+      const arrayBuf = this.archiveEntries?.get(relativePath);
+      if (!arrayBuf) throw new Error(`File not found in archive: ${relativePath}`);
+      const data = new TextDecoder('utf-8').decode(arrayBuf);
+      return yamlParse(data);
+    }
+    // Fallback to network fetch for non-raw URLs
     const response = await this.fetch(url);
     const data = await response.text();
     return yamlParse(data);
