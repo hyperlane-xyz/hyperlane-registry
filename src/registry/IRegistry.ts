@@ -1,5 +1,17 @@
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
-import { ChainAddresses, MaybePromise, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
+import type {
+  ChainMap,
+  ChainMetadata,
+  ChainName,
+  WarpCoreConfig,
+  WarpRouteDeployConfig,
+} from '@hyperlane-xyz/sdk';
+import {
+  ChainAddresses,
+  MaybePromise,
+  WarpDeployConfigMap,
+  WarpRouteConfigMap,
+  WarpRouteId,
+} from '../types.js';
 
 export interface ChainFiles {
   metadata?: string;
@@ -40,6 +52,14 @@ export enum RegistryType {
 export interface AddWarpRouteOptions {
   symbol?: string;
 }
+
+export type AddWarpRouteConfigOptions =
+  | {
+      symbol: string;
+    }
+  | {
+      warpRouteId: WarpRouteId;
+    };
 
 export interface IRegistry {
   type: RegistryType;

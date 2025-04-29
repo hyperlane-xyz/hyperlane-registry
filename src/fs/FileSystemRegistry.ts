@@ -21,15 +21,16 @@ import { ChainAddresses, ChainAddressesSchema, WarpRouteId } from '../types.js';
 import { toYamlString } from '../utils.js';
 
 import {
+  AddWarpRouteConfigOptions,
   RegistryType,
   UpdateChainParams,
   type AddWarpRouteOptions,
   type ChainFiles,
   type IRegistry,
   type RegistryContent,
-} from './IRegistry.js';
-import { SynchronousRegistry } from './SynchronousRegistry.js';
-import { warpRouteConfigPathToId, warpRouteDeployConfigPathToId } from './warp-utils.js';
+} from '../registry/IRegistry.js';
+import { SynchronousRegistry } from '../registry/SynchronousRegistry.js';
+import { warpRouteConfigPathToId, warpRouteDeployConfigPathToId } from '../registry/warp-utils.js';
 
 export interface FileSystemRegistryOptions {
   uri: string;
@@ -119,13 +120,29 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
   }
 
   addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): void {
-    let { configPath } = this.getWarpRoutesArtifactPaths(config, options);
-    configPath = path.join(this.uri, configPath);
-    this.createFile({ filePath: configPath, data: toYamlString(config, SCHEMA_REF) });
+    const configPath = this.getWarpRouteCoreConfigPath(config, options);
+    this.createFile({
+      filePath: path.join(this.uri, configPath),
+      data: toYamlString(config, SCHEMA_REF),
+    });
   }
+  //TODO: This string parameter overload is for backwards compatibility with the export-warp-configs.ts script.
+  //It should be removed when all consumers have been updated to use the options parameter.
+  //See: https://github.com/hyperlane-xyz/hyperlane-monorepo/blob/eb3054c59184573f67f79a801965c8e4cc2ed3ce/typescript/infra/scripts/warp-routes/export-warp-configs.ts#L35
+  addWarpRouteConfig(warpConfig: WarpRouteDeployConfig, fileName: string): void;
+  addWarpRouteConfig(warpConfig: WarpRouteDeployConfig, options: AddWarpRouteConfigOptions): void;
+  addWarpRouteConfig(
+    warpConfig: WarpRouteDeployConfig,
+    fileNameOrOptions: string | AddWarpRouteConfigOptions,
+  ): void {
+    let filePath: string;
 
-  addWarpRouteConfig(warpConfig: WarpRouteDeployConfig, fileName: string): void {
-    const filePath = path.join(this.uri, this.getWarpRoutesPath(), fileName);
+    if (typeof fileNameOrOptions === 'string') {
+      filePath = path.join(this.uri, this.getWarpRoutesPath(), fileNameOrOptions);
+    } else {
+      filePath = this.getWarpRouteDeployConfigPath(warpConfig, fileNameOrOptions);
+    }
+
     this.createFile({ filePath, data: toYamlString(warpConfig) });
   }
 

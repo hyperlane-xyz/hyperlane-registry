@@ -607,10 +607,14 @@ auroratestnet:
       family: blockscout
       name: auroratestnetscan
       url: https://explorer.testnet.aurora.dev
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
   chainId: 1313161555
   deployer:
-    name: JunayedMh
-    url: https://github.com/JunayedMh
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Aurora Testnet
   domainId: 1313161555
   isTestnet: true
@@ -622,6 +626,9 @@ auroratestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://testnet.aurora.dev
+    - http: https://endpoints.omniatech.io/v1/aurora/testnet/public
+    - http: https://aurora-testnet.drpc.org
+  technicalStack: other
 avalanche:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api
@@ -4073,6 +4080,82 @@ mevmdevnet:
   protocol: ethereum
   rpcUrls:
     - http: https://mevm.devnet.imola.movementlabs.xyz
+milkyway:
+  bech32Prefix: milk
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 1
+  canonicalAsset: umilk
+  chainId: milkyway
+  contractAddressBytes: 32
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: MilkyWay
+  domainId: 1835625579
+  gasCurrencyCoinGeckoId: temp-milkyway-milk
+  gasPrice:
+    amount: "0.03"
+    denom: umilk
+  grpcUrls:
+    - http: https://grpc.mainnet.milkyway.zone/
+  index:
+    chunk: 10
+    from: 2249100
+  name: milkyway
+  nativeToken:
+    decimals: 6
+    denom: umilk
+    name: MILK
+    symbol: MILK
+  protocol: cosmosnative
+  restUrls:
+    - http: https://lcd.mainnet.milkyway.zone/
+  rpcUrls:
+    - http: https://rpc.mainnet.milkyway.zone/
+  slip44: 118
+  technicalStack: other
+  transactionOverrides:
+    gasPrice: "0.03"
+milkywaytestnet:
+  bech32Prefix: milk
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 1
+  canonicalAsset: umilk
+  chainId: ceers-2112
+  contractAddressBytes: 32
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Milkyway Testnet
+  domainId: 1162171030
+  gasPrice:
+    amount: "0.0"
+    denom: umilk
+  grpcUrls:
+    - http: https://grpc.testnet.milkyway.zone/
+  index:
+    chunk: 10
+    from: 2449750
+  isTestnet: true
+  name: milkywaytestnet
+  nativeToken:
+    decimals: 6
+    denom: umilk
+    name: MILK
+    symbol: MILK
+  protocol: cosmosnative
+  restUrls:
+    - http: https://lcd.testnet.milkyway.zone/
+  rpcUrls:
+    - http: https://rpc.testnet.milkyway.zone/
+  slip44: 118
+  technicalStack: other
+  transactionOverrides:
+    gasPrice: "0.0"
 mint:
   blockExplorers:
     - apiUrl: https://explorer.mintchain.io/api
@@ -5721,6 +5804,8 @@ somniatestnet:
     url: https://www.hyperlane.xyz
   displayName: Somnia Testnet
   domainId: 50312
+  index:
+    from: 12593277
   isTestnet: true
   name: somniatestnet
   nativeToken:
