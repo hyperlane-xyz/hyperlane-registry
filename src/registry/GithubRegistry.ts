@@ -268,6 +268,19 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     return concurrentMap(GITHUB_FETCH_CONCURRENCY_LIMIT, urls, (url) => this.fetchYamlFile<T>(url));
   }
   /**
+   * Returns the URL to download the repository zip archive.
+   * Uses the GitHub API zipball endpoint when an authToken is present;
+   * otherwise uses the public archive URL.
+   */
+  protected async getArchiveDownloadUrl(): Promise<string> {
+    if (this.authToken) {
+      const apiUrl = await this.getApiUrl();
+      const origin = new URL(apiUrl).origin;
+      return `${origin}/repos/${this.repoOwner}/${this.repoName}/zipball/${this.branch}`;
+    }
+    return `https://github.com/${this.repoOwner}/${this.repoName}/archive/refs/heads/${this.branch}.zip`;
+  }
+  /**
    * Ensure the repository archive is downloaded and entries are cached in memory.
    */
   protected ensureArchiveEntries(): Promise<void> {
@@ -276,9 +289,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     // Kick off a single inflight download/unpack
     this.archiveEntriesPromise = (async () => {
       try {
-        const apiUrl = await this.getApiUrl();
-        const origin = new URL(apiUrl).origin;
-        const archiveUrl = `${origin}/repos/${this.repoOwner}/${this.repoName}/zipball/${this.branch}`;
+        const archiveUrl = await this.getArchiveDownloadUrl();
         const response = await this.fetch(archiveUrl);
         const responseBuf = await response.arrayBuffer();
         const zip = await JSZip.loadAsync(responseBuf);

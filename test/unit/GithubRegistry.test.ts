@@ -30,7 +30,8 @@ describe('GithubRegistry archive caching and YAML fetch', () => {
   const rawBase = `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/`;
 
   beforeEach(() => {
-    registry = new TestableGithubRegistry({ uri: baseUri, branch });
+    // Provide a dummy authToken so archive download uses the API zipball endpoint
+    registry = new TestableGithubRegistry({ uri: baseUri, branch, authToken: 'token' });
     // Stub out rate limit check to allow archive download
     sinon.stub(registry, 'getApiRateLimit').resolves({ remaining: 1, reset: 0, limit: 1, used: 0 });
     // Stub fetch to intercept network calls
