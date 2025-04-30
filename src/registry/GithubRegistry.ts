@@ -280,18 +280,17 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
         const origin = new URL(apiUrl).origin;
         const archiveUrl = `${origin}/repos/${this.repoOwner}/${this.repoName}/zipball/${this.branch}`;
         const response = await this.fetch(archiveUrl);
-        const arrayBuffer = await response.arrayBuffer();
-        const zip = await JSZip.loadAsync(arrayBuffer);
+        const responseBuf = await response.arrayBuffer();
+        const zip = await JSZip.loadAsync(responseBuf);
         const entries = new Map<string, ArrayBuffer>();
-        for (const filePath of Object.keys(zip.files)) {
-          const zipEntry = zip.files[filePath];
+        for (const [filePath, zipEntry] of Object.entries(zip.files)) {
           if (zipEntry.dir) continue;
           const parts = filePath.split('/');
           // Remove top-level folder (owner-repo-sha)
           parts.shift();
           const relativePath = parts.join('/');
-          const contentArray = await zipEntry.async('arraybuffer');
-          entries.set(relativePath, contentArray as ArrayBuffer);
+          const decompressedBuf = await zipEntry.async('arraybuffer');
+          entries.set(relativePath, decompressedBuf);
         }
         this.archiveEntries = entries;
       } catch (err) {
@@ -311,9 +310,9 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     if (url.startsWith(rawBase)) {
       await this.ensureArchiveEntries();
       const relativePath = url.substring(rawBase.length);
-      const arrayBuf = this.archiveEntries?.get(relativePath);
-      if (!arrayBuf) throw new Error(`File not found in archive: ${relativePath}`);
-      const data = new TextDecoder('utf-8').decode(arrayBuf);
+      const dataBuf = this.archiveEntries?.get(relativePath);
+      if (!dataBuf) throw new Error(`File not found in archive: ${relativePath}`);
+      const data = new TextDecoder('utf-8').decode(dataBuf);
       return yamlParse(data);
     }
     // Fallback to network fetch for non-raw URLs
