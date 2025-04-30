@@ -74,6 +74,7 @@
     "release": "yarn build && yarn changeset publish",
     "test:unit": "yarn build && mocha --require dotenv/config --config .mocharc.json './test/unit/*.test.ts' --exit",
     "test:health": "yarn build && mocha --config .mocharc.json './test/health/*.test.ts' --exit --parallel",
+    "test:rpc-health": "yarn build && mocha --config .mocharc.json './test/health/rpc-health.test.ts' --exit --parallel",
     "version:prepare": "yarn changeset version && yarn install --no-immutable",
     "version:check": "yarn changeset status"
   },
