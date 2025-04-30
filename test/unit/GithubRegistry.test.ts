@@ -70,13 +70,15 @@ describe('GithubRegistry archive caching and YAML fetch', () => {
   });
 
   it('fetchYamlFile parses YAML from in-memory archive buffer', async () => {
-    // Create a zip archive with multiple files under a root folder
+    // Create a zip archive with one YAML file under chains/<chainName>/
     const zip = new JSZip();
     const root = zip.folder('root')!;
-    root.file('foo.yaml', 'b: 2');
+    const chainDir = root.folder('chains')!.folder('testchain')!;
+    chainDir.file('foo.yaml', 'b: 2');
+    // Add an unrelated file to ensure filtering works
     root.file('ignore.txt', 'text');
     const zipBuffer = await zip.generateAsync({ type: 'arraybuffer' });
-    // Capture fetch calls and stub responses
+    // Stub fetch to return our zipBuffer for the archive URL
     fetchStub.callsFake(async (url: string) => {
       if (url.includes(`/${owner}/${repo}/zipball/${branch}`)) {
         return {
@@ -88,8 +90,10 @@ describe('GithubRegistry archive caching and YAML fetch', () => {
       }
       throw new Error(`Unexpected fetch: ${url}`);
     });
-    // Read the YAML file via raw content URL
-    const result = await registry.fetchYamlFile<{ b: number }>(rawBase + 'foo.yaml');
+    // Read the YAML file via raw content URL under chains/
+    const result = await registry.fetchYamlFile<{ b: number }>(
+      rawBase + 'chains/testchain/foo.yaml',
+    );
     expect(result).to.deep.equal({ b: 2 });
   });
 

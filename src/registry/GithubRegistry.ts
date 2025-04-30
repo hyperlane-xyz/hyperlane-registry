@@ -330,9 +330,9 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
         }
         if (!responseBuf) {
           throw new Error(
-            `Failed to download archive for ref ${this.branch}. Tried URLs: ${archiveUrls.join(
-              ', ',
-            )}. Errors: ${errors.join('; ')}`,
+            `Failed to download archive for ref ${this.branch}. ` +
+              `Tried URLs: ${archiveUrls.join(', ')}. ` +
+              `Errors: ${errors.join('; ')}`,
           );
         }
         const zip = await JSZip.loadAsync(responseBuf);
@@ -340,8 +340,12 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
         for (const [filePath, zipEntry] of Object.entries(zip.files)) {
           if (zipEntry.dir) continue;
           const parts = filePath.split('/');
+          // Remove the top-level folder (owner-repo-sha)
           parts.shift();
           const relativePath = parts.join('/');
+          // Only cache files under 'chains/' or 'deployments/'
+          if (!relativePath.startsWith('chains/') && !relativePath.startsWith('deployments/'))
+            continue;
           const decompressedBuf = await zipEntry.async('arraybuffer');
           entries.set(relativePath, decompressedBuf);
         }
