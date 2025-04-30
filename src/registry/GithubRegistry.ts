@@ -270,7 +270,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   /**
    * Ensure the repository archive is downloaded and entries are cached in memory.
    */
-  private ensureArchiveEntries(): Promise<void> {
+  protected ensureArchiveEntries(): Promise<void> {
     if (this.archiveEntries) return Promise.resolve();
     if (this.archiveEntriesPromise) return this.archiveEntriesPromise;
     // Kick off a single inflight download/unpack
