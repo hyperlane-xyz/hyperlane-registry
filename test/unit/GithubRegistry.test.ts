@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 import JSZip from 'jszip';
-import { GithubRegistry } from '../../src/registry/GithubRegistry.js';
+import { GithubRegistry, GithubFetchError } from '../../src/registry/GithubRegistry.js';
 /**
  * Testable subclass exposing protected methods for testing
  */
@@ -91,5 +91,40 @@ describe('GithubRegistry archive caching and YAML fetch', () => {
     // Read the YAML file via raw content URL
     const result = await registry.fetchYamlFile<{ b: number }>(rawBase + 'foo.yaml');
     expect(result).to.deep.equal({ b: 2 });
+  });
+
+  it('falls back through public archive URLs on 404s', async () => {
+    // Create a zip archive with one YAML file
+    const zip = new JSZip();
+    const root = zip.folder('root')!;
+    root.file('foo.yaml', 'c: 3');
+    const zipBuffer = await zip.generateAsync({ type: 'arraybuffer' });
+    const expectedUrls = [
+      `https://github.com/${owner}/${repo}/archive/refs/heads/${branch}.zip`,
+      `https://github.com/${owner}/${repo}/archive/refs/tags/${branch}.zip`,
+      `https://github.com/${owner}/${repo}/archive/${branch}.zip`,
+    ];
+    const calls: string[] = [];
+    // Instantiate registry without authToken to use public fallbacks
+    registry = new TestableGithubRegistry({ uri: baseUri, branch });
+    sinon.restore();
+    // Stub fetch to simulate 404 for first two URLs and success on third
+    fetchStub = sinon.stub(registry, 'fetch').callsFake(async (url: string) => {
+      calls.push(url);
+      if (url === expectedUrls[0] || url === expectedUrls[1]) {
+        throw new GithubFetchError({ status: 404, statusText: 'Not Found' } as any);
+      }
+      if (url === expectedUrls[2]) {
+        return {
+          ok: true,
+          status: 200,
+          statusText: 'OK',
+          arrayBuffer: async () => zipBuffer,
+        };
+      }
+      throw new Error(`Unexpected fetch: ${url}`);
+    });
+    await registry.ensureArchiveEntries();
+    expect(calls).to.deep.equal(expectedUrls);
   });
 });

@@ -63,6 +63,19 @@ type GithubRateResponse = {
 
 export const GITHUB_API_URL = 'https://api.github.com';
 export const GITHUB_API_VERSION = '2022-11-28';
+
+// Custom error to capture HTTP status codes for GitHub fetch failures
+export class GithubFetchError extends Error {
+  public readonly status: number;
+  public readonly statusText: string;
+  constructor(response: Response) {
+    super(`Failed to fetch from github: ${response.status} ${response.statusText}`);
+    this.name = 'GithubFetchError';
+    this.status = response.status; // numeric HTTP status
+    this.statusText = response.statusText;
+  }
+}
+
 /**
  * A registry that uses a github repository as its data source.
  * Reads are performed via the github API and github's raw content URLs.
@@ -267,19 +280,26 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   protected fetchYamlFiles<T>(urls: string[]): Promise<T[]> {
     return concurrentMap(GITHUB_FETCH_CONCURRENCY_LIMIT, urls, (url) => this.fetchYamlFile<T>(url));
   }
+
   /**
-   * Returns the URL to download the repository zip archive.
-   * Uses the GitHub API zipball endpoint when an authToken is present;
-   * otherwise uses the public archive URL.
+   * Returns an array of URLs to download the repository zip archive.
+   * If authToken is set, returns the GitHub API zipball endpoint URL only.
+   * Otherwise returns public archive URLs for branch, tag, and commit-SHA fallbacks.
    */
-  protected async getArchiveDownloadUrl(): Promise<string> {
+  protected async getArchiveDownloadUrls(): Promise<string[]> {
     if (this.authToken) {
       const apiUrl = await this.getApiUrl();
       const origin = new URL(apiUrl).origin;
-      return `${origin}/repos/${this.repoOwner}/${this.repoName}/zipball/${this.branch}`;
+      return [`${origin}/repos/${this.repoOwner}/${this.repoName}/zipball/${this.branch}`];
     }
-    return `https://github.com/${this.repoOwner}/${this.repoName}/archive/refs/heads/${this.branch}.zip`;
+    const base = `https://github.com/${this.repoOwner}/${this.repoName}/archive`;
+    return [
+      `${base}/refs/heads/${this.branch}.zip`,
+      `${base}/refs/tags/${this.branch}.zip`,
+      `${base}/${this.branch}.zip`,
+    ];
   }
+
   /**
    * Ensure the repository archive is downloaded and entries are cached in memory.
    */
@@ -289,15 +309,37 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     // Kick off a single inflight download/unpack
     this.archiveEntriesPromise = (async () => {
       try {
-        const archiveUrl = await this.getArchiveDownloadUrl();
-        const response = await this.fetch(archiveUrl);
-        const responseBuf = await response.arrayBuffer();
+        // Try each archive URL in order, but only fallback on 404 Not Found
+        const archiveUrls = await this.getArchiveDownloadUrls();
+        let responseBuf: ArrayBuffer | undefined;
+        const errors: string[] = [];
+        for (const url of archiveUrls) {
+          try {
+            const resp = await this.fetch(url);
+            responseBuf = await resp.arrayBuffer();
+            break;
+          } catch (err: any) {
+            // Retry only on 404 Not Found errors
+            if (err instanceof GithubFetchError && err.status === 404) {
+              errors.push(`${url}: ${err.status} ${err.statusText}`);
+              continue;
+            }
+            // Propagate other errors immediately
+            throw err;
+          }
+        }
+        if (!responseBuf) {
+          throw new Error(
+            `Failed to download archive for ref ${this.branch}. Tried URLs: ${archiveUrls.join(
+              ', ',
+            )}. Errors: ${errors.join('; ')}`,
+          );
+        }
         const zip = await JSZip.loadAsync(responseBuf);
         const entries = new Map<string, ArrayBuffer>();
         for (const [filePath, zipEntry] of Object.entries(zip.files)) {
           if (zipEntry.dir) continue;
           const parts = filePath.split('/');
-          // Remove top-level folder (owner-repo-sha)
           parts.shift();
           const relativePath = parts.join('/');
           const decompressedBuf = await zipEntry.async('arraybuffer');
@@ -342,8 +384,10 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     const response = await fetch(url, {
       headers,
     });
-    if (!response.ok)
-      throw new Error(`Failed to fetch from github: ${response.status} ${response.statusText}`);
+    if (!response.ok) {
+      // Throw custom error with status code for callers to inspect
+      throw new GithubFetchError(response);
+    }
     return response;
   }
 }
