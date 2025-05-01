@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 13.14.2
+
+### Patch Changes
+
+- b559f9a: Change oUSDT staging symbol to oUSDTSTAGE
+
 ## 13.14.1
 
 ### Patch Changes
