@@ -1,5 +1,430 @@
 # @hyperlane-xyz/registry
 
+## 13.13.0
+
+### Minor Changes
+
+- 3774ce1: Deploy to auroratestnet. Add milkywaytestnet to default ISMs.
+
+### Patch Changes
+
+- cbfbf23: Fix `from` block from milkyway
+- 4f572b8: Update to latest worldchain logo.
+- 5ca6777: Update EZETH and EZETH stage with worldchain extension
+
+## 13.12.0
+
+### Minor Changes
+
+- 39199c0: Add MILK/bsc-milkyway route.
+
+## 13.11.0
+
+### Minor Changes
+
+- 1599da7: Add milkyway chain metadata and addresses.
+- 86a9916: Update to hyperlane SDK 12.3.0.
+
+## 13.10.0
+
+### Minor Changes
+
+- ccbed07: added milkywaytestnet chain deployment
+
+### Patch Changes
+
+- 1227be2: Update ZeroNetwork USDT owners, and remove extraneous ownerOverrides
+- 8a88ab6: Updated `remoteRouters` in `-deploy.yaml` to reflect non-fully connected deployments and synchronised the `connections` property in `-config.yaml`.
+- c958338: Add lumia Logo
+- e080b2d: Update USDC zeronetwork owners
+- 3eea825: Default ISM updates.
+- f4e41f2: Adding wfragJTO and wfragSOL metadata.
+
+## 13.9.0
+
+### Minor Changes
+
+- 79a90e0: Add ETH/arbitrum-base-ethereum-lumiaprism-optimism-polygon configs
+
+## 13.8.0
+
+### Minor Changes
+
+- f738580: Remove mailbox configs from warp route deployments
+
+### Patch Changes
+
+- a72d34c: Extend LUMIA with arbitrum, avalanche, base, optimism, polygon
+
+## 13.7.1
+
+### Patch Changes
+
+- 23259fd: Add logoURI for COTI USDC
+
+## 13.7.0
+
+### Minor Changes
+
+- 18b9ed8: remove higly rate limited rpcs for arb, base, bsc, op and ethereum
+
+## 13.6.0
+
+### Minor Changes
+
+- 4d2c28d: Added the USDC/coti-ethereum warp route
+- 53c4667: Add production and staging warp route config for HYPER and stHYPER
+- 17630ed: Add the SUPR configs and logo
+
+### Patch Changes
+
+- 10bb5bd: Revert "chore: fix configs with violations (#765)" due to mailbox removal
+- 079da1c: add missing coingecko id to hyper tokens
+- 0796402: Reorder BSC rpc urls
+
+## 13.5.0
+
+### Minor Changes
+
+- b09f287: Add USDT/ethereum-lumia for Lumia Prisim
+- d9520ae: Add USDC/ethereum-lumiaprism warp route artifacts
+
+## 13.4.0
+
+### Minor Changes
+
+- 5fca08b: Update kyvetestnet protocol from cosmos to cosmosnative.
+
+### Patch Changes
+
+- 58b2338: Update polygon RPCs, removing default ankr one.
+- a68c1e1: Update hyperevm configs to include explicit proxyAdmin to resolve check-deploy violations
+- 8c18d62: Update modetestnet deployer.
+
+## 13.3.0
+
+### Minor Changes
+
+- 0946efd: Update hyperlane SDK.
+
+### Patch Changes
+
+- cdd6a74: Remove routing between base and ethereum
+
+## 13.2.0
+
+### Minor Changes
+
+- 6dd7494: added second soon wr deployment batch metadata
+- f774fd3: Add PZETH deploy and PZETHSTAGE deploy and warp core config
+- 4b7aa08: added registry artifacts for soon wr second batch
+
+### Patch Changes
+
+- cd66a33: Update oUSDT config to include ownerOverrides for collateralToken and collateralProxyadmin
+
+## 13.1.0
+
+### Minor Changes
+
+- 5941065: Hot fix GithubRefistry CORS error
+
+### Patch Changes
+
+- aec938e: Rotate default ethereum RPC to llamarpc.
+
+## 13.0.0
+
+### Major Changes
+
+- 5a83d04: Update to Hyperlane SDK 11.0.0, which includes support for the new "cosmosnative" ProtocolType.
+
+### Minor Changes
+
+- 0067c33: Enroll kyvetestnet on default ISMs.
+- c15dab3: Update default ISMs for March 31st chain deploy batch.
+
+## 12.2.0
+
+### Minor Changes
+
+- 48ea375: add `kyvetestnet` metadata to chains
+- 9357948: add ai16z, WIF, ELIZA, MEW, Pnut soon tokens
+- 2251c09: add `kyvetestnet` addresses to chains
+
+### Patch Changes
+
+- 9266157: Update Superseed ownership
+
+## 12.1.0
+
+### Minor Changes
+
+- 4d162ad: Rename staging USDC route with proper symbol
+
+## 12.0.0
+
+### Major Changes
+
+- d11c317: Deploy to cotitestnet. Remove existing deployment and redeploy on plumetestnet2 and modetestnet.
+
+### Minor Changes
+
+- 432e8ba: Deploy to coti, deepbrainchain, nibiru, opbnb, reactive.
+
+## 11.4.0
+
+### Minor Changes
+
+- dd0fd9f: Add SPICE warp route config
+
+## 11.3.1
+
+### Patch Changes
+
+- f1a019c: Remove connection to worldchain in oUSDT deployment
+
+## 11.3.0
+
+### Minor Changes
+
+- 3f20f57: Added token metadata for first batch of soon depl
+- b7183d4: Adding SPICE metadata.
+- 812f349: Change oUSDT tokens standard from XERC20 to VSXERC20 and remove ink connection
+
+## 11.2.0
+
+### Minor Changes
+
+- 263494c: updated the CDX route to add the sophon extension
+- ea5247e: Update default ISMs with new validators for infinityvm, plume, fuse.
+- bf65725: Extending cbBTC with Base.
+- 9bd7090: Add coingeckoIDs for a set of warp route configs
+- 37a6493: Updated the ubtc route to include the soneium extension
+- 6346eb9: Add Superseed ext to base, arbitrum, optimism, solana, ink for USDC
+
+### Patch Changes
+
+- 1eb8c79: Set forma IGP to 0x0.
+
+## 11.1.0
+
+### Minor Changes
+
+- 6aa6d64: Remove totalSupply from warp route deployments
+
+## 11.0.0
+
+### Major Changes
+
+- 987918c: Update to latest major hyperlane SDK v9.0.0. Includes support for "starknet" ProtocolType.
+
+### Minor Changes
+
+- 243040f: Add authToken parameter to getRegistry function
+- 4abd4ec: feat: authenticated github registry
+- ae39e7b: Add oUSDT coingeckoId
+
+## 10.15.0
+
+### Minor Changes
+
+- 0ccd510: Deploy to infinityvm, plume.
+- 044a7dd: Add Turtle warp routes config
+
+### Patch Changes
+
+- e9427b2: Update GPS to latest deployment to fix totalSupply
+
+## 10.14.0
+
+### Minor Changes
+
+- 14e800b: Add warp deployments artifacts for enzoBTC/bsc-hyperevm and stBTC/bsc-hyperevm
+
+### Patch Changes
+
+- 176ece4: Remove Lorenzo routes default ISM config
+
+## 10.13.0
+
+### Minor Changes
+
+- 0e6f08e: Add GPS configs
+
+### Patch Changes
+
+- 554b99d: oUSDT warp route artifacts
+
+## 10.12.0
+
+### Minor Changes
+
+- 961012e: Update GithubRegistry to be able to parse branch from URI.
+- 5234258: Refactor the getRegistry function to use an object parameter
+
+## 10.11.1
+
+### Patch Changes
+
+- 679bff6: Add missing ETH/base-ethereum-lumiaprism deploy config
+
+## 10.11.0
+
+### Minor Changes
+
+- 5cca0bb: Deploy to new testnets: carrchaintestnet, somniatestnet, infinityvmmonza.
+- c478f87: Add ETH/base-ethereum-lumiaprism warp route deployment
+- 10d02e5: Add file path string validation
+- beb15a6: adds taraxa mainnet support
+
+## 10.10.0
+
+### Minor Changes
+
+- c093d06: Add `branch` to getRegistry to allow reading of specific commit/branches. Also up the SDK version
+
+## 10.9.0
+
+### Minor Changes
+
+- 6031ff9: Add getRegistry function
+
+### Patch Changes
+
+- dedd673: Update REZ logo
+
+## 10.8.1
+
+### Patch Changes
+
+- 967fb84: Reverts PR #643 due to not exporting to index-fs.ts
+
+## 10.8.0
+
+### Minor Changes
+
+- b71797b: Add REZ configs
+- cfba620: Add getRegistry function
+
+## 10.7.0
+
+### Minor Changes
+
+- 1bb7961: Add oUSDT warp routes config
+
+## 10.6.0
+
+### Minor Changes
+
+- 0ceadb5: Add oUSDT logo
+
+## 10.5.0
+
+### Minor Changes
+
+- 8f7b03a: Fix sSOL/solanamainnet-sonicsvm collateralAddressOrDenom
+
+## 10.4.0
+
+### Minor Changes
+
+- d984e81: Added mint token warp route artifacts
+- 4f8a60d: Add sonicSOL and lrtsSOL config, update sonicSOL logo
+- fdf4cef: add mint token route metadata
+- 7d6ce89: Add sonicSOL and lrtsSOL metadata
+
+## 10.3.0
+
+### Minor Changes
+
+- 6b878f6: Add safe tx service urls for lisk, worldchain, superseed, soneium and unichain
+- fd5d055: Add pumpBTC/ethereum-unichain warp route deployment
+- a28c0fb: add logoURI to pumpBTCuni/ethereum-unichain deployment
+
+## 10.2.0
+
+### Minor Changes
+
+- 9b1aae1: Update default ISMs for Feb 17 batch enrollment. Update safe tx API URLs for fraxtal and hyperevm. Update default RPCs for subtensor.
+
+### Patch Changes
+
+- 2c1cae3: Deployed CCIP Hook/ISMs
+
+## 10.1.0
+
+### Minor Changes
+
+- d474b7f: Add SOL/hyperevm-solanamainnet
+
+## 10.0.0
+
+### Major Changes
+
+- a1758ee: Remove wanchaintestnet. Add hyperevm.
+
+### Minor Changes
+
+- 61ebec2: Deploy to bouncebit, arcadia, ronin, sophon, story, subtensor.
+- be10c5b: Add Ethereum<>HyperEVM warp routes for ETH, WBTC, USDT
+
+### Patch Changes
+
+- 3bac225: Add gnosis safe URL for sophon.
+
+## 9.7.0
+
+### Minor Changes
+
+- f7d238e: Deploy CDX/base-solanamainnet
+- 57be335: Add FORM warp route ethereum<>form
+- cc87e1e: Add CDX logo and metadata
+
+## 9.6.0
+
+### Minor Changes
+
+- 7682689: Add drpc fallback rpc to ethereum metadata.
+
+### Patch Changes
+
+- fd41924: Revert husky.
+
+## 9.5.0
+
+### Minor Changes
+
+- 04e3605: Add precommit to check for secrets using gitleaks
+- 983c3e5: Add Sapphire Testnet
+
+### Patch Changes
+
+- 03d0217: Update EZETSTAGE unichain owner to safe
+
+## 9.4.0
+
+### Minor Changes
+
+- 30ca799: Add EZETH and EZETHSTAGE with unichain and bercachain
+- 7718583: Deploy to monadtestnet, weavevmtestnet.
+
+### Patch Changes
+
+- 3f304ec: Update explorers for unichain and worldchain.
+
+## 9.3.0
+
+### Minor Changes
+
+- 0496f9d: added ES token metadata
+- 657c7fa: Deploy to subtensortestnet.
+- 64eae96: Add EZETHSTAGE config and artifact
+
+### Patch Changes
+
+- 208e223: Update ART coinGeckoId
+
 ## 9.2.0
 
 ### Minor Changes

@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: 7XYiQwKkHDgALca91sCj7sRBQbgDNB9zANX11UzP3Wt8
+    chainName: solanamainnet
+    coinGeckoId: spice
+    collateralAddressOrDenom: SPQkEcsdALLLn4MqCb3XH64hYTmdD4fZZk9CF5LiQV8
+    connections:
+      - token: sealevel|sonicsvm|CDCcn2156JBN5RvUXKvgpxzk9Yt8NbcG5DqGnoKzQu21
+    decimals: 6
+    logoURI: /deployments/warp_routes/SPICE/logo.svg
+    name: SPICE
+    standard: SealevelHypCollateral
+    symbol: SPICE
+  - addressOrDenom: CDCcn2156JBN5RvUXKvgpxzk9Yt8NbcG5DqGnoKzQu21
+    chainName: sonicsvm
+    collateralAddressOrDenom: 6sBvZHs9u5HRt25c3bQKLij8gYPheFJCaKnSagz1Nn9N
+    connections:
+      - token: sealevel|solanamainnet|7XYiQwKkHDgALca91sCj7sRBQbgDNB9zANX11UzP3Wt8
+    decimals: 6
+    logoURI: /deployments/warp_routes/SPICE/logo.svg
+    name: SPICE
+    standard: SealevelHypSynthetic
+    symbol: SPICE

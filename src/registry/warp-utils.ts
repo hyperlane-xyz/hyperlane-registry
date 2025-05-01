@@ -52,7 +52,7 @@ export function warpRouteDeployConfigPathToId(configRelativePath: string): WarpR
  * @param regex regex of the config filename
  */
 function parseWarpRouteConfigPath(configRelativePath: string, regex: RegExp) {
-  const matches =  configRelativePath.match(regex);
+  const matches = configRelativePath.match(regex);
   if (!matches || matches.length < 3)
     throw new Error(`Invalid warp route config path: ${configRelativePath}`);
   const [_, tokenSymbol, chains] = matches;
@@ -61,12 +61,18 @@ function parseWarpRouteConfigPath(configRelativePath: string, regex: RegExp) {
 
 /**
  * Gets a warp route ID from a warp route config.
- * This uses the first symbol in the lift. Situations where a config contains multiple
+ * This uses the first symbol in the list. Situations where a config contains multiple
  * symbols are not officially supported yet.
  */
-export function warpRouteConfigToId(config: WarpCoreConfig): WarpRouteId {
+export function warpRouteConfigToId(config: WarpCoreConfig, symbol?: string): WarpRouteId {
   if (!config?.tokens?.length) throw new Error('Cannot generate ID for empty warp config');
-  const tokenSymbol = config.tokens[0].symbol;
+  const symbols = new Set(config.tokens.map((token) => token.symbol.toUpperCase()));
+  if (!symbol && symbols.size !== 1) {
+    throw new Error(
+      `Only one token symbol per warp config is supported for now. Found: [${[...symbols].join()}]`,
+    );
+  }
+  const tokenSymbol = symbol || symbols.values().next().value;
   if (!tokenSymbol) throw new Error('Cannot generate warp config ID without a token symbol');
   const chains = new Set(config.tokens.map((token) => token.chainName));
   return createWarpRouteConfigId(tokenSymbol, [...chains.values()]);

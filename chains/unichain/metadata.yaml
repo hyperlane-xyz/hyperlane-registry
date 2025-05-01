@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://unichain.blockscout.com/api
-    family: blockscout
+  - apiUrl: https://api.uniscan.xyz/api
+    family: etherscan
     name: Unichain Explorer
-    url: https://unichain.blockscout.com
+    url: https://uniscan.xyz
 blocks:
   confirmations: 1
   estimateBlockTime: 1
@@ -15,6 +15,7 @@ deployer:
 displayName: Unichain
 domainId: 130
 gasCurrencyCoinGeckoId: ethereum
+gnosisSafeTransactionServiceUrl: https://safe-transaction-unichain.safe.global
 name: unichain
 nativeToken:
   decimals: 18

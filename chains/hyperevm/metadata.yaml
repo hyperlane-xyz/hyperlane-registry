@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://hyperliquid.cloud.blockscout.com/api
+    family: blockscout
+    name: HyperEVM Explorer
+    url: https://hyperliquid.cloud.blockscout.com
+blocks:
+  confirmations: 1
+  estimateBlockTime: 2
+  reorgPeriod: 5
+chainId: 999
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: HyperEVM
+domainId: 999
+gasCurrencyCoinGeckoId: hyperliquid
+gnosisSafeTransactionServiceUrl: https://prod.hyperliquid.keypersafe.xyz
+name: hyperevm
+nativeToken:
+  decimals: 18
+  name: Hyperliquid
+  symbol: HYPE
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.hyperliquid.xyz/evm
+technicalStack: other
