@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 13.14.1
+
+### Patch Changes
+
+- d35bc84: oUSDT: Remove worldchain connection, add logoURI and coinGeckoId
+
 ## 13.14.0
 
 ### Minor Changes
