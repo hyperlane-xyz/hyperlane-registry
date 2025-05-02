@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 13.15.0
+
+### Minor Changes
+
+- 86c5ee7: Add new chains: hashkey infinityVM ontology game7 fluence peaq
+
+### Patch Changes
+
+- 8669ded: Remove connections to and from sonic, bitlayer, ronin, mantle and linea for oUSDT route
+
 ## 13.14.2
 
 ### Patch Changes
