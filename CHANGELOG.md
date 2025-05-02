@@ -1,5 +1,44 @@
 # @hyperlane-xyz/registry
 
+## 13.15.0
+
+### Minor Changes
+
+- 86c5ee7: Add new chains: hashkey infinityVM ontology game7 fluence peaq
+
+### Patch Changes
+
+- 8669ded: Remove connections to and from sonic, bitlayer, ronin, mantle and linea for oUSDT route
+
+## 13.14.2
+
+### Patch Changes
+
+- b559f9a: Change oUSDT staging symbol to oUSDTSTAGE
+
+## 13.14.1
+
+### Patch Changes
+
+- d35bc84: oUSDT: Remove worldchain connection, add logoURI and coinGeckoId
+
+## 13.14.0
+
+### Minor Changes
+
+- 57a874f: The registry code is restructured by moving filesystem components to a dedicated directory. ESLint restrictions added to prevent Node.js imports in browser components.
+- 4c4d2e7: Extend oUSDT to new chains: ethereum, sonic, bitlayer, ronin, mantle, metis, linea, metal.
+- 6257c9a: Remove bad or flaky rpcs from the registry and re-enable health checks for healthy chains
+- ed210b2: add `nobletestnet` metadata and addresses to chains
+- c34f9a0: Added `getWarpRouteDeployConfigPath` function to BaseRegistry
+- b8b76d5: Add milkyway coingecko id
+
+### Patch Changes
+
+- 62a99e8: Transfer MILK ownership.
+- b3e432c: Add explicit proxyAdmin.owner to USDC/ancient8-ethereum, USDT/eclipsemainnet-ethereum-solanamainnet, WBTC/eclipsemainnet-ethereum
+- 0c74ff1: Update remoteRouter names to domainIds for zeronetwork USDC & USDT, and teasure SMOL
+
 ## 13.13.0
 
 ### Minor Changes
