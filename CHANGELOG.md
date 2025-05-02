@@ -1,5 +1,17 @@
 # @hyperlane-xyz/registry
 
+## 13.16.0
+
+### Minor Changes
+
+- 9366912: Remove connections for ETH/arbitrum-base-ethereum-lumiaprism-polygon route
+- 3206b17: Added the deployment data for the ES token
+
+### Patch Changes
+
+- 08ca361: add PAXG/arbitrum-ethereum
+- aad4f25: Re-add oUSDT extension
+
 ## 13.15.0
 
 ### Minor Changes
