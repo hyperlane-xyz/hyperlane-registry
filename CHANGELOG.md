@@ -1,5 +1,39 @@
 # @hyperlane-xyz/registry
 
+## 13.16.0
+
+### Minor Changes
+
+- 9366912: Remove connections for ETH/arbitrum-base-ethereum-lumiaprism-polygon route
+- 3206b17: Added the deployment data for the ES token
+
+### Patch Changes
+
+- 08ca361: add PAXG/arbitrum-ethereum
+- aad4f25: Re-add oUSDT extension
+
+## 13.15.0
+
+### Minor Changes
+
+- 86c5ee7: Add new chains: hashkey infinityVM ontology game7 fluence peaq
+
+### Patch Changes
+
+- 8669ded: Remove connections to and from sonic, bitlayer, ronin, mantle and linea for oUSDT route
+
+## 13.14.2
+
+### Patch Changes
+
+- b559f9a: Change oUSDT staging symbol to oUSDTSTAGE
+
+## 13.14.1
+
+### Patch Changes
+
+- d35bc84: oUSDT: Remove worldchain connection, add logoURI and coinGeckoId
+
 ## 13.14.0
 
 ### Minor Changes
