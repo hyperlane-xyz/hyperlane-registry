@@ -2533,6 +2533,32 @@ flowmainnet:
   technicalStack: other
   transactionOverrides:
     gasPrice: 100000000
+fluence:
+  blockExplorers:
+    - apiUrl: https://blockscout.mainnet.fluence.dev/api
+      family: blockscout
+      name: Fluence explorer
+      url: https://blockscout.mainnet.fluence.dev
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 9999999
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Fluence
+  domainId: 9999999
+  gasCurrencyCoinGeckoId: fluence
+  name: fluence
+  nativeToken:
+    decimals: 18
+    name: fluence
+    symbol: FLT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.mainnet.fluence.dev
+  technicalStack: other
 form:
   blockExplorers:
     - apiUrl: https://explorer.form.network/api
@@ -2789,6 +2815,35 @@ galadrieldevnet:
   protocol: ethereum
   rpcUrls:
     - http: https://devnet.galadriel.com
+game7:
+  blockExplorers:
+    - apiUrl: https://mainnet.game7.io/api
+      family: blockscout
+      name: Game7 Explorer
+      url: https://mainnet.game7.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 5
+    reorgPeriod: 0
+  chainId: 2187
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Game7
+  domainId: 2187
+  gasCurrencyCoinGeckoId: game7
+  index:
+    from: 1635677
+  isTestnet: false
+  name: game7
+  nativeToken:
+    decimals: 18
+    name: Game7
+    symbol: G7
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet-rpc.game7.build
+  technicalStack: arbitrumnitro
 glue:
   blockExplorers:
     - apiUrl: https://explorer.glue.net/api
@@ -2997,6 +3052,33 @@ harmonytestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://api.s0.b.hmny.io
+hashkey:
+  blockExplorers:
+    - apiUrl: https://explorer.hsk.xyz/api
+      family: blockscout
+      name: Hashkey Explorer
+      url: https://explorer.hsk.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 177
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Hashkey
+  domainId: 177
+  gasCurrencyCoinGeckoId: hashkey-ecopoints
+  isTestnet: false
+  name: hashkey
+  nativeToken:
+    decimals: 18
+    name: HashKey Platform Token
+    symbol: HSK
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet.hsk.xyz
+  technicalStack: other
 hemi:
   blockExplorers:
     - apiUrl: https://explorer.hemi.xyz/api
@@ -3257,6 +3339,29 @@ infinityvm:
   protocol: ethereum
   rpcUrls:
     - http: https://mainnet-endpoint.infinityvm.xyz
+  technicalStack: other
+infinityvmmainnet:
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 1032009
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Infinity VM
+  domainId: 1001032009
+  gasCurrencyCoinGeckoId: infinityvm
+  index:
+    from: 157889
+  name: infinityvmmainnet
+  nativeToken:
+    decimals: 18
+    name: INF
+    symbol: INF
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.infinityvm.xyz
   technicalStack: other
 infinityvmmonza:
   blocks:
@@ -4647,6 +4752,33 @@ odysseytestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://odyssey.ithaca.xyz
+ontology:
+  blockExplorers:
+    - apiUrl: https://explorer.ont.io/api
+      family: other
+      name: Ontology Explorer
+      url: https://explorer.ont.io/
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 58
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Ontology
+  domainId: 58
+  gasCurrencyCoinGeckoId: ong
+  isTestnet: false
+  name: ontology
+  nativeToken:
+    decimals: 18
+    name: Ontology Gas
+    symbol: ONG
+  protocol: ethereum
+  rpcUrls:
+    - http: https://dappnode4.ont.io:10339
+  technicalStack: other
 oortmainnet:
   blockExplorers:
     - apiUrl: https://mainnet-scan.oortech.com/api
@@ -4875,6 +5007,33 @@ osmosis:
   technicalStack: other
   transactionOverrides:
     gasPrice: "0.025"
+peaq:
+  blockExplorers:
+    - apiUrl: https://peaq.subscan.io/api
+      family: other
+      name: Peaq Explorer
+      url: https://peaq.subscan.io/
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: finalized
+  chainId: 3338
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Peaq
+  domainId: 3338
+  gasCurrencyCoinGeckoId: peaq-2
+  isTestnet: false
+  name: peaq
+  nativeToken:
+    decimals: 18
+    name: peaq
+    symbol: PEAQ
+  protocol: ethereum
+  rpcUrls:
+    - http: https://peaq.api.onfinality.io/public
+  technicalStack: polkadotsubstrate
 piccadilly:
   blockExplorers:
     - apiUrl: https://piccadilly.autonity.org/api
