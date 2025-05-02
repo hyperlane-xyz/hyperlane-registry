@@ -1,10 +1,8 @@
 name: update-nitro-chains
 
 on:
-  push:
-    branches:
-      - main
-  # Allows you to run this workflow manually
+  pull_request:
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
@@ -13,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref || 'main' }}
+          ref: ${{ github.event.pull_request.head.sha || 'main' }}
           # This action secret contains a fine-grained personal access token with permissions to read/write repo content
           # It is necessary because the default GITHUB_TOKEN cannot re-trigger workflows after pushing
           token: ${{ secrets.COMBINE_CI_TOKEN || secrets.GITHUB_TOKEN }}
@@ -43,15 +41,21 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
+      - name: Determine BASE_SHA
+        id: determine-base-sha
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            echo "base_sha=${{ github.event.pull_request.base.sha }}" >> $GITHUB_OUTPUT
+            echo "current_sha=${{ github.event.pull_request.head.sha }}" >> $GITHUB_OUTPUT
+          else
+            echo "base_sha=$(git rev-parse HEAD^)" >> $GITHUB_OUTPUT
+            echo "current_sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          fi
+
       - name: update-nitro-chains
         run: |
           echo "Updating Nitro chains..."
-          ./scripts/update-nitro-chains.sh
-
-      - name: combine-data
-        run: |
-          echo "Assembling chain metadata and addresses together..."
-          yarn build
+          ./scripts/update-nitro-chains.sh ${{ steps.determine-base-sha.outputs.base_sha }} ${{ steps.determine-base-sha.outputs.current_sha }}
 
       - name: commit-changes
         run: |
