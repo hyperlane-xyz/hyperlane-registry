@@ -126,24 +126,12 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
       data: toYamlString(config, SCHEMA_REF),
     });
   }
-  //TODO: This string parameter overload is for backwards compatibility with the export-warp-configs.ts script.
-  //It should be removed when all consumers have been updated to use the options parameter.
-  //See: https://github.com/hyperlane-xyz/hyperlane-monorepo/blob/eb3054c59184573f67f79a801965c8e4cc2ed3ce/typescript/infra/scripts/warp-routes/export-warp-configs.ts#L35
-  addWarpRouteConfig(warpConfig: WarpRouteDeployConfig, fileName: string): void;
-  addWarpRouteConfig(warpConfig: WarpRouteDeployConfig, options: AddWarpRouteConfigOptions): void;
-  addWarpRouteConfig(
-    warpConfig: WarpRouteDeployConfig,
-    fileNameOrOptions: string | AddWarpRouteConfigOptions,
-  ): void {
-    let filePath: string;
 
-    if (typeof fileNameOrOptions === 'string') {
-      filePath = path.join(this.uri, this.getWarpRoutesPath(), fileNameOrOptions);
-    } else {
-      filePath = this.getWarpRouteDeployConfigPath(warpConfig, fileNameOrOptions);
-    }
-
-    this.createFile({ filePath, data: toYamlString(warpConfig) });
+  addWarpRouteConfig(warpConfig: WarpRouteDeployConfig, options: AddWarpRouteConfigOptions): void {
+    this.createFile({
+      filePath: this.getWarpRouteDeployConfigPath(warpConfig, options),
+      data: toYamlString(warpConfig),
+    });
   }
 
   protected listFiles(dirPath: string): string[] {
