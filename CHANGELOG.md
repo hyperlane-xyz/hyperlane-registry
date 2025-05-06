@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 14.0.0
+
+### Major Changes
+
+- 16d2a83: Standardized Warp Route configuration API by adding consistent addWarpRouteConfig method to IRegistry interface and removed method overload in FileSystemRegistry.
+
 ## 13.16.1
 
 ### Patch Changes
