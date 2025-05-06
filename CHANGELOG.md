@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 13.16.1
+
+### Patch Changes
+
+- 60cfef3: Adding wfragSOL and wfragJTO deploy artifacts.
+
 ## 13.16.0
 
 ### Minor Changes
