@@ -3,7 +3,12 @@ import { use as chaiUse, expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import sinon from 'sinon';
 import { faker } from '@faker-js/faker';
-import type { ChainMetadata, WarpRouteDeployConfig, WarpCoreConfig } from '@hyperlane-xyz/sdk';
+import {
+  type ChainMetadata,
+  type WarpRouteDeployConfig,
+  type WarpCoreConfig,
+  TokenType,
+} from '@hyperlane-xyz/sdk';
 import type { Logger } from 'pino';
 import fs from 'fs';
 import { CHAIN_FILE_REGEX } from '../../src/consts.js';
@@ -183,6 +188,51 @@ describe('Registry utilities', () => {
       expect(fs.existsSync(configPath)).to.be.true;
       fs.unlinkSync(configPath);
       fs.rmdirSync(`deployments/warp_routes/${MOCKED_OPTION_SYMBOL}`);
+    }).timeout(5_000);
+
+    it(`Adds a warp route deploy config for ${registry.type} registry using the provided symbol`, async () => {
+      registry.addWarpRouteConfig(
+        {
+          [MOCK_CHAIN_NAME]: {
+            type: TokenType.collateral,
+            owner: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+            token: '0x0000000000000000000000000000000000000001',
+          },
+          [MOCK_CHAIN_NAME2]: {
+            type: TokenType.synthetic,
+            owner: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+          },
+        },
+        { symbol: MOCK_SYMBOL },
+      );
+      const outputBasePath = `deployments/warp_routes/${MOCK_SYMBOL}/${MOCK_CHAIN_NAME}-${MOCK_CHAIN_NAME2}-`;
+      const configPath = `${outputBasePath}deploy.yaml`;
+      expect(fs.existsSync(configPath)).to.be.true;
+      fs.unlinkSync(configPath);
+      fs.rmdirSync(`deployments/warp_routes/${MOCK_SYMBOL}`);
+    }).timeout(5_000);
+
+    it(`Adds a warp route deploy config for ${registry.type} registry using the provided warp route id`, async () => {
+      const MOCKED_WARP_ROUTE_ID = 'OPTION/CHAIN1-CHAIN2';
+
+      registry.addWarpRouteConfig(
+        {
+          [MOCK_CHAIN_NAME]: {
+            type: TokenType.collateral,
+            owner: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+            token: '0x0000000000000000000000000000000000000001',
+          },
+          [MOCK_CHAIN_NAME2]: {
+            type: TokenType.synthetic,
+            owner: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+          },
+        },
+        { warpRouteId: MOCKED_WARP_ROUTE_ID },
+      );
+      const configPath = `deployments/warp_routes/${MOCKED_WARP_ROUTE_ID}-deploy.yaml`;
+      expect(fs.existsSync(configPath)).to.be.true;
+      fs.unlinkSync(configPath);
+      fs.rmdirSync(`deployments/warp_routes/${MOCKED_WARP_ROUTE_ID.split('/')[0]}`);
     }).timeout(5_000);
   }
 
@@ -575,6 +625,7 @@ class TestBaseRegistry extends BaseRegistry {
     return {};
   }
   async addWarpRoute() {}
+  async addWarpRouteConfig() {}
   async getWarpDeployConfig() {
     return null;
   }

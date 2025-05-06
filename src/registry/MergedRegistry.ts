@@ -139,7 +139,7 @@ export class MergedRegistry implements IRegistry {
   ): Promise<void> {
     return this.multiRegistryWrite(
       async (registry) => await registry.addWarpRouteConfig(config, options),
-      'adding warp route config',
+      'adding warp route deploy config',
     );
   }
 
