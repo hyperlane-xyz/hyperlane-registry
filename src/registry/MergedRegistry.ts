@@ -1,9 +1,16 @@
 import type { Logger } from 'pino';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type {
+  ChainMap,
+  ChainMetadata,
+  ChainName,
+  WarpCoreConfig,
+  WarpRouteDeployConfig,
+} from '@hyperlane-xyz/sdk';
 import { ChainAddresses, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
 import { objMerge } from '../utils.js';
 import {
+  AddWarpRouteConfigOptions,
   AddWarpRouteOptions,
   IRegistry,
   RegistryContent,
@@ -46,7 +53,7 @@ export class MergedRegistry implements IRegistry {
       chains: {},
       deployments: {
         warpRoutes: {},
-        warpDeployConfig: {}
+        warpDeployConfig: {},
       },
     });
   }
@@ -123,6 +130,16 @@ export class MergedRegistry implements IRegistry {
     return this.multiRegistryWrite(
       async (registry) => await registry.addWarpRoute(config, options),
       'adding warp route',
+    );
+  }
+
+  async addWarpRouteConfig(
+    config: WarpRouteDeployConfig,
+    options: AddWarpRouteConfigOptions,
+  ): Promise<void> {
+    return this.multiRegistryWrite(
+      async (registry) => await registry.addWarpRouteConfig(config, options),
+      'adding warp route deploy config',
     );
   }
 
