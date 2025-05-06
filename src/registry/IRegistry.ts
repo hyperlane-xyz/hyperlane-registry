@@ -1,5 +1,17 @@
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
-import { ChainAddresses, MaybePromise, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
+import type {
+  ChainMap,
+  ChainMetadata,
+  ChainName,
+  WarpCoreConfig,
+  WarpRouteDeployConfig,
+} from '@hyperlane-xyz/sdk';
+import {
+  ChainAddresses,
+  MaybePromise,
+  WarpDeployConfigMap,
+  WarpRouteConfigMap,
+  WarpRouteId,
+} from '../types.js';
 
 export interface ChainFiles {
   metadata?: string;
@@ -41,6 +53,14 @@ export interface AddWarpRouteOptions {
   symbol?: string;
 }
 
+export type AddWarpRouteConfigOptions =
+  | {
+      symbol: string;
+    }
+  | {
+      warpRouteId: WarpRouteId;
+    };
+
 export interface IRegistry {
   type: RegistryType;
   uri: string;
@@ -66,6 +86,10 @@ export interface IRegistry {
   getWarpRoute(routeId: string): MaybePromise<WarpCoreConfig | null>;
   getWarpRoutes(filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap>;
   addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): MaybePromise<void>;
+  addWarpRouteConfig(
+    config: WarpRouteDeployConfig,
+    options: AddWarpRouteConfigOptions,
+  ): MaybePromise<void>;
 
   getWarpDeployConfig(routeId: string): MaybePromise<WarpRouteDeployConfig | null>;
   getWarpDeployConfigs(filter?: WarpRouteFilterParams): MaybePromise<WarpDeployConfigMap>;

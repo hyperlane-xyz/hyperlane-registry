@@ -1,10 +1,8 @@
 name: update-nitro-chains
 
 on:
-  push:
-    branches:
-      - main
-  # Allows you to run this workflow manually
+  pull_request:
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
@@ -13,53 +11,35 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref || 'main' }}
-          # This action secret contains a fine-grained personal access token with permissions to read/write repo content
-          # It is necessary because the default GITHUB_TOKEN cannot re-trigger workflows after pushing
-          token: ${{ secrets.COMBINE_CI_TOKEN || secrets.GITHUB_TOKEN }}
-
-      - uses: actions/cache@v4
-        with:
-          path: |
-            **/node_modules
-            .yarn/cache
-          key: ${{ runner.os }}-yarn-cache-${{ hashFiles('./yarn.lock') }}
-
-      - name: yarn-install
-        run: |
-          yarn install
-          CHANGES=$(git status -s)
-          if [[ ! -z $CHANGES ]]; then
-            echo "Changes found: $CHANGES"
-            git diff
-            exit 1
-          fi
+          ref: ${{ github.event.pull_request.head.sha || 'main' }}
+          fetch-depth: 0
 
       - name: foundry-install
         uses: foundry-rs/foundry-toolchain@v1
 
-      - name: configure-git
+      - name: Determine BASE_SHA
+        id: determine-base-sha
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            echo "base_sha=${{ github.event.pull_request.base.sha }}" >> $GITHUB_OUTPUT
+            echo "current_sha=${{ github.event.pull_request.head.sha }}" >> $GITHUB_OUTPUT
+          else
+            echo "base_sha=$(git rev-parse HEAD^)" >> $GITHUB_OUTPUT
+            echo "current_sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          fi
 
       - name: update-nitro-chains
         run: |
           echo "Updating Nitro chains..."
-          ./scripts/update-nitro-chains.sh
+          ./scripts/update-nitro-chains.sh ${{ steps.determine-base-sha.outputs.base_sha }} ${{ steps.determine-base-sha.outputs.current_sha }}
 
-      - name: combine-data
-        run: |
-          echo "Assembling chain metadata and addresses together..."
-          yarn build
-
-      - name: commit-changes
+      - name: check-for-changes
         run: |
           CHANGES=$(git status -s)
           if [[ ! -z $CHANGES ]]; then
-            git add .
-            git commit -m "Update chain metadata for nitro chains"
-            git push
+            echo "Changes detected. Please update nitro chains in your PR."
+            exit 1
           else
-            echo "No changes to commit."
+            echo "No changes detected."
+            exit 0
           fi

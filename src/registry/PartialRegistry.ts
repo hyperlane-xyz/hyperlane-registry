@@ -1,8 +1,20 @@
 import type { Logger } from 'pino';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type {
+  ChainMap,
+  ChainMetadata,
+  ChainName,
+  WarpCoreConfig,
+  WarpRouteDeployConfig,
+} from '@hyperlane-xyz/sdk';
 import { ChainAddresses, DeepPartial, WarpRouteId } from '../types.js';
-import { ChainFiles, IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
+import {
+  AddWarpRouteConfigOptions,
+  ChainFiles,
+  IRegistry,
+  RegistryContent,
+  RegistryType,
+} from './IRegistry.js';
 import { SynchronousRegistry } from './SynchronousRegistry.js';
 import { warpRouteConfigToId } from './warp-utils.js';
 
@@ -28,7 +40,13 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
   public warpRoutes: Array<DeepPartial<WarpCoreConfig>>;
   public warpDeployConfigs: Array<DeepPartial<WarpRouteDeployConfig>>;
 
-  constructor({ chainMetadata, chainAddresses, warpRoutes, warpDeployConfigs, logger }: PartialRegistryOptions) {
+  constructor({
+    chainMetadata,
+    chainAddresses,
+    warpRoutes,
+    warpDeployConfigs,
+    logger,
+  }: PartialRegistryOptions) {
     super({ uri: PARTIAL_URI_PLACEHOLDER, logger });
     this.chainMetadata = chainMetadata || {};
     this.chainAddresses = chainAddresses || {};
@@ -61,7 +79,7 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
       chains,
       deployments: {
         warpRoutes,
-        warpDeployConfig: {} // TODO: This cannot be implemented without deriving the token symbol from config.token
+        warpDeployConfig: {}, // TODO: This cannot be implemented without deriving the token symbol from config.token
       },
     };
   }
@@ -81,6 +99,10 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
   }
 
   addWarpRoute(_config: WarpCoreConfig): void {
+    throw new Error('Method not implemented.');
+  }
+
+  addWarpRouteConfig(_config: WarpRouteDeployConfig, _options: AddWarpRouteConfigOptions): void {
     throw new Error('Method not implemented.');
   }
 
