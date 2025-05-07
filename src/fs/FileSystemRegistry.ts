@@ -21,15 +21,16 @@ import { ChainAddresses, ChainAddressesSchema, WarpRouteId } from '../types.js';
 import { toYamlString } from '../utils.js';
 
 import {
+  AddWarpRouteConfigOptions,
   RegistryType,
   UpdateChainParams,
   type AddWarpRouteOptions,
   type ChainFiles,
   type IRegistry,
   type RegistryContent,
-} from './IRegistry.js';
-import { SynchronousRegistry } from './SynchronousRegistry.js';
-import { warpRouteConfigPathToId, warpRouteDeployConfigPathToId } from './warp-utils.js';
+} from '../registry/IRegistry.js';
+import { SynchronousRegistry } from '../registry/SynchronousRegistry.js';
+import { warpRouteConfigPathToId, warpRouteDeployConfigPathToId } from '../registry/warp-utils.js';
 
 export interface FileSystemRegistryOptions {
   uri: string;
@@ -119,14 +120,19 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
   }
 
   addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): void {
-    let { configPath } = this.getWarpRoutesArtifactPaths(config, options);
-    configPath = path.join(this.uri, configPath);
-    this.createFile({ filePath: configPath, data: toYamlString(config, SCHEMA_REF) });
+    const configPath = this.getWarpRouteCoreConfigPath(config, options);
+    this.createFile({
+      filePath: path.join(this.uri, configPath),
+      data: toYamlString(config, SCHEMA_REF),
+    });
   }
 
-  addWarpRouteConfig(warpConfig: WarpRouteDeployConfig, fileName: string): void {
-    const filePath = path.join(this.uri, this.getWarpRoutesPath(), fileName);
-    this.createFile({ filePath, data: toYamlString(warpConfig) });
+  addWarpRouteConfig(warpConfig: WarpRouteDeployConfig, options: AddWarpRouteConfigOptions): void {
+    const filePath = path.join(this.uri, this.getWarpRouteDeployConfigPath(warpConfig, options));
+    this.createFile({
+      filePath,
+      data: toYamlString(warpConfig),
+    });
   }
 
   protected listFiles(dirPath: string): string[] {

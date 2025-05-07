@@ -1,5 +1,140 @@
 # @hyperlane-xyz/registry
 
+## 14.1.0
+
+### Minor Changes
+
+- e9f844c: Add explorer API keys to some (most popular) chains.
+
+### Patch Changes
+
+- 65b313a: Fix wfragJTO: add correct collateral.
+
+## 14.0.0
+
+### Major Changes
+
+- 16d2a83: Standardized Warp Route configuration API by adding consistent addWarpRouteConfig method to IRegistry interface and removed method overload in FileSystemRegistry.
+
+## 13.16.1
+
+### Patch Changes
+
+- 60cfef3: Adding wfragSOL and wfragJTO deploy artifacts.
+
+## 13.16.0
+
+### Minor Changes
+
+- 9366912: Remove connections for ETH/arbitrum-base-ethereum-lumiaprism-polygon route
+- 3206b17: Added the deployment data for the ES token
+
+### Patch Changes
+
+- 08ca361: add PAXG/arbitrum-ethereum
+- aad4f25: Re-add oUSDT extension
+
+## 13.15.0
+
+### Minor Changes
+
+- 86c5ee7: Add new chains: hashkey infinityVM ontology game7 fluence peaq
+
+### Patch Changes
+
+- 8669ded: Remove connections to and from sonic, bitlayer, ronin, mantle and linea for oUSDT route
+
+## 13.14.2
+
+### Patch Changes
+
+- b559f9a: Change oUSDT staging symbol to oUSDTSTAGE
+
+## 13.14.1
+
+### Patch Changes
+
+- d35bc84: oUSDT: Remove worldchain connection, add logoURI and coinGeckoId
+
+## 13.14.0
+
+### Minor Changes
+
+- 57a874f: The registry code is restructured by moving filesystem components to a dedicated directory. ESLint restrictions added to prevent Node.js imports in browser components.
+- 4c4d2e7: Extend oUSDT to new chains: ethereum, sonic, bitlayer, ronin, mantle, metis, linea, metal.
+- 6257c9a: Remove bad or flaky rpcs from the registry and re-enable health checks for healthy chains
+- ed210b2: add `nobletestnet` metadata and addresses to chains
+- c34f9a0: Added `getWarpRouteDeployConfigPath` function to BaseRegistry
+- b8b76d5: Add milkyway coingecko id
+
+### Patch Changes
+
+- 62a99e8: Transfer MILK ownership.
+- b3e432c: Add explicit proxyAdmin.owner to USDC/ancient8-ethereum, USDT/eclipsemainnet-ethereum-solanamainnet, WBTC/eclipsemainnet-ethereum
+- 0c74ff1: Update remoteRouter names to domainIds for zeronetwork USDC & USDT, and teasure SMOL
+
+## 13.13.0
+
+### Minor Changes
+
+- 3774ce1: Deploy to auroratestnet. Add milkywaytestnet to default ISMs.
+
+### Patch Changes
+
+- cbfbf23: Fix `from` block from milkyway
+- 4f572b8: Update to latest worldchain logo.
+- 5ca6777: Update EZETH and EZETH stage with worldchain extension
+
+## 13.12.0
+
+### Minor Changes
+
+- 39199c0: Add MILK/bsc-milkyway route.
+
+## 13.11.0
+
+### Minor Changes
+
+- 1599da7: Add milkyway chain metadata and addresses.
+- 86a9916: Update to hyperlane SDK 12.3.0.
+
+## 13.10.0
+
+### Minor Changes
+
+- ccbed07: added milkywaytestnet chain deployment
+
+### Patch Changes
+
+- 1227be2: Update ZeroNetwork USDT owners, and remove extraneous ownerOverrides
+- 8a88ab6: Updated `remoteRouters` in `-deploy.yaml` to reflect non-fully connected deployments and synchronised the `connections` property in `-config.yaml`.
+- c958338: Add lumia Logo
+- e080b2d: Update USDC zeronetwork owners
+- 3eea825: Default ISM updates.
+- f4e41f2: Adding wfragJTO and wfragSOL metadata.
+
+## 13.9.0
+
+### Minor Changes
+
+- 79a90e0: Add ETH/arbitrum-base-ethereum-lumiaprism-optimism-polygon configs
+
+## 13.8.0
+
+### Minor Changes
+
+- f738580: Remove mailbox configs from warp route deployments
+
+### Patch Changes
+
+- a72d34c: Extend LUMIA with arbitrum, avalanche, base, optimism, polygon
+
+## 13.7.1
+
+### Patch Changes
+
+- 23259fd: Add logoURI for COTI USDC
+
 ## 13.7.0
 
 ### Minor Changes
