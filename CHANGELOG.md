@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 14.2.0
+
+### Minor Changes
+
+- 55b9c35: Add miracle chain
+
+### Patch Changes
+
+- a203c16: Remove ink connection for oUSDT
+
 ## 14.1.0
 
 ### Minor Changes
