@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 14.1.0
+
+### Minor Changes
+
+- e9f844c: Add explorer API keys to some (most popular) chains.
+
+### Patch Changes
+
+- 65b313a: Fix wfragJTO: add correct collateral.
+
 ## 14.0.0
 
 ### Major Changes
