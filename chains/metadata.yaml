@@ -250,7 +250,8 @@ appchain:
   technicalStack: arbitrumnitro
 arbitrum:
   blockExplorers:
-    - apiUrl: https://api.arbiscan.io/api
+    - apiKey: QAI5SWBNHJSFAN6KMS9RC5JGFKV2IYD2Z5
+      apiUrl: https://api.arbiscan.io/api
       family: etherscan
       name: Arbiscan
       url: https://arbiscan.io
@@ -309,7 +310,8 @@ arbitrumnova:
   technicalStack: arbitrumnitro
 arbitrumsepolia:
   blockExplorers:
-    - apiUrl: https://api-sepolia.arbiscan.io/api
+    - apiKey: QAI5SWBNHJSFAN6KMS9RC5JGFKV2IYD2Z5
+      apiUrl: https://api-sepolia.arbiscan.io/api
       family: etherscan
       name: Arbiscan
       url: https://sepolia.arbiscan.io
@@ -632,7 +634,8 @@ auroratestnet:
   technicalStack: other
 avalanche:
   blockExplorers:
-    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api
+    - apiKey: NIF3616T2AP6EHYWIHJEKR1HCMA2K7D96X
+      apiUrl: https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api
       family: routescan
       name: SnowTrace
       url: https://snowtrace.io
@@ -691,7 +694,8 @@ b3:
   technicalStack: opstack
 base:
   blockExplorers:
-    - apiUrl: https://api.basescan.org/api
+    - apiKey: R8CVTG7HDJYD5JDV2GSD5TGQH3J2KJDSSY
+      apiUrl: https://api.basescan.org/api
       family: etherscan
       name: BaseScan
       url: https://basescan.org
@@ -722,9 +726,35 @@ base:
     - http: https://1rpc.io/base
     - http: https://base-pokt.nodies.app
   technicalStack: opstack
+basecamptestnet:
+  blockExplorers:
+    - apiUrl: https://basecamp.cloud.blockscout.com/api
+      family: blockscout
+      name: Basecamp Explorer
+      url: https://basecamp.cloud.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 123420001114
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Basecamp Testnet
+  domainId: 1000001114
+  isTestnet: true
+  name: basecamptestnet
+  nativeToken:
+    decimals: 18
+    name: Camp
+    symbol: CAMP
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.basecamp.t.raas.gelato.cloud
 basesepolia:
   blockExplorers:
-    - apiUrl: https://api-sepolia.basescan.org/api
+    - apiKey: R8CVTG7HDJYD5JDV2GSD5TGQH3J2KJDSSY
+      apiUrl: https://api-sepolia.basescan.org/api
       family: etherscan
       name: BaseScan
       url: https://sepolia.basescan.org
@@ -749,32 +779,33 @@ basesepolia:
   rpcUrls:
     - http: https://sepolia.base.org
     - http: https://base-sepolia-rpc.publicnode.com
-berabartio:
+bepolia:
   blockExplorers:
-    - apiUrl: https://api.routescan.io/v2/network/testnet/evm/80084/etherscan/api/
+    - apiUrl: https://api.routescan.io/v2/network/testnet/evm/80069/etherscan/api
       family: routescan
-      name: Bartio Testnet Explorer
-      url: https://bartio.beratrail.io/
+      name: Bepolia Explorer
+      url: https://bepolia.beratrail.io
   blocks:
     confirmations: 1
-    estimateBlockTime: 3
-    reorgPeriod: 1
-  chainId: 80084
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 80069
   deployer:
     name: Abacus Works
     url: https://www.hyperlane.xyz
-  displayName: Berachain bArtio
-  domainId: 80084
-  gasCurrencyCoinGeckoId: berachain
+  displayName: Berachain Bepolia
+  displayNameShort: Bepolia
+  domainId: 80069
   isTestnet: true
-  name: berabartio
+  name: bepolia
   nativeToken:
     decimals: 18
     name: BERA
     symbol: BERA
   protocol: ethereum
   rpcUrls:
-    - http: https://bartio.drpc.org
+    - http: https://bepolia.rpc.berachain.com
+  technicalStack: other
 berachain:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/80094/etherscan/api/
@@ -1004,7 +1035,8 @@ bouncebit:
   technicalStack: other
 bsc:
   blockExplorers:
-    - apiUrl: https://api.bscscan.com/api
+    - apiKey: NXSXUUUAUDD5SYGQUIVS9TZTBCEG6X5THY
+      apiUrl: https://api.bscscan.com/api
       family: etherscan
       name: BscScan
       url: https://bscscan.com
@@ -1090,32 +1122,6 @@ bsquared:
     - http: https://mainnet.b2-rpc.com
     - http: https://b2-mainnet.alt.technology
   technicalStack: other
-camptestnet:
-  blockExplorers:
-    - apiUrl: https://camp-network-testnet.blockscout.com/api
-      family: blockscout
-      name: Camp Network Testnet Explorer
-      url: https://camp-network-testnet.blockscout.com
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 2
-    reorgPeriod: 1
-  chainId: 325000
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
-  displayName: Camp Network Testnet V2
-  domainId: 325000
-  gasCurrencyCoinGeckoId: ethereum
-  isTestnet: true
-  name: camptestnet
-  nativeToken:
-    decimals: 18
-    name: Ether
-    symbol: ETH
-  protocol: ethereum
-  rpcUrls:
-    - http: https://rpc-campnetwork.xyz
 canto:
   blockExplorers:
     - apiUrl: https://explorer.plexnode.wtf/api
@@ -1213,7 +1219,8 @@ carrchaintestnet:
   technicalStack: arbitrumnitro
 celo:
   blockExplorers:
-    - apiUrl: https://api.celoscan.io/api
+    - apiKey: IC1UCY8JWIYFWGPCEEE58HKFIFEVN73PVV
+      apiUrl: https://api.celoscan.io/api
       family: etherscan
       name: CeloScan
       url: https://celoscan.io
@@ -1608,7 +1615,8 @@ cotitestnet:
   technicalStack: other
 cronos:
   blockExplorers:
-    - apiUrl: https://api.cronoscan.com/api
+    - apiKey: TN462TRF5Y4CZA7WDPS7XTF48JT2IKQFUX
+      apiUrl: https://api.cronoscan.com/api
       family: etherscan
       name: Cronoscan Explorer
       url: https://cronoscan.com
@@ -2225,7 +2233,8 @@ endurance:
   technicalStack: other
 ethereum:
   blockExplorers:
-    - apiUrl: https://api.etherscan.io/api
+    - apiKey: CYUPN3Q66JIMRGQWYUDXJKQH4SX8YIYZMW
+      apiUrl: https://api.etherscan.io/api
       family: etherscan
       name: Etherscan
       url: https://etherscan.io
@@ -2669,7 +2678,8 @@ fractal:
   technicalStack: other
 fraxtal:
   blockExplorers:
-    - apiUrl: https://api.fraxscan.com/api
+    - apiKey: X3G6FVJU5VEZXVNQFRX52EQ5FEVP8IPR6F
+      apiUrl: https://api.fraxscan.com/api
       family: etherscan
       name: Fraxscan
       url: https://fraxscan.com
@@ -2874,7 +2884,8 @@ glue:
   technicalStack: other
 gnosis:
   blockExplorers:
-    - apiUrl: https://api.gnosisscan.io/api
+    - apiKey: 98A32SWJE876CHG95TMFRC5H5SBBX9GHAG
+      apiUrl: https://api.gnosisscan.io/api
       family: etherscan
       name: GnosisScan
       url: https://gnosisscan.io
@@ -3680,7 +3691,8 @@ kyvetestnet:
     gasPrice: "2.0"
 linea:
   blockExplorers:
-    - apiUrl: https://api.lineascan.build/api
+    - apiKey: ZCA9836XUX1XPAACHK4BMMYTIFMHIGU8VN
+      apiUrl: https://api.lineascan.build/api
       family: etherscan
       name: LineaScan
       url: https://lineascan.build
@@ -4308,6 +4320,32 @@ mintsepoliatest:
   protocol: ethereum
   rpcUrls:
     - http: https://sepolia-testnet-rpc.mintchain.io
+miraclechain:
+  blockExplorers:
+    - apiUrl: https://explorer.miracleplay.io/api
+      family: blockscout
+      name: Miracle Chain explorer
+      url: https://explorer.miracleplay.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 3
+    reorgPeriod: 5
+  chainId: 92278
+  displayName: Miraclechain
+  domainId: 92278
+  gasCurrencyCoinGeckoId: miracle-play
+  index:
+    from: 84964
+  isTestnet: false
+  name: miraclechain
+  nativeToken:
+    decimals: 18
+    name: MiraclePlay
+    symbol: MPT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.miracleplay.io
+  technicalStack: arbitrumnitro
 mitosistestnet:
   blockExplorers:
     - apiUrl: https://testnet.mitosiscan.xyz/api
@@ -4461,7 +4499,8 @@ moonbase:
     - http: https://rpc.testnet.moonbeam.network
 moonbeam:
   blockExplorers:
-    - apiUrl: https://api-moonbeam.moonscan.io/api
+    - apiKey: DDAT4TGIUSSV8MR489UJ21R34WGA1MM2GG
+      apiUrl: https://api-moonbeam.moonscan.io/api
       family: etherscan
       name: MoonScan
       url: https://moonscan.io
@@ -4709,7 +4748,7 @@ nobletestnet:
     amount: "0.1"
     denom: uusdn
   grpcUrls:
-    - http: https://noble-testnet-grpc.polkachu.com:21590
+    - http: http://noble-testnet-grpc.polkachu.com:21590
   index:
     chunk: 10
     from: 29035000
@@ -4809,7 +4848,8 @@ oortmainnet:
   technicalStack: other
 opbnb:
   blockExplorers:
-    - apiUrl: https://api-opbnb.bscscan.com/api
+    - apiKey: GK47JUUDX17PHP8XQ947IYTTPHP6FTAQMK
+      apiUrl: https://api-opbnb.bscscan.com/api
       family: etherscan
       name: opBNB Scan
       url: https://opbnb.bscscan.com
@@ -4885,7 +4925,8 @@ opengradienttestnet:
     - http: http://18.218.115.248:8545
 optimism:
   blockExplorers:
-    - apiUrl: https://api-optimistic.etherscan.io/api
+    - apiKey: JMYR3W6HHVPQ1HH8T6W8HSZVG88IH3MHRU
+      apiUrl: https://api-optimistic.etherscan.io/api
       family: etherscan
       name: Etherscan
       url: https://optimistic.etherscan.io
@@ -4915,7 +4956,8 @@ optimism:
   technicalStack: opstack
 optimismsepolia:
   blockExplorers:
-    - apiUrl: https://api-sepolia-optimistic.etherscan.io/api
+    - apiKey: JMYR3W6HHVPQ1HH8T6W8HSZVG88IH3MHRU
+      apiUrl: https://api-sepolia-optimistic.etherscan.io/api
       family: etherscan
       name: OP Sepolia Explorer
       url: https://sepolia-optimistic.etherscan.io
@@ -5120,7 +5162,8 @@ plumetestnet2:
   technicalStack: arbitrumnitro
 polygon:
   blockExplorers:
-    - apiUrl: https://api.polygonscan.com/api
+    - apiKey: ZPAHJ5A73MC45WJED98YJX4MKJE1UGN8D1
+      apiUrl: https://api.polygonscan.com/api
       family: etherscan
       name: PolygonScan
       url: https://polygonscan.com
@@ -5179,7 +5222,8 @@ polygonamoy:
     - http: https://polygon-amoy.gateway.tenderly.co
 polygonzkevm:
   blockExplorers:
-    - apiUrl: https://api-zkevm.polygonscan.com/api
+    - apiKey: P8765WMUM4KAM9NPNAY49EACATYC4927HK
+      apiUrl: https://api-zkevm.polygonscan.com/api
       family: etherscan
       name: PolygonScan
       url: https://zkevm.polygonscan.com
@@ -5666,7 +5710,8 @@ sapphiretestnet:
   technicalStack: other
 scroll:
   blockExplorers:
-    - apiUrl: https://api.scrollscan.com/api
+    - apiKey: 8MU9QJVN429TEYSCMB68NC5MG4VM542CFW
+      apiUrl: https://api.scrollscan.com/api
       family: etherscan
       name: Scroll Explorer
       url: https://scrollscan.com/
@@ -5726,7 +5771,8 @@ scrollsepolia:
     - http: https://scroll-public.scroll-testnet.quiknode.pro
 sei:
   blockExplorers:
-    - apiUrl: https://seitrace.com/pacific-1/api
+    - apiKey: 487e1ac5-03f4-4473-9e73-cee721b782b5
+      apiUrl: https://seitrace.com/pacific-1/api
       family: etherscan
       name: Seitrace
       url: https://seitrace.com
@@ -5753,7 +5799,8 @@ sei:
   technicalStack: other
 sepolia:
   blockExplorers:
-    - apiUrl: https://api-sepolia.etherscan.io/api
+    - apiKey: CYUPN3Q66JIMRGQWYUDXJKQH4SX8YIYZMW
+      apiUrl: https://api-sepolia.etherscan.io/api
       family: etherscan
       name: Etherscan
       url: https://sepolia.etherscan.io
@@ -6070,7 +6117,8 @@ soneiumtestnet:
     - http: https://rpc.minato.soneium.org
 sonic:
   blockExplorers:
-    - apiUrl: https://api.sonicscan.org/api
+    - apiKey: V9PP7AFQF5Q6GJSQQ5YS2UBN7GI8QCA443
+      apiUrl: https://api.sonicscan.org/api
       family: etherscan
       name: Sonic Explorer
       url: https://sonicscan.org
@@ -6097,7 +6145,8 @@ sonic:
   technicalStack: other
 sonicblaze:
   blockExplorers:
-    - apiUrl: https://api-testnet.sonicscan.org/api
+    - apiKey: V9PP7AFQF5Q6GJSQQ5YS2UBN7GI8QCA443
+      apiUrl: https://api-testnet.sonicscan.org/api
       family: etherscan
       name: Sonic Blaze Testnet Explorer
       url: https://testnet.sonicscan.org
@@ -6663,7 +6712,8 @@ swisstroniktestnet:
   technicalStack: other
 taiko:
   blockExplorers:
-    - apiUrl: https://api.taikoscan.io/api
+    - apiKey: 1CDVSH9KFUVPSFGD1EUFNHD18FUH484IEK
+      apiUrl: https://api.taikoscan.io/api
       family: etherscan
       name: Taikoscan
       url: https://taikoscan.io
@@ -6971,7 +7021,8 @@ u2utestnet:
     - http: https://rpc-nebulas-testnet.uniultra.xyz
 unichain:
   blockExplorers:
-    - apiUrl: https://api.uniscan.xyz/api
+    - apiKey: MUPHYQXB8A6GEEKKYA95N7WENSHYTU1UQQ
+      apiUrl: https://api.uniscan.xyz/api
       family: etherscan
       name: Unichain Explorer
       url: https://uniscan.xyz
@@ -7103,10 +7154,10 @@ viction:
   technicalStack: other
 weavevmtestnet:
   blockExplorers:
-    - apiUrl: https://explorer.wvm.dev/api
+    - apiUrl: https://explorer.load.network/api
       family: blockscout
-      name: WeaveVM Testnet Explorer
-      url: https://explorer.wvm.dev
+      name: Load Network Explorer
+      url: https://explorer.load.network
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -7115,21 +7166,22 @@ weavevmtestnet:
   deployer:
     name: Abacus Works
     url: https://www.hyperlane.xyz
-  displayName: Weave VM Testnet
+  displayName: Load Network Alphanet
   domainId: 9496
   isTestnet: true
   name: weavevmtestnet
   nativeToken:
     decimals: 18
-    name: tWVM
-    symbol: tWVM
+    name: tLOAD
+    symbol: tLOAD
   protocol: ethereum
   rpcUrls:
-    - http: https://testnet-rpc.wvm.dev
+    - http: https://alphanet.load.network
   technicalStack: other
 worldchain:
   blockExplorers:
-    - apiUrl: https://api.worldscan.org/api
+    - apiKey: BA89EI7MB9Z88UBURAYPRRRUKCQJB96KAE
+      apiUrl: https://api.worldscan.org/api
       family: etherscan
       name: Worldscan
       url: https://worldscan.org

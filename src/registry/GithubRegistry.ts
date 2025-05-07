@@ -21,6 +21,7 @@ import { ChainAddresses, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } 
 import { concurrentMap, parseGitHubPath, stripLeadingSlash } from '../utils.js';
 import { BaseRegistry } from './BaseRegistry.js';
 import {
+  AddWarpRouteConfigOptions,
   ChainFiles,
   IRegistry,
   RegistryContent,
@@ -242,6 +243,13 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   }
 
   async addWarpRoute(_config: WarpCoreConfig): Promise<void> {
+    throw new Error('TODO: Implement');
+  }
+
+  async addWarpRouteConfig(
+    _config: WarpRouteDeployConfig,
+    _options: AddWarpRouteConfigOptions,
+  ): Promise<void> {
     throw new Error('TODO: Implement');
   }
 
