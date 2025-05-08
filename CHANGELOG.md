@@ -1,5 +1,19 @@
 # @hyperlane-xyz/registry
 
+## 15.0.0
+
+### Major Changes
+
+- 93f9850: May 6 testnet batch: nobletestnet, megaethtestnet, basecamptestnet, bepolia. Removes metadata for old berabartio + camptestnet. Update weavevm -> load.network branding.
+
+### Minor Changes
+
+- d56aa3f: Add svmbnb
+
+### Patch Changes
+
+- 987992a: Update eclipse block explorer URL
+
 ## 14.2.0
 
 ### Minor Changes
