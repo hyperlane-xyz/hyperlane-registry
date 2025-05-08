@@ -1,9 +1,13 @@
----
+# yaml-language-server: $schema=../schema.json
 blockExplorers:
   - apiUrl: https://explorer.mantle.xyz/api
     family: blockscout
     name: Mantle Mainnet Explorer
     url: https://explorer.mantle.xyz
+  - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/5000/etherscan/api
+    family: routescan
+    name: Routescan
+    url: https://routescan.io/
 blocks:
   confirmations: 3
   estimateBlockTime: 2

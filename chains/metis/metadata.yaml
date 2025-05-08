@@ -1,8 +1,13 @@
+# yaml-language-server: $schema=../schema.json
 blockExplorers:
   - apiUrl: https://andromeda-explorer.metis.io/api/eth-rpc
     family: blockscout
     name: Metis Andromeda Explorer
     url: https://andromeda-explorer.metis.io
+  - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/1088/etherscan/api
+    family: routescan
+    name: Metis Explorer
+    url: https://explorer.metis.io/
 blocks:
   confirmations: 1
   estimateBlockTime: 5
