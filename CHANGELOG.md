@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 15.1.0
+
+### Minor Changes
+
+- d223f2a: Update eclipsemainnet ISM
+- 4119b8d: Add Boop, PEPE and GG warp routes artifacts for apechain and arbitrum
+
 ## 15.0.0
 
 ### Major Changes
