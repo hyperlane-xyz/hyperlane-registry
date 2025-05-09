@@ -1,11 +1,18 @@
-import { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
-import { ChainAddresses, MaybePromise, WarpRouteConfigMap } from '../types.js';
+import {
+  ChainMap,
+  ChainMetadata,
+  ChainName,
+  WarpCoreConfig,
+  WarpRouteDeployConfig,
+} from '@hyperlane-xyz/sdk';
+import { ChainAddresses, MaybePromise, WarpDeployConfigMap, WarpRouteConfigMap } from '../types.js';
 import {
   IRegistry,
   RegistryContent,
   RegistryType,
   UpdateChainParams,
   WarpRouteFilterParams,
+  AddWarpRouteConfigOptions,
 } from './IRegistry.js';
 
 export class HttpClientRegistry implements IRegistry {
@@ -77,6 +84,21 @@ export class HttpClientRegistry implements IRegistry {
   }
 
   addWarpRoute(_config: WarpCoreConfig): MaybePromise<void> {
+    throw new Error('Method not implemented.');
+  }
+
+  getWarpDeployConfig(_routeId: string): MaybePromise<WarpRouteDeployConfig | null> {
+    throw new Error('Method not implemented.');
+  }
+
+  getWarpDeployConfigs(): MaybePromise<WarpDeployConfigMap> {
+    throw new Error('Method not implemented.');
+  }
+
+  addWarpRouteConfig(
+    _config: WarpRouteDeployConfig,
+    _options: AddWarpRouteConfigOptions,
+  ): MaybePromise<void> {
     throw new Error('Method not implemented.');
   }
 
