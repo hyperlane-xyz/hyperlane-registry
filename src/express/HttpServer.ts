@@ -2,7 +2,7 @@ import { ChainMetadataSchema, ChainName, ZChainName } from '@hyperlane-xyz/sdk';
 import type { Logger } from 'pino';
 
 import express, { Express } from 'express';
-import { IRegistry } from './IRegistry.js';
+import { IRegistry } from '../registry/IRegistry.js';
 import { WarpRouteId } from '../types.js';
 
 const DEFAULT_PORT = 3000;
