@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: milk
+blocks:
+  confirmations: 1
+  estimateBlockTime: 6
+  reorgPeriod: 1
+canonicalAsset: umilk
+chainId: milkyway
+contractAddressBytes: 32
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: MilkyWay
+# Generated from: console.log(parseInt('0x'+Buffer.from('milk').toString('hex')))
+domainId: 1835625579
+gasCurrencyCoinGeckoId: milkyway-2
+gasPrice:
+  amount: "0.03"
+  denom: umilk
+grpcUrls:
+  - http: https://grpc.mainnet.milkyway.zone/
+index:
+  chunk: 10
+  from: 2249100
+name: milkyway
+nativeToken:
+  decimals: 6
+  denom: umilk
+  name: MILK
+  symbol: MILK
+protocol: cosmosnative
+restUrls:
+  - http: https://lcd.mainnet.milkyway.zone/
+rpcUrls:
+  - http: https://rpc.mainnet.milkyway.zone/
+slip44: 118
+technicalStack: other
+transactionOverrides:
+  gasPrice: "0.03"

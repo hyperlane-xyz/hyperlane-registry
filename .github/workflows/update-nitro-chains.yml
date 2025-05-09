@@ -1,0 +1,45 @@
+name: update-nitro-chains
+
+on:
+  pull_request:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  combine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || 'main' }}
+          fetch-depth: 0
+
+      - name: foundry-install
+        uses: foundry-rs/foundry-toolchain@v1
+
+      - name: Determine BASE_SHA
+        id: determine-base-sha
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            echo "base_sha=${{ github.event.pull_request.base.sha }}" >> $GITHUB_OUTPUT
+            echo "current_sha=${{ github.event.pull_request.head.sha }}" >> $GITHUB_OUTPUT
+          else
+            echo "base_sha=$(git rev-parse HEAD^)" >> $GITHUB_OUTPUT
+            echo "current_sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          fi
+
+      - name: update-nitro-chains
+        run: |
+          echo "Updating Nitro chains..."
+          ./scripts/update-nitro-chains.sh ${{ steps.determine-base-sha.outputs.base_sha }} ${{ steps.determine-base-sha.outputs.current_sha }}
+
+      - name: check-for-changes
+        run: |
+          CHANGES=$(git status -s)
+          if [[ ! -z $CHANGES ]]; then
+            echo "Changes detected. Please update nitro chains in your PR."
+            exit 1
+          else
+            echo "No changes detected."
+            exit 0
+          fi

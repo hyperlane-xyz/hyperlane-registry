@@ -1,16 +1,32 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { expect } from 'chai';
+import { use as chaiUse, expect } from 'chai';
+import chaiAsPromised from 'chai-as-promised';
 import sinon from 'sinon';
-
-import type { ChainMetadata } from '@hyperlane-xyz/sdk';
+import { faker } from '@faker-js/faker';
+import {
+  type ChainMetadata,
+  type WarpRouteDeployConfig,
+  type WarpCoreConfig,
+  TokenType,
+} from '@hyperlane-xyz/sdk';
+import type { Logger } from 'pino';
 import fs from 'fs';
 import { CHAIN_FILE_REGEX } from '../../src/consts.js';
-import { FileSystemRegistry } from '../../src/registry/FileSystemRegistry.js';
+import { FileSystemRegistry } from '../../src/fs/FileSystemRegistry.js';
 import { GITHUB_API_URL, GithubRegistry } from '../../src/registry/GithubRegistry.js';
-import { RegistryType } from '../../src/registry/IRegistry.js';
+import {
+  RegistryType,
+  AddWarpRouteConfigOptions,
+  RegistryContent,
+  AddWarpRouteOptions,
+} from '../../src/registry/IRegistry.js';
 import { MergedRegistry } from '../../src/registry/MergedRegistry.js';
 import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
 import { ChainAddresses } from '../../src/types.js';
+import { getRegistry } from '../../src/fs/registry-utils.js';
+import { DEFAULT_GITHUB_REGISTRY, PROXY_DEPLOYED_URL } from '../../src/consts.js';
+import { parseGitHubPath } from '../../src/utils.js';
+import { BaseRegistry } from '../../src/registry/BaseRegistry.js';
 
 const GITHUB_REGISTRY_BRANCH = 'main';
 
@@ -23,6 +39,8 @@ const MOCK_ADDRESS = '0x0000000000000000000000000000000000000001';
 // Used to verify the GithubRegistry is fetching the correct data
 // Must be kept in sync with value in canonical registry's main branch
 const ETH_MAILBOX_ADDRESS = '0xc005dc82818d67AF737725bD4bf75435d065D239';
+
+chaiUse(chaiAsPromised);
 
 describe('Registry utilities', () => {
   const githubRegistry = new GithubRegistry({ branch: GITHUB_REGISTRY_BRANCH });
@@ -96,6 +114,24 @@ describe('Registry utilities', () => {
       expect(firstRoute!.tokens.length).to.be.greaterThan(0);
       const noRoutes = await registry.getWarpRoutes({ symbol: 'NOTFOUND' });
       expect(Object.keys(noRoutes).length).to.eql(0);
+    }).timeout(20_000);
+
+    it(`Fetches warp deploy configs for ${registry.type} registry`, async () => {
+      const routes = await registry.getWarpDeployConfigs();
+      const routeIds = Object.keys(routes);
+
+      // TODO: Right now this returns an empty array
+      // This cannot be implemented without deriving the token symbol from config.token
+      // We will revisit once we merge the configs
+      if (registry.type === RegistryType.Partial) expect(routeIds.length).to.be.equal(0);
+      else {
+        expect(routeIds.length).to.be.greaterThan(0);
+        const firstRoute = await registry.getWarpDeployConfig(routeIds[0]);
+        const chains = Object.keys(firstRoute!);
+        expect(chains.length).to.be.greaterThan(0);
+        const noRoutes = await registry.getWarpDeployConfigs({ chainName: 'NOTFOUND' });
+        expect(Object.keys(noRoutes).length).to.eql(0);
+      }
     }).timeout(10_000);
 
     // TODO remove this once GitHubRegistry methods are implemented
@@ -130,12 +166,73 @@ describe('Registry utilities', () => {
       });
       const outputBasePath = `deployments/warp_routes/${MOCK_SYMBOL}/${MOCK_CHAIN_NAME}-${MOCK_CHAIN_NAME2}-`;
       const configPath = `${outputBasePath}config.yaml`;
-      const addressesPath = `${outputBasePath}addresses.yaml`;
       expect(fs.existsSync(configPath)).to.be.true;
-      expect(fs.existsSync(addressesPath)).to.be.true;
       fs.unlinkSync(configPath);
-      fs.unlinkSync(addressesPath);
       fs.rmdirSync(`deployments/warp_routes/${MOCK_SYMBOL}`);
+    }).timeout(5_000);
+
+    it(`Adds a warp route for ${registry.type} registry using the provided symbol`, async () => {
+      const MOCKED_OPTION_SYMBOL = 'OPTION';
+      await registry.addWarpRoute(
+        {
+          tokens: [
+            { chainName: MOCK_CHAIN_NAME, symbol: MOCK_SYMBOL, standard: 'EvmHypCollateral' },
+            { chainName: MOCK_CHAIN_NAME2, symbol: MOCK_SYMBOL, standard: 'EvmHypSynthetic' },
+          ] as any,
+          options: {},
+        },
+        { symbol: MOCKED_OPTION_SYMBOL },
+      );
+      const outputBasePath = `deployments/warp_routes/${MOCKED_OPTION_SYMBOL}/${MOCK_CHAIN_NAME}-${MOCK_CHAIN_NAME2}-`;
+      const configPath = `${outputBasePath}config.yaml`;
+      expect(fs.existsSync(configPath)).to.be.true;
+      fs.unlinkSync(configPath);
+      fs.rmdirSync(`deployments/warp_routes/${MOCKED_OPTION_SYMBOL}`);
+    }).timeout(5_000);
+
+    it(`Adds a warp route deploy config for ${registry.type} registry using the provided symbol`, async () => {
+      registry.addWarpRouteConfig(
+        {
+          [MOCK_CHAIN_NAME]: {
+            type: TokenType.collateral,
+            owner: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+            token: '0x0000000000000000000000000000000000000001',
+          },
+          [MOCK_CHAIN_NAME2]: {
+            type: TokenType.synthetic,
+            owner: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+          },
+        },
+        { symbol: MOCK_SYMBOL },
+      );
+      const outputBasePath = `deployments/warp_routes/${MOCK_SYMBOL}/${MOCK_CHAIN_NAME}-${MOCK_CHAIN_NAME2}-`;
+      const configPath = `${outputBasePath}deploy.yaml`;
+      expect(fs.existsSync(configPath)).to.be.true;
+      fs.unlinkSync(configPath);
+      fs.rmdirSync(`deployments/warp_routes/${MOCK_SYMBOL}`);
+    }).timeout(5_000);
+
+    it(`Adds a warp route deploy config for ${registry.type} registry using the provided warp route id`, async () => {
+      const MOCKED_WARP_ROUTE_ID = 'OPTION/CHAIN1-CHAIN2';
+
+      registry.addWarpRouteConfig(
+        {
+          [MOCK_CHAIN_NAME]: {
+            type: TokenType.collateral,
+            owner: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+            token: '0x0000000000000000000000000000000000000001',
+          },
+          [MOCK_CHAIN_NAME2]: {
+            type: TokenType.synthetic,
+            owner: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+          },
+        },
+        { warpRouteId: MOCKED_WARP_ROUTE_ID },
+      );
+      const configPath = `deployments/warp_routes/${MOCKED_WARP_ROUTE_ID}-deploy.yaml`;
+      expect(fs.existsSync(configPath)).to.be.true;
+      fs.unlinkSync(configPath);
+      fs.rmdirSync(`deployments/warp_routes/${MOCKED_WARP_ROUTE_ID.split('/')[0]}`);
     }).timeout(5_000);
   }
 
@@ -164,7 +261,7 @@ describe('Registry utilities', () => {
 
   describe('ProxiedGithubRegistry', () => {
     const proxyUrl = 'http://proxy.hyperlane.xyz';
-    let proxiedGithubRegistry;
+    let proxiedGithubRegistry: GithubRegistry;
     let getApiRateLimitStub;
     beforeEach(() => {
       proxiedGithubRegistry = new GithubRegistry({ branch: GITHUB_REGISTRY_BRANCH, proxyUrl });
@@ -173,7 +270,7 @@ describe('Registry utilities', () => {
     afterEach(() => {
       sinon.restore();
     });
-    it('always uses the public api if rate limit has been not been hit', async () => {
+    it('always uses the public api if rate limit has not been hit', async () => {
       getApiRateLimitStub.returns({ remaining: 10 });
       expect(await proxiedGithubRegistry.getApiUrl()).to.equal(
         `${GITHUB_API_URL}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`,
@@ -187,6 +284,58 @@ describe('Registry utilities', () => {
       );
     });
   });
+
+  describe('Authenticated GithubRegistry', () => {
+    const proxyUrl = 'http://proxy.hyperlane.xyz';
+    let authenticatedGithubRegistry: GithubRegistry;
+    let invalidTokenGithubRegistry: GithubRegistry;
+    let getApiRateLimitStub: sinon.SinonStub;
+    beforeEach(() => {
+      authenticatedGithubRegistry = new GithubRegistry({
+        branch: GITHUB_REGISTRY_BRANCH,
+        proxyUrl,
+        authToken: process.env.GITHUB_TOKEN,
+      });
+      invalidTokenGithubRegistry = new GithubRegistry({
+        branch: GITHUB_REGISTRY_BRANCH,
+        proxyUrl,
+        authToken: 'invalid_token',
+      });
+    });
+    afterEach(() => {
+      sinon.restore();
+    });
+    it('should fetch chains with authenticated token', async function () {
+      if (!process.env.GITHUB_TOKEN) {
+        console.log('Skipping this test because GITHUB_TOKEN is not defined');
+        this.skip();
+      }
+      return expect(authenticatedGithubRegistry.getChains()).to.eventually.be.fulfilled;
+    });
+
+    it('should fail fetching chains with invalid authentication token', async () => {
+      return expect(invalidTokenGithubRegistry.getChains()).to.eventually.be.rejected;
+    });
+
+    describe('GitHub API rate limit handling and fallback behavior:', () => {
+      beforeEach(() => {
+        getApiRateLimitStub = sinon.stub(authenticatedGithubRegistry, 'getApiRateLimit');
+      });
+      it('always uses the authenticated api if rate limit has been not been hit', async () => {
+        getApiRateLimitStub.resolves({ limit: 100, used: 90, remaining: 10, reset: 1234567890 });
+        expect(await authenticatedGithubRegistry.getApiUrl()).to.equal(
+          `${GITHUB_API_URL}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`,
+        );
+      });
+
+      it('should fallback to proxy url if public rate limit has been hit', async () => {
+        getApiRateLimitStub.resolves({ limit: 100, used: 100, remaining: 0, reset: 1234567890 });
+        expect(await authenticatedGithubRegistry.getApiUrl()).to.equal(
+          `${proxyUrl}/repos/hyperlane-xyz/hyperlane-registry/git/trees/main?recursive=true`,
+        );
+      });
+    });
+  });
 });
 
 describe('Registry regex', () => {
@@ -196,5 +345,413 @@ describe('Registry regex', () => {
     expect(CHAIN_FILE_REGEX.test('chains/_NotAChain/addresses.yaml')).to.be.false;
     expect(CHAIN_FILE_REGEX.test('chains/foobar/logo.svg')).to.be.true;
     expect(CHAIN_FILE_REGEX.test('chains/foobar/randomfile.txt')).to.be.false;
+  });
+});
+
+describe('Warp routes file structure', () => {
+  const localRegistry = new FileSystemRegistry({ uri: './' });
+  const WARP_ROUTES_PATH = 'deployments/warp_routes';
+
+  const findAddressesYaml = (dir: string): string | null => {
+    try {
+      const files = fs.readdirSync(dir);
+      for (const file of files) {
+        const path = `${dir}/${file}`;
+        if (file === 'addresses.yaml') return path;
+        if (fs.statSync(path).isDirectory()) {
+          const result = findAddressesYaml(path);
+          if (result) return result;
+        }
+      }
+      return null;
+    } catch {
+      return null;
+    }
+  };
+
+  it('should not contain addresses.yaml files', async () => {
+    const warpRoutes = await localRegistry.getWarpRoutes();
+    expect(Object.keys(warpRoutes).length).to.be.greaterThan(0);
+
+    const foundPath = findAddressesYaml(WARP_ROUTES_PATH);
+    expect(foundPath, foundPath ? `Found addresses.yaml at: ${foundPath}` : '').to.be.null;
+  });
+});
+
+describe('Registry Utils', () => {
+  // Mock logger
+  const logger: Logger = {
+    child: () => ({ info: () => {}, child: () => ({ info: () => {} }) }),
+  } as any;
+
+  const localPath = './';
+  const githubUrl = 'https://github.com/hyperlane-xyz/hyperlane-registry';
+
+  describe('getRegistry', () => {
+    type TestCase = {
+      name: string;
+      uris: string[];
+      useProxy: boolean;
+      branch?: string;
+      expectedRegistries: {
+        type: any;
+        uri: string;
+        proxyUrl?: string;
+        branch?: string;
+      }[];
+    };
+
+    const testCases: TestCase[] = [
+      {
+        name: 'FileSystemRegistry for local path',
+        uris: [localPath],
+        useProxy: false,
+        expectedRegistries: [{ type: FileSystemRegistry, uri: localPath }],
+      },
+      {
+        name: 'GithubRegistry for HTTPS URLs',
+        uris: [githubUrl],
+        useProxy: false,
+        expectedRegistries: [{ type: GithubRegistry, uri: githubUrl, branch: 'main' }],
+      },
+      {
+        name: 'proxied GithubRegistry for canonical repo',
+        uris: [DEFAULT_GITHUB_REGISTRY],
+        useProxy: true,
+        expectedRegistries: [
+          {
+            type: GithubRegistry,
+            uri: DEFAULT_GITHUB_REGISTRY,
+            proxyUrl: PROXY_DEPLOYED_URL,
+            branch: 'main',
+          },
+        ],
+      },
+      {
+        name: 'non-proxied GithubRegistry for non-canonical repos',
+        uris: ['https://github.com/user/test'],
+        useProxy: false,
+        expectedRegistries: [
+          { type: GithubRegistry, uri: 'https://github.com/user/test', branch: 'main' },
+        ],
+      },
+      {
+        name: 'FileSystemRegistry for non-HTTPS URLs',
+        uris: ['local/path'],
+        useProxy: false,
+        expectedRegistries: [{ type: FileSystemRegistry, uri: 'local/path' }],
+      },
+      {
+        name: 'multiple URIs with mixed types',
+        uris: [githubUrl, localPath],
+        useProxy: false,
+        expectedRegistries: [
+          { type: GithubRegistry, uri: githubUrl, branch: 'main' },
+          { type: FileSystemRegistry, uri: localPath },
+        ],
+      },
+      {
+        name: 'mixed registry types with proxy settings',
+        uris: [DEFAULT_GITHUB_REGISTRY, localPath, 'https://github.com/user/test'],
+        useProxy: true,
+        expectedRegistries: [
+          {
+            type: GithubRegistry,
+            uri: DEFAULT_GITHUB_REGISTRY,
+            proxyUrl: PROXY_DEPLOYED_URL,
+            branch: 'main',
+          },
+          { type: FileSystemRegistry, uri: localPath },
+          {
+            type: GithubRegistry,
+            uri: 'https://github.com/user/test',
+            branch: 'main',
+            proxyUrl: PROXY_DEPLOYED_URL,
+          },
+        ],
+      },
+      {
+        name: 'non-proxied GithubRegistry with branch',
+        uris: ['https://github.com/user/test/tree/branch'],
+        useProxy: false,
+        expectedRegistries: [
+          {
+            type: GithubRegistry,
+            uri: 'https://github.com/user/test/tree/branch',
+            branch: 'branch',
+          },
+        ],
+      },
+      {
+        name: 'non-proxied GithubRegistry with branch in constructor',
+        uris: ['https://github.com/user/test'],
+        useProxy: false,
+        branch: 'constructor-branch',
+        expectedRegistries: [
+          {
+            type: GithubRegistry,
+            uri: 'https://github.com/user/test',
+            branch: 'constructor-branch',
+          },
+        ],
+      },
+    ];
+
+    testCases.forEach(({ name, uris, useProxy, branch, expectedRegistries }) => {
+      it(name, () => {
+        const registry = getRegistry({
+          registryUris: uris,
+          enableProxy: useProxy,
+          branch,
+          logger,
+        }) as MergedRegistry;
+        expect(registry).to.be.instanceOf(MergedRegistry);
+        expect(registry.registries.length).to.equal(expectedRegistries.length);
+
+        registry.registries.forEach((reg, idx) => {
+          const expected = expectedRegistries[idx];
+          expect(reg).to.be.instanceOf(expected.type);
+          expect(reg.uri).to.equal(expected.uri);
+          if (reg instanceof GithubRegistry) {
+            expect(reg.proxyUrl).to.equal(expected.proxyUrl);
+            expect(reg.branch).to.equal(expected.branch);
+          }
+          expect(reg).to.have.property('logger');
+        });
+      });
+    });
+
+    const randomOwner = faker.internet.displayName();
+    const randomName = faker.internet.domainWord();
+
+    it(`should be able to parse a pathname with no branch`, () => {
+      const url = `https://github.com/${randomOwner}/${randomName}`;
+      const { repoOwner, repoName, repoBranch } = parseGitHubPath(url);
+      expect(repoOwner).to.equal(randomOwner);
+      expect(repoName).to.equal(randomName);
+      expect(repoBranch).to.be.undefined;
+    });
+
+    it(`should be able to parse a pathname with commit hash`, () => {
+      const randomCommitHash = faker.string.hexadecimal({ length: 40 });
+      const url = `https://github.com/${randomOwner}/${randomName}/tree/${randomCommitHash}`;
+      const { repoOwner, repoName, repoBranch } = parseGitHubPath(url);
+      expect(repoOwner).to.equal(randomOwner);
+      expect(repoName).to.equal(randomName);
+      expect(repoBranch).to.equal(randomCommitHash);
+    });
+
+    it(`should be able to parse user with branch name`, () => {
+      const randomBranch = `owner/asset/${faker.git.branch()}`;
+      const url = `https://github.com/${randomOwner}/${randomName}/tree/${randomBranch}`;
+      const { repoOwner, repoName, repoBranch } = parseGitHubPath(url);
+      expect(repoOwner).to.equal(randomOwner);
+      expect(repoName).to.equal(randomName);
+      expect(repoBranch).to.equal(randomBranch);
+    });
+
+    it('throws error for empty URIs array', () => {
+      expect(() => getRegistry({ registryUris: [], enableProxy: true, logger })).to.throw(
+        'At least one registry URI is required',
+      );
+      expect(() => getRegistry({ registryUris: [''], enableProxy: true, logger })).to.throw(
+        'At least one registry URI is required',
+      );
+      expect(() => getRegistry({ registryUris: ['   '], enableProxy: true, logger })).to.throw(
+        'At least one registry URI is required',
+      );
+    });
+
+    it('throws error if both option.branch is set and url includes a branch for GithubRegistry', () => {
+      expect(() =>
+        getRegistry({
+          registryUris: ['https://github.com/user/test/tree/branch'],
+          enableProxy: false,
+          branch: 'main',
+        }),
+      ).to.throw('Branch is set in both options and url.');
+    });
+  });
+});
+
+// Test class to expose protected methods
+class TestBaseRegistry extends BaseRegistry {
+  public type = RegistryType.FileSystem;
+
+  // Expose protected method for testing
+  public exposeGetWarpRouteDeployConfigPath(
+    config: WarpRouteDeployConfig,
+    options: AddWarpRouteConfigOptions,
+  ) {
+    return this.getWarpRouteDeployConfigPath(config, options);
+  }
+
+  // Expose getWarpRouteCoreConfigPath for testing
+  public exposeGetWarpRouteCoreConfigPath(config: WarpCoreConfig, options?: AddWarpRouteOptions) {
+    return this.getWarpRouteCoreConfigPath(config, options);
+  }
+
+  async listRegistryContent(): Promise<RegistryContent> {
+    return {
+      chains: {},
+      deployments: {
+        warpRoutes: {},
+        warpDeployConfig: {},
+      },
+    };
+  }
+  async getChains() {
+    return [];
+  }
+  async getMetadata() {
+    return {};
+  }
+  async getChainMetadata() {
+    return null;
+  }
+  async getAddresses() {
+    return {};
+  }
+  async getChainAddresses() {
+    return null;
+  }
+  async addChain() {}
+  async updateChain() {}
+  async removeChain() {}
+  async getWarpRoute() {
+    return null;
+  }
+  async getWarpRoutes() {
+    return {};
+  }
+  async addWarpRoute() {}
+  async addWarpRouteConfig() {}
+  async getWarpDeployConfig() {
+    return null;
+  }
+  async getWarpDeployConfigs() {
+    return {};
+  }
+}
+
+describe('BaseRegistry protected methods', () => {
+  const testRegistry = new TestBaseRegistry({ uri: './test' });
+
+  describe('getWarpRouteCoreConfigPath', () => {
+    it('should use symbol from options when provided', () => {
+      const config = {
+        tokens: [
+          { chainName: 'ethereum', symbol: 'TOKEN' },
+          { chainName: 'polygon', symbol: 'TOKEN' },
+        ],
+      } as WarpCoreConfig;
+      const options = { symbol: 'CUSTOM' };
+
+      const path = testRegistry.exposeGetWarpRouteCoreConfigPath(config, options);
+
+      expect(path).to.equal('deployments/warp_routes/CUSTOM/ethereum-polygon-config.yaml');
+    });
+
+    it('should use symbol from tokens when options symbol is not provided', () => {
+      const config = {
+        tokens: [
+          { chainName: 'ethereum', symbol: 'TOKEN' },
+          { chainName: 'polygon', symbol: 'TOKEN' },
+        ],
+      } as WarpCoreConfig;
+
+      const path = testRegistry.exposeGetWarpRouteCoreConfigPath(config);
+
+      expect(path).to.equal('deployments/warp_routes/TOKEN/ethereum-polygon-config.yaml');
+    });
+
+    it('should handle multiple chains in alphabetical order', () => {
+      const config = {
+        tokens: [
+          { chainName: 'arbitrum', symbol: 'TOKEN' },
+          { chainName: 'polygon', symbol: 'TOKEN' },
+          { chainName: 'ethereum', symbol: 'TOKEN' },
+        ],
+      } as WarpCoreConfig;
+
+      const path = testRegistry.exposeGetWarpRouteCoreConfigPath(config);
+
+      expect(path).to.equal('deployments/warp_routes/TOKEN/arbitrum-ethereum-polygon-config.yaml');
+    });
+
+    it('should throw error for empty tokens array', () => {
+      const config = {
+        tokens: [],
+      } as WarpCoreConfig;
+
+      expect(() => testRegistry.exposeGetWarpRouteCoreConfigPath(config)).to.throw(
+        'Cannot generate ID for empty warp config',
+      );
+    });
+
+    it('should throw error for multiple different symbols without option', () => {
+      const config = {
+        tokens: [
+          { chainName: 'ethereum', symbol: 'TOKEN1' },
+          { chainName: 'polygon', symbol: 'TOKEN2' },
+        ],
+      } as WarpCoreConfig;
+
+      expect(() => testRegistry.exposeGetWarpRouteCoreConfigPath(config)).to.throw(
+        'Only one token symbol per warp config is supported for now',
+      );
+    });
+
+    it('should normalize symbols to uppercase', () => {
+      const config = {
+        tokens: [
+          { chainName: 'ethereum', symbol: 'token' },
+          { chainName: 'polygon', symbol: 'token' },
+        ],
+      } as WarpCoreConfig;
+
+      const path = testRegistry.exposeGetWarpRouteCoreConfigPath(config);
+
+      expect(path).to.equal('deployments/warp_routes/TOKEN/ethereum-polygon-config.yaml');
+    });
+  });
+
+  describe('getWarpRouteDeployConfigPath', () => {
+    it('should use warpRouteId from options when provided', () => {
+      const config = {
+        ethereum: {},
+        polygon: {},
+      } as unknown as WarpRouteDeployConfig;
+      const options = { warpRouteId: 'custom-route-id' };
+
+      const path = testRegistry.exposeGetWarpRouteDeployConfigPath(config, options);
+
+      expect(path).to.equal('deployments/warp_routes/custom-route-id-deploy.yaml');
+    });
+
+    it('should create route ID from symbol and chains when warpRouteId is not provided', () => {
+      const config = {
+        ethereum: {},
+        polygon: {},
+      } as unknown as WarpRouteDeployConfig;
+      const options = { symbol: 'TEST' };
+
+      const path = testRegistry.exposeGetWarpRouteDeployConfigPath(config, options);
+
+      expect(path).to.equal('deployments/warp_routes/TEST/ethereum-polygon-deploy.yaml');
+    });
+
+    it('should handle multiple chains in alphabetical order', () => {
+      const config = {
+        arbitrum: {},
+        polygon: {},
+        ethereum: {},
+      } as unknown as WarpRouteDeployConfig;
+      const options = { symbol: 'MULTI' };
+
+      const path = testRegistry.exposeGetWarpRouteDeployConfigPath(config, options);
+
+      expect(path).to.equal('deployments/warp_routes/MULTI/arbitrum-ethereum-polygon-deploy.yaml');
+    });
   });
 });

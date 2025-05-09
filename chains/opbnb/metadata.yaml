@@ -1,16 +1,21 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://api-opbnb.bscscan.com/api
+  - apiKey: GK47JUUDX17PHP8XQ947IYTTPHP6FTAQMK
+    apiUrl: https://api-opbnb.bscscan.com/api
     family: etherscan
     name: opBNB Scan
     url: https://opbnb.bscscan.com
+blocks:
+  confirmations: 1
+  estimateBlockTime: 1
+  reorgPeriod: 5
 chainId: 204
 deployer:
-  name: JunayedMh
-  url: https://github.com/JunayedMh
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
 displayName: opBNB
 domainId: 204
-isTestnet: false
+gasCurrencyCoinGeckoId: binancecoin
 name: opbnb
 nativeToken:
   decimals: 18
@@ -18,4 +23,8 @@ nativeToken:
   symbol: BNB
 protocol: ethereum
 rpcUrls:
-  - http: https://opbnb-rpc.publicnode.com
+  - http: https://opbnb-mainnet-rpc.bnbchain.org
+  - http: https://opbnb-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3
+  - http: https://opbnb-mainnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5
+  - http: https://opbnb.publicnode.com
+technicalStack: opstack

@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://api.neroscan.io/api
+    family: etherscan
+    name: Neroscan
+    url: https://www.neroscan.io
+blocks:
+  confirmations: 1
+  estimateBlockTime: 3
+  reorgPeriod: 5
+chainId: 1689
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Nero
+domainId: 1689
+gasCurrencyCoinGeckoId: nerochain
+gnosisSafeTransactionServiceUrl: https://multisign.nerochain.io/txs/
+name: nero
+nativeToken:
+  decimals: 18
+  name: Nero
+  symbol: NERO
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.nerochain.io
+technicalStack: other
+transactionOverrides:
+  maxFeePerGas: 10000000000
+  maxPriorityFeePerGas: 1000000000

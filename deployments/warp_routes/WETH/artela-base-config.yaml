@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xfae4e14D01D9E13FB5db20A0329ED0472A2D96C7"
+    chainName: artela
+    connections:
+      - token: ethereum|base|0x5B4d7FD7E6Cb11170137df1A0dB24645533EC0b5
+    decimals: 18
+    logoURI: /deployments/warp_routes/WETH/logo.svg
+    name: Wrapped Ether
+    standard: EvmHypSynthetic
+    symbol: WETH.a
+  - addressOrDenom: "0x5B4d7FD7E6Cb11170137df1A0dB24645533EC0b5"
+    chainName: base
+    coinGeckoId: l2-standard-bridged-weth-base
+    collateralAddressOrDenom: "0x4200000000000000000000000000000000000006"
+    connections:
+      - token: ethereum|artela|0xfae4e14D01D9E13FB5db20A0329ED0472A2D96C7
+    decimals: 18
+    logoURI: /deployments/warp_routes/WETH/logo.svg
+    name: Wrapped Ether
+    standard: EvmHypCollateral
+    symbol: WETH

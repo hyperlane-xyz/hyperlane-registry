@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x40Ca4155c0334F7e0F6d7F80536B59EF8831c9fb"
+    chainName: form
+    connections:
+      - token: ethereum|base|0xa6536c88A7f86d2b189c58A5a19BF5F03241d6A0
+    decimals: 18
+    logoURI: /deployments/warp_routes/AIXBT/logo.svg
+    name: aixbt by Virtuals
+    standard: EvmHypSynthetic
+    symbol: AIXBT
+  - addressOrDenom: "0xa6536c88A7f86d2b189c58A5a19BF5F03241d6A0"
+    chainName: base
+    coinGeckoId: aixbt-by-virtuals
+    collateralAddressOrDenom: "0x4F9Fd6Be4a90f2620860d680c0d4d5Fb53d1A825"
+    connections:
+      - token: ethereum|form|0x40Ca4155c0334F7e0F6d7F80536B59EF8831c9fb
+    decimals: 18
+    logoURI: /deployments/warp_routes/AIXBT/logo.svg
+    name: aixbt by Virtuals
+    standard: EvmHypCollateral
+    symbol: AIXBT

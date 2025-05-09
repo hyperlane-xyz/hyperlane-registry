@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://api.blockscout.torus.network/api
+    family: blockscout
+    name: Torus Explorer
+    url: https://blockscout.torus.network
+blocks:
+  confirmations: 1
+  estimateBlockTime: 8
+  reorgPeriod: finalized
+chainId: 21000
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Torus
+domainId: 21000
+gasCurrencyCoinGeckoId: torus
+name: torus
+nativeToken:
+  decimals: 18
+  name: Torus
+  symbol: TORUS
+protocol: ethereum
+rpcUrls:
+  - http: https://api-hyperlane.nodes.torus.network
+  - http: https://api.torus.network
+technicalStack: polkadotsubstrate

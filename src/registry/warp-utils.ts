@@ -1,5 +1,5 @@
 import type { ChainMap, ChainName, TokenStandard, WarpCoreConfig } from '@hyperlane-xyz/sdk';
-import { WARP_ROUTE_CONFIG_FILE_REGEX } from '../consts.js';
+import { WARP_ROUTE_CONFIG_FILE_REGEX, WARP_ROUTE_DEPLOY_FILE_REGEX } from '../consts.js';
 import { ChainAddresses, WarpRouteId } from '../types.js';
 import { WarpRouteFilterParams } from './IRegistry.js';
 
@@ -33,7 +33,26 @@ function getWarpAddressKey(standard: TokenStandard): string | null {
  *    (e.g. `warp_routes/USDC/ethereum-arbitrum-config.yaml`)
  */
 export function warpRouteConfigPathToId(configRelativePath: string): WarpRouteId {
-  const matches = configRelativePath.match(WARP_ROUTE_CONFIG_FILE_REGEX);
+  return parseWarpRouteConfigPath(configRelativePath, WARP_ROUTE_CONFIG_FILE_REGEX);
+}
+
+/**
+ * Gets a warp route ID from a warp deploy config path.
+ * @param configRelativePath A relative path in the deployments dir
+ *    (e.g. `warp_routes/USDC/ethereum-arbitrum-config.yaml`)
+ */
+export function warpRouteDeployConfigPathToId(configRelativePath: string): WarpRouteId {
+  return parseWarpRouteConfigPath(configRelativePath, WARP_ROUTE_DEPLOY_FILE_REGEX);
+}
+
+/**
+ * Gets a warp route ID from a warp route config path.
+ * @param configRelativePath A relative path in the deployments dir
+ *    (e.g. `warp_routes/USDC/ethereum-arbitrum-config.yaml`)
+ * @param regex regex of the config filename
+ */
+function parseWarpRouteConfigPath(configRelativePath: string, regex: RegExp) {
+  const matches = configRelativePath.match(regex);
   if (!matches || matches.length < 3)
     throw new Error(`Invalid warp route config path: ${configRelativePath}`);
   const [_, tokenSymbol, chains] = matches;
@@ -42,12 +61,18 @@ export function warpRouteConfigPathToId(configRelativePath: string): WarpRouteId
 
 /**
  * Gets a warp route ID from a warp route config.
- * This uses the first symbol in the lift. Situations where a config contains multiple
+ * This uses the first symbol in the list. Situations where a config contains multiple
  * symbols are not officially supported yet.
  */
-export function warpRouteConfigToId(config: WarpCoreConfig): WarpRouteId {
+export function warpRouteConfigToId(config: WarpCoreConfig, symbol?: string): WarpRouteId {
   if (!config?.tokens?.length) throw new Error('Cannot generate ID for empty warp config');
-  const tokenSymbol = config.tokens[0].symbol;
+  const symbols = new Set(config.tokens.map((token) => token.symbol.toUpperCase()));
+  if (!symbol && symbols.size !== 1) {
+    throw new Error(
+      `Only one token symbol per warp config is supported for now. Found: [${[...symbols].join()}]`,
+    );
+  }
+  const tokenSymbol = symbol || symbols.values().next().value;
   if (!tokenSymbol) throw new Error('Cannot generate warp config ID without a token symbol');
   const chains = new Set(config.tokens.map((token) => token.chainName));
   return createWarpRouteConfigId(tokenSymbol, [...chains.values()]);

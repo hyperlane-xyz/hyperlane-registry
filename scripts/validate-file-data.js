@@ -12,6 +12,7 @@ const noLogoFileError = [];
 // warp route warnings / errors
 const noConfigFileWarning = [];
 const unorderedChainNamesError = [];
+const invalidLogoURIPathError = [];
 
 function validateChains() {
   if (!fs.existsSync(chainsDir)) {
@@ -71,6 +72,27 @@ function validateConfigFiles(entryPath) {
     noConfigFileWarning.push(entryPath);
     return;
   }
+
+  configFiles.forEach((configFile) => {
+    const configFilePath = path.join(entryPath, configFile);
+    const configData = readYaml(configFilePath);
+
+    if (Object.keys(configData).includes('tokens')) {
+      const tokens = configData.tokens;
+      tokens.forEach((token) => {
+        if (Object.keys(token).includes('logoURI')) {
+          const logoURI = token.logoURI;
+          const filePath = path.join('./', logoURI);
+          if (!fs.existsSync(filePath)) {
+            invalidLogoURIPathError.push({
+              chain: token.chainName,
+              path: configFilePath,
+            });
+          }
+        }
+      });
+    }
+  });
 }
 
 function validateWarpRoutes() {
@@ -105,7 +127,8 @@ function validateErrors() {
   const errorCount =
     missingDeployerField.length +
     noLogoFileError.length +
-    unorderedChainNamesError.length;
+    unorderedChainNamesError.length +
+    invalidLogoURIPathError.length;
 
   if (errorCount === 0) return;
 
@@ -124,6 +147,13 @@ function validateErrors() {
       'Error: Chain names not ordered alphabetically at paths:',
       unorderedChainNamesError,
     );
+
+  if (invalidLogoURIPathError.length > 0) {
+    console.error(
+      'Error: Invalid logoURI paths, verify that files exist:',
+      invalidLogoURIPathError,
+    );
+  }
 
   process.exit(1);
 }

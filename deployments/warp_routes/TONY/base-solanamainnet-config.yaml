@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xcc9EcE816641c8350Db06af375811107B1Aa0b9d"
+    chainName: base
+    # TONY is not on Coingecko has a price with a (somewhat) similar magnitude to Bonk.
+    # TONY: 0.00006 - https://cryptorank.io/price/big-tony
+    # Bonk: 0.00002854 - https://www.coingecko.com/en/coins/bonk
+    coinGeckoId: bonk
+    collateralAddressOrDenom: "0xb22a793a81ff5b6ad37f40d5fe1e0ac4184d52f3"
+    connections:
+      - token: sealevel|solanamainnet|Fa4zQJCH7id5KL1eFJt2mHyFpUNfCCSkHgtMrLvrRJBN
+    decimals: 18
+    logoURI: /deployments/warp_routes/TONY/logo.png
+    name: Big Tony
+    standard: EvmHypCollateral
+    symbol: TONY
+  - addressOrDenom: Fa4zQJCH7id5KL1eFJt2mHyFpUNfCCSkHgtMrLvrRJBN
+    chainName: solanamainnet
+    collateralAddressOrDenom: 3SboFTm5xF3VGcduCP6CPue3ZTh8qKXNcNSXR74YDaw1
+    connections:
+      - token: ethereum|base|0xcc9EcE816641c8350Db06af375811107B1Aa0b9d
+    decimals: 9
+    logoURI: /deployments/warp_routes/TONY/logo.png
+    name: Big Tony
+    standard: SealevelHypSynthetic
+    symbol: TONY
