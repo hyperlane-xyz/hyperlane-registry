@@ -1,23 +1,5 @@
 # @hyperlane-xyz/registry
 
-## 6.12.0-http.2
-
-### Patch Changes
-
-- Implement more endpoints
-
-## 6.12.0-http.1
-
-### Minor Changes
-
-- d0d0af4: Export http server utils
-
-## 6.12.0-http.0
-
-### Minor Changes
-
-- 9a11b8b: Add SOON chain, add Bonk logo and metadata, make warp deploys without a config a warning
-
 ## 6.11.0
 
 ### Minor Changes
