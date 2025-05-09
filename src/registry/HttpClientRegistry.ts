@@ -10,9 +10,12 @@ import {
 
 export class HttpClientRegistry implements IRegistry {
   private baseUrl: string;
+  public readonly type = RegistryType.Http;
+  public readonly uri: string;
 
-  constructor(baseUrl: string = 'http://localhost:3000/api') {
+  constructor(baseUrl: string) {
     this.baseUrl = baseUrl;
+    this.uri = baseUrl;
   }
 
   getMetadata(): MaybePromise<ChainMap<ChainMetadata>> {
@@ -23,6 +26,18 @@ export class HttpClientRegistry implements IRegistry {
     return this.fetchJson<ChainMap<ChainAddresses>>('/addresses');
   }
 
+  getUri(_itemPath?: string): string {
+    throw new Error('Method not implemented.');
+  }
+
+  listRegistryContent(): MaybePromise<RegistryContent> {
+    return this.fetchJson<RegistryContent>('/list-registry-content');
+  }
+
+  getChains(): MaybePromise<Array<ChainName>> {
+    return this.fetchJson<Array<ChainName>>('/chains');
+  }
+
   getChainMetadata(chainName: ChainName): MaybePromise<ChainMetadata> {
     return this.fetchJson<ChainMetadata>(`/chain/${chainName}/metadata`);
   }
@@ -31,48 +46,41 @@ export class HttpClientRegistry implements IRegistry {
     return this.fetchJson<void>(`/chain/${update.chainName}/metadata`, {
       method: 'POST',
       body: JSON.stringify(update.metadata),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
   }
 
-  get type(): RegistryType {
-    throw new Error('Method not implemented.');
-  }
-
-  get uri(): string {
-    throw new Error('Method not implemented.');
-  }
-
-  getUri(itemPath?: string): string {
-    throw new Error('Method not implemented.');
-  }
-  listRegistryContent(): MaybePromise<RegistryContent> {
-    throw new Error('Method not implemented.');
-  }
-  getChains(): MaybePromise<Array<ChainName>> {
-    throw new Error('Method not implemented.');
-  }
   getChainAddresses(chainName: ChainName): MaybePromise<ChainAddresses | null> {
+    return this.fetchJson<ChainAddresses>(`/chain/${chainName}/addresses`);
+  }
+
+  getChainLogoUri(_chainName: ChainName): Promise<string | null> {
     throw new Error('Method not implemented.');
   }
-  getChainLogoUri(chainName: ChainName): Promise<string | null> {
+
+  addChain(_chain: UpdateChainParams): MaybePromise<void> {
     throw new Error('Method not implemented.');
   }
-  addChain(chain: UpdateChainParams): MaybePromise<void> {
+
+  removeChain(_chain: ChainName): MaybePromise<void> {
     throw new Error('Method not implemented.');
   }
-  removeChain(chain: ChainName): MaybePromise<void> {
-    throw new Error('Method not implemented.');
-  }
+
   getWarpRoute(routeId: string): MaybePromise<WarpCoreConfig | null> {
+    return this.fetchJson<WarpCoreConfig | null>(`/warp-route/${encodeURIComponent(routeId)}`);
+  }
+
+  getWarpRoutes(_filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap> {
     throw new Error('Method not implemented.');
   }
-  getWarpRoutes(filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap> {
+
+  addWarpRoute(_config: WarpCoreConfig): MaybePromise<void> {
     throw new Error('Method not implemented.');
   }
-  addWarpRoute(config: WarpCoreConfig): MaybePromise<void> {
-    throw new Error('Method not implemented.');
-  }
-  merge(otherRegistry: IRegistry): IRegistry {
+
+  merge(_otherRegistry: IRegistry): IRegistry {
     throw new Error('Method not implemented.');
   }
 
