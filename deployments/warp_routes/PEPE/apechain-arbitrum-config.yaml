@@ -1,0 +1,21 @@
+tokens:
+  - addressOrDenom: "0x46C41c67471bF859A4453512a7dc1B2431b45993"
+    chainName: apechain
+    connections:
+      - token: ethereum|arbitrum|0x46C41c67471bF859A4453512a7dc1B2431b45993
+    decimals: 18
+    logoURI: /deployments/warp_routes/PEPE/logo.svg
+    name: Pepe
+    standard: EvmHypSynthetic
+    symbol: PEPE
+  - addressOrDenom: "0x46C41c67471bF859A4453512a7dc1B2431b45993"
+    chainName: arbitrum
+    coinGeckoId: pepe
+    collateralAddressOrDenom: "0x25d887ce7a35172c62febfd67a1856f20faebb00"
+    connections:
+      - token: ethereum|apechain|0x46C41c67471bF859A4453512a7dc1B2431b45993
+    decimals: 18
+    logoURI: /deployments/warp_routes/PEPE/logo.svg
+    name: Pepe
+    standard: EvmHypCollateral
+    symbol: PEPE

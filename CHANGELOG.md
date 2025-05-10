@@ -1,5 +1,51 @@
 # @hyperlane-xyz/registry
 
+## 15.0.0
+
+### Major Changes
+
+- 93f9850: May 6 testnet batch: nobletestnet, megaethtestnet, basecamptestnet, bepolia. Removes metadata for old berabartio + camptestnet. Update weavevm -> load.network branding.
+
+### Minor Changes
+
+- d56aa3f: Add svmbnb
+
+### Patch Changes
+
+- 987992a: Update eclipse block explorer URL
+
+## 14.2.0
+
+### Minor Changes
+
+- 55b9c35: Add miracle chain
+
+### Patch Changes
+
+- a203c16: Remove ink connection for oUSDT
+
+## 14.1.0
+
+### Minor Changes
+
+- e9f844c: Add explorer API keys to some (most popular) chains.
+
+### Patch Changes
+
+- 65b313a: Fix wfragJTO: add correct collateral.
+
+## 14.0.0
+
+### Major Changes
+
+- 16d2a83: Standardized Warp Route configuration API by adding consistent addWarpRouteConfig method to IRegistry interface and removed method overload in FileSystemRegistry.
+
+## 13.16.1
+
+### Patch Changes
+
+- 60cfef3: Adding wfragSOL and wfragJTO deploy artifacts.
+
 ## 13.16.0
 
 ### Minor Changes
