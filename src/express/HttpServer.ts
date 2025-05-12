@@ -1,12 +1,16 @@
-import { ChainMetadataSchema, ChainName, ZChainName } from '@hyperlane-xyz/sdk';
 import type { Logger } from 'pino';
 
 import express, { Express } from 'express';
 import { IRegistry } from '../registry/IRegistry.js';
-import { WarpRouteId } from '../types.js';
 import { DEFAULT_PORT, DEFAULT_REFRESH_INTERVAL } from './src/constants/ServerConstants.js';
-import { NotFoundError } from './src/errors/ApiError.js';
 import { errorHandler } from './src/middleware/errorHandler.js';
+import { createWarpRouter } from './src/routes/warp.js';
+import { WarpService } from './src/services/warpService.js';
+import { RegistryService } from './src/services/registryService.js';
+import { createRootRouter } from './src/routes/root.js';
+import { RootService } from './src/services/rootService.js';
+import { createChainRouter } from './src/routes/chain.js';
+import { ChainService } from './src/services/chainService.js';
 
 export class HttpServer {
   app: Express;
@@ -20,77 +24,12 @@ export class HttpServer {
 
   async start(port = DEFAULT_PORT, refreshInterval = DEFAULT_REFRESH_INTERVAL) {
     try {
-      let registry = await this.getRegistry();
+      const registryService = new RegistryService(this.getRegistry, refreshInterval, this.logger);
+      await registryService.initialize();
 
-      let lastRequest = Date.now();
-      this.app.use('/', async (_req, _res, next) => {
-        const now = Date.now();
-        if (now - lastRequest > refreshInterval) {
-          this.logger.info('Refreshing registry cache...');
-          registry = await this.getRegistry();
-        }
-
-        lastRequest = now;
-
-        return next();
-      });
-
-      this.app.get('/metadata', async (_req, res) => {
-        const metadata = await registry.getMetadata();
-        return res.json(metadata);
-      });
-
-      this.app.get('/addresses', async (_req, res) => {
-        const addresses = await registry.getAddresses();
-        return res.json(addresses);
-      });
-
-      this.app.get('/list-registry-content', async (_req, res) => {
-        const content = await registry.listRegistryContent();
-        return res.json(content);
-      });
-
-      this.app.get('/chains', async (_req, res) => {
-        const chains = await registry.getChains();
-        return res.json(chains);
-      });
-
-      this.app.get('/chain/:chain/metadata', async (req, res) => {
-        const chainName = req.params.chain as ChainName;
-        const metadata = await registry.getChainMetadata(chainName);
-        if (!metadata) {
-          throw new NotFoundError(`Chain metadata not found for chain ${chainName}`);
-        }
-        return res.json(metadata);
-      });
-
-      this.app.post('/chain/:chain/metadata', async (req, res) => {
-        const chainName = ZChainName.parse(req.params.chain);
-        const metadata = ChainMetadataSchema.parse(req.body);
-        await registry.updateChain({
-          chainName,
-          metadata,
-        });
-        return res.status(200).json({ message: 'Chain metadata updated successfully' });
-      });
-
-      this.app.get('/chain/:chain/addresses', async (req, res) => {
-        const chainName = req.params.chain as ChainName;
-        const addresses = await registry.getChainAddresses(chainName);
-        if (!addresses) {
-          throw new NotFoundError(`Chain addresses not found for chain ${chainName}`);
-        }
-        return res.json(addresses);
-      });
-
-      this.app.get('/warp-route/:id', async (req, res) => {
-        const id = req.params.id as WarpRouteId;
-        const warpRoute = await registry.getWarpRoute(id);
-        if (!warpRoute) {
-          throw new NotFoundError(`Warp route not found for id ${id}`);
-        }
-        return res.json(warpRoute);
-      });
+      this.app.use('/', createRootRouter(new RootService(registryService)));
+      this.app.use('/chain', createChainRouter(new ChainService(registryService)));
+      this.app.use('/warp-route', createWarpRouter(new WarpService(registryService)));
 
       // add error handler to the end of the middleware stack
       this.app.use(errorHandler);
