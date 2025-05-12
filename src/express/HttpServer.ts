@@ -4,9 +4,7 @@ import type { Logger } from 'pino';
 import express, { Express } from 'express';
 import { IRegistry } from '../registry/IRegistry.js';
 import { WarpRouteId } from '../types.js';
-
-const DEFAULT_PORT = 3000;
-const DEFAULT_REFRESH_INTERVAL = 1000 * 60 * 5; // 5 minutes
+import { DEFAULT_PORT, DEFAULT_REFRESH_INTERVAL } from './src/constants/ServerConstants.js';
 
 export class HttpServer {
   app: Express;
