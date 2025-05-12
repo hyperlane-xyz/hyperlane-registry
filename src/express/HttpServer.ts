@@ -5,6 +5,8 @@ import express, { Express } from 'express';
 import { IRegistry } from '../registry/IRegistry.js';
 import { WarpRouteId } from '../types.js';
 import { DEFAULT_PORT, DEFAULT_REFRESH_INTERVAL } from './src/constants/ServerConstants.js';
+import { NotFoundError } from './src/errors/ApiError.js';
+import { errorHandler } from './src/middleware/errorHandler.js';
 
 export class HttpServer {
   app: Express;
@@ -44,81 +46,54 @@ export class HttpServer {
       });
 
       this.app.get('/list-registry-content', async (_req, res) => {
-        try {
-          const content = await registry.listRegistryContent();
-          return res.json(content);
-        } catch (error) {
-          const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
-          return res.status(500).json({ error: errorMessage });
-        }
+        const content = await registry.listRegistryContent();
+        return res.json(content);
       });
 
       this.app.get('/chains', async (_req, res) => {
-        try {
-          const chains = await registry.getChains();
-          return res.json(chains);
-        } catch (error) {
-          const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
-          return res.status(500).json({ error: errorMessage });
-        }
+        const chains = await registry.getChains();
+        return res.json(chains);
       });
 
       this.app.get('/chain/:chain/metadata', async (req, res) => {
-        try {
-          const chainName = req.params.chain as ChainName;
-          const metadata = await registry.getChainMetadata(chainName);
-          if (!metadata) {
-            return res.status(404).json({ error: 'Chain metadata not found' });
-          }
-          return res.json(metadata);
-        } catch (error) {
-          const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
-          return res.status(500).json({ error: errorMessage });
+        const chainName = req.params.chain as ChainName;
+        const metadata = await registry.getChainMetadata(chainName);
+        if (!metadata) {
+          throw new NotFoundError(`Chain metadata not found for chain ${chainName}`);
         }
+        return res.json(metadata);
       });
 
       this.app.post('/chain/:chain/metadata', async (req, res) => {
-        try {
-          const chainName = ZChainName.parse(req.params.chain);
-          const metadata = ChainMetadataSchema.parse(req.body);
-          await registry.updateChain({
-            chainName,
-            metadata,
-          });
-          return res.status(200).json({ message: 'Chain metadata updated successfully' });
-        } catch (error) {
-          const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
-          return res.status(500).json({ error: errorMessage });
-        }
+        const chainName = ZChainName.parse(req.params.chain);
+        const metadata = ChainMetadataSchema.parse(req.body);
+        await registry.updateChain({
+          chainName,
+          metadata,
+        });
+        return res.status(200).json({ message: 'Chain metadata updated successfully' });
       });
 
       this.app.get('/chain/:chain/addresses', async (req, res) => {
-        try {
-          const chainName = req.params.chain as ChainName;
-          const addresses = await registry.getChainAddresses(chainName);
-          if (!addresses) {
-            return res.status(404).json({ error: 'Chain addresses not found' });
-          }
-          return res.json(addresses);
-        } catch (error) {
-          const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
-          return res.status(500).json({ error: errorMessage });
+        const chainName = req.params.chain as ChainName;
+        const addresses = await registry.getChainAddresses(chainName);
+        if (!addresses) {
+          throw new NotFoundError(`Chain addresses not found for chain ${chainName}`);
         }
+        return res.json(addresses);
       });
 
       this.app.get('/warp-route/:id', async (req, res) => {
-        try {
-          const id = req.params.id as WarpRouteId;
-          const warpRoute = await registry.getWarpRoute(id);
-          if (!warpRoute) {
-            return res.status(404).json({ error: 'Warp route not found' });
-          }
-          return res.json(warpRoute);
-        } catch (error) {
-          const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
-          return res.status(500).json({ error: errorMessage });
+        const id = req.params.id as WarpRouteId;
+        const warpRoute = await registry.getWarpRoute(id);
+        if (!warpRoute) {
+          throw new NotFoundError(`Warp route not found for id ${id}`);
         }
+        return res.json(warpRoute);
       });
+
+      // add error handler to the end of the middleware stack
+      this.app.use(errorHandler);
 
       const server = this.app.listen(port, () =>
         this.logger.info(`Server running on port ${port}`),

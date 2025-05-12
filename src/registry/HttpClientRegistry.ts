@@ -116,7 +116,14 @@ export class HttpClientRegistry implements IRegistry {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error: ${response.status} ${response.statusText}`);
+      let errorMessage: string;
+      try {
+        const errorBody = await response.json();
+        errorMessage = errorBody.message || response.statusText;
+      } catch (e) {
+        errorMessage = `Failed to parse error response: ${response.statusText}`;
+      }
+      throw new Error(`HTTP error ${response.status}: ${errorMessage}`);
     }
 
     return response.json();
