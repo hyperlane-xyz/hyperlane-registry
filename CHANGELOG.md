@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 15.2.0
+
+### Minor Changes
+
+- 49080f4: added artifacts for the coti wbtc and eth routes
+
 ## 15.1.0
 
 ### Minor Changes
