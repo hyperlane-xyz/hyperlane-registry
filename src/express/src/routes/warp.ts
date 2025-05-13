@@ -16,7 +16,7 @@ export function createWarpRouter(warpService: WarpService) {
     validateRequest({ params: warpRouteParamsSchema }),
     async (req: Request, res: Response) => {
       const warpRoute = await warpService.getWarpRoute(req.params.id);
-      res.json({ data: warpRoute });
+      res.json(warpRoute);
     },
   );
 

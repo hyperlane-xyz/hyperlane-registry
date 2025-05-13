@@ -16,7 +16,7 @@ export function createChainRouter(chainService: ChainService) {
     validateRequest({ params: chainParamsSchema }),
     async (req: Request, res: Response) => {
       const metadata = await chainService.getChainMetadata(req.params.chain);
-      res.json({ data: metadata });
+      res.json(metadata);
     },
   );
 
@@ -28,7 +28,7 @@ export function createChainRouter(chainService: ChainService) {
     }),
     async (req: Request, res: Response) => {
       const metadata = await chainService.setChainMetadata(req.params.chain, req.body);
-      res.json({ data: metadata });
+      res.json(metadata);
     },
   );
 
@@ -37,7 +37,7 @@ export function createChainRouter(chainService: ChainService) {
     validateRequest({ params: chainParamsSchema }),
     async (req: Request, res: Response) => {
       const addresses = await chainService.getChainAddresses(req.params.chain);
-      res.json({ data: addresses });
+      res.json(addresses);
     },
   );
 
