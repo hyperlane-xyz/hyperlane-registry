@@ -1,5 +1,6 @@
 import { RegistryService } from './registryService.js';
 import { AbstractService } from './abstractService.js';
+import { WarpRouteFilterParams } from '../../../registry/IRegistry.js';
 
 export class RootService extends AbstractService {
   constructor(registryService: RegistryService) {
@@ -27,6 +28,12 @@ export class RootService extends AbstractService {
   async listRegistryContent() {
     return this.withRegistry(async (registry) => {
       return registry.listRegistryContent();
+    });
+  }
+
+  async getWarpRoutes(filter?: WarpRouteFilterParams) {
+    return this.withRegistry(async (registry) => {
+      return registry.getWarpRoutes(filter);
     });
   }
 }

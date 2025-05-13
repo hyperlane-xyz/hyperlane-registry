@@ -1,5 +1,14 @@
 import { Router, Request, Response } from 'express';
+import { z } from 'zod';
 import { RootService } from '../services/rootService.js';
+import { validateRequest } from '../middleware/validateRequest.js';
+
+const warpRoutesQuerySchema = z
+  .object({
+    symbol: z.string().optional(),
+    chainName: z.string().optional(),
+  })
+  .strict();
 
 export function createRootRouter(rootService: RootService) {
   const router = Router();
@@ -27,6 +36,17 @@ export function createRootRouter(rootService: RootService) {
     const content = await rootService.listRegistryContent();
     res.json(content);
   });
+
+  // get warp routes
+  router.get(
+    '/warp-routes',
+    validateRequest({ query: warpRoutesQuerySchema }),
+    async (req: Request, res: Response) => {
+      const filter = req.query;
+      const warpRoutes = await rootService.getWarpRoutes(filter);
+      res.json(warpRoutes);
+    },
+  );
 
   return router;
 }

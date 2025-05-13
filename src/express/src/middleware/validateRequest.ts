@@ -12,13 +12,13 @@ export function validateRequest(schema: ValidationSchema) {
   return async (req: Request, _res: Response, next: NextFunction) => {
     try {
       if (schema.params) {
-        req.params = await schema.params.parseAsync(req.params);
+        await schema.params.parseAsync(req.params);
       }
       if (schema.query) {
-        req.query = await schema.query.parseAsync(req.query);
+        await schema.query.parseAsync(req.query);
       }
       if (schema.body) {
-        req.body = await schema.body.parseAsync(req.body);
+        await schema.body.parseAsync(req.body);
       }
       next();
     } catch (error) {

@@ -79,8 +79,15 @@ export class HttpClientRegistry implements IRegistry {
     return this.fetchJson<WarpCoreConfig | null>(`/warp-route/${encodeURIComponent(routeId)}`);
   }
 
-  getWarpRoutes(_filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap> {
-    throw new Error('Method not implemented.');
+  getWarpRoutes(filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap> {
+    const queryParams = new URLSearchParams();
+    if (filter?.symbol) {
+      queryParams.set('symbol', filter.symbol);
+    }
+    if (filter?.chainName) {
+      queryParams.set('chainName', filter.chainName);
+    }
+    return this.fetchJson<WarpRouteConfigMap>(`/warp-routes?${queryParams.toString()}`);
   }
 
   addWarpRoute(_config: WarpCoreConfig): MaybePromise<void> {
