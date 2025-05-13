@@ -1,7 +1,5 @@
 import { IRegistry } from '../../../registry/IRegistry.js';
 import type { Logger } from 'pino';
-import { ApiError } from '../errors/ApiError.js';
-
 export class RegistryService {
   private registry: IRegistry | null = null;
   private lastRefresh: number = Date.now();
@@ -18,15 +16,10 @@ export class RegistryService {
 
   async getCurrentRegistry(): Promise<IRegistry> {
     const now = Date.now();
-    if (now - this.lastRefresh > this.refreshInterval) {
+    if (now - this.lastRefresh > this.refreshInterval || !this.registry) {
       this.logger.info('Refreshing registry cache...');
       this.registry = await this.getRegistry();
       this.lastRefresh = now;
-    }
-
-    // ensure registry is initialized
-    if (!this.registry) {
-      throw new ApiError('Registry not initialized', 500);
     }
 
     return this.registry;
