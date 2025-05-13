@@ -3,7 +3,7 @@ import type { Logger } from 'pino';
 import express, { Express } from 'express';
 import { IRegistry } from '../registry/IRegistry.js';
 import { DEFAULT_PORT, DEFAULT_REFRESH_INTERVAL } from './src/constants/ServerConstants.js';
-import { errorHandler } from './src/middleware/errorHandler.js';
+import { createErrorHandler } from './src/middleware/errorHandler.js';
 import { createWarpRouter } from './src/routes/warp.js';
 import { WarpService } from './src/services/warpService.js';
 import { RegistryService } from './src/services/registryService.js';
@@ -32,7 +32,7 @@ export class HttpServer {
       this.app.use('/warp-route', createWarpRouter(new WarpService(registryService)));
 
       // add error handler to the end of the middleware stack
-      this.app.use(errorHandler);
+      this.app.use(createErrorHandler(this.logger));
 
       const server = this.app.listen(port, () =>
         this.logger.info(`Server running on port ${port}`),
