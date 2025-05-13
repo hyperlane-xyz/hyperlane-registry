@@ -1,7 +1,7 @@
 import { ChainMetadata, ChainName } from '@hyperlane-xyz/sdk';
 import { RegistryService } from './registryService.js';
 import { NotFoundError } from '../errors/ApiError.js';
-import { AbstractService } from './baseService.js';
+import { AbstractService } from './abstractService.js';
 
 export class ChainService extends AbstractService {
   constructor(registryService: RegistryService) {

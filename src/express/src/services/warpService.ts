@@ -1,8 +1,8 @@
 import { WarpCoreConfig } from '@hyperlane-xyz/sdk';
 import { WarpRouteId } from '../../../types.js';
 import { NotFoundError } from '../errors/ApiError.js';
+import { AbstractService } from './abstractService.js';
 import { RegistryService } from './registryService.js';
-import { AbstractService } from './baseService.js';
 
 export class WarpService extends AbstractService {
   constructor(registryService: RegistryService) {

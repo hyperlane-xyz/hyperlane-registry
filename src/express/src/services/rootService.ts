@@ -1,5 +1,5 @@
 import { RegistryService } from './registryService.js';
-import { AbstractService } from './baseService.js';
+import { AbstractService } from './abstractService.js';
 
 export class RootService extends AbstractService {
   constructor(registryService: RegistryService) {
