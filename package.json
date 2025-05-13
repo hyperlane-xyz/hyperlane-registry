@@ -70,6 +70,7 @@
   "scripts": {
     "build": "tsx ./scripts/build.ts && tsc --project tsconfig.publish.json",
     "clean": "rm -rf ./dist ./tmp",
+    "dev": "tsc --watch --project tsconfig.dev.json",
     "lint": "eslint ./src/ ./chains ./deployments",
     "lint:fix": "yarn lint --fix",
     "prettier": "prettier --write ./chains ./deployments",
