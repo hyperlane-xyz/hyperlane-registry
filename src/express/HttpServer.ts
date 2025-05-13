@@ -17,16 +17,25 @@ export class HttpServer {
   protected logger: Logger | Console;
 
   constructor(protected getRegistry: () => Promise<IRegistry>, logger?: Logger) {
-    this.app = express();
-    this.app.use(express.json());
     this.logger = logger || console;
+    this.app = express();
+    this.app.set('trust proxy', true); // trust proxy for x-forwarded-for header
+    this.app.use(express.json());
   }
 
-  async start(port = DEFAULT_PORT, refreshInterval = DEFAULT_REFRESH_INTERVAL) {
+  async start(
+    port = parseInt(process.env.PORT || DEFAULT_PORT.toString()),
+    refreshInterval = parseInt(process.env.REFRESH_INTERVAL || DEFAULT_REFRESH_INTERVAL.toString()),
+  ) {
     try {
       const registryService = new RegistryService(this.getRegistry, refreshInterval, this.logger);
       await registryService.initialize();
 
+      // add health check routes
+      this.app.get('/health', (_req, res) => res.sendStatus(200));
+      this.app.get('/readiness', (_req, res) => res.sendStatus(200));
+
+      // add routes
       this.app.use('/', createRootRouter(new RootService(registryService)));
       this.app.use('/chain', createChainRouter(new ChainService(registryService)));
       this.app.use('/warp-route', createWarpRouter(new WarpService(registryService)));
@@ -34,13 +43,21 @@ export class HttpServer {
       // add error handler to the end of the middleware stack
       this.app.use(createErrorHandler(this.logger));
 
-      const server = this.app.listen(port, () =>
+      const host = process.env.HOST || '127.0.0.1';
+      const server = this.app.listen(port, host, () =>
         this.logger.info(`Server running on port ${port}`),
       );
 
       server.on('request', (req, _res) => this.logger.info('Request:', req.url));
-
       server.on('error', (error) => this.logger.error('Server error:', error));
+
+      // add shutdown handler
+      const shutdown = () => {
+        this.logger.info('Shutting down…');
+        server.close(() => process.exit(0));
+      };
+      process.on('SIGTERM', shutdown);
+      process.on('SIGINT', shutdown);
     } catch (error) {
       this.logger.error('Error starting server:', error);
       process.exit(1);
