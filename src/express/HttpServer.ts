@@ -1,6 +1,6 @@
 import type { Logger } from 'pino';
 
-import express, { Express } from 'express';
+import express, { Express, Request, Response } from 'express';
 import { IRegistry } from '../registry/IRegistry.js';
 import { DEFAULT_PORT, DEFAULT_REFRESH_INTERVAL } from './src/constants/ServerConstants.js';
 import { createErrorHandler } from './src/middleware/errorHandler.js';
@@ -32,8 +32,8 @@ export class HttpServer {
       await registryService.initialize();
 
       // add health check routes
-      this.app.get('/health', (_req, res) => res.sendStatus(200));
-      this.app.get('/readiness', (_req, res) => res.sendStatus(200));
+      this.app.use('/health', (_req: Request, res: Response) => void res.sendStatus(200));
+      this.app.use('/readiness', (_req: Request, res: Response) => void res.sendStatus(200));
 
       // add routes
       this.app.use('/', createRootRouter(new RootService(registryService)));
