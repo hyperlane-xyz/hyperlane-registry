@@ -808,7 +808,5 @@ describe('BaseRegistry protected methods', () => {
         'Invalid warp route ID: HYPER. Must be in the format TOKENSYMBOL/label...',
       );
     });
-
-    it('should throw if the given name already exists', () => {});
   });
 });
