@@ -3646,6 +3646,49 @@ kroma:
     - http: https://api.kroma.network
     - http: https://1rpc.io/kroma
   technicalStack: opstack
+kyve:
+  bech32Prefix: kyve
+  blockExplorers:
+    - apiUrl: https://explorer.kyve.network/kyve
+      family: other
+      name: Ping.Pub
+      url: https://explorer.kyve.network/kyve
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 1
+  canonicalAsset: ukyve
+  chainId: kyve-1
+  contractAddressBytes: 32
+  deployer:
+    name: KYVE
+    url: https://kyve.network
+  displayName: KYVE
+  domainId: 1264145989
+  gasCurrencyCoinGeckoId: kyve-network
+  gasPrice:
+    amount: "2.0"
+    denom: ukyve
+  grpcUrls:
+    - http: https://grpc-raw.kyve.network
+  index:
+    chunk: 10
+    from: 11592376
+  name: kyve
+  nativeToken:
+    decimals: 6
+    denom: ukyve
+    name: KYVE
+    symbol: KYVE
+  protocol: cosmosnative
+  restUrls:
+    - http: https://api.kyve.network
+  rpcUrls:
+    - http: https://rpc.kyve.network
+  slip44: 118
+  technicalStack: other
+  transactionOverrides:
+    gasPrice: "2.0"
 kyvetestnet:
   bech32Prefix: kyve
   blockExplorers:
@@ -4329,14 +4372,16 @@ miraclechain:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 5
+    reorgPeriod: 0
   chainId: 92278
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Miraclechain
   domainId: 92278
   gasCurrencyCoinGeckoId: miracle-play
   index:
     from: 84964
-  isTestnet: false
   name: miraclechain
   nativeToken:
     decimals: 18
@@ -4810,7 +4855,6 @@ ontology:
   displayName: Ontology
   domainId: 58
   gasCurrencyCoinGeckoId: ong
-  isTestnet: false
   name: ontology
   nativeToken:
     decimals: 18
@@ -5105,10 +5149,10 @@ piccadilly:
     - http: https://rpc1.piccadilly.autonity.org
 plume:
   blockExplorers:
-    - apiUrl: https://phoenix-explorer.plumenetwork.xyz/api
+    - apiUrl: https://explorer.plume.org/api
       family: blockscout
       name: Plume Explorer
-      url: https://phoenix-explorer.plumenetwork.xyz
+      url: https://explorer.plume.org
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -5129,14 +5173,14 @@ plume:
     symbol: PLUME
   protocol: ethereum
   rpcUrls:
-    - http: https://phoenix-rpc.plumenetwork.xyz
+    - http: https://rpc.plume.org
   technicalStack: arbitrumnitro
 plumetestnet2:
   blockExplorers:
-    - apiUrl: https://testnet-explorer.plumenetwork.xyz/api
+    - apiUrl: https://testnet-explorer.plume.org/api
       family: blockscout
       name: Plume Explorer
-      url: https://testnet-explorer.plumenetwork.xyz
+      url: https://testnet-explorer.plume.org
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -5158,7 +5202,7 @@ plumetestnet2:
     symbol: PLUME
   protocol: ethereum
   rpcUrls:
-    - http: https://testnet-rpc.plumenetwork.xyz
+    - http: https://testnet-rpc.plume.org
   technicalStack: arbitrumnitro
 polygon:
   blockExplorers:
