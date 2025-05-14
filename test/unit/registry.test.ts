@@ -717,7 +717,7 @@ describe('BaseRegistry protected methods', () => {
     });
   });
 
-  describe.only('getWarpRouteDeployConfigPath', () => {
+  describe('getWarpRouteDeployConfigPath', () => {
     it('should use warpRouteId from options when provided', () => {
       const config = {
         ethereum: {},

@@ -3,11 +3,11 @@ import type { Logger } from 'pino';
 import {
   HypTokenRouterConfig,
   TokenType,
-  type ChainMap,
-  type ChainMetadata,
-  type ChainName,
-  type WarpCoreConfig,
-  type WarpRouteDeployConfig,
+  ChainMap,
+  ChainMetadata,
+  ChainName,
+  WarpCoreConfig,
+  WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
 import { assert, objFilter, objLength } from '@hyperlane-xyz/utils';
 import type { ChainAddresses, MaybePromise, WarpDeployConfigMap } from '../types.js';
@@ -96,7 +96,6 @@ export abstract class BaseRegistry implements IRegistry {
     );
     return warpRouteId;
   }
-
   protected getWarpRouteDeployConfigPath(
     config: WarpRouteDeployConfig,
     options: AddWarpRouteConfigOptions,
