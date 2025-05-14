@@ -129,6 +129,7 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
 
   addWarpRouteConfig(warpConfig: WarpRouteDeployConfig, options: AddWarpRouteConfigOptions): void {
     const filePath = path.join(this.uri, this.getWarpRouteDeployConfigPath(warpConfig, options));
+    if (fs.existsSync(filePath)) throw Error(`Warp deploy config already exists for: ${filePath}.`);
     this.createFile({
       filePath,
       data: toYamlString(warpConfig),
