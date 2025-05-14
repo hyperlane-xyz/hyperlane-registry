@@ -2133,10 +2133,10 @@ echos:
     - http: https://rpc-echos-mainnet-0.t.conduit.xyz
 eclipsemainnet:
   blockExplorers:
-    - apiUrl: https://explorer.eclipse.xyz/api
+    - apiUrl: https://api.eclipsescan.xyz/
       family: other
       name: Eclipse Explorer
-      url: https://explorer.eclipse.xyz/
+      url: https://eclipsescan.xyz/
   blocks:
     confirmations: 1
     estimateBlockTime: 0.4
@@ -3646,6 +3646,49 @@ kroma:
     - http: https://api.kroma.network
     - http: https://1rpc.io/kroma
   technicalStack: opstack
+kyve:
+  bech32Prefix: kyve
+  blockExplorers:
+    - apiUrl: https://explorer.kyve.network/kyve
+      family: other
+      name: Ping.Pub
+      url: https://explorer.kyve.network/kyve
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 1
+  canonicalAsset: ukyve
+  chainId: kyve-1
+  contractAddressBytes: 32
+  deployer:
+    name: KYVE
+    url: https://kyve.network
+  displayName: KYVE
+  domainId: 1264145989
+  gasCurrencyCoinGeckoId: kyve-network
+  gasPrice:
+    amount: "2.0"
+    denom: ukyve
+  grpcUrls:
+    - http: https://grpc-raw.kyve.network
+  index:
+    chunk: 10
+    from: 11592376
+  name: kyve
+  nativeToken:
+    decimals: 6
+    denom: ukyve
+    name: KYVE
+    symbol: KYVE
+  protocol: cosmosnative
+  restUrls:
+    - http: https://api.kyve.network
+  rpcUrls:
+    - http: https://rpc.kyve.network
+  slip44: 118
+  technicalStack: other
+  transactionOverrides:
+    gasPrice: "2.0"
 kyvetestnet:
   bech32Prefix: kyve
   blockExplorers:
@@ -4329,14 +4372,16 @@ miraclechain:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 5
+    reorgPeriod: 0
   chainId: 92278
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Miraclechain
   domainId: 92278
   gasCurrencyCoinGeckoId: miracle-play
   index:
     from: 84964
-  isTestnet: false
   name: miraclechain
   nativeToken:
     decimals: 18
@@ -4810,7 +4855,6 @@ ontology:
   displayName: Ontology
   domainId: 58
   gasCurrencyCoinGeckoId: ong
-  isTestnet: false
   name: ontology
   nativeToken:
     decimals: 18
@@ -6657,6 +6701,32 @@ superseedtestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://sepolia.superseed.xyz
+svmbnb:
+  blockExplorers:
+    - apiUrl: https://explorer.svmbnbmainnet.soo.network
+      family: other
+      name: svmBNB Explorer
+      url: https://explorer.svmbnbmainnet.soo.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 0.4
+    reorgPeriod: 0
+  chainId: 574456
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: svmBNB
+  domainId: 574456
+  gasCurrencyCoinGeckoId: binancecoin
+  name: svmbnb
+  nativeToken:
+    decimals: 9
+    name: BNB
+    symbol: BNB
+  protocol: sealevel
+  rpcUrls:
+    - http: https://rpc.svmbnbmainnet.soo.network/rpc
+  technicalStack: other
 swell:
   blockExplorers:
     - apiUrl: https://explorer.swellnetwork.io/api
