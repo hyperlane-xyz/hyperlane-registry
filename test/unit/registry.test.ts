@@ -208,7 +208,6 @@ describe('Registry utilities', () => {
       );
       const outputBasePath = `deployments/warp_routes/${MOCK_SYMBOL}/${MOCK_CHAIN_NAME2}-`;
       const configPath = `${outputBasePath}deploy.yaml`;
-      console.log('configPath', configPath);
       expect(fs.existsSync(configPath)).to.be.true;
       fs.unlinkSync(configPath);
       fs.rmdirSync(`deployments/warp_routes/${MOCK_SYMBOL}`);
