@@ -1,5 +1,127 @@
 # @hyperlane-xyz/registry
 
+## 15.2.0
+
+### Minor Changes
+
+- 49080f4: added artifacts for the coti wbtc and eth routes
+
+## 15.1.0
+
+### Minor Changes
+
+- d223f2a: Update eclipsemainnet ISM
+- 4119b8d: Add Boop, PEPE and GG warp routes artifacts for apechain and arbitrum
+
+## 15.0.0
+
+### Major Changes
+
+- 93f9850: May 6 testnet batch: nobletestnet, megaethtestnet, basecamptestnet, bepolia. Removes metadata for old berabartio + camptestnet. Update weavevm -> load.network branding.
+
+### Minor Changes
+
+- d56aa3f: Add svmbnb
+
+### Patch Changes
+
+- 987992a: Update eclipse block explorer URL
+
+## 14.2.0
+
+### Minor Changes
+
+- 55b9c35: Add miracle chain
+
+### Patch Changes
+
+- a203c16: Remove ink connection for oUSDT
+
+## 14.1.0
+
+### Minor Changes
+
+- e9f844c: Add explorer API keys to some (most popular) chains.
+
+### Patch Changes
+
+- 65b313a: Fix wfragJTO: add correct collateral.
+
+## 14.0.0
+
+### Major Changes
+
+- 16d2a83: Standardized Warp Route configuration API by adding consistent addWarpRouteConfig method to IRegistry interface and removed method overload in FileSystemRegistry.
+
+## 13.16.1
+
+### Patch Changes
+
+- 60cfef3: Adding wfragSOL and wfragJTO deploy artifacts.
+
+## 13.16.0
+
+### Minor Changes
+
+- 9366912: Remove connections for ETH/arbitrum-base-ethereum-lumiaprism-polygon route
+- 3206b17: Added the deployment data for the ES token
+
+### Patch Changes
+
+- 08ca361: add PAXG/arbitrum-ethereum
+- aad4f25: Re-add oUSDT extension
+
+## 13.15.0
+
+### Minor Changes
+
+- 86c5ee7: Add new chains: hashkey infinityVM ontology game7 fluence peaq
+
+### Patch Changes
+
+- 8669ded: Remove connections to and from sonic, bitlayer, ronin, mantle and linea for oUSDT route
+
+## 13.14.2
+
+### Patch Changes
+
+- b559f9a: Change oUSDT staging symbol to oUSDTSTAGE
+
+## 13.14.1
+
+### Patch Changes
+
+- d35bc84: oUSDT: Remove worldchain connection, add logoURI and coinGeckoId
+
+## 13.14.0
+
+### Minor Changes
+
+- 57a874f: The registry code is restructured by moving filesystem components to a dedicated directory. ESLint restrictions added to prevent Node.js imports in browser components.
+- 4c4d2e7: Extend oUSDT to new chains: ethereum, sonic, bitlayer, ronin, mantle, metis, linea, metal.
+- 6257c9a: Remove bad or flaky rpcs from the registry and re-enable health checks for healthy chains
+- ed210b2: add `nobletestnet` metadata and addresses to chains
+- c34f9a0: Added `getWarpRouteDeployConfigPath` function to BaseRegistry
+- b8b76d5: Add milkyway coingecko id
+
+### Patch Changes
+
+- 62a99e8: Transfer MILK ownership.
+- b3e432c: Add explicit proxyAdmin.owner to USDC/ancient8-ethereum, USDT/eclipsemainnet-ethereum-solanamainnet, WBTC/eclipsemainnet-ethereum
+- 0c74ff1: Update remoteRouter names to domainIds for zeronetwork USDC & USDT, and teasure SMOL
+
+## 13.13.0
+
+### Minor Changes
+
+- 3774ce1: Deploy to auroratestnet. Add milkywaytestnet to default ISMs.
+
+### Patch Changes
+
+- cbfbf23: Fix `from` block from milkyway
+- 4f572b8: Update to latest worldchain logo.
+- 5ca6777: Update EZETH and EZETH stage with worldchain extension
+
 ## 13.12.0
 
 ### Minor Changes
