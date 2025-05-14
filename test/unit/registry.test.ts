@@ -23,7 +23,7 @@ import {
 } from '../../src/registry/IRegistry.js';
 import { MergedRegistry } from '../../src/registry/MergedRegistry.js';
 import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
-import { ChainAddresses } from '../../src/types.js';
+import { ChainAddresses, WarpRouteId } from '../../src/types.js';
 import { getRegistry } from '../../src/fs/registry-utils.js';
 import { DEFAULT_GITHUB_REGISTRY, PROXY_DEPLOYED_URL } from '../../src/consts.js';
 import { parseGitHubPath } from '../../src/utils.js';
@@ -206,15 +206,16 @@ describe('Registry utilities', () => {
         },
         { symbol: MOCK_SYMBOL },
       );
-      const outputBasePath = `deployments/warp_routes/${MOCK_SYMBOL}/${MOCK_CHAIN_NAME}-${MOCK_CHAIN_NAME2}-`;
+      const outputBasePath = `deployments/warp_routes/${MOCK_SYMBOL}/${MOCK_CHAIN_NAME2}-`;
       const configPath = `${outputBasePath}deploy.yaml`;
+      console.log('configPath', configPath);
       expect(fs.existsSync(configPath)).to.be.true;
       fs.unlinkSync(configPath);
       fs.rmdirSync(`deployments/warp_routes/${MOCK_SYMBOL}`);
     }).timeout(5_000);
 
     it(`Adds a warp route deploy config for ${registry.type} registry using the provided warp route id`, async () => {
-      const MOCKED_WARP_ROUTE_ID = 'OPTION/CHAIN1-CHAIN2';
+      const MOCKED_WARP_ROUTE_ID = 'OPTION/chain1-chain2';
 
       registry.addWarpRouteConfig(
         {
@@ -592,6 +593,10 @@ class TestBaseRegistry extends BaseRegistry {
     return this.getWarpRouteCoreConfigPath(config, options);
   }
 
+  public set warpDeployConfigCache(registryContent: Record<WarpRouteId, string>) {
+    this.listContentCache!.deployments.warpDeployConfig = registryContent;
+  }
+
   async listRegistryContent(): Promise<RegistryContent> {
     return {
       chains: {},
@@ -803,5 +808,7 @@ describe('BaseRegistry protected methods', () => {
         'Invalid warp route ID: HYPER. Must be in the format TOKENSYMBOL/label...',
       );
     });
+
+    it('should throw if the given name already exists', () => {});
   });
 });
