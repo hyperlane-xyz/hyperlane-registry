@@ -67,7 +67,7 @@ export abstract class BaseRegistry implements IRegistry {
   }
 
   /**
-   * Generates a unique warp route ID based on the deploy config and options.
+   * Generates a warp route ID based on the deploy config and options.
    *
    * @param config The warp route deployment config
    * @param options Additional config options for the warp route
