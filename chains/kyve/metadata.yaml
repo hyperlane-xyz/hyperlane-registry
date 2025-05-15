@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: kyve
+blockExplorers:
+  - apiUrl: https://explorer.kyve.network/kyve
+    family: other
+    name: Ping.Pub
+    url: https://explorer.kyve.network/kyve
+blocks:
+  confirmations: 1
+  estimateBlockTime: 6
+  reorgPeriod: 1
+canonicalAsset: ukyve
+chainId: kyve-1
+contractAddressBytes: 32
+deployer:
+  name: KYVE
+  url: https://kyve.network
+displayName: KYVE
+# Generated from: console.log(parseInt('0x'+Buffer.from('KYVE').toString('hex')))
+domainId: 1264145989
+gasCurrencyCoinGeckoId: kyve-network
+gasPrice:
+  amount: "2.0"
+  denom: ukyve
+grpcUrls:
+  - http: https://grpc-raw.kyve.network
+index:
+  chunk: 10
+  from: 11592376
+name: kyve
+nativeToken:
+  decimals: 6
+  denom: ukyve
+  name: KYVE
+  symbol: KYVE
+protocol: cosmosnative
+restUrls:
+  - http: https://api.kyve.network
+rpcUrls:
+  - http: https://rpc.kyve.network
+slip44: 118
+technicalStack: other
+transactionOverrides:
+  gasPrice: "2.0"
