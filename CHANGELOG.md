@@ -1,5 +1,19 @@
 # @hyperlane-xyz/registry
 
+## 15.3.0
+
+### Minor Changes
+
+- d96e1ce: Add chain metadata for starknetsepolia, paradexsepolia.
+- 5f22611: Deploy to new chains: ontology, miraclechain, kyve.
+- fa91bbd: Added tUSD/eclipsemainnet-ethereum warp route
+
+### Patch Changes
+
+- 0166c65: Adding MIRAI warp route
+- 02813bd: Update plumenetwork.xyz -> plume.org.
+- 50c45bf: updated warp route deployment config files to match the on chain config
+
 ## 15.2.0
 
 ### Minor Changes
