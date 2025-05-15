@@ -1,0 +1,26 @@
+name: check-warp-deploy
+on:
+  # Triggers the workflow on pull request events
+  pull_request:
+jobs:
+  check-warp-deploy:
+    permissions:
+      # require PR write perms to be able to comment on the PR
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - name: Determine Base & Head SHA
+        id: determine-base-sha
+        run: |
+          echo "base_sha=${{ github.event.pull_request.base.sha }}" >> $GITHUB_OUTPUT
+          echo "current_sha=${{ github.event.pull_request.head.sha }}" >> $GITHUB_OUTPUT
+      - name: Check Warp Deploy
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ./scripts/check-warp-deploy.sh ${{ steps.determine-base-sha.outputs.base_sha }} ${{ steps.determine-base-sha.outputs.current_sha }}
