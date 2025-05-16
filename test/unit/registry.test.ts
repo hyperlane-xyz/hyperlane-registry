@@ -43,7 +43,10 @@ const ETH_MAILBOX_ADDRESS = '0xc005dc82818d67AF737725bD4bf75435d065D239';
 chaiUse(chaiAsPromised);
 
 describe('Registry utilities', () => {
-  const githubRegistry = new GithubRegistry({ branch: GITHUB_REGISTRY_BRANCH });
+  const githubRegistry = new GithubRegistry({
+    branch: GITHUB_REGISTRY_BRANCH,
+    authToken: process.env.GITHUB_TOKEN,
+  });
   expect(githubRegistry.repoOwner).to.eql('hyperlane-xyz');
   expect(githubRegistry.repoName).to.eql('hyperlane-registry');
   expect(githubRegistry.branch).to.eql(GITHUB_REGISTRY_BRANCH);
