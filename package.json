@@ -3,6 +3,7 @@
   "description": "A collection of configs, artifacts, and schemas for Hyperlane",
   "version": "15.3.0",
   "dependencies": {
+    "express": "^5",
     "yaml": "2.4.5",
     "zod": "^3.21.2"
   },
@@ -12,6 +13,7 @@
     "@faker-js/faker": "^9.6.0",
     "@hyperlane-xyz/sdk": "12.3.0",
     "@types/chai-as-promised": "^8",
+    "@types/express": "^5",
     "@types/mocha": "^10.0.1",
     "@types/node": "^16.9.1",
     "@typescript-eslint/parser": "^7.7.0",
@@ -38,6 +40,7 @@
     ".": "./dist/index.js",
     "./chains/schema.json": "./dist/chains/schema.json",
     "./chains/*": "./dist/chains/*",
+    "./express": "./dist/express/index.js",
     "./fs": "./dist/fs/index.js"
   },
   "types": "./dist/index.d.ts",
@@ -67,6 +70,7 @@
   "scripts": {
     "build": "tsx ./scripts/build.ts && tsc --project tsconfig.publish.json",
     "clean": "rm -rf ./dist ./tmp",
+    "dev": "tsc --watch --project tsconfig.dev.json",
     "lint": "eslint ./src/ ./chains ./deployments",
     "lint:fix": "yarn lint --fix",
     "prettier": "prettier --write ./chains ./deployments",
