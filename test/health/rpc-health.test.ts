@@ -116,9 +116,24 @@ async function isCosmJsProviderHealthy(
   return true;
 }
 
-describe('Chain RPC health', async () => {
+describe('Chain RPC health - Mainnets', async () => {
   for (const [chain, metadata] of Object.entries(chainMetadata)) {
-    if (CHAINS_TO_SKIP.has(chain)) continue;
+    if (CHAINS_TO_SKIP.has(chain) || metadata.isTestnet) continue;
+    metadata.rpcUrls.map((rpc, i) => {
+      it(`${chain} RPC number ${i} is healthy (${rpc.http})`, async () => {
+        const isHealthy = await isRpcHealthy(rpc, metadata);
+        if (!isHealthy) await sleep(HEALTH_CHECK_DELAY);
+        expect(isHealthy).to.be.true;
+      })
+        .timeout(HEALTH_CHECK_TIMEOUT + HEALTH_CHECK_DELAY * 2)
+        .retries(3);
+    });
+  }
+});
+
+describe('Chain RPC health - Testnets', async () => {
+  for (const [chain, metadata] of Object.entries(chainMetadata)) {
+    if (CHAINS_TO_SKIP.has(chain) || !metadata.isTestnet) continue;
     metadata.rpcUrls.map((rpc, i) => {
       it(`${chain} RPC number ${i} is healthy (${rpc.http})`, async () => {
         const isHealthy = await isRpcHealthy(rpc, metadata);
