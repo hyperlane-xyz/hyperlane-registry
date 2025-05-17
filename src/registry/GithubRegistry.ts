@@ -1,5 +1,6 @@
 import type { Logger } from 'pino';
 import { parse as yamlParse } from 'yaml';
+import JSZip from 'jszip';
 
 import type {
   ChainMap,
@@ -63,6 +64,19 @@ type GithubRateResponse = {
 
 export const GITHUB_API_URL = 'https://api.github.com';
 export const GITHUB_API_VERSION = '2022-11-28';
+
+// Custom error to capture HTTP status codes for GitHub fetch failures
+export class GithubFetchError extends Error {
+  public readonly status: number;
+  public readonly statusText: string;
+  constructor(response: Response) {
+    super(`Failed to fetch from github: ${response.status} ${response.statusText}`);
+    this.name = 'GithubFetchError';
+    this.status = response.status; // numeric HTTP status
+    this.statusText = response.statusText;
+  }
+}
+
 /**
  * A registry that uses a github repository as its data source.
  * Reads are performed via the github API and github's raw content URLs.
@@ -76,6 +90,10 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   public readonly repoName: string;
   public readonly proxyUrl: string | undefined;
   private readonly authToken: string | undefined;
+  // In-memory cache of archive file entries (relative path -> content as ArrayBuffer)
+  private archiveEntries?: Map<string, ArrayBuffer>;
+  // Promise tracking an in-flight archive download/unpack to dedupe parallel calls
+  private archiveEntriesPromise?: Promise<void>;
 
   private readonly baseApiHeaders: Record<string, string> = {
     'X-GitHub-Api-Version': GITHUB_API_VERSION,
@@ -271,7 +289,98 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     return concurrentMap(GITHUB_FETCH_CONCURRENCY_LIMIT, urls, (url) => this.fetchYamlFile<T>(url));
   }
 
+  /**
+   * Returns an array of URLs to download the repository zip archive.
+   * If authToken is set, returns the GitHub API zipball endpoint URL only.
+   * Otherwise returns public archive URLs for branch, tag, and commit-SHA fallbacks.
+   */
+  protected async getArchiveDownloadUrls(): Promise<string[]> {
+    if (this.authToken) {
+      const apiUrl = await this.getApiUrl();
+      const origin = new URL(apiUrl).origin;
+      return [`${origin}/repos/${this.repoOwner}/${this.repoName}/zipball/${this.branch}`];
+    }
+    const base = `https://github.com/${this.repoOwner}/${this.repoName}/archive`;
+    return [
+      `${base}/refs/heads/${this.branch}.zip`,
+      `${base}/refs/tags/${this.branch}.zip`,
+      `${base}/${this.branch}.zip`,
+    ];
+  }
+
+  /**
+   * Ensure the repository archive is downloaded and entries are cached in memory.
+   */
+  protected ensureArchiveEntries(): Promise<void> {
+    if (this.archiveEntries) return Promise.resolve();
+    if (this.archiveEntriesPromise) return this.archiveEntriesPromise;
+    // Kick off a single inflight download/unpack
+    this.archiveEntriesPromise = (async () => {
+      try {
+        // Try each archive URL in order, but only fallback on 404 Not Found
+        const archiveUrls = await this.getArchiveDownloadUrls();
+        let responseBuf: ArrayBuffer | undefined;
+        const errors: string[] = [];
+        for (const url of archiveUrls) {
+          try {
+            const resp = await this.fetch(url);
+            responseBuf = await resp.arrayBuffer();
+            break;
+          } catch (err: any) {
+            // Retry only on 404 Not Found errors
+            if (err instanceof GithubFetchError && err.status === 404) {
+              errors.push(`${url}: ${err.status} ${err.statusText}`);
+              continue;
+            }
+            // Propagate other errors immediately
+            throw err;
+          }
+        }
+        if (!responseBuf) {
+          throw new Error(
+            `Failed to download archive for ref ${this.branch}. ` +
+              `Tried URLs: ${archiveUrls.join(', ')}. ` +
+              `Errors: ${errors.join('; ')}`,
+          );
+        }
+        const zip = await JSZip.loadAsync(responseBuf);
+        const entries = new Map<string, ArrayBuffer>();
+        for (const [filePath, zipEntry] of Object.entries(zip.files)) {
+          if (zipEntry.dir) continue;
+          const parts = filePath.split('/');
+          // Remove the top-level folder (owner-repo-sha)
+          parts.shift();
+          const relativePath = parts.join('/');
+          // Only cache files under 'chains/' or 'deployments/'
+          if (!relativePath.startsWith('chains/') && !relativePath.startsWith('deployments/'))
+            continue;
+          const decompressedBuf = await zipEntry.async('arraybuffer');
+          entries.set(relativePath, decompressedBuf);
+        }
+        this.archiveEntries = entries;
+      } catch (err) {
+        // Reset on failure to allow retry
+        this.archiveEntriesPromise = undefined;
+        throw err;
+      }
+    })();
+    return this.archiveEntriesPromise;
+  }
+
+  /**
+   * Fetch a YAML file, using in-memory archive if available for raw content paths.
+   */
   protected async fetchYamlFile<T>(url: string): Promise<T> {
+    const rawBase = `https://raw.githubusercontent.com/${this.repoOwner}/${this.repoName}/${this.branch}/`;
+    if (url.startsWith(rawBase)) {
+      await this.ensureArchiveEntries();
+      const relativePath = url.substring(rawBase.length);
+      const dataBuf = this.archiveEntries?.get(relativePath);
+      if (!dataBuf) throw new Error(`File not found in archive: ${relativePath}`);
+      const data = new TextDecoder('utf-8').decode(dataBuf);
+      return yamlParse(data);
+    }
+    // Fallback to network fetch for non-raw URLs
     const response = await this.fetch(url);
     const data = await response.text();
     return yamlParse(data);
@@ -287,8 +396,10 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     const response = await fetch(url, {
       headers,
     });
-    if (!response.ok)
-      throw new Error(`Failed to fetch from github: ${response.status} ${response.statusText}`);
+    if (!response.ok) {
+      // Throw custom error with status code for callers to inspect
+      throw new GithubFetchError(response);
+    }
     return response;
   }
 }
