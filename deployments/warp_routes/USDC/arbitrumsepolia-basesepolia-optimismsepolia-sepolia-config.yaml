@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x986a5a5e4700E87b4b596Ab4a6ac5d6215e963dc"
+    collateralAddressOrDenom: "0x5fd84259d66Cd46123540766Be93DFE6D43130D7"
+    chainName: optimismsepolia
+    connections:
+      - token: ethereum|arbitrumsepolia|0x88e688DFdE6E7a6f3Df968B20B5B12c594348542
+      - token: ethereum|basesepolia|0x540c8f61DE5b75e7a95d471813C0079A4a30B2eF
+      - token: ethereum|sepolia|0x635849EE15B8AAccb800f6F4981F00f63634edA3
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x88e688DFdE6E7a6f3Df968B20B5B12c594348542"
+    collateralAddressOrDenom: "0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d"
+    chainName: arbitrumsepolia
+    connections:
+      - token: ethereum|optimismsepolia|0x986a5a5e4700E87b4b596Ab4a6ac5d6215e963dc
+      - token: ethereum|basesepolia|0x540c8f61DE5b75e7a95d471813C0079A4a30B2eF
+      - token: ethereum|sepolia|0x635849EE15B8AAccb800f6F4981F00f63634edA3
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x540c8f61DE5b75e7a95d471813C0079A4a30B2eF"
+    collateralAddressOrDenom: "0x036CbD53842c5426634e7929541eC2318f3dCF7e"
+    chainName: basesepolia
+    connections:
+      - token: ethereum|optimismsepolia|0x986a5a5e4700E87b4b596Ab4a6ac5d6215e963dc
+      - token: ethereum|arbitrumsepolia|0x88e688DFdE6E7a6f3Df968B20B5B12c594348542
+      - token: ethereum|sepolia|0x635849EE15B8AAccb800f6F4981F00f63634edA3
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x635849EE15B8AAccb800f6F4981F00f63634edA3"
+    collateralAddressOrDenom: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238"
+    chainName: sepolia
+    connections:
+      - token: ethereum|optimismsepolia|0x986a5a5e4700E87b4b596Ab4a6ac5d6215e963dc
+      - token: ethereum|arbitrumsepolia|0x88e688DFdE6E7a6f3Df968B20B5B12c594348542
+      - token: ethereum|basesepolia|0x540c8f61DE5b75e7a95d471813C0079A4a30B2eF
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
