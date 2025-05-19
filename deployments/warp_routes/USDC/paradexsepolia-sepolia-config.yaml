@@ -1,22 +1,23 @@
 # yaml-language-server: $schema=../schema.json
 options: {}
 tokens:
-  - addressOrDenom: "0x42f919945D740A3b6172a4FE320d20CC23B4Ac36"
+  - addressOrDenom: "0x02bfeeae861ad44ced0cb2738f8ce784dfa8bf7bd553fabbcaf7d8c8df42b81c"
+    chainName: paradexsepolia
+    collateralAddressOrDenom: "0x06f373B346561036d98EA10Fb3e60D2f459c872B1933B50B21FE6ef4FDa3b75E"
+    connections:
+      - token: ethereum|sepolia|0xd21E5D515E021E4cBB4E199d9d59b98dAE2Bf36c
+      - token: ethereum|sepolia|0xd21E5D515E021E4cBB4E199d9d59b98dAE2Bf36c
+    decimals: 6
+    name: USDC
+    standard: StarknetHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0xd21E5D515E021E4cBB4E199d9d59b98dAE2Bf36c"
     chainName: sepolia
     collateralAddressOrDenom: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238"
     connections:
-      - token: ethereum|paradexsepolia|0x0417c1391aba15b35373012970386f8096887c74504b7381d94e646ee9c3815a
-      - token: ethereum|paradexsepolia|0x0417c1391aba15b35373012970386f8096887c74504b7381d94e646ee9c3815a
+      - token: ethereum|paradexsepolia|0x02bfeeae861ad44ced0cb2738f8ce784dfa8bf7bd553fabbcaf7d8c8df42b81c
+      - token: ethereum|paradexsepolia|0x02bfeeae861ad44ced0cb2738f8ce784dfa8bf7bd553fabbcaf7d8c8df42b81c
     decimals: 6
     name: USDC
     standard: EvmHypCollateral
-    symbol: USDC
-  - addressOrDenom: "0x0417c1391aba15b35373012970386f8096887c74504b7381d94e646ee9c3815a"
-    chainName: paradexsepolia
-    connections:
-      - token: ethereum|sepolia|0x42f919945D740A3b6172a4FE320d20CC23B4Ac36
-      - token: ethereum|sepolia|0x42f919945D740A3b6172a4FE320d20CC23B4Ac36
-    decimals: 6
-    name: USDC
-    standard: StarknetHypSynthetic
     symbol: USDC

@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x93ed8c40f469c527807bbf354056397cbade0c4be05a3ba5513128d9648597d4"
+    chainName: solanatestnet
+    connections:
+      - token: starknetsepolia|solanatestnet|0x05a5b7d2a9be4c41cdc522b42cd787ea4d142bf1dc8619a47be2196c0b3ad1a0
+    decimals: 9
+    logoURI: /deployments/warp_routes/SOL/logo.svg
+    name: Solana
+    standard: SealevelHypNative
+    symbol: SOL
+  - addressOrDenom: "0x05a5b7d2a9be4c41cdc522b42cd787ea4d142bf1dc8619a47be2196c0b3ad1a0"
+    chainName: starknetsepolia
+    connections:
+      - token: sealevel|solanatestnet|0x93ed8c40f469c527807bbf354056397cbade0c4be05a3ba5513128d9648597d4
+    decimals: 9
+    logoURI: /deployments/warp_routes/SOL/logo.svg
+    name: hypSOL
+    standard: StarknetHypSynthetic
+    symbol: hypSOL
