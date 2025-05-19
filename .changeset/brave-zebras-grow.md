@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Update default ISMs.
+Update miraclechain logo and default ISMs.
