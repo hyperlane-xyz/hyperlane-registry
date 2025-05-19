@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 15.4.0
+
+### Minor Changes
+
+- ea62684: Updated mirai route deploy config to show current ownership setup
+- 172087e: Add TGT warp configs
+
 ## 15.3.0
 
 ### Minor Changes
