@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 15.5.0
+
+### Minor Changes
+
+- a9ca27a: Add Subtensor USDC configs
+
+### Patch Changes
+
+- 16d1e1e: Update to TGT warp route to Fireblocks owners
+
 ## 15.4.0
 
 ### Minor Changes
