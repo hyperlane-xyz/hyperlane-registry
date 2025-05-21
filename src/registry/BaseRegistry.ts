@@ -77,9 +77,8 @@ export abstract class BaseRegistry implements IRegistry {
    * Otherwise, the method attempts to generate an ID based on 1 synthetic chain, or defaults to all chains.
    */
   static warpDeployConfigToId(config: WarpRouteDeployConfig, options: AddWarpRouteConfigOptions) {
-    const syntheticChains = objFilter(
-      config,
-      (_, c): c is HypTokenRouterConfig => c.type === TokenType.synthetic,
+    const syntheticChains = objFilter(config, (_, c): c is HypTokenRouterConfig =>
+      [TokenType.synthetic, TokenType.syntheticRebase, TokenType.syntheticUri].includes(c.type),
     );
     let warpRouteId;
     if ('warpRouteId' in options) {

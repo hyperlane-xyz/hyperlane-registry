@@ -8,7 +8,6 @@ import {
   type WarpRouteDeployConfig,
   type WarpCoreConfig,
   TokenType,
-  WarpRouteConfig,
 } from '@hyperlane-xyz/sdk';
 import type { Logger } from 'pino';
 import fs from 'fs';
@@ -762,46 +761,67 @@ describe('BaseRegistry protected methods', () => {
       expect(path).to.equal('deployments/warp_routes/MULTI/arbitrum-ethereum-polygon-deploy.yaml');
     });
 
-    it('should use the chain name of a single synthetic', () => {
-      const config = {
-        arbitrum: {
-          type: TokenType.synthetic,
-        },
-        polygon: {},
-        ethereum: {},
-      } as unknown as WarpRouteDeployConfig;
-      const options = { symbol: 'MULTI' };
+    for (const tokenType of [
+      TokenType.synthetic,
+      TokenType.syntheticRebase,
+      TokenType.syntheticUri,
+    ]) {
+      it(`should use the chain name of a single ${tokenType}`, () => {
+        const config = {
+          arbitrum: {
+            type: tokenType,
+          },
+          polygon: {},
+          ethereum: {},
+        } as unknown as WarpRouteDeployConfig;
+        const options = { symbol: 'MULTI' };
 
-      const path = testRegistry.exposeGetWarpRouteDeployConfigPath(config, options);
+        const path = testRegistry.exposeGetWarpRouteDeployConfigPath(config, options);
 
-      expect(path).to.equal('deployments/warp_routes/MULTI/arbitrum-deploy.yaml');
-    });
+        expect(path).to.equal('deployments/warp_routes/MULTI/arbitrum-deploy.yaml');
+      });
 
-    it('should use all the chain names if multiple synthetic', () => {
-      const config = {
-        arbitrum: {
-          type: TokenType.synthetic,
-        },
-        polygon: {
-          type: TokenType.synthetic,
-        },
-        ethereum: {},
-      } as unknown as WarpRouteDeployConfig;
-      const options = { symbol: 'MULTI' };
+      it(`should use all the chain names if multiple ${tokenType}`, () => {
+        const config = {
+          arbitrum: {
+            type: TokenType.synthetic,
+          },
+          polygon: {
+            type: TokenType.synthetic,
+          },
+          ethereum: {},
+        } as unknown as WarpRouteDeployConfig;
+        const options = { symbol: 'MULTI' };
 
-      const path = testRegistry.exposeGetWarpRouteDeployConfigPath(config, options);
+        const path = testRegistry.exposeGetWarpRouteDeployConfigPath(config, options);
 
-      expect(path).to.equal('deployments/warp_routes/MULTI/arbitrum-ethereum-polygon-deploy.yaml');
-    });
+        expect(path).to.equal(
+          'deployments/warp_routes/MULTI/arbitrum-ethereum-polygon-deploy.yaml',
+        );
+      });
+
+      it('should throw if given an invalid name', () => {
+        const config = {
+          arbitrum: {
+            type: tokenType,
+          },
+          polygon: {
+            type: TokenType.synthetic,
+          },
+          ethereum: {},
+        } as unknown as WarpRouteDeployConfig;
+        const options = { symbol: 'MULTI', warpRouteId: 'HYPER' };
+
+        expect(() => testRegistry.exposeGetWarpRouteDeployConfigPath(config, options)).to.throw(
+          'Invalid warp route ID: HYPER. Must be in the format TOKENSYMBOL/label...',
+        );
+      });
+    }
 
     it('should throw if given an invalid name', () => {
       const config = {
-        arbitrum: {
-          type: TokenType.synthetic,
-        },
-        polygon: {
-          type: TokenType.synthetic,
-        },
+        arbitrum: {},
+        polygon: {},
         ethereum: {},
       } as unknown as WarpRouteDeployConfig;
       const options = { symbol: 'MULTI', warpRouteId: 'HYPER' };
