@@ -1,5 +1,16 @@
 # @hyperlane-xyz/registry
 
+## 15.6.0
+
+### Minor Changes
+
+- 46ce802: Update hyperlane SDK to 13.0.0.
+
+### Patch Changes
+
+- f76d8f7: Add SOL/apechain-solanamainnet.
+- f76d8f7: Add Fartcoin, PENGU, UFD.
+
 ## 15.5.0
 
 ### Minor Changes
