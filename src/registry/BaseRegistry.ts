@@ -58,11 +58,44 @@ export abstract class BaseRegistry implements IRegistry {
     return 'deployments/warp_routes';
   }
 
-  protected getWarpRouteCoreConfigPath(config: WarpCoreConfig, options?: AddWarpRouteOptions) {
-    return `${this.getWarpRoutesPath()}/${warpRouteConfigToId(
-      config,
-      options?.symbol,
-    )}-config.yaml`;
+  /**
+   * Gets a warp route ID from a warp route config.
+   * This uses the first symbol in the list. Situations where a config contains multiple
+   * symbols are not officially supported yet.
+   */
+  static warpRouteConfigToId(
+    config: WarpCoreConfig,
+    options?: AddWarpRouteConfigOptions,
+  ): WarpRouteId {
+    let warpRouteId;
+    if (options && 'warpRouteId' in options) {
+      warpRouteId = options.warpRouteId;
+    } else {
+      if (!config?.tokens?.length) throw new Error('Cannot generate ID for empty warp config');
+      const symbols = new Set(config.tokens.map((token) => token.symbol));
+      if (!options?.symbol && symbols.size !== 1) {
+        throw new Error(
+          `Only one token symbol per warp config is supported for now. Found: [${[
+            ...symbols,
+          ].join()}]`,
+        );
+      }
+      const tokenSymbol = options?.symbol || symbols.values().next().value;
+      if (!tokenSymbol) throw new Error('Cannot generate warp config ID without a token symbol');
+      const chains = new Set(config.tokens.map((token) => token.chainName));
+      warpRouteId = createWarpRouteConfigId(tokenSymbol, [...chains.values()]);
+    }
+
+    return warpRouteId;
+  }
+
+  protected getWarpRouteCoreConfigPath(
+    config: WarpCoreConfig,
+    options?: AddWarpRouteConfigOptions,
+  ) {
+    const warpRouteId = BaseRegistry.warpRouteConfigToId(config, options);
+    console.log('warpRouteId', warpRouteId);
+    return `${this.getWarpRoutesPath()}/${warpRouteId}-config.yaml`;
   }
 
   /**
@@ -98,9 +131,9 @@ export abstract class BaseRegistry implements IRegistry {
     config: WarpRouteDeployConfig,
     options: AddWarpRouteConfigOptions,
   ) {
-    const routeId = BaseRegistry.warpDeployConfigToId(config, options);
+    const warpRouteId = BaseRegistry.warpDeployConfigToId(config, options);
 
-    return `${this.getWarpRoutesPath()}/${routeId}-deploy.yaml`;
+    return `${this.getWarpRoutesPath()}/${warpRouteId}-deploy.yaml`;
   }
 
   abstract listRegistryContent(): MaybePromise<RegistryContent>;
