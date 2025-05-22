@@ -21,7 +21,7 @@ describe('Warp utils', () => {
         { chainName: 'arbitrum', symbol: 'USDT', standard: 'EvmHypCollateral' },
       ],
     } as WarpCoreConfig;
-    expect(warpRouteConfigToId(mockConfig)).to.eql(WARP_ROUTE_ID);
+    expect(BaseRegistry.warpRouteConfigToId(mockConfig)).to.eql(WARP_ROUTE_ID);
   });
   it('Parses a warp ID', () => {
     expect(parseWarpRouteConfigId(WARP_ROUTE_ID)).to.eql({
