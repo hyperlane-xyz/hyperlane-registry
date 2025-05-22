@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Deploy to neuratestnet.
+Deploy to neuratestnet, rometestnet. Remove suavetoliman from default testnets.
