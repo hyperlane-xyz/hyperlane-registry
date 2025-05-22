@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 15.7.1
+
+### Patch Changes
+
+- 4b31a7f: Connects the solana chain to the rest of subtensor warp route
+
 ## 15.7.0
 
 ### Minor Changes
