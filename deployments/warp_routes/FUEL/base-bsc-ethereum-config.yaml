@@ -1,0 +1,29 @@
+tokens:
+  - chainName: base
+    standard: EvmHypSynthetic
+    decimals: 9
+    symbol: FUEL
+    name: FUEL
+    addressOrDenom: "0xFdedBefEc262fE0eeaA2bbdE1afA2ef09AaB6634"
+    connections:
+      - token: ethereum|ethereum|0x3cF30C1D8DECBF45CD36C9492F6395D47357b91C
+      - token: ethereum|bsc|0x5c8daEabc57E9249606D3bD6d1E097eF492eA3C5
+  - chainName: bsc
+    standard: EvmHypSynthetic
+    decimals: 9
+    symbol: FUEL
+    name: FUEL
+    addressOrDenom: "0x5c8daEabc57E9249606D3bD6d1E097eF492eA3C5"
+    connections:
+      - token: ethereum|ethereum|0x3cF30C1D8DECBF45CD36C9492F6395D47357b91C
+      - token: ethereum|base|0xFdedBefEc262fE0eeaA2bbdE1afA2ef09AaB6634
+  - chainName: ethereum
+    standard: EvmHypCollateral
+    decimals: 9
+    symbol: FUEL
+    name: FUEL
+    addressOrDenom: "0x3cF30C1D8DECBF45CD36C9492F6395D47357b91C"
+    collateralAddressOrDenom: "0x675B68AA4d9c2d3BB3F0397048e62E6B7192079c"
+    connections:
+      - token: ethereum|bsc|0x5c8daEabc57E9249606D3bD6d1E097eF492eA3C5
+      - token: ethereum|base|0xFdedBefEc262fE0eeaA2bbdE1afA2ef09AaB6634
