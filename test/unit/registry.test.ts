@@ -721,6 +721,20 @@ describe('BaseRegistry protected methods', () => {
 
       expect(path).to.equal('deployments/warp_routes/TOKEN/ethereum-polygon-config.yaml');
     });
+
+    it('should capitalize the symbol', () => {
+      const config = {
+        tokens: [
+          { chainName: 'ethereum', symbol: 'token' },
+          { chainName: 'polygon', symbol: 'token' },
+        ],
+      } as WarpCoreConfig;
+      const options = { symbol: 'hyper' };
+
+      const path = testRegistry.exposeGetWarpRouteCoreConfigPath(config, options);
+
+      expect(path).to.equal('deployments/warp_routes/HYPER/ethereum-polygon-config.yaml');
+    });
   });
 
   describe('getWarpRouteDeployConfigPath', () => {
