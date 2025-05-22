@@ -4,9 +4,8 @@ import {
   filterWarpRoutesIds,
   parseWarpRouteConfigId,
   warpRouteConfigPathToId,
-  warpRouteConfigToId,
 } from '../../src/registry/warp-utils.js';
-
+import { BaseRegistry } from '../../src/registry/BaseRegistry.js';
 const WARP_ROUTE_ID = 'USDT/arbitrum-ethereum';
 
 describe('Warp utils', () => {

@@ -16,8 +16,7 @@ import {
   RegistryType,
 } from './IRegistry.js';
 import { SynchronousRegistry } from './SynchronousRegistry.js';
-import { warpRouteConfigToId } from './warp-utils.js';
-
+import { BaseRegistry } from './BaseRegistry.js';
 const PARTIAL_URI_PLACEHOLDER = '__partial_registry__';
 
 /**

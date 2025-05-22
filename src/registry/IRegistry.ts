@@ -49,10 +49,6 @@ export enum RegistryType {
   Partial = 'partial',
 }
 
-export interface AddWarpRouteOptions {
-  symbol?: string;
-}
-
 export type AddWarpRouteConfigOptions =
   | {
       symbol: string;
@@ -85,7 +81,7 @@ export interface IRegistry {
 
   getWarpRoute(routeId: string): MaybePromise<WarpCoreConfig | null>;
   getWarpRoutes(filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap>;
-  addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): MaybePromise<void>;
+  addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteConfigOptions): MaybePromise<void>;
   addWarpRouteConfig(
     config: WarpRouteDeployConfig,
     options: AddWarpRouteConfigOptions,

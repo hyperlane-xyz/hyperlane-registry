@@ -10,12 +10,11 @@ import {
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
 import { assert, objFilter, objLength } from '@hyperlane-xyz/utils';
-import type { ChainAddresses, MaybePromise, WarpDeployConfigMap } from '../types.js';
+import type { ChainAddresses, MaybePromise, WarpDeployConfigMap, WarpRouteId } from '../types.js';
 import { WarpRouteConfigMap } from '../types.js';
 import { stripLeadingSlash } from '../utils.js';
 import type {
   AddWarpRouteConfigOptions,
-  AddWarpRouteOptions,
   IRegistry,
   RegistryContent,
   RegistryType,
@@ -23,7 +22,7 @@ import type {
   WarpRouteFilterParams,
 } from './IRegistry.js';
 import { MergedRegistry } from './MergedRegistry.js';
-import { createWarpRouteConfigId, warpRouteConfigToId } from './warp-utils.js';
+import { createWarpRouteConfigId } from './warp-utils.js';
 import { WARP_ROUTE_ID_REGEX } from '../consts.js';
 
 export abstract class BaseRegistry implements IRegistry {

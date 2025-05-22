@@ -18,7 +18,7 @@ import {
   RegistryType,
   AddWarpRouteConfigOptions,
   RegistryContent,
-  AddWarpRouteOptions,
+  AddWarpRouteConfigOptions,
 } from '../../src/registry/IRegistry.js';
 import { MergedRegistry } from '../../src/registry/MergedRegistry.js';
 import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
@@ -590,7 +590,10 @@ class TestBaseRegistry extends BaseRegistry {
   }
 
   // Expose getWarpRouteCoreConfigPath for testing
-  public exposeGetWarpRouteCoreConfigPath(config: WarpCoreConfig, options?: AddWarpRouteOptions) {
+  public exposeGetWarpRouteCoreConfigPath(
+    config: WarpCoreConfig,
+    options?: AddWarpRouteConfigOptions,
+  ) {
     return this.getWarpRouteCoreConfigPath(config, options);
   }
 
