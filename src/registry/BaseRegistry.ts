@@ -86,6 +86,11 @@ export abstract class BaseRegistry implements IRegistry {
       warpRouteId = createWarpRouteConfigId(tokenSymbol, [...chains.values()]);
     }
 
+    assert(
+      warpRouteId.match(WARP_ROUTE_ID_REGEX),
+      `Invalid warp route ID: ${warpRouteId}. Must be in the format such as: TOKENSYMBOL/label...`,
+    );
+
     return warpRouteId;
   }
 
@@ -123,7 +128,7 @@ export abstract class BaseRegistry implements IRegistry {
 
     assert(
       warpRouteId.match(WARP_ROUTE_ID_REGEX),
-      `Invalid warp route ID: ${warpRouteId}. Must be in the format TOKENSYMBOL/label...`,
+      `Invalid warp route ID: ${warpRouteId}. Must be in the format such as: TOKENSYMBOL/label...`,
     );
     return warpRouteId;
   }
