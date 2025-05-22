@@ -712,7 +712,7 @@ describe('BaseRegistry protected methods', () => {
       );
     });
 
-    it('should keep symbols to the same case', () => {
+    it('should preserve symbols casing', () => {
       const config = {
         tokens: [
           { chainName: 'ethereum', symbol: 'token' },
