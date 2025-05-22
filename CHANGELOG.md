@@ -1,5 +1,19 @@
 # @hyperlane-xyz/registry
 
+## 15.7.0
+
+### Minor Changes
+
+- 35bafb8: Update miraclechain logo and default ISMs.
+- c9794df: Update default ISMs on solanamainnet, soon, svmbnb.
+- 166a9d2: Deploy to neuratestnet, rometestnet. Remove suavetoliman from default testnets.
+- d85abc6: update the existing getWarpRouteDeployConfigPath with new algorithm to propose and validate a warp route id
+- 6fc272f: Add KYVE warp route deployment.
+
+### Patch Changes
+
+- e5cc51d: The GithubRegistry now downloads a zip archive of the registry files to avoid running into rate limits.
+
 ## 15.6.0
 
 ### Minor Changes
