@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 15.8.0
+
+### Minor Changes
+
+- 9b5a470: add FUEL warp route
+
 ## 15.7.1
 
 ### Patch Changes
