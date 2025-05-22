@@ -94,7 +94,7 @@ export abstract class BaseRegistry implements IRegistry {
     options?: AddWarpRouteConfigOptions,
   ) {
     const warpRouteId = BaseRegistry.warpRouteConfigToId(config, options);
-    console.log('warpRouteId', warpRouteId);
+
     return `${this.getWarpRoutesPath()}/${warpRouteId}-config.yaml`;
   }
 
