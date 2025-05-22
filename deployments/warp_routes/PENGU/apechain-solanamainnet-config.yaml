@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x9Eaf39A97d56119236a356225B339fE7383549B3"
+    chainName: apechain
+    coinGeckoId: pudgy-penguins
+    connections:
+      - token: sealevel|solanamainnet|C7a43nYF9atxgJhfqoP2vc95exJcEQhvJqYbtCNkDf8f
+    decimals: 6
+    logoURI: /deployments/warp_routes/PENGU/logo.svg
+    name: Pudgy Penguins
+    standard: EvmHypSynthetic
+    symbol: PENGU
+  - addressOrDenom: C7a43nYF9atxgJhfqoP2vc95exJcEQhvJqYbtCNkDf8f
+    chainName: solanamainnet
+    coinGeckoId: pudgy-penguins
+    collateralAddressOrDenom: 2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv
+    connections:
+      - token: ethereum|apechain|0x9Eaf39A97d56119236a356225B339fE7383549B3
+    decimals: 6
+    logoURI: /deployments/warp_routes/PENGU/logo.svg
+    name: Pudgy Penguins
+    standard: SealevelHypCollateral
+    symbol: PENGU
