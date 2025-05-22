@@ -830,5 +830,16 @@ describe('BaseRegistry protected methods', () => {
         'Invalid warp route ID: HYPER. Must be in the format TOKENSYMBOL/label...',
       );
     });
+
+    it('should capitalize the symbol', () => {
+      const config = {
+        ethereum: {},
+        polygon: {},
+      } as unknown as WarpRouteDeployConfig;
+      const options = { symbol: 'hyper' };
+
+      const path = testRegistry.exposeGetWarpRouteDeployConfigPath(config, options);
+      expect(path).to.equal('deployments/warp_routes/HYPER/ethereum-polygon-deploy.yaml');
+    });
   });
 });
