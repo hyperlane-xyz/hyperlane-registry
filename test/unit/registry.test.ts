@@ -712,7 +712,7 @@ describe('BaseRegistry protected methods', () => {
       );
     });
 
-    it('should normalize symbols to uppercase', () => {
+    it('should keep symbols to the same case', () => {
       const config = {
         tokens: [
           { chainName: 'ethereum', symbol: 'token' },
@@ -722,21 +722,21 @@ describe('BaseRegistry protected methods', () => {
 
       const path = testRegistry.exposeGetWarpRouteCoreConfigPath(config);
 
-      expect(path).to.equal('deployments/warp_routes/TOKEN/ethereum-polygon-config.yaml');
+      expect(path).to.equal('deployments/warp_routes/token/ethereum-polygon-config.yaml');
     });
 
-    it('should capitalize the symbol', () => {
+    it('should throw error for invalid warp route ID format', () => {
       const config = {
         tokens: [
           { chainName: 'ethereum', symbol: 'token' },
           { chainName: 'polygon', symbol: 'token' },
         ],
       } as WarpCoreConfig;
-      const options = { symbol: 'hyper' };
+      const options = { warpRouteId: 'invalid-format' };
 
-      const path = testRegistry.exposeGetWarpRouteCoreConfigPath(config, options);
-
-      expect(path).to.equal('deployments/warp_routes/HYPER/ethereum-polygon-config.yaml');
+      expect(() => testRegistry.exposeGetWarpRouteCoreConfigPath(config, options)).to.throw(
+        'Invalid warp route ID: invalid-format. Must be in the format such as: TOKENSYMBOL/label...',
+      );
     });
   });
 
@@ -830,7 +830,7 @@ describe('BaseRegistry protected methods', () => {
         const options = { symbol: 'MULTI', warpRouteId: 'HYPER' };
 
         expect(() => testRegistry.exposeGetWarpRouteDeployConfigPath(config, options)).to.throw(
-          'Invalid warp route ID: HYPER. Must be in the format TOKENSYMBOL/label...',
+          'Invalid warp route ID: HYPER. Must be in the format such as: TOKENSYMBOL/label...',
         );
       });
     }
@@ -844,19 +844,8 @@ describe('BaseRegistry protected methods', () => {
       const options = { symbol: 'MULTI', warpRouteId: 'HYPER' };
 
       expect(() => testRegistry.exposeGetWarpRouteDeployConfigPath(config, options)).to.throw(
-        'Invalid warp route ID: HYPER. Must be in the format TOKENSYMBOL/label...',
+        'Invalid warp route ID: HYPER. Must be in the format such as: TOKENSYMBOL/label...',
       );
-    });
-
-    it('should capitalize the symbol', () => {
-      const config = {
-        ethereum: {},
-        polygon: {},
-      } as unknown as WarpRouteDeployConfig;
-      const options = { symbol: 'hyper' };
-
-      const path = testRegistry.exposeGetWarpRouteDeployConfigPath(config, options);
-      expect(path).to.equal('deployments/warp_routes/HYPER/ethereum-polygon-deploy.yaml');
     });
   });
 });

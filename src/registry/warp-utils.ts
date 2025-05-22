@@ -61,7 +61,7 @@ function parseWarpRouteConfigPath(configRelativePath: string, regex: RegExp) {
 
 export function createWarpRouteConfigId(tokenSymbol: string, chains: ChainName[]): WarpRouteId {
   const sortedChains = [...chains].sort();
-  return `${tokenSymbol.toUpperCase()}/${sortedChains.join('-')}`;
+  return `${tokenSymbol}/${sortedChains.join('-')}`;
 }
 
 export function parseWarpRouteConfigId(routeId: WarpRouteId): {
