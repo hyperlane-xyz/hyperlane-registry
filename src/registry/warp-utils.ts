@@ -51,12 +51,12 @@ export function warpRouteDeployConfigPathToId(configRelativePath: string): WarpR
  *    (e.g. `warp_routes/USDC/ethereum-arbitrum-config.yaml`)
  * @param regex regex of the config filename
  */
-function parseWarpRouteConfigPath(configRelativePath: string, regex: RegExp) {
+function parseWarpRouteConfigPath(configRelativePath: string, regex: RegExp): WarpRouteId {
   const matches = configRelativePath.match(regex);
   if (!matches || matches.length < 3)
     throw new Error(`Invalid warp route config path: ${configRelativePath}`);
-  const [_, tokenSymbol, chains] = matches;
-  return createWarpRouteConfigId(tokenSymbol, chains.split('-'));
+  const [_, tokenSymbol, label] = matches;
+  return `${tokenSymbol}/${label}`;
 }
 
 export function createWarpRouteConfigId(tokenSymbol: string, chains: ChainName[]): WarpRouteId {
