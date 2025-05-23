@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: 53XFTNcTRTzrNyD3QodXbRBZ249G8v3iSHh8FzYeHZoX
+    chainName: eclipsemainnet
+    collateralAddressOrDenom: 27Kkn8PWJbKJsRZrxbsYDdedpUQKnJ5vNfserCxNEJ3R
+    connections:
+      - token: ethereum|ethereum|0x69B1A59e98D94E1B9647C08Cb295Fc52597D20f0
+    decimals: 6
+    logoURI: /deployments/warp_routes/tUSD/logo.svg
+    name: tUSD
+    standard: SealevelHypSynthetic
+    symbol: tUSD
+  - addressOrDenom: "0x69B1A59e98D94E1B9647C08Cb295Fc52597D20f0"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x722a851B6798D65b80526562Fc3a36E19b1F883b"
+    connections:
+      - token: sealevel|eclipsemainnet|53XFTNcTRTzrNyD3QodXbRBZ249G8v3iSHh8FzYeHZoX
+    decimals: 6
+    logoURI: /deployments/warp_routes/tUSD/logo.svg
+    name: Eclipse Turbo USD
+    standard: EvmHypCollateral
+    symbol: tUSD

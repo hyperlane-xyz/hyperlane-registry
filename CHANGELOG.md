@@ -1,5 +1,73 @@
 # @hyperlane-xyz/registry
 
+## 15.8.0
+
+### Minor Changes
+
+- 9b5a470: add FUEL warp route
+
+## 15.7.1
+
+### Patch Changes
+
+- 4b31a7f: Connects the solana chain to the rest of subtensor warp route
+
+## 15.7.0
+
+### Minor Changes
+
+- 35bafb8: Update miraclechain logo and default ISMs.
+- c9794df: Update default ISMs on solanamainnet, soon, svmbnb.
+- 166a9d2: Deploy to neuratestnet, rometestnet. Remove suavetoliman from default testnets.
+- d85abc6: update the existing getWarpRouteDeployConfigPath with new algorithm to propose and validate a warp route id
+- 6fc272f: Add KYVE warp route deployment.
+
+### Patch Changes
+
+- e5cc51d: The GithubRegistry now downloads a zip archive of the registry files to avoid running into rate limits.
+
+## 15.6.0
+
+### Minor Changes
+
+- 46ce802: Update hyperlane SDK to 13.0.0.
+
+### Patch Changes
+
+- f76d8f7: Add SOL/apechain-solanamainnet.
+- f76d8f7: Add Fartcoin, PENGU, UFD.
+
+## 15.5.0
+
+### Minor Changes
+
+- a9ca27a: Add Subtensor USDC configs
+
+### Patch Changes
+
+- 16d1e1e: Update to TGT warp route to Fireblocks owners
+
+## 15.4.0
+
+### Minor Changes
+
+- ea62684: Updated mirai route deploy config to show current ownership setup
+- 172087e: Add TGT warp configs
+
+## 15.3.0
+
+### Minor Changes
+
+- d96e1ce: Add chain metadata for starknetsepolia, paradexsepolia.
+- 5f22611: Deploy to new chains: ontology, miraclechain, kyve.
+- fa91bbd: Added tUSD/eclipsemainnet-ethereum warp route
+
+### Patch Changes
+
+- 0166c65: Adding MIRAI warp route
+- 02813bd: Update plumenetwork.xyz -> plume.org.
+- 50c45bf: updated warp route deployment config files to match the on chain config
+
 ## 15.2.0
 
 ### Minor Changes
