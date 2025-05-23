@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 15.8.1
+
+### Patch Changes
+
+- 221f568: The GithubRegistry now bypasses the new archive downloading logic when running in a browser environment
+- c5edccc: Add CHILL metadata.
+
 ## 15.8.0
 
 ### Minor Changes
