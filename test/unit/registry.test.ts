@@ -796,7 +796,7 @@ describe('BaseRegistry protected methods', () => {
           expect(path).to.equal('deployments/warp_routes/CUSTOM/ethereum-config.yaml');
         });
 
-        it(`should use the options.symbol when provided`, () => {
+        it(`should use the options.symbol when provided multiple standards`, () => {
           const config = {
             tokens: [
               { chainName: 'ethereum', symbol: 'token', standard },
@@ -809,6 +809,48 @@ describe('BaseRegistry protected methods', () => {
 
           expect(path).to.equal(
             'deployments/warp_routes/CUSTOM/arbitrum-ethereum-polygon-config.yaml',
+          );
+        });
+
+        describe('symbols tests', () => {
+          ['USDC.ETH', 'USDC.eth'].forEach((symbol) => {
+            it(`should handle symbols with special characters: ${symbol}`, () => {
+              const config = {
+                tokens: [
+                  { chainName: 'ethereum', symbol },
+                  { chainName: 'arbitrum', symbol },
+                ],
+              } as WarpCoreConfig;
+
+              const path = testRegistry.exposeGetWarpRouteCoreConfigPath(config);
+
+              expect(path).to.equal(
+                `deployments/warp_routes/${symbol}/arbitrum-ethereum-config.yaml`,
+              );
+            });
+          });
+        });
+
+        it('should throw error if multiple symbols are provided', () => {
+          const config = {
+            tokens: [
+              { chainName: 'ethereum', symbol: 'USDC' },
+              { chainName: 'arbitrum', symbol: 'USDT' },
+            ],
+          } as WarpCoreConfig;
+
+          expect(() => testRegistry.exposeGetWarpRouteCoreConfigPath(config)).to.throw(
+            'Only one token symbol per warp config is supported for now',
+          );
+        });
+
+        it('should throw when no token config is provided', () => {
+          const config = {
+            tokens: [],
+          } as WarpCoreConfig;
+
+          expect(() => testRegistry.exposeGetWarpRouteCoreConfigPath(config)).to.throw(
+            'Cannot generate ID for empty warp config',
           );
         });
       });
@@ -921,6 +963,31 @@ describe('BaseRegistry protected methods', () => {
       expect(() => testRegistry.exposeGetWarpRouteDeployConfigPath(config, options)).to.throw(
         'Invalid warp route ID: HYPER. Must be in the format such as: TOKENSYMBOL/label...',
       );
+    });
+
+    describe('symbols tests', () => {
+      ['USDC.ETH', 'USDC.eth'].forEach((symbol) => {
+        it(`should handle symbols with special characters: ${symbol}`, () => {
+          const config = {
+            ethereum: {},
+            polygon: {},
+          } as unknown as WarpRouteDeployConfig;
+          const options = { symbol };
+
+          const path = testRegistry.exposeGetWarpRouteDeployConfigPath(config, options);
+
+          expect(path).to.equal(`deployments/warp_routes/${symbol}/ethereum-polygon-deploy.yaml`);
+        });
+      });
+
+      it('should throw when no token config is provided', () => {
+        const config = {} as unknown as WarpRouteDeployConfig;
+        const options = { symbol: 'TEST' };
+
+        expect(() => testRegistry.exposeGetWarpRouteDeployConfigPath(config, options)).to.throw(
+          'Cannot generate ID for empty warp deploy config',
+        );
+      });
     });
   });
 });
