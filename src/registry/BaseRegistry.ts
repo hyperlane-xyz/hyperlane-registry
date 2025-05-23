@@ -89,7 +89,7 @@ export abstract class BaseRegistry implements IRegistry {
       const syntheticSymbols = syntheticTokens.map((token) => token.symbol);
       const symbol = options?.symbol || syntheticSymbols[0];
 
-      warpRouteId = createWarpRouteConfigId(symbol, [...syntheticChains]);
+      warpRouteId = createWarpRouteConfigId(symbol, [...syntheticChains].join('-'));
     } else {
       // Only support one symbol per warp config for now
       const allChains = config.tokens.map((token) => token.chainName);
@@ -103,7 +103,7 @@ export abstract class BaseRegistry implements IRegistry {
       }
 
       const symbol = options?.symbol || [...allSymbols][0];
-      warpRouteId = createWarpRouteConfigId(symbol, [...allChains]);
+      warpRouteId = createWarpRouteConfigId(symbol, [...allChains].join('-'));
     }
     assert(
       warpRouteId.match(WARP_ROUTE_ID_REGEX),
@@ -142,9 +142,9 @@ export abstract class BaseRegistry implements IRegistry {
     if ('warpRouteId' in options) {
       warpRouteId = options.warpRouteId;
     } else if (objLength(syntheticChains) === 1) {
-      warpRouteId = createWarpRouteConfigId(options.symbol, Object.keys(syntheticChains));
+      warpRouteId = createWarpRouteConfigId(options.symbol, Object.keys(syntheticChains)[0]);
     } else {
-      warpRouteId = createWarpRouteConfigId(options.symbol, Object.keys(config));
+      warpRouteId = createWarpRouteConfigId(options.symbol, Object.keys(config).join('-'));
     }
 
     assert(

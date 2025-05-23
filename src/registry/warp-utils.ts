@@ -56,12 +56,12 @@ function parseWarpRouteConfigPath(configRelativePath: string, regex: RegExp): Wa
   if (!matches || matches.length < 3)
     throw new Error(`Invalid warp route config path: ${configRelativePath}`);
   const [_, tokenSymbol, label] = matches;
-  return `${tokenSymbol}/${label}`;
+  return createWarpRouteConfigId(tokenSymbol, label);
 }
 
-export function createWarpRouteConfigId(tokenSymbol: string, chains: ChainName[]): WarpRouteId {
-  const sortedChains = [...chains].sort();
-  return `${tokenSymbol}/${sortedChains.join('-')}`;
+// TODO: <Move the original fn into the monorepo or Remove from it
+export function createWarpRouteConfigId(tokenSymbol: string, label: string): WarpRouteId {
+  return `${tokenSymbol}/${label}`;
 }
 
 export function parseWarpRouteConfigId(routeId: WarpRouteId): {
