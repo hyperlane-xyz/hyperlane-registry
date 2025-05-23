@@ -4,9 +4,8 @@ import {
   filterWarpRoutesIds,
   parseWarpRouteConfigId,
   warpRouteConfigPathToId,
-  warpRouteConfigToId,
 } from '../../src/registry/warp-utils.js';
-
+import { BaseRegistry } from '../../src/registry/BaseRegistry.js';
 const WARP_ROUTE_ID = 'USDT/arbitrum-ethereum';
 
 describe('Warp utils', () => {
@@ -22,7 +21,7 @@ describe('Warp utils', () => {
         { chainName: 'arbitrum', symbol: 'USDT', standard: 'EvmHypCollateral' },
       ],
     } as WarpCoreConfig;
-    expect(warpRouteConfigToId(mockConfig)).to.eql(WARP_ROUTE_ID);
+    expect(BaseRegistry.warpRouteConfigToId(mockConfig)).to.eql(WARP_ROUTE_ID);
   });
   it('Parses a warp ID', () => {
     expect(parseWarpRouteConfigId(WARP_ROUTE_ID)).to.eql({

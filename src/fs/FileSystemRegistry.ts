@@ -24,7 +24,6 @@ import {
   AddWarpRouteConfigOptions,
   RegistryType,
   UpdateChainParams,
-  type AddWarpRouteOptions,
   type ChainFiles,
   type IRegistry,
   type RegistryContent,
@@ -119,7 +118,7 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
     this.removeFiles(Object.values(chainFiles));
   }
 
-  addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): void {
+  addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteConfigOptions): void {
     const configPath = this.getWarpRouteCoreConfigPath(config, options);
     this.createFile({
       filePath: path.join(this.uri, configPath),
