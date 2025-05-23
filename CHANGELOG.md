@@ -1,5 +1,24 @@
 # @hyperlane-xyz/registry
 
+## 15.8.1
+
+### Patch Changes
+
+- 221f568: The GithubRegistry now bypasses the new archive downloading logic when running in a browser environment
+- c5edccc: Add CHILL metadata.
+
+## 15.8.0
+
+### Minor Changes
+
+- 9b5a470: add FUEL warp route
+
+## 15.7.1
+
+### Patch Changes
+
+- 4b31a7f: Connects the solana chain to the rest of subtensor warp route
+
 ## 15.7.0
 
 ### Minor Changes
