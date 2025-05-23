@@ -8,6 +8,7 @@ import {
   ChainName,
   WarpCoreConfig,
   WarpRouteDeployConfig,
+  TokenStandard,
 } from '@hyperlane-xyz/sdk';
 import { assert, objFilter, objLength } from '@hyperlane-xyz/utils';
 import type { ChainAddresses, MaybePromise, WarpDeployConfigMap, WarpRouteId } from '../types.js';
@@ -59,33 +60,51 @@ export abstract class BaseRegistry implements IRegistry {
   }
 
   /**
-   * Gets a warp route ID from a warp route config.
-   * This uses the first symbol in the list. Situations where a config contains multiple
-   * symbols are not officially supported yet.
+   * Generates a warp route ID from a warp core config.
+   *
+   * The function handles three main cases:
+   * 1. If a warpRouteId is provided in options, it uses that directly
+   * 2. If there is exactly one synthetic token, it uses that token's chain and symbol
+   * 3. Otherwise, it uses all chains and requires a single symbol (either from options or tokens)
    */
   static warpRouteConfigToId(
     config: WarpCoreConfig,
     options?: AddWarpRouteConfigOptions,
   ): WarpRouteId {
+    if (!config?.tokens?.length) throw new Error('Cannot generate ID for empty warp config');
+
+    const syntheticTokens = config.tokens.filter((token) =>
+      [
+        TokenStandard.EvmHypSynthetic,
+        TokenStandard.EvmHypSyntheticRebase,
+        TokenStandard.SealevelHypSynthetic,
+      ].includes(token.standard),
+    );
+
     let warpRouteId;
     if (options && 'warpRouteId' in options) {
       warpRouteId = options.warpRouteId;
+    } else if (syntheticTokens.length === 1) {
+      const syntheticChains = syntheticTokens.map((token) => token.chainName);
+      const syntheticSymbols = syntheticTokens.map((token) => token.symbol);
+      const symbol = options?.symbol || syntheticSymbols[0];
+
+      warpRouteId = createWarpRouteConfigId(symbol, [...syntheticChains]);
     } else {
-      if (!config?.tokens?.length) throw new Error('Cannot generate ID for empty warp config');
-      const symbols = new Set(config.tokens.map((token) => token.symbol));
-      if (!options?.symbol && symbols.size !== 1) {
+      // Only support one symbol per warp config for now
+      const allChains = config.tokens.map((token) => token.chainName);
+      const allSymbols = new Set(config.tokens.map((token) => token.symbol));
+      if (!options?.symbol && allSymbols.size !== 1) {
         throw new Error(
           `Only one token symbol per warp config is supported for now. Found: [${[
-            ...symbols,
+            ...allSymbols,
           ].join()}]`,
         );
       }
-      const tokenSymbol = options?.symbol || symbols.values().next().value;
-      if (!tokenSymbol) throw new Error('Cannot generate warp config ID without a token symbol');
-      const chains = new Set(config.tokens.map((token) => token.chainName));
-      warpRouteId = createWarpRouteConfigId(tokenSymbol, [...chains.values()]);
-    }
 
+      const symbol = options?.symbol || [...allSymbols][0];
+      warpRouteId = createWarpRouteConfigId(symbol, [...allChains]);
+    }
     assert(
       warpRouteId.match(WARP_ROUTE_ID_REGEX),
       `Invalid warp route ID: ${warpRouteId}. Must be in the format such as: TOKENSYMBOL/label...`,
