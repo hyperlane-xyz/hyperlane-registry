@@ -41,6 +41,10 @@ export interface GithubRegistryOptions {
   branch?: string;
   authToken?: string;
   logger?: Logger;
+  /**
+   * Override browser detection. Defaults to true if running in a browser environment.
+   */
+  isBrowser?: boolean;
 }
 
 interface TreeNode {
@@ -90,6 +94,8 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   public readonly repoName: string;
   public readonly proxyUrl: string | undefined;
   private readonly authToken: string | undefined;
+  /** True when running in a browser environment (overridable via options). */
+  private readonly isBrowser: boolean;
   // In-memory cache of archive file entries (relative path -> content as ArrayBuffer)
   private archiveEntries?: Map<string, ArrayBuffer>;
   // Promise tracking an in-flight archive download/unpack to dedupe parallel calls
@@ -112,6 +118,9 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     this.branch = options.branch ?? repoBranch ?? 'main';
     this.proxyUrl = options.proxyUrl;
     this.authToken = options.authToken;
+    this.isBrowser = options.isBrowser !== undefined
+      ? options.isBrowser
+      : typeof window !== 'undefined';
   }
 
   getUri(itemPath?: string): string {
@@ -372,7 +381,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
    */
   protected async fetchYamlFile<T>(url: string): Promise<T> {
     const rawBase = `https://raw.githubusercontent.com/${this.repoOwner}/${this.repoName}/${this.branch}/`;
-    if (url.startsWith(rawBase)) {
+    if (!this.isBrowser && url.startsWith(rawBase)) {
       await this.ensureArchiveEntries();
       const relativePath = url.substring(rawBase.length);
       const dataBuf = this.archiveEntries?.get(relativePath);
