@@ -13,18 +13,22 @@ fi
 export BASE_COMMIT="$1"
 export HEAD_COMMIT="$2"
 
+# Get all changed files
+CHANGED_FILES=$(git diff "$BASE_COMMIT".."$HEAD_COMMIT" --name-only)
+
+# Find warp routes that have both config and deploy files
 WARP_ROUTE_IDS=$(
-    git diff "$BASE_COMMIT".."$HEAD_COMMIT" --name-only |
+    echo "$CHANGED_FILES" |
     grep -E 'warp_routes/.+-(config|deploy)\.yaml$' |
     sed -E 's|deployments/warp_routes/||' |
-    sed -E 's|-config\.yaml$||' |
-    sed -E 's|-deploy\.yaml$||' |
+    sed -E 's/-\(config\|deploy\)\.yaml$//' |
     sort |
-    uniq
+    uniq -c |
+    awk '$1 == 2 {print $2}'  # Only keep routes that appear exactly twice (both config and deploy)
 )
 
 # Run the Docker image for each warp route ID
-echo "Determined warp route IDs:"
+echo "Determined warp route IDs (skipping routes with only config files):"
 for ID in $WARP_ROUTE_IDS; do
     echo "- $ID"
 done
