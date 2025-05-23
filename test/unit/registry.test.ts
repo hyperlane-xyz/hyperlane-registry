@@ -8,6 +8,7 @@ import {
   type WarpRouteDeployConfig,
   type WarpCoreConfig,
   TokenType,
+  TokenStandard,
 } from '@hyperlane-xyz/sdk';
 import type { Logger } from 'pino';
 import fs from 'fs';
@@ -167,7 +168,7 @@ describe('Registry utilities', () => {
         ] as any,
         options: {},
       });
-      const outputBasePath = `deployments/warp_routes/${MOCK_SYMBOL}/${MOCK_CHAIN_NAME}-${MOCK_CHAIN_NAME2}-`;
+      const outputBasePath = `deployments/warp_routes/${MOCK_SYMBOL}/${MOCK_CHAIN_NAME2}-`;
       const configPath = `${outputBasePath}config.yaml`;
       expect(fs.existsSync(configPath)).to.be.true;
       fs.unlinkSync(configPath);
@@ -186,7 +187,7 @@ describe('Registry utilities', () => {
         },
         { symbol: MOCKED_OPTION_SYMBOL },
       );
-      const outputBasePath = `deployments/warp_routes/${MOCKED_OPTION_SYMBOL}/${MOCK_CHAIN_NAME}-${MOCK_CHAIN_NAME2}-`;
+      const outputBasePath = `deployments/warp_routes/${MOCKED_OPTION_SYMBOL}/${MOCK_CHAIN_NAME2}-`;
       const configPath = `${outputBasePath}config.yaml`;
       expect(fs.existsSync(configPath)).to.be.true;
       fs.unlinkSync(configPath);
@@ -732,11 +733,85 @@ describe('BaseRegistry protected methods', () => {
           { chainName: 'polygon', symbol: 'token' },
         ],
       } as WarpCoreConfig;
-      const options = { warpRouteId: 'invalid-format' };
+      const options = { warpRouteId: 'invalid-(format' };
 
       expect(() => testRegistry.exposeGetWarpRouteCoreConfigPath(config, options)).to.throw(
-        'Invalid warp route ID: invalid-format. Must be in the format such as: TOKENSYMBOL/label...',
+        'Invalid warp route ID: invalid-(format. Must be in the format such as: TOKENSYMBOL/label...',
       );
+    });
+
+    describe('Synthetic standards', () => {
+      [
+        TokenStandard.EvmHypSynthetic,
+        TokenStandard.EvmHypSyntheticRebase,
+        TokenStandard.SealevelHypSynthetic,
+      ].forEach((standard) => {
+        it(`should use the chain name of a single synthetic standard: ${standard}`, () => {
+          const config = {
+            tokens: [
+              {
+                chainName: 'ethereum',
+                symbol: 'token',
+                standard,
+              },
+              {
+                chainName: 'polygon',
+                symbol: 'token',
+                standard: TokenStandard.EvmHypCollateral,
+              },
+            ],
+          } as WarpCoreConfig;
+
+          const path = testRegistry.exposeGetWarpRouteCoreConfigPath(config);
+
+          expect(path).to.equal('deployments/warp_routes/token/ethereum-config.yaml');
+        });
+
+        it(`should use the chain name of multiple synthetic standard: ${standard}`, () => {
+          const config = {
+            tokens: [
+              { chainName: 'ethereum', symbol: 'token', standard },
+              { chainName: 'polygon', symbol: 'token', standard },
+              { chainName: 'arbitrum', symbol: 'token', standard },
+            ],
+          } as WarpCoreConfig;
+
+          const path = testRegistry.exposeGetWarpRouteCoreConfigPath(config);
+
+          expect(path).to.equal(
+            'deployments/warp_routes/token/arbitrum-ethereum-polygon-config.yaml',
+          );
+        });
+
+        it(`should use the symbol of a single synthetic standard: ${standard}`, () => {
+          const config = {
+            tokens: [
+              { chainName: 'ethereum', symbol: 'token', standard },
+              { chainName: 'polygon', symbol: 'token', standard: TokenStandard.EvmHypCollateral },
+            ],
+          } as WarpCoreConfig;
+
+          const path = testRegistry.exposeGetWarpRouteCoreConfigPath(config, { symbol: 'CUSTOM' });
+
+          expect(path).to.equal('deployments/warp_routes/CUSTOM/ethereum-config.yaml');
+        });
+
+        it(`should use the options.symbol when provided`, () => {
+          const config = {
+            tokens: [
+              { chainName: 'ethereum', symbol: 'token', standard },
+              { chainName: 'arbitrum', symbol: 'token', standard },
+              { chainName: 'polygon', symbol: 'token', standard: TokenStandard.EvmHypCollateral },
+            ],
+          } as WarpCoreConfig;
+
+          const path = testRegistry.exposeGetWarpRouteCoreConfigPath(config, { symbol: 'CUSTOM' });
+
+          expect(path).to.equal(
+            'deployments/warp_routes/CUSTOM/arbitrum-ethereum-polygon-config.yaml',
+          );
+        });
+      });
     });
   });
 
@@ -783,7 +858,7 @@ describe('BaseRegistry protected methods', () => {
       TokenType.syntheticRebase,
       TokenType.syntheticUri,
     ]) {
-      it(`should use the chain name of a single ${tokenType}`, () => {
+      it(`should use the chain name of a single config with ${tokenType}`, () => {
         const config = {
           arbitrum: {
             type: tokenType,
@@ -798,13 +873,13 @@ describe('BaseRegistry protected methods', () => {
         expect(path).to.equal('deployments/warp_routes/MULTI/arbitrum-deploy.yaml');
       });
 
-      it(`should use all the chain names if multiple ${tokenType}`, () => {
+      it(`should use all the chain names if multiple synthetic with ${tokenType}`, () => {
         const config = {
           arbitrum: {
             type: TokenType.synthetic,
           },
           polygon: {
-            type: TokenType.synthetic,
+            type: tokenType,
           },
           ethereum: {},
         } as unknown as WarpRouteDeployConfig;
