@@ -262,6 +262,13 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     throw new Error('TODO: Implement');
   }
 
+  async updateWarpRouteConfig(
+    _config: WarpRouteDeployConfig,
+    _options: AddWarpRouteConfigOptions,
+  ): Promise<void> {
+    throw new Error('TODO: Implement');
+  }
+
   public async getApiUrl(): Promise<string> {
     const { remaining, reset } = await this.getApiRateLimit();
     let apiHost = GITHUB_API_URL;

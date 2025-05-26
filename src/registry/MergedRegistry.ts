@@ -143,6 +143,16 @@ export class MergedRegistry implements IRegistry {
     );
   }
 
+  async updateWarpRouteConfig(
+    config: WarpRouteDeployConfig,
+    options: AddWarpRouteConfigOptions,
+  ): Promise<void> {
+    return this.multiRegistryWrite(
+      async (registry) => await registry.updateWarpRouteConfig(config, options),
+      'updating warp route deploy config',
+    );
+  }
+
   protected multiRegistryRead<R>(readFn: (registry: IRegistry) => Promise<R> | R) {
     return Promise.all(this.registries.map(readFn));
   }

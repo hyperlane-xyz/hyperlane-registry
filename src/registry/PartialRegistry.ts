@@ -106,6 +106,10 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
     throw new Error('Method not implemented.');
   }
 
+  updateWarpRouteConfig(_config: WarpRouteDeployConfig, _options: AddWarpRouteConfigOptions): void {
+    throw new Error('Method not implemented.');
+  }
+
   protected getWarpRoutesForIds(ids: WarpRouteId[]): WarpCoreConfig[] {
     return this.warpRoutes.filter((r) => {
       const id = warpRouteConfigToId(r as WarpCoreConfig);
