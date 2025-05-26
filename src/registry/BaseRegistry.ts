@@ -89,7 +89,7 @@ export abstract class BaseRegistry implements IRegistry {
       const syntheticSymbols = syntheticTokens.map((token) => token.symbol);
       const symbol = options?.symbol || syntheticSymbols[0];
 
-      warpRouteId = createWarpRouteConfigId(symbol, [...syntheticChains].join('-'));
+      warpRouteId = createWarpRouteConfigId(symbol, syntheticChains.join('-'));
     } else {
       // Only support one symbol per warp config for now
       const allChains = config.tokens.map((token) => token.chainName);
@@ -103,7 +103,7 @@ export abstract class BaseRegistry implements IRegistry {
       }
 
       const symbol = options?.symbol || [...allSymbols][0];
-      warpRouteId = createWarpRouteConfigId(symbol, [...allChains].join('-'));
+      warpRouteId = createWarpRouteConfigId(symbol, allChains.join('-'));
     }
     assert(
       warpRouteId.match(WARP_ROUTE_ID_REGEX),
