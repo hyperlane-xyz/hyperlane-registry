@@ -12,9 +12,6 @@ arbitrum:
   type: collateral
 base:
   owner: "0x3949eD0CD036D9FF662d97BD7aC1686051c4aeBF"
-  proxyAdmin:
-    address: "0xB6E9331576C5aBF69376AF6989eA61b7C7ea67F1"
-    owner: "0x3949eD0CD036D9FF662d97BD7aC1686051c4aeBF"
   remoteRouters:
     "1135":
       address: "0x0FC41a92F526A8CD22060A4052e156502D6B9db0"
@@ -24,9 +21,6 @@ base:
   type: collateral
 ethereum:
   owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
-  proxyAdmin:
-    address: "0x81063D413Ed6Eac3FCf0521eea14906fD27fEb1A"
-    owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
   remoteRouters:
     "1135":
       address: "0x0FC41a92F526A8CD22060A4052e156502D6B9db0"
@@ -36,22 +30,9 @@ ethereum:
   type: collateral
 lisk:
   owner: "0x22d952d3b9F493442731a3c7660aCaD98e55C00A"
-  proxyAdmin:
-    address: "0x81Db8B4Bc6F2e95781eeA2a21D0A453Ac046eFc0"
-    owner: "0x22d952d3b9F493442731a3c7660aCaD98e55C00A"
-    ownerOverrides:
-      _icaAddress: "0x22d952d3b9F493442731a3c7660aCaD98e55C00A"
-      _safeAddress: "0x831d0b06DF466263c06FFcD467cf91c6FA57c62C"
-      fallbackRoutingHook: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-      proxyAdmin: "0x22d952d3b9F493442731a3c7660aCaD98e55C00A"
-      testRecipient: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-      validatorAnnounce: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   type: synthetic
 optimism:
   owner: "0xbd7db3821806bc72D223F0AE521Bf82FcBd6Ef4d"
-  proxyAdmin:
-    address: "0xca9e64761C97b049901dF4E7a5926464969528b1"
-    owner: "0xbd7db3821806bc72D223F0AE521Bf82FcBd6Ef4d"
   remoteRouters:
     "1135":
       address: "0x0FC41a92F526A8CD22060A4052e156502D6B9db0"
@@ -61,9 +42,6 @@ optimism:
   type: collateral
 polygon:
   owner: "0xBDD25dd5203fedE33FD631e30fEF9b9eF2598ECE"
-  proxyAdmin:
-    address: "0x7fd5be37d560626625f395A2e6E30eA89150cc98"
-    owner: "0xBDD25dd5203fedE33FD631e30fEF9b9eF2598ECE"
   remoteRouters:
     "1135":
       address: "0x0FC41a92F526A8CD22060A4052e156502D6B9db0"
@@ -74,8 +52,5 @@ polygon:
 zeronetwork:
   gas: 300000
   owner: "0xCB21F61A3c8139F18e635d45aD1e62A4A61d2c3D"
-  proxyAdmin:
-    address: "0x6E906d8AeEBE9025a410887EAafc58C2561705e0"
-    owner: "0xCB21F61A3c8139F18e635d45aD1e62A4A61d2c3D"
   token: "0x6a6394F47DD0BAF794808F2749C09bd4Ee874E70"
   type: collateral
