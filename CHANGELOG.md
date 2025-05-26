@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 15.9.0
+
+### Minor Changes
+
+- 1e82651: Introduces configuration to support the deployment of the RDO Token across Ethereum and Binance Smart Chain (BSC).
+- c5b8e74: rename path to oUSDT route so that the symbol is consistent, USDT -> oUSDT
+
 ## 15.8.1
 
 ### Patch Changes
