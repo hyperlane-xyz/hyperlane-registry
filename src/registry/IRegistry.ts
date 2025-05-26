@@ -90,10 +90,6 @@ export interface IRegistry {
     config: WarpRouteDeployConfig,
     options: AddWarpRouteConfigOptions,
   ): MaybePromise<void>;
-  updateWarpRouteConfig(
-    config: WarpRouteDeployConfig,
-    options: AddWarpRouteConfigOptions,
-  ): MaybePromise<void>;
 
   getWarpDeployConfig(routeId: string): MaybePromise<WarpRouteDeployConfig | null>;
   getWarpDeployConfigs(filter?: WarpRouteFilterParams): MaybePromise<WarpDeployConfigMap>;
