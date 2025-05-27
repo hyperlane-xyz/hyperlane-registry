@@ -137,6 +137,16 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
     });
   }
 
+  updateWarpRouteConfig(warpConfig: WarpRouteDeployConfig, options: AddWarpRouteConfigOptions): void {
+    const filePath = path.join(this.uri, this.getWarpRouteDeployConfigPath(warpConfig, options));
+    if (!fs.existsSync(filePath)) throw Error(`Warp deploy config doesn't exist for: ${filePath}.`);
+
+    this.overwriteFile({
+      filePath,
+      data: toYamlString(warpConfig),
+    });
+  }
+
   protected listFiles(dirPath: string): string[] {
     if (!fs.existsSync(dirPath)) return [];
 
@@ -193,6 +203,13 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
       fs.mkdirSync(dirPath, {
         recursive: true,
       });
+    fs.writeFileSync(file.filePath, file.data);
+  }
+
+  protected overwriteFile(file: { filePath: string; data: string }): void {
+    if (!fs.existsSync(file.filePath)) {
+      throw new Error(`File does not exist: ${file.filePath}`);
+    }
     fs.writeFileSync(file.filePath, file.data);
   }
 

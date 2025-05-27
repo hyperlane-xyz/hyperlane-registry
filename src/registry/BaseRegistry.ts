@@ -131,6 +131,10 @@ export abstract class BaseRegistry implements IRegistry {
     warpConfig: WarpRouteDeployConfig,
     options: AddWarpRouteConfigOptions,
   ): MaybePromise<void>;
+  abstract updateWarpRouteConfig(
+    warpConfig: WarpRouteDeployConfig,
+    options: AddWarpRouteConfigOptions,
+  ): MaybePromise<void>;
 
   abstract getWarpDeployConfig(routeId: string): MaybePromise<WarpRouteDeployConfig | null>;
   abstract getWarpDeployConfigs(filter?: WarpRouteFilterParams): MaybePromise<WarpDeployConfigMap>;
