@@ -1,4 +1,4 @@
-import type { ChainMap, ChainName, TokenStandard, WarpCoreConfig } from '@hyperlane-xyz/sdk';
+import type { ChainMap, TokenStandard, WarpCoreConfig } from '@hyperlane-xyz/sdk';
 import { WARP_ROUTE_CONFIG_FILE_REGEX, WARP_ROUTE_DEPLOY_FILE_REGEX } from '../consts.js';
 import { ChainAddresses, WarpRouteId } from '../types.js';
 import { WarpRouteFilterParams } from './IRegistry.js';
@@ -59,17 +59,16 @@ function parseWarpRouteConfigPath(configRelativePath: string, regex: RegExp): Wa
   return createWarpRouteConfigId(tokenSymbol, label);
 }
 
-// TODO: <Move the original fn into the monorepo or Remove from it
 export function createWarpRouteConfigId(tokenSymbol: string, label: string): WarpRouteId {
   return `${tokenSymbol}/${label}`;
 }
 
 export function parseWarpRouteConfigId(routeId: WarpRouteId): {
   tokenSymbol: string;
-  chainNames: ChainName[];
+  label: string;
 } {
-  const [tokenSymbol, chains] = routeId.split('/');
-  return { tokenSymbol, chainNames: chains.split('-') };
+  const [tokenSymbol, label] = routeId.split('/');
+  return { tokenSymbol, label };
 }
 
 /**
@@ -79,12 +78,12 @@ export function filterWarpRoutesIds<T>(
   idMap: Record<WarpRouteId, T>,
   filter?: WarpRouteFilterParams,
 ): { ids: WarpRouteId[]; values: T[]; idMap: Record<WarpRouteId, T> } {
-  const filterChainName = filter?.chainName?.toLowerCase();
+  const filterLabel = filter?.label?.toLowerCase();
   const filterSymbol = filter?.symbol?.toLowerCase();
   const filtered = Object.entries(idMap).filter(([routeId]) => {
-    const { tokenSymbol, chainNames } = parseWarpRouteConfigId(routeId);
+    const { tokenSymbol, label } = parseWarpRouteConfigId(routeId);
     if (filterSymbol && tokenSymbol.toLowerCase() !== filterSymbol) return false;
-    if (filterChainName && !chainNames.includes(filterChainName)) return false;
+    if (filterLabel && !label.includes(filterLabel)) return false;
     return true;
   });
   const ids = filtered.map(([routeId]) => routeId);

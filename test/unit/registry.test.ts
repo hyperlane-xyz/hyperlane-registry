@@ -133,7 +133,7 @@ describe('Registry utilities', () => {
         const firstRoute = await registry.getWarpDeployConfig(routeIds[0]);
         const chains = Object.keys(firstRoute!);
         expect(chains.length).to.be.greaterThan(0);
-        const noRoutes = await registry.getWarpDeployConfigs({ chainName: 'NOTFOUND' });
+        const noRoutes = await registry.getWarpDeployConfigs({ label: 'NOTFOUND' });
         expect(Object.keys(noRoutes).length).to.eql(0);
       }
     }).timeout(10_000);

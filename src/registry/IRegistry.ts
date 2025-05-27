@@ -39,7 +39,7 @@ export interface UpdateChainParams {
 
 export interface WarpRouteFilterParams {
   symbol?: string;
-  chainName?: ChainName;
+  label?: string;
 }
 
 export enum RegistryType {
