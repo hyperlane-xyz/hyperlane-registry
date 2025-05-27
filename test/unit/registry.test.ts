@@ -265,8 +265,8 @@ describe('Registry utilities', () => {
       expect(fs.existsSync(configPath)).to.be.true;
 
       // Act
-      warpConfig[MOCK_CHAIN_NAME].owner = ' 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
-      warpConfig[MOCK_CHAIN_NAME2].owner = ' 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
+      warpConfig[MOCK_CHAIN_NAME].owner = '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
+      warpConfig[MOCK_CHAIN_NAME2].owner = '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
       registry.updateWarpRouteConfig(
         warpConfig,
         { symbol: MOCK_SYMBOL },
@@ -306,8 +306,8 @@ describe('Registry utilities', () => {
       expect(fs.existsSync(configPath)).to.be.true;
 
       // Act
-      warpConfig[MOCK_CHAIN_NAME].owner = ' 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
-      warpConfig[MOCK_CHAIN_NAME2].owner = ' 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
+      warpConfig[MOCK_CHAIN_NAME].owner = '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
+      warpConfig[MOCK_CHAIN_NAME2].owner = '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
       registry.updateWarpRouteConfig(
         warpConfig,
         { warpRouteId: MOCKED_WARP_ROUTE_ID },
