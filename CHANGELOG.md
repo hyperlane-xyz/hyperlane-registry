@@ -1,5 +1,25 @@
 # @hyperlane-xyz/registry
 
+## 15.10.1
+
+### Patch Changes
+
+- 1e37082: Updates the FileSystemRegistry to not throw when adding a warp route configuration. This essentially removes the need for an update function.
+- 331ff5f: add coingecko-id for DAI
+
+## 15.10.0
+
+### Minor Changes
+
+- f36b3c4: Add CHILL warp deploy
+
+## 15.9.0
+
+### Minor Changes
+
+- 1e82651: Introduces configuration to support the deployment of the RDO Token across Ethereum and Binance Smart Chain (BSC).
+- c5b8e74: rename path to oUSDT route so that the symbol is consistent, USDT -> oUSDT
+
 ## 15.8.1
 
 ### Patch Changes
