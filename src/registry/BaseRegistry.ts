@@ -103,7 +103,7 @@ export abstract class BaseRegistry implements IRegistry {
       }
 
       const symbol = options?.symbol || [...allSymbols][0];
-      warpRouteId = createWarpRouteConfigId(symbol, allChains.join('-'));
+      warpRouteId = createWarpRouteConfigId(symbol, allChains.sort().join('-'));
     }
     assert(
       warpRouteId.match(WARP_ROUTE_ID_REGEX),
@@ -144,7 +144,7 @@ export abstract class BaseRegistry implements IRegistry {
     } else if (objLength(syntheticChains) === 1) {
       warpRouteId = createWarpRouteConfigId(options.symbol, Object.keys(syntheticChains)[0]);
     } else {
-      warpRouteId = createWarpRouteConfigId(options.symbol, Object.keys(config).join('-'));
+      warpRouteId = createWarpRouteConfigId(options.symbol, Object.keys(config).sort().join('-'));
     }
 
     assert(
