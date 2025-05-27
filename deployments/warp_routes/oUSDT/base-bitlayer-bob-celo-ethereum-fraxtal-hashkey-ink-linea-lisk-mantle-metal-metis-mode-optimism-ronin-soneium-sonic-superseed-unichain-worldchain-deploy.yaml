@@ -103,17 +103,17 @@ bob:
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0x9e2fe7723b018d02cDE4f5cC1A9bC9C65b922Fc8"
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
         type: defaultFallbackRoutingIsm
-      - owner: "0x9e2fe7723b018d02cDE4f5cC1A9bC9C65b922Fc8"
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0x9e2fe7723b018d02cDE4f5cC1A9bC9C65b922Fc8"
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   ownerOverrides:
-    collateralProxyAdmin: "0x9e2fe7723b018d02cDE4f5cC1A9bC9C65b922Fc8"
-    collateralToken: "0x9e2fe7723b018d02cDE4f5cC1A9bC9C65b922Fc8"
+    collateralProxyAdmin: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    collateralToken: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
@@ -196,12 +196,17 @@ hashkey:
   interchainSecurityModule:
     modules:
       - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
         type: defaultFallbackRoutingIsm
-      - paused: false
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  ownerOverrides: {}
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  ownerOverrides:
+    collateralProxyAdmin: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    collateralToken: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
