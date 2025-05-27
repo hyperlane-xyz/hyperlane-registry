@@ -85,7 +85,7 @@ function updateCombinedChainFiles() {
 }
 
 function updateCombinedWarpRouteConfigsFile() {
-  console.log('Updating combined chain metadata and addresses files');
+  console.log('Updating combined warp route config files');
   const AUTO_GEN_PREFIX = '# AUTO-GENERATED; DO NOT EDIT MANUALLY';
   const combinedWarpRouteConfigs = stringify(warpRouteConfigs, { sortMapEntries: true });
   fs.writeFileSync(
