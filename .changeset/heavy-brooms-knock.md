@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Update eclipsemainnet ISM
+Add CHILL warp deploy

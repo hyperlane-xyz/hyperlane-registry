@@ -3244,7 +3244,7 @@ hyperliquidevmtestnet:
     - http: https://rpc.hyperliquid-testnet.xyz/evm
 immutablezkevmmainnet:
   blockExplorers:
-    - apiUrl: https://explorer.immutable.com/api/eth-rpc
+    - apiUrl: https://explorer.immutable.com/api
       family: blockscout
       name: Immutable Explorer
       url: https://explorer.immutable.com
@@ -3646,6 +3646,49 @@ kroma:
     - http: https://api.kroma.network
     - http: https://1rpc.io/kroma
   technicalStack: opstack
+kyve:
+  bech32Prefix: kyve
+  blockExplorers:
+    - apiUrl: https://explorer.kyve.network/kyve
+      family: other
+      name: Ping.Pub
+      url: https://explorer.kyve.network/kyve
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 1
+  canonicalAsset: ukyve
+  chainId: kyve-1
+  contractAddressBytes: 32
+  deployer:
+    name: KYVE
+    url: https://kyve.network
+  displayName: KYVE
+  domainId: 1264145989
+  gasCurrencyCoinGeckoId: kyve-network
+  gasPrice:
+    amount: "2.0"
+    denom: ukyve
+  grpcUrls:
+    - http: https://grpc-raw.kyve.network
+  index:
+    chunk: 10
+    from: 11592376
+  name: kyve
+  nativeToken:
+    decimals: 6
+    denom: ukyve
+    name: KYVE
+    symbol: KYVE
+  protocol: cosmosnative
+  restUrls:
+    - http: https://api.kyve.network
+  rpcUrls:
+    - http: https://rpc.kyve.network
+  slip44: 118
+  technicalStack: other
+  transactionOverrides:
+    gasPrice: "2.0"
 kyvetestnet:
   bech32Prefix: kyve
   blockExplorers:
@@ -4329,14 +4372,16 @@ miraclechain:
   blocks:
     confirmations: 1
     estimateBlockTime: 3
-    reorgPeriod: 5
+    reorgPeriod: 0
   chainId: 92278
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: Miraclechain
   domainId: 92278
   gasCurrencyCoinGeckoId: miracle-play
   index:
     from: 84964
-  isTestnet: false
   name: miraclechain
   nativeToken:
     decimals: 18
@@ -4655,6 +4700,32 @@ nero:
   transactionOverrides:
     maxFeePerGas: 10000000000
     maxPriorityFeePerGas: 1000000000
+neuratestnet:
+  blockExplorers:
+    - apiUrl: https://testnet-blockscout.infra.neuraprotocol.io/api
+      family: blockscout
+      name: Neura Testnet Explorer
+      url: https://testnet-blockscout.infra.neuraprotocol.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 267
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Neura Testnet
+  domainId: 267
+  isTestnet: true
+  name: neuratestnet
+  nativeToken:
+    decimals: 18
+    name: ANKR
+    symbol: ANKR
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.ankr.com/neura_testnet
+  technicalStack: other
 neutron:
   bech32Prefix: neutron
   blockExplorers:
@@ -4810,7 +4881,6 @@ ontology:
   displayName: Ontology
   domainId: 58
   gasCurrencyCoinGeckoId: ong
-  isTestnet: false
   name: ontology
   nativeToken:
     decimals: 18
@@ -5051,6 +5121,32 @@ osmosis:
   technicalStack: other
   transactionOverrides:
     gasPrice: "0.025"
+paradexsepolia:
+  blockExplorers:
+    - apiUrl: https://voyager.testnet.paradex.trade/api
+      family: voyager
+      name: Paradex Testnet Explorer
+      url: https://voyager.testnet.paradex.trade
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 4
+    reorgPeriod: 0
+  chainId: "0x505249564154455f534e5f504f54435f5345504f4c4941"
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Paradex Sepolia
+  domainId: 12263410
+  isTestnet: true
+  name: paradexsepolia
+  nativeToken:
+    decimals: 18
+    denom: "0x49D36570D4E46F48E99674BD3FCC84644DDD6B96F7C741B1562B82F9E004DC7"
+    name: EtherDUMMY_TOKEN
+    symbol: DT
+  protocol: starknet
+  rpcUrls:
+    - http: https://pathfinder.api.testnet.paradex.trade/rpc/v0_7
 peaq:
   blockExplorers:
     - apiUrl: https://peaq.subscan.io/api
@@ -5105,10 +5201,10 @@ piccadilly:
     - http: https://rpc1.piccadilly.autonity.org
 plume:
   blockExplorers:
-    - apiUrl: https://phoenix-explorer.plumenetwork.xyz/api
+    - apiUrl: https://explorer.plume.org/api
       family: blockscout
       name: Plume Explorer
-      url: https://phoenix-explorer.plumenetwork.xyz
+      url: https://explorer.plume.org
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -5129,14 +5225,14 @@ plume:
     symbol: PLUME
   protocol: ethereum
   rpcUrls:
-    - http: https://phoenix-rpc.plumenetwork.xyz
+    - http: https://rpc.plume.org
   technicalStack: arbitrumnitro
 plumetestnet2:
   blockExplorers:
-    - apiUrl: https://testnet-explorer.plumenetwork.xyz/api
+    - apiUrl: https://testnet-explorer.plume.org/api
       family: blockscout
       name: Plume Explorer
-      url: https://testnet-explorer.plumenetwork.xyz
+      url: https://testnet-explorer.plume.org
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -5158,7 +5254,7 @@ plumetestnet2:
     symbol: PLUME
   protocol: ethereum
   rpcUrls:
-    - http: https://testnet-rpc.plumenetwork.xyz
+    - http: https://testnet-rpc.plume.org
   technicalStack: arbitrumnitro
 polygon:
   blockExplorers:
@@ -6324,6 +6420,32 @@ sophonsepolia:
   rpcUrls:
     - http: https://rpc.testnet.sophon.xyz
   technicalStack: zksync
+starknetsepolia:
+  blockExplorers:
+    - apiUrl: https://sepolia.voyager.online/api
+      family: voyager
+      name: Starknet Sepolia Explorer
+      url: https://sepolia.voyager.online
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 5
+    reorgPeriod: 0
+  chainId: "0x534e5f5345504f4c4941"
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Starknet Sepolia
+  domainId: 23448591
+  isTestnet: true
+  name: starknetsepolia
+  nativeToken:
+    decimals: 18
+    denom: "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7"
+    name: Ether
+    symbol: ETH
+  protocol: starknet
+  rpcUrls:
+    - http: https://starknet-sepolia.public.blastapi.io/rpc/v0_7
 story:
   blockExplorers:
     - apiUrl: https://www.storyscan.xyz/api

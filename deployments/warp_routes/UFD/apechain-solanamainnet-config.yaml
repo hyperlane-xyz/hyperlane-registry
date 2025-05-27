@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xC58eeC72352b04358b0b6979ba10462190f0d54C"
+    chainName: apechain
+    connections:
+      - token: sealevel|solanamainnet|DTNQ9T9KYbB2rpnJxdwcZbnxB17G9jAiiSqU8fAf6uSS
+    decimals: 6
+    logoURI: /deployments/warp_routes/UFD/logo.svg
+    name: Unicorn Fart Dust
+    standard: EvmHypSynthetic
+    symbol: UFD
+  - addressOrDenom: DTNQ9T9KYbB2rpnJxdwcZbnxB17G9jAiiSqU8fAf6uSS
+    chainName: solanamainnet
+    coinGeckoId: unicorn-fart-dust
+    collateralAddressOrDenom: eL5fUxj2J4CiQsmW85k5FG9DvuQjjUoBHoQBi2Kpump
+    connections:
+      - token: ethereum|apechain|0xC58eeC72352b04358b0b6979ba10462190f0d54C
+    decimals: 6
+    logoURI: /deployments/warp_routes/UFD/logo.svg
+    name: Unicorn Fart Dust
+    standard: SealevelHypCollateral
+    symbol: UFD
