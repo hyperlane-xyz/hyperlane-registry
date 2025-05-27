@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 15.10.0
+
+### Minor Changes
+
+- f36b3c4: Add CHILL warp deploy
+
 ## 15.9.0
 
 ### Minor Changes
