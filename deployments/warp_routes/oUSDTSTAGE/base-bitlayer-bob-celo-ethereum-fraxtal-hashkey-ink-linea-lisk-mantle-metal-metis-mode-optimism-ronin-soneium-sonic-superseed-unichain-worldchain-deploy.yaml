@@ -92,6 +92,25 @@ bitlayer:
     warpRouteLimits:
       bufferCap: "25000000000"
       rateLimitPerSecond: "120000000"
+bob:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      bufferCap: "25000000000"
+      rateLimitPerSecond: "120000000"
 celo:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -136,6 +155,25 @@ ethereum:
       bufferCap: "25000000000"
       rateLimitPerSecond: "120000000"
 fraxtal:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      bufferCap: "25000000000"
+      rateLimitPerSecond: "120000000"
+hashkey:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:

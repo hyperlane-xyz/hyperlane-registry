@@ -98,6 +98,28 @@ bitlayer:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+bob:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x9e2fe7723b018d02cDE4f5cC1A9bC9C65b922Fc8"
+        type: defaultFallbackRoutingIsm
+      - owner: "0x9e2fe7723b018d02cDE4f5cC1A9bC9C65b922Fc8"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  owner: "0x9e2fe7723b018d02cDE4f5cC1A9bC9C65b922Fc8"
+  ownerOverrides:
+    collateralProxyAdmin: "0x9e2fe7723b018d02cDE4f5cC1A9bC9C65b922Fc8"
+    collateralToken: "0x9e2fe7723b018d02cDE4f5cC1A9bC9C65b922Fc8"
+  token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      bufferCap: "2000000000000"
+      rateLimitPerSecond: "500000000"
 celo:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -163,6 +185,23 @@ fraxtal:
   ownerOverrides:
     collateralProxyAdmin: "0x21C0CA5be5aC9BC6161Bf1cfE281A18Fe2190079"
     collateralToken: "0x21C0CA5be5aC9BC6161Bf1cfE281A18Fe2190079"
+  token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      bufferCap: "2000000000000"
+      rateLimitPerSecond: "500000000"
+hashkey:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        type: defaultFallbackRoutingIsm
+      - paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  ownerOverrides: {}
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
