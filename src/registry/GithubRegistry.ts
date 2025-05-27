@@ -232,7 +232,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
       return filteredWarpRouteConfigs;
     }
     const combinedDataUrl = this.getRawContentUrl(
-      `${this.getWarpRoutesPath}/warpRouteConfigs.yaml`,
+      `${this.getWarpRoutesPath()}/warpRouteConfigs.yaml`,
     );
     const warpRouteConfigs = await this.fetchYamlFile<WarpRouteConfigMap>(combinedDataUrl);
     this.isWarpRouteCacheFull = true;
