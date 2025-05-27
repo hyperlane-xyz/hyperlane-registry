@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 15.10.1
+
+### Patch Changes
+
+- 1e37082: Updates the FileSystemRegistry to not throw when adding a warp route configuration. This essentially removes the need for an update function.
+- 331ff5f: add coingecko-id for DAI
+
 ## 15.10.0
 
 ### Minor Changes
