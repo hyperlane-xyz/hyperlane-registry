@@ -118,9 +118,8 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     this.branch = options.branch ?? repoBranch ?? 'main';
     this.proxyUrl = options.proxyUrl;
     this.authToken = options.authToken;
-    this.isBrowser = options.isBrowser !== undefined
-      ? options.isBrowser
-      : typeof window !== 'undefined';
+    this.isBrowser =
+      options.isBrowser !== undefined ? options.isBrowser : typeof window !== 'undefined';
   }
 
   getUri(itemPath?: string): string {
@@ -228,9 +227,18 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   }
 
   async getWarpRoutes(filter?: WarpRouteFilterParams): Promise<WarpRouteConfigMap> {
-    const { warpRoutes } = (await this.listRegistryContent()).deployments;
-    const { ids: routeIds, values: routeConfigUrls } = filterWarpRoutesIds(warpRoutes, filter);
-    return this.readConfigs(routeIds, routeConfigUrls);
+    if (this.warpRouteCache && this.isWarpRouteCacheFull) {
+      const { idMap: filteredWarpRouteConfigs } = filterWarpRoutesIds(this.warpRouteCache, filter);
+      return filteredWarpRouteConfigs;
+    }
+    const combinedDataUrl = this.getRawContentUrl(
+      `${this.getWarpRoutesPath}/warpRouteConfigs.yaml`,
+    );
+    const warpRouteConfigs = await this.fetchYamlFile<WarpRouteConfigMap>(combinedDataUrl);
+    this.isWarpRouteCacheFull = true;
+    this.warpRouteCache = warpRouteConfigs;
+    const { idMap: filteredWarpRouteConfigs } = filterWarpRoutesIds(warpRouteConfigs, filter);
+    return filteredWarpRouteConfigs;
   }
 
   async getWarpDeployConfigs(filter?: WarpRouteFilterParams): Promise<WarpDeployConfigMap> {
