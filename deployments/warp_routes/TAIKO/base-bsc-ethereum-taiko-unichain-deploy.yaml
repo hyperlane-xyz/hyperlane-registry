@@ -1,0 +1,62 @@
+base:
+  interchainSecurityModule:
+    modules:
+      - relayer: "0xf0A0d6Bd4aA94F53F3FB2c88488202a9E9eD2c55"
+        type: trustedRelayerIsm
+      - domains: {}
+        owner: "0xf0A0d6Bd4aA94F53F3FB2c88488202a9E9eD2c55"
+        type: defaultFallbackRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
+  owner: "0xf0A0d6Bd4aA94F53F3FB2c88488202a9E9eD2c55"
+  type: synthetic
+bsc:
+  interchainSecurityModule:
+    modules:
+      - relayer: "0xf0A0d6Bd4aA94F53F3FB2c88488202a9E9eD2c55"
+        type: trustedRelayerIsm
+      - domains: {}
+        owner: "0xf0A0d6Bd4aA94F53F3FB2c88488202a9E9eD2c55"
+        type: defaultFallbackRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
+  owner: "0xf0A0d6Bd4aA94F53F3FB2c88488202a9E9eD2c55"
+  type: synthetic
+ethereum:
+  interchainSecurityModule:
+    modules:
+      - relayer: "0xf0A0d6Bd4aA94F53F3FB2c88488202a9E9eD2c55"
+        type: trustedRelayerIsm
+      - domains: {}
+        owner: "0xf0A0d6Bd4aA94F53F3FB2c88488202a9E9eD2c55"
+        type: defaultFallbackRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
+  owner: "0xf0A0d6Bd4aA94F53F3FB2c88488202a9E9eD2c55"
+  token: "0x10dea67478c5F8C5E2D90e5E9B26dBe60c54d800"
+  type: collateral
+taiko:
+  interchainSecurityModule:
+    modules:
+      - relayer: "0xf0A0d6Bd4aA94F53F3FB2c88488202a9E9eD2c55"
+        type: trustedRelayerIsm
+      - domains: {}
+        owner: "0xf0A0d6Bd4aA94F53F3FB2c88488202a9E9eD2c55"
+        type: defaultFallbackRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
+  owner: "0xf0A0d6Bd4aA94F53F3FB2c88488202a9E9eD2c55"
+  token: "0xA9d23408b9bA935c230493c40C73824Df71A0975"
+  type: collateral
+unichain:
+  interchainSecurityModule:
+    modules:
+      - relayer: "0xf0A0d6Bd4aA94F53F3FB2c88488202a9E9eD2c55"
+        type: trustedRelayerIsm
+      - domains: {}
+        owner: "0xf0A0d6Bd4aA94F53F3FB2c88488202a9E9eD2c55"
+        type: defaultFallbackRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
+  owner: "0xf0A0d6Bd4aA94F53F3FB2c88488202a9E9eD2c55"
+  type: synthetic
