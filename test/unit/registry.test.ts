@@ -12,7 +12,7 @@ import {
 } from '@hyperlane-xyz/sdk';
 import type { Logger } from 'pino';
 import fs from 'fs';
-import { CHAIN_FILE_REGEX } from '../../src/consts.js';
+import { CHAIN_FILE_REGEX, WARP_ROUTE_ID_REGEX } from '../../src/consts.js';
 import { FileSystemRegistry } from '../../src/fs/FileSystemRegistry.js';
 import { GITHUB_API_URL, GithubRegistry } from '../../src/registry/GithubRegistry.js';
 import {
@@ -27,6 +27,7 @@ import { getRegistry } from '../../src/fs/registry-utils.js';
 import { DEFAULT_GITHUB_REGISTRY, PROXY_DEPLOYED_URL } from '../../src/consts.js';
 import { parseGitHubPath } from '../../src/utils.js';
 import { BaseRegistry } from '../../src/registry/BaseRegistry.js';
+import RandExp from 'randexp';
 
 const GITHUB_REGISTRY_BRANCH = 'main';
 
@@ -216,8 +217,7 @@ describe('Registry utilities', () => {
     }).timeout(5_000);
 
     it(`Adds a warp route deploy config for ${registry.type} registry using the provided warp route id`, async () => {
-      const MOCKED_WARP_ROUTE_ID = 'OPTION/chain1-chain2';
-
+      const warpRouteId = new RandExp(WARP_ROUTE_ID_REGEX).gen();
       registry.addWarpRouteConfig(
         {
           [MOCK_CHAIN_NAME]: {
@@ -230,12 +230,12 @@ describe('Registry utilities', () => {
             owner: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
           },
         },
-        { warpRouteId: MOCKED_WARP_ROUTE_ID },
+        { warpRouteId: warpRouteId },
       );
-      const configPath = `deployments/warp_routes/${MOCKED_WARP_ROUTE_ID}-deploy.yaml`;
+      const configPath = `deployments/warp_routes/${warpRouteId}-deploy.yaml`;
       expect(fs.existsSync(configPath)).to.be.true;
       fs.unlinkSync(configPath);
-      fs.rmdirSync(`deployments/warp_routes/${MOCKED_WARP_ROUTE_ID.split('/')[0]}`);
+      fs.rmdirSync(`deployments/warp_routes/${warpRouteId.split('/')[0]}`);
     }).timeout(5_000);
   }
 
@@ -858,15 +858,16 @@ describe('BaseRegistry protected methods', () => {
 
   describe('getWarpRouteDeployConfigPath', () => {
     it('should use warpRouteId from options when provided', () => {
+      const warpRouteId = new RandExp(WARP_ROUTE_ID_REGEX).gen();
       const config = {
         ethereum: {},
         polygon: {},
       } as unknown as WarpRouteDeployConfig;
-      const options = { warpRouteId: 'ETH/custom-route-id' };
+      const options = { warpRouteId };
 
       const path = testRegistry.exposeGetWarpRouteDeployConfigPath(config, options);
 
-      expect(path).to.equal('deployments/warp_routes/ETH/custom-route-id-deploy.yaml');
+      expect(path).to.equal(`deployments/warp_routes/${warpRouteId}-deploy.yaml`);
     });
 
     it('should create route ID from symbol and chains when warpRouteId is not provided', () => {
