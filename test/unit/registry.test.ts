@@ -9,6 +9,9 @@ import {
   type WarpCoreConfig,
   TokenType,
 } from '@hyperlane-xyz/sdk';
+import {
+  deepEquals,
+} from '@hyperlane-xyz/utils';
 import type { Logger } from 'pino';
 import fs from 'fs';
 import { CHAIN_FILE_REGEX } from '../../src/consts.js';
@@ -27,6 +30,7 @@ import { getRegistry } from '../../src/fs/registry-utils.js';
 import { DEFAULT_GITHUB_REGISTRY, PROXY_DEPLOYED_URL } from '../../src/consts.js';
 import { parseGitHubPath } from '../../src/utils.js';
 import { BaseRegistry } from '../../src/registry/BaseRegistry.js';
+import { parse as yamlParse } from 'yaml';
 
 const GITHUB_REGISTRY_BRANCH = 'main';
 
@@ -234,6 +238,87 @@ describe('Registry utilities', () => {
       );
       const configPath = `deployments/warp_routes/${MOCKED_WARP_ROUTE_ID}-deploy.yaml`;
       expect(fs.existsSync(configPath)).to.be.true;
+      fs.unlinkSync(configPath);
+      fs.rmdirSync(`deployments/warp_routes/${MOCKED_WARP_ROUTE_ID.split('/')[0]}`);
+    }).timeout(5_000);
+
+    it(`Updates a warp route deploy config for ${registry.type} registry using the provided symbol`, async () => {
+      // Arrange
+      const warpConfig: WarpRouteDeployConfig = {
+          [MOCK_CHAIN_NAME]: {
+            type: TokenType.collateral,
+            owner: '0x0000000000000000000000000000000000000001',
+            token: '0x0000000000000000000000000000000000000001',
+          },
+          [MOCK_CHAIN_NAME2]: {
+            type: TokenType.synthetic,
+            owner: '0x0000000000000000000000000000000000000001',
+          },
+        }
+
+      registry.addWarpRouteConfig(
+        warpConfig,
+        { symbol: MOCK_SYMBOL },
+      );
+      const outputBasePath = `deployments/warp_routes/${MOCK_SYMBOL}/${MOCK_CHAIN_NAME2}-`;
+      const configPath = `${outputBasePath}deploy.yaml`;
+      expect(fs.existsSync(configPath)).to.be.true;
+
+      // Act
+      warpConfig[MOCK_CHAIN_NAME].owner = ' 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
+      warpConfig[MOCK_CHAIN_NAME2].owner = ' 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
+      registry.updateWarpRouteConfig(
+        warpConfig,
+        { symbol: MOCK_SYMBOL },
+      )
+
+      // Assert
+      expect(deepEquals(
+        yamlParse(fs.readFileSync(configPath, 'utf8')),
+        warpConfig
+      )).to.be.true;
+
+      fs.unlinkSync(configPath);
+      fs.rmdirSync(`deployments/warp_routes/${MOCK_SYMBOL}`);
+    }).timeout(5_000);
+
+    it(`Updates a warp route deploy config for ${registry.type} registry using the provided warp route id`, async () => {
+      // Arrange
+      const MOCKED_WARP_ROUTE_ID = 'OPTION/chain1-chain2';
+
+      const warpConfig: WarpRouteDeployConfig = {
+        [MOCK_CHAIN_NAME]: {
+          type: TokenType.collateral,
+          owner: '0x0000000000000000000000000000000000000001',
+          token: '0x0000000000000000000000000000000000000001',
+        },
+        [MOCK_CHAIN_NAME2]: {
+          type: TokenType.synthetic,
+          owner: '0x0000000000000000000000000000000000000001',
+        },
+      }
+
+      registry.addWarpRouteConfig(
+        warpConfig,
+        { warpRouteId: MOCKED_WARP_ROUTE_ID },
+      );
+      const configPath = `deployments/warp_routes/${MOCKED_WARP_ROUTE_ID}-deploy.yaml`;
+      expect(fs.existsSync(configPath)).to.be.true;
+
+      // Act
+      warpConfig[MOCK_CHAIN_NAME].owner = ' 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
+      warpConfig[MOCK_CHAIN_NAME2].owner = ' 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
+      registry.updateWarpRouteConfig(
+        warpConfig,
+        { warpRouteId: MOCKED_WARP_ROUTE_ID },
+      )
+
+      // Assert
+      expect(deepEquals(
+        yamlParse(fs.readFileSync(`deployments/warp_routes/${MOCKED_WARP_ROUTE_ID}-deploy.yaml`, 'utf8')),
+        warpConfig
+      )).to.be.true;
+
       fs.unlinkSync(configPath);
       fs.rmdirSync(`deployments/warp_routes/${MOCKED_WARP_ROUTE_ID.split('/')[0]}`);
     }).timeout(5_000);
@@ -633,6 +718,7 @@ class TestBaseRegistry extends BaseRegistry {
   }
   async addWarpRoute() {}
   async addWarpRouteConfig() {}
+  async updateWarpRouteConfig() {}
   async getWarpDeployConfig() {
     return null;
   }
