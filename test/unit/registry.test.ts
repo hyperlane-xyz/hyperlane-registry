@@ -19,7 +19,6 @@ import {
   RegistryType,
   AddWarpRouteConfigOptions,
   RegistryContent,
-  AddWarpRouteConfigOptions,
 } from '../../src/registry/IRegistry.js';
 import { MergedRegistry } from '../../src/registry/MergedRegistry.js';
 import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
