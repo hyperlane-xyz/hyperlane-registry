@@ -119,9 +119,10 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
   }
 
   addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteConfigOptions): void {
-    const configPath = this.getWarpRouteCoreConfigPath(config, options);
+    const filePath = path.join(this.uri, this.getWarpRouteCoreConfigPath(config, options));
+
     this.createFile({
-      filePath: path.join(this.uri, configPath),
+      filePath,
       data: toYamlString(config, SCHEMA_REF),
     });
   }
