@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-added ozean poseidon tesnet
+added ozean poseidon testnet
