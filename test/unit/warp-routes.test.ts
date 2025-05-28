@@ -89,7 +89,7 @@ describe('Warp Core Configs', () => {
       const { label: derivedLabel } = parseWarpRouteConfigId(derivedId);
 
       // Verify the chain names match
-      expect(label).to.deep.equal(derivedLabel, 'Chain names in ID must match derived chain names');
+      expect(label).to.deep.equal(derivedLabel, 'Label in ID must match derived label');
     });
 
     it(`WarpCore ${id} only specifies a coinGeckoId for tokens that escrow tokens`, () => {
