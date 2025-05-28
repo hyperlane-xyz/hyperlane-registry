@@ -66,6 +66,14 @@ base:
   xERC20:
     extraBridges:
       - limits:
+          bufferCap: "0"
+          rateLimitPerSecond: "0"
+        lockbox: "0x9d922c23d78179c2e75fe394fc8e49363f2dda85"
+      - limits:
+          bufferCap: "0"
+          rateLimitPerSecond: "0"
+        lockbox: "0xe92e51d99ae33114c60d9621fb2e1ec0acea7e30"
+      - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
         lockbox: "0xa760D20a91C076A57b270D3F7a3150421ab40591"
@@ -486,6 +494,14 @@ optimism:
   type: xERC20
   xERC20:
     extraBridges:
+      - limits:
+          bufferCap: "0"
+          rateLimitPerSecond: "0"
+        lockbox: "0x07e437d73e9e43ceece6ea14085b26159e3f7f31"
+      - limits:
+          bufferCap: "0"
+          rateLimitPerSecond: "0"
+        lockbox: "0x18c4cdc2d774c047eac8375bb09853c4d6d6df36"
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
