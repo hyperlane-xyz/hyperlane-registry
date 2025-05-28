@@ -85,11 +85,11 @@ export abstract class BaseRegistry implements IRegistry {
     if (options && 'warpRouteId' in options) {
       warpRouteId = options.warpRouteId;
     } else if (syntheticTokens.length === 1) {
-      const syntheticChains = syntheticTokens.map((token) => token.chainName);
-      const syntheticSymbols = syntheticTokens.map((token) => token.symbol);
-      const symbol = options?.symbol || syntheticSymbols[0];
+      const syntheticChain = syntheticTokens[0].chainName;
+      const syntheticSymbol = syntheticTokens[0].symbol;
+      const symbol = options?.symbol || syntheticSymbol;
 
-      warpRouteId = createWarpRouteConfigId(symbol, syntheticChains.join('-'));
+      warpRouteId = createWarpRouteConfigId(symbol, syntheticChain);
     } else {
       // Only support one symbol per warp config for now
       const allChains = config.tokens.map((token) => token.chainName);
