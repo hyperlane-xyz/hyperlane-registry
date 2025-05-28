@@ -1,15 +1,19 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://poseidon-testnet.explorer.caldera.xyz/api-docs
+  - apiUrl: https://poseidon-testnet.explorer.caldera.xyz/api
     family: blockscout
     name: Ozean Poseidon Explorer
-    url: https://poseidon-testnet.explorer.caldera.xyz/
+    url: https://poseidon-testnet.explorer.caldera.xyz
+blocks:
+  confirmations: 1
+  estimateBlockTime: 2
+  reorgPeriod: 1
 chainId: 31911
 deployer:
   name: Linuz
   url: https://github.com/0xlinus
 displayName: Ozean Poseidon Testnet
-domainId: 3441006
+domainId: 31911
 isTestnet: true
 name: ozeanposeidontestnet
 nativeToken:
