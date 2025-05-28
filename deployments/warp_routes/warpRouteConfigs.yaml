@@ -4246,6 +4246,27 @@ USDCSTAGE/arbitrum-base-ethereum-ink-optimism-solanamainnet-superseed:
       name: USD Coin
       standard: SealevelHypCollateral
       symbol: USDCSTAGE
+USDN/auroratestnet-nobletestnet:
+  tokens:
+    - addressOrDenom: "0x2d10ad108d26384329Ac879476Ae0F4cc0531DEC"
+      chainName: auroratestnet
+      connections:
+        - token: cosmosnative|nobletestnet|0x726f757465725f61707000000000000000000000000000010000000000000000
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDN/logo.svg
+      name: Noble Dollar
+      standard: EvmHypSynthetic
+      symbol: USDN
+    - addressOrDenom: "0x726f757465725f61707000000000000000000000000000010000000000000000"
+      chainName: nobletestnet
+      collateralAddressOrDenom: uusdn
+      connections:
+        - token: ethereum|auroratestnet|0x2d10ad108d26384329Ac879476Ae0F4cc0531DEC
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDN/logo.svg
+      name: Noble Dollar
+      standard: CosmosNativeHypCollateral
+      symbol: USDN
 USDT/arbitrum-bsc-kalychain-polygon:
   tokens:
     - addressOrDenom: "0xFDb3307a16442ed5A7C040AE1600a3B3D3C8e7D9"
