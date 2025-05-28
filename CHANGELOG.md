@@ -1,5 +1,18 @@
 # @hyperlane-xyz/registry
 
+## 15.11.0
+
+### Minor Changes
+
+- 4a7a13f: Add test to ensure Starknet chains have reorgPeriod of 1
+- e0a0fa5: Added metadata.json and logo for bbSOL
+- 397da55: Add USDN warp route deployment on Aurora testnet.
+- 1c2ae01: Include combined warp route configs in repository
+
+### Patch Changes
+
+- 4a7a13f: Fixed starknetsepolia BlockTime & adjusted reorgPeriod for Starknet chains
+
 ## 15.10.1
 
 ### Patch Changes
