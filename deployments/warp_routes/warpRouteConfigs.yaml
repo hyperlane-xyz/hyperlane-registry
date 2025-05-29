@@ -2580,28 +2580,37 @@ RDO/bsc:
       name: RDO Token
       standard: EvmHypSynthetic
       symbol: RDO
-REZ/base-ethereum:
+REZ/base-ethereum-unichain:
   tokens:
-    - addressOrDenom: "0xF4eae2f139D8032b8410Fef46f6873cD71A0FD76"
+    - addressOrDenom: "0xD23f3de954eeF59752DF0ca614403B1377F9302A"
       chainName: base
-      collateralAddressOrDenom: "0xf757c9804cF2EE8d8Ed64e0A8936293Fe43a7252"
+      collateralAddressOrDenom: "0x19c5C2316171A2cff8773435a9A5F3f0e3eaB14B"
       connections:
-        - token: ethereum|ethereum|0xc32848c38Dd5A5098Cd53d33e425c1013a4E06A8
+        - token: ethereum|ethereum|0x9c48903a8b95d7a208dC45a1905da271108dD56a
+        - token: ethereum|unichain|0x644bD9f172a890d769F7A82D533f799051E1A07f
       decimals: 18
-      logoURI: /deployments/warp_routes/REZ/REZ-logo.svg
-      name: Renzo
+      name: REZ
       standard: EvmHypXERC20
       symbol: REZ
-    - addressOrDenom: "0xc32848c38Dd5A5098Cd53d33e425c1013a4E06A8"
+    - addressOrDenom: "0x9c48903a8b95d7a208dC45a1905da271108dD56a"
       chainName: ethereum
-      coinGeckoId: renzo
-      collateralAddressOrDenom: "0xd8B543fEac4EEcEF5a46a926e10D6f4a72de6fE0"
+      collateralAddressOrDenom: "0xc693943eACc1Cb74b748Cf1B953946970b239279"
       connections:
-        - token: ethereum|base|0xF4eae2f139D8032b8410Fef46f6873cD71A0FD76
+        - token: ethereum|base|0xD23f3de954eeF59752DF0ca614403B1377F9302A
+        - token: ethereum|unichain|0x644bD9f172a890d769F7A82D533f799051E1A07f
       decimals: 18
-      logoURI: /deployments/warp_routes/REZ/REZ-logo.svg
-      name: Renzo
+      name: REZ
       standard: EvmHypXERC20Lockbox
+      symbol: REZ
+    - addressOrDenom: "0x644bD9f172a890d769F7A82D533f799051E1A07f"
+      chainName: unichain
+      collateralAddressOrDenom: "0x19c5C2316171A2cff8773435a9A5F3f0e3eaB14B"
+      connections:
+        - token: ethereum|base|0xD23f3de954eeF59752DF0ca614403B1377F9302A
+        - token: ethereum|ethereum|0x9c48903a8b95d7a208dC45a1905da271108dD56a
+      decimals: 18
+      name: REZ
+      standard: EvmHypXERC20
       symbol: REZ
 Re7LRT/zircuit:
   tokens:
