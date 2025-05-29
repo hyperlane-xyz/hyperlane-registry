@@ -121,6 +121,11 @@ bob:
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
+    extraBridges:
+      - limits:
+          bufferCap: "20000000000000"
+          rateLimitPerSecond: "5000000000"
+        lockbox: "0xAFEd606Bd2CAb6983fC6F10167c98aaC2173D77f"
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
@@ -223,6 +228,11 @@ hashkey:
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
+    extraBridges:
+      - limits:
+          bufferCap: "20000000000000"
+          rateLimitPerSecond: "5000000000"
+        lockbox: "0x55aeb80Aa6Ab34aA83E1F387903F8Bb2Aa9e2F2d"
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
