@@ -71,7 +71,7 @@ export abstract class BaseRegistry implements IRegistry {
     config: WarpCoreConfig,
     options?: AddWarpRouteConfigOptions,
   ): WarpRouteId {
-    assert(config?.tokens?.length, 'Cannot generate ID for empty warp config');
+    assert(config?.tokens?.length > 0, 'Cannot generate ID for empty warp config');
 
     const syntheticTokens = config.tokens.filter((token) =>
       [
