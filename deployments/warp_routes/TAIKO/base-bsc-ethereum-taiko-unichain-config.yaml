@@ -1,62 +1,46 @@
 # yaml-language-server: $schema=../schema.json
 tokens:
-  - addressOrDenom: "0xb3c291F98322Ad64b1E25E0e3c06c555295a86fE"
-    chainName: base
-    connections:
-      - token: ethereum|bsc|0xb951E2377D28a1b5a027540dE36dB4a856F02fa4
-      - token: ethereum|ethereum|0x686b07b1300B0A13f327682EA50D6BB47a231e0B
-      - token: ethereum|taiko|0x564FD31c37BB52b028FE3fCE7677594429c4C151
-      - token: ethereum|unichain|0x9244f9A676e9fA7ad2b741511FCbB1d4DC68C128
-    decimals: 18
-    name: Taiko Token
-    standard: EvmHypSynthetic
-    symbol: TAIKO
-    logoURI: /deployments/warp_routes/TAIKO/logo.svg
-  - addressOrDenom: "0xb951E2377D28a1b5a027540dE36dB4a856F02fa4"
-    chainName: bsc
-    connections:
-      - token: ethereum|base|0xb3c291F98322Ad64b1E25E0e3c06c555295a86fE
-      - token: ethereum|ethereum|0x686b07b1300B0A13f327682EA50D6BB47a231e0B
-      - token: ethereum|taiko|0x564FD31c37BB52b028FE3fCE7677594429c4C151
-      - token: ethereum|unichain|0x9244f9A676e9fA7ad2b741511FCbB1d4DC68C128
-    decimals: 18
-    name: Taiko Token
-    standard: EvmHypSynthetic
-    symbol: TAIKO
-    logoURI: /deployments/warp_routes/TAIKO/logo.svg
-  - addressOrDenom: "0x686b07b1300B0A13f327682EA50D6BB47a231e0B"
+  - addressOrDenom: "0x2C9423C718a603877eA8ea922BF1650834C92a83"
     chainName: ethereum
     collateralAddressOrDenom: "0x10dea67478c5F8C5E2D90e5E9B26dBe60c54d800"
     connections:
-      - token: ethereum|base|0xb3c291F98322Ad64b1E25E0e3c06c555295a86fE
-      - token: ethereum|bsc|0xb951E2377D28a1b5a027540dE36dB4a856F02fa4
-      - token: ethereum|taiko|0x564FD31c37BB52b028FE3fCE7677594429c4C151
-      - token: ethereum|unichain|0x9244f9A676e9fA7ad2b741511FCbB1d4DC68C128
+      - token: ethereum|taiko|0xa8Bb74D861194E3beAF545E3fB1fBf014d593995
+      - token: ethereum|base|0xb951E2377D28a1b5a027540dE36dB4a856F02fa4
+      - token: ethereum|bsc|0x4D7cCf5E31618C2Bf3AEdD3520C40dd537697894
     decimals: 18
     name: Taiko Token
     standard: EvmHypCollateral
     symbol: TAIKO
     logoURI: /deployments/warp_routes/TAIKO/logo.svg
-  - addressOrDenom: "0x564FD31c37BB52b028FE3fCE7677594429c4C151"
+  - addressOrDenom: "0xa8Bb74D861194E3beAF545E3fB1fBf014d593995"
     chainName: taiko
     collateralAddressOrDenom: "0xA9d23408b9bA935c230493c40C73824Df71A0975"
     connections:
-      - token: ethereum|base|0xb3c291F98322Ad64b1E25E0e3c06c555295a86fE
-      - token: ethereum|bsc|0xb951E2377D28a1b5a027540dE36dB4a856F02fa4
-      - token: ethereum|ethereum|0x686b07b1300B0A13f327682EA50D6BB47a231e0B
-      - token: ethereum|unichain|0x9244f9A676e9fA7ad2b741511FCbB1d4DC68C128
+      - token: ethereum|ethereum|0x2C9423C718a603877eA8ea922BF1650834C92a83
+      - token: ethereum|base|0xb951E2377D28a1b5a027540dE36dB4a856F02fa4
+      - token: ethereum|bsc|0x4D7cCf5E31618C2Bf3AEdD3520C40dd537697894
     decimals: 18
     name: Taiko Token
     standard: EvmHypCollateral
     symbol: TAIKO
     logoURI: /deployments/warp_routes/TAIKO/logo.svg
-  - addressOrDenom: "0x9244f9A676e9fA7ad2b741511FCbB1d4DC68C128"
-    chainName: unichain
+  - addressOrDenom: "0xb951E2377D28a1b5a027540dE36dB4a856F02fa4"
+    chainName: base
     connections:
-      - token: ethereum|base|0xb3c291F98322Ad64b1E25E0e3c06c555295a86fE
-      - token: ethereum|bsc|0xb951E2377D28a1b5a027540dE36dB4a856F02fa4
-      - token: ethereum|ethereum|0x686b07b1300B0A13f327682EA50D6BB47a231e0B
-      - token: ethereum|taiko|0x564FD31c37BB52b028FE3fCE7677594429c4C151
+      - token: ethereum|ethereum|0x2C9423C718a603877eA8ea922BF1650834C92a83
+      - token: ethereum|taiko|0xa8Bb74D861194E3beAF545E3fB1fBf014d593995
+      - token: ethereum|bsc|0x4D7cCf5E31618C2Bf3AEdD3520C40dd537697894
+    decimals: 18
+    name: Taiko Token
+    standard: EvmHypSynthetic
+    symbol: TAIKO
+    logoURI: /deployments/warp_routes/TAIKO/logo.svg
+  - addressOrDenom: "0x4D7cCf5E31618C2Bf3AEdD3520C40dd537697894"
+    chainName: bsc
+    connections:
+      - token: ethereum|ethereum|0x2C9423C718a603877eA8ea922BF1650834C92a83
+      - token: ethereum|taiko|0xa8Bb74D861194E3beAF545E3fB1fBf014d593995
+      - token: ethereum|base|0xb951E2377D28a1b5a027540dE36dB4a856F02fa4
     decimals: 18
     name: Taiko Token
     standard: EvmHypSynthetic
