@@ -1,5 +1,20 @@
 # @hyperlane-xyz/registry
 
+## 16.0.0
+
+### Major Changes
+
+- d8c5039: Update Warp Core Config warp route Id generation logic to accept a specified warpRouteId, use the a synthetic token, or fallback to original chain names algo. Related util functions such as createWarpRouteConfigId no longer contains warpRouteId generation logic and instead only accepts a symbol and label. The logic has been moved to warpRouteConfigToId static method.
+
+### Minor Changes
+
+- 8a097f3: Add REZ extension config for Unichain
+- 5e10fb5: Add logoURI to missing ETH routes
+
+### Patch Changes
+
+- db7d740: Add TGT coingeckoId
+
 ## 15.11.0
 
 ### Minor Changes
