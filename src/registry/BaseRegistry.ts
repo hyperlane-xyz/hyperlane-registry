@@ -2,13 +2,13 @@ import type { Logger } from 'pino';
 
 import {
   HypTokenRouterConfig,
-  TokenType,
   ChainMap,
   ChainMetadata,
   ChainName,
   WarpCoreConfig,
   WarpRouteDeployConfig,
-  TokenStandard,
+  isSyntheticTokenConfig,
+  isSyntheticRebaseTokenConfig,
 } from '@hyperlane-xyz/sdk';
 import { assert, objFilter, objLength } from '@hyperlane-xyz/utils';
 import type { ChainAddresses, MaybePromise, WarpDeployConfigMap, WarpRouteId } from '../types.js';
@@ -23,7 +23,7 @@ import type {
   WarpRouteFilterParams,
 } from './IRegistry.js';
 import { MergedRegistry } from './MergedRegistry.js';
-import { createWarpRouteConfigId } from './warp-utils.js';
+import { createWarpRouteConfigId, syntheticTokenStandards } from './warp-utils.js';
 import { WARP_ROUTE_ID_REGEX } from '../consts.js';
 
 export abstract class BaseRegistry implements IRegistry {
@@ -74,11 +74,7 @@ export abstract class BaseRegistry implements IRegistry {
     assert(config?.tokens?.length > 0, 'Cannot generate ID for empty warp config');
 
     const syntheticTokens = config.tokens.filter((token) =>
-      [
-        TokenStandard.EvmHypSynthetic,
-        TokenStandard.EvmHypSyntheticRebase,
-        TokenStandard.SealevelHypSynthetic,
-      ].includes(token.standard),
+      syntheticTokenStandards.includes(token.standard),
     );
 
     let warpRouteId;
@@ -135,8 +131,10 @@ export abstract class BaseRegistry implements IRegistry {
   static warpDeployConfigToId(config: WarpRouteDeployConfig, options: AddWarpRouteConfigOptions) {
     assert(objLength(config) > 0, 'Cannot generate ID for empty warp deploy config');
 
-    const syntheticChains = objFilter(config, (_, c): c is HypTokenRouterConfig =>
-      [TokenType.synthetic, TokenType.syntheticRebase, TokenType.syntheticUri].includes(c.type),
+    const syntheticChains = objFilter(
+      config,
+      (_, c): c is HypTokenRouterConfig =>
+        isSyntheticTokenConfig(c) || isSyntheticRebaseTokenConfig(c),
     );
     let warpRouteId;
     if ('warpRouteId' in options) {

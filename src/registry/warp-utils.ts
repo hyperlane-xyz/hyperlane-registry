@@ -1,4 +1,9 @@
-import type { ChainMap, TokenStandard, WarpCoreConfig } from '@hyperlane-xyz/sdk';
+import {
+  TOKEN_HYP_STANDARDS,
+  TokenStandard,
+  type ChainMap,
+  type WarpCoreConfig,
+} from '@hyperlane-xyz/sdk';
 import { WARP_ROUTE_CONFIG_FILE_REGEX, WARP_ROUTE_DEPLOY_FILE_REGEX } from '../consts.js';
 import { ChainAddresses, WarpRouteId } from '../types.js';
 import { WarpRouteFilterParams } from './IRegistry.js';
@@ -90,3 +95,15 @@ export function filterWarpRoutesIds<T>(
   const values = filtered.map(([, value]) => value);
   return { ids, values, idMap: Object.fromEntries(filtered) };
 }
+
+// TODO: Move this to the SDK
+export const syntheticTokenStandards = TOKEN_HYP_STANDARDS.filter((standard) =>
+  new Set([
+    TokenStandard.EvmHypSynthetic,
+    TokenStandard.EvmHypSyntheticRebase,
+    TokenStandard.SealevelHypSynthetic,
+    TokenStandard.CwHypSynthetic,
+    TokenStandard.CosmNativeHypSynthetic,
+    TokenStandard.StarknetHypSynthetic,
+  ]).has(standard),
+);

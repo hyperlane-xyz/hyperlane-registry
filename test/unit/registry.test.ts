@@ -904,6 +904,7 @@ describe('BaseRegistry protected methods', () => {
         const config = {
           arbitrum: {
             type: tokenType,
+            collateralChainName: 'optimism',
           },
           polygon: {},
           ethereum: {},
@@ -922,6 +923,7 @@ describe('BaseRegistry protected methods', () => {
           },
           polygon: {
             type: tokenType,
+            collateralChainName: 'optimism',
           },
           ethereum: {},
         } as unknown as WarpRouteDeployConfig;
