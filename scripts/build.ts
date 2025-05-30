@@ -3,8 +3,8 @@ import { ChainMetadataSchemaObject, WarpCoreConfigSchema } from '@hyperlane-xyz/
 import fs from 'fs';
 import { parse, stringify } from 'yaml';
 import { zodToJsonSchema } from 'zod-to-json-schema';
-import { warpRouteConfigToId } from '../src/registry/warp-utils';
 
+import { BaseRegistry } from '../src/registry/BaseRegistry';
 const chainMetadata = {};
 const chainAddresses = {};
 const warpRouteConfigs = {};
@@ -84,6 +84,16 @@ function updateCombinedChainFiles() {
   fs.writeFileSync('./chains/addresses.yaml', `${AUTO_GEN_PREFIX}\n${combinedAddresses}`);
 }
 
+function updateCombinedWarpRouteConfigsFile() {
+  console.log('Updating combined warp route config files');
+  const AUTO_GEN_PREFIX = '# AUTO-GENERATED; DO NOT EDIT MANUALLY';
+  const combinedWarpRouteConfigs = stringify(warpRouteConfigs, { sortMapEntries: true });
+  fs.writeFileSync(
+    './deployments/warp_routes/warpRouteConfigs.yaml',
+    `${AUTO_GEN_PREFIX}\n${combinedWarpRouteConfigs}`,
+  );
+}
+
 function createWarpConfigFiles() {
   console.log('Parsing and copying warp config data');
   const warpPathBase = 'deployments/warp_routes';
@@ -102,7 +112,7 @@ function createWarpConfigFiles() {
       const [warpFileName] = warpFile.split('.');
       const config = parse(fs.readFileSync(`${inDirPath}/${warpFile}`, 'utf8'));
       //Situations where a config contains multiple symbols are not officially supported yet.
-      const id = warpRouteConfigToId(config, config.tokens[0].symbol);
+      const id = BaseRegistry.warpRouteConfigToId(config, { symbol: config.tokens[0].symbol });
       warpRouteConfigs[id] = config;
       fs.mkdirSync(`${assetOutPath}`, { recursive: true });
       fs.mkdirSync(`${tsOutPath}`, { recursive: true });
@@ -190,6 +200,7 @@ createTmpDir();
 createChainFiles();
 updateCombinedChainFiles();
 createWarpConfigFiles();
+updateCombinedWarpRouteConfigsFile();
 generateChainTsCode();
 generateWarpConfigTsCode();
 updateJsonSchemas();
