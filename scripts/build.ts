@@ -112,8 +112,8 @@ function createWarpConfigFiles() {
       if (!warpFile.endsWith('config.yaml')) continue;
       const [warpFileName] = warpFile.split('.');
       // Remove the -config suffix from the filename
-      const routeName = warpFileName.replace('-config', '');
-      const warpRouteId = `${warpDir}/${routeName}`;
+      const label = warpFileName.replace('-config', '');
+      const warpRouteId = `${warpDir}/${label}`;
       if (!WARP_ROUTE_ID_REGEX.test(warpRouteId)) {
         throw new Error(`Invalid warp route ID format: ${warpRouteId}`);
       }
