@@ -1,5 +1,19 @@
 # @hyperlane-xyz/registry
 
+## 16.1.0
+
+### Minor Changes
+
+- 07b28b1: Added bbSOL/solanamainnet-soon warp route
+- 62851e3: Added chain metadata for starknet
+
+### Patch Changes
+
+- 9ce0b51: Add wfragBTC metadata.
+- fed0fdd: Update build.ts to create the correct warpRouteConfigs.yaml (without the shortnames)
+- 74adbaa: Switch from STRK to ETH as starknet's native token
+- e1d8fc7: Added IGP (zero address - doesn't exist yet)
+
 ## 16.0.0
 
 ### Major Changes
