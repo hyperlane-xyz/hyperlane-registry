@@ -5,6 +5,7 @@ import { parse, stringify } from 'yaml';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 
 import { BaseRegistry } from '../src/registry/BaseRegistry';
+import { WARP_ROUTE_ID_REGEX } from '../src/consts';
 const chainMetadata = {};
 const chainAddresses = {};
 const warpRouteConfigs = {};
@@ -110,9 +111,16 @@ function createWarpConfigFiles() {
     for (const warpFile of fs.readdirSync(inDirPath)) {
       if (!warpFile.endsWith('config.yaml')) continue;
       const [warpFileName] = warpFile.split('.');
+      // Remove the -config suffix from the filename
+      const routeName = warpFileName.replace('-config', '');
+      const warpRouteId = `${warpDir}/${routeName}`;
+      if (!WARP_ROUTE_ID_REGEX.test(warpRouteId)) {
+        throw new Error(`Invalid warp route ID format: ${warpRouteId}`);
+      }
+
       const config = parse(fs.readFileSync(`${inDirPath}/${warpFile}`, 'utf8'));
       //Situations where a config contains multiple symbols are not officially supported yet.
-      const id = BaseRegistry.warpRouteConfigToId(config, { symbol: config.tokens[0].symbol });
+      const id = BaseRegistry.warpRouteConfigToId(config, { warpRouteId });
       warpRouteConfigs[id] = config;
       fs.mkdirSync(`${assetOutPath}`, { recursive: true });
       fs.mkdirSync(`${tsOutPath}`, { recursive: true });
