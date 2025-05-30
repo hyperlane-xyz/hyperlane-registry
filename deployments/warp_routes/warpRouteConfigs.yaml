@@ -4941,6 +4941,29 @@ apxETH/eclipsemainnet:
       name: Autocompounding Pirex Ether
       standard: SealevelHypSynthetic
       symbol: apxETH
+bbSOL/soon:
+  tokens:
+    - addressOrDenom: 5mzc5Sv61721Xr44Uw7Kb9txoMWLz8XYLrgCewe1sj2B
+      chainName: soon
+      collateralAddressOrDenom: GxV545AqavAEnu6HbUQGy2DQQpwuY5wAxwrq5F3yG3Mh
+      connections:
+        - token: sealevel|solanamainnet|8rodtMgnpCboxNiaQozdCTGiCEkK6BDXmFuoJ9qhTxfh
+      decimals: 9
+      logoURI: /deployments/warp_routes/bbSOL/logo.png
+      name: Bybit Staked SOL
+      standard: SealevelHypSynthetic
+      symbol: bbSOL
+    - addressOrDenom: 8rodtMgnpCboxNiaQozdCTGiCEkK6BDXmFuoJ9qhTxfh
+      chainName: solanamainnet
+      coinGeckoId: bybit-staked-sol
+      collateralAddressOrDenom: Bybit2vBJGhPF52GBdNaQfUJ6ZpThSgHBobjWZpLPb4B
+      connections:
+        - token: sealevel|soon|5mzc5Sv61721Xr44Uw7Kb9txoMWLz8XYLrgCewe1sj2B
+      decimals: 9
+      logoURI: /deployments/warp_routes/bbSOL/logo.png
+      name: Bybit Staked SOL
+      standard: SealevelHypCollateral
+      symbol: bbSOL
 cbBTC/base-ethereum-superseed:
   tokens:
     - addressOrDenom: "0x7710d2FC9A2E0452b28a2cBf550429b579347199"
