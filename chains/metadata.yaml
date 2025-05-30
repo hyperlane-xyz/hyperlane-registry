@@ -6422,6 +6422,35 @@ sophonsepolia:
   rpcUrls:
     - http: https://rpc.testnet.sophon.xyz
   technicalStack: zksync
+starknet:
+  blockExplorers:
+    - apiUrl: https://voyager.online/api
+      family: voyager
+      name: Starknet Explorer
+      url: https://voyager.online/
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 30
+    reorgPeriod: 1
+  chainId: "0x534e5f4d41494e"
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Starknet
+  domainId: 3047739480
+  gasCurrencyCoinGeckoId: starknet
+  name: starknet
+  nativeToken:
+    decimals: 18
+    denom: "0x04718f5a0Fc34cC1AF16A1cdee98fFB20C31f5cD61D6Ab07201858f4287c938D"
+    name: Starknet Token
+    symbol: STRK
+  protocol: starknet
+  rpcUrls:
+    - http: https://starknet-mainnet.public.blastapi.io
+    - http: https://rpc.starknet.lava.build:443
+    - http: https://starknet.api.onfinality.io/public
+    - http: https://api.zan.top/public/starknet-mainnet
 starknetsepolia:
   blockExplorers:
     - apiUrl: https://sepolia.voyager.online/api
