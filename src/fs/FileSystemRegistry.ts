@@ -24,7 +24,6 @@ import {
   AddWarpRouteConfigOptions,
   RegistryType,
   UpdateChainParams,
-  type AddWarpRouteOptions,
   type ChainFiles,
   type IRegistry,
   type RegistryContent,
@@ -119,17 +118,17 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
     this.removeFiles(Object.values(chainFiles));
   }
 
-  addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): void {
-    const configPath = this.getWarpRouteCoreConfigPath(config, options);
+  addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteConfigOptions): void {
+    const filePath = path.join(this.uri, this.getWarpRouteCoreConfigPath(config, options));
+
     this.createFile({
-      filePath: path.join(this.uri, configPath),
+      filePath,
       data: toYamlString(config, SCHEMA_REF),
     });
   }
 
   addWarpRouteConfig(warpConfig: WarpRouteDeployConfig, options: AddWarpRouteConfigOptions): void {
     const filePath = path.join(this.uri, this.getWarpRouteDeployConfigPath(warpConfig, options));
-    if (fs.existsSync(filePath)) throw Error(`Warp deploy config already exists for: ${filePath}.`);
 
     this.createFile({
       filePath,

@@ -3,6 +3,7 @@ import {
   ChainTechnicalStack,
   EthJsonRpcBlockParameterTag,
 } from '@hyperlane-xyz/sdk';
+import { ProtocolType } from '@hyperlane-xyz/utils';
 import { chainAddresses, chainMetadata } from '../../dist/index.js';
 import { ChainAddressesSchema } from '../../src/types.js';
 import { isAbacusWorksChain } from '../../src/utils.js';
@@ -109,6 +110,12 @@ describe('Chain metadata', () => {
         it(`${chain} metadata has reorgPeriod of 5 if technicalStack is polygoncdk`, () => {
           if (metadata.technicalStack === ChainTechnicalStack.PolygonCDK) {
             expect(metadata.blocks?.reorgPeriod).to.equal(5);
+          }
+        });
+
+        it(`${chain} metadata has reorgPeriod of 1 if protocolType is starknet`, () => {
+          if (metadata.protocol === ProtocolType.Starknet) {
+            expect(metadata.blocks?.reorgPeriod).to.equal(1);
           }
         });
 

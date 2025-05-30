@@ -45,7 +45,7 @@ jobs:
 
       - name: combine-data
         run: |
-          echo "Assembling chain metadata and addresses together..."
+          echo "Assembling warp route configs, chain metadata and addresses together..."
           yarn build
 
       - name: commit-changes

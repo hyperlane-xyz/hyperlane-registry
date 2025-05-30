@@ -16,8 +16,7 @@ import {
   RegistryType,
 } from './IRegistry.js';
 import { SynchronousRegistry } from './SynchronousRegistry.js';
-import { warpRouteConfigToId } from './warp-utils.js';
-
+import { BaseRegistry } from './BaseRegistry.js';
 const PARTIAL_URI_PLACEHOLDER = '__partial_registry__';
 
 /**
@@ -68,7 +67,7 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
     const warpRoutes = this.warpRoutes.reduce<RegistryContent['deployments']['warpRoutes']>(
       (acc, r) => {
         // Cast is useful because this handles partials and is safe because the fn validates data
-        const id = warpRouteConfigToId(r as WarpCoreConfig);
+        const id = BaseRegistry.warpRouteConfigToId(r as WarpCoreConfig);
         acc[id] = PARTIAL_URI_PLACEHOLDER;
         return acc;
       },
@@ -108,7 +107,7 @@ export class PartialRegistry extends SynchronousRegistry implements IRegistry {
 
   protected getWarpRoutesForIds(ids: WarpRouteId[]): WarpCoreConfig[] {
     return this.warpRoutes.filter((r) => {
-      const id = warpRouteConfigToId(r as WarpCoreConfig);
+      const id = BaseRegistry.warpRouteConfigToId(r as WarpCoreConfig);
       return ids.includes(id);
     }) as WarpCoreConfig[];
   }
