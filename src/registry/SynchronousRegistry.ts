@@ -1,9 +1,15 @@
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk';
+import type {
+  ChainMap,
+  ChainMetadata,
+  ChainName,
+  WarpCoreConfig,
+  WarpRouteDeployConfig,
+} from '@hyperlane-xyz/sdk';
 
 import { ChainAddresses, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
 import { BaseRegistry } from './BaseRegistry.js';
 import {
-  AddWarpRouteOptions,
+  AddWarpRouteConfigOptions,
   IRegistry,
   RegistryContent,
   UpdateChainParams,
@@ -86,11 +92,14 @@ export abstract class SynchronousRegistry extends BaseRegistry implements IRegis
     const warpDeployConfig = this.listRegistryContent().deployments.warpDeployConfig;
     const { ids: routeIds } = filterWarpRoutesIds(warpDeployConfig, filter);
     const configs = this.getWarpDeployConfigForIds(routeIds);
-    const idsWithConfigs = routeIds.map((id, i): [WarpRouteId, WarpRouteDeployConfig] => [id, configs[i]])
+    const idsWithConfigs = routeIds.map((id, i): [WarpRouteId, WarpRouteDeployConfig] => [
+      id,
+      configs[i],
+    ]);
     return Object.fromEntries(idsWithConfigs);
   }
 
-  abstract addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): void;
+  abstract addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteConfigOptions): void;
 
   protected abstract createOrUpdateChain(chain: UpdateChainParams): void;
 
