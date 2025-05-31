@@ -1,0 +1,18 @@
+tokens:
+  - chainName: bsc
+    standard: EvmHypSynthetic
+    decimals: 18
+    symbol: EDGEN
+    name: LayerEdge
+    addressOrDenom: "0x0C808F0464C423d5Ea4F4454fcc23B6E2Ae75562"
+    connections:
+      - token: ethereum|ethereum|0xB8bB85FD0836691a64aFc23199566F898a1d6f4a
+  - chainName: ethereum
+    standard: EvmHypCollateral
+    decimals: 18
+    symbol: EDGEN
+    name: LayerEdge
+    addressOrDenom: "0xB8bB85FD0836691a64aFc23199566F898a1d6f4a"
+    collateralAddressOrDenom: "0xAa9806c938836627Ed1a41Ae871c7E1889AE02Ca"
+    connections:
+      - token: ethereum|bsc|0x0C808F0464C423d5Ea4F4454fcc23B6E2Ae75562
