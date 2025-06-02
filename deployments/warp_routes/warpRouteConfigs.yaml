@@ -1140,7 +1140,7 @@ ETH/holesky-piccadilly:
       name: Ether
       standard: EvmHypSynthetic
       symbol: ETH
-EZETH/arbitrum-base-berachain-blast-bsc-ethereum-fraxtal-linea-mode-optimism-sei-swell-taiko-unichain-worldchain-zircuit:
+EZETH/renzo-prod:
   tokens:
     - addressOrDenom: "0xB26bBfC6d1F469C821Ea25099017862e7368F4E8"
       chainName: arbitrum
@@ -1527,7 +1527,7 @@ EZETH/arbitrum-base-berachain-blast-bsc-ethereum-fraxtal-linea-mode-optimism-sei
       name: Renzo Restaked ETH
       standard: EvmHypXERC20
       symbol: ezETH
-EZETHSTAGE/arbitrum-base-berachain-blast-bsc-ethereum-fraxtal-linea-mode-optimism-sei-swell-taiko-unichain-worldchain-zircuit:
+EZETHSTAGE/renzo-stage:
   tokens:
     - addressOrDenom: "0x3F536e156eD291c135ACb1D20F77C3B948E0F8a5"
       chainName: arbitrum
@@ -5684,6 +5684,78 @@ WETH/artela-base:
       name: Wrapped Ether
       standard: EvmHypCollateral
       symbol: WETH
+WFRAGJTO/eclipsemainnet-solanamainnet-soon:
+  tokens:
+    - addressOrDenom: 21dbSbBdoEqUtJcvBkvhjpEiqb3LTrUFGQxKHWjY3WwV
+      chainName: solanamainnet
+      coinGeckoId: wrapped-fragjto
+      collateralAddressOrDenom: WFRGJnQt5pK8Dv4cDAbrSsgPcmboysrmX3RYhmRRyTR
+      connections:
+        - token: sealevel|eclipsemainnet|4dLFhsXeK6QPxV2HEbXsF6eSTZdTFaGcGY5eEj5c8CbD
+        - token: sealevel|soon|A4UxZkWrEtfmhdtBE3VSS6n4E7Tnj7EMs5PA3hLgmFL8
+      decimals: 9
+      logoURI: /deployments/warp_routes/wfragJTO/logo.svg
+      name: Wrapped Fragmetric Restaked JTO
+      standard: SealevelHypCollateral
+      symbol: wfragJTO
+    - addressOrDenom: 4dLFhsXeK6QPxV2HEbXsF6eSTZdTFaGcGY5eEj5c8CbD
+      chainName: eclipsemainnet
+      collateralAddressOrDenom: HqDHrCWhdELCf21AAzhpAYTtKLtkqVzGfHTz7fo1yNxy
+      connections:
+        - token: sealevel|solanamainnet|21dbSbBdoEqUtJcvBkvhjpEiqb3LTrUFGQxKHWjY3WwV
+        - token: sealevel|soon|A4UxZkWrEtfmhdtBE3VSS6n4E7Tnj7EMs5PA3hLgmFL8
+      decimals: 9
+      logoURI: /deployments/warp_routes/wfragJTO/logo.svg
+      name: Wrapped Fragmetric Restaked JTO
+      standard: SealevelHypSynthetic
+      symbol: wfragJTO
+    - addressOrDenom: A4UxZkWrEtfmhdtBE3VSS6n4E7Tnj7EMs5PA3hLgmFL8
+      chainName: soon
+      collateralAddressOrDenom: 6vrMyHTVQvmGzCjphMZxnfYV7R8C9tDWAQsWDTgCq1mE
+      connections:
+        - token: sealevel|solanamainnet|21dbSbBdoEqUtJcvBkvhjpEiqb3LTrUFGQxKHWjY3WwV
+        - token: sealevel|eclipsemainnet|4dLFhsXeK6QPxV2HEbXsF6eSTZdTFaGcGY5eEj5c8CbD
+      decimals: 9
+      logoURI: /deployments/warp_routes/wfragJTO/logo.svg
+      name: Wrapped Fragmetric Restaked JTO
+      standard: SealevelHypSynthetic
+      symbol: wfragJTO
+WFRAGSOL/eclipsemainnet-solanamainnet-soon:
+  tokens:
+    - addressOrDenom: 22z73A4E7QjwjTsHGJptnALgBGuovEabCcQtPdBaQPpJ
+      chainName: solanamainnet
+      coinGeckoId: wrapped-fragsol
+      collateralAddressOrDenom: WFRGSWjaz8tbAxsJitmbfRuFV2mSNwy7BMWcCwaA28U
+      connections:
+        - token: sealevel|eclipsemainnet|FF6PWPjiY1hwy3Kt5qTDoqhZ3PbmaXKYPzADEjZbK9iN
+        - token: sealevel|soon|6trL4uE7KANMqrPT5rw4uiN6TSTw7c5Ssv4GdAkhTzVc
+      decimals: 9
+      logoURI: /deployments/warp_routes/wfragSOL/logo.svg
+      name: Wrapped Fragmetric Restaked SOL
+      standard: SealevelHypCollateral
+      symbol: wfragSOL
+    - addressOrDenom: FF6PWPjiY1hwy3Kt5qTDoqhZ3PbmaXKYPzADEjZbK9iN
+      chainName: eclipsemainnet
+      collateralAddressOrDenom: 97UNrMjduqbHhnZ5T5w3DifYnxwM2LAEpYxfoMcMjXK1
+      connections:
+        - token: sealevel|solanamainnet|22z73A4E7QjwjTsHGJptnALgBGuovEabCcQtPdBaQPpJ
+        - token: sealevel|soon|6trL4uE7KANMqrPT5rw4uiN6TSTw7c5Ssv4GdAkhTzVc
+      decimals: 9
+      logoURI: /deployments/warp_routes/wfragSOL/logo.svg
+      name: Wrapped Fragmetric Restaked SOL
+      standard: SealevelHypSynthetic
+      symbol: wfragSOL
+    - addressOrDenom: 6trL4uE7KANMqrPT5rw4uiN6TSTw7c5Ssv4GdAkhTzVc
+      chainName: soon
+      collateralAddressOrDenom: 7T9sawCGJAV4wC49CjHpw8TGL3ZuPAbZipNq86YXGecy
+      connections:
+        - token: sealevel|solanamainnet|22z73A4E7QjwjTsHGJptnALgBGuovEabCcQtPdBaQPpJ
+        - token: sealevel|eclipsemainnet|FF6PWPjiY1hwy3Kt5qTDoqhZ3PbmaXKYPzADEjZbK9iN
+      decimals: 9
+      logoURI: /deployments/warp_routes/wfragSOL/logo.svg
+      name: Wrapped Fragmetric Restaked SOL
+      standard: SealevelHypSynthetic
+      symbol: wfragSOL
 WIF/eclipsemainnet-solanamainnet:
   tokens:
     - addressOrDenom: 6tBGmKNxirxBYnm9khkaTtcr2fhJ9YviCgRm1RWM8NJv
@@ -7010,75 +7082,3 @@ weETHs/eclipsemainnet-ethereum:
       name: Super Symbiotic LRT
       standard: SealevelHypSynthetic
       symbol: weETHs
-wfragJTO/eclipsemainnet-solanamainnet-soon:
-  tokens:
-    - addressOrDenom: 21dbSbBdoEqUtJcvBkvhjpEiqb3LTrUFGQxKHWjY3WwV
-      chainName: solanamainnet
-      coinGeckoId: wrapped-fragjto
-      collateralAddressOrDenom: WFRGJnQt5pK8Dv4cDAbrSsgPcmboysrmX3RYhmRRyTR
-      connections:
-        - token: sealevel|eclipsemainnet|4dLFhsXeK6QPxV2HEbXsF6eSTZdTFaGcGY5eEj5c8CbD
-        - token: sealevel|soon|A4UxZkWrEtfmhdtBE3VSS6n4E7Tnj7EMs5PA3hLgmFL8
-      decimals: 9
-      logoURI: /deployments/warp_routes/wfragJTO/logo.svg
-      name: Wrapped Fragmetric Restaked JTO
-      standard: SealevelHypCollateral
-      symbol: wfragJTO
-    - addressOrDenom: 4dLFhsXeK6QPxV2HEbXsF6eSTZdTFaGcGY5eEj5c8CbD
-      chainName: eclipsemainnet
-      collateralAddressOrDenom: HqDHrCWhdELCf21AAzhpAYTtKLtkqVzGfHTz7fo1yNxy
-      connections:
-        - token: sealevel|solanamainnet|21dbSbBdoEqUtJcvBkvhjpEiqb3LTrUFGQxKHWjY3WwV
-        - token: sealevel|soon|A4UxZkWrEtfmhdtBE3VSS6n4E7Tnj7EMs5PA3hLgmFL8
-      decimals: 9
-      logoURI: /deployments/warp_routes/wfragJTO/logo.svg
-      name: Wrapped Fragmetric Restaked JTO
-      standard: SealevelHypSynthetic
-      symbol: wfragJTO
-    - addressOrDenom: A4UxZkWrEtfmhdtBE3VSS6n4E7Tnj7EMs5PA3hLgmFL8
-      chainName: soon
-      collateralAddressOrDenom: 6vrMyHTVQvmGzCjphMZxnfYV7R8C9tDWAQsWDTgCq1mE
-      connections:
-        - token: sealevel|solanamainnet|21dbSbBdoEqUtJcvBkvhjpEiqb3LTrUFGQxKHWjY3WwV
-        - token: sealevel|eclipsemainnet|4dLFhsXeK6QPxV2HEbXsF6eSTZdTFaGcGY5eEj5c8CbD
-      decimals: 9
-      logoURI: /deployments/warp_routes/wfragJTO/logo.svg
-      name: Wrapped Fragmetric Restaked JTO
-      standard: SealevelHypSynthetic
-      symbol: wfragJTO
-wfragSOL/eclipsemainnet-solanamainnet-soon:
-  tokens:
-    - addressOrDenom: 22z73A4E7QjwjTsHGJptnALgBGuovEabCcQtPdBaQPpJ
-      chainName: solanamainnet
-      coinGeckoId: wrapped-fragsol
-      collateralAddressOrDenom: WFRGSWjaz8tbAxsJitmbfRuFV2mSNwy7BMWcCwaA28U
-      connections:
-        - token: sealevel|eclipsemainnet|FF6PWPjiY1hwy3Kt5qTDoqhZ3PbmaXKYPzADEjZbK9iN
-        - token: sealevel|soon|6trL4uE7KANMqrPT5rw4uiN6TSTw7c5Ssv4GdAkhTzVc
-      decimals: 9
-      logoURI: /deployments/warp_routes/wfragSOL/logo.svg
-      name: Wrapped Fragmetric Restaked SOL
-      standard: SealevelHypCollateral
-      symbol: wfragSOL
-    - addressOrDenom: FF6PWPjiY1hwy3Kt5qTDoqhZ3PbmaXKYPzADEjZbK9iN
-      chainName: eclipsemainnet
-      collateralAddressOrDenom: 97UNrMjduqbHhnZ5T5w3DifYnxwM2LAEpYxfoMcMjXK1
-      connections:
-        - token: sealevel|solanamainnet|22z73A4E7QjwjTsHGJptnALgBGuovEabCcQtPdBaQPpJ
-        - token: sealevel|soon|6trL4uE7KANMqrPT5rw4uiN6TSTw7c5Ssv4GdAkhTzVc
-      decimals: 9
-      logoURI: /deployments/warp_routes/wfragSOL/logo.svg
-      name: Wrapped Fragmetric Restaked SOL
-      standard: SealevelHypSynthetic
-      symbol: wfragSOL
-    - addressOrDenom: 6trL4uE7KANMqrPT5rw4uiN6TSTw7c5Ssv4GdAkhTzVc
-      chainName: soon
-      collateralAddressOrDenom: 7T9sawCGJAV4wC49CjHpw8TGL3ZuPAbZipNq86YXGecy
-      connections:
-        - token: sealevel|solanamainnet|22z73A4E7QjwjTsHGJptnALgBGuovEabCcQtPdBaQPpJ
-        - token: sealevel|eclipsemainnet|FF6PWPjiY1hwy3Kt5qTDoqhZ3PbmaXKYPzADEjZbK9iN
-      decimals: 9
-      logoURI: /deployments/warp_routes/wfragSOL/logo.svg
-      name: Wrapped Fragmetric Restaked SOL
-      standard: SealevelHypSynthetic
-      symbol: wfragSOL
