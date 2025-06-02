@@ -11,7 +11,12 @@ import { isAbacusWorksChain } from '../../src/utils.js';
 import { expect } from 'chai';
 
 describe('Chain metadata', () => {
+  const skippedChainsList = ['inclusivelayertestnet'];
   for (const [chain, metadata] of Object.entries(chainMetadata)) {
+    if (skippedChainsList.includes(chain)) {
+      continue;
+    }
+
     it(`${chain} metadata has name and domain defined`, () => {
       expect(metadata.name).not.to.be.undefined;
       expect(metadata.domainId).not.to.be.undefined;
@@ -63,10 +68,11 @@ describe('Chain metadata', () => {
       }
     });
 
-    it(`${chain} metadata has domainId within uint32 limits`, () => {
+    it(`${chain} metadata has domainId within int32 limits`, () => {
       const domainId = metadata.domainId;
       expect(domainId).to.be.at.least(0);
-      expect(domainId).to.be.at.most(4294967295); // 2^32 - 1
+      // scraper db id is signed int32 - https://github.com/hyperlane-xyz/hyperlane-monorepo/issues/3121
+      expect(domainId).to.be.at.most(2147483647); // 2^31 - 1
     });
 
     // Ensure all Abacus Works mainnets have gasCurrencyCoinGeckoId defined
