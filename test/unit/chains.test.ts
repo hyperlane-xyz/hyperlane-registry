@@ -66,7 +66,8 @@ describe('Chain metadata', () => {
     it(`${chain} metadata has domainId within uint32 limits`, () => {
       const domainId = metadata.domainId;
       expect(domainId).to.be.at.least(0);
-      expect(domainId).to.be.at.most(4294967295); // 2^32 - 1
+      // scraper db id is signed int32 - https://github.com/hyperlane-xyz/hyperlane-monorepo/issues/3121
+      expect(domainId).to.be.at.most(2147483647); // 2^31 - 1
     });
 
     // Ensure all Abacus Works mainnets have gasCurrencyCoinGeckoId defined
