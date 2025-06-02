@@ -4839,6 +4839,8 @@ nobletestnet:
     - http: https://rpc.testnet.noble.xyz:443
   slip44: 118
   technicalStack: other
+  transactionOverrides:
+    gasPrice: 0.1
 odysseytestnet:
   blockExplorers:
     - apiUrl: https://odyssey-explorer.ithaca.xyz/api
@@ -5129,8 +5131,8 @@ paradexsepolia:
       url: https://voyager.testnet.paradex.trade
   blocks:
     confirmations: 1
-    estimateBlockTime: 4
-    reorgPeriod: 0
+    estimateBlockTime: 30
+    reorgPeriod: 1
   chainId: "0x505249564154455f534e5f504f54435f5345504f4c4941"
   deployer:
     name: Abacus Works
@@ -6420,6 +6422,36 @@ sophonsepolia:
   rpcUrls:
     - http: https://rpc.testnet.sophon.xyz
   technicalStack: zksync
+starknet:
+  blockExplorers:
+    - apiUrl: https://voyager.online/api
+      family: voyager
+      name: Starknet Explorer
+      url: https://voyager.online/
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 30
+    reorgPeriod: 1
+  chainId: "0x534e5f4d41494e"
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Starknet
+  domainId: 358974494
+  gasCurrencyCoinGeckoId: ethereum
+  name: starknet
+  nativeToken:
+    decimals: 18
+    denom: "0x049D36570D4e46f48e99674bd3fcc84644DdD6b96F7C741B1562B82f9e004dC7"
+    name: Ether
+    symbol: ETH
+  protocol: starknet
+  rpcUrls:
+    - http: https://starknet-mainnet.public.blastapi.io
+    - http: https://rpc.starknet.lava.build:443
+    - http: https://starknet.api.onfinality.io/public
+    - http: https://api.zan.top/public/starknet-mainnet
+  technicalStack: other
 starknetsepolia:
   blockExplorers:
     - apiUrl: https://sepolia.voyager.online/api
@@ -6428,8 +6460,8 @@ starknetsepolia:
       url: https://sepolia.voyager.online
   blocks:
     confirmations: 1
-    estimateBlockTime: 5
-    reorgPeriod: 0
+    estimateBlockTime: 30
+    reorgPeriod: 1
   chainId: "0x534e5f5345504f4c4941"
   deployer:
     name: Abacus Works

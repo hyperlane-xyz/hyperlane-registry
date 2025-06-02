@@ -1,5 +1,47 @@
 # @hyperlane-xyz/registry
 
+## 16.1.0
+
+### Minor Changes
+
+- 07b28b1: Added bbSOL/solanamainnet-soon warp route
+- 62851e3: Added chain metadata for starknet
+
+### Patch Changes
+
+- 9ce0b51: Add wfragBTC metadata.
+- fed0fdd: Update build.ts to create the correct warpRouteConfigs.yaml (without the shortnames)
+- 74adbaa: Switch from STRK to ETH as starknet's native token
+- e1d8fc7: Added IGP (zero address - doesn't exist yet)
+
+## 16.0.0
+
+### Major Changes
+
+- d8c5039: Update Warp Core Config warp route Id generation logic to accept a specified warpRouteId, use the a synthetic token, or fallback to original chain names algo. Related util functions such as createWarpRouteConfigId no longer contains warpRouteId generation logic and instead only accepts a symbol and label. The logic has been moved to warpRouteConfigToId static method.
+
+### Minor Changes
+
+- 8a097f3: Add REZ extension config for Unichain
+- 5e10fb5: Add logoURI to missing ETH routes
+
+### Patch Changes
+
+- db7d740: Add TGT coingeckoId
+
+## 15.11.0
+
+### Minor Changes
+
+- 4a7a13f: Add test to ensure Starknet chains have reorgPeriod of 1
+- e0a0fa5: Added metadata.json and logo for bbSOL
+- 397da55: Add USDN warp route deployment on Aurora testnet.
+- 1c2ae01: Include combined warp route configs in repository
+
+### Patch Changes
+
+- 4a7a13f: Fixed starknetsepolia BlockTime & adjusted reorgPeriod for Starknet chains
+
 ## 15.10.1
 
 ### Patch Changes

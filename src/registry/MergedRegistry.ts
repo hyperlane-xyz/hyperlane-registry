@@ -11,7 +11,6 @@ import { ChainAddresses, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } 
 import { objMerge } from '../utils.js';
 import {
   AddWarpRouteConfigOptions,
-  AddWarpRouteOptions,
   IRegistry,
   RegistryContent,
   RegistryType,
@@ -126,7 +125,7 @@ export class MergedRegistry implements IRegistry {
     return results.reduce((acc, content) => objMerge(acc, content), {});
   }
 
-  async addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): Promise<void> {
+  async addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteConfigOptions): Promise<void> {
     return this.multiRegistryWrite(
       async (registry) => await registry.addWarpRoute(config, options),
       'adding warp route',
