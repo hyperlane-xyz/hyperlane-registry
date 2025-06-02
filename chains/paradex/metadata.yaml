@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://voyager.paradex.trade/api
+    family: voyager
+    name: Paradex Explorer
+    url: https://voyager.paradex.trade/
+blocks:
+  confirmations: 1
+  estimateBlockTime: 30
+  reorgPeriod: 1
+chainId: "0x534e5f4d41494e"
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Paradex
+# keccak256("paradex") % MAX_INT32
+domainId: 514051890
+gasCurrencyCoinGeckoId: usdc
+name: paradex
+nativeToken:
+  decimals: 6
+  denom: "0x07348407ebad690fec0cc8597e87dc16ef7b269a655ff72587dafff83d462be2"
+  name: USDC
+  symbol: USDC
+protocol: starknet
+rpcUrls:
+  - http: https://juno.api.prod.paradex.trade/rpc/v0_7
+  - http: https://pathfinder.api.prod.paradex.trade/rpc/v0_7
+technicalStack: other
