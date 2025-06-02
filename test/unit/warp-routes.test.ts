@@ -73,8 +73,14 @@ describe('Warp Core Configs', () => {
     });
 
     it(`WarpCore ${id} matches derived id from config`, () => {
-      // Skip check on TIA/forma-stride to avoid breaking changes to forma
-      if (id === 'TIA/forma-stride') {
+      const excludeIds = [
+        // Skip check on TIA/forma-stride to avoid breaking changes to forma
+        'TIA/forma-stride',
+        // oUSDT uses custom warp IDs
+        'oUSDT/production',
+        'oUSDT/staging',
+      ];
+      if (excludeIds.includes(id)) {
         return;
       }
 
