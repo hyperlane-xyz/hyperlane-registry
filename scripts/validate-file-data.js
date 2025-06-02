@@ -11,7 +11,6 @@ const noLogoFileError = [];
 
 // warp route warnings / errors
 const noConfigFileWarning = [];
-const unorderedChainNamesError = [];
 const invalidLogoURIPathError = [];
 
 function validateChains() {
@@ -103,10 +102,7 @@ function validateErrors() {
 
   // Then, errors
   const errorCount =
-    missingDeployerField.length +
-    noLogoFileError.length +
-    unorderedChainNamesError.length +
-    invalidLogoURIPathError.length;
+    missingDeployerField.length + noLogoFileError.length + invalidLogoURIPathError.length;
 
   if (errorCount === 0) return;
 
