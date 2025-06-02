@@ -1,14 +1,17 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiKey: testkey
-    apiUrl: https://edgenscan.io/api
+  - apiUrl: https://edgenscan.io/api
     family: blockscout
     name: Edgenscan
     url: https://edgenscan.io
+blocks:
+  confirmations: 1
+  estimateBlockTime: 3
+  reorgPeriod: 5
 chainId: 4207
 deployer:
   name: LayerEdge
-  url: https://www.layeredge.io/
+  url: https://www.layeredge.io
 displayName: Edgen Chain
 domainId: 4207
 isTestnet: false
