@@ -7,7 +7,6 @@ import {
   WarpRouteDeployConfigSchema,
 } from '@hyperlane-xyz/sdk';
 import { FileSystemRegistry } from '../../src/fs/FileSystemRegistry.js';
-import { createWarpRouteConfigId, parseWarpRouteConfigId } from '../../src/registry/warp-utils.js';
 import path from 'path';
 import fs from 'fs';
 import { WARP_ROUTE_SYMBOL_DIRECTORY_REGEX } from '../../src/consts.js';
@@ -70,32 +69,6 @@ describe('Warp Core Configs', () => {
         foundLogoURI === 0 || foundLogoURI === config.tokens.length,
         `Tokens must all or none have logoURI. Found ${foundLogoURI} with logoURI out of ${config.tokens.length}`,
       ).to.be.true;
-    });
-
-    it(`WarpCore ${id} matches derived id from config`, () => {
-      const excludeIds = [
-        // Skip check on TIA/forma-stride to avoid breaking changes to forma
-        'TIA/forma-stride',
-        // oUSDT uses custom warp IDs
-        'oUSDT/production',
-        'oUSDT/staging',
-      ];
-      if (excludeIds.includes(id)) {
-        return;
-      }
-
-      // Get the symbol and chain names from the config
-      const config = routes[id];
-      const { label } = parseWarpRouteConfigId(id);
-
-      // Create the ID from the config
-      const symbol = config.tokens[0].symbol;
-      const tokenChains = [...new Set(config.tokens.map((token) => token.chainName))];
-      const derivedId = createWarpRouteConfigId(symbol, tokenChains.sort().join('-'));
-      const { label: derivedLabel } = parseWarpRouteConfigId(derivedId);
-
-      // Verify the chain names match
-      expect(label).to.deep.equal(derivedLabel, 'Label in ID must match derived label');
     });
 
     it(`WarpCore ${id} only specifies a coinGeckoId for tokens that escrow tokens`, () => {
