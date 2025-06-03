@@ -11,7 +11,6 @@ const noLogoFileError = [];
 
 // warp route warnings / errors
 const noConfigFileWarning = [];
-const unorderedChainNamesError = [];
 const invalidLogoURIPathError = [];
 
 function validateChains() {
@@ -40,27 +39,6 @@ function validateChains() {
     if (fs.existsSync(addressesPath)) {
       if (!Object.keys(metadata).includes('deployer')) missingDeployerField.push(metadataPath);
     }
-  });
-}
-
-// This regex will make sure that we can split the filename when it contains the words
-// addresses or config that way we can grab all the chain names and exclude these words
-const filenameRegex = /^([\w-]+)-(addresses|config)\.yaml$/;
-
-// check if chain names in warp routes are ordered alphabetically
-function validateChainNameOrder(entryPath) {
-  const yamlFiles = fs.readdirSync(entryPath).filter((file) => file.includes('.yaml'));
-
-  yamlFiles.forEach((filename) => {
-    const match = filename.match(filenameRegex);
-    const filePath = path.join(entryPath, filename);
-
-    if (!match) return;
-
-    const chains = match[1];
-    const sortedChains = [...chains.split('-')].sort().join('-');
-
-    if (chains !== sortedChains) unorderedChainNamesError.push(filePath);
   });
 }
 
@@ -109,7 +87,6 @@ function validateWarpRoutes() {
     const entryPath = path.join(warpRoutesDir, entry.name);
 
     validateConfigFiles(entryPath);
-    validateChainNameOrder(entryPath);
   });
 }
 
@@ -125,10 +102,7 @@ function validateErrors() {
 
   // Then, errors
   const errorCount =
-    missingDeployerField.length +
-    noLogoFileError.length +
-    unorderedChainNamesError.length +
-    invalidLogoURIPathError.length;
+    missingDeployerField.length + noLogoFileError.length + invalidLogoURIPathError.length;
 
   if (errorCount === 0) return;
 
@@ -141,12 +115,6 @@ function validateErrors() {
     );
 
   if (noLogoFileError.length > 0) console.error('Error: logo file missing at:', noLogoFileError);
-
-  if (unorderedChainNamesError.length > 0)
-    console.error(
-      'Error: Chain names not ordered alphabetically at paths:',
-      unorderedChainNamesError,
-    );
 
   if (invalidLogoURIPathError.length > 0) {
     console.error(

@@ -1140,7 +1140,7 @@ ETH/holesky-piccadilly:
       name: Ether
       standard: EvmHypSynthetic
       symbol: ETH
-EZETH/arbitrum-base-berachain-blast-bsc-ethereum-fraxtal-linea-mode-optimism-sei-swell-taiko-unichain-worldchain-zircuit:
+EZETH/renzo-prod:
   tokens:
     - addressOrDenom: "0xB26bBfC6d1F469C821Ea25099017862e7368F4E8"
       chainName: arbitrum
@@ -1527,7 +1527,7 @@ EZETH/arbitrum-base-berachain-blast-bsc-ethereum-fraxtal-linea-mode-optimism-sei
       name: Renzo Restaked ETH
       standard: EvmHypXERC20
       symbol: ezETH
-EZETHSTAGE/arbitrum-base-berachain-blast-bsc-ethereum-fraxtal-linea-mode-optimism-sei-swell-taiko-unichain-worldchain-zircuit:
+EZETHSTAGE/renzo-stage:
   tokens:
     - addressOrDenom: "0x3F536e156eD291c135ACb1D20F77C3B948E0F8a5"
       chainName: arbitrum
@@ -3315,23 +3315,11 @@ Re7LRT/ethereum-zircuit:
       name: Re7 Labs LRT
       standard: EvmHypSynthetic
       symbol: Re7LRT
-SMOL/arbitrum-ethereum-solanamainnet-treasure:
+SMOL/ethereum-solanamainnet-treasure:
   tokens:
-    - addressOrDenom: "0xa4bbac7ed5bda8ec71a1af5ee84d4c5a737bd875"
-      chainName: arbitrum
-      collateralAddressOrDenom: "0x9e64d3b9e8ec387a9a58ced80b71ed815f8d82b5"
-      connections:
-        - token: ethereum|ethereum|0x53cce6d10e43d1b3d11872ad22ec2acd8d2537b8
-        - token: ethereum|treasure|0xb73e4f558F7d4436d77a18f56e4EE9d01764c641
-      decimals: 18
-      logoURI: /deployments/warp_routes/SMOL/logo.svg
-      name: SMOL
-      standard: EvmHypCollateral
-      symbol: SMOL
     - addressOrDenom: "0x53cce6d10e43d1b3d11872ad22ec2acd8d2537b8"
       chainName: ethereum
       connections:
-        - token: ethereum|arbitrum|0xa4bbac7ed5bda8ec71a1af5ee84d4c5a737bd875
         - token: ethereum|treasure|0xb73e4f558F7d4436d77a18f56e4EE9d01764c641
         - token: sealevel|solanamainnet|7Z7mZ4d31sfC3mcQYQXUNo6j9snByT2gs5eDkXYmZAyn
       decimals: 18
@@ -3353,7 +3341,6 @@ SMOL/arbitrum-ethereum-solanamainnet-treasure:
     - addressOrDenom: "0xb73e4f558F7d4436d77a18f56e4EE9d01764c641"
       chainName: treasure
       connections:
-        - token: ethereum|arbitrum|0xa4bbac7ed5bda8ec71a1af5ee84d4c5a737bd875
         - token: ethereum|ethereum|0x53cce6d10e43d1b3d11872ad22ec2acd8d2537b8
         - token: sealevel|solanamainnet|7Z7mZ4d31sfC3mcQYQXUNo6j9snByT2gs5eDkXYmZAyn
       decimals: 18
