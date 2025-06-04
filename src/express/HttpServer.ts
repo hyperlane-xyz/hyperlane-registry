@@ -2,7 +2,7 @@ import type { Logger } from 'pino';
 
 import express, { Express, Request, Response } from 'express';
 import { IRegistry } from '../registry/IRegistry.js';
-import { DEFAULT_PORT, DEFAULT_REFRESH_INTERVAL } from './src/constants/ServerConstants.js';
+import { ServerConstants, AppConstants } from './src/constants/index.js';
 import { createErrorHandler } from './src/middleware/errorHandler.js';
 import { createWarpRouter } from './src/routes/warp.js';
 import { WarpService } from './src/services/warpService.js';
@@ -24,16 +24,24 @@ export class HttpServer {
   }
 
   async start(
-    port = parseInt(process.env.PORT || DEFAULT_PORT.toString()),
-    refreshInterval = parseInt(process.env.REFRESH_INTERVAL || DEFAULT_REFRESH_INTERVAL.toString()),
+    port = parseInt(process.env.PORT || ServerConstants.DEFAULT_PORT.toString()),
+    refreshInterval = parseInt(
+      process.env.REFRESH_INTERVAL || ServerConstants.DEFAULT_REFRESH_INTERVAL.toString(),
+    ),
   ) {
     try {
       const registryService = new RegistryService(this.getRegistry, refreshInterval, this.logger);
       await registryService.initialize();
 
       // add health check routes
-      this.app.use('/health', (_req: Request, res: Response) => void res.sendStatus(200));
-      this.app.use('/readiness', (_req: Request, res: Response) => void res.sendStatus(200));
+      this.app.use(
+        '/health',
+        (_req: Request, res: Response) => void res.sendStatus(AppConstants.HTTP_STATUS_OK),
+      );
+      this.app.use(
+        '/readiness',
+        (_req: Request, res: Response) => void res.sendStatus(AppConstants.HTTP_STATUS_OK),
+      );
 
       // add routes
       this.app.use('/', createRootRouter(new RootService(registryService)));
@@ -43,7 +51,7 @@ export class HttpServer {
       // add error handler to the end of the middleware stack
       this.app.use(createErrorHandler(this.logger));
 
-      const host = process.env.HOST || '127.0.0.1';
+      const host = process.env.HOST || ServerConstants.DEFAULT_HOST;
       const server = this.app.listen(port, host, () =>
         this.logger.info(`Server running on port ${port}`),
       );
