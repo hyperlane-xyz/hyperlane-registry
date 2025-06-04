@@ -14,7 +14,8 @@ export BASE_COMMIT="$1"
 export HEAD_COMMIT="$2"
 
 WARP_ROUTE_IDS=$(
-    git diff "$BASE_COMMIT".."$HEAD_COMMIT" --name-only |
+    # ARM = Additions, Renames, Modifications
+    git diff --diff-filter=ARM "$BASE_COMMIT".."$HEAD_COMMIT" --name-only |
     grep -E 'warp_routes/.+-(config|deploy)\.yaml$' |
     sed -E 's|deployments/warp_routes/||' |
     sed -E 's|-config\.yaml$||' |

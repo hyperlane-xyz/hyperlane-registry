@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Updated starknet domainId
+Add wfragBTC.

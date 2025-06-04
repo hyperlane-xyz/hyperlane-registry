@@ -1,5 +1,21 @@
 # @hyperlane-xyz/registry
 
+## 17.0.0
+
+### Major Changes
+
+- 432c8eb: Update tUSD warp route to Nucleus owners
+
+### Minor Changes
+
+- d485bfe: Remove Arbitrum from SMOL route and update configs
+
+### Patch Changes
+
+- d1d05e5: Rename EZETH prod and stage file names to renzo-prod and renzo-stage respectively
+- f7a13c5: Update starknet's coingeckoId to be ethereum
+- 4074d49: Updated starknet domainId
+
 ## 16.1.0
 
 ### Minor Changes
