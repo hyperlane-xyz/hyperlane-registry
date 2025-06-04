@@ -5204,6 +5204,34 @@ osmosis:
   technicalStack: other
   transactionOverrides:
     gasPrice: "0.025"
+paradex:
+  blockExplorers:
+    - apiUrl: https://voyager.paradex.trade/api
+      family: voyager
+      name: Paradex Explorer
+      url: https://voyager.paradex.trade
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 30
+    reorgPeriod: 1
+  chainId: "0x534e5f4d41494e"
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Paradex
+  domainId: 514051890
+  gasCurrencyCoinGeckoId: paradex-fuel
+  name: paradex
+  nativeToken:
+    decimals: 18
+    denom: "0x047adc7deE88eec362D71A52C25D40559a921434B2d90e75b6a4a6E4e9fb9Ab1"
+    name: Para Gas Token
+    symbol: FUEL
+  protocol: starknet
+  rpcUrls:
+    - http: https://juno.api.prod.paradex.trade/rpc/v0_7
+    - http: https://pathfinder.api.prod.paradex.trade/rpc/v0_7
+  technicalStack: other
 paradexsepolia:
   blockExplorers:
     - apiUrl: https://voyager.testnet.paradex.trade/api
