@@ -2,20 +2,20 @@ import type { Logger } from 'pino';
 
 import {
   HypTokenRouterConfig,
-  TokenType,
   ChainMap,
   ChainMetadata,
   ChainName,
   WarpCoreConfig,
   WarpRouteDeployConfig,
+  isSyntheticTokenConfig,
+  isSyntheticRebaseTokenConfig,
 } from '@hyperlane-xyz/sdk';
 import { assert, objFilter, objLength } from '@hyperlane-xyz/utils';
-import type { ChainAddresses, MaybePromise, WarpDeployConfigMap } from '../types.js';
+import type { ChainAddresses, MaybePromise, WarpDeployConfigMap, WarpRouteId } from '../types.js';
 import { WarpRouteConfigMap } from '../types.js';
 import { stripLeadingSlash } from '../utils.js';
 import type {
   AddWarpRouteConfigOptions,
-  AddWarpRouteOptions,
   IRegistry,
   RegistryContent,
   RegistryType,
@@ -23,7 +23,7 @@ import type {
   WarpRouteFilterParams,
 } from './IRegistry.js';
 import { MergedRegistry } from './MergedRegistry.js';
-import { createWarpRouteConfigId, warpRouteConfigToId } from './warp-utils.js';
+import { createWarpRouteConfigId, syntheticTokenStandards } from './warp-utils.js';
 import { WARP_ROUTE_ID_REGEX } from '../consts.js';
 
 export abstract class BaseRegistry implements IRegistry {
@@ -61,11 +61,63 @@ export abstract class BaseRegistry implements IRegistry {
     return 'deployments/warp_routes';
   }
 
-  protected getWarpRouteCoreConfigPath(config: WarpCoreConfig, options?: AddWarpRouteOptions) {
-    return `${this.getWarpRoutesPath()}/${warpRouteConfigToId(
-      config,
-      options?.symbol,
-    )}-config.yaml`;
+  /**
+   * Generates a warp route ID from a warp core config.
+   *
+   * The function handles three main cases:
+   * 1. If a warpRouteId is provided in options, it uses that directly
+   * 2. If there is exactly one synthetic token, it uses that token's chain and symbol
+   * 3. Otherwise, it uses all chains and requires a single symbol (either from options or tokens)
+   */
+  static warpRouteConfigToId(
+    config: WarpCoreConfig,
+    options?: AddWarpRouteConfigOptions,
+  ): WarpRouteId {
+    assert(config?.tokens?.length > 0, 'Cannot generate ID for empty warp config');
+
+    const syntheticTokens = config.tokens.filter((token) =>
+      syntheticTokenStandards.includes(token.standard),
+    );
+
+    let warpRouteId;
+    if (options && 'warpRouteId' in options) {
+      warpRouteId = options.warpRouteId;
+    } else if (syntheticTokens.length === 1) {
+      const syntheticChain = syntheticTokens[0].chainName;
+      const syntheticSymbol = syntheticTokens[0].symbol;
+      const symbol = options?.symbol || syntheticSymbol;
+
+      warpRouteId = createWarpRouteConfigId(symbol, syntheticChain);
+    } else {
+      // Only support one symbol per warp config for now
+      const allChains = config.tokens.map((token) => token.chainName);
+      const allSymbols = new Set(config.tokens.map((token) => token.symbol));
+      if (!options?.symbol && allSymbols.size !== 1) {
+        throw new Error(
+          `Only one token symbol per warp config is supported for now. Found: [${[
+            ...allSymbols,
+          ].join()}]`,
+        );
+      }
+
+      const symbol = options?.symbol || [...allSymbols][0];
+      warpRouteId = createWarpRouteConfigId(symbol, allChains.sort().join('-'));
+    }
+    assert(
+      warpRouteId.match(WARP_ROUTE_ID_REGEX),
+      `Invalid warp route ID: ${warpRouteId}. Must be in the format such as: TOKENSYMBOL/label...`,
+    );
+
+    return warpRouteId;
+  }
+
+  protected getWarpRouteCoreConfigPath(
+    config: WarpCoreConfig,
+    options?: AddWarpRouteConfigOptions,
+  ) {
+    const warpRouteId = BaseRegistry.warpRouteConfigToId(config, options);
+
+    return `${this.getWarpRoutesPath()}/${warpRouteId}-config.yaml`;
   }
 
   /**
@@ -79,21 +131,25 @@ export abstract class BaseRegistry implements IRegistry {
    * Otherwise, the method attempts to generate an ID based on 1 synthetic chain, or defaults to all chains.
    */
   static warpDeployConfigToId(config: WarpRouteDeployConfig, options: AddWarpRouteConfigOptions) {
-    const syntheticChains = objFilter(config, (_, c): c is HypTokenRouterConfig =>
-      [TokenType.synthetic, TokenType.syntheticRebase, TokenType.syntheticUri].includes(c.type),
+    assert(objLength(config) > 0, 'Cannot generate ID for empty warp deploy config');
+
+    const syntheticChains = objFilter(
+      config,
+      (_, c): c is HypTokenRouterConfig =>
+        isSyntheticTokenConfig(c) || isSyntheticRebaseTokenConfig(c),
     );
     let warpRouteId;
     if ('warpRouteId' in options) {
       warpRouteId = options.warpRouteId;
     } else if (objLength(syntheticChains) === 1) {
-      warpRouteId = createWarpRouteConfigId(options.symbol, Object.keys(syntheticChains));
+      warpRouteId = createWarpRouteConfigId(options.symbol, Object.keys(syntheticChains)[0]);
     } else {
-      warpRouteId = createWarpRouteConfigId(options.symbol, Object.keys(config));
+      warpRouteId = createWarpRouteConfigId(options.symbol, Object.keys(config).sort().join('-'));
     }
 
     assert(
       warpRouteId.match(WARP_ROUTE_ID_REGEX),
-      `Invalid warp route ID: ${warpRouteId}. Must be in the format TOKENSYMBOL/label...`,
+      `Invalid warp route ID: ${warpRouteId}. Must be in the format such as: TOKENSYMBOL/label...`,
     );
     return warpRouteId;
   }
@@ -101,9 +157,9 @@ export abstract class BaseRegistry implements IRegistry {
     config: WarpRouteDeployConfig,
     options: AddWarpRouteConfigOptions,
   ) {
-    const routeId = BaseRegistry.warpDeployConfigToId(config, options);
+    const warpRouteId = BaseRegistry.warpDeployConfigToId(config, options);
 
-    return `${this.getWarpRoutesPath()}/${routeId}-deploy.yaml`;
+    return `${this.getWarpRoutesPath()}/${warpRouteId}-deploy.yaml`;
   }
 
   abstract listRegistryContent(): MaybePromise<RegistryContent>;

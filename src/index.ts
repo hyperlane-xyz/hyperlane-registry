@@ -6,7 +6,7 @@ export {
 export { BaseRegistry } from './registry/BaseRegistry.js';
 export { GithubRegistry, GithubRegistryOptions } from './registry/GithubRegistry.js';
 export {
-  AddWarpRouteOptions,
+  AddWarpRouteConfigOptions,
   ChainFiles,
   IRegistry,
   RegistryContent,
@@ -18,7 +18,6 @@ export {
   filterWarpRoutesIds,
   warpConfigToWarpAddresses,
   warpRouteConfigPathToId,
-  warpRouteConfigToId,
   createWarpRouteConfigId,
 } from './registry/warp-utils.js';
 export { ChainAddresses, ChainAddressesSchema } from './types.js';

@@ -1,0 +1,121 @@
+bsc:
+  decimals: 18
+  destinationGas:
+    "1": "68000"
+    "4207": "0"
+  hook:
+    address: "0x2E49dA0Dc6BFac19f522Da4a5379dFf4caFA3B34"
+    beneficiary: "0xCC5d4c9D59230f185e4F7A20Acbf62D59F0d4899"
+    oracleConfig:
+      edgenchain:
+        gasPrice: "562500"
+        tokenDecimals: 18
+        tokenExchangeRate: "4977759"
+      ethereum:
+        gasPrice: "1346848220"
+        tokenDecimals: 18
+        tokenExchangeRate: "50158732605"
+    oracleKey: "0xCC844ddA1e986B92FD2D075bb05Ed21F509CA20c"
+    overhead:
+      edgenchain: 150000
+      ethereum: 150000
+    owner: "0xCC844ddA1e986B92FD2D075bb05Ed21F509CA20c"
+    type: interchainGasPaymaster
+  interchainSecurityModule:
+    address: "0xa420007CCfFB2af91D08f82C3572eA4C2d693FF0"
+    relayer: "0x115c6d62067084D7ce168bCAe0727a66E732572A"
+    type: trustedRelayerIsm
+  mailbox: "0x2971b9Aec44bE4eb673DF1B88cDB57b96eefe8a4"
+  name: LayerEdge
+  owner: "0xCC844ddA1e986B92FD2D075bb05Ed21F509CA20c"
+  proxyAdmin:
+    address: "0x1c6cDa35622030FE6821dEc0201583126d2d54e8"
+    owner: "0xCC5d4c9D59230f185e4F7A20Acbf62D59F0d4899"
+  remoteRouters:
+    "1":
+      address: "0xB8bB85FD0836691a64aFc23199566F898a1d6f4a"
+    "4207":
+      address: "0x22EacED1774e0e24D6F4c3b1e593488Be21Ac34f"
+  symbol: EDGEN
+  type: synthetic
+edgenchain:
+  decimals: 18
+  destinationGas:
+    "1": "68000"
+    "56": "64000"
+  hook:
+    address: "0x8BADAAcD60824c5Db01e9C3616e4906Ca90B7C02"
+    beneficiary: "0xCC844ddA1e986B92FD2D075bb05Ed21F509CA20c"
+    oracleConfig:
+      bsc:
+        gasPrice: "100000000"
+        tokenDecimals: 18
+        tokenExchangeRate: "33951021912349"
+      ethereum:
+        gasPrice: "1346848220"
+        tokenDecimals: 18
+        tokenExchangeRate: "130995402290021"
+    oracleKey: "0xCC844ddA1e986B92FD2D075bb05Ed21F509CA20c"
+    overhead:
+      bsc: 150000
+      ethereum: 150000
+    owner: "0xCC844ddA1e986B92FD2D075bb05Ed21F509CA20c"
+    type: interchainGasPaymaster
+  interchainSecurityModule:
+    address: "0x2bd2962A14C7c416e747B9e893951bAE851E3f3f"
+    relayer: "0x115c6d62067084D7ce168bCAe0727a66E732572A"
+    type: trustedRelayerIsm
+  mailbox: "0xef07FAE1a6912C8d333F72E01A03CE3bb18E12a1"
+  name: EDGEN
+  owner: "0xCC844ddA1e986B92FD2D075bb05Ed21F509CA20c"
+  proxyAdmin:
+    address: "0x1fd173520c0a330E10FDcD16B8256B3714019b04"
+    owner: "0xCC844ddA1e986B92FD2D075bb05Ed21F509CA20c"
+  remoteRouters:
+    "1":
+      address: "0xB8bB85FD0836691a64aFc23199566F898a1d6f4a"
+    "56":
+      address: "0x0C808F0464C423d5Ea4F4454fcc23B6E2Ae75562"
+  symbol: EDGEN
+  type: native
+ethereum:
+  decimals: 18
+  destinationGas:
+    "4207": "0"
+    "56": "64000"
+  hook:
+    address: "0x13113bD4429735a0e7C398e455f7B39f35e38B52"
+    beneficiary: "0xCC5d4c9D59230f185e4F7A20Acbf62D59F0d4899"
+    oracleConfig:
+      bsc:
+        gasPrice: "100000000"
+        tokenDecimals: 18
+        tokenExchangeRate: "3369303633"
+      edgenchain:
+        gasPrice: "562500"
+        tokenDecimals: 18
+        tokenExchangeRate: "1290122"
+    oracleKey: "0xCC844ddA1e986B92FD2D075bb05Ed21F509CA20c"
+    overhead:
+      bsc: 150000
+      edgenchain: 150000
+    owner: "0xCC844ddA1e986B92FD2D075bb05Ed21F509CA20c"
+    type: interchainGasPaymaster
+  interchainSecurityModule:
+    address: "0xbD53ba7474126956db921cf3Fe580eB3707fb36A"
+    relayer: "0x115c6d62067084D7ce168bCAe0727a66E732572A"
+    type: trustedRelayerIsm
+  mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
+  name: LayerEdge
+  owner: "0xCC844ddA1e986B92FD2D075bb05Ed21F509CA20c"
+  proxyAdmin:
+    address: "0x6F9eD23323849E0E6c387A8B5E1BAe24B333dB6d"
+    owner: "0xCC5d4c9D59230f185e4F7A20Acbf62D59F0d4899"
+  remoteRouters:
+    "4207":
+      address: "0x22EacED1774e0e24D6F4c3b1e593488Be21Ac34f"
+    "56":
+      address: "0x0C808F0464C423d5Ea4F4454fcc23B6E2Ae75562"
+  symbol: EDGEN
+  token: "0xAa9806c938836627Ed1a41Ae871c7E1889AE02Ca"
+  type: collateral
