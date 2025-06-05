@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://voyager.online/api
+    family: voyager
+    name: Starknet Explorer
+    url: https://voyager.online/
+blocks:
+  confirmations: 1
+  estimateBlockTime: 30
+  reorgPeriod: 1
+chainId: "0x534e5f4d41494e"
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Starknet
+# keccak256("starknet") % MAX_INT32
+domainId: 358974494
+gasCurrencyCoinGeckoId: ethereum
+name: starknet
+nativeToken:
+  decimals: 18
+  denom: "0x049D36570D4e46f48e99674bd3fcc84644DdD6b96F7C741B1562B82f9e004dC7"
+  name: Ether
+  symbol: ETH
+protocol: starknet
+rpcUrls:
+  - http: https://starknet-mainnet.public.blastapi.io
+  - http: https://rpc.starknet.lava.build:443
+  - http: https://starknet.api.onfinality.io/public
+  - http: https://api.zan.top/public/starknet-mainnet
+technicalStack: other
