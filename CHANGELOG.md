@@ -1,5 +1,21 @@
 # @hyperlane-xyz/registry
 
+## 17.1.0
+
+### Minor Changes
+
+- 35c8e77: Update GithubRegistry getWarpRoutes to fetch combined warpRouteConfigs.yaml file
+- 2b679ca: Added edgenchain config
+- bec384b: added ozean poseidon testnet
+- ee66a9b: Deploy to botanix, katana. Update arcadia gecko ID.
+- e6462f7: Added core deployment to paradex
+
+### Patch Changes
+
+- a7709f7: Remove treasuretopaz testnet.
+- 191d00e: Update Renzo EZETH protocol fee values to match onchain
+- 22ff449: Add wfragBTC.
+
 ## 17.0.0
 
 ### Major Changes
