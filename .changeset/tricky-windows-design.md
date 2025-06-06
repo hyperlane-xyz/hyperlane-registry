@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Add wfragBTC.
+Update to Hyperlane SDK 13.2.1.
