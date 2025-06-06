@@ -1,5 +1,17 @@
 # @hyperlane-xyz/registry
 
+## 17.2.0
+
+### Minor Changes
+
+- ab66e3d: Extend wfragSOL and wfragJTO.
+- a157223: Add adraSOL deploy config.
+
+### Patch Changes
+
+- 4fa604e: Add adraSOL metadata.
+- c1986af: Update to Hyperlane SDK 13.2.1.
+
 ## 17.1.0
 
 ### Minor Changes
