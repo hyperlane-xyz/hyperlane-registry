@@ -7,7 +7,6 @@ import {
   WarpRouteDeployConfigSchema,
 } from '@hyperlane-xyz/sdk';
 import { FileSystemRegistry } from '../../src/fs/FileSystemRegistry.js';
-import { createWarpRouteConfigId, parseWarpRouteConfigId } from '../../src/registry/warp-utils.js';
 import path from 'path';
 import fs from 'fs';
 import { WARP_ROUTE_SYMBOL_DIRECTORY_REGEX } from '../../src/consts.js';
