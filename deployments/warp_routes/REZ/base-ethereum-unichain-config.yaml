@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xF4eae2f139D8032b8410Fef46f6873cD71A0FD76"
+    chainName: base
+    collateralAddressOrDenom: "0xf757c9804cF2EE8d8Ed64e0A8936293Fe43a7252"
+    connections:
+      - token: ethereum|ethereum|0xc32848c38Dd5A5098Cd53d33e425c1013a4E06A8
+      - token: ethereum|unichain|0xaEae59338bc13642D674DA22d56c83EA4D9d9B73
+    decimals: 18
+    logoURI: /deployments/warp_routes/REZ/REZ-logo.svg
+    name: Renzo
+    standard: EvmHypXERC20
+    symbol: REZ
+  - addressOrDenom: "0xc32848c38Dd5A5098Cd53d33e425c1013a4E06A8"
+    chainName: ethereum
+    coinGeckoId: renzo
+    collateralAddressOrDenom: "0xd8B543fEac4EEcEF5a46a926e10D6f4a72de6fE0"
+    connections:
+      - token: ethereum|base|0xF4eae2f139D8032b8410Fef46f6873cD71A0FD76
+      - token: ethereum|unichain|0xaEae59338bc13642D674DA22d56c83EA4D9d9B73
+    decimals: 18
+    logoURI: /deployments/warp_routes/REZ/REZ-logo.svg
+    name: Renzo
+    standard: EvmHypXERC20Lockbox
+    symbol: REZ
+  - addressOrDenom: "0xaEae59338bc13642D674DA22d56c83EA4D9d9B73"
+    chainName: unichain
+    collateralAddressOrDenom: "0xf757c9804cF2EE8d8Ed64e0A8936293Fe43a7252"
+    connections:
+      - token: ethereum|base|0xF4eae2f139D8032b8410Fef46f6873cD71A0FD76
+      - token: ethereum|ethereum|0xc32848c38Dd5A5098Cd53d33e425c1013a4E06A8
+    decimals: 18
+    logoURI: /deployments/warp_routes/REZ/REZ-logo.svg
+    name: Renzo
+    standard: EvmHypXERC20
+    symbol: REZ
