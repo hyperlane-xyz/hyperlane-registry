@@ -16,17 +16,17 @@ ethereum:
   interchainSecurityModule:
     modules:
       - threshold: 2
-        type: merkleRootMultisigIsm
-        validators:
-          - "0x95c7bf235837cb5a609fe6c95870410b9f68bcff"
-          - "0xa5a56e97fb46f0ac3a3d261e404acb998d9a6969"
-          - "0xbb5842ae0e05215b53df4787a29144efb7e67551"
-      - threshold: 2
         type: messageIdMultisigIsm
         validators:
-          - "0x95c7bf235837cb5a609fe6c95870410b9f68bcff"
-          - "0xa5a56e97fb46f0ac3a3d261e404acb998d9a6969"
           - "0xbb5842ae0e05215b53df4787a29144efb7e67551"
+          - "0xa5a56e97fb46f0ac3a3d261e404acb998d9a6969"
+          - "0x95c7bf235837cb5a609fe6c95870410b9f68bcff"
+      - threshold: 2
+        type: merkleRootMultisigIsm
+        validators:
+          - "0xbb5842ae0e05215b53df4787a29144efb7e67551"
+          - "0xa5a56e97fb46f0ac3a3d261e404acb998d9a6969"
+          - "0x95c7bf235837cb5a609fe6c95870410b9f68bcff"
     threshold: 1
     type: staticAggregationIsm
   owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"

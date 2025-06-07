@@ -1,14 +1,5 @@
 # yaml-language-server: $schema=../schema.json
 tokens:
-  - addressOrDenom: "0x93ca0d85837FF83158Cd14D65B169CdB223b1921"
-    chainName: arbitrum
-    connections:
-      - token: cosmos|neutron|neutron1dvzvf870mx9uf65uqhx40yzx9gu4xlqqq2pnx362a0ndmustww3smumrf5
-    decimals: 6
-    logoURI: /deployments/warp_routes/ECLIP/logo.svg
-    name: Eclipse Fi
-    standard: EvmHypSynthetic
-    symbol: ECLIP
   - addressOrDenom: neutron1dvzvf870mx9uf65uqhx40yzx9gu4xlqqq2pnx362a0ndmustww3smumrf5
     chainName: neutron
     coinGeckoId: eclipse-fi
@@ -20,6 +11,15 @@ tokens:
     logoURI: /deployments/warp_routes/ECLIP/logo.svg
     name: Eclipse Fi
     standard: CwHypCollateral
+    symbol: ECLIP
+  - addressOrDenom: "0x93ca0d85837FF83158Cd14D65B169CdB223b1921"
+    chainName: arbitrum
+    connections:
+      - token: cosmos|neutron|neutron1dvzvf870mx9uf65uqhx40yzx9gu4xlqqq2pnx362a0ndmustww3smumrf5
+    decimals: 6
+    logoURI: /deployments/warp_routes/ECLIP/logo.svg
+    name: Eclipse Fi
+    standard: EvmHypSynthetic
     symbol: ECLIP
   - addressOrDenom: ibc/773B4D0A3CD667B2275D5A4A7A2F0909C0BA0F4059C0B9181E680DDF4965DCC7
     chainName: neutron

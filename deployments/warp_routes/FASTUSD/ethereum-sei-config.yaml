@@ -1,5 +1,15 @@
 # yaml-language-server: $schema=../schema.json
 tokens:
+  - addressOrDenom: "0xeA895A7Ff45d8d3857A04c1E38A362f3bd9a076f"
+    chainName: sei
+    collateralAddressOrDenom: "0x37a4dD9CED2b19Cfe8FAC251cd727b5787E45269"
+    connections:
+      - token: ethereum|ethereum|0x9AD81058c6C3Bf552C9014CB30E824717A0ee21b
+    decimals: 18
+    logoURI: /deployments/warp_routes/FASTUSD/logo.svg
+    name: fastUSD
+    standard: EvmHypXERC20
+    symbol: fastUSD
   - addressOrDenom: "0x9AD81058c6C3Bf552C9014CB30E824717A0ee21b"
     chainName: ethereum
     # Unique setup where deUSD is deposited as collateral on Ethereum and fastUSD is minted as a synthetic on Sei
@@ -11,14 +21,4 @@ tokens:
     logoURI: /deployments/warp_routes/FASTUSD/logo.svg
     name: fastUSD
     standard: EvmHypCollateral
-    symbol: fastUSD
-  - addressOrDenom: "0xeA895A7Ff45d8d3857A04c1E38A362f3bd9a076f"
-    chainName: sei
-    collateralAddressOrDenom: "0x37a4dD9CED2b19Cfe8FAC251cd727b5787E45269"
-    connections:
-      - token: ethereum|ethereum|0x9AD81058c6C3Bf552C9014CB30E824717A0ee21b
-    decimals: 18
-    logoURI: /deployments/warp_routes/FASTUSD/logo.svg
-    name: fastUSD
-    standard: EvmHypXERC20
     symbol: fastUSD

@@ -6,16 +6,6 @@ options:
       destination: ethereum
       origin: stride
 tokens:
-  # stTIA on Ethereum to Stride
-  - addressOrDenom: "0x48A612A6da945205a221E94BB9F40B0550Cd2C4e"
-    chainName: ethereum
-    connections:
-      - token: cosmos|stride|stride1z3lz9n0549v95q6yllghezugdra6ezm68jtf4ve5hsz8k867k9cq3pc2f8
-    decimals: 6
-    logoURI: /deployments/warp_routes/stTIA/logo.svg
-    name: stTIA
-    standard: EvmHypSynthetic
-    symbol: stTIA
   # stTIA on Stride to Ethereum
   - addressOrDenom: stride1z3lz9n0549v95q6yllghezugdra6ezm68jtf4ve5hsz8k867k9cq3pc2f8
     chainName: stride
@@ -26,4 +16,14 @@ tokens:
     logoURI: /deployments/warp_routes/stTIA/logo.svg
     name: stTIA
     standard: CwHypCollateral
+    symbol: stTIA
+  # stTIA on Ethereum to Stride
+  - addressOrDenom: "0x48A612A6da945205a221E94BB9F40B0550Cd2C4e"
+    chainName: ethereum
+    connections:
+      - token: cosmos|stride|stride1z3lz9n0549v95q6yllghezugdra6ezm68jtf4ve5hsz8k867k9cq3pc2f8
+    decimals: 6
+    logoURI: /deployments/warp_routes/stTIA/logo.svg
+    name: stTIA
+    standard: EvmHypSynthetic
     symbol: stTIA
