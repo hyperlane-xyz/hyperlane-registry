@@ -3,5 +3,5 @@
   "*.ts": "prettier --write", 
   "*.md": "prettier --write",
   "*.json": "prettier --write",
-  "*.yaml": "prettier --write"
+  "*.yaml": ["eslint --fix", "prettier --write"]
 }
