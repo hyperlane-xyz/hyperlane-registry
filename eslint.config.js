@@ -64,7 +64,7 @@ export default tseslint.config(
           minValues: 2,
         },
       ],
-      'custom/sort-yaml-arrays': [
+      'hyperlane/sort-yaml-arrays': [
         'error',
         {
           arrays: [
@@ -77,7 +77,7 @@ export default tseslint.config(
       ],
     },
     plugins: {
-      custom: sortYamlArraysPlugin,
+      hyperlane: sortYamlArraysPlugin,
     },
   },
   {
