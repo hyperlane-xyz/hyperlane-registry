@@ -4,9 +4,11 @@ tokens:
     chainName: base
     collateralAddressOrDenom: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
     connections:
+      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
       - token: ethereum|celo|0xbBa1938ff861c77eA1687225B9C33554379Ef327
       - token: ethereum|ethereum|0x88AC0fC430130983c0DDEB4C22574056D8340Ca8
       - token: ethereum|fraxtal|0xa0bD9e96556E27e6FfF0cC0F77496390d9844E1e
+      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
       - token: ethereum|lisk|0x910FF91a92c9141b8352Ad3e50cF13ef9F3169A1
       - token: ethereum|metal|0x4FC916e83F59706Ba1Ccdd607be8cB64753Fe4f0
       - token: ethereum|metis|0x6267Dbfc38f7Af897536563c15f07B89634cb656
@@ -15,8 +17,6 @@ tokens:
       - token: ethereum|soneium|0x2dC335bDF489f8e978477Ae53924324697e0f7BB
       - token: ethereum|superseed|0x5beADE696E12aBE2839FEfB41c7EE6DA1f074C55
       - token: ethereum|unichain|0x4A8149B1b9e0122941A69D01D23EaE6bD1441b4f
-      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
-      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
     decimals: 6
     logoURI: /deployments/warp_routes/oUSDT/logo.svg
     name: OpenUSDT
@@ -30,13 +30,15 @@ tokens:
     name: OpenUSDT
     standard: EvmHypVSXERC20
     symbol: oUSDT
-  - addressOrDenom: "0xbBa1938ff861c77eA1687225B9C33554379Ef327"
-    chainName: celo
-    collateralAddressOrDenom: "0x5e5F4d6B03db16E7f00dE7C9AFAA53b92C8d1D42"
+  - addressOrDenom: "0x155332Fad14bdE126255E6Ab6A09Fe88D2864294"
+    chainName: bob
+    collateralAddressOrDenom: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
     connections:
       - token: ethereum|base|0x4F0654395d621De4d1101c0F98C1Dba73ca0a61f
+      - token: ethereum|celo|0xbBa1938ff861c77eA1687225B9C33554379Ef327
       - token: ethereum|ethereum|0x88AC0fC430130983c0DDEB4C22574056D8340Ca8
       - token: ethereum|fraxtal|0xa0bD9e96556E27e6FfF0cC0F77496390d9844E1e
+      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
       - token: ethereum|lisk|0x910FF91a92c9141b8352Ad3e50cF13ef9F3169A1
       - token: ethereum|metal|0x4FC916e83F59706Ba1Ccdd607be8cB64753Fe4f0
       - token: ethereum|metis|0x6267Dbfc38f7Af897536563c15f07B89634cb656
@@ -45,8 +47,28 @@ tokens:
       - token: ethereum|soneium|0x2dC335bDF489f8e978477Ae53924324697e0f7BB
       - token: ethereum|superseed|0x5beADE696E12aBE2839FEfB41c7EE6DA1f074C55
       - token: ethereum|unichain|0x4A8149B1b9e0122941A69D01D23EaE6bD1441b4f
+    decimals: 6
+    logoURI: /deployments/warp_routes/oUSDT/logo.svg
+    name: OpenUSDT
+    standard: EvmHypVSXERC20
+    symbol: oUSDT
+  - addressOrDenom: "0xbBa1938ff861c77eA1687225B9C33554379Ef327"
+    chainName: celo
+    collateralAddressOrDenom: "0x5e5F4d6B03db16E7f00dE7C9AFAA53b92C8d1D42"
+    connections:
+      - token: ethereum|base|0x4F0654395d621De4d1101c0F98C1Dba73ca0a61f
       - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
+      - token: ethereum|ethereum|0x88AC0fC430130983c0DDEB4C22574056D8340Ca8
+      - token: ethereum|fraxtal|0xa0bD9e96556E27e6FfF0cC0F77496390d9844E1e
       - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
+      - token: ethereum|lisk|0x910FF91a92c9141b8352Ad3e50cF13ef9F3169A1
+      - token: ethereum|metal|0x4FC916e83F59706Ba1Ccdd607be8cB64753Fe4f0
+      - token: ethereum|metis|0x6267Dbfc38f7Af897536563c15f07B89634cb656
+      - token: ethereum|mode|0x324d0b921C03b1e42eeFD198086A64beC3d736c2
+      - token: ethereum|optimism|0x7bD2676c85cca9Fa2203ebA324fb8792fbd520b8
+      - token: ethereum|soneium|0x2dC335bDF489f8e978477Ae53924324697e0f7BB
+      - token: ethereum|superseed|0x5beADE696E12aBE2839FEfB41c7EE6DA1f074C55
+      - token: ethereum|unichain|0x4A8149B1b9e0122941A69D01D23EaE6bD1441b4f
     decimals: 6
     logoURI: /deployments/warp_routes/oUSDT/logo.svg
     name: OpenUSDT
@@ -57,8 +79,10 @@ tokens:
     collateralAddressOrDenom: "0x6D265C7dD8d76F25155F1a7687C693FDC1220D12"
     connections:
       - token: ethereum|base|0x4F0654395d621De4d1101c0F98C1Dba73ca0a61f
+      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
       - token: ethereum|celo|0xbBa1938ff861c77eA1687225B9C33554379Ef327
       - token: ethereum|fraxtal|0xa0bD9e96556E27e6FfF0cC0F77496390d9844E1e
+      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
       - token: ethereum|lisk|0x910FF91a92c9141b8352Ad3e50cF13ef9F3169A1
       - token: ethereum|metal|0x4FC916e83F59706Ba1Ccdd607be8cB64753Fe4f0
       - token: ethereum|metis|0x6267Dbfc38f7Af897536563c15f07B89634cb656
@@ -67,8 +91,6 @@ tokens:
       - token: ethereum|soneium|0x2dC335bDF489f8e978477Ae53924324697e0f7BB
       - token: ethereum|superseed|0x5beADE696E12aBE2839FEfB41c7EE6DA1f074C55
       - token: ethereum|unichain|0x4A8149B1b9e0122941A69D01D23EaE6bD1441b4f
-      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
-      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
     decimals: 6
     logoURI: /deployments/warp_routes/oUSDT/logo.svg
     name: OpenUSDT
@@ -79,8 +101,10 @@ tokens:
     collateralAddressOrDenom: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
     connections:
       - token: ethereum|base|0x4F0654395d621De4d1101c0F98C1Dba73ca0a61f
+      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
       - token: ethereum|celo|0xbBa1938ff861c77eA1687225B9C33554379Ef327
       - token: ethereum|ethereum|0x88AC0fC430130983c0DDEB4C22574056D8340Ca8
+      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
       - token: ethereum|lisk|0x910FF91a92c9141b8352Ad3e50cF13ef9F3169A1
       - token: ethereum|metal|0x4FC916e83F59706Ba1Ccdd607be8cB64753Fe4f0
       - token: ethereum|metis|0x6267Dbfc38f7Af897536563c15f07B89634cb656
@@ -89,8 +113,28 @@ tokens:
       - token: ethereum|soneium|0x2dC335bDF489f8e978477Ae53924324697e0f7BB
       - token: ethereum|superseed|0x5beADE696E12aBE2839FEfB41c7EE6DA1f074C55
       - token: ethereum|unichain|0x4A8149B1b9e0122941A69D01D23EaE6bD1441b4f
+    decimals: 6
+    logoURI: /deployments/warp_routes/oUSDT/logo.svg
+    name: OpenUSDT
+    standard: EvmHypVSXERC20
+    symbol: oUSDT
+  - addressOrDenom: "0x9C6e8d989ea7F212e679191BEb44139d83ac927a"
+    chainName: hashkey
+    collateralAddressOrDenom: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
+    connections:
+      - token: ethereum|base|0x4F0654395d621De4d1101c0F98C1Dba73ca0a61f
       - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
-      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
+      - token: ethereum|celo|0xbBa1938ff861c77eA1687225B9C33554379Ef327
+      - token: ethereum|ethereum|0x88AC0fC430130983c0DDEB4C22574056D8340Ca8
+      - token: ethereum|fraxtal|0xa0bD9e96556E27e6FfF0cC0F77496390d9844E1e
+      - token: ethereum|lisk|0x910FF91a92c9141b8352Ad3e50cF13ef9F3169A1
+      - token: ethereum|metal|0x4FC916e83F59706Ba1Ccdd607be8cB64753Fe4f0
+      - token: ethereum|metis|0x6267Dbfc38f7Af897536563c15f07B89634cb656
+      - token: ethereum|mode|0x324d0b921C03b1e42eeFD198086A64beC3d736c2
+      - token: ethereum|optimism|0x7bD2676c85cca9Fa2203ebA324fb8792fbd520b8
+      - token: ethereum|soneium|0x2dC335bDF489f8e978477Ae53924324697e0f7BB
+      - token: ethereum|superseed|0x5beADE696E12aBE2839FEfB41c7EE6DA1f074C55
+      - token: ethereum|unichain|0x4A8149B1b9e0122941A69D01D23EaE6bD1441b4f
     decimals: 6
     logoURI: /deployments/warp_routes/oUSDT/logo.svg
     name: OpenUSDT
@@ -117,9 +161,11 @@ tokens:
     collateralAddressOrDenom: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
     connections:
       - token: ethereum|base|0x4F0654395d621De4d1101c0F98C1Dba73ca0a61f
+      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
       - token: ethereum|celo|0xbBa1938ff861c77eA1687225B9C33554379Ef327
       - token: ethereum|ethereum|0x88AC0fC430130983c0DDEB4C22574056D8340Ca8
       - token: ethereum|fraxtal|0xa0bD9e96556E27e6FfF0cC0F77496390d9844E1e
+      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
       - token: ethereum|metal|0x4FC916e83F59706Ba1Ccdd607be8cB64753Fe4f0
       - token: ethereum|metis|0x6267Dbfc38f7Af897536563c15f07B89634cb656
       - token: ethereum|mode|0x324d0b921C03b1e42eeFD198086A64beC3d736c2
@@ -127,8 +173,6 @@ tokens:
       - token: ethereum|soneium|0x2dC335bDF489f8e978477Ae53924324697e0f7BB
       - token: ethereum|superseed|0x5beADE696E12aBE2839FEfB41c7EE6DA1f074C55
       - token: ethereum|unichain|0x4A8149B1b9e0122941A69D01D23EaE6bD1441b4f
-      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
-      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
     decimals: 6
     logoURI: /deployments/warp_routes/oUSDT/logo.svg
     name: OpenUSDT
@@ -147,9 +191,11 @@ tokens:
     collateralAddressOrDenom: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
     connections:
       - token: ethereum|base|0x4F0654395d621De4d1101c0F98C1Dba73ca0a61f
+      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
       - token: ethereum|celo|0xbBa1938ff861c77eA1687225B9C33554379Ef327
       - token: ethereum|ethereum|0x88AC0fC430130983c0DDEB4C22574056D8340Ca8
       - token: ethereum|fraxtal|0xa0bD9e96556E27e6FfF0cC0F77496390d9844E1e
+      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
       - token: ethereum|lisk|0x910FF91a92c9141b8352Ad3e50cF13ef9F3169A1
       - token: ethereum|metis|0x6267Dbfc38f7Af897536563c15f07B89634cb656
       - token: ethereum|mode|0x324d0b921C03b1e42eeFD198086A64beC3d736c2
@@ -157,8 +203,6 @@ tokens:
       - token: ethereum|soneium|0x2dC335bDF489f8e978477Ae53924324697e0f7BB
       - token: ethereum|superseed|0x5beADE696E12aBE2839FEfB41c7EE6DA1f074C55
       - token: ethereum|unichain|0x4A8149B1b9e0122941A69D01D23EaE6bD1441b4f
-      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
-      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
     decimals: 6
     logoURI: /deployments/warp_routes/oUSDT/logo.svg
     name: OpenUSDT
@@ -169,9 +213,11 @@ tokens:
     collateralAddressOrDenom: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
     connections:
       - token: ethereum|base|0x4F0654395d621De4d1101c0F98C1Dba73ca0a61f
+      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
       - token: ethereum|celo|0xbBa1938ff861c77eA1687225B9C33554379Ef327
       - token: ethereum|ethereum|0x88AC0fC430130983c0DDEB4C22574056D8340Ca8
       - token: ethereum|fraxtal|0xa0bD9e96556E27e6FfF0cC0F77496390d9844E1e
+      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
       - token: ethereum|lisk|0x910FF91a92c9141b8352Ad3e50cF13ef9F3169A1
       - token: ethereum|metal|0x4FC916e83F59706Ba1Ccdd607be8cB64753Fe4f0
       - token: ethereum|mode|0x324d0b921C03b1e42eeFD198086A64beC3d736c2
@@ -179,8 +225,6 @@ tokens:
       - token: ethereum|soneium|0x2dC335bDF489f8e978477Ae53924324697e0f7BB
       - token: ethereum|superseed|0x5beADE696E12aBE2839FEfB41c7EE6DA1f074C55
       - token: ethereum|unichain|0x4A8149B1b9e0122941A69D01D23EaE6bD1441b4f
-      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
-      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
     decimals: 6
     logoURI: /deployments/warp_routes/oUSDT/logo.svg
     name: OpenUSDT
@@ -191,9 +235,11 @@ tokens:
     collateralAddressOrDenom: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
     connections:
       - token: ethereum|base|0x4F0654395d621De4d1101c0F98C1Dba73ca0a61f
+      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
       - token: ethereum|celo|0xbBa1938ff861c77eA1687225B9C33554379Ef327
       - token: ethereum|ethereum|0x88AC0fC430130983c0DDEB4C22574056D8340Ca8
       - token: ethereum|fraxtal|0xa0bD9e96556E27e6FfF0cC0F77496390d9844E1e
+      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
       - token: ethereum|lisk|0x910FF91a92c9141b8352Ad3e50cF13ef9F3169A1
       - token: ethereum|metal|0x4FC916e83F59706Ba1Ccdd607be8cB64753Fe4f0
       - token: ethereum|metis|0x6267Dbfc38f7Af897536563c15f07B89634cb656
@@ -201,8 +247,6 @@ tokens:
       - token: ethereum|soneium|0x2dC335bDF489f8e978477Ae53924324697e0f7BB
       - token: ethereum|superseed|0x5beADE696E12aBE2839FEfB41c7EE6DA1f074C55
       - token: ethereum|unichain|0x4A8149B1b9e0122941A69D01D23EaE6bD1441b4f
-      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
-      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
     decimals: 6
     logoURI: /deployments/warp_routes/oUSDT/logo.svg
     name: OpenUSDT
@@ -213,9 +257,11 @@ tokens:
     collateralAddressOrDenom: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
     connections:
       - token: ethereum|base|0x4F0654395d621De4d1101c0F98C1Dba73ca0a61f
+      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
       - token: ethereum|celo|0xbBa1938ff861c77eA1687225B9C33554379Ef327
       - token: ethereum|ethereum|0x88AC0fC430130983c0DDEB4C22574056D8340Ca8
       - token: ethereum|fraxtal|0xa0bD9e96556E27e6FfF0cC0F77496390d9844E1e
+      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
       - token: ethereum|lisk|0x910FF91a92c9141b8352Ad3e50cF13ef9F3169A1
       - token: ethereum|metal|0x4FC916e83F59706Ba1Ccdd607be8cB64753Fe4f0
       - token: ethereum|metis|0x6267Dbfc38f7Af897536563c15f07B89634cb656
@@ -223,8 +269,6 @@ tokens:
       - token: ethereum|soneium|0x2dC335bDF489f8e978477Ae53924324697e0f7BB
       - token: ethereum|superseed|0x5beADE696E12aBE2839FEfB41c7EE6DA1f074C55
       - token: ethereum|unichain|0x4A8149B1b9e0122941A69D01D23EaE6bD1441b4f
-      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
-      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
     decimals: 6
     logoURI: /deployments/warp_routes/oUSDT/logo.svg
     name: OpenUSDT
@@ -243,9 +287,11 @@ tokens:
     collateralAddressOrDenom: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
     connections:
       - token: ethereum|base|0x4F0654395d621De4d1101c0F98C1Dba73ca0a61f
+      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
       - token: ethereum|celo|0xbBa1938ff861c77eA1687225B9C33554379Ef327
       - token: ethereum|ethereum|0x88AC0fC430130983c0DDEB4C22574056D8340Ca8
       - token: ethereum|fraxtal|0xa0bD9e96556E27e6FfF0cC0F77496390d9844E1e
+      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
       - token: ethereum|lisk|0x910FF91a92c9141b8352Ad3e50cF13ef9F3169A1
       - token: ethereum|metal|0x4FC916e83F59706Ba1Ccdd607be8cB64753Fe4f0
       - token: ethereum|metis|0x6267Dbfc38f7Af897536563c15f07B89634cb656
@@ -253,8 +299,6 @@ tokens:
       - token: ethereum|optimism|0x7bD2676c85cca9Fa2203ebA324fb8792fbd520b8
       - token: ethereum|superseed|0x5beADE696E12aBE2839FEfB41c7EE6DA1f074C55
       - token: ethereum|unichain|0x4A8149B1b9e0122941A69D01D23EaE6bD1441b4f
-      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
-      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
     decimals: 6
     logoURI: /deployments/warp_routes/oUSDT/logo.svg
     name: OpenUSDT
@@ -273,9 +317,11 @@ tokens:
     collateralAddressOrDenom: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
     connections:
       - token: ethereum|base|0x4F0654395d621De4d1101c0F98C1Dba73ca0a61f
+      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
       - token: ethereum|celo|0xbBa1938ff861c77eA1687225B9C33554379Ef327
       - token: ethereum|ethereum|0x88AC0fC430130983c0DDEB4C22574056D8340Ca8
       - token: ethereum|fraxtal|0xa0bD9e96556E27e6FfF0cC0F77496390d9844E1e
+      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
       - token: ethereum|lisk|0x910FF91a92c9141b8352Ad3e50cF13ef9F3169A1
       - token: ethereum|metal|0x4FC916e83F59706Ba1Ccdd607be8cB64753Fe4f0
       - token: ethereum|metis|0x6267Dbfc38f7Af897536563c15f07B89634cb656
@@ -283,8 +329,6 @@ tokens:
       - token: ethereum|optimism|0x7bD2676c85cca9Fa2203ebA324fb8792fbd520b8
       - token: ethereum|soneium|0x2dC335bDF489f8e978477Ae53924324697e0f7BB
       - token: ethereum|unichain|0x4A8149B1b9e0122941A69D01D23EaE6bD1441b4f
-      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
-      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
     decimals: 6
     logoURI: /deployments/warp_routes/oUSDT/logo.svg
     name: OpenUSDT
@@ -295,9 +339,11 @@ tokens:
     collateralAddressOrDenom: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
     connections:
       - token: ethereum|base|0x4F0654395d621De4d1101c0F98C1Dba73ca0a61f
+      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
       - token: ethereum|celo|0xbBa1938ff861c77eA1687225B9C33554379Ef327
       - token: ethereum|ethereum|0x88AC0fC430130983c0DDEB4C22574056D8340Ca8
       - token: ethereum|fraxtal|0xa0bD9e96556E27e6FfF0cC0F77496390d9844E1e
+      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
       - token: ethereum|lisk|0x910FF91a92c9141b8352Ad3e50cF13ef9F3169A1
       - token: ethereum|metal|0x4FC916e83F59706Ba1Ccdd607be8cB64753Fe4f0
       - token: ethereum|metis|0x6267Dbfc38f7Af897536563c15f07B89634cb656
@@ -305,8 +351,6 @@ tokens:
       - token: ethereum|optimism|0x7bD2676c85cca9Fa2203ebA324fb8792fbd520b8
       - token: ethereum|soneium|0x2dC335bDF489f8e978477Ae53924324697e0f7BB
       - token: ethereum|superseed|0x5beADE696E12aBE2839FEfB41c7EE6DA1f074C55
-      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
-      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
     decimals: 6
     logoURI: /deployments/warp_routes/oUSDT/logo.svg
     name: OpenUSDT
@@ -315,50 +359,6 @@ tokens:
   - addressOrDenom: "0xAf6bEdBA6ab73f0a5941d429807C8B9c24Ea95F3"
     chainName: worldchain
     collateralAddressOrDenom: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
-    decimals: 6
-    logoURI: /deployments/warp_routes/oUSDT/logo.svg
-    name: OpenUSDT
-    standard: EvmHypVSXERC20
-    symbol: oUSDT
-  - addressOrDenom: "0x155332Fad14bdE126255E6Ab6A09Fe88D2864294"
-    chainName: bob
-    collateralAddressOrDenom: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
-    connections:
-      - token: ethereum|base|0x4F0654395d621De4d1101c0F98C1Dba73ca0a61f
-      - token: ethereum|celo|0xbBa1938ff861c77eA1687225B9C33554379Ef327
-      - token: ethereum|ethereum|0x88AC0fC430130983c0DDEB4C22574056D8340Ca8
-      - token: ethereum|fraxtal|0xa0bD9e96556E27e6FfF0cC0F77496390d9844E1e
-      - token: ethereum|lisk|0x910FF91a92c9141b8352Ad3e50cF13ef9F3169A1
-      - token: ethereum|metal|0x4FC916e83F59706Ba1Ccdd607be8cB64753Fe4f0
-      - token: ethereum|metis|0x6267Dbfc38f7Af897536563c15f07B89634cb656
-      - token: ethereum|mode|0x324d0b921C03b1e42eeFD198086A64beC3d736c2
-      - token: ethereum|optimism|0x7bD2676c85cca9Fa2203ebA324fb8792fbd520b8
-      - token: ethereum|soneium|0x2dC335bDF489f8e978477Ae53924324697e0f7BB
-      - token: ethereum|superseed|0x5beADE696E12aBE2839FEfB41c7EE6DA1f074C55
-      - token: ethereum|unichain|0x4A8149B1b9e0122941A69D01D23EaE6bD1441b4f
-      - token: ethereum|hashkey|0x9C6e8d989ea7F212e679191BEb44139d83ac927a
-    decimals: 6
-    logoURI: /deployments/warp_routes/oUSDT/logo.svg
-    name: OpenUSDT
-    standard: EvmHypVSXERC20
-    symbol: oUSDT
-  - addressOrDenom: "0x9C6e8d989ea7F212e679191BEb44139d83ac927a"
-    chainName: hashkey
-    collateralAddressOrDenom: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
-    connections:
-      - token: ethereum|base|0x4F0654395d621De4d1101c0F98C1Dba73ca0a61f
-      - token: ethereum|celo|0xbBa1938ff861c77eA1687225B9C33554379Ef327
-      - token: ethereum|ethereum|0x88AC0fC430130983c0DDEB4C22574056D8340Ca8
-      - token: ethereum|fraxtal|0xa0bD9e96556E27e6FfF0cC0F77496390d9844E1e
-      - token: ethereum|lisk|0x910FF91a92c9141b8352Ad3e50cF13ef9F3169A1
-      - token: ethereum|metal|0x4FC916e83F59706Ba1Ccdd607be8cB64753Fe4f0
-      - token: ethereum|metis|0x6267Dbfc38f7Af897536563c15f07B89634cb656
-      - token: ethereum|mode|0x324d0b921C03b1e42eeFD198086A64beC3d736c2
-      - token: ethereum|optimism|0x7bD2676c85cca9Fa2203ebA324fb8792fbd520b8
-      - token: ethereum|soneium|0x2dC335bDF489f8e978477Ae53924324697e0f7BB
-      - token: ethereum|superseed|0x5beADE696E12aBE2839FEfB41c7EE6DA1f074C55
-      - token: ethereum|unichain|0x4A8149B1b9e0122941A69D01D23EaE6bD1441b4f
-      - token: ethereum|bob|0x155332Fad14bdE126255E6Ab6A09Fe88D2864294
     decimals: 6
     logoURI: /deployments/warp_routes/oUSDT/logo.svg
     name: OpenUSDT
