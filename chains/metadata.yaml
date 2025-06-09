@@ -356,7 +356,7 @@ arcadia:
     url: https://www.hyperlane.xyz
   displayName: Arcadia
   domainId: 4278608
-  gasCurrencyCoinGeckoId: khalani-aip
+  gasCurrencyCoinGeckoId: ethereum
   name: arcadia
   nativeToken:
     decimals: 18
@@ -1007,6 +1007,35 @@ bobabnbtestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://testnet.bnb.boba.network
+botanix:
+  blockExplorers:
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/3637/etherscan/api
+      family: routescan
+      name: Botanix Explorer
+      url: https://botanixscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 5
+  chainId: 3637
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Botanix
+  domainId: 3637
+  gasCurrencyCoinGeckoId: bitcoin
+  name: botanix
+  nativeToken:
+    decimals: 18
+    name: Bitcoin
+    symbol: BTC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://botanixrpc.com
+  technicalStack: other
+  transactionOverrides:
+    maxFeePerGas: 1000007
+    maxPriorityFeePerGas: 1000007
 bouncebit:
   blockExplorers:
     - apiUrl: https://bbscan.io/api
@@ -3570,6 +3599,32 @@ kalychain:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.kalychain.io/rpc
+katana:
+  blockExplorers:
+    - apiUrl: https://explorer.katanarpc.com/api
+      family: blockscout
+      name: Katana Explorer
+      url: https://explorer.katanarpc.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 747474
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Katana
+  domainId: 747474
+  gasCurrencyCoinGeckoId: ethereum
+  name: katana
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://katanarpc.com
+  technicalStack: polygoncdk
 kava:
   blockExplorers:
     - apiUrl: https://explorer.kava.io/api
@@ -5149,6 +5204,34 @@ osmosis:
   technicalStack: other
   transactionOverrides:
     gasPrice: "0.025"
+paradex:
+  blockExplorers:
+    - apiUrl: https://voyager.paradex.trade/api
+      family: voyager
+      name: Paradex Explorer
+      url: https://voyager.paradex.trade
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 30
+    reorgPeriod: 1
+  chainId: "0x534e5f4d41494e"
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Paradex
+  domainId: 514051890
+  gasCurrencyCoinGeckoId: paradex-fuel
+  name: paradex
+  nativeToken:
+    decimals: 18
+    denom: "0x047adc7deE88eec362D71A52C25D40559a921434B2d90e75b6a4a6E4e9fb9Ab1"
+    name: Para Gas Token
+    symbol: FUEL
+  protocol: starknet
+  rpcUrls:
+    - http: https://juno.api.prod.paradex.trade/rpc/v0_7
+    - http: https://pathfinder.api.prod.paradex.trade/rpc/v0_7
+  technicalStack: other
 paradexsepolia:
   blockExplorers:
     - apiUrl: https://voyager.testnet.paradex.trade/api
@@ -5399,6 +5482,32 @@ polynomialfi:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.polynomial.fi
+  technicalStack: opstack
+poseidontestnet:
+  blockExplorers:
+    - apiUrl: https://poseidon-testnet.explorer.caldera.xyz/api
+      family: blockscout
+      name: Ozean Poseidon Explorer
+      url: https://poseidon-testnet.explorer.caldera.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 31911
+  deployer:
+    name: Linuz
+    url: https://github.com/0xlinus
+  displayName: Ozean Poseidon Testnet
+  domainId: 31911
+  isTestnet: true
+  name: poseidontestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://poseidon-testnet.rpc.caldera.xyz/http
   technicalStack: opstack
 prom:
   blockExplorers:
