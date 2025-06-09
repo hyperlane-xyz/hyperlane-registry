@@ -5785,6 +5785,28 @@ WSTETH/ethereum-form:
       name: Wrapped liquid staked Ether 2.0
       standard: EvmHypCollateral
       symbol: wstETH
+adraSOL/solanamainnet-sonicsvm:
+  tokens:
+    - addressOrDenom: cFZCgMoWSoohWMJDmfLZBSLiTwNVszRM13dVnqa63cd
+      chainName: solanamainnet
+      collateralAddressOrDenom: sctmY8fJucsJatwHz6P48RuWBBkdBMNmSMuBYrWFdrw
+      connections:
+        - token: sealevel|sonicsvm|6uG2ZuKKHPRamVHNEoTcHgC4ETYyW2XUxTWDMpZVdG5q
+      decimals: 9
+      logoURI: /deployments/warp_routes/adraSOL/logo.png
+      name: Adra LST
+      standard: SealevelHypCollateral
+      symbol: adraSOL
+    - addressOrDenom: 6uG2ZuKKHPRamVHNEoTcHgC4ETYyW2XUxTWDMpZVdG5q
+      chainName: sonicsvm
+      collateralAddressOrDenom: 7PtDjbwbjGCZ5rQU4ctXUCNMHXZ8UHvhoEnMZmN3Jhj8
+      connections:
+        - token: sealevel|solanamainnet|cFZCgMoWSoohWMJDmfLZBSLiTwNVszRM13dVnqa63cd
+      decimals: 9
+      logoURI: /deployments/warp_routes/adraSOL/logo.png
+      name: Adra LST
+      standard: SealevelHypSynthetic
+      symbol: adraSOL
 ai16z/solanamainnet-soon:
   tokens:
     - addressOrDenom: BrJbX9a9bi9hvV5WesfbuXudQP49G8jnKEqAutRNMYK5
@@ -7043,7 +7065,7 @@ weETHs/eclipsemainnet-ethereum:
       name: Super Symbiotic LRT
       standard: SealevelHypSynthetic
       symbol: weETHs
-wfragBTC/eclipsemainnet-solanamainnet-sonicsvm-soon:
+wfragBTC/fragmetric:
   tokens:
     - addressOrDenom: HrYAA2LAeqWf197FfNh2BVaqsDJFBhatpru9p2UnfwQA
       chainName: solanamainnet
@@ -7093,7 +7115,7 @@ wfragBTC/eclipsemainnet-solanamainnet-sonicsvm-soon:
       name: Wrapped Fragmetric Staked BTC
       standard: SealevelHypSynthetic
       symbol: wfragBTC
-wfragJTO/eclipsemainnet-solanamainnet-soon:
+wfragJTO/fragmetric:
   tokens:
     - addressOrDenom: 21dbSbBdoEqUtJcvBkvhjpEiqb3LTrUFGQxKHWjY3WwV
       chainName: solanamainnet
@@ -7101,6 +7123,7 @@ wfragJTO/eclipsemainnet-solanamainnet-soon:
       collateralAddressOrDenom: WFRGJnQt5pK8Dv4cDAbrSsgPcmboysrmX3RYhmRRyTR
       connections:
         - token: sealevel|eclipsemainnet|4dLFhsXeK6QPxV2HEbXsF6eSTZdTFaGcGY5eEj5c8CbD
+        - token: sealevel|sonicsvm|5g9mjZ6TNJV7fH8eRbDgVZ344fGp43euUVNexv5Kawwo
         - token: sealevel|soon|A4UxZkWrEtfmhdtBE3VSS6n4E7Tnj7EMs5PA3hLgmFL8
       decimals: 9
       logoURI: /deployments/warp_routes/wfragJTO/logo.svg
@@ -7112,6 +7135,19 @@ wfragJTO/eclipsemainnet-solanamainnet-soon:
       collateralAddressOrDenom: HqDHrCWhdELCf21AAzhpAYTtKLtkqVzGfHTz7fo1yNxy
       connections:
         - token: sealevel|solanamainnet|21dbSbBdoEqUtJcvBkvhjpEiqb3LTrUFGQxKHWjY3WwV
+        - token: sealevel|sonicsvm|5g9mjZ6TNJV7fH8eRbDgVZ344fGp43euUVNexv5Kawwo
+        - token: sealevel|soon|A4UxZkWrEtfmhdtBE3VSS6n4E7Tnj7EMs5PA3hLgmFL8
+      decimals: 9
+      logoURI: /deployments/warp_routes/wfragJTO/logo.svg
+      name: Wrapped Fragmetric Restaked JTO
+      standard: SealevelHypSynthetic
+      symbol: wfragJTO
+    - addressOrDenom: 5g9mjZ6TNJV7fH8eRbDgVZ344fGp43euUVNexv5Kawwo
+      chainName: sonicsvm
+      collateralAddressOrDenom: 4JbFLGRDNy9Ye6T7exs3bTBaBUrH2sWw88mRD2WhVTNr
+      connections:
+        - token: sealevel|solanamainnet|21dbSbBdoEqUtJcvBkvhjpEiqb3LTrUFGQxKHWjY3WwV
+        - token: sealevel|eclipsemainnet|4dLFhsXeK6QPxV2HEbXsF6eSTZdTFaGcGY5eEj5c8CbD
         - token: sealevel|soon|A4UxZkWrEtfmhdtBE3VSS6n4E7Tnj7EMs5PA3hLgmFL8
       decimals: 9
       logoURI: /deployments/warp_routes/wfragJTO/logo.svg
@@ -7124,12 +7160,13 @@ wfragJTO/eclipsemainnet-solanamainnet-soon:
       connections:
         - token: sealevel|solanamainnet|21dbSbBdoEqUtJcvBkvhjpEiqb3LTrUFGQxKHWjY3WwV
         - token: sealevel|eclipsemainnet|4dLFhsXeK6QPxV2HEbXsF6eSTZdTFaGcGY5eEj5c8CbD
+        - token: sealevel|sonicsvm|5g9mjZ6TNJV7fH8eRbDgVZ344fGp43euUVNexv5Kawwo
       decimals: 9
       logoURI: /deployments/warp_routes/wfragJTO/logo.svg
       name: Wrapped Fragmetric Restaked JTO
       standard: SealevelHypSynthetic
       symbol: wfragJTO
-wfragSOL/eclipsemainnet-solanamainnet-soon:
+wfragSOL/fragmetric:
   tokens:
     - addressOrDenom: 22z73A4E7QjwjTsHGJptnALgBGuovEabCcQtPdBaQPpJ
       chainName: solanamainnet
@@ -7137,6 +7174,7 @@ wfragSOL/eclipsemainnet-solanamainnet-soon:
       collateralAddressOrDenom: WFRGSWjaz8tbAxsJitmbfRuFV2mSNwy7BMWcCwaA28U
       connections:
         - token: sealevel|eclipsemainnet|FF6PWPjiY1hwy3Kt5qTDoqhZ3PbmaXKYPzADEjZbK9iN
+        - token: sealevel|sonicsvm|BW1QM1PvvU4VFvZYPhgnJSfFR1d49BAGy4X1uDmtTRLw
         - token: sealevel|soon|6trL4uE7KANMqrPT5rw4uiN6TSTw7c5Ssv4GdAkhTzVc
       decimals: 9
       logoURI: /deployments/warp_routes/wfragSOL/logo.svg
@@ -7148,6 +7186,19 @@ wfragSOL/eclipsemainnet-solanamainnet-soon:
       collateralAddressOrDenom: 97UNrMjduqbHhnZ5T5w3DifYnxwM2LAEpYxfoMcMjXK1
       connections:
         - token: sealevel|solanamainnet|22z73A4E7QjwjTsHGJptnALgBGuovEabCcQtPdBaQPpJ
+        - token: sealevel|sonicsvm|BW1QM1PvvU4VFvZYPhgnJSfFR1d49BAGy4X1uDmtTRLw
+        - token: sealevel|soon|6trL4uE7KANMqrPT5rw4uiN6TSTw7c5Ssv4GdAkhTzVc
+      decimals: 9
+      logoURI: /deployments/warp_routes/wfragSOL/logo.svg
+      name: Wrapped Fragmetric Restaked SOL
+      standard: SealevelHypSynthetic
+      symbol: wfragSOL
+    - addressOrDenom: BW1QM1PvvU4VFvZYPhgnJSfFR1d49BAGy4X1uDmtTRLw
+      chainName: sonicsvm
+      collateralAddressOrDenom: ApsE83FeU6NhRh1xYHiN2JmF2oDecNXZxn5ihXHFNWWL
+      connections:
+        - token: sealevel|solanamainnet|22z73A4E7QjwjTsHGJptnALgBGuovEabCcQtPdBaQPpJ
+        - token: sealevel|eclipsemainnet|FF6PWPjiY1hwy3Kt5qTDoqhZ3PbmaXKYPzADEjZbK9iN
         - token: sealevel|soon|6trL4uE7KANMqrPT5rw4uiN6TSTw7c5Ssv4GdAkhTzVc
       decimals: 9
       logoURI: /deployments/warp_routes/wfragSOL/logo.svg
@@ -7160,6 +7211,7 @@ wfragSOL/eclipsemainnet-solanamainnet-soon:
       connections:
         - token: sealevel|solanamainnet|22z73A4E7QjwjTsHGJptnALgBGuovEabCcQtPdBaQPpJ
         - token: sealevel|eclipsemainnet|FF6PWPjiY1hwy3Kt5qTDoqhZ3PbmaXKYPzADEjZbK9iN
+        - token: sealevel|sonicsvm|BW1QM1PvvU4VFvZYPhgnJSfFR1d49BAGy4X1uDmtTRLw
       decimals: 9
       logoURI: /deployments/warp_routes/wfragSOL/logo.svg
       name: Wrapped Fragmetric Restaked SOL
