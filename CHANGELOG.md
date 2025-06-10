@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 17.3.0
+
+### Minor Changes
+
+- e158598: Added custom YAML sorting rules from @hyperlane-xyz/utils to standardize registry file array ordering.
+- c737841: Extend oUSDT to bob, hashkey.
+
 ## 17.2.0
 
 ### Minor Changes
