@@ -1,14 +1,5 @@
 # yaml-language-server: $schema=../schema.json
 tokens:
-  - addressOrDenom: "0x7D824CCa0FCF6907Fb27f6134431B0649FB7db41"
-    chainName: cheesechain
-    connections:
-      - token: ethereum|arbitrum|0xC9e048011E4A47584CE5b91AbD8695338A640648
-    decimals: 6
-    logoURI: /deployments/warp_routes/USDC/logo.svg
-    name: USDC
-    standard: EvmHypSynthetic
-    symbol: USDC
   - addressOrDenom: "0xC9e048011E4A47584CE5b91AbD8695338A640648"
     chainName: arbitrum
     coinGeckoId: usd-coin
@@ -19,4 +10,13 @@ tokens:
     logoURI: /deployments/warp_routes/USDC/logo.svg
     name: USDC
     standard: EvmHypOwnerCollateral
+    symbol: USDC
+  - addressOrDenom: "0x7D824CCa0FCF6907Fb27f6134431B0649FB7db41"
+    chainName: cheesechain
+    connections:
+      - token: ethereum|arbitrum|0xC9e048011E4A47584CE5b91AbD8695338A640648
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USDC
+    standard: EvmHypSynthetic
     symbol: USDC
