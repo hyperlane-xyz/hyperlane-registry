@@ -6,8 +6,8 @@ tokens:
     collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
     connections:
       - token: ethereum|ethereum|0x3C43C421f08e2a48889eA3F75a747b7a7a366A0b
-      - token: ethereum|subtensor|0xB833E8137FEDf80de7E908dc6fea43a029142F20
       - token: ethereum|solanamainnet|GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
+      - token: ethereum|subtensor|0xB833E8137FEDf80de7E908dc6fea43a029142F20
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
     name: USD Coin
@@ -19,23 +19,12 @@ tokens:
     collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
     connections:
       - token: ethereum|base|0x26af973A5b256F9B9bc0B1A3c566de1566568a87
-      - token: ethereum|subtensor|0xB833E8137FEDf80de7E908dc6fea43a029142F20
       - token: ethereum|solanamainnet|GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
+      - token: ethereum|subtensor|0xB833E8137FEDf80de7E908dc6fea43a029142F20
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
     name: USD Coin
     standard: EvmHypCollateral
-    symbol: USDC
-  - addressOrDenom: "0xB833E8137FEDf80de7E908dc6fea43a029142F20"
-    chainName: subtensor
-    connections:
-      - token: ethereum|base|0x26af973A5b256F9B9bc0B1A3c566de1566568a87
-      - token: ethereum|ethereum|0x3C43C421f08e2a48889eA3F75a747b7a7a366A0b
-      - token: ethereum|solanamainnet|GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
-    decimals: 6
-    logoURI: /deployments/warp_routes/USDC/logo.svg
-    name: USD Coin
-    standard: EvmHypSynthetic
     symbol: USDC
   - addressOrDenom: GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
     chainName: solanamainnet
@@ -49,4 +38,15 @@ tokens:
     logoURI: /deployments/warp_routes/USDC/logo.svg
     name: USD Coin
     standard: SealevelHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0xB833E8137FEDf80de7E908dc6fea43a029142F20"
+    chainName: subtensor
+    connections:
+      - token: ethereum|base|0x26af973A5b256F9B9bc0B1A3c566de1566568a87
+      - token: ethereum|ethereum|0x3C43C421f08e2a48889eA3F75a747b7a7a366A0b
+      - token: ethereum|solanamainnet|GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypSynthetic
     symbol: USDC

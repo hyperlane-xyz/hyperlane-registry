@@ -1,5 +1,62 @@
 # @hyperlane-xyz/registry
 
+## 17.4.0
+
+### Minor Changes
+
+- b6dab1b: extended kySOL route to sonicSVM
+
+## 17.3.0
+
+### Minor Changes
+
+- e158598: Added custom YAML sorting rules from @hyperlane-xyz/utils to standardize registry file array ordering.
+- c737841: Extend oUSDT to bob, hashkey.
+
+## 17.2.0
+
+### Minor Changes
+
+- ab66e3d: Extend wfragSOL and wfragJTO.
+- a157223: Add adraSOL deploy config.
+
+### Patch Changes
+
+- 4fa604e: Add adraSOL metadata.
+- c1986af: Update to Hyperlane SDK 13.2.1.
+
+## 17.1.0
+
+### Minor Changes
+
+- 35c8e77: Update GithubRegistry getWarpRoutes to fetch combined warpRouteConfigs.yaml file
+- 2b679ca: Added edgenchain config
+- bec384b: added ozean poseidon testnet
+- ee66a9b: Deploy to botanix, katana. Update arcadia gecko ID.
+- e6462f7: Added core deployment to paradex
+
+### Patch Changes
+
+- a7709f7: Remove treasuretopaz testnet.
+- 191d00e: Update Renzo EZETH protocol fee values to match onchain
+- 22ff449: Add wfragBTC.
+
+## 17.0.0
+
+### Major Changes
+
+- 432c8eb: Update tUSD warp route to Nucleus owners
+
+### Minor Changes
+
+- d485bfe: Remove Arbitrum from SMOL route and update configs
+
+### Patch Changes
+
+- d1d05e5: Rename EZETH prod and stage file names to renzo-prod and renzo-stage respectively
+- f7a13c5: Update starknet's coingeckoId to be ethereum
+- 4074d49: Updated starknet domainId
+
 ## 16.1.0
 
 ### Minor Changes

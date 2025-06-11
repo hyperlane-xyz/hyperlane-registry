@@ -61,19 +61,29 @@ base:
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
   xERC20:
-    extraBridges:
-      - limits:
-          bufferCap: "0"
-          rateLimitPerSecond: "0"
-        lockbox: "0xd28ca33022d41758bed4f1a31a99dde8fc4d89b3"
-      - limits:
-          bufferCap: "0"
-          rateLimitPerSecond: "0"
-        lockbox: "0x50df545016d26735daacbbf5afda56dc17d8748b"
     warpRouteLimits:
       bufferCap: "25000000000"
       rateLimitPerSecond: "120000000"
 bitlayer:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      bufferCap: "25000000000"
+      rateLimitPerSecond: "120000000"
+bob:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -136,6 +146,25 @@ ethereum:
       bufferCap: "25000000000"
       rateLimitPerSecond: "120000000"
 fraxtal:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      bufferCap: "25000000000"
+      rateLimitPerSecond: "120000000"
+hashkey:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -397,15 +426,6 @@ optimism:
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
   xERC20:
-    extraBridges:
-      - limits:
-          bufferCap: "0"
-          rateLimitPerSecond: "0"
-        lockbox: "0x18c4cdc2d774c047eac8375bb09853c4d6d6df36"
-      - limits:
-          bufferCap: "0"
-          rateLimitPerSecond: "0"
-        lockbox: "0x07e437d73e9e43ceece6ea14085b26159e3f7f31"
     warpRouteLimits:
       bufferCap: "25000000000"
       rateLimitPerSecond: "120000000"

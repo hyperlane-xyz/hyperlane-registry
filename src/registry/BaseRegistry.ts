@@ -37,6 +37,8 @@ export abstract class BaseRegistry implements IRegistry {
   protected isMetadataCacheFull: boolean = false;
   protected addressCache?: ChainMap<ChainAddresses>;
   protected isAddressCacheFull: boolean = false;
+  protected warpRouteCache?: WarpRouteConfigMap;
+  protected isWarpRouteCacheFull: boolean = false;
 
   constructor({ uri, logger }: { uri: string; logger?: Logger }) {
     this.uri = uri;
