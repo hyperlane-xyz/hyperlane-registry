@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 17.4.0
+
+### Minor Changes
+
+- b6dab1b: extended kySOL route to sonicSVM
+
 ## 17.3.0
 
 ### Minor Changes
