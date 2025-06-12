@@ -5275,8 +5275,8 @@ paradex:
     symbol: FUEL
   protocol: starknet
   rpcUrls:
-    - http: https://juno.api.prod.paradex.trade/rpc/v0_7
-    - http: https://pathfinder.api.prod.paradex.trade/rpc/v0_7
+    - http: https://juno.api.prod.paradex.trade/rpc/v0_8
+    - http: https://pathfinder.api.prod.paradex.trade/rpc/v0_8
   technicalStack: other
 paradexsepolia:
   blockExplorers:
@@ -5303,7 +5303,7 @@ paradexsepolia:
     symbol: DT
   protocol: starknet
   rpcUrls:
-    - http: https://pathfinder.api.testnet.paradex.trade/rpc/v0_7
+    - http: https://pathfinder.api.testnet.paradex.trade/rpc/v0_8
 peaq:
   blockExplorers:
     - apiUrl: https://peaq.subscan.io/api
@@ -6623,15 +6623,14 @@ starknet:
   name: starknet
   nativeToken:
     decimals: 18
-    denom: "0x049D36570D4e46f48e99674bd3fcc84644DdD6b96F7C741B1562B82f9e004dC7"
-    name: Ether
-    symbol: ETH
+    denom: "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d"
+    name: StarkNet Token
+    symbol: STRK
   protocol: starknet
   rpcUrls:
-    - http: https://starknet-mainnet.public.blastapi.io
-    - http: https://rpc.starknet.lava.build:443
-    - http: https://starknet.api.onfinality.io/public
-    - http: https://api.zan.top/public/starknet-mainnet
+    - http: https://starknet-mainnet.public.blastapi.io/rpc/v0_8
+    - http: https://rpc.starknet.lava.build:443/
+    - http: https://api.zan.top/public/starknet-mainnet/rpc/v0_8
   technicalStack: other
 starknetsepolia:
   blockExplorers:
@@ -6653,12 +6652,12 @@ starknetsepolia:
   name: starknetsepolia
   nativeToken:
     decimals: 18
-    denom: "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7"
-    name: Ether
-    symbol: ETH
+    denom: "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d"
+    name: StarkNet Token
+    symbol: STRK
   protocol: starknet
   rpcUrls:
-    - http: https://starknet-sepolia.public.blastapi.io/rpc/v0_7
+    - http: https://starknet-sepolia.public.blastapi.io/rpc/v0_8
 story:
   blockExplorers:
     - apiUrl: https://www.storyscan.xyz/api
