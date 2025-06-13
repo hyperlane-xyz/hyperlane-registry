@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 17.7.0
+
+### Minor Changes
+
+- 04ed384: Add TOSHI
+
 ## 17.6.0
 
 ### Minor Changes
