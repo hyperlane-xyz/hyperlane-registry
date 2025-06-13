@@ -1,23 +1,26 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://node1.testnet.romeprotocol.xyz:1000/api
+  - apiUrl: https://romescout-testnet-1.testnet.romeprotocol.xyz/api
     family: blockscout
     name: Rome Testnet Explorer
-    url: https://node1.testnet.romeprotocol.xyz:1000
+    url: https://romescout-testnet-1.testnet.romeprotocol.xyz
 blocks:
   confirmations: 1
   estimateBlockTime: 4
-  reorgPeriod: 1
-chainId: 200018
+  reorgPeriod: 0
+chainId: 3001
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
 displayName: Rome Testnet
-domainId: 200018
+domainId: 3001
 isTestnet: true
-name: rometestnet
+name: rometestnet2
 nativeToken:
   decimals: 18
   name: ROME
   symbol: ROME
 protocol: ethereum
 rpcUrls:
-  - http: https://node1.testnet.romeprotocol.xyz
+  - http: https://testnet-1.testnet.romeprotocol.xyz
 technicalStack: other
