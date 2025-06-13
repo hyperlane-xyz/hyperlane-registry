@@ -1,5 +1,19 @@
 # @hyperlane-xyz/registry
 
+## 17.5.0
+
+### Minor Changes
+
+- 0668adf: add Taiko Token https://taiko.xyz
+- d059cee: Updates starknet & paradex endpoints to v8
+- f000dae: add `noble` metadata and addresses to chains
+
+## 17.4.0
+
+### Minor Changes
+
+- b6dab1b: extended kySOL route to sonicSVM
+
 ## 17.3.0
 
 ### Minor Changes
