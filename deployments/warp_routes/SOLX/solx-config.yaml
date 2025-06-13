@@ -1,0 +1,22 @@
+tokens:
+  - addressOrDenom: "0x261a172eB72D8D32837D123E8AcC4d2e44117195"
+    chainName: ethereum
+    collateralAddressOrDenom: "0xe0B7AD7F8F26e2b00C8b47b5Df370f15F90fCF48"
+    decimals: 18
+    name: Solaxy
+    standard: EvmHypCollateral
+    coinGeckoId: solaxy
+    logoURI: /deployments/warp_routes/SOLX/logo.svg
+    connections:
+      - token: sealevel|solanamainnet|DaF4pYDy5d6mhwEcMrenpNAjx1gfA9BgcYruUYTsZibE
+    symbol: SOLX
+  - addressOrDenom: "DaF4pYDy5d6mhwEcMrenpNAjx1gfA9BgcYruUYTsZibE"
+    chainName: solanamainnet
+    collateralAddressOrDenom: "Cf2LnRpmcUxY8qkAyiaaPpgAtUHgzkH3tPhMAevE9zLg"
+    decimals: 6
+    name: Solaxy
+    connections:
+      - token: ethereum|ethereum|0x261a172eB72D8D32837D123E8AcC4d2e44117195
+    standard: SealevelHypSynthetic
+    logoURI: /deployments/warp_routes/SOLX/logo.svg
+    symbol: SOLX
