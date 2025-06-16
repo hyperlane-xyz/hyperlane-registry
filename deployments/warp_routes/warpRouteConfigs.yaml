@@ -1976,6 +1976,54 @@ FASTUSD/ethereum-sei:
       name: fastUSD
       standard: EvmHypXERC20
       symbol: fastUSD
+FLT/fluence:
+  tokens:
+    - addressOrDenom: "0x7B9D9c85069181569DdF4D2aa639caF5418Ce098"
+      chainName: arbitrum
+      connections:
+        - token: ethereum|base|0x1C3D50450Ffa80BCaE435ef6E362d507a86924F2
+        - token: ethereum|ethereum|0x6f78E99143094EeE6893840f5e577B9E6b92B368
+        - token: ethereum|polygon|0x7B9D9c85069181569DdF4D2aa639caF5418Ce098
+      decimals: 18
+      logoURI: /deployments/warp_routes/FLT/logo.svg
+      name: Fluence
+      standard: EvmHypSynthetic
+      symbol: FLT
+    - addressOrDenom: "0x1C3D50450Ffa80BCaE435ef6E362d507a86924F2"
+      chainName: base
+      connections:
+        - token: ethereum|arbitrum|0x7B9D9c85069181569DdF4D2aa639caF5418Ce098
+        - token: ethereum|ethereum|0x6f78E99143094EeE6893840f5e577B9E6b92B368
+        - token: ethereum|polygon|0x7B9D9c85069181569DdF4D2aa639caF5418Ce098
+      decimals: 18
+      logoURI: /deployments/warp_routes/FLT/logo.svg
+      name: Fluence
+      standard: EvmHypSynthetic
+      symbol: FLT
+    - addressOrDenom: "0x6f78E99143094EeE6893840f5e577B9E6b92B368"
+      chainName: ethereum
+      coinGeckoId: fluence-2
+      collateralAddressOrDenom: "0x236501327e701692a281934230af0b6be8df3353"
+      connections:
+        - token: ethereum|arbitrum|0x7B9D9c85069181569DdF4D2aa639caF5418Ce098
+        - token: ethereum|base|0x1C3D50450Ffa80BCaE435ef6E362d507a86924F2
+        - token: ethereum|polygon|0x7B9D9c85069181569DdF4D2aa639caF5418Ce098
+      decimals: 18
+      logoURI: /deployments/warp_routes/FLT/logo.svg
+      name: Fluence
+      standard: EvmHypCollateral
+      symbol: FLT
+    - addressOrDenom: "0x7B9D9c85069181569DdF4D2aa639caF5418Ce098"
+      chainName: polygon
+      connections:
+        - token: ethereum|arbitrum|0x7B9D9c85069181569DdF4D2aa639caF5418Ce098
+        - token: ethereum|base|0x1C3D50450Ffa80BCaE435ef6E362d507a86924F2
+        - token: ethereum|ethereum|0x6f78E99143094EeE6893840f5e577B9E6b92B368
+      decimals: 18
+      logoURI: /deployments/warp_routes/FLT/logo.svg
+      name: Fluence
+      standard: EvmHypSynthetic
+      symbol: FLT
 FORM/ethereum-form:
   tokens:
     - addressOrDenom: "0xEa35E107fB64Ff8C3c8c37DB2d23A7179f31D8EC"
@@ -2635,6 +2683,27 @@ MAGIC/arbitrum-treasure:
       name: MAGIC
       standard: EvmHypNative
       symbol: MAGIC
+MAT/matchain:
+  tokens:
+    - addressOrDenom: "0xFE2DD2d57a05F89438F3AEC94EaFA4070396bab0"
+      chainName: bsc
+      connections:
+        - token: ethereum|matchain|0xB64a077d1cE66B422F09342597bc9C26FA82605d
+      decimals: 18
+      logoURI: /deployments/warp_routes/MAT/logo.svg
+      name: Matchain
+      standard: EvmHypSynthetic
+      symbol: MAT
+    - addressOrDenom: "0xB64a077d1cE66B422F09342597bc9C26FA82605d"
+      chainName: matchain
+      collateralAddressOrDenom: "0x44a83a012B926853DFc1BBE2ec5BEf37126067e8"
+      connections:
+        - token: ethereum|bsc|0xFE2DD2d57a05F89438F3AEC94EaFA4070396bab0
+      decimals: 18
+      logoURI: /deployments/warp_routes/MAT/logo.svg
+      name: Matchain
+      standard: EvmHypCollateral
+      symbol: MAT
 MEW/solanamainnet-soon:
   tokens:
     - addressOrDenom: BEzLRBDBJyRrzZN2CfGJB3bedBj3HwHqj6MB8BQn1mdL
@@ -3959,6 +4028,28 @@ TONY/base-solanamainnet:
       name: Big Tony
       standard: SealevelHypSynthetic
       symbol: TONY
+TOSHI/toshi:
+  tokens:
+    - addressOrDenom: "0x0fEA4BE161fDA8FBF24bbCd66a77f53E29F784A3"
+      chainName: base
+      coinGeckoId: toshi
+      collateralAddressOrDenom: "0xAC1Bd2486aAf3B5C0fc3Fd868558b082a531B2B4"
+      connections:
+        - token: ethereum|bsc|0x6a2608Dabe09bc1128EEC7275B92DFB939D5Db3f
+      decimals: 18
+      logoURI: /deployments/warp_routes/TOSHI/logo.svg
+      name: Toshi
+      standard: EvmHypCollateral
+      symbol: TOSHI
+    - addressOrDenom: "0x6a2608Dabe09bc1128EEC7275B92DFB939D5Db3f"
+      chainName: bsc
+      connections:
+        - token: ethereum|base|0x0fEA4BE161fDA8FBF24bbCd66a77f53E29F784A3
+      decimals: 18
+      logoURI: /deployments/warp_routes/TOSHI/logo.svg
+      name: Toshi
+      standard: EvmHypSynthetic
+      symbol: TOSHI
 TRUMP/arbitrum-avalanche-base-flowmainnet-form-optimism-solanamainnet-worldchain:
   tokens:
     - addressOrDenom: "0x5155EB1bcD30189915cF84717550Acfa537068bF"

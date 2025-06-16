@@ -1,5 +1,23 @@
 # @hyperlane-xyz/registry
 
+## 17.7.0
+
+### Minor Changes
+
+- 04ed384: Add TOSHI
+
+## 17.6.0
+
+### Minor Changes
+
+- 1c2cf5e: Add Matchain configs
+- 1de5cb2: Update default ISMs on botanix, katana, arbitrum, avalanche, base, ethereum, linea, mode, optimism, polygon, sonic.
+- dbd45f1: Add FLT/fluence route
+
+### Patch Changes
+
+- 6379fde: Paradex NativeToken denom valid 32bytes
+
 ## 17.5.0
 
 ### Minor Changes
