@@ -1976,6 +1976,54 @@ FASTUSD/ethereum-sei:
       name: fastUSD
       standard: EvmHypXERC20
       symbol: fastUSD
+FLT/fluence:
+  tokens:
+    - addressOrDenom: "0x7B9D9c85069181569DdF4D2aa639caF5418Ce098"
+      chainName: arbitrum
+      connections:
+        - token: ethereum|base|0x1C3D50450Ffa80BCaE435ef6E362d507a86924F2
+        - token: ethereum|ethereum|0x6f78E99143094EeE6893840f5e577B9E6b92B368
+        - token: ethereum|polygon|0x7B9D9c85069181569DdF4D2aa639caF5418Ce098
+      decimals: 18
+      logoURI: /deployments/warp_routes/FLT/logo.svg
+      name: Fluence
+      standard: EvmHypSynthetic
+      symbol: FLT
+    - addressOrDenom: "0x1C3D50450Ffa80BCaE435ef6E362d507a86924F2"
+      chainName: base
+      connections:
+        - token: ethereum|arbitrum|0x7B9D9c85069181569DdF4D2aa639caF5418Ce098
+        - token: ethereum|ethereum|0x6f78E99143094EeE6893840f5e577B9E6b92B368
+        - token: ethereum|polygon|0x7B9D9c85069181569DdF4D2aa639caF5418Ce098
+      decimals: 18
+      logoURI: /deployments/warp_routes/FLT/logo.svg
+      name: Fluence
+      standard: EvmHypSynthetic
+      symbol: FLT
+    - addressOrDenom: "0x6f78E99143094EeE6893840f5e577B9E6b92B368"
+      chainName: ethereum
+      coinGeckoId: fluence-2
+      collateralAddressOrDenom: "0x236501327e701692a281934230af0b6be8df3353"
+      connections:
+        - token: ethereum|arbitrum|0x7B9D9c85069181569DdF4D2aa639caF5418Ce098
+        - token: ethereum|base|0x1C3D50450Ffa80BCaE435ef6E362d507a86924F2
+        - token: ethereum|polygon|0x7B9D9c85069181569DdF4D2aa639caF5418Ce098
+      decimals: 18
+      logoURI: /deployments/warp_routes/FLT/logo.svg
+      name: Fluence
+      standard: EvmHypCollateral
+      symbol: FLT
+    - addressOrDenom: "0x7B9D9c85069181569DdF4D2aa639caF5418Ce098"
+      chainName: polygon
+      connections:
+        - token: ethereum|arbitrum|0x7B9D9c85069181569DdF4D2aa639caF5418Ce098
+        - token: ethereum|base|0x1C3D50450Ffa80BCaE435ef6E362d507a86924F2
+        - token: ethereum|ethereum|0x6f78E99143094EeE6893840f5e577B9E6b92B368
+      decimals: 18
+      logoURI: /deployments/warp_routes/FLT/logo.svg
+      name: Fluence
+      standard: EvmHypSynthetic
+      symbol: FLT
 FORM/ethereum-form:
   tokens:
     - addressOrDenom: "0xEa35E107fB64Ff8C3c8c37DB2d23A7179f31D8EC"
@@ -2635,6 +2683,27 @@ MAGIC/arbitrum-treasure:
       name: MAGIC
       standard: EvmHypNative
       symbol: MAGIC
+MAT/matchain:
+  tokens:
+    - addressOrDenom: "0xFE2DD2d57a05F89438F3AEC94EaFA4070396bab0"
+      chainName: bsc
+      connections:
+        - token: ethereum|matchain|0xB64a077d1cE66B422F09342597bc9C26FA82605d
+      decimals: 18
+      logoURI: /deployments/warp_routes/MAT/logo.svg
+      name: Matchain
+      standard: EvmHypSynthetic
+      symbol: MAT
+    - addressOrDenom: "0xB64a077d1cE66B422F09342597bc9C26FA82605d"
+      chainName: matchain
+      collateralAddressOrDenom: "0x44a83a012B926853DFc1BBE2ec5BEf37126067e8"
+      connections:
+        - token: ethereum|bsc|0xFE2DD2d57a05F89438F3AEC94EaFA4070396bab0
+      decimals: 18
+      logoURI: /deployments/warp_routes/MAT/logo.svg
+      name: Matchain
+      standard: EvmHypCollateral
+      symbol: MAT
 MEW/solanamainnet-soon:
   tokens:
     - addressOrDenom: BEzLRBDBJyRrzZN2CfGJB3bedBj3HwHqj6MB8BQn1mdL
@@ -3488,6 +3557,28 @@ SOL/solanamainnet-soon:
       name: Solana
       standard: SealevelHypSynthetic
       symbol: SOL
+SOLX/nitro:
+  tokens:
+    - addressOrDenom: "0x261a172eB72D8D32837D123E8AcC4d2e44117195"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xe0B7AD7F8F26e2b00C8b47b5Df370f15F90fCF48"
+      connections:
+        - token: sealevel|solanamainnet|DaF4pYDy5d6mhwEcMrenpNAjx1gfA9BgcYruUYTsZibE
+      decimals: 18
+      logoURI: /deployments/warp_routes/SOLX/logo.png
+      name: Solaxy
+      standard: EvmHypCollateral
+      symbol: SOLX
+    - addressOrDenom: DaF4pYDy5d6mhwEcMrenpNAjx1gfA9BgcYruUYTsZibE
+      chainName: solanamainnet
+      collateralAddressOrDenom: Cf2LnRpmcUxY8qkAyiaaPpgAtUHgzkH3tPhMAevE9zLg
+      connections:
+        - token: ethereum|ethereum|0x261a172eB72D8D32837D123E8AcC4d2e44117195
+      decimals: 6
+      logoURI: /deployments/warp_routes/SOLX/logo.png
+      name: Solaxy
+      standard: SealevelHypSynthetic
+      symbol: SOLX
 SONIC/solanamainnet-sonicsvm:
   tokens:
     - addressOrDenom: 2e6hyJbUpbhqbJzorDZ1m4QVTj5oPhsn2H3KBaMFVXAz
@@ -3624,6 +3715,53 @@ SUPR/base-ethereum-ink-optimism-superseed:
       name: Superseed
       standard: EvmHypXERC20Lockbox
       symbol: SUPR
+TAIKO/taiko:
+  tokens:
+    - addressOrDenom: "0x1f36ecf13394712c944805f38d1463cf54C0C2C8"
+      chainName: base
+      connections:
+        - token: ethereum|bsc|0x1f36ecf13394712c944805f38d1463cf54C0C2C8
+        - token: ethereum|ethereum|0xb20524C700879620D921c5eb4435517A0549aD75
+        - token: ethereum|unichain|0xfA6F161A6D0487351364BCB9792885e03D8E1371
+      decimals: 18
+      logoURI: /deployments/warp_routes/TAIKO/logo.svg
+      name: Taiko Token
+      standard: EvmHypSynthetic
+      symbol: TAIKO
+    - addressOrDenom: "0x1f36ecf13394712c944805f38d1463cf54C0C2C8"
+      chainName: bsc
+      connections:
+        - token: ethereum|base|0x1f36ecf13394712c944805f38d1463cf54C0C2C8
+        - token: ethereum|ethereum|0xb20524C700879620D921c5eb4435517A0549aD75
+        - token: ethereum|unichain|0xfA6F161A6D0487351364BCB9792885e03D8E1371
+      decimals: 18
+      logoURI: /deployments/warp_routes/TAIKO/logo.svg
+      name: Taiko Token
+      standard: EvmHypSynthetic
+      symbol: TAIKO
+    - addressOrDenom: "0xb20524C700879620D921c5eb4435517A0549aD75"
+      chainName: ethereum
+      collateralAddressOrDenom: "0x10dea67478c5F8C5E2D90e5E9B26dBe60c54d800"
+      connections:
+        - token: ethereum|base|0x1f36ecf13394712c944805f38d1463cf54C0C2C8
+        - token: ethereum|bsc|0x1f36ecf13394712c944805f38d1463cf54C0C2C8
+        - token: ethereum|unichain|0xfA6F161A6D0487351364BCB9792885e03D8E1371
+      decimals: 18
+      logoURI: /deployments/warp_routes/TAIKO/logo.svg
+      name: Taiko Token
+      standard: EvmHypCollateral
+      symbol: TAIKO
+    - addressOrDenom: "0xfA6F161A6D0487351364BCB9792885e03D8E1371"
+      chainName: unichain
+      connections:
+        - token: ethereum|base|0x1f36ecf13394712c944805f38d1463cf54C0C2C8
+        - token: ethereum|bsc|0x1f36ecf13394712c944805f38d1463cf54C0C2C8
+        - token: ethereum|ethereum|0xb20524C700879620D921c5eb4435517A0549aD75
+      decimals: 18
+      logoURI: /deployments/warp_routes/TAIKO/logo.svg
+      name: Taiko Token
+      standard: EvmHypSynthetic
+      symbol: TAIKO
 TAURA/euphoriatestnet-holesky:
   tokens:
     - addressOrDenom: "0x120f461C4d95412c4a1BC4e8BE6917C9da404510"
@@ -3912,6 +4050,28 @@ TONY/base-solanamainnet:
       name: Big Tony
       standard: SealevelHypSynthetic
       symbol: TONY
+TOSHI/toshi:
+  tokens:
+    - addressOrDenom: "0x0fEA4BE161fDA8FBF24bbCd66a77f53E29F784A3"
+      chainName: base
+      coinGeckoId: toshi
+      collateralAddressOrDenom: "0xAC1Bd2486aAf3B5C0fc3Fd868558b082a531B2B4"
+      connections:
+        - token: ethereum|bsc|0x6a2608Dabe09bc1128EEC7275B92DFB939D5Db3f
+      decimals: 18
+      logoURI: /deployments/warp_routes/TOSHI/logo.svg
+      name: Toshi
+      standard: EvmHypCollateral
+      symbol: TOSHI
+    - addressOrDenom: "0x6a2608Dabe09bc1128EEC7275B92DFB939D5Db3f"
+      chainName: bsc
+      connections:
+        - token: ethereum|base|0x0fEA4BE161fDA8FBF24bbCd66a77f53E29F784A3
+      decimals: 18
+      logoURI: /deployments/warp_routes/TOSHI/logo.svg
+      name: Toshi
+      standard: EvmHypSynthetic
+      symbol: TOSHI
 TRUMP/arbitrum-avalanche-base-flowmainnet-form-optimism-solanamainnet-worldchain:
   tokens:
     - addressOrDenom: "0x5155EB1bcD30189915cF84717550Acfa537068bF"
@@ -4079,12 +4239,13 @@ TURTLE/ethereum-linea:
       name: Turtle
       standard: EvmHypSynthetic
       symbol: TURTLE
-UBTC/boba-bsquared-soneium-swell:
+UBTC/bsquared:
   tokens:
     - addressOrDenom: "0xFA3198ecF05303a6d96E57a45E6c815055D255b1"
       chainName: boba
       connections:
         - token: ethereum|bsquared|0x0FC41a92F526A8CD22060A4052e156502D6B9db0
+        - token: ethereum|nibiru|0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa
         - token: ethereum|soneium|0x61F2993a644762A345b483ADF0d6351C5EdFB3b5
         - token: ethereum|swell|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
       decimals: 18
@@ -4097,6 +4258,7 @@ UBTC/boba-bsquared-soneium-swell:
       collateralAddressOrDenom: "0x796e4D53067FF374B89b2Ac101ce0c1f72ccaAc2"
       connections:
         - token: ethereum|boba|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+        - token: ethereum|nibiru|0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa
         - token: ethereum|soneium|0x61F2993a644762A345b483ADF0d6351C5EdFB3b5
         - token: ethereum|swell|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
       decimals: 18
@@ -4104,11 +4266,24 @@ UBTC/boba-bsquared-soneium-swell:
       name: uBTC
       standard: EvmHypCollateral
       symbol: uBTC
+    - addressOrDenom: "0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa"
+      chainName: nibiru
+      connections:
+        - token: ethereum|boba|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+        - token: ethereum|bsquared|0x0FC41a92F526A8CD22060A4052e156502D6B9db0
+        - token: ethereum|soneium|0x61F2993a644762A345b483ADF0d6351C5EdFB3b5
+        - token: ethereum|swell|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+      decimals: 18
+      logoURI: /deployments/warp_routes/UBTC/logo.svg
+      name: uBTC
+      standard: EvmHypSynthetic
+      symbol: uBTC
     - addressOrDenom: "0x61F2993a644762A345b483ADF0d6351C5EdFB3b5"
       chainName: soneium
       connections:
         - token: ethereum|boba|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
         - token: ethereum|bsquared|0x0FC41a92F526A8CD22060A4052e156502D6B9db0
+        - token: ethereum|nibiru|0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa
         - token: ethereum|swell|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
       decimals: 18
       logoURI: /deployments/warp_routes/UBTC/logo.svg
@@ -4120,6 +4295,7 @@ UBTC/boba-bsquared-soneium-swell:
       connections:
         - token: ethereum|boba|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
         - token: ethereum|bsquared|0x0FC41a92F526A8CD22060A4052e156502D6B9db0
+        - token: ethereum|nibiru|0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa
         - token: ethereum|soneium|0x61F2993a644762A345b483ADF0d6351C5EdFB3b5
       decimals: 18
       logoURI: /deployments/warp_routes/UBTC/logo.svg
@@ -5898,13 +6074,14 @@ jitoSOL/eclipsemainnet-solanamainnet:
       name: Jito Staked SOL
       standard: SealevelHypCollateral
       symbol: JitoSOL
-kySOL/eclipsemainnet-solanamainnet:
+kySOL/kyros:
   tokens:
     - addressOrDenom: 5XbuBdh4V5hmqQrazmGLXJBoLUE2jtvYhwMbGNoLNvG2
       chainName: eclipsemainnet
       collateralAddressOrDenom: 8jN7xMDqJucigQphWHvqAPQPAmk7VJKKsqLmgCkE7XzP
       connections:
         - token: sealevel|solanamainnet|9JdgDXPZtPdDpgiTvo8zuWmEXWUYL9eghvpGXLb31k2f
+        - token: sealevel|sonicsvm|99avVZJmBq5PFw3UjjnJQvrbaJf7DKoYNMiXRjQaML8h
       decimals: 9
       logoURI: /deployments/warp_routes/kySOL/logo.svg
       name: Kyros Restaked SOL
@@ -5916,10 +6093,22 @@ kySOL/eclipsemainnet-solanamainnet:
       collateralAddressOrDenom: kySo1nETpsZE2NWe5vj2C64mPSciH1SppmHb4XieQ7B
       connections:
         - token: sealevel|eclipsemainnet|5XbuBdh4V5hmqQrazmGLXJBoLUE2jtvYhwMbGNoLNvG2
+        - token: sealevel|sonicsvm|99avVZJmBq5PFw3UjjnJQvrbaJf7DKoYNMiXRjQaML8h
       decimals: 9
       logoURI: /deployments/warp_routes/kySOL/logo.svg
       name: Kyros Restaked SOL
       standard: SealevelHypCollateral
+      symbol: kySOL
+    - addressOrDenom: 99avVZJmBq5PFw3UjjnJQvrbaJf7DKoYNMiXRjQaML8h
+      chainName: sonicsvm
+      collateralAddressOrDenom: 7C7u1z4yCFY6H4w3vZ1cg7zbnpNtyheYpvYnQRXweffF
+      connections:
+        - token: sealevel|eclipsemainnet|5XbuBdh4V5hmqQrazmGLXJBoLUE2jtvYhwMbGNoLNvG2
+        - token: sealevel|solanamainnet|9JdgDXPZtPdDpgiTvo8zuWmEXWUYL9eghvpGXLb31k2f
+      decimals: 9
+      logoURI: /deployments/warp_routes/kySOL/logo.svg
+      name: Kyros Restaked SOL
+      standard: SealevelHypSynthetic
       symbol: kySOL
 lrtsSOL/solanamainnet-sonicsvm:
   tokens:

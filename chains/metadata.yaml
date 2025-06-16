@@ -955,6 +955,7 @@ boba:
   displayName: Boba Mainnet
   domainId: 288
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://transaction.safe.boba.network
   name: boba
   nativeToken:
     decimals: 18
@@ -1139,6 +1140,7 @@ bsquared:
   displayName: B² Network
   domainId: 223
   gasCurrencyCoinGeckoId: bitcoin
+  gnosisSafeTransactionServiceUrl: https://safe-gateway.bsquared.network/txs/
   name: bsquared
   nativeToken:
     decimals: 18
@@ -4877,6 +4879,52 @@ nibiru:
   rpcUrls:
     - http: https://evm-rpc.nibiru.fi
   technicalStack: other
+noble:
+  bech32Prefix: noble
+  blockExplorers:
+    - apiUrl: https://www.mintscan.io/noble
+      family: other
+      name: Mintscan
+      url: https://www.mintscan.io/noble
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1.5
+    reorgPeriod: 1
+  canonicalAsset: uusdn
+  chainId: noble-1
+  contractAddressBytes: 32
+  deployer:
+    name: Noble
+    url: https://noble.xyz
+  displayName: Noble
+  domainId: 1313817164
+  gasCurrencyCoinGeckoId: noble-dollar-usdn
+  gasPrice:
+    amount: "0.1"
+    denom: uusdn
+  grpcUrls:
+    - http: http://noble-grpc.polkachu.com:21590
+    - http: https://grpc.noble.xyz:443
+  index:
+    chunk: 10
+    from: 28613000
+  name: noble
+  nativeToken:
+    decimals: 6
+    denom: uusdn
+    name: Noble Dollar
+    symbol: USDN
+  protocol: cosmosnative
+  restUrls:
+    - http: https://noble-api.polkachu.com:443
+    - http: https://api.noble.xyz:443
+  rpcUrls:
+    - http: https://noble-rpc.polkachu.com:443
+    - http: https://rpc.noble.xyz:443
+  slip44: 118
+  technicalStack: other
+  transactionOverrides:
+    gasPrice: 0.1
 nobletestnet:
   bech32Prefix: noble
   blockExplorers:
@@ -5229,8 +5277,8 @@ paradex:
     symbol: FUEL
   protocol: starknet
   rpcUrls:
-    - http: https://juno.api.prod.paradex.trade/rpc/v0_7
-    - http: https://pathfinder.api.prod.paradex.trade/rpc/v0_7
+    - http: https://juno.api.prod.paradex.trade/rpc/v0_8
+    - http: https://pathfinder.api.prod.paradex.trade/rpc/v0_8
   technicalStack: other
 paradexsepolia:
   blockExplorers:
@@ -5252,12 +5300,12 @@ paradexsepolia:
   name: paradexsepolia
   nativeToken:
     decimals: 18
-    denom: "0x49D36570D4E46F48E99674BD3FCC84644DDD6B96F7C741B1562B82F9E004DC7"
+    denom: "0x049D36570D4E46F48E99674BD3FCC84644DDD6B96F7C741B1562B82F9E004DC7"
     name: EtherDUMMY_TOKEN
     symbol: DT
   protocol: starknet
   rpcUrls:
-    - http: https://pathfinder.api.testnet.paradex.trade/rpc/v0_7
+    - http: https://pathfinder.api.testnet.paradex.trade/rpc/v0_8
 peaq:
   blockExplorers:
     - apiUrl: https://peaq.subscan.io/api
@@ -6577,15 +6625,14 @@ starknet:
   name: starknet
   nativeToken:
     decimals: 18
-    denom: "0x049D36570D4e46f48e99674bd3fcc84644DdD6b96F7C741B1562B82f9e004dC7"
-    name: Ether
-    symbol: ETH
+    denom: "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d"
+    name: StarkNet Token
+    symbol: STRK
   protocol: starknet
   rpcUrls:
-    - http: https://starknet-mainnet.public.blastapi.io
-    - http: https://rpc.starknet.lava.build:443
-    - http: https://starknet.api.onfinality.io/public
-    - http: https://api.zan.top/public/starknet-mainnet
+    - http: https://starknet-mainnet.public.blastapi.io/rpc/v0_8
+    - http: https://rpc.starknet.lava.build:443/
+    - http: https://api.zan.top/public/starknet-mainnet/rpc/v0_8
   technicalStack: other
 starknetsepolia:
   blockExplorers:
@@ -6607,12 +6654,12 @@ starknetsepolia:
   name: starknetsepolia
   nativeToken:
     decimals: 18
-    denom: "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7"
-    name: Ether
-    symbol: ETH
+    denom: "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d"
+    name: StarkNet Token
+    symbol: STRK
   protocol: starknet
   rpcUrls:
-    - http: https://starknet-sepolia.public.blastapi.io/rpc/v0_7
+    - http: https://starknet-sepolia.public.blastapi.io/rpc/v0_8
 story:
   blockExplorers:
     - apiUrl: https://www.storyscan.xyz/api
