@@ -1,0 +1,48 @@
+name: Reusable Install and Build
+
+on:
+  workflow_call:
+    inputs:
+      job:
+        required: true
+        type: string
+        description: 'The job to run (install or build)'
+
+jobs:
+  install:
+    if: ${{ inputs.job == 'install' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+            .yarn/cache
+          key: ${{ runner.os }}-yarn-cache-${{ hashFiles('./yarn.lock') }}
+      - name: yarn-install
+        # Check out the lockfile from main, reinstall, and then
+        # verify the lockfile matches what was committed.
+        run: |
+          yarn install
+          CHANGES=$(git status -s)
+          if [[ ! -z $CHANGES ]]; then
+            echo "Changes found: $CHANGES"
+            git diff
+            exit 1
+          fi
+
+  build:
+    if: ${{ inputs.job == 'build' }}
+    runs-on: ubuntu-latest
+    needs: [install]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+            .yarn/cache
+          key: ${{ runner.os }}-yarn-cache-${{ hashFiles('./yarn.lock') }}
+      - name: build
+        run: yarn run build
