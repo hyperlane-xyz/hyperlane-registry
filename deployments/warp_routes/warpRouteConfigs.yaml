@@ -1173,6 +1173,25 @@ ETH/holesky-piccadilly:
       name: Ether
       standard: EvmHypSynthetic
       symbol: ETH
+ETH/sepolia-starknetsepolia:
+  options: {}
+  tokens:
+    - addressOrDenom: "0x83C7a7d489826F92bDFBcc5DD861Fd0D913f85c6"
+      chainName: sepolia
+      connections:
+        - token: ethereum|starknetsepolia|0x01665b7726bba364f9ef9ba0bee66acfda07a8ad95e2c93d8e88a53d78d7e477
+      decimals: 18
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
+    - addressOrDenom: "0x01665b7726bba364f9ef9ba0bee66acfda07a8ad95e2c93d8e88a53d78d7e477"
+      chainName: starknetsepolia
+      connections:
+        - token: ethereum|sepolia|0x83C7a7d489826F92bDFBcc5DD861Fd0D913f85c6
+      decimals: 18
+      name: Ether
+      standard: StarknetHypSynthetic
+      symbol: ETH
 EZETH/renzo-prod:
   tokens:
     - addressOrDenom: "0xB26bBfC6d1F469C821Ea25099017862e7368F4E8"
