@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x0273FCADa4D3A68bB801586cbe4aB2eB830C7b0d"
+    chainName: poseidontestnet
+    connections:
+      - token: ethereum|sepolia|0x7E0acECEE9DD0709BAC737e39894Dd2a0df7f585
+    decimals: 8
+    name: WBTC
+    standard: EvmHypSynthetic
+    symbol: WBTC
+  - addressOrDenom: "0x7E0acECEE9DD0709BAC737e39894Dd2a0df7f585"
+    chainName: sepolia
+    collateralAddressOrDenom: "0x29f2D40B0605204364af54EC677bD022dA425d03"
+    connections:
+      - token: ethereum|poseidontestnet|0x0273FCADa4D3A68bB801586cbe4aB2eB830C7b0d
+    decimals: 8
+    name: WBTC
+    standard: EvmHypCollateral
+    symbol: WBTC
