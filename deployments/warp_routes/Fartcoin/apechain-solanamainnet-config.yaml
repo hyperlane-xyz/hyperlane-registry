@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x5FC9b323013DAcF2d56046F9ff0f61c95c6A466B"
+    chainName: apechain
+    coinGeckoId: fartcoin
+    connections:
+      - token: sealevel|solanamainnet|4YGKdefcJMUVnzZFu124t7epCNWnAjmXbKXyC13HiAFR
+    decimals: 6
+    logoURI: /deployments/warp_routes/Fartcoin/logo.svg
+    name: Fartcoin
+    standard: EvmHypSynthetic
+    symbol: Fartcoin
+  - addressOrDenom: 4YGKdefcJMUVnzZFu124t7epCNWnAjmXbKXyC13HiAFR
+    chainName: solanamainnet
+    coinGeckoId: fartcoin
+    collateralAddressOrDenom: 9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+    connections:
+      - token: ethereum|apechain|0x5FC9b323013DAcF2d56046F9ff0f61c95c6A466B
+    decimals: 6
+    logoURI: /deployments/warp_routes/Fartcoin/logo.svg
+    name: Fartcoin
+    standard: SealevelHypCollateral
+    symbol: Fartcoin
