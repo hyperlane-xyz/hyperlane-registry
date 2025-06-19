@@ -7134,6 +7134,39 @@ oUSDT/staging:
       name: OpenUSDT
       standard: EvmHypVSXERC20
       symbol: oUSDTSTAGE
+oXAUT/production:
+  tokens:
+    - addressOrDenom: "0xd99911833652f222CfBE50eC7bDB6a23eA140DC4"
+      chainName: celo
+      collateralAddressOrDenom: "0x307e0c30FD1e65211fC727d521c98F0206b14D95"
+      connections:
+        - token: ethereum|ethereum|0x37372B68c9A69fB35D40010Cfe154A4DD86e753e
+        - token: ethereum|worldchain|0x78993A50141B69e3BB4B21FdaD335e964da090eb
+      decimals: 6
+      name: Tether Gold
+      standard: EvmHypXERC20
+      symbol: XAUt
+    - addressOrDenom: "0x37372B68c9A69fB35D40010Cfe154A4DD86e753e"
+      chainName: ethereum
+      coinGeckoId: tether-gold
+      collateralAddressOrDenom: "0x79BbE12dAa6Dd768Cd8207130a43bbA52c4f7B45"
+      connections:
+        - token: ethereum|celo|0xd99911833652f222CfBE50eC7bDB6a23eA140DC4
+        - token: ethereum|worldchain|0x78993A50141B69e3BB4B21FdaD335e964da090eb
+      decimals: 6
+      name: Tether Gold
+      standard: EvmHypXERC20Lockbox
+      symbol: XAUt
+    - addressOrDenom: "0x78993A50141B69e3BB4B21FdaD335e964da090eb"
+      chainName: worldchain
+      collateralAddressOrDenom: "0x307e0c30fd1e65211fc727d521c98f0206b14d95"
+      connections:
+        - token: ethereum|celo|0xd99911833652f222CfBE50eC7bDB6a23eA140DC4
+        - token: ethereum|ethereum|0x37372B68c9A69fB35D40010Cfe154A4DD86e753e
+      decimals: 6
+      name: Tether Gold
+      standard: EvmHypXERC20
+      symbol: XAUt
 pumpBTCsei/ethereum-sei:
   tokens:
     - addressOrDenom: "0x179149B7E74910d2A58b2a737e1a8B6F44388882"
