@@ -129,6 +129,33 @@ bob:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+botanix:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  ownerOverrides:
+    collateralProxyAdmin: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    collateralToken: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
+  type: xERC20
+  xERC20:
+    extraBridges:
+      - limits:
+          bufferCap: "20000000000000"
+          rateLimitPerSecond: "5000000000"
+        lockbox: "0x0EEFa8b75587bcD4A909a0F3c36180D4441481a0"
+    warpRouteLimits:
+      bufferCap: "8000000000000"
+      rateLimitPerSecond: "2000000000"
 celo:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -183,7 +210,7 @@ ethereum:
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
-        lockbox: "0xCe19f75BCE7Fb74c9e2328766Ebe50465df24CA3"
+        lockbox: "0xa3532633401AbFfbd15e6be825a45FB7F141469B"
     warpRouteLimits:
       bufferCap: "20000000000000"
       rateLimitPerSecond: "5000000000"
@@ -256,8 +283,8 @@ ink:
   type: xERC20
   xERC20:
     warpRouteLimits:
-      bufferCap: "0"
-      rateLimitPerSecond: "0"
+      bufferCap: "8000000000000"
+      rateLimitPerSecond: "2000000000"
 linea:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -612,6 +639,28 @@ superseed:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+swell:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  ownerOverrides:
+    collateralProxyAdmin: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    collateralToken: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      bufferCap: "8000000000000"
+      rateLimitPerSecond: "2000000000"
 unichain:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
