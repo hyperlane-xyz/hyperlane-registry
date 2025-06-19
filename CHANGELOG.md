@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 17.8.2
+
+### Patch Changes
+
+- 711b4f3: Update oXAUT deployment configs with new xERC20 deployment due to incorrect name and symbol
+
 ## 17.8.1
 
 ### Patch Changes
