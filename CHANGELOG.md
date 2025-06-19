@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 17.8.1
+
+### Patch Changes
+
+- 2441da0: Add oXAUT logo
+
 ## 17.8.0
 
 ### Minor Changes
