@@ -47,6 +47,7 @@ export enum RegistryType {
   FileSystem = 'filesystem',
   Merged = 'merged',
   Partial = 'partial',
+  Http = 'http',
 }
 
 export type AddWarpRouteConfigOptions =
