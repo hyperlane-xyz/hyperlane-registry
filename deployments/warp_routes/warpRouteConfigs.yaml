@@ -2257,6 +2257,27 @@ GPS/base-bsc:
       name: GoPlus Security
       standard: EvmHypSynthetic
       symbol: GPS
+H/humanity:
+  tokens:
+    - addressOrDenom: "0x44F161aE29361E332dEA039DFA2F404E0bC5B5Cc"
+      chainName: bsc
+      connections:
+        - token: ethereum|ethereum|0x44F161aE29361E332dEA039DFA2F404E0bC5B5Cc
+      decimals: 18
+      logoURI: /deployments/warp_routes/H/logo.svg
+      name: Humanity
+      standard: EvmHypSynthetic
+      symbol: H
+    - addressOrDenom: "0x44F161aE29361E332dEA039DFA2F404E0bC5B5Cc"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xcf5104d094e3864cfcbda43b82e1cefd26a016eb"
+      connections:
+        - token: ethereum|bsc|0x44F161aE29361E332dEA039DFA2F404E0bC5B5Cc
+      decimals: 18
+      logoURI: /deployments/warp_routes/H/logo.svg
+      name: Humanity
+      standard: EvmHypCollateral
+      symbol: H
 HYPER/arbitrum-base-bsc-ethereum-optimism:
   tokens:
     - addressOrDenom: "0xC9d23ED2ADB0f551369946BD377f8644cE1ca5c4"
