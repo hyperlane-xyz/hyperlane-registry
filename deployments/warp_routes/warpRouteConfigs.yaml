@@ -6048,6 +6048,29 @@ bbSOL/solanamainnet-soon:
       name: Bybit Staked SOL
       standard: SealevelHypSynthetic
       symbol: bbSOL
+dreams/solanamainnet-starknet:
+  options: {}
+  tokens:
+    - addressOrDenom: G5yLMZ1q3Xd6oPaTiuPUS3bFaPamQd1sxdYacsgB8Egp
+      chainName: solanamainnet
+      coinGeckoId: daydreams
+      collateralAddressOrDenom: GMzuntWYJLpNuCizrSR7ZXggiMdDzTNiEmSNHHunpump
+      connections:
+        - token: starknet|starknet|0x04fcaf2a7b4a072fe57c59beee807322d34ed65000d78611c909a46fead07fb1
+      decimals: 6
+      logoURI: /deployments/warp_routes/dreams/logo.jpeg
+      name: Daydreams
+      standard: SealevelHypCollateral
+      symbol: dreams
+    - addressOrDenom: "0x04fcaf2a7b4a072fe57c59beee807322d34ed65000d78611c909a46fead07fb1"
+      chainName: starknet
+      connections:
+        - token: sealevel|solanamainnet|G5yLMZ1q3Xd6oPaTiuPUS3bFaPamQd1sxdYacsgB8Egp
+      decimals: 6
+      logoURI: /deployments/warp_routes/dreams/logo.jpeg
+      name: Daydreams
+      standard: StarknetHypSynthetic
+      symbol: dreams
 enzoBTC/bsc-hyperevm:
   tokens:
     - addressOrDenom: "0xba06D7f285C6B0d5EacC50ceA931163B23Ab889c"
