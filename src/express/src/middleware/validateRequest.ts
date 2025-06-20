@@ -1,35 +1,64 @@
 import { Request, Response, NextFunction } from 'express';
 import { z } from 'zod';
 import { ApiError } from '../errors/ApiError.js';
+import AppConstants from '../constants/AppConstants.js';
 
-type ValidationSchema = {
-  params?: z.ZodType;
-  query?: z.ZodType;
-  body?: z.ZodType;
-};
-
-export function validateRequest(schema: ValidationSchema) {
-  return async (req: Request, _res: Response, next: NextFunction) => {
-    try {
-      if (schema.params) {
-        await schema.params.parseAsync(req.params);
-      }
-      if (schema.query) {
-        await schema.query.parseAsync(req.query);
-      }
-      if (schema.body) {
-        await schema.body.parseAsync(req.body);
-      }
+export function validateRequestParam<T extends z.ZodTypeAny>(name: string, schema: T) {
+  return (req: Request, _res: Response, next: NextFunction) => {
+    const parsed = schema.safeParse(req.params[name]);
+    if (parsed.success) {
+      req.params[name] = parsed.data;
       next();
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        const errorMessage = error.errors
-          .map((err) => `${err.path.join('.')}: ${err.message}`)
-          .join(', ');
-        next(new ApiError(`Validation error: ${errorMessage}`, 400));
-      } else {
-        next(error);
-      }
+    } else {
+      const errorMessage = parsed.error.errors
+        .map((err) => `${err.path.join('.') || name}: ${err.message}`)
+        .join(', ');
+      next(
+        new ApiError(
+          `Validation error for param '${name}': ${errorMessage}`,
+          AppConstants.HTTP_STATUS_BAD_REQUEST,
+        ),
+      );
+    }
+  };
+}
+
+export function validateBody<T extends z.ZodTypeAny>(schema: T) {
+  return (req: Request, _res: Response, next: NextFunction) => {
+    const parsed = schema.safeParse(req.body);
+    if (parsed.success) {
+      req.body = parsed.data; // Assign the parsed (and potentially transformed) body back
+      next();
+    } else {
+      const errorMessage = parsed.error.errors
+        .map((err) => `${err.path.join('.')}: ${err.message}`)
+        .join(', ');
+      next(
+        new ApiError(
+          `Validation error in body: ${errorMessage}`,
+          AppConstants.HTTP_STATUS_BAD_REQUEST,
+        ),
+      );
+    }
+  };
+}
+
+export function validateQueryParam<T extends z.ZodTypeAny>(name: string, schema: T) {
+  return (req: Request, _res: Response, next: NextFunction) => {
+    const parsed = schema.safeParse(req.query[name]);
+    if (parsed.success) {
+      req.query[name] = parsed.data;
+      next();
+    } else {
+      const errorMessage = parsed.error.errors
+        .map((err) => `${err.path.join('.')}: ${err.message}`)
+        .join(', ');
+      next(
+        new ApiError(
+          `Validation error in query: ${errorMessage}`,
+          AppConstants.HTTP_STATUS_BAD_REQUEST,
+        ),
+      );
     }
   };
 }

@@ -1,11 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { WarpService } from '../services/warpService.js';
 import { z } from 'zod';
-import { validateRequest } from '../middleware/validateRequest.js';
-
-const warpRouteParamsSchema = z.object({
-  id: z.string(),
-});
+import { validateRequestParam } from '../middleware/validateRequest.js';
 
 export function createWarpRouter(warpService: WarpService) {
   const router = Router();
@@ -13,7 +9,7 @@ export function createWarpRouter(warpService: WarpService) {
   // get warp route
   router.get(
     '/:id',
-    validateRequest({ params: warpRouteParamsSchema }),
+    validateRequestParam('id', z.string()),
     async (req: Request, res: Response) => {
       const warpRoute = await warpService.getWarpRoute(req.params.id);
       res.json(warpRoute);
