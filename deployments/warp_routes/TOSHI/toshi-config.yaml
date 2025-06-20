@@ -1,0 +1,21 @@
+tokens:
+  - addressOrDenom: "0x0fEA4BE161fDA8FBF24bbCd66a77f53E29F784A3"
+    chainName: base
+    coinGeckoId: toshi
+    collateralAddressOrDenom: "0xAC1Bd2486aAf3B5C0fc3Fd868558b082a531B2B4"
+    connections:
+      - token: ethereum|bsc|0x6a2608Dabe09bc1128EEC7275B92DFB939D5Db3f
+    decimals: 18
+    logoURI: /deployments/warp_routes/TOSHI/logo.svg
+    name: Toshi
+    standard: EvmHypCollateral
+    symbol: TOSHI
+  - addressOrDenom: "0x6a2608Dabe09bc1128EEC7275B92DFB939D5Db3f"
+    chainName: bsc
+    connections:
+      - token: ethereum|base|0x0fEA4BE161fDA8FBF24bbCd66a77f53E29F784A3
+    decimals: 18
+    logoURI: /deployments/warp_routes/TOSHI/logo.svg
+    name: Toshi
+    standard: EvmHypSynthetic
+    symbol: TOSHI

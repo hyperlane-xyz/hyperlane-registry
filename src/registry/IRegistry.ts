@@ -39,7 +39,7 @@ export interface UpdateChainParams {
 
 export interface WarpRouteFilterParams {
   symbol?: string;
-  chainName?: ChainName;
+  label?: string;
 }
 
 export enum RegistryType {
@@ -48,10 +48,6 @@ export enum RegistryType {
   Merged = 'merged',
   Partial = 'partial',
   Http = 'http',
-}
-
-export interface AddWarpRouteOptions {
-  symbol?: string;
 }
 
 export type AddWarpRouteConfigOptions =
@@ -86,7 +82,7 @@ export interface IRegistry {
 
   getWarpRoute(routeId: string): MaybePromise<WarpCoreConfig | null>;
   getWarpRoutes(filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap>;
-  addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): MaybePromise<void>;
+  addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteConfigOptions): MaybePromise<void>;
   addWarpRouteConfig(
     config: WarpRouteDeployConfig,
     options: AddWarpRouteConfigOptions,
