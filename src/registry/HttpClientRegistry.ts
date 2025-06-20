@@ -84,8 +84,8 @@ export class HttpClientRegistry implements IRegistry {
     if (filter?.symbol) {
       queryParams.set('symbol', filter.symbol);
     }
-    if (filter?.chainName) {
-      queryParams.set('chainName', filter.chainName);
+    if (filter?.label) {
+      queryParams.set('label', filter.label);
     }
     return this.fetchJson<WarpRouteConfigMap>(`/warp-routes?${queryParams.toString()}`);
   }
