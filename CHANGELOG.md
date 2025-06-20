@@ -1,5 +1,18 @@
 # @hyperlane-xyz/registry
 
+## 17.9.0
+
+### Minor Changes
+
+- 209d3c1: Add Humanity configs
+- bcc4abb: Deployed warp route for DREAMS between Solana Mainnet and Starknet.
+- 8717bb1: Add Solaxy chain
+- c8473f3: Deployed warp route for Fartcoin between Solana Mainnet and Starknet.
+
+### Patch Changes
+
+- 28bc40c: Update oXAUT core config name and symbol for ethereum
+
 ## 17.8.2
 
 ### Patch Changes
