@@ -1,0 +1,26 @@
+poseidontestnet:
+  interchainSecurityModule:
+    modules:
+      - relayer: "0xe43420E1f83530AAf8ad94e6904FDbdc3556Da2B"
+        type: trustedRelayerIsm
+      - domains: {}
+        owner: "0xe43420E1f83530AAf8ad94e6904FDbdc3556Da2B"
+        type: defaultFallbackRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
+  isNft: false
+  owner: "0xe43420E1f83530AAf8ad94e6904FDbdc3556Da2B"
+  type: synthetic
+sepolia:
+  interchainSecurityModule:
+    modules:
+      - relayer: "0xe43420E1f83530AAf8ad94e6904FDbdc3556Da2B"
+        type: trustedRelayerIsm
+      - domains: {}
+        owner: "0xe43420E1f83530AAf8ad94e6904FDbdc3556Da2B"
+        type: defaultFallbackRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
+  owner: "0xe43420E1f83530AAf8ad94e6904FDbdc3556Da2B"
+  token: "0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14"
+  type: collateral
