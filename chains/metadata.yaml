@@ -6317,6 +6317,32 @@ solanatestnet:
   protocol: sealevel
   rpcUrls:
     - http: https://api.testnet.solana.com
+solaxy:
+  blockExplorers:
+    - apiUrl: https://solscan.io
+      family: other
+      name: Solaxy Explorer
+      url: https://solscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 0.4
+    reorgPeriod: 0
+  chainId: 1936682104
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Solaxy
+  domainId: 1936682104
+  gasCurrencyCoinGeckoId: usd-coin
+  name: solaxy
+  nativeToken:
+    decimals: 9
+    name: Solaxy
+    symbol: SOLX
+  protocol: sealevel
+  rpcUrls:
+    - http: https://mainnet.rpc.solaxy.io
+  technicalStack: other
 solotestnet:
   blockExplorers:
     - apiUrl: https://solo-testnet.explorer.caldera.xyz/api
