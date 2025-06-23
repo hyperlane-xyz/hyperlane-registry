@@ -82,7 +82,7 @@ export default tseslint.config(
   },
   {
     files: ['src/**/*.ts'],
-    ignores: ['src/fs/**/*.ts'],
+    ignores: ['src/fs/**/*.ts', 'src/express/scripts/**/*.ts'],
     rules: {
       'no-restricted-imports': [
         'error',
