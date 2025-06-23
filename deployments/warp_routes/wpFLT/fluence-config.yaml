@@ -1,0 +1,47 @@
+tokens:
+  - addressOrDenom: "0x6fE6F4847e8A4485343aF9C7458C91132A0F6647"
+    chainName: arbitrum
+    connections:
+      - token: ethereum|base|0x1d73AB379902f71D8F1652b136f3717c085C2233
+      - token: ethereum|fluence|0xee7Fc418f5659a366b548b4E205d374C1F0B46e7
+      - token: ethereum|polygon|0x6fE6F4847e8A4485343aF9C7458C91132A0F6647
+    decimals: 18
+    logoURI: /deployments/warp_routes/FLT/logo.svg
+    name: wrapped pFLT
+    standard: EvmHypSynthetic
+    symbol: wpFLT
+  - addressOrDenom: "0x1d73AB379902f71D8F1652b136f3717c085C2233"
+    chainName: base
+    connections:
+      - token: ethereum|arbitrum|0x6fE6F4847e8A4485343aF9C7458C91132A0F6647
+      - token: ethereum|fluence|0xee7Fc418f5659a366b548b4E205d374C1F0B46e7
+      - token: ethereum|polygon|0x6fE6F4847e8A4485343aF9C7458C91132A0F6647
+    decimals: 18
+    logoURI: /deployments/warp_routes/FLT/logo.svg
+    name: wrapped pFLT
+    standard: EvmHypSynthetic
+    symbol: wpFLT
+  - addressOrDenom: "0xee7Fc418f5659a366b548b4E205d374C1F0B46e7"
+    chainName: fluence
+    coinGeckoId: fluence-2
+    collateralAddressOrDenom: "0xFe96A0F3e3b40e442FB11622717D37beEa479516"
+    connections:
+      - token: ethereum|arbitrum|0x6fE6F4847e8A4485343aF9C7458C91132A0F6647
+      - token: ethereum|base|0x1d73AB379902f71D8F1652b136f3717c085C2233
+      - token: ethereum|polygon|0x6fE6F4847e8A4485343aF9C7458C91132A0F6647
+    decimals: 18
+    logoURI: /deployments/warp_routes/FLT/logo.svg
+    name: wrapped pFLT
+    standard: EvmHypCollateral
+    symbol: wpFLT
+  - addressOrDenom: "0x6fE6F4847e8A4485343aF9C7458C91132A0F6647"
+    chainName: polygon
+    connections:
+      - token: ethereum|arbitrum|0x6fE6F4847e8A4485343aF9C7458C91132A0F6647
+      - token: ethereum|base|0x1d73AB379902f71D8F1652b136f3717c085C2233
+      - token: ethereum|fluence|0xee7Fc418f5659a366b548b4E205d374C1F0B46e7
+    decimals: 18
+    logoURI: /deployments/warp_routes/FLT/logo.svg
+    name: wrapped pFLT
+    standard: EvmHypSynthetic
+    symbol: wpFLT

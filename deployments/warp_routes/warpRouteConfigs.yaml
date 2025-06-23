@@ -1173,6 +1173,25 @@ ETH/holesky-piccadilly:
       name: Ether
       standard: EvmHypSynthetic
       symbol: ETH
+ETH/sepolia-starknetsepolia:
+  options: {}
+  tokens:
+    - addressOrDenom: "0x83C7a7d489826F92bDFBcc5DD861Fd0D913f85c6"
+      chainName: sepolia
+      connections:
+        - token: ethereum|starknetsepolia|0x01665b7726bba364f9ef9ba0bee66acfda07a8ad95e2c93d8e88a53d78d7e477
+      decimals: 18
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
+    - addressOrDenom: "0x01665b7726bba364f9ef9ba0bee66acfda07a8ad95e2c93d8e88a53d78d7e477"
+      chainName: starknetsepolia
+      connections:
+        - token: ethereum|sepolia|0x83C7a7d489826F92bDFBcc5DD861Fd0D913f85c6
+      decimals: 18
+      name: Ether
+      standard: StarknetHypSynthetic
+      symbol: ETH
 EZETH/renzo-prod:
   tokens:
     - addressOrDenom: "0xB26bBfC6d1F469C821Ea25099017862e7368F4E8"
@@ -2103,6 +2122,29 @@ Fartcoin/apechain-solanamainnet:
       name: Fartcoin
       standard: SealevelHypCollateral
       symbol: Fartcoin
+Fartcoin/solanamainnet-starknet:
+  options: {}
+  tokens:
+    - addressOrDenom: bwGKNDL1HF9x3rZE937oFMJDaF2sH9J9sgdERqjhyaC
+      chainName: solanamainnet
+      coinGeckoId: fartcoin
+      collateralAddressOrDenom: 9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+      connections:
+        - token: starknet|starknet|0x06e0e0117b742747452601f9f14576eb9d71b326379a1794bb51d9adbce3dbd3
+      decimals: 6
+      logoURI: /deployments/warp_routes/Fartcoin/logo.svg
+      name: Fartcoin
+      standard: SealevelHypCollateral
+      symbol: Fartcoin
+    - addressOrDenom: "0x06e0e0117b742747452601f9f14576eb9d71b326379a1794bb51d9adbce3dbd3"
+      chainName: starknet
+      connections:
+        - token: sealevel|solanamainnet|bwGKNDL1HF9x3rZE937oFMJDaF2sH9J9sgdERqjhyaC
+      decimals: 6
+      logoURI: /deployments/warp_routes/Fartcoin/logo.svg
+      name: Fartcoin
+      standard: StarknetHypSynthetic
+      symbol: Fartcoin
 GAME/base-form:
   tokens:
     - addressOrDenom: "0x6a5579ABECE07b73d4d92a8bBFF51aF827bB21f1"
@@ -2215,6 +2257,27 @@ GPS/base-bsc:
       name: GoPlus Security
       standard: EvmHypSynthetic
       symbol: GPS
+H/humanity:
+  tokens:
+    - addressOrDenom: "0x44F161aE29361E332dEA039DFA2F404E0bC5B5Cc"
+      chainName: bsc
+      connections:
+        - token: ethereum|ethereum|0x44F161aE29361E332dEA039DFA2F404E0bC5B5Cc
+      decimals: 18
+      logoURI: /deployments/warp_routes/H/logo.svg
+      name: Humanity
+      standard: EvmHypSynthetic
+      symbol: H
+    - addressOrDenom: "0x44F161aE29361E332dEA039DFA2F404E0bC5B5Cc"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xcf5104d094e3864cfcbda43b82e1cefd26a016eb"
+      connections:
+        - token: ethereum|bsc|0x44F161aE29361E332dEA039DFA2F404E0bC5B5Cc
+      decimals: 18
+      logoURI: /deployments/warp_routes/H/logo.svg
+      name: Humanity
+      standard: EvmHypCollateral
+      symbol: H
 HYPER/arbitrum-base-bsc-ethereum-optimism:
   tokens:
     - addressOrDenom: "0xC9d23ED2ADB0f551369946BD377f8644cE1ca5c4"
@@ -4009,6 +4072,7 @@ TOBY/base-optimism:
   tokens:
     - addressOrDenom: "0xf2aCC7a8Cd1fAA7a178B1569e11505372ea7943B"
       chainName: base
+      coinGeckoId: toby-toadgod
       collateralAddressOrDenom: "0xb8d98a102b0079b69ffbc760c8d857a31653e56e"
       connections:
         - token: ethereum|optimism|0xf2aCC7a8Cd1fAA7a178B1569e11505372ea7943B
@@ -6029,6 +6093,29 @@ bbSOL/solanamainnet-soon:
       name: Bybit Staked SOL
       standard: SealevelHypSynthetic
       symbol: bbSOL
+dreams/solanamainnet-starknet:
+  options: {}
+  tokens:
+    - addressOrDenom: G5yLMZ1q3Xd6oPaTiuPUS3bFaPamQd1sxdYacsgB8Egp
+      chainName: solanamainnet
+      coinGeckoId: daydreams
+      collateralAddressOrDenom: GMzuntWYJLpNuCizrSR7ZXggiMdDzTNiEmSNHHunpump
+      connections:
+        - token: starknet|starknet|0x04fcaf2a7b4a072fe57c59beee807322d34ed65000d78611c909a46fead07fb1
+      decimals: 6
+      logoURI: /deployments/warp_routes/dreams/logo.jpeg
+      name: Daydreams
+      standard: SealevelHypCollateral
+      symbol: dreams
+    - addressOrDenom: "0x04fcaf2a7b4a072fe57c59beee807322d34ed65000d78611c909a46fead07fb1"
+      chainName: starknet
+      connections:
+        - token: sealevel|solanamainnet|G5yLMZ1q3Xd6oPaTiuPUS3bFaPamQd1sxdYacsgB8Egp
+      decimals: 6
+      logoURI: /deployments/warp_routes/dreams/logo.jpeg
+      name: Daydreams
+      standard: StarknetHypSynthetic
+      symbol: dreams
 enzoBTC/bsc-hyperevm:
   tokens:
     - addressOrDenom: "0xba06D7f285C6B0d5EacC50ceA931163B23Ab889c"
@@ -7115,6 +7202,42 @@ oUSDT/staging:
       name: OpenUSDT
       standard: EvmHypVSXERC20
       symbol: oUSDTSTAGE
+oXAUT/production:
+  tokens:
+    - addressOrDenom: "0x53a81819DFD46730116B89dBCb096DAcC4e73cEA"
+      chainName: celo
+      collateralAddressOrDenom: "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
+      connections:
+        - token: ethereum|ethereum|0x9A9C33115455a929D3d821CEE4A01e38241bF375
+        - token: ethereum|worldchain|0xEa0ad8Fc869f5Ab97a859c3af110367865699a8d
+      decimals: 6
+      logoURI: /deployments/warp_routes/oXAUT/logo.svg
+      name: OpenXAUT
+      standard: EvmHypXERC20
+      symbol: oXAUT
+    - addressOrDenom: "0x9A9C33115455a929D3d821CEE4A01e38241bF375"
+      chainName: ethereum
+      coinGeckoId: tether-gold
+      collateralAddressOrDenom: "0x0797c6f55f5c9005996A55959A341018cF69A963"
+      connections:
+        - token: ethereum|celo|0x53a81819DFD46730116B89dBCb096DAcC4e73cEA
+        - token: ethereum|worldchain|0xEa0ad8Fc869f5Ab97a859c3af110367865699a8d
+      decimals: 6
+      logoURI: /deployments/warp_routes/oXAUT/logo.svg
+      name: OpenXAUT
+      standard: EvmHypXERC20Lockbox
+      symbol: oXAUT
+    - addressOrDenom: "0xEa0ad8Fc869f5Ab97a859c3af110367865699a8d"
+      chainName: worldchain
+      collateralAddressOrDenom: "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
+      connections:
+        - token: ethereum|celo|0x53a81819DFD46730116B89dBCb096DAcC4e73cEA
+        - token: ethereum|ethereum|0x9A9C33115455a929D3d821CEE4A01e38241bF375
+      decimals: 6
+      logoURI: /deployments/warp_routes/oXAUT/logo.svg
+      name: OpenXAUT
+      standard: EvmHypXERC20
+      symbol: oXAUT
 pumpBTCsei/ethereum-sei:
   tokens:
     - addressOrDenom: "0x179149B7E74910d2A58b2a737e1a8B6F44388882"
@@ -7568,3 +7691,51 @@ wfragSOL/fragmetric:
       name: Wrapped Fragmetric Restaked SOL
       standard: SealevelHypSynthetic
       symbol: wfragSOL
+wpFLT/fluence:
+  tokens:
+    - addressOrDenom: "0x6fE6F4847e8A4485343aF9C7458C91132A0F6647"
+      chainName: arbitrum
+      connections:
+        - token: ethereum|base|0x1d73AB379902f71D8F1652b136f3717c085C2233
+        - token: ethereum|fluence|0xee7Fc418f5659a366b548b4E205d374C1F0B46e7
+        - token: ethereum|polygon|0x6fE6F4847e8A4485343aF9C7458C91132A0F6647
+      decimals: 18
+      logoURI: /deployments/warp_routes/FLT/logo.svg
+      name: wrapped pFLT
+      standard: EvmHypSynthetic
+      symbol: wpFLT
+    - addressOrDenom: "0x1d73AB379902f71D8F1652b136f3717c085C2233"
+      chainName: base
+      connections:
+        - token: ethereum|arbitrum|0x6fE6F4847e8A4485343aF9C7458C91132A0F6647
+        - token: ethereum|fluence|0xee7Fc418f5659a366b548b4E205d374C1F0B46e7
+        - token: ethereum|polygon|0x6fE6F4847e8A4485343aF9C7458C91132A0F6647
+      decimals: 18
+      logoURI: /deployments/warp_routes/FLT/logo.svg
+      name: wrapped pFLT
+      standard: EvmHypSynthetic
+      symbol: wpFLT
+    - addressOrDenom: "0xee7Fc418f5659a366b548b4E205d374C1F0B46e7"
+      chainName: fluence
+      coinGeckoId: fluence-2
+      collateralAddressOrDenom: "0xFe96A0F3e3b40e442FB11622717D37beEa479516"
+      connections:
+        - token: ethereum|arbitrum|0x6fE6F4847e8A4485343aF9C7458C91132A0F6647
+        - token: ethereum|base|0x1d73AB379902f71D8F1652b136f3717c085C2233
+        - token: ethereum|polygon|0x6fE6F4847e8A4485343aF9C7458C91132A0F6647
+      decimals: 18
+      logoURI: /deployments/warp_routes/FLT/logo.svg
+      name: wrapped pFLT
+      standard: EvmHypCollateral
+      symbol: wpFLT
+    - addressOrDenom: "0x6fE6F4847e8A4485343aF9C7458C91132A0F6647"
+      chainName: polygon
+      connections:
+        - token: ethereum|arbitrum|0x6fE6F4847e8A4485343aF9C7458C91132A0F6647
+        - token: ethereum|base|0x1d73AB379902f71D8F1652b136f3717c085C2233
+        - token: ethereum|fluence|0xee7Fc418f5659a366b548b4E205d374C1F0B46e7
+      decimals: 18
+      logoURI: /deployments/warp_routes/FLT/logo.svg
+      name: wrapped pFLT
+      standard: EvmHypSynthetic
+      symbol: wpFLT
