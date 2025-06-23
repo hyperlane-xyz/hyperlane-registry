@@ -1,0 +1,18 @@
+tokens:
+  - addressOrDenom: "0x2A37aA7d175bC4951C4B5163eC9D0174f9B2a3F6"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xaf88d065e77c8cc2239327c5edb3a432268e5831"
+    connections:
+      - token: ethereum|polygon|0x2A37aA7d175bC4951C4B5163eC9D0174f9B2a3F6
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x2A37aA7d175bC4951C4B5163eC9D0174f9B2a3F6"
+    chainName: polygon
+    connections:
+      - token: ethereum|arbitrum|0x2A37aA7d175bC4951C4B5163eC9D0174f9B2a3F6
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypSynthetic
+    symbol: USDC
