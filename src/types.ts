@@ -14,7 +14,7 @@ export type ChainAddresses = z.infer<typeof ChainAddressesSchema>;
 export const WarpRouteFilterSchema = z.object({
   symbol: z.string().optional(),
   label: z.string().optional(),
-});
+}).strict();
 
 /**
  * TypeScript type inferred from the schema.
