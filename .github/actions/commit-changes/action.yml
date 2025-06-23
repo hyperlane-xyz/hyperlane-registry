@@ -1,0 +1,26 @@
+name: 'Commit Changes'
+description: 'Commit changes to the repository'
+inputs:
+  message:
+    description: 'The message to commit'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: configure-git
+      shell: bash
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+    - name: commit-changes
+      shell: bash
+      run: |
+        CHANGES=$(git status -s)
+        if [[ ! -z $CHANGES ]]; then
+          git add .
+          git commit -m "${{ inputs.message }}"
+          git push
+        else
+          echo "No changes to commit."
+        fi
