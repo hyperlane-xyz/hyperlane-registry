@@ -5,13 +5,18 @@ import {
   WarpCoreConfig,
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
-import { ChainAddresses, MaybePromise, WarpDeployConfigMap, WarpRouteConfigMap } from '../types.js';
+import {
+  ChainAddresses,
+  MaybePromise,
+  WarpDeployConfigMap,
+  WarpRouteConfigMap,
+  WarpRouteFilterParams,
+} from '../types.js';
 import {
   IRegistry,
   RegistryContent,
   RegistryType,
   UpdateChainParams,
-  WarpRouteFilterParams,
   AddWarpRouteConfigOptions,
 } from './IRegistry.js';
 

@@ -7,6 +7,20 @@ export type MaybePromise<T> = T | Promise<T> | PromiseLike<T>;
 export const ChainAddressesSchema = z.record(z.string());
 export type ChainAddresses = z.infer<typeof ChainAddressesSchema>;
 
+/**
+ * Schema for warp route filter parameters.
+ * This serves as the single source of truth for both TypeScript types and validation.
+ */
+export const WarpRouteFilterSchema = z.object({
+  symbol: z.string().optional(),
+  label: z.string().optional(),
+});
+
+/**
+ * TypeScript type inferred from the schema.
+ */
+export type WarpRouteFilterParams = z.infer<typeof WarpRouteFilterSchema>;
+
 export type WarpRouteId = string;
 export type WarpRouteConfigMap = Record<WarpRouteId, WarpCoreConfig>;
 export type WarpDeployConfigMap = Record<WarpRouteId, WarpRouteDeployConfig>;

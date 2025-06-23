@@ -11,6 +11,7 @@ import {
   WarpDeployConfigMap,
   WarpRouteConfigMap,
   WarpRouteId,
+  WarpRouteFilterParams,
 } from '../types.js';
 
 export interface ChainFiles {
@@ -35,11 +36,6 @@ export interface UpdateChainParams {
   chainName: ChainName;
   metadata?: ChainMetadata;
   addresses?: ChainAddresses;
-}
-
-export interface WarpRouteFilterParams {
-  symbol?: string;
-  label?: string;
 }
 
 export enum RegistryType {

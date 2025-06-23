@@ -1,6 +1,6 @@
 import { RegistryService } from './registryService.js';
 import { AbstractService } from './abstractService.js';
-import { WarpRouteFilterParams } from '../../../registry/IRegistry.js';
+import { WarpRouteFilterParams } from '../../../types.js';
 
 export class RootService extends AbstractService {
   constructor(registryService: RegistryService) {

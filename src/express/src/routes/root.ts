@@ -1,11 +1,7 @@
 import { Router, Request, Response } from 'express';
-import { z } from 'zod';
 import { RootService } from '../services/rootService.js';
-import { validateQueryParam } from '../middleware/validateRequest.js';
-import { ZChainName } from '@hyperlane-xyz/sdk';
-
-const ZSymbolOptional = z.string().optional();
-const ZChainNameOptional = ZChainName.optional();
+import { validateQueryParams } from '../middleware/validateRequest.js';
+import { WarpRouteFilterSchema } from '../../../types.js';
 
 export function createRootRouter(rootService: RootService) {
   const router = Router();
@@ -37,8 +33,7 @@ export function createRootRouter(rootService: RootService) {
   // get warp routes
   router.get(
     '/warp-routes',
-    validateQueryParam('symbol', ZSymbolOptional),
-    validateQueryParam('chainName', ZChainNameOptional),
+    validateQueryParams(WarpRouteFilterSchema),
     async (req: Request, res: Response) => {
       const filter = req.query;
       const warpRoutes = await rootService.getWarpRoutes(filter);

@@ -17,7 +17,13 @@ import {
   WARP_ROUTE_CONFIG_FILE_REGEX,
   WARP_ROUTE_DEPLOY_FILE_REGEX,
 } from '../consts.js';
-import { ChainAddresses, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
+import {
+  ChainAddresses,
+  WarpDeployConfigMap,
+  WarpRouteConfigMap,
+  WarpRouteFilterParams,
+  WarpRouteId,
+} from '../types.js';
 import { concurrentMap, parseGitHubPath, stripLeadingSlash } from '../utils.js';
 import { BaseRegistry } from './BaseRegistry.js';
 import {
@@ -27,7 +33,6 @@ import {
   RegistryContent,
   RegistryType,
   UpdateChainParams,
-  WarpRouteFilterParams,
 } from './IRegistry.js';
 import {
   filterWarpRoutesIds,
@@ -238,7 +243,7 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
     this.isWarpRouteCacheFull = true;
     this.warpRouteCache = warpRouteConfigs;
     const { idMap: filteredWarpRouteConfigs } = filterWarpRoutesIds(warpRouteConfigs, filter);
-    return filteredWarpRouteConfigs;
+  return filteredWarpRouteConfigs;
   }
 
   async getWarpDeployConfigs(filter?: WarpRouteFilterParams): Promise<WarpDeployConfigMap> {
