@@ -101,4 +101,24 @@ export default tseslint.config(
       import: importPlugin,
     },
   },
+  {
+    files: ['src/**/*.ts'],
+    ignores: ['src/express/**/*.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['*/**/express/**/*'],
+              message: 'Importing from src/express is not allowed outside express directory',
+            },
+          ],
+        },
+      ],
+    },
+    plugins: {
+      import: importPlugin,
+    },
+  },
 );
