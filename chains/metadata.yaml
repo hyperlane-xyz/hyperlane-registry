@@ -469,34 +469,6 @@ artelatestnet:
   rpcUrls:
     - http: https://betanet-rpc1.artela.network
     - http: https://betanet-rpc2.artela.network
-arthera:
-  blockExplorers:
-    - apiUrl: https://explorer.arthera.net/api
-      family: blockscout
-      name: Arthera Explorer
-      url: https://explorer.arthera.net
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 1
-    reorgPeriod: 5
-  chainId: 10242
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
-  displayName: Arthera
-  domainId: 10242
-  gasCurrencyCoinGeckoId: arthera
-  name: arthera
-  nativeToken:
-    decimals: 18
-    name: Arthera
-    symbol: AA
-  protocol: ethereum
-  rpcUrls:
-    - http: https://rpc.arthera.net
-      pagination:
-        maxBlockRange: 10000
-  technicalStack: other
 artheratestnet:
   blockExplorers:
     - apiUrl: https://explorer-test.arthera.net/api
@@ -1822,6 +1794,31 @@ deprecatedalephzeroevm:
     - http: https://rpc.alephzero.raas.gelato.cloud
     - http: https://alephzero.drpc.org
   technicalStack: arbitrumnitro
+deprecatedarthera:
+  blockExplorers:
+    - apiUrl: https://explorer.arthera.net/api
+      family: blockscout
+      name: Arthera Explorer
+      url: https://explorer.arthera.net
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 10242
+  displayName: Arthera
+  domainId: 10242
+  gasCurrencyCoinGeckoId: arthera
+  name: deprecatedarthera
+  nativeToken:
+    decimals: 18
+    name: Arthera
+    symbol: AA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.arthera.net
+      pagination:
+        maxBlockRange: 10000
+  technicalStack: other
 deprecatedchiliz:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/88888/etherscan/api
@@ -2068,6 +2065,55 @@ deprecatedsuperposition:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.superposition.so
+  technicalStack: arbitrumnitro
+deprecatedtreasure:
+  blockExplorers:
+    - apiUrl: https://rpc-explorer-verify.treasure.lol/contract_verification
+      family: etherscan
+      name: Treasurescan
+      url: https://treasurescan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 61166
+  displayName: Treasure
+  domainId: 61166
+  gasCurrencyCoinGeckoId: magic
+  gnosisSafeTransactionServiceUrl: https://prod.treasure.keypersafe.xyz
+  name: deprecatedtreasure
+  nativeToken:
+    decimals: 18
+    name: MAGIC
+    symbol: MAGIC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.treasure.lol
+  technicalStack: zksync
+deprecatedtrumpchain:
+  blockExplorers:
+    - apiUrl: https://explorer.trumpchain.dev/api
+      family: blockscout
+      name: TRUMPCHAIN Explorer
+      url: https://explorer.trumpchain.dev
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 4547
+  displayName: TRUMPCHAIN
+  domainId: 4547
+  gasCurrencyCoinGeckoId: official-trump
+  index:
+    from: 18
+  name: deprecatedtrumpchain
+  nativeToken:
+    decimals: 18
+    name: TRUMP
+    symbol: TRUMP
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.trumpchain.dev
   technicalStack: arbitrumnitro
 dodotestnet:
   blockExplorers:
@@ -7351,61 +7397,6 @@ torus:
     - http: https://api-hyperlane.nodes.torus.network
     - http: https://api.torus.network
   technicalStack: polkadotsubstrate
-treasure:
-  blockExplorers:
-    - apiUrl: https://rpc-explorer-verify.treasure.lol/contract_verification
-      family: etherscan
-      name: Treasurescan
-      url: https://treasurescan.io
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 1
-    reorgPeriod: 0
-  chainId: 61166
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
-  displayName: Treasure
-  domainId: 61166
-  gasCurrencyCoinGeckoId: magic
-  gnosisSafeTransactionServiceUrl: https://prod.treasure.keypersafe.xyz
-  name: treasure
-  nativeToken:
-    decimals: 18
-    name: MAGIC
-    symbol: MAGIC
-  protocol: ethereum
-  rpcUrls:
-    - http: https://rpc.treasure.lol
-  technicalStack: zksync
-trumpchain:
-  blockExplorers:
-    - apiUrl: https://explorer.trumpchain.dev/api
-      family: blockscout
-      name: TRUMPCHAIN Explorer
-      url: https://explorer.trumpchain.dev
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 1
-    reorgPeriod: 0
-  chainId: 4547
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
-  displayName: TRUMPCHAIN
-  domainId: 4547
-  gasCurrencyCoinGeckoId: official-trump
-  index:
-    from: 18
-  name: trumpchain
-  nativeToken:
-    decimals: 18
-    name: TRUMP
-    symbol: TRUMP
-  protocol: ethereum
-  rpcUrls:
-    - http: https://rpc.trumpchain.dev
-  technicalStack: arbitrumnitro
 u2utestnet:
   blockExplorers:
     - apiUrl: https://testnet.u2uscan.xyz/api
