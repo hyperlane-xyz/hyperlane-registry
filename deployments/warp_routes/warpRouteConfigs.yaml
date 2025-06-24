@@ -2122,6 +2122,29 @@ Fartcoin/apechain-solanamainnet:
       name: Fartcoin
       standard: SealevelHypCollateral
       symbol: Fartcoin
+Fartcoin/solanamainnet-starknet:
+  options: {}
+  tokens:
+    - addressOrDenom: bwGKNDL1HF9x3rZE937oFMJDaF2sH9J9sgdERqjhyaC
+      chainName: solanamainnet
+      coinGeckoId: fartcoin
+      collateralAddressOrDenom: 9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+      connections:
+        - token: starknet|starknet|0x06e0e0117b742747452601f9f14576eb9d71b326379a1794bb51d9adbce3dbd3
+      decimals: 6
+      logoURI: /deployments/warp_routes/Fartcoin/logo.svg
+      name: Fartcoin
+      standard: SealevelHypCollateral
+      symbol: Fartcoin
+    - addressOrDenom: "0x06e0e0117b742747452601f9f14576eb9d71b326379a1794bb51d9adbce3dbd3"
+      chainName: starknet
+      connections:
+        - token: sealevel|solanamainnet|bwGKNDL1HF9x3rZE937oFMJDaF2sH9J9sgdERqjhyaC
+      decimals: 6
+      logoURI: /deployments/warp_routes/Fartcoin/logo.svg
+      name: Fartcoin
+      standard: StarknetHypSynthetic
+      symbol: Fartcoin
 GAME/base-form:
   tokens:
     - addressOrDenom: "0x6a5579ABECE07b73d4d92a8bBFF51aF827bB21f1"
@@ -2234,6 +2257,27 @@ GPS/base-bsc:
       name: GoPlus Security
       standard: EvmHypSynthetic
       symbol: GPS
+H/humanity:
+  tokens:
+    - addressOrDenom: "0x44F161aE29361E332dEA039DFA2F404E0bC5B5Cc"
+      chainName: bsc
+      connections:
+        - token: ethereum|ethereum|0x44F161aE29361E332dEA039DFA2F404E0bC5B5Cc
+      decimals: 18
+      logoURI: /deployments/warp_routes/H/logo.svg
+      name: Humanity
+      standard: EvmHypSynthetic
+      symbol: H
+    - addressOrDenom: "0x44F161aE29361E332dEA039DFA2F404E0bC5B5Cc"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xcf5104d094e3864cfcbda43b82e1cefd26a016eb"
+      connections:
+        - token: ethereum|bsc|0x44F161aE29361E332dEA039DFA2F404E0bC5B5Cc
+      decimals: 18
+      logoURI: /deployments/warp_routes/H/logo.svg
+      name: Humanity
+      standard: EvmHypCollateral
+      symbol: H
 HYPER/arbitrum-base-bsc-ethereum-optimism:
   tokens:
     - addressOrDenom: "0xC9d23ED2ADB0f551369946BD377f8644cE1ca5c4"
@@ -4028,6 +4072,7 @@ TOBY/base-optimism:
   tokens:
     - addressOrDenom: "0xf2aCC7a8Cd1fAA7a178B1569e11505372ea7943B"
       chainName: base
+      coinGeckoId: toby-toadgod
       collateralAddressOrDenom: "0xb8d98a102b0079b69ffbc760c8d857a31653e56e"
       connections:
         - token: ethereum|optimism|0xf2aCC7a8Cd1fAA7a178B1569e11505372ea7943B
@@ -6048,6 +6093,29 @@ bbSOL/solanamainnet-soon:
       name: Bybit Staked SOL
       standard: SealevelHypSynthetic
       symbol: bbSOL
+dreams/solanamainnet-starknet:
+  options: {}
+  tokens:
+    - addressOrDenom: G5yLMZ1q3Xd6oPaTiuPUS3bFaPamQd1sxdYacsgB8Egp
+      chainName: solanamainnet
+      coinGeckoId: daydreams
+      collateralAddressOrDenom: GMzuntWYJLpNuCizrSR7ZXggiMdDzTNiEmSNHHunpump
+      connections:
+        - token: starknet|starknet|0x04fcaf2a7b4a072fe57c59beee807322d34ed65000d78611c909a46fead07fb1
+      decimals: 6
+      logoURI: /deployments/warp_routes/dreams/logo.jpeg
+      name: Daydreams
+      standard: SealevelHypCollateral
+      symbol: dreams
+    - addressOrDenom: "0x04fcaf2a7b4a072fe57c59beee807322d34ed65000d78611c909a46fead07fb1"
+      chainName: starknet
+      connections:
+        - token: sealevel|solanamainnet|G5yLMZ1q3Xd6oPaTiuPUS3bFaPamQd1sxdYacsgB8Egp
+      decimals: 6
+      logoURI: /deployments/warp_routes/dreams/logo.jpeg
+      name: Daydreams
+      standard: StarknetHypSynthetic
+      symbol: dreams
 enzoBTC/bsc-hyperevm:
   tokens:
     - addressOrDenom: "0xba06D7f285C6B0d5EacC50ceA931163B23Ab889c"
