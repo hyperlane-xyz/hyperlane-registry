@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
 blockExplorers:
   - apiUrl: https://romescout-testnet-1.testnet.romeprotocol.xyz/api
     family: blockscout
@@ -9,9 +12,6 @@ blocks:
   estimateBlockTime: 4
   reorgPeriod: 0
 chainId: 3001
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: Rome Testnet
 domainId: 3001
 isTestnet: true

@@ -1,5 +1,27 @@
 # @hyperlane-xyz/registry
 
+## 18.0.0
+
+### Major Changes
+
+- f185f9a: Deprecate arthera, trumpchain, real.
+
+### Minor Changes
+
+- 5d4c567: Extend oUSDT to ink, swell, botanix.
+- f12bfab: Deprecate rometestnet1, rometestnet2.
+- 209d3c1: Add Humanity configs
+- ae339bc: Deploy to TAC.
+- e74e238: Add availability metadata for deprecated chains.
+- bcc4abb: Deployed warp route for DREAMS between Solana Mainnet and Starknet.
+- 8717bb1: Add Solaxy chain
+- c8473f3: Deployed warp route for Fartcoin between Solana Mainnet and Starknet.
+
+### Patch Changes
+
+- 65bced3: Add TOBY Coingecko Id
+- 28bc40c: Update oXAUT core config name and symbol for ethereum
+
 ## 17.8.2
 
 ### Patch Changes
