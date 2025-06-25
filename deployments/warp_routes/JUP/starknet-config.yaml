@@ -1,12 +1,22 @@
-starknet:
-  isNft: false
-  type: synthetic
-  owner: "0x06ae465e0c05735820a75500c40cb4dabbe46ebf1f1665f9ba3f9a7dcc78a6d1"
-  decimals: 6
-  symbol: "JUP"
-  name: "Jupiter"
-solanamainnet:
-  type: collateral
-  token: "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"
-  owner: "9bRSUPjfS3xS6n5EfkJzHFTRDa4AHLda8BU2pP4HoWnf"
-  foreignDeployment: "7heDuWfoApUWd8Y9rezYnNCVDbj8XB5fkLiTH4uxbocW"
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: 7heDuWfoApUWd8Y9rezYnNCVDbj8XB5fkLiTH4uxbocW
+    collateralAddressOrDenom: JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN
+    coinGeckoId: jupiter-exchange-solana
+    connections:
+      - token: starknet|starknet|0x03a292bd498266ac4b05d93cc2df5cd7883c0684faabff182ab568d566a3c151
+    chainName: solanamainnet
+    decimals: 6
+    logoURI: /deployments/warp_routes/JUP/logo.svg
+    name: Jupiter
+    standard: SealevelHypCollateral
+    symbol: JUP
+  - addressOrDenom: "0x03a292bd498266ac4b05d93cc2df5cd7883c0684faabff182ab568d566a3c151"
+    chainName: starknet
+    connections:
+      - token: sealevel|solanamainnet|7heDuWfoApUWd8Y9rezYnNCVDbj8XB5fkLiTH4uxbocW
+    decimals: 6
+    logoURI: /deployments/warp_routes/JUP/logo.svg
+    name: Jupiter
+    standard: StarknetHypSynthetic
+    symbol: JUP
