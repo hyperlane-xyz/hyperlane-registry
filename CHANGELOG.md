@@ -1,5 +1,81 @@
 # @hyperlane-xyz/registry
 
+## 18.0.0
+
+### Major Changes
+
+- f185f9a: Deprecate arthera, trumpchain, real.
+
+### Minor Changes
+
+- 5d4c567: Extend oUSDT to ink, swell, botanix.
+- f12bfab: Deprecate rometestnet1, rometestnet2.
+- 209d3c1: Add Humanity configs
+- ae339bc: Deploy to TAC.
+- e74e238: Add availability metadata for deprecated chains.
+- bcc4abb: Deployed warp route for DREAMS between Solana Mainnet and Starknet.
+- 8717bb1: Add Solaxy chain
+- c8473f3: Deployed warp route for Fartcoin between Solana Mainnet and Starknet.
+
+### Patch Changes
+
+- 65bced3: Add TOBY Coingecko Id
+- 28bc40c: Update oXAUT core config name and symbol for ethereum
+
+## 17.8.2
+
+### Patch Changes
+
+- 711b4f3: Update oXAUT deployment configs with new xERC20 deployment due to incorrect name and symbol
+
+## 17.8.1
+
+### Patch Changes
+
+- 2441da0: Add oXAUT logo
+
+## 17.8.0
+
+### Minor Changes
+
+- bb65614: Deprecate rometestnet. Redeploy on rometestnet2.
+- 1c2c4bf: Add wpFLT/fluence route
+- 959229b: feat: extend ubtc warp route
+- 7e961cc: add solaxy warp route deployment
+- c93222c: Added ETH warp route between starknetsepolia and sepolia
+- c33afad: Add oXAUT configs
+
+### Patch Changes
+
+- fb9acb2: Use correct fluence network coingecko id.
+- a6aa495: add coingeckoid to ubtc
+
+## 17.7.0
+
+### Minor Changes
+
+- 04ed384: Add TOSHI
+
+## 17.6.0
+
+### Minor Changes
+
+- 1c2cf5e: Add Matchain configs
+- 1de5cb2: Update default ISMs on botanix, katana, arbitrum, avalanche, base, ethereum, linea, mode, optimism, polygon, sonic.
+- dbd45f1: Add FLT/fluence route
+
+### Patch Changes
+
+- 6379fde: Paradex NativeToken denom valid 32bytes
+
+## 17.5.0
+
+### Minor Changes
+
+- 0668adf: add Taiko Token https://taiko.xyz
+- d059cee: Updates starknet & paradex endpoints to v8
+- f000dae: add `noble` metadata and addresses to chains
+
 ## 17.4.0
 
 ### Minor Changes

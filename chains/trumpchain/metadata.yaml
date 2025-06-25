@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
 blockExplorers:
   - apiUrl: https://explorer.trumpchain.dev/api
     family: blockscout
@@ -9,9 +12,6 @@ blocks:
   estimateBlockTime: 1
   reorgPeriod: 0
 chainId: 4547
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: TRUMPCHAIN
 domainId: 4547
 gasCurrencyCoinGeckoId: official-trump

@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xFE2DD2d57a05F89438F3AEC94EaFA4070396bab0"
+    chainName: bsc
+    connections:
+      - token: ethereum|matchain|0xB64a077d1cE66B422F09342597bc9C26FA82605d
+    decimals: 18
+    logoURI: /deployments/warp_routes/MAT/logo.svg
+    name: Matchain
+    standard: EvmHypSynthetic
+    symbol: MAT
+  - addressOrDenom: "0xB64a077d1cE66B422F09342597bc9C26FA82605d"
+    chainName: matchain
+    collateralAddressOrDenom: "0x44a83a012B926853DFc1BBE2ec5BEf37126067e8"
+    connections:
+      - token: ethereum|bsc|0xFE2DD2d57a05F89438F3AEC94EaFA4070396bab0
+    decimals: 18
+    logoURI: /deployments/warp_routes/MAT/logo.svg
+    name: Matchain
+    standard: EvmHypCollateral
+    symbol: MAT

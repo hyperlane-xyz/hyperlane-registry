@@ -1,0 +1,30 @@
+name: 'Yarn Install with Cache'
+description: 'Run yarn install using yarn cache'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Cache
+      uses: actions/cache@v4
+      id: cache
+      with:
+        path: |
+          **/node_modules
+          .yarn/cache
+        key: ${{ runner.os }}-yarn-cache-${{ hashFiles('./yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-cache-
+
+    # Typically, the cache will be hit, but if there's a network error when
+    # restoring the cache, let's run the install step ourselves.
+    - name: Install dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      shell: bash
+      run: |
+        yarn install
+        CHANGES=$(git status -s --ignore-submodules)
+        if [[ ! -z $CHANGES ]]; then
+          echo "Changes found: $CHANGES"
+          git diff
+          exit 1
+        fi
