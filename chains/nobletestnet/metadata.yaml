@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: noble
+blockExplorers:
+  - apiUrl: https://www.mintscan.io/noble-testnet
+    family: other
+    name: Mintscan
+    url: https://www.mintscan.io/noble-testnet
+blocks:
+  confirmations: 1
+  estimateBlockTime: 1.5
+  reorgPeriod: 1
+canonicalAsset: uusdn
+chainId: grand-1
+contractAddressBytes: 32
+deployer:
+  name: Noble
+  url: https://noble.xyz
+displayName: Noble Testnet
+# Generated from: console.log(parseInt('0x'+Buffer.from('GRAN').toString('hex')))
+domainId: 1196573006
+gasPrice:
+  amount: "0.1"
+  denom: uusdn
+grpcUrls:
+  - http: http://noble-testnet-grpc.polkachu.com:21590
+index:
+  chunk: 10
+  from: 29035000
+isTestnet: true
+name: nobletestnet
+nativeToken:
+  decimals: 6
+  denom: uusdn
+  name: Noble Dollar
+  symbol: USDN
+protocol: cosmosnative
+restUrls:
+  - http: https://noble-testnet-api.polkachu.com:443
+  - http: https://api.testnet.noble.xyz:443
+rpcUrls:
+  - http: https://noble-testnet-rpc.polkachu.com:443
+  - http: https://rpc.testnet.noble.xyz:443
+slip44: 118
+technicalStack: other
+transactionOverrides:
+  gasPrice: 0.1

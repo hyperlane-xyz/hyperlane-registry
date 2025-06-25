@@ -3,6 +3,8 @@ import tseslint from 'typescript-eslint';
 import tsparser from '@typescript-eslint/parser';
 import eslintPluginYml from 'eslint-plugin-yml';
 import yamlParser from 'yaml-eslint-parser';
+import importPlugin from 'eslint-plugin-import';
+import { sortYamlArraysPlugin } from '@hyperlane-xyz/utils/eslint-rules';
 
 export default tseslint.config(
   eslint.configs.recommended,
@@ -50,6 +52,53 @@ export default tseslint.config(
     rules: {
       'yml/sort-keys': ['error'],
       'yml/flow-mapping-curly-spacing': ['error', 'always'],
+      'yml/sort-sequence-values': [
+        'error',
+        {
+          pathPattern: '.*',
+          order: {
+            type: 'asc',
+            caseSensitive: true,
+            natural: false,
+          },
+          minValues: 2,
+        },
+      ],
+      'hyperlane/sort-yaml-arrays': [
+        'error',
+        {
+          arrays: [
+            { path: 'tokens', sortKey: 'chainName' },
+            { path: 'tokens[].connections', sortKey: 'token' },
+            { path: '*.interchainSecurityModule.modules', sortKey: 'type' },
+            { path: '*.interchainSecurityModule.modules[].domains.*.modules', sortKey: 'type' },
+          ],
+        },
+      ],
+    },
+    plugins: {
+      hyperlane: sortYamlArraysPlugin,
+    },
+  },
+  {
+    files: ['src/**/*.ts'],
+    ignores: ['src/fs/**/*.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['*/**/fs/**/*'],
+              message: 'Importing from src/fs is not allowed on non fs files',
+            },
+          ],
+        },
+      ],
+      'import/no-nodejs-modules': ['error'],
+    },
+    plugins: {
+      import: importPlugin,
     },
   },
 );

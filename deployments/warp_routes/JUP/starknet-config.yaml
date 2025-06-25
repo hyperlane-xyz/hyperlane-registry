@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: 7heDuWfoApUWd8Y9rezYnNCVDbj8XB5fkLiTH4uxbocW
+    chainName: solanamainnet
+    coinGeckoId: jupiter-exchange-solana
+    collateralAddressOrDenom: JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN
+    connections:
+      - token: starknet|starknet|0x03a292bd498266ac4b05d93cc2df5cd7883c0684faabff182ab568d566a3c151
+    decimals: 6
+    logoURI: /deployments/warp_routes/JUP/logo.svg
+    name: Jupiter
+    standard: SealevelHypCollateral
+    symbol: JUP
+  - addressOrDenom: "0x03a292bd498266ac4b05d93cc2df5cd7883c0684faabff182ab568d566a3c151"
+    chainName: starknet
+    connections:
+      - token: sealevel|solanamainnet|7heDuWfoApUWd8Y9rezYnNCVDbj8XB5fkLiTH4uxbocW
+    decimals: 6
+    logoURI: /deployments/warp_routes/JUP/logo.svg
+    name: Jupiter
+    standard: StarknetHypSynthetic
+    symbol: JUP

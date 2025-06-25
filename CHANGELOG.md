@@ -1,5 +1,397 @@
 # @hyperlane-xyz/registry
 
+## 18.0.0
+
+### Major Changes
+
+- f185f9a: Deprecate arthera, trumpchain, real.
+
+### Minor Changes
+
+- 5d4c567: Extend oUSDT to ink, swell, botanix.
+- f12bfab: Deprecate rometestnet1, rometestnet2.
+- 209d3c1: Add Humanity configs
+- ae339bc: Deploy to TAC.
+- e74e238: Add availability metadata for deprecated chains.
+- bcc4abb: Deployed warp route for DREAMS between Solana Mainnet and Starknet.
+- 8717bb1: Add Solaxy chain
+- c8473f3: Deployed warp route for Fartcoin between Solana Mainnet and Starknet.
+
+### Patch Changes
+
+- 65bced3: Add TOBY Coingecko Id
+- 28bc40c: Update oXAUT core config name and symbol for ethereum
+
+## 17.8.2
+
+### Patch Changes
+
+- 711b4f3: Update oXAUT deployment configs with new xERC20 deployment due to incorrect name and symbol
+
+## 17.8.1
+
+### Patch Changes
+
+- 2441da0: Add oXAUT logo
+
+## 17.8.0
+
+### Minor Changes
+
+- bb65614: Deprecate rometestnet. Redeploy on rometestnet2.
+- 1c2c4bf: Add wpFLT/fluence route
+- 959229b: feat: extend ubtc warp route
+- 7e961cc: add solaxy warp route deployment
+- c93222c: Added ETH warp route between starknetsepolia and sepolia
+- c33afad: Add oXAUT configs
+
+### Patch Changes
+
+- fb9acb2: Use correct fluence network coingecko id.
+- a6aa495: add coingeckoid to ubtc
+
+## 17.7.0
+
+### Minor Changes
+
+- 04ed384: Add TOSHI
+
+## 17.6.0
+
+### Minor Changes
+
+- 1c2cf5e: Add Matchain configs
+- 1de5cb2: Update default ISMs on botanix, katana, arbitrum, avalanche, base, ethereum, linea, mode, optimism, polygon, sonic.
+- dbd45f1: Add FLT/fluence route
+
+### Patch Changes
+
+- 6379fde: Paradex NativeToken denom valid 32bytes
+
+## 17.5.0
+
+### Minor Changes
+
+- 0668adf: add Taiko Token https://taiko.xyz
+- d059cee: Updates starknet & paradex endpoints to v8
+- f000dae: add `noble` metadata and addresses to chains
+
+## 17.4.0
+
+### Minor Changes
+
+- b6dab1b: extended kySOL route to sonicSVM
+
+## 17.3.0
+
+### Minor Changes
+
+- e158598: Added custom YAML sorting rules from @hyperlane-xyz/utils to standardize registry file array ordering.
+- c737841: Extend oUSDT to bob, hashkey.
+
+## 17.2.0
+
+### Minor Changes
+
+- ab66e3d: Extend wfragSOL and wfragJTO.
+- a157223: Add adraSOL deploy config.
+
+### Patch Changes
+
+- 4fa604e: Add adraSOL metadata.
+- c1986af: Update to Hyperlane SDK 13.2.1.
+
+## 17.1.0
+
+### Minor Changes
+
+- 35c8e77: Update GithubRegistry getWarpRoutes to fetch combined warpRouteConfigs.yaml file
+- 2b679ca: Added edgenchain config
+- bec384b: added ozean poseidon testnet
+- ee66a9b: Deploy to botanix, katana. Update arcadia gecko ID.
+- e6462f7: Added core deployment to paradex
+
+### Patch Changes
+
+- a7709f7: Remove treasuretopaz testnet.
+- 191d00e: Update Renzo EZETH protocol fee values to match onchain
+- 22ff449: Add wfragBTC.
+
+## 17.0.0
+
+### Major Changes
+
+- 432c8eb: Update tUSD warp route to Nucleus owners
+
+### Minor Changes
+
+- d485bfe: Remove Arbitrum from SMOL route and update configs
+
+### Patch Changes
+
+- d1d05e5: Rename EZETH prod and stage file names to renzo-prod and renzo-stage respectively
+- f7a13c5: Update starknet's coingeckoId to be ethereum
+- 4074d49: Updated starknet domainId
+
+## 16.1.0
+
+### Minor Changes
+
+- 07b28b1: Added bbSOL/solanamainnet-soon warp route
+- 62851e3: Added chain metadata for starknet
+
+### Patch Changes
+
+- 9ce0b51: Add wfragBTC metadata.
+- fed0fdd: Update build.ts to create the correct warpRouteConfigs.yaml (without the shortnames)
+- 74adbaa: Switch from STRK to ETH as starknet's native token
+- e1d8fc7: Added IGP (zero address - doesn't exist yet)
+
+## 16.0.0
+
+### Major Changes
+
+- d8c5039: Update Warp Core Config warp route Id generation logic to accept a specified warpRouteId, use the a synthetic token, or fallback to original chain names algo. Related util functions such as createWarpRouteConfigId no longer contains warpRouteId generation logic and instead only accepts a symbol and label. The logic has been moved to warpRouteConfigToId static method.
+
+### Minor Changes
+
+- 8a097f3: Add REZ extension config for Unichain
+- 5e10fb5: Add logoURI to missing ETH routes
+
+### Patch Changes
+
+- db7d740: Add TGT coingeckoId
+
+## 15.11.0
+
+### Minor Changes
+
+- 4a7a13f: Add test to ensure Starknet chains have reorgPeriod of 1
+- e0a0fa5: Added metadata.json and logo for bbSOL
+- 397da55: Add USDN warp route deployment on Aurora testnet.
+- 1c2ae01: Include combined warp route configs in repository
+
+### Patch Changes
+
+- 4a7a13f: Fixed starknetsepolia BlockTime & adjusted reorgPeriod for Starknet chains
+
+## 15.10.1
+
+### Patch Changes
+
+- 1e37082: Updates the FileSystemRegistry to not throw when adding a warp route configuration. This essentially removes the need for an update function.
+- 331ff5f: add coingecko-id for DAI
+
+## 15.10.0
+
+### Minor Changes
+
+- f36b3c4: Add CHILL warp deploy
+
+## 15.9.0
+
+### Minor Changes
+
+- 1e82651: Introduces configuration to support the deployment of the RDO Token across Ethereum and Binance Smart Chain (BSC).
+- c5b8e74: rename path to oUSDT route so that the symbol is consistent, USDT -> oUSDT
+
+## 15.8.1
+
+### Patch Changes
+
+- 221f568: The GithubRegistry now bypasses the new archive downloading logic when running in a browser environment
+- c5edccc: Add CHILL metadata.
+
+## 15.8.0
+
+### Minor Changes
+
+- 9b5a470: add FUEL warp route
+
+## 15.7.1
+
+### Patch Changes
+
+- 4b31a7f: Connects the solana chain to the rest of subtensor warp route
+
+## 15.7.0
+
+### Minor Changes
+
+- 35bafb8: Update miraclechain logo and default ISMs.
+- c9794df: Update default ISMs on solanamainnet, soon, svmbnb.
+- 166a9d2: Deploy to neuratestnet, rometestnet. Remove suavetoliman from default testnets.
+- d85abc6: update the existing getWarpRouteDeployConfigPath with new algorithm to propose and validate a warp route id
+- 6fc272f: Add KYVE warp route deployment.
+
+### Patch Changes
+
+- e5cc51d: The GithubRegistry now downloads a zip archive of the registry files to avoid running into rate limits.
+
+## 15.6.0
+
+### Minor Changes
+
+- 46ce802: Update hyperlane SDK to 13.0.0.
+
+### Patch Changes
+
+- f76d8f7: Add SOL/apechain-solanamainnet.
+- f76d8f7: Add Fartcoin, PENGU, UFD.
+
+## 15.5.0
+
+### Minor Changes
+
+- a9ca27a: Add Subtensor USDC configs
+
+### Patch Changes
+
+- 16d1e1e: Update to TGT warp route to Fireblocks owners
+
+## 15.4.0
+
+### Minor Changes
+
+- ea62684: Updated mirai route deploy config to show current ownership setup
+- 172087e: Add TGT warp configs
+
+## 15.3.0
+
+### Minor Changes
+
+- d96e1ce: Add chain metadata for starknetsepolia, paradexsepolia.
+- 5f22611: Deploy to new chains: ontology, miraclechain, kyve.
+- fa91bbd: Added tUSD/eclipsemainnet-ethereum warp route
+
+### Patch Changes
+
+- 0166c65: Adding MIRAI warp route
+- 02813bd: Update plumenetwork.xyz -> plume.org.
+- 50c45bf: updated warp route deployment config files to match the on chain config
+
+## 15.2.0
+
+### Minor Changes
+
+- 49080f4: added artifacts for the coti wbtc and eth routes
+
+## 15.1.0
+
+### Minor Changes
+
+- d223f2a: Update eclipsemainnet ISM
+- 4119b8d: Add Boop, PEPE and GG warp routes artifacts for apechain and arbitrum
+
+## 15.0.0
+
+### Major Changes
+
+- 93f9850: May 6 testnet batch: nobletestnet, megaethtestnet, basecamptestnet, bepolia. Removes metadata for old berabartio + camptestnet. Update weavevm -> load.network branding.
+
+### Minor Changes
+
+- d56aa3f: Add svmbnb
+
+### Patch Changes
+
+- 987992a: Update eclipse block explorer URL
+
+## 14.2.0
+
+### Minor Changes
+
+- 55b9c35: Add miracle chain
+
+### Patch Changes
+
+- a203c16: Remove ink connection for oUSDT
+
+## 14.1.0
+
+### Minor Changes
+
+- e9f844c: Add explorer API keys to some (most popular) chains.
+
+### Patch Changes
+
+- 65b313a: Fix wfragJTO: add correct collateral.
+
+## 14.0.0
+
+### Major Changes
+
+- 16d2a83: Standardized Warp Route configuration API by adding consistent addWarpRouteConfig method to IRegistry interface and removed method overload in FileSystemRegistry.
+
+## 13.16.1
+
+### Patch Changes
+
+- 60cfef3: Adding wfragSOL and wfragJTO deploy artifacts.
+
+## 13.16.0
+
+### Minor Changes
+
+- 9366912: Remove connections for ETH/arbitrum-base-ethereum-lumiaprism-polygon route
+- 3206b17: Added the deployment data for the ES token
+
+### Patch Changes
+
+- 08ca361: add PAXG/arbitrum-ethereum
+- aad4f25: Re-add oUSDT extension
+
+## 13.15.0
+
+### Minor Changes
+
+- 86c5ee7: Add new chains: hashkey infinityVM ontology game7 fluence peaq
+
+### Patch Changes
+
+- 8669ded: Remove connections to and from sonic, bitlayer, ronin, mantle and linea for oUSDT route
+
+## 13.14.2
+
+### Patch Changes
+
+- b559f9a: Change oUSDT staging symbol to oUSDTSTAGE
+
+## 13.14.1
+
+### Patch Changes
+
+- d35bc84: oUSDT: Remove worldchain connection, add logoURI and coinGeckoId
+
+## 13.14.0
+
+### Minor Changes
+
+- 57a874f: The registry code is restructured by moving filesystem components to a dedicated directory. ESLint restrictions added to prevent Node.js imports in browser components.
+- 4c4d2e7: Extend oUSDT to new chains: ethereum, sonic, bitlayer, ronin, mantle, metis, linea, metal.
+- 6257c9a: Remove bad or flaky rpcs from the registry and re-enable health checks for healthy chains
+- ed210b2: add `nobletestnet` metadata and addresses to chains
+- c34f9a0: Added `getWarpRouteDeployConfigPath` function to BaseRegistry
+- b8b76d5: Add milkyway coingecko id
+
+### Patch Changes
+
+- 62a99e8: Transfer MILK ownership.
+- b3e432c: Add explicit proxyAdmin.owner to USDC/ancient8-ethereum, USDT/eclipsemainnet-ethereum-solanamainnet, WBTC/eclipsemainnet-ethereum
+- 0c74ff1: Update remoteRouter names to domainIds for zeronetwork USDC & USDT, and teasure SMOL
+
+## 13.13.0
+
+### Minor Changes
+
+- 3774ce1: Deploy to auroratestnet. Add milkywaytestnet to default ISMs.
+
+### Patch Changes
+
+- cbfbf23: Fix `from` block from milkyway
+- 4f572b8: Update to latest worldchain logo.
+- 5ca6777: Update EZETH and EZETH stage with worldchain extension
+
 ## 13.12.0
 
 ### Minor Changes

@@ -1,23 +1,26 @@
 # yaml-language-server: $schema=../schema.json
-chainId: "0x534e5f5345504f4c4941"
 blockExplorers:
   - apiUrl: https://sepolia.voyager.online/api
-    family: other
-    name: Starknet Sepolia
-    url: https://sepolia.voyager.online/
+    family: voyager
+    name: Starknet Sepolia Explorer
+    url: https://sepolia.voyager.online
 blocks:
-  confirmations: 0
-  estimateBlockTime: 5
-  reorgPeriod: 0
+  confirmations: 1
+  estimateBlockTime: 30
+  reorgPeriod: 1
+chainId: "0x534e5f5345504f4c4941"
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
 displayName: Starknet Sepolia
 domainId: 23448591
 isTestnet: true
 name: starknetsepolia
 nativeToken:
   decimals: 18
-  name: Ether
-  symbol: ETH
-  denom: "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7"
+  denom: "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d"
+  name: StarkNet Token
+  symbol: STRK
 protocol: starknet
 rpcUrls:
-  - http: https://starknet-sepolia.public.blastapi.io/rpc/v0_7
+  - http: https://starknet-sepolia.public.blastapi.io/rpc/v0_8

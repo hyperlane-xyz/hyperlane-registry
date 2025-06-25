@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xbCdA9Ae6A148Bc4fb411979fFA883c9D1DF08F43"
+    chainName: abstract
+    connections:
+      - token: ethereum|bsc|0xcb508877ffe5a085B2474641dD3B28F8Bc22A57c
+      - token: sealevel|solanamainnet|27CK2NMbkSTTddgbBDvujccpqNrfGztr9WggXusNmnD1
+    decimals: 6
+    logoURI: /deployments/warp_routes/MIRAI/logo.jpg
+    name: Project Mirai
+    standard: EvmHypSynthetic
+    symbol: MIRAI
+  - addressOrDenom: "0xcb508877ffe5a085B2474641dD3B28F8Bc22A57c"
+    chainName: bsc
+    connections:
+      - token: ethereum|abstract|0xbCdA9Ae6A148Bc4fb411979fFA883c9D1DF08F43
+      - token: sealevel|solanamainnet|27CK2NMbkSTTddgbBDvujccpqNrfGztr9WggXusNmnD1
+    decimals: 6
+    logoURI: /deployments/warp_routes/MIRAI/logo.jpg
+    name: Project Mirai
+    standard: EvmHypSynthetic
+    symbol: MIRAI
+  - addressOrDenom: 27CK2NMbkSTTddgbBDvujccpqNrfGztr9WggXusNmnD1
+    chainName: solanamainnet
+    collateralAddressOrDenom: 5evN2exivZXJfLaA1KhHfiJKWfwH8znqyH36w1SFz89Y
+    connections:
+      - token: ethereum|abstract|0xbCdA9Ae6A148Bc4fb411979fFA883c9D1DF08F43
+      - token: ethereum|bsc|0xcb508877ffe5a085B2474641dD3B28F8Bc22A57c
+    decimals: 6
+    logoURI: /deployments/warp_routes/MIRAI/logo.jpg
+    name: Project Mirai
+    standard: SealevelHypCollateral
+    symbol: MIRAI
