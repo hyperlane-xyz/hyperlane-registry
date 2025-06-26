@@ -1,0 +1,29 @@
+tokens:
+  - addressOrDenom: "0xd1dCD1C07310a9C681651dAe6777b76C557d8fb8"
+    chainName: arbitrum
+    connections:
+      - token: ethereum|polygon|0xd1dCD1C07310a9C681651dAe6777b76C557d8fb8
+      - token: ethereum|base|0x2A37aA7d175bC4951C4B5163eC9D0174f9B2a3F6
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypSynthetic
+    symbol: USDC
+  - addressOrDenom: "0xd1dCD1C07310a9C681651dAe6777b76C557d8fb8"
+    chainName: polygon
+    connections:
+      - token: ethereum|arbitrum|0xd1dCD1C07310a9C681651dAe6777b76C557d8fb8
+      - token: ethereum|base|0x2A37aA7d175bC4951C4B5163eC9D0174f9B2a3F6
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypSynthetic
+    symbol: USDC
+  - addressOrDenom: "0x2A37aA7d175bC4951C4B5163eC9D0174f9B2a3F6"
+    chainName: base
+    collateralAddressOrDenom: "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913"
+    connections:
+      - token: ethereum|arbitrum|0xd1dCD1C07310a9C681651dAe6777b76C557d8fb8
+      - token: ethereum|polygon|0xd1dCD1C07310a9C681651dAe6777b76C557d8fb8
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
