@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x61714300b991Cfc2BD336cb1745F01463163A988"
+    chainName: arbitrumsepolia
+    connections:
+      - token: ethereum|basesepolia|0x020dEE96414703c457322eed8504946583a7dd24
+      - token: ethereum|optimismsepolia|0xB0A06A5f47D335F5d94D4D8620BCaDF320a159AC
+      - token: ethereum|sepolia|0x352f1c7ffa598d0698c1D8D2fCAb02511c6fF3e9
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x020dEE96414703c457322eed8504946583a7dd24"
+    chainName: basesepolia
+    connections:
+      - token: ethereum|arbitrumsepolia|0x61714300b991Cfc2BD336cb1745F01463163A988
+      - token: ethereum|optimismsepolia|0xB0A06A5f47D335F5d94D4D8620BCaDF320a159AC
+      - token: ethereum|sepolia|0x352f1c7ffa598d0698c1D8D2fCAb02511c6fF3e9
+    decimals: 6
+    name: USDC
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0xB0A06A5f47D335F5d94D4D8620BCaDF320a159AC"
+    chainName: optimismsepolia
+    connections:
+      - token: ethereum|arbitrumsepolia|0x61714300b991Cfc2BD336cb1745F01463163A988
+      - token: ethereum|basesepolia|0x020dEE96414703c457322eed8504946583a7dd24
+      - token: ethereum|sepolia|0x352f1c7ffa598d0698c1D8D2fCAb02511c6fF3e9
+    decimals: 6
+    name: USDC
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x352f1c7ffa598d0698c1D8D2fCAb02511c6fF3e9"
+    chainName: sepolia
+    connections:
+      - token: ethereum|arbitrumsepolia|0x61714300b991Cfc2BD336cb1745F01463163A988
+      - token: ethereum|basesepolia|0x020dEE96414703c457322eed8504946583a7dd24
+      - token: ethereum|optimismsepolia|0xB0A06A5f47D335F5d94D4D8620BCaDF320a159AC
+    decimals: 6
+    name: USDC
+    standard: EvmHypCollateral
+    symbol: USDC
