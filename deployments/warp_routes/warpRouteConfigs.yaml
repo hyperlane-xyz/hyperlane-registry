@@ -5189,6 +5189,99 @@ USDC/ethereum-viction:
       name: USDC
       standard: EvmHypSynthetic
       symbol: USDC
+USDC/mainnet-cctp:
+  tokens:
+    - addressOrDenom: "0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2"
+      chainName: arbitrum
+      connections:
+        - token: ethereum|avalanche|0x0E8Bc62865F539889fe7d8537F2ed6db5aa0F677
+        - token: ethereum|base|0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975
+        - token: ethereum|ethereum|0xedCBAa585FD0F80f20073F9958246476466205b8
+        - token: ethereum|optimism|0xfB7681ECB05F85c383A5ce4439C7dF5ED12c77DE
+        - token: ethereum|polygon|0xa62F45662809f5F6535b58bae9A572a2EC4A1f84
+        - token: ethereum|unichain|0x296aF86bff91b23cF980f6a443bc15A3A5d30682
+      decimals: 6
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x0E8Bc62865F539889fe7d8537F2ed6db5aa0F677"
+      chainName: avalanche
+      connections:
+        - token: ethereum|arbitrum|0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2
+        - token: ethereum|base|0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975
+        - token: ethereum|ethereum|0xedCBAa585FD0F80f20073F9958246476466205b8
+        - token: ethereum|optimism|0xfB7681ECB05F85c383A5ce4439C7dF5ED12c77DE
+        - token: ethereum|polygon|0xa62F45662809f5F6535b58bae9A572a2EC4A1f84
+        - token: ethereum|unichain|0x296aF86bff91b23cF980f6a443bc15A3A5d30682
+      decimals: 6
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975"
+      chainName: base
+      connections:
+        - token: ethereum|arbitrum|0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2
+        - token: ethereum|avalanche|0x0E8Bc62865F539889fe7d8537F2ed6db5aa0F677
+        - token: ethereum|ethereum|0xedCBAa585FD0F80f20073F9958246476466205b8
+        - token: ethereum|optimism|0xfB7681ECB05F85c383A5ce4439C7dF5ED12c77DE
+        - token: ethereum|polygon|0xa62F45662809f5F6535b58bae9A572a2EC4A1f84
+        - token: ethereum|unichain|0x296aF86bff91b23cF980f6a443bc15A3A5d30682
+      decimals: 6
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0xedCBAa585FD0F80f20073F9958246476466205b8"
+      chainName: ethereum
+      connections:
+        - token: ethereum|arbitrum|0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2
+        - token: ethereum|avalanche|0x0E8Bc62865F539889fe7d8537F2ed6db5aa0F677
+        - token: ethereum|base|0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975
+        - token: ethereum|optimism|0xfB7681ECB05F85c383A5ce4439C7dF5ED12c77DE
+        - token: ethereum|polygon|0xa62F45662809f5F6535b58bae9A572a2EC4A1f84
+        - token: ethereum|unichain|0x296aF86bff91b23cF980f6a443bc15A3A5d30682
+      decimals: 6
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0xfB7681ECB05F85c383A5ce4439C7dF5ED12c77DE"
+      chainName: optimism
+      connections:
+        - token: ethereum|arbitrum|0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2
+        - token: ethereum|avalanche|0x0E8Bc62865F539889fe7d8537F2ed6db5aa0F677
+        - token: ethereum|base|0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975
+        - token: ethereum|ethereum|0xedCBAa585FD0F80f20073F9958246476466205b8
+        - token: ethereum|polygon|0xa62F45662809f5F6535b58bae9A572a2EC4A1f84
+        - token: ethereum|unichain|0x296aF86bff91b23cF980f6a443bc15A3A5d30682
+      decimals: 6
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0xa62F45662809f5F6535b58bae9A572a2EC4A1f84"
+      chainName: polygon
+      connections:
+        - token: ethereum|arbitrum|0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2
+        - token: ethereum|avalanche|0x0E8Bc62865F539889fe7d8537F2ed6db5aa0F677
+        - token: ethereum|base|0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975
+        - token: ethereum|ethereum|0xedCBAa585FD0F80f20073F9958246476466205b8
+        - token: ethereum|optimism|0xfB7681ECB05F85c383A5ce4439C7dF5ED12c77DE
+        - token: ethereum|unichain|0x296aF86bff91b23cF980f6a443bc15A3A5d30682
+      decimals: 6
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x296aF86bff91b23cF980f6a443bc15A3A5d30682"
+      chainName: unichain
+      connections:
+        - token: ethereum|arbitrum|0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2
+        - token: ethereum|avalanche|0x0E8Bc62865F539889fe7d8537F2ed6db5aa0F677
+        - token: ethereum|base|0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975
+        - token: ethereum|ethereum|0xedCBAa585FD0F80f20073F9958246476466205b8
+        - token: ethereum|optimism|0xfB7681ECB05F85c383A5ce4439C7dF5ED12c77DE
+        - token: ethereum|polygon|0xa62F45662809f5F6535b58bae9A572a2EC4A1f84
+      decimals: 6
+      name: USDC
+      standard: EvmHypCollateral
+      symbol: USDC
 USDC/solanamainnet-sonicsvm:
   tokens:
     - addressOrDenom: 996EsR8a7MC6odE6j7sjsArmDQVqB96qWu84wHdthahm
@@ -5211,6 +5304,48 @@ USDC/solanamainnet-sonicsvm:
       logoURI: /deployments/warp_routes/USDC/logo.svg
       name: USDC
       standard: SealevelHypSynthetic
+      symbol: USDC
+USDC/testnet-cctp:
+  tokens:
+    - addressOrDenom: "0x61714300b991Cfc2BD336cb1745F01463163A988"
+      chainName: arbitrumsepolia
+      connections:
+        - token: ethereum|basesepolia|0x020dEE96414703c457322eed8504946583a7dd24
+        - token: ethereum|optimismsepolia|0xB0A06A5f47D335F5d94D4D8620BCaDF320a159AC
+        - token: ethereum|sepolia|0x352f1c7ffa598d0698c1D8D2fCAb02511c6fF3e9
+      decimals: 6
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x020dEE96414703c457322eed8504946583a7dd24"
+      chainName: basesepolia
+      connections:
+        - token: ethereum|arbitrumsepolia|0x61714300b991Cfc2BD336cb1745F01463163A988
+        - token: ethereum|optimismsepolia|0xB0A06A5f47D335F5d94D4D8620BCaDF320a159AC
+        - token: ethereum|sepolia|0x352f1c7ffa598d0698c1D8D2fCAb02511c6fF3e9
+      decimals: 6
+      name: USDC
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0xB0A06A5f47D335F5d94D4D8620BCaDF320a159AC"
+      chainName: optimismsepolia
+      connections:
+        - token: ethereum|arbitrumsepolia|0x61714300b991Cfc2BD336cb1745F01463163A988
+        - token: ethereum|basesepolia|0x020dEE96414703c457322eed8504946583a7dd24
+        - token: ethereum|sepolia|0x352f1c7ffa598d0698c1D8D2fCAb02511c6fF3e9
+      decimals: 6
+      name: USDC
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x352f1c7ffa598d0698c1D8D2fCAb02511c6fF3e9"
+      chainName: sepolia
+      connections:
+        - token: ethereum|arbitrumsepolia|0x61714300b991Cfc2BD336cb1745F01463163A988
+        - token: ethereum|basesepolia|0x020dEE96414703c457322eed8504946583a7dd24
+        - token: ethereum|optimismsepolia|0xB0A06A5f47D335F5d94D4D8620BCaDF320a159AC
+      decimals: 6
+      name: USDC
+      standard: EvmHypCollateral
       symbol: USDC
 USDCSTAGE/arbitrum-base-ethereum-ink-optimism-solanamainnet-superseed:
   tokens:
