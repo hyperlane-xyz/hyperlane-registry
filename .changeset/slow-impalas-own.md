@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-add coingeckoid to ubtc
+Fix botanix logo missing xmlns attribute
