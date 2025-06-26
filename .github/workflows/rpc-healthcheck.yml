@@ -1,0 +1,27 @@
+name: rpc-healthcheck
+
+on:
+  schedule:
+    # Run at 00:00 UTC every day
+    - cron: '0 0 * * *'
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  rpc-health-mainnet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: yarn-install-with-cache
+        uses: ./.github/actions/yarn-install-with-cache
+      - name: test
+        run: yarn run test:rpc-health-mainnet
+
+  rpc-health-testnet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: yarn-install-with-cache
+        uses: ./.github/actions/yarn-install-with-cache
+      - name: test
+        run: yarn run test:rpc-health-testnet

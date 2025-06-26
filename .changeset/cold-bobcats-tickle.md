@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add wpFLT/fluence route
+Update paradex & starknet default ISMs
