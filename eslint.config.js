@@ -82,7 +82,7 @@ export default tseslint.config(
   },
   {
     files: ['src/**/*.ts'],
-    ignores: ['src/fs/**/*.ts'],
+    ignores: ['src/fs/**/*.ts', 'src/express/scripts/**/*.ts'],
     rules: {
       'no-restricted-imports': [
         'error',
@@ -96,6 +96,26 @@ export default tseslint.config(
         },
       ],
       'import/no-nodejs-modules': ['error'],
+    },
+    plugins: {
+      import: importPlugin,
+    },
+  },
+  {
+    files: ['src/**/*.ts'],
+    ignores: ['src/express/**/*.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['*/**/express/**/*'],
+              message: 'Importing from src/express is not allowed outside express directory',
+            },
+          ],
+        },
+      ],
     },
     plugins: {
       import: importPlugin,

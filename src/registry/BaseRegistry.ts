@@ -11,7 +11,13 @@ import {
   isSyntheticRebaseTokenConfig,
 } from '@hyperlane-xyz/sdk';
 import { assert, objFilter, objLength } from '@hyperlane-xyz/utils';
-import type { ChainAddresses, MaybePromise, WarpDeployConfigMap, WarpRouteId } from '../types.js';
+import type {
+  ChainAddresses,
+  MaybePromise,
+  WarpDeployConfigMap,
+  WarpRouteFilterParams,
+  WarpRouteId,
+} from '../types.js';
 import { WarpRouteConfigMap } from '../types.js';
 import { stripLeadingSlash } from '../utils.js';
 import type {
@@ -20,7 +26,6 @@ import type {
   RegistryContent,
   RegistryType,
   UpdateChainParams,
-  WarpRouteFilterParams,
 } from './IRegistry.js';
 import { MergedRegistry } from './MergedRegistry.js';
 import { createWarpRouteConfigId, syntheticTokenStandards } from './warp-utils.js';
