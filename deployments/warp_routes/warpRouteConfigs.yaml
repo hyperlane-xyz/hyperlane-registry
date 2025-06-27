@@ -4337,6 +4337,28 @@ TRUMP/solanamainnet-trumpchain:
       name: OFFICIAL TRUMP
       standard: EvmHypNative
       symbol: TRUMP
+TRUMP/starknet:
+  tokens:
+    - addressOrDenom: G13ocbVp6aCUdz8kHPpv2p82cPNXGTAUfnJRuTmscaCQ
+      chainName: solanamainnet
+      coinGeckoId: official-trump
+      collateralAddressOrDenom: 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN
+      connections:
+        - token: starknet|starknet|0x07380caa64fdf27501afad0bd93c89d1e83a081a553af89bbeffb28dae8d8916
+      decimals: 6
+      logoURI: /deployments/warp_routes/TRUMP/logo.png
+      name: OFFICIAL TRUMP
+      standard: SealevelHypCollateral
+      symbol: TRUMP
+    - addressOrDenom: "0x07380caa64fdf27501afad0bd93c89d1e83a081a553af89bbeffb28dae8d8916"
+      chainName: starknet
+      connections:
+        - token: sealevel|solanamainnet|G13ocbVp6aCUdz8kHPpv2p82cPNXGTAUfnJRuTmscaCQ
+      decimals: 6
+      logoURI: /deployments/warp_routes/TRUMP/logo.png
+      name: OFFICIAL TRUMP
+      standard: StarknetHypSynthetic
+      symbol: TRUMP
 TURTLE/ethereum-linea:
   tokens:
     - addressOrDenom: "0x15dE2C58FCF168bf9bB8860ab6EA10e1670C5D4c"
