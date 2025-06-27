@@ -469,6 +469,35 @@ artelatestnet:
   rpcUrls:
     - http: https://betanet-rpc1.artela.network
     - http: https://betanet-rpc2.artela.network
+arthera:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
+  blockExplorers:
+    - apiUrl: https://explorer.arthera.net/api
+      family: blockscout
+      name: Arthera Explorer
+      url: https://explorer.arthera.net
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 10242
+  displayName: Arthera
+  domainId: 10242
+  gasCurrencyCoinGeckoId: arthera
+  name: arthera
+  nativeToken:
+    decimals: 18
+    name: Arthera
+    symbol: AA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.arthera.net
+      pagination:
+        maxBlockRange: 10000
+  technicalStack: other
 artheratestnet:
   blockExplorers:
     - apiUrl: https://explorer-test.arthera.net/api
@@ -1004,7 +1033,7 @@ botanix:
     symbol: BTC
   protocol: ethereum
   rpcUrls:
-    - http: https://botanixrpc.com
+    - http: https://rpc.botanixlabs.com
   technicalStack: other
   transactionOverrides:
     maxFeePerGas: 1000007
@@ -1794,31 +1823,6 @@ deprecatedalephzeroevm:
     - http: https://rpc.alephzero.raas.gelato.cloud
     - http: https://alephzero.drpc.org
   technicalStack: arbitrumnitro
-deprecatedarthera:
-  blockExplorers:
-    - apiUrl: https://explorer.arthera.net/api
-      family: blockscout
-      name: Arthera Explorer
-      url: https://explorer.arthera.net
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 1
-    reorgPeriod: 5
-  chainId: 10242
-  displayName: Arthera
-  domainId: 10242
-  gasCurrencyCoinGeckoId: arthera
-  name: deprecatedarthera
-  nativeToken:
-    decimals: 18
-    name: Arthera
-    symbol: AA
-  protocol: ethereum
-  rpcUrls:
-    - http: https://rpc.arthera.net
-      pagination:
-        maxBlockRange: 10000
-  technicalStack: other
 deprecatedchiliz:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/88888/etherscan/api
@@ -1970,52 +1974,6 @@ deprecatedrari:
   rpcUrls:
     - http: https://mainnet.rpc.rarichain.org/http
   technicalStack: arbitrumnitro
-deprecatedrometestnet:
-  blockExplorers:
-    - apiUrl: https://node1.testnet.romeprotocol.xyz:1000/api
-      family: blockscout
-      name: Rome Testnet Explorer
-      url: https://node1.testnet.romeprotocol.xyz:1000
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 4
-    reorgPeriod: 1
-  chainId: 200018
-  displayName: Rome Testnet
-  domainId: 200018
-  isTestnet: true
-  name: deprecatedrometestnet
-  nativeToken:
-    decimals: 18
-    name: ROME
-    symbol: ROME
-  protocol: ethereum
-  rpcUrls:
-    - http: https://node1.testnet.romeprotocol.xyz
-  technicalStack: other
-deprecatedrometestnet2:
-  blockExplorers:
-    - apiUrl: https://romescout-testnet-1.testnet.romeprotocol.xyz/api
-      family: blockscout
-      name: Rome Testnet Explorer
-      url: https://romescout-testnet-1.testnet.romeprotocol.xyz
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 4
-    reorgPeriod: 0
-  chainId: 3001
-  displayName: Rome Testnet
-  domainId: 3001
-  isTestnet: true
-  name: deprecatedrometestnet2
-  nativeToken:
-    decimals: 18
-    name: rSOL
-    symbol: rSOL
-  protocol: ethereum
-  rpcUrls:
-    - http: https://testnet-1.testnet.romeprotocol.xyz
-  technicalStack: other
 deprecatedrootstock:
   blockExplorers:
     - apiUrl: https://rootstock.blockscout.com/api
@@ -2065,55 +2023,6 @@ deprecatedsuperposition:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.superposition.so
-  technicalStack: arbitrumnitro
-deprecatedtreasure:
-  blockExplorers:
-    - apiUrl: https://rpc-explorer-verify.treasure.lol/contract_verification
-      family: etherscan
-      name: Treasurescan
-      url: https://treasurescan.io
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 1
-    reorgPeriod: 0
-  chainId: 61166
-  displayName: Treasure
-  domainId: 61166
-  gasCurrencyCoinGeckoId: magic
-  gnosisSafeTransactionServiceUrl: https://prod.treasure.keypersafe.xyz
-  name: deprecatedtreasure
-  nativeToken:
-    decimals: 18
-    name: MAGIC
-    symbol: MAGIC
-  protocol: ethereum
-  rpcUrls:
-    - http: https://rpc.treasure.lol
-  technicalStack: zksync
-deprecatedtrumpchain:
-  blockExplorers:
-    - apiUrl: https://explorer.trumpchain.dev/api
-      family: blockscout
-      name: TRUMPCHAIN Explorer
-      url: https://explorer.trumpchain.dev
-  blocks:
-    confirmations: 1
-    estimateBlockTime: 1
-    reorgPeriod: 0
-  chainId: 4547
-  displayName: TRUMPCHAIN
-  domainId: 4547
-  gasCurrencyCoinGeckoId: official-trump
-  index:
-    from: 18
-  name: deprecatedtrumpchain
-  nativeToken:
-    decimals: 18
-    name: TRUMP
-    symbol: TRUMP
-  protocol: ethereum
-  rpcUrls:
-    - http: https://rpc.trumpchain.dev
   technicalStack: arbitrumnitro
 dodotestnet:
   blockExplorers:
@@ -4183,7 +4092,7 @@ mantle:
   displayName: Mantle
   domainId: 5000
   gasCurrencyCoinGeckoId: mantle
-  gnosisSafeTransactionServiceUrl: https://transaction.multisig.mantle.xyz
+  gnosisSafeTransactionServiceUrl: https://safe-transaction-mantle.safe.global
   name: mantle
   nativeToken:
     decimals: 18
@@ -5817,6 +5726,10 @@ reactivekopli:
   rpcUrls:
     - http: https://kopli-rpc.rnk.dev
 real:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.re.al/api/eth-rpc
       family: blockscout
@@ -5900,6 +5813,60 @@ rivalz:
   rpcUrls:
     - http: https://rivalz.calderachain.xyz/http
   technicalStack: arbitrumnitro
+rometestnet:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
+  blockExplorers:
+    - apiUrl: https://node1.testnet.romeprotocol.xyz:1000/api
+      family: blockscout
+      name: Rome Testnet Explorer
+      url: https://node1.testnet.romeprotocol.xyz:1000
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 4
+    reorgPeriod: 1
+  chainId: 200018
+  displayName: Rome Testnet
+  domainId: 200018
+  isTestnet: true
+  name: rometestnet
+  nativeToken:
+    decimals: 18
+    name: ROME
+    symbol: ROME
+  protocol: ethereum
+  rpcUrls:
+    - http: https://node1.testnet.romeprotocol.xyz
+  technicalStack: other
+rometestnet2:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
+  blockExplorers:
+    - apiUrl: https://romescout-testnet-1.testnet.romeprotocol.xyz/api
+      family: blockscout
+      name: Rome Testnet Explorer
+      url: https://romescout-testnet-1.testnet.romeprotocol.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 4
+    reorgPeriod: 0
+  chainId: 3001
+  displayName: Rome Testnet
+  domainId: 3001
+  isTestnet: true
+  name: rometestnet2
+  nativeToken:
+    decimals: 18
+    name: rSOL
+    symbol: rSOL
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet-1.testnet.romeprotocol.xyz
+  technicalStack: other
 ronin:
   blockExplorers:
     - apiUrl: https://app.roninchain.com/api
@@ -7397,6 +7364,63 @@ torus:
     - http: https://api-hyperlane.nodes.torus.network
     - http: https://api.torus.network
   technicalStack: polkadotsubstrate
+treasure:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
+  blockExplorers:
+    - apiUrl: https://rpc-explorer-verify.treasure.lol/contract_verification
+      family: etherscan
+      name: Treasurescan
+      url: https://treasurescan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 61166
+  displayName: Treasure
+  domainId: 61166
+  gasCurrencyCoinGeckoId: magic
+  gnosisSafeTransactionServiceUrl: https://prod.treasure.keypersafe.xyz
+  name: treasure
+  nativeToken:
+    decimals: 18
+    name: MAGIC
+    symbol: MAGIC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.treasure.lol
+  technicalStack: zksync
+trumpchain:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
+  blockExplorers:
+    - apiUrl: https://explorer.trumpchain.dev/api
+      family: blockscout
+      name: TRUMPCHAIN Explorer
+      url: https://explorer.trumpchain.dev
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 4547
+  displayName: TRUMPCHAIN
+  domainId: 4547
+  gasCurrencyCoinGeckoId: official-trump
+  index:
+    from: 18
+  name: trumpchain
+  nativeToken:
+    decimals: 18
+    name: TRUMP
+    symbol: TRUMP
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.trumpchain.dev
+  technicalStack: arbitrumnitro
 u2utestnet:
   blockExplorers:
     - apiUrl: https://testnet.u2uscan.xyz/api

@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Add TOBY Coingecko Id
+Fix botanix logo missing xmlns attribute
