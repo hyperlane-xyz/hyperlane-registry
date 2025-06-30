@@ -11,6 +11,7 @@ import {
   WarpDeployConfigMap,
   WarpRouteConfigMap,
   WarpRouteId,
+  WarpRouteFilterParams,
 } from '../types.js';
 
 export interface ChainFiles {
@@ -37,16 +38,12 @@ export interface UpdateChainParams {
   addresses?: ChainAddresses;
 }
 
-export interface WarpRouteFilterParams {
-  symbol?: string;
-  label?: string;
-}
-
 export enum RegistryType {
   Github = 'github',
   FileSystem = 'filesystem',
   Merged = 'merged',
   Partial = 'partial',
+  Http = 'http',
 }
 
 export type AddWarpRouteConfigOptions =

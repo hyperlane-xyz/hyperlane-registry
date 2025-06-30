@@ -17,7 +17,13 @@ import {
   WARP_ROUTE_CONFIG_FILE_REGEX,
   WARP_ROUTE_DEPLOY_FILE_REGEX,
 } from '../consts.js';
-import { ChainAddresses, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
+import {
+  ChainAddresses,
+  WarpDeployConfigMap,
+  WarpRouteConfigMap,
+  WarpRouteFilterParams,
+  WarpRouteId,
+} from '../types.js';
 import { concurrentMap, parseGitHubPath, stripLeadingSlash } from '../utils.js';
 import { BaseRegistry } from './BaseRegistry.js';
 import {
@@ -27,7 +33,6 @@ import {
   RegistryContent,
   RegistryType,
   UpdateChainParams,
-  WarpRouteFilterParams,
 } from './IRegistry.js';
 import {
   filterWarpRoutesIds,
