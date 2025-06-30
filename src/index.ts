@@ -27,5 +27,6 @@ export {
   WarpRouteId,
   WarpRouteConfigMap,
   WarpRouteFilterParams,
+  WarpRouteFilterSchema,
 } from './types.js';
 export { isAbacusWorksChain } from './utils.js';
