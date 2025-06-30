@@ -1,13 +1,30 @@
 # yaml-language-server: $schema=../schema.json
 tokens:
+  - addressOrDenom: "0x97411EC12cDE5fb98247CEA49B6d98aF850Ff975"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xaf88d065e77c8cc2239327c5edb3a432268e5831"
+    connections:
+      - token: ethereum|base|0x26af973A5b256F9B9bc0B1A3c566de1566568a87
+      - token: ethereum|ethereum|0x3C43C421f08e2a48889eA3F75a747b7a7a366A0b
+      - token: ethereum|polygon|0x5EBb0eD283a33a7020b8dE9708f2D0238f2c54A7
+      - token: sealevel|solanamainnet|GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
+      - token: ethereum|subtensor|0xB833E8137FEDf80de7E908dc6fea43a029142F20
+      - token: ethereum|unichain|0xD7713DBD5bCD0897499EbF87b42731172a5c81Bf
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
   - addressOrDenom: "0x26af973A5b256F9B9bc0B1A3c566de1566568a87"
     chainName: base
-    coinGeckoId: usdc
     collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
     connections:
+      - token: ethereum|arbitrum|0x97411EC12cDE5fb98247CEA49B6d98aF850Ff975
       - token: ethereum|ethereum|0x3C43C421f08e2a48889eA3F75a747b7a7a366A0b
-      - token: ethereum|solanamainnet|GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
+      - token: ethereum|polygon|0x5EBb0eD283a33a7020b8dE9708f2D0238f2c54A7
+      - token: sealevel|solanamainnet|GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
       - token: ethereum|subtensor|0xB833E8137FEDf80de7E908dc6fea43a029142F20
+      - token: ethereum|unichain|0xD7713DBD5bCD0897499EbF87b42731172a5c81Bf
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
     name: USD Coin
@@ -15,12 +32,29 @@ tokens:
     symbol: USDC
   - addressOrDenom: "0x3C43C421f08e2a48889eA3F75a747b7a7a366A0b"
     chainName: ethereum
-    coinGeckoId: usdc
     collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
     connections:
+      - token: ethereum|arbitrum|0x97411EC12cDE5fb98247CEA49B6d98aF850Ff975
       - token: ethereum|base|0x26af973A5b256F9B9bc0B1A3c566de1566568a87
-      - token: ethereum|solanamainnet|GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
+      - token: ethereum|polygon|0x5EBb0eD283a33a7020b8dE9708f2D0238f2c54A7
+      - token: sealevel|solanamainnet|GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
       - token: ethereum|subtensor|0xB833E8137FEDf80de7E908dc6fea43a029142F20
+      - token: ethereum|unichain|0xD7713DBD5bCD0897499EbF87b42731172a5c81Bf
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x5EBb0eD283a33a7020b8dE9708f2D0238f2c54A7"
+    chainName: polygon
+    collateralAddressOrDenom: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+    connections:
+      - token: ethereum|arbitrum|0x97411EC12cDE5fb98247CEA49B6d98aF850Ff975
+      - token: ethereum|base|0x26af973A5b256F9B9bc0B1A3c566de1566568a87
+      - token: ethereum|ethereum|0x3C43C421f08e2a48889eA3F75a747b7a7a366A0b
+      - token: sealevel|solanamainnet|GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
+      - token: ethereum|subtensor|0xB833E8137FEDf80de7E908dc6fea43a029142F20
+      - token: ethereum|unichain|0xD7713DBD5bCD0897499EbF87b42731172a5c81Bf
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
     name: USD Coin
@@ -31,9 +65,12 @@ tokens:
     coinGeckoId: usdc
     collateralAddressOrDenom: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
     connections:
+      - token: ethereum|arbitrum|0x97411EC12cDE5fb98247CEA49B6d98aF850Ff975
       - token: ethereum|base|0x26af973A5b256F9B9bc0B1A3c566de1566568a87
       - token: ethereum|ethereum|0x3C43C421f08e2a48889eA3F75a747b7a7a366A0b
+      - token: ethereum|polygon|0x5EBb0eD283a33a7020b8dE9708f2D0238f2c54A7
       - token: ethereum|subtensor|0xB833E8137FEDf80de7E908dc6fea43a029142F20
+      - token: ethereum|unichain|0xD7713DBD5bCD0897499EbF87b42731172a5c81Bf
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
     name: USD Coin
@@ -42,11 +79,29 @@ tokens:
   - addressOrDenom: "0xB833E8137FEDf80de7E908dc6fea43a029142F20"
     chainName: subtensor
     connections:
+      - token: ethereum|arbitrum|0x97411EC12cDE5fb98247CEA49B6d98aF850Ff975
       - token: ethereum|base|0x26af973A5b256F9B9bc0B1A3c566de1566568a87
       - token: ethereum|ethereum|0x3C43C421f08e2a48889eA3F75a747b7a7a366A0b
-      - token: ethereum|solanamainnet|GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
+      - token: ethereum|polygon|0x5EBb0eD283a33a7020b8dE9708f2D0238f2c54A7
+      - token: sealevel|solanamainnet|GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
+      - token: ethereum|unichain|0xD7713DBD5bCD0897499EbF87b42731172a5c81Bf
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
     name: USD Coin
     standard: EvmHypSynthetic
+    symbol: USDC
+  - addressOrDenom: "0xD7713DBD5bCD0897499EbF87b42731172a5c81Bf"
+    chainName: unichain
+    collateralAddressOrDenom: "0x078D782b760474a361dDA0AF3839290b0EF57AD6"
+    connections:
+      - token: ethereum|arbitrum|0x97411EC12cDE5fb98247CEA49B6d98aF850Ff975
+      - token: ethereum|base|0x26af973A5b256F9B9bc0B1A3c566de1566568a87
+      - token: ethereum|ethereum|0x3C43C421f08e2a48889eA3F75a747b7a7a366A0b
+      - token: ethereum|polygon|0x5EBb0eD283a33a7020b8dE9708f2D0238f2c54A7
+      - token: sealevel|solanamainnet|GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
+      - token: ethereum|subtensor|0xB833E8137FEDf80de7E908dc6fea43a029142F20
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USDC
+    standard: EvmHypCollateral
     symbol: USDC
