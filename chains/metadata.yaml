@@ -2864,6 +2864,35 @@ fusemainnet:
     - http: https://fuse.liquify.com
     - http: https://fuse-pokt.nodies.app
   technicalStack: other
+galactica:
+  blockExplorers:
+    - apiUrl: https://galactica-mainnet.explorer.alchemy.com/api
+      family: blockscout
+      name: Galactica Explorer
+      url: https://galactica-mainnet.explorer.alchemy.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 613419
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Galactica
+  domainId: 613419
+  gasCurrencyCoinGeckoId: galactica-network-gnet
+  index:
+    from: 851
+  isTestnet: false
+  name: galactica
+  nativeToken:
+    decimals: 18
+    name: GNET
+    symbol: GNET
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.galactica.com
+  technicalStack: arbitrumnitro
 galadrieldevnet:
   blockExplorers:
     - apiUrl: https://explorer.galadriel.com/
@@ -3703,6 +3732,10 @@ koitestnet:
   rpcUrls:
     - http: https://koi-rpc.darwinia.network
 kroma:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://blockscout.kroma.network/api
       family: blockscout
@@ -3713,9 +3746,6 @@ kroma:
     estimateBlockTime: 2
     reorgPeriod: 5
   chainId: 255
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: Kroma
   domainId: 255
   gasCurrencyCoinGeckoId: ethereum
