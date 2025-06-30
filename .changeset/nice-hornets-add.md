@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-feat: extend ubtc warp route
+Deploy to galactica, remove kroma.
