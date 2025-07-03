@@ -3,7 +3,7 @@ AIXBT/base-form:
   tokens:
     - addressOrDenom: "0xa6536c88A7f86d2b189c58A5a19BF5F03241d6A0"
       chainName: base
-      coinGeckoId: aixbt-by-virtuals
+      coinGeckoId: aixbt
       collateralAddressOrDenom: "0x4F9Fd6Be4a90f2620860d680c0d4d5Fb53d1A825"
       connections:
         - token: ethereum|form|0x40Ca4155c0334F7e0F6d7F80536B59EF8831c9fb
@@ -213,6 +213,28 @@ Bonk/solanamainnet-soon:
       logoURI: /deployments/warp_routes/Bonk/logo.svg
       name: Bonk
       standard: SealevelHypSynthetic
+      symbol: Bonk
+Bonk/starknet:
+  tokens:
+    - addressOrDenom: CWSVXTp2LadAE77Lk511ntA5jZNVgqiUXkWzUxjHtmeh
+      chainName: solanamainnet
+      coinGeckoId: bonk
+      collateralAddressOrDenom: DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263
+      connections:
+        - token: starknet|starknet|0x074238dfa02063792077820584c925b679a013cbab38e5ca61af5627d1eda736
+      decimals: 5
+      logoURI: /deployments/warp_routes/Bonk/logo.svg
+      name: Bonk
+      standard: SealevelHypCollateral
+      symbol: Bonk
+    - addressOrDenom: "0x074238dfa02063792077820584c925b679a013cbab38e5ca61af5627d1eda736"
+      chainName: starknet
+      connections:
+        - token: sealevel|solanamainnet|CWSVXTp2LadAE77Lk511ntA5jZNVgqiUXkWzUxjHtmeh
+      decimals: 5
+      logoURI: /deployments/warp_routes/Bonk/logo.svg
+      name: Bonk
+      standard: StarknetHypSynthetic
       symbol: Bonk
 Boop/apechain-arbitrum:
   tokens:
@@ -593,7 +615,7 @@ ELIZA/solanamainnet-soon:
   tokens:
     - addressOrDenom: 8Xu98zz1oHGeBEkvK1xsrkGpZeVayVmr4discHxmmV3S
       chainName: solanamainnet
-      coinGeckoId: ELIZA
+      coinGeckoId: eliza
       collateralAddressOrDenom: 5voS9evDjxF589WuEub5i4ti7FWQmZCsAsyD5ucbuRqM
       connections:
         - token: sealevel|soon|8f8C12h7b3HfYDbU9YWrf5q1K7jTVYYan2MgjzVWpynE
@@ -2616,7 +2638,7 @@ LOGX/arbitrum-solanamainnet:
   tokens:
     - addressOrDenom: "0x79EdA6DAfB2B9531930CbD9240A73B5eF0e8c9E2"
       chainName: arbitrum
-      coinGeckoId: logx
+      coinGeckoId: logx-2
       collateralAddressOrDenom: "0x59062301Fb510F4ea2417B67404CB16D31E604BA"
       connections:
         - token: sealevel|solanamainnet|975wpF9KmWTVnh398Qs6VcnDtYZsXVWtKiSkXfWH22GP
@@ -2805,7 +2827,7 @@ MEW/solanamainnet-soon:
   tokens:
     - addressOrDenom: BEzLRBDBJyRrzZN2CfGJB3bedBj3HwHqj6MB8BQn1mdL
       chainName: solanamainnet
-      coinGeckoId: mew
+      coinGeckoId: cat-in-a-dogs-world
       collateralAddressOrDenom: MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5
       connections:
         - token: sealevel|soon|9JcBcd9bRDQjRtkZq7sWfNF4DRFRA24KsuhV9rTemUgC
@@ -2871,7 +2893,7 @@ MINT/mint-solanamainnet:
   tokens:
     - addressOrDenom: "0x787561C5131d9328a28Ef810867299176a5b66C4"
       chainName: mint
-      coinGeckoId: usdc
+      coinGeckoId: mint-blockchain
       collateralAddressOrDenom: "0x8511138208529fe1b9a37b863c7EEE3Fe234b7Ab"
       connections:
         - token: sealevel|solanamainnet|DTp6yLfHyGo46Zu7xrbXwUF3YZSaYV2W7UhQb8q9QN5Q
@@ -3385,7 +3407,7 @@ Pnut/solanamainnet-soon:
   tokens:
     - addressOrDenom: J8fVLBiLMniYxaBYhfpGmqDpf2qtgaiDAPuznfRMhLs6
       chainName: solanamainnet
-      coinGeckoId: Pnut
+      coinGeckoId: peanut-the-squirrel
       collateralAddressOrDenom: 2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
       connections:
         - token: sealevel|soon|5WHM6rm9HpFqNY8hye9ZY9vrgCCM7M5YnCeKcq29FpXz
@@ -3404,6 +3426,27 @@ Pnut/solanamainnet-soon:
       name: Peanut the Squirrel
       standard: SealevelHypSynthetic
       symbol: Pnut
+RCADE/arbitrum-bsc:
+  tokens:
+    - addressOrDenom: "0x6720350f7e3323418c05645cD5d6bb055f4A7427"
+      chainName: arbitrum
+      collateralAddressOrDenom: "0x077574441C4F8763a37a2cFeE2ECb444aA60A15e"
+      connections:
+        - token: ethereum|bsc|0x6f0037C79d144d5B8E3E6f04E49FBb5f25fD508f
+      decimals: 18
+      logoURI: /deployments/warp_routes/RCADE/logo.svg
+      name: RCADE
+      standard: EvmHypCollateral
+      symbol: RCADE
+    - addressOrDenom: "0x6f0037C79d144d5B8E3E6f04E49FBb5f25fD508f"
+      chainName: bsc
+      connections:
+        - token: ethereum|arbitrum|0x6720350f7e3323418c05645cD5d6bb055f4A7427
+      decimals: 18
+      logoURI: /deployments/warp_routes/RCADE/logo.svg
+      name: RCADE
+      standard: EvmHypSynthetic
+      symbol: RCADE
 RDO/bsc-ethereum:
   tokens:
     - addressOrDenom: "0xd86E6ef14b96D942eF0AbF0720C549197EA8c528"
@@ -4336,6 +4379,28 @@ TRUMP/solanamainnet-trumpchain:
       logoURI: /deployments/warp_routes/TRUMP/logo.png
       name: OFFICIAL TRUMP
       standard: EvmHypNative
+      symbol: TRUMP
+TRUMP/starknet:
+  tokens:
+    - addressOrDenom: G13ocbVp6aCUdz8kHPpv2p82cPNXGTAUfnJRuTmscaCQ
+      chainName: solanamainnet
+      coinGeckoId: official-trump
+      collateralAddressOrDenom: 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN
+      connections:
+        - token: starknet|starknet|0x07380caa64fdf27501afad0bd93c89d1e83a081a553af89bbeffb28dae8d8916
+      decimals: 6
+      logoURI: /deployments/warp_routes/TRUMP/logo.png
+      name: OFFICIAL TRUMP
+      standard: SealevelHypCollateral
+      symbol: TRUMP
+    - addressOrDenom: "0x07380caa64fdf27501afad0bd93c89d1e83a081a553af89bbeffb28dae8d8916"
+      chainName: starknet
+      connections:
+        - token: sealevel|solanamainnet|G13ocbVp6aCUdz8kHPpv2p82cPNXGTAUfnJRuTmscaCQ
+      decimals: 6
+      logoURI: /deployments/warp_routes/TRUMP/logo.png
+      name: OFFICIAL TRUMP
+      standard: StarknetHypSynthetic
       symbol: TRUMP
 TURTLE/ethereum-linea:
   tokens:
