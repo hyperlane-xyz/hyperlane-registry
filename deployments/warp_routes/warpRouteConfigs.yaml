@@ -3426,6 +3426,27 @@ Pnut/solanamainnet-soon:
       name: Peanut the Squirrel
       standard: SealevelHypSynthetic
       symbol: Pnut
+RCADE/arbitrum-bsc:
+  tokens:
+    - addressOrDenom: "0x6720350f7e3323418c05645cD5d6bb055f4A7427"
+      chainName: arbitrum
+      collateralAddressOrDenom: "0x077574441C4F8763a37a2cFeE2ECb444aA60A15e"
+      connections:
+        - token: ethereum|bsc|0x6f0037C79d144d5B8E3E6f04E49FBb5f25fD508f
+      decimals: 18
+      logoURI: /deployments/warp_routes/RCADE/logo.svg
+      name: RCADE
+      standard: EvmHypCollateral
+      symbol: RCADE
+    - addressOrDenom: "0x6f0037C79d144d5B8E3E6f04E49FBb5f25fD508f"
+      chainName: bsc
+      connections:
+        - token: ethereum|arbitrum|0x6720350f7e3323418c05645cD5d6bb055f4A7427
+      decimals: 18
+      logoURI: /deployments/warp_routes/RCADE/logo.svg
+      name: RCADE
+      standard: EvmHypSynthetic
+      symbol: RCADE
 RDO/bsc-ethereum:
   tokens:
     - addressOrDenom: "0xd86E6ef14b96D942eF0AbF0720C549197EA8c528"
@@ -5165,30 +5186,6 @@ USDC/ethereum-ink:
       name: USD Coin
       standard: EvmHypSynthetic
       symbol: USDC
-USDC/ethereum-lumiaprism:
-  tokens:
-    - addressOrDenom: "0x066abc14c59cF7681b4b66844500733D2258032A"
-      chainName: ethereum
-      coinGeckoId: usdc
-      collateralAddressOrDenom: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
-      connections:
-        - token: ethereum|lumiaprism|0x2D0b95BB7eC6A8A3B3229e8FB8bE5848aBEA137a
-      decimals: 6
-      logoURI: /deployments/warp_routes/USDC/logo.svg
-      name: USD Coin
-      standard: EvmHypCollateral
-      symbol: USDC
-    - addressOrDenom: "0x2D0b95BB7eC6A8A3B3229e8FB8bE5848aBEA137a"
-      chainName: lumiaprism
-      coinGeckoId: usdc
-      collateralAddressOrDenom: "0xFF297AC2CB0a236155605EB37cB55cFCAe6D3F01"
-      connections:
-        - token: ethereum|ethereum|0x066abc14c59cF7681b4b66844500733D2258032A
-      decimals: 6
-      logoURI: /deployments/warp_routes/USDC/logo.svg
-      name: USD Coin
-      standard: EvmHypCollateralFiat
-      symbol: USDC
 USDC/ethereum-swell:
   tokens:
     - addressOrDenom: "0x1fbcc5A3EE1EfC5e920FFF999AE97a0C2DF4A583"
@@ -5244,6 +5241,7 @@ USDC/lumia:
         - token: ethereum|lumiaprism|0x2D0b95BB7eC6A8A3B3229e8FB8bE5848aBEA137a
         - token: ethereum|optimism|0xD6880E571A11FBd14Fa63a9e18A8152cAB3Bb720
       decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
       name: USD Coin
       standard: EvmHypCollateral
       symbol: USDC
@@ -5256,6 +5254,7 @@ USDC/lumia:
         - token: ethereum|lumiaprism|0x2D0b95BB7eC6A8A3B3229e8FB8bE5848aBEA137a
         - token: ethereum|optimism|0xD6880E571A11FBd14Fa63a9e18A8152cAB3Bb720
       decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
       name: USD Coin
       standard: EvmHypCollateral
       symbol: USDC
@@ -5268,6 +5267,7 @@ USDC/lumia:
         - token: ethereum|lumiaprism|0x2D0b95BB7eC6A8A3B3229e8FB8bE5848aBEA137a
         - token: ethereum|optimism|0xD6880E571A11FBd14Fa63a9e18A8152cAB3Bb720
       decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
       name: USD Coin
       standard: EvmHypCollateral
       symbol: USDC
@@ -5280,6 +5280,7 @@ USDC/lumia:
         - token: ethereum|ethereum|0x066abc14c59cF7681b4b66844500733D2258032A
         - token: ethereum|optimism|0xD6880E571A11FBd14Fa63a9e18A8152cAB3Bb720
       decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
       name: USDC
       standard: EvmHypCollateralFiat
       symbol: USDC
@@ -5292,6 +5293,7 @@ USDC/lumia:
         - token: ethereum|ethereum|0x066abc14c59cF7681b4b66844500733D2258032A
         - token: ethereum|lumiaprism|0x2D0b95BB7eC6A8A3B3229e8FB8bE5848aBEA137a
       decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
       name: USD Coin
       standard: EvmHypCollateral
       symbol: USDC
