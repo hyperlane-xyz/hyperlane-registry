@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../schema.json
+options: {}
+tokens:
+  - addressOrDenom: "0x05f971c4faecde2c2b8f2462ea9e5c72aa28ee64404c95e4b7b281e7b49142fb"
+    chainName: paradexsepolia
+    collateralAddressOrDenom: "0x06f373B346561036d98EA10Fb3e60D2f459c872B1933B50B21FE6ef4FDa3b75E"
+    connections:
+      - token: ethereum|sepolia|0xFE5505d75890122A6624EEE2ce6C075c421e1849
+      - token: ethereum|solanatestnet|ETai5iFvKgAmLGSQrXgdMaMivQQ8Vn1xPRLBrRWtfmEo
+      - token: ethereum|starknetsepolia|0x02abbcd42d5d38dc0a0ae1bc186bef271527ceeba3ff5e2bd3003800b80ebb1a
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USDC
+    standard: StarknetHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0xFE5505d75890122A6624EEE2ce6C075c421e1849"
+    chainName: sepolia
+    collateralAddressOrDenom: "0x29A873159D5e14AcBd63913D4A7E2df04570c666"
+    connections:
+      - token: ethereum|paradexsepolia|0x05f971c4faecde2c2b8f2462ea9e5c72aa28ee64404c95e4b7b281e7b49142fb
+      - token: ethereum|solanatestnet|ETai5iFvKgAmLGSQrXgdMaMivQQ8Vn1xPRLBrRWtfmEo
+      - token: ethereum|starknetsepolia|0x02abbcd42d5d38dc0a0ae1bc186bef271527ceeba3ff5e2bd3003800b80ebb1a
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USDC
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: ETai5iFvKgAmLGSQrXgdMaMivQQ8Vn1xPRLBrRWtfmEo
+    chainName: solanatestnet
+    collateralAddressOrDenom: Gh9ZwEmdLJ8DscKNTkTqPbNwLNNBjuSzaG9Vp2KGtKJr
+    connections:
+      - token: ethereum|paradexsepolia|0x05f971c4faecde2c2b8f2462ea9e5c72aa28ee64404c95e4b7b281e7b49142fb
+      - token: ethereum|sepolia|0xFE5505d75890122A6624EEE2ce6C075c421e1849
+      - token: ethereum|starknetsepolia|0x02abbcd42d5d38dc0a0ae1bc186bef271527ceeba3ff5e2bd3003800b80ebb1a
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USDC
+    standard: SealevelHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x02abbcd42d5d38dc0a0ae1bc186bef271527ceeba3ff5e2bd3003800b80ebb1a"
+    chainName: starknetsepolia
+    collateralAddressOrDenom: "0x053b40A647CEDfca6cA84f542A0fe36736031905A9639a7f19A3C1e66bFd5080"
+    connections:
+      - token: ethereum|paradexsepolia|0x05f971c4faecde2c2b8f2462ea9e5c72aa28ee64404c95e4b7b281e7b49142fb
+      - token: ethereum|sepolia|0xFE5505d75890122A6624EEE2ce6C075c421e1849
+      - token: ethereum|solanatestnet|ETai5iFvKgAmLGSQrXgdMaMivQQ8Vn1xPRLBrRWtfmEo
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USDC
+    standard: StarknetHypCollateral
+    symbol: USDC
