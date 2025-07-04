@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Update default ISMs.
+Update katana public RPC. Update default ISMs.
