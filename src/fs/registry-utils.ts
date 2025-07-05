@@ -4,6 +4,7 @@ import { FileSystemRegistry } from './FileSystemRegistry.js';
 import { IRegistry } from '../registry/IRegistry.js';
 import { PROXY_DEPLOYED_URL } from '../consts.js';
 import { MergedRegistry } from '../registry/MergedRegistry.js';
+import { HttpClientRegistry } from '../registry/HttpClientRegistry.js';
 
 const isHttpsUrl = (value: string): boolean => {
   try {
@@ -71,7 +72,7 @@ export function getRegistry({
     .filter((uri) => !!uri)
     .map((uri, index) => {
       const childLogger = registryLogger?.child({ uri, index });
-      if (isHttpsUrl(uri)) {
+      if (isHttpsUrl(uri) && uri.includes('github')) {
         return new GithubRegistry({
           uri,
           branch,
@@ -79,6 +80,8 @@ export function getRegistry({
           proxyUrl: enableProxy ? PROXY_DEPLOYED_URL : undefined,
           authToken,
         });
+      } else if (uri.includes('http')) {
+        return new HttpClientRegistry(uri);
       } else {
         if (!isValidFilePath(uri)) {
           throw new Error(`Invalid file system path: ${uri}`);
