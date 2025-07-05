@@ -7,7 +7,13 @@ import type {
   WarpCoreConfig,
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
-import { ChainAddresses, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
+import {
+  ChainAddresses,
+  WarpDeployConfigMap,
+  WarpRouteConfigMap,
+  WarpRouteFilterParams,
+  WarpRouteId,
+} from '../types.js';
 import { objMerge } from '../utils.js';
 import {
   AddWarpRouteConfigOptions,
@@ -15,7 +21,6 @@ import {
   RegistryContent,
   RegistryType,
   UpdateChainParams,
-  WarpRouteFilterParams,
 } from './IRegistry.js';
 
 export interface MergedRegistryOptions {

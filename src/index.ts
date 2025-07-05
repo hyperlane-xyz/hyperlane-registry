@@ -14,11 +14,19 @@ export {
 } from './registry/IRegistry.js';
 export { MergedRegistry, MergedRegistryOptions } from './registry/MergedRegistry.js';
 export { PartialRegistry, PartialRegistryOptions } from './registry/PartialRegistry.js';
+export { HttpClientRegistry } from './registry/HttpClientRegistry.js';
 export {
   filterWarpRoutesIds,
   warpConfigToWarpAddresses,
   warpRouteConfigPathToId,
   createWarpRouteConfigId,
 } from './registry/warp-utils.js';
-export { ChainAddresses, ChainAddressesSchema } from './types.js';
+export {
+  ChainAddresses,
+  ChainAddressesSchema,
+  WarpRouteId,
+  WarpRouteConfigMap,
+  WarpRouteFilterParams,
+  WarpRouteFilterSchema,
+} from './types.js';
 export { isAbacusWorksChain } from './utils.js';
