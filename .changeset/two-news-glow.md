@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-update solx route to extedn to solaxy
+update solx route to extend to solaxy
