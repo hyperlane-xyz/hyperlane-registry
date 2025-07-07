@@ -1,5 +1,88 @@
 # @hyperlane-xyz/registry
 
+## 19.0.0
+
+### Major Changes
+
+- 6759d87: update eclipse route to extend to solana mainnet and renamed artifacts to use stable warp ids
+
+### Minor Changes
+
+- 1f0f1d3: Remove old lumiaprism route and add `logoURI` to USDC/lumia
+- 292dc47: Deprecate guru.
+- 53b1614: Added SOL warp route between solana and starknet
+- 2633756: Update paradex & starknet default ISMs
+- 684a943: Add RCADE/arbitrum-bsc deploy artifacts
+- cc22a1e: Add JUP warp route between Solana and Starknet
+- 95ed85c: Add USDC paradexsepolia route
+- b48f662: Deploy to galactica, remove kroma.
+- 5632574: Update block times for arbitrum and optimism
+- 512322c: Deploy to xrplevm.
+- 3219e7c: Add Bonk starknet.
+- dc622e6: Added Paradex USDC route
+- 67d47e8: Add metadata for chain celestiatestnet
+- 57e6444: Add TRUMP starknet.
+
+### Patch Changes
+
+- ac25cf9: Add CCTP warp routes
+- 162799f: Add collateralAddressOrDenom and logoURI to USDC mainnet cctp config
+- 6d24338: Extend lumia USDC with CCTP rebalancing
+- 30a1387: Remove zan RPC from starknet metadata because it causes issues when getting tx status
+- df92d90: Fix botanix logo missing xmlns attribute
+- bfdb552: Update and fix coingecko ids for LOGX, AIXBT, MINT, ELIZA, MEW and Pnut
+- a8f9610: Update arb/op block times.
+
+## 18.0.0
+
+### Major Changes
+
+- f185f9a: Deprecate arthera, trumpchain, real.
+
+### Minor Changes
+
+- 5d4c567: Extend oUSDT to ink, swell, botanix.
+- f12bfab: Deprecate rometestnet1, rometestnet2.
+- 209d3c1: Add Humanity configs
+- ae339bc: Deploy to TAC.
+- e74e238: Add availability metadata for deprecated chains.
+- bcc4abb: Deployed warp route for DREAMS between Solana Mainnet and Starknet.
+- 8717bb1: Add Solaxy chain
+- c8473f3: Deployed warp route for Fartcoin between Solana Mainnet and Starknet.
+
+### Patch Changes
+
+- 65bced3: Add TOBY Coingecko Id
+- 28bc40c: Update oXAUT core config name and symbol for ethereum
+
+## 17.8.2
+
+### Patch Changes
+
+- 711b4f3: Update oXAUT deployment configs with new xERC20 deployment due to incorrect name and symbol
+
+## 17.8.1
+
+### Patch Changes
+
+- 2441da0: Add oXAUT logo
+
+## 17.8.0
+
+### Minor Changes
+
+- bb65614: Deprecate rometestnet. Redeploy on rometestnet2.
+- 1c2c4bf: Add wpFLT/fluence route
+- 959229b: feat: extend ubtc warp route
+- 7e961cc: add solaxy warp route deployment
+- c93222c: Added ETH warp route between starknetsepolia and sepolia
+- c33afad: Add oXAUT configs
+
+### Patch Changes
+
+- fb9acb2: Use correct fluence network coingecko id.
+- a6aa495: add coingeckoid to ubtc
+
 ## 17.7.0
 
 ### Minor Changes
