@@ -257,7 +257,7 @@ arbitrum:
       url: https://arbiscan.io
   blocks:
     confirmations: 1
-    estimateBlockTime: 3
+    estimateBlockTime: 0.25
     reorgPeriod: 5
   chainId: 42161
   deployer:
@@ -1249,6 +1249,44 @@ carrchaintestnet:
   rpcUrls:
     - http: https://rpc-testnet.carrchain.io
   technicalStack: arbitrumnitro
+celestiatestnet:
+  bech32Prefix: celestia
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 1
+  canonicalAsset: utia
+  chainId: mocha-4
+  contractAddressBytes: 32
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Celestia Testnet
+  domainId: 1297040200
+  gasPrice:
+    amount: "0.1"
+    denom: utia
+  grpcUrls:
+    - http: https://public-celestia-mocha4-consensus.numia.xyz:9090
+  index:
+    chunk: 10
+    from: 6915786
+  isTestnet: true
+  name: celestiatestnet
+  nativeToken:
+    decimals: 6
+    denom: utia
+    name: Celestia
+    symbol: TIA
+  protocol: cosmosnative
+  restUrls:
+    - http: https://celestia-t-api.noders.services
+  rpcUrls:
+    - http: https://rpc-1.testnet.celestia.nodes.guru
+  slip44: 118
+  technicalStack: other
+  transactionOverrides:
+    gasPrice: "0.0"
 celo:
   blockExplorers:
     - apiKey: IC1UCY8JWIYFWGPCEEE58HKFIFEVN73PVV
@@ -5165,7 +5203,7 @@ optimism:
       url: https://optimistic.etherscan.io
   blocks:
     confirmations: 1
-    estimateBlockTime: 3
+    estimateBlockTime: 2
     reorgPeriod: 10
   chainId: 10
   deployer:
@@ -7743,6 +7781,32 @@ xpla:
   protocol: ethereum
   rpcUrls:
     - http: https://dimension-evm-rpc.xpla.dev
+  technicalStack: other
+xrplevm:
+  blockExplorers:
+    - apiUrl: https://explorer.xrplevm.org/api
+      family: blockscout
+      name: XRPL EVM Explorer
+      url: https://explorer.xrplevm.org
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 5
+  chainId: 1440000
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: XRPL EVM
+  domainId: 1440000
+  gasCurrencyCoinGeckoId: ripple
+  name: xrplevm
+  nativeToken:
+    decimals: 18
+    name: XRP
+    symbol: XRP
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.xrplevm.org
   technicalStack: other
 zeronetwork:
   blockExplorers:
