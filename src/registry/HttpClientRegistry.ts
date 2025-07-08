@@ -20,6 +20,18 @@ import {
   AddWarpRouteConfigOptions,
 } from './IRegistry.js';
 
+export class HttpError extends Error {
+  public status: number;
+  public body: any;
+
+  constructor(message: string, status: number, body: any = null) {
+    super(message);
+    this.name = 'HttpError';
+    this.status = status;
+    this.body = body;
+  }
+}
+
 export class HttpClientRegistry implements IRegistry {
   private baseUrl: string;
   public readonly type = RegistryType.Http;
@@ -50,11 +62,30 @@ export class HttpClientRegistry implements IRegistry {
     return this.fetchJson<Array<ChainName>>('/chains');
   }
 
-  getChainMetadata(chainName: ChainName): MaybePromise<ChainMetadata> {
-    return this.fetchJson<ChainMetadata>(`/chain/${chainName}/metadata`);
+  async getChainMetadata(chainName: ChainName): Promise<ChainMetadata | null> {
+    try {
+      return await this.fetchJson<ChainMetadata>(`/chain/${chainName}/metadata`);
+    } catch (e) {
+      if (e instanceof HttpError && e.status === 404) {
+        return null;
+      }
+      throw e;
+    }
+  }
+
+  async getChainAddresses(chainName: ChainName): Promise<ChainAddresses | null> {
+    try {
+      return await this.fetchJson<ChainAddresses>(`/chain/${chainName}/addresses`);
+    } catch (e) {
+      if (e instanceof HttpError && e.status === 404) {
+        return null;
+      }
+      throw e;
+    }
   }
 
   updateChain(update: UpdateChainParams): MaybePromise<void> {
+    // TODO this should handle updating both metadata and addresses
     return this.fetchJson<void>(`/chain/${update.chainName}/metadata`, {
       method: 'POST',
       body: JSON.stringify(update.metadata),
@@ -62,10 +93,6 @@ export class HttpClientRegistry implements IRegistry {
         'Content-Type': 'application/json',
       },
     });
-  }
-
-  getChainAddresses(chainName: ChainName): MaybePromise<ChainAddresses | null> {
-    return this.fetchJson<ChainAddresses>(`/chain/${chainName}/addresses`);
   }
 
   getChainLogoUri(_chainName: ChainName): Promise<string | null> {
@@ -81,7 +108,7 @@ export class HttpClientRegistry implements IRegistry {
   }
 
   getWarpRoute(routeId: string): MaybePromise<WarpCoreConfig | null> {
-    return this.fetchJson<WarpCoreConfig | null>(`/warp-route/${encodeURIComponent(routeId)}`);
+    return this.fetchJson<WarpCoreConfig | null>(`/warp-route/${routeId}`);
   }
 
   getWarpRoutes(filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap> {
@@ -119,23 +146,36 @@ export class HttpClientRegistry implements IRegistry {
   }
 
   private async fetchJson<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
-    const response = await fetch(`${this.baseUrl}${endpoint}`, {
-      ...options,
-      headers: {
+    const requestOptions: RequestInit = { ...options };
+    // Only add JSON content-type header if there's a body
+    if (options.body) {
+      requestOptions.headers = {
         'Content-Type': 'application/json',
         ...options.headers,
-      },
-    });
+      };
+    }
+
+    const response = await fetch(`${this.baseUrl}${endpoint}`, requestOptions);
+
+    // Handle successful requests that have no content to parse.
+    if (response.status === 204) {
+      return null as T;
+    }
 
     if (!response.ok) {
-      let errorMessage: string;
+      let errorBody: any = null;
+      let errorMessage = `HTTP Error: ${response.status} ${response.statusText}`;
       try {
-        const errorBody = await response.json();
-        errorMessage = errorBody.message || response.statusText;
+        errorBody = await response.json();
+        // Use the server's detailed error message if available
+        if (errorBody && errorBody.message) {
+          errorMessage = errorBody.message;
+        }
       } catch (e) {
-        errorMessage = `Failed to parse error response: ${response.statusText}`;
+        // Ignore if error body isn't valid JSON, use statusText instead.
       }
-      throw new Error(`HTTP error ${response.status}: ${errorMessage}`);
+      // Throw the structured error
+      throw new HttpError(errorMessage, response.status, errorBody);
     }
 
     return response.json();
