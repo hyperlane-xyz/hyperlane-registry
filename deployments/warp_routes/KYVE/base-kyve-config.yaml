@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xAD13BcE42394Add02e6c215a40e582309B7975C7"
+    chainName: base
+    connections:
+      - token: cosmosnative|kyve|0x726f757465725f61707000000000000000000000000000010000000000000000
+    decimals: 6
+    logoURI: /deployments/warp_routes/KYVE/logo.svg
+    name: KYVE Network
+    standard: EvmHypSynthetic
+    symbol: KYVE
+  - addressOrDenom: "0x726f757465725f61707000000000000000000000000000010000000000000000"
+    chainName: kyve
+    coinGeckoId: kyve-network
+    connections:
+      - token: ethereum|base|0xAD13BcE42394Add02e6c215a40e582309B7975C7
+    decimals: 6
+    logoURI: /deployments/warp_routes/KYVE/logo.svg
+    name: KYVE Network
+    standard: CosmosNativeHypCollateral
+    symbol: KYVE

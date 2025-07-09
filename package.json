@@ -1,8 +1,9 @@
 {
   "name": "@hyperlane-xyz/registry",
   "description": "A collection of configs, artifacts, and schemas for Hyperlane",
-  "version": "13.13.0",
+  "version": "19.1.1",
   "dependencies": {
+    "jszip": "^3.10.1",
     "yaml": "2.4.5",
     "zod": "^3.21.2"
   },
@@ -10,7 +11,8 @@
     "@changesets/cli": "^2.26.2",
     "@eslint/js": "^9.1.1",
     "@faker-js/faker": "^9.6.0",
-    "@hyperlane-xyz/sdk": "12.3.0",
+    "@hyperlane-xyz/sdk": "14.0.0",
+    "@hyperlane-xyz/utils": "14.0.0",
     "@types/chai-as-promised": "^8",
     "@types/mocha": "^10.0.1",
     "@types/node": "^16.9.1",
@@ -26,6 +28,7 @@
     "lint-staged": "^15.2.2",
     "mocha": "^10.2.0",
     "prettier": "^2.8.8",
+    "randexp": "^0.5.3",
     "sinon": "^18.0.0",
     "svgo": "3.3.2",
     "tsx": "^4.7.1",
@@ -74,7 +77,8 @@
     "release": "yarn build && yarn changeset publish",
     "test:unit": "yarn build && mocha --require dotenv/config --config .mocharc.json './test/unit/*.test.ts' --exit",
     "test:health": "yarn build && mocha --config .mocharc.json './test/health/*.test.ts' --exit --parallel",
-    "test:rpc-health": "yarn build && mocha --config .mocharc.json './test/health/rpc-health.test.ts' --exit --parallel",
+    "test:rpc-health-mainnet": "yarn build && mocha --config .mocharc.json './test/health/rpc-health.test.ts' --grep 'Mainnets' --exit --parallel",
+    "test:rpc-health-testnet": "yarn build && mocha --config .mocharc.json './test/health/rpc-health.test.ts' --grep 'Testnets' --exit --parallel",
     "version:prepare": "yarn changeset version && yarn install --no-immutable",
     "version:check": "yarn changeset status"
   },

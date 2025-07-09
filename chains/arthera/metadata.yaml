@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
 blockExplorers:
   - apiUrl: https://explorer.arthera.net/api
     family: blockscout
@@ -9,9 +12,6 @@ blocks:
   estimateBlockTime: 1
   reorgPeriod: 5
 chainId: 10242
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: Arthera
 domainId: 10242
 gasCurrencyCoinGeckoId: arthera

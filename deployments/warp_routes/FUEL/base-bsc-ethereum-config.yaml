@@ -1,0 +1,33 @@
+tokens:
+  - addressOrDenom: "0xFdedBefEc262fE0eeaA2bbdE1afA2ef09AaB6634"
+    chainName: base
+    connections:
+      - token: ethereum|bsc|0x5c8daEabc57E9249606D3bD6d1E097eF492eA3C5
+      - token: ethereum|ethereum|0x3cF30C1D8DECBF45CD36C9492F6395D47357b91C
+    decimals: 9
+    logoURI: /deployments/warp_routes/FUEL/logo.svg
+    name: FUEL
+    standard: EvmHypSynthetic
+    symbol: FUEL
+  - addressOrDenom: "0x5c8daEabc57E9249606D3bD6d1E097eF492eA3C5"
+    chainName: bsc
+    connections:
+      - token: ethereum|base|0xFdedBefEc262fE0eeaA2bbdE1afA2ef09AaB6634
+      - token: ethereum|ethereum|0x3cF30C1D8DECBF45CD36C9492F6395D47357b91C
+    decimals: 9
+    logoURI: /deployments/warp_routes/FUEL/logo.svg
+    name: FUEL
+    standard: EvmHypSynthetic
+    symbol: FUEL
+  - addressOrDenom: "0x3cF30C1D8DECBF45CD36C9492F6395D47357b91C"
+    chainName: ethereum
+    coinGeckoId: fuel-network
+    collateralAddressOrDenom: "0x675B68AA4d9c2d3BB3F0397048e62E6B7192079c"
+    connections:
+      - token: ethereum|base|0xFdedBefEc262fE0eeaA2bbdE1afA2ef09AaB6634
+      - token: ethereum|bsc|0x5c8daEabc57E9249606D3bD6d1E097eF492eA3C5
+    decimals: 9
+    logoURI: /deployments/warp_routes/FUEL/logo.svg
+    name: FUEL
+    standard: EvmHypCollateral
+    symbol: FUEL

@@ -1,0 +1,20 @@
+tokens:
+  - addressOrDenom: "0x639aCc80569c5FC83c6FBf2319A6Cc38bBfe26d1"
+    chainName: coti
+    connections:
+      - token: ethereum|ethereum|0x07C747b0D99aBE8132f771cf6D2365D19ED1FfbA
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: EvmHypSynthetic
+    symbol: ETH
+  - addressOrDenom: "0x07C747b0D99aBE8132f771cf6D2365D19ED1FfbA"
+    chainName: ethereum
+    coinGeckoId: ethereum
+    connections:
+      - token: ethereum|coti|0x639aCc80569c5FC83c6FBf2319A6Cc38bBfe26d1
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH

@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xE7eFb127249Ec17B484B5Bb0Ea5f79A14A6d0721"
+    chainName: arbitrum
+    connections:
+      - token: ethereum|ethereum|0x68A593C7F42e0f6616F9356dCb1CFd130e4e7694
+    decimals: 18
+    logoURI: /deployments/warp_routes/PAXG/logo.svg
+    name: Paxos Gold
+    standard: EvmHypSynthetic
+    symbol: PAXG
+  - addressOrDenom: "0x68A593C7F42e0f6616F9356dCb1CFd130e4e7694"
+    chainName: ethereum
+    coinGeckoId: pax-gold
+    collateralAddressOrDenom: "0x45804880de22913dafe09f4980848ece6ecbaf78"
+    connections:
+      - token: ethereum|arbitrum|0xE7eFb127249Ec17B484B5Bb0Ea5f79A14A6d0721
+    decimals: 18
+    logoURI: /deployments/warp_routes/PAXG/logo.svg
+    name: Paxos Gold
+    standard: EvmHypCollateral
+    symbol: PAXG

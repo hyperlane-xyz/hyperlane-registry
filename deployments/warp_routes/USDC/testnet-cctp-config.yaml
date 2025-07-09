@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x61714300b991Cfc2BD336cb1745F01463163A988"
+    chainName: arbitrumsepolia
+    collateralAddressOrDenom: "0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d"
+    connections:
+      - token: ethereum|basesepolia|0x020dEE96414703c457322eed8504946583a7dd24
+      - token: ethereum|optimismsepolia|0xB0A06A5f47D335F5d94D4D8620BCaDF320a159AC
+      - token: ethereum|sepolia|0x352f1c7ffa598d0698c1D8D2fCAb02511c6fF3e9
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x020dEE96414703c457322eed8504946583a7dd24"
+    chainName: basesepolia
+    collateralAddressOrDenom: "0x036CbD53842c5426634e7929541eC2318f3dCF7e"
+    connections:
+      - token: ethereum|arbitrumsepolia|0x61714300b991Cfc2BD336cb1745F01463163A988
+      - token: ethereum|optimismsepolia|0xB0A06A5f47D335F5d94D4D8620BCaDF320a159AC
+      - token: ethereum|sepolia|0x352f1c7ffa598d0698c1D8D2fCAb02511c6fF3e9
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USDC
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0xB0A06A5f47D335F5d94D4D8620BCaDF320a159AC"
+    chainName: optimismsepolia
+    collateralAddressOrDenom: "0x5fd84259d66Cd46123540766Be93DFE6D43130D7"
+    connections:
+      - token: ethereum|arbitrumsepolia|0x61714300b991Cfc2BD336cb1745F01463163A988
+      - token: ethereum|basesepolia|0x020dEE96414703c457322eed8504946583a7dd24
+      - token: ethereum|sepolia|0x352f1c7ffa598d0698c1D8D2fCAb02511c6fF3e9
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USDC
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x352f1c7ffa598d0698c1D8D2fCAb02511c6fF3e9"
+    chainName: sepolia
+    collateralAddressOrDenom: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238"
+    connections:
+      - token: ethereum|arbitrumsepolia|0x61714300b991Cfc2BD336cb1745F01463163A988
+      - token: ethereum|basesepolia|0x020dEE96414703c457322eed8504946583a7dd24
+      - token: ethereum|optimismsepolia|0xB0A06A5f47D335F5d94D4D8620BCaDF320a159AC
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USDC
+    standard: EvmHypCollateral
+    symbol: USDC
