@@ -170,7 +170,7 @@ export class HttpClientRegistry implements IRegistry {
       try {
         errorBody = await response.json();
         // Use the server's detailed error message if available
-        if (errorBody && errorBody.message) {
+        if (errorBody?.message) {
           errorMessage = errorBody.message;
         }
       } catch (e) {
