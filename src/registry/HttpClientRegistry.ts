@@ -37,7 +37,7 @@ export class HttpClientRegistry implements IRegistry {
   public readonly type = RegistryType.Http;
   public readonly uri: string;
 
-  constructor(baseUrl: string = 'http://localhost:3000') {
+  constructor(baseUrl: string = 'http://localhost:3001') {
     this.baseUrl = baseUrl;
     this.uri = baseUrl;
   }
