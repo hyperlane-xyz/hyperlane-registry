@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 19.1.0
+
+### Minor Changes
+
+- f582af6: update solx route to extend to solaxy
+
 ## 19.0.0
 
 ### Major Changes
