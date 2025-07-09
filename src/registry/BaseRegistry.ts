@@ -17,6 +17,7 @@ import type {
   WarpDeployConfigMap,
   WarpRouteFilterParams,
   WarpRouteId,
+  UpdateChainParams,
 } from '../types.js';
 import { WarpRouteConfigMap } from '../types.js';
 import { stripLeadingSlash } from '../utils.js';
@@ -25,7 +26,6 @@ import type {
   IRegistry,
   RegistryContent,
   RegistryType,
-  UpdateChainParams,
 } from './IRegistry.js';
 import { MergedRegistry } from './MergedRegistry.js';
 import { createWarpRouteConfigId, syntheticTokenStandards } from './warp-utils.js';

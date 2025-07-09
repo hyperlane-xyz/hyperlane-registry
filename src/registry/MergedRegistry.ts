@@ -9,6 +9,7 @@ import type {
 } from '@hyperlane-xyz/sdk';
 import {
   ChainAddresses,
+  UpdateChainParams,
   WarpDeployConfigMap,
   WarpRouteConfigMap,
   WarpRouteFilterParams,
@@ -20,7 +21,6 @@ import {
   IRegistry,
   RegistryContent,
   RegistryType,
-  UpdateChainParams,
 } from './IRegistry.js';
 
 export interface MergedRegistryOptions {

@@ -19,6 +19,7 @@ import {
 } from '../consts.js';
 import {
   ChainAddresses,
+  UpdateChainParams,
   WarpDeployConfigMap,
   WarpRouteConfigMap,
   WarpRouteFilterParams,
@@ -32,7 +33,6 @@ import {
   IRegistry,
   RegistryContent,
   RegistryType,
-  UpdateChainParams,
 } from './IRegistry.js';
 import {
   filterWarpRoutesIds,

@@ -8,6 +8,7 @@ import {
 import {
   ChainAddresses,
   MaybePromise,
+  UpdateChainParams,
   WarpDeployConfigMap,
   WarpRouteConfigMap,
   WarpRouteFilterParams,
@@ -16,7 +17,6 @@ import {
   IRegistry,
   RegistryContent,
   RegistryType,
-  UpdateChainParams,
   AddWarpRouteConfigOptions,
 } from './IRegistry.js';
 
@@ -84,11 +84,13 @@ export class HttpClientRegistry implements IRegistry {
     }
   }
 
-  updateChain(update: UpdateChainParams): MaybePromise<void> {
-    // TODO this should handle updating both metadata and addresses
-    return this.fetchJson<void>(`/chain/${update.chainName}/metadata`, {
+  async updateChain(update: UpdateChainParams): Promise<void> {
+    await this.fetchJson<void>(`/chain/${update.chainName}`, {
       method: 'POST',
-      body: JSON.stringify(update.metadata),
+      body: JSON.stringify({
+        metadata: update.metadata,
+        addresses: update.addresses,
+      }),
       headers: {
         'Content-Type': 'application/json',
       },

@@ -8,18 +8,14 @@ import type {
 
 import {
   ChainAddresses,
+  UpdateChainParams,
   WarpDeployConfigMap,
   WarpRouteConfigMap,
   WarpRouteFilterParams,
   WarpRouteId,
 } from '../types.js';
 import { BaseRegistry } from './BaseRegistry.js';
-import {
-  AddWarpRouteConfigOptions,
-  IRegistry,
-  RegistryContent,
-  UpdateChainParams,
-} from './IRegistry.js';
+import { AddWarpRouteConfigOptions, IRegistry, RegistryContent } from './IRegistry.js';
 import { filterWarpRoutesIds } from './warp-utils.js';
 
 /**
