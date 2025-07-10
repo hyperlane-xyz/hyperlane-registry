@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: CWSVXTp2LadAE77Lk511ntA5jZNVgqiUXkWzUxjHtmeh
+    chainName: solanamainnet
+    coinGeckoId: bonk
+    collateralAddressOrDenom: DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263
+    connections:
+      - token: starknet|starknet|0x074238dfa02063792077820584c925b679a013cbab38e5ca61af5627d1eda736
+    decimals: 5
+    logoURI: /deployments/warp_routes/Bonk/logo.svg
+    name: Bonk
+    standard: SealevelHypCollateral
+    symbol: Bonk
+  - addressOrDenom: "0x074238dfa02063792077820584c925b679a013cbab38e5ca61af5627d1eda736"
+    chainName: starknet
+    connections:
+      - token: sealevel|solanamainnet|CWSVXTp2LadAE77Lk511ntA5jZNVgqiUXkWzUxjHtmeh
+    decimals: 5
+    logoURI: /deployments/warp_routes/Bonk/logo.svg
+    name: Bonk
+    standard: StarknetHypSynthetic
+    symbol: Bonk
