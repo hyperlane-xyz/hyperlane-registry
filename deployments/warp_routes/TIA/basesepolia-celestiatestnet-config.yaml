@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xC2455315f69696295b357428fe13970bB5B4eFfA"
+    chainName: basesepolia
+    connections:
+      - token: cosmosnative|celestiatestnet|0x726f757465725f61707000000000000000000000000000010000000000000000
+    decimals: 6
+    logoURI: /deployments/warp_routes/TIA/logo.svg
+    name: TIA
+    standard: EvmHypSynthetic
+    symbol: TIA
+  - addressOrDenom: "0x726f757465725f61707000000000000000000000000000010000000000000000"
+    chainName: celestiatestnet
+    collateralAddressOrDenom: utia
+    connections:
+      - token: ethereum|basesepolia|0xC2455315f69696295b357428fe13970bB5B4eFfA
+    decimals: 6
+    logoURI: /deployments/warp_routes/TIA/logo.svg
+    name: TIA
+    standard: CosmosNativeHypCollateral
+    symbol: TIA
