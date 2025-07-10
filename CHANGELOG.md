@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 19.1.1
+
+### Patch Changes
+
+- 5cb131b: Update Celestia Testnet grpc endpoint
+- 994cf31: Add TIA testnet.
+
 ## 19.1.0
 
 ### Minor Changes
