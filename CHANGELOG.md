@@ -1,26 +1,5 @@
 # @hyperlane-xyz/registry
 
-## 19.0.0
-
-### Major Changes
-
-- 6759d87: update eclipse route to extend to solana mainnet and renamed artifacts to use stable warp ids
-
-### Minor Changes
-
-- 53b1614: Added SOL warp route between solana and starknet
-- 2633756: Update paradex & starknet default ISMs
-- cc22a1e: Add JUP warp route between Solana and Starknet
-- 3219e7c: Add Bonk starknet.
-- 57e6444: Add TRUMP starknet.
-
-### Patch Changes
-
-- ac25cf9: Add CCTP warp routes
-- 162799f: Add collateralAddressOrDenom and logoURI to USDC mainnet cctp config
-- 6d24338: Extend lumia USDC with CCTP rebalancing
-- df92d90: Fix botanix logo missing xmlns attribute
-
 ## 18.0.0
 
 ### Major Changes
