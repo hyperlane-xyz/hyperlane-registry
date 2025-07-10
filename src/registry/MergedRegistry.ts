@@ -19,6 +19,7 @@ import { objMerge } from '../utils.js';
 import {
   AddWarpRouteConfigOptions,
   IRegistry,
+  IRegistryMethods,
   RegistryContent,
   RegistryType,
 } from './IRegistry.js';
@@ -92,6 +93,7 @@ export class MergedRegistry implements IRegistry {
   async addChain(chain: UpdateChainParams): Promise<void> {
     return this.multiRegistryWrite(
       async (registry) => await registry.addChain(chain),
+      'addChain',
       `adding chain ${chain.chainName}`,
     );
   }
@@ -99,6 +101,7 @@ export class MergedRegistry implements IRegistry {
   async updateChain(chain: UpdateChainParams): Promise<void> {
     return this.multiRegistryWrite(
       async (registry) => await registry.updateChain(chain),
+      'updateChain',
       `updating chain ${chain.chainName}`,
     );
   }
@@ -106,6 +109,7 @@ export class MergedRegistry implements IRegistry {
   async removeChain(chain: ChainName): Promise<void> {
     return this.multiRegistryWrite(
       async (registry) => await registry.removeChain(chain),
+      'removeChain',
       `removing chain ${chain}`,
     );
   }
@@ -133,6 +137,7 @@ export class MergedRegistry implements IRegistry {
   async addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteConfigOptions): Promise<void> {
     return this.multiRegistryWrite(
       async (registry) => await registry.addWarpRoute(config, options),
+      'addWarpRoute',
       'adding warp route',
     );
   }
@@ -143,6 +148,7 @@ export class MergedRegistry implements IRegistry {
   ): Promise<void> {
     return this.multiRegistryWrite(
       async (registry) => await registry.addWarpRouteConfig(config, options),
+      'addWarpRouteConfig',
       'adding warp route deploy config',
     );
   }
@@ -153,12 +159,12 @@ export class MergedRegistry implements IRegistry {
 
   protected async multiRegistryWrite(
     writeFn: (registry: IRegistry) => Promise<void>,
+    methodName: IRegistryMethods,
     logMsg: string,
   ): Promise<void> {
     for (const registry of this.registries) {
-      // TODO remove this when GithubRegistry supports write methods
-      if (registry.type === RegistryType.Github) {
-        this.logger.warn(`Skipping ${logMsg} at ${registry.type} registry`);
+      if (registry.unimplementedMethods?.has(methodName)) {
+        this.logger.warn(`Skipping ${logMsg} at ${registry.type} registry (not supported)`);
         continue;
       }
       try {

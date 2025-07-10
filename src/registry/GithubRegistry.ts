@@ -31,6 +31,7 @@ import {
   AddWarpRouteConfigOptions,
   ChainFiles,
   IRegistry,
+  IRegistryMethods,
   RegistryContent,
   RegistryType,
 } from './IRegistry.js';
@@ -105,6 +106,14 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   private archiveEntries?: Map<string, ArrayBuffer>;
   // Promise tracking an in-flight archive download/unpack to dedupe parallel calls
   private archiveEntriesPromise?: Promise<void>;
+
+  public readonly unimplementedMethods = new Set<IRegistryMethods>([
+    'addChain',
+    'updateChain',
+    'removeChain',
+    'addWarpRoute',
+    'addWarpRouteConfig',
+  ]);
 
   private readonly baseApiHeaders: Record<string, string> = {
     'X-GitHub-Api-Version': GITHUB_API_VERSION,

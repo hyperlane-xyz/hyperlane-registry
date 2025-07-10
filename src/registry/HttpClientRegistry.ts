@@ -18,6 +18,7 @@ import {
   RegistryContent,
   RegistryType,
   AddWarpRouteConfigOptions,
+  IRegistryMethods,
 } from './IRegistry.js';
 
 export class HttpError extends Error {
@@ -36,6 +37,18 @@ export class HttpClientRegistry implements IRegistry {
   private baseUrl: string;
   public readonly type = RegistryType.Http;
   public readonly uri: string;
+
+  public readonly unimplementedMethods = new Set<IRegistryMethods>([
+    'getUri',
+    'getChainLogoUri',
+    'addChain',
+    'removeChain',
+    'addWarpRoute',
+    'getWarpDeployConfig',
+    'getWarpDeployConfigs',
+    'addWarpRouteConfig',
+    'merge',
+  ]);
 
   constructor(baseUrl: string = 'http://localhost:3001') {
     this.baseUrl = baseUrl;
