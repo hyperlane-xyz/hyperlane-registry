@@ -17,13 +17,12 @@ import {
   WARP_ROUTE_CONFIG_FILE_REGEX,
   WARP_ROUTE_DEPLOY_FILE_REGEX,
 } from '../consts.js';
-import { ChainAddresses, ChainAddressesSchema, WarpRouteId } from '../types.js';
+import { ChainAddresses, ChainAddressesSchema, UpdateChainParams, WarpRouteId } from '../types.js';
 import { toYamlString } from '../utils.js';
 
 import {
   AddWarpRouteConfigOptions,
   RegistryType,
-  UpdateChainParams,
   type ChainFiles,
   type IRegistry,
   type RegistryContent,
