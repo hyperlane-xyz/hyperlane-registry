@@ -1,5 +1,18 @@
 # @hyperlane-xyz/registry
 
+## 19.2.0
+
+### Minor Changes
+
+- d8a2a57: update usdc paradex route to be rebalanceable
+- d5a2f9c: Add HttpClientRegistry (IRegistry) implementation
+- 968f0f4: extedended subtensor usdc route to unichain, arbitrum and polygon
+
+### Patch Changes
+
+- 55ea7b9: Add SEDA route
+- c4e12fd: Fix paradex `chainId` in metadata
+
 ## 19.1.1
 
 ### Patch Changes
