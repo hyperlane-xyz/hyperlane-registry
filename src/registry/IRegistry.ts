@@ -11,7 +11,20 @@ import {
   WarpDeployConfigMap,
   WarpRouteConfigMap,
   WarpRouteId,
+  WarpRouteFilterParams,
+  UpdateChainParams,
 } from '../types.js';
+
+type MethodsOf<T> = {
+  [K in keyof T]: T[K] extends (...args: any[]) => any ? K : never;
+}[keyof T];
+
+/**
+ * A type listing all method names on IRegistry.
+ * It is derived from IRegistry to ensure it's always in sync.
+ * Omit is used to avoid a circular reference with the `unimplementedMethods` property.
+ */
+export type IRegistryMethods = MethodsOf<Omit<IRegistry, 'unimplementedMethods'>>;
 
 export interface ChainFiles {
   metadata?: string;
@@ -31,22 +44,12 @@ export interface RegistryContent {
   };
 }
 
-export interface UpdateChainParams {
-  chainName: ChainName;
-  metadata?: ChainMetadata;
-  addresses?: ChainAddresses;
-}
-
-export interface WarpRouteFilterParams {
-  symbol?: string;
-  label?: string;
-}
-
 export enum RegistryType {
   Github = 'github',
   FileSystem = 'filesystem',
   Merged = 'merged',
   Partial = 'partial',
+  Http = 'http',
 }
 
 export type AddWarpRouteConfigOptions =
@@ -60,6 +63,12 @@ export type AddWarpRouteConfigOptions =
 export interface IRegistry {
   type: RegistryType;
   uri: string;
+  /**
+   * An optional set of method names that are not implemented by the registry.
+   * If a method is in this set, it should not be called.
+   * If this property is undefined, all methods are assumed to be implemented.
+   */
+  readonly unimplementedMethods?: Set<IRegistryMethods>;
 
   getUri(itemPath?: string): string;
 
