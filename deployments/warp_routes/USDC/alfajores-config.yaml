@@ -1,0 +1,18 @@
+tokens:
+  - addressOrDenom: "0xC542e7B4256c41018fa42Ad70BCDc89d0d7eE6Fe"
+    chainName: alfajores
+    connections:
+      - token: ethereum|basesepolia|0x72135454D1c6b1DaD6f16EEa1eD5aB3f9f8697f0
+    decimals: 18
+    name: USDC
+    standard: EvmHypSynthetic
+    symbol: USDC
+  - addressOrDenom: "0x72135454D1c6b1DaD6f16EEa1eD5aB3f9f8697f0"
+    chainName: basesepolia
+    collateralAddressOrDenom: "0xaf33add7918f685b2a82c1077bd8c07d220ffa04"
+    connections:
+      - token: ethereum|alfajores|0xC542e7B4256c41018fa42Ad70BCDc89d0d7eE6Fe
+    decimals: 18
+    name: USDC
+    standard: EvmHypCollateral
+    symbol: USDC
