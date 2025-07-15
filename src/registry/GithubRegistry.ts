@@ -17,17 +17,23 @@ import {
   WARP_ROUTE_CONFIG_FILE_REGEX,
   WARP_ROUTE_DEPLOY_FILE_REGEX,
 } from '../consts.js';
-import { ChainAddresses, WarpDeployConfigMap, WarpRouteConfigMap, WarpRouteId } from '../types.js';
+import {
+  ChainAddresses,
+  UpdateChainParams,
+  WarpDeployConfigMap,
+  WarpRouteConfigMap,
+  WarpRouteFilterParams,
+  WarpRouteId,
+} from '../types.js';
 import { concurrentMap, parseGitHubPath, stripLeadingSlash } from '../utils.js';
 import { BaseRegistry } from './BaseRegistry.js';
 import {
   AddWarpRouteConfigOptions,
   ChainFiles,
   IRegistry,
+  IRegistryMethods,
   RegistryContent,
   RegistryType,
-  UpdateChainParams,
-  WarpRouteFilterParams,
 } from './IRegistry.js';
 import {
   filterWarpRoutesIds,
@@ -100,6 +106,14 @@ export class GithubRegistry extends BaseRegistry implements IRegistry {
   private archiveEntries?: Map<string, ArrayBuffer>;
   // Promise tracking an in-flight archive download/unpack to dedupe parallel calls
   private archiveEntriesPromise?: Promise<void>;
+
+  public readonly unimplementedMethods = new Set<IRegistryMethods>([
+    'addChain',
+    'updateChain',
+    'removeChain',
+    'addWarpRoute',
+    'addWarpRouteConfig',
+  ]);
 
   private readonly baseApiHeaders: Record<string, string> = {
     'X-GitHub-Api-Version': GITHUB_API_VERSION,
