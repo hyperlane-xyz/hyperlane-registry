@@ -141,8 +141,8 @@ export class HttpClientRegistry implements IRegistry {
     throw new Error('Method not implemented.');
   }
 
-  getWarpDeployConfig(_routeId: string): MaybePromise<WarpRouteDeployConfig | null> {
-    throw new Error('Method not implemented.');
+  getWarpDeployConfig(routeId: string): MaybePromise<WarpRouteDeployConfig | null> {
+    return this.fetchJson<WarpRouteDeployConfig | null>(`/warp-route/deploy/${routeId}`);
   }
 
   getWarpDeployConfigs(): MaybePromise<WarpDeployConfigMap> {
