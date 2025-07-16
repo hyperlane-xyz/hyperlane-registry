@@ -134,9 +134,8 @@ export abstract class BaseRegistry implements IRegistry {
   static warpDeployConfigToId(config: WarpRouteDeployConfig, options: AddWarpRouteConfigOptions) {
     assert(objLength(config) > 0, 'Cannot generate ID for empty warp deploy config');
 
-    const syntheticChains = objFilter(
-      config,
-      (_, c): c is HypTokenRouterConfig => c.type === 'synthetic' || c.type === 'syntheticRebase',
+    const syntheticChains = objFilter(config, (_, c): c is HypTokenRouterConfig =>
+      c.type?.includes('synthetic'),
     );
     let warpRouteId;
     if ('warpRouteId' in options) {
