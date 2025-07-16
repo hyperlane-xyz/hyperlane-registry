@@ -1,5 +1,20 @@
 # @hyperlane-xyz/registry
 
+## 19.3.0
+
+### Minor Changes
+
+- dfa6782: update paradex defaultISM
+- dd21180: Remove treasure and trumpchain warp routes.
+- 4c95328: Update katana public RPC. Update default ISMs.
+- 8948b4a: Added PUMP metadata and logo
+- 2f45f38: Update superseed with CCTP rebalancing and add connections
+
+### Patch Changes
+
+- 9359431: Extend oXAUT to Avalanche
+- 532664a: Remove SDK code imports
+
 ## 19.2.0
 
 ### Minor Changes
