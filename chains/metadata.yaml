@@ -1035,9 +1035,6 @@ botanix:
   rpcUrls:
     - http: https://rpc.botanixlabs.com
   technicalStack: other
-  transactionOverrides:
-    maxFeePerGas: 1000007
-    maxPriorityFeePerGas: 1000007
 bouncebit:
   blockExplorers:
     - apiUrl: https://bbscan.io/api
@@ -1300,8 +1297,8 @@ celo:
       url: https://explorer.celo.org
   blocks:
     confirmations: 1
-    estimateBlockTime: 5
-    reorgPeriod: 0
+    estimateBlockTime: 1
+    reorgPeriod: 5
   chainId: 42220
   deployer:
     name: Abacus Works
@@ -1318,7 +1315,9 @@ celo:
   protocol: ethereum
   rpcUrls:
     - http: https://forno.celo.org
-  technicalStack: other
+    - http: https://rpc.ankr.com/celo
+    - http: https://celo.drpc.org
+  technicalStack: opstack
 cheesechain:
   blockExplorers:
     - apiUrl: https://fetascan.xyz/api

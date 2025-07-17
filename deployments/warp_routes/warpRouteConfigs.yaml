@@ -2782,26 +2782,6 @@ LUMIA/arbitrum-avalanche-base-bsc-ethereum-lumiaprism-optimism-polygon:
       name: Lumia Token
       standard: EvmHypSynthetic
       symbol: LUMIA
-MAGIC/arbitrum-treasure:
-  tokens:
-    - addressOrDenom: "0x240d04a70B038369C8DF703B78B3b47332EeE116"
-      chainName: arbitrum
-      coinGeckoId: magic
-      collateralAddressOrDenom: "0x539bdE0d7Dbd336b79148AA742883198BBF60342"
-      connections:
-        - token: ethereum|treasure|0x01c94f24F8D72BB9C3f61c4ED0b9b86BfC23BADd
-      decimals: 18
-      name: MAGIC
-      standard: EvmHypCollateral
-      symbol: MAGIC
-    - addressOrDenom: "0x01c94f24F8D72BB9C3f61c4ED0b9b86BfC23BADd"
-      chainName: treasure
-      connections:
-        - token: ethereum|arbitrum|0x240d04a70B038369C8DF703B78B3b47332EeE116
-      decimals: 18
-      name: MAGIC
-      standard: EvmHypNative
-      symbol: MAGIC
 MAT/matchain:
   tokens:
     - addressOrDenom: "0xFE2DD2d57a05F89438F3AEC94EaFA4070396bab0"
@@ -3273,6 +3253,29 @@ PROM/bsc-polygon-prom:
       name: Prometeus
       standard: EvmHypNative
       symbol: PROM
+PUMP/eclipsemainnet:
+  tokens:
+    - addressOrDenom: Ba5PvcUQPjDTqNe6dtqf4tYMungrBF6BhD7fCM27jQxh
+      chainName: eclipsemainnet
+      collateralAddressOrDenom: 2qLEN4Gu7MkBevJMeTbQKgnwdgvxNvwQ6ufH7L8fjzHs
+      connections:
+        - token: sealevel|solanamainnet|9u6JS1qxnNogAwqtjkpdeLGhQmt5wxyHAjP1511S3ExL
+      decimals: 6
+      logoURI: /deployments/warp_routes/PUMP/logo.png
+      name: Pump
+      standard: SealevelHypSynthetic
+      symbol: PUMP
+    - addressOrDenom: 9u6JS1qxnNogAwqtjkpdeLGhQmt5wxyHAjP1511S3ExL
+      chainName: solanamainnet
+      coinGeckoId: pump-fun
+      collateralAddressOrDenom: pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn
+      connections:
+        - token: sealevel|eclipsemainnet|Ba5PvcUQPjDTqNe6dtqf4tYMungrBF6BhD7fCM27jQxh
+      decimals: 6
+      logoURI: /deployments/warp_routes/PUMP/logo.png
+      name: Pump
+      standard: SealevelHypCollateral
+      symbol: PUMP
 PZETH/berachain-ethereum-swell-unichain-zircuit:
   tokens:
     - addressOrDenom: "0x25a851bF599cb8AEf00Ac1D1a9fb575EBf9d94b0"
@@ -3584,7 +3587,6 @@ SMOL/ethereum-solanamainnet-treasure:
     - addressOrDenom: "0x53cce6d10e43d1b3d11872ad22ec2acd8d2537b8"
       chainName: ethereum
       connections:
-        - token: ethereum|treasure|0xb73e4f558F7d4436d77a18f56e4EE9d01764c641
         - token: sealevel|solanamainnet|7Z7mZ4d31sfC3mcQYQXUNo6j9snByT2gs5eDkXYmZAyn
       decimals: 18
       logoURI: /deployments/warp_routes/SMOL/logo.svg
@@ -3596,21 +3598,10 @@ SMOL/ethereum-solanamainnet-treasure:
       collateralAddressOrDenom: 5KHQeeQvM4qBtmX3WnaCMGpM3Th7jYpqcHf3c6qzPodM
       connections:
         - token: ethereum|ethereum|0x53cce6d10e43d1b3d11872ad22ec2acd8d2537b8
-        - token: ethereum|treasure|0xb73e4f558F7d4436d77a18f56e4EE9d01764c641
       decimals: 9
       logoURI: /deployments/warp_routes/SMOL/logo.svg
       name: SMOL
       standard: SealevelHypSynthetic
-      symbol: SMOL
-    - addressOrDenom: "0xb73e4f558F7d4436d77a18f56e4EE9d01764c641"
-      chainName: treasure
-      connections:
-        - token: ethereum|ethereum|0x53cce6d10e43d1b3d11872ad22ec2acd8d2537b8
-        - token: sealevel|solanamainnet|7Z7mZ4d31sfC3mcQYQXUNo6j9snByT2gs5eDkXYmZAyn
-      decimals: 18
-      logoURI: /deployments/warp_routes/SMOL/logo.svg
-      name: SMOL
-      standard: EvmHypSynthetic
       symbol: SMOL
 SOL/apechain-solanamainnet:
   tokens:
@@ -4412,28 +4403,6 @@ TRUMP/arbitrum-avalanche-base-flowmainnet-form-optimism-solanamainnet-worldchain
       logoURI: /deployments/warp_routes/TRUMP/logo.png
       name: OFFICIAL TRUMP
       standard: EvmHypSynthetic
-      symbol: TRUMP
-TRUMP/solanamainnet-trumpchain:
-  tokens:
-    - addressOrDenom: AyJk3V2SjswRv1ppDazVofXnFgjCTeydNEDSyA2UyVNX
-      chainName: solanamainnet
-      coinGeckoId: official-trump
-      collateralAddressOrDenom: 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN
-      connections:
-        - token: ethereum|trumpchain|0xD84981Ecd4c411A86E1Ccda77F944c8f3D9737ab
-      decimals: 6
-      logoURI: /deployments/warp_routes/TRUMP/logo.png
-      name: OFFICIAL TRUMP
-      standard: SealevelHypCollateral
-      symbol: TRUMP
-    - addressOrDenom: "0xD84981Ecd4c411A86E1Ccda77F944c8f3D9737ab"
-      chainName: trumpchain
-      connections:
-        - token: sealevel|solanamainnet|AyJk3V2SjswRv1ppDazVofXnFgjCTeydNEDSyA2UyVNX
-      decimals: 18
-      logoURI: /deployments/warp_routes/TRUMP/logo.png
-      name: OFFICIAL TRUMP
-      standard: EvmHypNative
       symbol: TRUMP
 TRUMP/starknet:
   tokens:
@@ -8083,10 +8052,23 @@ oUSDT/staging:
       symbol: oUSDTSTAGE
 oXAUT/production:
   tokens:
+    - addressOrDenom: "0x118b30d28e5dB274f2376910038F66b1C33bD00a"
+      chainName: avalanche
+      collateralAddressOrDenom: "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
+      connections:
+        - token: ethereum|celo|0x53a81819DFD46730116B89dBCb096DAcC4e73cEA
+        - token: ethereum|ethereum|0x9A9C33115455a929D3d821CEE4A01e38241bF375
+        - token: ethereum|worldchain|0xEa0ad8Fc869f5Ab97a859c3af110367865699a8d
+      decimals: 6
+      logoURI: /deployments/warp_routes/oXAUT/logo.svg
+      name: OpenXAUT
+      standard: EvmHypXERC20
+      symbol: oXAUT
     - addressOrDenom: "0x53a81819DFD46730116B89dBCb096DAcC4e73cEA"
       chainName: celo
       collateralAddressOrDenom: "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
       connections:
+        - token: ethereum|avalanche|0x118b30d28e5dB274f2376910038F66b1C33bD00a
         - token: ethereum|ethereum|0x9A9C33115455a929D3d821CEE4A01e38241bF375
         - token: ethereum|worldchain|0xEa0ad8Fc869f5Ab97a859c3af110367865699a8d
       decimals: 6
@@ -8099,17 +8081,19 @@ oXAUT/production:
       coinGeckoId: tether-gold
       collateralAddressOrDenom: "0x0797c6f55f5c9005996A55959A341018cF69A963"
       connections:
+        - token: ethereum|avalanche|0x118b30d28e5dB274f2376910038F66b1C33bD00a
         - token: ethereum|celo|0x53a81819DFD46730116B89dBCb096DAcC4e73cEA
         - token: ethereum|worldchain|0xEa0ad8Fc869f5Ab97a859c3af110367865699a8d
       decimals: 6
       logoURI: /deployments/warp_routes/oXAUT/logo.svg
-      name: OpenXAUT
+      name: Tether Gold
       standard: EvmHypXERC20Lockbox
-      symbol: oXAUT
+      symbol: XAUt
     - addressOrDenom: "0xEa0ad8Fc869f5Ab97a859c3af110367865699a8d"
       chainName: worldchain
       collateralAddressOrDenom: "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
       connections:
+        - token: ethereum|avalanche|0x118b30d28e5dB274f2376910038F66b1C33bD00a
         - token: ethereum|celo|0x53a81819DFD46730116B89dBCb096DAcC4e73cEA
         - token: ethereum|ethereum|0x9A9C33115455a929D3d821CEE4A01e38241bF375
       decimals: 6
