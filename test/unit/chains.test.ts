@@ -66,6 +66,10 @@ describe('Chain metadata', () => {
       }
     });
 
+    it(`${chain} metadata does not have interchainAccountIsm address defined`, () => {
+      expect(chainAddresses[chain]?.interchainAccountIsm).to.be.undefined;
+    });
+
     it(`${chain} metadata has valid reorgPeriod`, () => {
       const reorgPeriod = metadata.blocks?.reorgPeriod;
       if (reorgPeriod === undefined) {
