@@ -1,5 +1,34 @@
 # @hyperlane-xyz/registry
 
+## 19.4.0
+
+### Minor Changes
+
+- 94b5167: Added the PUMP/eclipsemainnet warp route
+
+### Patch Changes
+
+- d9f0d03: Remove botanix tx overrides
+- 23336e2: Update oXAUT ownerOverrides.collateralToken to the top-level owners
+- f8af54f: Update default ISMs on arbitrum, base, ethereum, mode.
+- 06c2b8a: Update celo metadata
+- d925022: Update oXAUT owners to AW safes
+
+## 19.3.0
+
+### Minor Changes
+
+- dfa6782: update paradex defaultISM
+- dd21180: Remove treasure and trumpchain warp routes.
+- 4c95328: Update katana public RPC. Update default ISMs.
+- 8948b4a: Added PUMP metadata and logo
+- 2f45f38: Update superseed with CCTP rebalancing and add connections
+
+### Patch Changes
+
+- 9359431: Extend oXAUT to Avalanche
+- 532664a: Remove SDK code imports
+
 ## 19.2.0
 
 ### Minor Changes
