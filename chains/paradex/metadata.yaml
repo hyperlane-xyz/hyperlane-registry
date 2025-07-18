@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://voyager.prod.paradex.trade/api
+    family: voyager
+    name: Paradex Explorer
+    url: https://voyager.prod.paradex.trade
+blocks:
+  confirmations: 1
+  estimateBlockTime: 30
+  reorgPeriod: 1
+chainId: "0x505249564154455f534e5f50415241434c4541525f4d41494e4e4554"
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Paradex
+# keccak256("paradex") % MAX_INT32
+domainId: 514051890
+gasCurrencyCoinGeckoId: paradex-fuel # paradex-fuel doesn't exist on coingecko so it will default to 1
+name: paradex
+nativeToken:
+  decimals: 18
+  denom: "0x047adc7deE88eec362D71A52C25D40559a921434B2d90e75b6a4a6E4e9fb9Ab1"
+  name: Para Gas Token
+  symbol: FUEL
+protocol: starknet
+rpcUrls:
+  - http: https://juno.api.prod.paradex.trade/rpc/v0_8
+  - http: https://pathfinder.api.prod.paradex.trade/rpc/v0_8
+technicalStack: other

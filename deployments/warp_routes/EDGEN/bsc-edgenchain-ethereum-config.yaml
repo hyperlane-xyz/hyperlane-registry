@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x0C808F0464C423d5Ea4F4454fcc23B6E2Ae75562"
+    chainName: bsc
+    connections:
+      - token: ethereum|edgenchain|0x22EacED1774e0e24D6F4c3b1e593488Be21Ac34f
+      - token: ethereum|ethereum|0xB8bB85FD0836691a64aFc23199566F898a1d6f4a
+    decimals: 18
+    logoURI: /deployments/warp_routes/EDGEN/logo.svg
+    name: LayerEdge
+    standard: EvmHypSynthetic
+    symbol: EDGEN
+  - addressOrDenom: "0x22EacED1774e0e24D6F4c3b1e593488Be21Ac34f"
+    chainName: edgenchain
+    connections:
+      - token: ethereum|bsc|0x0C808F0464C423d5Ea4F4454fcc23B6E2Ae75562
+      - token: ethereum|ethereum|0xB8bB85FD0836691a64aFc23199566F898a1d6f4a
+    decimals: 18
+    logoURI: /deployments/warp_routes/EDGEN/logo.svg
+    name: LayerEdge
+    standard: EvmHypNative
+    symbol: EDGEN
+  - addressOrDenom: "0xB8bB85FD0836691a64aFc23199566F898a1d6f4a"
+    chainName: ethereum
+    coinGeckoId: edgen
+    collateralAddressOrDenom: "0xAa9806c938836627Ed1a41Ae871c7E1889AE02Ca"
+    connections:
+      - token: ethereum|bsc|0x0C808F0464C423d5Ea4F4454fcc23B6E2Ae75562
+      - token: ethereum|edgenchain|0x22EacED1774e0e24D6F4c3b1e593488Be21Ac34f
+    decimals: 18
+    logoURI: /deployments/warp_routes/EDGEN/logo.svg
+    name: LayerEdge
+    standard: EvmHypCollateral
+    symbol: EDGEN

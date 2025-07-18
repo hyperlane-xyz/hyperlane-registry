@@ -17,14 +17,12 @@ import {
   WARP_ROUTE_CONFIG_FILE_REGEX,
   WARP_ROUTE_DEPLOY_FILE_REGEX,
 } from '../consts.js';
-import { ChainAddresses, ChainAddressesSchema, WarpRouteId } from '../types.js';
+import { ChainAddresses, ChainAddressesSchema, UpdateChainParams, WarpRouteId } from '../types.js';
 import { toYamlString } from '../utils.js';
 
 import {
   AddWarpRouteConfigOptions,
   RegistryType,
-  UpdateChainParams,
-  type AddWarpRouteOptions,
   type ChainFiles,
   type IRegistry,
   type RegistryContent,
@@ -119,16 +117,18 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
     this.removeFiles(Object.values(chainFiles));
   }
 
-  addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteOptions): void {
-    const configPath = this.getWarpRouteCoreConfigPath(config, options);
+  addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteConfigOptions): void {
+    const filePath = path.join(this.uri, this.getWarpRouteCoreConfigPath(config, options));
+
     this.createFile({
-      filePath: path.join(this.uri, configPath),
+      filePath,
       data: toYamlString(config, SCHEMA_REF),
     });
   }
 
   addWarpRouteConfig(warpConfig: WarpRouteDeployConfig, options: AddWarpRouteConfigOptions): void {
     const filePath = path.join(this.uri, this.getWarpRouteDeployConfigPath(warpConfig, options));
+
     this.createFile({
       filePath,
       data: toYamlString(warpConfig),

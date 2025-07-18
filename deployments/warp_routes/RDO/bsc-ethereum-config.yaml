@@ -1,0 +1,22 @@
+tokens:
+  - addressOrDenom: "0xd86E6ef14b96D942eF0AbF0720C549197EA8c528"
+    chainName: bsc
+    coinGeckoId: reddio
+    connections:
+      - token: ethereum|ethereum|0xd86E6ef14b96D942eF0AbF0720C549197EA8c528
+    decimals: 18
+    logoURI: /deployments/warp_routes/RDO/logo.svg
+    name: RDO Token
+    standard: EvmHypSynthetic
+    symbol: RDO
+  - addressOrDenom: "0xd86E6ef14b96D942eF0AbF0720C549197EA8c528"
+    chainName: ethereum
+    coinGeckoId: reddio
+    collateralAddressOrDenom: "0x57240C3E140f98abe315CA8E0213c7a77F34A334"
+    connections:
+      - token: ethereum|bsc|0xd86E6ef14b96D942eF0AbF0720C549197EA8c528
+    decimals: 18
+    logoURI: /deployments/warp_routes/RDO/logo.svg
+    name: RDO Token
+    standard: EvmHypCollateral
+    symbol: RDO

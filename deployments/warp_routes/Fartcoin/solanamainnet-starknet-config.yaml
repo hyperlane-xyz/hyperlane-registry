@@ -1,0 +1,22 @@
+options: {}
+tokens:
+  - addressOrDenom: bwGKNDL1HF9x3rZE937oFMJDaF2sH9J9sgdERqjhyaC
+    chainName: solanamainnet
+    coinGeckoId: fartcoin
+    collateralAddressOrDenom: 9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+    connections:
+      - token: starknet|starknet|0x06e0e0117b742747452601f9f14576eb9d71b326379a1794bb51d9adbce3dbd3
+    decimals: 6
+    logoURI: /deployments/warp_routes/Fartcoin/logo.svg
+    name: Fartcoin
+    standard: SealevelHypCollateral
+    symbol: Fartcoin
+  - addressOrDenom: "0x06e0e0117b742747452601f9f14576eb9d71b326379a1794bb51d9adbce3dbd3"
+    chainName: starknet
+    connections:
+      - token: sealevel|solanamainnet|bwGKNDL1HF9x3rZE937oFMJDaF2sH9J9sgdERqjhyaC
+    decimals: 6
+    logoURI: /deployments/warp_routes/Fartcoin/logo.svg
+    name: Fartcoin
+    standard: StarknetHypSynthetic
+    symbol: Fartcoin

@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x16eE589E237f2c70aBE91F87a6C0712C836941bb"
+    chainName: apechain
+    connections:
+      - token: sealevel|solanamainnet|BwD1LvMvofVZAAWyG318S17zqKMXXeeNeVHQimaWG6qt
+    decimals: 9
+    logoURI: /deployments/warp_routes/SOL/logo.svg
+    name: Solana
+    standard: EvmHypSynthetic
+    symbol: SOL
+  - addressOrDenom: BwD1LvMvofVZAAWyG318S17zqKMXXeeNeVHQimaWG6qt
+    chainName: solanamainnet
+    coinGeckoId: solana
+    connections:
+      - token: ethereum|apechain|0x16eE589E237f2c70aBE91F87a6C0712C836941bb
+    decimals: 9
+    logoURI: /deployments/warp_routes/SOL/logo.svg
+    name: Solana
+    standard: SealevelHypNative
+    symbol: SOL
