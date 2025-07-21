@@ -1,0 +1,20 @@
+tokens:
+  - addressOrDenom: "0x5bA056a6C90bCF5FB22FbBE979dd9dfBD03cA21d"
+    chainName: basesepolia
+    collateralAddressOrDenom: "0xAF33ADd7918F685B2A82C1077bd8c07d220FFA04"
+    connections:
+      - token: ethereum|sepolia|0x72135454D1c6b1DaD6f16EEa1eD5aB3f9f8697f0
+    decimals: 18
+    logoURI: deployments/warp_routes/USDC/logox.svg
+    name: USDC
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x72135454D1c6b1DaD6f16EEa1eD5aB3f9f8697f0"
+    chainName: sepolia
+    connections:
+      - token: ethereum|basesepolia|0x5bA056a6C90bCF5FB22FbBE979dd9dfBD03cA21d
+    decimals: 18
+    logoURI: deployments/warp_routes/USDC/logox.svg
+    name: USDC
+    standard: EvmHypSynthetic
+    symbol: USDC
