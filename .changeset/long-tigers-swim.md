@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add MAGIC arbitrum/abstract route. Add SMOL arbitrum + abstract routes.
+Add MAGIC arbitrum/abstract/ronin route. Add SMOL arbitrum + abstract routes.
