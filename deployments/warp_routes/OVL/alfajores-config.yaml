@@ -1,0 +1,20 @@
+tokens:
+  - addressOrDenom: "0xBD14cB29072D72df1253f2C5a580Cbe3CB769C47"
+    chainName: alfajores
+    connections:
+      - token: ethereum|bsctestnet|0x72135454D1c6b1DaD6f16EEa1eD5aB3f9f8697f0
+    decimals: 18
+    logoURI: deployments/warp_routes/OVL/logo.svg
+    name: Overlay
+    standard: EvmHypSynthetic
+    symbol: OVL
+  - addressOrDenom: "0x72135454D1c6b1DaD6f16EEa1eD5aB3f9f8697f0"
+    chainName: bsctestnet
+    collateralAddressOrDenom: "0xb880e767739a82eb716780bdfdbc1ed7b23bdb38"
+    connections:
+      - token: ethereum|alfajores|0xBD14cB29072D72df1253f2C5a580Cbe3CB769C47
+    decimals: 18
+    logoURI: deployments/warp_routes/OVL/logo.svg
+    name: Overlay
+    standard: EvmHypCollateral
+    symbol: OVL
