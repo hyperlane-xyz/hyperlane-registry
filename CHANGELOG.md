@@ -1,5 +1,13 @@
 # @hyperlane-xyz/registry
 
+## 20.1.0
+
+### Minor Changes
+
+- 30443a6: feat: torus warp route
+- d585bf6: Add USDC matchain configs
+- 0f20cff: add blockscout explorers to oUSDT realted chains
+
 ## 20.0.0
 
 ### Major Changes
