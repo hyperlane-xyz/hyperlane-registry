@@ -250,8 +250,8 @@ appchain:
   technicalStack: arbitrumnitro
 arbitrum:
   blockExplorers:
-    - apiKey: QAI5SWBNHJSFAN6KMS9RC5JGFKV2IYD2Z5
-      apiUrl: https://api.arbiscan.io/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=42161
       family: etherscan
       name: Arbiscan
       url: https://arbiscan.io
@@ -695,11 +695,19 @@ b3:
   technicalStack: opstack
 base:
   blockExplorers:
-    - apiKey: R8CVTG7HDJYD5JDV2GSD5TGQH3J2KJDSSY
-      apiUrl: https://api.basescan.org/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=8453
       family: etherscan
       name: BaseScan
       url: https://basescan.org
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/8453/etherscan/api
+      family: routescan
+      name: Base Explorer
+      url: https://base.thesuperscan.io
+    - apiUrl: https://base.blockscout.com/api
+      family: blockscout
+      name: Base Mainnet explorer
+      url: https://base.blockscout.com
   blocks:
     confirmations: 3
     estimateBlockTime: 2
@@ -719,7 +727,7 @@ base:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://base.publicnode.com/
+    - http: https://base.publicnode.com
     - http: https://mainnet.base.org
     - http: https://base.blockpi.network/v1/rpc/public
     - http: https://base.drpc.org
@@ -865,6 +873,11 @@ bitlayer:
   technicalStack: other
 blast:
   blockExplorers:
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=81457
+      family: etherscan
+      name: BlastScan
+      url: https://blastscan.io/
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/81457/etherscan/api
       family: routescan
       name: Blast Explorer
@@ -1063,8 +1076,8 @@ bouncebit:
   technicalStack: other
 bsc:
   blockExplorers:
-    - apiKey: NXSXUUUAUDD5SYGQUIVS9TZTBCEG6X5THY
-      apiUrl: https://api.bscscan.com/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=56
       family: etherscan
       name: BscScan
       url: https://bscscan.com
@@ -1286,8 +1299,8 @@ celestiatestnet:
     gasPrice: "0.0"
 celo:
   blockExplorers:
-    - apiKey: IC1UCY8JWIYFWGPCEEE58HKFIFEVN73PVV
-      apiUrl: https://api.celoscan.io/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=42220
       family: etherscan
       name: CeloScan
       url: https://celoscan.io
@@ -2328,8 +2341,8 @@ endurance:
   technicalStack: other
 ethereum:
   blockExplorers:
-    - apiKey: CYUPN3Q66JIMRGQWYUDXJKQH4SX8YIYZMW
-      apiUrl: https://api.etherscan.io/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=1
       family: etherscan
       name: Etherscan
       url: https://etherscan.io
@@ -2337,6 +2350,10 @@ ethereum:
       family: blockscout
       name: Blockscout
       url: https://blockscout.com/eth/mainnet
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/1/etherscan/api
+      family: routescan
+      name: Ethereum Explorer
+      url: https://1.routescan.io
   blocks:
     confirmations: 2
     estimateBlockTime: 13
@@ -2773,11 +2790,15 @@ fractal:
   technicalStack: other
 fraxtal:
   blockExplorers:
-    - apiKey: X3G6FVJU5VEZXVNQFRX52EQ5FEVP8IPR6F
-      apiUrl: https://api.fraxscan.com/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=252
       family: etherscan
       name: Fraxscan
       url: https://fraxscan.com
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/252/etherscan/api
+      family: routescan
+      name: Fraxtal Explorer
+      url: https://252.thesuperscan.io
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -3008,8 +3029,8 @@ glue:
   technicalStack: other
 gnosis:
   blockExplorers:
-    - apiKey: 98A32SWJE876CHG95TMFRC5H5SBBX9GHAG
-      apiUrl: https://api.gnosisscan.io/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=100
       family: etherscan
       name: GnosisScan
       url: https://gnosisscan.io
@@ -3572,6 +3593,10 @@ ink:
       family: blockscout
       name: Ink Explorer
       url: https://explorer.inkonchain.com
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/57073/etherscan/api
+      family: routescan
+      name: Ink Explorer
+      url: https://57073.routescan.io
   blocks:
     confirmations: 1
     estimateBlockTime: 1
@@ -3886,11 +3911,15 @@ kyvetestnet:
     gasPrice: "2.0"
 linea:
   blockExplorers:
-    - apiKey: ZCA9836XUX1XPAACHK4BMMYTIFMHIGU8VN
-      apiUrl: https://api.lineascan.build/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=59144
       family: etherscan
       name: LineaScan
       url: https://lineascan.build
+    - apiUrl: https://api-explorer.linea.build/api
+      family: blockscout
+      name: Linea Explorer
+      url: https://explorer.linea.build
   blocks:
     confirmations: 1
     estimateBlockTime: 3
@@ -3943,6 +3972,10 @@ lisk:
       family: blockscout
       name: Lisk Explorer
       url: https://blockscout.lisk.com
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/1135/etherscan/api
+      family: routescan
+      name: Lisk Explorer
+      url: https://1135.thesuperscan.io
   blocks:
     confirmations: 3
     estimateBlockTime: 2
@@ -4149,6 +4182,10 @@ mantle:
       family: blockscout
       name: Mantle Mainnet Explorer
       url: https://explorer.mantle.xyz
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/5000/etherscan/api
+      family: routescan
+      name: Routescan
+      url: https://routescan.io
   blocks:
     confirmations: 3
     estimateBlockTime: 2
@@ -4346,6 +4383,10 @@ metis:
       family: blockscout
       name: Metis Andromeda Explorer
       url: https://andromeda-explorer.metis.io
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/1088/etherscan/api
+      family: routescan
+      name: Metis Explorer
+      url: https://explorer.metis.io
   blocks:
     confirmations: 1
     estimateBlockTime: 5
@@ -4570,6 +4611,10 @@ mode:
       family: blockscout
       name: Mode Explorer
       url: https://explorer.mode.network
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/34443/etherscan/api
+      family: routescan
+      name: Mode Explorer
+      url: https://34443.thesuperscan.io
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -5118,8 +5163,8 @@ oortmainnet:
   technicalStack: other
 opbnb:
   blockExplorers:
-    - apiKey: GK47JUUDX17PHP8XQ947IYTTPHP6FTAQMK
-      apiUrl: https://api-opbnb.bscscan.com/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=204
       family: etherscan
       name: opBNB Scan
       url: https://opbnb.bscscan.com
@@ -5195,11 +5240,19 @@ opengradienttestnet:
     - http: http://18.218.115.248:8545
 optimism:
   blockExplorers:
-    - apiKey: JMYR3W6HHVPQ1HH8T6W8HSZVG88IH3MHRU
-      apiUrl: https://api-optimistic.etherscan.io/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=10
       family: etherscan
       name: Etherscan
       url: https://optimistic.etherscan.io
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/10/etherscan/api
+      family: routescan
+      name: Optimism Explorer
+      url: https://mainnet.thesuperscan.io
+    - apiUrl: https://optimism.blockscout.com/api
+      family: blockscout
+      name: OP Mainnet explorer
+      url: https://optimism.blockscout.com
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -5486,8 +5539,8 @@ plumetestnet2:
   technicalStack: arbitrumnitro
 polygon:
   blockExplorers:
-    - apiKey: ZPAHJ5A73MC45WJED98YJX4MKJE1UGN8D1
-      apiUrl: https://api.polygonscan.com/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=137
       family: etherscan
       name: PolygonScan
       url: https://polygonscan.com
@@ -5546,8 +5599,8 @@ polygonamoy:
     - http: https://polygon-amoy.gateway.tenderly.co
 polygonzkevm:
   blockExplorers:
-    - apiKey: P8765WMUM4KAM9NPNAY49EACATYC4927HK
-      apiUrl: https://api-zkevm.polygonscan.com/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=1101
       family: etherscan
       name: PolygonScan
       url: https://zkevm.polygonscan.com
@@ -6092,8 +6145,8 @@ sapphiretestnet:
   technicalStack: other
 scroll:
   blockExplorers:
-    - apiKey: 8MU9QJVN429TEYSCMB68NC5MG4VM542CFW
-      apiUrl: https://api.scrollscan.com/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=534352
       family: etherscan
       name: Scroll Explorer
       url: https://scrollscan.com/
@@ -6525,8 +6578,8 @@ soneiumtestnet:
     - http: https://rpc.minato.soneium.org
 sonic:
   blockExplorers:
-    - apiKey: V9PP7AFQF5Q6GJSQQ5YS2UBN7GI8QCA443
-      apiUrl: https://api.sonicscan.org/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=146
       family: etherscan
       name: Sonic Explorer
       url: https://sonicscan.org
@@ -7077,6 +7130,10 @@ superseed:
       family: blockscout
       name: Superseed Explorer
       url: https://explorer.superseed.xyz
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/5330/etherscan/api
+      family: routescan
+      name: Superseed Explorer
+      url: https://5330.thesuperscan.io
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -7227,8 +7284,8 @@ tac:
   technicalStack: other
 taiko:
   blockExplorers:
-    - apiKey: 1CDVSH9KFUVPSFGD1EUFNHD18FUH484IEK
-      apiUrl: https://api.taikoscan.io/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=167000
       family: etherscan
       name: Taikoscan
       url: https://taikoscan.io
@@ -7511,11 +7568,15 @@ u2utestnet:
     - http: https://rpc-nebulas-testnet.uniultra.xyz
 unichain:
   blockExplorers:
-    - apiKey: MUPHYQXB8A6GEEKKYA95N7WENSHYTU1UQQ
-      apiUrl: https://api.uniscan.xyz/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=130
       family: etherscan
       name: Unichain Explorer
       url: https://uniscan.xyz
+    - apiUrl: https://unichain.blockscout.com/api
+      family: blockscout
+      name: Unichain Blockscout
+      url: https://unichain.blockscout.com
   blocks:
     confirmations: 1
     estimateBlockTime: 1
@@ -7670,11 +7731,15 @@ weavevmtestnet:
   technicalStack: other
 worldchain:
   blockExplorers:
-    - apiKey: BA89EI7MB9Z88UBURAYPRRRUKCQJB96KAE
-      apiUrl: https://api.worldscan.org/api
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=480
       family: etherscan
       name: Worldscan
       url: https://worldscan.org
+    - apiUrl: https://worldchain-mainnet.explorer.alchemy.com/api
+      family: blockscout
+      name: World Chain Explorer
+      url: https://worldchain-mainnet.explorer.alchemy.com
   blocks:
     confirmations: 1
     estimateBlockTime: 2
