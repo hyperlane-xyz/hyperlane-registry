@@ -4,6 +4,17 @@ avalanche:
     collateralToken: "0x5bE94B17112B8F18eA9Ac8e559377B467556a3c3"
   token: "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
   type: xERC20
+  xERC20:
+    extraBridges:
+      - limits:
+          burn: "100000000000"
+          mint: "100000000000"
+          type: wonderland
+        lockbox: "0x18e25Ac83477d7013D43174508B7AE7EC2CE2e08"
+    warpRouteLimits:
+      burn: "200000000000"
+      mint: "200000000000"
+      type: wonderland
 celo:
   owner: "0x879038d6Fc9F6D5e2BA73188bd078486d77e1156"
   ownerOverrides:
