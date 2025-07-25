@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add solanadevnet addresses for v3 deploy
+Add solanadevnet addresses, update EVM ISMs to receive from solanadevnet
