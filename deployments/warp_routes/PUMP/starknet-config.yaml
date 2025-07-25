@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: SX4MUUdCAjMHmFLjoCwioUdpkVpAmk7qaaQFopu3j7m
+    chainName: solanamainnet
+    coinGeckoId: pump-fun
+    collateralAddressOrDenom: pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn
+    connections:
+      - token: starknet|starknet|0x020d2f21817b8813bf7fa691adf9f79e20984c2bb4151e9a52a81ca5f8eb705e
+    decimals: 6
+    logoURI: /deployments/warp_routes/PUMP/logo.png
+    name: Pump
+    standard: SealevelHypCollateral
+    symbol: PUMP
+  - addressOrDenom: "0x020d2f21817b8813bf7fa691adf9f79e20984c2bb4151e9a52a81ca5f8eb705e"
+    chainName: starknet
+    connections:
+      - token: sealevel|solanamainnet|SX4MUUdCAjMHmFLjoCwioUdpkVpAmk7qaaQFopu3j7m
+    decimals: 6
+    logoURI: /deployments/warp_routes/PUMP/logo.png
+    name: Pump
+    standard: StarknetHypSynthetic
+    symbol: PUMP
