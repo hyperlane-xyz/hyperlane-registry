@@ -134,7 +134,7 @@ export class HttpClientRegistry implements IRegistry {
     if (filter?.label) {
       queryParams.set('label', filter.label);
     }
-    return this.fetchJson<WarpRouteConfigMap>(`/warp-routes/core?${queryParams.toString()}`);
+    return this.fetchJson<WarpRouteConfigMap>(`/warp-route/core?${queryParams.toString()}`);
   }
 
   addWarpRoute(_config: WarpCoreConfig): MaybePromise<void> {

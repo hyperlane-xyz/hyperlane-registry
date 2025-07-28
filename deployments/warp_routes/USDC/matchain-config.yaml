@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x1Bf82F7C3238d37d31bAc741DE95bbbf47E42001"
+    chainName: bsc
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
+    connections:
+      - token: ethereum|matchain|0x6D1a81c6CB65B1f892FD0eb8624e90B102628C94
+    decimals: 18
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x6D1a81c6CB65B1f892FD0eb8624e90B102628C94"
+    chainName: matchain
+    collateralAddressOrDenom: "0x679Dc08cC3A4acFeea2f7CAFAa37561aE0b41Ce7"
+    connections:
+      - token: ethereum|bsc|0x1Bf82F7C3238d37d31bAc741DE95bbbf47E42001
+    decimals: 18
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: Bridged USDC (Hyperlane)
+    standard: EvmHypCollateralFiat
+    symbol: USDC
