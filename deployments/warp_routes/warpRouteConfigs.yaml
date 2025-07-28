@@ -602,6 +602,7 @@ EDGEN/bsc-edgenchain-ethereum:
       symbol: EDGEN
     - addressOrDenom: "0xB8bB85FD0836691a64aFc23199566F898a1d6f4a"
       chainName: ethereum
+      coinGeckoId: edgen
       collateralAddressOrDenom: "0xAa9806c938836627Ed1a41Ae871c7E1889AE02Ca"
       connections:
         - token: ethereum|bsc|0x0C808F0464C423d5Ea4F4454fcc23B6E2Ae75562
@@ -4258,6 +4259,28 @@ TONY/base-solanamainnet:
       name: Big Tony
       standard: SealevelHypSynthetic
       symbol: TONY
+TORUS/torus:
+  tokens:
+    - addressOrDenom: "0x78ec15c5fd8efc5e924e9eebb9e549e29c785867"
+      chainName: base
+      collateralAddressOrDenom: "0xAC1Bd2486aAf3B5C0fc3Fd868558b082a531B2B4"
+      connections:
+        - token: ethereum|torus|0x9925cdbea5b91542bba6e1fc967465b1c1ed7156
+      decimals: 18
+      logoURI: /deployments/warp_routes/TORUS/logo.jpg
+      name: Torus
+      standard: EvmHypSynthetic
+      symbol: TORUS
+    - addressOrDenom: "0x9925cdbea5b91542bba6e1fc967465b1c1ed7156"
+      chainName: torus
+      coinGeckoId: torus
+      connections:
+        - token: ethereum|base|0x78ec15c5fd8efc5e924e9eebb9e549e29c785867
+      decimals: 18
+      logoURI: /deployments/warp_routes/TORUS/logo.jpg
+      name: Torus
+      standard: EvmHypNative
+      symbol: TORUS
 TOSHI/toshi:
   tokens:
     - addressOrDenom: "0x0fEA4BE161fDA8FBF24bbCd66a77f53E29F784A3"
@@ -4975,58 +4998,6 @@ USDC/artela-base:
       name: USD Coin
       standard: EvmHypCollateral
       symbol: USDC
-USDC/base-ethereum-solanamainnet-subtensor:
-  tokens:
-    - addressOrDenom: "0x26af973A5b256F9B9bc0B1A3c566de1566568a87"
-      chainName: base
-      coinGeckoId: usdc
-      collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
-      connections:
-        - token: ethereum|ethereum|0x3C43C421f08e2a48889eA3F75a747b7a7a366A0b
-        - token: ethereum|solanamainnet|GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
-        - token: ethereum|subtensor|0xB833E8137FEDf80de7E908dc6fea43a029142F20
-      decimals: 6
-      logoURI: /deployments/warp_routes/USDC/logo.svg
-      name: USD Coin
-      standard: EvmHypCollateral
-      symbol: USDC
-    - addressOrDenom: "0x3C43C421f08e2a48889eA3F75a747b7a7a366A0b"
-      chainName: ethereum
-      coinGeckoId: usdc
-      collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
-      connections:
-        - token: ethereum|base|0x26af973A5b256F9B9bc0B1A3c566de1566568a87
-        - token: ethereum|solanamainnet|GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
-        - token: ethereum|subtensor|0xB833E8137FEDf80de7E908dc6fea43a029142F20
-      decimals: 6
-      logoURI: /deployments/warp_routes/USDC/logo.svg
-      name: USD Coin
-      standard: EvmHypCollateral
-      symbol: USDC
-    - addressOrDenom: GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
-      chainName: solanamainnet
-      coinGeckoId: usdc
-      collateralAddressOrDenom: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
-      connections:
-        - token: ethereum|base|0x26af973A5b256F9B9bc0B1A3c566de1566568a87
-        - token: ethereum|ethereum|0x3C43C421f08e2a48889eA3F75a747b7a7a366A0b
-        - token: ethereum|subtensor|0xB833E8137FEDf80de7E908dc6fea43a029142F20
-      decimals: 6
-      logoURI: /deployments/warp_routes/USDC/logo.svg
-      name: USD Coin
-      standard: SealevelHypCollateral
-      symbol: USDC
-    - addressOrDenom: "0xB833E8137FEDf80de7E908dc6fea43a029142F20"
-      chainName: subtensor
-      connections:
-        - token: ethereum|base|0x26af973A5b256F9B9bc0B1A3c566de1566568a87
-        - token: ethereum|ethereum|0x3C43C421f08e2a48889eA3F75a747b7a7a366A0b
-        - token: ethereum|solanamainnet|GPCsiXvm9NaFjrxB6sThscap6akyvRgD5V6decCk25c
-      decimals: 6
-      logoURI: /deployments/warp_routes/USDC/logo.svg
-      name: USD Coin
-      standard: EvmHypSynthetic
-      symbol: USDC
 USDC/base-optimism:
   tokens:
     - addressOrDenom: "0x524410b1e64f689eeBa15E7E511110438811B3dC"
@@ -5447,6 +5418,29 @@ USDC/mainnet-cctp:
       logoURI: /deployments/warp_routes/USDC/logo.svg
       name: USDC
       standard: EvmHypCollateral
+      symbol: USDC
+USDC/matchain:
+  tokens:
+    - addressOrDenom: "0x1Bf82F7C3238d37d31bAc741DE95bbbf47E42001"
+      chainName: bsc
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
+      connections:
+        - token: ethereum|matchain|0x6D1a81c6CB65B1f892FD0eb8624e90B102628C94
+      decimals: 18
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x6D1a81c6CB65B1f892FD0eb8624e90B102628C94"
+      chainName: matchain
+      collateralAddressOrDenom: "0x679Dc08cC3A4acFeea2f7CAFAa37561aE0b41Ce7"
+      connections:
+        - token: ethereum|bsc|0x1Bf82F7C3238d37d31bAc741DE95bbbf47E42001
+      decimals: 18
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: Bridged USDC (Hyperlane)
+      standard: EvmHypCollateralFiat
       symbol: USDC
 USDC/paradex:
   tokens:
@@ -6384,6 +6378,32 @@ VANA/ethereum-vana:
       name: Vana
       standard: EvmHypNative
       symbol: VANA
+VRA/bsc-ethereum:
+  tokens:
+    - addressOrDenom: "0xde1bb600f24e9c6E49d51765fB836b070762e45D"
+      chainName: bsc
+      coinGeckoId: verasity
+      collateralAddressOrDenom: "0x1d58e204ca59328007469A614522903d69dc0A4C"
+      connections:
+        - token: ethereum|ethereum|0xde1bb600f24e9c6E49d51765fB836b070762e45D
+      decimals: 18
+      logoURI: /deployments/warp_routes/VRA/logo.png
+      name: VERA
+      scale: 10
+      standard: EvmHypCollateral
+      symbol: VRA
+    - addressOrDenom: "0xde1bb600f24e9c6E49d51765fB836b070762e45D"
+      chainName: ethereum
+      coinGeckoId: verasity
+      collateralAddressOrDenom: "0xF411903cbC70a74d22900a5DE66A2dda66507255"
+      connections:
+        - token: ethereum|bsc|0xde1bb600f24e9c6E49d51765fB836b070762e45D
+      decimals: 18
+      logoURI: /deployments/warp_routes/VRA/logo.png
+      name: VERA
+      scale: 1
+      standard: EvmHypCollateral
+      symbol: VRA
 WBTC/arbitrum-bsc-kalychain-polygon:
   tokens:
     - addressOrDenom: "0x3CDbaBE5Bf4E6cfE10A2A326E0ad31b2d16398D4"

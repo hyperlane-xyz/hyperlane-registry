@@ -1,5 +1,36 @@
 # @hyperlane-xyz/registry
 
+## 20.0.0
+
+### Major Changes
+
+- 9c577a4: Removed subtensor usdc outdated artifacts that were replaced by stable warp ids ones
+
+### Minor Changes
+
+- 71209b5: Add VRA/bsc-ethereum artifacts
+- 1207721: Add get warp deploy to fetch from the Server. Also, update get warp core to fetch from the updated route.
+
+### Patch Changes
+
+- f1c0422: Add edgen coingecko-id
+- 8116fd7: Update metal safe tx service url.
+- a4e2dea: Fix typo for HttpClientRegistry route /warp-route/core
+
+## 19.4.0
+
+### Minor Changes
+
+- 94b5167: Added the PUMP/eclipsemainnet warp route
+
+### Patch Changes
+
+- d9f0d03: Remove botanix tx overrides
+- 23336e2: Update oXAUT ownerOverrides.collateralToken to the top-level owners
+- f8af54f: Update default ISMs on arbitrum, base, ethereum, mode.
+- 06c2b8a: Update celo metadata
+- d925022: Update oXAUT owners to AW safes
+
 ## 19.3.0
 
 ### Minor Changes

@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Added the PUMP/eclipsemainnet warp route
+Add USDC matchain configs
