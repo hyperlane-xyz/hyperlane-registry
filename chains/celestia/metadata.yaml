@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: celestia
+blockExplorers:
+  - apiUrl: https://celenium.io
+    family: other
+    name: Celenium
+    url: https://celenium.io
+  - apiUrl: https://www.mintscan.io/celestia
+    family: other
+    name: Mintscan
+    url: https://www.mintscan.io/celestia
+blocks:
+  confirmations: 1
+  estimateBlockTime: 6
+  reorgPeriod: 1
+canonicalAsset: utia
+chainId: celestia
+contractAddressBytes: 32
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Celestia
+# Generated from: console.log(parseInt('0x'+Buffer.from('CELE').toString('hex')))
+domainId: 1128614981
+gasCurrencyCoinGeckoId: celestia
+gasPrice:
+  amount: "0.002"
+  denom: utia
+grpcUrls:
+  - http: https://celestia-grpc.publicnode.com:443
+index:
+  chunk: 10
+  from: 6680339
+name: celestia
+nativeToken:
+  decimals: 6
+  denom: utia
+  name: Celestia
+  symbol: TIA
+protocol: cosmosnative
+restUrls:
+  - http: https://celestia-rest.publicnode.com
+rpcUrls:
+  - http: https://celestia-rpc.publicnode.com:443
+slip44: 118
+technicalStack: other
+transactionOverrides:
+  gasPrice: "0.002"
