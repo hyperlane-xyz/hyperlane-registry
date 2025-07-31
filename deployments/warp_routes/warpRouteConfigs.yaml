@@ -3277,6 +3277,28 @@ PUMP/eclipsemainnet:
       name: Pump
       standard: SealevelHypCollateral
       symbol: PUMP
+PUMP/starknet:
+  tokens:
+    - addressOrDenom: Dk41nVHLGd1JFiNL2zTbKwLBAeTJ3NtWSWgR6d1U3EqE
+      chainName: solanamainnet
+      coinGeckoId: pump-fun
+      collateralAddressOrDenom: pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn
+      connections:
+        - token: starknet|starknet|0x062b7d46189cc075a100c468d529f06aa7fe6e4b55e58991744cee1b8548c5bc
+      decimals: 6
+      logoURI: /deployments/warp_routes/PUMP/logo.png
+      name: Pump
+      standard: SealevelHypCollateral
+      symbol: PUMP
+    - addressOrDenom: "0x062b7d46189cc075a100c468d529f06aa7fe6e4b55e58991744cee1b8548c5bc"
+      chainName: starknet
+      connections:
+        - token: sealevel|solanamainnet|Dk41nVHLGd1JFiNL2zTbKwLBAeTJ3NtWSWgR6d1U3EqE
+      decimals: 6
+      logoURI: /deployments/warp_routes/PUMP/logo.png
+      name: Pump
+      standard: StarknetHypSynthetic
+      symbol: PUMP
 PZETH/berachain-ethereum-swell-unichain-zircuit:
   tokens:
     - addressOrDenom: "0x25a851bF599cb8AEf00Ac1D1a9fb575EBf9d94b0"
@@ -4259,6 +4281,28 @@ TONY/base-solanamainnet:
       name: Big Tony
       standard: SealevelHypSynthetic
       symbol: TONY
+TORUS/torus:
+  tokens:
+    - addressOrDenom: "0x78ec15c5fd8efc5e924e9eebb9e549e29c785867"
+      chainName: base
+      collateralAddressOrDenom: "0xAC1Bd2486aAf3B5C0fc3Fd868558b082a531B2B4"
+      connections:
+        - token: ethereum|torus|0x9925cdbea5b91542bba6e1fc967465b1c1ed7156
+      decimals: 18
+      logoURI: /deployments/warp_routes/TORUS/logo.jpg
+      name: Torus
+      standard: EvmHypSynthetic
+      symbol: TORUS
+    - addressOrDenom: "0x9925cdbea5b91542bba6e1fc967465b1c1ed7156"
+      chainName: torus
+      coinGeckoId: torus
+      connections:
+        - token: ethereum|base|0x78ec15c5fd8efc5e924e9eebb9e549e29c785867
+      decimals: 18
+      logoURI: /deployments/warp_routes/TORUS/logo.jpg
+      name: Torus
+      standard: EvmHypNative
+      symbol: TORUS
 TOSHI/toshi:
   tokens:
     - addressOrDenom: "0x0fEA4BE161fDA8FBF24bbCd66a77f53E29F784A3"
@@ -5396,6 +5440,29 @@ USDC/mainnet-cctp:
       logoURI: /deployments/warp_routes/USDC/logo.svg
       name: USDC
       standard: EvmHypCollateral
+      symbol: USDC
+USDC/matchain:
+  tokens:
+    - addressOrDenom: "0x1Bf82F7C3238d37d31bAc741DE95bbbf47E42001"
+      chainName: bsc
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
+      connections:
+        - token: ethereum|matchain|0x6D1a81c6CB65B1f892FD0eb8624e90B102628C94
+      decimals: 18
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x6D1a81c6CB65B1f892FD0eb8624e90B102628C94"
+      chainName: matchain
+      collateralAddressOrDenom: "0x679Dc08cC3A4acFeea2f7CAFAa37561aE0b41Ce7"
+      connections:
+        - token: ethereum|bsc|0x1Bf82F7C3238d37d31bAc741DE95bbbf47E42001
+      decimals: 18
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: Bridged USDC (Hyperlane)
+      standard: EvmHypCollateralFiat
       symbol: USDC
 USDC/paradex:
   tokens:
