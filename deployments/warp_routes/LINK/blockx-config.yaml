@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xfCEB494AdA7a1740902041D13f89Fd829a980c70"
+    chainName: blockx
+    connections:
+      - token: ethereum|polygon|0xa66c10604dc863475B2b72288774AaE65772332a
+    decimals: 18
+    name: ChainLink Token
+    standard: EvmHypSynthetic
+    symbol: LINK
+  - addressOrDenom: "0xa66c10604dc863475B2b72288774AaE65772332a"
+    chainName: polygon
+    collateralAddressOrDenom: "0x53E0bca35eC356BD5ddDFebbD1Fc0fD03FaBad39"
+    connections:
+      - token: ethereum|blockx|0xfCEB494AdA7a1740902041D13f89Fd829a980c70
+    decimals: 18
+    name: ChainLink Token
+    standard: EvmHypCollateral
+    symbol: LINK

@@ -1,0 +1,29 @@
+blockx:
+  interchainSecurityModule:
+    modules:
+      - relayer: "0xe0d5FB223e803ce8Ef52D301e1183E9a569B7D51"
+        type: trustedRelayerIsm
+      - domains: {}
+        owner: "0xe0d5FB223e803ce8Ef52D301e1183E9a569B7D51"
+        type: defaultFallbackRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
+  isNft: false
+  owner: "0xe0d5FB223e803ce8Ef52D301e1183E9a569B7D51"
+  proxyAdmin:
+    address: "0x2C59DB2FcEf2F7E99DBaF7d3dc6793d3944e16DE"
+    owner: "0xe0d5FB223e803ce8Ef52D301e1183E9a569B7D51"
+  type: synthetic
+polygon:
+  interchainSecurityModule:
+    modules:
+      - relayer: "0xe0d5FB223e803ce8Ef52D301e1183E9a569B7D51"
+        type: trustedRelayerIsm
+      - domains: {}
+        owner: "0xe0d5FB223e803ce8Ef52D301e1183E9a569B7D51"
+        type: defaultFallbackRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
+  owner: "0xe0d5FB223e803ce8Ef52D301e1183E9a569B7D51"
+  token: "0x53E0bca35eC356BD5ddDFebbD1Fc0fD03FaBad39"
+  type: collateral
