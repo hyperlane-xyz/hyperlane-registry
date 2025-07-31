@@ -68,18 +68,22 @@ base:
       - limits:
           bufferCap: "0"
           rateLimitPerSecond: "0"
+          type: velo
         lockbox: "0x9d922c23d78179c2e75fe394fc8e49363f2dda85"
       - limits:
           bufferCap: "0"
           rateLimitPerSecond: "0"
+          type: velo
         lockbox: "0xe92e51d99ae33114c60d9621fb2e1ec0acea7e30"
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0xa760D20a91C076A57b270D3F7a3150421ab40591"
     warpRouteLimits:
       bufferCap: "20000000000000"
       rateLimitPerSecond: "5000000000"
+      type: velo
 bitlayer:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -102,6 +106,7 @@ bitlayer:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 bob:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -125,10 +130,12 @@ bob:
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0xAFEd606Bd2CAb6983fC6F10167c98aaC2173D77f"
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 botanix:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -152,10 +159,12 @@ botanix:
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0x0EEFa8b75587bcD4A909a0F3c36180D4441481a0"
     warpRouteLimits:
       bufferCap: "8000000000000"
       rateLimitPerSecond: "2000000000"
+      type: velo
 celo:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -179,10 +188,12 @@ celo:
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0x47Db76c9c97F4bcFd54D8872FDb848Cab696092d"
     warpRouteLimits:
       bufferCap: "20000000000000"
       rateLimitPerSecond: "5000000000"
+      type: velo
 ethereum:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -206,14 +217,17 @@ ethereum:
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0x6D265C7dD8d76F25155F1a7687C693FDC1220D12"
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0xa3532633401AbFfbd15e6be825a45FB7F141469B"
     warpRouteLimits:
       bufferCap: "20000000000000"
       rateLimitPerSecond: "5000000000"
+      type: velo
 fraxtal:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -236,6 +250,7 @@ fraxtal:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 hashkey:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -259,10 +274,12 @@ hashkey:
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0x55aeb80Aa6Ab34aA83E1F387903F8Bb2Aa9e2F2d"
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 ink:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -285,6 +302,7 @@ ink:
     warpRouteLimits:
       bufferCap: "8000000000000"
       rateLimitPerSecond: "2000000000"
+      type: velo
 linea:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -307,6 +325,7 @@ linea:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 lisk:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -329,6 +348,7 @@ lisk:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 mantle:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -351,6 +371,7 @@ mantle:
     warpRouteLimits:
       bufferCap: "8000000000000"
       rateLimitPerSecond: "2000000000"
+      type: velo
 metal:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -373,6 +394,7 @@ metal:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 metis:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -395,6 +417,7 @@ metis:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 mode:
   hook:
     domains:
@@ -464,6 +487,7 @@ mode:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 optimism:
   hook:
     domains:
@@ -534,18 +558,22 @@ optimism:
       - limits:
           bufferCap: "0"
           rateLimitPerSecond: "0"
+          type: velo
         lockbox: "0x07e437d73e9e43ceece6ea14085b26159e3f7f31"
       - limits:
           bufferCap: "0"
           rateLimitPerSecond: "0"
+          type: velo
         lockbox: "0x18c4cdc2d774c047eac8375bb09853c4d6d6df36"
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0x6a21a19aD44542d83F7f7FF45Aa31A62a36200de"
     warpRouteLimits:
       bufferCap: "20000000000000"
       rateLimitPerSecond: "5000000000"
+      type: velo
 ronin:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -568,6 +596,7 @@ ronin:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 soneium:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -590,6 +619,7 @@ soneium:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 sonic:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -613,10 +643,12 @@ sonic:
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0x6a21a19aD44542d83F7f7FF45Aa31A62a36200de"
     warpRouteLimits:
       bufferCap: "8000000000000"
       rateLimitPerSecond: "2000000000"
+      type: velo
 superseed:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -639,6 +671,7 @@ superseed:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 swell:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -661,6 +694,7 @@ swell:
     warpRouteLimits:
       bufferCap: "8000000000000"
       rateLimitPerSecond: "2000000000"
+      type: velo
 unichain:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -683,6 +717,7 @@ unichain:
     warpRouteLimits:
       bufferCap: "20000000000000"
       rateLimitPerSecond: "5000000000"
+      type: velo
 worldchain:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -705,3 +740,4 @@ worldchain:
     warpRouteLimits:
       bufferCap: "0"
       rateLimitPerSecond: "0"
+      type: velo
