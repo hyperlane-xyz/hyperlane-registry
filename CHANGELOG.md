@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 20.2.0
+
+### Minor Changes
+
+- 10e8bce: Migrate oUSDT ownership to timelocks.
+- e3eaf21: Add Celestia Mainnet configuration
+
 ## 20.1.0
 
 ### Minor Changes
