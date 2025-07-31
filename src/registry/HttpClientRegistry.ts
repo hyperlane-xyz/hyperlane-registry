@@ -123,7 +123,7 @@ export class HttpClientRegistry implements IRegistry {
   }
 
   getWarpRoute(routeId: string): MaybePromise<WarpCoreConfig | null> {
-    return this.fetchJson<WarpCoreConfig | null>(`/warp-route/${routeId}`);
+    return this.fetchJson<WarpCoreConfig | null>(`/warp-route/core/${routeId}`);
   }
 
   getWarpRoutes(filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap> {
@@ -134,15 +134,15 @@ export class HttpClientRegistry implements IRegistry {
     if (filter?.label) {
       queryParams.set('label', filter.label);
     }
-    return this.fetchJson<WarpRouteConfigMap>(`/warp-routes?${queryParams.toString()}`);
+    return this.fetchJson<WarpRouteConfigMap>(`/warp-route/core?${queryParams.toString()}`);
   }
 
   addWarpRoute(_config: WarpCoreConfig): MaybePromise<void> {
     throw new Error('Method not implemented.');
   }
 
-  getWarpDeployConfig(_routeId: string): MaybePromise<WarpRouteDeployConfig | null> {
-    throw new Error('Method not implemented.');
+  getWarpDeployConfig(routeId: string): MaybePromise<WarpRouteDeployConfig | null> {
+    return this.fetchJson<WarpRouteDeployConfig | null>(`/warp-route/deploy/${routeId}`);
   }
 
   getWarpDeployConfigs(): MaybePromise<WarpDeployConfigMap> {

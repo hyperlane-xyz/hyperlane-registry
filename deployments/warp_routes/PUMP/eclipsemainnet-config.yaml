@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: Ba5PvcUQPjDTqNe6dtqf4tYMungrBF6BhD7fCM27jQxh
+    chainName: eclipsemainnet
+    collateralAddressOrDenom: 2qLEN4Gu7MkBevJMeTbQKgnwdgvxNvwQ6ufH7L8fjzHs
+    connections:
+      - token: sealevel|solanamainnet|9u6JS1qxnNogAwqtjkpdeLGhQmt5wxyHAjP1511S3ExL
+    decimals: 6
+    logoURI: /deployments/warp_routes/PUMP/logo.png
+    name: Pump
+    standard: SealevelHypSynthetic
+    symbol: PUMP
+  - addressOrDenom: 9u6JS1qxnNogAwqtjkpdeLGhQmt5wxyHAjP1511S3ExL
+    chainName: solanamainnet
+    coinGeckoId: pump-fun
+    collateralAddressOrDenom: pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn
+    connections:
+      - token: sealevel|eclipsemainnet|Ba5PvcUQPjDTqNe6dtqf4tYMungrBF6BhD7fCM27jQxh
+    decimals: 6
+    logoURI: /deployments/warp_routes/PUMP/logo.png
+    name: Pump
+    standard: SealevelHypCollateral
+    symbol: PUMP

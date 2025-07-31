@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-update paradex defaultISM
+Add Celestia Mainnet configuration

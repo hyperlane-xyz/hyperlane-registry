@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xde1bb600f24e9c6E49d51765fB836b070762e45D"
+    chainName: bsc
+    coinGeckoId: verasity
+    collateralAddressOrDenom: "0x1d58e204ca59328007469A614522903d69dc0A4C"
+    connections:
+      - token: ethereum|ethereum|0xde1bb600f24e9c6E49d51765fB836b070762e45D
+    decimals: 18
+    logoURI: /deployments/warp_routes/VRA/logo.png
+    name: VERA
+    scale: 10
+    standard: EvmHypCollateral
+    symbol: VRA
+  - addressOrDenom: "0xde1bb600f24e9c6E49d51765fB836b070762e45D"
+    chainName: ethereum
+    coinGeckoId: verasity
+    collateralAddressOrDenom: "0xF411903cbC70a74d22900a5DE66A2dda66507255"
+    connections:
+      - token: ethereum|bsc|0xde1bb600f24e9c6E49d51765fB836b070762e45D
+    decimals: 18
+    logoURI: /deployments/warp_routes/VRA/logo.png
+    name: VERA
+    scale: 1
+    standard: EvmHypCollateral
+    symbol: VRA

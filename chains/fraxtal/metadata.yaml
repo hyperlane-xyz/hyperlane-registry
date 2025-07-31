@@ -1,10 +1,14 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiKey: X3G6FVJU5VEZXVNQFRX52EQ5FEVP8IPR6F
-    apiUrl: https://api.fraxscan.com/api
+  - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+    apiUrl: https://api.etherscan.io/v2/api?chainid=252
     family: etherscan
     name: Fraxscan
     url: https://fraxscan.com
+  - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/252/etherscan/api
+    family: routescan
+    name: Fraxtal Explorer
+    url: https://252.thesuperscan.io
 blocks:
   confirmations: 1
   estimateBlockTime: 2
