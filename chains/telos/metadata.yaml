@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
 blockExplorers:
   - apiUrl: https://www.teloscan.io/api
     family: other
@@ -9,9 +12,6 @@ blocks:
   estimateBlockTime: 1
   reorgPeriod: finalized
 chainId: 40
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: Telos EVM
 domainId: 40
 gasCurrencyCoinGeckoId: telos
