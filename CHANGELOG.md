@@ -1,5 +1,81 @@
 # @hyperlane-xyz/registry
 
+## 21.0.0
+
+### Major Changes
+
+- 7c9f61c: Deprecate chains bouncebit, conflux, conwai, deepbrainchain, duckchain, evmos, flame, nero, rivalz, rootstockmainnet, sanko, telos, unitzero, xpla, zklink
+
+### Minor Changes
+
+- 10e8bce: Migrate oUSDT ownership to timelocks.
+- e3eaf21: Add Celestia Mainnet configuration
+
+### Patch Changes
+
+- 85ac73b: Update TGT owners
+- e94b324: Transfer USDC-paradex ownership.
+- 3d353f7: Add foreignDeployment to Starknet routes.
+
+## 20.1.0
+
+### Minor Changes
+
+- 30443a6: feat: torus warp route
+- d585bf6: Add USDC matchain configs
+- 0f20cff: add blockscout explorers to oUSDT realted chains
+
+### Patch Changes
+
+- d66da9b: Deploy PUMP/starknet
+- 1ad0cf3: Update proxyAdmin config on ancient8 usdc route to sync it with current config
+
+## 20.0.0
+
+### Major Changes
+
+- 9c577a4: Removed subtensor usdc outdated artifacts that were replaced by stable warp ids ones
+
+### Minor Changes
+
+- 71209b5: Add VRA/bsc-ethereum artifacts
+- 1207721: Add get warp deploy to fetch from the Server. Also, update get warp core to fetch from the updated route.
+
+### Patch Changes
+
+- f1c0422: Add edgen coingecko-id
+- 8116fd7: Update metal safe tx service url.
+- a4e2dea: Fix typo for HttpClientRegistry route /warp-route/core
+
+## 19.4.0
+
+### Minor Changes
+
+- 94b5167: Added the PUMP/eclipsemainnet warp route
+
+### Patch Changes
+
+- d9f0d03: Remove botanix tx overrides
+- 23336e2: Update oXAUT ownerOverrides.collateralToken to the top-level owners
+- f8af54f: Update default ISMs on arbitrum, base, ethereum, mode.
+- 06c2b8a: Update celo metadata
+- d925022: Update oXAUT owners to AW safes
+
+## 19.3.0
+
+### Minor Changes
+
+- dfa6782: update paradex defaultISM
+- dd21180: Remove treasure and trumpchain warp routes.
+- 4c95328: Update katana public RPC. Update default ISMs.
+- 8948b4a: Added PUMP metadata and logo
+- 2f45f38: Update superseed with CCTP rebalancing and add connections
+
+### Patch Changes
+
+- 9359431: Extend oXAUT to Avalanche
+- 532664a: Remove SDK code imports
+
 ## 19.2.0
 
 ### Minor Changes
