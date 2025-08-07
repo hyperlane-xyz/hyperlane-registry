@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
 blockExplorers:
   - apiUrl: https://scan.duckchain.io/api
     family: blockscout
@@ -9,9 +12,6 @@ blocks:
   estimateBlockTime: 1
   reorgPeriod: 5
 chainId: 5545
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: DuckChain
 domainId: 5545
 gasCurrencyCoinGeckoId: the-open-network

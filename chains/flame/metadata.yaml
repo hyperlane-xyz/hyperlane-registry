@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
 blockExplorers:
   - apiUrl: https://explorer.flame.astria.org/api
     family: blockscout
@@ -9,9 +12,6 @@ blocks:
   estimateBlockTime: 2
   reorgPeriod: 5
 chainId: 253368190
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: Flame
 domainId: 253368190
 gasCurrencyCoinGeckoId: celestia

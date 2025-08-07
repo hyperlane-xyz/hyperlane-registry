@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
 blockExplorers:
   - apiUrl: https://www.dbcscan.io/api
     family: blockscout
@@ -9,9 +12,6 @@ blocks:
   estimateBlockTime: 6
   reorgPeriod: finalized
 chainId: 19880818
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: Deep Brain Chain
 domainId: 19880818
 gasCurrencyCoinGeckoId: deepbrain-chain

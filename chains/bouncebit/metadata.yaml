@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
 blockExplorers:
   - apiUrl: https://bbscan.io/api
     family: other
@@ -9,9 +12,6 @@ blocks:
   estimateBlockTime: 4
   reorgPeriod: 5
 chainId: 6001
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: BounceBit
 domainId: 6001
 gasCurrencyCoinGeckoId: bouncebit

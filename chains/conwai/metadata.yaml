@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
 blockExplorers:
   - apiUrl: https://conwai.calderaexplorer.xyz/api
     family: blockscout
@@ -9,9 +12,6 @@ blocks:
   estimateBlockTime: 2
   reorgPeriod: 0
 chainId: 668668
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: Conwai
 domainId: 668668
 gasCurrencyCoinGeckoId: conwai
