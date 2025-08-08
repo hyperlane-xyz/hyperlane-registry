@@ -1,5 +1,16 @@
 # @hyperlane-xyz/registry
 
+## 21.1.0
+
+### Minor Changes
+
+- 45eca7d: Add MAGIC arbitrum/abstract/ronin route. Add SMOL arbitrum + abstract routes.
+
+### Patch Changes
+
+- cea2b10: Add solana `collateralAddressOrDenom` to SMOL route
+- 9a36c26: Replace USD₮ for USDT in ethereum ouSDT/production route
+
 ## 21.0.0
 
 ### Major Changes
