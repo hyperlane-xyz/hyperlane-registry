@@ -1,30 +1,30 @@
 # yaml-language-server: $schema=../schema.json
+bech32Prefix: terra
 blockExplorers:
   - apiUrl: https://api.terra-classic.hexxagon.io
     family: other
     name: Terra Finder
     url: https://finder.terraclassic.community
+canonicalAsset: uluna
 chainId: columbus-5
 displayName: Terra Classic
 domainId: 1425
-isTestnet: false
-name: terraclassic
-canonicalAsset: uluna
-nativeToken:
-  decimals: 6
-  name: Luna Classic
-  symbol: LUNC
-  denom: uluna
 gasPrice:
   amount: "28.325"
   denom: uluna
-protocol: cosmos
-rpcUrls:
-  - http: https://terra-classic-rpc.publicnode.com:443
 grpcUrls:
-  - http: 'https://grpc.terra-classic.hexxagon.io'
+  - http: "https://grpc.terra-classic.hexxagon.io"
+isTestnet: false
+name: terraclassic
+nativeToken:
+  decimals: 6
+  denom: uluna
+  name: Luna Classic
+  symbol: LUNC
+protocol: cosmos
 restUrls:
   - http: https://lcd.terra-classic.hexxagon.io
-technicalStack: other
-bech32Prefix: terra
+rpcUrls:
+  - http: https://terra-classic-rpc.publicnode.com:443
 slip44: 330
+technicalStack: other
