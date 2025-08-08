@@ -1049,6 +1049,10 @@ botanix:
     - http: https://rpc.botanixlabs.com
   technicalStack: other
 bouncebit:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://bbscan.io/api
       family: other
@@ -1059,9 +1063,6 @@ bouncebit:
     estimateBlockTime: 4
     reorgPeriod: 5
   chainId: 6001
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: BounceBit
   domainId: 6001
   gasCurrencyCoinGeckoId: bouncebit
@@ -1259,6 +1260,53 @@ carrchaintestnet:
   rpcUrls:
     - http: https://rpc-testnet.carrchain.io
   technicalStack: arbitrumnitro
+celestia:
+  bech32Prefix: celestia
+  blockExplorers:
+    - apiUrl: https://celenium.io
+      family: other
+      name: Celenium
+      url: https://celenium.io
+    - apiUrl: https://www.mintscan.io/celestia
+      family: other
+      name: Mintscan
+      url: https://www.mintscan.io/celestia
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 1
+  canonicalAsset: utia
+  chainId: celestia
+  contractAddressBytes: 32
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Celestia
+  domainId: 1128614981
+  gasCurrencyCoinGeckoId: celestia
+  gasPrice:
+    amount: "0.002"
+    denom: utia
+  grpcUrls:
+    - http: https://celestia-grpc.publicnode.com:443
+  index:
+    chunk: 10
+    from: 6680339
+  name: celestia
+  nativeToken:
+    decimals: 6
+    denom: utia
+    name: Celestia
+    symbol: TIA
+  protocol: cosmosnative
+  restUrls:
+    - http: https://celestia-rest.publicnode.com
+  rpcUrls:
+    - http: https://celestia-rpc.publicnode.com:443
+  slip44: 118
+  technicalStack: other
+  transactionOverrides:
+    gasPrice: "0.002"
 celestiatestnet:
   bech32Prefix: celestia
   blocks:
@@ -1466,6 +1514,10 @@ clique:
   rpcUrls:
     - http: https://rpc.myclique.io
 conflux:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://evmapi.confluxscan.net/api
       family: other
@@ -1476,9 +1528,6 @@ conflux:
     estimateBlockTime: 2
     reorgPeriod: 10
   chainId: 1030
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: Conflux eSpace
   domainId: 1030
   gasCurrencyCoinGeckoId: conflux-token
@@ -1523,6 +1572,10 @@ connextsepolia:
     - http: https://rpc.connext-sepolia.gelato.digital
   technicalStack: arbitrumnitro
 conwai:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://conwai.calderaexplorer.xyz/api
       family: blockscout
@@ -1533,9 +1586,6 @@ conwai:
     estimateBlockTime: 2
     reorgPeriod: 0
   chainId: 668668
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: Conwai
   domainId: 668668
   gasCurrencyCoinGeckoId: conwai
@@ -1768,6 +1818,10 @@ cyber:
     - http: https://cyber.alt.technology
   technicalStack: opstack
 deepbrainchain:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://www.dbcscan.io/api
       family: blockscout
@@ -1778,9 +1832,6 @@ deepbrainchain:
     estimateBlockTime: 6
     reorgPeriod: finalized
   chainId: 19880818
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: Deep Brain Chain
   domainId: 19880818
   gasCurrencyCoinGeckoId: deepbrain-chain
@@ -2129,6 +2180,10 @@ dogechain:
     - http: https://rpc.dogechain.dog
   technicalStack: polygoncdk
 duckchain:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://scan.duckchain.io/api
       family: blockscout
@@ -2139,9 +2194,6 @@ duckchain:
     estimateBlockTime: 1
     reorgPeriod: 5
   chainId: 5545
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: DuckChain
   domainId: 5545
   gasCurrencyCoinGeckoId: the-open-network
@@ -2434,6 +2486,10 @@ everclear:
     - http: https://rpc.everclear.raas.gelato.cloud
   technicalStack: arbitrumnitro
 evmos:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://www.mintscan.io/evmos/api
       family: other
@@ -2444,9 +2500,6 @@ evmos:
     estimateBlockTime: 2
     reorgPeriod: 5
   chainId: 9001
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: Evmos EVM
   domainId: 9001
   gasCurrencyCoinGeckoId: evmos
@@ -2541,6 +2594,10 @@ filecoin:
     - http: https://api.node.glif.io/rpc/v1
     - http: https://rpc.ankr.com/filecoin
 flame:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.flame.astria.org/api
       family: blockscout
@@ -2551,9 +2608,6 @@ flame:
     estimateBlockTime: 2
     reorgPeriod: 5
   chainId: 253368190
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: Flame
   domainId: 253368190
   gasCurrencyCoinGeckoId: celestia
@@ -4868,6 +4922,10 @@ neoxt4:
     maxFeePerGas: 40000000000
     maxPriorityFeePerGas: 20000000000
 nero:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://api.neroscan.io/api
       family: etherscan
@@ -4878,9 +4936,6 @@ nero:
     estimateBlockTime: 3
     reorgPeriod: 5
   chainId: 1689
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: Nero
   domainId: 1689
   gasCurrencyCoinGeckoId: nerochain
@@ -5907,6 +5962,10 @@ redstone:
     - http: https://rpc.redstonechain.com
   technicalStack: opstack
 rivalz:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://rivalz.calderaexplorer.xyz/api
       family: blockscout
@@ -5917,9 +5976,6 @@ rivalz:
     estimateBlockTime: 2
     reorgPeriod: 0
   chainId: 753
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: Rivalz
   domainId: 753
   gasCurrencyCoinGeckoId: ethereum
@@ -6017,6 +6073,10 @@ ronin:
     - http: https://ronin.drpc.org
   technicalStack: other
 rootstockmainnet:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://rootstock.blockscout.com/api
       family: blockscout
@@ -6027,9 +6087,6 @@ rootstockmainnet:
     estimateBlockTime: 30
     reorgPeriod: 4
   chainId: 30
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: Rootstock
   domainId: 1000000030
   gasCurrencyCoinGeckoId: rootstock
@@ -6090,6 +6147,10 @@ saakuru:
   rpcUrls:
     - http: https://rpc.saakuru.network
 sanko:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.sanko.xyz/api/eth-rpc
       family: blockscout
@@ -6100,9 +6161,6 @@ sanko:
     estimateBlockTime: 15
     reorgPeriod: 1
   chainId: 1996
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: Sanko
   domainId: 1996
   gasCurrencyCoinGeckoId: dream-machine-token
@@ -7412,6 +7470,10 @@ taraxa:
     - http: https://rpc.mainnet.taraxa.io
   technicalStack: other
 telos:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://www.teloscan.io/api
       family: other
@@ -7422,9 +7484,6 @@ telos:
     estimateBlockTime: 1
     reorgPeriod: finalized
   chainId: 40
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: Telos EVM
   domainId: 40
   gasCurrencyCoinGeckoId: telos
@@ -7624,6 +7683,10 @@ unichaintestnet:
   rpcUrls:
     - http: https://sepolia.unichain.org
 unitzero:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.unit0.dev/api
       family: blockscout
@@ -7634,9 +7697,6 @@ unitzero:
     estimateBlockTime: 7
     reorgPeriod: 5
   chainId: 88811
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: Unit Zero
   domainId: 88811
   gasCurrencyCoinGeckoId: unit0
@@ -7821,6 +7881,10 @@ xlayer:
     - http: https://rpc.xlayer.tech
   technicalStack: polygoncdk
 xpla:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.xpla.io/mainnet/api
       family: other
@@ -7831,9 +7895,6 @@ xpla:
     estimateBlockTime: 6
     reorgPeriod: 5
   chainId: 37
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: XPLA
   domainId: 37
   gasCurrencyCoinGeckoId: xpla
@@ -7957,6 +8018,10 @@ zircuit:
     - http: https://zircuit-mainnet.drpc.org
   technicalStack: opstack
 zklink:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.zklink.io/contract_verification
       family: etherscan
@@ -7967,9 +8032,6 @@ zklink:
     estimateBlockTime: 1
     reorgPeriod: 0
   chainId: 810180
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: zkLink Nova
   displayNameShort: zkLink
   domainId: 810180

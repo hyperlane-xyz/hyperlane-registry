@@ -1,5 +1,35 @@
 # @hyperlane-xyz/registry
 
+## 21.0.0
+
+### Major Changes
+
+- 7c9f61c: Deprecate chains bouncebit, conflux, conwai, deepbrainchain, duckchain, evmos, flame, nero, rivalz, rootstockmainnet, sanko, telos, unitzero, xpla, zklink
+
+### Minor Changes
+
+- 10e8bce: Migrate oUSDT ownership to timelocks.
+- e3eaf21: Add Celestia Mainnet configuration
+
+### Patch Changes
+
+- 85ac73b: Update TGT owners
+- e94b324: Transfer USDC-paradex ownership.
+- 3d353f7: Add foreignDeployment to Starknet routes.
+
+## 20.1.0
+
+### Minor Changes
+
+- 30443a6: feat: torus warp route
+- d585bf6: Add USDC matchain configs
+- 0f20cff: add blockscout explorers to oUSDT realted chains
+
+### Patch Changes
+
+- d66da9b: Deploy PUMP/starknet
+- 1ad0cf3: Update proxyAdmin config on ancient8 usdc route to sync it with current config
+
 ## 20.0.0
 
 ### Major Changes
