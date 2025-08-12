@@ -1,0 +1,57 @@
+arbitrum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    base:
+      - bridge: "0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2"
+    ethereum:
+      - bridge: "0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2"
+  contractVersion: 8.1.1
+  owner: "0xFF57A3bB6465501c993acF8f3b29125a862661C0"
+  token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+  type: collateral
+base:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975"
+    ethereum:
+      - bridge: "0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975"
+  contractVersion: 8.1.1
+  owner: "0xFF57A3bB6465501c993acF8f3b29125a862661C0"
+  token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+  type: collateral
+ethereum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0xedCBAa585FD0F80f20073F9958246476466205b8"
+    base:
+      - bridge: "0xedCBAa585FD0F80f20073F9958246476466205b8"
+  contractVersion: 8.1.1
+  owner: "0xFF57A3bB6465501c993acF8f3b29125a862661C0"
+  token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+  type: collateral
+mode:
+  owner: "0xFF57A3bB6465501c993acF8f3b29125a862661C0"
+  type: synthetic
+paradex:
+  foreignDeployment: "0x0274d8800b7f4f60a13c8cf17fda9e949b099562195ab185ce667f2e483457c5"
+  gas: 5000000
+  owner: "0x00395a1eebf43d06be83684da623c4c2ab8e1ea4a89dfa71ee04677b6e19a428"
+  token: "0x7348407ebad690fec0cc8597e87dc16ef7b269a655ff72587dafff83d462be2"
+  type: collateral
+solanamainnet:
+  foreignDeployment: CYiUT9WzmHebQQJ5bBQSsWY7hW2GSwRgQ8gYZLHN7V6D
+  gas: 300000
+  owner: HBPwc1dSuaJCEwWkJvfeWUqJguFqPTVaggfDGssc3LVt
+  token: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+  type: collateral
+starknet:
+  foreignDeployment: "0x065aa53156379692b54141146c342f90e9c7a1243896a0be0fea6c8960b9261c"
+  gas: 5000000
+  owner: "0x00af66284c430cc46fd5048312ef134e35141d4499f9450f2e9eff170c7dde08"
+  token: "0x053C91253BC9682c04929cA02ED00b3E423f6710D2ee7e0D5EBB06F3eCF368A8"
+  type: collateral

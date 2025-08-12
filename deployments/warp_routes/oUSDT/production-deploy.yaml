@@ -25,7 +25,7 @@ base:
           type: aggregationHook
     fallback:
       type: defaultHook
-    owner: "0x125d1b64dfd7898DD06ac3E060A432691b8Fa676"
+    owner: "0xe38714D00cAa906065D872D177C1374C847035fF"
     type: fallbackRoutingHook
   interchainSecurityModule:
     modules:
@@ -33,7 +33,7 @@ base:
           mode:
             lowerIsm:
               domains: {}
-              owner: "0x125d1b64dfd7898DD06ac3E060A432691b8Fa676"
+              owner: "0xe38714D00cAa906065D872D177C1374C847035fF"
               type: defaultFallbackRoutingIsm
             threshold: 250000000000
             type: amountRoutingIsm
@@ -43,24 +43,24 @@ base:
           optimism:
             lowerIsm:
               domains: {}
-              owner: "0x125d1b64dfd7898DD06ac3E060A432691b8Fa676"
+              owner: "0xe38714D00cAa906065D872D177C1374C847035fF"
               type: defaultFallbackRoutingIsm
             threshold: 250000000000
             type: amountRoutingIsm
             upperIsm:
               originChain: optimism
               type: ccipIsm
-        owner: "0x125d1b64dfd7898DD06ac3E060A432691b8Fa676"
+        owner: "0xe38714D00cAa906065D872D177C1374C847035fF"
         type: defaultFallbackRoutingIsm
-      - owner: "0x125d1b64dfd7898DD06ac3E060A432691b8Fa676"
+      - owner: "0xe38714D00cAa906065D872D177C1374C847035fF"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0x125d1b64dfd7898DD06ac3E060A432691b8Fa676"
+  owner: "0xe38714D00cAa906065D872D177C1374C847035fF"
   ownerOverrides:
-    collateralProxyAdmin: "0x125d1b64dfd7898DD06ac3E060A432691b8Fa676"
-    collateralToken: "0x125d1b64dfd7898DD06ac3E060A432691b8Fa676"
+    collateralProxyAdmin: "0xe38714D00cAa906065D872D177C1374C847035fF"
+    collateralToken: "0xe38714D00cAa906065D872D177C1374C847035fF"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
@@ -68,56 +68,61 @@ base:
       - limits:
           bufferCap: "0"
           rateLimitPerSecond: "0"
+          type: velo
         lockbox: "0x9d922c23d78179c2e75fe394fc8e49363f2dda85"
       - limits:
           bufferCap: "0"
           rateLimitPerSecond: "0"
+          type: velo
         lockbox: "0xe92e51d99ae33114c60d9621fb2e1ec0acea7e30"
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0xa760D20a91C076A57b270D3F7a3150421ab40591"
     warpRouteLimits:
       bufferCap: "20000000000000"
       rateLimitPerSecond: "5000000000"
+      type: velo
 bitlayer:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0x5F7771EA40546e2932754C263455Cb0023a55ca7"
+        owner: "0x5066d3C3c8511A0f0e0146C99b17458126F6c4E4"
         type: defaultFallbackRoutingIsm
-      - owner: "0x5F7771EA40546e2932754C263455Cb0023a55ca7"
+      - owner: "0x5066d3C3c8511A0f0e0146C99b17458126F6c4E4"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0x5F7771EA40546e2932754C263455Cb0023a55ca7"
+  owner: "0x5066d3C3c8511A0f0e0146C99b17458126F6c4E4"
   ownerOverrides:
-    collateralProxyAdmin: "0x5F7771EA40546e2932754C263455Cb0023a55ca7"
-    collateralToken: "0x5F7771EA40546e2932754C263455Cb0023a55ca7"
+    collateralProxyAdmin: "0x5066d3C3c8511A0f0e0146C99b17458126F6c4E4"
+    collateralToken: "0x5066d3C3c8511A0f0e0146C99b17458126F6c4E4"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 bob:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0xc99e58b9A4E330e2E4d09e2c94CD3c553904F588"
+        owner: "0x790306c30eFeeAF3943ee3700C71D7B7812c85a1"
         type: defaultFallbackRoutingIsm
-      - owner: "0xc99e58b9A4E330e2E4d09e2c94CD3c553904F588"
+      - owner: "0x790306c30eFeeAF3943ee3700C71D7B7812c85a1"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0xc99e58b9A4E330e2E4d09e2c94CD3c553904F588"
+  owner: "0x790306c30eFeeAF3943ee3700C71D7B7812c85a1"
   ownerOverrides:
-    collateralProxyAdmin: "0xc99e58b9A4E330e2E4d09e2c94CD3c553904F588"
-    collateralToken: "0xc99e58b9A4E330e2E4d09e2c94CD3c553904F588"
+    collateralProxyAdmin: "0x790306c30eFeeAF3943ee3700C71D7B7812c85a1"
+    collateralToken: "0x790306c30eFeeAF3943ee3700C71D7B7812c85a1"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
@@ -125,26 +130,28 @@ bob:
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0xAFEd606Bd2CAb6983fC6F10167c98aaC2173D77f"
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 botanix:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0xf06c254d1Df285BC16B2D53A426dC106897CfDf9"
+        owner: "0x4C2C26664D9A72F50e8B260408B070F34e7F748f"
         type: defaultFallbackRoutingIsm
-      - owner: "0xf06c254d1Df285BC16B2D53A426dC106897CfDf9"
+      - owner: "0x4C2C26664D9A72F50e8B260408B070F34e7F748f"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0xf06c254d1Df285BC16B2D53A426dC106897CfDf9"
+  owner: "0x4C2C26664D9A72F50e8B260408B070F34e7F748f"
   ownerOverrides:
-    collateralProxyAdmin: "0xf06c254d1Df285BC16B2D53A426dC106897CfDf9"
-    collateralToken: "0xf06c254d1Df285BC16B2D53A426dC106897CfDf9"
+    collateralProxyAdmin: "0x4C2C26664D9A72F50e8B260408B070F34e7F748f"
+    collateralToken: "0x4C2C26664D9A72F50e8B260408B070F34e7F748f"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
@@ -152,26 +159,28 @@ botanix:
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0x0EEFa8b75587bcD4A909a0F3c36180D4441481a0"
     warpRouteLimits:
       bufferCap: "8000000000000"
       rateLimitPerSecond: "2000000000"
+      type: velo
 celo:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0xf1b3fc934bB46c459253fb38555A400b94909800"
+        owner: "0xb527ea7ff1B14fEb9FFF98b5Cd750Bd311cD598F"
         type: defaultFallbackRoutingIsm
-      - owner: "0xf1b3fc934bB46c459253fb38555A400b94909800"
+      - owner: "0xb527ea7ff1B14fEb9FFF98b5Cd750Bd311cD598F"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0xf1b3fc934bB46c459253fb38555A400b94909800"
+  owner: "0xb527ea7ff1B14fEb9FFF98b5Cd750Bd311cD598F"
   ownerOverrides:
-    collateralProxyAdmin: "0xf1b3fc934bB46c459253fb38555A400b94909800"
-    collateralToken: "0xf1b3fc934bB46c459253fb38555A400b94909800"
+    collateralProxyAdmin: "0xb527ea7ff1B14fEb9FFF98b5Cd750Bd311cD598F"
+    collateralToken: "0xb527ea7ff1B14fEb9FFF98b5Cd750Bd311cD598F"
   token: "0x5e5F4d6B03db16E7f00dE7C9AFAA53b92C8d1D42"
   type: xERC20Lockbox
   xERC20:
@@ -179,26 +188,28 @@ celo:
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0x47Db76c9c97F4bcFd54D8872FDb848Cab696092d"
     warpRouteLimits:
       bufferCap: "20000000000000"
       rateLimitPerSecond: "5000000000"
+      type: velo
 ethereum:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+        owner: "0x469f45d05F8C3B3cE40d1640ffE66b795B1d2d22"
         type: defaultFallbackRoutingIsm
-      - owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+      - owner: "0x469f45d05F8C3B3cE40d1640ffE66b795B1d2d22"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+  owner: "0x469f45d05F8C3B3cE40d1640ffE66b795B1d2d22"
   ownerOverrides:
-    collateralProxyAdmin: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
-    collateralToken: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+    collateralProxyAdmin: "0x469f45d05F8C3B3cE40d1640ffE66b795B1d2d22"
+    collateralToken: "0x469f45d05F8C3B3cE40d1640ffE66b795B1d2d22"
   token: "0x6D265C7dD8d76F25155F1a7687C693FDC1220D12"
   type: xERC20Lockbox
   xERC20:
@@ -206,52 +217,56 @@ ethereum:
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0x6D265C7dD8d76F25155F1a7687C693FDC1220D12"
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0xa3532633401AbFfbd15e6be825a45FB7F141469B"
     warpRouteLimits:
       bufferCap: "20000000000000"
       rateLimitPerSecond: "5000000000"
+      type: velo
 fraxtal:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0x21C0CA5be5aC9BC6161Bf1cfE281A18Fe2190079"
+        owner: "0x09F478e8dEB9Ef466025bf96d13cd9DC56881E18"
         type: defaultFallbackRoutingIsm
-      - owner: "0x21C0CA5be5aC9BC6161Bf1cfE281A18Fe2190079"
+      - owner: "0x09F478e8dEB9Ef466025bf96d13cd9DC56881E18"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0x21C0CA5be5aC9BC6161Bf1cfE281A18Fe2190079"
+  owner: "0x09F478e8dEB9Ef466025bf96d13cd9DC56881E18"
   ownerOverrides:
-    collateralProxyAdmin: "0x21C0CA5be5aC9BC6161Bf1cfE281A18Fe2190079"
-    collateralToken: "0x21C0CA5be5aC9BC6161Bf1cfE281A18Fe2190079"
+    collateralProxyAdmin: "0x09F478e8dEB9Ef466025bf96d13cd9DC56881E18"
+    collateralToken: "0x09F478e8dEB9Ef466025bf96d13cd9DC56881E18"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 hashkey:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0xEE01c007f89c9255f43b91B591b93cD1459048D1"
+        owner: "0x072DDFd63F1dcf7819c80A971F6CEbFF9b0277Cc"
         type: defaultFallbackRoutingIsm
-      - owner: "0xEE01c007f89c9255f43b91B591b93cD1459048D1"
+      - owner: "0x072DDFd63F1dcf7819c80A971F6CEbFF9b0277Cc"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0xEE01c007f89c9255f43b91B591b93cD1459048D1"
+  owner: "0x072DDFd63F1dcf7819c80A971F6CEbFF9b0277Cc"
   ownerOverrides:
-    collateralProxyAdmin: "0xEE01c007f89c9255f43b91B591b93cD1459048D1"
-    collateralToken: "0xEE01c007f89c9255f43b91B591b93cD1459048D1"
+    collateralProxyAdmin: "0x072DDFd63F1dcf7819c80A971F6CEbFF9b0277Cc"
+    collateralToken: "0x072DDFd63F1dcf7819c80A971F6CEbFF9b0277Cc"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
@@ -259,142 +274,150 @@ hashkey:
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0x55aeb80Aa6Ab34aA83E1F387903F8Bb2Aa9e2F2d"
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 ink:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0x1BBf2CE75A77b8A10dA7e73dC1F76456008010bD"
+        owner: "0xED56728fb977b0bBdacf65bCdD5e17Bb7e84504f"
         type: defaultFallbackRoutingIsm
-      - owner: "0x1BBf2CE75A77b8A10dA7e73dC1F76456008010bD"
+      - owner: "0xED56728fb977b0bBdacf65bCdD5e17Bb7e84504f"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0x1BBf2CE75A77b8A10dA7e73dC1F76456008010bD"
+  owner: "0xED56728fb977b0bBdacf65bCdD5e17Bb7e84504f"
   ownerOverrides:
-    collateralProxyAdmin: "0x1BBf2CE75A77b8A10dA7e73dC1F76456008010bD"
-    collateralToken: "0x1BBf2CE75A77b8A10dA7e73dC1F76456008010bD"
+    collateralProxyAdmin: "0xED56728fb977b0bBdacf65bCdD5e17Bb7e84504f"
+    collateralToken: "0xED56728fb977b0bBdacf65bCdD5e17Bb7e84504f"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "8000000000000"
       rateLimitPerSecond: "2000000000"
+      type: velo
 linea:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0xaCD1865B262C89Fb0b50dcc8fB095330ae8F35b5"
+        owner: "0x3A2e96403d076e9f953166A9E4c61bcD9D164CFe"
         type: defaultFallbackRoutingIsm
-      - owner: "0xaCD1865B262C89Fb0b50dcc8fB095330ae8F35b5"
+      - owner: "0x3A2e96403d076e9f953166A9E4c61bcD9D164CFe"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0xaCD1865B262C89Fb0b50dcc8fB095330ae8F35b5"
+  owner: "0x3A2e96403d076e9f953166A9E4c61bcD9D164CFe"
   ownerOverrides:
-    collateralProxyAdmin: "0xaCD1865B262C89Fb0b50dcc8fB095330ae8F35b5"
-    collateralToken: "0xaCD1865B262C89Fb0b50dcc8fB095330ae8F35b5"
+    collateralProxyAdmin: "0x3A2e96403d076e9f953166A9E4c61bcD9D164CFe"
+    collateralToken: "0x3A2e96403d076e9f953166A9E4c61bcD9D164CFe"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 lisk:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0x6F0A0038FcDB2F1655219f1b92f7E9aD4b78Aa49"
+        owner: "0xfA96BCb61C7CbD7839689E807CD6d7FC27754Af3"
         type: defaultFallbackRoutingIsm
-      - owner: "0x6F0A0038FcDB2F1655219f1b92f7E9aD4b78Aa49"
+      - owner: "0xfA96BCb61C7CbD7839689E807CD6d7FC27754Af3"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0x6F0A0038FcDB2F1655219f1b92f7E9aD4b78Aa49"
+  owner: "0xfA96BCb61C7CbD7839689E807CD6d7FC27754Af3"
   ownerOverrides:
-    collateralProxyAdmin: "0x6F0A0038FcDB2F1655219f1b92f7E9aD4b78Aa49"
-    collateralToken: "0x6F0A0038FcDB2F1655219f1b92f7E9aD4b78Aa49"
+    collateralProxyAdmin: "0xfA96BCb61C7CbD7839689E807CD6d7FC27754Af3"
+    collateralToken: "0xfA96BCb61C7CbD7839689E807CD6d7FC27754Af3"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 mantle:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0x8aFE6EECc6CcB02aA20DA8Fff7d29aadEBbc2DCd"
+        owner: "0xA3C59Caa046Ac6234272c74ADaE5f202E57F6e33"
         type: defaultFallbackRoutingIsm
-      - owner: "0x8aFE6EECc6CcB02aA20DA8Fff7d29aadEBbc2DCd"
+      - owner: "0xA3C59Caa046Ac6234272c74ADaE5f202E57F6e33"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0x8aFE6EECc6CcB02aA20DA8Fff7d29aadEBbc2DCd"
+  owner: "0xA3C59Caa046Ac6234272c74ADaE5f202E57F6e33"
   ownerOverrides:
-    collateralProxyAdmin: "0x8aFE6EECc6CcB02aA20DA8Fff7d29aadEBbc2DCd"
-    collateralToken: "0x8aFE6EECc6CcB02aA20DA8Fff7d29aadEBbc2DCd"
+    collateralProxyAdmin: "0xA3C59Caa046Ac6234272c74ADaE5f202E57F6e33"
+    collateralToken: "0xA3C59Caa046Ac6234272c74ADaE5f202E57F6e33"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "8000000000000"
       rateLimitPerSecond: "2000000000"
+      type: velo
 metal:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0x41A4e3425c7FeE8711D1C1b2c2acc1879F849b45"
+        owner: "0xA312a8329bCDc2e5EA5dc2849326a45D40C58e8F"
         type: defaultFallbackRoutingIsm
-      - owner: "0x41A4e3425c7FeE8711D1C1b2c2acc1879F849b45"
+      - owner: "0xA312a8329bCDc2e5EA5dc2849326a45D40C58e8F"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0x41A4e3425c7FeE8711D1C1b2c2acc1879F849b45"
+  owner: "0xA312a8329bCDc2e5EA5dc2849326a45D40C58e8F"
   ownerOverrides:
-    collateralProxyAdmin: "0x41A4e3425c7FeE8711D1C1b2c2acc1879F849b45"
-    collateralToken: "0x41A4e3425c7FeE8711D1C1b2c2acc1879F849b45"
+    collateralProxyAdmin: "0xA312a8329bCDc2e5EA5dc2849326a45D40C58e8F"
+    collateralToken: "0xA312a8329bCDc2e5EA5dc2849326a45D40C58e8F"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 metis:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0xf6B817Cf8b4440F38951851cf1160969039966A2"
+        owner: "0xfc8b34Fa72310A2926A0668e05F17F21c9811b80"
         type: defaultFallbackRoutingIsm
-      - owner: "0xf6B817Cf8b4440F38951851cf1160969039966A2"
+      - owner: "0xfc8b34Fa72310A2926A0668e05F17F21c9811b80"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0xf6B817Cf8b4440F38951851cf1160969039966A2"
+  owner: "0xfc8b34Fa72310A2926A0668e05F17F21c9811b80"
   ownerOverrides:
-    collateralProxyAdmin: "0xf6B817Cf8b4440F38951851cf1160969039966A2"
-    collateralToken: "0xf6B817Cf8b4440F38951851cf1160969039966A2"
+    collateralProxyAdmin: "0xfc8b34Fa72310A2926A0668e05F17F21c9811b80"
+    collateralToken: "0xfc8b34Fa72310A2926A0668e05F17F21c9811b80"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 mode:
   hook:
     domains:
@@ -422,7 +445,7 @@ mode:
           type: aggregationHook
     fallback:
       type: defaultHook
-    owner: "0xD4c01B4753575899AD81aAca0bb2DB7796E9F7C0"
+    owner: "0x5CC74C639310B6865d2Ef2E92ed4B68fcd96Ff88"
     type: fallbackRoutingHook
   interchainSecurityModule:
     modules:
@@ -430,7 +453,7 @@ mode:
           base:
             lowerIsm:
               domains: {}
-              owner: "0xD4c01B4753575899AD81aAca0bb2DB7796E9F7C0"
+              owner: "0x5CC74C639310B6865d2Ef2E92ed4B68fcd96Ff88"
               type: defaultFallbackRoutingIsm
             threshold: 250000000000
             type: amountRoutingIsm
@@ -440,30 +463,31 @@ mode:
           optimism:
             lowerIsm:
               domains: {}
-              owner: "0xD4c01B4753575899AD81aAca0bb2DB7796E9F7C0"
+              owner: "0x5CC74C639310B6865d2Ef2E92ed4B68fcd96Ff88"
               type: defaultFallbackRoutingIsm
             threshold: 250000000000
             type: amountRoutingIsm
             upperIsm:
               originChain: optimism
               type: ccipIsm
-        owner: "0xD4c01B4753575899AD81aAca0bb2DB7796E9F7C0"
+        owner: "0x5CC74C639310B6865d2Ef2E92ed4B68fcd96Ff88"
         type: defaultFallbackRoutingIsm
-      - owner: "0xD4c01B4753575899AD81aAca0bb2DB7796E9F7C0"
+      - owner: "0x5CC74C639310B6865d2Ef2E92ed4B68fcd96Ff88"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0xD4c01B4753575899AD81aAca0bb2DB7796E9F7C0"
+  owner: "0x5CC74C639310B6865d2Ef2E92ed4B68fcd96Ff88"
   ownerOverrides:
-    collateralProxyAdmin: "0xD4c01B4753575899AD81aAca0bb2DB7796E9F7C0"
-    collateralToken: "0xD4c01B4753575899AD81aAca0bb2DB7796E9F7C0"
+    collateralProxyAdmin: "0x5CC74C639310B6865d2Ef2E92ed4B68fcd96Ff88"
+    collateralToken: "0x5CC74C639310B6865d2Ef2E92ed4B68fcd96Ff88"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 optimism:
   hook:
     domains:
@@ -491,7 +515,7 @@ optimism:
           type: aggregationHook
     fallback:
       type: defaultHook
-    owner: "0x8E3340E241880F80359AA95Ae20Dc498d3f62503"
+    owner: "0x1C9192aB4aDc226FF20121624590650b076492BE"
     type: fallbackRoutingHook
   interchainSecurityModule:
     modules:
@@ -499,7 +523,7 @@ optimism:
           base:
             lowerIsm:
               domains: {}
-              owner: "0x8E3340E241880F80359AA95Ae20Dc498d3f62503"
+              owner: "0x1C9192aB4aDc226FF20121624590650b076492BE"
               type: defaultFallbackRoutingIsm
             threshold: 250000000000
             type: amountRoutingIsm
@@ -509,24 +533,24 @@ optimism:
           mode:
             lowerIsm:
               domains: {}
-              owner: "0x8E3340E241880F80359AA95Ae20Dc498d3f62503"
+              owner: "0x1C9192aB4aDc226FF20121624590650b076492BE"
               type: defaultFallbackRoutingIsm
             threshold: 250000000000
             type: amountRoutingIsm
             upperIsm:
               originChain: mode
               type: ccipIsm
-        owner: "0x8E3340E241880F80359AA95Ae20Dc498d3f62503"
+        owner: "0x1C9192aB4aDc226FF20121624590650b076492BE"
         type: defaultFallbackRoutingIsm
-      - owner: "0x8E3340E241880F80359AA95Ae20Dc498d3f62503"
+      - owner: "0x1C9192aB4aDc226FF20121624590650b076492BE"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0x8E3340E241880F80359AA95Ae20Dc498d3f62503"
+  owner: "0x1C9192aB4aDc226FF20121624590650b076492BE"
   ownerOverrides:
-    collateralProxyAdmin: "0x8E3340E241880F80359AA95Ae20Dc498d3f62503"
-    collateralToken: "0x8E3340E241880F80359AA95Ae20Dc498d3f62503"
+    collateralProxyAdmin: "0x1C9192aB4aDc226FF20121624590650b076492BE"
+    collateralToken: "0x1C9192aB4aDc226FF20121624590650b076492BE"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
@@ -534,78 +558,84 @@ optimism:
       - limits:
           bufferCap: "0"
           rateLimitPerSecond: "0"
+          type: velo
         lockbox: "0x07e437d73e9e43ceece6ea14085b26159e3f7f31"
       - limits:
           bufferCap: "0"
           rateLimitPerSecond: "0"
+          type: velo
         lockbox: "0x18c4cdc2d774c047eac8375bb09853c4d6d6df36"
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0x6a21a19aD44542d83F7f7FF45Aa31A62a36200de"
     warpRouteLimits:
       bufferCap: "20000000000000"
       rateLimitPerSecond: "5000000000"
+      type: velo
 ronin:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0x5F7771EA40546e2932754C263455Cb0023a55ca7"
+        owner: "0x96c418BaB57953765B97532c494125F9b2e2B38D"
         type: defaultFallbackRoutingIsm
-      - owner: "0x5F7771EA40546e2932754C263455Cb0023a55ca7"
+      - owner: "0x96c418BaB57953765B97532c494125F9b2e2B38D"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0x5F7771EA40546e2932754C263455Cb0023a55ca7"
+  owner: "0x96c418BaB57953765B97532c494125F9b2e2B38D"
   ownerOverrides:
-    collateralProxyAdmin: "0x5F7771EA40546e2932754C263455Cb0023a55ca7"
-    collateralToken: "0x5F7771EA40546e2932754C263455Cb0023a55ca7"
+    collateralProxyAdmin: "0x96c418BaB57953765B97532c494125F9b2e2B38D"
+    collateralToken: "0x96c418BaB57953765B97532c494125F9b2e2B38D"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 soneium:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0x31Bf112F33556A0F1dc76881cfA8A36Bc2134A57"
+        owner: "0x39d3c2Cf646447ee302178EDBe5a15E13B6F33aC"
         type: defaultFallbackRoutingIsm
-      - owner: "0x31Bf112F33556A0F1dc76881cfA8A36Bc2134A57"
+      - owner: "0x39d3c2Cf646447ee302178EDBe5a15E13B6F33aC"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0x31Bf112F33556A0F1dc76881cfA8A36Bc2134A57"
+  owner: "0x39d3c2Cf646447ee302178EDBe5a15E13B6F33aC"
   ownerOverrides:
-    collateralProxyAdmin: "0x31Bf112F33556A0F1dc76881cfA8A36Bc2134A57"
-    collateralToken: "0x31Bf112F33556A0F1dc76881cfA8A36Bc2134A57"
+    collateralProxyAdmin: "0x39d3c2Cf646447ee302178EDBe5a15E13B6F33aC"
+    collateralToken: "0x39d3c2Cf646447ee302178EDBe5a15E13B6F33aC"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 sonic:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0x7f56412491D8E77331Ff0300d3C8E42A6D233FdC"
+        owner: "0x591273A518b59B4E9E4c104B001Fee4B9920244F"
         type: defaultFallbackRoutingIsm
-      - owner: "0x7f56412491D8E77331Ff0300d3C8E42A6D233FdC"
+      - owner: "0x591273A518b59B4E9E4c104B001Fee4B9920244F"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0x7f56412491D8E77331Ff0300d3C8E42A6D233FdC"
+  owner: "0x591273A518b59B4E9E4c104B001Fee4B9920244F"
   ownerOverrides:
-    collateralProxyAdmin: "0x7f56412491D8E77331Ff0300d3C8E42A6D233FdC"
-    collateralToken: "0x7f56412491D8E77331Ff0300d3C8E42A6D233FdC"
+    collateralProxyAdmin: "0x591273A518b59B4E9E4c104B001Fee4B9920244F"
+    collateralToken: "0x591273A518b59B4E9E4c104B001Fee4B9920244F"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
@@ -613,95 +643,101 @@ sonic:
       - limits:
           bufferCap: "20000000000000"
           rateLimitPerSecond: "5000000000"
+          type: velo
         lockbox: "0x6a21a19aD44542d83F7f7FF45Aa31A62a36200de"
     warpRouteLimits:
       bufferCap: "8000000000000"
       rateLimitPerSecond: "2000000000"
+      type: velo
 superseed:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0x0731a8e0DC88Df79d9643BD6C1f26cfe6fa53382"
+        owner: "0xEd9c6B30482ACe8De6366a1858D0702111852449"
         type: defaultFallbackRoutingIsm
-      - owner: "0x0731a8e0DC88Df79d9643BD6C1f26cfe6fa53382"
+      - owner: "0xEd9c6B30482ACe8De6366a1858D0702111852449"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0x0731a8e0DC88Df79d9643BD6C1f26cfe6fa53382"
+  owner: "0xEd9c6B30482ACe8De6366a1858D0702111852449"
   ownerOverrides:
-    collateralProxyAdmin: "0x0731a8e0DC88Df79d9643BD6C1f26cfe6fa53382"
-    collateralToken: "0x0731a8e0DC88Df79d9643BD6C1f26cfe6fa53382"
+    collateralProxyAdmin: "0xEd9c6B30482ACe8De6366a1858D0702111852449"
+    collateralToken: "0xEd9c6B30482ACe8De6366a1858D0702111852449"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "2000000000000"
       rateLimitPerSecond: "500000000"
+      type: velo
 swell:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0xff8326468e7AaB51c53D3569cf7C45Dd54c11687"
+        owner: "0xc82C44E3b5fA9fa9915F4c09fB0b5bb9e417625c"
         type: defaultFallbackRoutingIsm
-      - owner: "0xff8326468e7AaB51c53D3569cf7C45Dd54c11687"
+      - owner: "0xc82C44E3b5fA9fa9915F4c09fB0b5bb9e417625c"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0xff8326468e7AaB51c53D3569cf7C45Dd54c11687"
+  owner: "0xc82C44E3b5fA9fa9915F4c09fB0b5bb9e417625c"
   ownerOverrides:
-    collateralProxyAdmin: "0xff8326468e7AaB51c53D3569cf7C45Dd54c11687"
-    collateralToken: "0xff8326468e7AaB51c53D3569cf7C45Dd54c11687"
+    collateralProxyAdmin: "0xc82C44E3b5fA9fa9915F4c09fB0b5bb9e417625c"
+    collateralToken: "0xc82C44E3b5fA9fa9915F4c09fB0b5bb9e417625c"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "8000000000000"
       rateLimitPerSecond: "2000000000"
+      type: velo
 unichain:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0xf306ad5bF95960188c67A30f5546D193760ca3D0"
+        owner: "0x6291596339A6EDD6cD68aca1d1c08B1fa2115F8C"
         type: defaultFallbackRoutingIsm
-      - owner: "0xf306ad5bF95960188c67A30f5546D193760ca3D0"
+      - owner: "0x6291596339A6EDD6cD68aca1d1c08B1fa2115F8C"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0xf306ad5bF95960188c67A30f5546D193760ca3D0"
+  owner: "0x6291596339A6EDD6cD68aca1d1c08B1fa2115F8C"
   ownerOverrides:
-    collateralProxyAdmin: "0xf306ad5bF95960188c67A30f5546D193760ca3D0"
-    collateralToken: "0xf306ad5bF95960188c67A30f5546D193760ca3D0"
+    collateralProxyAdmin: "0x6291596339A6EDD6cD68aca1d1c08B1fa2115F8C"
+    collateralToken: "0x6291596339A6EDD6cD68aca1d1c08B1fa2115F8C"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "20000000000000"
       rateLimitPerSecond: "5000000000"
+      type: velo
 worldchain:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
       - domains: {}
-        owner: "0x998238aF5A2DDC7ae08Dbe4B60b82EF63A1538cd"
+        owner: "0x1008FAbD07aBd93a7D9bB81803a89cC3a834E1A9"
         type: defaultFallbackRoutingIsm
-      - owner: "0x998238aF5A2DDC7ae08Dbe4B60b82EF63A1538cd"
+      - owner: "0x1008FAbD07aBd93a7D9bB81803a89cC3a834E1A9"
         paused: false
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0x998238aF5A2DDC7ae08Dbe4B60b82EF63A1538cd"
+  owner: "0x1008FAbD07aBd93a7D9bB81803a89cC3a834E1A9"
   ownerOverrides:
-    collateralProxyAdmin: "0x998238aF5A2DDC7ae08Dbe4B60b82EF63A1538cd"
-    collateralToken: "0x998238aF5A2DDC7ae08Dbe4B60b82EF63A1538cd"
+    collateralProxyAdmin: "0x1008FAbD07aBd93a7D9bB81803a89cC3a834E1A9"
+    collateralToken: "0x1008FAbD07aBd93a7D9bB81803a89cC3a834E1A9"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "0"
       rateLimitPerSecond: "0"
+      type: velo

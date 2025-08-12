@@ -1,5 +1,151 @@
 # @hyperlane-xyz/registry
 
+## 21.1.0
+
+### Minor Changes
+
+- 45eca7d: Add MAGIC arbitrum/abstract/ronin route. Add SMOL arbitrum + abstract routes.
+
+### Patch Changes
+
+- cea2b10: Add solana `collateralAddressOrDenom` to SMOL route
+- 9a36c26: Replace USD₮ for USDT in ethereum ouSDT/production route
+
+## 21.0.0
+
+### Major Changes
+
+- 7c9f61c: Deprecate chains bouncebit, conflux, conwai, deepbrainchain, duckchain, evmos, flame, nero, rivalz, rootstockmainnet, sanko, telos, unitzero, xpla, zklink
+
+### Minor Changes
+
+- 10e8bce: Migrate oUSDT ownership to timelocks.
+- e3eaf21: Add Celestia Mainnet configuration
+
+### Patch Changes
+
+- 85ac73b: Update TGT owners
+- e94b324: Transfer USDC-paradex ownership.
+- 3d353f7: Add foreignDeployment to Starknet routes.
+
+## 20.1.0
+
+### Minor Changes
+
+- 30443a6: feat: torus warp route
+- d585bf6: Add USDC matchain configs
+- 0f20cff: add blockscout explorers to oUSDT realted chains
+
+### Patch Changes
+
+- d66da9b: Deploy PUMP/starknet
+- 1ad0cf3: Update proxyAdmin config on ancient8 usdc route to sync it with current config
+
+## 20.0.0
+
+### Major Changes
+
+- 9c577a4: Removed subtensor usdc outdated artifacts that were replaced by stable warp ids ones
+
+### Minor Changes
+
+- 71209b5: Add VRA/bsc-ethereum artifacts
+- 1207721: Add get warp deploy to fetch from the Server. Also, update get warp core to fetch from the updated route.
+
+### Patch Changes
+
+- f1c0422: Add edgen coingecko-id
+- 8116fd7: Update metal safe tx service url.
+- a4e2dea: Fix typo for HttpClientRegistry route /warp-route/core
+
+## 19.4.0
+
+### Minor Changes
+
+- 94b5167: Added the PUMP/eclipsemainnet warp route
+
+### Patch Changes
+
+- d9f0d03: Remove botanix tx overrides
+- 23336e2: Update oXAUT ownerOverrides.collateralToken to the top-level owners
+- f8af54f: Update default ISMs on arbitrum, base, ethereum, mode.
+- 06c2b8a: Update celo metadata
+- d925022: Update oXAUT owners to AW safes
+
+## 19.3.0
+
+### Minor Changes
+
+- dfa6782: update paradex defaultISM
+- dd21180: Remove treasure and trumpchain warp routes.
+- 4c95328: Update katana public RPC. Update default ISMs.
+- 8948b4a: Added PUMP metadata and logo
+- 2f45f38: Update superseed with CCTP rebalancing and add connections
+
+### Patch Changes
+
+- 9359431: Extend oXAUT to Avalanche
+- 532664a: Remove SDK code imports
+
+## 19.2.0
+
+### Minor Changes
+
+- d8a2a57: update usdc paradex route to be rebalanceable
+- d5a2f9c: Add HttpClientRegistry (IRegistry) implementation
+- 968f0f4: extedended subtensor usdc route to unichain, arbitrum and polygon
+
+### Patch Changes
+
+- 55ea7b9: Add SEDA route
+- c4e12fd: Fix paradex `chainId` in metadata
+
+## 19.1.1
+
+### Patch Changes
+
+- 5cb131b: Update Celestia Testnet grpc endpoint
+- 994cf31: Add TIA testnet.
+
+## 19.1.0
+
+### Minor Changes
+
+- f582af6: update solx route to extend to solaxy
+
+## 19.0.0
+
+### Major Changes
+
+- 6759d87: update eclipse route to extend to solana mainnet and renamed artifacts to use stable warp ids
+
+### Minor Changes
+
+- 1f0f1d3: Remove old lumiaprism route and add `logoURI` to USDC/lumia
+- 292dc47: Deprecate guru.
+- 53b1614: Added SOL warp route between solana and starknet
+- 2633756: Update paradex & starknet default ISMs
+- 684a943: Add RCADE/arbitrum-bsc deploy artifacts
+- cc22a1e: Add JUP warp route between Solana and Starknet
+- 95ed85c: Add USDC paradexsepolia route
+- b48f662: Deploy to galactica, remove kroma.
+- 5632574: Update block times for arbitrum and optimism
+- 512322c: Deploy to xrplevm.
+- 3219e7c: Add Bonk starknet.
+- dc622e6: Added Paradex USDC route
+- 67d47e8: Add metadata for chain celestiatestnet
+- 57e6444: Add TRUMP starknet.
+
+### Patch Changes
+
+- ac25cf9: Add CCTP warp routes
+- 162799f: Add collateralAddressOrDenom and logoURI to USDC mainnet cctp config
+- 6d24338: Extend lumia USDC with CCTP rebalancing
+- 30a1387: Remove zan RPC from starknet metadata because it causes issues when getting tx status
+- df92d90: Fix botanix logo missing xmlns attribute
+- bfdb552: Update and fix coingecko ids for LOGX, AIXBT, MINT, ELIZA, MEW and Pnut
+- a8f9610: Update arb/op block times.
+
 ## 18.0.0
 
 ### Major Changes

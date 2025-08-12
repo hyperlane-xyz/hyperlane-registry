@@ -1,13 +1,21 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiKey: JMYR3W6HHVPQ1HH8T6W8HSZVG88IH3MHRU
-    apiUrl: https://api-optimistic.etherscan.io/api
+  - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+    apiUrl: https://api.etherscan.io/v2/api?chainid=10
     family: etherscan
     name: Etherscan
     url: https://optimistic.etherscan.io
+  - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/10/etherscan/api
+    family: routescan
+    name: Optimism Explorer
+    url: https://mainnet.thesuperscan.io
+  - apiUrl: https://optimism.blockscout.com/api
+    family: blockscout
+    name: OP Mainnet explorer
+    url: https://optimism.blockscout.com
 blocks:
   confirmations: 1
-  estimateBlockTime: 3
+  estimateBlockTime: 2
   reorgPeriod: 10
 chainId: 10
 deployer:
