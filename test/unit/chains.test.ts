@@ -11,7 +11,7 @@ import { isAbacusWorksChain } from '../../src/utils.js';
 import { expect } from 'chai';
 import { ABACUS_WORKS_DEPLOYER_NAME } from '../../src/consts.js';
 
-const legacyIcaChains = ['conflux', 'viction', 'ontology'];
+const legacyIcaChains = ['viction', 'ontology'];
 
 describe('Chain metadata', () => {
   const skippedChainsList = ['inclusivelayertestnet'];
