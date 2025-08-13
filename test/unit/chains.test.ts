@@ -9,6 +9,9 @@ import { ChainAddressesSchema } from '../../src/types.js';
 import { isAbacusWorksChain } from '../../src/utils.js';
 
 import { expect } from 'chai';
+import { ABACUS_WORKS_DEPLOYER_NAME } from '../../src/consts.js';
+
+const legacyIcaChains = ['viction', 'ontology'];
 
 describe('Chain metadata', () => {
   const skippedChainsList = ['inclusivelayertestnet'];
@@ -35,7 +38,7 @@ describe('Chain metadata', () => {
     });
 
     it(`${chain} metadata contains deployer details if mailbox address is defined`, () => {
-      if (chainAddresses[chain] && chainAddresses[chain].mailboxAddress) {
+      if (chainAddresses[chain] && chainAddresses[chain].mailbox) {
         expect(metadata.deployer).not.to.be.undefined;
       }
     });
@@ -47,9 +50,24 @@ describe('Chain metadata', () => {
     });
 
     it(`${chain} metadata has gasCurrencyCoinGeckoId if deployer is Abacus Works it is a mainnet`, () => {
-      if (metadata.deployer?.name === 'Abacus Works' && !metadata.isTestnet) {
+      if (metadata.deployer?.name === ABACUS_WORKS_DEPLOYER_NAME && !metadata.isTestnet) {
         expect(metadata.gasCurrencyCoinGeckoId).not.to.be.undefined;
       }
+    });
+
+    it(`${chain} metadata has interchainAccountRouter defined if it is a mainnet with mailbox, deployer is Abacus Works, protocol is ethereum and technicalStack is not zksync`, () => {
+      if (!metadata.isTestnet &&
+          chainAddresses[chain]?.mailbox &&
+          metadata.deployer?.name === ABACUS_WORKS_DEPLOYER_NAME &&
+          metadata.protocol === ProtocolType.Ethereum &&
+          metadata.technicalStack !== ChainTechnicalStack.ZkSync &&
+          !legacyIcaChains.includes(chain)) {
+        expect(chainAddresses[chain].interchainAccountRouter).not.to.be.undefined;
+      }
+    });
+
+    it(`${chain} metadata does not have interchainAccountIsm address defined`, () => {
+      expect(chainAddresses[chain]?.interchainAccountIsm).to.be.undefined;
     });
 
     it(`${chain} metadata has valid reorgPeriod`, () => {
