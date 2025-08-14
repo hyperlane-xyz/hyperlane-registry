@@ -16,7 +16,7 @@ abstract:
   displayName: Abstract
   domainId: 2741
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://transaction.abstract-safe.protofire.io
+  gnosisSafeTransactionServiceUrl: https://transaction.safe.abs.xyz
   index:
     from: 201749
   name: abstract
@@ -562,9 +562,6 @@ astarzkevm:
     estimateBlockTime: 3
     reorgPeriod: 5
   chainId: 3776
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: Astar zkEVM
   domainId: 3776
   gasCurrencyCoinGeckoId: ethereum
@@ -3536,9 +3533,6 @@ infinityvm:
     estimateBlockTime: 1
     reorgPeriod: 1
   chainId: 1032009
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: Infinity VM
   domainId: 1032009
   gasCurrencyCoinGeckoId: infinityvm
@@ -4638,6 +4632,27 @@ miraclechain:
   rpcUrls:
     - http: https://rpc.miracleplay.io
   technicalStack: arbitrumnitro
+mitosis:
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 124816
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Mitosis
+  domainId: 124816
+  gasCurrencyCoinGeckoId: mitosis
+  name: mitosis
+  nativeToken:
+    decimals: 18
+    name: MITO
+    symbol: MITO
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.mitosis.org
+  technicalStack: other
 mitosistestnet:
   blockExplorers:
     - apiUrl: https://testnet.mitosiscan.xyz/api
