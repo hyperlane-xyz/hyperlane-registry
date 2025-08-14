@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
 blockExplorers:
   - apiUrl: https://explorer.glue.net/api
     family: blockscout
@@ -9,9 +12,6 @@ blocks:
   estimateBlockTime: 6
   reorgPeriod: 5
 chainId: 1300
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: Glue
 domainId: 1300
 gasCurrencyCoinGeckoId: glue

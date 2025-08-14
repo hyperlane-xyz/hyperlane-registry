@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
 blockExplorers:
   - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/21000000/etherscan/api
     family: routescan
@@ -9,9 +12,6 @@ blocks:
   estimateBlockTime: 20
   reorgPeriod: 5
 chainId: 21000000
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: Corn
 domainId: 21000000
 gasCurrencyCoinGeckoId: bitcoin
