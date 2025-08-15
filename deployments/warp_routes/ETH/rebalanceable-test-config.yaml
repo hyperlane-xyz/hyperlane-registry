@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x8A8260896199AB2c06C001438Fb20C47EdB0FdA5"
+    chainName: arbitrum
+    connections:
+      - token: ethereum|optimism|0x82eEECE1c3b1F865243dC089d3Fb34E25557B34B
+      - token: ethereum|base|0xB395706F4b1976499e8789F4a2bf82c4B3aa2b59
+    decimals: 18
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH
+  - addressOrDenom: "0x82eEECE1c3b1F865243dC089d3Fb34E25557B34B"
+    chainName: optimism
+    connections:
+      - token: ethereum|arbitrum|0x8A8260896199AB2c06C001438Fb20C47EdB0FdA5
+      - token: ethereum|base|0xB395706F4b1976499e8789F4a2bf82c4B3aa2b59
+    decimals: 18
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH
+  - addressOrDenom: "0xB395706F4b1976499e8789F4a2bf82c4B3aa2b59"
+    chainName: base
+    connections:
+      - token: ethereum|arbitrum|0x8A8260896199AB2c06C001438Fb20C47EdB0FdA5
+      - token: ethereum|optimism|0x82eEECE1c3b1F865243dC089d3Fb34E25557B34B
+    decimals: 18
+    name: Ether
+    standard: EvmHypSynthetic
+    symbol: ETH
