@@ -2960,6 +2960,26 @@ MIRAI/abstract-bsc-solanamainnet:
       name: Project Mirai
       standard: SealevelHypCollateral
       symbol: MIRAI
+MITO/mitosis:
+  tokens:
+    - addressOrDenom: "0x8e1e6BF7E13C400269987B65Ab2b5724b016CaEF"
+      chainName: bsc
+      connections:
+        - token: ethereum|mitosis|0xF6CC9B10c607afB777380bF71F272E4D7037C3A9
+      decimals: 18
+      logoURI: /deployments/warp_routes/MITO/logo.svg
+      name: MITO
+      standard: EvmHypSynthetic
+      symbol: MITO
+    - addressOrDenom: "0xF6CC9B10c607afB777380bF71F272E4D7037C3A9"
+      chainName: mitosis
+      connections:
+        - token: ethereum|bsc|0x8e1e6BF7E13C400269987B65Ab2b5724b016CaEF
+      decimals: 18
+      logoURI: /deployments/warp_routes/MITO/logo.svg
+      name: MITO
+      standard: EvmHypNative
+      symbol: MITO
 NTN/holesky-piccadilly:
   tokens:
     - addressOrDenom: "0xdF73856d44C1f7b3B14Fd0DaD8B0792fCf1c3f68"
