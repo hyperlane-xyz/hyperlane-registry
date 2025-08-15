@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 22.1.0
+
+### Minor Changes
+
+- a45326c: Deploy MITO/mitosis route.
+- 8224f8e: Update metadata of deprecated chains.
+
 ## 22.0.0
 
 ### Major Changes
