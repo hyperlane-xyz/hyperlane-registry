@@ -1626,6 +1626,10 @@ coredao:
     - http: https://rpc-core.icecreamswap.com
   technicalStack: other
 corn:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/21000000/etherscan/api
       family: routescan
@@ -1636,9 +1640,6 @@ corn:
     estimateBlockTime: 20
     reorgPeriod: 5
   chainId: 21000000
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: Corn
   domainId: 21000000
   gasCurrencyCoinGeckoId: bitcoin
@@ -3053,6 +3054,10 @@ game7:
     - http: https://mainnet-rpc.game7.build
   technicalStack: arbitrumnitro
 glue:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.glue.net/api
       family: blockscout
@@ -3063,9 +3068,6 @@ glue:
     estimateBlockTime: 6
     reorgPeriod: 5
   chainId: 1300
-  deployer:
-    name: Abacus Works
-    url: https://www.hyperlane.xyz
   displayName: Glue
   domainId: 1300
   gasCurrencyCoinGeckoId: glue
