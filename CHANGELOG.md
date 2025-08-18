@@ -1,5 +1,35 @@
 # @hyperlane-xyz/registry
 
+## 22.0.0
+
+### Major Changes
+
+- f7cfec3: Deploy new ICA v2 routers: https://github.com/hyperlane-xyz/hyperlane-monorepo/pull/6475
+
+### Minor Changes
+
+- 732cd1c: Add USDT/matchain warp route deploy artifacts
+- 5659860: Deploy to mitosis.
+- 496eb70: Enable oUSDT on UI for bitlayer, mantle, ronin, sonic.
+
+### Patch Changes
+
+- e7b9fa0: Update default ISMs on ethereum, arbitrum, base, abstract.
+- 1d32c2f: Add velo XERC20 type to oUSDT
+- 76812e2: Update oXAUT config to include base chain
+- 8d57bc5: Remove arbitrum connection for SMOL route, update owners for SMOL and MAGIC
+
+## 21.1.0
+
+### Minor Changes
+
+- 45eca7d: Add MAGIC arbitrum/abstract/ronin route. Add SMOL arbitrum + abstract routes.
+
+### Patch Changes
+
+- cea2b10: Add solana `collateralAddressOrDenom` to SMOL route
+- 9a36c26: Replace USD₮ for USDT in ethereum ouSDT/production route
+
 ## 21.0.0
 
 ### Major Changes
