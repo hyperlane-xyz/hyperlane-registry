@@ -164,12 +164,12 @@ ethereum:
     extraBridges:
       - limits:
           bufferCap: "25000000000"
-          type: velo
           rateLimitPerSecond: "120000000"
         lockbox: "0x935EAaAb78B491Cd9281f438E413767893913983"
     warpRouteLimits:
       bufferCap: "25000000000"
       rateLimitPerSecond: "120000000"
+      type: velo
 fraxtal:
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
