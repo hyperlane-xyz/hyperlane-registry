@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xF528Aa0c86cBBbBb4288ecb8133D317DD528FD88"
+    chainName: bsc
+    collateralAddressOrDenom: "0x55d398326f99059fF775485246999027B3197955"
+    connections:
+      - token: ethereum|deepbrainchain|0x5155101187F8Faa1aD8AfeC7820c801870F81D52
+    decimals: 18
+    name: Tether USD
+    standard: EvmHypCollateral
+    symbol: USDT
+  - addressOrDenom: "0x5155101187F8Faa1aD8AfeC7820c801870F81D52"
+    chainName: deepbrainchain
+    connections:
+      - token: ethereum|bsc|0xF528Aa0c86cBBbBb4288ecb8133D317DD528FD88
+    decimals: 18
+    name: Tether USD
+    standard: EvmHypSynthetic
+    symbol: USDT
