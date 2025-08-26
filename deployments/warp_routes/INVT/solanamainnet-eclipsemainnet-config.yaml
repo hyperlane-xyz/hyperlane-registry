@@ -1,24 +1,21 @@
 tokens:
-  - chainName: solanamainnet
-    standard: SealevelHypCollateral
-    decimals: 4
-    name: Invariant
-    symbol: INVT
-    logoURI: https://raw.githubusercontent.com/invariant-labs/invt/master/images/invt.png
-    addressOrDenom: DTfbAYGbdFADAXVzeqi6jW92cx3U9G1EtCdP8NTSvHGy
-    collateralAddressOrDenom: invTrkA5SbM49yjk9EoknQ8DpBhaprTJ5csdkzTnAiV
-    connections:
-      - token: sealevel|eclipsemainnet|4ydN8rDcLTACUFVkcDX4Fcef8nm9sj2tMheT3An1fvJt
-
-  - chainName: eclipsemainnet
-    standard: SealevelHypSynthetic
-    decimals: 4
-    name: Invariant
-    symbol: INVT
-    logoURI: https://raw.githubusercontent.com/invariant-labs/invt/master/images/invt.png
-    addressOrDenom: 4ydN8rDcLTACUFVkcDX4Fcef8nm9sj2tMheT3An1fvJt
+  - addressOrDenom: 4ydN8rDcLTACUFVkcDX4Fcef8nm9sj2tMheT3An1fvJt
+    chainName: eclipsemainnet
     collateralAddressOrDenom: EqwchrrGFppZYpTVAQH7ETm2QhSpu6eHV5fwZtUamfSM
     connections:
       - token: sealevel|solanamainnet|DTfbAYGbdFADAXVzeqi6jW92cx3U9G1EtCdP8NTSvHGy
-
-options: {}
+    decimals: 4
+    logoURI: /deployments/warp_routes/INVT/logo.png
+    name: Invariant
+    standard: SealevelHypSynthetic
+    symbol: INVT
+  - addressOrDenom: DTfbAYGbdFADAXVzeqi6jW92cx3U9G1EtCdP8NTSvHGy
+    chainName: solanamainnet
+    collateralAddressOrDenom: invTrkA5SbM49yjk9EoknQ8DpBhaprTJ5csdkzTnAiV
+    connections:
+      - token: sealevel|eclipsemainnet|4ydN8rDcLTACUFVkcDX4Fcef8nm9sj2tMheT3An1fvJt
+    decimals: 4
+    logoURI: /deployments/warp_routes/INVT/logo.png
+    name: Invariant
+    standard: SealevelHypCollateral
+    symbol: INVT
