@@ -5839,6 +5839,35 @@ pulsechain:
   transactionOverrides:
     maxFeePerGas: 800000000000000
     maxPriorityFeePerGas: 2500000000
+radixstokenet:
+  bech32Prefix: account_tdx_2_
+  blockExplorers:
+    - apiUrl: https://stokenet-dashboard.radixdlt.com/
+      family: other
+      name: Radix Dashboard
+      url: https://stokenet-dashboard.radixdlt.com/
+  blocks:
+    confirmations: 0
+    estimateBlockTime: 5
+    reorgPeriod: 0
+  chainId: 2
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Radix Stokenet
+  domainId: 1280787160
+  gatewayUrls:
+    - http: https://stokenet.radixdlt.com
+  isTestnet: true
+  name: radixstokenet
+  nativeToken:
+    decimals: 18
+    denom: resource_tdx_2_1tknxxxxxxxxxradxrdxxxxxxxxx009923554798xxxxxxxxxtfd2jc
+    name: Radix
+    symbol: XRD
+  protocol: radix
+  rpcUrls:
+    - http: https://stokenet.radixdlt.com
 rarichain:
   blockExplorers:
     - apiUrl: https://mainnet.explorer.rarichain.org/api
