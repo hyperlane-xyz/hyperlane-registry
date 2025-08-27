@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Update metadata of deprecated chains.
+Deploy to celosepolia, incentivtestnet.

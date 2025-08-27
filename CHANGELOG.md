@@ -1,5 +1,22 @@
 # @hyperlane-xyz/registry
 
+## 23.0.0
+
+### Major Changes
+
+- a56736e: Bump hyperlane-xyz/sdk hyperlane-xyz/utils versions
+
+### Minor Changes
+
+- 6fb1fef: Update default ISMs on some chains to enroll mitosis.
+- a45326c: Deploy MITO/mitosis route.
+- 8224f8e: Update metadata of deprecated chains.
+
+### Patch Changes
+
+- 525fd39: Added logo to USDT/matchain warp route
+- a56736e: Add velo XERC20 type to oUSDT
+
 ## 22.0.0
 
 ### Major Changes

@@ -2783,6 +2783,28 @@ LUMIA/arbitrum-avalanche-base-bsc-ethereum-lumiaprism-optimism-polygon:
       name: Lumia Token
       standard: EvmHypSynthetic
       symbol: LUMIA
+LYX/lukso:
+  tokens:
+    - addressOrDenom: "0xC210B2cB65ed3484892167F5e05F7ab496Ab0598"
+      chainName: ethereum
+      coinGeckoId: lukso-token-2
+      connections:
+        - token: ethereum|lukso|0xC210B2cB65ed3484892167F5e05F7ab496Ab0598
+      decimals: 18
+      logoURI: /deployments/warp_routes/LYX/logo.svg
+      name: Bridged LUKSO (Hyperlane)
+      standard: EvmHypSynthetic
+      symbol: LYX
+    - addressOrDenom: "0xC210B2cB65ed3484892167F5e05F7ab496Ab0598"
+      chainName: lukso
+      coinGeckoId: lukso-token-2
+      connections:
+        - token: ethereum|ethereum|0xC210B2cB65ed3484892167F5e05F7ab496Ab0598
+      decimals: 18
+      logoURI: /deployments/warp_routes/LYX/logo.svg
+      name: LUKSO
+      standard: EvmHypNative
+      symbol: LYX
 MAGIC/arbitrum-abstract-ronin:
   tokens:
     - addressOrDenom: "0x263D8f36Bb8d0d9526255E205868C26690b04B88"
@@ -6446,6 +6468,7 @@ USDT/matchain:
       connections:
         - token: ethereum|matchain|0xa0e73E30945B80010503E68e53AbFd0B6B6a6ed9
       decimals: 18
+      logoURI: /deployments/warp_routes/USDT/logo.svg
       name: Tether USD
       standard: EvmHypCollateral
       symbol: USDT
@@ -6454,6 +6477,7 @@ USDT/matchain:
       connections:
         - token: ethereum|bsc|0xa0e73E30945B80010503E68e53AbFd0B6B6a6ed9
       decimals: 18
+      logoURI: /deployments/warp_routes/USDT/logo.svg
       name: Tether USD
       standard: EvmHypSynthetic
       symbol: USDT
