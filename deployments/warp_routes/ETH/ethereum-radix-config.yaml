@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: component_rdx1cpem230qt00q0733x3pauzjw2y2sd4rcjt92ac27kkfxydge96z9qq
+    chainName: radix
+    connections:
+      - token: ethereum|ethereum|0x20d0159C2369d115a7e430516E635267c08ACE19
+    decimals: 18
+    name: Ethereum
+    standard: RadixHypSynthetic
+    symbol: ETH
+  - addressOrDenom: "0x20d0159C2369d115a7e430516E635267c08ACE19"
+    chainName: ethereum
+    connections:
+      - token: radix|radix|component_rdx1cpem230qt00q0733x3pauzjw2y2sd4rcjt92ac27kkfxydge96z9qq
+    decimals: 18
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH
