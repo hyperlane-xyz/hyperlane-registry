@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 23.2.0
+
+### Minor Changes
+
+- 09fa9df: Add blockExplorers for mitosis and update owners for MITO/mitosis route
+
+### Patch Changes
+
+- d3cc03f: Add mito coingecko id
+
 ## 23.1.0
 
 ### Minor Changes
