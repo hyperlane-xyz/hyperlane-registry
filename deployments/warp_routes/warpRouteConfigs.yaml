@@ -3018,6 +3018,7 @@ MITO/mitosis:
       symbol: MITO
     - addressOrDenom: "0xF6CC9B10c607afB777380bF71F272E4D7037C3A9"
       chainName: mitosis
+      coinGeckoId: mitosis
       connections:
         - token: ethereum|bsc|0x8e1e6BF7E13C400269987B65Ab2b5724b016CaEF
       decimals: 18
@@ -3025,6 +3026,28 @@ MITO/mitosis:
       name: MITO
       standard: EvmHypNative
       symbol: MITO
+MONEY/sonicsvm:
+  tokens:
+    - addressOrDenom: B7y3LKF5bRmeZBveaeLLtnsxXvS8NK7iegT7F1zP7mFp
+      chainName: solanamainnet
+      collateralAddressOrDenom: 8QTHqXcDXJf8Apiz81Lh3yAeV4MxbgZGXM9L9z4rhzV
+      connections:
+        - token: sealevel|sonicsvm|3Gxd4twoKcMMqyTJx9vbe9znhzMDdPktHRj56yj4UUo1
+      decimals: 6
+      logoURI: /deployments/warp_routes/MONEY/logo.svg
+      name: Money
+      standard: SealevelHypSynthetic
+      symbol: MONEY
+    - addressOrDenom: 3Gxd4twoKcMMqyTJx9vbe9znhzMDdPktHRj56yj4UUo1
+      chainName: sonicsvm
+      collateralAddressOrDenom: 4atQffe9q6xwcv5YmZKapSRofHFtJXtG6jJvdiVojqt7
+      connections:
+        - token: sealevel|solanamainnet|B7y3LKF5bRmeZBveaeLLtnsxXvS8NK7iegT7F1zP7mFp
+      decimals: 6
+      logoURI: /deployments/warp_routes/MONEY/logo.svg
+      name: Money
+      standard: SealevelHypCollateral
+      symbol: MONEY
 NTN/holesky-piccadilly:
   tokens:
     - addressOrDenom: "0xdF73856d44C1f7b3B14Fd0DaD8B0792fCf1c3f68"
@@ -3290,6 +3313,7 @@ PROM/bsc-ethereum-polygon:
   tokens:
     - addressOrDenom: "0xA83e1e21e82038e425e7a47aD7c2e059D7F1cae6"
       chainName: bsc
+      coinGeckoId: prometeus
       collateralAddressOrDenom: "0xaf53d56ff99f1322515e54fdde93ff8b3b7dafd5"
       connections:
         - token: ethereum|ethereum|0x25C147Bd61bdaB6ce5A1Ae4939d2765092e0e2F8
@@ -3301,6 +3325,7 @@ PROM/bsc-ethereum-polygon:
       symbol: PROM
     - addressOrDenom: "0x25C147Bd61bdaB6ce5A1Ae4939d2765092e0e2F8"
       chainName: ethereum
+      coinGeckoId: prometeus
       collateralAddressOrDenom: "0xfc82bb4ba86045af6f327323a46e80412b91b27d"
       connections:
         - token: ethereum|bsc|0xA83e1e21e82038e425e7a47aD7c2e059D7F1cae6
@@ -3324,6 +3349,7 @@ PROM/bsc-polygon-prom:
   tokens:
     - addressOrDenom: "0x700b9322F6Cce0c8EFF4754bE9AcE88Ce6582821"
       chainName: bsc
+      coinGeckoId: prometeus
       collateralAddressOrDenom: "0xaf53d56ff99f1322515e54fdde93ff8b3b7dafd5"
       connections:
         - token: ethereum|polygon|0x23Ae469604E3c1b581ADabf07c035472FbdB5Ee1
@@ -3345,6 +3371,7 @@ PROM/bsc-polygon-prom:
       symbol: PROM
     - addressOrDenom: "0xc1f4b896B94bd57dEfB7b6e630Bb91995b86CbAC"
       chainName: prom
+      coinGeckoId: prometeus
       connections:
         - token: ethereum|bsc|0x700b9322F6Cce0c8EFF4754bE9AcE88Ce6582821
         - token: ethereum|polygon|0x23Ae469604E3c1b581ADabf07c035472FbdB5Ee1
@@ -8480,6 +8507,29 @@ pumpBTCsei/ethereum-sei:
       name: redBTC
       standard: EvmHypSynthetic
       symbol: redBTC
+pumpBTCstk/starknet:
+  options: {}
+  tokens:
+    - addressOrDenom: "0x4564da2DD9BaDE637c85a1B5BFC14eF5099096BC"
+      chainName: ethereum
+      coinGeckoId: pumpbtc
+      collateralAddressOrDenom: "0xfa78Ea5d8C39E0a8852aBAAF88aE4D32349b7D02"
+      connections:
+        - token: starknet|starknet|0x041b4e5dc3e9d859f12b62913489633bbd5b5c8c6ec0ea0bca2fdd4469534111
+      decimals: 8
+      logoURI: /deployments/warp_routes/pumpBTCstk/logo.svg
+      name: pumpBTC.stk
+      standard: EvmHypCollateral
+      symbol: pumpBTC.stk
+    - addressOrDenom: "0x041b4e5dc3e9d859f12b62913489633bbd5b5c8c6ec0ea0bca2fdd4469534111"
+      chainName: starknet
+      connections:
+        - token: ethereum|ethereum|0x4564da2DD9BaDE637c85a1B5BFC14eF5099096BC
+      decimals: 8
+      logoURI: /deployments/warp_routes/pumpBTCstk/logo.svg
+      name: pumpBTC.stk
+      standard: StarknetHypSynthetic
+      symbol: pumpBTC.stk
 pumpBTCuni/ethereum-unichain:
   tokens:
     - addressOrDenom: "0x791a257977a147B501dA11013C826063FF2d881e"
