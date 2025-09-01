@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Rename radixstokenet -> radixtestnet
+Add HOLO metadata.
