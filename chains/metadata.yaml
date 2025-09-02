@@ -1376,6 +1376,32 @@ celo:
     - http: https://rpc.ankr.com/celo
     - http: https://celo.drpc.org
   technicalStack: opstack
+celosepolia:
+  blockExplorers:
+    - apiUrl: https://celo-sepolia.blockscout.com/api
+      family: blockscout
+      name: Celo Sepolia Explorer
+      url: https://celo-sepolia.blockscout.com
+  blocks:
+    confirmations: 3
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 11142220
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Celo Sepolia
+  domainId: 11142220
+  isTestnet: true
+  name: celosepolia
+  nativeToken:
+    decimals: 18
+    name: CELO
+    symbol: CELO
+  protocol: ethereum
+  rpcUrls:
+    - http: https://forno.celo-sepolia.celo-testnet.org
+  technicalStack: opstack
 cheesechain:
   blockExplorers:
     - apiUrl: https://fetascan.xyz/api
@@ -3471,6 +3497,32 @@ immutablezkevmmainnet:
   transactionOverrides:
     maxFeePerGas: 100000000000
     maxPriorityFeePerGas: 100000000000
+incentivtestnet:
+  blockExplorers:
+    - apiUrl: https://explorer-testnet.incentiv.io/api
+      family: blockscout
+      name: Incentiv Testnet Explorer
+      url: https://explorer-testnet.incentiv.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 10
+    reorgPeriod: 1
+  chainId: 28802
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Incentiv Testnet v2
+  domainId: 28802
+  isTestnet: true
+  name: incentivtestnet
+  nativeToken:
+    decimals: 18
+    name: TCENT
+    symbol: TCENT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc2.testnet.incentiv.io
+  technicalStack: other
 inclusivelayertestnet:
   blockExplorers:
     - apiUrl: http://192.241.245.190/api
@@ -4635,6 +4687,11 @@ miraclechain:
     - http: https://rpc.miracleplay.io
   technicalStack: arbitrumnitro
 mitosis:
+  blockExplorers:
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/124816/etherscan/api
+      family: routescan
+      name: Mitosis Explorer
+      url: https://mitoscan.io/
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -5818,15 +5875,14 @@ pulsechain:
   blocks:
     confirmations: 1
     estimateBlockTime: 10
-    reorgPeriod: 0
+    reorgPeriod: 10
   chainId: 369
   deployer:
-    name: ganadhish-RL
-    url: https://github.com/ganadhish-RL
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
   displayName: PulseChain
   domainId: 369
   gasCurrencyCoinGeckoId: pulsechain
-  isTestnet: false
   name: pulsechain
   nativeToken:
     decimals: 18
@@ -5836,9 +5892,66 @@ pulsechain:
   rpcUrls:
     - http: https://rpc.pulsechain.com
     - http: https://pulsechain-rpc.publicnode.com
-  transactionOverrides:
-    maxFeePerGas: 800000000000000
-    maxPriorityFeePerGas: 2500000000
+  technicalStack: other
+radix:
+  bech32Prefix: account_rdx
+  blockExplorers:
+    - apiUrl: https://dashboard.radixdlt.com
+      family: other
+      name: Radix Dashboard
+      url: https://dashboard.radixdlt.com
+  blocks:
+    confirmations: 0
+    estimateBlockTime: 5
+    reorgPeriod: 0
+  chainId: 1
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Radix
+  domainId: 1633970780
+  gasCurrencyCoinGeckoId: radix
+  gatewayUrls:
+    - http: https://mainnet.radixdlt.com
+  name: radix
+  nativeToken:
+    decimals: 18
+    denom: resource_rdx1tknxxxxxxxxxradxrdxxxxxxxxx009923554798xxxxxxxxxradxrd
+    name: Radix
+    symbol: XRD
+  protocol: radix
+  rpcUrls:
+    - http: https://radix.rpc.grove.city/v1/326002fc
+  technicalStack: other
+radixtestnet:
+  bech32Prefix: account_tdx_2_
+  blockExplorers:
+    - apiUrl: https://stokenet-dashboard.radixdlt.com
+      family: other
+      name: Radix Dashboard
+      url: https://stokenet-dashboard.radixdlt.com
+  blocks:
+    confirmations: 0
+    estimateBlockTime: 5
+    reorgPeriod: 0
+  chainId: 2
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Radix Stokenet
+  domainId: 1280787160
+  gatewayUrls:
+    - http: https://stokenet.radixdlt.com
+  isTestnet: true
+  name: radixtestnet
+  nativeToken:
+    decimals: 18
+    denom: resource_tdx_2_1tknxxxxxxxxxradxrdxxxxxxxxx009923554798xxxxxxxxxtfd2jc
+    name: Radix
+    symbol: XRD
+  protocol: radix
+  rpcUrls:
+    - http: https://stokenet.radixdlt.com
 rarichain:
   blockExplorers:
     - apiUrl: https://mainnet.explorer.rarichain.org/api
@@ -8014,7 +8127,7 @@ zircuit:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 5
+    reorgPeriod: 21600
   chainId: 48900
   deployer:
     name: Abacus Works

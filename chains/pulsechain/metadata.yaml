@@ -10,15 +10,14 @@ blockExplorers:
 blocks:
   confirmations: 1
   estimateBlockTime: 10
-  reorgPeriod: 0
+  reorgPeriod: 10
 chainId: 369
 deployer:
-  name: ganadhish-RL
-  url: https://github.com/ganadhish-RL
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
 displayName: PulseChain
 domainId: 369
 gasCurrencyCoinGeckoId: pulsechain
-isTestnet: false
 name: pulsechain
 nativeToken:
   decimals: 18
@@ -28,6 +27,4 @@ protocol: ethereum
 rpcUrls:
   - http: https://rpc.pulsechain.com
   - http: https://pulsechain-rpc.publicnode.com
-transactionOverrides:
-  maxFeePerGas: 800000000000000
-  maxPriorityFeePerGas: 2500000000
+technicalStack: other
