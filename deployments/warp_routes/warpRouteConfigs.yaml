@@ -1149,6 +1149,12 @@ ETH/ethereum-hyperevm:
       symbol: ETH
 ETH/ethereum-radix:
   tokens:
+    - addressOrDenom: "0x20d0159C2369d115a7e430516E635267c08ACE19"
+      chainName: ethereum
+      decimals: 18
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
     - addressOrDenom: component_rdx1cr0v0jnmfzhzs4xfsvfgcm43vp7khrx7jfkf0umfl4qes528zm7pcq
       chainName: radix
       connections:
@@ -1157,14 +1163,6 @@ ETH/ethereum-radix:
       name: Hyperlane Ether
       standard: RadixHypSynthetic
       symbol: hETH
-    - addressOrDenom: "0x20d0159C2369d115a7e430516E635267c08ACE19"
-      chainName: ethereum
-      connections:
-        - token: radix|radix|component_rdx1cr0v0jnmfzhzs4xfsvfgcm43vp7khrx7jfkf0umfl4qes528zm7pcq
-      decimals: 18
-      name: Ether
-      standard: EvmHypNative
-      symbol: ETH
 ETH/ethereum-vana:
   tokens:
     - addressOrDenom: "0x3e6Dba802d62aba2361Dd632fbC9f547AA6789aE"
