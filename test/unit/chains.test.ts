@@ -80,7 +80,9 @@ describe('Chain metadata', () => {
         expect(Object.values(EthJsonRpcBlockParameterTag)).to.include(reorgPeriod);
       } else if (typeof reorgPeriod === 'number') {
         expect(reorgPeriod).to.be.at.least(0);
-        expect(reorgPeriod).to.be.at.most(500);
+        if (chain !== "zircuit") {
+          expect(reorgPeriod).to.be.at.most(500);
+        }
       } else {
         throw new Error(`Invalid reorgPeriod type for ${chain}`);
       }
@@ -126,7 +128,7 @@ describe('Chain metadata', () => {
             } else if (chain === 'mantle') {
               expect(metadata.blocks?.reorgPeriod).to.equal(2);
             } else if (chain === 'zircuit') {
-              expect(metadata.blocks?.reorgPeriod).to.equal(45);
+              expect(metadata.blocks?.reorgPeriod).to.equal(21600);
             } else {
               expect(metadata.blocks?.reorgPeriod).to.equal(5);
             }

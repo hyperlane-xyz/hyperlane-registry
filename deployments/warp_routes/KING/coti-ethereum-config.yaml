@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x5CF4ce6Be17CaB6d86d724804e2f1f5040205594"
+    chainName: coti
+    connections:
+      - token: ethereum|ethereum|0x592cd754B947396255E50Cac10c519c7ee313919
+    decimals: 18
+    logoURI: /deployments/warp_routes/KING/logo.svg
+    name: King Protocol
+    standard: EvmHypSynthetic
+    symbol: KING
+  - addressOrDenom: "0x592cd754B947396255E50Cac10c519c7ee313919"
+    chainName: ethereum
+    coinGeckoId: lrt-squared
+    collateralAddressOrDenom: "0x8F08B70456eb22f6109F57b8fafE862ED28E6040"
+    connections:
+      - token: ethereum|coti|0x5CF4ce6Be17CaB6d86d724804e2f1f5040205594
+    decimals: 18
+    logoURI: /deployments/warp_routes/KING/logo.svg
+    name: King Protocol
+    standard: EvmHypCollateral
+    symbol: KING
