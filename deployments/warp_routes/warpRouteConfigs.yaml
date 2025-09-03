@@ -1147,6 +1147,24 @@ ETH/ethereum-hyperevm:
       name: Ether
       standard: EvmHypSynthetic
       symbol: ETH
+ETH/ethereum-radix:
+  tokens:
+    - addressOrDenom: component_rdx1cr0v0jnmfzhzs4xfsvfgcm43vp7khrx7jfkf0umfl4qes528zm7pcq
+      chainName: radix
+      connections:
+        - token: ethereum|ethereum|0x20d0159C2369d115a7e430516E635267c08ACE19
+      decimals: 18
+      name: Hyperlane Ether
+      standard: RadixHypSynthetic
+      symbol: hETH
+    - addressOrDenom: "0x20d0159C2369d115a7e430516E635267c08ACE19"
+      chainName: ethereum
+      connections:
+        - token: radix|radix|component_rdx1cr0v0jnmfzhzs4xfsvfgcm43vp7khrx7jfkf0umfl4qes528zm7pcq
+      decimals: 18
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
 ETH/ethereum-vana:
   tokens:
     - addressOrDenom: "0x3e6Dba802d62aba2361Dd632fbC9f547AA6789aE"
@@ -4989,6 +5007,51 @@ USDC/arbitrum-base-ethereum-lisk-optimism-polygon-zeronetwork:
       name: USD Coin
       standard: EvmHypCollateral
       symbol: USDC
+USDC/arbitrum-base-ethereum-radix:
+  tokens:
+    - addressOrDenom: "0x867a19a5b257bcb99E1840dE2ef852268Efd5E46"
+      chainName: arbitrum
+      collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+      connections:
+        - token: ethereum|base|0x151B328Ca752C67C9a4C6E0CA329bE0c00B12A24
+        - token: ethereum|ethereum|0x67899664446CCfAdf75e0D3F5668be262aCd1069
+        - token: radix|radix|component_rdx1crvhu42czzpvkh556228sc5xk7uz69yvwcsqn23u5yy65pea0w02l0
+      decimals: 6
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x151B328Ca752C67C9a4C6E0CA329bE0c00B12A24"
+      chainName: base
+      collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      connections:
+        - token: ethereum|arbitrum|0x867a19a5b257bcb99E1840dE2ef852268Efd5E46
+        - token: ethereum|ethereum|0x67899664446CCfAdf75e0D3F5668be262aCd1069
+        - token: radix|radix|component_rdx1crvhu42czzpvkh556228sc5xk7uz69yvwcsqn23u5yy65pea0w02l0
+      decimals: 6
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x67899664446CCfAdf75e0D3F5668be262aCd1069"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+      connections:
+        - token: ethereum|arbitrum|0x867a19a5b257bcb99E1840dE2ef852268Efd5E46
+        - token: ethereum|base|0x151B328Ca752C67C9a4C6E0CA329bE0c00B12A24
+        - token: radix|radix|component_rdx1crvhu42czzpvkh556228sc5xk7uz69yvwcsqn23u5yy65pea0w02l0
+      decimals: 6
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: component_rdx1crvhu42czzpvkh556228sc5xk7uz69yvwcsqn23u5yy65pea0w02l0
+      chainName: radix
+      connections:
+        - token: ethereum|arbitrum|0x867a19a5b257bcb99E1840dE2ef852268Efd5E46
+        - token: ethereum|base|0x151B328Ca752C67C9a4C6E0CA329bE0c00B12A24
+        - token: ethereum|ethereum|0x67899664446CCfAdf75e0D3F5668be262aCd1069
+      decimals: 6
+      name: USDC
+      standard: RadixHypSynthetic
+      symbol: USDC
 USDC/arbitrum-bsc-kalychain-polygon:
   tokens:
     - addressOrDenom: "0xD0a1d1b8E10625eE7Ed4Be4Aa7afA7f169411FBd"
@@ -6417,6 +6480,25 @@ USDT/ethereum-lumiaprism:
       name: Tether USD
       standard: EvmHypSynthetic
       symbol: USDT
+USDT/ethereum-radix:
+  tokens:
+    - addressOrDenom: "0x2Dc9A39d934f52E0f28E52E8d32Ce810FC685247"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+      connections:
+        - token: radix|radix|component_rdx1cp2llht7llhp9ung4l657uecn03m6tu07x7eznhmfctspxtpl5h43g
+      decimals: 6
+      name: Tether USD
+      standard: EvmHypCollateral
+      symbol: USDT
+    - addressOrDenom: component_rdx1cp2llht7llhp9ung4l657uecn03m6tu07x7eznhmfctspxtpl5h43g
+      chainName: radix
+      connections:
+        - token: ethereum|ethereum|0x2Dc9A39d934f52E0f28E52E8d32Ce810FC685247
+      decimals: 6
+      name: Tether USD
+      standard: RadixHypSynthetic
+      symbol: USDT
 USDT/ethereum-superseed:
   tokens:
     - addressOrDenom: "0xA7Db85E2925e3fec7C33A20d87CC895C948e62b3"
@@ -6758,6 +6840,25 @@ WBTC/ethereum-mode-scroll-zeronetwork:
       name: Wrapped BTC
       standard: EvmHypSynthetic
       symbol: WBTC
+WBTC/ethereum-radix:
+  tokens:
+    - addressOrDenom: "0x0E993E49df1b7412DED493EAAf806730b74378b9"
+      chainName: ethereum
+      collateralAddressOrDenom: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+      connections:
+        - token: radix|radix|component_rdx1cp9lqkswethenu2l8cx5d39x9lh9dm22t62cykkc4sxp8rdvj25ak4
+      decimals: 8
+      name: Wrapped BTC
+      standard: EvmHypCollateral
+      symbol: WBTC
+    - addressOrDenom: component_rdx1cp9lqkswethenu2l8cx5d39x9lh9dm22t62cykkc4sxp8rdvj25ak4
+      chainName: radix
+      connections:
+        - token: ethereum|ethereum|0x0E993E49df1b7412DED493EAAf806730b74378b9
+      decimals: 8
+      name: Hyperlane Wrapped Bitcoin
+      standard: RadixHypSynthetic
+      symbol: hWBTC
 WETH/artela-base:
   tokens:
     - addressOrDenom: "0xfae4e14D01D9E13FB5db20A0329ED0472A2D96C7"
