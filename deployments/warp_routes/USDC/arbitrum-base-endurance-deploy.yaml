@@ -1,0 +1,36 @@
+arbitrum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    base:
+      - bridge: "0xa66a9C0112a428d407388Db87659E9C66F3eF29c"
+    endurance:
+      - bridge: "0xa66a9C0112a428d407388Db87659E9C66F3eF29c"
+  contractVersion: 8.0.0
+  owner: "0x7a80EfF79AFa5899f6735B5985cFCb09d824e427"
+  token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+  type: collateral
+base:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0xa66a9C0112a428d407388Db87659E9C66F3eF29c"
+    endurance:
+      - bridge: "0xa66a9C0112a428d407388Db87659E9C66F3eF29c"
+  contractVersion: 8.0.0
+  owner: "0xcC006fb59f01bC8FbbAa01D0952C2E08432a5161"
+  token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+  type: collateral
+endurance:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0xa66a9C0112a428d407388Db87659E9C66F3eF29c"
+    base:
+      - bridge: "0xa66a9C0112a428d407388Db87659E9C66F3eF29c"
+  contractVersion: 8.0.0
+  owner: "0x7a80EfF79AFa5899f6735B5985cFCb09d824e427"
+  token: "0x71ee6485cF72b9C3bf183528A2241474f21B2eFa"
+  type: collateralFiat
