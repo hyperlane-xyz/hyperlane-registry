@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xe38c11C02B4f14366175D1276ffBdf00c55A9d41"
+    chainName: bsc
+    coinGeckoId: holoworld
+    collateralAddressOrDenom: "0x1a5D7E4c3A7F940B240b7357a4bFED30D17f9497"
+    connections:
+      - token: sealevel|solanamainnet|ACUNbqSVgoLjrff9Cy5EqjTxqhfRe5hoZAvfFVvtfiEZ
+    decimals: 18
+    logoURI: /deployments/warp_routes/HOLO/logo.svg
+    name: Holoworld AI
+    standard: EvmHypCollateral
+    symbol: HOLO
+  - addressOrDenom: ACUNbqSVgoLjrff9Cy5EqjTxqhfRe5hoZAvfFVvtfiEZ
+    chainName: solanamainnet
+    collateralAddressOrDenom: 4UnRvsP6GGxgagQcP4RGwt9AQyPky9cFoygf8xQ11ZHC
+    connections:
+      - token: ethereum|bsc|0xe38c11C02B4f14366175D1276ffBdf00c55A9d41
+    decimals: 18
+    logoURI: /deployments/warp_routes/HOLO/logo.svg
+    name: Holoworld AI
+    standard: SealevelHypSynthetic
+    symbol: HOLO
