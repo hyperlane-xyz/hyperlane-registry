@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: int3face
+blocks:
+  confirmations: 1
+  estimateBlockTime: 6
+  reorgPeriod: 1
+canonicalAsset: uint3
+chainId: int3-test-2
+contractAddressBytes: 32
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Int3face Testnet
+# Generated from: console.log(parseInt('0x'+Buffer.from('int3-test-2').toString('hex')) % 4_294_967_295)
+domainId: 865526488
+gasPrice:
+  amount: "0.1"
+  denom: uint3
+grpcUrls:
+  - http: https://grpc.testnet.int3face.zone:443
+index:
+  chunk: 10
+  from: 12640500
+isTestnet: true
+name: int3facetestnet
+nativeToken:
+  decimals: 6
+  denom: uint3
+  name: Int3face
+  symbol: INT3
+protocol: cosmosnative
+restUrls:
+  - http: https://api.testnet.int3face.zone
+rpcUrls:
+  - http: https://rpc.testnet.int3face.zone
+slip44: 118
+technicalStack: other
+transactionOverrides:
+  gasPrice: "0.0"
