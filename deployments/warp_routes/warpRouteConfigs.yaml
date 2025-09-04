@@ -2553,6 +2553,28 @@ JUP/starknet:
       name: Jupiter
       standard: StarknetHypSynthetic
       symbol: JUP
+KING/coti-ethereum:
+  tokens:
+    - addressOrDenom: "0x5CF4ce6Be17CaB6d86d724804e2f1f5040205594"
+      chainName: coti
+      connections:
+        - token: ethereum|ethereum|0x592cd754B947396255E50Cac10c519c7ee313919
+      decimals: 18
+      logoURI: /deployments/warp_routes/KING/logo.svg
+      name: King Protocol
+      standard: EvmHypSynthetic
+      symbol: KING
+    - addressOrDenom: "0x592cd754B947396255E50Cac10c519c7ee313919"
+      chainName: ethereum
+      coinGeckoId: lrt-squared
+      collateralAddressOrDenom: "0x8F08B70456eb22f6109F57b8fafE862ED28E6040"
+      connections:
+        - token: ethereum|coti|0x5CF4ce6Be17CaB6d86d724804e2f1f5040205594
+      decimals: 18
+      logoURI: /deployments/warp_routes/KING/logo.svg
+      name: King Protocol
+      standard: EvmHypCollateral
+      symbol: KING
 KLC/arbitrum-bsc-kalychain-polygon:
   tokens:
     - addressOrDenom: "0x7542c62565f48520A34Cf79884656efDEdD38176"
@@ -4163,6 +4185,27 @@ TGT/bsc-immutablezkevmmainnet:
       name: TGT
       standard: EvmHypCollateral
       symbol: TGT
+TIA/abstract-celestia:
+  tokens:
+    - addressOrDenom: "0x638e65eeb89182623E3923A95B1d4b7ED02ADbe0"
+      chainName: abstract
+      connections:
+        - token: cosmosnative|celestia|0x726f757465725f61707000000000000000000000000000010000000000000002
+      decimals: 6
+      logoURI: /deployments/warp_routes/TIA/logo.svg
+      name: TIA
+      standard: EvmHypSynthetic
+      symbol: TIA
+    - addressOrDenom: "0x726f757465725f61707000000000000000000000000000010000000000000002"
+      chainName: celestia
+      collateralAddressOrDenom: utia
+      connections:
+        - token: ethereum|abstract|0x638e65eeb89182623E3923A95B1d4b7ED02ADbe0
+      decimals: 6
+      logoURI: /deployments/warp_routes/TIA/logo.svg
+      name: TIA
+      standard: CosmosNativeHypCollateral
+      symbol: TIA
 TIA/arbitrum-neutron:
   options:
     interchainFeeConstants:
@@ -4198,6 +4241,27 @@ TIA/arbitrum-neutron:
       name: TIA.n
       standard: CosmosIbc
       symbol: TIA.n
+TIA/base-celestia:
+  tokens:
+    - addressOrDenom: "0x5d27225a5D8A756e5655617b22cC03616C3B26c3"
+      chainName: base
+      connections:
+        - token: cosmosnative|celestia|0x726f757465725f61707000000000000000000000000000010000000000000001
+      decimals: 6
+      logoURI: /deployments/warp_routes/TIA/logo.svg
+      name: TIA
+      standard: EvmHypSynthetic
+      symbol: TIA
+    - addressOrDenom: "0x726f757465725f61707000000000000000000000000000010000000000000001"
+      chainName: celestia
+      collateralAddressOrDenom: utia
+      connections:
+        - token: ethereum|base|0x5d27225a5D8A756e5655617b22cC03616C3B26c3
+      decimals: 6
+      logoURI: /deployments/warp_routes/TIA/logo.svg
+      name: TIA
+      standard: CosmosNativeHypCollateral
+      symbol: TIA
 TIA/basesepolia-celestiatestnet:
   tokens:
     - addressOrDenom: "0xC2455315f69696295b357428fe13970bB5B4eFfA"
@@ -4218,6 +4282,49 @@ TIA/basesepolia-celestiatestnet:
       logoURI: /deployments/warp_routes/TIA/logo.svg
       name: TIA
       standard: CosmosNativeHypCollateral
+      symbol: TIA
+TIA/celestia-ethereum:
+  tokens:
+    - addressOrDenom: "0x726f757465725f61707000000000000000000000000000010000000000000000"
+      chainName: celestia
+      collateralAddressOrDenom: utia
+      connections:
+        - token: ethereum|ethereum|0xB8fB4E8512c8272e8986058D0318C8cEFcB21aa7
+      decimals: 6
+      logoURI: /deployments/warp_routes/TIA/logo.svg
+      name: TIA
+      standard: CosmosNativeHypCollateral
+      symbol: TIA
+    - addressOrDenom: "0xB8fB4E8512c8272e8986058D0318C8cEFcB21aa7"
+      chainName: ethereum
+      connections:
+        - token: cosmosnative|celestia|0x726f757465725f61707000000000000000000000000000010000000000000000
+      decimals: 6
+      logoURI: /deployments/warp_routes/TIA/logo.svg
+      name: TIA
+      standard: EvmHypSynthetic
+      symbol: TIA
+TIA/celestia-solanamainnet:
+  tokens:
+    - addressOrDenom: "0x726f757465725f61707000000000000000000000000000010000000000000003"
+      chainName: celestia
+      collateralAddressOrDenom: utia
+      connections:
+        - token: sealevel|solanamainnet|49UtqAFzuJ8bk2zgYjnGMaU3Z2xVs9n1eFY8Y4dKozyY
+      decimals: 6
+      logoURI: /deployments/warp_routes/TIA/logo.svg
+      name: TIA
+      standard: CosmosNativeHypCollateral
+      symbol: TIA
+    - addressOrDenom: 49UtqAFzuJ8bk2zgYjnGMaU3Z2xVs9n1eFY8Y4dKozyY
+      chainName: solanamainnet
+      collateralAddressOrDenom: 4PsPuUu4KK8a8kZsbqzTFQiPTriUNbzYyzEyB7bQMNBL
+      connections:
+        - token: cosmosnative|celestia|0x726f757465725f61707000000000000000000000000000010000000000000003
+      decimals: 6
+      logoURI: /deployments/warp_routes/TIA/logo.svg
+      name: Celestia
+      standard: SealevelHypSynthetic
       symbol: TIA
 TIA/eclipsemainnet-stride:
   options:
@@ -4649,6 +4756,7 @@ UBTC/bsquared:
       chainName: boba
       connections:
         - token: ethereum|bsquared|0x0FC41a92F526A8CD22060A4052e156502D6B9db0
+        - token: ethereum|ethereum|0xa582e9e96F5D58A1202ad216E89926283a5dD056
         - token: ethereum|nibiru|0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa
         - token: ethereum|soneium|0x61F2993a644762A345b483ADF0d6351C5EdFB3b5
         - token: ethereum|swell|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
@@ -4663,6 +4771,7 @@ UBTC/bsquared:
       collateralAddressOrDenom: "0x796e4D53067FF374B89b2Ac101ce0c1f72ccaAc2"
       connections:
         - token: ethereum|boba|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+        - token: ethereum|ethereum|0xa582e9e96F5D58A1202ad216E89926283a5dD056
         - token: ethereum|nibiru|0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa
         - token: ethereum|soneium|0x61F2993a644762A345b483ADF0d6351C5EdFB3b5
         - token: ethereum|swell|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
@@ -4671,11 +4780,25 @@ UBTC/bsquared:
       name: uBTC
       standard: EvmHypCollateral
       symbol: uBTC
+    - addressOrDenom: "0xa582e9e96F5D58A1202ad216E89926283a5dD056"
+      chainName: ethereum
+      connections:
+        - token: ethereum|boba|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+        - token: ethereum|bsquared|0x0FC41a92F526A8CD22060A4052e156502D6B9db0
+        - token: ethereum|nibiru|0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa
+        - token: ethereum|soneium|0x61F2993a644762A345b483ADF0d6351C5EdFB3b5
+        - token: ethereum|swell|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+      decimals: 18
+      logoURI: /deployments/warp_routes/UBTC/logo.svg
+      name: uBTC
+      standard: EvmHypSynthetic
+      symbol: uBTC
     - addressOrDenom: "0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa"
       chainName: nibiru
       connections:
         - token: ethereum|boba|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
         - token: ethereum|bsquared|0x0FC41a92F526A8CD22060A4052e156502D6B9db0
+        - token: ethereum|ethereum|0xa582e9e96F5D58A1202ad216E89926283a5dD056
         - token: ethereum|soneium|0x61F2993a644762A345b483ADF0d6351C5EdFB3b5
         - token: ethereum|swell|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
       decimals: 18
@@ -4688,6 +4811,7 @@ UBTC/bsquared:
       connections:
         - token: ethereum|boba|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
         - token: ethereum|bsquared|0x0FC41a92F526A8CD22060A4052e156502D6B9db0
+        - token: ethereum|ethereum|0xa582e9e96F5D58A1202ad216E89926283a5dD056
         - token: ethereum|nibiru|0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa
         - token: ethereum|swell|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
       decimals: 18
@@ -4700,6 +4824,7 @@ UBTC/bsquared:
       connections:
         - token: ethereum|boba|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
         - token: ethereum|bsquared|0x0FC41a92F526A8CD22060A4052e156502D6B9db0
+        - token: ethereum|ethereum|0xa582e9e96F5D58A1202ad216E89926283a5dD056
         - token: ethereum|nibiru|0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa
         - token: ethereum|soneium|0x61F2993a644762A345b483ADF0d6351C5EdFB3b5
       decimals: 18

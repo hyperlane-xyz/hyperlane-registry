@@ -4174,6 +4174,10 @@ luksotestnet:
   rpcUrls:
     - http: https://rpc.testnet.lukso.network
 lumia:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.lumia.org/api/eth-rpc
       family: blockscout
@@ -8127,7 +8131,7 @@ zircuit:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 45
+    reorgPeriod: 21600
   chainId: 48900
   deployer:
     name: Abacus Works
