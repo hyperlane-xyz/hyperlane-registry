@@ -1,5 +1,28 @@
 # @hyperlane-xyz/registry
 
+## 23.1.0
+
+### Minor Changes
+
+- 64cbc0e: updated tgt route artifacts to have the correct ownership config
+- ba21821: add money sonicsvm deployment
+- d238ff7: Add stokenet metadata
+- 46ed9a9: Deploy to celosepolia, incentivtestnet.
+- ab01078: Add LYX/lukso-ethereum warp route
+- 9fd55be: add INVT warp route
+- a84d8ac: Redeploy on pulsechain.
+- 0cb4553: Enroll radixtestnet to sepolia defaultIsm
+- abf5e96: Add radix chain
+
+### Patch Changes
+
+- f32a750: Rename radixstokenet -> radixtestnet
+- 0416859: updated decimals in some SOL warp routes to satisfy stricter warp checker rules
+- f241bd3: add PROM CoinGecko-id
+- 1fb6974: updated decimals in some warp routes to satisfy warp checker rules
+- f7bd10d: Set zircuit reorg period to 45.
+- 668839e: Add pumpBTC.stk
+
 ## 23.0.0
 
 ### Major Changes

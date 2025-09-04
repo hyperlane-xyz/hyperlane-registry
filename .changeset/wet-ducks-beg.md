@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Set zircuit reorg period to 45.
+update zircuit reorg period
