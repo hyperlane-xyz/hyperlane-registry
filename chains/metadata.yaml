@@ -6151,6 +6151,32 @@ redstone:
   rpcUrls:
     - http: https://rpc.redstonechain.com
   technicalStack: opstack
+risetestnet:
+  blockExplorers:
+    - apiUrl: https://explorer.testnet.riselabs.xyz/api
+      family: blockscout
+      name: Rise Testnet Explorer
+      url: https://explorer.testnet.riselabs.xyz
+  blocks:
+    confirmations: 10
+    estimateBlockTime: 1
+    reorgPeriod: 60
+  chainId: 11155931
+  deployer:
+    name: Epoch Protocol
+    url: https://www.epochprotocol.xyz
+  displayName: Rise Testnet
+  domainId: 11155931
+  isTestnet: true
+  name: risetestnet
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet.riselabs.xyz
+  technicalStack: other
 rivalz:
   availability:
     reasons:
@@ -7658,6 +7684,32 @@ taraxa:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.mainnet.taraxa.io
+  technicalStack: other
+tatara:
+  blockExplorers:
+    - apiUrl: https://explorer.tatara.katana.network/api
+      family: blockscout
+      name: Tatara Explorer
+      url: https://explorer.tatara.katana.network
+  blocks:
+    confirmations: 10
+    estimateBlockTime: 1
+    reorgPeriod: 60
+  chainId: 129399
+  deployer:
+    name: Epoch Protocol
+    url: https://www.epochprotocol.xyz
+  displayName: Tatara
+  domainId: 129399
+  isTestnet: true
+  name: tatara
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.tatara.katanarpc.com
   technicalStack: other
 telos:
   availability:
