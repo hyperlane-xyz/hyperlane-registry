@@ -29,6 +29,10 @@ abstract:
     - http: https://api.mainnet.abs.xyz
   technicalStack: zksync
 abstracttestnet:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://api-explorer-verify.testnet.abs.xyz/contract_verification
       family: etherscan
@@ -111,6 +115,10 @@ alephzeroevmmainnet:
     - http: https://alephzero.drpc.org
   technicalStack: arbitrumnitro
 alephzeroevmtestnet:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://evm-explorer-testnet.alephzero.org/api
       family: blockscout
@@ -790,6 +798,10 @@ basesepolia:
     - http: https://sepolia.base.org
     - http: https://base-sepolia-rpc.publicnode.com
 bepolia:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/testnet/evm/80069/etherscan/api
       family: routescan
@@ -1465,6 +1477,10 @@ chilizmainnet:
   transactionOverrides:
     maxPriorityFeePerGas: 1000000000
 chronicleyellowstone:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://yellowstone-explorer.litprotocol.com/api
       family: blockscout
@@ -1570,6 +1586,10 @@ conflux:
     - http: https://conflux-espace.blockpi.network/v1/rpc/public
   technicalStack: other
 connextsepolia:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://scan.testnet.everclear.org/api
       family: blockscout
@@ -2341,6 +2361,10 @@ eclipsetestnet:
   rpcUrls:
     - http: https://testnet.dev2.eclipsenetwork.xyz
 ecotestnet:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://eco-testnet.explorer.caldera.xyz/api
       family: blockscout
@@ -2675,6 +2699,10 @@ flame:
     - http: https://rpc.flame.astria.org
   technicalStack: other
 flametestnet:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.flame.dawn-1.astria.org/api
       family: blockscout
@@ -2844,6 +2872,10 @@ forma:
   rpcUrls:
     - http: https://rpc.forma.art
 formtestnet:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://sepolia-explorer.form.network/api
       family: blockscout
@@ -3751,6 +3783,10 @@ ink:
     - http: https://rpc-qnd.inkonchain.com
   technicalStack: opstack
 inksepolia:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer-sepolia.inkonchain.com/api
       family: blockscout
@@ -5248,6 +5284,10 @@ nobletestnet:
   transactionOverrides:
     gasPrice: 0.1
 odysseytestnet:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://odyssey-explorer.ithaca.xyz/api
       family: blockscout
@@ -5698,6 +5738,10 @@ plume:
     - http: https://rpc.plume.org
   technicalStack: arbitrumnitro
 plumetestnet2:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://testnet-explorer.plume.org/api
       family: blockscout
@@ -6825,6 +6869,10 @@ soneium:
     - http: https://rpc.soneium.org
   technicalStack: opstack
 soneiumtestnet:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer-testnet.soneium.org/api
       family: blockscout
@@ -6879,6 +6927,10 @@ sonic:
     - http: https://rpc.soniclabs.com
   technicalStack: other
 sonicblaze:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiKey: V9PP7AFQF5Q6GJSQQ5YS2UBN7GI8QCA443
       apiUrl: https://api-testnet.sonicscan.org/api
@@ -7370,6 +7422,10 @@ superpositionmainnet:
     - http: https://rpc.superposition.so
   technicalStack: arbitrumnitro
 superpositiontestnet:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://testnet-explorer.superposition.so/api
       family: blockscout
@@ -7900,6 +7956,10 @@ unichain:
     - http: https://mainnet.unichain.org
   technicalStack: opstack
 unichaintestnet:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://unichain-sepolia.blockscout.com/api
       family: blockscout
@@ -8006,6 +8066,10 @@ viction:
     - http: https://viction.blockpi.network/v1/rpc/public
   technicalStack: other
 weavevmtestnet:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.load.network/api
       family: blockscout
