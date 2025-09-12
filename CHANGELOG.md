@@ -1,5 +1,35 @@
 # @hyperlane-xyz/registry
 
+## 23.2.0
+
+### Minor Changes
+
+- 5dc3ab8: Officially deprecate legacy lumia mailbox.
+- ed3a0cf: Add TIA warp routes for Abstract, Arbitrum, Base, Eclipse, Solana & Ethereum.
+- 70d6bd9: Update solanamainnet ISM.
+- 0447d9b: Add radix warp routes
+- aeec7c2: Extend the UBTC route to ethereum
+- 927498c: Fix `HOLO` decimals.
+- 6a6543b: Deploy on plasma, electroneum.
+- 09fa9df: Add blockExplorers for mitosis and update owners for MITO/mitosis route
+- 6d5585b: update luksotestnet config addresses
+- e153c1d: Update dependencies and include radixdashboard as an explorer
+- 88fea43: Deprecate support for alephzeroevmtestnet, bepolia, flametestnet, formtestnet, inksepolia, sonicblaze, odysseytestnet, superpositiontestnet, unichaintestnet, chronicleyellowstone, weavevmtestnet, abstracttestnet, soneiumtestnet, connextsepolia, ecotestnet, plumetestnet2
+- 0189f5d: Add Tatara and RISE Testnet
+
+### Patch Changes
+
+- d459b4e: Add HOLO deploy artifacts.
+- 0e086e3: Updates the oXAUT bridge limits for avax, celo, ethereum, worldchain and base config
+- 3a36de5: Deprecate alfajores, as it's being replaced by celosepolia
+- c573015: Update default ISMs after validator rotations.
+- 490b292: Update oXAUT base owner to AW safe
+- 90fd4b6: Update default ISMs to enroll plasma, electroneum.
+- d3cc03f: Add mito coingecko id
+- fc745b9: Add KING Ethereum <> Coti config.
+- 2fbe811: Add HOLO metadata.
+- 107b66e: update zircuit reorg period
+
 ## 23.1.0
 
 ### Minor Changes
