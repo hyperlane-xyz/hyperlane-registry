@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: noble
+blockExplorers:
+  - apiUrl: https://explorer.core.devnet.noble.xyz/noble
+    family: other
+    name: Ping.Pub
+    url: https://explorer.core.devnet.noble.xyz/noble
+blocks:
+  confirmations: 1
+  estimateBlockTime: 1
+  reorgPeriod: 1
+canonicalAsset: uusdc
+chainId: duke-1
+contractAddressBytes: 32
+deployer:
+  name: Noble
+  url: https://noble.xyz
+displayName: Noble Devnet
+# Generated from: console.log(parseInt('0x'+Buffer.from('DUKE').toString('hex')))
+domainId: 1146440517
+gasPrice:
+  amount: "0.1"
+  denom: uusdc
+grpcUrls:
+  - http: http://grpc.core.devnet.noble.xyz:443
+index:
+  chunk: 10
+  from: 5215 # E83D9FC876D91063509E5D91B3FAAC7F6D388B4F6E81F4F30C2C33FBC0ABCE62
+name: nobledevnet
+nativeToken:
+  decimals: 6
+  denom: uusdc
+  name: USDC
+  symbol: USDC
+protocol: cosmosnative
+restUrls:
+  - http: https://api.core.devnet.noble.xyz:443
+rpcUrls:
+  - http: https://rpc.core.devnet.noble.xyz:443
+slip44: 118
+technicalStack: other
+transactionOverrides:
+  gasPrice: 0.1
