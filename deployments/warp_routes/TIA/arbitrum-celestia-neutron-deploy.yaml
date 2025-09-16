@@ -9,8 +9,20 @@ arbitrum:
     proxyAdmin: "0xAC98b0cD1B64EA4fe133C6D2EDaf842cE5cF4b01"
     testRecipient: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
     validatorAnnounce: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  remoteRouters:
+    celestia:
+      address: "0x726f757465725f61707000000000000000000000000000010000000000000005"
+    neutron:
+      address: "0x910926c4cf95d107237a9cf0b3305fe9c81351ebcba3d218ceb0e4935d92ceac"
   symbol: TIA.n
   type: synthetic
+celestia:
+  decimals: 6
+  name: TIA
+  owner: celestia1d3ap0qjx08250ltl7cwd0eal4jtvamp3ujtmru
+  symbol: TIA
+  token: utia
+  type: collateral
 neutron:
   foreignDeployment: 910926c4cf95d107237a9cf0b3305fe9c81351ebcba3d218ceb0e4935d92ceac
   gas: 600000
