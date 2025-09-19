@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Deploy to 0g (zerogravity).
+Deploy to zerogravity, sova. Add metadata for mantra.
