@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: n
+blockExplorers:
+  - apiUrl: https://nym.explorers.guru
+    family: other
+    name: Nodes.Guru
+    url: https://nym.explorers.guru
+  - apiUrl: https://ping.pub/nyx
+    family: other
+    name: Ping.pub
+    url: https://ping.pub/nyx
+blocks:
+  confirmations: 1
+  estimateBlockTime: 6
+  reorgPeriod: 1
+canonicalAsset: unym
+chainId: nyx
+contractAddressBytes: 32
+deployer:
+  name: Nym
+  url: https://www.nym.com
+displayName: Nym
+# Generated from: console.log(parseInt('0x'+Buffer.from('NYM').toString('hex')))
+domainId: 5134669
+gasCurrencyCoinGeckoId: nym
+gasPrice:
+  amount: "0.025"
+  denom: unym
+grpcUrls:
+  - http: https://grpc.nymtech.net:443
+index:
+  chunk: 10
+  from: 19500000
+isTestnet: false
+name: nym
+nativeToken:
+  decimals: 6
+  denom: unym
+  name: Nym
+  symbol: NYM
+protocol: cosmosnative
+restUrls:
+  - http: https://api.nymtech.net:443
+  - http: https://api.nyx.nodes.guru:443
+rpcUrls:
+  - http: https://rpc.nymtech.net:443
+  - http: https://rpc.nyx.nodes.guru:443
+slip44: 118
+technicalStack: other
