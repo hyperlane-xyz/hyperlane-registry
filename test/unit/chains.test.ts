@@ -126,7 +126,7 @@ describe('Chain metadata', () => {
             } else if (chain === 'mantle') {
               expect(metadata.blocks?.reorgPeriod).to.equal(2);
             } else if (chain === 'zircuit') {
-              expect(metadata.blocks?.reorgPeriod).to.equal(45);
+              expect(metadata.blocks?.reorgPeriod).to.equal(300);
             } else {
               expect(metadata.blocks?.reorgPeriod).to.equal(5);
             }
