@@ -4401,6 +4401,32 @@ mantlesepolia:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.sepolia.mantle.xyz
+mantra:
+  blockExplorers:
+    - apiUrl: https://blockscout.mantrascan.io/api
+      family: blockscout
+      name: Mantrascan
+      url: https://blockscout.mantrascan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 3
+    reorgPeriod: 5
+  chainId: 5888
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Mantra
+  domainId: 5888
+  gasCurrencyCoinGeckoId: mantra-dao
+  name: mantra
+  nativeToken:
+    decimals: 18
+    name: OM
+    symbol: OM
+  protocol: ethereum
+  rpcUrls:
+    - http: https://evm.mantrachain.io
+  technicalStack: other
 matchain:
   blockExplorers:
     - apiUrl: https://matchscan.io/api
@@ -7117,6 +7143,32 @@ sophonsepolia:
   rpcUrls:
     - http: https://rpc.testnet.sophon.xyz
   technicalStack: zksync
+sova:
+  blockExplorers:
+    - apiUrl: https://explorer.sova.io/api
+      family: blockscout
+      name: Sova Explorer
+      url: https://explorer.sova.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 100021
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Sova
+  domainId: 100021
+  gasCurrencyCoinGeckoId: ethereum
+  name: sova
+  nativeToken:
+    decimals: 18
+    name: ETH
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.sova.io
+  technicalStack: opstack
 starknet:
   blockExplorers:
     - apiUrl: https://voyager.online/api
@@ -8244,6 +8296,32 @@ xrplevm:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.xrplevm.org
+  technicalStack: other
+zerogravity:
+  blockExplorers:
+    - apiUrl: https://chainscan.0g.ai/open/api
+      family: other
+      name: 0G Explorer
+      url: https://chainscan.0g.ai
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 0.4
+    reorgPeriod: 10
+  chainId: 16661
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: 0G
+  domainId: 16661
+  gasCurrencyCoinGeckoId: zero-gravity
+  name: zerogravity
+  nativeToken:
+    decimals: 18
+    name: 0G
+    symbol: 0G
+  protocol: ethereum
+  rpcUrls:
+    - http: https://evmrpc.0g.ai
   technicalStack: other
 zeronetwork:
   blockExplorers:
