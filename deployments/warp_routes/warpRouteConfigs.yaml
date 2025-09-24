@@ -4250,7 +4250,7 @@ TIA/abstract-celestia:
       name: TIA
       standard: CosmosNativeHypCollateral
       symbol: TIA
-TIA/arbitrum-neutron:
+TIA/arbitrum-celestia-neutron:
   options:
     interchainFeeConstants:
       - addressOrDenom: ibc/773B4D0A3CD667B2275D5A4A7A2F0909C0BA0F4059C0B9181E680DDF4965DCC7
@@ -4261,18 +4261,26 @@ TIA/arbitrum-neutron:
     - addressOrDenom: "0xD56734d7f9979dD94FAE3d67C7e928234e71cD4C"
       chainName: arbitrum
       connections:
-        - token: cosmos|neutron|neutron1jyyjd3x0jhgswgm6nnctxvzla8ypx50tew3ayxxwkrjfxhvje6kqzvzudq
+        - token: cosmosnative|celestia|0x726f757465725f61707000000000000000000000000000010000000000000005
       decimals: 6
       logoURI: /deployments/warp_routes/TIA/logo.svg
       name: TIA.n
       standard: EvmHypSynthetic
       symbol: TIA.n
+    - addressOrDenom: "0x726f757465725f61707000000000000000000000000000010000000000000005"
+      chainName: celestia
+      collateralAddressOrDenom: utia
+      connections:
+        - token: ethereum|arbitrum|0xD56734d7f9979dD94FAE3d67C7e928234e71cD4C
+      decimals: 6
+      logoURI: /deployments/warp_routes/TIA/logo.svg
+      name: TIA.n
+      standard: CosmosNativeHypCollateral
+      symbol: TIA.n
     - addressOrDenom: neutron1jyyjd3x0jhgswgm6nnctxvzla8ypx50tew3ayxxwkrjfxhvje6kqzvzudq
       chainName: neutron
       coinGeckoId: celestia
       collateralAddressOrDenom: ibc/773B4D0A3CD667B2275D5A4A7A2F0909C0BA0F4059C0B9181E680DDF4965DCC7
-      connections:
-        - token: ethereum|arbitrum|0xD56734d7f9979dD94FAE3d67C7e928234e71cD4C
       decimals: 6
       logoURI: /deployments/warp_routes/TIA/logo.svg
       name: TIA.n
@@ -4326,6 +4334,29 @@ TIA/basesepolia-celestiatestnet:
       logoURI: /deployments/warp_routes/TIA/logo.svg
       name: TIA
       standard: CosmosNativeHypCollateral
+      symbol: TIA
+TIA/celestia-eclipsemainnet:
+  tokens:
+    - addressOrDenom: "0x726f757465725f61707000000000000000000000000000010000000000000004"
+      chainName: celestia
+      coinGeckoId: celestia
+      collateralAddressOrDenom: utia
+      connections:
+        - token: sealevel|eclipsemainnet|8gkLoHDNA8VygyCD1T7bbDszYboUjALtrxgSLnKZsYBt
+      decimals: 6
+      logoURI: /deployments/warp_routes/TIA/logo.svg
+      name: TIA
+      standard: CosmosNativeHypCollateral
+      symbol: TIA
+    - addressOrDenom: 8gkLoHDNA8VygyCD1T7bbDszYboUjALtrxgSLnKZsYBt
+      chainName: eclipsemainnet
+      collateralAddressOrDenom: CixfcEPw3aAzmXRcgbkaRKCs2wvuWKP2wRB1sBd7ZrPQ
+      connections:
+        - token: cosmosnative|celestia|0x726f757465725f61707000000000000000000000000000010000000000000004
+      decimals: 6
+      logoURI: /deployments/warp_routes/TIA/logo.svg
+      name: Celestia
+      standard: SealevelHypSynthetic
       symbol: TIA
 TIA/celestia-ethereum:
   tokens:
@@ -5998,6 +6029,76 @@ USDC/paradexsepolia:
       logoURI: /deployments/warp_routes/USDC/logo.svg
       name: USDC
       standard: StarknetHypCollateral
+      symbol: USDC
+USDC/pulsechain:
+  tokens:
+    - addressOrDenom: "0xf73436AB044AAA679fb619D0DEe4a1dAfE84ac1a"
+      chainName: arbitrum
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+      connections:
+        - token: ethereum|base|0x32aB2fcCA30864027056a41B329e0195f2f7E250
+        - token: ethereum|ethereum|0x7E5db36f762A3eae5d6ef18f16dEe9DF619bb539
+        - token: ethereum|polygon|0x21AA4e2107618Ffc21Fa3cec2BdfdF22469A2e8A
+        - token: ethereum|pulsechain|0xa5B0D537CeBE97f087Dc5FE5732d70719caaEc1D
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x32aB2fcCA30864027056a41B329e0195f2f7E250"
+      chainName: base
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      connections:
+        - token: ethereum|arbitrum|0xf73436AB044AAA679fb619D0DEe4a1dAfE84ac1a
+        - token: ethereum|ethereum|0x7E5db36f762A3eae5d6ef18f16dEe9DF619bb539
+        - token: ethereum|polygon|0x21AA4e2107618Ffc21Fa3cec2BdfdF22469A2e8A
+        - token: ethereum|pulsechain|0xa5B0D537CeBE97f087Dc5FE5732d70719caaEc1D
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x7E5db36f762A3eae5d6ef18f16dEe9DF619bb539"
+      chainName: ethereum
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+      connections:
+        - token: ethereum|arbitrum|0xf73436AB044AAA679fb619D0DEe4a1dAfE84ac1a
+        - token: ethereum|base|0x32aB2fcCA30864027056a41B329e0195f2f7E250
+        - token: ethereum|polygon|0x21AA4e2107618Ffc21Fa3cec2BdfdF22469A2e8A
+        - token: ethereum|pulsechain|0xa5B0D537CeBE97f087Dc5FE5732d70719caaEc1D
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x21AA4e2107618Ffc21Fa3cec2BdfdF22469A2e8A"
+      chainName: polygon
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+      connections:
+        - token: ethereum|arbitrum|0xf73436AB044AAA679fb619D0DEe4a1dAfE84ac1a
+        - token: ethereum|base|0x32aB2fcCA30864027056a41B329e0195f2f7E250
+        - token: ethereum|ethereum|0x7E5db36f762A3eae5d6ef18f16dEe9DF619bb539
+        - token: ethereum|pulsechain|0xa5B0D537CeBE97f087Dc5FE5732d70719caaEc1D
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0xa5B0D537CeBE97f087Dc5FE5732d70719caaEc1D"
+      chainName: pulsechain
+      connections:
+        - token: ethereum|arbitrum|0xf73436AB044AAA679fb619D0DEe4a1dAfE84ac1a
+        - token: ethereum|base|0x32aB2fcCA30864027056a41B329e0195f2f7E250
+        - token: ethereum|ethereum|0x7E5db36f762A3eae5d6ef18f16dEe9DF619bb539
+        - token: ethereum|polygon|0x21AA4e2107618Ffc21Fa3cec2BdfdF22469A2e8A
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypSynthetic
       symbol: USDC
 USDC/solanamainnet-sonicsvm:
   tokens:
