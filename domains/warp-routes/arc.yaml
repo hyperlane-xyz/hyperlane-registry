@@ -1,0 +1,52 @@
+ARC:
+  type: warpRoute
+  tokens:
+    ethereum:
+      addressOrDenom: 0xfe12BC3a8Ee44F740170f5acF744ac8283F3fe06
+      standard: EvmHypCollateral
+      name: ARC
+      symbol: ARC
+      decimals: 18
+      collateralAddressOrDenom: 0x672fdBA7055bddFa8fD6bD45B1455cE5eB97f499
+      connections:
+        - chainName: base
+          address: 0x5229194E803Fb0d40da82F7a3aAAf6c6A71527fa
+          
+    base:
+      addressOrDenom: 0x5229194E803Fb0d40da82F7a3aAAf6c6A71527fa
+      standard: EvmHypCollateral  
+      name: ARC
+      symbol: ARC
+      decimals: 18
+      collateralAddressOrDenom: 0x431151F26c48B4D4BEFc34048a0966Bf960A0c50
+      connections:
+        - chainName: ethereum
+          address: 0xfe12BC3a8Ee44F740170f5acF744ac8283F3fe06
+
+  metadata:
+    name: ARC
+    symbol: ARC
+    description: "ARC is the infrastructure layer for high-performance, privacy-first AI tools. The $ARC utility token enables access to governance, staking, and participation in ARC's AI ecosystem. Powered by Efficiency AI, ARC delivers speed, privacy, and sustainability."
+    logo: logo.svg
+    deployer: 0xD1E09D2e6af8b4A3Cc5fEeC8Ea2Cc9974F10d776
+    deployDate: "2025-09-25"
+    
+    tokens:
+      ethereum:
+        name: ARC
+        address: 0x672fdBA7055bddFa8fD6bD45B1455cE5eB97f499
+        explorer: https://etherscan.io/token/0x672fdBA7055bddFa8fD6bD45B1455cE5eB97f499
+        
+      base:
+        name: ARC  
+        address: 0x431151F26c48B4D4BEFc34048a0966Bf960A0c50
+        explorer: https://basescan.org/token/0x431151F26c48B4D4BEFc34048a0966Bf960A0c50
+        
+    routers:
+      ethereum:
+        address: 0xfe12BC3a8Ee44F740170f5acF744ac8283F3fe06
+        explorer: https://etherscan.io/address/0xfe12BC3a8Ee44F740170f5acF744ac8283F3fe06
+        
+      base:
+        address: 0x5229194E803Fb0d40da82F7a3aAAf6c6A71527fa  
+        explorer: https://basescan.org/address/0x5229194E803Fb0d40da82F7a3aAAf6c6A71527fa
