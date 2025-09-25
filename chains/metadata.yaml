@@ -3141,6 +3141,32 @@ game7:
   rpcUrls:
     - http: https://mainnet-rpc.game7.build
   technicalStack: arbitrumnitro
+giwasepolia:
+  blockExplorers:
+    - apiUrl: https://sepolia-explorer.giwa.io/api
+      family: blockscout
+      name: GIWA Sepolia Explorer
+      url: https://sepolia-explorer.giwa.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 91342
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: GIWA Sepolia
+  domainId: 91342
+  isTestnet: true
+  name: giwasepolia
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://sepolia-rpc.giwa.io
+  technicalStack: opstack
 glue:
   availability:
     reasons:
@@ -3687,6 +3713,10 @@ infinityvmmainnet:
     - http: https://rpc.infinityvm.xyz
   technicalStack: other
 infinityvmmonza:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blocks:
     confirmations: 1
     estimateBlockTime: 1
