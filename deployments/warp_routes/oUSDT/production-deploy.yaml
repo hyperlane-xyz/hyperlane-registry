@@ -741,3 +741,32 @@ worldchain:
       bufferCap: "0"
       rateLimitPerSecond: "0"
       type: velo
+zerogravity:
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x11EF91d17c5ad3330DbCa709a8841743d3Af6819"
+        type: defaultFallbackRoutingIsm
+      - owner: "0x11EF91d17c5ad3330DbCa709a8841743d3Af6819"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  owner: "0x11EF91d17c5ad3330DbCa709a8841743d3Af6819"
+  ownerOverrides:
+    collateralProxyAdmin: "0x11EF91d17c5ad3330DbCa709a8841743d3Af6819"
+    collateralToken: "0x11EF91d17c5ad3330DbCa709a8841743d3Af6819"
+  token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
+  type: xERC20
+  xERC20:
+    extraBridges:
+      - limits:
+          bufferCap: "20000000000000"
+          rateLimitPerSecond: "5000000000"
+          type: velo
+        lockbox: "0xd7502CaBdb70c79382deF58FB6df3CdA69cb2A1b"
+    warpRouteLimits:
+      bufferCap: "8000000000000"
+      rateLimitPerSecond: "2000000000"
+      type: velo
