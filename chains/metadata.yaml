@@ -85,6 +85,10 @@ acala:
     - http: https://eth-rpc-acala.aca-api.network
   technicalStack: polkadotsubstrate
 alephzeroevmmainnet:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://evm-explorer.alephzero.org/api
       family: blockscout
@@ -3064,10 +3068,10 @@ fusemainnet:
   technicalStack: other
 galactica:
   blockExplorers:
-    - apiUrl: https://galactica-mainnet.explorer.alchemy.com/api
+    - apiUrl: https://explorer.galactica.com/api
       family: blockscout
       name: Galactica Explorer
-      url: https://galactica-mainnet.explorer.alchemy.com
+      url: https://explorer.galactica.com
   blocks:
     confirmations: 1
     estimateBlockTime: 1
@@ -3089,7 +3093,7 @@ galactica:
     symbol: GNET
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.galactica.com
+    - http: https://galactica-mainnet.g.alchemy.com/public
   technicalStack: arbitrumnitro
 galadrieldevnet:
   blockExplorers:
@@ -3113,6 +3117,10 @@ galadrieldevnet:
   rpcUrls:
     - http: https://devnet.galadriel.com
 game7:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://mainnet.game7.io/api
       family: blockscout
@@ -3690,6 +3698,10 @@ infinityvm:
     - http: https://mainnet-endpoint.infinityvm.xyz
   technicalStack: other
 infinityvmmainnet:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blocks:
     confirmations: 1
     estimateBlockTime: 1
@@ -4474,6 +4486,7 @@ matchain:
   displayName: Matchain
   domainId: 698
   gasCurrencyCoinGeckoId: binancecoin
+  gnosisSafeTransactionServiceUrl: https://prod.matchain.keypersafe.xyz
   name: matchain
   nativeToken:
     decimals: 18
