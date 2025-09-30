@@ -6227,6 +6227,29 @@ USDC/solanamainnet-sonicsvm:
       name: USDC
       standard: SealevelHypSynthetic
       symbol: USDC
+USDC/solaxy:
+  tokens:
+    - addressOrDenom: AYVM4uSxtg6FzSU7dCXoZwTG7n63ARTnPcdXYKofWuZb
+      chainName: solanamainnet
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+      connections:
+        - token: sealevel|solaxy|9VuFrTe4TumTfHTKsp2haWRejyvhazvDYWyk1Ws2zfHB
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USDC
+      standard: SealevelHypCollateral
+      symbol: USDC
+    - addressOrDenom: 9VuFrTe4TumTfHTKsp2haWRejyvhazvDYWyk1Ws2zfHB
+      chainName: solaxy
+      collateralAddressOrDenom: 3qEHjM3UbbZbuk5rnZp4taGhoiSGea3tLPgu1TNb34oe
+      connections:
+        - token: sealevel|solanamainnet|AYVM4uSxtg6FzSU7dCXoZwTG7n63ARTnPcdXYKofWuZb
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USDC
+      standard: SealevelHypSynthetic
+      symbol: USDC
 USDC/subtensor:
   tokens:
     - addressOrDenom: "0x4337e529a4f6429668746db798416961c48F07BE"
@@ -6781,6 +6804,29 @@ USDT/eclipsemainnet-ethereum-solanamainnet:
       logoURI: /deployments/warp_routes/USDT/logo.svg
       name: USDT
       standard: SealevelHypCollateral
+      symbol: USDT
+USDT/electroneum:
+  tokens:
+    - addressOrDenom: "0x48E722f1458b253c2FB0E573F939318D7Dbd54e7"
+      chainName: electroneum
+      coinGeckoId: tether
+      connections:
+        - token: ethereum|ethereum|0x97B80b1d89d10E5d2c9396B0ea0BA2dAf917Dc96
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDT/logo.svg
+      name: Tether USD
+      standard: EvmHypSynthetic
+      symbol: USDT
+    - addressOrDenom: "0x97B80b1d89d10E5d2c9396B0ea0BA2dAf917Dc96"
+      chainName: ethereum
+      coinGeckoId: tether
+      collateralAddressOrDenom: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+      connections:
+        - token: ethereum|electroneum|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDT/logo.svg
+      name: Tether USD
+      standard: EvmHypCollateral
       symbol: USDT
 USDT/ethereum-form:
   tokens:
