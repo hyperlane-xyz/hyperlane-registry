@@ -1249,6 +1249,34 @@ carbon:
   protocol: ethereum
   rpcUrls:
     - http: https://evm-api.carbon.network
+carrchain:
+  blockExplorers:
+    - apiUrl: https://carrscan.io/api/v1
+      family: other
+      name: CarrScan
+      url: https://carrscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 7667
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: CarrChain
+  domainId: 7667
+  gasCurrencyCoinGeckoId: carnomaly
+  index:
+    from: 40
+  name: carrchain
+  nativeToken:
+    decimals: 18
+    name: CARR
+    symbol: CARR
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.carrchain.io
+  technicalStack: arbitrumnitro
 carrchaintestnet:
   blockExplorers:
     - apiUrl: https://testnet.carrscan.io/api/v1
@@ -2953,13 +2981,13 @@ fraxtal:
     url: https://www.hyperlane.xyz
   displayName: Fraxtal
   domainId: 252
-  gasCurrencyCoinGeckoId: frax-ether
+  gasCurrencyCoinGeckoId: frax-share
   gnosisSafeTransactionServiceUrl: https://safe.mainnet.frax.com/txs
   name: fraxtal
   nativeToken:
     decimals: 18
-    name: Frax Ether
-    symbol: frxETH
+    name: FRAX
+    symbol: FRAX
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.frax.com
@@ -3593,6 +3621,32 @@ immutablezkevmmainnet:
   transactionOverrides:
     maxFeePerGas: 100000000000
     maxPriorityFeePerGas: 100000000000
+incentiv:
+  blockExplorers:
+    - apiUrl: http://explorer.incentiv.io/api
+      family: blockscout
+      name: Incentiv Explorer
+      url: http://explorer.incentiv.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 5
+    reorgPeriod: 10
+  chainId: 24101
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Incentiv
+  domainId: 24101
+  gasCurrencyCoinGeckoId: incentiv
+  name: incentiv
+  nativeToken:
+    decimals: 18
+    name: CENT
+    symbol: CENT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc1-archive.incentiv.io
+  technicalStack: other
 incentivtestnet:
   blockExplorers:
     - apiUrl: https://explorer-testnet.incentiv.io/api
@@ -4228,6 +4282,34 @@ lisksepolia:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.sepolia-api.lisk.com
+litchain:
+  blockExplorers:
+    - apiUrl: https://lit-chain-explorer.litprotocol.com/api
+      family: blockscout
+      name: Lit Chain Explorer
+      url: https://lit-chain-explorer.litprotocol.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 175200
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Lit Chain
+  domainId: 175200
+  gasCurrencyCoinGeckoId: litkey
+  index:
+    from: 854
+  name: litchain
+  nativeToken:
+    decimals: 18
+    name: LITKEY
+    symbol: LITKEY
+  protocol: ethereum
+  rpcUrls:
+    - http: https://lit-chain-rpc.litprotocol.com
+  technicalStack: arbitrumnitro
 lukso:
   blockExplorers:
     - apiUrl: https://explorer.execution.mainnet.lukso.network/api
@@ -4959,6 +5041,32 @@ molten:
   rpcUrls:
     - http: https://molten.calderachain.xyz/http
   technicalStack: arbitrumnitro
+monad:
+  blockExplorers:
+    - apiUrl: https://mainnet-beta.monvision.io/api
+      family: other
+      name: Monad Explorer
+      url: https://mainnet-beta.monvision.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 143
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Monad
+  domainId: 143
+  gasCurrencyCoinGeckoId: monad
+  name: monad
+  nativeToken:
+    decimals: 18
+    name: MON
+    symbol: MON
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.monad.xyz
+  technicalStack: other
 monadtestnet:
   blockExplorers:
     - apiUrl: https://explorer.monad-testnet.category.xyz/api
@@ -6736,6 +6844,10 @@ smartbch:
     - http: https://smartbch.greyh.at
     - http: https://rpc.smartbch.org
 snaxchain:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.snaxchain.io/api
       family: blockscout

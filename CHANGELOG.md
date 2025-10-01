@@ -1,5 +1,17 @@
 # @hyperlane-xyz/registry
 
+## 23.3.0
+
+### Minor Changes
+
+- 4ca7139: Add Electroneum USDT
+- c80c9fc: Add solaxy USDC warp route deployment artifacts
+- 490a01d: Deploy to incentiv, monad, carrchain, litchain. Deprecate snaxchain.
+
+### Patch Changes
+
+- b12008a: Update Electroneum USDC owner to ICA
+
 ## 23.2.0
 
 ### Minor Changes
