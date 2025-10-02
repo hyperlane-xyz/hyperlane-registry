@@ -1,20 +1,20 @@
 # yaml-language-server: $schema=../schema.json
 tokens:
-  - addressOrDenom: "0xD11874D565f0B64083433f767F67b15eB110bc8B"
-    chainName: ethereum
-    collateralAddressOrDenom: "0x672fdBA7055bddFa8fD6bD45B1455cE5eB97f499"
-    connections:
-      - token: ethereum|base|0x8a59BB7706317d07325C69521fBe6ECc3D880af0
-    decimals: 18
-    logoURI: /deployments/warp_routes/ARC/logo.svg
-    name: ARC
-    standard: EvmHypCollateral
-    symbol: ARC
   - addressOrDenom: "0x8a59BB7706317d07325C69521fBe6ECc3D880af0"
     chainName: base
     collateralAddressOrDenom: "0x431151F26c48B4D4BEFc34048a0966Bf960A0c50"
     connections:
       - token: ethereum|ethereum|0xD11874D565f0B64083433f767F67b15eB110bc8B
+    decimals: 18
+    logoURI: /deployments/warp_routes/ARC/logo.svg
+    name: ARC
+    standard: EvmHypCollateral
+    symbol: ARC
+  - addressOrDenom: "0xD11874D565f0B64083433f767F67b15eB110bc8B"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x672fdBA7055bddFa8fD6bD45B1455cE5eB97f499"
+    connections:
+      - token: ethereum|base|0x8a59BB7706317d07325C69521fBe6ECc3D880af0
     decimals: 18
     logoURI: /deployments/warp_routes/ARC/logo.svg
     name: ARC
