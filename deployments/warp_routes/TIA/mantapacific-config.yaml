@@ -6,9 +6,20 @@ options:
       destination: mantapacific
       origin: neutron
 tokens:
+  - addressOrDenom: "0x726f757465725f61707000000000000000000000000000010000000000000007"
+    chainName: celestia
+    collateralAddressOrDenom: utia
+    connections:
+      - token: ethereum|mantapacific|0x6Fae4D9935E2fcb11fC79a64e917fb2BF14DaFaa
+    decimals: 6
+    logoURI: /deployments/warp_routes/TIA/logo.svg
+    name: TIA
+    standard: CosmosNativeHypCollateral
+    symbol: TIA
   - addressOrDenom: "0x6Fae4D9935E2fcb11fC79a64e917fb2BF14DaFaa"
     chainName: mantapacific
     connections:
+      - token: cosmosnative|celestia|0x726f757465725f61707000000000000000000000000000010000000000000007
       - token: cosmos|neutron|neutron1ch7x3xgpnj62weyes8vfada35zff6z59kt2psqhnx9gjnt2ttqdqtva3pa
     decimals: 6
     logoURI: /deployments/warp_routes/TIA/logo.svg
