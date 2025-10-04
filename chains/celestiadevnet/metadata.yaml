@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: celestia
+blocks:
+  confirmations: 1
+  estimateBlockTime: 6
+  reorgPeriod: 1
+canonicalAsset: utia
+chainId: arabica-11
+contractAddressBytes: 32
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Celestia Arabica Devnet
+# Generated from: console.log(parseInt('0x'+Buffer.from('ARAB').toString('hex')) % 4_294_967_295)
+domainId: 1095909698
+gasPrice:
+  amount: "0.1"
+  denom: utia
+grpcUrls:
+  - http: https://grpc.celestia-arabica-11.com:443
+index:
+  chunk: 10
+  from: 8214286
+isTestnet: true
+name: celestiadevnet
+nativeToken:
+  decimals: 6
+  denom: utia
+  name: Celestia
+  symbol: TIA
+protocol: cosmosnative
+restUrls:
+  - http: https://api.celestia-arabica-11.com
+rpcUrls:
+  - http: https://rpc.celestia-arabica-11.com
+slip44: 118
+technicalStack: other
+transactionOverrides:
+  gasPrice: "0.0"
