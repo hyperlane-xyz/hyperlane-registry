@@ -495,6 +495,7 @@ DOG/base-optimism:
   tokens:
     - addressOrDenom: "0x91f016B43A73DFF60f5D910c530338f69Fa3FD0b"
       chainName: base
+      coinGeckoId: the-doge-nft
       collateralAddressOrDenom: "0xafb89a09d82fbde58f18ac6437b3fc81724e4df6"
       connections:
         - token: ethereum|optimism|0x8da914daf9fc05D0e31435f7bd9633ffFC41f20B
@@ -650,6 +651,7 @@ ES/eclipse:
       symbol: ES
     - addressOrDenom: "0x3eE1BEA3A10f7508b76219f109eBe19419b3dd85"
       chainName: ethereum
+      coinGeckoId: eclipse-3
       collateralAddressOrDenom: "0x6055Dc6Ff1077eebe5e6D2BA1a1f53d7Ef8430dE"
       connections:
         - token: sealevel|eclipsemainnet|2JvSu7PzquY2b8NDZbnupFZ1jezqMBtNUhi7TuU3GQJD
@@ -1297,6 +1299,29 @@ ETN/electroneum:
       name: ETN
       standard: SealevelHypSynthetic
       symbol: ETN
+EURC/matchain:
+  tokens:
+    - addressOrDenom: "0x236f7CCE81558b36cE0D866017ECF006be7d5c30"
+      chainName: ethereum
+      coinGeckoId: eurc
+      collateralAddressOrDenom: "0x1aBaEA1f7C830bD89Acc67eC4af516284b1bC33c"
+      connections:
+        - token: ethereum|matchain|0xA452bDb132Cdf8d11E070786D78907ddB95C5120
+      decimals: 6
+      logoURI: /deployments/warp_routes/EURC/logo.svg
+      name: Euro Coin
+      standard: EvmHypCollateral
+      symbol: EURC
+    - addressOrDenom: "0xA452bDb132Cdf8d11E070786D78907ddB95C5120"
+      chainName: matchain
+      collateralAddressOrDenom: "0x633268639892C73Fa7340Ec1da4e397cf3913c8C"
+      connections:
+        - token: ethereum|ethereum|0x236f7CCE81558b36cE0D866017ECF006be7d5c30
+      decimals: 6
+      logoURI: /deployments/warp_routes/EURC/logo.svg
+      name: EURC
+      standard: EvmHypCollateralFiat
+      symbol: EURC
 EZETH/renzo-prod:
   tokens:
     - addressOrDenom: "0xB26bBfC6d1F469C821Ea25099017862e7368F4E8"
@@ -2712,6 +2737,7 @@ KLC/arbitrum-bsc-kalychain-polygon:
       symbol: KLC
     - addressOrDenom: "0x8A1ABbB167b149F2493C8141091028fD812Da6E4"
       chainName: kalychain
+      coinGeckoId: kalycoin
       connections:
         - token: ethereum|arbitrum|0x7542c62565f48520A34Cf79884656efDEdD38176
         - token: ethereum|bsc|0x02CF1778c07584D92b610E0C03fA285DfD00c354
@@ -3206,6 +3232,7 @@ OORT/bsc-ethereum-oortmainnet:
   tokens:
     - addressOrDenom: "0x15366f1a7c71baa6fd1c8FAB56b30faf98d56a3B"
       chainName: bsc
+      coinGeckoId: oort
       collateralAddressOrDenom: "0x5651fA7a726B9Ec0cAd00Ee140179912B6E73599"
       connections:
         - token: ethereum|ethereum|0x70f34d5cC2527Cd81de9F6e7C9208f26f7252697
@@ -3217,6 +3244,7 @@ OORT/bsc-ethereum-oortmainnet:
       symbol: OORT
     - addressOrDenom: "0x70f34d5cC2527Cd81de9F6e7C9208f26f7252697"
       chainName: ethereum
+      coinGeckoId: oort
       collateralAddressOrDenom: "0x5651fA7a726B9Ec0cAd00Ee140179912B6E73599"
       connections:
         - token: ethereum|bsc|0x15366f1a7c71baa6fd1c8FAB56b30faf98d56a3B
@@ -3228,6 +3256,7 @@ OORT/bsc-ethereum-oortmainnet:
       symbol: OORT
     - addressOrDenom: "0x15366f1a7c71baa6fd1c8FAB56b30faf98d56a3B"
       chainName: oortmainnet
+      coinGeckoId: oort
       connections:
         - token: ethereum|bsc|0x15366f1a7c71baa6fd1c8FAB56b30faf98d56a3B
         - token: ethereum|ethereum|0x70f34d5cC2527Cd81de9F6e7C9208f26f7252697
@@ -3717,6 +3746,7 @@ RCADE/arbitrum-bsc:
   tokens:
     - addressOrDenom: "0x6720350f7e3323418c05645cD5d6bb055f4A7427"
       chainName: arbitrum
+      coinGeckoId: rcade-network
       collateralAddressOrDenom: "0x077574441C4F8763a37a2cFeE2ECb444aA60A15e"
       connections:
         - token: ethereum|bsc|0x6f0037C79d144d5B8E3E6f04E49FBb5f25fD508f
@@ -3857,7 +3887,7 @@ SEDA/base-ethereum:
       symbol: SEDA
     - addressOrDenom: "0x8E1C6992621f1f647C79A297035B5484B9fb6864"
       chainName: ethereum
-      coingeckoId: seda-2
+      coinGeckoId: seda-2
       collateralAddressOrDenom: "0x14862c03A0cACcC1aB328B062E64e31B2a1afcd7"
       connections:
         - token: ethereum|base|0x306aCd0c07c430AbBBb2e74Ef7bdE94F32A898c0
@@ -4065,6 +4095,7 @@ SOLX/nitro:
   tokens:
     - addressOrDenom: "0x261a172eB72D8D32837D123E8AcC4d2e44117195"
       chainName: ethereum
+      coinGeckoId: solaxy
       collateralAddressOrDenom: "0xe0B7AD7F8F26e2b00C8b47b5Df370f15F90fCF48"
       connections:
         - token: sealevel|solanamainnet|DaF4pYDy5d6mhwEcMrenpNAjx1gfA9BgcYruUYTsZibE
@@ -4087,6 +4118,7 @@ SOLX/nitro:
       symbol: SOLX
     - addressOrDenom: 7HZ5A89rQyd3gpSLCFCsAzpap4SZJx3eC2AUMXKJBnfh
       chainName: solaxy
+      coinGeckoId: solaxy
       connections:
         - token: ethereum|ethereum|0x261a172eB72D8D32837D123E8AcC4d2e44117195
         - token: sealevel|solanamainnet|DaF4pYDy5d6mhwEcMrenpNAjx1gfA9BgcYruUYTsZibE
@@ -4220,6 +4252,7 @@ SUPR/base-ethereum-ink-optimism-superseed:
       symbol: SUPR
     - addressOrDenom: "0xA1863B4b02b7DCd7429F62C775816328D63020F4"
       chainName: superseed
+      coinGeckoId: superseed
       collateralAddressOrDenom: "0xEe64bC3f4A58D638D0845b24e2f51534d01b6549"
       connections:
         - token: ethereum|base|0x458BDDd0793fe4f70912535f172466a5473f2e77
@@ -4257,6 +4290,7 @@ TAIKO/taiko:
       symbol: TAIKO
     - addressOrDenom: "0xb20524C700879620D921c5eb4435517A0549aD75"
       chainName: ethereum
+      coinGeckoId: taiko
       collateralAddressOrDenom: "0x10dea67478c5F8C5E2D90e5E9B26dBe60c54d800"
       connections:
         - token: ethereum|base|0x1f36ecf13394712c944805f38d1463cf54C0C2C8
