@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - chainName: pulsetest
+    standard: EvmHypCollateral
+    name: mueed
+    symbol: mueed
+    decimals: 18
+    totalSupply: 0
+    isNft: false
+    type: collateral
+    token: "0xe76d80014DCfD5Fe196F22d3a001b454A6936ae6"
+    owner: "0x402E591937d13DB4ced228397315e2BBc368b2e8"
+    mailbox: "0xe34eD1A84243Aa7736a06653a4aDE059B9AE4E29"
+    interchainSecurityModule:
+      type: staticAggregationIsm
+      modules:
+        - type: trustedRelayerIsm
+          relayer: "0x402E591937d13DB4ced228397315e2BBc368b2e8"
+        - owner: "0x402E591937d13DB4ced228397315e2BBc368b2e8"
+          type: defaultFallbackRoutingIsm
+          domains: {}
+      threshold: 1
+    addressOrDenom: "0xeb75B3EFEC6134D2f2B7378B44a90fB8bddE5E0B"
+    collateralAddressOrDenom: "0xe76d80014DCfD5Fe196F22d3a001b454A6936ae6"
+    connections:
+      - token: ethereum|arbitrumsepolia|0x714854a0745348828F1512a8156688D11f8b327D
+  - chainName: arbitrumsepolia
+    standard: EvmHypCollateral
+    name: mueed
+    symbol: mueed
+    decimals: 18
+    totalSupply: 0
+    isNft: false
+    type: collateral
+    token: "0x11D56dd0B3C67aCA1CFafd75D821B39241ee7ceB"
+    owner: "0x402E591937d13DB4ced228397315e2BBc368b2e8"
+    mailbox: "0x598facE78a4302f11E3de0bee1894Da0b2Cb71F8"
+    interchainSecurityModule:
+      type: staticAggregationIsm
+      modules:
+        - type: trustedRelayerIsm
+          relayer: "0x402E591937d13DB4ced228397315e2BBc368b2e8"
+        - owner: "0x402E591937d13DB4ced228397315e2BBc368b2e8"
+          type: defaultFallbackRoutingIsm
+          domains: {}
+      threshold: 1
+    addressOrDenom: "0x714854a0745348828F1512a8156688D11f8b327D"
+    collateralAddressOrDenom: "0x11D56dd0B3C67aCA1CFafd75D821B39241ee7ceB"
+    connections:
+      - token: ethereum|pulsetest|0xeb75B3EFEC6134D2f2B7378B44a90fB8bddE5E0B
