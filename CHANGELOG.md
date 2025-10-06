@@ -1,5 +1,19 @@
 # @hyperlane-xyz/registry
 
+## 23.4.0
+
+### Minor Changes
+
+- 2600b94: Deprecate legacy sova network. Update default ISMs.
+- 9cbeb15: Add CoinGecko ids for DOG, ES, KLC, OORT, RCADE, SEDA, SOLX, SUPR, TAIKO.
+- 5547eb8: Update galactica/GNET coingecko IDs.
+- d4984b3: Add ETN configs
+- c0a9512: added matchain eurc deployment artifacts
+
+### Patch Changes
+
+- 00c3050: Add SOL/radix
+
 ## 23.3.0
 
 ### Minor Changes
