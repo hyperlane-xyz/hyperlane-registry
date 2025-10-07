@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Add SOL/radix
+Remove arbitrum leg from CARR/carrchain
