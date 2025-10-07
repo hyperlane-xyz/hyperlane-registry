@@ -6,6 +6,13 @@ bsc:
   token: "0x2a48a41301E6635DF9E65B80063Ff84677142619"
   type: collateral
 carrchain:
+  hook:
+    hooks:
+      - type: defaultHook
+      - owner: "0xAfD0Ac442c6d7E0f34476a10d4ba0bD7cffb4c72"
+        paused: false
+        type: pausableHook
+    type: aggregationHook
   owner: "0xAfD0Ac442c6d7E0f34476a10d4ba0bD7cffb4c72"
   type: native
 polygon:
