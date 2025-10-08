@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://blocksync.wardenprotocol.org
+    family: blockscout
+    name: Blockscout
+    url: https://explorer.wardenprotocol.org
+blocks:
+  confirmations: 7
+  estimateBlockTime: 2
+  reorgPeriod: 5
+deployer:
+  name: Warden Labs
+  url: https://wardenprotocol.org
+chainId: 8765
+displayName: Warden Protocol
+gasCurrencyCoinGeckoId: warden-2
+domainId: 8765
+isTestnet: false
+name: wardenprotocol
+nativeToken:
+  decimals: 18
+  name: WARD
+  symbol: WARD
+protocol: ethereum
+rpcUrls:
+  - http: https://evm.wardenprotocol.org
+technicalStack: other
