@@ -1,5 +1,20 @@
 # @hyperlane-xyz/registry
 
+## 23.5.0
+
+### Minor Changes
+
+- e9d17c9: Add mantra usdc deployment artifacts
+- 6c186fe: Update to new staticAggregationHookFactory implementation, update default hooks.
+- 09b859f: Deploy to sovachain. Deprecate proofofplay.
+- 8cf4bce: Add ustd/mantra warp route deployment artifacts
+- a687c25: Add CARR configs and logo
+
+### Patch Changes
+
+- 5555be3: Deploy USDC/radix
+- f32f809: Remove arbitrum leg from CARR/carrchain
+
 ## 23.4.0
 
 ### Minor Changes
