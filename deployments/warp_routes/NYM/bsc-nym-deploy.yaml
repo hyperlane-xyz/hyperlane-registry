@@ -1,0 +1,30 @@
+bsc:
+  decimals: 6
+  interchainSecurityModule:
+    domains:
+      nym:
+        modules:
+          - threshold: 2
+            type: merkleRootMultisigIsm
+            validators:
+              - "0x14588d90308e801564f7b222b78309154004ce22"
+              - "0x390757ed58f94b57fdc59ebd72d939280af2d0d9"
+              - "0xc7bc176dc2e8d1ee298f8cda962d7de711b11097"
+          - threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x14588d90308e801564f7b222b78309154004ce22"
+              - "0x390757ed58f94b57fdc59ebd72d939280af2d0d9"
+              - "0xc7bc176dc2e8d1ee298f8cda962d7de711b11097"
+        threshold: 1
+        type: staticAggregationIsm
+    owner: "0xD4B4E957cF9d41A552a7034d0E1548a701469420"
+    type: defaultFallbackRoutingIsm
+  name: Nym
+  owner: "0xD4B4E957cF9d41A552a7034d0E1548a701469420"
+  symbol: NYM
+  type: synthetic
+nym:
+  foreignDeployment: "0x726f757465725f61707000000000000000000000000000010000000000000001"
+  owner: n1gqrycg899c6hq7upy6508tcnp4j0rfvxcyjmtn
+  type: native
