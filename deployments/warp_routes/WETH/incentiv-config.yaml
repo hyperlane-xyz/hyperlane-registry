@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x6147e57484AF30f974aCFdBB166BAe7Af9C06890"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x7a69e552616Ac38D212CeA26467a8aFB42D8FaCd"
+    connections:
+      - token: ethereum|incentiv|0x0AD603065753A5fAE9f02617C43C877d34D3ED4a
+    decimals: 18
+    name: Wrapped Ether
+    standard: EvmHypOwnerCollateral
+    symbol: WETH
+  - addressOrDenom: "0x0AD603065753A5fAE9f02617C43C877d34D3ED4a"
+    chainName: incentiv
+    connections:
+      - token: ethereum|ethereum|0x6147e57484AF30f974aCFdBB166BAe7Af9C06890
+    decimals: 18
+    name: Wrapped Ether
+    standard: EvmHypSynthetic
+    symbol: WETH
