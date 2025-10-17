@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: 6QSWUmEaEcE2KJrU5jq7T11tNRaVsgnG8XULezjg7JjL
+    chainName: eclipsemainnet
+    connections:
+      - token: ethereum|ethereum|0x04C26A1Efb87D5Ac9ee6179754B4CDDC61fC11d5
+      - token: sealevel|solanamainnet|E5rVV8zXwtc4TKGypCJvSBaYbgxa4XaYg5MS6N9QGdeo
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDCSTAGE/logo.svg
+    name: USD Coin STAGE
+    standard: SealevelHypSynthetic
+    symbol: USDCSTAGE
+  - addressOrDenom: "0x04C26A1Efb87D5Ac9ee6179754B4CDDC61fC11d5"
+    chainName: ethereum
+    collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    connections:
+      - token: sealevel|eclipsemainnet|6QSWUmEaEcE2KJrU5jq7T11tNRaVsgnG8XULezjg7JjL
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDCSTAGE/logo.svg
+    name: USD Coin STAGE
+    standard: EvmHypCollateral
+    symbol: USDCSTAGE
+  - addressOrDenom: E5rVV8zXwtc4TKGypCJvSBaYbgxa4XaYg5MS6N9QGdeo
+    chainName: solanamainnet
+    collateralAddressOrDenom: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    connections:
+      - token: sealevel|eclipsemainnet|6QSWUmEaEcE2KJrU5jq7T11tNRaVsgnG8XULezjg7JjL
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDCSTAGE/logo.svg
+    name: USDCSTAGE
+    standard: SealevelHypCollateral
+    symbol: USDCSTAGE
