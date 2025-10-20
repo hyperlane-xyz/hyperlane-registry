@@ -427,6 +427,38 @@ CDX/base-solanamainnet-sophon:
       name: Cod3x Token
       standard: EvmHypSynthetic
       symbol: CDX
+CENT/incentiv:
+  tokens:
+    - addressOrDenom: "0x1E9A8531548aEd9b7fb83e80eF66422d182998C3"
+      chainName: bsc
+      connections:
+        - token: ethereum|ethereum|0xBBDE7EFB7a1AB3ED9122a14b33dC5C07D982367E
+        - token: ethereum|incentiv|0x23958cBa555AC52C9495Df9b121ff73003e39dBb
+      decimals: 18
+      logoURI: /deployments/warp_routes/CENT/logo.svg
+      name: CENT
+      standard: EvmHypSynthetic
+      symbol: CENT
+    - addressOrDenom: "0xBBDE7EFB7a1AB3ED9122a14b33dC5C07D982367E"
+      chainName: ethereum
+      connections:
+        - token: ethereum|bsc|0x1E9A8531548aEd9b7fb83e80eF66422d182998C3
+        - token: ethereum|incentiv|0x23958cBa555AC52C9495Df9b121ff73003e39dBb
+      decimals: 18
+      logoURI: /deployments/warp_routes/CENT/logo.svg
+      name: CENT
+      standard: EvmHypSynthetic
+      symbol: CENT
+    - addressOrDenom: "0x23958cBa555AC52C9495Df9b121ff73003e39dBb"
+      chainName: incentiv
+      connections:
+        - token: ethereum|bsc|0x1E9A8531548aEd9b7fb83e80eF66422d182998C3
+        - token: ethereum|ethereum|0xBBDE7EFB7a1AB3ED9122a14b33dC5C07D982367E
+      decimals: 18
+      logoURI: /deployments/warp_routes/CENT/logo.svg
+      name: CENT
+      standard: EvmHypNative
+      symbol: CENT
 CHILL/solanamainnet-sonicsvm:
   tokens:
     - addressOrDenom: 5Ez7qqsT9GXVWWB9a5B4yKhvzns3hatc3ZwKHiL5Pmuv
