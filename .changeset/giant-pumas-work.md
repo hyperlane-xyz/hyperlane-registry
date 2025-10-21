@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add ETN configs
+Add mantra usdc deployment artifacts

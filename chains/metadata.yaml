@@ -3110,7 +3110,7 @@ galactica:
     url: https://www.hyperlane.xyz
   displayName: Galactica
   domainId: 613419
-  gasCurrencyCoinGeckoId: galactica-network-gnet
+  gasCurrencyCoinGeckoId: galactica-com
   index:
     from: 851
   isTestnet: false
@@ -3645,7 +3645,7 @@ incentiv:
     symbol: CENT
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc1-archive.incentiv.io
+    - http: https://rpc-archive.incentiv.io
   technicalStack: other
 incentivtestnet:
   blockExplorers:
@@ -6117,6 +6117,11 @@ prom:
     - http: https://prom-rpc.eu-north-2.gateway.fm
   technicalStack: polygoncdk
 proofofplay:
+  availability:
+    reasons:
+      - deprecated
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.apex.proofofplay.com/api/eth-rpc
       family: blockscout
@@ -7298,6 +7303,11 @@ sophonsepolia:
     - http: https://rpc.testnet.sophon.xyz
   technicalStack: zksync
 sova:
+  availability:
+    reasons:
+      - deprecated
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.sova.io/api
       family: blockscout
@@ -7315,6 +7325,32 @@ sova:
   domainId: 100021
   gasCurrencyCoinGeckoId: ethereum
   name: sova
+  nativeToken:
+    decimals: 18
+    name: ETH
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.sova.io
+  technicalStack: opstack
+sovachain:
+  blockExplorers:
+    - apiUrl: https://explorer.sova.io/api
+      family: blockscout
+      name: Sova Explorer
+      url: https://explorer.sova.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 100021
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Sova
+  domainId: 1000100021
+  gasCurrencyCoinGeckoId: ethereum
+  name: sovachain
   nativeToken:
     decimals: 18
     name: ETH
