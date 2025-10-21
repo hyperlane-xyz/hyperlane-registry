@@ -7971,6 +7971,28 @@ WBTC/ethereum-radix:
       name: Hyperlane Wrapped Bitcoin
       standard: RadixHypSynthetic
       symbol: hWBTC
+WBTC/incentiv:
+  tokens:
+    - addressOrDenom: "0x6cFC3e0579F3706E6f2E4BC039e8372b868F3CA5"
+      chainName: ethereum
+      coinGeckoId: wrapped-bitcoin
+      collateralAddressOrDenom: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+      connections:
+        - token: ethereum|incentiv|0x0292593D416Cb765E0e8FF77b32fA7e465958FEE
+      decimals: 8
+      logoURI: /deployments/warp_routes/WBTC/logo.svg
+      name: Wrapped BTC
+      standard: EvmHypCollateral
+      symbol: WBTC
+    - addressOrDenom: "0x0292593D416Cb765E0e8FF77b32fA7e465958FEE"
+      chainName: incentiv
+      connections:
+        - token: ethereum|ethereum|0x6cFC3e0579F3706E6f2E4BC039e8372b868F3CA5
+      decimals: 8
+      logoURI: /deployments/warp_routes/WBTC/logo.svg
+      name: Wrapped BTC
+      standard: EvmHypSynthetic
+      symbol: WBTC
 WETH/artela-base:
   tokens:
     - addressOrDenom: "0xfae4e14D01D9E13FB5db20A0329ED0472A2D96C7"
