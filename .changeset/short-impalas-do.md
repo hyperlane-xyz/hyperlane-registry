@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Update metadata of deprecated chains.
+Add WBTC/incentiv warp route artifacts

@@ -1,0 +1,34 @@
+ethereum:
+  decimals: 6
+  gas: 300000
+  interchainSecurityModule:
+    domains:
+      radix:
+        modules:
+          - threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x4f977a59fdc2d9e39f6d780a84d5b4add1495a36"
+              - "0xa715a7cd97f68caeedb7be64f9e1da10f8ffafb4"
+          - threshold: 2
+            type: merkleRootMultisigIsm
+            validators:
+              - "0x4f977a59fdc2d9e39f6d780a84d5b4add1495a36"
+              - "0xa715a7cd97f68caeedb7be64f9e1da10f8ffafb4"
+        threshold: 1
+        type: staticAggregationIsm
+    owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+    type: defaultFallbackRoutingIsm
+  owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+  proxyAdmin:
+    owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+  token: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+  type: collateral
+radix:
+  decimals: 6
+  foreignDeployment: component_rdx1cp2llht7llhp9ung4l657uecn03m6tu07x7eznhmfctspxtpl5h43g
+  gas: 30000000
+  name: Hyperlane Tether USD
+  owner: account_rdx1280taxhhnuek02y59yapsg4kjtux954qkyufpwmy4dlfcxdrjzr7fj
+  symbol: hUSDT
+  type: synthetic

@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Deploy MITO/mitosis route.
+Add mantra usdc deployment artifacts

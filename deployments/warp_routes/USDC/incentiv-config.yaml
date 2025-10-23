@@ -1,0 +1,90 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x67E26775847da2c066415d7F46fbEEc5C70F6a89"
+    chainName: arbitrum
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+    connections:
+      - token: ethereum|base|0xBBDE7EFB7a1AB3ED9122a14b33dC5C07D982367E
+      - token: ethereum|ethereum|0x8918b0186136130FE8e02bfB221f23cbBbCDDE07
+      - token: ethereum|incentiv|0x16e43840d8D79896A389a3De85aB0B0210C05685
+      - token: ethereum|optimism|0xBb099fc67423e5173286cC5144e85A6aaa7737bF
+      - token: ethereum|polygon|0x7022CffD405960c1B98fEB84DD03c29Cc1053f61
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0xBBDE7EFB7a1AB3ED9122a14b33dC5C07D982367E"
+    chainName: base
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    connections:
+      - token: ethereum|arbitrum|0x67E26775847da2c066415d7F46fbEEc5C70F6a89
+      - token: ethereum|ethereum|0x8918b0186136130FE8e02bfB221f23cbBbCDDE07
+      - token: ethereum|incentiv|0x16e43840d8D79896A389a3De85aB0B0210C05685
+      - token: ethereum|optimism|0xBb099fc67423e5173286cC5144e85A6aaa7737bF
+      - token: ethereum|polygon|0x7022CffD405960c1B98fEB84DD03c29Cc1053f61
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x8918b0186136130FE8e02bfB221f23cbBbCDDE07"
+    chainName: ethereum
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    connections:
+      - token: ethereum|arbitrum|0x67E26775847da2c066415d7F46fbEEc5C70F6a89
+      - token: ethereum|base|0xBBDE7EFB7a1AB3ED9122a14b33dC5C07D982367E
+      - token: ethereum|incentiv|0x16e43840d8D79896A389a3De85aB0B0210C05685
+      - token: ethereum|optimism|0xBb099fc67423e5173286cC5144e85A6aaa7737bF
+      - token: ethereum|polygon|0x7022CffD405960c1B98fEB84DD03c29Cc1053f61
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x16e43840d8D79896A389a3De85aB0B0210C05685"
+    chainName: incentiv
+    connections:
+      - token: ethereum|arbitrum|0x67E26775847da2c066415d7F46fbEEc5C70F6a89
+      - token: ethereum|base|0xBBDE7EFB7a1AB3ED9122a14b33dC5C07D982367E
+      - token: ethereum|ethereum|0x8918b0186136130FE8e02bfB221f23cbBbCDDE07
+      - token: ethereum|optimism|0xBb099fc67423e5173286cC5144e85A6aaa7737bF
+      - token: ethereum|polygon|0x7022CffD405960c1B98fEB84DD03c29Cc1053f61
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypSynthetic
+    symbol: USDC
+  - addressOrDenom: "0xBb099fc67423e5173286cC5144e85A6aaa7737bF"
+    chainName: optimism
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
+    connections:
+      - token: ethereum|arbitrum|0x67E26775847da2c066415d7F46fbEEc5C70F6a89
+      - token: ethereum|base|0xBBDE7EFB7a1AB3ED9122a14b33dC5C07D982367E
+      - token: ethereum|ethereum|0x8918b0186136130FE8e02bfB221f23cbBbCDDE07
+      - token: ethereum|incentiv|0x16e43840d8D79896A389a3De85aB0B0210C05685
+      - token: ethereum|polygon|0x7022CffD405960c1B98fEB84DD03c29Cc1053f61
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x7022CffD405960c1B98fEB84DD03c29Cc1053f61"
+    chainName: polygon
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+    connections:
+      - token: ethereum|arbitrum|0x67E26775847da2c066415d7F46fbEEc5C70F6a89
+      - token: ethereum|base|0xBBDE7EFB7a1AB3ED9122a14b33dC5C07D982367E
+      - token: ethereum|ethereum|0x8918b0186136130FE8e02bfB221f23cbBbCDDE07
+      - token: ethereum|incentiv|0x16e43840d8D79896A389a3De85aB0B0210C05685
+      - token: ethereum|optimism|0xBb099fc67423e5173286cC5144e85A6aaa7737bF
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
