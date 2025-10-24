@@ -1,14 +1,5 @@
 # yaml-language-server: $schema=../schema.json
 tokens:
-  - addressOrDenom: "0xc7960A4Baa8d9Db795890b56Af874F3a24c20123"
-    chainName: mantra
-    connections:
-      - token: ethereum|ethereum|0xABb5E5b46112Ca652481d1117459dc289a1Ee282
-    decimals: 8
-    logoURI: /deployments/warp_routes/WBTC/logo.svg
-    name: Wrapped BTC
-    standard: EvmHypSynthetic
-    symbol: WBTC
   - addressOrDenom: "0xABb5E5b46112Ca652481d1117459dc289a1Ee282"
     chainName: ethereum
     coinGeckoId: wrapped-bitcoin
@@ -19,4 +10,13 @@ tokens:
     logoURI: /deployments/warp_routes/WBTC/logo.svg
     name: Wrapped BTC
     standard: EvmHypCollateral
+    symbol: WBTC
+  - addressOrDenom: "0xc7960A4Baa8d9Db795890b56Af874F3a24c20123"
+    chainName: mantra
+    connections:
+      - token: ethereum|ethereum|0xABb5E5b46112Ca652481d1117459dc289a1Ee282
+    decimals: 8
+    logoURI: /deployments/warp_routes/WBTC/logo.svg
+    name: Wrapped BTC
+    standard: EvmHypSynthetic
     symbol: WBTC
