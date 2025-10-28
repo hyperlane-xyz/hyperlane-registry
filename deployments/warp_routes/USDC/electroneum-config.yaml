@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x3187deAd7A2Bd6770F5Fe81495D1B715926AAe6e"
+    chainName: avalanche
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E"
+    connections:
+      - token: ethereum|base|0xaaDF9558Cf103d394B22b18Ffbaa0D1c0778Ccfa
+      - token: ethereum|electroneum|0x3187deAd7A2Bd6770F5Fe81495D1B715926AAe6e
+      - token: ethereum|ethereum|0xFC2944e9F1d57Ce82aeD05922887DD660404e50B
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0xaaDF9558Cf103d394B22b18Ffbaa0D1c0778Ccfa"
+    chainName: base
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    connections:
+      - token: ethereum|avalanche|0x3187deAd7A2Bd6770F5Fe81495D1B715926AAe6e
+      - token: ethereum|electroneum|0x3187deAd7A2Bd6770F5Fe81495D1B715926AAe6e
+      - token: ethereum|ethereum|0xFC2944e9F1d57Ce82aeD05922887DD660404e50B
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x3187deAd7A2Bd6770F5Fe81495D1B715926AAe6e"
+    chainName: electroneum
+    connections:
+      - token: ethereum|avalanche|0x3187deAd7A2Bd6770F5Fe81495D1B715926AAe6e
+      - token: ethereum|base|0xaaDF9558Cf103d394B22b18Ffbaa0D1c0778Ccfa
+      - token: ethereum|ethereum|0xFC2944e9F1d57Ce82aeD05922887DD660404e50B
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypSynthetic
+    symbol: USDC
+  - addressOrDenom: "0xFC2944e9F1d57Ce82aeD05922887DD660404e50B"
+    chainName: ethereum
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    connections:
+      - token: ethereum|avalanche|0x3187deAd7A2Bd6770F5Fe81495D1B715926AAe6e
+      - token: ethereum|base|0xaaDF9558Cf103d394B22b18Ffbaa0D1c0778Ccfa
+      - token: ethereum|electroneum|0x3187deAd7A2Bd6770F5Fe81495D1B715926AAe6e
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC

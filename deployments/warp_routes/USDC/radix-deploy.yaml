@@ -1,0 +1,111 @@
+arbitrum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    base:
+      - bridge: "0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2"
+    ethereum:
+      - bridge: "0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2"
+  decimals: 6
+  interchainSecurityModule:
+    domains:
+      radix:
+        modules:
+          - threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x4f977a59fdc2d9e39f6d780a84d5b4add1495a36"
+              - "0xa715a7cd97f68caeedb7be64f9e1da10f8ffafb4"
+          - threshold: 2
+            type: merkleRootMultisigIsm
+            validators:
+              - "0x4f977a59fdc2d9e39f6d780a84d5b4add1495a36"
+              - "0xa715a7cd97f68caeedb7be64f9e1da10f8ffafb4"
+        threshold: 1
+        type: staticAggregationIsm
+    owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+    type: defaultFallbackRoutingIsm
+  owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+  proxyAdmin:
+    owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+  token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+  type: collateral
+base:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975"
+    ethereum:
+      - bridge: "0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975"
+  decimals: 6
+  interchainSecurityModule:
+    domains:
+      radix:
+        modules:
+          - threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x4f977a59fdc2d9e39f6d780a84d5b4add1495a36"
+              - "0xa715a7cd97f68caeedb7be64f9e1da10f8ffafb4"
+          - threshold: 2
+            type: merkleRootMultisigIsm
+            validators:
+              - "0x4f977a59fdc2d9e39f6d780a84d5b4add1495a36"
+              - "0xa715a7cd97f68caeedb7be64f9e1da10f8ffafb4"
+        threshold: 1
+        type: staticAggregationIsm
+    owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+    type: defaultFallbackRoutingIsm
+  owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+  proxyAdmin:
+    owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+  token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+  type: collateral
+ethereum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0xedCBAa585FD0F80f20073F9958246476466205b8"
+    base:
+      - bridge: "0xedCBAa585FD0F80f20073F9958246476466205b8"
+  decimals: 6
+  interchainSecurityModule:
+    domains:
+      radix:
+        modules:
+          - threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x4f977a59fdc2d9e39f6d780a84d5b4add1495a36"
+              - "0xa715a7cd97f68caeedb7be64f9e1da10f8ffafb4"
+          - threshold: 2
+            type: merkleRootMultisigIsm
+            validators:
+              - "0x4f977a59fdc2d9e39f6d780a84d5b4add1495a36"
+              - "0xa715a7cd97f68caeedb7be64f9e1da10f8ffafb4"
+        threshold: 1
+        type: staticAggregationIsm
+    owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+    type: defaultFallbackRoutingIsm
+  owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+  proxyAdmin:
+    owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+  token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+  type: collateral
+radix:
+  decimals: 6
+  foreignDeployment: component_rdx1crvhu42czzpvkh556228sc5xk7uz69yvwcsqn23u5yy65pea0w02l0
+  gas: 30000000
+  name: Hyperlane USD Coin
+  owner: account_rdx1280taxhhnuek02y59yapsg4kjtux954qkyufpwmy4dlfcxdrjzr7fj
+  symbol: hUSDC
+  type: synthetic
+solanamainnet:
+  decimals: 6
+  foreignDeployment: mSjeF19MEyUto4RejyPeL6SGb2eDevNfYESaHBeQb9z
+  gas: 300000
+  owner: GvjSzPttfE3dimBFZMKFhg7Yq3C5Jz17SrpE1L4nbR2F
+  token: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+  type: collateral

@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x6720350f7e3323418c05645cD5d6bb055f4A7427"
+    chainName: arbitrum
+    coinGeckoId: rcade-network
+    collateralAddressOrDenom: "0x077574441C4F8763a37a2cFeE2ECb444aA60A15e"
+    connections:
+      - token: ethereum|bsc|0x6f0037C79d144d5B8E3E6f04E49FBb5f25fD508f
+    decimals: 18
+    logoURI: /deployments/warp_routes/RCADE/logo.svg
+    name: RCADE
+    standard: EvmHypCollateral
+    symbol: RCADE
+  - addressOrDenom: "0x6f0037C79d144d5B8E3E6f04E49FBb5f25fD508f"
+    chainName: bsc
+    connections:
+      - token: ethereum|arbitrum|0x6720350f7e3323418c05645cD5d6bb055f4A7427
+    decimals: 18
+    logoURI: /deployments/warp_routes/RCADE/logo.svg
+    name: RCADE
+    standard: EvmHypSynthetic
+    symbol: RCADE

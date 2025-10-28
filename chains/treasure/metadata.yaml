@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
 blockExplorers:
   - apiUrl: https://rpc-explorer-verify.treasure.lol/contract_verification
     family: etherscan
@@ -9,12 +12,10 @@ blocks:
   estimateBlockTime: 1
   reorgPeriod: 0
 chainId: 61166
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: Treasure
 domainId: 61166
 gasCurrencyCoinGeckoId: magic
+gnosisSafeTransactionServiceUrl: https://prod.treasure.keypersafe.xyz
 name: treasure
 nativeToken:
   decimals: 18

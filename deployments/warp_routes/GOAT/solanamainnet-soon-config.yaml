@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: HM4qABV4C6KPYhZQmJnQXJ9Q9Syo5waPcxFWLQNiDq2e
+    chainName: solanamainnet
+    coinGeckoId: goatseus-maximus
+    collateralAddressOrDenom: CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump
+    connections:
+      - token: sealevel|soon|9NhiDziXERQUsb3NxRNdamR6ivfeF8GanUJvBffQbyBF
+    decimals: 6
+    logoURI: /deployments/warp_routes/GOAT/logo.svg
+    name: Goatseus Maximus
+    standard: SealevelHypCollateral
+    symbol: GOAT
+  - addressOrDenom: 9NhiDziXERQUsb3NxRNdamR6ivfeF8GanUJvBffQbyBF
+    chainName: soon
+    collateralAddressOrDenom: 6ABPSb8Pj7B6waFjcPf8JgosQnghqqqiL9kAL3ykatk4
+    connections:
+      - token: sealevel|solanamainnet|HM4qABV4C6KPYhZQmJnQXJ9Q9Syo5waPcxFWLQNiDq2e
+    decimals: 6
+    logoURI: /deployments/warp_routes/GOAT/logo.svg
+    name: Goatseus Maximus
+    standard: SealevelHypSynthetic
+    symbol: GOAT

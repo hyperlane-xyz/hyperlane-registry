@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: 9TxKLb6RBo4hEfFNN6up6obvebnEUcm2gkBXrzQFq8s8
+    chainName: solanamainnet
+    coinGeckoId: ai16z
+    collateralAddressOrDenom: HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC
+    connections:
+      - token: sealevel|soon|BrJbX9a9bi9hvV5WesfbuXudQP49G8jnKEqAutRNMYK5
+    decimals: 9
+    logoURI: /deployments/warp_routes/ai16z/logo.png
+    name: ai16z
+    standard: SealevelHypCollateral
+    symbol: ai16z
+  - addressOrDenom: BrJbX9a9bi9hvV5WesfbuXudQP49G8jnKEqAutRNMYK5
+    chainName: soon
+    collateralAddressOrDenom: Hc3feJHN3S7Kh2TorCKTFQWFx7jgznjzKNG37ufPmp2r
+    connections:
+      - token: sealevel|solanamainnet|9TxKLb6RBo4hEfFNN6up6obvebnEUcm2gkBXrzQFq8s8
+    decimals: 9
+    logoURI: /deployments/warp_routes/ai16z/logo.png
+    name: ai16z
+    standard: SealevelHypSynthetic
+    symbol: ai16z

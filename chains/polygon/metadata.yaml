@@ -1,6 +1,7 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://api.polygonscan.com/api
+  - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+    apiUrl: https://api.etherscan.io/v2/api?chainid=137
     family: etherscan
     name: PolygonScan
     url: https://polygonscan.com
@@ -25,5 +26,6 @@ protocol: ethereum
 rpcUrls:
   - http: https://polygon-bor.publicnode.com
   - http: https://polygon-rpc.com
-  - http: https://rpc.ankr.com/polygon
+  - http: https://polygon.drpc.org
+  - http: https://polygon-pokt.nodies.app
 technicalStack: other

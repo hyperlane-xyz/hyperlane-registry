@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/80094/etherscan/api/
+    family: routescan
+    name: Berachain Explorer
+    url: https://beratrail.io
+blocks:
+  confirmations: 1
+  estimateBlockTime: 2
+  reorgPeriod: 5
+chainId: 80094
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Berachain
+domainId: 80094
+gasCurrencyCoinGeckoId: berachain-bera
+gnosisSafeTransactionServiceUrl: https://transaction.safe.berachain.com
+name: berachain
+nativeToken:
+  decimals: 18
+  name: BERA
+  symbol: BERA
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.berachain.com
+technicalStack: other

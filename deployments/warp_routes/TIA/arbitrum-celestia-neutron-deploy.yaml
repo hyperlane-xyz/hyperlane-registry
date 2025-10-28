@@ -1,0 +1,32 @@
+arbitrum:
+  decimals: 6
+  gas: 600000
+  name: TIA
+  owner: "0x03fD5BE9DF85F0017dC7F4DC3068dDF64fffF25e"
+  ownerOverrides:
+    _safeAddress: "0x03fD5BE9DF85F0017dC7F4DC3068dDF64fffF25e"
+    fallbackRoutingHook: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    proxyAdmin: "0xAC98b0cD1B64EA4fe133C6D2EDaf842cE5cF4b01"
+    testRecipient: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    validatorAnnounce: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  remoteRouters:
+    celestia:
+      address: "0x726f757465725f61707000000000000000000000000000010000000000000005"
+    neutron:
+      address: "0x910926c4cf95d107237a9cf0b3305fe9c81351ebcba3d218ceb0e4935d92ceac"
+  symbol: TIA.n
+  type: synthetic
+celestia:
+  decimals: 6
+  name: TIA
+  owner: celestia1d3ap0qjx08250ltl7cwd0eal4jtvamp3ujtmru
+  symbol: TIA
+  token: utia
+  type: collateral
+neutron:
+  decimals: 6
+  foreignDeployment: 910926c4cf95d107237a9cf0b3305fe9c81351ebcba3d218ceb0e4935d92ceac
+  gas: 600000
+  owner: neutron1fqf5mprg3f5hytvzp3t7spmsum6rjrw80mq8zgkc0h6rxga0dtzqws3uu7
+  token: ibc/773B4D0A3CD667B2275D5A4A7A2F0909C0BA0F4059C0B9181E680DDF4965DCC7
+  type: collateral

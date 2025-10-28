@@ -1,12 +1,13 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://api.arbiscan.io/api
+  - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+    apiUrl: https://api.etherscan.io/v2/api?chainid=42161
     family: etherscan
     name: Arbiscan
     url: https://arbiscan.io
 blocks:
   confirmations: 1
-  estimateBlockTime: 3
+  estimateBlockTime: 0.25
   reorgPeriod: 5
 chainId: 42161
 deployer:
@@ -29,7 +30,7 @@ nativeToken:
   symbol: ETH
 protocol: ethereum
 rpcUrls:
-  - http: https://arbitrum.llamarpc.com
-  - http: https://rpc.ankr.com/arbitrum
   - http: https://arb1.arbitrum.io/rpc
+  - http: https://arbitrum.rpc.subquery.network/public
+  - http: https://arbitrum.drpc.org
 technicalStack: arbitrumnitro

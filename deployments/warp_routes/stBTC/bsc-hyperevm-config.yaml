@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xA0B3b527A15218f980Ceb33df049Dd58D3Da8223"
+    chainName: bsc
+    coinGeckoId: lorenzo-stbtc
+    collateralAddressOrDenom: "0xf6718b2701d4a6498ef77d7c152b2137ab28b8a3"
+    connections:
+      - token: ethereum|hyperevm|0xd2bb5f4d89Ee1e497489503Bdc9a7c9CeBB3918E
+    decimals: 18
+    logoURI: /deployments/warp_routes/stBTC/logo.svg
+    name: Lorenzo stBTC
+    standard: EvmHypCollateral
+    symbol: stBTC
+  - addressOrDenom: "0xd2bb5f4d89Ee1e497489503Bdc9a7c9CeBB3918E"
+    chainName: hyperevm
+    connections:
+      - token: ethereum|bsc|0xA0B3b527A15218f980Ceb33df049Dd58D3Da8223
+    decimals: 18
+    logoURI: /deployments/warp_routes/stBTC/logo.svg
+    name: Lorenzo stBTC
+    standard: EvmHypSynthetic
+    symbol: stBTC

@@ -1,0 +1,82 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xFA3198ecF05303a6d96E57a45E6c815055D255b1"
+    chainName: boba
+    connections:
+      - token: ethereum|bsquared|0x0FC41a92F526A8CD22060A4052e156502D6B9db0
+      - token: ethereum|ethereum|0xa582e9e96F5D58A1202ad216E89926283a5dD056
+      - token: ethereum|nibiru|0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa
+      - token: ethereum|soneium|0x61F2993a644762A345b483ADF0d6351C5EdFB3b5
+      - token: ethereum|swell|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+    decimals: 18
+    logoURI: /deployments/warp_routes/UBTC/logo.svg
+    name: uBTC
+    standard: EvmHypSynthetic
+    symbol: uBTC
+  - addressOrDenom: "0x0FC41a92F526A8CD22060A4052e156502D6B9db0"
+    chainName: bsquared
+    coinGeckoId: ubtc
+    collateralAddressOrDenom: "0x796e4D53067FF374B89b2Ac101ce0c1f72ccaAc2"
+    connections:
+      - token: ethereum|boba|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+      - token: ethereum|ethereum|0xa582e9e96F5D58A1202ad216E89926283a5dD056
+      - token: ethereum|nibiru|0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa
+      - token: ethereum|soneium|0x61F2993a644762A345b483ADF0d6351C5EdFB3b5
+      - token: ethereum|swell|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+    decimals: 18
+    logoURI: /deployments/warp_routes/UBTC/logo.svg
+    name: uBTC
+    standard: EvmHypCollateral
+    symbol: uBTC
+  - addressOrDenom: "0xa582e9e96F5D58A1202ad216E89926283a5dD056"
+    chainName: ethereum
+    connections:
+      - token: ethereum|boba|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+      - token: ethereum|bsquared|0x0FC41a92F526A8CD22060A4052e156502D6B9db0
+      - token: ethereum|nibiru|0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa
+      - token: ethereum|soneium|0x61F2993a644762A345b483ADF0d6351C5EdFB3b5
+      - token: ethereum|swell|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+    decimals: 18
+    logoURI: /deployments/warp_routes/UBTC/logo.svg
+    name: uBTC
+    standard: EvmHypSynthetic
+    symbol: uBTC
+  - addressOrDenom: "0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa"
+    chainName: nibiru
+    connections:
+      - token: ethereum|boba|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+      - token: ethereum|bsquared|0x0FC41a92F526A8CD22060A4052e156502D6B9db0
+      - token: ethereum|ethereum|0xa582e9e96F5D58A1202ad216E89926283a5dD056
+      - token: ethereum|soneium|0x61F2993a644762A345b483ADF0d6351C5EdFB3b5
+      - token: ethereum|swell|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+    decimals: 18
+    logoURI: /deployments/warp_routes/UBTC/logo.svg
+    name: uBTC
+    standard: EvmHypSynthetic
+    symbol: uBTC
+  - addressOrDenom: "0x61F2993a644762A345b483ADF0d6351C5EdFB3b5"
+    chainName: soneium
+    connections:
+      - token: ethereum|boba|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+      - token: ethereum|bsquared|0x0FC41a92F526A8CD22060A4052e156502D6B9db0
+      - token: ethereum|ethereum|0xa582e9e96F5D58A1202ad216E89926283a5dD056
+      - token: ethereum|nibiru|0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa
+      - token: ethereum|swell|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+    decimals: 18
+    logoURI: /deployments/warp_routes/UBTC/logo.svg
+    name: uBTC
+    standard: EvmHypSynthetic
+    symbol: uBTC
+  - addressOrDenom: "0xFA3198ecF05303a6d96E57a45E6c815055D255b1"
+    chainName: swell
+    connections:
+      - token: ethereum|boba|0xFA3198ecF05303a6d96E57a45E6c815055D255b1
+      - token: ethereum|bsquared|0x0FC41a92F526A8CD22060A4052e156502D6B9db0
+      - token: ethereum|ethereum|0xa582e9e96F5D58A1202ad216E89926283a5dD056
+      - token: ethereum|nibiru|0xd59be1Da2e9B30b6f7aB27b2D08f841B39c349fa
+      - token: ethereum|soneium|0x61F2993a644762A345b483ADF0d6351C5EdFB3b5
+    decimals: 18
+    logoURI: /deployments/warp_routes/UBTC/logo.svg
+    name: uBTC
+    standard: EvmHypSynthetic
+    symbol: uBTC

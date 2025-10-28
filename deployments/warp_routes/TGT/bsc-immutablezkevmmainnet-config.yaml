@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x6c58E4a513D3A8062E57f41a1442e003aF14eBb5"
+    chainName: bsc
+    connections:
+      - token: ethereum|immutablezkevmmainnet|0x4d9D942010eB2411fF16a9d910Badbc8520a9BfF
+    decimals: 18
+    logoURI: /deployments/warp_routes/TGT/logo.svg
+    name: TGT
+    standard: EvmHypSynthetic
+    symbol: TGT
+  - addressOrDenom: "0x4d9D942010eB2411fF16a9d910Badbc8520a9BfF"
+    chainName: immutablezkevmmainnet
+    coinGeckoId: tokyo-games-token
+    collateralAddressOrDenom: "0x0FA1d8Ffa9B414ABF0F47183e088bddC32e084F3"
+    connections:
+      - token: ethereum|bsc|0x6c58E4a513D3A8062E57f41a1442e003aF14eBb5
+    decimals: 18
+    logoURI: /deployments/warp_routes/TGT/logo.svg
+    name: TGT
+    standard: EvmHypCollateral
+    symbol: TGT

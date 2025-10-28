@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: 8Xu98zz1oHGeBEkvK1xsrkGpZeVayVmr4discHxmmV3S
+    chainName: solanamainnet
+    coinGeckoId: eliza
+    collateralAddressOrDenom: 5voS9evDjxF589WuEub5i4ti7FWQmZCsAsyD5ucbuRqM
+    connections:
+      - token: sealevel|soon|8f8C12h7b3HfYDbU9YWrf5q1K7jTVYYan2MgjzVWpynE
+    decimals: 6
+    logoURI: /deployments/warp_routes/ELIZA/logo.svg
+    name: Eliza
+    standard: SealevelHypCollateral
+    symbol: ELIZA
+  - addressOrDenom: 8f8C12h7b3HfYDbU9YWrf5q1K7jTVYYan2MgjzVWpynE
+    chainName: soon
+    collateralAddressOrDenom: BMrhaq5Q3PBtLdyybAf2SKiYx2ZjAC93BMJgYjVoTwYt
+    connections:
+      - token: sealevel|solanamainnet|8Xu98zz1oHGeBEkvK1xsrkGpZeVayVmr4discHxmmV3S
+    decimals: 6
+    logoURI: /deployments/warp_routes/ELIZA/logo.svg
+    name: Eliza
+    standard: SealevelHypSynthetic
+    symbol: ELIZA

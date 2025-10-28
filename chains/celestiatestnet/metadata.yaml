@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: celestia
+blocks:
+  confirmations: 1
+  estimateBlockTime: 6
+  reorgPeriod: 1
+canonicalAsset: utia
+chainId: mocha-4
+contractAddressBytes: 32
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Celestia Testnet
+# Generated from: console.log(parseInt('0x'+Buffer.from('MOCH').toString('hex')) % 4_294_967_295)
+domainId: 1297040200
+gasPrice:
+  amount: "0.1"
+  denom: utia
+grpcUrls:
+  - http: https://grpc-celestia-testnet.mzonder.com:443
+index:
+  chunk: 10
+  from: 6915786
+isTestnet: true
+name: celestiatestnet
+nativeToken:
+  decimals: 6
+  denom: utia
+  name: Celestia
+  symbol: TIA
+protocol: cosmosnative
+restUrls:
+  - http: https://celestia-t-api.noders.services
+rpcUrls:
+  - http: https://rpc-1.testnet.celestia.nodes.guru
+slip44: 118
+technicalStack: other
+transactionOverrides:
+  gasPrice: "0.0"

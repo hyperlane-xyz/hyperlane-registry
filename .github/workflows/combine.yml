@@ -18,48 +18,32 @@ jobs:
           # It is necessary because the default GITHUB_TOKEN cannot re-trigger workflows after pushing
           token: ${{ secrets.COMBINE_CI_TOKEN || secrets.GITHUB_TOKEN }}
 
-      - uses: actions/cache@v4
-        with:
-          path: |
-            **/node_modules
-            .yarn/cache
-          key: ${{ runner.os }}-yarn-cache-${{ hashFiles('./yarn.lock') }}
-
       - name: yarn-install
-        run: |
-          yarn install
-          CHANGES=$(git status -s)
-          if [[ ! -z $CHANGES ]]; then
-            echo "Changes found: $CHANGES"
-            git diff
-            exit 1
-          fi
+        uses: ./.github/actions/yarn-install-with-cache
 
       - name: foundry-install
         uses: foundry-rs/foundry-toolchain@v1
 
-      - name: configure-git
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-      - name: update-nitro-chains
-        run: |
-          echo "Updating Nitro chains..."
-          ./scripts/update-nitro-chains.sh
-
       - name: combine-data
         run: |
-          echo "Assembling chain metadata and addresses together..."
+          echo "Assembling warp route configs, chain metadata and addresses together..."
           yarn build
 
       - name: commit-changes
+        uses: ./.github/actions/commit-changes
+        with:
+          message: "Update chain metadata and address files"
+
+      - name: setup-node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: optimize-svgs
         run: |
-          CHANGES=$(git status -s)
-          if [[ ! -z $CHANGES ]]; then
-            git add .
-            git commit -m "Update chain metadata and address files"
-            git push
-          else
-            echo "No changes to commit."
-          fi
+          node ./scripts/optimize-svg.js
+
+      - name: commit-changes
+        uses: ./.github/actions/commit-changes
+        with:
+          message: "Optimize SVG files"

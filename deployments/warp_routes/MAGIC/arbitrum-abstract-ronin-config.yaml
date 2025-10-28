@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x263D8f36Bb8d0d9526255E205868C26690b04B88"
+    chainName: abstract
+    connections:
+      - token: ethereum|arbitrum|0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3
+      - token: ethereum|ronin|0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3
+    decimals: 18
+    logoURI: /deployments/warp_routes/MAGIC/logo.svg
+    name: MAGIC
+    standard: EvmHypSynthetic
+    symbol: MAGIC
+  - addressOrDenom: "0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3"
+    chainName: arbitrum
+    coinGeckoId: magic
+    collateralAddressOrDenom: "0x539bdE0d7Dbd336b79148AA742883198BBF60342"
+    connections:
+      - token: ethereum|abstract|0x263D8f36Bb8d0d9526255E205868C26690b04B88
+      - token: ethereum|ronin|0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3
+    decimals: 18
+    logoURI: /deployments/warp_routes/MAGIC/logo.svg
+    name: MAGIC
+    standard: EvmHypCollateral
+    symbol: MAGIC
+  - addressOrDenom: "0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3"
+    chainName: ronin
+    connections:
+      - token: ethereum|abstract|0x263D8f36Bb8d0d9526255E205868C26690b04B88
+      - token: ethereum|arbitrum|0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3
+    decimals: 18
+    logoURI: /deployments/warp_routes/MAGIC/logo.svg
+    name: MAGIC
+    standard: EvmHypSynthetic
+    symbol: MAGIC

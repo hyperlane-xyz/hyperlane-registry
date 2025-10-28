@@ -1,6 +1,7 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://api.sonicscan.org/api
+  - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+    apiUrl: https://api.etherscan.io/v2/api?chainid=146
     family: etherscan
     name: Sonic Explorer
     url: https://sonicscan.org
@@ -15,6 +16,7 @@ deployer:
 displayName: Sonic
 domainId: 146
 gasCurrencyCoinGeckoId: fantom
+gnosisSafeTransactionServiceUrl: https://safe-transaction-sonic.safe.global/
 name: sonic
 nativeToken:
   decimals: 18

@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
 blockExplorers:
   - apiUrl: https://api.neroscan.io/api
     family: etherscan
@@ -9,9 +12,6 @@ blocks:
   estimateBlockTime: 3
   reorgPeriod: 5
 chainId: 1689
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: Nero
 domainId: 1689
 gasCurrencyCoinGeckoId: nerochain

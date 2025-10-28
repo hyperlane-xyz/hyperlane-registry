@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xC210B2cB65ed3484892167F5e05F7ab496Ab0598"
+    chainName: ethereum
+    coinGeckoId: lukso-token-2
+    connections:
+      - token: ethereum|lukso|0xC210B2cB65ed3484892167F5e05F7ab496Ab0598
+    decimals: 18
+    logoURI: /deployments/warp_routes/LYX/logo.svg
+    name: Bridged LUKSO (Hyperlane)
+    standard: EvmHypSynthetic
+    symbol: LYX
+  - addressOrDenom: "0xC210B2cB65ed3484892167F5e05F7ab496Ab0598"
+    chainName: lukso
+    coinGeckoId: lukso-token-2
+    connections:
+      - token: ethereum|ethereum|0xC210B2cB65ed3484892167F5e05F7ab496Ab0598
+    decimals: 18
+    logoURI: /deployments/warp_routes/LYX/logo.svg
+    name: LUKSO
+    standard: EvmHypNative
+    symbol: LYX

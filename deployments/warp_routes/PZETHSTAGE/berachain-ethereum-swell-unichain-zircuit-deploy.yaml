@@ -1,0 +1,405 @@
+berachain:
+  gas: 200000
+  hook:
+    hooks:
+      - "0x7937CB2886f01F38210506491A69B0D107Ea0ad9"
+      - beneficiary: "0xf013c8Be28421b050cca5bD95cc57Af49568e8be"
+        maxProtocolFee: "100000000000000000000"
+        owner: "0xf013c8Be28421b050cca5bD95cc57Af49568e8be"
+        protocolFee: "50000000000000000"
+        type: protocolFee
+    type: aggregationHook
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xf013c8Be28421b050cca5bD95cc57Af49568e8be"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0x1fd889337f60986aa57166bc5ac121efd13e4fdd"
+                  - "0xc7f7b94a6baf2fffa54dfe1dde6e5fcbb749e04f"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0x1fd889337f60986aa57166bc5ac121efd13e4fdd"
+                  - "0xc7f7b94a6baf2fffa54dfe1dde6e5fcbb749e04f"
+            threshold: 1
+            type: staticAggregationIsm
+          swell:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0x9eadf9217be22d9878e0e464727a2176d5c69ff8"
+                  - "0xb6b9b4bd4eb6eb3aef5e9826e7f8b8455947f67c"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0x9eadf9217be22d9878e0e464727a2176d5c69ff8"
+                  - "0xb6b9b4bd4eb6eb3aef5e9826e7f8b8455947f67c"
+            threshold: 1
+            type: staticAggregationIsm
+          unichain:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0xa9d517776fe8beba7d67c21cac1e805bd609c08e"
+                  - "0xfe318024ca6197f2157905209149067a11e6982c"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0xa9d517776fe8beba7d67c21cac1e805bd609c08e"
+                  - "0xfe318024ca6197f2157905209149067a11e6982c"
+            threshold: 1
+            type: staticAggregationIsm
+          zircuit:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0x1da9176c2ce5cc7115340496fa7d1800a98911ce"
+                  - "0x7ac6584c068eb2a72d4db82a7b7cd5ab34044061"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0x1da9176c2ce5cc7115340496fa7d1800a98911ce"
+                  - "0x7ac6584c068eb2a72d4db82a7b7cd5ab34044061"
+            threshold: 1
+            type: staticAggregationIsm
+        owner: "0xf013c8Be28421b050cca5bD95cc57Af49568e8be"
+        type: domainRoutingIsm
+    threshold: 2
+    type: staticAggregationIsm
+  isNft: false
+  owner: "0xf013c8Be28421b050cca5bD95cc57Af49568e8be"
+  token: "0xDe9e4211087A43112b0e0e9d840459Acf1d9E6C8"
+  type: xERC20
+ethereum:
+  gas: 200000
+  hook:
+    hooks:
+      - "0x571f1435613381208477ac5d6974310d88AC7cB7"
+      - beneficiary: "0xA9421c6F339eC414b7e77449986bE9C2Ae430C25"
+        maxProtocolFee: "100000000000000000000"
+        owner: "0xA9421c6F339eC414b7e77449986bE9C2Ae430C25"
+        protocolFee: "400000000000000"
+        type: protocolFee
+    type: aggregationHook
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xA9421c6F339eC414b7e77449986bE9C2Ae430C25"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          berachain:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0xa7341aa60faad0ce728aa9aeb67bb880f55e4392"
+                  - "0xae09cb3febc4cad59ef5a56c1df741df4eb1f4b6"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0xa7341aa60faad0ce728aa9aeb67bb880f55e4392"
+                  - "0xae09cb3febc4cad59ef5a56c1df741df4eb1f4b6"
+            threshold: 1
+            type: staticAggregationIsm
+          swell:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0x9eadf9217be22d9878e0e464727a2176d5c69ff8"
+                  - "0xb6b9b4bd4eb6eb3aef5e9826e7f8b8455947f67c"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0x9eadf9217be22d9878e0e464727a2176d5c69ff8"
+                  - "0xb6b9b4bd4eb6eb3aef5e9826e7f8b8455947f67c"
+            threshold: 1
+            type: staticAggregationIsm
+          unichain:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0xa9d517776fe8beba7d67c21cac1e805bd609c08e"
+                  - "0xfe318024ca6197f2157905209149067a11e6982c"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0xa9d517776fe8beba7d67c21cac1e805bd609c08e"
+                  - "0xfe318024ca6197f2157905209149067a11e6982c"
+            threshold: 1
+            type: staticAggregationIsm
+          zircuit:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0x1da9176c2ce5cc7115340496fa7d1800a98911ce"
+                  - "0x7ac6584c068eb2a72d4db82a7b7cd5ab34044061"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0x1da9176c2ce5cc7115340496fa7d1800a98911ce"
+                  - "0x7ac6584c068eb2a72d4db82a7b7cd5ab34044061"
+            threshold: 1
+            type: staticAggregationIsm
+        owner: "0xA9421c6F339eC414b7e77449986bE9C2Ae430C25"
+        type: domainRoutingIsm
+    threshold: 2
+    type: staticAggregationIsm
+  isNft: false
+  owner: "0xA9421c6F339eC414b7e77449986bE9C2Ae430C25"
+  token: "0x9E1a2b6de93164b77Fc5CA11e647EECB38BB463D"
+  type: xERC20Lockbox
+swell:
+  gas: 200000
+  hook:
+    hooks:
+      - "0x70EbA87Cd15616f32C736B3f3BdCfaeD0713a82B"
+      - beneficiary: "0xf40b75fb85C3bEc70D75A1B45ef08FC48Db61115"
+        maxProtocolFee: "100000000000000000000"
+        owner: "0xf40b75fb85C3bEc70D75A1B45ef08FC48Db61115"
+        protocolFee: "129871800000000"
+        type: protocolFee
+    type: aggregationHook
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xf40b75fb85C3bEc70D75A1B45ef08FC48Db61115"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          berachain:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0xa7341aa60faad0ce728aa9aeb67bb880f55e4392"
+                  - "0xae09cb3febc4cad59ef5a56c1df741df4eb1f4b6"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0xa7341aa60faad0ce728aa9aeb67bb880f55e4392"
+                  - "0xae09cb3febc4cad59ef5a56c1df741df4eb1f4b6"
+            threshold: 1
+            type: staticAggregationIsm
+          ethereum:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0x1fd889337f60986aa57166bc5ac121efd13e4fdd"
+                  - "0xc7f7b94a6baf2fffa54dfe1dde6e5fcbb749e04f"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0x1fd889337f60986aa57166bc5ac121efd13e4fdd"
+                  - "0xc7f7b94a6baf2fffa54dfe1dde6e5fcbb749e04f"
+            threshold: 1
+            type: staticAggregationIsm
+          unichain:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0xa9d517776fe8beba7d67c21cac1e805bd609c08e"
+                  - "0xfe318024ca6197f2157905209149067a11e6982c"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0xa9d517776fe8beba7d67c21cac1e805bd609c08e"
+                  - "0xfe318024ca6197f2157905209149067a11e6982c"
+            threshold: 1
+            type: staticAggregationIsm
+          zircuit:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0x1da9176c2ce5cc7115340496fa7d1800a98911ce"
+                  - "0x7ac6584c068eb2a72d4db82a7b7cd5ab34044061"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0x1da9176c2ce5cc7115340496fa7d1800a98911ce"
+                  - "0x7ac6584c068eb2a72d4db82a7b7cd5ab34044061"
+            threshold: 1
+            type: staticAggregationIsm
+        owner: "0xf40b75fb85C3bEc70D75A1B45ef08FC48Db61115"
+        type: domainRoutingIsm
+    threshold: 2
+    type: staticAggregationIsm
+  isNft: false
+  owner: "0xf40b75fb85C3bEc70D75A1B45ef08FC48Db61115"
+  token: "0xDe9e4211087A43112b0e0e9d840459Acf1d9E6C8"
+  type: xERC20
+unichain:
+  gas: 200000
+  hook:
+    hooks:
+      - "0x0D3bD9F1bcDA82bD1682b2C895a907d7aaE45849"
+      - beneficiary: "0x9D5FCF39FF17a67eB9CB4505f83920519EfEB01B"
+        maxProtocolFee: "100000000000000000000"
+        owner: "0x9D5FCF39FF17a67eB9CB4505f83920519EfEB01B"
+        protocolFee: "400000000000000"
+        type: protocolFee
+    type: aggregationHook
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x9D5FCF39FF17a67eB9CB4505f83920519EfEB01B"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          berachain:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0xa7341aa60faad0ce728aa9aeb67bb880f55e4392"
+                  - "0xae09cb3febc4cad59ef5a56c1df741df4eb1f4b6"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0xa7341aa60faad0ce728aa9aeb67bb880f55e4392"
+                  - "0xae09cb3febc4cad59ef5a56c1df741df4eb1f4b6"
+            threshold: 1
+            type: staticAggregationIsm
+          ethereum:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0x1fd889337f60986aa57166bc5ac121efd13e4fdd"
+                  - "0xc7f7b94a6baf2fffa54dfe1dde6e5fcbb749e04f"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0x1fd889337f60986aa57166bc5ac121efd13e4fdd"
+                  - "0xc7f7b94a6baf2fffa54dfe1dde6e5fcbb749e04f"
+            threshold: 1
+            type: staticAggregationIsm
+          swell:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0x9eadf9217be22d9878e0e464727a2176d5c69ff8"
+                  - "0xb6b9b4bd4eb6eb3aef5e9826e7f8b8455947f67c"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0x9eadf9217be22d9878e0e464727a2176d5c69ff8"
+                  - "0xb6b9b4bd4eb6eb3aef5e9826e7f8b8455947f67c"
+            threshold: 1
+            type: staticAggregationIsm
+          zircuit:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0x1da9176c2ce5cc7115340496fa7d1800a98911ce"
+                  - "0x7ac6584c068eb2a72d4db82a7b7cd5ab34044061"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0x1da9176c2ce5cc7115340496fa7d1800a98911ce"
+                  - "0x7ac6584c068eb2a72d4db82a7b7cd5ab34044061"
+            threshold: 1
+            type: staticAggregationIsm
+        owner: "0x9D5FCF39FF17a67eB9CB4505f83920519EfEB01B"
+        type: domainRoutingIsm
+    threshold: 2
+    type: staticAggregationIsm
+  isNft: false
+  owner: "0x9D5FCF39FF17a67eB9CB4505f83920519EfEB01B"
+  token: "0xDe9e4211087A43112b0e0e9d840459Acf1d9E6C8"
+  type: xERC20
+zircuit:
+  gas: 200000
+  hook:
+    hooks:
+      - "0xDa7cECb05C4aeB02c1aFDE277d4306a2da7Bd762"
+      - beneficiary: "0xf40b75fb85C3bEc70D75A1B45ef08FC48Db61115"
+        maxProtocolFee: "100000000000000000000"
+        owner: "0xf40b75fb85C3bEc70D75A1B45ef08FC48Db61115"
+        protocolFee: "400000000000000"
+        type: protocolFee
+    type: aggregationHook
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xf40b75fb85C3bEc70D75A1B45ef08FC48Db61115"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          berachain:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0xa7341aa60faad0ce728aa9aeb67bb880f55e4392"
+                  - "0xae09cb3febc4cad59ef5a56c1df741df4eb1f4b6"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0xa7341aa60faad0ce728aa9aeb67bb880f55e4392"
+                  - "0xae09cb3febc4cad59ef5a56c1df741df4eb1f4b6"
+            threshold: 1
+            type: staticAggregationIsm
+          ethereum:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0x1fd889337f60986aa57166bc5ac121efd13e4fdd"
+                  - "0xc7f7b94a6baf2fffa54dfe1dde6e5fcbb749e04f"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0x1fd889337f60986aa57166bc5ac121efd13e4fdd"
+                  - "0xc7f7b94a6baf2fffa54dfe1dde6e5fcbb749e04f"
+            threshold: 1
+            type: staticAggregationIsm
+          swell:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0x9eadf9217be22d9878e0e464727a2176d5c69ff8"
+                  - "0xb6b9b4bd4eb6eb3aef5e9826e7f8b8455947f67c"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0x9eadf9217be22d9878e0e464727a2176d5c69ff8"
+                  - "0xb6b9b4bd4eb6eb3aef5e9826e7f8b8455947f67c"
+            threshold: 1
+            type: staticAggregationIsm
+          unichain:
+            modules:
+              - threshold: 1
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0xa9d517776fe8beba7d67c21cac1e805bd609c08e"
+                  - "0xfe318024ca6197f2157905209149067a11e6982c"
+              - threshold: 1
+                type: messageIdMultisigIsm
+                validators:
+                  - "0xa9d517776fe8beba7d67c21cac1e805bd609c08e"
+                  - "0xfe318024ca6197f2157905209149067a11e6982c"
+            threshold: 1
+            type: staticAggregationIsm
+        owner: "0xf40b75fb85C3bEc70D75A1B45ef08FC48Db61115"
+        type: domainRoutingIsm
+    threshold: 2
+    type: staticAggregationIsm
+  isNft: false
+  owner: "0xf40b75fb85C3bEc70D75A1B45ef08FC48Db61115"
+  token: "0xDe9e4211087A43112b0e0e9d840459Acf1d9E6C8"
+  type: xERC20

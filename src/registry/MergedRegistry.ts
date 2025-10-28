@@ -1,14 +1,27 @@
 import type { Logger } from 'pino';
 
-import type { ChainMap, ChainMetadata, ChainName, WarpCoreConfig } from '@hyperlane-xyz/sdk';
-import { ChainAddresses, WarpRouteConfigMap, WarpRouteId } from '../types.js';
+import type {
+  ChainMap,
+  ChainMetadata,
+  ChainName,
+  WarpCoreConfig,
+  WarpRouteDeployConfig,
+} from '@hyperlane-xyz/sdk';
+import {
+  ChainAddresses,
+  UpdateChainParams,
+  WarpDeployConfigMap,
+  WarpRouteConfigMap,
+  WarpRouteFilterParams,
+  WarpRouteId,
+} from '../types.js';
 import { objMerge } from '../utils.js';
 import {
+  AddWarpRouteConfigOptions,
   IRegistry,
+  IRegistryMethods,
   RegistryContent,
   RegistryType,
-  UpdateChainParams,
-  WarpRouteFilterParams,
 } from './IRegistry.js';
 
 export interface MergedRegistryOptions {
@@ -45,6 +58,7 @@ export class MergedRegistry implements IRegistry {
       chains: {},
       deployments: {
         warpRoutes: {},
+        warpDeployConfig: {},
       },
     });
   }
@@ -79,6 +93,7 @@ export class MergedRegistry implements IRegistry {
   async addChain(chain: UpdateChainParams): Promise<void> {
     return this.multiRegistryWrite(
       async (registry) => await registry.addChain(chain),
+      'addChain',
       `adding chain ${chain.chainName}`,
     );
   }
@@ -86,6 +101,7 @@ export class MergedRegistry implements IRegistry {
   async updateChain(chain: UpdateChainParams): Promise<void> {
     return this.multiRegistryWrite(
       async (registry) => await registry.updateChain(chain),
+      'updateChain',
       `updating chain ${chain.chainName}`,
     );
   }
@@ -93,6 +109,7 @@ export class MergedRegistry implements IRegistry {
   async removeChain(chain: ChainName): Promise<void> {
     return this.multiRegistryWrite(
       async (registry) => await registry.removeChain(chain),
+      'removeChain',
       `removing chain ${chain}`,
     );
   }
@@ -102,15 +119,37 @@ export class MergedRegistry implements IRegistry {
     return results.find((r) => !!r) || null;
   }
 
+  async getWarpDeployConfig(id: WarpRouteId): Promise<WarpRouteDeployConfig | null> {
+    const results = await this.multiRegistryRead((r) => r.getWarpDeployConfig(id));
+    return results.find((r) => !!r) || null;
+  }
+
   async getWarpRoutes(filter?: WarpRouteFilterParams): Promise<WarpRouteConfigMap> {
     const results = await this.multiRegistryRead((r) => r.getWarpRoutes(filter));
     return results.reduce((acc, content) => objMerge(acc, content), {});
   }
 
-  async addWarpRoute(config: WarpCoreConfig): Promise<void> {
+  async getWarpDeployConfigs(filter?: WarpRouteFilterParams): Promise<WarpDeployConfigMap> {
+    const results = await this.multiRegistryRead((r) => r.getWarpDeployConfigs(filter));
+    return results.reduce((acc, content) => objMerge(acc, content), {});
+  }
+
+  async addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteConfigOptions): Promise<void> {
     return this.multiRegistryWrite(
-      async (registry) => await registry.addWarpRoute(config),
+      async (registry) => await registry.addWarpRoute(config, options),
+      'addWarpRoute',
       'adding warp route',
+    );
+  }
+
+  async addWarpRouteConfig(
+    config: WarpRouteDeployConfig,
+    options: AddWarpRouteConfigOptions,
+  ): Promise<void> {
+    return this.multiRegistryWrite(
+      async (registry) => await registry.addWarpRouteConfig(config, options),
+      'addWarpRouteConfig',
+      'adding warp route deploy config',
     );
   }
 
@@ -120,12 +159,12 @@ export class MergedRegistry implements IRegistry {
 
   protected async multiRegistryWrite(
     writeFn: (registry: IRegistry) => Promise<void>,
+    methodName: IRegistryMethods,
     logMsg: string,
   ): Promise<void> {
     for (const registry of this.registries) {
-      // TODO remove this when GithubRegistry supports write methods
-      if (registry.type === RegistryType.Github) {
-        this.logger.warn(`Skipping ${logMsg} at ${registry.type} registry`);
+      if (registry.unimplementedMethods?.has(methodName)) {
+        this.logger.warn(`Skipping ${logMsg} at ${registry.type} registry (not supported)`);
         continue;
       }
       try {

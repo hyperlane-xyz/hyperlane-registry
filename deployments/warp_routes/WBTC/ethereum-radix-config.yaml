@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x0E993E49df1b7412DED493EAAf806730b74378b9"
+    chainName: ethereum
+    coinGeckoId: wrapped-bitcoin
+    collateralAddressOrDenom: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+    connections:
+      - token: radix|radix|component_rdx1cp9lqkswethenu2l8cx5d39x9lh9dm22t62cykkc4sxp8rdvj25ak4
+    decimals: 8
+    logoURI: /deployments/warp_routes/WBTC/logo.svg
+    name: Wrapped BTC
+    standard: EvmHypCollateral
+    symbol: WBTC
+  - addressOrDenom: component_rdx1cp9lqkswethenu2l8cx5d39x9lh9dm22t62cykkc4sxp8rdvj25ak4
+    chainName: radix
+    connections:
+      - token: ethereum|ethereum|0x0E993E49df1b7412DED493EAAf806730b74378b9
+    decimals: 8
+    logoURI: /deployments/warp_routes/WBTC/logo.svg
+    name: Hyperlane Wrapped Bitcoin
+    standard: RadixHypSynthetic
+    symbol: hWBTC

@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
+blockExplorers:
+  - apiUrl: https://www.dbcscan.io/api
+    family: blockscout
+    name: dbcscan
+    url: https://www.dbcscan.io
+blocks:
+  confirmations: 1
+  estimateBlockTime: 6
+  reorgPeriod: finalized
+chainId: 19880818
+displayName: Deep Brain Chain
+domainId: 19880818
+gasCurrencyCoinGeckoId: deepbrain-chain
+name: deepbrainchain
+nativeToken:
+  decimals: 18
+  name: DBC
+  symbol: DBC
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.dbcwallet.io
+technicalStack: polkadotsubstrate

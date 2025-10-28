@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x458BDDd0793fe4f70912535f172466a5473f2e77"
+    chainName: base
+    collateralAddressOrDenom: "0x17906b1Cd88aA8EfaEfC5e82891B52a22219BD45"
+    connections:
+      - token: ethereum|ethereum|0xbc808c98beA0a097346273A9Fd7a5B231fc2d889
+      - token: ethereum|ink|0x6cfDDfa3e0867A873675B80FDEBeB94e9262b5F0
+      - token: ethereum|optimism|0xae1E04F18D1323d8EaC7Ba5b2c683c95DC3baC97
+      - token: ethereum|superseed|0xA1863B4b02b7DCd7429F62C775816328D63020F4
+    decimals: 18
+    logoURI: /deployments/warp_routes/SUPR/logo.svg
+    name: Superseed
+    standard: EvmHypXERC20
+    symbol: SUPR
+  - addressOrDenom: "0xbc808c98beA0a097346273A9Fd7a5B231fc2d889"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x17906b1Cd88aA8EfaEfC5e82891B52a22219BD45"
+    connections:
+      - token: ethereum|base|0x458BDDd0793fe4f70912535f172466a5473f2e77
+      - token: ethereum|ink|0x6cfDDfa3e0867A873675B80FDEBeB94e9262b5F0
+      - token: ethereum|optimism|0xae1E04F18D1323d8EaC7Ba5b2c683c95DC3baC97
+      - token: ethereum|superseed|0xA1863B4b02b7DCd7429F62C775816328D63020F4
+    decimals: 18
+    logoURI: /deployments/warp_routes/SUPR/logo.svg
+    name: Superseed
+    standard: EvmHypXERC20
+    symbol: SUPR
+  - addressOrDenom: "0x6cfDDfa3e0867A873675B80FDEBeB94e9262b5F0"
+    chainName: ink
+    collateralAddressOrDenom: "0x17906b1Cd88aA8EfaEfC5e82891B52a22219BD45"
+    connections:
+      - token: ethereum|base|0x458BDDd0793fe4f70912535f172466a5473f2e77
+      - token: ethereum|ethereum|0xbc808c98beA0a097346273A9Fd7a5B231fc2d889
+      - token: ethereum|optimism|0xae1E04F18D1323d8EaC7Ba5b2c683c95DC3baC97
+      - token: ethereum|superseed|0xA1863B4b02b7DCd7429F62C775816328D63020F4
+    decimals: 18
+    logoURI: /deployments/warp_routes/SUPR/logo.svg
+    name: Superseed
+    standard: EvmHypXERC20
+    symbol: SUPR
+  - addressOrDenom: "0xae1E04F18D1323d8EaC7Ba5b2c683c95DC3baC97"
+    chainName: optimism
+    collateralAddressOrDenom: "0x17906b1Cd88aA8EfaEfC5e82891B52a22219BD45"
+    connections:
+      - token: ethereum|base|0x458BDDd0793fe4f70912535f172466a5473f2e77
+      - token: ethereum|ethereum|0xbc808c98beA0a097346273A9Fd7a5B231fc2d889
+      - token: ethereum|ink|0x6cfDDfa3e0867A873675B80FDEBeB94e9262b5F0
+      - token: ethereum|superseed|0xA1863B4b02b7DCd7429F62C775816328D63020F4
+    decimals: 18
+    logoURI: /deployments/warp_routes/SUPR/logo.svg
+    name: Superseed
+    standard: EvmHypXERC20
+    symbol: SUPR
+  - addressOrDenom: "0xA1863B4b02b7DCd7429F62C775816328D63020F4"
+    chainName: superseed
+    coinGeckoId: superseed
+    collateralAddressOrDenom: "0xEe64bC3f4A58D638D0845b24e2f51534d01b6549"
+    connections:
+      - token: ethereum|base|0x458BDDd0793fe4f70912535f172466a5473f2e77
+      - token: ethereum|ethereum|0xbc808c98beA0a097346273A9Fd7a5B231fc2d889
+      - token: ethereum|ink|0x6cfDDfa3e0867A873675B80FDEBeB94e9262b5F0
+      - token: ethereum|optimism|0xae1E04F18D1323d8EaC7Ba5b2c683c95DC3baC97
+    decimals: 18
+    logoURI: /deployments/warp_routes/SUPR/logo.svg
+    name: Superseed
+    standard: EvmHypXERC20Lockbox
+    symbol: SUPR

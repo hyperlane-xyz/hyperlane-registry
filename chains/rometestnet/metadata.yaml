@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
+blockExplorers:
+  - apiUrl: https://node1.testnet.romeprotocol.xyz:1000/api
+    family: blockscout
+    name: Rome Testnet Explorer
+    url: https://node1.testnet.romeprotocol.xyz:1000
+blocks:
+  confirmations: 1
+  estimateBlockTime: 4
+  reorgPeriod: 1
+chainId: 200018
+displayName: Rome Testnet
+domainId: 200018
+isTestnet: true
+name: rometestnet
+nativeToken:
+  decimals: 18
+  name: ROME
+  symbol: ROME
+protocol: ethereum
+rpcUrls:
+  - http: https://node1.testnet.romeprotocol.xyz
+technicalStack: other

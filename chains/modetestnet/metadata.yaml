@@ -1,13 +1,17 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://testnet.modescan.io/api
+  - apiUrl: https://api.routescan.io/v2/network/testnet/evm/919/etherscan/api
     family: etherscan
     name: Mode Testnet Explorer
-    url: https://testnet.modescan.io/
+    url: https://testnet.modescan.io
+blocks:
+  confirmations: 1
+  estimateBlockTime: 2
+  reorgPeriod: 1
 chainId: 919
 deployer:
-  name: guy93354
-  url: https://github.com/guy93354
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
 displayName: Mode Testnet
 domainId: 919
 isTestnet: true
@@ -19,3 +23,4 @@ nativeToken:
 protocol: ethereum
 rpcUrls:
   - http: https://sepolia.mode.network
+technicalStack: opstack

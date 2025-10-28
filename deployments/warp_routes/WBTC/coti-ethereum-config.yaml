@@ -1,0 +1,21 @@
+tokens:
+  - addressOrDenom: "0x8C39B1fD0e6260fdf20652Fc436d25026832bfEA"
+    chainName: coti
+    connections:
+      - token: ethereum|ethereum|0x5c43f06EF93bb0a2cd3C0f7b832AbA1F4d6575Ea
+    decimals: 8
+    logoURI: /deployments/warp_routes/WBTC/logo.svg
+    name: Wrapped BTC
+    standard: EvmHypSynthetic
+    symbol: WBTC
+  - addressOrDenom: "0x5c43f06EF93bb0a2cd3C0f7b832AbA1F4d6575Ea"
+    chainName: ethereum
+    coinGeckoId: wrapped-bitcoin
+    collateralAddressOrDenom: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
+    connections:
+      - token: ethereum|coti|0x8C39B1fD0e6260fdf20652Fc436d25026832bfEA
+    decimals: 8
+    logoURI: /deployments/warp_routes/WBTC/logo.svg
+    name: Wrapped BTC
+    standard: EvmHypCollateral
+    symbol: WBTC

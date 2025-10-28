@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: BJkD7PFuMKRFPdc8H3pxL5u4KuQ2HWGkQgbvP3hw26AF
+    chainName: solanamainnet
+    coinGeckoId: dogwifcoin
+    collateralAddressOrDenom: EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm
+    connections:
+      - token: sealevel|soon|HzP6KbL7fVAwqVgix4eJhijGMFeyg7mhHkQs7kBwrGPQ
+    decimals: 6
+    logoURI: /deployments/warp_routes/WIF/logo.jpg
+    name: dogwifhat
+    standard: SealevelHypCollateral
+    symbol: WIF
+  - addressOrDenom: HzP6KbL7fVAwqVgix4eJhijGMFeyg7mhHkQs7kBwrGPQ
+    chainName: soon
+    collateralAddressOrDenom: 4LamGFWF36vfBCVtWrZv17wDkbBSkJ8vSJhGFzui4wkZ
+    connections:
+      - token: sealevel|solanamainnet|BJkD7PFuMKRFPdc8H3pxL5u4KuQ2HWGkQgbvP3hw26AF
+    decimals: 6
+    logoURI: /deployments/warp_routes/WIF/logo.jpg
+    name: dogwifhat
+    standard: SealevelHypSynthetic
+    symbol: WIF

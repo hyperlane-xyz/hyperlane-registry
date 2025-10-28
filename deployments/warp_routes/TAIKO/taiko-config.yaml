@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x1f36ecf13394712c944805f38d1463cf54C0C2C8"
+    chainName: base
+    connections:
+      - token: ethereum|bsc|0x1f36ecf13394712c944805f38d1463cf54C0C2C8
+      - token: ethereum|ethereum|0xb20524C700879620D921c5eb4435517A0549aD75
+      - token: ethereum|unichain|0xfA6F161A6D0487351364BCB9792885e03D8E1371
+    decimals: 18
+    logoURI: /deployments/warp_routes/TAIKO/logo.svg
+    name: Taiko Token
+    standard: EvmHypSynthetic
+    symbol: TAIKO
+  - addressOrDenom: "0x1f36ecf13394712c944805f38d1463cf54C0C2C8"
+    chainName: bsc
+    connections:
+      - token: ethereum|base|0x1f36ecf13394712c944805f38d1463cf54C0C2C8
+      - token: ethereum|ethereum|0xb20524C700879620D921c5eb4435517A0549aD75
+      - token: ethereum|unichain|0xfA6F161A6D0487351364BCB9792885e03D8E1371
+    decimals: 18
+    logoURI: /deployments/warp_routes/TAIKO/logo.svg
+    name: Taiko Token
+    standard: EvmHypSynthetic
+    symbol: TAIKO
+  - addressOrDenom: "0xb20524C700879620D921c5eb4435517A0549aD75"
+    chainName: ethereum
+    coinGeckoId: taiko
+    collateralAddressOrDenom: "0x10dea67478c5F8C5E2D90e5E9B26dBe60c54d800"
+    connections:
+      - token: ethereum|base|0x1f36ecf13394712c944805f38d1463cf54C0C2C8
+      - token: ethereum|bsc|0x1f36ecf13394712c944805f38d1463cf54C0C2C8
+      - token: ethereum|unichain|0xfA6F161A6D0487351364BCB9792885e03D8E1371
+    decimals: 18
+    logoURI: /deployments/warp_routes/TAIKO/logo.svg
+    name: Taiko Token
+    standard: EvmHypCollateral
+    symbol: TAIKO
+  - addressOrDenom: "0xfA6F161A6D0487351364BCB9792885e03D8E1371"
+    chainName: unichain
+    connections:
+      - token: ethereum|base|0x1f36ecf13394712c944805f38d1463cf54C0C2C8
+      - token: ethereum|bsc|0x1f36ecf13394712c944805f38d1463cf54C0C2C8
+      - token: ethereum|ethereum|0xb20524C700879620D921c5eb4435517A0549aD75
+    decimals: 18
+    logoURI: /deployments/warp_routes/TAIKO/logo.svg
+    name: Taiko Token
+    standard: EvmHypSynthetic
+    symbol: TAIKO

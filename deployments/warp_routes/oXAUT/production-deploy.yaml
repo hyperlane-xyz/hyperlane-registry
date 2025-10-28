@@ -1,0 +1,79 @@
+avalanche:
+  owner: "0x5bE94B17112B8F18eA9Ac8e559377B467556a3c3"
+  ownerOverrides:
+    collateralToken: "0x5bE94B17112B8F18eA9Ac8e559377B467556a3c3"
+  token: "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
+  type: xERC20
+  xERC20:
+    extraBridges:
+      - limits:
+          burn: "10000000000000"
+          mint: "10000000000000"
+          type: standard
+        lockbox: "0x18e25Ac83477d7013D43174508B7AE7EC2CE2e08"
+    warpRouteLimits:
+      burn: "20000000000000"
+      mint: "20000000000000"
+      type: standard
+base:
+  owner: "0x3949eD0CD036D9FF662d97BD7aC1686051c4aeBF"
+  ownerOverrides:
+    collateralToken: "0x3949eD0CD036D9FF662d97BD7aC1686051c4aeBF"
+  token: "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
+  type: xERC20
+  xERC20:
+    extraBridges:
+      - limits:
+          burn: "10000000000000"
+          mint: "10000000000000"
+          type: standard
+        lockbox: "0xaF35bef911A5e0be90987cE5070d7c9CbF5cFd3c"
+    warpRouteLimits:
+      burn: "20000000000000"
+      mint: "20000000000000"
+      type: standard
+celo:
+  owner: "0x879038d6Fc9F6D5e2BA73188bd078486d77e1156"
+  ownerOverrides:
+    collateralToken: "0x879038d6Fc9F6D5e2BA73188bd078486d77e1156"
+  token: "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      burn: "20000000000000"
+      mint: "20000000000000"
+      type: standard
+ethereum:
+  owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+  ownerOverrides:
+    collateralToken: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+  token: "0x0797c6f55f5c9005996A55959A341018cF69A963"
+  type: xERC20Lockbox
+  xERC20:
+    extraBridges:
+      - limits:
+          burn: "10000000000000"
+          mint: "10000000000000"
+          type: standard
+        lockbox: "0x04db9b1D7f52cB288b95B4934a1fA688F6d0cBc3"
+    warpRouteLimits:
+      burn: "20000000000000"
+      mint: "20000000000000"
+      type: standard
+worldchain:
+  owner: "0x95b1634566663117322999ce42cDEaEF18c089Be"
+  ownerOverrides:
+    collateralToken: "0x95b1634566663117322999ce42cDEaEF18c089Be"
+  token: "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
+  type: xERC20
+  xERC20:
+    extraBridges:
+      - limits:
+          burn: "10000000000000"
+          mint: "10000000000000"
+          type: standard
+        lockbox: "0xF8AE5209DE22dbd06Dace938934b0D75B5E80299"
+    warpRouteLimits:
+      burn: "20000000000000"
+      mint: "20000000000000"
+      type: standard

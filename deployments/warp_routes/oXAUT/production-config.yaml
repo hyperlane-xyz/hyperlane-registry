@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x118b30d28e5dB274f2376910038F66b1C33bD00a"
+    chainName: avalanche
+    collateralAddressOrDenom: "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
+    connections:
+      - token: ethereum|base|0x0fcf8DAE34efB101e7dF535550370da4e53Ab960
+      - token: ethereum|celo|0x53a81819DFD46730116B89dBCb096DAcC4e73cEA
+      - token: ethereum|ethereum|0x9A9C33115455a929D3d821CEE4A01e38241bF375
+      - token: ethereum|worldchain|0xEa0ad8Fc869f5Ab97a859c3af110367865699a8d
+    decimals: 6
+    logoURI: /deployments/warp_routes/oXAUT/logo.svg
+    name: OpenXAUT
+    standard: EvmHypXERC20
+    symbol: oXAUT
+  - addressOrDenom: "0x0fcf8DAE34efB101e7dF535550370da4e53Ab960"
+    chainName: base
+    collateralAddressOrDenom: "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
+    connections:
+      - token: ethereum|avalanche|0x118b30d28e5dB274f2376910038F66b1C33bD00a
+      - token: ethereum|celo|0x53a81819DFD46730116B89dBCb096DAcC4e73cEA
+      - token: ethereum|ethereum|0x9A9C33115455a929D3d821CEE4A01e38241bF375
+      - token: ethereum|worldchain|0xEa0ad8Fc869f5Ab97a859c3af110367865699a8d
+    decimals: 6
+    logoURI: /deployments/warp_routes/oXAUT/logo.svg
+    name: OpenXAUT
+    standard: EvmHypXERC20
+    symbol: oXAUT
+  - addressOrDenom: "0x53a81819DFD46730116B89dBCb096DAcC4e73cEA"
+    chainName: celo
+    collateralAddressOrDenom: "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
+    connections:
+      - token: ethereum|avalanche|0x118b30d28e5dB274f2376910038F66b1C33bD00a
+      - token: ethereum|base|0x0fcf8DAE34efB101e7dF535550370da4e53Ab960
+      - token: ethereum|ethereum|0x9A9C33115455a929D3d821CEE4A01e38241bF375
+      - token: ethereum|worldchain|0xEa0ad8Fc869f5Ab97a859c3af110367865699a8d
+    decimals: 6
+    logoURI: /deployments/warp_routes/oXAUT/logo.svg
+    name: OpenXAUT
+    standard: EvmHypXERC20
+    symbol: oXAUT
+  - addressOrDenom: "0x9A9C33115455a929D3d821CEE4A01e38241bF375"
+    chainName: ethereum
+    coinGeckoId: tether-gold
+    collateralAddressOrDenom: "0x0797c6f55f5c9005996A55959A341018cF69A963"
+    connections:
+      - token: ethereum|avalanche|0x118b30d28e5dB274f2376910038F66b1C33bD00a
+      - token: ethereum|base|0x0fcf8DAE34efB101e7dF535550370da4e53Ab960
+      - token: ethereum|celo|0x53a81819DFD46730116B89dBCb096DAcC4e73cEA
+      - token: ethereum|worldchain|0xEa0ad8Fc869f5Ab97a859c3af110367865699a8d
+    decimals: 6
+    logoURI: /deployments/warp_routes/oXAUT/logo.svg
+    name: Tether Gold
+    standard: EvmHypXERC20Lockbox
+    symbol: XAUt
+  - addressOrDenom: "0xEa0ad8Fc869f5Ab97a859c3af110367865699a8d"
+    chainName: worldchain
+    collateralAddressOrDenom: "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
+    connections:
+      - token: ethereum|avalanche|0x118b30d28e5dB274f2376910038F66b1C33bD00a
+      - token: ethereum|base|0x0fcf8DAE34efB101e7dF535550370da4e53Ab960
+      - token: ethereum|celo|0x53a81819DFD46730116B89dBCb096DAcC4e73cEA
+      - token: ethereum|ethereum|0x9A9C33115455a929D3d821CEE4A01e38241bF375
+    decimals: 6
+    logoURI: /deployments/warp_routes/oXAUT/logo.svg
+    name: OpenXAUT
+    standard: EvmHypXERC20
+    symbol: oXAUT

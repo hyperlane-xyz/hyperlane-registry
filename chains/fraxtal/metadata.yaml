@@ -1,9 +1,14 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://api.fraxscan.com/api
+  - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+    apiUrl: https://api.etherscan.io/v2/api?chainid=252
     family: etherscan
     name: Fraxscan
     url: https://fraxscan.com
+  - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/252/etherscan/api
+    family: routescan
+    name: Fraxtal Explorer
+    url: https://252.thesuperscan.io
 blocks:
   confirmations: 1
   estimateBlockTime: 2
@@ -14,13 +19,13 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Fraxtal
 domainId: 252
-gasCurrencyCoinGeckoId: frax-ether
-gnosisSafeTransactionServiceUrl: https://transaction-frax.safe.optimism.io
+gasCurrencyCoinGeckoId: frax-share
+gnosisSafeTransactionServiceUrl: https://safe.mainnet.frax.com/txs
 name: fraxtal
 nativeToken:
   decimals: 18
-  name: Frax Ether
-  symbol: frxETH
+  name: FRAX
+  symbol: FRAX
 protocol: ethereum
 rpcUrls:
   - http: https://rpc.frax.com

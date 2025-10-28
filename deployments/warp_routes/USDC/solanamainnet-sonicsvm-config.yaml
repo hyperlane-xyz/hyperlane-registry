@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: 996EsR8a7MC6odE6j7sjsArmDQVqB96qWu84wHdthahm
+    chainName: solanamainnet
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    connections:
+      - token: sealevel|sonicsvm|BvTEYSqCcfMwpAriC1vDpNhzR1JWzasRFfCPCdgsYaCd
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USDC
+    standard: SealevelHypCollateral
+    symbol: USDC
+  - addressOrDenom: BvTEYSqCcfMwpAriC1vDpNhzR1JWzasRFfCPCdgsYaCd
+    chainName: sonicsvm
+    collateralAddressOrDenom: HbDgpvHVxeNSRCGEUFvapCYmtYfqxexWcCbxtYecruy8
+    connections:
+      - token: sealevel|solanamainnet|996EsR8a7MC6odE6j7sjsArmDQVqB96qWu84wHdthahm
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USDC
+    standard: SealevelHypSynthetic
+    symbol: USDC

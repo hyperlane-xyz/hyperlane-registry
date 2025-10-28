@@ -1,0 +1,88 @@
+arbitrum:
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  owner: "0x03fD5BE9DF85F0017dC7F4DC3068dDF64fffF25e"
+  proxyAdmin:
+    address: "0x02317D525FA7ceb5ea388244b4618f0c8Ac1CeC2"
+    owner: "0xAC98b0cD1B64EA4fe133C6D2EDaf842cE5cF4b01"
+  remoteRouters:
+    "1135":
+      address: "0x0FC41a92F526A8CD22060A4052e156502D6B9db0"
+    "543210":
+      address: "0xbb967d98313EDF91751651C0E66ef8A8B7BeD9e1"
+  token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+  type: collateral
+base:
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  owner: "0x3949eD0CD036D9FF662d97BD7aC1686051c4aeBF"
+  proxyAdmin:
+    address: "0xB6E9331576C5aBF69376AF6989eA61b7C7ea67F1"
+    owner: "0x3949eD0CD036D9FF662d97BD7aC1686051c4aeBF"
+  remoteRouters:
+    "1135":
+      address: "0x0FC41a92F526A8CD22060A4052e156502D6B9db0"
+    "543210":
+      address: "0xbb967d98313EDF91751651C0E66ef8A8B7BeD9e1"
+  token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+  type: collateral
+ethereum:
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+  proxyAdmin:
+    address: "0x81063D413Ed6Eac3FCf0521eea14906fD27fEb1A"
+    owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+  remoteRouters:
+    "1135":
+      address: "0x0FC41a92F526A8CD22060A4052e156502D6B9db0"
+    "543210":
+      address: "0xbb967d98313EDF91751651C0E66ef8A8B7BeD9e1"
+  token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+  type: collateral
+lisk:
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  owner: "0x22d952d3b9F493442731a3c7660aCaD98e55C00A"
+  proxyAdmin:
+    address: "0x81Db8B4Bc6F2e95781eeA2a21D0A453Ac046eFc0"
+    owner: "0x22d952d3b9F493442731a3c7660aCaD98e55C00A"
+    ownerOverrides:
+      _icaAddress: "0x22d952d3b9F493442731a3c7660aCaD98e55C00A"
+      _safeAddress: "0x831d0b06DF466263c06FFcD467cf91c6FA57c62C"
+      fallbackRoutingHook: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+      proxyAdmin: "0x22d952d3b9F493442731a3c7660aCaD98e55C00A"
+      testRecipient: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+      validatorAnnounce: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  type: synthetic
+optimism:
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  owner: "0xbd7db3821806bc72D223F0AE521Bf82FcBd6Ef4d"
+  proxyAdmin:
+    address: "0xca9e64761C97b049901dF4E7a5926464969528b1"
+    owner: "0xbd7db3821806bc72D223F0AE521Bf82FcBd6Ef4d"
+  remoteRouters:
+    "1135":
+      address: "0x0FC41a92F526A8CD22060A4052e156502D6B9db0"
+    "543210":
+      address: "0xbb967d98313EDF91751651C0E66ef8A8B7BeD9e1"
+  token: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
+  type: collateral
+polygon:
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  owner: "0xBDD25dd5203fedE33FD631e30fEF9b9eF2598ECE"
+  proxyAdmin:
+    address: "0x7fd5be37d560626625f395A2e6E30eA89150cc98"
+    owner: "0xBDD25dd5203fedE33FD631e30fEF9b9eF2598ECE"
+  remoteRouters:
+    "1135":
+      address: "0x0FC41a92F526A8CD22060A4052e156502D6B9db0"
+    "543210":
+      address: "0xbb967d98313EDF91751651C0E66ef8A8B7BeD9e1"
+  token: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+  type: collateral
+zeronetwork:
+  gas: 300000
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  owner: "0xCB21F61A3c8139F18e635d45aD1e62A4A61d2c3D"
+  proxyAdmin:
+    address: "0x6E906d8AeEBE9025a410887EAafc58C2561705e0"
+    owner: "0xCB21F61A3c8139F18e635d45aD1e62A4A61d2c3D"
+  token: "0x6a6394F47DD0BAF794808F2749C09bd4Ee874E70"
+  type: collateral

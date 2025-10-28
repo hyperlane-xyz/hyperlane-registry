@@ -1,0 +1,42 @@
+ancient8:
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  owner: "0xA9FD5BeB556AB1859D7625B381110a257f56F98C"
+  ownerOverrides:
+    _icaAddress: "0xA9FD5BeB556AB1859D7625B381110a257f56F98C"
+    _safeAddress: "0xD2BFA0F0654E3f2139b8cDC56c32eeC54D32b133"
+    fallbackRoutingHook: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    proxyAdmin: "0xA9FD5BeB556AB1859D7625B381110a257f56F98C"
+    testRecipient: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    validatorAnnounce: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  proxyAdmin:
+    owner: "0x72ba22a1a8b8c2b7b1795a35a1e05c058217e9a7"
+  type: synthetic
+ethereum:
+  hook: "0x19b2cF952b70b217c90FC408714Fbc1acD29A6A8"
+  interchainSecurityModule:
+    modules:
+      - threshold: 2
+        type: merkleRootMultisigIsm
+        validators:
+          - "0x95c7bf235837cb5a609fe6c95870410b9f68bcff"
+          - "0xa5a56e97fb46f0ac3a3d261e404acb998d9a6969"
+          - "0xbb5842ae0e05215b53df4787a29144efb7e67551"
+      - threshold: 2
+        type: messageIdMultisigIsm
+        validators:
+          - "0x95c7bf235837cb5a609fe6c95870410b9f68bcff"
+          - "0xa5a56e97fb46f0ac3a3d261e404acb998d9a6969"
+          - "0xbb5842ae0e05215b53df4787a29144efb7e67551"
+    threshold: 1
+    type: staticAggregationIsm
+  owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+  ownerOverrides:
+    _safeAddress: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+    fallbackRoutingHook: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    proxyAdmin: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+    testRecipient: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    validatorAnnounce: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  proxyAdmin:
+    owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
+  token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+  type: collateral

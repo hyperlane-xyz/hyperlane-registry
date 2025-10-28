@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x8e1e6BF7E13C400269987B65Ab2b5724b016CaEF"
+    chainName: bsc
+    connections:
+      - token: ethereum|mitosis|0xF6CC9B10c607afB777380bF71F272E4D7037C3A9
+    decimals: 18
+    logoURI: /deployments/warp_routes/MITO/logo.svg
+    name: MITO
+    standard: EvmHypSynthetic
+    symbol: MITO
+  - addressOrDenom: "0xF6CC9B10c607afB777380bF71F272E4D7037C3A9"
+    chainName: mitosis
+    coinGeckoId: mitosis
+    connections:
+      - token: ethereum|bsc|0x8e1e6BF7E13C400269987B65Ab2b5724b016CaEF
+    decimals: 18
+    logoURI: /deployments/warp_routes/MITO/logo.svg
+    name: MITO
+    standard: EvmHypNative
+    symbol: MITO

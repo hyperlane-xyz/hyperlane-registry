@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x6E9804a08092D8ba4E69DaCF422Df12459F2599E"
+    chainName: bsc
+    connections:
+      - token: ethereum|ethereum|0x9F6E6d150977dabc82d5D4EaaBDB1F1Ab0D25F92
+    decimals: 18
+    logoURI: /deployments/warp_routes/stHYPER/logo.svg
+    name: Staked HYPER
+    standard: EvmHypSyntheticRebase
+    symbol: stHYPER
+  - addressOrDenom: "0x9F6E6d150977dabc82d5D4EaaBDB1F1Ab0D25F92"
+    chainName: ethereum
+    coinGeckoId: hyperlane
+    collateralAddressOrDenom: "0xa860e01Cc4A889BB2917EC97104510A2e1Ae0e53"
+    connections:
+      - token: ethereum|bsc|0x6E9804a08092D8ba4E69DaCF422Df12459F2599E
+    decimals: 18
+    logoURI: /deployments/warp_routes/stHYPER/logo.svg
+    name: Staked HYPER
+    standard: EvmHypRebaseCollateral
+    symbol: stHYPER

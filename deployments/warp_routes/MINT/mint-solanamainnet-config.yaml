@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x787561C5131d9328a28Ef810867299176a5b66C4"
+    chainName: mint
+    coinGeckoId: mint-blockchain
+    collateralAddressOrDenom: "0x8511138208529fe1b9a37b863c7EEE3Fe234b7Ab"
+    connections:
+      - token: sealevel|solanamainnet|DTp6yLfHyGo46Zu7xrbXwUF3YZSaYV2W7UhQb8q9QN5Q
+    decimals: 18
+    logoURI: /deployments/warp_routes/MINT/logo.svg
+    name: Mint
+    standard: EvmHypCollateral
+    symbol: MINT
+  - addressOrDenom: DTp6yLfHyGo46Zu7xrbXwUF3YZSaYV2W7UhQb8q9QN5Q
+    chainName: solanamainnet
+    collateralAddressOrDenom: HwmvBfZP6SUgaQSYtLicvLqY4UepKw2J1LLkqFxiLB7L
+    connections:
+      - token: ethereum|mint|0x787561C5131d9328a28Ef810867299176a5b66C4
+    decimals: 9
+    logoURI: /deployments/warp_routes/MINT/logo.svg
+    name: Mint
+    standard: SealevelHypSynthetic
+    symbol: MINT

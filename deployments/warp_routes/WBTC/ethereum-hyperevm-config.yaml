@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x55A66567dFEc91e7Af39e0feb06009F35E8D68a9"
+    chainName: ethereum
+    coinGeckoId: wrapped-bitcoin
+    collateralAddressOrDenom: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+    connections:
+      - token: ethereum|hyperevm|0xE2B36A37bD98ba81658dC5454F2dB2F98438d140
+    decimals: 8
+    logoURI: /deployments/warp_routes/WBTC/logo.svg
+    name: Wrapped BTC
+    standard: EvmHypCollateral
+    symbol: WBTC
+  - addressOrDenom: "0xE2B36A37bD98ba81658dC5454F2dB2F98438d140"
+    chainName: hyperevm
+    connections:
+      - token: ethereum|ethereum|0x55A66567dFEc91e7Af39e0feb06009F35E8D68a9
+    decimals: 8
+    logoURI: /deployments/warp_routes/WBTC/logo.svg
+    name: Wrapped BTC
+    standard: EvmHypSynthetic
+    symbol: WBTC

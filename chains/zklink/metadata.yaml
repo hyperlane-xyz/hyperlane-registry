@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
 blockExplorers:
   - apiUrl: https://explorer.zklink.io/contract_verification
     family: etherscan
@@ -9,13 +12,11 @@ blocks:
   estimateBlockTime: 1
   reorgPeriod: 0
 chainId: 810180
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: zkLink Nova
 displayNameShort: zkLink
 domainId: 810180
 gasCurrencyCoinGeckoId: ethereum
+gnosisSafeTransactionServiceUrl: https://transaction.safe.zklink.io
 name: zklink
 nativeToken:
   decimals: 18
@@ -24,5 +25,4 @@ nativeToken:
 protocol: ethereum
 rpcUrls:
   - http: https://rpc.zklink.io
-  - http: https://rpc.zklink.network
 technicalStack: zksync

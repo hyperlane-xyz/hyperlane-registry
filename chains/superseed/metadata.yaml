@@ -4,6 +4,10 @@ blockExplorers:
     family: blockscout
     name: Superseed Explorer
     url: https://explorer.superseed.xyz
+  - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/5330/etherscan/api
+    family: routescan
+    name: Superseed Explorer
+    url: https://5330.thesuperscan.io
 blocks:
   confirmations: 1
   estimateBlockTime: 2
@@ -15,6 +19,7 @@ deployer:
 displayName: Superseed
 domainId: 5330
 gasCurrencyCoinGeckoId: ethereum
+gnosisSafeTransactionServiceUrl: https://trx-superseed.safe.protofire.io
 name: superseed
 nativeToken:
   decimals: 18

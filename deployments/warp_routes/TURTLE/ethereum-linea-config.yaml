@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x15dE2C58FCF168bf9bB8860ab6EA10e1670C5D4c"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x2BE3be1D8A556954320c2252dF4f891F64699d50"
+    connections:
+      - token: ethereum|linea|0xB88F86E0c403B02d4cCF893Fc37312A18Fa2Fe1B
+    decimals: 18
+    logoURI: /deployments/warp_routes/TURTLE/logo.png
+    name: Turtle
+    standard: EvmHypCollateral
+    symbol: TURTLE
+  - addressOrDenom: "0xB88F86E0c403B02d4cCF893Fc37312A18Fa2Fe1B"
+    chainName: linea
+    connections:
+      - token: ethereum|ethereum|0x15dE2C58FCF168bf9bB8860ab6EA10e1670C5D4c
+    decimals: 18
+    logoURI: /deployments/warp_routes/TURTLE/logo.png
+    name: Turtle
+    standard: EvmHypSynthetic
+    symbol: TURTLE

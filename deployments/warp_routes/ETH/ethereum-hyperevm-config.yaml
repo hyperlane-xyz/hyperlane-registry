@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x9a3BeED38441e8fF8E033043a88B49E035F5a2da"
+    chainName: ethereum
+    coinGeckoId: ethereum
+    connections:
+      - token: ethereum|hyperevm|0x1fbcCdc677c10671eE50b46C61F0f7d135112450
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH
+  - addressOrDenom: "0x1fbcCdc677c10671eE50b46C61F0f7d135112450"
+    chainName: hyperevm
+    connections:
+      - token: ethereum|ethereum|0x9a3BeED38441e8fF8E033043a88B49E035F5a2da
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: EvmHypSynthetic
+    symbol: ETH

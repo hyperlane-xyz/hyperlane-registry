@@ -1,0 +1,21 @@
+tokens:
+  - addressOrDenom: "0x32fF31FfeB04070e9E34C345965C1bB9B5C1F787"
+    chainName: ethereum
+    coinGeckoId: tether
+    collateralAddressOrDenom: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    connections:
+      - token: ethereum|lumiaprism|0xee7Fc418f5659a366b548b4E205d374C1F0B46e7
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypCollateral
+    symbol: USDT
+  - addressOrDenom: "0xee7Fc418f5659a366b548b4E205d374C1F0B46e7"
+    chainName: lumiaprism
+    connections:
+      - token: ethereum|ethereum|0x32fF31FfeB04070e9E34C345965C1bB9B5C1F787
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypSynthetic
+    symbol: USDT

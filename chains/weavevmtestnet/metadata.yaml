@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
+blockExplorers:
+  - apiUrl: https://explorer.load.network/api
+    family: blockscout
+    name: Load Network Explorer
+    url: https://explorer.load.network
+blocks:
+  confirmations: 1
+  estimateBlockTime: 2
+  reorgPeriod: 1
+chainId: 9496
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Load Network Alphanet
+domainId: 9496
+isTestnet: true
+name: weavevmtestnet
+nativeToken:
+  decimals: 18
+  name: tLOAD
+  symbol: tLOAD
+protocol: ethereum
+rpcUrls:
+  - http: https://alphanet.load.network
+technicalStack: other

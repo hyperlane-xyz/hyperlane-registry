@@ -1,6 +1,9 @@
+availability:
+  reasons: [unavailable]
+  status: disabled
 blockExplorers:
   - apiUrl: https://evmapi.confluxscan.net/api
-    family: blockscout
+    family: other
     name: ConfluxScan eSpace
     url: https://evm.confluxscan.net
 blocks:
@@ -8,9 +11,6 @@ blocks:
   estimateBlockTime: 2
   reorgPeriod: 10
 chainId: 1030
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: Conflux eSpace
 domainId: 1030
 gasCurrencyCoinGeckoId: conflux-token

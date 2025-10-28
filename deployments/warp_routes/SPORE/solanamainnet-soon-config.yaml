@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: 34V29ar8oahnZVnnQqEfd9pUE3MBrAxpgMtQf1Xccs1A
+    chainName: solanamainnet
+    coinGeckoId: spore-2
+    collateralAddressOrDenom: 8bdhP1UQMevciC9oJ7NrvgDfoW8XPXPfbkkm6vKtMS7N
+    connections:
+      - token: sealevel|soon|JDnjXhoucA9HwTk1s7piyoCLvwQSKdnaRitdkpXsRgtj
+    decimals: 6
+    logoURI: /deployments/warp_routes/SPORE/logo.svg
+    name: SPORE
+    standard: SealevelHypCollateral
+    symbol: SPORE
+  - addressOrDenom: JDnjXhoucA9HwTk1s7piyoCLvwQSKdnaRitdkpXsRgtj
+    chainName: soon
+    collateralAddressOrDenom: 4zCFfTv26uUgo9APJcbCuGEwx5hhyb9HMgbM35gnsQ6B
+    connections:
+      - token: sealevel|solanamainnet|34V29ar8oahnZVnnQqEfd9pUE3MBrAxpgMtQf1Xccs1A
+    decimals: 6
+    logoURI: /deployments/warp_routes/SPORE/logo.svg
+    name: SPORE
+    standard: SealevelHypSynthetic
+    symbol: SPORE

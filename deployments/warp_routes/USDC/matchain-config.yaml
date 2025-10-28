@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xCC5053691ed540C031A725eb03C25C57f5Be7117"
+    chainName: base
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    connections:
+      - token: ethereum|bsc|0x1Bf82F7C3238d37d31bAc741DE95bbbf47E42001
+      - token: ethereum|ethereum|0x679e13780c20Bf7A7cC158a76BFd1aff9Ba7d09d
+      - token: ethereum|matchain|0x6D1a81c6CB65B1f892FD0eb8624e90B102628C94
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x1Bf82F7C3238d37d31bAc741DE95bbbf47E42001"
+    chainName: bsc
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
+    connections:
+      - token: ethereum|base|0xCC5053691ed540C031A725eb03C25C57f5Be7117
+      - token: ethereum|ethereum|0x679e13780c20Bf7A7cC158a76BFd1aff9Ba7d09d
+      - token: ethereum|matchain|0x6D1a81c6CB65B1f892FD0eb8624e90B102628C94
+    decimals: 18
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x679e13780c20Bf7A7cC158a76BFd1aff9Ba7d09d"
+    chainName: ethereum
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    connections:
+      - token: ethereum|base|0xCC5053691ed540C031A725eb03C25C57f5Be7117
+      - token: ethereum|bsc|0x1Bf82F7C3238d37d31bAc741DE95bbbf47E42001
+      - token: ethereum|matchain|0x6D1a81c6CB65B1f892FD0eb8624e90B102628C94
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x6D1a81c6CB65B1f892FD0eb8624e90B102628C94"
+    chainName: matchain
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0x679Dc08cC3A4acFeea2f7CAFAa37561aE0b41Ce7"
+    connections:
+      - token: ethereum|base|0xCC5053691ed540C031A725eb03C25C57f5Be7117
+      - token: ethereum|bsc|0x1Bf82F7C3238d37d31bAc741DE95bbbf47E42001
+      - token: ethereum|ethereum|0x679e13780c20Bf7A7cC158a76BFd1aff9Ba7d09d
+    decimals: 18
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: Bridged USDC (Hyperlane)
+    standard: EvmHypCollateralFiat
+    symbol: USDC

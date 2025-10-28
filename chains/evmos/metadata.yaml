@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
 blockExplorers:
   - apiUrl: https://www.mintscan.io/evmos/api
     family: other
@@ -9,9 +12,6 @@ blocks:
   estimateBlockTime: 2
   reorgPeriod: 5
 chainId: 9001
-deployer:
-  name: Abacus Works
-  url: https://www.hyperlane.xyz
 displayName: Evmos EVM
 domainId: 9001
 gasCurrencyCoinGeckoId: evmos

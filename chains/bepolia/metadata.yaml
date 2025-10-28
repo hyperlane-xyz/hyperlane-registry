@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [unavailable]
+  status: disabled
+blockExplorers:
+  - apiUrl: https://api.routescan.io/v2/network/testnet/evm/80069/etherscan/api
+    family: routescan
+    name: Bepolia Explorer
+    url: https://bepolia.beratrail.io
+blocks:
+  confirmations: 1
+  estimateBlockTime: 2
+  reorgPeriod: 5
+chainId: 80069
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Berachain Bepolia
+displayNameShort: Bepolia
+domainId: 80069
+isTestnet: true
+name: bepolia
+nativeToken:
+  decimals: 18
+  name: BERA
+  symbol: BERA
+protocol: ethereum
+rpcUrls:
+  - http: https://bepolia.rpc.berachain.com
+technicalStack: other
