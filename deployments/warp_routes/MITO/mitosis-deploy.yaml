@@ -1,0 +1,71 @@
+bsc:
+  hook:
+    hooks:
+      - type: defaultHook
+      - owner: "0x1248163214D9A0D6F02932A245370D3fD9613A82"
+        paused: false
+        type: pausableHook
+    type: aggregationHook
+  interchainSecurityModule:
+    modules:
+      - domains:
+          mitosis:
+            modules:
+              - threshold: 3
+                type: merkleRootMultisigIsm
+                validators:
+                  - "0x340058f071e8376c2ecff219e1e6620deea8a3c7"
+                  - "0x3b3eb808d90a4e19bb601790a6b6297812d6a61f"
+                  - "0x401f25ff73769ed85bdb449a4347a4fd2678acfe"
+                  - "0x4f977a59fdc2d9e39f6d780a84d5b4add1495a36"
+                  - "0x5450447aee7b544c462c9352bef7cad049b0c2dc"
+              - threshold: 3
+                type: messageIdMultisigIsm
+                validators:
+                  - "0x340058f071e8376c2ecff219e1e6620deea8a3c7"
+                  - "0x3b3eb808d90a4e19bb601790a6b6297812d6a61f"
+                  - "0x401f25ff73769ed85bdb449a4347a4fd2678acfe"
+                  - "0x4f977a59fdc2d9e39f6d780a84d5b4add1495a36"
+                  - "0x5450447aee7b544c462c9352bef7cad049b0c2dc"
+            threshold: 1
+            type: staticAggregationIsm
+        owner: "0x8f51e8e0Ce90CC1B6E60a3E434c7E63DeaD13612"
+        type: defaultFallbackRoutingIsm
+      - owner: "0x8f51e8e0Ce90CC1B6E60a3E434c7E63DeaD13612"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  owner: "0x1248163214D9A0D6F02932A245370D3fD9613A82"
+  ownerOverrides:
+    proxyAdmin: "0x8f51e8e0Ce90CC1B6E60a3E434c7E63DeaD13612"
+  proxyAdmin:
+    address: "0xb80d5c3DDF890C39c84ed487Ed95794560addb66"
+    owner: "0x8f51e8e0Ce90CC1B6E60a3E434c7E63DeaD13612"
+  symbol: MITO
+  type: synthetic
+mitosis:
+  hook:
+    hooks:
+      - type: defaultHook
+      - owner: "0x1248163200964459971c7cc9631909132ad28c27"
+        paused: false
+        type: pausableHook
+    type: aggregationHook
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x8f51e8e0Ce90CC1B6E60a3E434c7E63DeaD13612"
+        type: defaultFallbackRoutingIsm
+      - owner: "0x8f51e8e0Ce90CC1B6E60a3E434c7E63DeaD13612"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  owner: "0x1248163200964459971c7cC9631909132AD28C27"
+  ownerOverrides:
+    proxyAdmin: "0x8f51e8e0Ce90CC1B6E60a3E434c7E63DeaD13612"
+  proxyAdmin:
+    address: "0x8452363d5c78bf95538614441Dc8B465e03A89ca"
+    owner: "0x8f51e8e0Ce90CC1B6E60a3E434c7E63DeaD13612"
+  type: native

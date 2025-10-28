@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiKey: IC1UCY8JWIYFWGPCEEE58HKFIFEVN73PVV
-    apiUrl: https://api.celoscan.io/api
+  - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+    apiUrl: https://api.etherscan.io/v2/api?chainid=42220
     family: etherscan
     name: CeloScan
     url: https://celoscan.io
@@ -11,8 +11,8 @@ blockExplorers:
     url: https://explorer.celo.org
 blocks:
   confirmations: 1
-  estimateBlockTime: 5
-  reorgPeriod: 0
+  estimateBlockTime: 1
+  reorgPeriod: 5
 chainId: 42220
 deployer:
   name: Abacus Works
@@ -29,4 +29,6 @@ nativeToken:
 protocol: ethereum
 rpcUrls:
   - http: https://forno.celo.org
-technicalStack: other
+  - http: https://rpc.ankr.com/celo
+  - http: https://celo.drpc.org
+technicalStack: opstack

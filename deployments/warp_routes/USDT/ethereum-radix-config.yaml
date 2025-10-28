@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x2Dc9A39d934f52E0f28E52E8d32Ce810FC685247"
+    chainName: ethereum
+    coinGeckoId: tether
+    collateralAddressOrDenom: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    connections:
+      - token: radix|radix|component_rdx1cp2llht7llhp9ung4l657uecn03m6tu07x7eznhmfctspxtpl5h43g
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypCollateral
+    symbol: USDT
+  - addressOrDenom: component_rdx1cp2llht7llhp9ung4l657uecn03m6tu07x7eznhmfctspxtpl5h43g
+    chainName: radix
+    connections:
+      - token: ethereum|ethereum|0x2Dc9A39d934f52E0f28E52E8d32Ce810FC685247
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Hyperlane Tether USD
+    standard: RadixHypSynthetic
+    symbol: hUSDT

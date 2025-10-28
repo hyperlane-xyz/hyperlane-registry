@@ -1,5 +1,236 @@
 # @hyperlane-xyz/registry
 
+## 23.4.0
+
+### Minor Changes
+
+- 2600b94: Deprecate legacy sova network. Update default ISMs.
+- 9cbeb15: Add CoinGecko ids for DOG, ES, KLC, OORT, RCADE, SEDA, SOLX, SUPR, TAIKO.
+- 5547eb8: Update galactica/GNET coingecko IDs.
+- d4984b3: Add ETN configs
+- c0a9512: added matchain eurc deployment artifacts
+
+### Patch Changes
+
+- 00c3050: Add SOL/radix
+
+## 23.3.0
+
+### Minor Changes
+
+- 4ca7139: Add Electroneum USDT
+- c80c9fc: Add solaxy USDC warp route deployment artifacts
+- 490a01d: Deploy to incentiv, monad, carrchain, litchain. Deprecate snaxchain.
+
+### Patch Changes
+
+- b12008a: Update Electroneum USDC owner to ICA
+
+## 23.2.0
+
+### Minor Changes
+
+- 5dc3ab8: Officially deprecate legacy lumia mailbox.
+- 5e91a58: Deploy to zerogravity, sova, mantra.
+- ed3a0cf: Add TIA warp routes for Abstract, Arbitrum, Base, Eclipse, Solana & Ethereum.
+- 70d6bd9: Update solanamainnet ISM.
+- 580aa28: Enroll sova, zerogravity, mantra on default isms.
+- a52f33b: extended USDC/matchain to Ethereum and Base with rebalancing support
+- 0447d9b: Add radix warp routes
+- aeec7c2: Extend the UBTC route to ethereum
+- 927498c: Fix `HOLO` decimals.
+- 98d6450: Deploy to giwasepolia. Deprecate infinityvmmonza testnet.
+- 6a6543b: Deploy on plasma, electroneum.
+- 902188d: Deployed USDC warp route on pulsechain
+- a852bec: Remove neutron connection for TIA/arbitrum-celestia-neutron
+- 09fa9df: Add blockExplorers for mitosis and update owners for MITO/mitosis route
+- 6d5585b: update luksotestnet config addresses
+- e153c1d: Update dependencies and include radixdashboard as an explorer
+- 88fea43: Deprecate support for alephzeroevmtestnet, bepolia, flametestnet, formtestnet, inksepolia, sonicblaze, odysseytestnet, superpositiontestnet, unichaintestnet, chronicleyellowstone, weavevmtestnet, abstracttestnet, soneiumtestnet, connextsepolia, ecotestnet, plumetestnet2
+- b2f06a3: Add gnet warp route artifacts
+- 7e84145: Deprecate alephzeroevmmainnet, game7, infinityvmmainnet.
+- afb1a21: Add electroneum USDC config
+- 99ad40d: Add ETN token metadata and logo for Solana
+- 1a1296e: Extend oUSDT to 0G.
+- 0189f5d: Add Tatara and RISE Testnet
+
+### Patch Changes
+
+- f3a3190: Add Celestia to TIA/arbitrum-neutron.
+- d459b4e: Add HOLO deploy artifacts.
+- e1d5a18: Add TIA/celestia-eclipsemainnet
+- 3e38532: Update the logorUrl and coinGeckoId to the correct config for electroneum USDC
+- c92df04: Update Pulsechain blockExplorers apiUrl and url
+- 0e086e3: Updates the oXAUT bridge limits for avax, celo, ethereum, worldchain and base config
+- 3a36de5: Deprecate alfajores, as it's being replaced by celosepolia
+- c573015: Update default ISMs after validator rotations.
+- 490b292: Update oXAUT base owner to AW safe
+- 94d13b5: update zircuit reorg to 10mins
+- 90fd4b6: Update default ISMs to enroll plasma, electroneum.
+- d3cc03f: Add mito coingecko id
+- fc745b9: Add KING Ethereum <> Coti config.
+- 2fbe811: Add HOLO metadata.
+- 107b66e: update zircuit reorg period
+
+## 23.1.0
+
+### Minor Changes
+
+- 64cbc0e: updated tgt route artifacts to have the correct ownership config
+- ba21821: add money sonicsvm deployment
+- d238ff7: Add stokenet metadata
+- 46ed9a9: Deploy to celosepolia, incentivtestnet.
+- ab01078: Add LYX/lukso-ethereum warp route
+- 9fd55be: add INVT warp route
+- a84d8ac: Redeploy on pulsechain.
+- 0cb4553: Enroll radixtestnet to sepolia defaultIsm
+- abf5e96: Add radix chain
+
+### Patch Changes
+
+- f32a750: Rename radixstokenet -> radixtestnet
+- 0416859: updated decimals in some SOL warp routes to satisfy stricter warp checker rules
+- f241bd3: add PROM CoinGecko-id
+- 1fb6974: updated decimals in some warp routes to satisfy warp checker rules
+- f7bd10d: Set zircuit reorg period to 45.
+- 668839e: Add pumpBTC.stk
+
+## 23.0.0
+
+### Major Changes
+
+- a56736e: Bump hyperlane-xyz/sdk hyperlane-xyz/utils versions
+
+### Minor Changes
+
+- 6fb1fef: Update default ISMs on some chains to enroll mitosis.
+- a45326c: Deploy MITO/mitosis route.
+- 8224f8e: Update metadata of deprecated chains.
+
+### Patch Changes
+
+- 525fd39: Added logo to USDT/matchain warp route
+- a56736e: Add velo XERC20 type to oUSDT
+
+## 22.0.0
+
+### Major Changes
+
+- f7cfec3: Deploy new ICA v2 routers: https://github.com/hyperlane-xyz/hyperlane-monorepo/pull/6475
+
+### Minor Changes
+
+- 732cd1c: Add USDT/matchain warp route deploy artifacts
+- 5659860: Deploy to mitosis.
+- 496eb70: Enable oUSDT on UI for bitlayer, mantle, ronin, sonic.
+
+### Patch Changes
+
+- e7b9fa0: Update default ISMs on ethereum, arbitrum, base, abstract.
+- 1d32c2f: Add velo XERC20 type to oUSDT
+- 76812e2: Update oXAUT config to include base chain
+- 8d57bc5: Remove arbitrum connection for SMOL route, update owners for SMOL and MAGIC
+
+## 21.1.0
+
+### Minor Changes
+
+- 45eca7d: Add MAGIC arbitrum/abstract/ronin route. Add SMOL arbitrum + abstract routes.
+
+### Patch Changes
+
+- cea2b10: Add solana `collateralAddressOrDenom` to SMOL route
+- 9a36c26: Replace USD₮ for USDT in ethereum ouSDT/production route
+
+## 21.0.0
+
+### Major Changes
+
+- 7c9f61c: Deprecate chains bouncebit, conflux, conwai, deepbrainchain, duckchain, evmos, flame, nero, rivalz, rootstockmainnet, sanko, telos, unitzero, xpla, zklink
+
+### Minor Changes
+
+- 10e8bce: Migrate oUSDT ownership to timelocks.
+- e3eaf21: Add Celestia Mainnet configuration
+
+### Patch Changes
+
+- 85ac73b: Update TGT owners
+- e94b324: Transfer USDC-paradex ownership.
+- 3d353f7: Add foreignDeployment to Starknet routes.
+
+## 20.1.0
+
+### Minor Changes
+
+- 30443a6: feat: torus warp route
+- d585bf6: Add USDC matchain configs
+- 0f20cff: add blockscout explorers to oUSDT realted chains
+
+### Patch Changes
+
+- d66da9b: Deploy PUMP/starknet
+- 1ad0cf3: Update proxyAdmin config on ancient8 usdc route to sync it with current config
+
+## 20.0.0
+
+### Major Changes
+
+- 9c577a4: Removed subtensor usdc outdated artifacts that were replaced by stable warp ids ones
+
+### Minor Changes
+
+- 71209b5: Add VRA/bsc-ethereum artifacts
+- 1207721: Add get warp deploy to fetch from the Server. Also, update get warp core to fetch from the updated route.
+
+### Patch Changes
+
+- f1c0422: Add edgen coingecko-id
+- 8116fd7: Update metal safe tx service url.
+- a4e2dea: Fix typo for HttpClientRegistry route /warp-route/core
+
+## 19.4.0
+
+### Minor Changes
+
+- 94b5167: Added the PUMP/eclipsemainnet warp route
+
+### Patch Changes
+
+- d9f0d03: Remove botanix tx overrides
+- 23336e2: Update oXAUT ownerOverrides.collateralToken to the top-level owners
+- f8af54f: Update default ISMs on arbitrum, base, ethereum, mode.
+- 06c2b8a: Update celo metadata
+- d925022: Update oXAUT owners to AW safes
+
+## 19.3.0
+
+### Minor Changes
+
+- dfa6782: update paradex defaultISM
+- dd21180: Remove treasure and trumpchain warp routes.
+- 4c95328: Update katana public RPC. Update default ISMs.
+- 8948b4a: Added PUMP metadata and logo
+- 2f45f38: Update superseed with CCTP rebalancing and add connections
+
+### Patch Changes
+
+- 9359431: Extend oXAUT to Avalanche
+- 532664a: Remove SDK code imports
+
+## 19.2.0
+
+### Minor Changes
+
+- d8a2a57: update usdc paradex route to be rebalanceable
+- d5a2f9c: Add HttpClientRegistry (IRegistry) implementation
+- 968f0f4: extedended subtensor usdc route to unichain, arbitrum and polygon
+
+### Patch Changes
+
+- 55ea7b9: Add SEDA route
+- c4e12fd: Fix paradex `chainId` in metadata
+
 ## 19.1.1
 
 ### Patch Changes

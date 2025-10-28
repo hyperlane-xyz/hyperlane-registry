@@ -31,6 +31,7 @@
                   "EvmHypXERC20Lockbox",
                   "EvmHypVSXERC20",
                   "EvmHypVSXERC20Lockbox",
+                  "EvmM0PortalLite",
                   "SealevelSpl",
                   "SealevelSpl2022",
                   "SealevelNative",
@@ -51,7 +52,10 @@
                   "CosmosNativeHypSynthetic",
                   "StarknetHypNative",
                   "StarknetHypCollateral",
-                  "StarknetHypSynthetic"
+                  "StarknetHypSynthetic",
+                  "RadixNative",
+                  "RadixHypCollateral",
+                  "RadixHypSynthetic"
                 ],
                 "description": "The type of token. See TokenStandard for valid values."
               },
@@ -194,6 +198,12 @@
               "coinGeckoId": {
                 "type": "string",
                 "description": "The CoinGecko id of the token, used for price lookups"
+              },
+              "scale": {
+                "type": "integer",
+                "minimum": 0,
+                "exclusiveMaximum": 256,
+                "description": "The scaling factor of the token"
               }
             },
             "required": [

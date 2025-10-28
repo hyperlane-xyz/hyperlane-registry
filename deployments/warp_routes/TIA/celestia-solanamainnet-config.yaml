@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x726f757465725f61707000000000000000000000000000010000000000000003"
+    chainName: celestia
+    collateralAddressOrDenom: utia
+    connections:
+      - token: sealevel|solanamainnet|49UtqAFzuJ8bk2zgYjnGMaU3Z2xVs9n1eFY8Y4dKozyY
+    decimals: 6
+    logoURI: /deployments/warp_routes/TIA/logo.svg
+    name: TIA
+    standard: CosmosNativeHypCollateral
+    symbol: TIA
+  - addressOrDenom: 49UtqAFzuJ8bk2zgYjnGMaU3Z2xVs9n1eFY8Y4dKozyY
+    chainName: solanamainnet
+    collateralAddressOrDenom: 4PsPuUu4KK8a8kZsbqzTFQiPTriUNbzYyzEyB7bQMNBL
+    connections:
+      - token: cosmosnative|celestia|0x726f757465725f61707000000000000000000000000000010000000000000003
+    decimals: 6
+    logoURI: /deployments/warp_routes/TIA/logo.svg
+    name: Celestia
+    standard: SealevelHypSynthetic
+    symbol: TIA

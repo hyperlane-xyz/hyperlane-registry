@@ -1,0 +1,40 @@
+base:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    ethereum:
+      - bridge: "0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975"
+  decimals: 6
+  name: USDC
+  owner: "0x3941e287a5e815177E5eA909EDb357fc7F7738C5"
+  scale: 1000000000000
+  symbol: USDC
+  token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+  type: collateral
+bsc:
+  decimals: 18
+  name: USDC
+  owner: "0x489145FABcc90d09feCa3285BDd0A64cB2FB8d8c"
+  symbol: USDC
+  token: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
+  type: collateral
+ethereum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    base:
+      - bridge: "0xedCBAa585FD0F80f20073F9958246476466205b8"
+  decimals: 6
+  name: USDC
+  owner: "0x3941e287a5e815177E5eA909EDb357fc7F7738C5"
+  scale: 1000000000000
+  symbol: USDC
+  token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+  type: collateral
+matchain:
+  decimals: 18
+  name: USDC
+  owner: "0x485f48CdCc2F27ACE7B4BE6398ef1dD5002b65F5"
+  symbol: USDC
+  token: "0x679Dc08cC3A4acFeea2f7CAFAa37561aE0b41Ce7"
+  type: collateralFiat

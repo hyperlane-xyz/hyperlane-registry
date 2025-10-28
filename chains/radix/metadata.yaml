@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: account_rdx
+blockExplorers:
+  - apiUrl: https://dashboard.radixdlt.com
+    family: radixdashboard
+    name: Radix Dashboard
+    url: https://dashboard.radixdlt.com
+blocks:
+  confirmations: 0
+  estimateBlockTime: 5
+  reorgPeriod: 0
+chainId: 1
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Radix
+# Generated from: parseInt('0x'+Buffer.from('radix').toString('hex')) % (2**31-1)
+domainId: 1633970780
+gasCurrencyCoinGeckoId: radix
+gatewayUrls:
+  - http: https://mainnet.radixdlt.com
+name: radix
+nativeToken:
+  decimals: 18
+  denom: resource_rdx1tknxxxxxxxxxradxrdxxxxxxxxx009923554798xxxxxxxxxradxrd
+  name: Radix
+  symbol: XRD
+protocol: radix
+rpcUrls:
+  - http: https://radix.rpc.grove.city/v1/326002fc
+technicalStack: other

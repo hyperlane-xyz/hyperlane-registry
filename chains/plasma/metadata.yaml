@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/9745/etherscan/api
+    family: routescan
+    name: Plasma Explorer
+    url: https://plasmascan.to
+blocks:
+  confirmations: 1
+  estimateBlockTime: 1
+  reorgPeriod: 10
+chainId: 9745
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Plasma
+domainId: 9745
+gasCurrencyCoinGeckoId: plasma
+name: plasma
+nativeToken:
+  decimals: 18
+  name: XPL
+  symbol: XPL
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.plasma.to
+technicalStack: other
