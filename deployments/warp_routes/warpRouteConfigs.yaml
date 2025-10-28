@@ -169,6 +169,24 @@ BNB/bsc-zeronetwork:
       name: BNB
       standard: EvmHypSynthetic
       symbol: BNB
+BNB/radix:
+  tokens:
+    - addressOrDenom: "0xdd615fCfed0E2BE65041053DA12C3C95C6A16957"
+      chainName: bsc
+      connections:
+        - token: radix|radix|component_rdx1cpsxagjgh6yw4lkscwptlg2fvvha4sg7fgrf0x9mdntp3nxen0hzfy
+      decimals: 18
+      name: BNB
+      standard: EvmHypNative
+      symbol: BNB
+    - addressOrDenom: component_rdx1cpsxagjgh6yw4lkscwptlg2fvvha4sg7fgrf0x9mdntp3nxen0hzfy
+      chainName: radix
+      connections:
+        - token: ethereum|bsc|0xdd615fCfed0E2BE65041053DA12C3C95C6A16957
+      decimals: 18
+      name: Hyperlane BNB
+      standard: RadixHypSynthetic
+      symbol: hBNB
 BRETT/base-zeronetwork:
   tokens:
     - addressOrDenom: "0x9Fe693789E93319cc0F8A00FB4597Ea4fD4b08cA"
