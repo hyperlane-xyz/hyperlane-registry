@@ -3492,6 +3492,11 @@ heneztestnet:
     - http: https://henez-testnet.rpc.caldera.xyz/http
   technicalStack: arbitrumnitro
 holesky:
+  availability:
+    reasons:
+      - deprecated
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://api-holesky.etherscan.io/api
       family: etherscan
@@ -7334,6 +7339,11 @@ sova:
     - http: https://rpc.sova.io
   technicalStack: opstack
 sovachain:
+  availability:
+    reasons:
+      - deprecated
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.sova.io/api
       family: blockscout
