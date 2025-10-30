@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Deprecate sovachain.
+Deprecate sovachain, holesky.
