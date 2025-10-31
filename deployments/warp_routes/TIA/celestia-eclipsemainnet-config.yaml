@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x726f757465725f61707000000000000000000000000000010000000000000004"
+    chainName: celestia
+    coinGeckoId: celestia
+    collateralAddressOrDenom: utia
+    connections:
+      - token: sealevel|eclipsemainnet|8gkLoHDNA8VygyCD1T7bbDszYboUjALtrxgSLnKZsYBt
+    decimals: 6
+    logoURI: /deployments/warp_routes/TIA/logo.svg
+    name: TIA
+    standard: CosmosNativeHypCollateral
+    symbol: TIA
+  - addressOrDenom: 8gkLoHDNA8VygyCD1T7bbDszYboUjALtrxgSLnKZsYBt
+    chainName: eclipsemainnet
+    collateralAddressOrDenom: CixfcEPw3aAzmXRcgbkaRKCs2wvuWKP2wRB1sBd7ZrPQ
+    connections:
+      - token: cosmosnative|celestia|0x726f757465725f61707000000000000000000000000000010000000000000004
+    decimals: 6
+    logoURI: /deployments/warp_routes/TIA/logo.svg
+    name: Celestia
+    standard: SealevelHypSynthetic
+    symbol: TIA

@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xc7B42d83255ac2874F39370101a9DBD4Ed219D84"
+    chainName: arbitrum
+    connections: []
+    decimals: 18
+    logoURI: /deployments/warp_routes/CARR/logo.svg
+    name: CARR
+    standard: EvmHypSynthetic
+    symbol: CARR
+  - addressOrDenom: "0xcf73D7119cD121F02a3Dd2cbf8A609279830EB69"
+    chainName: bsc
+    coinGeckoId: carnomaly
+    collateralAddressOrDenom: "0x2a48a41301E6635DF9E65B80063Ff84677142619"
+    connections: []
+    decimals: 18
+    logoURI: /deployments/warp_routes/CARR/logo.svg
+    name: Carnomaly
+    standard: EvmHypCollateral
+    symbol: CARR
+  - addressOrDenom: "0x810db1ea27946aCDdc40ca98B6A6380Af6c7b89A"
+    chainName: carrchain
+    coinGeckoId: carrchain
+    connections:
+      - token: ethereum|polygon|0x810db1ea27946aCDdc40ca98B6A6380Af6c7b89A
+      - token: ethereum|solanamainnet|B1dBmaEFGMbLvNn3UsrayxQBTVF7K9XFBS66M1csyUz1
+    decimals: 18
+    logoURI: /deployments/warp_routes/CARR/logo.svg
+    name: CARR
+    standard: EvmHypNative
+    symbol: CARR
+  - addressOrDenom: "0x810db1ea27946aCDdc40ca98B6A6380Af6c7b89A"
+    chainName: polygon
+    coinGeckoId: carnomaly
+    collateralAddressOrDenom: "0x9b765735C82BB00085e9DBF194F20E3Fa754258E"
+    connections:
+      - token: ethereum|carrchain|0x810db1ea27946aCDdc40ca98B6A6380Af6c7b89A
+      - token: ethereum|solanamainnet|B1dBmaEFGMbLvNn3UsrayxQBTVF7K9XFBS66M1csyUz1
+    decimals: 18
+    logoURI: /deployments/warp_routes/CARR/logo.svg
+    name: Carnomaly
+    standard: EvmHypCollateral
+    symbol: CARR
+  - addressOrDenom: B1dBmaEFGMbLvNn3UsrayxQBTVF7K9XFBS66M1csyUz1
+    chainName: solanamainnet
+    coinGeckoId: carnomaly
+    collateralAddressOrDenom: CDwKAreA1ipd1hUDBKsfVXVFWqNEeGDdvmZ7RHdiQk1U
+    connections:
+      - token: ethereum|carrchain|0x810db1ea27946aCDdc40ca98B6A6380Af6c7b89A
+      - token: ethereum|polygon|0x810db1ea27946aCDdc40ca98B6A6380Af6c7b89A
+    decimals: 6
+    logoURI: /deployments/warp_routes/CARR/logo.svg
+    name: Carnomaly
+    standard: SealevelHypCollateral
+    symbol: CARR

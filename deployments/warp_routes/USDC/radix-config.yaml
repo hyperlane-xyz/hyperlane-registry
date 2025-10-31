@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x867a19a5b257bcb99E1840dE2ef852268Efd5E46"
+    chainName: arbitrum
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+    connections:
+      - token: ethereum|base|0x151B328Ca752C67C9a4C6E0CA329bE0c00B12A24
+      - token: ethereum|ethereum|0x67899664446CCfAdf75e0D3F5668be262aCd1069
+      - token: radix|radix|component_rdx1crvhu42czzpvkh556228sc5xk7uz69yvwcsqn23u5yy65pea0w02l0
+      - token: sealevel|solanamainnet|mSjeF19MEyUto4RejyPeL6SGb2eDevNfYESaHBeQb9z
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x151B328Ca752C67C9a4C6E0CA329bE0c00B12A24"
+    chainName: base
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    connections:
+      - token: ethereum|arbitrum|0x867a19a5b257bcb99E1840dE2ef852268Efd5E46
+      - token: ethereum|ethereum|0x67899664446CCfAdf75e0D3F5668be262aCd1069
+      - token: radix|radix|component_rdx1crvhu42czzpvkh556228sc5xk7uz69yvwcsqn23u5yy65pea0w02l0
+      - token: sealevel|solanamainnet|mSjeF19MEyUto4RejyPeL6SGb2eDevNfYESaHBeQb9z
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x67899664446CCfAdf75e0D3F5668be262aCd1069"
+    chainName: ethereum
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    connections:
+      - token: ethereum|arbitrum|0x867a19a5b257bcb99E1840dE2ef852268Efd5E46
+      - token: ethereum|base|0x151B328Ca752C67C9a4C6E0CA329bE0c00B12A24
+      - token: radix|radix|component_rdx1crvhu42czzpvkh556228sc5xk7uz69yvwcsqn23u5yy65pea0w02l0
+      - token: sealevel|solanamainnet|mSjeF19MEyUto4RejyPeL6SGb2eDevNfYESaHBeQb9z
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: component_rdx1crvhu42czzpvkh556228sc5xk7uz69yvwcsqn23u5yy65pea0w02l0
+    chainName: radix
+    connections:
+      - token: ethereum|arbitrum|0x867a19a5b257bcb99E1840dE2ef852268Efd5E46
+      - token: ethereum|base|0x151B328Ca752C67C9a4C6E0CA329bE0c00B12A24
+      - token: ethereum|ethereum|0x67899664446CCfAdf75e0D3F5668be262aCd1069
+      - token: sealevel|solanamainnet|mSjeF19MEyUto4RejyPeL6SGb2eDevNfYESaHBeQb9z
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USDC
+    standard: RadixHypSynthetic
+    symbol: USDC
+  - addressOrDenom: mSjeF19MEyUto4RejyPeL6SGb2eDevNfYESaHBeQb9z
+    chainName: solanamainnet
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    connections:
+      - token: ethereum|arbitrum|0x867a19a5b257bcb99E1840dE2ef852268Efd5E46
+      - token: ethereum|base|0x151B328Ca752C67C9a4C6E0CA329bE0c00B12A24
+      - token: ethereum|ethereum|0x67899664446CCfAdf75e0D3F5668be262aCd1069
+      - token: radix|radix|component_rdx1crvhu42czzpvkh556228sc5xk7uz69yvwcsqn23u5yy65pea0w02l0
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: SealevelHypCollateral
+    symbol: USDC

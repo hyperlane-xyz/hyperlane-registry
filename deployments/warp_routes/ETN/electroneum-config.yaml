@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xc8a9E4927301cE381A96Dd639f154f1A539fd939"
+    chainName: bsc
+    connections:
+      - token: ethereum|electroneum|0x3003b36eea03A55d2cAF6048d45420A60Bf40aC5
+      - token: ethereum|ethereum|0xB89371D7d6Fe8Eb98732cECD8fbEEF7dbfC3B0Bb
+      - token: sealevel|solanamainnet|D8pSXG5rgcoCeeu2KQ6VUJ43MeDFJxYYyYggjbVuMxK5
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETN/logo.svg
+    name: ETN
+    standard: EvmHypSynthetic
+    symbol: ETN
+  - addressOrDenom: "0x3003b36eea03A55d2cAF6048d45420A60Bf40aC5"
+    chainName: electroneum
+    coinGeckoId: electroneum
+    connections:
+      - token: ethereum|bsc|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
+      - token: ethereum|ethereum|0xB89371D7d6Fe8Eb98732cECD8fbEEF7dbfC3B0Bb
+      - token: sealevel|solanamainnet|D8pSXG5rgcoCeeu2KQ6VUJ43MeDFJxYYyYggjbVuMxK5
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETN/logo.svg
+    name: ETN
+    standard: EvmHypNative
+    symbol: ETN
+  - addressOrDenom: "0xB89371D7d6Fe8Eb98732cECD8fbEEF7dbfC3B0Bb"
+    chainName: ethereum
+    connections:
+      - token: ethereum|bsc|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
+      - token: ethereum|electroneum|0x3003b36eea03A55d2cAF6048d45420A60Bf40aC5
+      - token: sealevel|solanamainnet|D8pSXG5rgcoCeeu2KQ6VUJ43MeDFJxYYyYggjbVuMxK5
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETN/logo.svg
+    name: ETN
+    standard: EvmHypSynthetic
+    symbol: ETN
+  - addressOrDenom: D8pSXG5rgcoCeeu2KQ6VUJ43MeDFJxYYyYggjbVuMxK5
+    chainName: solanamainnet
+    collateralAddressOrDenom: GEYjJ2BEocfy3LNDimqkevmAMS66fmiSUbfsAhVa78J6
+    connections:
+      - token: ethereum|bsc|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
+      - token: ethereum|electroneum|0x3003b36eea03A55d2cAF6048d45420A60Bf40aC5
+      - token: ethereum|ethereum|0xB89371D7d6Fe8Eb98732cECD8fbEEF7dbfC3B0Bb
+    decimals: 9
+    logoURI: /deployments/warp_routes/ETN/logo.svg
+    name: ETN
+    standard: SealevelHypSynthetic
+    symbol: ETN

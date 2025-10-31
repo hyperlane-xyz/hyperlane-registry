@@ -1,0 +1,22 @@
+tokens:
+  - addressOrDenom: "0x236f7CCE81558b36cE0D866017ECF006be7d5c30"
+    chainName: ethereum
+    coinGeckoId: eurc
+    collateralAddressOrDenom: "0x1aBaEA1f7C830bD89Acc67eC4af516284b1bC33c"
+    connections:
+      - token: ethereum|matchain|0xA452bDb132Cdf8d11E070786D78907ddB95C5120
+    decimals: 6
+    logoURI: /deployments/warp_routes/EURC/logo.svg
+    name: Euro Coin
+    standard: EvmHypCollateral
+    symbol: EURC
+  - addressOrDenom: "0xA452bDb132Cdf8d11E070786D78907ddB95C5120"
+    chainName: matchain
+    collateralAddressOrDenom: "0x633268639892C73Fa7340Ec1da4e397cf3913c8C"
+    connections:
+      - token: ethereum|ethereum|0x236f7CCE81558b36cE0D866017ECF006be7d5c30
+    decimals: 6
+    logoURI: /deployments/warp_routes/EURC/logo.svg
+    name: EURC
+    standard: EvmHypCollateralFiat
+    symbol: EURC

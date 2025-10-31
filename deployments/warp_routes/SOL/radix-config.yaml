@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: component_rdx1cz8zrl66x305z7lf2mshv8rzlkpcj40s4a7tj0keudr6rxvygsrjgd
+    chainName: radix
+    connections:
+      - token: sealevel|solanamainnet|8mZa4mbyu5PF5z5tFuY9d4kAEbdXPWE7PxfVx4d3AntF
+    decimals: 9
+    logoURI: /deployments/warp_routes/SOL/logo.svg
+    name: Hyperlane SOL
+    standard: RadixHypSynthetic
+    symbol: hSOL
+  - addressOrDenom: 8mZa4mbyu5PF5z5tFuY9d4kAEbdXPWE7PxfVx4d3AntF
+    chainName: solanamainnet
+    coinGeckoId: solana
+    connections:
+      - token: radix|radix|component_rdx1cz8zrl66x305z7lf2mshv8rzlkpcj40s4a7tj0keudr6rxvygsrjgd
+    decimals: 9
+    logoURI: /deployments/warp_routes/SOL/logo.svg
+    name: Solana
+    standard: SealevelHypNative
+    symbol: SOL

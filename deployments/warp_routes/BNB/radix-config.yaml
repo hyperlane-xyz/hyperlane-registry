@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xdd615fCfed0E2BE65041053DA12C3C95C6A16957"
+    chainName: bsc
+    connections:
+      - token: radix|radix|component_rdx1cpsxagjgh6yw4lkscwptlg2fvvha4sg7fgrf0x9mdntp3nxen0hzfy
+    decimals: 18
+    logoURI: /deployments/warp_routes/BNB/logo.svg
+    name: BNB
+    standard: EvmHypNative
+    symbol: BNB
+  - addressOrDenom: component_rdx1cpsxagjgh6yw4lkscwptlg2fvvha4sg7fgrf0x9mdntp3nxen0hzfy
+    chainName: radix
+    connections:
+      - token: ethereum|bsc|0xdd615fCfed0E2BE65041053DA12C3C95C6A16957
+    decimals: 18
+    logoURI: /deployments/warp_routes/BNB/logo.svg
+    name: Hyperlane BNB
+    standard: RadixHypSynthetic
+    symbol: hBNB

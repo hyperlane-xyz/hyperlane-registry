@@ -1,0 +1,21 @@
+tokens:
+  - addressOrDenom: "0xA95d1a59cF9Be8A53fECeA7CbB5BD6E6B1bC1060"
+    chainName: ethereum
+    coinGeckoId: tether
+    collateralAddressOrDenom: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+    connections:
+      - token: ethereum|mantra|0x680e8ECB908A2040232ef139A0A52cbE47b9F15B
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypCollateral
+    symbol: USDT
+  - addressOrDenom: "0x680e8ECB908A2040232ef139A0A52cbE47b9F15B"
+    chainName: mantra
+    connections:
+      - token: ethereum|ethereum|0xA95d1a59cF9Be8A53fECeA7CbB5BD6E6B1bC1060
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypSynthetic
+    symbol: USDT

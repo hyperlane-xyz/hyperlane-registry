@@ -1,5 +1,77 @@
 # @hyperlane-xyz/registry
 
+## 23.4.0
+
+### Minor Changes
+
+- 2600b94: Deprecate legacy sova network. Update default ISMs.
+- 9cbeb15: Add CoinGecko ids for DOG, ES, KLC, OORT, RCADE, SEDA, SOLX, SUPR, TAIKO.
+- 5547eb8: Update galactica/GNET coingecko IDs.
+- d4984b3: Add ETN configs
+- c0a9512: added matchain eurc deployment artifacts
+
+### Patch Changes
+
+- 00c3050: Add SOL/radix
+
+## 23.3.0
+
+### Minor Changes
+
+- 4ca7139: Add Electroneum USDT
+- c80c9fc: Add solaxy USDC warp route deployment artifacts
+- 490a01d: Deploy to incentiv, monad, carrchain, litchain. Deprecate snaxchain.
+
+### Patch Changes
+
+- b12008a: Update Electroneum USDC owner to ICA
+
+## 23.2.0
+
+### Minor Changes
+
+- 5dc3ab8: Officially deprecate legacy lumia mailbox.
+- 5e91a58: Deploy to zerogravity, sova, mantra.
+- ed3a0cf: Add TIA warp routes for Abstract, Arbitrum, Base, Eclipse, Solana & Ethereum.
+- 70d6bd9: Update solanamainnet ISM.
+- 580aa28: Enroll sova, zerogravity, mantra on default isms.
+- a52f33b: extended USDC/matchain to Ethereum and Base with rebalancing support
+- 0447d9b: Add radix warp routes
+- aeec7c2: Extend the UBTC route to ethereum
+- 927498c: Fix `HOLO` decimals.
+- 98d6450: Deploy to giwasepolia. Deprecate infinityvmmonza testnet.
+- 6a6543b: Deploy on plasma, electroneum.
+- 902188d: Deployed USDC warp route on pulsechain
+- a852bec: Remove neutron connection for TIA/arbitrum-celestia-neutron
+- 09fa9df: Add blockExplorers for mitosis and update owners for MITO/mitosis route
+- 6d5585b: update luksotestnet config addresses
+- e153c1d: Update dependencies and include radixdashboard as an explorer
+- 88fea43: Deprecate support for alephzeroevmtestnet, bepolia, flametestnet, formtestnet, inksepolia, sonicblaze, odysseytestnet, superpositiontestnet, unichaintestnet, chronicleyellowstone, weavevmtestnet, abstracttestnet, soneiumtestnet, connextsepolia, ecotestnet, plumetestnet2
+- b2f06a3: Add gnet warp route artifacts
+- 7e84145: Deprecate alephzeroevmmainnet, game7, infinityvmmainnet.
+- afb1a21: Add electroneum USDC config
+- 99ad40d: Add ETN token metadata and logo for Solana
+- 1a1296e: Extend oUSDT to 0G.
+- 0189f5d: Add Tatara and RISE Testnet
+
+### Patch Changes
+
+- f3a3190: Add Celestia to TIA/arbitrum-neutron.
+- d459b4e: Add HOLO deploy artifacts.
+- e1d5a18: Add TIA/celestia-eclipsemainnet
+- 3e38532: Update the logorUrl and coinGeckoId to the correct config for electroneum USDC
+- c92df04: Update Pulsechain blockExplorers apiUrl and url
+- 0e086e3: Updates the oXAUT bridge limits for avax, celo, ethereum, worldchain and base config
+- 3a36de5: Deprecate alfajores, as it's being replaced by celosepolia
+- c573015: Update default ISMs after validator rotations.
+- 490b292: Update oXAUT base owner to AW safe
+- 94d13b5: update zircuit reorg to 10mins
+- 90fd4b6: Update default ISMs to enroll plasma, electroneum.
+- d3cc03f: Add mito coingecko id
+- fc745b9: Add KING Ethereum <> Coti config.
+- 2fbe811: Add HOLO metadata.
+- 107b66e: update zircuit reorg period
+
 ## 23.1.0
 
 ### Minor Changes
