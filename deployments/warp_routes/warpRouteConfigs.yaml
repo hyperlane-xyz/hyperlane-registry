@@ -3333,12 +3333,13 @@ LYX/lukso:
       name: LUKSO
       standard: EvmHypNative
       symbol: LYX
-MAGIC/arbitrum-abstract-ronin:
+MAGIC/arbitrum-abstract-ronin-base:
   tokens:
     - addressOrDenom: "0x263D8f36Bb8d0d9526255E205868C26690b04B88"
       chainName: abstract
       connections:
         - token: ethereum|arbitrum|0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3
+        - token: ethereum|base|0xF1572d1Da5c3CcE14eE5a1c9327d17e9ff0E3f43
         - token: ethereum|ronin|0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3
       decimals: 18
       logoURI: /deployments/warp_routes/MAGIC/logo.svg
@@ -3351,17 +3352,30 @@ MAGIC/arbitrum-abstract-ronin:
       collateralAddressOrDenom: "0x539bdE0d7Dbd336b79148AA742883198BBF60342"
       connections:
         - token: ethereum|abstract|0x263D8f36Bb8d0d9526255E205868C26690b04B88
+        - token: ethereum|base|0xF1572d1Da5c3CcE14eE5a1c9327d17e9ff0E3f43
         - token: ethereum|ronin|0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3
       decimals: 18
       logoURI: /deployments/warp_routes/MAGIC/logo.svg
       name: MAGIC
       standard: EvmHypCollateral
       symbol: MAGIC
+    - addressOrDenom: "0xF1572d1Da5c3CcE14eE5a1c9327d17e9ff0E3f43"
+      chainName: base
+      connections:
+        - token: ethereum|abstract|0x263D8f36Bb8d0d9526255E205868C26690b04B88
+        - token: ethereum|arbitrum|0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3
+        - token: ethereum|ronin|0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3
+      decimals: 18
+      logoURI: /deployments/warp_routes/MAGIC/logo.svg
+      name: MAGIC
+      standard: EvmHypSynthetic
+      symbol: MAGIC
     - addressOrDenom: "0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3"
       chainName: ronin
       connections:
         - token: ethereum|abstract|0x263D8f36Bb8d0d9526255E205868C26690b04B88
         - token: ethereum|arbitrum|0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3
+        - token: ethereum|base|0xF1572d1Da5c3CcE14eE5a1c9327d17e9ff0E3f43
       decimals: 18
       logoURI: /deployments/warp_routes/MAGIC/logo.svg
       name: MAGIC
@@ -4240,11 +4254,12 @@ SEDA/base-ethereum:
       name: SEDA
       standard: EvmHypCollateral
       symbol: SEDA
-SMOL/arbitrum-abstract-ethereum-solanamainnet:
+SMOL/arbitrum-abstract-ethereum-solanamainnet-base:
   tokens:
     - addressOrDenom: "0xcbfb6dBeb6C06DdCd345781a0ADc711A86a77f7c"
       chainName: abstract
       connections:
+        - token: ethereum|base|0xA4Bbac7eD5BdA8Ec71a1aF5ee84d4c5a737bD875
         - token: ethereum|ethereum|0x53ccE6d10e43d1B3D11872Ad22eC2aCd8d2537B8
         - token: sealevel|solanamainnet|7Z7mZ4d31sfC3mcQYQXUNo6j9snByT2gs5eDkXYmZAyn
       decimals: 18
@@ -4258,6 +4273,7 @@ SMOL/arbitrum-abstract-ethereum-solanamainnet:
       collateralAddressOrDenom: "0x9E64D3b9e8eC387a9a58CED80b71Ed815f8D82B5"
       connections:
         - token: ethereum|abstract|0xcbfb6dBeb6C06DdCd345781a0ADc711A86a77f7c
+        - token: ethereum|base|0xA4Bbac7eD5BdA8Ec71a1aF5ee84d4c5a737bD875
         - token: ethereum|ethereum|0x53ccE6d10e43d1B3D11872Ad22eC2aCd8d2537B8
         - token: sealevel|solanamainnet|7Z7mZ4d31sfC3mcQYQXUNo6j9snByT2gs5eDkXYmZAyn
       decimals: 18
@@ -4265,10 +4281,22 @@ SMOL/arbitrum-abstract-ethereum-solanamainnet:
       name: SMOL
       standard: EvmHypCollateral
       symbol: SMOL
+    - addressOrDenom: "0xA4Bbac7eD5BdA8Ec71a1aF5ee84d4c5a737bD875"
+      chainName: base
+      connections:
+        - token: ethereum|abstract|0xcbfb6dBeb6C06DdCd345781a0ADc711A86a77f7c
+        - token: ethereum|ethereum|0x53ccE6d10e43d1B3D11872Ad22eC2aCd8d2537B8
+        - token: sealevel|solanamainnet|7Z7mZ4d31sfC3mcQYQXUNo6j9snByT2gs5eDkXYmZAyn
+      decimals: 18
+      logoURI: /deployments/warp_routes/SMOL/logo.svg
+      name: SMOL
+      standard: EvmHypSynthetic
+      symbol: SMOL
     - addressOrDenom: "0x53ccE6d10e43d1B3D11872Ad22eC2aCd8d2537B8"
       chainName: ethereum
       connections:
         - token: ethereum|abstract|0xcbfb6dBeb6C06DdCd345781a0ADc711A86a77f7c
+        - token: ethereum|base|0xA4Bbac7eD5BdA8Ec71a1aF5ee84d4c5a737bD875
         - token: sealevel|solanamainnet|7Z7mZ4d31sfC3mcQYQXUNo6j9snByT2gs5eDkXYmZAyn
       decimals: 18
       logoURI: /deployments/warp_routes/SMOL/logo.svg
@@ -4280,6 +4308,7 @@ SMOL/arbitrum-abstract-ethereum-solanamainnet:
       collateralAddressOrDenom: 5KHQeeQvM4qBtmX3WnaCMGpM3Th7jYpqcHf3c6qzPodM
       connections:
         - token: ethereum|abstract|0xcbfb6dBeb6C06DdCd345781a0ADc711A86a77f7c
+        - token: ethereum|base|0xA4Bbac7eD5BdA8Ec71a1aF5ee84d4c5a737bD875
         - token: ethereum|ethereum|0x53ccE6d10e43d1B3D11872Ad22eC2aCd8d2537B8
       decimals: 9
       logoURI: /deployments/warp_routes/SMOL/logo.svg
