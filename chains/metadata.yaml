@@ -3492,6 +3492,11 @@ heneztestnet:
     - http: https://henez-testnet.rpc.caldera.xyz/http
   technicalStack: arbitrumnitro
 holesky:
+  availability:
+    reasons:
+      - deprecated
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://api-holesky.etherscan.io/api
       family: etherscan
@@ -3645,7 +3650,7 @@ incentiv:
     symbol: CENT
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc1-archive.incentiv.io
+    - http: https://rpc-archive.incentiv.io
   technicalStack: other
 incentivtestnet:
   blockExplorers:
@@ -4298,7 +4303,7 @@ litchain:
     url: https://www.hyperlane.xyz
   displayName: Lit Chain
   domainId: 175200
-  gasCurrencyCoinGeckoId: litkey
+  gasCurrencyCoinGeckoId: lit-protocol
   index:
     from: 854
   name: litchain
@@ -7334,6 +7339,11 @@ sova:
     - http: https://rpc.sova.io
   technicalStack: opstack
 sovachain:
+  availability:
+    reasons:
+      - deprecated
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.sova.io/api
       family: blockscout
@@ -8312,6 +8322,33 @@ viction:
     - http: https://rpc.viction.xyz
     - http: https://viction.drpc.org
     - http: https://viction.blockpi.network/v1/rpc/public
+  technicalStack: other
+wardenprotocol:
+  blockExplorers:
+    - apiUrl: https://api.explorer.wardenprotocol.org
+      family: blockscout
+      name: Warden Protocol Explorer
+      url: https://explorer.wardenprotocol.org
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 8765
+  deployer:
+    name: Warden Labs
+    url: https://wardenprotocol.org
+  displayName: Warden Protocol
+  domainId: 8765
+  gasCurrencyCoinGeckoId: warden-2
+  isTestnet: false
+  name: wardenprotocol
+  nativeToken:
+    decimals: 18
+    name: WARD
+    symbol: WARD
+  protocol: ethereum
+  rpcUrls:
+    - http: https://evm.wardenprotocol.org
   technicalStack: other
 weavevmtestnet:
   availability:
