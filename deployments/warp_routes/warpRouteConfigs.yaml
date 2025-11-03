@@ -1339,6 +1339,27 @@ ETH/holesky-piccadilly:
       name: Ether
       standard: EvmHypSynthetic
       symbol: ETH
+ETH/mantra:
+  tokens:
+    - addressOrDenom: "0xa901E6974C8F0fCc2f44451B0e788CD6957E02E2"
+      chainName: ethereum
+      coinGeckoId: ethereum
+      connections:
+        - token: ethereum|mantra|0xeE99Cf120Ab08A68727253FB1cCC55f7551682e8
+      decimals: 18
+      logoURI: /deployments/warp_routes/ETH/logo.svg
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
+    - addressOrDenom: "0xeE99Cf120Ab08A68727253FB1cCC55f7551682e8"
+      chainName: mantra
+      connections:
+        - token: ethereum|ethereum|0xa901E6974C8F0fCc2f44451B0e788CD6957E02E2
+      decimals: 18
+      logoURI: /deployments/warp_routes/ETH/logo.svg
+      name: ETH
+      standard: EvmHypSynthetic
+      symbol: ETH
 ETH/sepolia-starknetsepolia:
   options: {}
   tokens:
@@ -2641,6 +2662,27 @@ HOLO/bsc-solanamainnet:
       name: Holoworld AI
       standard: SealevelHypSynthetic
       symbol: HOLO
+HYPE/mantra:
+  tokens:
+    - addressOrDenom: "0xA10bCe7B3F13f8846611bdac36EF5972069ce7d8"
+      chainName: hyperevm
+      coinGeckoId: hyperliquid
+      connections:
+        - token: ethereum|mantra|0x2d01885f395186903ac76D0C67b94f1F8BcE6727
+      decimals: 18
+      logoURI: /deployments/warp_routes/HYPE/logo.svg
+      name: Hyperliquid
+      standard: EvmHypNative
+      symbol: HYPE
+    - addressOrDenom: "0x2d01885f395186903ac76D0C67b94f1F8BcE6727"
+      chainName: mantra
+      connections:
+        - token: ethereum|hyperevm|0xA10bCe7B3F13f8846611bdac36EF5972069ce7d8
+      decimals: 18
+      logoURI: /deployments/warp_routes/HYPE/logo.svg
+      name: Hyperliquid
+      standard: EvmHypSynthetic
+      symbol: HYPE
 HYPER/arbitrum-base-bsc-ethereum-optimism:
   tokens:
     - addressOrDenom: "0xC9d23ED2ADB0f551369946BD377f8644cE1ca5c4"
@@ -8131,6 +8173,28 @@ WBTC/incentiv:
       chainName: incentiv
       connections:
         - token: ethereum|ethereum|0x6cFC3e0579F3706E6f2E4BC039e8372b868F3CA5
+      decimals: 8
+      logoURI: /deployments/warp_routes/WBTC/logo.svg
+      name: Wrapped BTC
+      standard: EvmHypSynthetic
+      symbol: WBTC
+WBTC/mantra:
+  tokens:
+    - addressOrDenom: "0xABb5E5b46112Ca652481d1117459dc289a1Ee282"
+      chainName: ethereum
+      coinGeckoId: wrapped-bitcoin
+      collateralAddressOrDenom: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+      connections:
+        - token: ethereum|mantra|0xc7960A4Baa8d9Db795890b56Af874F3a24c20123
+      decimals: 8
+      logoURI: /deployments/warp_routes/WBTC/logo.svg
+      name: Wrapped BTC
+      standard: EvmHypCollateral
+      symbol: WBTC
+    - addressOrDenom: "0xc7960A4Baa8d9Db795890b56Af874F3a24c20123"
+      chainName: mantra
+      connections:
+        - token: ethereum|ethereum|0xABb5E5b46112Ca652481d1117459dc289a1Ee282
       decimals: 8
       logoURI: /deployments/warp_routes/WBTC/logo.svg
       name: Wrapped BTC
