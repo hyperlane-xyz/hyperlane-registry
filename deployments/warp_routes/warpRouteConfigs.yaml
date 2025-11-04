@@ -1339,6 +1339,27 @@ ETH/holesky-piccadilly:
       name: Ether
       standard: EvmHypSynthetic
       symbol: ETH
+ETH/mantra:
+  tokens:
+    - addressOrDenom: "0xa901E6974C8F0fCc2f44451B0e788CD6957E02E2"
+      chainName: ethereum
+      coinGeckoId: ethereum
+      connections:
+        - token: ethereum|mantra|0xeE99Cf120Ab08A68727253FB1cCC55f7551682e8
+      decimals: 18
+      logoURI: /deployments/warp_routes/ETH/logo.svg
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
+    - addressOrDenom: "0xeE99Cf120Ab08A68727253FB1cCC55f7551682e8"
+      chainName: mantra
+      connections:
+        - token: ethereum|ethereum|0xa901E6974C8F0fCc2f44451B0e788CD6957E02E2
+      decimals: 18
+      logoURI: /deployments/warp_routes/ETH/logo.svg
+      name: ETH
+      standard: EvmHypSynthetic
+      symbol: ETH
 ETH/sepolia-starknetsepolia:
   options: {}
   tokens:
@@ -2641,6 +2662,27 @@ HOLO/bsc-solanamainnet:
       name: Holoworld AI
       standard: SealevelHypSynthetic
       symbol: HOLO
+HYPE/mantra:
+  tokens:
+    - addressOrDenom: "0xA10bCe7B3F13f8846611bdac36EF5972069ce7d8"
+      chainName: hyperevm
+      coinGeckoId: hyperliquid
+      connections:
+        - token: ethereum|mantra|0x2d01885f395186903ac76D0C67b94f1F8BcE6727
+      decimals: 18
+      logoURI: /deployments/warp_routes/HYPE/logo.svg
+      name: Hyperliquid
+      standard: EvmHypNative
+      symbol: HYPE
+    - addressOrDenom: "0x2d01885f395186903ac76D0C67b94f1F8BcE6727"
+      chainName: mantra
+      connections:
+        - token: ethereum|hyperevm|0xA10bCe7B3F13f8846611bdac36EF5972069ce7d8
+      decimals: 18
+      logoURI: /deployments/warp_routes/HYPE/logo.svg
+      name: Hyperliquid
+      standard: EvmHypSynthetic
+      symbol: HYPE
 HYPER/arbitrum-base-bsc-ethereum-optimism:
   tokens:
     - addressOrDenom: "0xC9d23ED2ADB0f551369946BD377f8644cE1ca5c4"
@@ -3012,6 +3054,7 @@ LITKEY/litchain:
   tokens:
     - addressOrDenom: "0xc656E77E18d378DeED5051b26f750b325D6253C2"
       chainName: arbitrum
+      coinGeckoId: lit-protocol
       collateralAddressOrDenom: "0xC7603786470F04D33E35f9E9B56bD0Ca8803fB95"
       connections:
         - token: ethereum|avalanche|0xa38Fce8bf2fA38a97749332724b9db3FF44F006D
@@ -3045,6 +3088,7 @@ LITKEY/litchain:
       symbol: LITKEY
     - addressOrDenom: "0x9D132d5678253FD88f7DB51Ac2AC13FC40a63547"
       chainName: base
+      coinGeckoId: lit-protocol
       collateralAddressOrDenom: "0xF732A566121Fa6362E9E0FBdd6D66E5c8C925E49"
       connections:
         - token: ethereum|arbitrum|0xc656E77E18d378DeED5051b26f750b325D6253C2
@@ -3078,6 +3122,7 @@ LITKEY/litchain:
       symbol: LITKEY
     - addressOrDenom: "0x733BC1F0D76AB8f0AB7C1c8044ECc4720Cd402AD"
       chainName: ethereum
+      coinGeckoId: lit-protocol
       collateralAddressOrDenom: "0x4D4eb0E8B160f6EbF63cC6d36060ffec09301B42"
       connections:
         - token: ethereum|arbitrum|0xc656E77E18d378DeED5051b26f750b325D6253C2
@@ -3111,6 +3156,7 @@ LITKEY/litchain:
       symbol: LITKEY
     - addressOrDenom: "0x94930Cbfed2483b69DfBed9d96a9CdD7c27D1393"
       chainName: litchain
+      coinGeckoId: lit-protocol
       connections:
         - token: ethereum|arbitrum|0xc656E77E18d378DeED5051b26f750b325D6253C2
         - token: ethereum|avalanche|0xa38Fce8bf2fA38a97749332724b9db3FF44F006D
@@ -3127,6 +3173,7 @@ LITKEY/litchain:
       symbol: LITKEY
     - addressOrDenom: "0x56aE521E18a7de66b2e3AcE3A0b71e716a61D34d"
       chainName: optimism
+      coinGeckoId: lit-protocol
       collateralAddressOrDenom: "0x0633E91f64C22d4FEa53dbE6e77B7BA4093177B8"
       connections:
         - token: ethereum|arbitrum|0xc656E77E18d378DeED5051b26f750b325D6253C2
@@ -3328,12 +3375,13 @@ LYX/lukso:
       name: LUKSO
       standard: EvmHypNative
       symbol: LYX
-MAGIC/arbitrum-abstract-ronin:
+MAGIC/arbitrum-abstract-ronin-base:
   tokens:
     - addressOrDenom: "0x263D8f36Bb8d0d9526255E205868C26690b04B88"
       chainName: abstract
       connections:
         - token: ethereum|arbitrum|0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3
+        - token: ethereum|base|0xF1572d1Da5c3CcE14eE5a1c9327d17e9ff0E3f43
         - token: ethereum|ronin|0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3
       decimals: 18
       logoURI: /deployments/warp_routes/MAGIC/logo.svg
@@ -3346,17 +3394,30 @@ MAGIC/arbitrum-abstract-ronin:
       collateralAddressOrDenom: "0x539bdE0d7Dbd336b79148AA742883198BBF60342"
       connections:
         - token: ethereum|abstract|0x263D8f36Bb8d0d9526255E205868C26690b04B88
+        - token: ethereum|base|0xF1572d1Da5c3CcE14eE5a1c9327d17e9ff0E3f43
         - token: ethereum|ronin|0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3
       decimals: 18
       logoURI: /deployments/warp_routes/MAGIC/logo.svg
       name: MAGIC
       standard: EvmHypCollateral
       symbol: MAGIC
+    - addressOrDenom: "0xF1572d1Da5c3CcE14eE5a1c9327d17e9ff0E3f43"
+      chainName: base
+      connections:
+        - token: ethereum|abstract|0x263D8f36Bb8d0d9526255E205868C26690b04B88
+        - token: ethereum|arbitrum|0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3
+        - token: ethereum|ronin|0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3
+      decimals: 18
+      logoURI: /deployments/warp_routes/MAGIC/logo.svg
+      name: MAGIC
+      standard: EvmHypSynthetic
+      symbol: MAGIC
     - addressOrDenom: "0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3"
       chainName: ronin
       connections:
         - token: ethereum|abstract|0x263D8f36Bb8d0d9526255E205868C26690b04B88
         - token: ethereum|arbitrum|0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3
+        - token: ethereum|base|0xF1572d1Da5c3CcE14eE5a1c9327d17e9ff0E3f43
       decimals: 18
       logoURI: /deployments/warp_routes/MAGIC/logo.svg
       name: MAGIC
@@ -4235,11 +4296,12 @@ SEDA/base-ethereum:
       name: SEDA
       standard: EvmHypCollateral
       symbol: SEDA
-SMOL/arbitrum-abstract-ethereum-solanamainnet:
+SMOL/arbitrum-abstract-ethereum-solanamainnet-base:
   tokens:
     - addressOrDenom: "0xcbfb6dBeb6C06DdCd345781a0ADc711A86a77f7c"
       chainName: abstract
       connections:
+        - token: ethereum|base|0xA4Bbac7eD5BdA8Ec71a1aF5ee84d4c5a737bD875
         - token: ethereum|ethereum|0x53ccE6d10e43d1B3D11872Ad22eC2aCd8d2537B8
         - token: sealevel|solanamainnet|7Z7mZ4d31sfC3mcQYQXUNo6j9snByT2gs5eDkXYmZAyn
       decimals: 18
@@ -4253,6 +4315,7 @@ SMOL/arbitrum-abstract-ethereum-solanamainnet:
       collateralAddressOrDenom: "0x9E64D3b9e8eC387a9a58CED80b71Ed815f8D82B5"
       connections:
         - token: ethereum|abstract|0xcbfb6dBeb6C06DdCd345781a0ADc711A86a77f7c
+        - token: ethereum|base|0xA4Bbac7eD5BdA8Ec71a1aF5ee84d4c5a737bD875
         - token: ethereum|ethereum|0x53ccE6d10e43d1B3D11872Ad22eC2aCd8d2537B8
         - token: sealevel|solanamainnet|7Z7mZ4d31sfC3mcQYQXUNo6j9snByT2gs5eDkXYmZAyn
       decimals: 18
@@ -4260,10 +4323,22 @@ SMOL/arbitrum-abstract-ethereum-solanamainnet:
       name: SMOL
       standard: EvmHypCollateral
       symbol: SMOL
+    - addressOrDenom: "0xA4Bbac7eD5BdA8Ec71a1aF5ee84d4c5a737bD875"
+      chainName: base
+      connections:
+        - token: ethereum|abstract|0xcbfb6dBeb6C06DdCd345781a0ADc711A86a77f7c
+        - token: ethereum|ethereum|0x53ccE6d10e43d1B3D11872Ad22eC2aCd8d2537B8
+        - token: sealevel|solanamainnet|7Z7mZ4d31sfC3mcQYQXUNo6j9snByT2gs5eDkXYmZAyn
+      decimals: 18
+      logoURI: /deployments/warp_routes/SMOL/logo.svg
+      name: SMOL
+      standard: EvmHypSynthetic
+      symbol: SMOL
     - addressOrDenom: "0x53ccE6d10e43d1B3D11872Ad22eC2aCd8d2537B8"
       chainName: ethereum
       connections:
         - token: ethereum|abstract|0xcbfb6dBeb6C06DdCd345781a0ADc711A86a77f7c
+        - token: ethereum|base|0xA4Bbac7eD5BdA8Ec71a1aF5ee84d4c5a737bD875
         - token: sealevel|solanamainnet|7Z7mZ4d31sfC3mcQYQXUNo6j9snByT2gs5eDkXYmZAyn
       decimals: 18
       logoURI: /deployments/warp_routes/SMOL/logo.svg
@@ -4275,6 +4350,7 @@ SMOL/arbitrum-abstract-ethereum-solanamainnet:
       collateralAddressOrDenom: 5KHQeeQvM4qBtmX3WnaCMGpM3Th7jYpqcHf3c6qzPodM
       connections:
         - token: ethereum|abstract|0xcbfb6dBeb6C06DdCd345781a0ADc711A86a77f7c
+        - token: ethereum|base|0xA4Bbac7eD5BdA8Ec71a1aF5ee84d4c5a737bD875
         - token: ethereum|ethereum|0x53ccE6d10e43d1B3D11872Ad22eC2aCd8d2537B8
       decimals: 9
       logoURI: /deployments/warp_routes/SMOL/logo.svg
@@ -8102,6 +8178,28 @@ WBTC/incentiv:
       name: Wrapped BTC
       standard: EvmHypSynthetic
       symbol: WBTC
+WBTC/mantra:
+  tokens:
+    - addressOrDenom: "0xABb5E5b46112Ca652481d1117459dc289a1Ee282"
+      chainName: ethereum
+      coinGeckoId: wrapped-bitcoin
+      collateralAddressOrDenom: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+      connections:
+        - token: ethereum|mantra|0xc7960A4Baa8d9Db795890b56Af874F3a24c20123
+      decimals: 8
+      logoURI: /deployments/warp_routes/WBTC/logo.svg
+      name: Wrapped BTC
+      standard: EvmHypCollateral
+      symbol: WBTC
+    - addressOrDenom: "0xc7960A4Baa8d9Db795890b56Af874F3a24c20123"
+      chainName: mantra
+      connections:
+        - token: ethereum|ethereum|0xABb5E5b46112Ca652481d1117459dc289a1Ee282
+      decimals: 8
+      logoURI: /deployments/warp_routes/WBTC/logo.svg
+      name: Wrapped BTC
+      standard: EvmHypSynthetic
+      symbol: WBTC
 WETH/artela-base:
   tokens:
     - addressOrDenom: "0xfae4e14D01D9E13FB5db20A0329ED0472A2D96C7"
@@ -8214,6 +8312,30 @@ WSTETH/ethereum-form:
       name: Wrapped liquid staked Ether 2.0
       standard: EvmHypSynthetic
       symbol: wstETH
+XRD/radix:
+  tokens:
+    - addressOrDenom: "0x94a766ebdfbBFF21428b6C504Be7405e74c02774"
+      chainName: ethereum
+      coinGeckoId: radix
+      collateralAddressOrDenom: "0x6468e79A80C0eaB0F9A2B574c8d5bC374Af59414"
+      connections:
+        - token: radix|radix|component_rdx1crrj42g0855jnpvfs6t9tff25vtq3lm292g3h07xrnz9l49mnsu3hy
+      decimals: 18
+      logoURI: /deployments/warp_routes/XRD/logo.svg
+      name: E-RADIX
+      standard: EvmHypCollateralFiat
+      symbol: eXRD
+    - addressOrDenom: component_rdx1crrj42g0855jnpvfs6t9tff25vtq3lm292g3h07xrnz9l49mnsu3hy
+      chainName: radix
+      coinGeckoId: radix
+      collateralAddressOrDenom: resource_rdx1tknxxxxxxxxxradxrdxxxxxxxxx009923554798xxxxxxxxxradxrd
+      connections:
+        - token: ethereum|ethereum|0x94a766ebdfbBFF21428b6C504Be7405e74c02774
+      decimals: 18
+      logoURI: /deployments/warp_routes/XRD/logo.svg
+      name: Radix
+      standard: RadixHypCollateral
+      symbol: XRD
 adraSOL/solanamainnet-sonicsvm:
   tokens:
     - addressOrDenom: cFZCgMoWSoohWMJDmfLZBSLiTwNVszRM13dVnqa63cd
