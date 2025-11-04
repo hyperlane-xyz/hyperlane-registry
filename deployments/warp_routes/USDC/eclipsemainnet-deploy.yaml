@@ -1,0 +1,45 @@
+arbitrum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    base:
+      - bridge: "0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2"
+  contractVersion: 9.0.16
+  owner: "0x03fD5BE9DF85F0017dC7F4DC3068dDF64fffF25e"
+  proxyAdmin:
+    address: "0x80Cebd56A65e46c474a1A101e89E76C4c51D179c"
+    owner: "0x7379D7bB2ccA68982E467632B6554fD4e72e9431"
+  token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+  type: collateral
+base:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975"
+  contractVersion: 9.0.16
+  owner: "0x3949eD0CD036D9FF662d97BD7aC1686051c4aeBF"
+  proxyAdmin:
+    address: "0x4Ed7d626f1E96cD1C0401607Bf70D95243E3dEd1"
+    owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
+  token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+  type: collateral
+eclipsemainnet:
+  foreignDeployment: EqRSt9aUDMKYKhzd1DGMderr3KNp29VZH3x5P7LFTC8m
+  gas: 300000
+  owner: E4TncCw3WMqQZbkACVcomX3HqcSzLfNyhTnqKN1DimGr
+  type: synthetic
+ethereum:
+  contractVersion: 9.0.16
+  owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+  proxyAdmin:
+    address: "0x75EE15Ee1B4A75Fa3e2fDF5DF3253c25599cc659"
+    owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
+  token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+  type: collateral
+solanamainnet:
+  foreignDeployment: 3EpVCPUgyjq2MfGeCttyey6bs5zya5wjYZ2BE6yDg6bm
+  gas: 300000
+  owner: BNGDJ1h9brgt6FFVd8No1TVAH48Fp44d7jkuydr1URwJ
+  token: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+  type: collateral
