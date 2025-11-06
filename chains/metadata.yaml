@@ -1352,6 +1352,44 @@ celestia:
   technicalStack: other
   transactionOverrides:
     gasPrice: "0.002"
+celestiadevnet:
+  bech32Prefix: celestia
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 6
+    reorgPeriod: 1
+  canonicalAsset: utia
+  chainId: arabica-11
+  contractAddressBytes: 32
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Celestia Arabica Devnet
+  domainId: 1095909698
+  gasPrice:
+    amount: "0.1"
+    denom: utia
+  grpcUrls:
+    - http: https://grpc.celestia-arabica-11.com:443
+  index:
+    chunk: 10
+    from: 8214286
+  isTestnet: true
+  name: celestiadevnet
+  nativeToken:
+    decimals: 6
+    denom: utia
+    name: Celestia
+    symbol: TIA
+  protocol: cosmosnative
+  restUrls:
+    - http: https://api.celestia-arabica-11.com
+  rpcUrls:
+    - http: https://rpc.celestia-arabica-11.com
+  slip44: 118
+  technicalStack: other
+  transactionOverrides:
+    gasPrice: "0.0"
 celestiatestnet:
   bech32Prefix: celestia
   blocks:
@@ -1451,6 +1489,11 @@ celosepolia:
     - http: https://forno.celo-sepolia.celo-testnet.org
   technicalStack: opstack
 cheesechain:
+  availability:
+    reasons:
+      - deprecated
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://fetascan.xyz/api
       family: blockscout
@@ -2422,6 +2465,20 @@ ecotestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://eco-testnet.rpc.caldera.xyz/http
+edentestnet:
+  chainId: 3735928814
+  displayName: Eden Testnet
+  domainId: 60901
+  isTestnet: true
+  name: edentestnet
+  nativeToken:
+    decimals: 18
+    name: Eden
+    symbol: EDEN
+  protocol: ethereum
+  rpcUrls:
+    - http: http://rpc-evreth-sequencer-edennet-1-testnet.binary.builders:8545/
+  technicalStack: other
 edgenchain:
   blockExplorers:
     - apiUrl: https://edgenscan.io/api
@@ -3652,6 +3709,8 @@ incentiv:
   rpcUrls:
     - http: https://rpc-archive.incentiv.io
   technicalStack: other
+  transactionOverrides:
+    gasPrice: 60000000000
 incentivtestnet:
   blockExplorers:
     - apiUrl: https://explorer-testnet.incentiv.io/api
@@ -7394,7 +7453,6 @@ starknet:
     symbol: STRK
   protocol: starknet
   rpcUrls:
-    - http: https://starknet-mainnet.public.blastapi.io/rpc/v0_8
     - http: https://rpc.starknet.lava.build:443/
   technicalStack: other
 starknetsepolia:
@@ -7422,7 +7480,8 @@ starknetsepolia:
     symbol: STRK
   protocol: starknet
   rpcUrls:
-    - http: https://starknet-sepolia.public.blastapi.io/rpc/v0_8
+    - http: https://starknet-sepolia-rpc.publicnode.com
+    - http: https://rpc.starknet-testnet.lava.build/
 story:
   blockExplorers:
     - apiUrl: https://www.storyscan.xyz/api

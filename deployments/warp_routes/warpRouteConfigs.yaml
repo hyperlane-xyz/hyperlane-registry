@@ -1339,6 +1339,27 @@ ETH/holesky-piccadilly:
       name: Ether
       standard: EvmHypSynthetic
       symbol: ETH
+ETH/mantra:
+  tokens:
+    - addressOrDenom: "0xa901E6974C8F0fCc2f44451B0e788CD6957E02E2"
+      chainName: ethereum
+      coinGeckoId: ethereum
+      connections:
+        - token: ethereum|mantra|0xeE99Cf120Ab08A68727253FB1cCC55f7551682e8
+      decimals: 18
+      logoURI: /deployments/warp_routes/ETH/logo.svg
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
+    - addressOrDenom: "0xeE99Cf120Ab08A68727253FB1cCC55f7551682e8"
+      chainName: mantra
+      connections:
+        - token: ethereum|ethereum|0xa901E6974C8F0fCc2f44451B0e788CD6957E02E2
+      decimals: 18
+      logoURI: /deployments/warp_routes/ETH/logo.svg
+      name: ETH
+      standard: EvmHypSynthetic
+      symbol: ETH
 ETH/sepolia-starknetsepolia:
   options: {}
   tokens:
@@ -1441,6 +1462,7 @@ EZETH/renzo-prod:
         - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
         - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
@@ -1450,6 +1472,7 @@ EZETH/renzo-prod:
         - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
         - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
         - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
         - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
@@ -1466,6 +1489,7 @@ EZETH/renzo-prod:
         - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
         - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
@@ -1475,6 +1499,7 @@ EZETH/renzo-prod:
         - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
         - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
         - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
         - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
@@ -1491,6 +1516,7 @@ EZETH/renzo-prod:
         - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
         - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
@@ -1500,6 +1526,7 @@ EZETH/renzo-prod:
         - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
         - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
         - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
         - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
@@ -1516,6 +1543,7 @@ EZETH/renzo-prod:
         - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
         - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
@@ -1525,6 +1553,7 @@ EZETH/renzo-prod:
         - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
         - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
         - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
         - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
@@ -1541,6 +1570,7 @@ EZETH/renzo-prod:
         - token: ethereum|blast|0x486b39378f99f073A3043C6Aabe8666876A8F3C5
         - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
@@ -1550,6 +1580,7 @@ EZETH/renzo-prod:
         - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
         - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
         - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
         - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
@@ -1567,6 +1598,7 @@ EZETH/renzo-prod:
         - token: ethereum|blast|0x486b39378f99f073A3043C6Aabe8666876A8F3C5
         - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
         - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
@@ -1576,6 +1608,7 @@ EZETH/renzo-prod:
         - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
         - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
         - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
         - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
@@ -1592,6 +1625,7 @@ EZETH/renzo-prod:
         - token: ethereum|blast|0x486b39378f99f073A3043C6Aabe8666876A8F3C5
         - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
         - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
@@ -1601,6 +1635,34 @@ EZETH/renzo-prod:
         - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
         - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
         - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
+        - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
+      decimals: 18
+      logoURI: /deployments/warp_routes/EZETH/logo.svg
+      name: Renzo Restaked ETH
+      standard: EvmHypXERC20
+      symbol: ezETH
+    - addressOrDenom: "0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b"
+      chainName: ink
+      collateralAddressOrDenom: "0x2416092f143378750bb29b79eD961ab195CcEea5"
+      connections:
+        - token: ethereum|arbitrum|0xB26bBfC6d1F469C821Ea25099017862e7368F4E8
+        - token: ethereum|base|0x2552516453368e42705D791F674b312b8b87CD9e
+        - token: ethereum|berachain|0x50105110D9e14Eb3d1e4BA7C32daC7f002AC50FD
+        - token: ethereum|blast|0x486b39378f99f073A3043C6Aabe8666876A8F3C5
+        - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
+        - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
+        - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
+        - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
+        - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
+        - token: ethereum|plasma|0xcD78A32Da8cfe9452cD2F50F547c11B979Afcf1b
+        - token: ethereum|sei|0xE5163F148C82a0818545d5D34e30BC1EDA870cB9
+        - token: ethereum|swell|0xA166219dF110BDA97b91e65D4BB4Aae4159978b9
+        - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
+        - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
+        - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
         - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
@@ -1618,6 +1680,7 @@ EZETH/renzo-prod:
         - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
         - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
         - token: ethereum|plasma|0xcD78A32Da8cfe9452cD2F50F547c11B979Afcf1b
@@ -1626,6 +1689,7 @@ EZETH/renzo-prod:
         - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
         - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
         - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
         - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
@@ -1643,6 +1707,7 @@ EZETH/renzo-prod:
         - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
         - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
         - token: ethereum|plasma|0xcD78A32Da8cfe9452cD2F50F547c11B979Afcf1b
@@ -1651,7 +1716,16 @@ EZETH/renzo-prod:
         - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
         - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
         - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
         - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
+      decimals: 18
+      logoURI: /deployments/warp_routes/EZETH/logo.svg
+      name: Renzo Restaked ETH
+      standard: EvmHypXERC20
+      symbol: ezETH
+    - addressOrDenom: "0x7A911b0bD4F067FB8DAFF734A78E7A72865100d8"
+      chainName: monad
+      collateralAddressOrDenom: "0x2416092f143378750bb29b79eD961ab195CcEea5"
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
       name: Renzo Restaked ETH
@@ -1668,6 +1742,7 @@ EZETH/renzo-prod:
         - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
         - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|plasma|0xcD78A32Da8cfe9452cD2F50F547c11B979Afcf1b
@@ -1676,6 +1751,7 @@ EZETH/renzo-prod:
         - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
         - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
         - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
         - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
@@ -1693,6 +1769,7 @@ EZETH/renzo-prod:
         - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
         - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
@@ -1701,6 +1778,7 @@ EZETH/renzo-prod:
         - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
         - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
         - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
         - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
@@ -1718,6 +1796,7 @@ EZETH/renzo-prod:
         - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
         - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
@@ -1726,12 +1805,13 @@ EZETH/renzo-prod:
         - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
         - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
         - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
         - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
-      name: Renzo Restaked ETH
+      name: Restaked ETH on Sei
       standard: EvmHypXERC20
-      symbol: ezETH
+      symbol: redETH
     - addressOrDenom: "0xA166219dF110BDA97b91e65D4BB4Aae4159978b9"
       chainName: swell
       collateralAddressOrDenom: "0x2416092f143378750bb29b79eD961ab195CcEea5"
@@ -1743,6 +1823,7 @@ EZETH/renzo-prod:
         - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
         - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
@@ -1751,6 +1832,7 @@ EZETH/renzo-prod:
         - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
         - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
         - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
         - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
@@ -1768,6 +1850,7 @@ EZETH/renzo-prod:
         - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
         - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
@@ -1776,6 +1859,7 @@ EZETH/renzo-prod:
         - token: ethereum|swell|0xA166219dF110BDA97b91e65D4BB4Aae4159978b9
         - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
         - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
         - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
@@ -1793,6 +1877,7 @@ EZETH/renzo-prod:
         - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
         - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
@@ -1801,6 +1886,7 @@ EZETH/renzo-prod:
         - token: ethereum|swell|0xA166219dF110BDA97b91e65D4BB4Aae4159978b9
         - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
         - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
         - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
@@ -1818,6 +1904,7 @@ EZETH/renzo-prod:
         - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
         - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
@@ -1826,6 +1913,34 @@ EZETH/renzo-prod:
         - token: ethereum|swell|0xA166219dF110BDA97b91e65D4BB4Aae4159978b9
         - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
         - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
+        - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
+      decimals: 18
+      logoURI: /deployments/warp_routes/EZETH/logo.svg
+      name: Renzo Restaked ETH
+      standard: EvmHypXERC20
+      symbol: ezETH
+    - addressOrDenom: "0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3"
+      chainName: xlayer
+      collateralAddressOrDenom: "0x2416092f143378750bb29b79eD961ab195CcEea5"
+      connections:
+        - token: ethereum|arbitrum|0xB26bBfC6d1F469C821Ea25099017862e7368F4E8
+        - token: ethereum|base|0x2552516453368e42705D791F674b312b8b87CD9e
+        - token: ethereum|berachain|0x50105110D9e14Eb3d1e4BA7C32daC7f002AC50FD
+        - token: ethereum|blast|0x486b39378f99f073A3043C6Aabe8666876A8F3C5
+        - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
+        - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
+        - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
+        - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
+        - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
+        - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
+        - token: ethereum|plasma|0xcD78A32Da8cfe9452cD2F50F547c11B979Afcf1b
+        - token: ethereum|sei|0xE5163F148C82a0818545d5D34e30BC1EDA870cB9
+        - token: ethereum|swell|0xA166219dF110BDA97b91e65D4BB4Aae4159978b9
+        - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
+        - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
+        - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
         - token: ethereum|zircuit|0x2552516453368e42705D791F674b312b8b87CD9e
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
@@ -1843,6 +1958,7 @@ EZETH/renzo-prod:
         - token: ethereum|bsc|0xE00C6185a5c19219F1FFeD213b4406a254968c26
         - token: ethereum|ethereum|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|fraxtal|0x3aE8635A4D581d40a6Edfb3f2ED480f9532994F5
+        - token: ethereum|ink|0x698f0Acd19F4795B6C187d5187E1d0b62f6e257b
         - token: ethereum|linea|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|mode|0xC59336D8edDa9722B4f1Ec104007191Ec16f7087
         - token: ethereum|optimism|0xacEB607CdF59EB8022Cc0699eEF3eCF246d149e2
@@ -1852,6 +1968,7 @@ EZETH/renzo-prod:
         - token: ethereum|taiko|0x5eAFB1D4b5BDFaFE81715EeBcC7713e418C80E78
         - token: ethereum|unichain|0xFf0247f72b0d7ceD319D8457dD30622a2bed78B5
         - token: ethereum|worldchain|0x530b6596af6B6aB4D355d7Af2b5FF12eAeef8261
+        - token: ethereum|xlayer|0xB0A73DBA15454B3f84CeC0f88CFc7D88B6De59B3
       decimals: 18
       logoURI: /deployments/warp_routes/EZETH/logo.svg
       name: Renzo Restaked ETH
@@ -1869,8 +1986,10 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
         - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
         - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
         - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
@@ -1878,6 +1997,7 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
         - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
       decimals: 18
       name: Renzo Restaked ETH Stage 9
@@ -1893,8 +2013,10 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
         - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
         - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
         - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
@@ -1902,6 +2024,7 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
         - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
       decimals: 18
       name: Renzo Restaked ETH Stage 9
@@ -1917,8 +2040,10 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
         - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
         - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
         - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
@@ -1926,6 +2051,7 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
         - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
       decimals: 18
       name: Renzo Restaked ETH Stage 9
@@ -1941,8 +2067,10 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
         - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
         - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
         - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
@@ -1950,6 +2078,7 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
         - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
       decimals: 18
       name: Renzo Restaked ETH Stage 9
@@ -1965,8 +2094,10 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|blast|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
         - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
         - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
@@ -1974,6 +2105,7 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
         - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
       decimals: 18
       name: Renzo Restaked ETH Stage 9
@@ -1989,8 +2121,10 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|blast|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
         - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
         - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
@@ -1998,6 +2132,7 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
         - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
       decimals: 18
       name: Renzo Restaked ETH (STAGING)
@@ -2013,8 +2148,10 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|blast|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
         - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
         - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
@@ -2022,6 +2159,34 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
         - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
+        - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+      decimals: 18
+      name: Renzo Restaked ETH Stage 9
+      standard: EvmHypXERC20
+      symbol: EZETHSTAGE
+    - addressOrDenom: "0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9"
+      chainName: ink
+      collateralAddressOrDenom: "0x06232BC2a4388695a2C5A6C8e1F67743B9e6cc51"
+      connections:
+        - token: ethereum|arbitrum|0xB0F59a43FD64ba50772ba53A694Cf712d39e5449
+        - token: ethereum|base|0xb803A9A89e559B2aE167925459bB6b64E06B156F
+        - token: ethereum|berachain|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
+        - token: ethereum|blast|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
+        - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
+        - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
+        - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
+        - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
+        - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
+        - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
+        - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
+        - token: ethereum|swell|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
       decimals: 18
       name: Renzo Restaked ETH Stage 9
@@ -2038,7 +2203,9 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
         - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
         - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
         - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
@@ -2046,6 +2213,7 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
         - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
       decimals: 18
       name: Renzo Restaked ETH Stage 7
@@ -2062,7 +2230,9 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
         - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
         - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
         - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
@@ -2070,6 +2240,34 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
         - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
+        - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+      decimals: 18
+      name: Renzo Restaked ETH Stage 9
+      standard: EvmHypXERC20
+      symbol: EZETHSTAGE
+    - addressOrDenom: "0x6642D0E1d28C337305A99d91E528D6B155beCbe1"
+      chainName: monad
+      collateralAddressOrDenom: "0x06232BC2a4388695a2C5A6C8e1F67743B9e6cc51"
+      connections:
+        - token: ethereum|arbitrum|0xB0F59a43FD64ba50772ba53A694Cf712d39e5449
+        - token: ethereum|base|0xb803A9A89e559B2aE167925459bB6b64E06B156F
+        - token: ethereum|berachain|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
+        - token: ethereum|blast|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
+        - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
+        - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
+        - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
+        - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
+        - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
+        - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
+        - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
+        - token: ethereum|swell|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
       decimals: 18
       name: Renzo Restaked ETH Stage 9
@@ -2086,14 +2284,17 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
         - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
         - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
         - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
         - token: ethereum|swell|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
         - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
       decimals: 18
       name: Renzo Restaked ETH Stage 9
@@ -2110,14 +2311,17 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
         - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
         - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
         - token: ethereum|swell|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
         - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
       decimals: 18
       name: Renzo Restaked ETH Stage 9
@@ -2134,14 +2338,17 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
         - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
         - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
         - token: ethereum|swell|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
         - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
       decimals: 18
       name: Renzo Restaked ETH Stage 9
@@ -2158,14 +2365,17 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
         - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
         - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
         - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
         - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
         - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
       decimals: 18
       name: Renzo Restaked ETH Stage 9
@@ -2182,14 +2392,17 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
         - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
         - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
         - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
         - token: ethereum|swell|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
         - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
       decimals: 18
       name: Renzo Restaked ETH Stage 9
@@ -2206,14 +2419,17 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
         - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
         - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
         - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
         - token: ethereum|swell|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
       decimals: 18
       name: Renzo Restaked ETH Stage 9
@@ -2230,14 +2446,44 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
         - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
         - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
         - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
         - token: ethereum|swell|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
+        - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+      decimals: 18
+      name: Renzo Restaked ETH Stage 9
+      standard: EvmHypXERC20
+      symbol: EZETHSTAGE
+    - addressOrDenom: "0x6642D0E1d28C337305A99d91E528D6B155beCbe1"
+      chainName: xlayer
+      collateralAddressOrDenom: "0x06232BC2a4388695a2C5A6C8e1F67743B9e6cc51"
+      connections:
+        - token: ethereum|arbitrum|0xB0F59a43FD64ba50772ba53A694Cf712d39e5449
+        - token: ethereum|base|0xb803A9A89e559B2aE167925459bB6b64E06B156F
+        - token: ethereum|berachain|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
+        - token: ethereum|blast|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
+        - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
+        - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
+        - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
+        - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
+        - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
+        - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
+        - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
+        - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
+        - token: ethereum|swell|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
         - token: ethereum|zircuit|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
       decimals: 18
       name: Renzo Restaked ETH Stage 9
@@ -2254,8 +2500,10 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|bsc|0xd6608f15b714C5A110C42b4666665BC77FA52599
         - token: ethereum|ethereum|0xD090a082A0F6859AcBaEC1C6E7bB0B4D5a2DEC23
         - token: ethereum|fraxtal|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
+        - token: ethereum|ink|0x836088259A6c273F6dB7BB2C3ba74Ad046CC1ea9
         - token: ethereum|linea|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|mode|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|monad|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
         - token: ethereum|optimism|0xc6375bEb48252791Ae59841ac87F4923a6f6bbB1
         - token: ethereum|plasma|0x3CBCa631A797fd4c6332Cd4435C92065AFb57ef8
         - token: ethereum|sei|0xc8a9E4927301cE381A96Dd639f154f1A539fd939
@@ -2263,6 +2511,7 @@ EZETHSTAGE/renzo-stage:
         - token: ethereum|taiko|0x48E722f1458b253c2FB0E573F939318D7Dbd54e7
         - token: ethereum|unichain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
         - token: ethereum|worldchain|0x077B8Ee1b9609494Ef5DfD741DD784F27Fc468E0
+        - token: ethereum|xlayer|0x6642D0E1d28C337305A99d91E528D6B155beCbe1
       decimals: 18
       name: Renzo Restaked ETH Stage 9
       standard: EvmHypXERC20
@@ -2641,6 +2890,27 @@ HOLO/bsc-solanamainnet:
       name: Holoworld AI
       standard: SealevelHypSynthetic
       symbol: HOLO
+HYPE/mantra:
+  tokens:
+    - addressOrDenom: "0xA10bCe7B3F13f8846611bdac36EF5972069ce7d8"
+      chainName: hyperevm
+      coinGeckoId: hyperliquid
+      connections:
+        - token: ethereum|mantra|0x2d01885f395186903ac76D0C67b94f1F8BcE6727
+      decimals: 18
+      logoURI: /deployments/warp_routes/HYPE/logo.svg
+      name: Hyperliquid
+      standard: EvmHypNative
+      symbol: HYPE
+    - addressOrDenom: "0x2d01885f395186903ac76D0C67b94f1F8BcE6727"
+      chainName: mantra
+      connections:
+        - token: ethereum|hyperevm|0xA10bCe7B3F13f8846611bdac36EF5972069ce7d8
+      decimals: 18
+      logoURI: /deployments/warp_routes/HYPE/logo.svg
+      name: Hyperliquid
+      standard: EvmHypSynthetic
+      symbol: HYPE
 HYPER/arbitrum-base-bsc-ethereum-optimism:
   tokens:
     - addressOrDenom: "0xC9d23ED2ADB0f551369946BD377f8644cE1ca5c4"
@@ -4374,6 +4644,27 @@ SOL/hyperevm-solanamainnet:
       coinGeckoId: solana
       connections:
         - token: ethereum|hyperevm|0x96029bcf706FAC4176492F4a05f63f7d23cE78fb
+      decimals: 9
+      logoURI: /deployments/warp_routes/SOL/logo.svg
+      name: Solana
+      standard: SealevelHypNative
+      symbol: SOL
+SOL/incentiv:
+  tokens:
+    - addressOrDenom: "0xfaC24134dbc4b00Ee11114eCDFE6397f389203E3"
+      chainName: incentiv
+      connections:
+        - token: sealevel|solanamainnet|AYnRuLKV6Tqtibt7iA6DGCCACnRjy4nAhC8b5nPscsYs
+      decimals: 9
+      logoURI: /deployments/warp_routes/SOL/logo.svg
+      name: Solana
+      standard: EvmHypSynthetic
+      symbol: SOL
+    - addressOrDenom: AYnRuLKV6Tqtibt7iA6DGCCACnRjy4nAhC8b5nPscsYs
+      chainName: solanamainnet
+      coinGeckoId: solana
+      connections:
+        - token: ethereum|incentiv|0xfaC24134dbc4b00Ee11114eCDFE6397f389203E3
       decimals: 9
       logoURI: /deployments/warp_routes/SOL/logo.svg
       name: Solana
@@ -8131,6 +8422,28 @@ WBTC/incentiv:
       chainName: incentiv
       connections:
         - token: ethereum|ethereum|0x6cFC3e0579F3706E6f2E4BC039e8372b868F3CA5
+      decimals: 8
+      logoURI: /deployments/warp_routes/WBTC/logo.svg
+      name: Wrapped BTC
+      standard: EvmHypSynthetic
+      symbol: WBTC
+WBTC/mantra:
+  tokens:
+    - addressOrDenom: "0xABb5E5b46112Ca652481d1117459dc289a1Ee282"
+      chainName: ethereum
+      coinGeckoId: wrapped-bitcoin
+      collateralAddressOrDenom: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+      connections:
+        - token: ethereum|mantra|0xc7960A4Baa8d9Db795890b56Af874F3a24c20123
+      decimals: 8
+      logoURI: /deployments/warp_routes/WBTC/logo.svg
+      name: Wrapped BTC
+      standard: EvmHypCollateral
+      symbol: WBTC
+    - addressOrDenom: "0xc7960A4Baa8d9Db795890b56Af874F3a24c20123"
+      chainName: mantra
+      connections:
+        - token: ethereum|ethereum|0xABb5E5b46112Ca652481d1117459dc289a1Ee282
       decimals: 8
       logoURI: /deployments/warp_routes/WBTC/logo.svg
       name: Wrapped BTC
