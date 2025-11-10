@@ -109,8 +109,6 @@ describe('Warp Deploy Configs', () => {
     'ECLIP/arbitrum-neutron',
     'INJ/inevm-injective',
     'TIA/arbitrum-neutron',
-    'INJ/inevm-injective',
-    'TIA/arbitrum-neutron',
     'TIA/eclipsemainnet-stride',
     'TIA/mantapacific-neutron',
     'stTIA/eclipsemainnet-stride',
