@@ -4,6 +4,8 @@ arbitrum:
   allowedRebalancingBridges:
     base:
       - bridge: "0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2"
+    ethereum:
+      - bridge: "0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2"
   contractVersion: 9.0.16
   owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
   proxyAdmin:
@@ -16,6 +18,8 @@ base:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
     arbitrum:
+      - bridge: "0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975"
+    ethereum:
       - bridge: "0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975"
   contractVersion: 9.0.16
   owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
@@ -30,6 +34,13 @@ eclipsemainnet:
   owner: E4TncCw3WMqQZbkACVcomX3HqcSzLfNyhTnqKN1DimGr
   type: synthetic
 ethereum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0xedCBAa585FD0F80f20073F9958246476466205b8"
+    base:
+      - bridge: "0xedCBAa585FD0F80f20073F9958246476466205b8"
   contractVersion: 9.0.16
   owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
   proxyAdmin:
