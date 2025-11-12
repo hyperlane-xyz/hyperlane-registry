@@ -5,9 +5,6 @@ on:
     # Run weekly on Mondays at 9 AM UTC
     - cron: '0 9 * * 1'
   workflow_dispatch: # Allow manual triggering
-  push:
-    branches:
-      - pb/auto-update-ci
 
 jobs:
   update-dependencies:
