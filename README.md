@@ -13,11 +13,11 @@ Structured as a folder for each chain. Each folder should contain a `metadata.ya
 
 #### Core
 
-Configs and artifacts for [Hyperlane Core Contract](https://docs.hyperlane.xyz/docs/deploy/deploy-hyperlane) deployments.
+Configs and artifacts for [Hyperlane Core Contract](https://docs.hyperlane.xyz/docs/guides/chains/deploy-hyperlane) deployments.
 
 #### Warp
 
-Address artifacts for [Warp Route](https://docs.hyperlane.xyz/docs/deploy/deploy-warp-route) token deployments.
+Address artifacts for [Warp Route](https://docs.hyperlane.xyz/docs/applications/warp-routes/overview) token deployments.
 
 ## Contributing
 
