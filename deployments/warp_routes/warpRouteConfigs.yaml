@@ -5038,7 +5038,7 @@ TIA/abstract-celestia:
       name: TIA
       standard: CosmosNativeHypCollateral
       symbol: TIA
-TIA/arbitrum-celestia-neutron:
+TIA/arbitrum:
   options:
     interchainFeeConstants:
       - addressOrDenom: ibc/773B4D0A3CD667B2275D5A4A7A2F0909C0BA0F4059C0B9181E680DDF4965DCC7
@@ -5295,7 +5295,7 @@ TIA/forma-stride:
       name: TIA
       standard: CosmosIbc
       symbol: TIA
-TIA/mantapacific-neutron:
+TIA/mantapacific:
   options:
     interchainFeeConstants:
       - addressOrDenom: ibc/773B4D0A3CD667B2275D5A4A7A2F0909C0BA0F4059C0B9181E680DDF4965DCC7
@@ -5303,9 +5303,20 @@ TIA/mantapacific-neutron:
         destination: mantapacific
         origin: neutron
   tokens:
+    - addressOrDenom: "0x726f757465725f61707000000000000000000000000000010000000000000007"
+      chainName: celestia
+      collateralAddressOrDenom: utia
+      connections:
+        - token: ethereum|mantapacific|0x6Fae4D9935E2fcb11fC79a64e917fb2BF14DaFaa
+      decimals: 6
+      logoURI: /deployments/warp_routes/TIA/logo.svg
+      name: TIA
+      standard: CosmosNativeHypCollateral
+      symbol: TIA
     - addressOrDenom: "0x6Fae4D9935E2fcb11fC79a64e917fb2BF14DaFaa"
       chainName: mantapacific
       connections:
+        - token: cosmosnative|celestia|0x726f757465725f61707000000000000000000000000000010000000000000007
         - token: cosmos|neutron|neutron1ch7x3xgpnj62weyes8vfada35zff6z59kt2psqhnx9gjnt2ttqdqtva3pa
       decimals: 6
       logoURI: /deployments/warp_routes/TIA/logo.svg
@@ -9350,6 +9361,7 @@ mUSD/musd:
       collateralAddressOrDenom: "0xaca92e438df0b2401ff60da7e4337b687a2435da"
       connections:
         - token: ethereum|ethereum|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+        - token: ethereum|linea|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
       decimals: 6
       logoURI: /deployments/warp_routes/mUSD/logo.svg
       name: MetaMask USD
@@ -9370,6 +9382,7 @@ mUSD/musd:
       chainName: linea
       collateralAddressOrDenom: "0xaca92e438df0b2401ff60da7e4337b687a2435da"
       connections:
+        - token: ethereum|bsc|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
         - token: ethereum|ethereum|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
       decimals: 6
       logoURI: /deployments/warp_routes/mUSD/logo.svg
