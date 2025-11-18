@@ -4039,6 +4039,27 @@ PNDR/bsc-ethereum-lumiaprism:
       name: Ponder
       standard: EvmHypSynthetic
       symbol: PNDR
+POG/apechain:
+  tokens:
+    - addressOrDenom: "0x633268639892C73Fa7340Ec1da4e397cf3913c8C"
+      chainName: apechain
+      connections:
+        - token: sealevel|solanamainnet|BjQqFUD95DkH6JV8vGisuYjoeDPicmAA5TrAZbBzZaFD
+      decimals: 6
+      logoURI: /deployments/warp_routes/POG/logo.png
+      name: POG Coin
+      standard: EvmHypSynthetic
+      symbol: POG
+    - addressOrDenom: BjQqFUD95DkH6JV8vGisuYjoeDPicmAA5TrAZbBzZaFD
+      chainName: solanamainnet
+      collateralAddressOrDenom: PoGqbndpKNADjr2eGFjJz6Vu2fTpk37LDPbm6xCeY2v
+      connections:
+        - token: ethereum|apechain|0x633268639892C73Fa7340Ec1da4e397cf3913c8C
+      decimals: 6
+      logoURI: /deployments/warp_routes/POG/logo.png
+      name: POG Coin
+      standard: SealevelHypCollateral
+      symbol: POG
 POL/kalychain-polygon:
   tokens:
     - addressOrDenom: "0x706C9a63d7c8b7Aaf85DDCca52654645f470E8Ac"
