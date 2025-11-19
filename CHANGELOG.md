@@ -1,5 +1,61 @@
 # @hyperlane-xyz/registry
 
+## 23.5.0
+
+### Minor Changes
+
+- 265538c: Deprecate sovachain, holesky.
+- 1db1d84: update pulsechain usdc route to add avalanche, optimism and unichain
+- 6942fe2: Update Hyperlane dependencies to SDK 19.9.0 and Utils 19.9.0
+- 2030010: Added BNB <-> hBNB warp route, BSC to Radix
+- 573c540: Remove custom ISM from initially deployed Warp Routes.
+- 91730ec: Add USDC/incentiv artifacts
+- 1f2f92d: Update hyperlane deps to 19.8.0. Add CCTP version to mainnet and testnet cctp configs to confirm to the latest schema.
+- 0573034: Add POG coin warp route deployment artifacts
+- f43ca15: Remove faulty RPC on base
+- 050357a: Deploy CCTP v2 warp routes
+- ecf145d: Update EZETH configs to include plasma
+- e9d17c9: Add mantra usdc deployment artifacts
+- e2b91ed: Add CENT/incentiv artifacts
+- 201d09f: Updated starknet sepolia RPCs
+- 87688b6: Deployed XRD warp route between ethereum and radix
+- faea4d7: remove deprecated starknet RPC
+- d8e20e5: Add USDCSTAGE/eclipsemainnet route
+- 0051abe: Add WETH/incentiv yield route
+- b08f954: Adding Celestia Devnet + Eden Testnet to the registry
+- 2832953: Add Warden Protocol
+- fbe530e: Deprecate cheesechain.
+- 43e278f: Add incentiv USDT yield route
+- 57f2277: Add WBTC/incentiv warp route artifacts
+- 6c186fe: Update to new staticAggregationHookFactory implementation, update default hooks.
+- 5e0a702: Remove trailing slashes from block explorer urls
+- 2e08c55: Add LITKEY warp route deployment artifacts
+- 09b859f: Deploy to sovachain. Deprecate proofofplay.
+- 6eebb79: Add Ink, Monad, and Xlayer for EZETH
+- 8cf4bce: Add ustd/mantra warp route deployment artifacts
+- 7005645: Add SOL/incentiv-route, update transactionOverrides for incentiv
+- a687c25: Add CARR configs and logo
+- bd67600: Adds routes to Base for MAGIC and SMOL.
+
+### Patch Changes
+
+- ce1882d: Add missing entries to Radix addresses to comply with Zod schema.
+- 6491eb7: Fix gitleaks setup.
+- bf44bc6: Remove connections to monad for ezeth prod route
+- fe8252a: Update incentiv RPC url
+- 257e473: Update Renzo configs to use ownerOverrides
+- f1db8fb: Extend TIA/mantapacific
+- 5555be3: Deploy USDC/radix
+- 0d73b8c: Update litchain/LITKEY gecko IDs.
+- ca2bca6: Update incentiv owner to SAFE
+- bd90760: Refactor TIA/arbitrum
+- 45072bb: add BSC <-> Linea warp routes for mUSD
+- f7550d1: feat: Add mUSD route config
+- f32f809: Remove arbitrum leg from CARR/carrchain
+- af7b233: Deploy Mantra ETH, WBTC & HYPE.
+- 93a21a9: Add LITKEY metadata.
+- 49aa1ed: Update incentiv logo with correct one
+
 ## 23.4.0
 
 ### Minor Changes
