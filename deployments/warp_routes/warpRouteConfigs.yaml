@@ -130,6 +130,27 @@ ATN/holesky-piccadilly:
       name: Auton
       standard: EvmHypNative
       symbol: ATN
+BEST/ethereum:
+  tokens:
+    - addressOrDenom: "0x2E3B0f8eb2a98bC4ddF55477CC3B49bdd1da4EAF"
+      chainName: bsc
+      connections:
+        - token: ethereum|ethereum|0x8934bEDC734481071Ba486E6e5E7DDa21Fc4EB35
+      decimals: 18
+      logoURI: /deployments/warp_routes/BEST/logo.svg
+      name: Best Wallet Token
+      standard: EvmHypSynthetic
+      symbol: BEST
+    - addressOrDenom: "0x8934bEDC734481071Ba486E6e5E7DDa21Fc4EB35"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xba83b5ed3f12Bfa44f066f03eE0433419B74f469"
+      connections:
+        - token: ethereum|bsc|0x2E3B0f8eb2a98bC4ddF55477CC3B49bdd1da4EAF
+      decimals: 18
+      logoURI: /deployments/warp_routes/BEST/logo.svg
+      name: Best Wallet Token
+      standard: EvmHypCollateral
+      symbol: BEST
 BNB/bsc-kalychain:
   tokens:
     - addressOrDenom: "0x8d0e034611B691683377d2fC9958122a30F7DAab"
