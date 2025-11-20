@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 23.7.0
+
+### Minor Changes
+
+- ef1abc6: Add BEST token warp route deployment artifacts
+
 ## 23.6.0
 
 ### Minor Changes
