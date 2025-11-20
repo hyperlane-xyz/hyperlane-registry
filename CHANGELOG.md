@@ -1,5 +1,16 @@
 # @hyperlane-xyz/registry
 
+## 23.6.0
+
+### Minor Changes
+
+- 11f92e4: add wM and USDSC warp routes across ethereum, bsc, linea and soneium
+
+### Patch Changes
+
+- 643ca3b: Update monad public rpc
+- 533b6f1: update celestiatestnet grpc urls
+
 ## 23.5.0
 
 ### Minor Changes
