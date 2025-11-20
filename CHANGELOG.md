@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 23.4.1
+
+### Patch Changes
+
+- 20d85ee: Update edentestnet native token from EDEN to TIA (18 decimals)
+
 ## 23.4.0
 
 ### Minor Changes
