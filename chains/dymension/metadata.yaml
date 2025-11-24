@@ -1,47 +1,39 @@
 # yaml-language-server: $schema=../schema.json
-bech32Prefix: noble
-blockExplorers:
-- apiUrl: https://www.mintscan.io/noble
-  family: other
-  name: Mintscan
-  url: https://www.mintscan.io/noble
+# see https://github.com/hyperlane-xyz/hyperlane-registry/blob/main/chains/kyvetestnet/metadata.yaml
+bech32Prefix: dym
+# todo can add block explorers
 blocks:
   confirmations: 1
-  estimateBlockTime: 1.5
+  estimateBlockTime: 1
   reorgPeriod: 1
-canonicalAsset: uusdn
-chainId: noble-1
+canonicalAsset: adym
+chainId: dymension_1100-1
 contractAddressBytes: 32
 deployer:
-  name: Noble
-  url: https://noble.xyz
-displayName: Noble
+  name: DYMENSION
+  url: https://example.com
+displayName: Dymension
+gasCurrencyCoinGeckoId: dymension
 # Generated from: console.log(parseInt('0x'+Buffer.from('dymension_1100-1').toString('hex')) % 2147483647) // mod max signed 32
-domainId: 1570310961 # dymenion
-gasCurrencyCoinGeckoId: noble-dollar-usdn
+domainId: 1570310961
 gasPrice:
-  amount: "0.1"
-  denom: uusdn
+  amount: "100000000000.0"
+  denom: adym
 grpcUrls:
-- http: http://noble-grpc.polkachu.com:21590
-- http: https://grpc.noble.xyz:443
+- http: https://grpc-dymension.mzonder.com:443
 index:
-  chunk: 10
-  from: 28613000
-name: noble
+  from: 10201794
+isTestnet: false
+name: dymension
 nativeToken:
-  decimals: 6
-  denom: uusdn
-  name: Noble Dollar
-  symbol: USDN
+  decimals: 18
+  denom: adym
+  name: ADYM
+  symbol: ADYM
 protocol: cosmosnative
 restUrls:
-- http: https://noble-api.polkachu.com:443
-- http: https://api.noble.xyz:443
+- http: https://api-dymension.mzonder.com:443
 rpcUrls:
-- http: https://noble-rpc.polkachu.com:443
-- http: https://rpc.noble.xyz:443
+- http: https://rpc-dymension.mzonder.com:443
 slip44: 118
 technicalStack: other
-transactionOverrides:
-  gasPrice: 0.1
