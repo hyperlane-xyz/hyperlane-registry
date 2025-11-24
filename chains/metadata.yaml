@@ -4241,6 +4241,32 @@ kyvetestnet:
   technicalStack: other
   transactionOverrides:
     gasPrice: "2.0"
+lazai:
+  blockExplorers:
+    - apiUrl: https://explorer-api.mainnet.lazai.network/api
+      family: blockscout
+      name: LazAI Explorer
+      url: https://explorer.mainnet.lazai.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 52924
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: LazAI
+  domainId: 52924
+  gasCurrencyCoinGeckoId: metis-token
+  name: lazai
+  nativeToken:
+    decimals: 18
+    name: METIS
+    symbol: METIS
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet.lazai.network
+  technicalStack: other
 linea:
   blockExplorers:
     - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
@@ -7072,6 +7098,32 @@ solotestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://solo-testnet.rpc.caldera.xyz/http
+somnia:
+  blockExplorers:
+    - apiUrl: https://explorer.somnia.network/api
+      family: blockscout
+      name: Somnia Explorer
+      url: https://explorer.somnia.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 10
+  chainId: 5031
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Somnia
+  domainId: 5031
+  gasCurrencyCoinGeckoId: somnia
+  name: somnia
+  nativeToken:
+    decimals: 18
+    name: SOMI
+    symbol: SOMI
+  protocol: ethereum
+  rpcUrls:
+    - http: https://api.infra.mainnet.somnia.network
+  technicalStack: other
 somniatestnet:
   blockExplorers:
     - apiUrl: https://shannon-explorer.somnia.network/api
