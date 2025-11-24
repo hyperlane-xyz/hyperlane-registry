@@ -130,6 +130,27 @@ ATN/holesky-piccadilly:
       name: Auton
       standard: EvmHypNative
       symbol: ATN
+BEST/ethereum:
+  tokens:
+    - addressOrDenom: "0x2E3B0f8eb2a98bC4ddF55477CC3B49bdd1da4EAF"
+      chainName: bsc
+      connections:
+        - token: ethereum|ethereum|0x8934bEDC734481071Ba486E6e5E7DDa21Fc4EB35
+      decimals: 18
+      logoURI: /deployments/warp_routes/BEST/logo.svg
+      name: Best Wallet Token
+      standard: EvmHypSynthetic
+      symbol: BEST
+    - addressOrDenom: "0x8934bEDC734481071Ba486E6e5E7DDa21Fc4EB35"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xba83b5ed3f12Bfa44f066f03eE0433419B74f469"
+      connections:
+        - token: ethereum|bsc|0x2E3B0f8eb2a98bC4ddF55477CC3B49bdd1da4EAF
+      decimals: 18
+      logoURI: /deployments/warp_routes/BEST/logo.svg
+      name: Best Wallet Token
+      standard: EvmHypCollateral
+      symbol: BEST
 BNB/bsc-kalychain:
   tokens:
     - addressOrDenom: "0x8d0e034611B691683377d2fC9958122a30F7DAab"
@@ -4039,6 +4060,27 @@ PNDR/bsc-ethereum-lumiaprism:
       name: Ponder
       standard: EvmHypSynthetic
       symbol: PNDR
+POG/apechain:
+  tokens:
+    - addressOrDenom: "0x633268639892C73Fa7340Ec1da4e397cf3913c8C"
+      chainName: apechain
+      connections:
+        - token: sealevel|solanamainnet|BjQqFUD95DkH6JV8vGisuYjoeDPicmAA5TrAZbBzZaFD
+      decimals: 6
+      logoURI: /deployments/warp_routes/POG/logo.png
+      name: POG Coin
+      standard: EvmHypSynthetic
+      symbol: POG
+    - addressOrDenom: BjQqFUD95DkH6JV8vGisuYjoeDPicmAA5TrAZbBzZaFD
+      chainName: solanamainnet
+      collateralAddressOrDenom: PoGqbndpKNADjr2eGFjJz6Vu2fTpk37LDPbm6xCeY2v
+      connections:
+        - token: ethereum|apechain|0x633268639892C73Fa7340Ec1da4e397cf3913c8C
+      decimals: 6
+      logoURI: /deployments/warp_routes/POG/logo.png
+      name: POG Coin
+      standard: SealevelHypCollateral
+      symbol: POG
 POL/kalychain-polygon:
   tokens:
     - addressOrDenom: "0x706C9a63d7c8b7Aaf85DDCca52654645f470E8Ac"
@@ -8134,6 +8176,28 @@ USDN/auroratestnet-nobletestnet:
       name: Noble Dollar
       standard: CosmosNativeHypCollateral
       symbol: USDN
+USDSC/usdsc:
+  tokens:
+    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+      chainName: ethereum
+      collateralAddressOrDenom: "0x3f99231dD03a9F0E7e3421c92B7b90fbe012985a"
+      connections:
+        - token: ethereum|soneium|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDSC/logo.png
+      name: Startale USD
+      standard: EvmM0PortalLite
+      symbol: USDSC
+    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+      chainName: soneium
+      collateralAddressOrDenom: "0x3f99231dD03a9F0E7e3421c92B7b90fbe012985a"
+      connections:
+        - token: ethereum|ethereum|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDSC/logo.png
+      name: Startale USD
+      standard: EvmM0PortalLite
+      symbol: USDSC
 USDStar/solanamainnet-sonicsvm:
   tokens:
     - addressOrDenom: FRPTWpmnNPm4LS2a5NUL1QenUrzGDAuifZBUi1mTWTdt
@@ -11211,6 +11275,50 @@ tUSD/eclipsemainnet-ethereum:
       name: Eclipse Turbo USD
       standard: EvmHypCollateral
       symbol: tUSD
+wM/wrapped-m:
+  tokens:
+    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+      chainName: bsc
+      collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
+      connections:
+        - token: ethereum|ethereum|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+        - token: ethereum|linea|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+      decimals: 6
+      logoURI: /deployments/warp_routes/wM/logo.png
+      name: WrappedM by M^0
+      standard: EvmM0PortalLite
+      symbol: wM
+    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+      chainName: ethereum
+      collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
+      connections:
+        - token: ethereum|bsc|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+        - token: ethereum|soneium|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+      decimals: 6
+      logoURI: /deployments/warp_routes/wM/logo.png
+      name: WrappedM by M^0
+      standard: EvmM0PortalLite
+      symbol: wM
+    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+      chainName: linea
+      collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
+      connections:
+        - token: ethereum|bsc|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+      decimals: 6
+      logoURI: /deployments/warp_routes/wM/logo.png
+      name: WrappedM by M^0
+      standard: EvmM0PortalLite
+      symbol: wM
+    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+      chainName: soneium
+      collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
+      connections:
+        - token: ethereum|ethereum|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+      decimals: 6
+      logoURI: /deployments/warp_routes/wM/logo.png
+      name: WrappedM by M^0
+      standard: EvmM0PortalLite
+      symbol: wM
 weETHs/eclipsemainnet-ethereum:
   tokens:
     - addressOrDenom: 7Zx4wU1QAw98MfvnPFqRh1oyumek7G5VAX6TKB3U1tcn

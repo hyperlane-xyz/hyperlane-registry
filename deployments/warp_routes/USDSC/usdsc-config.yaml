@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  # M0 USDSC on Ethereum (HubPortal)
+  - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x3f99231dD03a9F0E7e3421c92B7b90fbe012985a"
+    connections:
+      - token: ethereum|soneium|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDSC/logo.png
+    name: Startale USD
+    standard: EvmM0PortalLite
+    symbol: USDSC
+  # M0 USDSC on Soneium (SpokePortal)
+  - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+    chainName: soneium
+    collateralAddressOrDenom: "0x3f99231dD03a9F0E7e3421c92B7b90fbe012985a"
+    connections:
+      - token: ethereum|ethereum|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDSC/logo.png
+    name: Startale USD
+    standard: EvmM0PortalLite
+    symbol: USDSC

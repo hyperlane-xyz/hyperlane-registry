@@ -210,6 +210,11 @@ ancient8:
   technicalStack: opstack
 apechain:
   blockExplorers:
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://apescan.io/api
+      family: etherscan
+      name: Apescan
+      url: https://apescan.io
     - apiUrl: https://apechain.calderaexplorer.xyz/api
       family: blockscout
       name: ApeChain Explorer
@@ -301,7 +306,7 @@ arbitrumnova:
     - apiUrl: https://api-nova.arbiscan.io/api
       family: etherscan
       name: Arbiscan Nova
-      url: https://nova.arbiscan.io/
+      url: https://nova.arbiscan.io
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -833,7 +838,7 @@ bepolia:
   technicalStack: other
 berachain:
   blockExplorers:
-    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/80094/etherscan/api/
+    - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/80094/etherscan/api
       family: routescan
       name: Berachain Explorer
       url: https://beratrail.io
@@ -893,7 +898,7 @@ blast:
       apiUrl: https://api.etherscan.io/v2/api?chainid=81457
       family: etherscan
       name: BlastScan
-      url: https://blastscan.io/
+      url: https://blastscan.io
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/81457/etherscan/api
       family: routescan
       name: Blast Explorer
@@ -925,7 +930,7 @@ blastsepolia:
     - apiUrl: https://api-sepolia.blastscan.io/api
       family: etherscan
       name: Blast Sepolia Testnet Explorer
-      url: https://sepolia.blastscan.io/
+      url: https://sepolia.blastscan.io
   chainId: 168587773
   deployer:
     name: tmr
@@ -1186,7 +1191,7 @@ canto:
     - apiUrl: https://explorer.plexnode.wtf/api
       family: blockscout
       name: Canto Explorer
-      url: https://explorer.plexnode.wtf/
+      url: https://explorer.plexnode.wtf
   chainId: 7700
   deployer:
     name: guy93354
@@ -1209,7 +1214,7 @@ cantotestnet:
     - apiUrl: https://testnet.tuber.build/api
       family: blockscout
       name: Canto Testnet Explorer
-      url: https://testnet.tuber.build/
+      url: https://testnet.tuber.build
   chainId: 7701
   deployer:
     name: guy93354
@@ -1407,7 +1412,7 @@ celestiatestnet:
     amount: "0.1"
     denom: utia
   grpcUrls:
-    - http: https://grpc-celestia-testnet.mzonder.com:443
+    - http: http://public-celestia-mocha4-consensus.numia.xyz:9090
   index:
     chunk: 10
     from: 6915786
@@ -1668,7 +1673,7 @@ connextsepolia:
     - apiUrl: https://scan.testnet.everclear.org/api
       family: blockscout
       name: Everclear Testnet Explorer
-      url: https://scan.testnet.everclear.org/
+      url: https://scan.testnet.everclear.org
   blocks:
     confirmations: 1
     estimateBlockTime: 10
@@ -2227,7 +2232,7 @@ deprecatedsuperposition:
     - apiUrl: https://explorer.superposition.so/api
       family: blockscout
       name: Superposition Explorer
-      url: https://explorer.superposition.so/
+      url: https://explorer.superposition.so
   blocks:
     confirmations: 1
     estimateBlockTime: 60
@@ -2389,10 +2394,10 @@ echos:
     - http: https://rpc-echos-mainnet-0.t.conduit.xyz
 eclipsemainnet:
   blockExplorers:
-    - apiUrl: https://api.eclipsescan.xyz/
+    - apiUrl: https://api.eclipsescan.xyz
       family: other
       name: Eclipse Explorer
-      url: https://eclipsescan.xyz/
+      url: https://eclipsescan.xyz
   blocks:
     confirmations: 1
     estimateBlockTime: 0.4
@@ -2443,7 +2448,7 @@ ecotestnet:
     - apiUrl: https://eco-testnet.explorer.caldera.xyz/api
       family: blockscout
       name: ECO Testnet explorer
-      url: https://eco-testnet.explorer.caldera.xyz/
+      url: https://eco-testnet.explorer.caldera.xyz
   blocks:
     confirmations: 1
     estimateBlockTime: 1
@@ -3054,7 +3059,7 @@ fraxtaltestnet:
     - apiUrl: https://api-holesky.fraxscan.com/api
       family: etherscan
       name: Fraxtal Testnet Explorer
-      url: https://holesky.fraxscan.com/
+      url: https://holesky.fraxscan.com
   chainId: 2522
   deployer:
     name: guy93354
@@ -3181,10 +3186,10 @@ galactica:
   technicalStack: arbitrumnitro
 galadrieldevnet:
   blockExplorers:
-    - apiUrl: https://explorer.galadriel.com/
+    - apiUrl: https://explorer.galadriel.com
       family: blockscout
       name: Galadriel Devnet explorer
-      url: https://explorer.galadriel.com/
+      url: https://explorer.galadriel.com
   chainId: 696969
   deployer:
     name: remsee
@@ -3454,7 +3459,7 @@ harmonytestnet:
     - apiUrl: https://explorer.testnet.harmony.one/api/v2
       family: blockscout
       name: Harmony Testnet Explorer
-      url: https://explorer.testnet.harmony.one/
+      url: https://explorer.testnet.harmony.one
   chainId: 1666700000
   deployer:
     name: JaunePomme
@@ -4105,7 +4110,7 @@ koitestnet:
     - apiUrl: https://koi-scan.darwinia.network/api
       family: blockscout
       name: Koi Explorer
-      url: https://koi-scan.darwinia.network/
+      url: https://koi-scan.darwinia.network
   chainId: 701
   deployer:
     name: guy93354
@@ -4329,7 +4334,7 @@ lisksepolia:
     - apiUrl: https://sepolia-blockscout.lisk.com/api
       family: blockscout
       name: Lisk Sepolia Testnet Explorer
-      url: https://sepolia-blockscout.lisk.com/
+      url: https://sepolia-blockscout.lisk.com
   chainId: 4202
   deployer:
     name: guy93354
@@ -4572,7 +4577,7 @@ mantlesepolia:
     - apiUrl: https://api-sepolia.mantlescan.xyz/api
       family: etherscan
       name: Mantle Testnet Explorer
-      url: https://sepolia.mantlescan.xyz/
+      url: https://sepolia.mantlescan.xyz
   chainId: 5003
   deployer:
     name: guy93354
@@ -4748,7 +4753,7 @@ metertestnet:
     - apiUrl: https://testnet.meter.io
       family: other
       name: Meter Testnet Explorer
-      url: https://scan.meter.io/
+      url: https://scan.meter.io
   chainId: 83
   deployer:
     name: JaunePomme
@@ -4927,7 +4932,7 @@ mint:
   technicalStack: opstack
 mintsepoliatest:
   blockExplorers:
-    - apiUrl: https://sepolia-testnet-explorer.mintchain.io/api/v2/
+    - apiUrl: https://sepolia-testnet-explorer.mintchain.io/api/v2
       family: blockscout
       name: Mint Sepolia Testnet explorer
       url: https://sepolia-testnet-explorer.mintchain.io
@@ -4976,7 +4981,7 @@ mitosis:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/124816/etherscan/api
       family: routescan
       name: Mitosis Explorer
-      url: https://mitoscan.io/
+      url: https://mitoscan.io
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -5128,7 +5133,7 @@ monad:
     symbol: MON
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.monad.xyz
+    - http: https://rpc-mainnet.monadinfra.com
   technicalStack: other
 monadtestnet:
   blockExplorers:
@@ -5558,7 +5563,7 @@ ontology:
     - apiUrl: https://explorer.ont.io/api
       family: other
       name: Ontology Explorer
-      url: https://explorer.ont.io/
+      url: https://explorer.ont.io
   blocks:
     confirmations: 1
     estimateBlockTime: 1
@@ -5640,7 +5645,7 @@ opbnbtestnet:
     - apiUrl: https://opbnb-testnet.bscscan.com/api
       family: etherscan
       name: opbnbscan
-      url: https://opbnb-testnet.bscscan.com/
+      url: https://opbnb-testnet.bscscan.com
   chainId: 5611
   deployer:
     name: JunayedMh
@@ -5877,7 +5882,7 @@ peaq:
     - apiUrl: https://peaq.subscan.io/api
       family: other
       name: Peaq Explorer
-      url: https://peaq.subscan.io/
+      url: https://peaq.subscan.io
   blocks:
     confirmations: 1
     estimateBlockTime: 6
@@ -6221,7 +6226,7 @@ pulsechain:
     - apiUrl: https://api.scan.pulsechain.com/api
       family: blockscout
       name: Pulsechain Explorer
-      url: https://scan.pulsechainfoundation.org/#/
+      url: https://scan.pulsechainfoundation.org/#
     - apiUrl: https://api.scan.pulsechain.com/api
       family: other
       name: Otterscan
@@ -6687,7 +6692,7 @@ sanko:
   technicalStack: arbitrumnitro
 sapphiretestnet:
   blockExplorers:
-    - apiUrl: https://nexus.oasis.io/v1/
+    - apiUrl: https://nexus.oasis.io/v1
       family: other
       name: Oasis Explorer
       url: https://explorer.oasis.io/testnet/sapphire
@@ -6717,7 +6722,7 @@ scroll:
       apiUrl: https://api.etherscan.io/v2/api?chainid=534352
       family: etherscan
       name: Scroll Explorer
-      url: https://scrollscan.com/
+      url: https://scrollscan.com
   blocks:
     confirmations: 1
     estimateBlockTime: 3
@@ -6748,7 +6753,7 @@ scrollsepolia:
     - apiUrl: https://api-sepolia.scrollscan.com/api
       family: etherscan
       name: Scroll Explorer
-      url: https://sepolia.scrollscan.dev/
+      url: https://sepolia.scrollscan.dev
   blocks:
     confirmations: 1
     estimateBlockTime: 3
@@ -7051,7 +7056,7 @@ solotestnet:
     - apiUrl: https://solo-testnet.explorer.caldera.xyz/api
       family: blockscout
       name: Solo Testnet Explorer
-      url: https://solo-testnet.explorer.caldera.xyz/
+      url: https://solo-testnet.explorer.caldera.xyz
   chainId: 8884571
   deployer:
     name: Solo Chain
@@ -7291,10 +7296,10 @@ sonictestnet:
     - http: https://rpc.testnet.soniclabs.com
 soon:
   blockExplorers:
-    - apiUrl: https://explorer.soo.network/
+    - apiUrl: https://explorer.soo.network
       family: other
       name: SOON Explorer
-      url: https://explorer.soo.network/
+      url: https://explorer.soo.network
   blocks:
     confirmations: 1
     estimateBlockTime: 0.05
@@ -7432,7 +7437,7 @@ starknet:
     - apiUrl: https://voyager.online/api
       family: voyager
       name: Starknet Explorer
-      url: https://voyager.online/
+      url: https://voyager.online
   blocks:
     confirmations: 1
     estimateBlockTime: 30
@@ -7714,7 +7719,7 @@ superpositionmainnet:
     - apiUrl: https://explorer.superposition.so/api
       family: blockscout
       name: Superposition Explorer
-      url: https://explorer.superposition.so/
+      url: https://explorer.superposition.so
   blocks:
     confirmations: 1
     estimateBlockTime: 60
@@ -8010,7 +8015,7 @@ tangletestnet:
     - apiUrl: https://testnet-explorer.tangle.tools/api
       family: blockscout
       name: Tangle Test Network Explorer
-      url: https://testnet-explorer.tangle.tools/
+      url: https://testnet-explorer.tangle.tools
   blocks:
     confirmations: 1
     estimateBlockTime: 6
@@ -8802,7 +8807,7 @@ zoratestnet:
     - apiUrl: https://sepolia.explorer.zora.energy/api
       family: blockscout
       name: Zora Testnet Explorer
-      url: https://sepolia.explorer.zora.energy/
+      url: https://sepolia.explorer.zora.energy
   chainId: 999999999
   deployer:
     name: guy93354

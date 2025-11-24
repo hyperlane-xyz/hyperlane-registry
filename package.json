@@ -1,7 +1,7 @@
 {
   "name": "@hyperlane-xyz/registry",
   "description": "A collection of configs, artifacts, and schemas for Hyperlane",
-  "version": "23.4.0",
+  "version": "23.6.0",
   "dependencies": {
     "jszip": "^3.10.1",
     "yaml": "2.4.5",
@@ -73,7 +73,7 @@
     "lint": "eslint ./src/ ./chains ./deployments",
     "lint:fix": "yarn lint --fix",
     "prettier": "prettier --write ./chains ./deployments",
-    "prepare": "husky",
+    "prepare": "husky install",
     "release": "yarn build && yarn changeset publish",
     "test:unit": "yarn build && mocha --require dotenv/config --config .mocharc.json './test/unit/*.test.ts' --exit",
     "test:health": "yarn build && mocha --config .mocharc.json './test/health/*.test.ts' --exit --parallel",
