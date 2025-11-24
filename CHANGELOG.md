@@ -8,7 +8,6 @@
 
 ### Patch Changes
 
-- 20d85ee: Update edentestnet native token from EDEN to TIA (18 decimals)
 - 643ca3b: Update monad public rpc
 - 533b6f1: update celestiatestnet grpc urls
 
