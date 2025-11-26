@@ -29,6 +29,13 @@ jobs:
       - name: Install Dependencies
         run: yarn install --no-immutable
 
+      - name: Generate GitHub App Token
+        id: generate-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.HYPER_GONK_APP_ID }}
+          private-key: ${{ secrets.HYPER_GONK_PRIVATE_KEY }}
+
       - name: Create Release PR or Publish to NPM
         id: changesets
         uses: changesets/action@v1
@@ -37,5 +44,5 @@ jobs:
           publish: yarn release
         env:
           NPM_CONFIG_PROVENANCE: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

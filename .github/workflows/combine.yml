@@ -11,12 +11,18 @@ jobs:
   combine:
     runs-on: ubuntu-latest
     steps:
+      - name: Generate GitHub App Token
+        id: generate-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.HYPER_GONK_APP_ID }}
+          private-key: ${{ secrets.HYPER_GONK_PRIVATE_KEY }}
+
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref || 'main' }}
-          # This action secret contains a fine-grained personal access token with permissions to read/write repo content
-          # It is necessary because the default GITHUB_TOKEN cannot re-trigger workflows after pushing
-          token: ${{ secrets.COMBINE_CI_TOKEN || secrets.GITHUB_TOKEN }}
+          # Use Hyper Gonk token to allow CI to trigger on commits pushed by this workflow
+          token: ${{ steps.generate-token.outputs.token }}
 
       - name: yarn-install
         uses: ./.github/actions/yarn-install-with-cache
