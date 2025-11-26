@@ -1,5 +1,18 @@
 # @hyperlane-xyz/registry
 
+## 23.7.0
+
+### Minor Changes
+
+- 52467cf: Deploy to somnia, lazai.
+- ef1abc6: Add BEST token warp route deployment artifacts
+
+### Patch Changes
+
+- b143d98: Modified token name from EDEN to TIA for edentestnet
+- b5b9a92: Re-add monad legs to ezeth prod.
+- 0326984: fix filename `address.yaml` -> `addresses.yaml` for LUKSO Testnet + update logo
+
 ## 23.6.0
 
 ### Minor Changes
