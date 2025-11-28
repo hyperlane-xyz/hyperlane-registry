@@ -29,8 +29,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "${{ steps.generate-token.outputs.app-slug }}[bot]"
+          git config user.email "${{ secrets.HYPER_GONK_APP_ID }}+${{ steps.generate-token.outputs.app-slug }}[bot]@users.noreply.github.com"
 
       - name: Setup Node.js 20
         uses: actions/setup-node@v4

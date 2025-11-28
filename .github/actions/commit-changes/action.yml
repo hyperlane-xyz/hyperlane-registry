@@ -1,5 +1,5 @@
 name: 'Commit Changes'
-description: 'Commit changes to the repository'
+description: 'Commit changes to the repository. Note: git user.name and user.email must be configured before calling this action.'
 inputs:
   message:
     description: 'The message to commit'
@@ -7,12 +7,6 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: configure-git
-      shell: bash
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
     - name: commit-changes
       shell: bash
       run: |

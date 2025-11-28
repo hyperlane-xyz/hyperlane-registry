@@ -30,6 +30,11 @@ jobs:
       - name: foundry-install
         uses: foundry-rs/foundry-toolchain@v1
 
+      - name: Configure Git for Hyper Gonk
+        run: |
+          git config user.name "${{ steps.generate-token.outputs.app-slug }}[bot]"
+          git config user.email "${{ secrets.HYPER_GONK_APP_ID }}+${{ steps.generate-token.outputs.app-slug }}[bot]@users.noreply.github.com"
+
       - name: combine-data
         run: |
           echo "Assembling warp route configs, chain metadata and addresses together..."
