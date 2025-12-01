@@ -27,10 +27,16 @@ jobs:
           ref: main
           token: ${{ steps.generate-token.outputs.token }}
 
+      - name: Get GitHub App User ID
+        id: get-user-id
+        run: echo "user-id=$(gh api /users/${{ steps.generate-token.outputs.app-slug }}[bot] --jq .id)" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+
       - name: Configure Git
         run: |
           git config user.name "${{ steps.generate-token.outputs.app-slug }}[bot]"
-          git config user.email "${{ secrets.HYPER_GONK_APP_ID }}+${{ steps.generate-token.outputs.app-slug }}[bot]@users.noreply.github.com"
+          git config user.email "${{ steps.get-user-id.outputs.user-id }}+${{ steps.generate-token.outputs.app-slug }}[bot]@users.noreply.github.com"
 
       - name: Setup Node.js 20
         uses: actions/setup-node@v4
