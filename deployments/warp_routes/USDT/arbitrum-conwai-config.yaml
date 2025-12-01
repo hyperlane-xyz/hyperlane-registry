@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x62DaD2F8767FF39A7ae7247eA2d793Ad193a3DED"
+    chainName: conwai
+    connections:
+      - token: ethereum|arbitrum|0x62DaD2F8767FF39A7ae7247eA2d793Ad193a3DED
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: USDT
+    standard: EvmHypSynthetic
+    symbol: USDT
+  - addressOrDenom: "0x62DaD2F8767FF39A7ae7247eA2d793Ad193a3DED"
+    chainName: arbitrum
+    coinGeckoId: tether
+    collateralAddressOrDenom: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+    connections:
+      - token: ethereum|conwai|0x62DaD2F8767FF39A7ae7247eA2d793Ad193a3DED
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypOwnerCollateral
+    symbol: Tether USD
