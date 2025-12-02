@@ -1,0 +1,36 @@
+luksotestnet:
+  interchainSecurityModule:
+    modules:
+      - relayer: "0xeA677E3Bb84a3FF1294f353a32B4d4Ef5393a2B5"
+        type: trustedRelayerIsm
+      - domains: {}
+        owner: "0xeA677E3Bb84a3FF1294f353a32B4d4Ef5393a2B5"
+        type: defaultFallbackRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
+  isNft: false
+  owner: "0x3414486376A5eE5CC2062d059920409EE81E52CD"
+  proxyAdmin:
+    address: "0x6a3Db9Bea74E11D24b8C73624C30Bd4002593153"
+    owner: "0x03492D5fF5e86cc06b4a40F8c0A0F72B730f50b9"
+  type: synthetic
+  name: Bridged USDC (test-1)
+  symbol: USDCt
+  decimals: 6
+sepolia:
+  interchainSecurityModule:
+    modules:
+      - relayer: "0xeA677E3Bb84a3FF1294f353a32B4d4Ef5393a2B5"
+        type: trustedRelayerIsm
+      - domains: {}
+        owner: "0xeA677E3Bb84a3FF1294f353a32B4d4Ef5393a2B5"
+        type: defaultFallbackRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
+  owner: "0x3414486376A5eE5CC2062d059920409EE81E52CD"
+  proxyAdmin:
+    address: "0x97Bbc6bBaFa5Ce3b2FA966c121Af63bD09e940f8"
+    owner: "0xfaD1C94469700833717Fa8a3017278BC1cA8031C"
+  token: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238"
+  type: collateral
+  decimals: 6

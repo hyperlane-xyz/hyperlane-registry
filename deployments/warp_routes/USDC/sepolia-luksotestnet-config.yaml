@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xfEFfff4c4496d7Aeea68E42ECee01387225CE413"
+    chainName: luksotestnet
+    connections:
+      - token: ethereum|sepolia|0x403bdC411ce30d2fE3b20c19850c1BA4fe41cFB3
+    standard: EvmHypSynthetic
+    decimals: 6
+    name: Bridged USDC (test-1)
+    symbol: USDCt
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+  - addressOrDenom: "0x403bdC411ce30d2fE3b20c19850c1BA4fe41cFB3"
+    chainName: sepolia
+    collateralAddressOrDenom: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238"
+    connections:
+      - token: ethereum|luksotestnet|0xfEFfff4c4496d7Aeea68E42ECee01387225CE413
+    standard: EvmHypCollateral
+    decimals: 6
+    name: USDC
+    symbol: USDC
+    logoURI: /deployments/warp_routes/USDC/logo.svg
