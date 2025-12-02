@@ -2336,6 +2336,42 @@ duckchain:
     - http: https://rpc.duckchain.io
     - http: https://rpc-hk.duckchain.io
   technicalStack: arbitrumnitro
+dymension:
+  bech32Prefix: dym
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  canonicalAsset: adym
+  chainId: dymension_1100-1
+  contractAddressBytes: 32
+  deployer:
+    name: DYMENSION
+    url: https://portal.dymension.xyz/
+  displayName: Dymension
+  domainId: 1570310961
+  gasCurrencyCoinGeckoId: dymension
+  gasPrice:
+    amount: "100000000000.0"
+    denom: adym
+  grpcUrls:
+    - http: https://grpc-dymension.mzonder.com:443
+  index:
+    from: 10201794
+  isTestnet: false
+  name: dymension
+  nativeToken:
+    decimals: 18
+    denom: adym
+    name: ADYM
+    symbol: ADYM
+  protocol: cosmosnative
+  restUrls:
+    - http: https://api-dymension.mzonder.com:443
+  rpcUrls:
+    - http: https://rpc-dymension.mzonder.com:443
+  slip44: 118
+  technicalStack: other
 ebi:
   blockExplorers:
     - apiUrl: https://explorer.ebi.xyz/api
@@ -2477,8 +2513,8 @@ edentestnet:
   name: edentestnet
   nativeToken:
     decimals: 18
-    name: Eden
-    symbol: EDEN
+    name: TIA
+    symbol: TIA
   protocol: ethereum
   rpcUrls:
     - http: http://rpc-evreth-sequencer-edennet-1-testnet.binary.builders:8545/
@@ -3770,6 +3806,10 @@ inclusivelayertestnet:
     - http: http://192.241.245.190:18449
   technicalStack: arbitrumnitro
 inevm:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://inevm.calderaexplorer.xyz/api
       family: blockscout
@@ -4241,6 +4281,32 @@ kyvetestnet:
   technicalStack: other
   transactionOverrides:
     gasPrice: "2.0"
+lazai:
+  blockExplorers:
+    - apiUrl: https://explorer-api.mainnet.lazai.network/api
+      family: blockscout
+      name: LazAI Explorer
+      url: https://explorer.mainnet.lazai.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 52924
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: LazAI
+  domainId: 52924
+  gasCurrencyCoinGeckoId: metis-token
+  name: lazai
+  nativeToken:
+    decimals: 18
+    name: METIS
+    symbol: METIS
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet.lazai.network
+  technicalStack: other
 linea:
   blockExplorers:
     - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
@@ -7072,6 +7138,32 @@ solotestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://solo-testnet.rpc.caldera.xyz/http
+somnia:
+  blockExplorers:
+    - apiUrl: https://explorer.somnia.network/api
+      family: blockscout
+      name: Somnia Explorer
+      url: https://explorer.somnia.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 10
+  chainId: 5031
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Somnia
+  domainId: 5031
+  gasCurrencyCoinGeckoId: somnia
+  name: somnia
+  nativeToken:
+    decimals: 18
+    name: SOMI
+    symbol: SOMI
+  protocol: ethereum
+  rpcUrls:
+    - http: https://api.infra.mainnet.somnia.network
+  technicalStack: other
 somniatestnet:
   blockExplorers:
     - apiUrl: https://shannon-explorer.somnia.network/api
