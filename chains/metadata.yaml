@@ -84,6 +84,32 @@ acala:
   rpcUrls:
     - http: https://eth-rpc-acala.aca-api.network
   technicalStack: polkadotsubstrate
+adichain:
+  blockExplorers:
+    - apiUrl: https://explorer.adichain/api
+      family: other
+      name: ADI Explorer
+      url: https://explorer.adichain
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 0
+  chainId: 36900
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: ADI Chain
+  domainId: 36900
+  gasCurrencyCoinGeckoId: adi-token
+  name: adichain
+  nativeToken:
+    decimals: 18
+    name: ADI
+    symbol: ADI
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.adichain
+  technicalStack: other
 alephzeroevmmainnet:
   availability:
     reasons:
@@ -4712,6 +4738,32 @@ matchain:
   rpcUrls:
     - http: https://rpc.matchain.io
   technicalStack: opstack
+megaeth:
+  blockExplorers:
+    - apiUrl: https://megaeth.blockscout.com/api
+      family: blockscout
+      name: MegaETH Explorer
+      url: https://megaeth.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 4326
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: MegaETH
+  domainId: 4326
+  gasCurrencyCoinGeckoId: ethereum
+  name: megaeth
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.megaeth.com
+  technicalStack: opstack
 megaethtestnet:
   blockExplorers:
     - apiUrl: https://www.megaexplorer.xyz/api
@@ -7524,6 +7576,33 @@ sovachain:
   rpcUrls:
     - http: https://rpc.sova.io
   technicalStack: opstack
+stable:
+  blockExplorers:
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=988
+      family: other
+      name: Stable Explorer
+      url: https://stablescan.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 988
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Stable
+  domainId: 988
+  gasCurrencyCoinGeckoId: tether
+  name: stable
+  nativeToken:
+    decimals: 18
+    name: gUSDT
+    symbol: gUSDT
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.stable.xyz
+  technicalStack: other
 starknet:
   blockExplorers:
     - apiUrl: https://voyager.online/api
