@@ -1,5 +1,23 @@
 # @hyperlane-xyz/registry
 
+## 23.7.0
+
+### Minor Changes
+
+- 4513728: - Add warp routes for wM on Ethereum <-> Mantra
+  - Update previous images of wM and USDSC from PNG to SVG format
+- 52467cf: Deploy to somnia, lazai.
+- 719493d: Deploy to megaeth, stable, adichain. Update ISMs on other chains in the batch (somnia, lazai).
+- ef1abc6: Add BEST token warp route deployment artifacts
+
+### Patch Changes
+
+- e285be2: Disable inevm.
+- b143d98: Modified token name from EDEN to TIA for edentestnet
+- 177f009: Registers Dymension mainnet chain
+- b5b9a92: Re-add monad legs to ezeth prod.
+- 0326984: fix filename `address.yaml` -> `addresses.yaml` for LUKSO Testnet + update logo
+
 ## 23.6.0
 
 ### Minor Changes
