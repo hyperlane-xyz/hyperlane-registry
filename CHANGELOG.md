@@ -1,5 +1,15 @@
 # @hyperlane-xyz/registry
 
+## 23.8.0
+
+### Minor Changes
+
+- 25efdb9: Update Hyperlane dependencies to SDK 19.11.0 and Utils 19.11.0
+
+### Patch Changes
+
+- a47d94b: Remove llamarpc from Ethereum RPC list
+
 ## 23.7.0
 
 ### Minor Changes
