@@ -26,6 +26,31 @@ type MethodsOf<T> = {
  */
 export type IRegistryMethods = MethodsOf<Omit<IRegistry, 'unimplementedMethods'>>;
 
+const isWriteRegistryMethodMap = {
+  addChain: true,
+  addWarpRoute: true,
+  addWarpRouteConfig: true,
+  getAddresses: false,
+  getChainAddresses: false,
+  getChainLogoUri: false,
+  getChainMetadata: false,
+  getChains: false,
+  getMetadata: false,
+  getUri: false,
+  getWarpDeployConfig: false,
+  getWarpDeployConfigs: false,
+  getWarpRoute: false,
+  getWarpRoutes: false,
+  listRegistryContent: false,
+  merge: false,
+  removeChain: true,
+  updateChain: true,
+} as const satisfies Record<IRegistryMethods, boolean>;
+
+export type IRegistryWriteMethod = {
+  [K in IRegistryMethods]: (typeof isWriteRegistryMethodMap)[K] extends true ? K : never;
+}[IRegistryMethods];
+
 export interface ChainFiles {
   metadata?: string;
   addresses?: string;
@@ -50,6 +75,7 @@ export enum RegistryType {
   Merged = 'merged',
   Partial = 'partial',
   Http = 'http',
+  Readonly = 'readonly',
 }
 
 export type AddWarpRouteConfigOptions =
