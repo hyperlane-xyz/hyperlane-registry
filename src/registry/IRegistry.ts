@@ -26,30 +26,7 @@ type MethodsOf<T> = {
  */
 export type IRegistryMethods = MethodsOf<Omit<IRegistry, 'unimplementedMethods'>>;
 
-const isWriteRegistryMethodMap = {
-  addChain: true,
-  addWarpRoute: true,
-  addWarpRouteConfig: true,
-  getAddresses: false,
-  getChainAddresses: false,
-  getChainLogoUri: false,
-  getChainMetadata: false,
-  getChains: false,
-  getMetadata: false,
-  getUri: false,
-  getWarpDeployConfig: false,
-  getWarpDeployConfigs: false,
-  getWarpRoute: false,
-  getWarpRoutes: false,
-  listRegistryContent: false,
-  merge: false,
-  removeChain: true,
-  updateChain: true,
-} as const satisfies Record<IRegistryMethods, boolean>;
-
-export type IRegistryWriteMethod = {
-  [K in IRegistryMethods]: (typeof isWriteRegistryMethodMap)[K] extends true ? K : never;
-}[IRegistryMethods];
+export type IRegistryWriteMethod = keyof IWriteRegistry;
 
 export interface ChainFiles {
   metadata?: string;
@@ -86,7 +63,7 @@ export type AddWarpRouteConfigOptions =
       warpRouteId: WarpRouteId;
     };
 
-export interface IRegistry {
+interface IBaseRegistry {
   type: RegistryType;
   uri: string;
   /**
@@ -95,7 +72,9 @@ export interface IRegistry {
    * If this property is undefined, all methods are assumed to be implemented.
    */
   readonly unimplementedMethods?: Set<IRegistryMethods>;
+}
 
+export interface IReadRegistry extends IBaseRegistry {
   getUri(itemPath?: string): string;
 
   listRegistryContent(): MaybePromise<RegistryContent>;
@@ -110,22 +89,30 @@ export interface IRegistry {
 
   getChainLogoUri(chainName: ChainName): Promise<string | null>;
 
+  getWarpRoute(routeId: string): MaybePromise<WarpCoreConfig | null>;
+  getWarpRoutes(filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap>;
+
+  getWarpDeployConfig(routeId: string): MaybePromise<WarpRouteDeployConfig | null>;
+  getWarpDeployConfigs(filter?: WarpRouteFilterParams): MaybePromise<WarpDeployConfigMap>;
+
+  // TODO define more deployment artifact related methods
+}
+
+export interface IWriteRegistry extends IBaseRegistry {
   addChain(chain: UpdateChainParams): MaybePromise<void>;
   updateChain(chain: UpdateChainParams): MaybePromise<void>;
   removeChain(chain: ChainName): MaybePromise<void>;
 
-  getWarpRoute(routeId: string): MaybePromise<WarpCoreConfig | null>;
-  getWarpRoutes(filter?: WarpRouteFilterParams): MaybePromise<WarpRouteConfigMap>;
   addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteConfigOptions): MaybePromise<void>;
   addWarpRouteConfig(
     config: WarpRouteDeployConfig,
     options: AddWarpRouteConfigOptions,
   ): MaybePromise<void>;
 
-  getWarpDeployConfig(routeId: string): MaybePromise<WarpRouteDeployConfig | null>;
-  getWarpDeployConfigs(filter?: WarpRouteFilterParams): MaybePromise<WarpDeployConfigMap>;
-
   // TODO define more deployment artifact related methods
-
-  merge(otherRegistry: IRegistry): IRegistry;
 }
+
+export type IRegistry = IReadRegistry &
+  IWriteRegistry & {
+    merge(otherRegistry: IRegistry): IRegistry;
+  };
