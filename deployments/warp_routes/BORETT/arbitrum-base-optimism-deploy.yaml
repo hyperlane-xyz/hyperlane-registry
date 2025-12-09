@@ -1,0 +1,82 @@
+arbitrum:
+  owner: "0x0BaC59Fc3865226b1e95602cBc9A5d2880F76030"
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    address: "0xf09a409D8209Ee1C85CC98CD663d9496374ce83F"
+    type: staticAggregationIsm
+    modules:
+      - owner: "0x0BaC59Fc3865226b1e95602cBc9A5d2880F76030"
+        address: "0x79a22F0bBB176A0A718BB1839b99126EC37cB8F0"
+        type: defaultFallbackRoutingIsm
+        domains: {}
+    threshold: 1
+  type: synthetic
+  name: BORETT
+  symbol: BORETT
+  decimals: 18
+  remoteRouters:
+    "10":
+      address: "0x8066d0Cd9c7192B3700A2f4bCfc726944257Bb28"
+    "8453":
+      address: "0xe2DB44eBadBE4Bef311B38953C7E4457b0D792F9"
+  proxyAdmin:
+    address: "0x0C24b23A407f6a36dfA6FB5A90Ec2E35E78654a7"
+    owner: "0x0BaC59Fc3865226b1e95602cBc9A5d2880F76030"
+  destinationGas:
+    "10": "64000"
+    "8453": "68000"
+base:
+  owner: "0x0BaC59Fc3865226b1e95602cBc9A5d2880F76030"
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    address: "0x65c32db6bDE0323B509179676143ab86C964bd0c"
+    type: staticAggregationIsm
+    modules:
+      - owner: "0x0BaC59Fc3865226b1e95602cBc9A5d2880F76030"
+        address: "0xbd179F36682b0949aD5716Cda3e1662172743C0b"
+        type: defaultFallbackRoutingIsm
+        domains: {}
+    threshold: 1
+  type: collateral
+  name: BORETT
+  symbol: BORETT
+  decimals: 18
+  token: "0x8A4252D94176308817eD81572Ec9B11618D8fb55"
+  remoteRouters:
+    "10":
+      address: "0x8066d0Cd9c7192B3700A2f4bCfc726944257Bb28"
+    "42161":
+      address: "0xEEe0d6592A469560E76372c8aed347BE16894405"
+  proxyAdmin:
+    address: "0x93A0D853571FeBFBf9F181332deFc198181719A9"
+    owner: "0x0BaC59Fc3865226b1e95602cBc9A5d2880F76030"
+  destinationGas:
+    "10": "64000"
+    "42161": "64000"
+optimism:
+  owner: "0x0BaC59Fc3865226b1e95602cBc9A5d2880F76030"
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    address: "0x728842B46A177A5a9c16c601D32d45c41114e7D0"
+    type: staticAggregationIsm
+    modules:
+      - owner: "0x0BaC59Fc3865226b1e95602cBc9A5d2880F76030"
+        address: "0xEEe0d6592A469560E76372c8aed347BE16894405"
+        type: defaultFallbackRoutingIsm
+        domains: {}
+    threshold: 1
+  type: synthetic
+  name: BORETT
+  symbol: BORETT
+  decimals: 18
+  remoteRouters:
+    "8453":
+      address: "0xe2DB44eBadBE4Bef311B38953C7E4457b0D792F9"
+    "42161":
+      address: "0xEEe0d6592A469560E76372c8aed347BE16894405"
+  proxyAdmin:
+    address: "0x30Afd555381D88A2Da454CcAe7c6457d7c09D989"
+    owner: "0x0BaC59Fc3865226b1e95602cBc9A5d2880F76030"
+  destinationGas:
+    "8453": "68000"
+    "42161": "64000"
