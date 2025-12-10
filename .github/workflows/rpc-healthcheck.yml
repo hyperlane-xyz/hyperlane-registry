@@ -15,7 +15,7 @@ jobs:
       - name: pnpm-cache
         uses: ./.github/actions/pnpm-cache
       - name: test
-        run: pnpm test:rpc-health-mainnet
+        run: pnpm run test:rpc-health-mainnet
 
   rpc-health-testnet:
     runs-on: ubuntu-latest
@@ -24,4 +24,4 @@ jobs:
       - name: pnpm-cache
         uses: ./.github/actions/pnpm-cache
       - name: test
-        run: pnpm test:rpc-health-testnet
+        run: pnpm run test:rpc-health-testnet

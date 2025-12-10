@@ -67,12 +67,12 @@ jobs:
       - name: Run build
         id: build
         continue-on-error: true
-        run: pnpm build
+        run: pnpm run build
 
       - name: Run tests
         id: test
         continue-on-error: true
-        run: pnpm test:unit
+        run: pnpm run test:unit
 
       - name: Create changeset
         run: |

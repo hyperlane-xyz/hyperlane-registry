@@ -20,7 +20,7 @@ jobs:
       - name: pnpm-cache
         uses: ./.github/actions/pnpm-cache
       - name: build
-        run: pnpm build
+        run: pnpm run build
 
   lint:
     runs-on: ubuntu-latest
@@ -29,7 +29,7 @@ jobs:
       - name: pnpm-cache
         uses: ./.github/actions/pnpm-cache
       - name: lint
-        run: pnpm lint
+        run: pnpm run lint
 
   prettier:
     runs-on: ubuntu-latest
@@ -53,7 +53,7 @@ jobs:
       - name: pnpm-cache
         uses: ./.github/actions/pnpm-cache
       - name: test
-        run: pnpm test:unit
+        run: pnpm run test:unit
 
       - name: validate-file-path
         run: |
@@ -78,4 +78,4 @@ jobs:
       - name: pnpm-cache
         uses: ./.github/actions/pnpm-cache
       - name: changeset
-        run: pnpm changeset status --since origin/main
+        run: pnpm exec changeset status --since origin/main
