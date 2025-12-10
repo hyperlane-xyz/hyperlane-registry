@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x4eF3E6A7985EEEBefFDC3BE455BDeA203697E713"
+    chainName: bsc
+    collateralAddressOrDenom: "0x55d398326f99059ff775485246999027b3197955"
+    connections:
+      - token: ethereum|polygon|0x084D3ce85898b801Efc4FEccD85221A7EfA01B48
+    decimals: 18
+    name: Tether USD
+    standard: EvmHypCollateralFiat
+    symbol: USDT
+  - addressOrDenom: "0x084D3ce85898b801Efc4FEccD85221A7EfA01B48"
+    chainName: polygon
+    collateralAddressOrDenom: "0xc2132d05d31c914a87c6611c10748aeb04b58e8f"
+    connections:
+      - token: ethereum|bsc|0x4eF3E6A7985EEEBefFDC3BE455BDeA203697E713
+    decimals: 18
+    name: Tether USD
+    standard: EvmHypCollateralFiat
+    symbol: USDT
