@@ -18,7 +18,7 @@ jobs:
           app-id: ${{ secrets.HYPER_GONK_APP_ID }}
           private-key: ${{ secrets.HYPER_GONK_PRIVATE_KEY }}
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: ${{ github.head_ref || 'main' }}
           # Use Hyper Gonk token to allow CI to trigger on commits pushed by this workflow
@@ -52,7 +52,7 @@ jobs:
           message: "Update chain metadata and address files"
 
       - name: setup-node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 20
 

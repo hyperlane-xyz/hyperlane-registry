@@ -16,7 +16,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: pnpm-cache
         uses: ./.github/actions/pnpm-cache
       - name: build
@@ -25,7 +25,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: pnpm-cache
         uses: ./.github/actions/pnpm-cache
       - name: lint
@@ -34,7 +34,7 @@ jobs:
   prettier:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: pnpm-cache
         uses: ./.github/actions/pnpm-cache
       - name: prettier
@@ -49,7 +49,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: pnpm-cache
         uses: ./.github/actions/pnpm-cache
       - name: test
@@ -71,7 +71,7 @@ jobs:
     if: ${{ github.event_name == 'pull_request' && github.head_ref != 'changeset-release/main' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           # check out full history
           fetch-depth: 0

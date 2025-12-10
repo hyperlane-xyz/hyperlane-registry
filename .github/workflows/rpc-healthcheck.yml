@@ -11,7 +11,7 @@ jobs:
   rpc-health-mainnet:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: pnpm-cache
         uses: ./.github/actions/pnpm-cache
       - name: test
@@ -20,7 +20,7 @@ jobs:
   rpc-health-testnet:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: pnpm-cache
         uses: ./.github/actions/pnpm-cache
       - name: test
