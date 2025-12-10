@@ -17,29 +17,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: yarn-install-with-cache
-        uses: ./.github/actions/yarn-install-with-cache
+      - name: pnpm-cache
+        uses: ./.github/actions/pnpm-cache
       - name: build
-        run: yarn run build
+        run: pnpm build
 
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: yarn-install-with-cache
-        uses: ./.github/actions/yarn-install-with-cache
+      - name: pnpm-cache
+        uses: ./.github/actions/pnpm-cache
       - name: lint
-        run: yarn run lint
+        run: pnpm lint
 
   prettier:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: yarn-install-with-cache
-        uses: ./.github/actions/yarn-install-with-cache
+      - name: pnpm-cache
+        uses: ./.github/actions/pnpm-cache
       - name: prettier
         run: |
-          yarn run prettier
+          pnpm prettier
           CHANGES=$(git status -s)
           if [[ ! -z $CHANGES ]]; then
             echo "Changes found: $CHANGES"
@@ -50,10 +50,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: yarn-install-with-cache
-        uses: ./.github/actions/yarn-install-with-cache
+      - name: pnpm-cache
+        uses: ./.github/actions/pnpm-cache
       - name: test
-        run: yarn run test:unit
+        run: pnpm test:unit
 
       - name: validate-file-path
         run: |
@@ -75,7 +75,7 @@ jobs:
         with:
           # check out full history
           fetch-depth: 0
-      - name: yarn-install-with-cache
-        uses: ./.github/actions/yarn-install-with-cache
+      - name: pnpm-cache
+        uses: ./.github/actions/pnpm-cache
       - name: changeset
-        run: yarn changeset status --since origin/main
+        run: pnpm changeset status --since origin/main

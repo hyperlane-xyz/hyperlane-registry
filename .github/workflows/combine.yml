@@ -24,8 +24,8 @@ jobs:
           # Use Hyper Gonk token to allow CI to trigger on commits pushed by this workflow
           token: ${{ steps.generate-token.outputs.token }}
 
-      - name: yarn-install
-        uses: ./.github/actions/yarn-install-with-cache
+      - name: pnpm-cache
+        uses: ./.github/actions/pnpm-cache
 
       - name: foundry-install
         uses: foundry-rs/foundry-toolchain@v1
@@ -44,7 +44,7 @@ jobs:
       - name: combine-data
         run: |
           echo "Assembling warp route configs, chain metadata and addresses together..."
-          yarn build
+          pnpm build
 
       - name: commit-changes
         uses: ./.github/actions/commit-changes
