@@ -7553,13 +7553,6 @@ USDC/paradex:
       chainName: paradex
       coinGeckoId: usd-coin
       collateralAddressOrDenom: "0x7348407ebad690fec0cc8597e87dc16ef7b269a655ff72587dafff83d462be2"
-      connections:
-        - token: ethereum|arbitrum|0xF5f93d26229482adCA3e42F84D08d549cF131658
-        - token: ethereum|base|0x0BA30bdd7D3C510De16c47385102c0B7068f4f33
-        - token: ethereum|ethereum|0x6912088890254E69970baEdB03284fB3D8fBCDA0
-        - token: ethereum|mode|0xcA4b9B3b6Dae4E5Dc2D749b2bD400ef62E7ae642
-        - token: sealevel|solanamainnet|CYiUT9WzmHebQQJ5bBQSsWY7hW2GSwRgQ8gYZLHN7V6D
-        - token: starknet|starknet|0x065aa53156379692b54141146c342f90e9c7a1243896a0be0fea6c8960b9261c
       decimals: 6
       logoURI: /deployments/warp_routes/USDC/logo.svg
       name: USD Coin
@@ -7903,6 +7896,7 @@ USDC/subtensor:
   tokens:
     - addressOrDenom: "0x4337e529a4f6429668746db798416961c48F07BE"
       chainName: arbitrum
+      coinGeckoId: usd-coin
       collateralAddressOrDenom: "0xaf88d065e77c8cc2239327c5edb3a432268e5831"
       connections:
         - token: ethereum|base|0x26af973A5b256F9B9bc0B1A3c566de1566568a87
@@ -7918,6 +7912,7 @@ USDC/subtensor:
       symbol: USDC
     - addressOrDenom: "0x26af973A5b256F9B9bc0B1A3c566de1566568a87"
       chainName: base
+      coinGeckoId: usd-coin
       collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
       connections:
         - token: ethereum|arbitrum|0x4337e529a4f6429668746db798416961c48F07BE
@@ -7933,6 +7928,7 @@ USDC/subtensor:
       symbol: USDC
     - addressOrDenom: "0x3C43C421f08e2a48889eA3F75a747b7a7a366A0b"
       chainName: ethereum
+      coinGeckoId: usd-coin
       collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
       connections:
         - token: ethereum|arbitrum|0x4337e529a4f6429668746db798416961c48F07BE
@@ -7948,6 +7944,7 @@ USDC/subtensor:
       symbol: USDC
     - addressOrDenom: "0x52fCcE3778D4Ea883a1F9F697D3710e470D32505"
       chainName: polygon
+      coinGeckoId: usd-coin
       collateralAddressOrDenom: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
       connections:
         - token: ethereum|arbitrum|0x4337e529a4f6429668746db798416961c48F07BE
@@ -7993,6 +7990,7 @@ USDC/subtensor:
       symbol: USDC
     - addressOrDenom: "0x155cbBCD975AF593dC7D5A547120f73dcF1A33e0"
       chainName: unichain
+      coinGeckoId: usd-coin
       collateralAddressOrDenom: "0x078D782b760474a361dDA0AF3839290b0EF57AD6"
       connections:
         - token: ethereum|arbitrum|0x4337e529a4f6429668746db798416961c48F07BE
@@ -9241,11 +9239,22 @@ WSTETH/ethereum-form:
       symbol: wstETH
 XRD/radix:
   tokens:
+    - addressOrDenom: "0x574134917E3d78705Ed865b6EC58Fa67F95F9a7E"
+      chainName: base
+      connections:
+        - token: ethereum|ethereum|0x94a766ebdfbBFF21428b6C504Be7405e74c02774
+        - token: radix|radix|component_rdx1crrj42g0855jnpvfs6t9tff25vtq3lm292g3h07xrnz9l49mnsu3hy
+      decimals: 18
+      logoURI: /deployments/warp_routes/XRD/logo.svg
+      name: E-RADIX
+      standard: EvmHypSynthetic
+      symbol: eXRD
     - addressOrDenom: "0x94a766ebdfbBFF21428b6C504Be7405e74c02774"
       chainName: ethereum
       coinGeckoId: radix
       collateralAddressOrDenom: "0x6468e79A80C0eaB0F9A2B574c8d5bC374Af59414"
       connections:
+        - token: ethereum|base|0x574134917E3d78705Ed865b6EC58Fa67F95F9a7E
         - token: radix|radix|component_rdx1crrj42g0855jnpvfs6t9tff25vtq3lm292g3h07xrnz9l49mnsu3hy
       decimals: 18
       logoURI: /deployments/warp_routes/XRD/logo.svg
@@ -9257,6 +9266,7 @@ XRD/radix:
       coinGeckoId: radix
       collateralAddressOrDenom: resource_rdx1tknxxxxxxxxxradxrdxxxxxxxxx009923554798xxxxxxxxxradxrd
       connections:
+        - token: ethereum|base|0x574134917E3d78705Ed865b6EC58Fa67F95F9a7E
         - token: ethereum|ethereum|0x94a766ebdfbBFF21428b6C504Be7405e74c02774
       decimals: 18
       logoURI: /deployments/warp_routes/XRD/logo.svg

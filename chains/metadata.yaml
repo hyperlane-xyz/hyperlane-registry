@@ -110,6 +110,32 @@ adichain:
   rpcUrls:
     - http: https://rpc.adichain
   technicalStack: other
+aleotestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.explorer.provable.com
+      family: other
+      name: Provable Explorer
+      url: https://testnet.explorer.provable.com
+  blocks:
+    confirmations: 0
+    estimateBlockTime: 3
+    reorgPeriod: 0
+  chainId: 1
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Aleo Testnet
+  domainId: 1617853565
+  isTestnet: true
+  name: aleotestnet
+  nativeToken:
+    decimals: 6
+    denom: credits
+    name: Aleo
+    symbol: ALEO
+  protocol: aleo
+  rpcUrls:
+    - http: https://api.explorer.provable.com/v1
 alephzeroevmmainnet:
   availability:
     reasons:

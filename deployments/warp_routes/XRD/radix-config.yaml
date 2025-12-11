@@ -1,9 +1,20 @@
 tokens:
+  - addressOrDenom: "0x574134917E3d78705Ed865b6EC58Fa67F95F9a7E"
+    chainName: base
+    connections:
+      - token: ethereum|ethereum|0x94a766ebdfbBFF21428b6C504Be7405e74c02774
+      - token: radix|radix|component_rdx1crrj42g0855jnpvfs6t9tff25vtq3lm292g3h07xrnz9l49mnsu3hy
+    decimals: 18
+    logoURI: /deployments/warp_routes/XRD/logo.svg
+    name: E-RADIX
+    standard: EvmHypSynthetic
+    symbol: eXRD
   - addressOrDenom: "0x94a766ebdfbBFF21428b6C504Be7405e74c02774"
     chainName: ethereum
     coinGeckoId: radix
     collateralAddressOrDenom: "0x6468e79A80C0eaB0F9A2B574c8d5bC374Af59414"
     connections:
+      - token: ethereum|base|0x574134917E3d78705Ed865b6EC58Fa67F95F9a7E
       - token: radix|radix|component_rdx1crrj42g0855jnpvfs6t9tff25vtq3lm292g3h07xrnz9l49mnsu3hy
     decimals: 18
     logoURI: /deployments/warp_routes/XRD/logo.svg
@@ -15,6 +26,7 @@ tokens:
     coinGeckoId: radix
     collateralAddressOrDenom: resource_rdx1tknxxxxxxxxxradxrdxxxxxxxxx009923554798xxxxxxxxxradxrd
     connections:
+      - token: ethereum|base|0x574134917E3d78705Ed865b6EC58Fa67F95F9a7E
       - token: ethereum|ethereum|0x94a766ebdfbBFF21428b6C504Be7405e74c02774
     decimals: 18
     logoURI: /deployments/warp_routes/XRD/logo.svg
