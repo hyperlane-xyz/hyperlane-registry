@@ -19,9 +19,11 @@ import {
   RegistryType,
   AddWarpRouteConfigOptions,
   RegistryContent,
+  IRegistryWriteMethod,
 } from '../../src/registry/IRegistry.js';
 import { MergedRegistry } from '../../src/registry/MergedRegistry.js';
 import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
+import { ReadonlyRegistry } from '../../src/registry/ReadonlyRegistry.js';
 import { ChainAddresses, WarpRouteId } from '../../src/types.js';
 import { getRegistry } from '../../src/fs/registry-utils.js';
 import { DEFAULT_GITHUB_REGISTRY, PROXY_DEPLOYED_URL } from '../../src/consts.js';
@@ -65,7 +67,15 @@ describe('Registry utilities', () => {
     registries: [githubRegistry, localRegistry, partialRegistry],
   });
 
-  for (const registry of [githubRegistry, localRegistry, partialRegistry, mergedRegistry]) {
+  const readonlyRegistry = new ReadonlyRegistry(mergedRegistry);
+
+  for (const registry of [
+    githubRegistry,
+    localRegistry,
+    partialRegistry,
+    mergedRegistry,
+    readonlyRegistry,
+  ]) {
     it(`Lists all chains for ${registry.type} registry`, async () => {
       const chains = await registry.getChains();
       expect(chains.length).to.be.greaterThan(0);
@@ -76,7 +86,11 @@ describe('Registry utilities', () => {
       const metadata = await registry.getMetadata();
       expect(Object.keys(metadata).length).to.be.greaterThan(0);
       expect(metadata['ethereum'].chainId).to.eql(1);
-      if (registry.type === RegistryType.Partial || registry.type === RegistryType.Merged) {
+      if (
+        registry.type === RegistryType.Partial ||
+        registry.type === RegistryType.Merged ||
+        registry.type === RegistryType.Readonly
+      ) {
         expect(metadata['ethereum'].displayName).to.eql(MOCK_DISPLAY_NAME);
       } else {
         expect(metadata['ethereum'].displayName).to.eql('Ethereum');
@@ -259,6 +273,132 @@ describe('Registry utilities', () => {
       expect(localAddresses['ethereum'].mailbox).to.not.eql(MOCK_ADDRESS);
       // Confirm other chains are not affected
       expect(localAddresses['arbitrum']).to.eql(localAddresses['arbitrum']);
+    });
+  });
+
+  describe('ReadonlyRegistry', async () => {
+    let consoleInfoStub: sinon.SinonStub;
+
+    beforeEach(() => {
+      consoleInfoStub = sinon.stub(console, 'info');
+    });
+
+    afterEach(() => {
+      sinon.restore();
+    });
+
+    it('Has the correct registry type', () => {
+      expect(readonlyRegistry.type).to.eql(RegistryType.Readonly);
+    });
+
+    const writeOperationTestCases: Record<
+      IRegistryWriteMethod,
+      { methodName: IRegistryWriteMethod; action: () => Promise<void> }
+    > = {
+      addChain: {
+        methodName: 'addChain',
+        action: async () => {
+          const mockMetadata: ChainMetadata = {
+            ...(await localRegistry.getChainMetadata('ethereum'))!,
+            name: MOCK_CHAIN_NAME,
+          };
+          const mockAddresses: ChainAddresses = await localRegistry.getChainAddresses('ethereum')!;
+          await readonlyRegistry.addChain({
+            chainName: MOCK_CHAIN_NAME,
+            metadata: mockMetadata,
+            addresses: mockAddresses,
+          });
+        },
+      },
+      updateChain: {
+        methodName: 'updateChain',
+        action: async () => {
+          const mockMetadata: ChainMetadata = {
+            ...(await localRegistry.getChainMetadata('ethereum'))!,
+            name: 'ethereum',
+            displayName: 'Updated Name',
+          };
+          const mockAddresses: ChainAddresses = await localRegistry.getChainAddresses('ethereum')!;
+          await readonlyRegistry.updateChain({
+            chainName: 'ethereum',
+            metadata: mockMetadata,
+            addresses: mockAddresses,
+          });
+        },
+      },
+      removeChain: {
+        methodName: 'removeChain',
+        action: async () => {
+          await readonlyRegistry.removeChain('ethereum');
+        },
+      },
+      addWarpRoute: {
+        methodName: 'addWarpRoute',
+        action: async () => {
+          await readonlyRegistry.addWarpRoute({
+            tokens: [
+              { chainName: MOCK_CHAIN_NAME, symbol: MOCK_SYMBOL, standard: 'EvmHypCollateral' },
+              { chainName: MOCK_CHAIN_NAME2, symbol: MOCK_SYMBOL, standard: 'EvmHypSynthetic' },
+            ] as any,
+            options: {},
+          });
+        },
+      },
+      addWarpRouteConfig: {
+        methodName: 'addWarpRouteConfig',
+        action: async () => {
+          await readonlyRegistry.addWarpRouteConfig(
+            {
+              [MOCK_CHAIN_NAME]: {
+                type: TokenType.collateral,
+                owner: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+                token: '0x0000000000000000000000000000000000000001',
+              },
+              [MOCK_CHAIN_NAME2]: {
+                type: TokenType.synthetic,
+                owner: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+              },
+            },
+            { symbol: MOCK_SYMBOL },
+          );
+        },
+      },
+    };
+
+    Object.values(writeOperationTestCases).forEach(({ methodName, action }) => {
+      it(`Blocks ${methodName} and logs a message`, async () => {
+        await action();
+
+        sinon.assert.calledWith(
+          consoleInfoStub,
+          sinon.match(new RegExp(`Skipping "${methodName}" method call as registry is readonly`)),
+        );
+      });
+    });
+
+    it('Delegates read operations to inner registry', async () => {
+      const chains = await readonlyRegistry.getChains();
+      const metadata = await readonlyRegistry.getMetadata();
+      const addresses = await readonlyRegistry.getAddresses();
+      const chainMetadata = await readonlyRegistry.getChainMetadata('ethereum');
+      const chainAddresses = await readonlyRegistry.getChainAddresses('ethereum');
+
+      expect(chains.length).to.be.greaterThan(0);
+      expect(Object.keys(metadata).length).to.be.greaterThan(0);
+      expect(Object.keys(addresses).length).to.be.greaterThan(0);
+      expect(chainMetadata).to.not.be.null;
+      expect(chainAddresses).to.not.be.null;
+    });
+
+    it('Returns a new ReadonlyRegistry when merged', () => {
+      const newRegistry = new PartialRegistry({
+        chainMetadata: { testchain: { chainId: 999, displayName: 'Test Chain' } },
+      });
+
+      const merged = readonlyRegistry.merge(newRegistry);
+
+      expect(merged).to.be.instanceOf(ReadonlyRegistry);
+      expect(merged.type).to.eql(RegistryType.Readonly);
     });
   });
 
