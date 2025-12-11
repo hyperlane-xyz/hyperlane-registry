@@ -41,7 +41,7 @@ jobs:
         uses: pnpm/action-setup@v4
 
       - name: Install Dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Get GitHub App User ID
         id: get-user-id
