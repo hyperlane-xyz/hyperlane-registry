@@ -26,7 +26,9 @@ type MethodsOf<T> = {
  */
 export type IRegistryMethods = MethodsOf<Omit<IRegistry, 'unimplementedMethods'>>;
 
-export type IRegistryWriteMethod = keyof IWriteRegistry;
+export type IRegistryWriteMethod = MethodsOf<
+  Omit<IWriteRegistry, 'merge' | 'unimplementedMethods'>
+>;
 
 export interface ChainFiles {
   metadata?: string;
@@ -72,6 +74,8 @@ interface IBaseRegistry {
    * If this property is undefined, all methods are assumed to be implemented.
    */
   readonly unimplementedMethods?: Set<IRegistryMethods>;
+
+  merge(otherRegistry: IRegistry): IRegistry;
 }
 
 export interface IReadRegistry extends IBaseRegistry {
@@ -112,7 +116,4 @@ export interface IWriteRegistry extends IBaseRegistry {
   // TODO define more deployment artifact related methods
 }
 
-export type IRegistry = IReadRegistry &
-  IWriteRegistry & {
-    merge(otherRegistry: IRegistry): IRegistry;
-  };
+export type IRegistry = IReadRegistry & IWriteRegistry;
