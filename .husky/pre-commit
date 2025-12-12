@@ -13,4 +13,4 @@ if [ "$GITHUB_ACTIONS" != "true" ]; then
     fi
 fi
 
-pnpm lint-staged
+pnpm exec lint-staged

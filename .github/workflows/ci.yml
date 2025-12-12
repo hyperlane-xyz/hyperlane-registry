@@ -39,7 +39,7 @@ jobs:
         uses: ./.github/actions/pnpm-cache
       - name: prettier
         run: |
-          pnpm prettier
+          pnpm run prettier
           CHANGES=$(git status -s)
           if [[ ! -z $CHANGES ]]; then
             echo "Changes found: $CHANGES"

@@ -73,16 +73,16 @@
     "build": "tsx ./scripts/build.ts && tsc --project tsconfig.publish.json",
     "clean": "rm -rf ./dist ./tmp",
     "lint": "eslint ./src/ ./chains ./deployments",
-    "lint:fix": "pnpm lint --fix",
+    "lint:fix": "pnpm run lint --fix",
     "prettier": "prettier --write ./chains ./deployments",
     "prepare": "husky install",
-    "release": "pnpm build && pnpm changeset publish",
-    "test:unit": "pnpm build && mocha --require dotenv/config --config .mocharc.json './test/unit/*.test.ts' --exit",
-    "test:health": "pnpm build && mocha --config .mocharc.json './test/health/*.test.ts' --exit --parallel",
-    "test:rpc-health-mainnet": "pnpm build && mocha --config .mocharc.json './test/health/rpc-health.test.ts' --grep 'Mainnets' --exit --parallel",
-    "test:rpc-health-testnet": "pnpm build && mocha --config .mocharc.json './test/health/rpc-health.test.ts' --grep 'Testnets' --exit --parallel",
-    "version:prepare": "pnpm changeset version && pnpm install --no-frozen-lockfile",
-    "version:check": "pnpm changeset status"
+    "release": "pnpm run build && pnpm exec changeset publish",
+    "test:unit": "pnpm run build && mocha --require dotenv/config --config .mocharc.json './test/unit/*.test.ts' --exit",
+    "test:health": "pnpm run build && mocha --config .mocharc.json './test/health/*.test.ts' --exit --parallel",
+    "test:rpc-health-mainnet": "pnpm run build && mocha --config .mocharc.json './test/health/rpc-health.test.ts' --grep 'Mainnets' --exit --parallel",
+    "test:rpc-health-testnet": "pnpm run build && mocha --config .mocharc.json './test/health/rpc-health.test.ts' --grep 'Testnets' --exit --parallel",
+    "version:prepare": "pnpm exec changeset version && pnpm install --no-frozen-lockfile",
+    "version:check": "pnpm exec changeset status"
   },
   "packageManager": "pnpm@10.25.0"
 }

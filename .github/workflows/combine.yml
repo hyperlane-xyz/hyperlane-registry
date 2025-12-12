@@ -44,7 +44,7 @@ jobs:
       - name: combine-data
         run: |
           echo "Assembling warp route configs, chain metadata and addresses together..."
-          pnpm build
+          pnpm run build
 
       - name: commit-changes
         uses: ./.github/actions/commit-changes
