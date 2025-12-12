@@ -1,15 +1,6 @@
 # yaml-language-server: $schema=../schema.json
 tokens:
-  - addressOrDenom: "0x9E2946d1C41082D32d1fDffA723e6cA2d4364Ad3"
-    chainName: sepolia
-    connections:
-      - token: aleo|aleo|test_hyp_warp_token_credits.aleo/aleo1e394kmnr0f3j4anxvqnqe57tmv06kp7v7uyyu598gk9wn7d7w58qq9h2qz
-    decimals: 6
-    logoURI: /deployments/warp_routes/ALEO/logo.svg
-    name: Aleo Testnet
-    standard: EvmHypSynthetic
-    symbol: ALEO
-  - addressOrDenom: "test_hyp_warp_token_credits.aleo/aleo1e394kmnr0f3j4anxvqnqe57tmv06kp7v7uyyu598gk9wn7d7w58qq9h2qz"
+  - addressOrDenom: test_hyp_warp_token_credits.aleo/aleo1e394kmnr0f3j4anxvqnqe57tmv06kp7v7uyyu598gk9wn7d7w58qq9h2qz
     chainName: aleotestnet
     connections:
       - token: ethereum|sepolia|0x9E2946d1C41082D32d1fDffA723e6cA2d4364Ad3
@@ -17,4 +8,13 @@ tokens:
     logoURI: /deployments/warp_routes/ALEO/logo.svg
     name: Aleo Testnet
     standard: AleoHypNative
+    symbol: ALEO
+  - addressOrDenom: 0x9E2946d1C41082D32d1fDffA723e6cA2d4364Ad3
+    chainName: sepolia
+    connections:
+      - token: aleo|aleo|test_hyp_warp_token_credits.aleo/aleo1e394kmnr0f3j4anxvqnqe57tmv06kp7v7uyyu598gk9wn7d7w58qq9h2qz
+    decimals: 6
+    logoURI: /deployments/warp_routes/ALEO/logo.svg
+    name: Aleo Testnet
+    standard: EvmHypSynthetic
     symbol: ALEO
