@@ -16,30 +16,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: yarn-install-with-cache
-        uses: ./.github/actions/yarn-install-with-cache
+      - uses: actions/checkout@v6
+      - name: pnpm-cache
+        uses: ./.github/actions/pnpm-cache
       - name: build
-        run: yarn run build
+        run: pnpm run build
 
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: yarn-install-with-cache
-        uses: ./.github/actions/yarn-install-with-cache
+      - uses: actions/checkout@v6
+      - name: pnpm-cache
+        uses: ./.github/actions/pnpm-cache
       - name: lint
-        run: yarn run lint
+        run: pnpm run lint
 
   prettier:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: yarn-install-with-cache
-        uses: ./.github/actions/yarn-install-with-cache
+      - uses: actions/checkout@v6
+      - name: pnpm-cache
+        uses: ./.github/actions/pnpm-cache
       - name: prettier
         run: |
-          yarn run prettier
+          pnpm run prettier
           CHANGES=$(git status -s)
           if [[ ! -z $CHANGES ]]; then
             echo "Changes found: $CHANGES"
@@ -49,11 +49,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: yarn-install-with-cache
-        uses: ./.github/actions/yarn-install-with-cache
+      - uses: actions/checkout@v6
+      - name: pnpm-cache
+        uses: ./.github/actions/pnpm-cache
       - name: test
-        run: yarn run test:unit
+        run: pnpm run test:unit
 
       - name: validate-file-path
         run: |
@@ -71,11 +71,11 @@ jobs:
     if: ${{ github.event_name == 'pull_request' && github.head_ref != 'changeset-release/main' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           # check out full history
           fetch-depth: 0
-      - name: yarn-install-with-cache
-        uses: ./.github/actions/yarn-install-with-cache
+      - name: pnpm-cache
+        uses: ./.github/actions/pnpm-cache
       - name: changeset
-        run: yarn changeset status --since origin/main
+        run: pnpm exec changeset status --since origin/main

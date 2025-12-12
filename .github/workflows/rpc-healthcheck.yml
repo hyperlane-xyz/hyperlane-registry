@@ -11,17 +11,17 @@ jobs:
   rpc-health-mainnet:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: yarn-install-with-cache
-        uses: ./.github/actions/yarn-install-with-cache
+      - uses: actions/checkout@v6
+      - name: pnpm-cache
+        uses: ./.github/actions/pnpm-cache
       - name: test
-        run: yarn run test:rpc-health-mainnet
+        run: pnpm run test:rpc-health-mainnet
 
   rpc-health-testnet:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: yarn-install-with-cache
-        uses: ./.github/actions/yarn-install-with-cache
+      - uses: actions/checkout@v6
+      - name: pnpm-cache
+        uses: ./.github/actions/pnpm-cache
       - name: test
-        run: yarn run test:rpc-health-testnet
+        run: pnpm run test:rpc-health-testnet
