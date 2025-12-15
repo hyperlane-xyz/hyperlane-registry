@@ -16,7 +16,7 @@ jobs:
           app-id: ${{ secrets.HYPER_GONK_APP_ID }}
           private-key: ${{ secrets.HYPER_GONK_PRIVATE_KEY }}
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
