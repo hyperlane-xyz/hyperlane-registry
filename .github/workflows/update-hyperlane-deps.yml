@@ -22,7 +22,7 @@ jobs:
           private-key: ${{ secrets.HYPER_GONK_PRIVATE_KEY }}
 
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: main
           token: ${{ steps.generate-token.outputs.token }}
@@ -39,15 +39,18 @@ jobs:
           git config user.email "${{ steps.get-user-id.outputs.user-id }}+${{ steps.generate-token.outputs.app-slug }}[bot]@users.noreply.github.com"
 
       - name: Setup Node.js 20
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 20
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Get latest SDK and Utils versions
         id: get-versions
         run: |
-          LATEST_SDK=$(yarn npm info @hyperlane-xyz/sdk --fields version --json | jq -r '.version')
-          LATEST_UTILS=$(yarn npm info @hyperlane-xyz/utils --fields version --json | jq -r '.version')
+          LATEST_SDK=$(pnpm view @hyperlane-xyz/sdk version)
+          LATEST_UTILS=$(pnpm view @hyperlane-xyz/utils version)
           echo "sdk=$LATEST_SDK" >> $GITHUB_OUTPUT
           echo "utils=$LATEST_UTILS" >> $GITHUB_OUTPUT
           echo "Latest SDK: $LATEST_SDK"
@@ -59,17 +62,17 @@ jobs:
           npm pkg set devDependencies.@hyperlane-xyz/utils=${{ steps.get-versions.outputs.utils }}
 
       - name: Install dependencies
-        run: yarn install --no-immutable
+        run: pnpm install --no-frozen-lockfile
 
       - name: Run build
         id: build
         continue-on-error: true
-        run: yarn build
+        run: pnpm run build
 
       - name: Run tests
         id: test
         continue-on-error: true
-        run: yarn test:unit
+        run: pnpm run test:unit
 
       - name: Create changeset
         run: |
@@ -96,7 +99,7 @@ jobs:
 
           - Update @hyperlane-xyz/sdk to ${{ steps.get-versions.outputs.sdk }}
           - Update @hyperlane-xyz/utils to ${{ steps.get-versions.outputs.utils }}
-          - Update yarn.lock
+          - Update pnpm-lock.yaml
           - Add changeset for dependency updates"
 
             git push -fu origin ci/update-hl-deps
@@ -112,7 +115,7 @@ jobs:
 
           **Changes include:**
           - Updated \`package.json\` with latest SDK and Utils versions
-          - Updated \`yarn.lock\` via \`yarn install\`
+          - Updated \`pnpm-lock.yaml\` via \`pnpm install\`
           - Added changeset for dependency updates
           - Verified build passes with new versions
           - Verified unit tests pass with new versions

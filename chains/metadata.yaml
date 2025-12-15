@@ -110,6 +110,32 @@ adichain:
   rpcUrls:
     - http: https://rpc.adichain
   technicalStack: other
+aleotestnet:
+  blockExplorers:
+    - apiUrl: https://testnet.explorer.provable.com
+      family: other
+      name: Provable Explorer
+      url: https://testnet.explorer.provable.com
+  blocks:
+    confirmations: 0
+    estimateBlockTime: 3
+    reorgPeriod: 0
+  chainId: 1
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Aleo Testnet
+  domainId: 1617853565
+  isTestnet: true
+  name: aleotestnet
+  nativeToken:
+    decimals: 6
+    denom: credits
+    name: Aleo
+    symbol: ALEO
+  protocol: aleo
+  rpcUrls:
+    - http: https://api.explorer.provable.com/v1
 alephzeroevmmainnet:
   availability:
     reasons:
@@ -2943,7 +2969,7 @@ flowmainnet:
     - http: https://mainnet.evm.nodes.onflow.org
   technicalStack: other
   transactionOverrides:
-    gasPrice: 100000000
+    gasPrice: 16038000000
 fluence:
   blockExplorers:
     - apiUrl: https://blockscout.mainnet.fluence.dev/api
@@ -3774,8 +3800,6 @@ incentiv:
   rpcUrls:
     - http: https://rpc-archive.incentiv.io
   technicalStack: other
-  transactionOverrides:
-    gasPrice: 60000000000
 incentivtestnet:
   blockExplorers:
     - apiUrl: https://explorer-testnet.incentiv.io/api
@@ -5243,6 +5267,7 @@ monad:
   displayName: Monad
   domainId: 143
   gasCurrencyCoinGeckoId: monad
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/monad/
   name: monad
   nativeToken:
     decimals: 18
@@ -6063,6 +6088,7 @@ plasma:
   displayName: Plasma
   domainId: 9745
   gasCurrencyCoinGeckoId: plasma
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/plasma/
   name: plasma
   nativeToken:
     decimals: 18
@@ -7579,7 +7605,7 @@ stable:
   blockExplorers:
     - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
       apiUrl: https://api.etherscan.io/v2/api?chainid=988
-      family: other
+      family: etherscan
       name: Stable Explorer
       url: https://stablescan.xyz
   blocks:
@@ -7593,6 +7619,7 @@ stable:
   displayName: Stable
   domainId: 988
   gasCurrencyCoinGeckoId: tether
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/stable/
   name: stable
   nativeToken:
     decimals: 18
@@ -8693,7 +8720,7 @@ xlayer:
   displayNameShort: XLayer
   domainId: 196
   gasCurrencyCoinGeckoId: okb
-  gnosisSafeTransactionServiceUrl: https://app.safe.global/welcome?chain=xlayer
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/okb/
   name: xlayer
   nativeToken:
     decimals: 18
