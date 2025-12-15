@@ -142,8 +142,7 @@
         "chainId": {
           "anyOf": [
             {
-              "type": "integer",
-              "exclusiveMinimum": 0
+              "$ref": "#/definitions/hyperlaneChainMetadata/properties/blocks/properties/reorgPeriod/anyOf/0"
             },
             {
               "type": "string"
@@ -227,7 +226,8 @@
                 "type": "object",
                 "properties": {
                   "maxBlockRange": {
-                    "$ref": "#/definitions/hyperlaneChainMetadata/properties/chainId/anyOf/0",
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
                     "description": "The maximum range between block numbers for which the RPC can query data"
                   },
                   "minBlockNumber": {
@@ -235,7 +235,7 @@
                     "description": "The absolute minimum block number that this RPC supports."
                   },
                   "maxBlockAge": {
-                    "$ref": "#/definitions/hyperlaneChainMetadata/properties/chainId/anyOf/0",
+                    "$ref": "#/definitions/hyperlaneChainMetadata/properties/grpcUrls/items/properties/pagination/properties/maxBlockRange",
                     "description": "The relative different from latest block that this RPC supports."
                   }
                 },
