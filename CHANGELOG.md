@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 23.9.0
+
+### Minor Changes
+
+- 28397a1: Update Hyperlane dependencies to SDK 20.1.0 and Utils 20.1.0
+
 ## 23.8.0
 
 ### Minor Changes
