@@ -1,5 +1,26 @@
 # @hyperlane-xyz/registry
 
+## 23.8.0
+
+### Minor Changes
+
+- 25efdb9: Update Hyperlane dependencies to SDK 19.11.0 and Utils 19.11.0
+- 8150caf: Update default ISMs.
+- 2a6e862: Added aleo testnet metadata
+- c3183b7: Migrate from Yarn to pnpm and fix phantom dependencies
+- 03a4a22: Extended XRD/radix route to base
+- ea59bdc: Paradex & Starknet defaultIsm validator rotation
+- 2f0c68e: Remove connections from paradex and starknet in USDC/paradex route
+- 7e06d37: Add Stable connection to EZETH. Update xlayer, monad, plasma, stable gnosisSafeTransactionServiceUrl
+
+### Patch Changes
+
+- bef4818: Remove incentiv gas price override
+- b220cbe: update flowmainnet gas price
+- a47d94b: Remove llamarpc from Ethereum RPC list
+- f161786: Re-add starknet connections to USDC/paradex route
+- 5d376a7: Adds coinGeckoId to subtensor USDC config
+
 ## 23.7.0
 
 ### Minor Changes
