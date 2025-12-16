@@ -28,17 +28,20 @@ jobs:
           private-key: ${{ secrets.HYPER_GONK_PRIVATE_KEY }}
 
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ steps.generate-token.outputs.token }}
 
       - name: Setup Node.js 20
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 20
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Install Dependencies
-        run: yarn install --no-immutable
+        run: pnpm install --frozen-lockfile
 
       - name: Get GitHub App User ID
         id: get-user-id
@@ -55,8 +58,8 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          version: yarn version:prepare
-          publish: yarn release
+          version: pnpm version:prepare
+          publish: pnpm release
           setupGitUser: false
         env:
           NPM_CONFIG_PROVENANCE: true
