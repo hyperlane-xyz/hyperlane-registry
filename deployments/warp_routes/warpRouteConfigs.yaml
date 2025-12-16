@@ -3842,6 +3842,28 @@ MAT/matchain:
       name: Matchain
       standard: EvmHypCollateral
       symbol: MAT
+METIS/lazai:
+  tokens:
+    - addressOrDenom: "0x680e8ECB908A2040232ef139A0A52cbE47b9F15B"
+      chainName: lazai
+      coinGeckoId: metis-token
+      connections:
+        - token: ethereum|metis|0x680e8ECB908A2040232ef139A0A52cbE47b9F15B
+      decimals: 18
+      logoURI: /deployments/warp_routes/METIS/logo.svg
+      name: METIS
+      standard: EvmHypNative
+      symbol: METIS
+    - addressOrDenom: "0x680e8ECB908A2040232ef139A0A52cbE47b9F15B"
+      chainName: metis
+      coinGeckoId: metis-token
+      connections:
+        - token: ethereum|lazai|0x680e8ECB908A2040232ef139A0A52cbE47b9F15B
+      decimals: 18
+      logoURI: /deployments/warp_routes/METIS/logo.svg
+      name: Metis
+      standard: EvmHypNative
+      symbol: METIS
 MEW/solanamainnet-soon:
   tokens:
     - addressOrDenom: BEzLRBDBJyRrzZN2CfGJB3bedBj3HwHqj6MB8BQn1mdL
