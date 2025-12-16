@@ -2999,6 +2999,11 @@ fluence:
     - http: https://rpc.mainnet.fluence.dev
   technicalStack: arbitrumnitro
 form:
+  availability:
+    reasons:
+      - deprecated
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.form.network/api
       family: blockscout
@@ -3963,6 +3968,10 @@ infinityvmmonza:
     - http: https://rpc.monza.infinityvm.xyz
   technicalStack: other
 injective:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   bech32Prefix: inj
   blockExplorers:
     - apiUrl: https://apis.mintscan.io/v1/injective
@@ -5007,6 +5016,10 @@ milkyway:
   transactionOverrides:
     gasPrice: "0.03"
 milkywaytestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   bech32Prefix: milk
   blocks:
     confirmations: 1
@@ -5045,6 +5058,10 @@ milkywaytestnet:
   transactionOverrides:
     gasPrice: "0.0"
 mint:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.mintchain.io/api
       family: blockscout
@@ -5511,6 +5528,10 @@ neuratestnet:
     - http: https://rpc.ankr.com/neura_testnet
   technicalStack: other
 neutron:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   bech32Prefix: neutron
   blockExplorers:
     - apiUrl: https://apis.mintscan.io/v1/neutron
