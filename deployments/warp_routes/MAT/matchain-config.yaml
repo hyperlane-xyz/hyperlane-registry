@@ -1,8 +1,19 @@
 # yaml-language-server: $schema=../schema.json
 tokens:
+  - addressOrDenom: "0xAb5061BebE14630a768D361BB43E7ca714C634E4"
+    chainName: base
+    connections:
+      - token: ethereum|bsc|0xFE2DD2d57a05F89438F3AEC94EaFA4070396bab0
+      - token: ethereum|matchain|0xB64a077d1cE66B422F09342597bc9C26FA82605d
+    decimals: 18
+    logoURI: /deployments/warp_routes/MAT/logo.svg
+    name: Matchain
+    standard: EvmHypSynthetic
+    symbol: MAT
   - addressOrDenom: "0xFE2DD2d57a05F89438F3AEC94EaFA4070396bab0"
     chainName: bsc
     connections:
+      - token: ethereum|base|0xAb5061BebE14630a768D361BB43E7ca714C634E4
       - token: ethereum|matchain|0xB64a077d1cE66B422F09342597bc9C26FA82605d
     decimals: 18
     logoURI: /deployments/warp_routes/MAT/logo.svg
@@ -11,8 +22,10 @@ tokens:
     symbol: MAT
   - addressOrDenom: "0xB64a077d1cE66B422F09342597bc9C26FA82605d"
     chainName: matchain
+    coinGeckoId: matchain
     collateralAddressOrDenom: "0x44a83a012B926853DFc1BBE2ec5BEf37126067e8"
     connections:
+      - token: ethereum|base|0xAb5061BebE14630a768D361BB43E7ca714C634E4
       - token: ethereum|bsc|0xFE2DD2d57a05F89438F3AEC94EaFA4070396bab0
     decimals: 18
     logoURI: /deployments/warp_routes/MAT/logo.svg
