@@ -1,5 +1,17 @@
 # @hyperlane-xyz/registry
 
+## 23.10.0
+
+### Minor Changes
+
+- 6b23a2a: Remove form connections from TRUMP route
+- 155f133: Aleo mainnet deployment
+
+### Patch Changes
+
+- fad742d: Deprecate form, injective, mint, neutron, milkywaytestnet.
+- 725e5b0: Extend MAT with Base.
+
 ## 23.9.0
 
 ### Minor Changes
