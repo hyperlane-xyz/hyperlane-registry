@@ -1,0 +1,35 @@
+tokens:
+  - addressOrDenom: "0x46d73d6E252aE09EFAD26e87353302c06184FA82"
+    chainName: bsc
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
+    connections:
+      - token: ethereum|carrchain|0x2EA98401A0Af88cb44B9666b4C970B7a4f3217B2
+      - token: ethereum|ethereum|0x4c8adAde648D26d2c3245b2067ab08c5A3f9e998
+    decimals: 18
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x2EA98401A0Af88cb44B9666b4C970B7a4f3217B2"
+    chainName: carrchain
+    connections:
+      - token: ethereum|bsc|0x46d73d6E252aE09EFAD26e87353302c06184FA82
+      - token: ethereum|ethereum|0x4c8adAde648D26d2c3245b2067ab08c5A3f9e998
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypSynthetic
+    symbol: USDC
+  - addressOrDenom: "0x4c8adAde648D26d2c3245b2067ab08c5A3f9e998"
+    chainName: ethereum
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    connections:
+      - token: ethereum|bsc|0x46d73d6E252aE09EFAD26e87353302c06184FA82
+      - token: ethereum|carrchain|0x2EA98401A0Af88cb44B9666b4C970B7a4f3217B2
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
