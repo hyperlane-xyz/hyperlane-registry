@@ -6444,6 +6444,42 @@ USDC/bsc-prom:
       name: USD Coin
       standard: EvmHypSynthetic
       symbol: USDC
+USDC/carrchain:
+  tokens:
+    - addressOrDenom: "0x46d73d6E252aE09EFAD26e87353302c06184FA82"
+      chainName: bsc
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
+      connections:
+        - token: ethereum|carrchain|0x2EA98401A0Af88cb44B9666b4C970B7a4f3217B2
+        - token: ethereum|ethereum|0x4c8adAde648D26d2c3245b2067ab08c5A3f9e998
+      decimals: 18
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x2EA98401A0Af88cb44B9666b4C970B7a4f3217B2"
+      chainName: carrchain
+      connections:
+        - token: ethereum|bsc|0x46d73d6E252aE09EFAD26e87353302c06184FA82
+        - token: ethereum|ethereum|0x4c8adAde648D26d2c3245b2067ab08c5A3f9e998
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypSynthetic
+      symbol: USDC
+    - addressOrDenom: "0x4c8adAde648D26d2c3245b2067ab08c5A3f9e998"
+      chainName: ethereum
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+      connections:
+        - token: ethereum|bsc|0x46d73d6E252aE09EFAD26e87353302c06184FA82
+        - token: ethereum|carrchain|0x2EA98401A0Af88cb44B9666b4C970B7a4f3217B2
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
 USDC/coti-ethereum:
   tokens:
     - addressOrDenom: "0xEE2e85Df244e32d95d9f327D7a35Ba3d2d412225"
@@ -8623,6 +8659,42 @@ USDT/bsc-prom:
       name: Tether USD
       standard: EvmHypSynthetic
       symbol: USDT
+USDT/carrchain:
+  tokens:
+    - addressOrDenom: "0x8B4995442691d2e0A680a7835d86512025de0756"
+      chainName: bsc
+      coinGeckoId: tether
+      collateralAddressOrDenom: "0x55d398326f99059fF775485246999027B3197955"
+      connections:
+        - token: ethereum|carrchain|0x1E9A8531548aEd9b7fb83e80eF66422d182998C3
+        - token: ethereum|ethereum|0xC4aE629ABe0ce3de55B7DB8F6BeBf97d52AfE9f7
+      decimals: 18
+      logoURI: /deployments/warp_routes/USDT/logo.svg
+      name: Tether USD
+      standard: EvmHypCollateral
+      symbol: USDT
+    - addressOrDenom: "0x1E9A8531548aEd9b7fb83e80eF66422d182998C3"
+      chainName: carrchain
+      connections:
+        - token: ethereum|bsc|0x8B4995442691d2e0A680a7835d86512025de0756
+        - token: ethereum|ethereum|0xC4aE629ABe0ce3de55B7DB8F6BeBf97d52AfE9f7
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDT/logo.svg
+      name: Tether USD
+      standard: EvmHypSynthetic
+      symbol: USDT
+    - addressOrDenom: "0xC4aE629ABe0ce3de55B7DB8F6BeBf97d52AfE9f7"
+      chainName: ethereum
+      coinGeckoId: tether
+      collateralAddressOrDenom: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+      connections:
+        - token: ethereum|bsc|0x8B4995442691d2e0A680a7835d86512025de0756
+        - token: ethereum|carrchain|0x1E9A8531548aEd9b7fb83e80eF66422d182998C3
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDT/logo.svg
+      name: Tether USD
+      standard: EvmHypCollateral
+      symbol: USDT
 USDT/eclipsemainnet-ethereum-solanamainnet:
   tokens:
     - addressOrDenom: 5g5ujyYUNvdydwyDVCpZwPpgYRqH5RYJRi156cxyE3me
@@ -9035,6 +9107,42 @@ WBTC/arbitrum-bsc-kalychain-polygon:
       name: Wrapped BTC
       standard: EvmHypCollateral
       symbol: WBTC
+WBTC/carrchain:
+  tokens:
+    - addressOrDenom: "0xbfD6E8c1AFaE4c70AC10f7DD1d52515Dd77D1B4D"
+      chainName: bsc
+      coinGeckoId: binance-bitcoin
+      collateralAddressOrDenom: "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c"
+      connections:
+        - token: ethereum|carrchain|0xdeC1195BE0a96669cDEf7A3f8246EBB381eE7Eb5
+        - token: ethereum|ethereum|0x7f3Ab91a586C34b7E0a7C0fDd2241C5F29d89a6e
+      decimals: 18
+      logoURI: /deployments/warp_routes/WBTC/logo.svg
+      name: BTCB Token
+      standard: EvmHypCollateral
+      symbol: WBTC
+    - addressOrDenom: "0xdeC1195BE0a96669cDEf7A3f8246EBB381eE7Eb5"
+      chainName: carrchain
+      connections:
+        - token: ethereum|bsc|0xbfD6E8c1AFaE4c70AC10f7DD1d52515Dd77D1B4D
+        - token: ethereum|ethereum|0x7f3Ab91a586C34b7E0a7C0fDd2241C5F29d89a6e
+      decimals: 8
+      logoURI: /deployments/warp_routes/WBTC/logo.svg
+      name: Wrapped BTC
+      standard: EvmHypSynthetic
+      symbol: WBTC
+    - addressOrDenom: "0x7f3Ab91a586C34b7E0a7C0fDd2241C5F29d89a6e"
+      chainName: ethereum
+      coinGeckoId: wrapped-bitcoin
+      collateralAddressOrDenom: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+      connections:
+        - token: ethereum|bsc|0xbfD6E8c1AFaE4c70AC10f7DD1d52515Dd77D1B4D
+        - token: ethereum|carrchain|0xdeC1195BE0a96669cDEf7A3f8246EBB381eE7Eb5
+      decimals: 8
+      logoURI: /deployments/warp_routes/WBTC/logo.svg
+      name: Wrapped BTC
+      standard: EvmHypCollateral
+      symbol: WBTC
 WBTC/coti-ethereum:
   tokens:
     - addressOrDenom: "0x8C39B1fD0e6260fdf20652Fc436d25026832bfEA"
@@ -9259,6 +9367,42 @@ WETH/artela-base:
       collateralAddressOrDenom: "0x4200000000000000000000000000000000000006"
       connections:
         - token: ethereum|artela|0xfae4e14D01D9E13FB5db20A0329ED0472A2D96C7
+      decimals: 18
+      logoURI: /deployments/warp_routes/WETH/logo.svg
+      name: Wrapped Ether
+      standard: EvmHypCollateral
+      symbol: WETH
+WETH/carrchain:
+  tokens:
+    - addressOrDenom: "0xd5985Ba1C2873e5F5b83F49D7EBE2cB50F1c25fA"
+      chainName: bsc
+      coinGeckoId: binance-peg-weth
+      collateralAddressOrDenom: "0x2170Ed0880ac9A755fd29B2688956BD959F933F8"
+      connections:
+        - token: ethereum|carrchain|0xE514c211C44A7752542Addc1650be244FA626d22
+        - token: ethereum|ethereum|0x25b0F02B26cB369Fefa6EFc3F8e8eDB5371C55BC
+      decimals: 18
+      logoURI: /deployments/warp_routes/ETH/logo.svg
+      name: Ethereum Token
+      standard: EvmHypCollateral
+      symbol: ETH
+    - addressOrDenom: "0xE514c211C44A7752542Addc1650be244FA626d22"
+      chainName: carrchain
+      connections:
+        - token: ethereum|bsc|0xd5985Ba1C2873e5F5b83F49D7EBE2cB50F1c25fA
+        - token: ethereum|ethereum|0x25b0F02B26cB369Fefa6EFc3F8e8eDB5371C55BC
+      decimals: 18
+      logoURI: /deployments/warp_routes/WETH/logo.svg
+      name: Wrapped Ether
+      standard: EvmHypSynthetic
+      symbol: WETH
+    - addressOrDenom: "0x25b0F02B26cB369Fefa6EFc3F8e8eDB5371C55BC"
+      chainName: ethereum
+      coinGeckoId: weth
+      collateralAddressOrDenom: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+      connections:
+        - token: ethereum|bsc|0xd5985Ba1C2873e5F5b83F49D7EBE2cB50F1c25fA
+        - token: ethereum|carrchain|0xE514c211C44A7752542Addc1650be244FA626d22
       decimals: 18
       logoURI: /deployments/warp_routes/WETH/logo.svg
       name: Wrapped Ether
