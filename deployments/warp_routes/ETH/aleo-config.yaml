@@ -1,0 +1,29 @@
+tokens:
+  - chainName: aleo
+    standard: AleoHypSynthetic
+    decimals: 18
+    symbol: ETH
+    name: Ether
+    addressOrDenom: hyp_warp_token_eth.aleo/aleo1uw2g90m8qhlf4cdfs34rtg4n83z2l8hu80fg7f027en56v3yrvfqdqhvn9
+    connections:
+      - token: ethereum|hyperevm|0x2a848D76f075033D4D69b9c18ef2C44753a38DBC
+      - token: ethereum|ethereum|0x38D447694f5c1f773ae3132cf93bF30B7Ec1Fa5A
+  - chainName: hyperevm
+    standard: EvmHypCollateral
+    decimals: 18
+    symbol: UETH
+    name: Unit Ethereum
+    addressOrDenom: "0x2a848D76f075033D4D69b9c18ef2C44753a38DBC"
+    collateralAddressOrDenom: "0xBe6727B535545C67d5cAa73dEa54865B92CF7907"
+    connections:
+      - token: aleo|aleo|hyp_warp_token_eth.aleo/aleo1uw2g90m8qhlf4cdfs34rtg4n83z2l8hu80fg7f027en56v3yrvfqdqhvn9
+      - token: ethereum|ethereum|0x38D447694f5c1f773ae3132cf93bF30B7Ec1Fa5A
+  - chainName: ethereum
+    standard: EvmHypNative
+    decimals: 18
+    symbol: ETH
+    name: Ether
+    addressOrDenom: "0x38D447694f5c1f773ae3132cf93bF30B7Ec1Fa5A"
+    connections:
+      - token: aleo|aleo|hyp_warp_token_eth.aleo/aleo1uw2g90m8qhlf4cdfs34rtg4n83z2l8hu80fg7f027en56v3yrvfqdqhvn9
+      - token: ethereum|hyperevm|0x2a848D76f075033D4D69b9c18ef2C44753a38DBC
