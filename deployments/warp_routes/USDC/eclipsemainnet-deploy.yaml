@@ -17,11 +17,17 @@ arbitrum:
     unichain:
       - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
       - bridge: "0xb0B8D4C6EF212D76d5079df5Ff7A0888A27e9b32"
+  contractVersion: 10.1.3
   owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
   proxyAdmin:
     address: "0x80Cebd56A65e46c474a1A101e89E76C4c51D179c"
     owner: "0xAC98b0cD1B64EA4fe133C6D2EDaf842cE5cF4b01"
   token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+  tokenFee:
+    bps: 5
+    owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+    token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+    type: LinearFee
   type: collateral
 base:
   allowedRebalancers:
@@ -42,11 +48,17 @@ base:
     unichain:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x584244d02b0fBf9054A5D5C9e9cE9A2E8adA0e28"
+  contractVersion: 10.1.3
   owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
   proxyAdmin:
     address: "0x4Ed7d626f1E96cD1C0401607Bf70D95243E3dEd1"
     owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
   token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+  tokenFee:
+    bps: 5
+    owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+    token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    type: LinearFee
   type: collateral
 eclipsemainnet:
   foreignDeployment: EqRSt9aUDMKYKhzd1DGMderr3KNp29VZH3x5P7LFTC8m
@@ -72,11 +84,17 @@ ethereum:
     unichain:
       - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
       - bridge: "0xEE4a09db2C25592C04b8b342CB89f9a7f5E20BD2"
+  contractVersion: 10.1.3
   owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
   proxyAdmin:
     address: "0x75EE15Ee1B4A75Fa3e2fDF5DF3253c25599cc659"
     owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
   token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+  tokenFee:
+    bps: 5
+    owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+    token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    type: LinearFee
   type: collateral
 optimism:
   allowedRebalancers:
@@ -97,11 +115,17 @@ optimism:
     unichain:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xb0B8D4C6EF212D76d5079df5Ff7A0888A27e9b32"
+  contractVersion: 10.1.3
   owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
   proxyAdmin:
     address: "0xE047cb95FB3b7117989e911c6afb34771183fC35"
     owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
   token: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
+  tokenFee:
+    bps: 5
+    owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+    token: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
+    type: LinearFee
   type: collateral
 polygon:
   allowedRebalancers:
@@ -122,11 +146,17 @@ polygon:
     unichain:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x8dadbDE67eD0589d90cdE3C940045F10092AcC11"
+  contractVersion: 10.1.3
   owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
   proxyAdmin:
     address: "0xC4F7590C5d30BE959225dC75640657954A86b980"
     owner: "0x20e52e3BeDf7BD305Ca816Dc54a0835D3bDeD820"
   token: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+  tokenFee:
+    bps: 5
+    owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+    token: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+    type: LinearFee
   type: collateral
 solanamainnet:
   foreignDeployment: 3EpVCPUgyjq2MfGeCttyey6bs5zya5wjYZ2BE6yDg6bm
@@ -153,9 +183,15 @@ unichain:
     polygon:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x5b7A1a03F26C05D68ada7CE67d49db263e2D0d9B"
+  contractVersion: 10.1.3
   owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
   proxyAdmin:
     address: "0x2f2aFaE1139Ce54feFC03593FeE8AB2aDF4a85A7"
     owner: "0xD39c288D2A021207Dfec7780e778D73460f563D7"
   token: "0x078D782b760474a361dDA0AF3839290b0EF57AD6"
+  tokenFee:
+    bps: 5
+    owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+    token: "0x078D782b760474a361dDA0AF3839290b0EF57AD6"
+    type: LinearFee
   type: collateral
