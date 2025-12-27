@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Remove flowmmainet from trump leg
+Remove flowmainnet from trump leg
