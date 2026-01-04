@@ -1360,6 +1360,23 @@ ETH/holesky-piccadilly:
       name: Ether
       standard: EvmHypSynthetic
       symbol: ETH
+ETH/krown:
+  tokens:
+    - addressOrDenom: "0x6F9eC4f83ef69b923Fa1Dc00189e591728DF0ac0"
+      chainName: krown
+      connections: []
+      decimals: 18
+      name: ETH
+      standard: EvmHypSynthetic
+      symbol: ETH
+    - addressOrDenom: "0x95Abf44e0B9166348A9ed8797a7f20CC32Fd9C26"
+      chainName: ethereum
+      connections:
+        - token: ethereum|krown|0x6F9eC4f83ef69b923Fa1Dc00189e591728DF0ac0
+      decimals: 18
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
 ETH/mantra:
   tokens:
     - addressOrDenom: "0xa901E6974C8F0fCc2f44451B0e788CD6957E02E2"
@@ -6771,6 +6788,24 @@ USDC/incentiv:
       name: USD Coin
       standard: EvmHypCollateral
       symbol: USDC
+USDC/krown:
+  tokens:
+    - addressOrDenom: "0xa3D9cfa4220d6a5ba7b9067D33ebEdbF2DE6F1CF"
+      chainName: krown
+      connections: []
+      decimals: 6
+      name: USD Coin
+      standard: EvmHypSynthetic
+      symbol: USDC
+    - addressOrDenom: "0xbdE0801a78f9c4BC360C34aaf98043EA0cdF4fB0"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+      connections:
+        - token: ethereum|krown|0xa3D9cfa4220d6a5ba7b9067D33ebEdbF2DE6F1CF
+      decimals: 6
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
 USDC/lumia:
   tokens:
     - addressOrDenom: "0xd57c6B54f198bf039C93a821C6c0151C9Ea546ac"
@@ -8925,6 +8960,24 @@ USDT/incentiv:
       logoURI: /deployments/warp_routes/USDT/logo.svg
       name: Tether USD
       standard: EvmHypSynthetic
+      symbol: USDT
+USDT/krown:
+  tokens:
+    - addressOrDenom: "0x59973ae98D340cA0577ed92502402E82E987Ba2E"
+      chainName: krown
+      connections: []
+      decimals: 6
+      name: Tether USD
+      standard: EvmHypSynthetic
+      symbol: USDT
+    - addressOrDenom: "0xE78fA49bE021e533cd8f6E10931b796D89cd80DD"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+      connections:
+        - token: ethereum|krown|0x59973ae98D340cA0577ed92502402E82E987Ba2E
+      decimals: 6
+      name: Tether USD
+      standard: EvmHypCollateral
       symbol: USDT
 USDT/mantra:
   tokens:
