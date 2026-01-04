@@ -2703,6 +2703,32 @@ endurance:
   rpcUrls:
     - http: https://rpc-endurance.fusionist.io
   technicalStack: other
+eni:
+  blockExplorers:
+    - apiUrl: https://scan.eniac.network/api
+      family: blockscout
+      name: ENI Mainnet Block Explorer
+      url: https://scan.eniac.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 173
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: ENI
+  domainId: 173
+  gasCurrencyCoinGeckoId: eniac-network
+  name: eni
+  nativeToken:
+    decimals: 18
+    name: EGAS
+    symbol: EGAS
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.eniac.network
+  technicalStack: other
 ethereum:
   blockExplorers:
     - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
@@ -4306,6 +4332,27 @@ kroma:
     - http: https://api.kroma.network
     - http: https://1rpc.io/kroma
   technicalStack: opstack
+krown:
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 12
+    reorgPeriod: 1
+  chainId: 1983
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Krown
+  domainId: 1983
+  gasCurrencyCoinGeckoId: krown-network
+  name: krown
+  nativeToken:
+    decimals: 18
+    name: KROWN
+    symbol: KROWN
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.krown.network
+  technicalStack: other
 kyve:
   bech32Prefix: kyve
   blockExplorers:
