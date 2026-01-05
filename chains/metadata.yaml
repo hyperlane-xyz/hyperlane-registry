@@ -1666,6 +1666,32 @@ chronicleyellowstone:
   rpcUrls:
     - http: https://yellowstone-rpc.litprotocol.com
   technicalStack: arbitrumnitro
+citrea:
+  blockExplorers:
+    - apiUrl: https://explorer.mainnet.citrea.xyz/api
+      family: blockscout
+      name: Citrea Explorer
+      url: https://explorer.mainnet.citrea.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 4114
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Citrea
+  domainId: 4114
+  gasCurrencyCoinGeckoId: bitcoin
+  name: citrea
+  nativeToken:
+    decimals: 18
+    name: CBTC
+    symbol: CBTC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.mainnet.citrea.xyz
+  technicalStack: other
 citreatestnet:
   blockExplorers:
     - apiUrl: https://explorer.testnet.citrea.xyz/api
@@ -2676,6 +2702,32 @@ endurance:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc-endurance.fusionist.io
+  technicalStack: other
+eni:
+  blockExplorers:
+    - apiUrl: https://scan.eniac.network/api
+      family: blockscout
+      name: ENI Mainnet Block Explorer
+      url: https://scan.eniac.network
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 173
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: ENI
+  domainId: 173
+  gasCurrencyCoinGeckoId: eniac-network
+  name: eni
+  nativeToken:
+    decimals: 18
+    name: EGAS
+    symbol: EGAS
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.eniac.network
   technicalStack: other
 ethereum:
   blockExplorers:
@@ -4280,6 +4332,27 @@ kroma:
     - http: https://api.kroma.network
     - http: https://1rpc.io/kroma
   technicalStack: opstack
+krown:
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 12
+    reorgPeriod: 5
+  chainId: 1983
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Krown
+  domainId: 1983
+  gasCurrencyCoinGeckoId: krown-network
+  name: krown
+  nativeToken:
+    decimals: 18
+    name: KROWN
+    symbol: KROWN
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet1.krown.network
+  technicalStack: other
 kyve:
   bech32Prefix: kyve
   blockExplorers:
@@ -4758,7 +4831,7 @@ mantra:
   deployer:
     name: Abacus Works
     url: https://www.hyperlane.xyz
-  displayName: Mantra
+  displayName: MANTRA
   domainId: 5888
   gasCurrencyCoinGeckoId: mantra-dao
   name: mantra
