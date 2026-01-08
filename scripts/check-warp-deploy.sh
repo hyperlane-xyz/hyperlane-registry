@@ -15,7 +15,8 @@ export HEAD_COMMIT="$2"
 
 WARP_ROUTE_IDS=$(
     # ARM = Additions, Renames, Modifications
-    git diff --diff-filter=ARM "$BASE_COMMIT".."$HEAD_COMMIT" --name-only |
+    # Use three-dot syntax to only show changes from the branch, not changes from main
+    git diff --diff-filter=ARM "$BASE_COMMIT"..."$HEAD_COMMIT" --name-only |
     grep -E 'warp_routes/.+-(config|deploy)\.yaml$' |
     sed -E 's|deployments/warp_routes/||' |
     sed -E 's|-config\.yaml$||' |
@@ -30,14 +31,15 @@ for ID in $WARP_ROUTE_IDS; do
     echo "- $ID"
 done
 
+# Exit early if no warp routes to check
+if [ -z "$WARP_ROUTE_IDS" ]; then
+    echo "No warp routes to check!"
+    exit 0
+fi
+
 # Initialize the job summary
 JOB_SUMMARY="## Check Warp Deploy Summary\n"
-
-if [ -z "$WARP_ROUTE_IDS" ]; then
-    JOB_SUMMARY+="No warp routes to check!"
-else
-    JOB_SUMMARY+="| Warp Route ID | Status |\n|-|-|\n"
-fi
+JOB_SUMMARY+="| Warp Route ID | Status |\n|-|-|\n"
 
 EXIT_CODE=0
 

@@ -1,7 +1,7 @@
 {
   "name": "@hyperlane-xyz/registry",
   "description": "A collection of configs, artifacts, and schemas for Hyperlane",
-  "version": "23.4.0",
+  "version": "23.11.0",
   "dependencies": {
     "jszip": "^3.10.1",
     "yaml": "2.4.5",
@@ -11,8 +11,8 @@
     "@changesets/cli": "^2.26.2",
     "@eslint/js": "^9.1.1",
     "@faker-js/faker": "^9.6.0",
-    "@hyperlane-xyz/sdk": "18.1.0",
-    "@hyperlane-xyz/utils": "18.1.0",
+    "@hyperlane-xyz/sdk": "20.1.0",
+    "@hyperlane-xyz/utils": "20.1.0",
     "@types/chai-as-promised": "^8",
     "@types/mocha": "^10.0.1",
     "@types/node": "^16.9.1",
@@ -27,6 +27,7 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "mocha": "^10.2.0",
+    "pino": "^8.20.0",
     "prettier": "^2.8.8",
     "randexp": "^0.5.3",
     "sinon": "^18.0.0",
@@ -34,6 +35,7 @@
     "tsx": "^4.7.1",
     "typescript": "5.5.2",
     "typescript-eslint": "^7.7.0",
+    "yaml-eslint-parser": "^1.3.2",
     "zod-to-json-schema": "^3.22.5"
   },
   "type": "module",
@@ -71,16 +73,16 @@
     "build": "tsx ./scripts/build.ts && tsc --project tsconfig.publish.json",
     "clean": "rm -rf ./dist ./tmp",
     "lint": "eslint ./src/ ./chains ./deployments",
-    "lint:fix": "yarn lint --fix",
+    "lint:fix": "pnpm run lint --fix",
     "prettier": "prettier --write ./chains ./deployments",
-    "prepare": "husky",
-    "release": "yarn build && yarn changeset publish",
-    "test:unit": "yarn build && mocha --require dotenv/config --config .mocharc.json './test/unit/*.test.ts' --exit",
-    "test:health": "yarn build && mocha --config .mocharc.json './test/health/*.test.ts' --exit --parallel",
-    "test:rpc-health-mainnet": "yarn build && mocha --config .mocharc.json './test/health/rpc-health.test.ts' --grep 'Mainnets' --exit --parallel",
-    "test:rpc-health-testnet": "yarn build && mocha --config .mocharc.json './test/health/rpc-health.test.ts' --grep 'Testnets' --exit --parallel",
-    "version:prepare": "yarn changeset version && yarn install --no-immutable",
-    "version:check": "yarn changeset status"
+    "prepare": "husky install",
+    "release": "pnpm run build && pnpm exec changeset publish",
+    "test:unit": "pnpm run build && mocha --require dotenv/config --config .mocharc.json './test/unit/*.test.ts' --exit",
+    "test:health": "pnpm run build && mocha --config .mocharc.json './test/health/*.test.ts' --exit --parallel",
+    "test:rpc-health-mainnet": "pnpm run build && mocha --config .mocharc.json './test/health/rpc-health.test.ts' --grep 'Mainnets' --exit --parallel",
+    "test:rpc-health-testnet": "pnpm run build && mocha --config .mocharc.json './test/health/rpc-health.test.ts' --grep 'Testnets' --exit --parallel",
+    "version:prepare": "pnpm exec changeset version && pnpm install --no-frozen-lockfile",
+    "version:check": "pnpm exec changeset status"
   },
-  "packageManager": "yarn@4.5.1"
+  "packageManager": "pnpm@10.25.0"
 }

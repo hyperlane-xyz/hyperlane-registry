@@ -142,8 +142,7 @@
         "chainId": {
           "anyOf": [
             {
-              "type": "integer",
-              "exclusiveMinimum": 0
+              "$ref": "#/definitions/hyperlaneChainMetadata/properties/blocks/properties/reorgPeriod/anyOf/0"
             },
             {
               "type": "string"
@@ -200,6 +199,10 @@
           "type": "string",
           "description": "The URL of the gnosis safe transaction service."
         },
+        "gnosisSafeApiKey": {
+          "type": "string",
+          "description": "The API key for the gnosis safe transaction service."
+        },
         "grpcUrls": {
           "type": "array",
           "items": {
@@ -223,7 +226,8 @@
                 "type": "object",
                 "properties": {
                   "maxBlockRange": {
-                    "$ref": "#/definitions/hyperlaneChainMetadata/properties/chainId/anyOf/0",
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
                     "description": "The maximum range between block numbers for which the RPC can query data"
                   },
                   "minBlockNumber": {
@@ -231,7 +235,7 @@
                     "description": "The absolute minimum block number that this RPC supports."
                   },
                   "maxBlockAge": {
-                    "$ref": "#/definitions/hyperlaneChainMetadata/properties/chainId/anyOf/0",
+                    "$ref": "#/definitions/hyperlaneChainMetadata/properties/grpcUrls/items/properties/pagination/properties/maxBlockRange",
                     "description": "The relative different from latest block that this RPC supports."
                   }
                 },
@@ -329,7 +333,8 @@
             "cosmos",
             "cosmosnative",
             "starknet",
-            "radix"
+            "radix",
+            "aleo"
           ],
           "description": "The type of protocol used by this chain. See ProtocolType for valid values."
         },

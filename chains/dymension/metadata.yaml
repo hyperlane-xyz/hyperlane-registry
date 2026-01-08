@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../schema.json
+# see https://github.com/hyperlane-xyz/hyperlane-registry/blob/main/chains/kyvetestnet/metadata.yaml
+bech32Prefix: dym
+# todo can add block explorers
+blocks:
+  confirmations: 1
+  estimateBlockTime: 1
+  reorgPeriod: 1
+canonicalAsset: adym
+chainId: dymension_1100-1
+contractAddressBytes: 32
+deployer:
+  name: DYMENSION
+  url: https://portal.dymension.xyz/
+displayName: Dymension
+# Generated from: console.log(parseInt('0x'+Buffer.from('dymension_1100-1').toString('hex')) % 2147483647) // mod max signed 32
+domainId: 1570310961
+gasCurrencyCoinGeckoId: dymension
+gasPrice:
+  amount: "100000000000.0"
+  denom: adym
+grpcUrls:
+  - http: https://grpc-dymension.mzonder.com:443
+index:
+  from: 10201794
+isTestnet: false
+name: dymension
+nativeToken:
+  decimals: 18
+  denom: adym
+  name: ADYM
+  symbol: ADYM
+protocol: cosmosnative
+restUrls:
+  - http: https://api-dymension.mzonder.com:443
+rpcUrls:
+  - http: https://rpc-dymension.mzonder.com:443
+slip44: 118
+technicalStack: other

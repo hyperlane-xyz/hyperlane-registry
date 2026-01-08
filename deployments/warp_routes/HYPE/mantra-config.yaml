@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xA10bCe7B3F13f8846611bdac36EF5972069ce7d8"
+    chainName: hyperevm
+    coinGeckoId: hyperliquid
+    connections:
+      - token: ethereum|mantra|0x2d01885f395186903ac76D0C67b94f1F8BcE6727
+    decimals: 18
+    logoURI: /deployments/warp_routes/HYPE/logo.svg
+    name: Hyperliquid
+    standard: EvmHypNative
+    symbol: HYPE
+  - addressOrDenom: "0x2d01885f395186903ac76D0C67b94f1F8BcE6727"
+    chainName: mantra
+    connections:
+      - token: ethereum|hyperevm|0xA10bCe7B3F13f8846611bdac36EF5972069ce7d8
+    decimals: 18
+    logoURI: /deployments/warp_routes/HYPE/logo.svg
+    name: Hyperliquid
+    standard: EvmHypSynthetic
+    symbol: HYPE

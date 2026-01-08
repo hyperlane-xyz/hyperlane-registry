@@ -29,6 +29,15 @@ describe('Chain metadata', () => {
       ChainMetadataSchema.parse(metadata);
     });
 
+    it(`${chain} block explorer url does not end in /`, () => {
+      const blockExplorers = metadata.blockExplorers ?? [];
+
+      blockExplorers.forEach((blockExplorer) => {
+        expect(blockExplorer.apiUrl.endsWith('/')).to.be.false;
+        expect(blockExplorer.url.endsWith('/')).to.be.false;
+      });
+    });
+
     // check if isTestNet is set properly for chains that could be testnets
     // PD: this only works to check chains that have "test" on their name
     it(`${chain} isTestnet is set to true when name contains test`, () => {
@@ -56,12 +65,14 @@ describe('Chain metadata', () => {
     });
 
     it(`${chain} metadata has interchainAccountRouter defined if it is a mainnet with mailbox, deployer is Abacus Works, protocol is ethereum and technicalStack is not zksync`, () => {
-      if (!metadata.isTestnet &&
-          chainAddresses[chain]?.mailbox &&
-          metadata.deployer?.name === ABACUS_WORKS_DEPLOYER_NAME &&
-          metadata.protocol === ProtocolType.Ethereum &&
-          metadata.technicalStack !== ChainTechnicalStack.ZkSync &&
-          !legacyIcaChains.includes(chain)) {
+      if (
+        !metadata.isTestnet &&
+        chainAddresses[chain]?.mailbox &&
+        metadata.deployer?.name === ABACUS_WORKS_DEPLOYER_NAME &&
+        metadata.protocol === ProtocolType.Ethereum &&
+        metadata.technicalStack !== ChainTechnicalStack.ZkSync &&
+        !legacyIcaChains.includes(chain)
+      ) {
         expect(chainAddresses[chain].interchainAccountRouter).not.to.be.undefined;
       }
     });

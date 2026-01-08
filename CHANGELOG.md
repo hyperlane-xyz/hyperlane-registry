@@ -1,5 +1,152 @@
 # @hyperlane-xyz/registry
 
+## 23.11.0
+
+### Minor Changes
+
+- 008d243: Deploy to citrea mainnet
+- 4bdf0f1: Update default ISMs.
+- 25651cf: Deployed the METIS/lazai warp route
+- 366a1e1: Add warp route artifacts for: USDC/krown, USDT/krown, ETH/krown, and add correct RPC URL for krown.
+- c8eb1a5: Add warp route artifacts for: USDC/carrchain, USDT/carrchain, WBTC/carrchain & WETH/carrchain
+- 03ec6e2: Deploy to eni, krown.
+
+### Patch Changes
+
+- 9ad57e6: Update Krown URL
+- c1c30be: fix: update kyve gasprice
+- bd09606: Update Mantra chain displayName to be uppercase
+- 6bf1fa6: Remove flowmainnet from trump leg
+- a71b036: Update krown reorgPeriod from 1 to 5.
+- 4e7f57b: Update CCTP v2 fast deployment artifacts
+- 0957895: Deprecate svmbnb.
+- 804f757: Hide collateral legs connection for carrchain routes
+- 9537933: Update megaeth RPC URL to https://mainnet.megaeth.com/rpc
+
+## 23.10.0
+
+### Minor Changes
+
+- 6b23a2a: Remove form connections from TRUMP route
+- 155f133: Aleo mainnet deployment
+
+### Patch Changes
+
+- fad742d: Deprecate form, injective, mint, neutron, milkywaytestnet.
+- 725e5b0: Extend MAT with Base.
+
+## 23.9.0
+
+### Minor Changes
+
+- 28397a1: Update Hyperlane dependencies to SDK 20.1.0 and Utils 20.1.0
+
+## 23.8.0
+
+### Minor Changes
+
+- 25efdb9: Update Hyperlane dependencies to SDK 19.11.0 and Utils 19.11.0
+- 8150caf: Update default ISMs.
+- 2a6e862: Added aleo testnet metadata
+- c3183b7: Migrate from Yarn to pnpm and fix phantom dependencies
+- 03a4a22: Extended XRD/radix route to base
+- ea59bdc: Paradex & Starknet defaultIsm validator rotation
+- 2f0c68e: Remove connections from paradex and starknet in USDC/paradex route
+- 7e06d37: Add Stable connection to EZETH. Update xlayer, monad, plasma, stable gnosisSafeTransactionServiceUrl
+
+### Patch Changes
+
+- bef4818: Remove incentiv gas price override
+- b220cbe: update flowmainnet gas price
+- a47d94b: Remove llamarpc from Ethereum RPC list
+- f161786: Re-add starknet connections to USDC/paradex route
+- 5d376a7: Adds coinGeckoId to subtensor USDC config
+
+## 23.7.0
+
+### Minor Changes
+
+- 4513728: - Add warp routes for wM on Ethereum <-> Mantra
+  - Update previous images of wM and USDSC from PNG to SVG format
+- 52467cf: Deploy to somnia, lazai.
+- 719493d: Deploy to megaeth, stable, adichain. Update ISMs on other chains in the batch (somnia, lazai).
+- ef1abc6: Add BEST token warp route deployment artifacts
+
+### Patch Changes
+
+- e285be2: Disable inevm.
+- b143d98: Modified token name from EDEN to TIA for edentestnet
+- 177f009: Registers Dymension mainnet chain
+- b5b9a92: Re-add monad legs to ezeth prod.
+- 0326984: fix filename `address.yaml` -> `addresses.yaml` for LUKSO Testnet + update logo
+
+## 23.6.0
+
+### Minor Changes
+
+- 11f92e4: add wM and USDSC warp routes across ethereum, bsc, linea and soneium
+
+### Patch Changes
+
+- 643ca3b: Update monad public rpc
+- 533b6f1: update celestiatestnet grpc urls
+
+## 23.5.0
+
+### Minor Changes
+
+- 265538c: Deprecate sovachain, holesky.
+- 1db1d84: update pulsechain usdc route to add avalanche, optimism and unichain
+- 6942fe2: Update Hyperlane dependencies to SDK 19.9.0 and Utils 19.9.0
+- 2030010: Added BNB <-> hBNB warp route, BSC to Radix
+- 573c540: Remove custom ISM from initially deployed Warp Routes.
+- 91730ec: Add USDC/incentiv artifacts
+- 1f2f92d: Update hyperlane deps to 19.8.0. Add CCTP version to mainnet and testnet cctp configs to confirm to the latest schema.
+- 0573034: Add POG coin warp route deployment artifacts
+- f43ca15: Remove faulty RPC on base
+- 050357a: Deploy CCTP v2 warp routes
+- ecf145d: Update EZETH configs to include plasma
+- e9d17c9: Add mantra usdc deployment artifacts
+- e2b91ed: Add CENT/incentiv artifacts
+- 201d09f: Updated starknet sepolia RPCs
+- 87688b6: Deployed XRD warp route between ethereum and radix
+- faea4d7: remove deprecated starknet RPC
+- d8e20e5: Add USDCSTAGE/eclipsemainnet route
+- 0051abe: Add WETH/incentiv yield route
+- b08f954: Adding Celestia Devnet + Eden Testnet to the registry
+- 2832953: Add Warden Protocol
+- fbe530e: Deprecate cheesechain.
+- 43e278f: Add incentiv USDT yield route
+- 57f2277: Add WBTC/incentiv warp route artifacts
+- 6c186fe: Update to new staticAggregationHookFactory implementation, update default hooks.
+- 5e0a702: Remove trailing slashes from block explorer urls
+- 2e08c55: Add LITKEY warp route deployment artifacts
+- 09b859f: Deploy to sovachain. Deprecate proofofplay.
+- 6eebb79: Add Ink, Monad, and Xlayer for EZETH
+- 8cf4bce: Add ustd/mantra warp route deployment artifacts
+- 7005645: Add SOL/incentiv-route, update transactionOverrides for incentiv
+- a687c25: Add CARR configs and logo
+- bd67600: Adds routes to Base for MAGIC and SMOL.
+
+### Patch Changes
+
+- ce1882d: Add missing entries to Radix addresses to comply with Zod schema.
+- 6491eb7: Fix gitleaks setup.
+- bf44bc6: Remove connections to monad for ezeth prod route
+- fe8252a: Update incentiv RPC url
+- 257e473: Update Renzo configs to use ownerOverrides
+- f1db8fb: Extend TIA/mantapacific
+- 5555be3: Deploy USDC/radix
+- 0d73b8c: Update litchain/LITKEY gecko IDs.
+- ca2bca6: Update incentiv owner to SAFE
+- bd90760: Refactor TIA/arbitrum
+- 45072bb: add BSC <-> Linea warp routes for mUSD
+- f7550d1: feat: Add mUSD route config
+- f32f809: Remove arbitrum leg from CARR/carrchain
+- af7b233: Deploy Mantra ETH, WBTC & HYPE.
+- 93a21a9: Add LITKEY metadata.
+- 49aa1ed: Update incentiv logo with correct one
+
 ## 23.4.0
 
 ### Minor Changes
