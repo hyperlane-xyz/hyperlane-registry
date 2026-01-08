@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-revert USDC/paradex extension
+Extend USDC/paradex with hyperevm
