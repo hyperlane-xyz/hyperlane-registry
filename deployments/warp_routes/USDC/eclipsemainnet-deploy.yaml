@@ -24,10 +24,35 @@ arbitrum:
     owner: "0xAC98b0cD1B64EA4fe133C6D2EDaf842cE5cF4b01"
   token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
   tokenFee:
-    bps: 5
+    feeContracts:
+      base:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+        type: LinearFee
+      ethereum:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+        type: LinearFee
+      optimism:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+        type: LinearFee
+      polygon:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+        type: LinearFee
+      unichain:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+        type: LinearFee
     owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
     token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
-    type: LinearFee
+    type: RoutingFee
   type: collateral
 base:
   allowedRebalancers:
@@ -55,10 +80,35 @@ base:
     owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
   token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
   tokenFee:
-    bps: 5
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+        type: LinearFee
+      ethereum:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+        type: LinearFee
+      optimism:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+        type: LinearFee
+      polygon:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+        type: LinearFee
+      unichain:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+        type: LinearFee
     owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
     token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
-    type: LinearFee
+    type: RoutingFee
   type: collateral
 eclipsemainnet:
   foreignDeployment: EqRSt9aUDMKYKhzd1DGMderr3KNp29VZH3x5P7LFTC8m
@@ -91,10 +141,35 @@ ethereum:
     owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
   token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
   tokenFee:
-    bps: 5
-    owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        type: LinearFee
+      base:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        type: LinearFee
+      optimism:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        type: LinearFee
+      polygon:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        type: LinearFee
+      unichain:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+        type: LinearFee
+    owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
     token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
-    type: LinearFee
+    type: RoutingFee
   type: collateral
 optimism:
   allowedRebalancers:
@@ -122,10 +197,35 @@ optimism:
     owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
   token: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
   tokenFee:
-    bps: 5
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
+        type: LinearFee
+      base:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
+        type: LinearFee
+      ethereum:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
+        type: LinearFee
+      polygon:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
+        type: LinearFee
+      unichain:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
+        type: LinearFee
     owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
     token: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
-    type: LinearFee
+    type: RoutingFee
   type: collateral
 polygon:
   allowedRebalancers:
@@ -153,10 +253,35 @@ polygon:
     owner: "0x20e52e3BeDf7BD305Ca816Dc54a0835D3bDeD820"
   token: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
   tokenFee:
-    bps: 5
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+        type: LinearFee
+      base:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+        type: LinearFee
+      ethereum:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+        type: LinearFee
+      optimism:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+        type: LinearFee
+      unichain:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+        type: LinearFee
     owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
     token: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
-    type: LinearFee
+    type: RoutingFee
   type: collateral
 solanamainnet:
   foreignDeployment: 3EpVCPUgyjq2MfGeCttyey6bs5zya5wjYZ2BE6yDg6bm
@@ -190,8 +315,33 @@ unichain:
     owner: "0xD39c288D2A021207Dfec7780e778D73460f563D7"
   token: "0x078D782b760474a361dDA0AF3839290b0EF57AD6"
   tokenFee:
-    bps: 5
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x078D782b760474a361dDA0AF3839290b0EF57AD6"
+        type: LinearFee
+      base:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x078D782b760474a361dDA0AF3839290b0EF57AD6"
+        type: LinearFee
+      ethereum:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x078D782b760474a361dDA0AF3839290b0EF57AD6"
+        type: LinearFee
+      optimism:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x078D782b760474a361dDA0AF3839290b0EF57AD6"
+        type: LinearFee
+      polygon:
+        bps: 5
+        owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+        token: "0x078D782b760474a361dDA0AF3839290b0EF57AD6"
+        type: LinearFee
     owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
     token: "0x078D782b760474a361dDA0AF3839290b0EF57AD6"
-    type: LinearFee
+    type: RoutingFee
   type: collateral
