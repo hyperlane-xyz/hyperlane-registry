@@ -67,26 +67,35 @@ for WARP_ROUTE_ID in $WARP_ROUTE_IDS; do
     DEPLOY_FILE="deployments/warp_routes/${WARP_ROUTE_ID}-deploy.yaml"
     if [ -f "$DEPLOY_FILE" ]; then
         cp "$DEPLOY_FILE" /tmp/registry-deploy-before.yaml
+        EXPORT_LOG="/tmp/registry-export-${WARP_ROUTE_ID}.log"
         
-        docker run --rm \
+        if docker run --rm \
             -e CI=true \
+            -e REGISTRY_URI=/registry \
             -v "$(pwd)":/registry \
             -w /registry \
             gcr.io/abacus-labs-dev/hyperlane-monorepo:main \
             ./node_modules/.bin/tsx \
             ./typescript/infra/scripts/warp-routes/export-warp-configs.ts \
             -e mainnet3 \
-            --warpRouteId $WARP_ROUTE_ID 2>/dev/null || true
-        
-        if diff -q "$DEPLOY_FILE" /tmp/registry-deploy-before.yaml > /dev/null 2>&1; then
-            CONFIG_SYNC_STATUS="✅"
+            --warpRouteId $WARP_ROUTE_ID > "$EXPORT_LOG" 2>&1; then
+            if grep -q "^SKIP: No config getter" "$EXPORT_LOG"; then
+                CONFIG_SYNC_STATUS="N/A (no getter)"
+            elif diff -q "$DEPLOY_FILE" /tmp/registry-deploy-before.yaml > /dev/null 2>&1; then
+                CONFIG_SYNC_STATUS="✅"
+            else
+                CONFIG_SYNC_STATUS="❌ (config getter differs)"
+                EXIT_CODE=1
+            fi
         else
-            CONFIG_SYNC_STATUS="❌ (config getter differs)"
+            CONFIG_SYNC_STATUS="❌ (export failed)"
             EXIT_CODE=1
+            echo "export-warp-configs failed for $WARP_ROUTE_ID"
+            cat "$EXPORT_LOG"
         fi
         
         cp /tmp/registry-deploy-before.yaml "$DEPLOY_FILE"
-        rm -f /tmp/registry-deploy-before.yaml
+        rm -f /tmp/registry-deploy-before.yaml "$EXPORT_LOG"
     else
         CONFIG_SYNC_STATUS="N/A"
     fi
