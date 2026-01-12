@@ -74,7 +74,6 @@ for WARP_ROUTE_ID in $WARP_ROUTE_IDS; do
             -e CI=true \
             -e REGISTRY_URI=/registry \
             -v "$(pwd)":/registry \
-            -w /registry \
             gcr.io/abacus-labs-dev/hyperlane-monorepo:main \
             ./node_modules/.bin/tsx \
             ./typescript/infra/scripts/warp-routes/export-warp-configs.ts \
