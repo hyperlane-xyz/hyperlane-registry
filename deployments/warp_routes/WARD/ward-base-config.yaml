@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x6252BefAc2E1a8f7CbD3d43C6B8479790F37a98f"
+    chainName: wardenprotocol
+    connections:
+      - token: ethereum|base|0x6252BefAc2E1a8f7CbD3d43C6B8479790F37a98f
+    decimals: 18
+    logoURI: /deployments/warp_routes/WARD/logo.svg
+    name: WARD
+    standard: EvmHypNative
+    symbol: WARD
+  - addressOrDenom: "0x6252BefAc2E1a8f7CbD3d43C6B8479790F37a98f"
+    chainName: base
+    connections:
+      - token: ethereum|wardenprotocol|0x6252BefAc2E1a8f7CbD3d43C6B8479790F37a98f
+    decimals: 18
+    logoURI: /deployments/warp_routes/WARD/logo.svg
+    name: WARD
+    standard: EvmHypSynthetic
+    symbol: WARD
