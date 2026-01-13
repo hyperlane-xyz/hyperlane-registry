@@ -2,6 +2,7 @@
 tokens:
   - addressOrDenom: "0xE78fA49bE021e533cd8f6E10931b796D89cd80DD"
     chainName: ethereum
+    coinGeckoId: tether
     collateralAddressOrDenom: "0xdac17f958d2ee523a2206206994597c13d831ec7"
     connections:
       - token: ethereum|krown|0x59973ae98D340cA0577ed92502402E82E987Ba2E
@@ -12,8 +13,8 @@ tokens:
     symbol: USDT
   - addressOrDenom: "0x59973ae98D340cA0577ed92502402E82E987Ba2E"
     chainName: krown
-    connections: [] # temporarily deposit-only to krown
-    # - token: ethereum|ethereum|0xE78fA49bE021e533cd8f6E10931b796D89cd80DD
+    connections:
+      - token: ethereum|ethereum|0xE78fA49bE021e533cd8f6E10931b796D89cd80DD
     decimals: 6
     logoURI: /deployments/warp_routes/USDT/logo.svg
     name: Tether USD

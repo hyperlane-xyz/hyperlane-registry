@@ -824,9 +824,9 @@ base:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
+    - http: https://base.drpc.org
     - http: https://mainnet.base.org
     - http: https://base.blockpi.network/v1/rpc/public
-    - http: https://base.drpc.org
     - http: https://base.llamarpc.com
     - http: https://1rpc.io/base
     - http: https://base-pokt.nodies.app
@@ -4627,8 +4627,8 @@ lukso:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.mainnet.lukso.network
-    - http: https://rpc.lukso.sigmacore.io
     - http: https://42.rpc.thirdweb.com
+    - http: https://public-lukso.nownodes.io
   technicalStack: other
 luksotestnet:
   blockExplorers:
@@ -4887,6 +4887,7 @@ megaeth:
   displayName: MegaETH
   domainId: 4326
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/mega
   name: megaeth
   nativeToken:
     decimals: 18

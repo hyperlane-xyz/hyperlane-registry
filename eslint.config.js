@@ -1,14 +1,13 @@
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import tsparser from '@typescript-eslint/parser';
-import eslintPluginYml from 'eslint-plugin-yml';
-import yamlParser from 'yaml-eslint-parser';
 import importPlugin from 'eslint-plugin-import';
-import { sortYamlArraysPlugin } from '@hyperlane-xyz/utils/eslint-rules';
+import { yamlEslintConfig } from '@hyperlane-xyz/utils/eslint-rules';
 
 export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
+  ...yamlEslintConfig,
   {
     files: ['src/**/*.ts'],
     languageOptions: {
@@ -42,43 +41,6 @@ export default tseslint.config(
       ],
     },
     ignores: ['node_modules', 'dist', 'tmp'],
-  },
-  ...eslintPluginYml.configs['flat/standard'],
-  {
-    files: ['chains/**/*.yaml', 'deployments/**/*.yaml'],
-    languageOptions: {
-      parser: yamlParser,
-    },
-    rules: {
-      'yml/sort-keys': ['error'],
-      'yml/flow-mapping-curly-spacing': ['error', 'always'],
-      'yml/sort-sequence-values': [
-        'error',
-        {
-          pathPattern: '.*',
-          order: {
-            type: 'asc',
-            caseSensitive: true,
-            natural: false,
-          },
-          minValues: 2,
-        },
-      ],
-      'hyperlane/sort-yaml-arrays': [
-        'error',
-        {
-          arrays: [
-            { path: 'tokens', sortKey: 'chainName' },
-            { path: 'tokens[].connections', sortKey: 'token' },
-            { path: '*.interchainSecurityModule.modules', sortKey: 'type' },
-            { path: '*.interchainSecurityModule.modules[].domains.*.modules', sortKey: 'type' },
-          ],
-        },
-      ],
-    },
-    plugins: {
-      hyperlane: sortYamlArraysPlugin,
-    },
   },
   {
     files: ['src/**/*.ts'],
