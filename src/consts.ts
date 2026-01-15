@@ -10,10 +10,10 @@ export const WARP_ROUTE_SYMBOL_DIRECTORY_REGEX = /warp_routes\/([a-zA-Z0-9]+)$/;
 export const WARP_ROUTE_PATTERN = '([a-zA-Z0-9.*]+)/([a-z0-9-]+)';
 export const WARP_ROUTE_ID_REGEX = new RegExp(`^${WARP_ROUTE_PATTERN}$`);
 export const WARP_ROUTE_CONFIG_FILE_REGEX = new RegExp(
-  `warp_routes/${WARP_ROUTE_PATTERN}-config.yaml`,
+  `warp_routes/${WARP_ROUTE_PATTERN}-config.yaml$`,
 );
 export const WARP_ROUTE_DEPLOY_FILE_REGEX = new RegExp(
-  `warp_routes/${WARP_ROUTE_PATTERN}-deploy.yaml`,
+  `warp_routes/${WARP_ROUTE_PATTERN}-deploy.yaml$`,
 );
 
 export const ABACUS_WORKS_DEPLOYER_NAME = 'Abacus Works';
