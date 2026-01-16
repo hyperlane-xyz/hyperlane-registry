@@ -1,5 +1,5 @@
 aleo:
-  decimals: 18
+  decimals: 6
   gas: 60000
   name: Tether USDC
   owner: aleo1mx0tldt5qsqymn5a3whnmf9rx2whp837jjn0tvqgxqf86zg6dvyqnc8spm
@@ -7,33 +7,33 @@ aleo:
   type: synthetic
 bsc:
   decimals: 18
+  interchainSecurityModule:
+    threshold: 1
+    type: messageIdMultisigIsm
+    validators:
+      - "0xb9e79db67d02db0f79726c1aa499cc4d26b084fa"
   owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
   token: "0x55d398326f99059ff775485246999027b3197955"
   type: collateral
-  interchainSecurityModule:
-    type: messageIdMultisigIsm
-    threshold: 1
-    validators:
-      - "0xb9e79db67d02db0f79726c1aa499cc4d26b084fa"
-hyperevm:
-  decimals: 6
-  scale: 1000000000000
-  owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
-  token: "0xB8CE59FC3717ada4C02eaDF9682A9e934F625ebb"
-  type: collateral
-  interchainSecurityModule:
-    type: messageIdMultisigIsm
-    threshold: 1
-    validators:
-      - "0xb9e79db67d02db0f79726c1aa499cc4d26b084fa"
 ethereum:
   decimals: 6
-  scale: 1000000000000
-  owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
-  token: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
-  type: collateral
   interchainSecurityModule:
-    type: messageIdMultisigIsm
     threshold: 1
+    type: messageIdMultisigIsm
     validators:
       - "0xb9e79db67d02db0f79726c1aa499cc4d26b084fa"
+  owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
+  scale: 1000000000000
+  token: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+  type: collateral
+hyperevm:
+  decimals: 6
+  interchainSecurityModule:
+    threshold: 1
+    type: messageIdMultisigIsm
+    validators:
+      - "0xb9e79db67d02db0f79726c1aa499cc4d26b084fa"
+  owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
+  scale: 1000000000000
+  token: "0xB8CE59FC3717ada4C02eaDF9682A9e934F625ebb"
+  type: collateral
