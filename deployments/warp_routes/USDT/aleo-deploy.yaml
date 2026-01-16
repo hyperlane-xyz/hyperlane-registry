@@ -3,6 +3,7 @@ aleo:
   gas: 60000
   name: Tether USDC
   owner: aleo1mx0tldt5qsqymn5a3whnmf9rx2whp837jjn0tvqgxqf86zg6dvyqnc8spm
+  scale: 1000000000000
   symbol: USDT
   type: synthetic
 bsc:
@@ -12,7 +13,10 @@ bsc:
     type: messageIdMultisigIsm
     validators:
       - "0xb9e79db67d02db0f79726c1aa499cc4d26b084fa"
+  name: Tether USD,
   owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
+  scale: 1
+  symbol: USDT
   token: "0x55d398326f99059ff775485246999027b3197955"
   type: collateral
 ethereum:
@@ -22,8 +26,10 @@ ethereum:
     type: messageIdMultisigIsm
     validators:
       - "0xb9e79db67d02db0f79726c1aa499cc4d26b084fa"
+  name: Tether USD,
   owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
   scale: 1000000000000
+  symbol: USDT
   token: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
   type: collateral
 hyperevm:
@@ -33,7 +39,19 @@ hyperevm:
     type: messageIdMultisigIsm
     validators:
       - "0xb9e79db67d02db0f79726c1aa499cc4d26b084fa"
+  name: Tether USD,
   owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
   scale: 1000000000000
+  symbol: USDT
   token: "0xB8CE59FC3717ada4C02eaDF9682A9e934F625ebb"
+  type: collateral
+solanamainnet:
+  decimals: 6
+  foreignDeployment: GZ5zWtLNbQ2qJPymkS9My4AYatQx5HV7MQ9f68vG6GNi
+  gas: 300000
+  name: Tether USD,
+  owner: FUEyWicwhuRwAn5thRj6XrVwogWUeoCUX38iV2xW61Za
+  scale: 1000000000000
+  symbol: USDT
+  token: GZ5zWtLNbQ2qJPymkS9My4AYatQx5HV7MQ9f68vG6GNi
   type: collateral
