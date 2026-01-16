@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add Aleo Solana metadata
+Add metadata for the ALEO synthetic token on Solana.
