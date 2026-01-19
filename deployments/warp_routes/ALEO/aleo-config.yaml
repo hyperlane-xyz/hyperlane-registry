@@ -1,41 +1,41 @@
 tokens:
-  - chainName: ethereum
-    standard: EvmHypSynthetic
-    decimals: 6
-    symbol: ALEO
-    name: Aleo
-    addressOrDenom: "0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa"
+  - addressOrDenom: hyp_warp_token_credits.aleo/aleo1qaqv2f6mn24xufa50d579s2pr75alxczcwl2g94favhj0dcj0yqqexazpp
+    chainName: aleo
     connections:
       - token: ethereum|base|0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa
-      - token: aleo|aleo|hyp_warp_token_credits.aleo/aleo1qaqv2f6mn24xufa50d579s2pr75alxczcwl2g94favhj0dcj0yqqexazpp
-      - token: ethereum|hyperevm|0x9562b536713aF52627679c2c559ebE54fB7c3cc9
-  - chainName: base
-    standard: EvmHypSynthetic
-    decimals: 6
-    symbol: ALEO
-    name: Aleo
-    addressOrDenom: "0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa"
-    connections:
       - token: ethereum|ethereum|0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa
-      - token: aleo|aleo|hyp_warp_token_credits.aleo/aleo1qaqv2f6mn24xufa50d579s2pr75alxczcwl2g94favhj0dcj0yqqexazpp
       - token: ethereum|hyperevm|0x9562b536713aF52627679c2c559ebE54fB7c3cc9
-  - chainName: aleo
+    decimals: 6
+    name: Aleo
     standard: AleoHypNative
-    decimals: 6
     symbol: ALEO
-    name: Aleo
-    addressOrDenom: hyp_warp_token_credits.aleo/aleo1qaqv2f6mn24xufa50d579s2pr75alxczcwl2g94favhj0dcj0yqqexazpp
+  - addressOrDenom: "0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa"
+    chainName: base
     connections:
+      - token: aleo|aleo|hyp_warp_token_credits.aleo/aleo1qaqv2f6mn24xufa50d579s2pr75alxczcwl2g94favhj0dcj0yqqexazpp
       - token: ethereum|ethereum|0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa
+      - token: ethereum|hyperevm|0x9562b536713aF52627679c2c559ebE54fB7c3cc9
+    decimals: 6
+    name: Aleo
+    standard: EvmHypSynthetic
+    symbol: ALEO
+  - addressOrDenom: "0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa"
+    chainName: ethereum
+    connections:
+      - token: aleo|aleo|hyp_warp_token_credits.aleo/aleo1qaqv2f6mn24xufa50d579s2pr75alxczcwl2g94favhj0dcj0yqqexazpp
       - token: ethereum|base|0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa
       - token: ethereum|hyperevm|0x9562b536713aF52627679c2c559ebE54fB7c3cc9
-  - chainName: hyperevm
-    standard: EvmHypSynthetic
     decimals: 6
-    symbol: ALEO
     name: Aleo
-    addressOrDenom: "0x9562b536713aF52627679c2c559ebE54fB7c3cc9"
+    standard: EvmHypSynthetic
+    symbol: ALEO
+  - addressOrDenom: "0x9562b536713aF52627679c2c559ebE54fB7c3cc9"
+    chainName: hyperevm
     connections:
-      - token: ethereum|ethereum|0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa
-      - token: ethereum|base|0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa
       - token: aleo|aleo|hyp_warp_token_credits.aleo/aleo1qaqv2f6mn24xufa50d579s2pr75alxczcwl2g94favhj0dcj0yqqexazpp
+      - token: ethereum|base|0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa
+      - token: ethereum|ethereum|0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa
+    decimals: 6
+    name: Aleo
+    standard: EvmHypSynthetic
+    symbol: ALEO

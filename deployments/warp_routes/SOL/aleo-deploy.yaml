@@ -7,18 +7,17 @@ aleo:
   type: synthetic
 hyperevm:
   decimals: 9
+  interchainSecurityModule:
+    threshold: 1
+    type: messageIdMultisigIsm
+    validators:
+      - "0xb9e79db67d02db0f79726c1aa499cc4d26b084fa"
   owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
   token: "0x068f321Fa8Fb9f0D135f290Ef6a3e2813e1c8A29"
   type: collateral
-  interchainSecurityModule:
-    type: messageIdMultisigIsm
-    threshold: 1
-    validators:
-      - "0xb9e79db67d02db0f79726c1aa499cc4d26b084fa"
 solanamainnet:
   decimals: 9
   foreignDeployment: 8YGT2pZwyZe94qBpGzWfY2TMEVcwaQ1bXAE7YAgpUaM7
-  owner: FUEyWicwhuRwAn5thRj6XrVwogWUeoCUX38iV2xW61Za
   gas: 300000
+  owner: FUEyWicwhuRwAn5thRj6XrVwogWUeoCUX38iV2xW61Za
   type: native
-

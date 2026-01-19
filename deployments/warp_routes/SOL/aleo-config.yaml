@@ -1,18 +1,31 @@
 tokens:
-  - chainName: aleo
-    standard: AleoHypSynthetic
-    decimals: 9
-    symbol: SOL
-    name: Solana
-    addressOrDenom: hyp_warp_token_sol.aleo/aleo1m3f6d2sp07ca6cpjw20xw7tv9qhvhu5t33ak6c830kjmxwl6s5zq5qswg8
+  - addressOrDenom: hyp_warp_token_sol.aleo/aleo1m3f6d2sp07ca6cpjw20xw7tv9qhvhu5t33ak6c830kjmxwl6s5zq5qswg8
+    chainName: aleo
     connections:
       - token: ethereum|hyperevm|0xEe3147deeDFC0c6DDD7c65D4e9ff9a48632BE645
-  - chainName: hyperevm
-    standard: EvmHypCollateral
+      - token: sealevel|solanamainnet|8YGT2pZwyZe94qBpGzWfY2TMEVcwaQ1bXAE7YAgpUaM7
     decimals: 9
-    symbol: USOL
-    name: Unit Solana
-    addressOrDenom: "0xEe3147deeDFC0c6DDD7c65D4e9ff9a48632BE645"
+    name: Solana
+    standard: AleoHypSynthetic
+    symbol: SOL
+  - addressOrDenom: "0xEe3147deeDFC0c6DDD7c65D4e9ff9a48632BE645"
+    chainName: hyperevm
     collateralAddressOrDenom: "0x068f321Fa8Fb9f0D135f290Ef6a3e2813e1c8A29"
     connections:
       - token: aleo|aleo|hyp_warp_token_sol.aleo/aleo1m3f6d2sp07ca6cpjw20xw7tv9qhvhu5t33ak6c830kjmxwl6s5zq5qswg8
+      - token: sealevel|solanamainnet|8YGT2pZwyZe94qBpGzWfY2TMEVcwaQ1bXAE7YAgpUaM7
+    decimals: 9
+    name: Unit Solana
+    standard: EvmHypCollateral
+    symbol: USOL
+  - addressOrDenom: 8YGT2pZwyZe94qBpGzWfY2TMEVcwaQ1bXAE7YAgpUaM7
+    chainName: solanamainnet
+    coinGeckoId: solana
+    connections:
+      - token: aleo|aleo|hyp_warp_token_sol.aleo/aleo1m3f6d2sp07ca6cpjw20xw7tv9qhvhu5t33ak6c830kjmxwl6s5zq5qswg8
+      - token: ethereum|hyperevm|0xEe3147deeDFC0c6DDD7c65D4e9ff9a48632BE645
+    decimals: 9
+    logoURI: /deployments/warp_routes/SOL/logo.svg
+    name: Solana
+    standard: SealevelHypNative
+    symbol: SOL
