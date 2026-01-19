@@ -5,6 +5,7 @@ tokens:
       - token: ethereum|bsc|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
       - token: ethereum|ethereum|0x3C2064D78e4578E8F936E3db42aEF044E33FBF31
       - token: ethereum|hyperevm|0x36E437699E3658396Bf6229ddDaE54884cf28779
+      - token: sealevel|solanamainnet|GZ5zWtLNbQ2qJPymkS9My4AYatQx5HV7MQ9f68vG6GNi
     decimals: 6
     name: Tether USDC
     standard: AleoHypSynthetic
@@ -16,6 +17,7 @@ tokens:
       - token: aleo|aleo|hyp_warp_token_usdt.aleo/aleo1t8xqj2q5lem2jr5gj6036am9hu69t59554cl5gd2pasxnjxmdsgsh98eqg
       - token: ethereum|ethereum|0x3C2064D78e4578E8F936E3db42aEF044E33FBF31
       - token: ethereum|hyperevm|0x36E437699E3658396Bf6229ddDaE54884cf28779
+      - token: sealevel|solanamainnet|GZ5zWtLNbQ2qJPymkS9My4AYatQx5HV7MQ9f68vG6GNi
     decimals: 18
     name: Tether USD
     standard: EvmHypCollateral
@@ -27,6 +29,7 @@ tokens:
       - token: aleo|aleo|hyp_warp_token_usdt.aleo/aleo1t8xqj2q5lem2jr5gj6036am9hu69t59554cl5gd2pasxnjxmdsgsh98eqg
       - token: ethereum|bsc|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
       - token: ethereum|hyperevm|0x36E437699E3658396Bf6229ddDaE54884cf28779
+      - token: sealevel|solanamainnet|GZ5zWtLNbQ2qJPymkS9My4AYatQx5HV7MQ9f68vG6GNi
     decimals: 6
     name: Tether USD
     standard: EvmHypCollateral
@@ -38,7 +41,22 @@ tokens:
       - token: aleo|aleo|hyp_warp_token_usdt.aleo/aleo1t8xqj2q5lem2jr5gj6036am9hu69t59554cl5gd2pasxnjxmdsgsh98eqg
       - token: ethereum|bsc|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
       - token: ethereum|ethereum|0x3C2064D78e4578E8F936E3db42aEF044E33FBF31
+      - token: sealevel|solanamainnet|GZ5zWtLNbQ2qJPymkS9My4AYatQx5HV7MQ9f68vG6GNi
     decimals: 6
     name: USD₮0
     standard: EvmHypCollateral
     symbol: USD₮0
+  - addressOrDenom: GZ5zWtLNbQ2qJPymkS9My4AYatQx5HV7MQ9f68vG6GNi
+    chainName: solanamainnet
+    coinGeckoId: tether
+    collateralAddressOrDenom: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+    connections:
+      - token: aleo|aleo|hyp_warp_token_usdt.aleo/aleo1t8xqj2q5lem2jr5gj6036am9hu69t59554cl5gd2pasxnjxmdsgsh98eqg
+      - token: ethereum|bsc|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
+      - token: ethereum|ethereum|0x3C2064D78e4578E8F936E3db42aEF044E33FBF31
+      - token: ethereum|hyperevm|0x36E437699E3658396Bf6229ddDaE54884cf28779
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: SealevelHypCollateral
+    symbol: USDT
