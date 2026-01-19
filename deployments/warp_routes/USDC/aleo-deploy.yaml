@@ -3,6 +3,7 @@ aleo:
   gas: 60000
   name: USD Coin
   owner: aleo1mx0tldt5qsqymn5a3whnmf9rx2whp837jjn0tvqgxqf86zg6dvyqnc8spm
+  scale: 1000000000000
   symbol: USDC
   type: synthetic
 arbitrum:
@@ -20,8 +21,10 @@ arbitrum:
     polygon:
       - bridge: "0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2"
   decimals: 6
+  name: USD Coin
   owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
   scale: 1000000000000
+  symbol: USDC
   token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
   type: collateral
 avalanche:
@@ -39,8 +42,10 @@ avalanche:
     polygon:
       - bridge: "0x0E8Bc62865F539889fe7d8537F2ed6db5aa0F677"
   decimals: 6
+  name: USD Coin
   owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
   scale: 1000000000000
+  symbol: USDC
   token: "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E"
   type: collateral
 base:
@@ -58,14 +63,18 @@ base:
     polygon:
       - bridge: "0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975"
   decimals: 6
+  name: USD Coin
   owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
   scale: 1000000000000
+  symbol: USDC
   token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
   type: collateral
 bsc:
   decimals: 18
+  name: USD Coin
   owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
-  scale: 1000000000000
+  scale: 1
+  symbol: USDC
   token: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
   type: collateral
 ethereum:
@@ -83,8 +92,10 @@ ethereum:
     polygon:
       - bridge: "0xedCBAa585FD0F80f20073F9958246476466205b8"
   decimals: 6
+  name: USD Coin
   owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
   scale: 1000000000000
+  symbol: USDC
   token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
   type: collateral
 optimism:
@@ -102,8 +113,10 @@ optimism:
     polygon:
       - bridge: "0xfB7681ECB05F85c383A5ce4439C7dF5ED12c77DE"
   decimals: 6
+  name: USD Coin
   owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
   scale: 1000000000000
+  symbol: USDC
   token: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
   type: collateral
 polygon:
@@ -121,7 +134,19 @@ polygon:
     optimism:
       - bridge: "0xa62F45662809f5F6535b58bae9A572a2EC4A1f84"
   decimals: 6
+  name: USD Coin
   owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
   scale: 1000000000000
+  symbol: USDC
   token: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+  type: collateral
+solanamainnet:
+  decimals: 6
+  foreignDeployment: EiUymjh3vJ2486ozY24s1A1YWXoH6QnSGjWuP95ph35G
+  gas: 300000
+  name: USD Coin
+  owner: FUEyWicwhuRwAn5thRj6XrVwogWUeoCUX38iV2xW61Za
+  scale: 1000000000000
+  symbol: USDC
+  token: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
   type: collateral
