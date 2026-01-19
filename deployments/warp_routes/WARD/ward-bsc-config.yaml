@@ -1,14 +1,5 @@
 # yaml-language-server: $schema=../schema.json
 tokens:
-  - addressOrDenom: "0xAB5159B5655CdAA5178C283853841aBB0D02Eef9"
-    chainName: wardenprotocol
-    connections:
-      - token: ethereum|bsc|0x6dc200b21894Af4660b549B678ea8df22BF7cfAc
-    decimals: 18
-    logoURI: /deployments/warp_routes/WARD/logo.svg
-    name: WARD
-    standard: EvmHypNative
-    symbol: WARD
   - addressOrDenom: "0x6dc200b21894Af4660b549B678ea8df22BF7cfAc"
     chainName: bsc
     connections:
@@ -17,4 +8,13 @@ tokens:
     logoURI: /deployments/warp_routes/WARD/logo.svg
     name: WARD
     standard: EvmHypSynthetic
+    symbol: WARD
+  - addressOrDenom: "0xAB5159B5655CdAA5178C283853841aBB0D02Eef9"
+    chainName: wardenprotocol
+    connections:
+      - token: ethereum|bsc|0x6dc200b21894Af4660b549B678ea8df22BF7cfAc
+    decimals: 18
+    logoURI: /deployments/warp_routes/WARD/logo.svg
+    name: WARD
+    standard: EvmHypNative
     symbol: WARD
