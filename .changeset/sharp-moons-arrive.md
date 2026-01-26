@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Aleo mainnet deployment
+Add ENI eth/wbtc/usdc/usdt warp routes.

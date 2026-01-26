@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Extend MAT with Base.
+Add USDC logo to CCTP v2 warp routes

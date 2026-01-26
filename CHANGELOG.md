@@ -1,5 +1,40 @@
 # @hyperlane-xyz/registry
 
+## 23.11.0
+
+### Minor Changes
+
+- 008d243: Deploy to citrea mainnet
+- 4bdf0f1: Update default ISMs.
+- 25651cf: Deployed the METIS/lazai warp route
+- 366a1e1: Add warp route artifacts for: USDC/krown, USDT/krown, ETH/krown, and add correct RPC URL for krown.
+- c8eb1a5: Add warp route artifacts for: USDC/carrchain, USDT/carrchain, WBTC/carrchain & WETH/carrchain
+- 03ec6e2: Deploy to eni, krown.
+
+### Patch Changes
+
+- 9ad57e6: Update Krown URL
+- c1c30be: fix: update kyve gasprice
+- bd09606: Update Mantra chain displayName to be uppercase
+- 6bf1fa6: Remove flowmainnet from trump leg
+- a71b036: Update krown reorgPeriod from 1 to 5.
+- 4e7f57b: Update CCTP v2 fast deployment artifacts
+- 0957895: Deprecate svmbnb.
+- 804f757: Hide collateral legs connection for carrchain routes
+- 9537933: Update megaeth RPC URL to https://mainnet.megaeth.com/rpc
+
+## 23.10.0
+
+### Minor Changes
+
+- 6b23a2a: Remove form connections from TRUMP route
+- 155f133: Aleo mainnet deployment
+
+### Patch Changes
+
+- fad742d: Deprecate form, injective, mint, neutron, milkywaytestnet.
+- 725e5b0: Extend MAT with Base.
+
 ## 23.9.0
 
 ### Minor Changes
