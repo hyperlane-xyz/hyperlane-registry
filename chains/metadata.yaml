@@ -826,7 +826,7 @@ base:
   rpcUrls:
     - http: https://base.drpc.org
     - http: https://mainnet.base.org
-    - http: https://base.blockpi.network/v1/rpc/public
+    - http: https://base.public.blockpi.network/v1/rpc/public
     - http: https://base.llamarpc.com
     - http: https://1rpc.io/base
     - http: https://base-pokt.nodies.app
@@ -2130,6 +2130,10 @@ degenchain:
     - http: https://rpc.degen.tips
   technicalStack: arbitrumnitro
 deprecatedalephzeroevm:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://evm-explorer.alephzero.org/api
       family: blockscout
@@ -2157,6 +2161,10 @@ deprecatedalephzeroevm:
     - http: https://alephzero.drpc.org
   technicalStack: arbitrumnitro
 deprecatedchiliz:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/88888/etherscan/api
       family: routescan
@@ -2183,6 +2191,10 @@ deprecatedchiliz:
   transactionOverrides:
     maxPriorityFeePerGas: 1000000000
 deprecatedflow:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://evm.flowscan.io/api
       family: blockscout
@@ -2209,6 +2221,10 @@ deprecatedflow:
   transactionOverrides:
     gasPrice: 100000000
 deprecatedimmutablezkevm:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.immutable.com/api/eth-rpc
       family: blockscout
@@ -2236,6 +2252,10 @@ deprecatedimmutablezkevm:
     maxFeePerGas: 100000000000
     maxPriorityFeePerGas: 100000000000
 deprecatedmetall2:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.metall2.com/api
       family: blockscout
@@ -2260,6 +2280,10 @@ deprecatedmetall2:
     - http: https://rpc.metall2.com
   technicalStack: opstack
 deprecatedpolynomial:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://polynomialscan.io/api
       family: routescan
@@ -2283,6 +2307,10 @@ deprecatedpolynomial:
     - http: https://rpc.polynomial.fi
   technicalStack: opstack
 deprecatedrari:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://mainnet.explorer.rarichain.org/api
       family: blockscout
@@ -2308,6 +2336,10 @@ deprecatedrari:
     - http: https://mainnet.rpc.rarichain.org/http
   technicalStack: arbitrumnitro
 deprecatedrootstock:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://rootstock.blockscout.com/api
       family: blockscout
@@ -2333,6 +2365,10 @@ deprecatedrootstock:
     - http: https://mycrypto.rsk.co
   technicalStack: other
 deprecatedsuperposition:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.superposition.so/api
       family: blockscout
@@ -2610,6 +2646,27 @@ ecotestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://eco-testnet.rpc.caldera.xyz/http
+eden:
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 714
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Eden
+  domainId: 714
+  gasCurrencyCoinGeckoId: celestia
+  name: eden
+  nativeToken:
+    decimals: 18
+    name: TIA
+    symbol: TIA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://eden-rpc.celestia.org
+  technicalStack: other
 edentestnet:
   chainId: 3735928814
   displayName: Eden Testnet
@@ -3777,10 +3834,10 @@ humanitytestnet:
     - http: https://rpc.testnet.humanity.org
 hyperevm:
   blockExplorers:
-    - apiUrl: https://hyperliquid.cloud.blockscout.com/api
+    - apiUrl: https://www.hyperscan.com/api/v2
       family: blockscout
       name: HyperEVM Explorer
-      url: https://hyperliquid.cloud.blockscout.com
+      url: https://www.hyperscan.com
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -4887,6 +4944,7 @@ megaeth:
   displayName: MegaETH
   domainId: 4326
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/mega
   name: megaeth
   nativeToken:
     decimals: 18
