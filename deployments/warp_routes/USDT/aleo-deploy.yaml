@@ -8,12 +8,8 @@ aleo:
   type: synthetic
 bsc:
   decimals: 18
-  interchainSecurityModule:
-    threshold: 1
-    type: messageIdMultisigIsm
-    validators:
-      - "0xb9e79db67d02db0f79726c1aa499cc4d26b084fa"
-  name: Tether USD,
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  name: Tether USD
   owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
   scale: 1
   symbol: USDT
@@ -21,12 +17,8 @@ bsc:
   type: collateral
 ethereum:
   decimals: 6
-  interchainSecurityModule:
-    threshold: 1
-    type: messageIdMultisigIsm
-    validators:
-      - "0xb9e79db67d02db0f79726c1aa499cc4d26b084fa"
-  name: Tether USD,
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  name: Tether USD
   owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
   scale: 1000000000000
   symbol: USDT
@@ -34,11 +26,7 @@ ethereum:
   type: collateral
 hyperevm:
   decimals: 6
-  interchainSecurityModule:
-    threshold: 1
-    type: messageIdMultisigIsm
-    validators:
-      - "0xb9e79db67d02db0f79726c1aa499cc4d26b084fa"
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
   name: Tether USD,
   owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
   scale: 1000000000000
@@ -49,7 +37,7 @@ solanamainnet:
   decimals: 6
   foreignDeployment: GZ5zWtLNbQ2qJPymkS9My4AYatQx5HV7MQ9f68vG6GNi
   gas: 300000
-  name: Tether USD,
+  name: Tether USD
   owner: FUEyWicwhuRwAn5thRj6XrVwogWUeoCUX38iV2xW61Za
   scale: 1000000000000
   symbol: USDT
