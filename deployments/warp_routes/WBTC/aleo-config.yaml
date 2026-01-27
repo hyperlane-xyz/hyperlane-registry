@@ -1,30 +1,30 @@
 tokens:
-  - chainName: aleo
-    standard: AleoHypSynthetic
-    decimals: 8
-    symbol: WBTC
-    name: Wrapped BTC
-    addressOrDenom: hyp_warp_token_wbtc.aleo/aleo1gxp4wr92ya52kqdhe87kquj8s7xkllyks4jk44qw0539pxjjhqrshd3svx
+  - addressOrDenom: hyp_warp_token_wbtc.aleo/aleo1gxp4wr92ya52kqdhe87kquj8s7xkllyks4jk44qw0539pxjjhqrshd3svx
+    chainName: aleo
     connections:
       - token: ethereum|ethereum|0x20CDC85778b732073F7EecEF3DF25c0d310f8772
       - token: ethereum|hyperevm|0xefafEE2F52c083c5aaB09c4AF65Adc966bbf1479
-  - chainName: hyperevm
-    standard: EvmHypCollateral
     decimals: 8
-    symbol: WBTC
     name: Wrapped BTC
-    addressOrDenom: "0xefafEE2F52c083c5aaB09c4AF65Adc966bbf1479"
-    collateralAddressOrDenom: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
-    connections:
-      - token: ethereum|ethereum|0x20CDC85778b732073F7EecEF3DF25c0d310f8772
-      - token: aleo|aleo|hyp_warp_token_wbtc.aleo/aleo1gxp4wr92ya52kqdhe87kquj8s7xkllyks4jk44qw0539pxjjhqrshd3svx
-  - chainName: ethereum
-    standard: EvmHypCollateral
-    decimals: 8
+    standard: AleoHypSynthetic
     symbol: WBTC
-    name: Wrapped BTC
-    addressOrDenom: "0x20CDC85778b732073F7EecEF3DF25c0d310f8772"
+  - addressOrDenom: "0x20CDC85778b732073F7EecEF3DF25c0d310f8772"
+    chainName: ethereum
     collateralAddressOrDenom: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
     connections:
       - token: aleo|aleo|hyp_warp_token_wbtc.aleo/aleo1gxp4wr92ya52kqdhe87kquj8s7xkllyks4jk44qw0539pxjjhqrshd3svx
       - token: ethereum|hyperevm|0x20CDC85778b732073F7EecEF3DF25c0d310f8772
+    decimals: 8
+    name: Wrapped BTC
+    standard: EvmHypCollateral
+    symbol: WBTC
+  - addressOrDenom: "0xefafEE2F52c083c5aaB09c4AF65Adc966bbf1479"
+    chainName: hyperevm
+    collateralAddressOrDenom: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
+    connections:
+      - token: aleo|aleo|hyp_warp_token_wbtc.aleo/aleo1gxp4wr92ya52kqdhe87kquj8s7xkllyks4jk44qw0539pxjjhqrshd3svx
+      - token: ethereum|ethereum|0x20CDC85778b732073F7EecEF3DF25c0d310f8772
+    decimals: 8
+    name: Wrapped BTC
+    standard: EvmHypCollateral
+    symbol: WBTC
