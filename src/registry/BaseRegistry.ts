@@ -5,6 +5,7 @@ import {
   ChainMetadata,
   ChainName,
   HypTokenRouterConfig,
+  SignerConfig,
   WarpCoreConfig,
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
@@ -13,6 +14,8 @@ import { WARP_ROUTE_ID_REGEX } from '../consts.js';
 import type {
   ChainAddresses,
   MaybePromise,
+  SignerConfigMap,
+  SignerConfiguration,
   UpdateChainParams,
   WarpDeployConfigMap,
   WarpRouteFilterParams,
@@ -191,6 +194,41 @@ export abstract class BaseRegistry implements IRegistry {
 
   abstract getWarpDeployConfig(routeId: string): MaybePromise<WarpRouteDeployConfig | null>;
   abstract getWarpDeployConfigs(filter?: WarpRouteFilterParams): MaybePromise<WarpDeployConfigMap>;
+
+  // Default signer implementations - return null by default
+  // Subclasses can override to provide signer support
+
+  /**
+   * Get all named signer configurations
+   * Default implementation returns null (not supported)
+   */
+  getSigners(): MaybePromise<SignerConfigMap | null> {
+    return null;
+  }
+
+  /**
+   * Get a specific named signer configuration
+   * Default implementation returns null (not found)
+   */
+  getSigner(_id: string): MaybePromise<SignerConfig | null> {
+    return null;
+  }
+
+  /**
+   * Get the default signer for a chain using hierarchy: chain > protocol > default
+   * Default implementation returns null (not configured)
+   */
+  getDefaultSigner(_chainName?: ChainName): MaybePromise<SignerConfig | null> {
+    return null;
+  }
+
+  /**
+   * Get the full signer configuration
+   * Default implementation returns null (not supported)
+   */
+  getSignerConfiguration(): MaybePromise<SignerConfiguration | null> {
+    return null;
+  }
 
   merge(otherRegistry: IRegistry): IRegistry {
     return new MergedRegistry({ registries: [this, otherRegistry], logger: this.logger });

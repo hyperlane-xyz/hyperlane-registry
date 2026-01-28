@@ -1,6 +1,8 @@
 import {
   ChainMetadataSchema,
   ChainName,
+  type SignerConfig,
+  type SignerConfiguration as SDKSignerConfiguration,
   type WarpCoreConfig,
   type WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
@@ -46,3 +48,18 @@ export type DeepPartial<T> = T extends object
       [P in keyof T]?: DeepPartial<T[P]>;
     }
   : T;
+
+// Re-export signer types from SDK for convenience
+export type { SignerConfig };
+
+/**
+ * Map of named signer configurations
+ * Key is the signer identifier, value is the signer config
+ */
+export type SignerConfigMap = Record<string, SignerConfig>;
+
+/**
+ * Complete signer configuration for a registry
+ * Includes named signers and hierarchical defaults
+ */
+export type SignerConfiguration = SDKSignerConfiguration;

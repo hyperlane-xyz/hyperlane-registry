@@ -6,6 +6,16 @@ export {
 export { BaseRegistry } from './registry/BaseRegistry.js';
 export { GithubRegistry, GithubRegistryOptions } from './registry/GithubRegistry.js';
 export {
+  GCPSignerRegistry,
+  GCPSignerRegistryOptions,
+  parseGCPUri,
+} from './registry/GCPSignerRegistry.js';
+export {
+  FoundryKeystoreRegistry,
+  FoundryKeystoreRegistryOptions,
+  parseFoundryKeystoreUri,
+} from './registry/FoundryKeystoreRegistry.js';
+export {
   AddWarpRouteConfigOptions,
   ChainFiles,
   IRegistry,
