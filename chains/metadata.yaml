@@ -652,6 +652,10 @@ astar:
     - http: https://evm.astar.network
   technicalStack: polkadotsubstrate
 astarzkevm:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://astar-zkevm.explorer.startale.com/api
       family: blockscout
@@ -2646,6 +2650,27 @@ ecotestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://eco-testnet.rpc.caldera.xyz/http
+eden:
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 714
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Eden
+  domainId: 714
+  gasCurrencyCoinGeckoId: celestia
+  name: eden
+  nativeToken:
+    decimals: 18
+    name: TIA
+    symbol: TIA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://eden-rpc.celestia.org
+  technicalStack: other
 edentestnet:
   chainId: 3735928814
   displayName: Eden Testnet
@@ -4009,6 +4034,10 @@ inevm:
     - http: https://mainnet.rpc.inevm.com/http
   technicalStack: arbitrumnitro
 infinityvm:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blocks:
     confirmations: 1
     estimateBlockTime: 1
@@ -6148,6 +6177,7 @@ paradex:
     symbol: FUEL
   protocol: starknet
   rpcUrls:
+    - http: https://rpc.api.prod.paradex.trade/rpc/v0_8
     - http: https://juno.api.prod.paradex.trade/rpc/v0_8
     - http: https://pathfinder.api.prod.paradex.trade/rpc/v0_8
   technicalStack: other
