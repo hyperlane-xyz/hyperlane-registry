@@ -3551,6 +3551,27 @@ KLC/arbitrum-bsc-kalychain-polygon:
       name: KalyCoin
       standard: EvmHypSynthetic
       symbol: KLC
+KROWN/krown:
+  tokens:
+    - addressOrDenom: "0xD198097db1C372ACbd3907df8A1BEd3c7d1B53CD"
+      chainName: ethereum
+      connections:
+        - token: ethereum|krown|0x680e8ECB908A2040232ef139A0A52cbE47b9F15B
+      decimals: 18
+      logoURI: /deployments/warp_routes/KROWN/logo.svg
+      name: KROWN
+      standard: EvmHypSynthetic
+      symbol: KROWN
+    - addressOrDenom: "0x680e8ECB908A2040232ef139A0A52cbE47b9F15B"
+      chainName: krown
+      coinGeckoId: krown-network
+      connections:
+        - token: ethereum|ethereum|0xD198097db1C372ACbd3907df8A1BEd3c7d1B53CD
+      decimals: 18
+      logoURI: /deployments/warp_routes/KROWN/logo.svg
+      name: KROWN
+      standard: EvmHypNative
+      symbol: KROWN
 KYVE/base-kyve:
   tokens:
     - addressOrDenom: "0xAD13BcE42394Add02e6c215a40e582309B7975C7"
