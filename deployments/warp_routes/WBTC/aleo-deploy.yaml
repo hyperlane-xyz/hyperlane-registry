@@ -1,0 +1,27 @@
+aleo:
+  decimals: 8
+  gas: 60000
+  name: Wrapped BTC
+  owner: aleo1mx0tldt5qsqymn5a3whnmf9rx2whp837jjn0tvqgxqf86zg6dvyqnc8spm
+  symbol: WBTC
+  type: synthetic
+hyperevm:
+  decimals: 8
+  owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
+  token: "0x9FDBdA0A5e284c32744D2f17Ee5c74B284993463"
+  type: collateral
+  interchainSecurityModule:
+    type: messageIdMultisigIsm
+    threshold: 1
+    validators:
+      - "0xb9e79db67d02db0f79726c1aa499cc4d26b084fa"
+ethereum:
+  decimals: 8
+  owner: "0xCdC981EE32C3306f116E196C009152B6D0ceA09A"
+  token: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
+  type: collateral
+  interchainSecurityModule:
+    type: messageIdMultisigIsm
+    threshold: 1
+    validators:
+      - "0xb9e79db67d02db0f79726c1aa499cc4d26b084fa"
