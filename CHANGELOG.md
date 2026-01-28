@@ -1,5 +1,50 @@
 # @hyperlane-xyz/registry
 
+## 23.12.0
+
+### Minor Changes
+
+- ea47535: Add metadata for the ALEO synthetic token on Solana.
+- ad2fafa: Deploy to eden mainnet.
+- 0e15ab9: Add MegaEth extension for EZETH
+- a3977ef: Added new Krown warp routes for BNB and WBTC
+- a803852: Migrate to node 24.
+- de59933: Add warp routes for Warden Protocol
+- 980d176: Add ENI eth/wbtc/usdc/usdt warp routes.
+- c6c5010: USDC/eclipsemainnet ownership transfer
+- 1e73372: Add ALEO (Aleo -> Sepolia) route
+- 74d5d19: Aleo Warp Routes (USDC, USDT, WBTC, ETH, SOL, ALEO)
+- 6eec27d: extend USDCSTAGE/eclipsemainnet
+- a0b58b8: Deployed krown native token warp route to allow bridging from and to ethereum
+- b54167e: Update warpRouteId for superseed route, update ink leg with new USDC and update rebalancing bridge to use CctpV2 for the route
+- 7824a57: extend USDC/eclipse to arbitrum, base, optimism, polygon, unichain, + upgrade ethereum router + enable MainnetCCTPV2Standard and MainnetCCTPV2Fast bridges
+- 075e7f9: Add testnet Aleo USAD route
+- fa809df: Add megaEth gnosisSafeTransactionServiceUrl
+- 7ceb0ec: Update default ISMs.
+- c7f134c: Remove ink connection array in superseed route
+
+### Patch Changes
+
+- 13dc9d1: Update HyperEVM block explorer
+- 6988266: Use BTC logo for BTCB token in WBTC/carrchain route
+- db4e3e0: Add USDC logo to CCTP v2 warp routes
+- 3a7aa2d: Added registry vs on-chain and config getter sync checks to CI
+- fc9c94d: Mark astarzkevm and infinityvm as unavailable
+- 7783185: Fix Base blockpi RPC URL
+- 4b2c979: Use correct BTCB symbol for BSC portion of WBTC/carrchain warp route
+- 0ee6eb6: Rotate lukso RPC
+- e5bbb1a: Promote base drpc as first one for base `rpcUrls`
+- b3df0ac: Import yamlEslintConfig from @hyperlane-xyz/utils instead of defining inline
+- a27756f: Enable withdrawals from Krown warp routes (ETH, USDC, USDT)
+- a27756f: Transfer Krown warp route ownership to Krown team and add coinGeckoIds for collateral tokens
+- 8b19dec: Update CCTP v2 fast fees
+- 5adc75c: Add new Paradex public RPC endpoint
+- e8af370: Update aleo, paradex validators on selected default ISMs.
+- 824d553: Add availability disabled metadata to deprecated chains
+- a7b072d: Remove neutron from mantapacific TIA warp route
+- a1827cd: Upgrade mainnet-cctp-v2-standard contract version.
+- 0044f34: revert USDC/paradex extension
+
 ## 23.11.0
 
 ### Minor Changes
