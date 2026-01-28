@@ -1,5 +1,10 @@
 import type { Logger } from 'pino';
 import { GithubRegistry } from '../registry/GithubRegistry.js';
+import { GCPSignerRegistry, parseGCPUri } from '../registry/GCPSignerRegistry.js';
+import {
+  FoundryKeystoreRegistry,
+  parseFoundryKeystoreUri,
+} from '../registry/FoundryKeystoreRegistry.js';
 import { FileSystemRegistry } from './FileSystemRegistry.js';
 import { IRegistry } from '../registry/IRegistry.js';
 import { PROXY_DEPLOYED_URL } from '../consts.js';
@@ -74,6 +79,23 @@ export function getRegistry({
     .filter((uri) => !!uri)
     .map((uri, index) => {
       const childLogger = registryLogger?.child({ uri, index });
+
+      // Check for GCP signer registry (gcp://project/secret-name)
+      if (parseGCPUri(uri)) {
+        return new GCPSignerRegistry({
+          uri,
+          logger: childLogger,
+        });
+      }
+
+      // Check for Foundry keystore registry (foundry://accountName or foundry:///path/accountName)
+      if (parseFoundryKeystoreUri(uri)) {
+        return new FoundryKeystoreRegistry({
+          uri,
+          logger: childLogger,
+        });
+      }
+
       if (isProtocolUrl(uri, ['https:']) && uri.includes('github')) {
         return new GithubRegistry({
           uri,

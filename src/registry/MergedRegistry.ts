@@ -4,11 +4,15 @@ import type {
   ChainMap,
   ChainMetadata,
   ChainName,
+  SignerConfig,
   WarpCoreConfig,
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
+import { isSignerRef } from '@hyperlane-xyz/sdk';
 import {
   ChainAddresses,
+  SignerConfigMap,
+  SignerConfiguration,
   UpdateChainParams,
   WarpDeployConfigMap,
   WarpRouteConfigMap,
@@ -151,6 +155,79 @@ export class MergedRegistry implements IRegistry {
       'addWarpRouteConfig',
       'adding warp route deploy config',
     );
+  }
+
+  /**
+   * Get the merged signer configuration from all registries
+   * Later registries override earlier ones
+   */
+  async getSignerConfiguration(): Promise<SignerConfiguration | null> {
+    const results = await this.multiRegistryRead((r) => r.getSignerConfiguration());
+    const nonNullResults = results.filter((r): r is SignerConfiguration => r !== null);
+
+    if (nonNullResults.length === 0) return null;
+
+    // Merge all signer configurations
+    return nonNullResults.reduce(
+      (acc, config) => ({
+        signers: { ...acc.signers, ...config.signers },
+        defaults: {
+          default: config.defaults?.default ?? acc.defaults?.default,
+          protocols: { ...acc.defaults?.protocols, ...config.defaults?.protocols },
+          chains: { ...acc.defaults?.chains, ...config.defaults?.chains },
+        },
+      }),
+      {} as SignerConfiguration,
+    );
+  }
+
+  /**
+   * Get all named signer configurations merged from all registries
+   */
+  async getSigners(): Promise<SignerConfigMap | null> {
+    const config = await this.getSignerConfiguration();
+    return config?.signers ?? null;
+  }
+
+  /**
+   * Get a specific named signer configuration
+   * Returns the first match found across registries
+   */
+  async getSigner(id: string): Promise<SignerConfig | null> {
+    const signers = await this.getSigners();
+    return signers?.[id] ?? null;
+  }
+
+  /**
+   * Get the default signer for a chain using merged configuration
+   * Resolution order: chain > protocol > default
+   */
+  async getDefaultSigner(chainName?: ChainName): Promise<SignerConfig | null> {
+    const config = await this.getSignerConfiguration();
+    if (!config?.defaults) return null;
+
+    let signerOrRef = config.defaults.default;
+
+    // Check chain-specific override
+    if (chainName && config.defaults.chains?.[chainName]) {
+      signerOrRef = config.defaults.chains[chainName];
+    }
+    // Check protocol-specific override
+    else if (chainName) {
+      const metadata = await this.getChainMetadata(chainName);
+      if (metadata?.protocol && config.defaults.protocols?.[metadata.protocol]) {
+        signerOrRef = config.defaults.protocols[metadata.protocol];
+      }
+    }
+
+    if (!signerOrRef) return null;
+
+    // Resolve ref if needed
+    if (isSignerRef(signerOrRef)) {
+      return this.getSigner(signerOrRef.ref);
+    }
+
+    return signerOrRef;
   }
 
   protected multiRegistryRead<R>(readFn: (registry: IRegistry) => Promise<R> | R) {

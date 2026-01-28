@@ -7,9 +7,11 @@ import type {
   ChainMap,
   ChainMetadata,
   ChainName,
+  SignerConfig,
   WarpCoreConfig,
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
+import { isSignerRef } from '@hyperlane-xyz/sdk';
 
 import {
   CHAIN_FILE_REGEX,
@@ -17,7 +19,14 @@ import {
   WARP_ROUTE_CONFIG_FILE_REGEX,
   WARP_ROUTE_DEPLOY_FILE_REGEX,
 } from '../consts.js';
-import { ChainAddresses, ChainAddressesSchema, UpdateChainParams, WarpRouteId } from '../types.js';
+import {
+  ChainAddresses,
+  ChainAddressesSchema,
+  SignerConfigMap,
+  SignerConfiguration,
+  UpdateChainParams,
+  WarpRouteId,
+} from '../types.js';
 import { toYamlString } from '../utils.js';
 
 import {
@@ -42,8 +51,15 @@ export interface FileSystemRegistryOptions {
 export class FileSystemRegistry extends SynchronousRegistry implements IRegistry {
   public readonly type = RegistryType.FileSystem;
 
+  // Signer configuration cache
+  protected signerConfigCache?: SignerConfiguration;
+
   constructor(options: FileSystemRegistryOptions) {
     super(options);
+  }
+
+  protected getSignersPath(): string {
+    return 'signers';
   }
 
   getUri(itemPath?: string): string {
@@ -133,6 +149,108 @@ export class FileSystemRegistry extends SynchronousRegistry implements IRegistry
       filePath,
       data: toYamlString(warpConfig),
     });
+  }
+
+  /**
+   * Get the full signer configuration from the signers/ directory
+   * Parses all .yaml files in the signers/ directory and merges them
+   */
+  getSignerConfiguration(): SignerConfiguration | null {
+    if (this.signerConfigCache) return this.signerConfigCache;
+
+    const signersPath = path.join(this.uri, this.getSignersPath());
+    if (!fs.existsSync(signersPath)) return null;
+
+    const signerFiles = this.listFiles(signersPath).filter(
+      (f) => f.endsWith('.yaml') || f.endsWith('.yml'),
+    );
+
+    if (signerFiles.length === 0) return null;
+
+    // Merge all signer config files
+    let mergedConfig: SignerConfiguration = {};
+
+    for (const filePath of signerFiles) {
+      try {
+        const data = fs.readFileSync(filePath, 'utf8');
+        const parsed = yamlParse(data) as SignerConfiguration;
+
+        // Merge signers
+        if (parsed.signers) {
+          mergedConfig.signers = { ...mergedConfig.signers, ...parsed.signers };
+        }
+
+        // Merge defaults (later files override earlier ones)
+        if (parsed.defaults) {
+          mergedConfig.defaults = {
+            ...mergedConfig.defaults,
+            ...parsed.defaults,
+            // Deep merge protocols and chains
+            protocols: {
+              ...mergedConfig.defaults?.protocols,
+              ...parsed.defaults.protocols,
+            },
+            chains: {
+              ...mergedConfig.defaults?.chains,
+              ...parsed.defaults.chains,
+            },
+          };
+        }
+      } catch (error) {
+        this.logger.warn(`Failed to parse signer config file ${filePath}: ${error}`);
+      }
+    }
+
+    this.signerConfigCache = mergedConfig;
+    return mergedConfig;
+  }
+
+  /**
+   * Get all named signer configurations
+   */
+  getSigners(): SignerConfigMap | null {
+    const config = this.getSignerConfiguration();
+    return config?.signers ?? null;
+  }
+
+  /**
+   * Get a specific named signer configuration
+   */
+  getSigner(id: string): SignerConfig | null {
+    const signers = this.getSigners();
+    return signers?.[id] ?? null;
+  }
+
+  /**
+   * Get the default signer for a chain using hierarchy: chain > protocol > default
+   * Resolves refs to actual signer configs
+   */
+  getDefaultSigner(chainName?: ChainName): SignerConfig | null {
+    const config = this.getSignerConfiguration();
+    if (!config?.defaults) return null;
+
+    let signerOrRef = config.defaults.default;
+
+    // Check chain-specific override
+    if (chainName && config.defaults.chains?.[chainName]) {
+      signerOrRef = config.defaults.chains[chainName];
+    }
+    // Check protocol-specific override
+    else if (chainName) {
+      const metadata = this.getChainMetadata(chainName);
+      if (metadata?.protocol && config.defaults.protocols?.[metadata.protocol]) {
+        signerOrRef = config.defaults.protocols[metadata.protocol];
+      }
+    }
+
+    if (!signerOrRef) return null;
+
+    // Resolve ref if needed
+    if (isSignerRef(signerOrRef)) {
+      return this.getSigner(signerOrRef.ref);
+    }
+
+    return signerOrRef;
   }
 
   protected listFiles(dirPath: string): string[] {

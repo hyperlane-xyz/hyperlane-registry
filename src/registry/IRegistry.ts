@@ -2,12 +2,15 @@ import type {
   ChainMap,
   ChainMetadata,
   ChainName,
+  SignerConfig,
   WarpCoreConfig,
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
 import {
   ChainAddresses,
   MaybePromise,
+  SignerConfigMap,
+  SignerConfiguration,
   WarpDeployConfigMap,
   WarpRouteConfigMap,
   WarpRouteId,
@@ -99,7 +102,34 @@ export interface IRegistry {
   getWarpDeployConfig(routeId: string): MaybePromise<WarpRouteDeployConfig | null>;
   getWarpDeployConfigs(filter?: WarpRouteFilterParams): MaybePromise<WarpDeployConfigMap>;
 
-  // TODO define more deployment artifact related methods
+  // Signer configuration methods
+
+  /**
+   * Get all named signer configurations from the registry
+   * @returns Map of signer name to signer config, or null if not supported
+   */
+  getSigners(): MaybePromise<SignerConfigMap | null>;
+
+  /**
+   * Get a specific named signer configuration
+   * @param id - The signer identifier/name
+   * @returns The signer config or null if not found
+   */
+  getSigner(id: string): MaybePromise<SignerConfig | null>;
+
+  /**
+   * Get the default signer for a specific chain, falling back through
+   * the hierarchy: chain > protocol > default
+   * @param chainName - Optional chain name to get specific signer for
+   * @returns The resolved signer config or null if not configured
+   */
+  getDefaultSigner(chainName?: ChainName): MaybePromise<SignerConfig | null>;
+
+  /**
+   * Get the full signer configuration including named signers and defaults
+   * @returns The complete signer configuration or null if not supported
+   */
+  getSignerConfiguration(): MaybePromise<SignerConfiguration | null>;
 
   merge(otherRegistry: IRegistry): IRegistry;
 }
