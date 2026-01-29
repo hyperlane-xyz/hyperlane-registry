@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xbcDAA686CD93188527A6020ba3D75f926f9e3c92"
+    chainName: arbitrum
+    coinGeckoId: ethereum
+    connections:
+      - token: ethereum|base|0xD3b9dDaC349E808B07845e01bae3Bf3464FB45b3
+      - token: ethereum|ethereum|0x7DCA030594C6695fc24b874917d0beAA38715639
+      - token: ethereum|optimism|0xEF096995d7C4FE68abF9C96042521A61bEdd596D
+      - token: ethereum|viction|0x182e8d7c5f1b06201b102123fc7df0eaeb445a7b
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH
+  - addressOrDenom: "0xD3b9dDaC349E808B07845e01bae3Bf3464FB45b3"
+    chainName: base
+    coinGeckoId: ethereum
+    connections:
+      - token: ethereum|arbitrum|0xbcDAA686CD93188527A6020ba3D75f926f9e3c92
+      - token: ethereum|ethereum|0x7DCA030594C6695fc24b874917d0beAA38715639
+      - token: ethereum|optimism|0xEF096995d7C4FE68abF9C96042521A61bEdd596D
+      - token: ethereum|viction|0x182e8d7c5f1b06201b102123fc7df0eaeb445a7b
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH
+  - addressOrDenom: "0x7DCA030594C6695fc24b874917d0beAA38715639"
+    chainName: ethereum
+    coinGeckoId: ethereum
+    connections:
+      - token: ethereum|arbitrum|0xbcDAA686CD93188527A6020ba3D75f926f9e3c92
+      - token: ethereum|base|0xD3b9dDaC349E808B07845e01bae3Bf3464FB45b3
+      - token: ethereum|optimism|0xEF096995d7C4FE68abF9C96042521A61bEdd596D
+      - token: ethereum|viction|0x182e8d7c5f1b06201b102123fc7df0eaeb445a7b
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH
+  - addressOrDenom: "0xEF096995d7C4FE68abF9C96042521A61bEdd596D"
+    chainName: optimism
+    coinGeckoId: ethereum
+    connections:
+      - token: ethereum|arbitrum|0xbcDAA686CD93188527A6020ba3D75f926f9e3c92
+      - token: ethereum|base|0xD3b9dDaC349E808B07845e01bae3Bf3464FB45b3
+      - token: ethereum|ethereum|0x7DCA030594C6695fc24b874917d0beAA38715639
+      - token: ethereum|viction|0x182e8d7c5f1b06201b102123fc7df0eaeb445a7b
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH
+  - addressOrDenom: "0x182e8d7c5f1b06201b102123fc7df0eaeb445a7b"
+    chainName: viction
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ethereum
+    standard: EvmHypSynthetic
+    symbol: ETH

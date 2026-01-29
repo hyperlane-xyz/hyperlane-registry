@@ -1,0 +1,101 @@
+arbitrum:
+  owner: "0x3Fb137161365f273Ebb8262a26569C117b6CBAfb"
+  proxyAdmin:
+    owner: "0x3Fb137161365f273Ebb8262a26569C117b6CBAfb"
+  tokenFee:
+    feeContracts:
+      base:
+        bps: 10
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        type: LinearFee
+      ethereum:
+        bps: 10
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        type: LinearFee
+      optimism:
+        bps: 10
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        type: LinearFee
+    owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+    type: RoutingFee
+  type: native
+base:
+  owner: "0x3Fb137161365f273Ebb8262a26569C117b6CBAfb"
+  proxyAdmin:
+    owner: "0x3Fb137161365f273Ebb8262a26569C117b6CBAfb"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 10
+        owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+        type: LinearFee
+      ethereum:
+        bps: 10
+        owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+        type: LinearFee
+      optimism:
+        bps: 10
+        owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+        type: LinearFee
+    owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+    type: RoutingFee
+  type: native
+ethereum:
+  owner: "0x3Fb137161365f273Ebb8262a26569C117b6CBAfb"
+  proxyAdmin:
+    owner: "0x3Fb137161365f273Ebb8262a26569C117b6CBAfb"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 10
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        type: LinearFee
+      base:
+        bps: 10
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        type: LinearFee
+      optimism:
+        bps: 10
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        type: LinearFee
+    owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+    type: RoutingFee
+  type: native
+optimism:
+  owner: "0x3Fb137161365f273Ebb8262a26569C117b6CBAfb"
+  proxyAdmin:
+    owner: "0x3Fb137161365f273Ebb8262a26569C117b6CBAfb"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 10
+        owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
+        type: LinearFee
+      base:
+        bps: 10
+        owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
+        type: LinearFee
+      ethereum:
+        bps: 10
+        owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
+        type: LinearFee
+    owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
+    type: RoutingFee
+  type: native
+viction:
+  decimals: 18
+  gas: 50000
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  name: ETH
+  owner: "0x23ed65DE22ac29Ec1C16E75EddB0cE3A187357b4"
+  ownerOverrides:
+    _icaAddress: "0x23ed65DE22ac29Ec1C16E75EddB0cE3A187357b4"
+    fallbackRoutingHook: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    proxyAdmin: "0x23ed65DE22ac29Ec1C16E75EddB0cE3A187357b4"
+    testRecipient: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    validatorAnnounce: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  proxyAdmin:
+    address: "0x0761b0827849abbf7b0cC09CE14e1C93D87f5004"
+    owner: "0x23ed65DE22ac29Ec1C16E75EddB0cE3A187357b4"
+  symbol: ETH
+  type: synthetic
