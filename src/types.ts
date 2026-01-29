@@ -37,9 +37,16 @@ export type UpdateChainParams = z.infer<typeof UpdateChainSchema> & {
   chainName: ChainName;
 };
 
-export type WarpRouteId = string;
+export const WarpRouteIdSchema = z.string();
+export type WarpRouteId = z.infer<typeof WarpRouteIdSchema>;
 export type WarpRouteConfigMap = Record<WarpRouteId, WarpCoreConfig>;
 export type WarpDeployConfigMap = Record<WarpRouteId, WarpRouteDeployConfig>;
+
+export const AddWarpRouteConfigOptionsSchema = z.union([
+  z.object({ symbol: z.string() }),
+  z.object({ warpRouteId: WarpRouteIdSchema }),
+]);
+export type AddWarpRouteConfigOptions = z.infer<typeof AddWarpRouteConfigOptionsSchema>;
 
 export type DeepPartial<T> = T extends object
   ? {
