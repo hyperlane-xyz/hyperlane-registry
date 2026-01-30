@@ -7390,6 +7390,27 @@ USDC/krown:
       name: USD Coin
       standard: EvmHypSynthetic
       symbol: USDC
+USDC/lukso:
+  tokens:
+    - addressOrDenom: "0xE0C2e4F894D4Cd33626e33b24582559F3156E1Ab"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+      connections:
+        - token: ethereum|lukso|0xE0C2e4F894D4Cd33626e33b24582559F3156E1Ab
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0xE0C2e4F894D4Cd33626e33b24582559F3156E1Ab"
+      chainName: lukso
+      connections:
+        - token: ethereum|ethereum|0xE0C2e4F894D4Cd33626e33b24582559F3156E1Ab
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: Bridged USDC (Hyperlane)
+      standard: EvmHypSynthetic
+      symbol: USDC
 USDC/lumia:
   tokens:
     - addressOrDenom: "0xd57c6B54f198bf039C93a821C6c0151C9Ea546ac"
