@@ -6,6 +6,7 @@ import {
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
 import {
+  AddWarpRouteConfigOptions,
   ChainAddresses,
   MaybePromise,
   UpdateChainParams,
@@ -13,13 +14,7 @@ import {
   WarpRouteConfigMap,
   WarpRouteFilterParams,
 } from '../types.js';
-import {
-  IRegistry,
-  RegistryContent,
-  RegistryType,
-  AddWarpRouteConfigOptions,
-  IRegistryMethods,
-} from './IRegistry.js';
+import { IRegistry, IRegistryMethods, RegistryContent, RegistryType } from './IRegistry.js';
 
 export class HttpError extends Error {
   public status: number;
@@ -43,10 +38,6 @@ export class HttpClientRegistry implements IRegistry {
     'getChainLogoUri',
     'addChain',
     'removeChain',
-    'addWarpRoute',
-    'getWarpDeployConfig',
-    'getWarpDeployConfigs',
-    'addWarpRouteConfig',
     'merge',
   ]);
 
@@ -137,23 +128,36 @@ export class HttpClientRegistry implements IRegistry {
     return this.fetchJson<WarpRouteConfigMap>(`/warp-route/core?${queryParams.toString()}`);
   }
 
-  addWarpRoute(_config: WarpCoreConfig): MaybePromise<void> {
-    throw new Error('Method not implemented.');
+  async addWarpRoute(config: WarpCoreConfig, options?: AddWarpRouteConfigOptions): Promise<void> {
+    await this.fetchJson<void>('/warp-route', {
+      method: 'POST',
+      body: JSON.stringify({ config, options }),
+    });
   }
 
   getWarpDeployConfig(routeId: string): MaybePromise<WarpRouteDeployConfig | null> {
     return this.fetchJson<WarpRouteDeployConfig | null>(`/warp-route/deploy/${routeId}`);
   }
 
-  getWarpDeployConfigs(): MaybePromise<WarpDeployConfigMap> {
-    throw new Error('Method not implemented.');
+  getWarpDeployConfigs(filter?: WarpRouteFilterParams): MaybePromise<WarpDeployConfigMap> {
+    const queryParams = new URLSearchParams();
+    if (filter?.symbol) {
+      queryParams.set('symbol', filter.symbol);
+    }
+    if (filter?.label) {
+      queryParams.set('label', filter.label);
+    }
+    return this.fetchJson<WarpDeployConfigMap>(`/warp-route/deploy?${queryParams.toString()}`);
   }
 
-  addWarpRouteConfig(
-    _config: WarpRouteDeployConfig,
-    _options: AddWarpRouteConfigOptions,
-  ): MaybePromise<void> {
-    throw new Error('Method not implemented.');
+  async addWarpRouteConfig(
+    config: WarpRouteDeployConfig,
+    options: AddWarpRouteConfigOptions,
+  ): Promise<void> {
+    await this.fetchJson<void>('/warp-route/deploy', {
+      method: 'POST',
+      body: JSON.stringify({ config, options }),
+    });
   }
 
   merge(_otherRegistry: IRegistry): IRegistry {
