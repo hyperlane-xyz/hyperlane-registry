@@ -6,6 +6,8 @@ import {
 } from '@hyperlane-xyz/sdk';
 import { z } from 'zod';
 
+import { WARP_ROUTE_ID_REGEX } from './consts.js';
+
 // https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-5.html#the-awaited-type-and-promise-improvements
 export type MaybePromise<T> = T | Promise<T> | PromiseLike<T>;
 
@@ -37,7 +39,12 @@ export type UpdateChainParams = z.infer<typeof UpdateChainSchema> & {
   chainName: ChainName;
 };
 
-export const WarpRouteIdSchema = z.string();
+export const WarpRouteIdSchema = z
+  .string()
+  .regex(
+    WARP_ROUTE_ID_REGEX,
+    'Must be in the format SYMBOL/label (e.g., ETH/ethereum-base, USDC.e/arbitrum-polygon)',
+  );
 export type WarpRouteId = z.infer<typeof WarpRouteIdSchema>;
 export type WarpRouteConfigMap = Record<WarpRouteId, WarpCoreConfig>;
 export type WarpDeployConfigMap = Record<WarpRouteId, WarpRouteDeployConfig>;
