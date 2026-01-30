@@ -1,10 +1,17 @@
 # CLAUDE.md
 
+**Be extremely concise. Sacrifice grammar for concision. Terse responses preferred. No fluff.**
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Overview
 
 Hyperlane Registry is a TypeScript library that provides configs, artifacts, and schemas for the Hyperlane interchain communication protocol. It serves as a central source of truth for chain metadata, deployment addresses, and warp route configurations used by Hyperlane tooling (Explorer, CLI).
+
+## Plan Mode
+
+- Make the plan extremely concise. Sacrifice grammar for the sake of concision.
+- At the end of each plan, give me a list of unresolved questions to answer, if any.
 
 ## Common Commands
 
@@ -87,3 +94,54 @@ The package exports chain metadata, addresses, and warp route configs in multipl
 - `@hyperlane-xyz/utils` - Utility functions and ESLint plugin for YAML sorting
 - `zod` - Schema validation
 - `yaml` - YAML parsing/serialization
+
+## Engineering Philosophy
+
+### Keep It Simple
+
+We handle ONLY the most important cases. Don't add functionality unless it's small or absolutely necessary.
+
+### Error Handling
+
+- **Expected issues** (external systems, user input): Use explicit error handling, try/catch at boundaries
+- **Unexpected issues** (invalid state, broken invariants): Fail loudly with `throw` or `console.error`
+- **NEVER** add silent fallbacks for unexpected issues - they mask bugs
+
+### Backwards-Compatibility
+
+| Change Location    | Backwards-Compat? | Rationale                                |
+| ------------------ | ----------------- | ---------------------------------------- |
+| Local/uncommitted  | No                | Iteration speed; no external impact      |
+| In main unreleased | Preferred         | Minimize friction for other developers   |
+| Released           | Required          | Prevent breaking downstream integrations |
+
+## Tips for Claude Code Sessions
+
+1. **Run tests incrementally** - `pnpm run build && mocha` for specific test files
+2. **Check existing patterns** - Search codebase for similar implementations
+3. **YAML keys alphabetical** - ESLint enforces sorted keys in YAML files
+4. **Registry is source of truth** - Chain metadata, addresses, warp routes all here
+5. **Keep changes minimal** - Only modify what's necessary; avoid scope creep
+6. **No Node.js in main src/** - Only `src/fs/` can import Node.js modules
+7. **Warp ID format** - Must be `{SYMBOL}/{label}`, e.g., `USDC/ethereum-arbitrum`
+8. **Address provenance** - When adding/changing addresses, note the source (PR, tx hash)
+9. **Deterministic ordering** - Sort arrays/maps before processing for consistent output
+10. **Changesets** - Include changeset files for version-bumped changes
+
+## Verify Before Acting
+
+**Always search the codebase before assuming.** Don't hallucinate file paths, function names, or patterns.
+
+- `grep` or search before claiming "X doesn't exist"
+- Read the actual file before suggesting changes to it
+- Check `git log` or blame before assuming why code exists
+- Verify imports exist in `package.json` before using them
+
+## When Claude Gets It Wrong
+
+If output seems wrong, check:
+
+1. **Did I read the actual file?** Or did I assume its contents?
+2. **Did I search for existing patterns?** The codebase likely has examples
+3. **Am I using stale context?** Re-read files that may have changed
+4. **Did I verify the error message?** Run the command and read actual output
