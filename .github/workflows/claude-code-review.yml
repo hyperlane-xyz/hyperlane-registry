@@ -74,72 +74,16 @@ jobs:
             --model claude-sonnet-4-5
             --max-turns 30
 
-  security-review:
-    if: |
-      (
-        github.event_name == 'pull_request' &&
-        !github.event.pull_request.draft &&
-        !contains(github.event.pull_request.title, '[skip-review]') &&
-        !contains(join(github.event.pull_request.labels.*.name, ','), 'skip-review')
-      ) ||
-      (
-        github.event_name == 'issue_comment' &&
-        github.event.issue.pull_request &&
-        contains(github.event.comment.body, '@claude security')
-      )
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    permissions:
-      contents: read
-      pull-requests: write
-      issues: write
-      id-token: write
-    steps:
-      - name: Get PR SHA
-        id: pr-sha
-        uses: actions/github-script@v7
-        with:
-          script: |
-            if (context.eventName === 'issue_comment') {
-              const { data: pr } = await github.rest.pulls.get({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                pull_number: context.issue.number
-              });
-              core.setOutput('head_sha', pr.head.sha);
-            } else {
-              core.setOutput('head_sha', context.payload.pull_request.head.sha);
-            }
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ steps.pr-sha.outputs.head_sha }}
-          fetch-depth: 2
-
-      - name: Run Claude Security Review
-        uses: anthropics/claude-code-security-review@25e460eb0a12077f0c6a1934d5dbae2f50785dda
-        with:
-          claude-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
-          comment-pr: true
-          upload-results: true
-          exclude-directories: 'node_modules,dist,tmp,cache'
-          claudecode-timeout: '15'
-          claude-model: claude-sonnet-4-5
-          custom-security-scan-instructions: '.github/prompts/security-scan.md'
-
   interactive:
     if: |
       (
         github.event_name == 'issue_comment' &&
         contains(github.event.comment.body, '@claude') &&
-        !contains(github.event.comment.body, '@claude review') &&
-        !contains(github.event.comment.body, '@claude security')
+        !contains(github.event.comment.body, '@claude review')
       ) ||
       (
         github.event_name == 'pull_request_review_comment' &&
-        contains(github.event.comment.body, '@claude') &&
-        !contains(github.event.comment.body, '@claude security')
+        contains(github.event.comment.body, '@claude')
       )
     runs-on: ubuntu-latest
     timeout-minutes: 15
