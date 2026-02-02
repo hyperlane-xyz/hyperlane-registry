@@ -34,6 +34,7 @@
                   "EvmM0PortalLite",
                   "EvmHypEverclearCollateral",
                   "EvmHypEverclearEth",
+                  "EvmHypStableSwap",
                   "SealevelSpl",
                   "SealevelSpl2022",
                   "SealevelNative",
@@ -115,28 +116,58 @@
                     {
                       "anyOf": [
                         {
-                          "type": "object",
-                          "properties": {
-                            "type": {
-                              "type": "string",
-                              "const": "hyperlane"
+                          "anyOf": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "const": "hyperlane"
+                                },
+                                "token": {
+                                  "type": "string",
+                                  "pattern": "^(.+)|(.+)|(.+)$"
+                                }
+                              },
+                              "required": [
+                                "token"
+                              ],
+                              "additionalProperties": false
                             },
-                            "token": {
-                              "type": "string",
-                              "pattern": "^(.+)|(.+)|(.+)$"
+                            {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "const": "ibc"
+                                },
+                                "token": {
+                                  "type": "string",
+                                  "pattern": "^(.+)|(.+)|(.+)$"
+                                },
+                                "sourcePort": {
+                                  "type": "string"
+                                },
+                                "sourceChannel": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "token",
+                                "sourcePort",
+                                "sourceChannel"
+                              ],
+                              "additionalProperties": false
                             }
-                          },
-                          "required": [
-                            "token"
-                          ],
-                          "additionalProperties": false
+                          ]
                         },
                         {
                           "type": "object",
                           "properties": {
                             "type": {
                               "type": "string",
-                              "const": "ibc"
+                              "const": "ibc-hyperlane"
                             },
                             "token": {
                               "type": "string",
@@ -147,13 +178,26 @@
                             },
                             "sourceChannel": {
                               "type": "string"
+                            },
+                            "intermediateChainName": {
+                              "type": "string",
+                              "pattern": "^[a-z][a-z0-9]*$"
+                            },
+                            "intermediateIbcDenom": {
+                              "type": "string"
+                            },
+                            "intermediateRouterAddress": {
+                              "type": "string"
                             }
                           },
                           "required": [
                             "type",
                             "token",
                             "sourcePort",
-                            "sourceChannel"
+                            "sourceChannel",
+                            "intermediateChainName",
+                            "intermediateIbcDenom",
+                            "intermediateRouterAddress"
                           ],
                           "additionalProperties": false
                         }
@@ -164,37 +208,24 @@
                       "properties": {
                         "type": {
                           "type": "string",
-                          "const": "ibc-hyperlane"
+                          "const": "stableswap"
                         },
                         "token": {
                           "type": "string",
                           "pattern": "^(.+)|(.+)|(.+)$"
                         },
-                        "sourcePort": {
+                        "stableSwapPool": {
                           "type": "string"
                         },
-                        "sourceChannel": {
-                          "type": "string"
-                        },
-                        "intermediateChainName": {
-                          "type": "string",
-                          "pattern": "^[a-z][a-z0-9]*$"
-                        },
-                        "intermediateIbcDenom": {
-                          "type": "string"
-                        },
-                        "intermediateRouterAddress": {
+                        "helperAddress": {
                           "type": "string"
                         }
                       },
                       "required": [
                         "type",
                         "token",
-                        "sourcePort",
-                        "sourceChannel",
-                        "intermediateChainName",
-                        "intermediateIbcDenom",
-                        "intermediateRouterAddress"
+                        "stableSwapPool",
+                        "helperAddress"
                       ],
                       "additionalProperties": false
                     }
@@ -211,6 +242,22 @@
                 "minimum": 0,
                 "exclusiveMaximum": 256,
                 "description": "The scaling factor of the token"
+              },
+              "stableSwapPool": {
+                "type": "string",
+                "description": "Identifier for the stableswap pool (e.g., \"susd-m0\")"
+              },
+              "helperAddress": {
+                "type": "string",
+                "description": "Address of the StableSwapHelper contract"
+              },
+              "sUSDAddress": {
+                "type": "string",
+                "description": "Address of the sUSD token (HypERC20WithMinters)"
+              },
+              "adapterAddress": {
+                "type": "string",
+                "description": "Address of the CollateralAdapter for this token"
               }
             },
             "required": [
@@ -233,10 +280,10 @@
                 "type": "object",
                 "properties": {
                   "origin": {
-                    "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/tokens/items/properties/connections/items/anyOf/1/properties/intermediateChainName"
+                    "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/tokens/items/properties/connections/items/anyOf/0/anyOf/1/properties/intermediateChainName"
                   },
                   "destination": {
-                    "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/tokens/items/properties/connections/items/anyOf/1/properties/intermediateChainName"
+                    "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/tokens/items/properties/connections/items/anyOf/0/anyOf/1/properties/intermediateChainName"
                   },
                   "amount": {
                     "type": [
@@ -266,10 +313,10 @@
                 "type": "object",
                 "properties": {
                   "origin": {
-                    "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/tokens/items/properties/connections/items/anyOf/1/properties/intermediateChainName"
+                    "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/tokens/items/properties/connections/items/anyOf/0/anyOf/1/properties/intermediateChainName"
                   },
                   "destination": {
-                    "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/tokens/items/properties/connections/items/anyOf/1/properties/intermediateChainName"
+                    "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/tokens/items/properties/connections/items/anyOf/0/anyOf/1/properties/intermediateChainName"
                   }
                 },
                 "required": [
