@@ -101,13 +101,18 @@ for WARP_ROUTE_ID in $WARP_ROUTE_IDS; do
     JOB_SUMMARY+="| $WARP_ROUTE_ID | $ONCHAIN_STATUS | $CONFIG_SYNC_STATUS |\n"
 done
 
-# Output the job summary to a file if PR_NUMBER is set
+# Add readable timestamp to the job summary
+TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
+JOB_SUMMARY+="\n*Last updated: $TIMESTAMP UTC*\n"
+
+# Always write to GitHub Actions job summary (visible on workflow run page)
+if [ -n "$GITHUB_STEP_SUMMARY" ]; then
+    echo -e "$JOB_SUMMARY" >> "$GITHUB_STEP_SUMMARY"
+fi
+
+# Post PR comment if PR_NUMBER is set (non-fork PRs only)
 if [ -n "$PR_NUMBER" ]; then
     echo "Writing job summary to check_warp_deploy_summary.txt"
-
-    # Add readable timestamp to the job summary
-    TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
-    JOB_SUMMARY+="\n*Last updated: $TIMESTAMP UTC*\n"
 
     echo -e "$JOB_SUMMARY" > check_warp_deploy_summary.txt
 
