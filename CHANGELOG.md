@@ -1,5 +1,61 @@
 # @hyperlane-xyz/registry
 
+## 23.12.0
+
+### Minor Changes
+
+- 9dd5541: Remove Neutron from TIA mantapacific warp core
+- 0479b83: Update default ISMs on viction, ontology. Migrate ontology to v2 ICAs.
+- ea47535: Add metadata for the ALEO synthetic token on Solana.
+- ad2fafa: Deploy to eden mainnet.
+- 0e15ab9: Add MegaEth extension for EZETH
+- b0d88c3: Added write support for HttpClientRegistry with new methods: addWarpRoute(), addWarpRouteConfig(), and getWarpDeployConfigs(). Exported WarpRouteIdSchema with regex validation and WarpDeployConfigMap type for HTTP server integration.
+- 95eedea: Transfer ownership to DEPLOYER for USDCSTAGE/eclipsemainnet + update mainnet v2 fast bridge
+- a3977ef: Added new Krown warp routes for BNB and WBTC
+- a803852: Migrate to node 24.
+- de59933: Add warp routes for Warden Protocol
+- 980d176: Add ENI eth/wbtc/usdc/usdt warp routes.
+- c6c5010: USDC/eclipsemainnet ownership transfer
+- 555c1b6: Deprecate testnets: auroratestnet, basecamptestnet, carrchaintestnet, citreatestnet, giwasepolia, megaethtestnet, modetestnet, monadtestnet, neuratestnet, nobletestnet, scrollsepolia, somniatestnet, subtensortestnet.
+- 1e73372: Add ALEO (Aleo -> Sepolia) route
+- db6134b: Update LYX route owner and proxy admin configs
+- 74d5d19: Aleo Warp Routes (USDC, USDT, WBTC, ETH, SOL, ALEO)
+- 6eec27d: extend USDCSTAGE/eclipsemainnet
+- a0b58b8: Deployed krown native token warp route to allow bridging from and to ethereum
+- b54167e: Update warpRouteId for superseed route, update ink leg with new USDC and update rebalancing bridge to use CctpV2 for the route
+- 7824a57: extend USDC/eclipse to arbitrum, base, optimism, polygon, unichain, + upgrade ethereum router + enable MainnetCCTPV2Standard and MainnetCCTPV2Fast bridges
+- 075e7f9: Add testnet Aleo USAD route
+- fa809df: Add megaEth gnosisSafeTransactionServiceUrl
+- 08cfa06: Add USDC/ethereum-lukso warp route
+- 7ceb0ec: Update default ISMs.
+- c7f134c: Remove ink connection array in superseed route
+
+### Patch Changes
+
+- 3794b21: Added AGENTS.md for AI coding assistant compatibility
+- 13dc9d1: Update HyperEVM block explorer
+- 6988266: Use BTC logo for BTCB token in WBTC/carrchain route
+- db4e3e0: Add USDC logo to CCTP v2 warp routes
+- 3a7aa2d: Added registry vs on-chain and config getter sync checks to CI
+- 28776b9: Added Claude code review workflow and skill
+- fc9c94d: Mark astarzkevm and infinityvm as unavailable
+- 7783185: Fix Base blockpi RPC URL
+- 4b2c979: Use correct BTCB symbol for BSC portion of WBTC/carrchain warp route
+- 0ee6eb6: Rotate lukso RPC
+- 1c02368: Fix check-warp-deploy workflow for fork PRs
+- e5bbb1a: Promote base drpc as first one for base `rpcUrls`
+- b3df0ac: Import yamlEslintConfig from @hyperlane-xyz/utils instead of defining inline
+- a27756f: Enable withdrawals from Krown warp routes (ETH, USDC, USDT)
+- a27756f: Transfer Krown warp route ownership to Krown team and add coinGeckoIds for collateral tokens
+- 8b19dec: Update CCTP v2 fast fees
+- 5adc75c: Add new Paradex public RPC endpoint
+- e8af370: Update aleo, paradex validators on selected default ISMs.
+- 824d553: Add availability disabled metadata to deprecated chains
+- a7b072d: Remove neutron from mantapacific TIA warp route
+- a1827cd: Upgrade mainnet-cctp-v2-standard contract version.
+- 555bf8d: Update solanamainnet interchainSecurityModule address
+- 0044f34: revert USDC/paradex extension
+
 ## 23.11.0
 
 ### Minor Changes
