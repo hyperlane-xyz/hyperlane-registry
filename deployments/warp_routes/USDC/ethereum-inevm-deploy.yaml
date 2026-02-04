@@ -1,5 +1,21 @@
 ethereum:
   hook: "0xb87AC8EA4533AE017604E44470F7c1E550AC6F10"
+  interchainSecurityModule:
+    domains:
+      inevm:
+        modules:
+          - threshold: 1
+            type: merkleRootMultisigIsm
+            validators:
+              - "0xf9e35ee88e4448a3673b4676a4e153e3584a08eb"
+          - threshold: 1
+            type: messageIdMultisigIsm
+            validators:
+              - "0xf9e35ee88e4448a3673b4676a4e153e3584a08eb"
+        threshold: 1
+        type: staticAggregationIsm
+    owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+    type: domainRoutingIsm
   owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
   ownerOverrides:
     _safeAddress: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
