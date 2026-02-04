@@ -937,6 +937,26 @@ ETH/aleo:
       name: Unit Ethereum
       standard: EvmHypCollateral
       symbol: UETH
+ETH/aleotestnet:
+  tokens:
+    - addressOrDenom: test_hyp_warp_token_eth.aleo/aleo1n6g5lvv7706pmcy2lsfta7k5d7tx522ly50ykr5frneq4pvkugzqqqtjav
+      chainName: aleotestnet
+      connections:
+        - token: ethereum|sepolia|0x7c4aAAaB1f846881af95f5736d127F3F3F07F25F
+      decimals: 18
+      logoURI: /deployments/warp_routes/ETH/logo.svg
+      name: Ether
+      standard: AleoHypSynthetic
+      symbol: ETH
+    - addressOrDenom: "0x7c4aAAaB1f846881af95f5736d127F3F3F07F25F"
+      chainName: sepolia
+      connections:
+        - token: aleo|aleotestnet|test_hyp_warp_token_eth.aleo/aleo1n6g5lvv7706pmcy2lsfta7k5d7tx522ly50ykr5frneq4pvkugzqqqtjav
+      decimals: 18
+      logoURI: /deployments/warp_routes/ETH/logo.svg
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
 ETH/alfajores-sepolia:
   tokens:
     - addressOrDenom: "0x78fe869f19f917fde4192c51c446Fbd3721788ee"
@@ -6222,10 +6242,33 @@ UFD/apechain-solanamainnet:
       name: Unicorn Fart Dust
       standard: SealevelHypCollateral
       symbol: UFD
+USAD/aleo:
+  tokens:
+    - addressOrDenom: hyp_warp_token_usad.aleo/aleo19n3zsqu9f9g6r7j0n2relyv3uvhyzsa5mla6p0jl528z6dhums9ss07msp
+      chainName: aleo
+      connections:
+        - token: ethereum|ethereum|0x52E96C79DC3a1813577DBfB411B92E8C96Cb3d91
+      decimals: 6
+      logoURI: /deployments/warp_routes/USAD/logo.svg
+      name: USAD
+      standard: AleoHypSynthetic
+      symbol: USAD
+    - addressOrDenom: "0x52E96C79DC3a1813577DBfB411B92E8C96Cb3d91"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xC60a7e21A6753ED4305C93034607009fAeC2A5F3"
+      connections:
+        - token: aleo|aleo|hyp_warp_token_usad.aleo/aleo19n3zsqu9f9g6r7j0n2relyv3uvhyzsa5mla6p0jl528z6dhums9ss07msp
+      decimals: 6
+      logoURI: /deployments/warp_routes/USAD/logo.svg
+      name: USAD
+      standard: EvmHypCollateral
+      symbol: USAD
 USAD/aleotestnet:
   tokens:
     - addressOrDenom: test_hyp_warp_token_usad.aleo/aleo1c9kdv4xgnww0rhk8hth8s8c9cl8w7ja9shpwdupsug26m9kaayqq6segar
       chainName: aleotestnet
+      connections:
+        - token: ethereum|sepolia|0xf95A2e563972E200F6239f60bB0eefCf62F00E63
       decimals: 6
       logoURI: /deployments/warp_routes/USAD/logo.svg
       name: USAD
@@ -6234,6 +6277,8 @@ USAD/aleotestnet:
     - addressOrDenom: "0xf95A2e563972E200F6239f60bB0eefCf62F00E63"
       chainName: sepolia
       collateralAddressOrDenom: "0xC60a7e21A6753ED4305C93034607009fAeC2A5F3"
+      connections:
+        - token: aleo|aleotestnet|test_hyp_warp_token_usad.aleo/aleo1c9kdv4xgnww0rhk8hth8s8c9cl8w7ja9shpwdupsug26m9kaayqq6segar
       decimals: 6
       logoURI: /deployments/warp_routes/USAD/logo.svg
       name: USAD
