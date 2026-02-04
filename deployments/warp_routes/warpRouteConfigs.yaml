@@ -5017,6 +5017,28 @@ REZSTAGING/base-ethereum-unichain:
       name: REZ
       standard: EvmHypXERC20
       symbol: REZ
+ROAM/eni:
+  tokens:
+    - addressOrDenom: "0x23958cBa555AC52C9495Df9b121ff73003e39dBb"
+      chainName: eni
+      connections:
+        - token: sealevel|solanamainnet|7MkS1VBeTXjXW4ERwSe6CDzvEZx25UcGFY47FehQ1T9T
+      decimals: 6
+      logoURI: /deployments/warp_routes/ROAM/logo.svg
+      name: Roam Token
+      standard: EvmHypSynthetic
+      symbol: ROAM
+    - addressOrDenom: 7MkS1VBeTXjXW4ERwSe6CDzvEZx25UcGFY47FehQ1T9T
+      chainName: solanamainnet
+      coinGeckoId: roam-token
+      collateralAddressOrDenom: RoamA1USA8xjvpTJZ6RvvxyDRzNh6GCA1zVGKSiMVkn
+      connections:
+        - token: ethereum|eni|0x23958cBa555AC52C9495Df9b121ff73003e39dBb
+      decimals: 6
+      logoURI: /deployments/warp_routes/ROAM/logo.svg
+      name: Roam Token
+      standard: SealevelHypCollateral
+      symbol: ROAM
 Re7LRT/ethereum-zircuit:
   tokens:
     - addressOrDenom: "0x7D77702f1c7A1662923FD654f904127988Caa3fD"
