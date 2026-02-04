@@ -1,5 +1,18 @@
 # @hyperlane-xyz/registry
 
+## 23.13.0
+
+### Minor Changes
+
+- aa1699c: Aleo USAD Warp Route
+- a5ba363: Add ROAM/eni route artifacts
+- 4afca0d: Transfer ownership of ETH/aleotestnet to Aleo team
+
+### Patch Changes
+
+- 6c02508: Updated inEVM ISM on Ethereum for inEVM USDT and USDC deploys
+- e55f252: Make ROAM logo more compact
+
 ## 23.12.0
 
 ### Minor Changes
