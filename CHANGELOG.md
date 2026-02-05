@@ -1,5 +1,16 @@
 # @hyperlane-xyz/registry
 
+## 23.14.0
+
+### Minor Changes
+
+- cd597f7: Update Hyperlane dependencies to SDK 25.0.0 and Utils 25.0.0
+
+### Patch Changes
+
+- 9ba7c9b: Added inline PR comments skill and simplified Claude review workflows to use skills directly.
+- 2e10890: Updated Claude CI workflow model to opus 4.6 and made model IDs configurable via env vars.
+
 ## 23.13.0
 
 ### Minor Changes
