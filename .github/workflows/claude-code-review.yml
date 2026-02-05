@@ -8,6 +8,10 @@ on:
   issue_comment:
     types: [created]
 
+env:
+  CLAUDE_OPUS_MODEL: claude-opus-4-6
+  CLAUDE_SONNET_MODEL: claude-sonnet-4-5
+
 concurrency:
   group: claude-review-${{ github.event.pull_request.number || github.event.issue.number }}
   cancel-in-progress: false
@@ -77,7 +81,7 @@ jobs:
           track_progress: true
           use_sticky_comment: true
           claude_args: |
-            --model claude-opus-4-5
+            --model ${{ env.CLAUDE_OPUS_MODEL }}
             --max-turns 30
 
   interactive:
@@ -144,5 +148,5 @@ jobs:
           track_progress: true
           use_sticky_comment: true
           claude_args: |
-            --model claude-sonnet-4-5
+            --model ${{ env.CLAUDE_SONNET_MODEL }}
             --max-turns 20
