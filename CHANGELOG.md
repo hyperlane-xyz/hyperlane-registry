@@ -1,5 +1,29 @@
 # @hyperlane-xyz/registry
 
+## 23.14.0
+
+### Minor Changes
+
+- cd597f7: Update Hyperlane dependencies to SDK 25.0.0 and Utils 25.0.0
+
+### Patch Changes
+
+- 9ba7c9b: Added inline PR comments skill and simplified Claude review workflows to use skills directly.
+- 2e10890: Updated Claude CI workflow model to opus 4.6 and made model IDs configurable via env vars.
+
+## 23.13.0
+
+### Minor Changes
+
+- aa1699c: Aleo USAD Warp Route
+- a5ba363: Add ROAM/eni route artifacts
+- 4afca0d: Transfer ownership of ETH/aleotestnet to Aleo team
+
+### Patch Changes
+
+- 6c02508: Updated inEVM ISM on Ethereum for inEVM USDT and USDC deploys
+- e55f252: Make ROAM logo more compact
+
 ## 23.12.0
 
 ### Minor Changes
