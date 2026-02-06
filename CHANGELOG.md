@@ -1,5 +1,20 @@
 # @hyperlane-xyz/registry
 
+## 24.0.0
+
+### Major Changes
+
+- ddc6844: Update and extend the viction route. Rename warp route id and removed old files
+
+### Minor Changes
+
+- 748f7db: Re-Enroll Solana leg for ALEO/aleo
+- 471c4fa: Enable modetestnet again
+
+### Patch Changes
+
+- 748f7db: fix Aleo USDC connections
+
 ## 23.14.0
 
 ### Minor Changes
