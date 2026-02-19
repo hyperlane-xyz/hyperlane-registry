@@ -31,6 +31,7 @@ export interface ChainFiles {
   metadata?: string;
   addresses?: string;
   logo?: string;
+  'darkmode-logo'?: string;
 }
 
 export interface RegistryContent {
