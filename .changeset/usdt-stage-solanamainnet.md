@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Added solanamainnet to USDTSTAGE warp route config for mode.
+Added USDTSTAGE warp route deployment across ethereum, arbitrum, plasma, mode, and solanamainnet.
