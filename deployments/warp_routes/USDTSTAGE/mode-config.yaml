@@ -7,6 +7,7 @@ tokens:
       - token: ethereum|ethereum|0x4f7635A2F9795c10DF260C2fc0A23e0F60B4829C
       - token: ethereum|mode|0x01419427C18cC14d66817E90d2e550760230Cf3D
       - token: ethereum|plasma|0xa7E4dC4078bAc6e97Eec52a4F7642fF51cbb17C1
+      - token: sealevel|solanamainnet|7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
     decimals: 6
     name: USD₮0
     standard: EvmHypCollateral
@@ -18,6 +19,7 @@ tokens:
       - token: ethereum|arbitrum|0x22eF52C822329E96C3bE0bBB165805603777296C
       - token: ethereum|mode|0x01419427C18cC14d66817E90d2e550760230Cf3D
       - token: ethereum|plasma|0xa7E4dC4078bAc6e97Eec52a4F7642fF51cbb17C1
+      - token: sealevel|solanamainnet|7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
     decimals: 6
     name: Tether USD
     standard: EvmHypCollateral
@@ -28,6 +30,7 @@ tokens:
       - token: ethereum|arbitrum|0x22eF52C822329E96C3bE0bBB165805603777296C
       - token: ethereum|ethereum|0x4f7635A2F9795c10DF260C2fc0A23e0F60B4829C
       - token: ethereum|plasma|0xa7E4dC4078bAc6e97Eec52a4F7642fF51cbb17C1
+      - token: sealevel|solanamainnet|7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
     decimals: 6
     name: Tether USD STAGE
     standard: EvmHypSynthetic
@@ -39,7 +42,20 @@ tokens:
       - token: ethereum|arbitrum|0x22eF52C822329E96C3bE0bBB165805603777296C
       - token: ethereum|ethereum|0x4f7635A2F9795c10DF260C2fc0A23e0F60B4829C
       - token: ethereum|mode|0x01419427C18cC14d66817E90d2e550760230Cf3D
+      - token: sealevel|solanamainnet|7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
     decimals: 6
     name: USDT0
     standard: EvmHypCollateral
+    symbol: USDTSTAGE
+  - addressOrDenom: 7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
+    chainName: solanamainnet
+    collateralAddressOrDenom: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+    connections:
+      - token: ethereum|arbitrum|0x22eF52C822329E96C3bE0bBB165805603777296C
+      - token: ethereum|ethereum|0x4f7635A2F9795c10DF260C2fc0A23e0F60B4829C
+      - token: ethereum|mode|0x01419427C18cC14d66817E90d2e550760230Cf3D
+      - token: ethereum|plasma|0xa7E4dC4078bAc6e97Eec52a4F7642fF51cbb17C1
+    decimals: 6
+    name: USDT
+    standard: SealevelHypCollateral
     symbol: USDTSTAGE
