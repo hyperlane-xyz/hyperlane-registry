@@ -69,8 +69,12 @@ function createChainFiles() {
       fs.writeFileSync(`${tsOutPath}/addresses.ts`, genJsExport(addresses, 'addresses'));
     }
 
-    // Copy the logo file
+    // Copy logo files
     fs.copyFileSync(`${inDirPath}/logo.svg`, `${assetOutPath}/logo.svg`);
+    const darkLogoPath = `${inDirPath}/darkmode-logo.svg`;
+    if (fs.existsSync(darkLogoPath)) {
+      fs.copyFileSync(darkLogoPath, `${assetOutPath}/darkmode-logo.svg`);
+    }
   }
 }
 

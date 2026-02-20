@@ -1562,6 +1562,68 @@ ETH/mantra:
       name: ETH
       standard: EvmHypSynthetic
       symbol: ETH
+ETH/paradex:
+  tokens:
+    - addressOrDenom: "0x2bBdc933196334C6CD3F16F131B62f7c567BB27D"
+      chainName: ethereum
+      coinGeckoId: ethereum
+      connections:
+        - token: ethereum|mode|0x137c2d3FA634834dAeDD4b7389a166C1445C9d60
+        - token: starknet|paradex|0x069b225194ec5391d9df605afdb2ade6401fd476b0284bc0ec39b78f89584c44
+      decimals: 18
+      logoURI: /deployments/warp_routes/ETH/logo.svg
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
+    - addressOrDenom: "0x137c2d3FA634834dAeDD4b7389a166C1445C9d60"
+      chainName: mode
+      connections:
+        - token: ethereum|ethereum|0x2bBdc933196334C6CD3F16F131B62f7c567BB27D
+        - token: starknet|paradex|0x069b225194ec5391d9df605afdb2ade6401fd476b0284bc0ec39b78f89584c44
+      decimals: 18
+      logoURI: /deployments/warp_routes/ETH/logo.svg
+      name: ETH
+      standard: EvmHypSynthetic
+      symbol: ETH
+    - addressOrDenom: "0x069b225194ec5391d9df605afdb2ade6401fd476b0284bc0ec39b78f89584c44"
+      chainName: paradex
+      coinGeckoId: ethereum
+      collateralAddressOrDenom: "0x753b4f4e127a2c2d969a3e4c09e5b0371b78040f7ad433ddc69de4dae90f407"
+      decimals: 18
+      logoURI: /deployments/warp_routes/ETH/logo.svg
+      name: Ether
+      standard: StarknetHypCollateral
+      symbol: ETH
+ETH/paradexsepolia:
+  tokens:
+    - addressOrDenom: "0xe60cA1BDBD3f4A0F113847f5e7cA78235F462F61"
+      chainName: modetestnet
+      connections:
+        - token: ethereum|sepolia|0x251b97bF2A18Ca33fb3AF8D487b78825Ed5CE003
+        - token: starknet|paradexsepolia|0x049d3b2ddc0058d9967cfdf5ed517d0a1a9a106c7cb41d50785293fb068fe453
+      decimals: 18
+      name: ETH
+      standard: EvmHypSynthetic
+      symbol: ETH
+    - addressOrDenom: "0x049d3b2ddc0058d9967cfdf5ed517d0a1a9a106c7cb41d50785293fb068fe453"
+      chainName: paradexsepolia
+      collateralAddressOrDenom: "0x7f51a6740f1172c11babf26e1926381b6d778f83b7e337f08ff1e48eebbc077"
+      connections:
+        - token: ethereum|modetestnet|0xe60cA1BDBD3f4A0F113847f5e7cA78235F462F61
+        - token: ethereum|sepolia|0x251b97bF2A18Ca33fb3AF8D487b78825Ed5CE003
+      decimals: 18
+      name: Ether
+      standard: StarknetHypCollateral
+      symbol: ETH
+    - addressOrDenom: "0x251b97bF2A18Ca33fb3AF8D487b78825Ed5CE003"
+      chainName: sepolia
+      connections:
+        - token: ethereum|modetestnet|0xe60cA1BDBD3f4A0F113847f5e7cA78235F462F61
+        - token: starknet|paradexsepolia|0x049d3b2ddc0058d9967cfdf5ed517d0a1a9a106c7cb41d50785293fb068fe453
+      decimals: 18
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
 ETH/sepolia-starknetsepolia:
   options: {}
   tokens:
@@ -10145,6 +10207,67 @@ USDT/solanamainnet-sonicsvm:
       name: USDT
       standard: SealevelHypSynthetic
       symbol: USDT
+USDTSTAGE/mode:
+  tokens:
+    - addressOrDenom: "0x22eF52C822329E96C3bE0bBB165805603777296C"
+      chainName: arbitrum
+      collateralAddressOrDenom: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+      connections:
+        - token: ethereum|ethereum|0x4f7635A2F9795c10DF260C2fc0A23e0F60B4829C
+        - token: ethereum|mode|0x01419427C18cC14d66817E90d2e550760230Cf3D
+        - token: ethereum|plasma|0xa7E4dC4078bAc6e97Eec52a4F7642fF51cbb17C1
+        - token: sealevel|solanamainnet|7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
+      decimals: 6
+      name: USD₮0
+      standard: EvmHypCollateral
+      symbol: USDTSTAGE
+    - addressOrDenom: "0x4f7635A2F9795c10DF260C2fc0A23e0F60B4829C"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+      connections:
+        - token: ethereum|arbitrum|0x22eF52C822329E96C3bE0bBB165805603777296C
+        - token: ethereum|mode|0x01419427C18cC14d66817E90d2e550760230Cf3D
+        - token: ethereum|plasma|0xa7E4dC4078bAc6e97Eec52a4F7642fF51cbb17C1
+        - token: sealevel|solanamainnet|7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
+      decimals: 6
+      name: Tether USD
+      standard: EvmHypCollateral
+      symbol: USDTSTAGE
+    - addressOrDenom: "0x01419427C18cC14d66817E90d2e550760230Cf3D"
+      chainName: mode
+      connections:
+        - token: ethereum|arbitrum|0x22eF52C822329E96C3bE0bBB165805603777296C
+        - token: ethereum|ethereum|0x4f7635A2F9795c10DF260C2fc0A23e0F60B4829C
+        - token: ethereum|plasma|0xa7E4dC4078bAc6e97Eec52a4F7642fF51cbb17C1
+        - token: sealevel|solanamainnet|7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
+      decimals: 6
+      name: Tether USD STAGE
+      standard: EvmHypSynthetic
+      symbol: USDTSTAGE
+    - addressOrDenom: "0xa7E4dC4078bAc6e97Eec52a4F7642fF51cbb17C1"
+      chainName: plasma
+      collateralAddressOrDenom: "0xb8ce59fc3717ada4c02eadf9682a9e934f625ebb"
+      connections:
+        - token: ethereum|arbitrum|0x22eF52C822329E96C3bE0bBB165805603777296C
+        - token: ethereum|ethereum|0x4f7635A2F9795c10DF260C2fc0A23e0F60B4829C
+        - token: ethereum|mode|0x01419427C18cC14d66817E90d2e550760230Cf3D
+        - token: sealevel|solanamainnet|7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
+      decimals: 6
+      name: USDT0
+      standard: EvmHypCollateral
+      symbol: USDTSTAGE
+    - addressOrDenom: 7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
+      chainName: solanamainnet
+      collateralAddressOrDenom: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+      connections:
+        - token: ethereum|arbitrum|0x22eF52C822329E96C3bE0bBB165805603777296C
+        - token: ethereum|ethereum|0x4f7635A2F9795c10DF260C2fc0A23e0F60B4829C
+        - token: ethereum|mode|0x01419427C18cC14d66817E90d2e550760230Cf3D
+        - token: ethereum|plasma|0xa7E4dC4078bAc6e97Eec52a4F7642fF51cbb17C1
+      decimals: 6
+      name: USDT
+      standard: SealevelHypCollateral
+      symbol: USDTSTAGE
 VANA/ethereum-vana:
   tokens:
     - addressOrDenom: "0x177778F19E89dD1012BdBe603F144088A95C4B53"
