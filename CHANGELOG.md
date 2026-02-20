@@ -1,5 +1,24 @@
 # @hyperlane-xyz/registry
 
+## 24.0.0
+
+### Major Changes
+
+- ddc6844: Update and extend the viction route. Rename warp route id and removed old files
+
+### Minor Changes
+
+- 4350579: re-enable somniatestnet
+- 748f7db: Re-Enroll Solana leg for ALEO/aleo
+- b93357a: Add ETH/paradex & ETH/paradexsepolia warp route
+- 471c4fa: Enable modetestnet again
+
+### Patch Changes
+
+- 748f7db: fix Aleo USDC connections
+- 1e75175: Add dark mode logos for chains and tokens
+- fb80908: Added USDTSTAGE warp route deployment across ethereum, arbitrum, plasma, mode, and solanamainnet.
+
 ## 23.14.0
 
 ### Minor Changes
