@@ -1,10 +1,23 @@
 # yaml-language-server: $schema=../schema.json
 tokens:
+  - addressOrDenom: "0x89D67954096609060BE278Ec04141de8bDfeB61f"
+    chainName: base
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913"
+    connections:
+      - token: ethereum|ethereum|0xbdE0801a78f9c4BC360C34aaf98043EA0cdF4fB0
+      - token: ethereum|krown|0xa3D9cfa4220d6a5ba7b9067D33ebEdbF2DE6F1CF
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
   - addressOrDenom: "0xbdE0801a78f9c4BC360C34aaf98043EA0cdF4fB0"
     chainName: ethereum
     coinGeckoId: usd-coin
     collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
     connections:
+      - token: ethereum|base|0x89D67954096609060BE278Ec04141de8bDfeB61f
       - token: ethereum|krown|0xa3D9cfa4220d6a5ba7b9067D33ebEdbF2DE6F1CF
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
@@ -14,6 +27,7 @@ tokens:
   - addressOrDenom: "0xa3D9cfa4220d6a5ba7b9067D33ebEdbF2DE6F1CF"
     chainName: krown
     connections:
+      - token: ethereum|base|0x89D67954096609060BE278Ec04141de8bDfeB61f
       - token: ethereum|ethereum|0xbdE0801a78f9c4BC360C34aaf98043EA0cdF4fB0
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
