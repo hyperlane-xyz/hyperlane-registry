@@ -1,0 +1,80 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xBDCC7E7eCb1e39b387b0314567363e305D04f49d"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+    connections:
+      - token: ethereum|arbitrum|0xf6e899999f3177350AF29d21FE2a1297b194792e
+      - token: ethereum|base|0x43402011892D43208ecB3d7fa36A416811ea1D81
+      - token: ethereum|base|0xCA2Bc586D7ae29872cC33D0C2020F94d17328C94
+      - token: ethereum|hyperevm|0xDB190f6A84Ae202E7e5248F398F989Fc817cc2Bc
+      - token: ethereum|mantra|0xA5f4EDE0C73971BEBcc49E587B59d5c83e9192b9
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypMultiCollateral
+    symbol: USDC
+  - addressOrDenom: "0xf6e899999f3177350AF29d21FE2a1297b194792e"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+    connections:
+      - token: ethereum|arbitrum|0xBDCC7E7eCb1e39b387b0314567363e305D04f49d
+      - token: ethereum|base|0x43402011892D43208ecB3d7fa36A416811ea1D81
+      - token: ethereum|base|0xCA2Bc586D7ae29872cC33D0C2020F94d17328C94
+      - token: ethereum|hyperevm|0xDB190f6A84Ae202E7e5248F398F989Fc817cc2Bc
+      - token: ethereum|mantra|0xA5f4EDE0C73971BEBcc49E587B59d5c83e9192b9
+    decimals: 6
+    name: USD₮0
+    standard: EvmHypMultiCollateral
+    symbol: USD₮0
+  - addressOrDenom: "0xCA2Bc586D7ae29872cC33D0C2020F94d17328C94"
+    chainName: base
+    collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    connections:
+      - token: ethereum|arbitrum|0xBDCC7E7eCb1e39b387b0314567363e305D04f49d
+      - token: ethereum|arbitrum|0xf6e899999f3177350AF29d21FE2a1297b194792e
+      - token: ethereum|base|0x43402011892D43208ecB3d7fa36A416811ea1D81
+      - token: ethereum|hyperevm|0xDB190f6A84Ae202E7e5248F398F989Fc817cc2Bc
+      - token: ethereum|mantra|0xA5f4EDE0C73971BEBcc49E587B59d5c83e9192b9
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypMultiCollateral
+    symbol: USDC
+  - addressOrDenom: "0x43402011892D43208ecB3d7fa36A416811ea1D81"
+    chainName: base
+    collateralAddressOrDenom: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
+    connections:
+      - token: ethereum|arbitrum|0xBDCC7E7eCb1e39b387b0314567363e305D04f49d
+      - token: ethereum|arbitrum|0xf6e899999f3177350AF29d21FE2a1297b194792e
+      - token: ethereum|base|0xCA2Bc586D7ae29872cC33D0C2020F94d17328C94
+      - token: ethereum|hyperevm|0xDB190f6A84Ae202E7e5248F398F989Fc817cc2Bc
+      - token: ethereum|mantra|0xA5f4EDE0C73971BEBcc49E587B59d5c83e9192b9
+    decimals: 6
+    name: Tether USD
+    standard: EvmHypMultiCollateral
+    symbol: USDT
+  - addressOrDenom: "0xDB190f6A84Ae202E7e5248F398F989Fc817cc2Bc"
+    chainName: hyperevm
+    collateralAddressOrDenom: "0x111111a1a0667d36bd57c0a9f569b98057111111"
+    connections:
+      - token: ethereum|arbitrum|0xBDCC7E7eCb1e39b387b0314567363e305D04f49d
+      - token: ethereum|arbitrum|0xf6e899999f3177350AF29d21FE2a1297b194792e
+      - token: ethereum|base|0x43402011892D43208ecB3d7fa36A416811ea1D81
+      - token: ethereum|base|0xCA2Bc586D7ae29872cC33D0C2020F94d17328C94
+      - token: ethereum|mantra|0xA5f4EDE0C73971BEBcc49E587B59d5c83e9192b9
+    decimals: 6
+    name: USDH
+    standard: EvmHypMultiCollateral
+    symbol: USDH
+  - addressOrDenom: "0xA5f4EDE0C73971BEBcc49E587B59d5c83e9192b9"
+    chainName: mantra
+    collateralAddressOrDenom: "0xd2b95283011E47257917770D28Bb3EE44c849f6F"
+    connections:
+      - token: ethereum|arbitrum|0xBDCC7E7eCb1e39b387b0314567363e305D04f49d
+      - token: ethereum|arbitrum|0xf6e899999f3177350AF29d21FE2a1297b194792e
+      - token: ethereum|base|0x43402011892D43208ecB3d7fa36A416811ea1D81
+      - token: ethereum|base|0xCA2Bc586D7ae29872cC33D0C2020F94d17328C94
+      - token: ethereum|hyperevm|0xDB190f6A84Ae202E7e5248F398F989Fc817cc2Bc
+    decimals: 6
+    name: MANTRA USD
+    standard: EvmHypMultiCollateral
+    symbol: mantraUSD
