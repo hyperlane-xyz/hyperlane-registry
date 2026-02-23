@@ -1,0 +1,103 @@
+arbitrum:
+  decimals: 18
+  owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45" # ICA on ethereum
+  proxyAdmin:
+    owner: "0x03fD5BE9DF85F0017dC7F4DC3068dDF64fffF25e"
+  tokenFee:
+    feeContracts:
+      base:
+        bps: 10
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        type: LinearFee
+      ethereum:
+        bps: 10
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        type: LinearFee
+      optimism:
+        bps: 10
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        type: LinearFee
+    owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+    type: RoutingFee
+  type: native
+base:
+  decimals: 18
+  owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7" # ICA on ethereum
+  proxyAdmin:
+    owner: "0x3949eD0CD036D9FF662d97BD7aC1686051c4aeBF"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 10
+        owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+        type: LinearFee
+      ethereum:
+        bps: 10
+        owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+        type: LinearFee
+      optimism:
+        bps: 10
+        owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+        type: LinearFee
+    owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+    type: RoutingFee
+  type: native
+ethereum:
+  decimals: 18
+  owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+  proxyAdmin:
+    owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 10
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        type: LinearFee
+      base:
+        bps: 10
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        type: LinearFee
+      optimism:
+        bps: 10
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        type: LinearFee
+    owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+    type: RoutingFee
+  type: native
+optimism:
+  decimals: 18
+  owner: "0x1E2afA8d1B841c53eDe9474D188Cd4FcfEd40dDC" # ICA on ethereum
+  proxyAdmin:
+    owner: "0xbd7db3821806bc72D223F0AE521Bf82FcBd6Ef4d"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 10
+        owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
+        type: LinearFee
+      base:
+        bps: 10
+        owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
+        type: LinearFee
+      ethereum:
+        bps: 10
+        owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
+        type: LinearFee
+    owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
+    type: RoutingFee
+  type: native
+viction:
+  decimals: 18
+  gas: 50000
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  name: ETH
+  owner: "0x18165B1cb2969B79D2a0f67AECe0bf7bb44a7CaD"
+  ownerOverrides:
+    _icaAddress: "0x23ed65DE22ac29Ec1C16E75EddB0cE3A187357b4"
+    _safeAddress: "0x18165B1cb2969B79D2a0f67AECe0bf7bb44a7CaD"
+    fallbackRoutingHook: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    proxyAdmin: "0x23ed65DE22ac29Ec1C16E75EddB0cE3A187357b4"
+    testRecipient: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    validatorAnnounce: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  symbol: ETH
+  type: synthetic

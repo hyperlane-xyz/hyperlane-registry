@@ -9,8 +9,10 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
+      # Skip token generation for fork PRs (they don't have access to secrets)
       - name: Generate GitHub App Token
         id: generate-token
+        if: github.event.pull_request.head.repo.full_name == github.repository
         uses: actions/create-github-app-token@v2
         with:
           app-id: ${{ secrets.HYPER_GONK_APP_ID }}
@@ -29,7 +31,8 @@ jobs:
 
       - name: Check Warp Deploy
         env:
-          PR_NUMBER: ${{ github.event.pull_request.number }}
+          # Only set PR_NUMBER for non-fork PRs (enables PR commenting)
+          PR_NUMBER: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.number || '' }}
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
         run: |
           ./scripts/check-warp-deploy.sh ${{ steps.determine-base-sha.outputs.base_sha }} ${{ steps.determine-base-sha.outputs.current_sha }}

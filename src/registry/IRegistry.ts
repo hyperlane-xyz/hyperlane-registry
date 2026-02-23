@@ -6,6 +6,7 @@ import type {
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
 import {
+  AddWarpRouteConfigOptions,
   ChainAddresses,
   MaybePromise,
   WarpDeployConfigMap,
@@ -30,6 +31,7 @@ export interface ChainFiles {
   metadata?: string;
   addresses?: string;
   logo?: string;
+  'darkmode-logo'?: string;
 }
 
 export interface RegistryContent {
@@ -51,14 +53,6 @@ export enum RegistryType {
   Partial = 'partial',
   Http = 'http',
 }
-
-export type AddWarpRouteConfigOptions =
-  | {
-      symbol: string;
-    }
-  | {
-      warpRouteId: WarpRouteId;
-    };
 
 export interface IRegistry {
   type: RegistryType;

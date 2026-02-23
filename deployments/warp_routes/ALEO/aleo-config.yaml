@@ -1,0 +1,63 @@
+tokens:
+  - addressOrDenom: hyp_warp_token_credits.aleo/aleo1qaqv2f6mn24xufa50d579s2pr75alxczcwl2g94favhj0dcj0yqqexazpp
+    chainName: aleo
+    coinGeckoId: aleo
+    connections:
+      - token: ethereum|base|0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa
+      - token: ethereum|ethereum|0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa
+      - token: ethereum|hyperevm|0x9562b536713aF52627679c2c559ebE54fB7c3cc9
+      - token: sealevel|solanamainnet|9EJC4KsqrxZzfp2iXp3gm8pKXTqzQo8AWUFQ22vK7Lvr
+    decimals: 6
+    logoURI: /deployments/warp_routes/ALEO/logo.svg
+    name: Aleo
+    standard: AleoHypNative
+    symbol: ALEO
+  - addressOrDenom: "0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa"
+    chainName: base
+    connections:
+      - token: aleo|aleo|hyp_warp_token_credits.aleo/aleo1qaqv2f6mn24xufa50d579s2pr75alxczcwl2g94favhj0dcj0yqqexazpp
+      - token: ethereum|ethereum|0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa
+      - token: ethereum|hyperevm|0x9562b536713aF52627679c2c559ebE54fB7c3cc9
+      - token: sealevel|solanamainnet|9EJC4KsqrxZzfp2iXp3gm8pKXTqzQo8AWUFQ22vK7Lvr
+    decimals: 6
+    logoURI: /deployments/warp_routes/ALEO/logo.svg
+    name: Aleo
+    standard: EvmHypSynthetic
+    symbol: ALEO
+  - addressOrDenom: "0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa"
+    chainName: ethereum
+    connections:
+      - token: aleo|aleo|hyp_warp_token_credits.aleo/aleo1qaqv2f6mn24xufa50d579s2pr75alxczcwl2g94favhj0dcj0yqqexazpp
+      - token: ethereum|base|0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa
+      - token: ethereum|hyperevm|0x9562b536713aF52627679c2c559ebE54fB7c3cc9
+      - token: sealevel|solanamainnet|9EJC4KsqrxZzfp2iXp3gm8pKXTqzQo8AWUFQ22vK7Lvr
+    decimals: 6
+    logoURI: /deployments/warp_routes/ALEO/logo.svg
+    name: Aleo
+    standard: EvmHypSynthetic
+    symbol: ALEO
+  - addressOrDenom: "0x9562b536713aF52627679c2c559ebE54fB7c3cc9"
+    chainName: hyperevm
+    connections:
+      - token: aleo|aleo|hyp_warp_token_credits.aleo/aleo1qaqv2f6mn24xufa50d579s2pr75alxczcwl2g94favhj0dcj0yqqexazpp
+      - token: ethereum|base|0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa
+      - token: ethereum|ethereum|0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa
+      - token: sealevel|solanamainnet|9EJC4KsqrxZzfp2iXp3gm8pKXTqzQo8AWUFQ22vK7Lvr
+    decimals: 6
+    logoURI: /deployments/warp_routes/ALEO/logo.svg
+    name: Aleo
+    standard: EvmHypSynthetic
+    symbol: ALEO
+  - addressOrDenom: 9EJC4KsqrxZzfp2iXp3gm8pKXTqzQo8AWUFQ22vK7Lvr
+    chainName: solanamainnet
+    collateralAddressOrDenom: RCPBTDNd64xoeFGqYGXLmJUCa92kqp3CSnNsC5fjRad
+    connections:
+      - token: aleo|aleo|hyp_warp_token_credits.aleo/aleo1qaqv2f6mn24xufa50d579s2pr75alxczcwl2g94favhj0dcj0yqqexazpp
+      - token: ethereum|base|0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa
+      - token: ethereum|ethereum|0x33fbC08bD84E61E04e51eA0F32885AA77F7D5ECa
+      - token: ethereum|hyperevm|0x9562b536713aF52627679c2c559ebE54fB7c3cc9
+    decimals: 6
+    logoURI: /deployments/warp_routes/ALEO/logo.svg
+    name: ALEO
+    standard: SealevelHypSynthetic
+    symbol: ALEO

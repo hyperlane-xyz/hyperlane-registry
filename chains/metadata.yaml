@@ -652,6 +652,10 @@ astar:
     - http: https://evm.astar.network
   technicalStack: polkadotsubstrate
 astarzkevm:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://astar-zkevm.explorer.startale.com/api
       family: blockscout
@@ -703,6 +707,10 @@ aurora:
     - http: https://aurora.drpc.org
   technicalStack: other
 auroratestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.testnet.aurora.dev/api
       family: blockscout
@@ -826,12 +834,16 @@ base:
   rpcUrls:
     - http: https://base.drpc.org
     - http: https://mainnet.base.org
-    - http: https://base.blockpi.network/v1/rpc/public
+    - http: https://base.public.blockpi.network/v1/rpc/public
     - http: https://base.llamarpc.com
     - http: https://1rpc.io/base
     - http: https://base-pokt.nodies.app
   technicalStack: opstack
 basecamptestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://basecamp.cloud.blockscout.com/api
       family: blockscout
@@ -1361,6 +1373,10 @@ carrchain:
     - http: https://rpc.carrchain.io
   technicalStack: arbitrumnitro
 carrchaintestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://testnet.carrscan.io/api/v1
       family: etherscan
@@ -1693,6 +1709,10 @@ citrea:
     - http: https://rpc.mainnet.citrea.xyz
   technicalStack: other
 citreatestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.testnet.citrea.xyz/api
       family: blockscout
@@ -2646,6 +2666,27 @@ ecotestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://eco-testnet.rpc.caldera.xyz/http
+eden:
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 714
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Eden
+  domainId: 714
+  gasCurrencyCoinGeckoId: celestia
+  name: eden
+  nativeToken:
+    decimals: 18
+    name: TIA
+    symbol: TIA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://eden-rpc.celestia.org
+  technicalStack: other
 edentestnet:
   chainId: 3735928814
   displayName: Eden Testnet
@@ -3446,6 +3487,10 @@ game7:
     - http: https://mainnet-rpc.game7.build
   technicalStack: arbitrumnitro
 giwasepolia:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://sepolia-explorer.giwa.io/api
       family: blockscout
@@ -3813,10 +3858,10 @@ humanitytestnet:
     - http: https://rpc.testnet.humanity.org
 hyperevm:
   blockExplorers:
-    - apiUrl: https://hyperliquid.cloud.blockscout.com/api
+    - apiUrl: https://www.hyperscan.com/api/v2
       family: blockscout
       name: HyperEVM Explorer
-      url: https://hyperliquid.cloud.blockscout.com
+      url: https://www.hyperscan.com
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -4009,6 +4054,10 @@ inevm:
     - http: https://mainnet.rpc.inevm.com/http
   technicalStack: arbitrumnitro
 infinityvm:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blocks:
     confirmations: 1
     estimateBlockTime: 1
@@ -4934,6 +4983,10 @@ megaeth:
     - http: https://mainnet.megaeth.com/rpc
   technicalStack: opstack
 megaethtestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://www.megaexplorer.xyz/api
       family: other
@@ -5432,6 +5485,10 @@ monad:
     - http: https://rpc-mainnet.monadinfra.com
   technicalStack: other
 monadtestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.monad-testnet.category.xyz/api
       family: blockscout
@@ -5639,6 +5696,10 @@ nero:
     maxFeePerGas: 10000000000
     maxPriorityFeePerGas: 1000000000
 neuratestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://testnet-blockscout.infra.neuraprotocol.io/api
       family: blockscout
@@ -5785,6 +5846,10 @@ noble:
   transactionOverrides:
     gasPrice: 0.1
 nobletestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   bech32Prefix: noble
   blockExplorers:
     - apiUrl: https://www.mintscan.io/noble-testnet
@@ -6148,6 +6213,7 @@ paradex:
     symbol: FUEL
   protocol: starknet
   rpcUrls:
+    - http: https://rpc.api.prod.paradex.trade/rpc/v0_8
     - http: https://juno.api.prod.paradex.trade/rpc/v0_8
     - http: https://pathfinder.api.prod.paradex.trade/rpc/v0_8
   technicalStack: other
@@ -7050,6 +7116,10 @@ scroll:
     - http: https://1rpc.io/scroll
   technicalStack: other
 scrollsepolia:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://api-sepolia.scrollscan.com/api
       family: etherscan
@@ -8048,6 +8118,10 @@ subtensor:
     - http: https://bittensor-finney.api.onfinality.io/public
   technicalStack: other
 subtensortestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blocks:
     confirmations: 1
     estimateBlockTime: 12

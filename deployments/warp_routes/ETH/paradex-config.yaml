@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x2bBdc933196334C6CD3F16F131B62f7c567BB27D"
+    chainName: ethereum
+    coinGeckoId: ethereum
+    connections:
+      - token: ethereum|mode|0x137c2d3FA634834dAeDD4b7389a166C1445C9d60
+      - token: starknet|paradex|0x069b225194ec5391d9df605afdb2ade6401fd476b0284bc0ec39b78f89584c44
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH
+  - addressOrDenom: "0x137c2d3FA634834dAeDD4b7389a166C1445C9d60"
+    chainName: mode
+    connections:
+      - token: ethereum|ethereum|0x2bBdc933196334C6CD3F16F131B62f7c567BB27D
+      - token: starknet|paradex|0x069b225194ec5391d9df605afdb2ade6401fd476b0284bc0ec39b78f89584c44
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: ETH
+    standard: EvmHypSynthetic
+    symbol: ETH
+  - addressOrDenom: "0x069b225194ec5391d9df605afdb2ade6401fd476b0284bc0ec39b78f89584c44"
+    chainName: paradex
+    coinGeckoId: ethereum
+    collateralAddressOrDenom: "0x753b4f4e127a2c2d969a3e4c09e5b0371b78040f7ad433ddc69de4dae90f407"
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: StarknetHypCollateral
+    symbol: ETH
