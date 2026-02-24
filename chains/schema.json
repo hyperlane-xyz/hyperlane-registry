@@ -81,23 +81,15 @@
                 "description": "An API key for the explorer (recommended for better reliability)."
               },
               "family": {
-                "anyOf": [
-                  {
-                    "type": "string",
-                    "enum": [
-                      "etherscan",
-                      "blockscout",
-                      "routescan",
-                      "voyager",
-                      "zksync",
-                      "radixdashboard",
-                      "other",
-                      "unknown"
-                    ]
-                  },
-                  {
-                    "type": "string"
-                  }
+                "type": "string",
+                "enum": [
+                  "etherscan",
+                  "blockscout",
+                  "routescan",
+                  "voyager",
+                  "zksync",
+                  "radixdashboard",
+                  "other"
                 ],
                 "description": "The type of the block explorer. See ExplorerFamily for valid values."
               }
@@ -334,23 +326,15 @@
           "description": "The metadata of the native token of the chain (e.g. ETH for Ethereum)."
         },
         "protocol": {
-          "anyOf": [
-            {
-              "type": "string",
-              "enum": [
-                "ethereum",
-                "sealevel",
-                "cosmos",
-                "cosmosnative",
-                "starknet",
-                "radix",
-                "aleo",
-                "unknown"
-              ]
-            },
-            {
-              "type": "string"
-            }
+          "type": "string",
+          "enum": [
+            "ethereum",
+            "sealevel",
+            "cosmos",
+            "cosmosnative",
+            "starknet",
+            "radix",
+            "aleo"
           ],
           "description": "The type of protocol used by this chain. See ProtocolType for valid values."
         },
@@ -374,22 +358,14 @@
           "description": "The SLIP-0044 coin type."
         },
         "technicalStack": {
-          "anyOf": [
-            {
-              "type": "string",
-              "enum": [
-                "arbitrumnitro",
-                "opstack",
-                "polygoncdk",
-                "polkadotsubstrate",
-                "zksync",
-                "other",
-                "unknown"
-              ]
-            },
-            {
-              "type": "string"
-            }
+          "type": "string",
+          "enum": [
+            "arbitrumnitro",
+            "opstack",
+            "polygoncdk",
+            "polkadotsubstrate",
+            "zksync",
+            "other"
           ],
           "description": "The technical stack of the chain. See ChainTechnicalStack for valid values."
         },
