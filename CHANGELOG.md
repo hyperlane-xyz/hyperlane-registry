@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 24.1.0
+
+### Minor Changes
+
+- 7c51374: Deployed USD1 warp route bsc <> eni
+
 ## 24.0.0
 
 ### Major Changes
