@@ -1,0 +1,21 @@
+tokens:
+  - addressOrDenom: "0x29AC114182580D660bA97b1fABF9a94f5C30a6B3"
+    chainName: bsc
+    coinGeckoId: usd1
+    collateralAddressOrDenom: "0x8d0D000Ee44948FC98c9B98A4FA4921476f08B0d"
+    connections:
+      - token: ethereum|eni|0x680e8ECB908A2040232ef139A0A52cbE47b9F15B
+    decimals: 18
+    logoURI: /deployments/warp_routes/USD1/logo.svg
+    name: World Liberty Financial USD
+    standard: EvmHypCollateral
+    symbol: USD1
+  - addressOrDenom: "0x680e8ECB908A2040232ef139A0A52cbE47b9F15B"
+    chainName: eni
+    connections:
+      - token: ethereum|bsc|0x29AC114182580D660bA97b1fABF9a94f5C30a6B3
+    decimals: 18
+    logoURI: /deployments/warp_routes/USD1/logo.svg
+    name: World Liberty Financial USD
+    standard: EvmHypSynthetic
+    symbol: USD1
