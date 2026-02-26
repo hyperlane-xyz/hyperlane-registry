@@ -1,5 +1,30 @@
 # @hyperlane-xyz/registry
 
+## 24.0.0
+
+### Major Changes
+
+- ddc6844: Update and extend the viction route. Rename warp route id and removed old files
+
+### Minor Changes
+
+- d49cb0d: Extend eclipse USDC to avalanche, ink, linea, monad, world, uni
+- 7f01376: Update hyperlane packages to latest
+- a7cd6cd: Deploy ETHSTAGE/stage warp route
+- 3fae0c7: Extended ETH and USDC Krown warp routes to Base
+- 4350579: re-enable somniatestnet
+- 748f7db: Re-Enroll Solana leg for ALEO/aleo
+- b93357a: Add ETH/paradex & ETH/paradexsepolia warp route
+- 471c4fa: Enable modetestnet again
+
+### Patch Changes
+
+- 748f7db: fix Aleo USDC connections
+- 1e75175: Add dark mode logos for chains and tokens
+- 9745c3f: Update USDT/eni connections to allow only bsc <> eni
+- 7b92d0b: Update Eden default RPC to https://rpc.eden.gateway.fm
+- fb80908: Added USDTSTAGE warp route deployment across ethereum, arbitrum, plasma, mode, and solanamainnet.
+
 ## 23.14.0
 
 ### Minor Changes
