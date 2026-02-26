@@ -5,19 +5,20 @@ blockExplorers:
     name: Tronscan
     url: https://shasta.tronscan.org/#/
 blocks:
-  confirmations: 20
+  confirmations: 5
   estimateBlockTime: 3
-  reorgPeriod: 20
+  reorgPeriod: 5
 chainId: 2494104990
 deployer:
   name: Abacus Works
   url: https://www.hyperlane.xyz
 displayName: Tron Testnet
-domainId: 2494104990
+# 2494104990 % (2**31-1)
+domainId: 346621343
 grpcUrls:
   - http: http://grpc.shasta.trongrid.io:50051
 isTestnet: true
-name: trontestnet
+name: tronshasta
 nativeToken:
   decimals: 6
   name: Tron
