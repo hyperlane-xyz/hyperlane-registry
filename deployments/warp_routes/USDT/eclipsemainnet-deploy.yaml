@@ -1,13 +1,39 @@
+arbitrum:
+  owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
+  proxyAdmin:
+    address: "0x33465314CbD880976B7A9f86062d615DE5E4Fa8A"
+    owner: "0x03fD5BE9DF85F0017dC7F4DC3068dDF64fffF25e"
+  token: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+  type: collateral
+bsc:
+  proxyAdmin:
+    owner: "0x7bB2ADeDdC342ffb611dDC073095cc4B8C547170"
+  scale:
+    denominator: 1000000000000
+    numerator: 1
+  token: "0x55d398326f99059fF775485246999027B3197955"
+  type: collateral
 eclipsemainnet:
   foreignDeployment: 5g5ujyYUNvdydwyDVCpZwPpgYRqH5RYJRi156cxyE3me
   gas: 300000
-  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
   owner: E4TncCw3WMqQZbkACVcomX3HqcSzLfNyhTnqKN1DimGr
   type: synthetic
 ethereum:
-  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
   owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
   proxyAdmin:
-    owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
+    address: "0x692e50577fAaBF10F824Dc8Ce581e3Af93785175"
+    owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
   token: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+  type: collateral
+plasma:
+  owner: "0x45A96b92d486B671A09AAc037d7be8940038AaEb"
+  proxyAdmin:
+    owner: "0x45A96b92d486B671A09AAc037d7be8940038AaEb"
+  token: "0xb8ce59fc3717ada4c02eadf9682a9e934f625ebb"
+  type: collateral
+solanamainnet:
+  foreignDeployment: Bk79wMjvpPCh5iQcCEjPWFcG1V2TfgdwaBsWBEYFYSNU
+  gas: 300000
+  owner: BNGDJ1h9brgt6FFVd8No1TVAH48Fp44d7jkuydr1URwJ
+  token: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
   type: collateral
