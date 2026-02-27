@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://explorer.turkchain1919.com/api
+    family: blockscout
+    name: TurkScan
+    url: https://explorer.turkchain1919.com
+blocks:
+  confirmations: 2
+  estimateBlockTime: 2
+  reorgPeriod: finalized
+chainId: 1919
+deployer:
+  name: Turkchain
+  url: https://www.turkchain1919.com
+displayName: Turkchain
+domainId: 1919
+isTestnet: false
+name: turkchain
+nativeToken:
+  decimals: 18
+  name: TC
+  symbol: TURK
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.turkchain1919.com
+technicalStack: other
+transactionOverrides:
+  maxFeePerGas: 20000000000
+  maxPriorityFeePerGas: 2000000000
