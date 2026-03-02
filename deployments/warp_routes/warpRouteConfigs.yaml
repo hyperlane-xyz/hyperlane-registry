@@ -724,6 +724,83 @@ DAI/arbitrum-bsc-linea-polygon:
       name: Dai Stablecoin
       standard: EvmHypCollateral
       symbol: DAI
+DIME/paradex:
+  options: {}
+  tokens:
+    - addressOrDenom: "0x7396b724a43C1d654a89B44996DA84d1E1a9B568"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xb32e10022ffbedfe10bc818a1c7e67d9d87e0fa7"
+      connections:
+        - token: ethereum|hyperevm|0xA72ae85ca2340FF74cC45c423f2A85A062A4fb4c
+        - token: ethereum|mode|0xE29FcB01d6504805929F4bD02c7CCe16eA878705
+        - token: starknet|paradex|0x0796b6a63adcce73be0809d046b05c853c2e1de60f98fbb17836f7f01d2bc091
+      decimals: 18
+      name: DIME
+      standard: EvmHypCollateral
+      symbol: DIME
+    - addressOrDenom: "0xA72ae85ca2340FF74cC45c423f2A85A062A4fb4c"
+      chainName: hyperevm
+      connections:
+        - token: ethereum|ethereum|0x7396b724a43C1d654a89B44996DA84d1E1a9B568
+        - token: ethereum|mode|0xE29FcB01d6504805929F4bD02c7CCe16eA878705
+        - token: starknet|paradex|0x0796b6a63adcce73be0809d046b05c853c2e1de60f98fbb17836f7f01d2bc091
+      decimals: 18
+      name: DIME
+      standard: EvmHypSynthetic
+      symbol: DIME
+    - addressOrDenom: "0xE29FcB01d6504805929F4bD02c7CCe16eA878705"
+      chainName: mode
+      connections:
+        - token: ethereum|ethereum|0x7396b724a43C1d654a89B44996DA84d1E1a9B568
+        - token: ethereum|hyperevm|0xA72ae85ca2340FF74cC45c423f2A85A062A4fb4c
+        - token: starknet|paradex|0x0796b6a63adcce73be0809d046b05c853c2e1de60f98fbb17836f7f01d2bc091
+      decimals: 18
+      name: DIME
+      standard: EvmHypSynthetic
+      symbol: DIME
+    - addressOrDenom: "0x0796b6a63adcce73be0809d046b05c853c2e1de60f98fbb17836f7f01d2bc091"
+      chainName: paradex
+      collateralAddressOrDenom: "0x316cb56a8cc7c478ea7c9b22f33571330bc61ea0312f2222d182b4b6b3fa4b2"
+      connections:
+        - token: ethereum|ethereum|0x7396b724a43C1d654a89B44996DA84d1E1a9B568
+        - token: ethereum|hyperevm|0xA72ae85ca2340FF74cC45c423f2A85A062A4fb4c
+        - token: ethereum|mode|0xE29FcB01d6504805929F4bD02c7CCe16eA878705
+      decimals: 18
+      name: DIME
+      standard: StarknetHypCollateral
+      symbol: DIME
+DIME/paradexsepolia:
+  options: {}
+  tokens:
+    - addressOrDenom: "0xDa51f70176E6cDd260780CF7b124F9A0C61dffaA"
+      chainName: modetestnet
+      connections:
+        - token: ethereum|sepolia|0xdE47E1355C236bF4AB8933f674A68579C5849848
+        - token: starknet|paradexsepolia|0x032242869cd6e959da8b519c34458ef99809f85abfd03277c178968409d951f1
+      decimals: 18
+      name: DIME
+      standard: EvmHypSynthetic
+      symbol: DIME
+    - addressOrDenom: "0x032242869cd6e959da8b519c34458ef99809f85abfd03277c178968409d951f1"
+      chainName: paradexsepolia
+      collateralAddressOrDenom: "0x72fefa1481ee0911ab0e263e0781d1786105634d7ef89222449aba31161c696"
+      connections:
+        - token: ethereum|modetestnet|0xDa51f70176E6cDd260780CF7b124F9A0C61dffaA
+        - token: ethereum|sepolia|0xdE47E1355C236bF4AB8933f674A68579C5849848
+      decimals: 18
+      name: DIME
+      standard: StarknetHypCollateral
+      symbol: DIME
+    - addressOrDenom: "0xdE47E1355C236bF4AB8933f674A68579C5849848"
+      chainName: sepolia
+      collateralAddressOrDenom: "0x7a04507df78e1b1d3d30a82f5681cb0c947a2888"
+      connections:
+        - token: ethereum|modetestnet|0xDa51f70176E6cDd260780CF7b124F9A0C61dffaA
+        - token: starknet|paradexsepolia|0x032242869cd6e959da8b519c34458ef99809f85abfd03277c178968409d951f1
+      decimals: 18
+      name: DIME
+      standard: EvmHypCollateral
+      symbol: DIME
 DOG/base-optimism:
   tokens:
     - addressOrDenom: "0x91f016B43A73DFF60f5D910c530338f69Fa3FD0b"
