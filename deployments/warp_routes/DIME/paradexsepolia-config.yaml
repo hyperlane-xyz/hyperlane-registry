@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../schema.json
+options: {}
+tokens:
+  - addressOrDenom: "0xDa51f70176E6cDd260780CF7b124F9A0C61dffaA"
+    chainName: modetestnet
+    connections:
+      - token: ethereum|sepolia|0xdE47E1355C236bF4AB8933f674A68579C5849848
+      - token: ethereum|sepolia|0xdE47E1355C236bF4AB8933f674A68579C5849848
+      - token: starknet|paradexsepolia|0x032242869cd6e959da8b519c34458ef99809f85abfd03277c178968409d951f1
+    decimals: 18
+    name: DIME
+    standard: EvmHypSynthetic
+    symbol: DIME
+  - addressOrDenom: "0x032242869cd6e959da8b519c34458ef99809f85abfd03277c178968409d951f1"
+    chainName: paradexsepolia
+    collateralAddressOrDenom: "0x72fefa1481ee0911ab0e263e0781d1786105634d7ef89222449aba31161c696"
+    connections:
+      - token: ethereum|modetestnet|0xDa51f70176E6cDd260780CF7b124F9A0C61dffaA
+      - token: ethereum|sepolia|0xdE47E1355C236bF4AB8933f674A68579C5849848
+    decimals: 18
+    name: DIME
+    standard: StarknetHypDexCollateral
+    symbol: DIME
+  - addressOrDenom: "0xdE47E1355C236bF4AB8933f674A68579C5849848"
+    chainName: sepolia
+    collateralAddressOrDenom: "0x7a04507df78e1b1d3d30a82f5681cb0c947a2888"
+    connections:
+      - token: ethereum|modetestnet|0xDa51f70176E6cDd260780CF7b124F9A0C61dffaA
+      - token: ethereum|modetestnet|0xDa51f70176E6cDd260780CF7b124F9A0C61dffaA
+      - token: starknet|paradexsepolia|0x032242869cd6e959da8b519c34458ef99809f85abfd03277c178968409d951f1
+    decimals: 18
+    name: DIME
+    standard: EvmHypCollateral
+    symbol: DIME
