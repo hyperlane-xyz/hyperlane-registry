@@ -8339,6 +8339,32 @@ swisstroniktestnet:
   rpcUrls:
     - http: https://json-rpc.testnet.swisstronik.com
   technicalStack: other
+syscoin:
+  blockExplorers:
+    - apiUrl: https://explorer.syscoin.org/api
+      family: blockscout
+      name: Syscoin NEVM explorer
+      url: https://explorer.syscoin.org
+  blocks:
+    confirmations: 15
+    estimateBlockTime: 150
+    reorgPeriod: 5
+  chainId: 57
+  deployer:
+    name: Syscoin
+    url: https://syscoin.org
+  displayName: Syscoin NEVM
+  domainId: 57
+  isTestnet: false
+  name: syscoin
+  nativeToken:
+    decimals: 18
+    name: Syscoin Token
+    symbol: SYS
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.syscoin.org
+  technicalStack: other
 tac:
   blockExplorers:
     - apiUrl: https://explorer.tac.build/api
