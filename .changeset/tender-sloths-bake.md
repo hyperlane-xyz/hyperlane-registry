@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Trontestnet deployment
+Tronshasta deployment
