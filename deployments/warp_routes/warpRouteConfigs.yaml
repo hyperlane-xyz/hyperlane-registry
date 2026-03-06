@@ -5161,6 +5161,28 @@ Pnut/solanamainnet-soon:
       name: Peanut the Squirrel
       standard: SealevelHypSynthetic
       symbol: Pnut
+QUILL/eni:
+  tokens:
+    - addressOrDenom: "0x754587e5704B5aCecEA6d5d60fDE65BAAe97b8d6"
+      chainName: avalanche
+      coinGeckoId: ink-finance
+      collateralAddressOrDenom: "0xf3E5914cA1F678E0A3a38031B5514682e3450919"
+      connections:
+        - token: ethereum|eni|0xF4e644772b17b6c57327F4D111a73D68C8cC731B
+      decimals: 18
+      logoURI: /deployments/warp_routes/QUILL/logo.png
+      name: InkFinance
+      standard: EvmHypCollateral
+      symbol: QUILL
+    - addressOrDenom: "0xF4e644772b17b6c57327F4D111a73D68C8cC731B"
+      chainName: eni
+      connections:
+        - token: ethereum|avalanche|0x754587e5704B5aCecEA6d5d60fDE65BAAe97b8d6
+      decimals: 18
+      logoURI: /deployments/warp_routes/QUILL/logo.png
+      name: InkFinance
+      standard: EvmHypSynthetic
+      symbol: QUILL
 RCADE/arbitrum-bsc:
   tokens:
     - addressOrDenom: "0x6720350f7e3323418c05645cD5d6bb055f4A7427"
