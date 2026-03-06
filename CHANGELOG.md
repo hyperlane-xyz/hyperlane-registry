@@ -1,5 +1,20 @@
 # @hyperlane-xyz/registry
 
+## 24.1.0
+
+### Minor Changes
+
+- 8d947a4: Update Hyperlane dependencies to SDK 26.0.0 and Utils 26.0.0
+- 19ca1de: Add QUILL/eni deployment artifacts
+- e44369a: DIME testnet & mainnet deployment
+- f498cc0: Add Syscoin NEVM chain
+- 070a656: Tronshasta deployment
+- 7c51374: Deployed USD1 warp route bsc <> eni
+
+### Patch Changes
+
+- 44703dd: Fix starknet gasCurrencyCoinGeckoId to use correct id
+
 ## 24.0.0
 
 ### Major Changes
