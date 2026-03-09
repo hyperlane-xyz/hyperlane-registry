@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xeBEB7F52892dF3066885F4D31137a76327f6348b"
+    chainName: citrea
+    collateralAddressOrDenom: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
+    connections:
+      - token: ethereum|ethereum|0x6372e1C8a08940C7e95AF2891B9201aC48De6519
+      - token: sealevel|solanamainnet|HLrN331CCLAx13e9AudYVDuowwjGgpkNXzY8L17NQFzC
+    decimals: 6
+    logoURI: /deployments/warp_routes/ctUSD/logo.svg
+    name: Citrea USD
+    standard: EvmHypCollateral
+    symbol: ctUSD
+  - addressOrDenom: "0x6372e1C8a08940C7e95AF2891B9201aC48De6519"
+    chainName: ethereum
+    collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    connections:
+      - token: ethereum|citrea|0xeBEB7F52892dF3066885F4D31137a76327f6348b
+      - token: sealevel|solanamainnet|HLrN331CCLAx13e9AudYVDuowwjGgpkNXzY8L17NQFzC
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: HLrN331CCLAx13e9AudYVDuowwjGgpkNXzY8L17NQFzC
+    chainName: solanamainnet
+    collateralAddressOrDenom: xoUSDq85Rjsb6SbUwJyreFgeWQvxdkT7R3c3g7s6p5Y
+    connections:
+      - token: ethereum|citrea|0xeBEB7F52892dF3066885F4D31137a76327f6348b
+      - token: ethereum|ethereum|0x6372e1C8a08940C7e95AF2891B9201aC48De6519
+    decimals: 6
+    logoURI: /deployments/warp_routes/ctUSD/logo.svg
+    name: XO Cash
+    standard: SealevelHypCollateral
+    symbol: XO
