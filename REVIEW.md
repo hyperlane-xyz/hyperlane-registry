@@ -1,4 +1,4 @@
-Review this pull request. Focus on:
+# Code Review Guidelines
 
 ## Code Quality
 
@@ -36,7 +36,3 @@ Review this pull request. Focus on:
 - **YAML keys alphabetical** - ESLint enforces sorted keys
 - **No Node.js in main src/** - Only `src/fs/` can import Node.js modules
 - **Deterministic ordering** - Sort arrays/maps before processing
-
-Provide actionable feedback with specific line references.
-Be concise. For minor style issues, group them together.
-Security issues are handled by a separate dedicated review.
