@@ -1,0 +1,34 @@
+arbitrum:
+  tokenBridgeOft:
+    addDomainTxHash: "0x31aad83740353f8816c12af4a4918d80f24b6555a1267d242045573a1a0ecb14"
+    address: "0x889055Ef415aaD49a554A0491fC9421d2B31dd9a"
+    deployTxHash: "0x30eb6084af5bf4cafcc8c8752f2022bc7e8041c66675969dcab1db4725aebc1c"
+    hyperlaneDomainToLzEid:
+      "1": 30101
+    initTxHash: "0x1a48922f0c365316f8c7ab99c9dd2bc4511f9a6ae834ed41bebe35b54326619e"
+bridgeType: TokenBridgeOft
+ethereum:
+  tokenBridgeOft:
+    addDomainTxHash: "0x755dc6a68ebfcdf84b82782aa576bafebde469f1d04deb3281fff46e36d3b8a7"
+    address: "0xBaF02AD3571cEB889DfC92e42abe9C914b615A49"
+    deployTxHash: "0x3d0482582ae025c82fb6d3a5f0ac16a0ea1854919dc0658bea69da69fa26b129"
+    hyperlaneDomainToLzEid:
+      "42161": 30110
+    initTxHash: "0xcf86b2c23175d2259759bd08d3f88714e190e9d7967172f4ca173de3e5fe9c9e"
+liveTest:
+  amount: "1"
+  bridge: "0xBaF02AD3571cEB889DfC92e42abe9C914b615A49"
+  destinationDomain: 42161
+  sourceChain: ethereum
+  testType: rebalance
+  txHash: "0xc2b2e608d7b40618a9eb0711233740c7d65fc842b4c9224b7d2ea3ea66ccce68"
+route: PYUSD/stableswap
+routerWiring:
+  arbitrum:
+    addBridgeTxHash: "0xdf8d4803e0d6505aaa480f7a0ea950d6cd9cc957ad92955597eb1584801d61d5"
+    removeBridgeTxHash: "0x122f7c802181c66b546c12944f41bfb662c793e71201d7c3efc77a1382f48766"
+    router: "0x3930F18AA26902FfE92bA7b25352A49e694A1AB4"
+  ethereum:
+    addBridgeTxHash: "0x9d73bba0830995c53be7e08c5d85179a7a6d3fc9b3ae6f603ca40d00ee8dc344"
+    removeBridgeTxHash: "0x3bd6a4fbfa54c4721e0524aeaccb22c0c6bb9ee23f3310afa5a7bdc497c3a7d6"
+    router: "0x23c51024b19303F1315DbFFA055666aE9B7A0B2c"

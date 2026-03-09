@@ -1,4 +1,9 @@
 arbitrum:
+  allowedRebalancers:
+    - "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+  allowedRebalancingBridges:
+    ethereum:
+      - bridge: "0xc677F01510d827438dE05E1ca54Aae49C33C13ef" # fast
   enrolledRouters:
     "1":
       - "0x00000000000000000000000023c51024b19303f1315dbffa055666ae9b7a0b2c"
@@ -37,6 +42,11 @@ base:
   token: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
   type: multiCollateral
 ethereum:
+  allowedRebalancers:
+    - "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0xAB4acE93e8f9993f62C64758ed971391Bae77B56" # fast
   enrolledRouters:
     "1":
       - "0x00000000000000000000000023c51024b19303f1315dbffa055666ae9b7a0b2c"
