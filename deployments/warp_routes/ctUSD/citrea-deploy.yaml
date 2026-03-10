@@ -1,0 +1,29 @@
+citrea:
+  allowedRebalancers:
+    - "0xDA97A88A777FDC13978f3567bb1A94beec7F229D"
+  allowedRebalancingBridges:
+    ethereum:
+      - bridge: "0x5b877447F549ef799214dF0e9745a76a7129dA2A"
+  # custom ISM deployed by the team
+  interchainSecurityModule: "0x7d9a697eFfdEbb16C6A4b7eEedD16ac22227Fd0e"
+  owner: "0x690f4e2f19717A06E1C146B2dCE68c2d23e36f4c"
+  token: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
+  type: collateral
+ethereum:
+  allowedRebalancers:
+    - "0xDA97A88A777FDC13978f3567bb1A94beec7F229D"
+  allowedRebalancingBridges:
+    citrea:
+      - bridge: "0x926BDd2Ab8DeDa17757be78c8aF55b4fb8e38914"
+  # custom ISM deployed by the team
+  interchainSecurityModule: "0x02F02A24dd6135d7d4aD15f42B16D7F5f3a16421"
+  owner: "0x690f4e2f19717A06E1C146B2dCE68c2d23e36f4c"
+  token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+  type: collateral
+solanamainnet:
+  foreignDeployment: HLrN331CCLAx13e9AudYVDuowwjGgpkNXzY8L17NQFzC
+  gas: 300000
+  hook: BhNcatUDC2D5JTyeaqrdSukiVFsEHK7e3hVmKMztwefv
+  owner: 811iW9k4kE2aLsR53Vti4QZiPyuGZXgV58QUbmU7c69f
+  token: xoUSDq85Rjsb6SbUwJyreFgeWQvxdkT7R3c3g7s6p5Y
+  type: collateral
