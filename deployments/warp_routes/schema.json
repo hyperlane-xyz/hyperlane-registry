@@ -230,6 +230,11 @@
                 "minimum": 0,
                 "exclusiveMaximum": 256,
                 "description": "The scaling factor of the token"
+              },
+              "warpRouteId": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Unique warp route identifier, used to disambiguate tokens that share the same addressOrDenom on the same chain (e.g. M0 Portal tokens)"
               }
             },
             "required": [
