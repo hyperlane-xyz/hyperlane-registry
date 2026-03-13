@@ -1,5 +1,26 @@
 # @hyperlane-xyz/registry
 
+## 24.1.0
+
+### Minor Changes
+
+- 8d947a4: Update Hyperlane dependencies to SDK 26.0.0 and Utils 26.0.0
+- 69c058b: Update Hyperlane dependencies to SDK 27.1.0 and Utils 27.1.0
+- 92e4a2a: Fix usdc symbol on ethereum for citrea usd
+- 19ca1de: Add QUILL/eni deployment artifacts
+- 43c3bd4: Deploy to igra mainnet, update mantra native token.
+- e44369a: DIME testnet & mainnet deployment
+- f498cc0: Add Syscoin NEVM chain
+- 070a656: Tronshasta deployment
+- e093770: Added ctUSD warp route deployment artifacts
+- 7c51374: Deployed USD1 warp route bsc <> eni
+
+### Patch Changes
+
+- c597206: Add gnosisSafeTransactionServiceUrl for igra
+- 44703dd: Fix starknet gasCurrencyCoinGeckoId to use correct id
+- 2594a2b: Updated supported svm chains to include native token metadata denom to support svm tooling in the cli
+
 ## 24.0.0
 
 ### Major Changes

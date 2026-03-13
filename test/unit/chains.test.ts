@@ -11,7 +11,7 @@ import { isAbacusWorksChain } from '../../src/utils.js';
 import { expect } from 'chai';
 import { ABACUS_WORKS_DEPLOYER_NAME } from '../../src/consts.js';
 
-const legacyIcaChains = ['viction', 'ontology'];
+const icaUnsupportedChains = ['igra', 'viction', 'ontology'];
 
 describe('Chain metadata', () => {
   const skippedChainsList = ['inclusivelayertestnet'];
@@ -71,7 +71,7 @@ describe('Chain metadata', () => {
         metadata.deployer?.name === ABACUS_WORKS_DEPLOYER_NAME &&
         metadata.protocol === ProtocolType.Ethereum &&
         metadata.technicalStack !== ChainTechnicalStack.ZkSync &&
-        !legacyIcaChains.includes(chain)
+        !icaUnsupportedChains.includes(chain)
       ) {
         expect(chainAddresses[chain].interchainAccountRouter).not.to.be.undefined;
       }
