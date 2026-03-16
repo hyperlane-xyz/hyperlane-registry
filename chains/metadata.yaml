@@ -8691,6 +8691,36 @@ treasure:
   rpcUrls:
     - http: https://rpc.treasure.lol
   technicalStack: zksync
+tron:
+  blockExplorers:
+    - apiUrl: https://tronscan.org/#
+      family: other
+      name: Tronscan
+      url: https://tronscan.org/#
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 3
+    reorgPeriod: 5
+  chainId: 728126428
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Tron
+  domainId: 728126428
+  gasCurrencyCoinGeckoId: tron
+  grpcUrls:
+    - http: http://grpc.trongrid.io:50051
+  name: tron
+  nativeToken:
+    decimals: 6
+    name: Tron
+    symbol: TRX
+  protocol: tron
+  rpcUrls:
+    - http: https://api.trongrid.io/jsonrpc
+  solidityGrpcUrls:
+    - http: http://grpc.trongrid.io:50052
+  technicalStack: other
 tronshasta:
   blockExplorers:
     - apiUrl: https://shasta.tronscan.org/#
