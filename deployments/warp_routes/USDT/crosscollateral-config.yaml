@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xB36892eD4e51e57106427c449Ebaa301be22e466"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+    connections:
+      - token: ethereum|base|0x8601BF6998262b4d515988b2c81B3364F73c0713
+      - token: ethereum|ethereum|0xE02b0c7F711729f07D825a5eD752626c1840838F
+    decimals: 6
+    name: USD₮0
+    standard: EvmHypCrossCollateralRouter
+    symbol: USD₮0
+  - addressOrDenom: "0x8601BF6998262b4d515988b2c81B3364F73c0713"
+    chainName: base
+    collateralAddressOrDenom: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
+    connections:
+      - token: ethereum|arbitrum|0xB36892eD4e51e57106427c449Ebaa301be22e466
+      - token: ethereum|ethereum|0xE02b0c7F711729f07D825a5eD752626c1840838F
+    decimals: 6
+    name: Tether USD
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDT
+  - addressOrDenom: "0xE02b0c7F711729f07D825a5eD752626c1840838F"
+    chainName: ethereum
+    collateralAddressOrDenom: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    connections:
+      - token: ethereum|arbitrum|0xB36892eD4e51e57106427c449Ebaa301be22e466
+      - token: ethereum|base|0x8601BF6998262b4d515988b2c81B3364F73c0713
+    decimals: 6
+    name: Tether USD
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDT
