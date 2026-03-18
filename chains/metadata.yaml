@@ -8708,8 +8708,6 @@ tron:
   displayName: Tron
   domainId: 728126428
   gasCurrencyCoinGeckoId: tron
-  grpcUrls:
-    - http: http://grpc.trongrid.io:50051
   name: tron
   nativeToken:
     decimals: 6
@@ -8718,9 +8716,11 @@ tron:
   protocol: tron
   rpcUrls:
     - http: https://api.trongrid.io/jsonrpc
-  solidityGrpcUrls:
-    - http: http://grpc.trongrid.io:50052
   technicalStack: other
+  walletSolidityUrls:
+    - http: https://api.trongrid.io/walletsolidity
+  walletUrls:
+    - http: https://api.trongrid.io/wallet
 tronshasta:
   blockExplorers:
     - apiUrl: https://shasta.tronscan.org/#
@@ -8737,8 +8737,6 @@ tronshasta:
     url: https://www.hyperlane.xyz
   displayName: Tron Testnet
   domainId: 346621343
-  grpcUrls:
-    - http: http://grpc.shasta.trongrid.io:50051
   isTestnet: true
   name: tronshasta
   nativeToken:
@@ -8748,9 +8746,11 @@ tronshasta:
   protocol: tron
   rpcUrls:
     - http: https://api.shasta.trongrid.io/jsonrpc
-  solidityGrpcUrls:
-    - http: http://grpc.shasta.trongrid.io:50052
   technicalStack: other
+  walletSolidityUrls:
+    - http: https://api.shasta.trongrid.io/walletsolidity
+  walletUrls:
+    - http: https://api.shasta.trongrid.io/wallet
 trumpchain:
   availability:
     reasons:
