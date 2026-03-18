@@ -50,7 +50,7 @@ for WARP_ROUTE_ID in $WARP_ROUTE_IDS; do
     if docker run --rm \
         -e REGISTRY_COMMIT=$HEAD_COMMIT \
         -e CI=true \
-        gcr.io/abacus-labs-dev/hyperlane-monorepo:main \
+        ghcr.io/hyperlane-xyz/hyperlane-monorepo:main \
         ./node_modules/.bin/tsx \
         ./typescript/infra/scripts/check/check-deploy.ts \
         -e mainnet3 \
@@ -74,7 +74,7 @@ for WARP_ROUTE_ID in $WARP_ROUTE_IDS; do
             -e CI=true \
             -e REGISTRY_URI=/registry \
             -v "$(pwd)":/registry \
-            gcr.io/abacus-labs-dev/hyperlane-monorepo:main \
+            ghcr.io/hyperlane-xyz/hyperlane-monorepo:main \
             ./node_modules/.bin/tsx \
             ./typescript/infra/scripts/warp-routes/export-warp-configs.ts \
             -e mainnet3 \
