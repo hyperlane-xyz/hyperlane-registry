@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-re-enable somniatestnet
+Tron mainnet deployment.

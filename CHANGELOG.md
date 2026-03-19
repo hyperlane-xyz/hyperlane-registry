@@ -1,5 +1,51 @@
 # @hyperlane-xyz/registry
 
+## 24.1.0
+
+### Minor Changes
+
+- 8d947a4: Update Hyperlane dependencies to SDK 26.0.0 and Utils 26.0.0
+- 69c058b: Update Hyperlane dependencies to SDK 27.1.0 and Utils 27.1.0
+- 92e4a2a: Fix usdc symbol on ethereum for citrea usd
+- 19ca1de: Add QUILL/eni deployment artifacts
+- 43c3bd4: Deploy to igra mainnet, update mantra native token.
+- e44369a: DIME testnet & mainnet deployment
+- f498cc0: Add Syscoin NEVM chain
+- 070a656: Tronshasta deployment
+- e093770: Added ctUSD warp route deployment artifacts
+- 7c51374: Deployed USD1 warp route bsc <> eni
+
+### Patch Changes
+
+- c597206: Add gnosisSafeTransactionServiceUrl for igra
+- 44703dd: Fix starknet gasCurrencyCoinGeckoId to use correct id
+- 2594a2b: Updated supported svm chains to include native token metadata denom to support svm tooling in the cli
+
+## 24.0.0
+
+### Major Changes
+
+- ddc6844: Update and extend the viction route. Rename warp route id and removed old files
+
+### Minor Changes
+
+- d49cb0d: Extend eclipse USDC to avalanche, ink, linea, monad, world, uni
+- 7f01376: Update hyperlane packages to latest
+- a7cd6cd: Deploy ETHSTAGE/stage warp route
+- 3fae0c7: Extended ETH and USDC Krown warp routes to Base
+- 4350579: re-enable somniatestnet
+- 748f7db: Re-Enroll Solana leg for ALEO/aleo
+- b93357a: Add ETH/paradex & ETH/paradexsepolia warp route
+- 471c4fa: Enable modetestnet again
+
+### Patch Changes
+
+- 748f7db: fix Aleo USDC connections
+- 1e75175: Add dark mode logos for chains and tokens
+- 9745c3f: Update USDT/eni connections to allow only bsc <> eni
+- 7b92d0b: Update Eden default RPC to https://rpc.eden.gateway.fm
+- fb80908: Added USDTSTAGE warp route deployment across ethereum, arbitrum, plasma, mode, and solanamainnet.
+
 ## 23.14.0
 
 ### Minor Changes

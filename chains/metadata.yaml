@@ -2609,6 +2609,7 @@ eclipsemainnet:
   name: eclipsemainnet
   nativeToken:
     decimals: 9
+    denom: wei
     name: Ether
     symbol: ETH
   protocol: sealevel
@@ -2631,6 +2632,7 @@ eclipsetestnet:
   name: eclipsetestnet
   nativeToken:
     decimals: 9
+    denom: wei
     name: Ether
     symbol: ETH
   protocol: sealevel
@@ -2685,7 +2687,7 @@ eden:
     symbol: TIA
   protocol: ethereum
   rpcUrls:
-    - http: https://eden-rpc.celestia.org
+    - http: https://rpc.eden.gateway.fm
   technicalStack: other
 edentestnet:
   chainId: 3735928814
@@ -3909,6 +3911,35 @@ hyperliquidevmtestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.hyperliquid-testnet.xyz/evm
+igra:
+  blockExplorers:
+    - apiUrl: https://explorer.igralabs.com/api
+      family: blockscout
+      name: IGRA Explorer
+      url: https://explorer.igralabs.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 38833
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Igra
+  domainId: 38833
+  gasCurrencyCoinGeckoId: igra
+  gnosisSafeTransactionServiceUrl: https://safe.igralabs.com/txs
+  name: igra
+  nativeToken:
+    decimals: 18
+    name: iKAS
+    symbol: iKAS
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.igralabs.com:8545
+  technicalStack: other
+  transactionOverrides:
+    gasPrice: 1000000000000
 immutablezkevmmainnet:
   blockExplorers:
     - apiUrl: https://explorer.immutable.com/api
@@ -4918,12 +4949,12 @@ mantra:
     url: https://www.hyperlane.xyz
   displayName: MANTRA
   domainId: 5888
-  gasCurrencyCoinGeckoId: mantra-dao
+  gasCurrencyCoinGeckoId: mantra
   name: mantra
   nativeToken:
     decimals: 18
-    name: OM
-    symbol: OM
+    name: MANTRA
+    symbol: MANTRA
   protocol: ethereum
   rpcUrls:
     - http: https://evm.mantrachain.io
@@ -7338,6 +7369,7 @@ solanadevnet:
   name: solanadevnet
   nativeToken:
     decimals: 9
+    denom: lamport
     name: Solana
     symbol: SOL
   protocol: sealevel
@@ -7363,6 +7395,7 @@ solanamainnet:
   name: solanamainnet
   nativeToken:
     decimals: 9
+    denom: lamport
     name: Solana
     symbol: SOL
   protocol: sealevel
@@ -7391,6 +7424,7 @@ solanatestnet:
   name: solanatestnet
   nativeToken:
     decimals: 9
+    denom: lamport
     name: Solana
     symbol: SOL
   protocol: sealevel
@@ -7416,6 +7450,7 @@ solaxy:
   name: solaxy
   nativeToken:
     decimals: 6
+    denom: microSOLX
     name: Solaxy
     symbol: SOLX
   protocol: sealevel
@@ -7634,6 +7669,7 @@ sonicsvm:
   name: sonicsvm
   nativeToken:
     decimals: 9
+    denom: lamport
     name: Solana
     symbol: SOL
   protocol: sealevel
@@ -7661,6 +7697,7 @@ sonicsvmtestnet:
   name: sonicsvmtestnet
   nativeToken:
     decimals: 9
+    denom: lamport
     name: Solana
     symbol: SOL
   protocol: sealevel
@@ -7711,6 +7748,7 @@ soon:
   name: soon
   nativeToken:
     decimals: 9
+    denom: wei
     name: Ether
     symbol: ETH
   protocol: sealevel
@@ -7873,7 +7911,7 @@ starknet:
     url: https://www.hyperlane.xyz
   displayName: Starknet
   domainId: 358974494
-  gasCurrencyCoinGeckoId: ethereum
+  gasCurrencyCoinGeckoId: starknet
   name: starknet
   nativeToken:
     decimals: 18
@@ -8339,6 +8377,32 @@ swisstroniktestnet:
   rpcUrls:
     - http: https://json-rpc.testnet.swisstronik.com
   technicalStack: other
+syscoin:
+  blockExplorers:
+    - apiUrl: https://explorer.syscoin.org/api
+      family: blockscout
+      name: Syscoin NEVM explorer
+      url: https://explorer.syscoin.org
+  blocks:
+    confirmations: 15
+    estimateBlockTime: 150
+    reorgPeriod: 5
+  chainId: 57
+  deployer:
+    name: Syscoin
+    url: https://syscoin.org
+  displayName: Syscoin NEVM
+  domainId: 57
+  isTestnet: false
+  name: syscoin
+  nativeToken:
+    decimals: 18
+    name: Syscoin Token
+    symbol: SYS
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.syscoin.org
+  technicalStack: other
 tac:
   blockExplorers:
     - apiUrl: https://explorer.tac.build/api
@@ -8627,6 +8691,66 @@ treasure:
   rpcUrls:
     - http: https://rpc.treasure.lol
   technicalStack: zksync
+tron:
+  blockExplorers:
+    - apiUrl: https://tronscan.org/#
+      family: other
+      name: Tronscan
+      url: https://tronscan.org/#
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 3
+    reorgPeriod: finalized
+  chainId: 728126428
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Tron
+  domainId: 728126428
+  gasCurrencyCoinGeckoId: tron
+  name: tron
+  nativeToken:
+    decimals: 6
+    name: Tron
+    symbol: TRX
+  protocol: tron
+  rpcUrls:
+    - http: https://api.trongrid.io/jsonrpc
+  technicalStack: other
+  walletSolidityUrls:
+    - http: https://api.trongrid.io/walletsolidity
+  walletUrls:
+    - http: https://api.trongrid.io/wallet
+tronshasta:
+  blockExplorers:
+    - apiUrl: https://shasta.tronscan.org/#
+      family: other
+      name: Tronscan
+      url: https://shasta.tronscan.org/#
+  blocks:
+    confirmations: 5
+    estimateBlockTime: 3
+    reorgPeriod: 20
+  chainId: 2494104990
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Tron Testnet
+  domainId: 346621343
+  isTestnet: true
+  name: tronshasta
+  nativeToken:
+    decimals: 6
+    name: Tron
+    symbol: TRX
+  protocol: tron
+  rpcUrls:
+    - http: https://api.shasta.trongrid.io/jsonrpc
+  technicalStack: other
+  walletSolidityUrls:
+    - http: https://api.shasta.trongrid.io/walletsolidity
+  walletUrls:
+    - http: https://api.shasta.trongrid.io/wallet
 trumpchain:
   availability:
     reasons:
