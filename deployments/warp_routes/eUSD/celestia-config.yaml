@@ -1,0 +1,22 @@
+tokens:
+  - addressOrDenom: "0x726f757465725f61707000000000000000000000000000020000000000000013"
+    chainName: celestia
+    connections:
+      - token: ethereum|ethereum|0x129b6d0b13e04a3de4c3e133ca926c174fdcec7d
+    decimals: 18
+    logoURI: /deployments/warp_routes/eUSD/logo.svg
+    name: eUSD
+    standard: CosmosNativeHypSynthetic
+    symbol: eUSD
+  - addressOrDenom: "0x129b6d0b13e04a3de4c3e133ca926c174fdcec7d"
+    chainName: ethereum
+    # no info on coingecko for this token yet but will assume its usdc priced
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0x399cc65703e01c7fdefdf27093f84e7eb4b3f8b6"
+    connections:
+      - token: cosmosnative|celestia|0x726f757465725f61707000000000000000000000000000020000000000000013
+    decimals: 18
+    logoURI: /deployments/warp_routes/eUSD/logo.svg
+    name: eUSD
+    standard: EvmHypCollateral
+    symbol: eUSD
