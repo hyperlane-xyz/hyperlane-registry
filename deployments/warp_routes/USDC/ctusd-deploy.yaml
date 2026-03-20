@@ -1,0 +1,130 @@
+arbitrum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+    - "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+  crossCollateralRouters:
+    "42161":
+      - "0x000000000000000000000000824353938ee1361265097acc9e329828e3455c15"
+    "8453":
+      - "0x000000000000000000000000a9a434f0abce2f3e7073752046545530e32de6cf"
+  foreignDeployment: "0x62fe676dff1e7ABBCcbedc8BABc993827b9fb189"
+  mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
+  owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+  token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+  tokenFee:
+    feeContracts:
+      base:
+        bps: 3
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+        type: LinearFee
+      citrea:
+        bps: 3
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+        type: LinearFee
+      ethereum:
+        bps: 3
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+        type: LinearFee
+    owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+    type: RoutingFee
+  type: crossCollateral
+base:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+    - "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+  allowedRebalancingBridges:
+    "4114":
+      - bridge: "0x1c9DA8e9077323B5bb0Af96b94092992B59cE175" # slow
+  crossCollateralRouters:
+    "42161":
+      - "0x000000000000000000000000824353938ee1361265097acc9e329828e3455c15"
+    "8453":
+      - "0x000000000000000000000000a9a434f0abce2f3e7073752046545530e32de6cf"
+  foreignDeployment: "0xd54A15f8dF8C6dD9Ef3b5589BE0bF37EC6f61F91"
+  mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
+  owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+  token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 3
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+        type: LinearFee
+      citrea:
+        bps: 3
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+        type: LinearFee
+      ethereum:
+        bps: 3
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+        type: LinearFee
+    owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+    type: RoutingFee
+  type: crossCollateral
+citrea:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+    - "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+  allowedRebalancingBridges:
+    "1":
+      - bridge: "0xeBEB7F52892dF3066885F4D31137a76327f6348b"
+    "8453":
+      - bridge: "0x1a559f3D0753A07BB1dc597E4c2b4C7723CB27F4" # slow
+  crossCollateralRouters:
+    "42161":
+      - "0x000000000000000000000000824353938ee1361265097acc9e329828e3455c15"
+    "8453":
+      - "0x000000000000000000000000a9a434f0abce2f3e7073752046545530e32de6cf"
+  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
+  owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+  token: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 3
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+        type: LinearFee
+      base:
+        bps: 3
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+        type: LinearFee
+      ethereum:
+        bps: 3
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+        type: LinearFee
+    owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+    type: RoutingFee
+  type: crossCollateral
+ethereum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+    - "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+  allowedRebalancingBridges:
+    "4114":
+      - bridge: "0x6372e1C8a08940C7e95AF2891B9201aC48De6519"
+  crossCollateralRouters:
+    "42161":
+      - "0x000000000000000000000000824353938ee1361265097acc9e329828e3455c15"
+    "8453":
+      - "0x000000000000000000000000a9a434f0abce2f3e7073752046545530e32de6cf"
+  foreignDeployment: "0xd4463cB3c90b3F49c673310BEC9bC18311134B47"
+  mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
+  owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+  token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 3
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+        type: LinearFee
+      base:
+        bps: 3
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+        type: LinearFee
+      citrea:
+        bps: 3
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+        type: LinearFee
+    owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+    type: RoutingFee
+  type: crossCollateral
