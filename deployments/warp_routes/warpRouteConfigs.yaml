@@ -274,6 +274,27 @@ BNB/bsc-zeronetwork:
       name: BNB
       standard: EvmHypSynthetic
       symbol: BNB
+BNB/eni:
+  tokens:
+    - addressOrDenom: "0xBAACA4e74fCAa430E903ecEe46665e4E60EA2D38"
+      chainName: bsc
+      coinGeckoId: bnb
+      connections:
+        - token: ethereum|eni|0x0c45404740AF1Afc0428BD4E66085cD7DC028167
+      decimals: 18
+      logoURI: /deployments/warp_routes/BNB/logo.svg
+      name: BNB
+      standard: EvmHypNative
+      symbol: BNB
+    - addressOrDenom: "0x0c45404740AF1Afc0428BD4E66085cD7DC028167"
+      chainName: eni
+      connections:
+        - token: ethereum|bsc|0xBAACA4e74fCAa430E903ecEe46665e4E60EA2D38
+      decimals: 18
+      logoURI: /deployments/warp_routes/BNB/logo.svg
+      name: BNB
+      standard: EvmHypSynthetic
+      symbol: BNB
 BNB/krown:
   tokens:
     - addressOrDenom: "0x8E64a314034a3089fA8E8cF87Fbda9a2E10B7AAc"
