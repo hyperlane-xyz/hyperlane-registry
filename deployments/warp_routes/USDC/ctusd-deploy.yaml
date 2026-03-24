@@ -11,19 +11,22 @@ arbitrum:
   owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
   tokenFee:
-    feeContracts:
+    ccrfFeeContracts:
       base:
-        bps: 3
-        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        type: LinearFee
+        default:
+          bps: 3
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: LinearFee
       citrea:
-        bps: 3
-        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        type: LinearFee
+        default:
+          bps: 3
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: LinearFee
       ethereum:
-        bps: 3
-        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        type: LinearFee
+        default:
+          bps: 3
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: LinearFee
     owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
     type: RoutingFee
   type: crossCollateral
@@ -43,19 +46,22 @@ base:
   owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
   tokenFee:
-    feeContracts:
+    ccrfFeeContracts:
       arbitrum:
-        bps: 3
-        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        type: LinearFee
+        default:
+          bps: 3
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: LinearFee
       citrea:
-        bps: 3
-        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        type: LinearFee
+        default:
+          bps: 3
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: LinearFee
       ethereum:
-        bps: 3
-        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        type: LinearFee
+        default:
+          bps: 3
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: LinearFee
     owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
     type: RoutingFee
   type: crossCollateral
@@ -77,19 +83,22 @@ citrea:
   owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   token: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
   tokenFee:
-    feeContracts:
+    ccrfFeeContracts:
       arbitrum:
-        bps: 3
-        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        type: LinearFee
+        default:
+          bps: 3
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: LinearFee
       base:
-        bps: 3
-        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        type: LinearFee
+        default:
+          bps: 3
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: LinearFee
       ethereum:
-        bps: 3
-        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        type: LinearFee
+        default:
+          bps: 3
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: LinearFee
     owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
     type: RoutingFee
   type: crossCollateral
@@ -109,19 +118,22 @@ ethereum:
   owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
   tokenFee:
-    feeContracts:
+    ccrfFeeContracts:
       arbitrum:
-        bps: 3
-        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        type: LinearFee
+        default:
+          bps: 3
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: LinearFee
       base:
-        bps: 3
-        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        type: LinearFee
+        default:
+          bps: 3
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: LinearFee
       citrea:
-        bps: 3
-        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        type: LinearFee
+        default:
+          bps: 3
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: LinearFee
     owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
     type: RoutingFee
   type: crossCollateral
