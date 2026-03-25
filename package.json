@@ -41,6 +41,10 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
+    "./runtime": "./dist/runtime.js",
+    "./chainMetadata": "./dist/chainMetadata.js",
+    "./chainAddresses": "./dist/chainAddresses.js",
+    "./warpRouteConfigs": "./dist/warpRouteConfigs.js",
     "./chains/schema.json": "./dist/chains/schema.json",
     "./chains/*": "./dist/chains/*",
     "./fs": "./dist/fs/index.js"
@@ -48,6 +52,18 @@
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
+      "runtime": [
+        "./dist/runtime.d.ts"
+      ],
+      "chainMetadata": [
+        "./dist/chainMetadata.d.ts"
+      ],
+      "chainAddresses": [
+        "./dist/chainAddresses.d.ts"
+      ],
+      "warpRouteConfigs": [
+        "./dist/warpRouteConfigs.d.ts"
+      ],
       "chains/*": [
         "./dist/chains/*/index.d.ts"
       ]
