@@ -15,7 +15,7 @@ arbitrum:
   owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   token: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
   tokenFee:
-    ccrfFeeContracts:
+    feeContracts:
       base:
         default:
           bps: 3
@@ -32,7 +32,7 @@ arbitrum:
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
           type: LinearFee
     owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-    type: RoutingFee
+    type: CrossCollateralRoutingFee
   type: crossCollateral
 base:
   allowedRebalancers:
@@ -51,7 +51,7 @@ base:
   owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   token: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
   tokenFee:
-    ccrfFeeContracts:
+    feeContracts:
       arbitrum:
         default:
           bps: 3
@@ -68,5 +68,5 @@ base:
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
           type: LinearFee
     owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-    type: RoutingFee
+    type: CrossCollateralRoutingFee
   type: crossCollateral

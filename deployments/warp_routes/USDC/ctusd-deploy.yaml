@@ -11,7 +11,7 @@ arbitrum:
   owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
   tokenFee:
-    ccrfFeeContracts:
+    feeContracts:
       base:
         default:
           bps: 3
@@ -28,7 +28,7 @@ arbitrum:
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
           type: LinearFee
     owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-    type: RoutingFee
+    type: CrossCollateralRoutingFee
   type: crossCollateral
 base:
   allowedRebalancers:
@@ -46,7 +46,7 @@ base:
   owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
   tokenFee:
-    ccrfFeeContracts:
+    feeContracts:
       arbitrum:
         default:
           bps: 3
@@ -63,7 +63,7 @@ base:
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
           type: LinearFee
     owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-    type: RoutingFee
+    type: CrossCollateralRoutingFee
   type: crossCollateral
 citrea:
   allowedRebalancers:
@@ -83,7 +83,7 @@ citrea:
   owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   token: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
   tokenFee:
-    ccrfFeeContracts:
+    feeContracts:
       arbitrum:
         default:
           bps: 3
@@ -100,7 +100,7 @@ citrea:
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
           type: LinearFee
     owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-    type: RoutingFee
+    type: CrossCollateralRoutingFee
   type: crossCollateral
 ethereum:
   allowedRebalancers:
@@ -118,7 +118,7 @@ ethereum:
   owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
   tokenFee:
-    ccrfFeeContracts:
+    feeContracts:
       arbitrum:
         default:
           bps: 3
@@ -135,5 +135,5 @@ ethereum:
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
           type: LinearFee
     owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-    type: RoutingFee
+    type: CrossCollateralRoutingFee
   type: crossCollateral
