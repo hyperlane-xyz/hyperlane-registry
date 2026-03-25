@@ -6,6 +6,17 @@ on:
       - main
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      snapshot_tag:
+        description: 'NPM dist-tag for the beta release'
+        required: true
+        default: 'beta'
+        type: choice
+        options:
+          - beta
+          - alpha
+          - rc
+          - preview
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -144,6 +155,79 @@ jobs:
         env:
           NPM_CONFIG_PROVENANCE: true
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+
+  publish-beta:
+    if: github.event_name == 'workflow_dispatch'
+    concurrency:
+      group: npm-beta-release
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Check for changesets
+        run: |
+          CHANGESET_COUNT=$(find .changeset -name "*.md" ! -name "README.md" ! -name "config.json" 2>/dev/null | wc -l | tr -d ' ')
+          if [ "$CHANGESET_COUNT" -eq 0 ]; then
+            echo "::error::No pending changesets found. Beta releases require pending changeset files."
+            echo ""
+            echo "To create a beta release:"
+            echo "1. Add a changeset: pnpm exec changeset"
+            echo "2. Commit the changeset file"
+            echo "3. Run this workflow again"
+            exit 1
+          fi
+          echo "Found $CHANGESET_COUNT changeset(s)"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Build BEFORE snapshot versioning so changeset version doesn't invalidate caches
+      - name: Build
+        run: pnpm run build
+
+      - name: Create snapshot versions
+        run: pnpm exec changeset version --snapshot ${{ inputs.snapshot_tag }}
+
+      - name: Get snapshot version
+        id: version
+        run: |
+          SNAPSHOT_VERSION=$(jq -r '.version' package.json)
+          echo "snapshot=$SNAPSHOT_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Publish beta package
+        run: pnpm exec changeset publish --tag ${{ inputs.snapshot_tag }} --no-git-tag
+        env:
+          NPM_CONFIG_PROVENANCE: true
+
+      - name: Summary
+        run: |
+          echo "### Beta Release Published" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** \`${{ steps.version.outputs.snapshot }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**NPM Tag:** \`${{ inputs.snapshot_tag }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** \`${{ github.ref_name }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Install with:" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          echo "npm install @hyperlane-xyz/registry@${{ inputs.snapshot_tag }}" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
 
   notify-publish-failure:
     if: >-
