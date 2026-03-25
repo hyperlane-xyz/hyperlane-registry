@@ -20,17 +20,23 @@ arbitrum:
         default:
           bps: 3
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-          type: LinearFee
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
       citrea:
         default:
           bps: 3
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-          type: LinearFee
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
       ethereum:
         default:
           bps: 3
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-          type: LinearFee
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
     owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
     type: CrossCollateralRoutingFee
   type: crossCollateral
@@ -56,17 +62,23 @@ base:
         default:
           bps: 3
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-          type: LinearFee
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
       citrea:
         default:
           bps: 3
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-          type: LinearFee
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
       ethereum:
         default:
           bps: 3
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-          type: LinearFee
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
     owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
     type: CrossCollateralRoutingFee
   type: crossCollateral
