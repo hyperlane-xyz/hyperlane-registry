@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x5615605eBa908EEA01225E796c97B9FCda15AC7c"
+    chainName: bsc
+    connections:
+      - token: ethereum|ethereum|0x260F395C37A85e557f8E95bcc881f22d047bfb4f
+    decimals: 18
+    name: RISE
+    standard: EvmHypSynthetic
+    symbol: RISE
+  - addressOrDenom: "0x260F395C37A85e557f8E95bcc881f22d047bfb4f"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x0972B3403ff4006cAbc049f4FA048AE1584C337a"
+    connections:
+      - token: ethereum|bsc|0x5615605eBa908EEA01225E796c97B9FCda15AC7c
+    decimals: 18
+    name: Rise
+    standard: EvmHypCollateral
+    symbol: RISE
