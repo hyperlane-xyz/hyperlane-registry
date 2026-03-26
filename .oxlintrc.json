@@ -1,0 +1,51 @@
+{
+  "plugins": ["typescript", "import"],
+  "rules": {
+    "no-console": "error",
+    "no-eval": "error",
+    "no-extra-boolean-cast": "error",
+    "no-ex-assign": "error",
+    "no-constant-condition": "off",
+    "guard-for-in": "error",
+    "typescript/ban-ts-comment": "off",
+    "typescript/explicit-module-boundary-types": "off",
+    "typescript/no-explicit-any": "off",
+    "typescript/no-non-null-assertion": "off",
+    "typescript/no-require-imports": "warn",
+    "typescript/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.ts"],
+      "rules": {
+        "import/no-nodejs-modules": "error",
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["*/**/fs/**/*"],
+                "message": "Importing from src/fs is not allowed on non fs files"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/fs/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": "off",
+        "import/no-nodejs-modules": "off"
+      }
+    }
+  ],
+  "ignorePatterns": ["node_modules", "dist", "tmp"]
+}

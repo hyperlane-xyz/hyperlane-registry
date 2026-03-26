@@ -1,7 +1,3 @@
-import type { Logger } from 'pino';
-import { parse as yamlParse } from 'yaml';
-import JSZip from 'jszip';
-
 import type {
   ChainMap,
   ChainMetadata,
@@ -9,6 +5,9 @@ import type {
   WarpCoreConfig,
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
+import JSZip from 'jszip';
+import type { Logger } from 'pino';
+import { parse as yamlParse } from 'yaml';
 
 import {
   CHAIN_FILE_REGEX,

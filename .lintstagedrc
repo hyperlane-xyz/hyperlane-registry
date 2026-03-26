@@ -1,7 +1,4 @@
 {
-  "*.js": "prettier --write",
-  "*.ts": "prettier --write", 
-  "*.md": "prettier --write",
-  "*.json": "prettier --write",
-  "*.yaml": ["eslint --fix", "prettier --write"]
+  "src/**/*.{js,ts,tsx}": ["oxlint --fix", "oxfmt"],
+  "*.{md,json,yaml}": "oxfmt"
 }
