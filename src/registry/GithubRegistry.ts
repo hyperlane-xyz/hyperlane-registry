@@ -1,7 +1,3 @@
-import type { Logger } from 'pino';
-import { parse as yamlParse } from 'yaml';
-import JSZip from 'jszip';
-
 import type {
   ChainMap,
   ChainMetadata,
@@ -9,6 +5,9 @@ import type {
   WarpCoreConfig,
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
+import JSZip from 'jszip';
+import type { Logger } from 'pino';
+import { parse as yamlParse } from 'yaml';
 
 import {
   CHAIN_FILE_REGEX,
@@ -18,6 +17,7 @@ import {
   WARP_ROUTE_DEPLOY_FILE_REGEX,
 } from '../consts.js';
 import {
+  AddWarpRouteConfigOptions,
   ChainAddresses,
   UpdateChainParams,
   WarpDeployConfigMap,
@@ -28,7 +28,6 @@ import {
 import { concurrentMap, parseGitHubPath, stripLeadingSlash } from '../utils.js';
 import { BaseRegistry } from './BaseRegistry.js';
 import {
-  AddWarpRouteConfigOptions,
   ChainFiles,
   IRegistry,
   IRegistryMethods,

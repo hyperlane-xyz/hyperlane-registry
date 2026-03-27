@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../schema.json
+options: {}
+tokens:
+  - addressOrDenom: "0x7396b724a43C1d654a89B44996DA84d1E1a9B568"
+    chainName: ethereum
+    collateralAddressOrDenom: "0xb32e10022ffbedfe10bc818a1c7e67d9d87e0fa7"
+    connections:
+      - token: ethereum|hyperevm|0xA72ae85ca2340FF74cC45c423f2A85A062A4fb4c
+      - token: ethereum|mode|0xE29FcB01d6504805929F4bD02c7CCe16eA878705
+      - token: sealevel|solanamainnet|48UM41HxDEruBgXE4HG1Eb8kQCkuFuYTWRVLnYrM1rC9
+      - token: starknet|paradex|0x0796b6a63adcce73be0809d046b05c853c2e1de60f98fbb17836f7f01d2bc091
+    decimals: 18
+    logoURI: /deployments/warp_routes/DIME/logo.svg
+    name: DIME
+    standard: EvmHypCollateral
+    symbol: DIME
+  - addressOrDenom: "0xA72ae85ca2340FF74cC45c423f2A85A062A4fb4c"
+    chainName: hyperevm
+    connections:
+      - token: ethereum|ethereum|0x7396b724a43C1d654a89B44996DA84d1E1a9B568
+      - token: ethereum|mode|0xE29FcB01d6504805929F4bD02c7CCe16eA878705
+      - token: starknet|paradex|0x0796b6a63adcce73be0809d046b05c853c2e1de60f98fbb17836f7f01d2bc091
+    decimals: 18
+    logoURI: /deployments/warp_routes/DIME/logo.svg
+    name: DIME
+    standard: EvmHypSynthetic
+    symbol: DIME
+  - addressOrDenom: "0xE29FcB01d6504805929F4bD02c7CCe16eA878705"
+    chainName: mode
+    connections:
+      - token: ethereum|ethereum|0x7396b724a43C1d654a89B44996DA84d1E1a9B568
+      - token: ethereum|hyperevm|0xA72ae85ca2340FF74cC45c423f2A85A062A4fb4c
+      - token: starknet|paradex|0x0796b6a63adcce73be0809d046b05c853c2e1de60f98fbb17836f7f01d2bc091
+    decimals: 18
+    logoURI: /deployments/warp_routes/DIME/logo.svg
+    name: DIME
+    standard: EvmHypSynthetic
+    symbol: DIME
+  - addressOrDenom: "0x0796b6a63adcce73be0809d046b05c853c2e1de60f98fbb17836f7f01d2bc091"
+    chainName: paradex
+    collateralAddressOrDenom: "0x316cb56a8cc7c478ea7c9b22f33571330bc61ea0312f2222d182b4b6b3fa4b2"
+    connections:
+      - token: ethereum|ethereum|0x7396b724a43C1d654a89B44996DA84d1E1a9B568
+      - token: ethereum|hyperevm|0xA72ae85ca2340FF74cC45c423f2A85A062A4fb4c
+      - token: ethereum|mode|0xE29FcB01d6504805929F4bD02c7CCe16eA878705
+    decimals: 18
+    logoURI: /deployments/warp_routes/DIME/logo.svg
+    name: Paradex
+    standard: StarknetHypCollateral
+    symbol: DIME
+  - addressOrDenom: 48UM41HxDEruBgXE4HG1Eb8kQCkuFuYTWRVLnYrM1rC9
+    chainName: solanamainnet
+    collateralAddressOrDenom: 3ywtR9qQH4BuA7LSfLvEuW1gh6ha7EK18XwLbHvhryPZ
+    connections:
+      - token: ethereum|ethereum|0x7396b724a43C1d654a89B44996DA84d1E1a9B568
+    decimals: 9
+    logoURI: /deployments/warp_routes/DIME/logo.svg
+    name: DIME
+    standard: SealevelHypSynthetic
+    symbol: DIME

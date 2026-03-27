@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://explorer.igralabs.com/api
+    family: blockscout
+    name: IGRA Explorer
+    url: https://explorer.igralabs.com
+blocks:
+  confirmations: 1
+  estimateBlockTime: 1
+  reorgPeriod: 5
+chainId: 38833
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Igra
+domainId: 38833
+gasCurrencyCoinGeckoId: igra
+gnosisSafeTransactionServiceUrl: https://safe.igralabs.com/txs
+name: igra
+nativeToken:
+  decimals: 18
+  name: iKAS
+  symbol: iKAS
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.igralabs.com:8545
+technicalStack: other
+transactionOverrides:
+  gasPrice: 1000000000000

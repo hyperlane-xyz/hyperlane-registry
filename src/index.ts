@@ -5,13 +5,7 @@ export {
 } from './consts.js';
 export { BaseRegistry } from './registry/BaseRegistry.js';
 export { GithubRegistry, GithubRegistryOptions } from './registry/GithubRegistry.js';
-export {
-  AddWarpRouteConfigOptions,
-  ChainFiles,
-  IRegistry,
-  RegistryContent,
-  RegistryType,
-} from './registry/IRegistry.js';
+export { ChainFiles, IRegistry, RegistryContent, RegistryType } from './registry/IRegistry.js';
 export { MergedRegistry, MergedRegistryOptions } from './registry/MergedRegistry.js';
 export { PartialRegistry, PartialRegistryOptions } from './registry/PartialRegistry.js';
 export { HttpClientRegistry } from './registry/HttpClientRegistry.js';
@@ -22,9 +16,13 @@ export {
   createWarpRouteConfigId,
 } from './registry/warp-utils.js';
 export {
+  AddWarpRouteConfigOptions,
+  AddWarpRouteConfigOptionsSchema,
   ChainAddresses,
   ChainAddressesSchema,
+  WarpDeployConfigMap,
   WarpRouteId,
+  WarpRouteIdSchema,
   WarpRouteConfigMap,
   WarpRouteFilterParams,
   WarpRouteFilterSchema,

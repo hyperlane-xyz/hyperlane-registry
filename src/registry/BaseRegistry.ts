@@ -1,5 +1,3 @@
-import type { Logger } from 'pino';
-
 import {
   ChainMap,
   ChainMetadata,
@@ -9,8 +7,11 @@ import {
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
 import { assert, objFilter, objLength } from '@hyperlane-xyz/utils';
+import type { Logger } from 'pino';
+
 import { WARP_ROUTE_ID_REGEX } from '../consts.js';
 import type {
+  AddWarpRouteConfigOptions,
   ChainAddresses,
   MaybePromise,
   UpdateChainParams,
@@ -20,12 +21,7 @@ import type {
 } from '../types.js';
 import { WarpRouteConfigMap } from '../types.js';
 import { stripLeadingSlash } from '../utils.js';
-import type {
-  AddWarpRouteConfigOptions,
-  IRegistry,
-  RegistryContent,
-  RegistryType,
-} from './IRegistry.js';
+import type { IRegistry, RegistryContent, RegistryType } from './IRegistry.js';
 import { MergedRegistry } from './MergedRegistry.js';
 import { createWarpRouteConfigId } from './warp-utils.js';
 

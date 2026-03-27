@@ -32,8 +32,10 @@
                   "EvmHypVSXERC20",
                   "EvmHypVSXERC20Lockbox",
                   "EvmM0PortalLite",
+                  "EvmM0Portal",
                   "EvmHypEverclearCollateral",
                   "EvmHypEverclearEth",
+                  "EvmHypCrossCollateralRouter",
                   "SealevelSpl",
                   "SealevelSpl2022",
                   "SealevelNative",
@@ -62,7 +64,25 @@
                   "AleoNative",
                   "AleoHypNative",
                   "AleoHypCollateral",
-                  "AleoHypSynthetic"
+                  "AleoHypSynthetic",
+                  "TRC20",
+                  "TRC721",
+                  "TronNative",
+                  "TronHypNative",
+                  "TronHypCollateral",
+                  "TronHypOwnerCollateral",
+                  "TronHypRebaseCollateral",
+                  "TronHypCollateralFiat",
+                  "TronHypSynthetic",
+                  "TronHypSyntheticRebase",
+                  "TronHypXERC20",
+                  "TronHypXERC20Lockbox",
+                  "TronHypVSXERC20",
+                  "TronHypVSXERC20Lockbox",
+                  "TronM0PortalLite",
+                  "TronHypEverclearCollateral",
+                  "TronHypEverclearEth",
+                  "TronHypCrossCollateralRouter"
                 ],
                 "description": "The type of token. See TokenStandard for valid values."
               },
@@ -211,6 +231,11 @@
                 "minimum": 0,
                 "exclusiveMaximum": 256,
                 "description": "The scaling factor of the token"
+              },
+              "warpRouteId": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Unique warp route identifier, used to disambiguate tokens that share the same addressOrDenom on the same chain (e.g. M0 Portal tokens)"
               }
             },
             "required": [

@@ -6,20 +6,30 @@ on:
       - main
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      snapshot_tag:
+        description: 'NPM dist-tag for the beta release'
+        required: true
+        default: 'beta'
+        type: choice
+        options:
+          - beta
+          - alpha
+          - rc
+          - preview
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  release:
+  # Creates or updates the release PR when changesets are present
+  prepare-release:
+    if: github.event_name == 'push'
     permissions:
       id-token: write
       contents: write
       pull-requests: write
-    name: Release
     runs-on: ubuntu-latest
     steps:
-      # Generate token first so checkout configures git credentials with it
-      # This allows subsequent pushes to trigger workflows
       - name: Generate GitHub App Token
         id: generate-token
         uses: actions/create-github-app-token@v2
@@ -30,12 +40,14 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v6
         with:
+          fetch-depth: 0
+          persist-credentials: false
           token: ${{ steps.generate-token.outputs.token }}
 
-      - name: Setup Node.js 20
+      - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version-file: .nvmrc
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -54,14 +66,191 @@ jobs:
           git config user.name "${{ steps.generate-token.outputs.app-slug }}[bot]"
           git config user.email "${{ steps.get-user-id.outputs.user-id }}+${{ steps.generate-token.outputs.app-slug }}[bot]@users.noreply.github.com"
 
-      - name: Create Release PR or Publish to NPM
+      - name: Create Release PR
         id: changesets
         uses: changesets/action@v1
         with:
+          title: 'chore: release npm packages'
+          version: pnpm version:prepare
+          setupGitUser: false
+        env:
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+
+  # Check if the current version is already published
+  check-latest-published:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    outputs:
+      all_latest: ${{ steps.check.outputs.all_latest }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Compare package version
+        id: check
+        run: |
+          LOCAL_VERSION=$(jq -r '.version' package.json)
+          PUBLISHED_VERSION=$(npm view @hyperlane-xyz/registry version 2>/dev/null || echo "N/A")
+          echo "Local: $LOCAL_VERSION, Published: $PUBLISHED_VERSION"
+          if [ "$LOCAL_VERSION" = "$PUBLISHED_VERSION" ]; then
+            echo "all_latest=true" >> $GITHUB_OUTPUT
+          else
+            echo "all_latest=false" >> $GITHUB_OUTPUT
+          fi
+
+  # Publishes to NPM when unpublished versions are detected
+  publish-release:
+    needs: check-latest-published
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.check-latest-published.outputs.all_latest == 'false'
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate GitHub App Token
+        id: generate-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.HYPER_GONK_APP_ID }}
+          private-key: ${{ secrets.HYPER_GONK_PRIVATE_KEY }}
+
+      - name: Checkout Repo
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          token: ${{ steps.generate-token.outputs.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Get GitHub App User ID
+        id: get-user-id
+        run: echo "user-id=$(gh api /users/${{ steps.generate-token.outputs.app-slug }}[bot] --jq .id)" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+
+      - name: Configure Git for Hyper Gonk
+        run: |
+          git config user.name "${{ steps.generate-token.outputs.app-slug }}[bot]"
+          git config user.email "${{ steps.get-user-id.outputs.user-id }}+${{ steps.generate-token.outputs.app-slug }}[bot]@users.noreply.github.com"
+
+      - name: Publish Release to NPM
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          title: 'chore: release npm packages'
           version: pnpm version:prepare
           publish: pnpm release
           setupGitUser: false
         env:
           NPM_CONFIG_PROVENANCE: true
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-beta:
+    if: github.event_name == 'workflow_dispatch'
+    concurrency:
+      group: npm-beta-release
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Check for changesets
+        run: |
+          CHANGESET_COUNT=$(find .changeset -name "*.md" ! -name "README.md" ! -name "config.json" 2>/dev/null | wc -l | tr -d ' ')
+          if [ "$CHANGESET_COUNT" -eq 0 ]; then
+            echo "::error::No pending changesets found. Beta releases require pending changeset files."
+            echo ""
+            echo "To create a beta release:"
+            echo "1. Add a changeset: pnpm exec changeset"
+            echo "2. Commit the changeset file"
+            echo "3. Run this workflow again"
+            exit 1
+          fi
+          echo "Found $CHANGESET_COUNT changeset(s)"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Build BEFORE snapshot versioning so changeset version doesn't invalidate caches
+      - name: Build
+        run: pnpm run build
+
+      - name: Create snapshot versions
+        run: pnpm exec changeset version --snapshot ${{ inputs.snapshot_tag }}
+
+      - name: Get snapshot version
+        id: version
+        run: |
+          SNAPSHOT_VERSION=$(jq -r '.version' package.json)
+          echo "snapshot=$SNAPSHOT_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Publish beta package
+        run: pnpm exec changeset publish --tag ${{ inputs.snapshot_tag }} --no-git-tag
+        env:
+          NPM_CONFIG_PROVENANCE: true
+
+      - name: Summary
+        run: |
+          echo "### Beta Release Published" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** \`${{ steps.version.outputs.snapshot }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**NPM Tag:** \`${{ inputs.snapshot_tag }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** \`${{ github.ref_name }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Install with:" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          echo "npm install @hyperlane-xyz/registry@${{ inputs.snapshot_tag }}" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+
+  notify-publish-failure:
+    if: >-
+      always() && (
+        needs.publish-release.result == 'failure' ||
+        needs.check-latest-published.result == 'failure'
+      )
+    needs:
+      [
+        check-latest-published,
+        publish-release,
+      ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Slack on publish failure
+        uses: slackapi/slack-github-action@v3
+        with:
+          webhook: ${{ secrets.SLACK_INCIDENTS_WEBHOOK }}
+          webhook-type: incoming-webhook
+          payload: |
+            text: ":red-siren: Registry NPM publish failed — see workflow run for details"
+            blocks:
+              - type: "section"
+                text:
+                  type: "mrkdwn"
+                  text: ":red-siren: *Registry NPM publish failed*\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View workflow run #${{ github.run_number }}>"

@@ -7,6 +7,7 @@ import type {
 } from '@hyperlane-xyz/sdk';
 
 import {
+  AddWarpRouteConfigOptions,
   ChainAddresses,
   UpdateChainParams,
   WarpDeployConfigMap,
@@ -15,7 +16,7 @@ import {
   WarpRouteId,
 } from '../types.js';
 import { BaseRegistry } from './BaseRegistry.js';
-import { AddWarpRouteConfigOptions, IRegistry, RegistryContent } from './IRegistry.js';
+import { IRegistry, RegistryContent } from './IRegistry.js';
 import { filterWarpRoutesIds } from './warp-utils.js';
 
 /**

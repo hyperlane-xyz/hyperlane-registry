@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xe60cA1BDBD3f4A0F113847f5e7cA78235F462F61"
+    chainName: modetestnet
+    connections:
+      - token: ethereum|sepolia|0x251b97bF2A18Ca33fb3AF8D487b78825Ed5CE003
+      - token: starknet|paradexsepolia|0x049d3b2ddc0058d9967cfdf5ed517d0a1a9a106c7cb41d50785293fb068fe453
+    decimals: 18
+    name: ETH
+    standard: EvmHypSynthetic
+    symbol: ETH
+  - addressOrDenom: "0x049d3b2ddc0058d9967cfdf5ed517d0a1a9a106c7cb41d50785293fb068fe453"
+    chainName: paradexsepolia
+    collateralAddressOrDenom: "0x7f51a6740f1172c11babf26e1926381b6d778f83b7e337f08ff1e48eebbc077"
+    connections:
+      - token: ethereum|modetestnet|0xe60cA1BDBD3f4A0F113847f5e7cA78235F462F61
+      - token: ethereum|sepolia|0x251b97bF2A18Ca33fb3AF8D487b78825Ed5CE003
+    decimals: 18
+    name: Ether
+    standard: StarknetHypCollateral
+    symbol: ETH
+  - addressOrDenom: "0x251b97bF2A18Ca33fb3AF8D487b78825Ed5CE003"
+    chainName: sepolia
+    connections:
+      - token: ethereum|modetestnet|0xe60cA1BDBD3f4A0F113847f5e7cA78235F462F61
+      - token: starknet|paradexsepolia|0x049d3b2ddc0058d9967cfdf5ed517d0a1a9a106c7cb41d50785293fb068fe453
+    decimals: 18
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH

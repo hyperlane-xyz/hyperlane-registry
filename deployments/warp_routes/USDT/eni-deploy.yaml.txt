@@ -1,0 +1,82 @@
+arbitrum:
+  decimals: 6
+  name: Tether USD
+  owner: "0x38C2c361E81C89e9cD0FD7f5c305e60C2A039054"
+  scale: 1000000000000
+  symbol: USDT
+  token: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+  type: collateral
+base:
+  decimals: 6
+  name: Tether USD
+  owner: "0x83bD81deFEC483194f7c5c8E161DFC535c794167"
+  scale: 1000000000000
+  symbol: USDT
+  token: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
+  type: collateral
+bsc:
+  decimals: 18
+  name: Tether USD
+  owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
+  symbol: USDT
+  token: "0x55d398326f99059fF775485246999027B3197955"
+  type: collateral
+eni:
+  decimals: 6
+  name: Tether USD
+  owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
+  scale: 1000000000000
+  symbol: USDT
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 8
+        owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
+        type: LinearFee
+      base:
+        bps: 8
+        owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
+        type: LinearFee
+      bsc:
+        bps: 8
+        owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
+        type: LinearFee
+      ethereum:
+        bps: 8
+        owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
+        type: LinearFee
+      optimism:
+        bps: 8
+        owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
+        type: LinearFee
+      polygon:
+        bps: 8
+        owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
+        type: LinearFee
+    owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
+    type: RoutingFee
+  type: synthetic
+ethereum:
+  decimals: 6
+  name: Tether USD
+  owner: "0x409dcC6874919D2194236e2F10b403E15CC7F149"
+  scale: 1000000000000
+  symbol: USDT
+  token: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+  type: collateral
+optimism:
+  decimals: 6
+  name: Tether USD
+  owner: "0xd1219aef6eA190f6aD48525664C33ceE0169c7a8"
+  scale: 1000000000000
+  symbol: USDT
+  token: "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58"
+  type: collateral
+polygon:
+  decimals: 6
+  name: Tether USD
+  owner: "0x3211A1Fea94cd4000Bd82D7C9E9334E51938De1b"
+  scale: 1000000000000
+  symbol: USDT
+  token: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
+  type: collateral

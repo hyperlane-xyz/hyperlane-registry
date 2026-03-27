@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x8E64a314034a3089fA8E8cF87Fbda9a2E10B7AAc"
+    chainName: bsc
+    coinGeckoId: binancecoin
+    connections:
+      - token: ethereum|krown|0xf116226B3cf664bC94A5f612B9eF833784D3bb6F
+    decimals: 18
+    logoURI: /deployments/warp_routes/BNB/logo.svg
+    name: BNB
+    standard: EvmHypNative
+    symbol: BNB
+  - addressOrDenom: "0xf116226B3cf664bC94A5f612B9eF833784D3bb6F"
+    chainName: krown
+    connections:
+      - token: ethereum|bsc|0x8E64a314034a3089fA8E8cF87Fbda9a2E10B7AAc
+    decimals: 18
+    logoURI: /deployments/warp_routes/BNB/logo.svg
+    name: BNB
+    standard: EvmHypSynthetic
+    symbol: BNB

@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://shasta.tronscan.org/#
+    family: tronscan
+    name: Tronscan
+    url: https://shasta.tronscan.org/#
+blocks:
+  confirmations: 5
+  estimateBlockTime: 3
+  reorgPeriod: 20
+chainId: 2494104990
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Tron Testnet
+# 2494104990 % (2**31-1)
+domainId: 346621343
+isTestnet: true
+name: tronshasta
+nativeToken:
+  decimals: 6
+  name: Tron
+  symbol: TRX
+protocol: tron
+rpcUrls:
+  - http: https://api.shasta.trongrid.io/jsonrpc
+technicalStack: other
+walletSolidityUrls:
+  - http: https://api.shasta.trongrid.io/walletsolidity
+walletUrls:
+  - http: https://api.shasta.trongrid.io/wallet

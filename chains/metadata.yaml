@@ -382,10 +382,10 @@ arbitrum:
   technicalStack: arbitrumnitro
 arbitrumnova:
   blockExplorers:
-    - apiUrl: https://api-nova.arbiscan.io/api
-      family: etherscan
-      name: Arbiscan Nova
-      url: https://nova.arbiscan.io
+    - apiUrl: https://arbitrum-nova.blockscout.com/api
+      family: blockscout
+      name: Arbitrum Nova Explorer
+      url: https://arbitrum-nova.blockscout.com
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -652,6 +652,10 @@ astar:
     - http: https://evm.astar.network
   technicalStack: polkadotsubstrate
 astarzkevm:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blockExplorers:
     - apiUrl: https://astar-zkevm.explorer.startale.com/api
       family: blockscout
@@ -703,6 +707,10 @@ aurora:
     - http: https://aurora.drpc.org
   technicalStack: other
 auroratestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.testnet.aurora.dev/api
       family: blockscout
@@ -826,12 +834,16 @@ base:
   rpcUrls:
     - http: https://base.drpc.org
     - http: https://mainnet.base.org
-    - http: https://base.blockpi.network/v1/rpc/public
+    - http: https://base.public.blockpi.network/v1/rpc/public
     - http: https://base.llamarpc.com
     - http: https://1rpc.io/base
     - http: https://base-pokt.nodies.app
   technicalStack: opstack
 basecamptestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://basecamp.cloud.blockscout.com/api
       family: blockscout
@@ -1361,6 +1373,10 @@ carrchain:
     - http: https://rpc.carrchain.io
   technicalStack: arbitrumnitro
 carrchaintestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://testnet.carrscan.io/api/v1
       family: etherscan
@@ -1693,6 +1709,10 @@ citrea:
     - http: https://rpc.mainnet.citrea.xyz
   technicalStack: other
 citreatestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.testnet.citrea.xyz/api
       family: blockscout
@@ -2130,6 +2150,10 @@ degenchain:
     - http: https://rpc.degen.tips
   technicalStack: arbitrumnitro
 deprecatedalephzeroevm:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://evm-explorer.alephzero.org/api
       family: blockscout
@@ -2157,6 +2181,10 @@ deprecatedalephzeroevm:
     - http: https://alephzero.drpc.org
   technicalStack: arbitrumnitro
 deprecatedchiliz:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/88888/etherscan/api
       family: routescan
@@ -2183,6 +2211,10 @@ deprecatedchiliz:
   transactionOverrides:
     maxPriorityFeePerGas: 1000000000
 deprecatedflow:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://evm.flowscan.io/api
       family: blockscout
@@ -2209,6 +2241,10 @@ deprecatedflow:
   transactionOverrides:
     gasPrice: 100000000
 deprecatedimmutablezkevm:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.immutable.com/api/eth-rpc
       family: blockscout
@@ -2236,6 +2272,10 @@ deprecatedimmutablezkevm:
     maxFeePerGas: 100000000000
     maxPriorityFeePerGas: 100000000000
 deprecatedmetall2:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.metall2.com/api
       family: blockscout
@@ -2260,6 +2300,10 @@ deprecatedmetall2:
     - http: https://rpc.metall2.com
   technicalStack: opstack
 deprecatedpolynomial:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://polynomialscan.io/api
       family: routescan
@@ -2283,6 +2327,10 @@ deprecatedpolynomial:
     - http: https://rpc.polynomial.fi
   technicalStack: opstack
 deprecatedrari:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://mainnet.explorer.rarichain.org/api
       family: blockscout
@@ -2308,6 +2356,10 @@ deprecatedrari:
     - http: https://mainnet.rpc.rarichain.org/http
   technicalStack: arbitrumnitro
 deprecatedrootstock:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://rootstock.blockscout.com/api
       family: blockscout
@@ -2333,6 +2385,10 @@ deprecatedrootstock:
     - http: https://mycrypto.rsk.co
   technicalStack: other
 deprecatedsuperposition:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.superposition.so/api
       family: blockscout
@@ -2553,6 +2609,7 @@ eclipsemainnet:
   name: eclipsemainnet
   nativeToken:
     decimals: 9
+    denom: wei
     name: Ether
     symbol: ETH
   protocol: sealevel
@@ -2575,6 +2632,7 @@ eclipsetestnet:
   name: eclipsetestnet
   nativeToken:
     decimals: 9
+    denom: wei
     name: Ether
     symbol: ETH
   protocol: sealevel
@@ -2610,6 +2668,27 @@ ecotestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://eco-testnet.rpc.caldera.xyz/http
+eden:
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 714
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Eden
+  domainId: 714
+  gasCurrencyCoinGeckoId: celestia
+  name: eden
+  nativeToken:
+    decimals: 18
+    name: TIA
+    symbol: TIA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.eden.gateway.fm
+  technicalStack: other
 edentestnet:
   chainId: 3735928814
   displayName: Eden Testnet
@@ -3410,6 +3489,10 @@ game7:
     - http: https://mainnet-rpc.game7.build
   technicalStack: arbitrumnitro
 giwasepolia:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://sepolia-explorer.giwa.io/api
       family: blockscout
@@ -3777,10 +3860,10 @@ humanitytestnet:
     - http: https://rpc.testnet.humanity.org
 hyperevm:
   blockExplorers:
-    - apiUrl: https://hyperliquid.cloud.blockscout.com/api
+    - apiUrl: https://www.hyperscan.com/api/v2
       family: blockscout
       name: HyperEVM Explorer
-      url: https://hyperliquid.cloud.blockscout.com
+      url: https://www.hyperscan.com
   blocks:
     confirmations: 1
     estimateBlockTime: 2
@@ -3828,6 +3911,35 @@ hyperliquidevmtestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.hyperliquid-testnet.xyz/evm
+igra:
+  blockExplorers:
+    - apiUrl: https://explorer.igralabs.com/api
+      family: blockscout
+      name: IGRA Explorer
+      url: https://explorer.igralabs.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 38833
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Igra
+  domainId: 38833
+  gasCurrencyCoinGeckoId: igra
+  gnosisSafeTransactionServiceUrl: https://safe.igralabs.com/txs
+  name: igra
+  nativeToken:
+    decimals: 18
+    name: iKAS
+    symbol: iKAS
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.igralabs.com:8545
+  technicalStack: other
+  transactionOverrides:
+    gasPrice: 1000000000000
 immutablezkevmmainnet:
   blockExplorers:
     - apiUrl: https://explorer.immutable.com/api
@@ -3973,6 +4085,10 @@ inevm:
     - http: https://mainnet.rpc.inevm.com/http
   technicalStack: arbitrumnitro
 infinityvm:
+  availability:
+    reasons:
+      - unavailable
+    status: disabled
   blocks:
     confirmations: 1
     estimateBlockTime: 1
@@ -4627,8 +4743,8 @@ lukso:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.mainnet.lukso.network
-    - http: https://rpc.lukso.sigmacore.io
     - http: https://42.rpc.thirdweb.com
+    - http: https://public-lukso.nownodes.io
   technicalStack: other
 luksotestnet:
   blockExplorers:
@@ -4833,12 +4949,12 @@ mantra:
     url: https://www.hyperlane.xyz
   displayName: MANTRA
   domainId: 5888
-  gasCurrencyCoinGeckoId: mantra-dao
+  gasCurrencyCoinGeckoId: mantra
   name: mantra
   nativeToken:
     decimals: 18
-    name: OM
-    symbol: OM
+    name: MANTRA
+    symbol: MANTRA
   protocol: ethereum
   rpcUrls:
     - http: https://evm.mantrachain.io
@@ -4887,6 +5003,7 @@ megaeth:
   displayName: MegaETH
   domainId: 4326
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/mega
   name: megaeth
   nativeToken:
     decimals: 18
@@ -4897,6 +5014,10 @@ megaeth:
     - http: https://mainnet.megaeth.com/rpc
   technicalStack: opstack
 megaethtestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://www.megaexplorer.xyz/api
       family: other
@@ -5395,6 +5516,10 @@ monad:
     - http: https://rpc-mainnet.monadinfra.com
   technicalStack: other
 monadtestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.monad-testnet.category.xyz/api
       family: blockscout
@@ -5602,6 +5727,10 @@ nero:
     maxFeePerGas: 10000000000
     maxPriorityFeePerGas: 1000000000
 neuratestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://testnet-blockscout.infra.neuraprotocol.io/api
       family: blockscout
@@ -5748,6 +5877,10 @@ noble:
   transactionOverrides:
     gasPrice: 0.1
 nobletestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   bech32Prefix: noble
   blockExplorers:
     - apiUrl: https://www.mintscan.io/noble-testnet
@@ -6111,6 +6244,7 @@ paradex:
     symbol: FUEL
   protocol: starknet
   rpcUrls:
+    - http: https://rpc.api.prod.paradex.trade/rpc/v0_8
     - http: https://juno.api.prod.paradex.trade/rpc/v0_8
     - http: https://pathfinder.api.prod.paradex.trade/rpc/v0_8
   technicalStack: other
@@ -7013,6 +7147,10 @@ scroll:
     - http: https://1rpc.io/scroll
   technicalStack: other
 scrollsepolia:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://api-sepolia.scrollscan.com/api
       family: etherscan
@@ -7231,6 +7369,7 @@ solanadevnet:
   name: solanadevnet
   nativeToken:
     decimals: 9
+    denom: lamport
     name: Solana
     symbol: SOL
   protocol: sealevel
@@ -7256,6 +7395,7 @@ solanamainnet:
   name: solanamainnet
   nativeToken:
     decimals: 9
+    denom: lamport
     name: Solana
     symbol: SOL
   protocol: sealevel
@@ -7284,6 +7424,7 @@ solanatestnet:
   name: solanatestnet
   nativeToken:
     decimals: 9
+    denom: lamport
     name: Solana
     symbol: SOL
   protocol: sealevel
@@ -7309,6 +7450,7 @@ solaxy:
   name: solaxy
   nativeToken:
     decimals: 6
+    denom: microSOLX
     name: Solaxy
     symbol: SOLX
   protocol: sealevel
@@ -7527,6 +7669,7 @@ sonicsvm:
   name: sonicsvm
   nativeToken:
     decimals: 9
+    denom: lamport
     name: Solana
     symbol: SOL
   protocol: sealevel
@@ -7554,6 +7697,7 @@ sonicsvmtestnet:
   name: sonicsvmtestnet
   nativeToken:
     decimals: 9
+    denom: lamport
     name: Solana
     symbol: SOL
   protocol: sealevel
@@ -7604,6 +7748,7 @@ soon:
   name: soon
   nativeToken:
     decimals: 9
+    denom: wei
     name: Ether
     symbol: ETH
   protocol: sealevel
@@ -7766,7 +7911,7 @@ starknet:
     url: https://www.hyperlane.xyz
   displayName: Starknet
   domainId: 358974494
-  gasCurrencyCoinGeckoId: ethereum
+  gasCurrencyCoinGeckoId: starknet
   name: starknet
   nativeToken:
     decimals: 18
@@ -8011,6 +8156,10 @@ subtensor:
     - http: https://bittensor-finney.api.onfinality.io/public
   technicalStack: other
 subtensortestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blocks:
     confirmations: 1
     estimateBlockTime: 12
@@ -8227,6 +8376,32 @@ swisstroniktestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://json-rpc.testnet.swisstronik.com
+  technicalStack: other
+syscoin:
+  blockExplorers:
+    - apiUrl: https://explorer.syscoin.org/api
+      family: blockscout
+      name: Syscoin NEVM explorer
+      url: https://explorer.syscoin.org
+  blocks:
+    confirmations: 15
+    estimateBlockTime: 150
+    reorgPeriod: 5
+  chainId: 57
+  deployer:
+    name: Syscoin
+    url: https://syscoin.org
+  displayName: Syscoin NEVM
+  domainId: 57
+  isTestnet: false
+  name: syscoin
+  nativeToken:
+    decimals: 18
+    name: Syscoin Token
+    symbol: SYS
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.syscoin.org
   technicalStack: other
 tac:
   blockExplorers:
@@ -8516,6 +8691,66 @@ treasure:
   rpcUrls:
     - http: https://rpc.treasure.lol
   technicalStack: zksync
+tron:
+  blockExplorers:
+    - apiUrl: https://tronscan.org/#
+      family: tronscan
+      name: Tronscan
+      url: https://tronscan.org/#
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 3
+    reorgPeriod: finalized
+  chainId: 728126428
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Tron
+  domainId: 728126428
+  gasCurrencyCoinGeckoId: tron
+  name: tron
+  nativeToken:
+    decimals: 6
+    name: Tron
+    symbol: TRX
+  protocol: tron
+  rpcUrls:
+    - http: https://api.trongrid.io/jsonrpc
+  technicalStack: other
+  walletSolidityUrls:
+    - http: https://api.trongrid.io/walletsolidity
+  walletUrls:
+    - http: https://api.trongrid.io/wallet
+tronshasta:
+  blockExplorers:
+    - apiUrl: https://shasta.tronscan.org/#
+      family: tronscan
+      name: Tronscan
+      url: https://shasta.tronscan.org/#
+  blocks:
+    confirmations: 5
+    estimateBlockTime: 3
+    reorgPeriod: 20
+  chainId: 2494104990
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Tron Testnet
+  domainId: 346621343
+  isTestnet: true
+  name: tronshasta
+  nativeToken:
+    decimals: 6
+    name: Tron
+    symbol: TRX
+  protocol: tron
+  rpcUrls:
+    - http: https://api.shasta.trongrid.io/jsonrpc
+  technicalStack: other
+  walletSolidityUrls:
+    - http: https://api.shasta.trongrid.io/walletsolidity
+  walletUrls:
+    - http: https://api.shasta.trongrid.io/wallet
 trumpchain:
   availability:
     reasons:

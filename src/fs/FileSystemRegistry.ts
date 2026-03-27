@@ -1,7 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-import type { Logger } from 'pino';
-import { parse as yamlParse } from 'yaml';
 
 import type {
   ChainMap,
@@ -10,6 +8,8 @@ import type {
   WarpCoreConfig,
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
+import type { Logger } from 'pino';
+import { parse as yamlParse } from 'yaml';
 
 import {
   CHAIN_FILE_REGEX,
@@ -17,11 +17,7 @@ import {
   WARP_ROUTE_CONFIG_FILE_REGEX,
   WARP_ROUTE_DEPLOY_FILE_REGEX,
 } from '../consts.js';
-import { ChainAddresses, ChainAddressesSchema, UpdateChainParams, WarpRouteId } from '../types.js';
-import { toYamlString } from '../utils.js';
-
 import {
-  AddWarpRouteConfigOptions,
   RegistryType,
   type ChainFiles,
   type IRegistry,
@@ -29,6 +25,14 @@ import {
 } from '../registry/IRegistry.js';
 import { SynchronousRegistry } from '../registry/SynchronousRegistry.js';
 import { warpRouteConfigPathToId, warpRouteDeployConfigPathToId } from '../registry/warp-utils.js';
+import {
+  AddWarpRouteConfigOptions,
+  ChainAddresses,
+  ChainAddressesSchema,
+  UpdateChainParams,
+  WarpRouteId,
+} from '../types.js';
+import { toYamlString } from '../utils.js';
 
 export interface FileSystemRegistryOptions {
   uri: string;
