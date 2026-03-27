@@ -14,17 +14,17 @@ arbitrum:
   interchainSecurityModule:
     domains:
       ethereum:
-        lowerIsm:
-          modules:
-            - relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            - domains: {}
-              owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-              type: defaultFallbackRoutingIsm
-          threshold: 1
-          type: staticAggregationIsm
-        threshold: 1000000000
         type: amountRoutingIsm
+        threshold: 1000000000
+        lowerIsm:
+          type: staticAggregationIsm
+          threshold: 1
+          modules:
+            - type: trustedRelayerIsm
+              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+            - type: defaultFallbackRoutingIsm
+              owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+              domains: {}
         upperIsm:
           domains: {}
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
@@ -70,17 +70,17 @@ base:
   interchainSecurityModule:
     domains:
       ethereum:
-        lowerIsm:
-          modules:
-            - relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            - domains: {}
-              owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-              type: defaultFallbackRoutingIsm
-          threshold: 1
-          type: staticAggregationIsm
-        threshold: 1000000000
         type: amountRoutingIsm
+        threshold: 1000000000
+        lowerIsm:
+          type: staticAggregationIsm
+          threshold: 1
+          modules:
+            - type: trustedRelayerIsm
+              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+            - type: defaultFallbackRoutingIsm
+              owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+              domains: {}
         upperIsm:
           domains: {}
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
