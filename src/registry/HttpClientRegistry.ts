@@ -5,6 +5,7 @@ import {
   WarpCoreConfig,
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
+
 import {
   AddWarpRouteConfigOptions,
   ChainAddresses,
@@ -190,7 +191,7 @@ export class HttpClientRegistry implements IRegistry {
         if (errorBody?.message) {
           errorMessage = errorBody.message;
         }
-      } catch (e) {
+      } catch (_e) {
         // Ignore if error body isn't valid JSON, use statusText instead.
       }
       // Throw the structured error

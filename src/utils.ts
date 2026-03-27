@@ -1,6 +1,7 @@
-import { stringify } from 'yaml';
-import { ABACUS_WORKS_DEPLOYER_NAME } from './consts.js';
 import { ChainMetadata } from '@hyperlane-xyz/sdk';
+import { stringify } from 'yaml';
+
+import { ABACUS_WORKS_DEPLOYER_NAME } from './consts.js';
 
 export function toYamlString(data: any, prefix?: string): string {
   const yamlString = stringify(data, {
