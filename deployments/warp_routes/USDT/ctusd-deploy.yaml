@@ -11,6 +11,26 @@ arbitrum:
       - "0x00000000000000000000000062fe676dff1e7abbccbedc8babc993827b9fb189"
     "8453":
       - "0x000000000000000000000000d54a15f8df8c6dd9ef3b5589be0bf37ec6f61f91"
+  interchainSecurityModule:
+    domains:
+      ethereum:
+        type: amountRoutingIsm
+        threshold: 1000000000
+        lowerIsm:
+          type: staticAggregationIsm
+          threshold: 1
+          modules:
+            - type: trustedRelayerIsm
+              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+            - type: defaultFallbackRoutingIsm
+              owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+              domains: {}
+        upperIsm:
+          domains: {}
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: defaultFallbackRoutingIsm
+    owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+    type: defaultFallbackRoutingIsm
   mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
   owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   token: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
@@ -47,6 +67,26 @@ base:
       - "0x00000000000000000000000062fe676dff1e7abbccbedc8babc993827b9fb189"
     "8453":
       - "0x000000000000000000000000d54a15f8df8c6dd9ef3b5589be0bf37ec6f61f91"
+  interchainSecurityModule:
+    domains:
+      ethereum:
+        type: amountRoutingIsm
+        threshold: 1000000000
+        lowerIsm:
+          type: staticAggregationIsm
+          threshold: 1
+          modules:
+            - type: trustedRelayerIsm
+              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+            - type: defaultFallbackRoutingIsm
+              owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+              domains: {}
+        upperIsm:
+          domains: {}
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: defaultFallbackRoutingIsm
+    owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+    type: defaultFallbackRoutingIsm
   mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
   owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   token: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
