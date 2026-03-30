@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://scan.qom.network/api
+    family: blockscout
+    name: Qom Scanner
+    url: https://scan.qom.network
+chainId: 766
+displayName: Ql1
+domainId: 766
+isTestnet: false
+name: ql1
+nativeToken:
+  decimals: 18
+  name: Qom
+  symbol: QOM
+protocol: ethereum
+rpcUrls:
+  - http: https://evm-rpc-ql1.foxxone.one
+technicalStack: unknown
+
+transactionOverrides:
+  gasLimit: 8000000
