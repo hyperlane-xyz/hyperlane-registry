@@ -11,6 +11,26 @@ arbitrum:
     "1399811149":
       - "0x3f1376c74e0409c7d9b7a25cc7b05c9739a04082986a21665a6128ef281cdb84"
       - "0xfc0f72cda5fa979e0eee3aa711b3e52425c3516a245ea0eb9d1d46548df4b21b"
+  interchainSecurityModule:
+    domains:
+      ethereum:
+        type: amountRoutingIsm
+        threshold: 1000000000
+        lowerIsm:
+          type: staticAggregationIsm
+          threshold: 1
+          modules:
+            - type: trustedRelayerIsm
+              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+            - type: defaultFallbackRoutingIsm
+              owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+              domains: {}
+        upperIsm:
+          domains: {}
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: defaultFallbackRoutingIsm
+    owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+    type: defaultFallbackRoutingIsm
   mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
   owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
@@ -62,6 +82,26 @@ base:
     "1399811149":
       - "0x3f1376c74e0409c7d9b7a25cc7b05c9739a04082986a21665a6128ef281cdb84"
       - "0xfc0f72cda5fa979e0eee3aa711b3e52425c3516a245ea0eb9d1d46548df4b21b"
+  interchainSecurityModule:
+    domains:
+      ethereum:
+        type: amountRoutingIsm
+        threshold: 1000000000
+        lowerIsm:
+          type: staticAggregationIsm
+          threshold: 1
+          modules:
+            - type: trustedRelayerIsm
+              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+            - type: defaultFallbackRoutingIsm
+              owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+              domains: {}
+        upperIsm:
+          domains: {}
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: defaultFallbackRoutingIsm
+    owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+    type: defaultFallbackRoutingIsm
   mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
   owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
@@ -115,6 +155,26 @@ citrea:
     "1399811149":
       - "0x3f1376c74e0409c7d9b7a25cc7b05c9739a04082986a21665a6128ef281cdb84"
       - "0xfc0f72cda5fa979e0eee3aa711b3e52425c3516a245ea0eb9d1d46548df4b21b"
+  interchainSecurityModule:
+    domains:
+      ethereum:
+        type: amountRoutingIsm
+        threshold: 1000000000
+        lowerIsm:
+          type: staticAggregationIsm
+          threshold: 1
+          modules:
+            - type: trustedRelayerIsm
+              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+            - type: defaultFallbackRoutingIsm
+              owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+              domains: {}
+        upperIsm:
+          domains: {}
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          type: defaultFallbackRoutingIsm
+    owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+    type: defaultFallbackRoutingIsm
   mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
   owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   token: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
