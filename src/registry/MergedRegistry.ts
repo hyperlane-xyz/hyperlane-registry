@@ -1,5 +1,3 @@
-import type { Logger } from 'pino';
-
 import type {
   ChainMap,
   ChainMetadata,
@@ -7,6 +5,8 @@ import type {
   WarpCoreConfig,
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
+import type { Logger } from 'pino';
+
 import {
   AddWarpRouteConfigOptions,
   ChainAddresses,

@@ -42,7 +42,6 @@ pnpm run test:rpc-health-testnet
 ### Data Structure
 
 - **chains/**: One directory per chain containing:
-
   - `metadata.yaml` - Chain metadata (chainId, RPC URLs, block explorers, native token)
   - `addresses.yaml` - Deployed contract addresses (mailbox, ISM factories, hooks)
   - `logo.svg` - Chain logo

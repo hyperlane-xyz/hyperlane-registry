@@ -1,5 +1,3 @@
-import type { Logger } from 'pino';
-
 import {
   ChainMap,
   ChainMetadata,
@@ -9,6 +7,8 @@ import {
   WarpRouteDeployConfig,
 } from '@hyperlane-xyz/sdk';
 import { assert, objFilter, objLength } from '@hyperlane-xyz/utils';
+import type { Logger } from 'pino';
+
 import { WARP_ROUTE_ID_REGEX } from '../consts.js';
 import type {
   AddWarpRouteConfigOptions,
