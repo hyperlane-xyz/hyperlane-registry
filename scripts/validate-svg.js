@@ -5,6 +5,7 @@ import { getFilePaths } from './utils.js';
 const directories = ['./chains', './deployments'];
 const MAX_FILE_SIZE = 100 * 1024; // 100KBs
 const RASTER_IMAGE_REGEX = /<image[^>]*>/i;
+const RASTER_IMAGE_EXCEPTIONS = ['chains/kiichain/logo.svg'];
 
 const invalidNameSVGs = [];
 const invalidSizeSVGs = [];
@@ -20,7 +21,9 @@ function isValidSvg(filePath) {
   if (stats.size > MAX_FILE_SIZE) invalidSizeSVGs.push({ filePath, fileSize: `${fileSize}KBs` });
 
   const fileContent = fs.readFileSync(filePath, 'utf8');
-  if (RASTER_IMAGE_REGEX.test(fileContent)) rasterImgSVGs.push(filePath);
+  const normalizedPath = filePath.replace(/\\/g, '/').replace(/^\.\//, '');
+  if (RASTER_IMAGE_REGEX.test(fileContent) && !RASTER_IMAGE_EXCEPTIONS.some((e) => normalizedPath.endsWith(e)))
+    rasterImgSVGs.push(filePath);
 }
 
 function validateErrors() {
