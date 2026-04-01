@@ -3156,6 +3156,32 @@ fluence:
   rpcUrls:
     - http: https://rpc.mainnet.fluence.dev
   technicalStack: arbitrumnitro
+fluent:
+  blockExplorers:
+    - apiUrl: https://fluentscan.xyz/api
+      family: blockscout
+      name: Fluentscan
+      url: https://fluentscan.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 25363
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Fluent
+  domainId: 25363
+  gasCurrencyCoinGeckoId: ethereum
+  name: fluent
+  nativeToken:
+    decimals: 18
+    name: ETH
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.fluent.xyz
+  technicalStack: other
 form:
   availability:
     reasons:
@@ -4370,6 +4396,32 @@ kava:
     - http: https://rpc.ankr.com/kava_evm
     - http: https://evm.kava.io
     - http: https://kava.drpc.org
+kiichain:
+  blockExplorers:
+    - apiUrl: https://mainnet.explorer.kiichain.io/api
+      family: other
+      name: KiiChain Explorer
+      url: https://mainnet.explorer.kiichain.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 1783
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Kiichain
+  domainId: 1783
+  gasCurrencyCoinGeckoId: kiichain
+  name: kiichain
+  nativeToken:
+    decimals: 18
+    name: KII
+    symbol: KII
+  protocol: ethereum
+  rpcUrls:
+    - http: https://json-rpc.kiivalidator.com
+  technicalStack: other
 kinto:
   blockExplorers:
     - apiUrl: https://explorer.kinto.xyz/api/eth-rpc
@@ -5402,6 +5454,32 @@ mitosistestnet:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.testnet.mitosis.org
+mocachain:
+  blockExplorers:
+    - apiUrl: https://moca-mainnet.cloud.blockscout.com/api
+      family: blockscout
+      name: Moca Explorer
+      url: https://moca-mainnet.cloud.blockscout.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 2288
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Moca Chain
+  domainId: 2288
+  gasCurrencyCoinGeckoId: mocaverse
+  name: mocachain
+  nativeToken:
+    decimals: 18
+    name: MOCA
+    symbol: MOCA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.mocachain.dev
+  technicalStack: other
 mode:
   blockExplorers:
     - apiUrl: https://explorer.mode.network/api
@@ -8613,6 +8691,32 @@ telos:
     - http: https://rpc.telos.net
     - http: https://telos.drpc.org
   technicalStack: other
+tempo:
+  blockExplorers:
+    - apiUrl: https://explore.tempo.xyz/api
+      family: other
+      name: Tempo Explorer
+      url: https://explore.tempo.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 4217
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Tempo
+  domainId: 4217
+  gasCurrencyCoinGeckoId: usd-coin
+  name: tempo
+  nativeToken:
+    decimals: 18
+    name: USD
+    symbol: USD
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.tempo.xyz
+  technicalStack: other
 tenet:
   blockExplorers:
     - apiUrl: https://tenetscan.io/api
@@ -8694,7 +8798,7 @@ treasure:
 tron:
   blockExplorers:
     - apiUrl: https://tronscan.org/#
-      family: other
+      family: tronscan
       name: Tronscan
       url: https://tronscan.org/#
   blocks:
@@ -8724,7 +8828,7 @@ tron:
 tronshasta:
   blockExplorers:
     - apiUrl: https://shasta.tronscan.org/#
-      family: other
+      family: tronscan
       name: Tronscan
       url: https://shasta.tronscan.org/#
   blocks:

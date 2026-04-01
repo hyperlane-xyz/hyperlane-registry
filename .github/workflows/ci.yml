@@ -31,15 +31,15 @@ jobs:
       - name: lint
         run: pnpm run lint
 
-  prettier:
+  format:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
       - name: pnpm-cache
         uses: ./.github/actions/pnpm-cache
-      - name: prettier
+      - name: format
         run: |
-          pnpm run prettier
+          pnpm run format
           CHANGES=$(git status -s)
           if [[ ! -z $CHANGES ]]; then
             echo "Changes found: $CHANGES"

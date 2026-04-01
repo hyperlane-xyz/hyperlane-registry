@@ -8,7 +8,7 @@ const directories = [
 const fileExtensions = ['.svg', '.yaml'];
 
 // Files that are allowed in the root directory
-const allowedRootFiles = ['pnpm-lock.yaml'];
+const allowedRootFiles = ['pnpm-lock.yaml', 'pnpm-workspace.yaml'];
 
 function main() {
   const invalidFilesPaths = directories

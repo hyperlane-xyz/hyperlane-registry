@@ -1,10 +1,11 @@
 import type { Logger } from 'pino';
-import { GithubRegistry } from '../registry/GithubRegistry.js';
-import { FileSystemRegistry } from './FileSystemRegistry.js';
-import { IRegistry } from '../registry/IRegistry.js';
+
 import { PROXY_DEPLOYED_URL } from '../consts.js';
-import { MergedRegistry } from '../registry/MergedRegistry.js';
+import { GithubRegistry } from '../registry/GithubRegistry.js';
 import { HttpClientRegistry } from '../registry/HttpClientRegistry.js';
+import { IRegistry } from '../registry/IRegistry.js';
+import { MergedRegistry } from '../registry/MergedRegistry.js';
+import { FileSystemRegistry } from './FileSystemRegistry.js';
 
 type Protocol = 'http:' | 'https:';
 

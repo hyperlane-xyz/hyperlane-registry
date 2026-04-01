@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Tron mainnet deployment.
+Added 1Piece/eni deployment artifacts

@@ -1,5 +1,24 @@
 # @hyperlane-xyz/registry
 
+## 24.2.0
+
+### Minor Changes
+
+- ec39218: Update Hyperlane dependencies to SDK 29.1.0 and Utils 29.1.0
+- b7bcf3a: Added solana token to dime warp route artifact
+- d308b20: Add warpRouteId to M0 Portal tokens (mUSD, wM, USDSC) for disambiguation of tokens sharing the same addressOrDenom on the same chain.
+- 5fae0f5: Add eUSD/celestia and eUSD/eden deployments artifacts
+- 8298973: feat: add BNB/eni warp route
+- 3cc11b0: Tron mainnet deployment.
+
+### Patch Changes
+
+- 5e5ae6a: Update arbitrumnova block explorer from Arbiscan to Blockscout
+- 564de5a: Use GHCR monorepo image for check-warp-deploy CI
+- 39c3d14: mar19 ism updates.
+- 8b00c2b: The registry toolchain was updated to TypeScript 6.0 while staying off TypeScript 7.0 deprecated tsconfig options.
+- 6d724f5: Tron and Tronshasta metadata updated to use HTTP REST API endpoints (`walletUrls`/`walletSolidityUrls`) instead of gRPC endpoints (`grpcUrls`/`solidityGrpcUrls`).
+
 ## 24.1.0
 
 ### Minor Changes

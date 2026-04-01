@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-feat: add BNB/eni warp route
+extended paradex usdc route to hyperevm

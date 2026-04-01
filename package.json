@@ -1,50 +1,21 @@
 {
   "name": "@hyperlane-xyz/registry",
+  "version": "24.2.0",
   "description": "A collection of configs, artifacts, and schemas for Hyperlane",
-  "version": "24.1.0",
-  "dependencies": {
-    "jszip": "^3.10.1",
-    "yaml": "2.4.5",
-    "zod": "^3.21.2"
-  },
-  "devDependencies": {
-    "@changesets/cli": "^2.26.2",
-    "@eslint/js": "^9.1.1",
-    "@faker-js/faker": "^9.6.0",
-    "@hyperlane-xyz/sdk": "27.1.0",
-    "@hyperlane-xyz/utils": "27.1.0",
-    "@types/chai-as-promised": "^8",
-    "@types/mocha": "^10.0.1",
-    "@types/node": "^24.10.9",
-    "@typescript-eslint/parser": "^7.7.0",
-    "chai": "^5.1.2",
-    "chai-as-promised": "^8.0.1",
-    "dotenv": "^16.4.7",
-    "eslint": "^9.0.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-yml": "^1.14.0",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.2",
-    "mocha": "^10.2.0",
-    "pino": "^8.20.0",
-    "prettier": "^2.8.8",
-    "randexp": "^0.5.3",
-    "sinon": "^18.0.0",
-    "svgo": "3.3.2",
-    "tsx": "^4.7.1",
-    "typescript": "6.0.2",
-    "typescript-eslint": "^7.7.0",
-    "yaml-eslint-parser": "^1.3.2",
-    "zod-to-json-schema": "^3.22.5"
-  },
+  "keywords": [
+    "Chains",
+    "Deployments",
+    "Hyperlane",
+    "Registry"
+  ],
+  "homepage": "https://www.hyperlane.xyz",
+  "license": "MIT",
+  "repository": "https://github.com/hyperlane-xyz/hyperlane-registry",
+  "files": [
+    "/dist"
+  ],
   "type": "module",
-  "exports": {
-    ".": "./dist/index.js",
-    "./chains/schema.json": "./dist/chains/schema.json",
-    "./chains/*": "./dist/chains/*",
-    "./fs": "./dist/fs/index.js"
-  },
+  "sideEffects": false,
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
@@ -53,28 +24,18 @@
       ]
     }
   },
-  "files": [
-    "/dist"
-  ],
-  "sideEffects": false,
-  "engines": {
-    "node": ">=24"
+  "exports": {
+    ".": "./dist/index.js",
+    "./chains/schema.json": "./dist/chains/schema.json",
+    "./chains/*": "./dist/chains/*",
+    "./fs": "./dist/fs/index.js"
   },
-  "homepage": "https://www.hyperlane.xyz",
-  "repository": "https://github.com/hyperlane-xyz/hyperlane-registry",
-  "keywords": [
-    "Hyperlane",
-    "Registry",
-    "Chains",
-    "Deployments"
-  ],
-  "license": "MIT",
   "scripts": {
     "build": "tsx ./scripts/build.ts && tsc --project tsconfig.publish.json",
     "clean": "rm -rf ./dist ./tmp",
-    "lint": "eslint ./src/ ./chains ./deployments",
-    "lint:fix": "pnpm run lint --fix",
-    "prettier": "prettier --write ./chains ./deployments",
+    "lint": "oxlint ./src/",
+    "lint:fix": "oxlint --fix ./src/",
+    "format": "oxfmt ./chains ./deployments ./src",
     "prepare": "husky install",
     "release": "pnpm run build && pnpm exec changeset publish",
     "test:unit": "pnpm run build && mocha --require dotenv/config --config .mocharc.json './test/unit/*.test.ts' --exit",
@@ -83,6 +44,38 @@
     "test:rpc-health-testnet": "pnpm run build && mocha --config .mocharc.json './test/health/rpc-health.test.ts' --grep 'Testnets' --exit --parallel",
     "version:prepare": "pnpm exec changeset version && pnpm install --no-frozen-lockfile",
     "version:check": "pnpm exec changeset status"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "yaml": "2.4.5",
+    "zod": "^3.21.2"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@faker-js/faker": "^9.6.0",
+    "@hyperlane-xyz/sdk": "29.1.0",
+    "@hyperlane-xyz/utils": "29.1.0",
+    "@types/chai-as-promised": "^8",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^24.10.9",
+    "chai": "^5.1.2",
+    "chai-as-promised": "^8.0.1",
+    "dotenv": "^16.4.7",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "mocha": "^10.2.0",
+    "oxfmt": "0.42.0",
+    "oxlint": "1.57.0",
+    "pino": "^8.20.0",
+    "randexp": "^0.5.3",
+    "sinon": "^18.0.0",
+    "svgo": "3.3.2",
+    "tsx": "^4.7.1",
+    "typescript": "6.0.2",
+    "zod-to-json-schema": "^3.22.5"
+  },
+  "engines": {
+    "node": ">=24"
   },
   "packageManager": "pnpm@10.25.0"
 }
