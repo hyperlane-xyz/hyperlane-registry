@@ -1,4 +1,11 @@
 arbitrum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    ethereum:
+      - bridge: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
+    plasma:
+      - bridge: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
   decimals: 6
   name: USD₮0
   owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
@@ -36,6 +43,7 @@ bsc:
   name: Tether USD
   owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
   proxyAdmin:
+    address: "0x9C5a42CBA06D818945df8D798C98F41EA1d88BDA"
     owner: "0x7bB2ADeDdC342ffb611dDC073095cc4B8C547170"
   scale:
     denominator: 1000000000000
@@ -73,6 +81,13 @@ eclipsemainnet:
   symbol: USDT
   type: synthetic
 ethereum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
+    plasma:
+      - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
   contractVersion: 11.1.0
   decimals: 6
   name: Tether USD
@@ -107,10 +122,18 @@ ethereum:
     type: RoutingFee
   type: collateral
 plasma:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0x93bfFA2231fbA5029997603fb68D9aC08024Baa2"
+    ethereum:
+      - bridge: "0x93bfFA2231fbA5029997603fb68D9aC08024Baa2"
   decimals: 6
   name: USDT0
   owner: "0x5f132a9a16F8e4AE1E2ec2F2bcEdf074d1496c3f"
   proxyAdmin:
+    address: "0x0587E4E093Cd820eda59EcF0FD73544cE65B4775"
     owner: "0xCcf5e9862D486e71aA47B87Cb3a7eEB1e1f2F624"
   scale:
     denominator: 1
@@ -153,6 +176,7 @@ tron:
   name: Tether USD
   owner: "0xB960616C7E2ee0F2a296A4b2B9D0b3308E23A69D"
   proxyAdmin:
+    address: "0x0d558DbF548fB9df2b62740b8a4C79A7160971DB"
     owner: "0xB960616C7E2ee0F2a296A4b2B9D0b3308E23A69D"
   scale:
     denominator: 1
