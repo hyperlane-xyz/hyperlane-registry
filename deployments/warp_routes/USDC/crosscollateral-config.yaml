@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x43402D998C0F3331b1AFee4F5c7966faCAb1Db1E"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+    connections:
+      - token: ethereum|base|0xAfD0995C7Edca913599d5731D022f5f39Bd11F8a
+      - token: ethereum|ethereum|0x0501f39976D53067915C8c84BFba35A287Eaa7Bd
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDC
+  - addressOrDenom: "0xAfD0995C7Edca913599d5731D022f5f39Bd11F8a"
+    chainName: base
+    collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    connections:
+      - token: ethereum|arbitrum|0x43402D998C0F3331b1AFee4F5c7966faCAb1Db1E
+      - token: ethereum|ethereum|0x0501f39976D53067915C8c84BFba35A287Eaa7Bd
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDC
+  - addressOrDenom: "0x0501f39976D53067915C8c84BFba35A287Eaa7Bd"
+    chainName: ethereum
+    collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    connections:
+      - token: ethereum|arbitrum|0x43402D998C0F3331b1AFee4F5c7966faCAb1Db1E
+      - token: ethereum|base|0xAfD0995C7Edca913599d5731D022f5f39Bd11F8a
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDC
