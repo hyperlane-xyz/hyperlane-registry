@@ -1,5 +1,20 @@
 # @hyperlane-xyz/registry
 
+## 24.3.0
+
+### Minor Changes
+
+- 4b67326: April 2nd multisig batch.
+- 01002be: extended paradex usdc route to hyperevm
+- 9f323e6: Added 1Piece/eni deployment artifacts
+- 7449c91: Deploy to mocachain, tempo, fluent, kiichain.
+- a2b0063: Updated tron & tronshasta explorer family to tronscan
+- cf2bd52: feat: added RISE/bsc-ethereum warp route
+
+### Patch Changes
+
+- 423f682: Replace ESLint and Prettier with oxlint and oxfmt for linting and formatting
+
 ## 24.2.0
 
 ### Minor Changes
