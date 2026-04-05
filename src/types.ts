@@ -14,6 +14,15 @@ export type MaybePromise<T> = T | Promise<T> | PromiseLike<T>;
 export const ChainAddressesSchema = z.record(z.string());
 export type ChainAddresses = z.infer<typeof ChainAddressesSchema>;
 
+export const DenylistEntrySchema = z.object({
+  messageId: z.string().regex(/^0x[0-9a-fA-F]{64}$/),
+  context: z.string(),
+});
+export type DenylistEntry = z.infer<typeof DenylistEntrySchema>;
+
+export const DenylistSchema = z.array(DenylistEntrySchema);
+export type Denylist = z.infer<typeof DenylistSchema>;
+
 /**
  * Schema for warp route filter parameters.
  * This serves as the single source of truth for both TypeScript types and validation.
