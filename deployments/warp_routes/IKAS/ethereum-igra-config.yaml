@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xB2DFD630e47eA47A5228Fe3183E260C3b1FC901d"
+    chainName: igra
+    coinGeckoId: igra
+    connections:
+      - token: ethereum|ethereum|0x62869154c5a81D200F85c7412aaedF7E03c6c499
+    decimals: 18
+    logoURI: /deployments/warp_routes/IKAS/logo.svg
+    name: iKAS
+    standard: EvmHypNative
+    symbol: iKAS
+  - addressOrDenom: "0x62869154c5a81D200F85c7412aaedF7E03c6c499"
+    chainName: ethereum
+    connections:
+      - token: ethereum|igra|0xB2DFD630e47eA47A5228Fe3183E260C3b1FC901d
+    decimals: 18
+    logoURI: /deployments/warp_routes/IKAS/logo.svg
+    name: iKAS
+    standard: EvmHypSynthetic
+    symbol: iKAS
