@@ -580,6 +580,28 @@ CBBTC/ethereum-flowmainnet:
       name: Coinbase Wrapped BTC
       standard: EvmHypSynthetic
       symbol: cbBTC
+CBBTC/igra:
+  tokens:
+    - addressOrDenom: "0xF2B48b6e560af8834622203a8EEff6960d6172De"
+      chainName: igra
+      connections:
+        - token: ethereum|base|0x8DE75A8a9Ee436390429eefD343926b28768EAb7
+      decimals: 8
+      logoURI: /deployments/warp_routes/CBBTC/logo.svg
+      name: Coinbase Wrapped BTC
+      standard: EvmHypSynthetic
+      symbol: cbBTC
+    - addressOrDenom: "0x8DE75A8a9Ee436390429eefD343926b28768EAb7"
+      chainName: base
+      coinGeckoId: coinbase-wrapped-btc
+      collateralAddressOrDenom: "0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf"
+      connections:
+        - token: ethereum|igra|0xF2B48b6e560af8834622203a8EEff6960d6172De
+      decimals: 8
+      logoURI: /deployments/warp_routes/CBBTC/logo.svg
+      name: Coinbase Wrapped BTC
+      standard: EvmHypCollateral
+      symbol: cbBTC
 CDX/base-solanamainnet-sophon:
   tokens:
     - addressOrDenom: "0x22Fd11F93F0303346c9b9070cc67C4Bc7aB2dABB"
