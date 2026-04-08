@@ -7935,6 +7935,118 @@ USDC/ethereum-viction:
       name: USDC
       standard: EvmHypSynthetic
       symbol: USDC
+USDC/igra:
+  tokens:
+    - addressOrDenom: "0xA5b8BF902b2844dA17d4506cc827F7F1681735E7"
+      chainName: igra
+      connections:
+        - token: ethereum|avalanche|0x9f8F71F139C354B7b17E4D8DCb29ddd2A377733D
+        - token: ethereum|optimism|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
+        - token: ethereum|arbitrum|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
+        - token: ethereum|base|0x84e1dF3553B16452AeD7060A4266E4E434f418cC
+        - token: ethereum|polygon|0x9f8F71F139C354B7b17E4D8DCb29ddd2A377733D
+        - token: ethereum|ethereum|0xC3f8B34587EB403FC30a161d6A35cB724A3b273E
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USDC
+      standard: EvmHypSynthetic
+      symbol: USDC
+    - addressOrDenom: "0x9f8F71F139C354B7b17E4D8DCb29ddd2A377733D"
+      chainName: avalanche
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E"
+      connections:
+        - token: ethereum|igra|0xA5b8BF902b2844dA17d4506cc827F7F1681735E7
+        - token: ethereum|optimism|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
+        - token: ethereum|arbitrum|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
+        - token: ethereum|base|0x84e1dF3553B16452AeD7060A4266E4E434f418cC
+        - token: ethereum|polygon|0x9f8F71F139C354B7b17E4D8DCb29ddd2A377733D
+        - token: ethereum|ethereum|0xC3f8B34587EB403FC30a161d6A35cB724A3b273E
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7"
+      chainName: optimism
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
+      connections:
+        - token: ethereum|igra|0xA5b8BF902b2844dA17d4506cc827F7F1681735E7
+        - token: ethereum|avalanche|0x9f8F71F139C354B7b17E4D8DCb29ddd2A377733D
+        - token: ethereum|arbitrum|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
+        - token: ethereum|base|0x84e1dF3553B16452AeD7060A4266E4E434f418cC
+        - token: ethereum|polygon|0x9f8F71F139C354B7b17E4D8DCb29ddd2A377733D
+        - token: ethereum|ethereum|0xC3f8B34587EB403FC30a161d6A35cB724A3b273E
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7"
+      chainName: arbitrum
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+      connections:
+        - token: ethereum|igra|0xA5b8BF902b2844dA17d4506cc827F7F1681735E7
+        - token: ethereum|avalanche|0x9f8F71F139C354B7b17E4D8DCb29ddd2A377733D
+        - token: ethereum|optimism|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
+        - token: ethereum|base|0x84e1dF3553B16452AeD7060A4266E4E434f418cC
+        - token: ethereum|polygon|0x9f8F71F139C354B7b17E4D8DCb29ddd2A377733D
+        - token: ethereum|ethereum|0xC3f8B34587EB403FC30a161d6A35cB724A3b273E
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x84e1dF3553B16452AeD7060A4266E4E434f418cC"
+      chainName: base
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      connections:
+        - token: ethereum|igra|0xA5b8BF902b2844dA17d4506cc827F7F1681735E7
+        - token: ethereum|avalanche|0x9f8F71F139C354B7b17E4D8DCb29ddd2A377733D
+        - token: ethereum|optimism|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
+        - token: ethereum|arbitrum|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
+        - token: ethereum|polygon|0x9f8F71F139C354B7b17E4D8DCb29ddd2A377733D
+        - token: ethereum|ethereum|0xC3f8B34587EB403FC30a161d6A35cB724A3b273E
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x9f8F71F139C354B7b17E4D8DCb29ddd2A377733D"
+      chainName: polygon
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+      connections:
+        - token: ethereum|igra|0xA5b8BF902b2844dA17d4506cc827F7F1681735E7
+        - token: ethereum|avalanche|0x9f8F71F139C354B7b17E4D8DCb29ddd2A377733D
+        - token: ethereum|optimism|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
+        - token: ethereum|arbitrum|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
+        - token: ethereum|base|0x84e1dF3553B16452AeD7060A4266E4E434f418cC
+        - token: ethereum|ethereum|0xC3f8B34587EB403FC30a161d6A35cB724A3b273E
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0xC3f8B34587EB403FC30a161d6A35cB724A3b273E"
+      chainName: ethereum
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+      connections:
+        - token: ethereum|igra|0xA5b8BF902b2844dA17d4506cc827F7F1681735E7
+        - token: ethereum|avalanche|0x9f8F71F139C354B7b17E4D8DCb29ddd2A377733D
+        - token: ethereum|optimism|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
+        - token: ethereum|arbitrum|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
+        - token: ethereum|base|0x84e1dF3553B16452AeD7060A4266E4E434f418cC
+        - token: ethereum|polygon|0x9f8F71F139C354B7b17E4D8DCb29ddd2A377733D
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
 USDC/incentiv:
   tokens:
     - addressOrDenom: "0x67E26775847da2c066415d7F46fbEEc5C70F6a89"
@@ -11519,6 +11631,28 @@ WSTETH/ethereum-form:
       logoURI: /deployments/warp_routes/WSTETH/logo.svg
       name: Wrapped liquid staked Ether 2.0
       standard: EvmHypSynthetic
+      symbol: wstETH
+WSTETH/igra:
+  tokens:
+    - addressOrDenom: "0xC3f8B34587EB403FC30a161d6A35cB724A3b273E"
+      chainName: igra
+      connections:
+        - token: ethereum|ethereum|0x0E47F12002CbDC72E3d1080d10f44A5A94279A29
+      decimals: 18
+      logoURI: /deployments/warp_routes/WSTETH/logo.svg
+      name: Wrapped stETH
+      standard: EvmHypSynthetic
+      symbol: wstETH
+    - addressOrDenom: "0x0E47F12002CbDC72E3d1080d10f44A5A94279A29"
+      chainName: ethereum
+      coinGeckoId: wrapped-steth
+      collateralAddressOrDenom: "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"
+      connections:
+        - token: ethereum|igra|0xC3f8B34587EB403FC30a161d6A35cB724A3b273E
+      decimals: 18
+      logoURI: /deployments/warp_routes/WSTETH/logo.svg
+      name: Wrapped liquid staked Ether 2.0
+      standard: EvmHypCollateral
       symbol: wstETH
 XRD/radix:
   tokens:
