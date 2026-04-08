@@ -7,6 +7,7 @@ tokens:
       - token: ethereum|base|0xd54A15f8dF8C6dD9Ef3b5589BE0bF37EC6f61F91
       - token: ethereum|citrea|0x38E8720EBE02e7c5254F9De9F81440C7a770a9c6
       - token: ethereum|ethereum|0xd4463cB3c90b3F49c673310BEC9bC18311134B47
+      - token: ethereum|katana|0xe064aee7327b19ba636c8d8b594f73572b95ea29
     decimals: 6
     name: USD Coin
     standard: EvmHypCrossCollateralRouter
@@ -18,6 +19,7 @@ tokens:
       - token: ethereum|arbitrum|0x62fe676dff1e7ABBCcbedc8BABc993827b9fb189
       - token: ethereum|citrea|0x38E8720EBE02e7c5254F9De9F81440C7a770a9c6
       - token: ethereum|ethereum|0xd4463cB3c90b3F49c673310BEC9bC18311134B47
+      - token: ethereum|katana|0xe064aee7327b19ba636c8d8b594f73572b95ea29
     decimals: 6
     name: USD Coin
     standard: EvmHypCrossCollateralRouter
@@ -29,6 +31,7 @@ tokens:
       - token: ethereum|arbitrum|0x62fe676dff1e7ABBCcbedc8BABc993827b9fb189
       - token: ethereum|base|0xd54A15f8dF8C6dD9Ef3b5589BE0bF37EC6f61F91
       - token: ethereum|ethereum|0xd4463cB3c90b3F49c673310BEC9bC18311134B47
+      - token: ethereum|katana|0xe064aee7327b19ba636c8d8b594f73572b95ea29
     decimals: 6
     name: Citrea USD
     standard: EvmHypCrossCollateralRouter
@@ -40,7 +43,19 @@ tokens:
       - token: ethereum|arbitrum|0x62fe676dff1e7ABBCcbedc8BABc993827b9fb189
       - token: ethereum|base|0xd54A15f8dF8C6dD9Ef3b5589BE0bF37EC6f61F91
       - token: ethereum|citrea|0x38E8720EBE02e7c5254F9De9F81440C7a770a9c6
+      - token: ethereum|katana|0xe064aee7327b19ba636c8d8b594f73572b95ea29
     decimals: 6
     name: USD Coin
     standard: EvmHypCrossCollateralRouter
     symbol: USDC
+  - addressOrDenom: "0xe064aee7327b19ba636c8d8b594f73572b95ea29"
+    chainName: katana
+    connections:
+      - token: ethereum|arbitrum|0x62fe676dff1e7ABBCcbedc8BABc993827b9fb189
+      - token: ethereum|base|0xd54A15f8dF8C6dD9Ef3b5589BE0bF37EC6f61F91
+      - token: ethereum|citrea|0x38E8720EBE02e7c5254F9De9F81440C7a770a9c6
+      - token: ethereum|ethereum|0xd4463cB3c90b3F49c673310BEC9bC18311134B47
+    decimals: 6
+    name: Vault Bridge USDC
+    standard: EvmHypSynthetic
+    symbol: vbUSDC
