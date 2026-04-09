@@ -46,17 +46,12 @@ EXIT_CODE=0
 for WARP_ROUTE_ID in $WARP_ROUTE_IDS; do
     export WARP_ROUTE_ID
     
-    # Check 1: Registry YAML vs on-chain (uses --forceRegistryConfig to read registry directly)
-    if docker run --rm \
-        -e REGISTRY_COMMIT=$HEAD_COMMIT \
-        -e CI=true \
-        ghcr.io/hyperlane-xyz/hyperlane-monorepo:main \
-        ./node_modules/.bin/tsx \
-        ./typescript/infra/scripts/check/check-deploy.ts \
-        -e mainnet3 \
-        -m warp \
-        --warpRouteId "$WARP_ROUTE_ID" \
-        --forceRegistryConfig; then
+    # Check 1: Registry YAML vs on-chain via published CLI
+    if hyperlane \
+        --registry "$(pwd)" \
+        -y \
+        warp check \
+        --warp-route-id "$WARP_ROUTE_ID"; then
       ONCHAIN_STATUS="✅"
     else
       ONCHAIN_STATUS="❌"

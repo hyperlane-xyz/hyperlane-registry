@@ -23,6 +23,13 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
 
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Install Hyperlane CLI
+        run: npm i -g @hyperlane-xyz/cli@latest
+
       - name: Determine Base & Head SHA
         id: determine-base-sha
         run: |
@@ -32,6 +39,7 @@ jobs:
       - name: Check Warp Deploy
         env:
           # Only set PR_NUMBER for non-fork PRs (enables PR commenting)
+          HYPERLANE_SKIP_VERSION_CHECK: '1'
           PR_NUMBER: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.number || '' }}
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
         run: |
