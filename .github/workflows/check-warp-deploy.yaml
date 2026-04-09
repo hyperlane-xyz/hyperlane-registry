@@ -44,7 +44,12 @@ jobs:
       - name: Install Hyperlane CLI
         env:
           HYPERLANE_CLI_VERSION: ${{ steps.hyperlane-version.outputs.version }}
-        run: npm i -g "@hyperlane-xyz/cli@${HYPERLANE_CLI_VERSION}"
+        run: |
+          if ! npm view "@hyperlane-xyz/cli@${HYPERLANE_CLI_VERSION}" version >/dev/null 2>&1; then
+            echo "No published @hyperlane-xyz/cli version ${HYPERLANE_CLI_VERSION}"
+            exit 1
+          fi
+          npm i -g "@hyperlane-xyz/cli@${HYPERLANE_CLI_VERSION}"
 
       - name: Determine Base & Head SHA
         id: determine-base-sha
@@ -54,8 +59,8 @@ jobs:
 
       - name: Check Warp Deploy
         env:
-          # Only set PR_NUMBER for non-fork PRs (enables PR commenting)
           HYPERLANE_SKIP_VERSION_CHECK: "1"
+          # Only set PR_NUMBER for non-fork PRs (enables PR commenting)
           PR_NUMBER: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.number || '' }}
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
         run: |
