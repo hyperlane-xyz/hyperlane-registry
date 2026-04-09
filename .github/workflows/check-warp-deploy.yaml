@@ -30,7 +30,15 @@ jobs:
       - name: Determine Hyperlane package version
         id: hyperlane-version
         run: |
-          VERSION=$(node -p "const pkg = JSON.parse(require('fs').readFileSync('package.json', 'utf8')); const version = pkg.dependencies?.['@hyperlane-xyz/sdk'] ?? pkg.devDependencies?.['@hyperlane-xyz/sdk']; if (!version) throw new Error('Missing @hyperlane-xyz/sdk dependency'); if (!/^[0-9]+\\.[0-9]+\\.[0-9]+(?:[-+][0-9A-Za-z.-]+)?$/.test(version)) throw new Error('Expected exact semver @hyperlane-xyz/sdk version, got ' + version); version;")
+          VERSION="$(jq -r '.dependencies["@hyperlane-xyz/sdk"] // .devDependencies["@hyperlane-xyz/sdk"] // empty' package.json)"
+          if [ -z "$VERSION" ]; then
+            echo "Missing @hyperlane-xyz/sdk dependency"
+            exit 1
+          fi
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+([+-][0-9A-Za-z.-]+)?$ ]]; then
+            echo "Expected exact semver @hyperlane-xyz/sdk version, got $VERSION"
+            exit 1
+          fi
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Install Hyperlane CLI
