@@ -27,8 +27,14 @@ jobs:
         with:
           node-version-file: .nvmrc
 
+      - name: Determine Hyperlane package version
+        id: hyperlane-version
+        run: |
+          VERSION=$(node -p "const pkg = JSON.parse(require('fs').readFileSync('package.json', 'utf8')); const version = pkg.dependencies?.['@hyperlane-xyz/sdk'] ?? pkg.devDependencies?.['@hyperlane-xyz/sdk']; if (!version) throw new Error('Missing @hyperlane-xyz/sdk dependency'); version;")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
       - name: Install Hyperlane CLI
-        run: npm i -g @hyperlane-xyz/cli@latest
+        run: npm i -g @hyperlane-xyz/cli@${{ steps.hyperlane-version.outputs.version }}
 
       - name: Determine Base & Head SHA
         id: determine-base-sha
@@ -39,7 +45,7 @@ jobs:
       - name: Check Warp Deploy
         env:
           # Only set PR_NUMBER for non-fork PRs (enables PR commenting)
-          HYPERLANE_SKIP_VERSION_CHECK: '1'
+          HYPERLANE_SKIP_VERSION_CHECK: "1"
           PR_NUMBER: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.number || '' }}
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
         run: |
