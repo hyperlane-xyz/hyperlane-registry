@@ -19,12 +19,23 @@ tokens:
     collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
     connections:
       - token: ethereum|bsc|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
-      - token: ethereum|mantra|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
-      - token: ethereum|soneium|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
     decimals: 6
     logoURI: /deployments/warp_routes/wM/logo.svg
     name: WrappedM by M^0
     standard: EvmM0PortalLite
+    symbol: wM
+    warpRouteId: wM/wrapped-m
+  # M0 wM on Ethereum (HubPortal)
+  - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
+    connections:
+      - token: ethereum|mantra|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
+      - token: ethereum|soneium|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
+    decimals: 6
+    logoURI: /deployments/warp_routes/wM/logo.svg
+    name: WrappedM by M^0
+    standard: EvmM0Portal
     symbol: wM
     warpRouteId: wM/wrapped-m
   # M0 wM on Linea (SpokePortal)
@@ -40,26 +51,26 @@ tokens:
     symbol: wM
     warpRouteId: wM/wrapped-m
   # M0 wM on Mantra (SpokePortal)
-  - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+  - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
     chainName: mantra
     collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
     connections:
-      - token: ethereum|ethereum|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+      - token: ethereum|ethereum|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
     decimals: 6
     logoURI: /deployments/warp_routes/wM/logo.svg
     name: WrappedM by M^0
-    standard: EvmM0PortalLite
+    standard: EvmM0Portal
     symbol: wM
     warpRouteId: wM/wrapped-m
   # M0 wM on Soneium (SpokePortal)
-  - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+  - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
     chainName: soneium
     collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
     connections:
-      - token: ethereum|ethereum|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+      - token: ethereum|ethereum|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
     decimals: 6
     logoURI: /deployments/warp_routes/wM/logo.svg
     name: WrappedM by M^0
-    standard: EvmM0PortalLite
+    standard: EvmM0Portal
     symbol: wM
     warpRouteId: wM/wrapped-m
