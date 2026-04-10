@@ -152,15 +152,22 @@ export class MergedRegistry implements IRegistry {
     return Promise.all(
       this.registries.map(async (registry) => {
         try {
-          return await readFn(registry);
+          return { ok: true as const, value: await readFn(registry) };
         } catch (error) {
           if (isNotFoundError(error)) {
-            return null as R;
+            return { ok: false as const, error };
           }
           throw error;
         }
       }),
-    );
+    ).then((results) => {
+      const successResults = results.filter((result) => result.ok);
+      if (!successResults.length) {
+        const notFoundResult = results.find((result) => !result.ok);
+        if (notFoundResult) throw notFoundResult.error;
+      }
+      return results.map((result) => (result.ok ? result.value : (null as R)));
+    });
   }
 
   protected async multiRegistryWrite(

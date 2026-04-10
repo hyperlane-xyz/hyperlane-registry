@@ -305,7 +305,7 @@ describe('Registry utilities', () => {
       });
     });
 
-    it('ignores 404 misses from the primary registry', async () => {
+    it('ignores 404 misses from the primary registry when another registry succeeds', async () => {
       const primaryRegistry = new PartialRegistry({});
       const overlayRegistry = new PartialRegistry({});
       sinon.stub(primaryRegistry, 'getMetadata').throws(notFoundError());
@@ -315,6 +315,20 @@ describe('Registry utilities', () => {
       });
 
       expect(await registry.getMetadata()).to.eql({});
+    });
+
+    it('throws if all registries miss with not-found errors', async () => {
+      const primaryRegistry = new PartialRegistry({});
+      const overlayRegistry = new PartialRegistry({});
+      const error = notFoundError();
+      sinon.stub(primaryRegistry, 'getMetadata').throws(error);
+      sinon.stub(overlayRegistry, 'getMetadata').throws(enoentError());
+
+      const registry = new MergedRegistry({
+        registries: [primaryRegistry, overlayRegistry],
+      });
+
+      await expect(registry.getMetadata()).to.be.rejectedWith(error);
     });
 
     it('propagates non-404 errors from overlay registries', async () => {
