@@ -19,10 +19,6 @@ import {
 import { objMerge } from '../utils.js';
 import { IRegistry, IRegistryMethods, RegistryContent, RegistryType } from './IRegistry.js';
 
-interface MultiRegistryReadOptions {
-  tolerateOverlayNotFound?: boolean;
-}
-
 export interface MergedRegistryOptions {
   registries: Array<IRegistry>;
   logger?: Logger;
@@ -52,9 +48,7 @@ export class MergedRegistry implements IRegistry {
   }
 
   async listRegistryContent(): Promise<RegistryContent> {
-    const results = await this.multiRegistryRead((r) => r.listRegistryContent(), {
-      tolerateOverlayNotFound: true,
-    });
+    const results = await this.multiRegistryRead((r) => r.listRegistryContent());
     return results.reduce((acc, content) => objMerge(acc, content), {
       chains: {},
       deployments: {
@@ -69,9 +63,7 @@ export class MergedRegistry implements IRegistry {
   }
 
   async getMetadata(): Promise<ChainMap<ChainMetadata>> {
-    const results = await this.multiRegistryRead((r) => r.getMetadata(), {
-      tolerateOverlayNotFound: true,
-    });
+    const results = await this.multiRegistryRead((r) => r.getMetadata());
     return results.reduce((acc, content) => objMerge(acc, content), {});
   }
 
@@ -80,9 +72,7 @@ export class MergedRegistry implements IRegistry {
   }
 
   async getAddresses(): Promise<ChainMap<ChainAddresses>> {
-    const results = await this.multiRegistryRead((r) => r.getAddresses(), {
-      tolerateOverlayNotFound: true,
-    });
+    const results = await this.multiRegistryRead((r) => r.getAddresses());
     return results.reduce((acc, content) => objMerge(acc, content), {});
   }
 
@@ -120,30 +110,22 @@ export class MergedRegistry implements IRegistry {
   }
 
   async getWarpRoute(id: WarpRouteId): Promise<WarpCoreConfig | null> {
-    const results = await this.multiRegistryRead((r) => r.getWarpRoute(id), {
-      tolerateOverlayNotFound: true,
-    });
+    const results = await this.multiRegistryRead((r) => r.getWarpRoute(id));
     return results.find((r) => !!r) || null;
   }
 
   async getWarpDeployConfig(id: WarpRouteId): Promise<WarpRouteDeployConfig | null> {
-    const results = await this.multiRegistryRead((r) => r.getWarpDeployConfig(id), {
-      tolerateOverlayNotFound: true,
-    });
+    const results = await this.multiRegistryRead((r) => r.getWarpDeployConfig(id));
     return results.find((r) => !!r) || null;
   }
 
   async getWarpRoutes(filter?: WarpRouteFilterParams): Promise<WarpRouteConfigMap> {
-    const results = await this.multiRegistryRead((r) => r.getWarpRoutes(filter), {
-      tolerateOverlayNotFound: true,
-    });
+    const results = await this.multiRegistryRead((r) => r.getWarpRoutes(filter));
     return results.reduce((acc, content) => objMerge(acc, content), {});
   }
 
   async getWarpDeployConfigs(filter?: WarpRouteFilterParams): Promise<WarpDeployConfigMap> {
-    const results = await this.multiRegistryRead((r) => r.getWarpDeployConfigs(filter), {
-      tolerateOverlayNotFound: true,
-    });
+    const results = await this.multiRegistryRead((r) => r.getWarpDeployConfigs(filter));
     return results.reduce((acc, content) => objMerge(acc, content), {});
   }
 
@@ -166,16 +148,13 @@ export class MergedRegistry implements IRegistry {
     );
   }
 
-  protected multiRegistryRead<R>(
-    readFn: (registry: IRegistry) => Promise<R> | R,
-    options?: MultiRegistryReadOptions,
-  ) {
+  protected multiRegistryRead<R>(readFn: (registry: IRegistry) => Promise<R> | R) {
     return Promise.all(
-      this.registries.map(async (registry, index) => {
+      this.registries.map(async (registry) => {
         try {
           return await readFn(registry);
         } catch (error) {
-          if (options?.tolerateOverlayNotFound && index > 0 && isHttpNotFoundError(error)) {
+          if (isNotFoundError(error)) {
             return null as R;
           }
           throw error;
@@ -213,14 +192,20 @@ export class MergedRegistry implements IRegistry {
   }
 }
 
-function isHttpNotFoundError(error: unknown): boolean {
+function isNotFoundError(error: unknown): boolean {
   if (!error || typeof error !== 'object') return false;
-  const { status, statusCode, response } = error as {
+  const { code, message, status, statusCode, response } = error as {
+    code?: unknown;
+    message?: unknown;
     status?: unknown;
     statusCode?: unknown;
     response?: { status?: unknown; statusCode?: unknown };
   };
-  return [status, statusCode, response?.status, response?.statusCode].some(
-    (candidate) => Number(candidate) === 404,
+  return (
+    [status, statusCode, response?.status, response?.statusCode].some(
+      (candidate) => Number(candidate) === 404,
+    ) ||
+    code === 'ENOENT' ||
+    (typeof message === 'string' && /^File not found(?:\b|:)/i.test(message))
   );
 }
