@@ -19,6 +19,10 @@ import {
 import { objMerge } from '../utils.js';
 import { IRegistry, IRegistryMethods, RegistryContent, RegistryType } from './IRegistry.js';
 
+interface MultiRegistryReadOptions {
+  tolerateOverlayNotFound?: boolean;
+}
+
 export interface MergedRegistryOptions {
   registries: Array<IRegistry>;
   logger?: Logger;
@@ -48,7 +52,9 @@ export class MergedRegistry implements IRegistry {
   }
 
   async listRegistryContent(): Promise<RegistryContent> {
-    const results = await this.multiRegistryRead((r) => r.listRegistryContent());
+    const results = await this.multiRegistryRead((r) => r.listRegistryContent(), {
+      tolerateOverlayNotFound: true,
+    });
     return results.reduce((acc, content) => objMerge(acc, content), {
       chains: {},
       deployments: {
@@ -63,7 +69,9 @@ export class MergedRegistry implements IRegistry {
   }
 
   async getMetadata(): Promise<ChainMap<ChainMetadata>> {
-    const results = await this.multiRegistryRead((r) => r.getMetadata());
+    const results = await this.multiRegistryRead((r) => r.getMetadata(), {
+      tolerateOverlayNotFound: true,
+    });
     return results.reduce((acc, content) => objMerge(acc, content), {});
   }
 
@@ -72,7 +80,9 @@ export class MergedRegistry implements IRegistry {
   }
 
   async getAddresses(): Promise<ChainMap<ChainAddresses>> {
-    const results = await this.multiRegistryRead((r) => r.getAddresses());
+    const results = await this.multiRegistryRead((r) => r.getAddresses(), {
+      tolerateOverlayNotFound: true,
+    });
     return results.reduce((acc, content) => objMerge(acc, content), {});
   }
 
@@ -110,22 +120,30 @@ export class MergedRegistry implements IRegistry {
   }
 
   async getWarpRoute(id: WarpRouteId): Promise<WarpCoreConfig | null> {
-    const results = await this.multiRegistryRead((r) => r.getWarpRoute(id));
+    const results = await this.multiRegistryRead((r) => r.getWarpRoute(id), {
+      tolerateOverlayNotFound: true,
+    });
     return results.find((r) => !!r) || null;
   }
 
   async getWarpDeployConfig(id: WarpRouteId): Promise<WarpRouteDeployConfig | null> {
-    const results = await this.multiRegistryRead((r) => r.getWarpDeployConfig(id));
+    const results = await this.multiRegistryRead((r) => r.getWarpDeployConfig(id), {
+      tolerateOverlayNotFound: true,
+    });
     return results.find((r) => !!r) || null;
   }
 
   async getWarpRoutes(filter?: WarpRouteFilterParams): Promise<WarpRouteConfigMap> {
-    const results = await this.multiRegistryRead((r) => r.getWarpRoutes(filter));
+    const results = await this.multiRegistryRead((r) => r.getWarpRoutes(filter), {
+      tolerateOverlayNotFound: true,
+    });
     return results.reduce((acc, content) => objMerge(acc, content), {});
   }
 
   async getWarpDeployConfigs(filter?: WarpRouteFilterParams): Promise<WarpDeployConfigMap> {
-    const results = await this.multiRegistryRead((r) => r.getWarpDeployConfigs(filter));
+    const results = await this.multiRegistryRead((r) => r.getWarpDeployConfigs(filter), {
+      tolerateOverlayNotFound: true,
+    });
     return results.reduce((acc, content) => objMerge(acc, content), {});
   }
 
@@ -148,8 +166,22 @@ export class MergedRegistry implements IRegistry {
     );
   }
 
-  protected multiRegistryRead<R>(readFn: (registry: IRegistry) => Promise<R> | R) {
-    return Promise.all(this.registries.map(readFn));
+  protected multiRegistryRead<R>(
+    readFn: (registry: IRegistry) => Promise<R> | R,
+    options?: MultiRegistryReadOptions,
+  ) {
+    return Promise.all(
+      this.registries.map(async (registry, index) => {
+        try {
+          return await readFn(registry);
+        } catch (error) {
+          if (options?.tolerateOverlayNotFound && index > 0 && isHttpNotFoundError(error)) {
+            return null as R;
+          }
+          throw error;
+        }
+      }),
+    );
   }
 
   protected async multiRegistryWrite(
@@ -179,4 +211,16 @@ export class MergedRegistry implements IRegistry {
       logger: this.logger,
     });
   }
+}
+
+function isHttpNotFoundError(error: unknown): boolean {
+  if (!error || typeof error !== 'object') return false;
+  const { status, statusCode, response } = error as {
+    status?: unknown;
+    statusCode?: unknown;
+    response?: { status?: unknown; statusCode?: unknown };
+  };
+  return [status, statusCode, response?.status, response?.statusCode].some(
+    (candidate) => Number(candidate) === 404,
+  );
 }
