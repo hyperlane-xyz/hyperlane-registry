@@ -1,5 +1,5 @@
 ---
-'@hyperlane-xyz/registry': patch
+'@hyperlane-xyz/registry': minor
 ---
 
-Allow merged registries to ignore not-found misses during reads.
+Allow merged registries to tolerate recognized not-found read misses when another registry succeeds, while still throwing when every registry misses.

@@ -307,14 +307,18 @@ describe('Registry utilities', () => {
 
     it('ignores 404 misses from the primary registry when another registry succeeds', async () => {
       const primaryRegistry = new PartialRegistry({});
-      const overlayRegistry = new PartialRegistry({});
+      const overlayRegistry = new PartialRegistry({
+        chainMetadata: { ethereum: { chainId: 1, displayName: 'Ethereum' } },
+      });
       sinon.stub(primaryRegistry, 'getMetadata').throws(notFoundError());
 
       const registry = new MergedRegistry({
         registries: [primaryRegistry, overlayRegistry],
       });
 
-      expect(await registry.getMetadata()).to.eql({});
+      expect(await registry.getMetadata()).to.eql({
+        ethereum: { chainId: 1, displayName: 'Ethereum' },
+      });
     });
 
     it('throws if all registries miss with not-found errors', async () => {

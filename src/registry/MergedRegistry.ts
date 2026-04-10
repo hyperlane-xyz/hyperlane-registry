@@ -155,6 +155,9 @@ export class MergedRegistry implements IRegistry {
           return { ok: true as const, value: await readFn(registry) };
         } catch (error) {
           if (isNotFoundError(error)) {
+            this.logger.debug(
+              `Tolerating not-found read miss from ${registry.type} registry at ${registry.uri}`,
+            );
             return { ok: false as const, error };
           }
           throw error;
