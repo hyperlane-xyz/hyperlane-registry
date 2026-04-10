@@ -340,7 +340,9 @@ describe('Registry utilities', () => {
         registries: [primaryRegistry, overlayRegistry],
       });
 
-      expect(await registry.listRegistryContent()).to.eql(primaryRegistry.listRegistryContent());
+      expect(await registry.listRegistryContent()).to.eql(
+        await primaryRegistry.listRegistryContent(),
+      );
     });
 
     it('keeps non-tolerant read paths fail-fast', async () => {
