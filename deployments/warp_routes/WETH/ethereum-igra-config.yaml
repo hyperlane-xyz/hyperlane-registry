@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x69790024D44504F05973E127197E6df17e283859"
+    chainName: igra
+    connections:
+      - token: ethereum|ethereum|0x4eB3afF1A39a6477CA84b01B8e26B0f7aEEAE9D2
+    decimals: 18
+    logoURI: /deployments/warp_routes/WETH/logo.svg
+    name: Wrapped Ether
+    standard: EvmHypSynthetic
+    symbol: WETH
+  - addressOrDenom: "0x4eB3afF1A39a6477CA84b01B8e26B0f7aEEAE9D2"
+    chainName: ethereum
+    coinGeckoId: weth
+    collateralAddressOrDenom: "0x2371e134e3455e0593363cBF89d3b6cf53740618"
+    connections:
+      - token: ethereum|igra|0x69790024D44504F05973E127197E6df17e283859
+    decimals: 18
+    logoURI: /deployments/warp_routes/WETH/logo.svg
+    name: Wrapped Ether
+    standard: EvmHypOwnerCollateral
+    symbol: WETH

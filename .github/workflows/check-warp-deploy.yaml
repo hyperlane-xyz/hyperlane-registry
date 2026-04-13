@@ -23,6 +23,34 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
 
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+
+      - name: Determine Hyperlane package version
+        id: hyperlane-version
+        run: |
+          VERSION="$(jq -r '.dependencies["@hyperlane-xyz/sdk"] // .devDependencies["@hyperlane-xyz/sdk"] // empty' package.json)"
+          if [ -z "$VERSION" ]; then
+            echo "Missing @hyperlane-xyz/sdk dependency"
+            exit 1
+          fi
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?(\+[0-9A-Za-z.-]+)?$ ]]; then
+            echo "Expected exact semver @hyperlane-xyz/sdk version, got $VERSION"
+            exit 1
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Install Hyperlane CLI
+        env:
+          HYPERLANE_CLI_VERSION: ${{ steps.hyperlane-version.outputs.version }}
+        run: |
+          if ! npm view "@hyperlane-xyz/cli@${HYPERLANE_CLI_VERSION}" version >/dev/null 2>&1; then
+            echo "No published @hyperlane-xyz/cli version ${HYPERLANE_CLI_VERSION}"
+            exit 1
+          fi
+          npm i -g "@hyperlane-xyz/cli@${HYPERLANE_CLI_VERSION}"
+
       - name: Determine Base & Head SHA
         id: determine-base-sha
         run: |
@@ -31,6 +59,7 @@ jobs:
 
       - name: Check Warp Deploy
         env:
+          HYPERLANE_SKIP_VERSION_CHECK: "1"
           # Only set PR_NUMBER for non-fork PRs (enables PR commenting)
           PR_NUMBER: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.number || '' }}
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
