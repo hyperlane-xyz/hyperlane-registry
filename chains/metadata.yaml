@@ -3922,7 +3922,7 @@ humanitytestnet:
     - http: https://rpc.testnet.humanity.org
 hyperevm:
   blockExplorers:
-    - apiUrl: https://www.hyperscan.com/api/v2
+    - apiUrl: https://www.hyperscan.com/api
       family: blockscout
       name: HyperEVM Explorer
       url: https://www.hyperscan.com
@@ -5608,6 +5608,11 @@ molten:
   technicalStack: arbitrumnitro
 monad:
   blockExplorers:
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=143
+      family: etherscan
+      name: MonadScan
+      url: https://monadscan.com
     - apiUrl: https://mainnet-beta.monvision.io/api
       family: other
       name: Monad Explorer
