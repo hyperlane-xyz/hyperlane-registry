@@ -10754,6 +10754,28 @@ USDT/ethereum-hyperevm:
       name: Tether USD
       standard: EvmHypSynthetic
       symbol: USDT
+USDT/ethereum-igra:
+  tokens:
+    - addressOrDenom: "0x46346F49b4fe8c640c5FCdbed2d6741056FEB959"
+      chainName: igra
+      connections:
+        - token: ethereum|ethereum|0xe15F7d93F761C35b5d692224418099409C749011
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDT/logo.svg
+      name: Tether USD
+      standard: EvmHypSynthetic
+      symbol: USDT
+    - addressOrDenom: "0xe15F7d93F761C35b5d692224418099409C749011"
+      chainName: ethereum
+      coinGeckoId: tether
+      collateralAddressOrDenom: "0xbEef047a543E45807105E51A8BBEFCc5950fcfBa"
+      connections:
+        - token: ethereum|igra|0x46346F49b4fe8c640c5FCdbed2d6741056FEB959
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDT/logo.svg
+      name: Tether USD
+      standard: EvmHypOwnerCollateral
+      symbol: USDT
 USDT/ethereum-inevm:
   tokens:
     - addressOrDenom: "0xab852e67bf03E74C89aF67C4BA97dd1088D3dA19"
@@ -11563,6 +11585,28 @@ WETH/carrchain:
       logoURI: /deployments/warp_routes/WETH/logo.svg
       name: Wrapped Ether
       standard: EvmHypCollateral
+      symbol: WETH
+WETH/ethereum-igra:
+  tokens:
+    - addressOrDenom: "0x69790024D44504F05973E127197E6df17e283859"
+      chainName: igra
+      connections:
+        - token: ethereum|ethereum|0x4eB3afF1A39a6477CA84b01B8e26B0f7aEEAE9D2
+      decimals: 18
+      logoURI: /deployments/warp_routes/WETH/logo.svg
+      name: Wrapped Ether
+      standard: EvmHypSynthetic
+      symbol: WETH
+    - addressOrDenom: "0x4eB3afF1A39a6477CA84b01B8e26B0f7aEEAE9D2"
+      chainName: ethereum
+      coinGeckoId: weth
+      collateralAddressOrDenom: "0x2371e134e3455e0593363cBF89d3b6cf53740618"
+      connections:
+        - token: ethereum|igra|0x69790024D44504F05973E127197E6df17e283859
+      decimals: 18
+      logoURI: /deployments/warp_routes/WETH/logo.svg
+      name: Wrapped Ether
+      standard: EvmHypOwnerCollateral
       symbol: WETH
 WETH/incentiv:
   tokens:
