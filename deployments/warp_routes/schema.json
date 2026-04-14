@@ -113,7 +113,7 @@
                     "type": "null"
                   }
                 ],
-                "description": "The address or denom, or null for native tokens"
+                "description": "The address or denom; null config values are normalized to an empty string for native tokens"
               },
               "collateralAddressOrDenom": {
                 "type": "string",
@@ -144,7 +144,7 @@
                             },
                             "token": {
                               "type": "string",
-                              "pattern": "^(.+)|(.+)|(.+)$"
+                              "pattern": "^(.+)\\|(.+)\\|(.+)$"
                             }
                           },
                           "required": [
@@ -161,7 +161,7 @@
                             },
                             "token": {
                               "type": "string",
-                              "pattern": "^(.+)|(.+)|(.+)$"
+                              "pattern": "^(.+)\\|(.+)\\|(.+)$"
                             },
                             "sourcePort": {
                               "type": "string"
@@ -189,7 +189,7 @@
                         },
                         "token": {
                           "type": "string",
-                          "pattern": "^(.+)|(.+)|(.+)$"
+                          "pattern": "^(.+)\\|(.+)\\|(.+)$"
                         },
                         "sourcePort": {
                           "type": "string"
