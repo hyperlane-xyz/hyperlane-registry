@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x46346F49b4fe8c640c5FCdbed2d6741056FEB959"
+    chainName: igra
+    connections:
+      - token: ethereum|ethereum|0xe15F7d93F761C35b5d692224418099409C749011
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypSynthetic
+    symbol: USDT
+  - addressOrDenom: "0xe15F7d93F761C35b5d692224418099409C749011"
+    chainName: ethereum
+    coinGeckoId: tether
+    collateralAddressOrDenom: "0xbEef047a543E45807105E51A8BBEFCc5950fcfBa"
+    connections:
+      - token: ethereum|igra|0x46346F49b4fe8c640c5FCdbed2d6741056FEB959
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypOwnerCollateral
+    symbol: USDT

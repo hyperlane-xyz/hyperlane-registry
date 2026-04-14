@@ -1,5 +1,27 @@
 # @hyperlane-xyz/registry
 
+## 24.3.0
+
+### Minor Changes
+
+- 50dbbde: added cbBTC warp route on base and igra
+- 4bcf8c8: added iKAS warp route on igra and ethereum
+- 8db446a: added USDC warp route on arbitrum, avalanche, base, ethereum, igra, optimism, and polygon
+- 9e39b85: added wstETH warp route on ethereum and igra
+- 4b67326: April 2nd multisig batch.
+- 3f790c7: Mark 17 chains as deprecated: story, merlin, degenchain, dogechain, tangle, harmony, superpositionmainnet, arbitrumnova, polygonzkevm, aurora, fantom, b3, bsquared, scroll, zeronetwork, moonbeam, arcadiatestnet2.
+- 01002be: extended paradex usdc route to hyperevm
+- 9f323e6: Added 1Piece/eni deployment artifacts
+- 7449c91: Deploy to mocachain, tempo, fluent, kiichain.
+- a2b0063: Updated tron & tronshasta explorer family to tronscan
+- 178b511: Allow merged registries to tolerate recognized not-found read misses when another registry succeeds, while still throwing when every registry misses.
+- cf2bd52: feat: added RISE/bsc-ethereum warp route
+
+### Patch Changes
+
+- 423f682: Replace ESLint and Prettier with oxlint and oxfmt for linting and formatting
+- 057e756: The sealevel ISM addresses are updated for eclipsemainnet, sonicsvm, and soon after the multisig ISM redeployments.
+
 ## 24.2.0
 
 ### Minor Changes
