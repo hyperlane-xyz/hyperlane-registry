@@ -11101,6 +11101,30 @@ USDTSTAGE/mode:
       name: USDT
       standard: SealevelHypCollateral
       symbol: USDTSTAGE
+USDnr/usdnr:
+  tokens:
+    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xD48e565561416dE59DA1050ED70b8d75e8eF28f9"
+      connections:
+        - token: ethereum|fluent|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDnr/logo.svg
+      name: Nerona USD
+      standard: EvmM0Portal
+      symbol: USDnr
+      warpRouteId: USDnr/usdnr
+    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
+      chainName: fluent
+      collateralAddressOrDenom: "0xD48e565561416dE59DA1050ED70b8d75e8eF28f9"
+      connections:
+        - token: ethereum|ethereum|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDnr/logo.svg
+      name: Nerona USD
+      standard: EvmM0Portal
+      symbol: USDnr
+      warpRouteId: USDnr/usdnr
 VANA/ethereum-vana:
   tokens:
     - addressOrDenom: "0x177778F19E89dD1012BdBe603F144088A95C4B53"
