@@ -10276,26 +10276,26 @@ USDS/ethereum-igra:
       symbol: USDS
 USDSC/usdsc:
   tokens:
-    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
+    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
       chainName: ethereum
       collateralAddressOrDenom: "0x3f99231dD03a9F0E7e3421c92B7b90fbe012985a"
       connections:
-        - token: ethereum|soneium|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
+        - token: ethereum|soneium|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
       decimals: 6
       logoURI: /deployments/warp_routes/USDSC/logo.svg
       name: Startale USD
-      standard: EvmM0Portal
+      standard: EvmM0PortalLite
       symbol: USDSC
       warpRouteId: USDSC/usdsc
-    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
+    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
       chainName: soneium
       collateralAddressOrDenom: "0x3f99231dD03a9F0E7e3421c92B7b90fbe012985a"
       connections:
-        - token: ethereum|ethereum|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
+        - token: ethereum|ethereum|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
       decimals: 6
       logoURI: /deployments/warp_routes/USDSC/logo.svg
       name: Startale USD
-      standard: EvmM0Portal
+      standard: EvmM0PortalLite
       symbol: USDSC
       warpRouteId: USDSC/usdsc
 USDStar/solanamainnet-sonicsvm:
@@ -14136,42 +14136,6 @@ tUSD/eclipsemainnet-ethereum:
       symbol: tUSD
 wM/wrapped-m:
   tokens:
-    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
-      chainName: ethereum
-      collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
-      connections:
-        - token: ethereum|mantra|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
-        - token: ethereum|soneium|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
-      decimals: 6
-      logoURI: /deployments/warp_routes/wM/logo.svg
-      name: WrappedM by M^0
-      standard: EvmM0Portal
-      symbol: wM
-      warpRouteId: wM/wrapped-m
-    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
-      chainName: mantra
-      collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
-      connections:
-        - token: ethereum|ethereum|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
-      decimals: 6
-      logoURI: /deployments/warp_routes/wM/logo.svg
-      name: WrappedM by M^0
-      standard: EvmM0Portal
-      symbol: wM
-      warpRouteId: wM/wrapped-m
-    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
-      chainName: soneium
-      collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
-      connections:
-        - token: ethereum|ethereum|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
-      decimals: 6
-      logoURI: /deployments/warp_routes/wM/logo.svg
-      name: WrappedM by M^0
-      standard: EvmM0Portal
-      symbol: wM
-      warpRouteId: wM/wrapped-m
-wM/wrapped-m-portal-lite:
-  tokens:
     - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
       chainName: bsc
       collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
@@ -14183,18 +14147,20 @@ wM/wrapped-m-portal-lite:
       name: WrappedM by M^0
       standard: EvmM0PortalLite
       symbol: wM
-      warpRouteId: wM/wrapped-m-portal-lite
+      warpRouteId: wM/wrapped-m
     - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
       chainName: ethereum
       collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
       connections:
         - token: ethereum|bsc|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+        - token: ethereum|mantra|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+        - token: ethereum|soneium|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
       decimals: 6
       logoURI: /deployments/warp_routes/wM/logo.svg
       name: WrappedM by M^0
       standard: EvmM0PortalLite
       symbol: wM
-      warpRouteId: wM/wrapped-m-portal-lite
+      warpRouteId: wM/wrapped-m
     - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
       chainName: linea
       collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
@@ -14205,7 +14171,29 @@ wM/wrapped-m-portal-lite:
       name: WrappedM by M^0
       standard: EvmM0PortalLite
       symbol: wM
-      warpRouteId: wM/wrapped-m-portal-lite
+      warpRouteId: wM/wrapped-m
+    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+      chainName: mantra
+      collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
+      connections:
+        - token: ethereum|ethereum|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+      decimals: 6
+      logoURI: /deployments/warp_routes/wM/logo.svg
+      name: WrappedM by M^0
+      standard: EvmM0PortalLite
+      symbol: wM
+      warpRouteId: wM/wrapped-m
+    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+      chainName: soneium
+      collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
+      connections:
+        - token: ethereum|ethereum|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+      decimals: 6
+      logoURI: /deployments/warp_routes/wM/logo.svg
+      name: WrappedM by M^0
+      standard: EvmM0PortalLite
+      symbol: wM
+      warpRouteId: wM/wrapped-m
 weETHs/eclipsemainnet-ethereum:
   tokens:
     - addressOrDenom: 7Zx4wU1QAw98MfvnPFqRh1oyumek7G5VAX6TKB3U1tcn
