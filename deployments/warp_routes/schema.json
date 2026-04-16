@@ -255,7 +255,7 @@
                     "type": "object",
                     "properties": {
                       "numerator": {
-                        "allOf": [
+                        "anyOf": [
                           {
                             "anyOf": [
                               {
@@ -263,13 +263,14 @@
                                 "format": "int64"
                               },
                               {
-                                "type": "string"
+                                "type": "integer",
+                                "minimum": 0
                               }
                             ]
                           },
                           {
-                            "type": "integer",
-                            "format": "int64"
+                            "type": "string",
+                            "pattern": "^[0-9]+$"
                           }
                         ]
                       },
