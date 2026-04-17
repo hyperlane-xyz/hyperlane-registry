@@ -3964,6 +3964,68 @@ JUP/starknet:
       name: Jupiter
       standard: StarknetHypSynthetic
       symbol: JUP
+KII/kiichain:
+  tokens:
+    - addressOrDenom: "0x3Eb6F7e90127792EbDe3C17019591C92f8B3255b"
+      chainName: base
+      connections:
+        - token: ethereum|kiichain|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
+        - token: ethereum|bsc|0x601D2D3Ba5e2F8a0D9da6653fda2a6F4A9DbbD0a
+        - token: ethereum|polygon|0x8E281996FCF50b54D7772e4a2e24E0DF27B9D59f
+        - token: ethereum|ethereum|0xE1206aF9d43966d440CEF6d78AbF4406602e90D2
+      decimals: 18
+      logoURI: /deployments/warp_routes/KII/logo.png
+      name: KII
+      standard: EvmHypSynthetic
+      symbol: KII
+    - addressOrDenom: "0x601D2D3Ba5e2F8a0D9da6653fda2a6F4A9DbbD0a"
+      chainName: bsc
+      connections:
+        - token: ethereum|kiichain|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
+        - token: ethereum|base|0x3Eb6F7e90127792EbDe3C17019591C92f8B3255b
+        - token: ethereum|polygon|0x8E281996FCF50b54D7772e4a2e24E0DF27B9D59f
+        - token: ethereum|ethereum|0xE1206aF9d43966d440CEF6d78AbF4406602e90D2
+      decimals: 18
+      logoURI: /deployments/warp_routes/KII/logo.png
+      name: KII
+      standard: EvmHypSynthetic
+      symbol: KII
+    - addressOrDenom: "0xE1206aF9d43966d440CEF6d78AbF4406602e90D2"
+      chainName: ethereum
+      connections:
+        - token: ethereum|kiichain|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
+        - token: ethereum|bsc|0x601D2D3Ba5e2F8a0D9da6653fda2a6F4A9DbbD0a
+        - token: ethereum|base|0x3Eb6F7e90127792EbDe3C17019591C92f8B3255b
+        - token: ethereum|polygon|0x8E281996FCF50b54D7772e4a2e24E0DF27B9D59f
+      decimals: 18
+      logoURI: /deployments/warp_routes/KII/logo.png
+      name: KII
+      standard: EvmHypSynthetic
+      symbol: KII
+    - addressOrDenom: "0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7"
+      chainName: kiichain
+      connections:
+        - token: ethereum|bsc|0x601D2D3Ba5e2F8a0D9da6653fda2a6F4A9DbbD0a
+        - token: ethereum|base|0x3Eb6F7e90127792EbDe3C17019591C92f8B3255b
+        - token: ethereum|polygon|0x8E281996FCF50b54D7772e4a2e24E0DF27B9D59f
+        - token: ethereum|ethereum|0xE1206aF9d43966d440CEF6d78AbF4406602e90D2
+      decimals: 18
+      logoURI: /deployments/warp_routes/KII/logo.png
+      name: KII
+      standard: EvmHypNative
+      symbol: KII
+    - addressOrDenom: "0x8E281996FCF50b54D7772e4a2e24E0DF27B9D59f"
+      chainName: polygon
+      connections:
+        - token: ethereum|kiichain|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
+        - token: ethereum|bsc|0x601D2D3Ba5e2F8a0D9da6653fda2a6F4A9DbbD0a
+        - token: ethereum|base|0x3Eb6F7e90127792EbDe3C17019591C92f8B3255b
+        - token: ethereum|ethereum|0xE1206aF9d43966d440CEF6d78AbF4406602e90D2
+      decimals: 18
+      logoURI: /deployments/warp_routes/KII/logo.png
+      name: KII
+      standard: EvmHypSynthetic
+      symbol: KII
 KING/coti-ethereum:
   tokens:
     - addressOrDenom: "0x5CF4ce6Be17CaB6d86d724804e2f1f5040205594"
