@@ -11237,6 +11237,35 @@ USDT/oft:
       name: Tether USD
       standard: EvmHypCollateral
       symbol: USDT
+USDT/oft-legacy:
+  tokens:
+    - addressOrDenom: "0x9323793FB9a071ce5fE839079925c0e39f37170F"
+      chainName: arbitrum
+      connections:
+        - token: ethereum|ethereum|0xC0dA8EF1225145E0b720d8A33471fa6360b7e73B
+        - token: tron|tron|0x43Bb7C9C64a05af94d67B52883a60756950058D7
+      decimals: 6
+      name: Tether USD
+      standard: EvmHypCollateral
+      symbol: USDT
+    - addressOrDenom: "0xC0dA8EF1225145E0b720d8A33471fa6360b7e73B"
+      chainName: ethereum
+      connections:
+        - token: ethereum|arbitrum|0x9323793FB9a071ce5fE839079925c0e39f37170F
+        - token: tron|tron|0x43Bb7C9C64a05af94d67B52883a60756950058D7
+      decimals: 6
+      name: Tether USD
+      standard: EvmHypCollateral
+      symbol: USDT
+    - addressOrDenom: "0x43Bb7C9C64a05af94d67B52883a60756950058D7"
+      chainName: tron
+      connections:
+        - token: ethereum|arbitrum|0x9323793FB9a071ce5fE839079925c0e39f37170F
+        - token: ethereum|ethereum|0xC0dA8EF1225145E0b720d8A33471fa6360b7e73B
+      decimals: 6
+      name: Tether USD
+      standard: TronHypCollateral
+      symbol: USDT
 USDT/solanamainnet-sonicsvm:
   tokens:
     - addressOrDenom: CKrNt2y1e2H9728mHRVYyF2owy9eKreepRKpTMj2j8JG
