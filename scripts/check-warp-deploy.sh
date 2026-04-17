@@ -13,6 +13,15 @@ fi
 export BASE_COMMIT="$1"
 export HEAD_COMMIT="$2"
 
+is_m0_warp_route() {
+    local warp_route_id="$1"
+    local config_file="deployments/warp_routes/${warp_route_id}-config.yaml"
+
+    [ -f "$config_file" ] || return 1
+
+    grep -Eq 'standard:[[:space:]]*EvmM0Portal(Lite)?' "$config_file"
+}
+
 WARP_ROUTE_IDS=$(
     # ARM = Additions, Renames, Modifications
     # Use three-dot syntax to only show changes from the branch, not changes from main
@@ -45,6 +54,13 @@ EXIT_CODE=0
 
 for WARP_ROUTE_ID in $WARP_ROUTE_IDS; do
     export WARP_ROUTE_ID
+
+    if is_m0_warp_route "$WARP_ROUTE_ID"; then
+      ONCHAIN_STATUS="N/A (M0 exempt)"
+      CONFIG_SYNC_STATUS="N/A (M0 exempt)"
+      JOB_SUMMARY+="| $WARP_ROUTE_ID | $ONCHAIN_STATUS | $CONFIG_SYNC_STATUS |\n"
+      continue
+    fi
     
     # Check 1: Registry YAML vs on-chain via published CLI
     if hyperlane \

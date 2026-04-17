@@ -113,7 +113,7 @@
                     "type": "null"
                   }
                 ],
-                "description": "The address or denom, or null for native tokens"
+                "description": "The address or denom; null config values are normalized to an empty string for native tokens"
               },
               "collateralAddressOrDenom": {
                 "type": "string",
@@ -144,7 +144,7 @@
                             },
                             "token": {
                               "type": "string",
-                              "pattern": "^(.+)|(.+)|(.+)$"
+                              "pattern": "^(.+)\\|(.+)\\|(.+)$"
                             }
                           },
                           "required": [
@@ -161,7 +161,7 @@
                             },
                             "token": {
                               "type": "string",
-                              "pattern": "^(.+)|(.+)|(.+)$"
+                              "pattern": "^(.+)\\|(.+)\\|(.+)$"
                             },
                             "sourcePort": {
                               "type": "string"
@@ -189,7 +189,7 @@
                         },
                         "token": {
                           "type": "string",
-                          "pattern": "^(.+)|(.+)|(.+)$"
+                          "pattern": "^(.+)\\|(.+)\\|(.+)$"
                         },
                         "sourcePort": {
                           "type": "string"
@@ -228,9 +228,63 @@
                 "description": "The CoinGecko id of the token, used for price lookups"
               },
               "scale": {
-                "type": "integer",
-                "minimum": 0,
-                "exclusiveMaximum": 256,
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "exclusiveMinimum": 0
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "numerator": {
+                        "type": "integer",
+                        "exclusiveMinimum": 0
+                      },
+                      "denominator": {
+                        "type": "integer",
+                        "exclusiveMinimum": 0
+                      }
+                    },
+                    "required": [
+                      "numerator",
+                      "denominator"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "numerator": {
+                        "anyOf": [
+                          {
+                            "anyOf": [
+                              {
+                                "type": "integer",
+                                "format": "int64"
+                              },
+                              {
+                                "type": "integer",
+                                "minimum": 0
+                              }
+                            ]
+                          },
+                          {
+                            "type": "string",
+                            "pattern": "^[0-9]+$"
+                          }
+                        ]
+                      },
+                      "denominator": {
+                        "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/tokens/items/properties/scale/anyOf/2/properties/numerator"
+                      }
+                    },
+                    "required": [
+                      "numerator",
+                      "denominator"
+                    ],
+                    "additionalProperties": false
+                  }
+                ],
                 "description": "The scaling factor of the token"
               },
               "warpRouteId": {
