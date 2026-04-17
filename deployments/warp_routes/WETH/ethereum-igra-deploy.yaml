@@ -1,0 +1,24 @@
+ethereum:
+  decimals: 18
+  gas: 300000
+  mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
+  name: Wrapped Ether
+  owner: "0x442f580802aDa1B1E83DCaf103682C59dAEe904E"
+  symbol: WETH
+  token: "0x2371e134e3455e0593363cBF89d3b6cf53740618"
+  type: collateralVault
+igra:
+  decimals: 18
+  mailbox: "0x3a867fCfFeC2B790970eeBDC9023E75B0a172aa7"
+  name: Wrapped Ether
+  owner: "0xe1C9B631fD776442b7E2c91a58C6d713Bb13FF03"
+  symbol: WETH
+  tokenFee:
+    feeContracts:
+      ethereum:
+        bps: 6
+        owner: "0x42cb788529463B1F41de9E3cd3d2906930aCd32F"
+        type: LinearFee
+    owner: "0x42cb788529463B1F41de9E3cd3d2906930aCd32F"
+    type: RoutingFee
+  type: synthetic
