@@ -11146,6 +11146,35 @@ USDT/matchain:
       name: Tether USD
       standard: EvmHypSynthetic
       symbol: USDT
+USDT/oft:
+  tokens:
+    - addressOrDenom: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
+      chainName: arbitrum
+      connections:
+        - token: ethereum|ethereum|0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6
+        - token: ethereum|plasma|0x93bfFA2231fbA5029997603fb68D9aC08024Baa2
+      decimals: 6
+      name: Tether USD
+      standard: EvmHypCollateral
+      symbol: USDT
+    - addressOrDenom: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
+      chainName: ethereum
+      connections:
+        - token: ethereum|arbitrum|0xE4c1A1E54C232454311cF68610c3885FdD991c0E
+        - token: ethereum|plasma|0x93bfFA2231fbA5029997603fb68D9aC08024Baa2
+      decimals: 6
+      name: Tether USD
+      standard: EvmHypCollateral
+      symbol: USDT
+    - addressOrDenom: "0x93bfFA2231fbA5029997603fb68D9aC08024Baa2"
+      chainName: plasma
+      connections:
+        - token: ethereum|arbitrum|0xE4c1A1E54C232454311cF68610c3885FdD991c0E
+        - token: ethereum|ethereum|0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6
+      decimals: 6
+      name: Tether USD
+      standard: EvmHypCollateral
+      symbol: USDT
 USDT/solanamainnet-sonicsvm:
   tokens:
     - addressOrDenom: CKrNt2y1e2H9728mHRVYyF2owy9eKreepRKpTMj2j8JG
