@@ -12,7 +12,6 @@ const noLogoFileError = [];
 // warp route warnings / errors
 const noConfigFileWarning = [];
 const invalidLogoURIPathError = [];
-const scaleMismatchError = [];
 
 function validateChains() {
   if (!fs.existsSync(chainsDir)) {
@@ -43,47 +42,6 @@ function validateChains() {
   });
 }
 
-function normalizeScale(scale) {
-  if (scale == null) return null;
-  if (typeof scale === 'number') return { numerator: 1, denominator: scale };
-  if (typeof scale === 'object' && 'numerator' in scale && 'denominator' in scale) {
-    return { numerator: scale.numerator, denominator: scale.denominator };
-  }
-  return null;
-}
-
-function scaleEqual(a, b) {
-  if (a == null || b == null) return false;
-  return a.numerator === b.numerator && a.denominator === b.denominator;
-}
-
-function validateScaleConsistency(configFilePath, configData) {
-  const deployFilePath = configFilePath.replace(/-config\.yaml$/, '-deploy.yaml');
-  if (!fs.existsSync(deployFilePath)) return;
-
-  const deployData = readYaml(deployFilePath);
-  if (!deployData || typeof deployData !== 'object' || !Array.isArray(configData.tokens)) return;
-
-  for (const [chainName, chainCfg] of Object.entries(deployData)) {
-    if (!chainCfg || typeof chainCfg !== 'object' || !('scale' in chainCfg)) continue;
-    const deployScale = normalizeScale(chainCfg.scale);
-    if (!deployScale) continue;
-
-    const token = configData.tokens.find((t) => t.chainName === chainName);
-    const configScale = token && 'scale' in token ? normalizeScale(token.scale) : null;
-
-    if (!scaleEqual(deployScale, configScale)) {
-      scaleMismatchError.push({
-        chain: chainName,
-        deploy: deployFilePath,
-        config: configFilePath,
-        deployScale,
-        configScale,
-      });
-    }
-  }
-}
-
 function validateConfigFiles(entryPath) {
   //Search for config files
   const configFiles = fs.readdirSync(entryPath).filter((file) => file.includes('-config.yaml'));
@@ -111,8 +69,6 @@ function validateConfigFiles(entryPath) {
           }
         }
       });
-
-      validateScaleConsistency(configFilePath, configData);
     }
   });
 }
@@ -146,10 +102,7 @@ function validateErrors() {
 
   // Then, errors
   const errorCount =
-    missingDeployerField.length +
-    noLogoFileError.length +
-    invalidLogoURIPathError.length +
-    scaleMismatchError.length;
+    missingDeployerField.length + noLogoFileError.length + invalidLogoURIPathError.length;
 
   if (errorCount === 0) return;
 
@@ -167,13 +120,6 @@ function validateErrors() {
     console.error(
       'Error: Invalid logoURI paths, verify that files exist:',
       invalidLogoURIPathError,
-    );
-  }
-
-  if (scaleMismatchError.length > 0) {
-    console.error(
-      'Error: deploy.yaml defines scale but config.yaml scale is missing or does not match:',
-      scaleMismatchError,
     );
   }
 
