@@ -1,7 +1,23 @@
-import { ChainMetadata } from '@hyperlane-xyz/sdk';
+import {
+  ChainMetadata,
+  NormalizedScale,
+  ScaleInput,
+  normalizeScale as sdkNormalizeScale,
+} from '@hyperlane-xyz/sdk';
+import { isNullish } from '@hyperlane-xyz/utils';
 import { stringify } from 'yaml';
 
 import { ABACUS_WORKS_DEPLOYER_NAME } from './consts.js';
+
+/**
+ * Returns the SDK's canonical {numerator, denominator} bigint form, or null
+ * when scale is absent. The null distinguishes "scale not set" from "scale set
+ * to identity {1,1}", which the SDK's normalizeScale collapses together.
+ */
+export function normalizeScale(scale: ScaleInput | null | undefined): NormalizedScale | null {
+  if (isNullish(scale)) return null;
+  return sdkNormalizeScale(scale);
+}
 
 export function toYamlString(data: any, prefix?: string): string {
   const yamlString = stringify(data, {
