@@ -1,5 +1,5 @@
 ---
-"@hyperlane-xyz/registry": patch
+'@hyperlane-xyz/registry': patch
 ---
 
 Update CCTP warp route config
