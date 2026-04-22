@@ -1,0 +1,21 @@
+tokens:
+  - chainName: igra
+    standard: EvmHypSynthetic
+    decimals: 9
+    symbol: SOL
+    name: Solana
+    addressOrDenom: "0xB9EC76392f7d48F6B266431951cb7c645bd711e2"
+    coinGeckoId: solana
+    logoURI: /deployments/warp_routes/SOL/logo.svg
+    connections:
+      - token: sealevel|solanamainnet|HL6Sij9tdcU3tEvpSnaRzLVaTLLqE5zjv8k2Pmp2x3RT
+  - chainName: solanamainnet
+    standard: SealevelHypNative
+    decimals: 9
+    symbol: SOL
+    name: Solana
+    addressOrDenom: HL6Sij9tdcU3tEvpSnaRzLVaTLLqE5zjv8k2Pmp2x3RT
+    coinGeckoId: solana
+    logoURI: /deployments/warp_routes/SOL/logo.svg
+    connections:
+      - token: ethereum|igra|0xB9EC76392f7d48F6B266431951cb7c645bd711e2
