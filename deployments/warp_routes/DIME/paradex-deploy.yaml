@@ -19,9 +19,22 @@ mode:
   type: synthetic
 paradex:
   decimals: 18
+  foreignDeployment: "0x0796b6a63adcce73be0809d046b05c853c2e1de60f98fbb17836f7f01d2bc091"
   gas: 5000000
   name: DIME
   owner: "0x00395a1eebf43d06be83684da623c4c2ab8e1ea4a89dfa71ee04677b6e19a428"
   symbol: DIME
   token: "0x316cb56a8cc7c478ea7c9b22f33571330bc61ea0312f2222d182b4b6b3fa4b2"
   type: collateralDex
+solanamainnet:
+  decimals: 9
+  gas: 300000
+  hook: BhNcatUDC2D5JTyeaqrdSukiVFsEHK7e3hVmKMztwefv
+  metadataUri: "https://raw.githubusercontent.com/hyperlane-xyz/hyperlane-registry/96f97d9cb4a58e7d8839c2b91259fa2ce06bff43/deployments/warp_routes/DIME/metadata.json"
+  name: DIME
+  owner: HBPwc1dSuaJCEwWkJvfeWUqJguFqPTVaggfDGssc3LVt
+  # Upscale to 18 decimals when sending to remote chains
+  # Downscale to 9 decimals when receiving on solana
+  scale: 1000000000
+  symbol: DIME
+  type: synthetic
