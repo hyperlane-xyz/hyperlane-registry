@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x84eADcE7C08788b041351BbaC9781D8e820EA96A"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0x46850aD61C2B7d64d08c9C754F45254596696984"
+    connections:
+      - token: ethereum|ethereum|0xb6A23ffD07b493a051831092fAa83f31CA9f98e7
+    decimals: 6
+    name: PayPal USD
+    standard: EvmHypCrossCollateralRouter
+    symbol: PYUSD
+  - addressOrDenom: "0xb6A23ffD07b493a051831092fAa83f31CA9f98e7"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x6c3ea9036406852006290770BEdFcAbA0e23A0e8"
+    connections:
+      - token: ethereum|arbitrum|0x84eADcE7C08788b041351BbaC9781D8e820EA96A
+    decimals: 6
+    name: PayPal USD
+    standard: EvmHypCrossCollateralRouter
+    symbol: PYUSD
