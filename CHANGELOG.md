@@ -1,5 +1,46 @@
 # @hyperlane-xyz/registry
 
+## 25.0.0
+
+### Major Changes
+
+- 798d33a: Rename USDT/eclipsemainnet-ethereum-solanamainnet route to USDT/eclipsemainnet and extend route
+
+### Minor Changes
+
+- ea3b41c: added BLEND warp route on Fluent (collateral) and Solana (synthetic)
+- f3ed361: added KII warp route on kiichain, ethereum, base, polygon, and bsc
+- 54fe917: Added missing scale fields to warp route config files for TRUMP, USDC (aleo, carrchain, matchain), USDT (aleo, carrchain, eclipsemainnet), and WBTC (carrchain) routes. These are needed by the UI and SDK to correctly compute destination amounts for routes with different decimals.
+- ab1ae00: added SOL warp route on solanamainnet and igra
+- 44df768: added USDS warp route on ethereum and igra
+- eea67a7: added USDT warp route on ethereum and igra
+- 232b400: added WETH warp route on ethereum and igra
+- 305d3f2: Update Hyperlane dependencies to SDK 31.0.0 and Utils 31.0.0
+- f0c3369: Update Hyperlane dependencies to SDK 31.1.0 and Utils 31.1.0
+- 8e80f68: Update Hyperlane dependencies to SDK 31.2.1 and Utils 31.2.1
+- 6933fa5: Update Hyperlane dependencies to SDK 32.0.1 and Utils 32.0.1
+- ed3a4b8: Extended eclipse usdc warp route to katana and bsc
+- 9061e91: Remove withdrawal capabilities for zircuit, blast, swell, taiko, berachain and sei for EZETH/renzo
+- 5f9a4de: feat: added testnet cctp v2 fast transfer warp route for testing
+- 5084ac3: Removed v2 suffix from hyperevm block explorer api url + added monadscan explorer info
+- 8eecd1d: Remove wM routes between Ethereum, Linea and BSC
+- 709f357: Added USDT/oft-legacy collateralOft warp route deployment artifacts for ethereum, arbitrum, and tron using LayerZero Legacy Mesh OFT bridge contracts.
+- 4d4deeb: Added USDT/oft collateralOft warp route deployment artifacts for ethereum, arbitrum, and plasma using LayerZero OFT bridge contracts.
+
+### Patch Changes
+
+- fae314d: CI warp route checks were switched from the Docker-based infra script to the published Hyperlane CLI, with the CLI version pinned to the registry's SDK dependency.
+- 72e1e69: The warp deploy check was updated to exempt M0 artifacts from deploy-config enforcement.
+- 63de335: Added missing scale fields to USDC/eclipsemainnet warp route config tokens to match the scales defined in the corresponding deploy file.
+- e3725bb: swap ctUSD logo from jpg to svg
+- 0fdb3e8: rename BLEND token name to Fluent in configs
+- 590bf23: rename BLEND token name to Fluent
+- 9ba14fe: Update CCTP warp route config
+- 7defecd: Migrate wM (Mantra, Soneium) and USDSC (Ethereum, Soneium) warp routes to the new EvmM0Portal. Split wM into two route configs: wrapped-m (Ethereum/Mantra/Soneium on EvmM0Portal) and wrapped-m-portal-lite (BSC/Ethereum/Linea on EvmM0PortalLite, to be deprecated).
+- 65ccf42: Fixed usdc fpwr metadata
+- 42133ee: Add USDnr (Nerona USD) warp route between Ethereum and FLuent using EvmM0Portal standard
+- d5132be: update USDnr logo
+
 ## 24.3.0
 
 ### Minor Changes

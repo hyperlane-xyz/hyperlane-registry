@@ -256,6 +256,31 @@ BEST/ethereum:
       name: Best Wallet Token
       standard: EvmHypCollateral
       symbol: BEST
+BLEND/fluent:
+  tokens:
+    - addressOrDenom: "0x2bef59e84615371304bd731601f6344F5F304504"
+      chainName: fluent
+      collateralAddressOrDenom: "0x1385B8f55A84f2BdA13EeD4099d29Eae03d553b2"
+      connections:
+        - token: sealevel|solanamainnet|4iQfUG5RC58qAdwiLUUv3xmUnADviy4TQ1pqJVrSR2fE
+      decimals: 18
+      logoURI: /deployments/warp_routes/BLEND/logo.svg
+      name: Fluent
+      standard: EvmHypCollateral
+      symbol: BLEND
+    - addressOrDenom: 4iQfUG5RC58qAdwiLUUv3xmUnADviy4TQ1pqJVrSR2fE
+      chainName: solanamainnet
+      collateralAddressOrDenom: BWsnyEa1XtsNRdgPaDoA1WVUonF7BBGZTd2zc72NQsWT
+      connections:
+        - token: ethereum|fluent|0x2bef59e84615371304bd731601f6344F5F304504
+      decimals: 9
+      logoURI: /deployments/warp_routes/BLEND/logo.svg
+      name: Fluent
+      scale:
+        denominator: 1
+        numerator: 1000000000
+      standard: SealevelHypSynthetic
+      symbol: BLEND
 BNB/bsc-kalychain:
   tokens:
     - addressOrDenom: "0x8d0e034611B691683377d2fC9958122a30F7DAab"
@@ -3840,64 +3865,64 @@ JUP/starknet:
       symbol: JUP
 KII/kiichain:
   tokens:
-    - addressOrDenom: "0x3Eb6F7e90127792EbDe3C17019591C92f8B3255b"
-      chainName: base
-      connections:
-        - token: ethereum|kiichain|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
-        - token: ethereum|bsc|0x601D2D3Ba5e2F8a0D9da6653fda2a6F4A9DbbD0a
-        - token: ethereum|polygon|0x8E281996FCF50b54D7772e4a2e24E0DF27B9D59f
-        - token: ethereum|ethereum|0xE1206aF9d43966d440CEF6d78AbF4406602e90D2
-      decimals: 18
-      logoURI: /deployments/warp_routes/KII/logo.png
-      name: KII
-      standard: EvmHypSynthetic
-      symbol: KII
-    - addressOrDenom: "0x601D2D3Ba5e2F8a0D9da6653fda2a6F4A9DbbD0a"
-      chainName: bsc
-      connections:
-        - token: ethereum|kiichain|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
-        - token: ethereum|base|0x3Eb6F7e90127792EbDe3C17019591C92f8B3255b
-        - token: ethereum|polygon|0x8E281996FCF50b54D7772e4a2e24E0DF27B9D59f
-        - token: ethereum|ethereum|0xE1206aF9d43966d440CEF6d78AbF4406602e90D2
-      decimals: 18
-      logoURI: /deployments/warp_routes/KII/logo.png
-      name: KII
-      standard: EvmHypSynthetic
-      symbol: KII
-    - addressOrDenom: "0xE1206aF9d43966d440CEF6d78AbF4406602e90D2"
-      chainName: ethereum
-      connections:
-        - token: ethereum|kiichain|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
-        - token: ethereum|bsc|0x601D2D3Ba5e2F8a0D9da6653fda2a6F4A9DbbD0a
-        - token: ethereum|base|0x3Eb6F7e90127792EbDe3C17019591C92f8B3255b
-        - token: ethereum|polygon|0x8E281996FCF50b54D7772e4a2e24E0DF27B9D59f
-      decimals: 18
-      logoURI: /deployments/warp_routes/KII/logo.png
-      name: KII
-      standard: EvmHypSynthetic
-      symbol: KII
-    - addressOrDenom: "0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7"
+    - addressOrDenom: "0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886"
       chainName: kiichain
       connections:
-        - token: ethereum|bsc|0x601D2D3Ba5e2F8a0D9da6653fda2a6F4A9DbbD0a
-        - token: ethereum|base|0x3Eb6F7e90127792EbDe3C17019591C92f8B3255b
-        - token: ethereum|polygon|0x8E281996FCF50b54D7772e4a2e24E0DF27B9D59f
-        - token: ethereum|ethereum|0xE1206aF9d43966d440CEF6d78AbF4406602e90D2
+        - token: ethereum|bsc|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|polygon|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|base|0x3EBA6644819546C44Eb3e7c3A92f034f921dcA80
+        - token: ethereum|ethereum|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
       decimals: 18
       logoURI: /deployments/warp_routes/KII/logo.png
-      name: KII
+      name: Kiichain
       standard: EvmHypNative
       symbol: KII
-    - addressOrDenom: "0x8E281996FCF50b54D7772e4a2e24E0DF27B9D59f"
-      chainName: polygon
+    - addressOrDenom: "0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886"
+      chainName: bsc
       connections:
-        - token: ethereum|kiichain|0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7
-        - token: ethereum|bsc|0x601D2D3Ba5e2F8a0D9da6653fda2a6F4A9DbbD0a
-        - token: ethereum|base|0x3Eb6F7e90127792EbDe3C17019591C92f8B3255b
-        - token: ethereum|ethereum|0xE1206aF9d43966d440CEF6d78AbF4406602e90D2
+        - token: ethereum|kiichain|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|polygon|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|base|0x3EBA6644819546C44Eb3e7c3A92f034f921dcA80
+        - token: ethereum|ethereum|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
       decimals: 18
       logoURI: /deployments/warp_routes/KII/logo.png
-      name: KII
+      name: Kiichain
+      standard: EvmHypSynthetic
+      symbol: KII
+    - addressOrDenom: "0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886"
+      chainName: polygon
+      connections:
+        - token: ethereum|kiichain|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|bsc|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|base|0x3EBA6644819546C44Eb3e7c3A92f034f921dcA80
+        - token: ethereum|ethereum|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+      decimals: 18
+      logoURI: /deployments/warp_routes/KII/logo.png
+      name: Kiichain
+      standard: EvmHypSynthetic
+      symbol: KII
+    - addressOrDenom: "0x3EBA6644819546C44Eb3e7c3A92f034f921dcA80"
+      chainName: base
+      connections:
+        - token: ethereum|kiichain|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|bsc|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|polygon|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|ethereum|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+      decimals: 18
+      logoURI: /deployments/warp_routes/KII/logo.png
+      name: Kiichain
+      standard: EvmHypSynthetic
+      symbol: KII
+    - addressOrDenom: "0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886"
+      chainName: ethereum
+      connections:
+        - token: ethereum|kiichain|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|bsc|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|polygon|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|base|0x3EBA6644819546C44Eb3e7c3A92f034f921dcA80
+      decimals: 18
+      logoURI: /deployments/warp_routes/KII/logo.png
+      name: Kiichain
       standard: EvmHypSynthetic
       symbol: KII
 KING/coti-ethereum:
@@ -5571,6 +5596,28 @@ SOL/hyperevm-solanamainnet:
       coinGeckoId: solana
       connections:
         - token: ethereum|hyperevm|0x96029bcf706FAC4176492F4a05f63f7d23cE78fb
+      decimals: 9
+      logoURI: /deployments/warp_routes/SOL/logo.svg
+      name: Solana
+      standard: SealevelHypNative
+      symbol: SOL
+SOL/igra:
+  tokens:
+    - addressOrDenom: "0xB9EC76392f7d48F6B266431951cb7c645bd711e2"
+      chainName: igra
+      coinGeckoId: solana
+      connections:
+        - token: sealevel|solanamainnet|HL6Sij9tdcU3tEvpSnaRzLVaTLLqE5zjv8k2Pmp2x3RT
+      decimals: 9
+      logoURI: /deployments/warp_routes/SOL/logo.svg
+      name: Solana
+      standard: EvmHypSynthetic
+      symbol: SOL
+    - addressOrDenom: HL6Sij9tdcU3tEvpSnaRzLVaTLLqE5zjv8k2Pmp2x3RT
+      chainName: solanamainnet
+      coinGeckoId: solana
+      connections:
+        - token: ethereum|igra|0xB9EC76392f7d48F6B266431951cb7c645bd711e2
       decimals: 9
       logoURI: /deployments/warp_routes/SOL/logo.svg
       name: Solana
@@ -10276,26 +10323,26 @@ USDS/ethereum-igra:
       symbol: USDS
 USDSC/usdsc:
   tokens:
-    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
       chainName: ethereum
       collateralAddressOrDenom: "0x3f99231dD03a9F0E7e3421c92B7b90fbe012985a"
       connections:
-        - token: ethereum|soneium|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+        - token: ethereum|soneium|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
       decimals: 6
       logoURI: /deployments/warp_routes/USDSC/logo.svg
       name: Startale USD
-      standard: EvmM0PortalLite
+      standard: EvmM0Portal
       symbol: USDSC
       warpRouteId: USDSC/usdsc
-    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
       chainName: soneium
       collateralAddressOrDenom: "0x3f99231dD03a9F0E7e3421c92B7b90fbe012985a"
       connections:
-        - token: ethereum|ethereum|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+        - token: ethereum|ethereum|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
       decimals: 6
       logoURI: /deployments/warp_routes/USDSC/logo.svg
       name: Startale USD
-      standard: EvmM0PortalLite
+      standard: EvmM0Portal
       symbol: USDSC
       warpRouteId: USDSC/usdsc
 USDStar/solanamainnet-sonicsvm:
@@ -11320,6 +11367,30 @@ USDTSTAGE/mode:
       name: USDT
       standard: SealevelHypCollateral
       symbol: USDTSTAGE
+USDnr/usdnr:
+  tokens:
+    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xD48e565561416dE59DA1050ED70b8d75e8eF28f9"
+      connections:
+        - token: ethereum|fluent|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDnr/logo.svg
+      name: Nerona USD
+      standard: EvmM0Portal
+      symbol: USDnr
+      warpRouteId: USDnr/usdnr
+    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
+      chainName: fluent
+      collateralAddressOrDenom: "0xD48e565561416dE59DA1050ED70b8d75e8eF28f9"
+      connections:
+        - token: ethereum|ethereum|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDnr/logo.svg
+      name: Nerona USD
+      standard: EvmM0Portal
+      symbol: USDnr
+      warpRouteId: USDnr/usdnr
 VANA/ethereum-vana:
   tokens:
     - addressOrDenom: "0x177778F19E89dD1012BdBe603F144088A95C4B53"
@@ -11350,7 +11421,7 @@ VRA/bsc-ethereum:
       decimals: 18
       logoURI: /deployments/warp_routes/VRA/logo.png
       name: VERA
-      scale: 10
+      scale: 1
       standard: EvmHypCollateral
       symbol: VRA
     - addressOrDenom: "0xde1bb600f24e9c6E49d51765fB836b070762e45D"
@@ -14136,62 +14207,38 @@ tUSD/eclipsemainnet-ethereum:
       symbol: tUSD
 wM/wrapped-m:
   tokens:
-    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
-      chainName: bsc
-      collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
-      connections:
-        - token: ethereum|ethereum|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
-        - token: ethereum|linea|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
-      decimals: 6
-      logoURI: /deployments/warp_routes/wM/logo.svg
-      name: WrappedM by M^0
-      standard: EvmM0PortalLite
-      symbol: wM
-      warpRouteId: wM/wrapped-m
-    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
       chainName: ethereum
       collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
       connections:
-        - token: ethereum|bsc|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
-        - token: ethereum|mantra|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
-        - token: ethereum|soneium|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+        - token: ethereum|mantra|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
+        - token: ethereum|soneium|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
       decimals: 6
       logoURI: /deployments/warp_routes/wM/logo.svg
       name: WrappedM by M^0
-      standard: EvmM0PortalLite
+      standard: EvmM0Portal
       symbol: wM
       warpRouteId: wM/wrapped-m
-    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
-      chainName: linea
-      collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
-      connections:
-        - token: ethereum|bsc|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
-      decimals: 6
-      logoURI: /deployments/warp_routes/wM/logo.svg
-      name: WrappedM by M^0
-      standard: EvmM0PortalLite
-      symbol: wM
-      warpRouteId: wM/wrapped-m
-    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
       chainName: mantra
       collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
       connections:
-        - token: ethereum|ethereum|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+        - token: ethereum|ethereum|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
       decimals: 6
       logoURI: /deployments/warp_routes/wM/logo.svg
       name: WrappedM by M^0
-      standard: EvmM0PortalLite
+      standard: EvmM0Portal
       symbol: wM
       warpRouteId: wM/wrapped-m
-    - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
+    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
       chainName: soneium
       collateralAddressOrDenom: "0x437cc33344a0B27A429f795ff6B469C72698B291"
       connections:
-        - token: ethereum|ethereum|0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE
+        - token: ethereum|ethereum|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
       decimals: 6
       logoURI: /deployments/warp_routes/wM/logo.svg
       name: WrappedM by M^0
-      standard: EvmM0PortalLite
+      standard: EvmM0Portal
       symbol: wM
       warpRouteId: wM/wrapped-m
 weETHs/eclipsemainnet-ethereum:

@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-swap ctUSD logo from jpg to svg
+rename BLEND token name to Fluent

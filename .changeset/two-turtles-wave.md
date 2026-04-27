@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Fixed usdc fpwr metadata
+Fix USDnr token logo
