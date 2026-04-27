@@ -1,0 +1,22 @@
+arbitrumsepolia:
+  hook:
+    type: aggregationHook
+    hooks:
+      - type: cctpHook
+        address: "0xbfcE950a54a2052aec323c8884F034373Ca9CAbD"
+      - type: defaultHook
+  interchainSecurityModule: "0xbfcE950a54a2052aec323c8884F034373Ca9CAbD"
+  mailbox: "0x598facE78a4302f11E3de0bee1894Da0b2Cb71F8"
+  owner: "0xe699ceCa237DD38e8f2Fa308D7d1a2BeCFC5493E"
+  type: synthetic
+basesepolia:
+  hook:
+    type: aggregationHook
+    hooks:
+      - type: cctpHook
+        address: "0x6AD4F1CCBB4e897eFbBb2A62c7ccbBd7fe941848"
+      - type: defaultHook
+  interchainSecurityModule: "0x6AD4F1CCBB4e897eFbBb2A62c7ccbBd7fe941848"
+  mailbox: "0x6966b0E55883d49BFB24539356a2f8A673E02039"
+  owner: "0xe699ceCa237DD38e8f2Fa308D7d1a2BeCFC5493E"
+  type: native
