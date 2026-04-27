@@ -1,5 +1,23 @@
 # @hyperlane-xyz/registry
 
+## 25.1.0
+
+### Minor Changes
+
+- 5022bba: added nara chain and USDC/USDT/SOL warp routes between nara and solanamainnet
+- 977c4d4: Update Hyperlane dependencies to SDK 33.0.2 and Utils 33.0.2
+- 0581af5: Mark everclear as deprecated.
+- dc12521: Mark milkyway as deprecated.
+- 8708102: renamed BLEND to Fluent
+- 08b134c: redeployed KII warp route on kiichain, ethereum, base, polygon, and bsc
+
+### Patch Changes
+
+- 8708102: rename BLEND token name to Fluent
+- 254dc69: Update scale for bsc in VRA/bsc-ethereum from 10 to 1
+- 3866723: Enable missing connections for USDT/eclipsemainnet route
+- 71cded3: Fix USDnr token logo
+
 ## 25.0.0
 
 ### Major Changes
