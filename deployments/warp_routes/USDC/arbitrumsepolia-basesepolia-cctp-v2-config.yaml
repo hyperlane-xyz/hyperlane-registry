@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xbfcE950a54a2052aec323c8884F034373Ca9CAbD"
+    chainName: arbitrumsepolia
+    connections:
+      - token: ethereum|basesepolia|0x6AD4F1CCBB4e897eFbBb2A62c7ccbBd7fe941848
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x6AD4F1CCBB4e897eFbBb2A62c7ccbBd7fe941848"
+    chainName: basesepolia
+    connections:
+      - token: ethereum|arbitrumsepolia|0xbfcE950a54a2052aec323c8884F034373Ca9CAbD
+    decimals: 6
+    name: USDC
+    standard: EvmHypCollateral
+    symbol: USDC
