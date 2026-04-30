@@ -6324,6 +6324,28 @@ TIA/mantapacific-osmosis:
       name: TIA.o
       standard: CwHypCollateral
       symbol: TIA.o
+TIBBIR/igra:
+  tokens:
+    - addressOrDenom: "0x7623eE55F82BA257De96Ae828363b548e808b045"
+      chainName: igra
+      connections:
+        - token: ethereum|base|0x3131f6B80C26936aB03F7d9D29Eb4Ddf36AC3FB5
+      decimals: 18
+      logoURI: /deployments/warp_routes/TIBBIR/logo.png
+      name: Ribbita by Virtuals
+      standard: EvmHypSynthetic
+      symbol: TIBBIR
+    - addressOrDenom: "0x3131f6B80C26936aB03F7d9D29Eb4Ddf36AC3FB5"
+      chainName: base
+      coinGeckoId: ribbita-by-virtuals
+      collateralAddressOrDenom: "0xa4a2e2ca3fbfe21aed83471d28b6f65a233c6e00"
+      connections:
+        - token: ethereum|igra|0x7623eE55F82BA257De96Ae828363b548e808b045
+      decimals: 18
+      logoURI: /deployments/warp_routes/TIBBIR/logo.png
+      name: Ribbita by Virtuals
+      standard: EvmHypCollateral
+      symbol: TIBBIR
 TOBY/base-optimism:
   tokens:
     - addressOrDenom: "0xf2aCC7a8Cd1fAA7a178B1569e11505372ea7943B"
