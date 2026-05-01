@@ -366,7 +366,7 @@ arbitrum:
   displayName: Arbitrum
   domainId: 42161
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-arbitrum.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/arb1
   index:
     from: 143649797
   name: arbitrum
@@ -772,7 +772,7 @@ avalanche:
   displayName: Avalanche
   domainId: 43114
   gasCurrencyCoinGeckoId: avalanche-2
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-avalanche.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/avax
   name: avalanche
   nativeToken:
     decimals: 18
@@ -844,7 +844,7 @@ base:
   displayName: Base
   domainId: 8453
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-base.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/base
   name: base
   nativeToken:
     decimals: 18
@@ -964,7 +964,7 @@ berachain:
   displayName: Berachain
   domainId: 80094
   gasCurrencyCoinGeckoId: berachain-bera
-  gnosisSafeTransactionServiceUrl: https://transaction.safe.berachain.com
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/berachain
   name: berachain
   nativeToken:
     decimals: 18
@@ -1226,7 +1226,7 @@ bsc:
   displayNameShort: Binance
   domainId: 56
   gasCurrencyCoinGeckoId: binancecoin
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-bsc.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/bnb
   name: bsc
   nativeToken:
     decimals: 18
@@ -1573,7 +1573,7 @@ celo:
   displayName: Celo
   domainId: 42220
   gasCurrencyCoinGeckoId: celo
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-celo.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/celo
   name: celo
   nativeToken:
     decimals: 18
@@ -2083,6 +2083,7 @@ cyber:
   displayName: Cyber
   domainId: 7560
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://transaction-cyber.safe.optimism.io
   name: cyber
   nativeToken:
     decimals: 18
@@ -2866,7 +2867,7 @@ ethereum:
   displayName: Ethereum
   domainId: 1
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-mainnet.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/eth
   name: ethereum
   nativeToken:
     decimals: 18
@@ -3633,7 +3634,7 @@ gnosis:
   displayName: Gnosis
   domainId: 100
   gasCurrencyCoinGeckoId: xdai
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-gnosis-chain.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/gno
   name: gnosis
   nativeToken:
     decimals: 18
@@ -3949,7 +3950,7 @@ hyperevm:
   displayName: HyperEVM
   domainId: 999
   gasCurrencyCoinGeckoId: hyperliquid
-  gnosisSafeTransactionServiceUrl: https://prod.hyperliquid.keypersafe.xyz
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/hyper
   name: hyperevm
   nativeToken:
     decimals: 18
@@ -4303,7 +4304,7 @@ ink:
   displayName: Ink
   domainId: 57073
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-ink.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/ink
   name: ink
   nativeToken:
     decimals: 18
@@ -4333,6 +4334,7 @@ inksepolia:
     url: https://www.hyperlane.xyz
   displayName: Ink Sepolia
   domainId: 763373
+  gnosisSafeTransactionServiceUrl: https://kraken-sepolia.superchain.safe.protofire.io
   isTestnet: true
   name: inksepolia
   nativeToken:
@@ -4703,7 +4705,7 @@ linea:
   displayName: Linea
   domainId: 59144
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-linea.safe.global
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/linea
   name: linea
   nativeToken:
     decimals: 18
@@ -4781,6 +4783,7 @@ lisksepolia:
     url: https://github.com/guy93354
   displayName: Lisk Sepolia
   domainId: 4202
+  gnosisSafeTransactionServiceUrl: https://transaction-lisk-sepolia.safe.optimism.io
   isTestnet: true
   name: lisksepolia
   nativeToken:
@@ -5002,7 +5005,7 @@ mantle:
   displayName: Mantle
   domainId: 5000
   gasCurrencyCoinGeckoId: mantle
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-mantle.safe.global
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/mantle
   name: mantle
   nativeToken:
     decimals: 18
@@ -5584,6 +5587,7 @@ modetestnet:
     url: https://www.hyperlane.xyz
   displayName: Mode Testnet
   domainId: 919
+  gnosisSafeTransactionServiceUrl: https://transaction-mode-sepolia.safe.optimism.io
   isTestnet: true
   name: modetestnet
   nativeToken:
@@ -6282,7 +6286,7 @@ optimism:
   displayName: Optimism
   domainId: 10
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-optimism.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/oeth
   name: optimism
   nativeToken:
     decimals: 18
@@ -6313,6 +6317,7 @@ optimismsepolia:
   displayName: Optimism Sepolia
   domainId: 11155420
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://transaction-optimism-sepolia.safe.optimism.io
   isTestnet: true
   name: optimismsepolia
   nativeToken:
@@ -6605,7 +6610,7 @@ polygon:
   displayName: Polygon
   domainId: 137
   gasCurrencyCoinGeckoId: polygon-ecosystem-token
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-polygon.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/pol
   name: polygon
   nativeToken:
     decimals: 18
@@ -6670,7 +6675,7 @@ polygonzkevm:
   displayNameShort: zkEVM
   domainId: 1101
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-zkevm.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/zkevm
   name: polygonzkevm
   nativeToken:
     decimals: 18
@@ -7317,7 +7322,7 @@ scroll:
   displayName: Scroll
   domainId: 534352
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-scroll.safe.global
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/scr
   name: scroll
   nativeToken:
     decimals: 18
@@ -7410,7 +7415,7 @@ sepolia:
   displayName: Sepolia
   domainId: 11155111
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-sepolia.safe.global
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/sep
   isTestnet: true
   name: sepolia
   nativeToken:
@@ -7734,7 +7739,7 @@ soneium:
   displayName: Soneium
   domainId: 1868
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://trx-soneium.safe.protofire.io
+  gnosisSafeTransactionServiceUrl: https://soneium.superchain.safe.protofire.io
   name: soneium
   nativeToken:
     decimals: 18
@@ -7792,7 +7797,7 @@ sonic:
   displayName: Sonic
   domainId: 146
   gasCurrencyCoinGeckoId: fantom
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-sonic.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/sonic
   name: sonic
   nativeToken:
     decimals: 18
@@ -8456,7 +8461,7 @@ superseed:
   displayName: Superseed
   domainId: 5330
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://trx-superseed.safe.protofire.io
+  gnosisSafeTransactionServiceUrl: https://superseed.superchain.safe.protofire.io
   name: superseed
   nativeToken:
     decimals: 18
@@ -8534,7 +8539,7 @@ swell:
   displayName: Swell
   domainId: 1923
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://trx-swell.safe.protofire.io
+  gnosisSafeTransactionServiceUrl: https://swell.superchain.safe.protofire.io
   name: swell
   nativeToken:
     decimals: 18
@@ -9046,7 +9051,7 @@ unichain:
   displayName: Unichain
   domainId: 130
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-unichain.safe.global
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/unichain
   name: unichain
   nativeToken:
     decimals: 18
@@ -9245,7 +9250,7 @@ worldchain:
   displayName: World Chain
   domainId: 480
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-worldchain.safe.global
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/wc
   name: worldchain
   nativeToken:
     decimals: 18
@@ -9527,7 +9532,7 @@ zksync:
   displayName: zkSync
   domainId: 324
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-zksync.safe.global
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/zksync
   name: zksync
   nativeToken:
     decimals: 18
@@ -9602,6 +9607,7 @@ zoratestnet:
     url: https://github.com/guy93354
   displayName: Zora Testnet
   domainId: 999999999
+  gnosisSafeTransactionServiceUrl: https://transaction-zora-sepolia.safe.optimism.io
   isTestnet: true
   name: zoratestnet
   nativeToken:
