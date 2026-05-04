@@ -1,5 +1,31 @@
 # @hyperlane-xyz/registry
 
+## 25.1.0
+
+### Minor Changes
+
+- 5022bba: added nara chain and USDC/USDT/SOL warp routes between nara and solanamainnet
+- 1ceea2c: added Ribbita by Virtuals (TIBBIR) warp route on Base and Igra
+- 52f9bc9: added USDe warp route on ethereum and igra
+- 260dcd8: Mark molten, artela, fluence, and zoramainnet as deprecated.
+- 977c4d4: Update Hyperlane dependencies to SDK 33.0.2 and Utils 33.0.2
+- 0581af5: Mark everclear as deprecated.
+- dc12521: Mark milkyway as deprecated.
+- 8708102: renamed BLEND to Fluent
+- 08b134c: redeployed KII warp route on kiichain, ethereum, base, polygon, and bsc
+
+### Patch Changes
+
+- c945277: Update Ethereum interchainSecurityModule and add quotedCalls address; disable polynomialfi chain (deprecated)
+- 8708102: rename BLEND token name to Fluent
+- 254dc69: Update scale for bsc in VRA/bsc-ethereum from 10 to 1
+- 3866723: Enable missing connections for USDT/eclipsemainnet route
+- 502db64: Updated Safe transaction service URLs to current Safe-supported API endpoints.
+- a4801f0: Added missing scale field to USDT/eni, update deploy file to .yaml
+- c7b1d53: Added coinGeckoId to USDC/lukso
+- 71cded3: Fix USDnr token logo
+- c36267e: Removed connections to fraxtal in EZETH/renzo
+
 ## 25.0.0
 
 ### Major Changes
