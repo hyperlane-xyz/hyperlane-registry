@@ -191,8 +191,14 @@ citrea:
           domains: {}
           owner: "0x4fC003a348D6b244B01170D08CF69373c11FBf01"
         ethereum:
-          type: trustedRelayerIsm
-          relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+          type: staticAggregationIsm
+          threshold: 1
+          modules:
+            - type: trustedRelayerIsm
+              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+            - type: defaultFallbackRoutingIsm
+              domains: {}
+              owner: "0x4fC003a348D6b244B01170D08CF69373c11FBf01"
     upperIsm:
       type: defaultFallbackRoutingIsm
       domains: {}
