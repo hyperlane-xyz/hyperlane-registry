@@ -1,7 +1,7 @@
 solanamainnet:
   type: crossCollateral
   token: xoUSDq85Rjsb6SbUwJyreFgeWQvxdkT7R3c3g7s6p5Y
-  owner: BNGDJ1h9brgt6FFVd8No1TVAH48Fp44d7jkuydr1URwJ
+  owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   hook: BhNcatUDC2D5JTyeaqrdSukiVFsEHK7e3hVmKMztwefv
   gas: 300000
   name: XO Cash
@@ -10,13 +10,13 @@ solanamainnet:
 arbitrum:
   type: crossCollateral
   token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
-  owner: "0x7379D7bB2ccA68982E467632B6554fD4e72e9431"
+  owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   hook:
     type: amountRoutingHook
     threshold: 100000000000
     lowerHook:
       type: fallbackRoutingHook
-      owner: "0x7379D7bB2ccA68982E467632B6554fD4e72e9431"
+      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
       domains:
         base:
           type: aggregationHook
@@ -37,12 +37,12 @@ arbitrum:
     threshold: 100000000000
     lowerIsm:
       type: domainRoutingIsm
-      owner: "0x7379D7bB2ccA68982E467632B6554fD4e72e9431"
+      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
       domains:
         solanamainnet:
           type: defaultFallbackRoutingIsm
           domains: {}
-          owner: "0x7379D7bB2ccA68982E467632B6554fD4e72e9431"
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
         base:
           type: staticAggregationIsm
           threshold: 2
@@ -53,7 +53,7 @@ arbitrum:
         citrea:
           type: defaultFallbackRoutingIsm
           domains: {}
-          owner: "0x7379D7bB2ccA68982E467632B6554fD4e72e9431"
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
         ethereum:
           type: staticAggregationIsm
           threshold: 2
@@ -64,7 +64,7 @@ arbitrum:
     upperIsm:
       type: defaultFallbackRoutingIsm
       domains: {}
-      owner: "0x7379D7bB2ccA68982E467632B6554fD4e72e9431"
+      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   tokenFee:
     type: RoutingFee
     owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
@@ -94,13 +94,13 @@ arbitrum:
 base:
   type: crossCollateral
   token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
-  owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
+  owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   hook:
     type: amountRoutingHook
     threshold: 100000000000
     lowerHook:
       type: fallbackRoutingHook
-      owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
+      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
       domains:
         arbitrum:
           type: aggregationHook
@@ -121,12 +121,12 @@ base:
     threshold: 100000000000
     lowerIsm:
       type: domainRoutingIsm
-      owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
+      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
       domains:
         solanamainnet:
           type: defaultFallbackRoutingIsm
           domains: {}
-          owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
         arbitrum:
           type: staticAggregationIsm
           threshold: 2
@@ -137,7 +137,7 @@ base:
         citrea:
           type: defaultFallbackRoutingIsm
           domains: {}
-          owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
         ethereum:
           type: staticAggregationIsm
           threshold: 2
@@ -148,7 +148,7 @@ base:
     upperIsm:
       type: defaultFallbackRoutingIsm
       domains: {}
-      owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
+      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   tokenFee:
     type: RoutingFee
     owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
@@ -176,26 +176,26 @@ base:
 citrea:
   type: crossCollateral
   token: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
-  owner: "0x4fC003a348D6b244B01170D08CF69373c11FBf01"
+  owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   interchainSecurityModule:
     type: amountRoutingIsm
     threshold: 100000000000
     lowerIsm:
       type: domainRoutingIsm
-      owner: "0x4fC003a348D6b244B01170D08CF69373c11FBf01"
+      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
       domains:
         solanamainnet:
           type: defaultFallbackRoutingIsm
           domains: {}
-          owner: "0x4fC003a348D6b244B01170D08CF69373c11FBf01"
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
         arbitrum:
           type: defaultFallbackRoutingIsm
           domains: {}
-          owner: "0x4fC003a348D6b244B01170D08CF69373c11FBf01"
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
         base:
           type: defaultFallbackRoutingIsm
           domains: {}
-          owner: "0x4fC003a348D6b244B01170D08CF69373c11FBf01"
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
         ethereum:
           type: staticAggregationIsm
           threshold: 1
@@ -204,11 +204,11 @@ citrea:
               relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
             - type: defaultFallbackRoutingIsm
               domains: {}
-              owner: "0x4fC003a348D6b244B01170D08CF69373c11FBf01"
+              owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
     upperIsm:
       type: defaultFallbackRoutingIsm
       domains: {}
-      owner: "0x4fC003a348D6b244B01170D08CF69373c11FBf01"
+      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   tokenFee:
     type: RoutingFee
     owner: "0x656ced4a881e4D618B635984Cf0D1D1e051E8513"
@@ -236,13 +236,13 @@ citrea:
 ethereum:
   type: crossCollateral
   token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
-  owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
+  owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   hook:
     type: amountRoutingHook
     threshold: 100000000000
     lowerHook:
       type: fallbackRoutingHook
-      owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
+      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
       domains:
         arbitrum:
           type: aggregationHook
@@ -263,12 +263,12 @@ ethereum:
     threshold: 100000000000
     lowerIsm:
       type: domainRoutingIsm
-      owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
+      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
       domains:
         solanamainnet:
           type: defaultFallbackRoutingIsm
           domains: {}
-          owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
         arbitrum:
           type: staticAggregationIsm
           threshold: 2
@@ -286,11 +286,11 @@ ethereum:
         citrea:
           type: defaultFallbackRoutingIsm
           domains: {}
-          owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
     upperIsm:
       type: defaultFallbackRoutingIsm
       domains: {}
-      owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
+      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   tokenFee:
     type: RoutingFee
     owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
