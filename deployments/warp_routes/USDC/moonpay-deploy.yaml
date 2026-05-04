@@ -34,10 +34,6 @@ arbitrum:
                 - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
               threshold: 2
               type: staticAggregationIsm
-            citrea:
-              domains: {}
-              owner: "0x0000000000000000000000000000000000000000"
-              type: defaultFallbackRoutingIsm
             ethereum:
               modules:
                 - relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
@@ -45,10 +41,6 @@ arbitrum:
                 - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
               threshold: 2
               type: staticAggregationIsm
-            solanamainnet:
-              domains: {}
-              owner: "0x0000000000000000000000000000000000000000"
-              type: defaultFallbackRoutingIsm
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
           type: domainRoutingIsm
         threshold: 100000000000
@@ -131,10 +123,6 @@ base:
                 - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
               threshold: 2
               type: staticAggregationIsm
-            citrea:
-              domains: {}
-              owner: "0x0000000000000000000000000000000000000000"
-              type: defaultFallbackRoutingIsm
             ethereum:
               modules:
                 - relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
@@ -142,10 +130,6 @@ base:
                 - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
               threshold: 2
               type: staticAggregationIsm
-            solanamainnet:
-              domains: {}
-              owner: "0x0000000000000000000000000000000000000000"
-              type: defaultFallbackRoutingIsm
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
           type: domainRoutingIsm
         threshold: 100000000000
@@ -200,14 +184,6 @@ citrea:
         type: defaultFallbackRoutingIsm
       - lowerIsm:
           domains:
-            arbitrum:
-              domains: {}
-              owner: "0x0000000000000000000000000000000000000000"
-              type: defaultFallbackRoutingIsm
-            base:
-              domains: {}
-              owner: "0x0000000000000000000000000000000000000000"
-              type: defaultFallbackRoutingIsm
             ethereum:
               modules:
                 - relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
@@ -217,10 +193,6 @@ citrea:
                   type: defaultFallbackRoutingIsm
               threshold: 1
               type: staticAggregationIsm
-            solanamainnet:
-              domains: {}
-              owner: "0x0000000000000000000000000000000000000000"
-              type: defaultFallbackRoutingIsm
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
           type: domainRoutingIsm
         threshold: 100000000000
@@ -310,14 +282,6 @@ ethereum:
                 - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
               threshold: 2
               type: staticAggregationIsm
-            citrea:
-              domains: {}
-              owner: "0x0000000000000000000000000000000000000000"
-              type: defaultFallbackRoutingIsm
-            solanamainnet:
-              domains: {}
-              owner: "0x0000000000000000000000000000000000000000"
-              type: defaultFallbackRoutingIsm
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
           type: domainRoutingIsm
         threshold: 100000000000
