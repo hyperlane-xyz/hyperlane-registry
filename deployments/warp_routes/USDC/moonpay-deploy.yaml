@@ -12,31 +12,23 @@ arbitrum:
   token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
   owner: "0x7379D7bB2ccA68982E467632B6554fD4e72e9431"
   hook:
-    type: fallbackRoutingHook
-    owner: "0x7379D7bB2ccA68982E467632B6554fD4e72e9431"
-    domains:
-      base:
-        type: amountRoutingHook
-        threshold: 100000000000
-        lowerHook:
-          type: aggregationHook
-          hooks:
-            - type: defaultHook
-            - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-        upperHook:
-          type: defaultHook
-      ethereum:
-        type: amountRoutingHook
-        threshold: 100000000000
-        lowerHook:
-          type: aggregationHook
-          hooks:
-            - type: defaultHook
-            - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-        upperHook:
-          type: defaultHook
-    fallback:
-      type: defaultHook
+    type: aggregationHook
+    hooks:
+      - type: defaultHook
+      - type: fallbackRoutingHook
+        owner: "0x7379D7bB2ccA68982E467632B6554fD4e72e9431"
+        domains:
+          base:
+            type: amountRoutingHook
+            threshold: 100000000000
+            lowerHook: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+            upperHook: "0x0000000000000000000000000000000000000000"
+          ethereum:
+            type: amountRoutingHook
+            threshold: 100000000000
+            lowerHook: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+            upperHook: "0x0000000000000000000000000000000000000000"
+        fallback: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     type: amountRoutingIsm
     threshold: 100000000000
@@ -45,13 +37,27 @@ arbitrum:
       owner: "0x7379D7bB2ccA68982E467632B6554fD4e72e9431"
       domains:
         solanamainnet:
-          type: trustedRelayerIsm
-          relayer: "0x74cae0ecc47b02ed9b9d32e000fd70b9417970c5"
-        base: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+          type: defaultFallbackRoutingIsm
+          domains: {}
+          owner: "0x7379D7bB2ccA68982E467632B6554fD4e72e9431"
+        base:
+          type: staticAggregationIsm
+          threshold: 2
+          modules:
+            - type: trustedRelayerIsm
+              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+            - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
         citrea:
-          type: trustedRelayerIsm
-          relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-        ethereum: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+          type: defaultFallbackRoutingIsm
+          domains: {}
+          owner: "0x7379D7bB2ccA68982E467632B6554fD4e72e9431"
+        ethereum:
+          type: staticAggregationIsm
+          threshold: 2
+          modules:
+            - type: trustedRelayerIsm
+              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+            - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
     upperIsm:
       type: defaultFallbackRoutingIsm
       domains: {}
@@ -87,31 +93,23 @@ base:
   token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
   owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
   hook:
-    type: fallbackRoutingHook
-    owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
-    domains:
-      arbitrum:
-        type: amountRoutingHook
-        threshold: 100000000000
-        lowerHook:
-          type: aggregationHook
-          hooks:
-            - type: defaultHook
-            - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-        upperHook:
-          type: defaultHook
-      ethereum:
-        type: amountRoutingHook
-        threshold: 100000000000
-        lowerHook:
-          type: aggregationHook
-          hooks:
-            - type: defaultHook
-            - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-        upperHook:
-          type: defaultHook
-    fallback:
-      type: defaultHook
+    type: aggregationHook
+    hooks:
+      - type: defaultHook
+      - type: fallbackRoutingHook
+        owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
+        domains:
+          arbitrum:
+            type: amountRoutingHook
+            threshold: 100000000000
+            lowerHook: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+            upperHook: "0x0000000000000000000000000000000000000000"
+          ethereum:
+            type: amountRoutingHook
+            threshold: 100000000000
+            lowerHook: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+            upperHook: "0x0000000000000000000000000000000000000000"
+        fallback: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     type: amountRoutingIsm
     threshold: 100000000000
@@ -120,13 +118,27 @@ base:
       owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
       domains:
         solanamainnet:
-          type: trustedRelayerIsm
-          relayer: "0x74cae0ecc47b02ed9b9d32e000fd70b9417970c5"
-        arbitrum: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+          type: defaultFallbackRoutingIsm
+          domains: {}
+          owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
+        arbitrum:
+          type: staticAggregationIsm
+          threshold: 2
+          modules:
+            - type: trustedRelayerIsm
+              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+            - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
         citrea:
-          type: trustedRelayerIsm
-          relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-        ethereum: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+          type: defaultFallbackRoutingIsm
+          domains: {}
+          owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
+        ethereum:
+          type: staticAggregationIsm
+          threshold: 2
+          modules:
+            - type: trustedRelayerIsm
+              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+            - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
     upperIsm:
       type: defaultFallbackRoutingIsm
       domains: {}
@@ -167,14 +179,17 @@ citrea:
       owner: "0x4fC003a348D6b244B01170D08CF69373c11FBf01"
       domains:
         solanamainnet:
-          type: trustedRelayerIsm
-          relayer: "0x74cae0ecc47b02ed9b9d32e000fd70b9417970c5"
+          type: defaultFallbackRoutingIsm
+          domains: {}
+          owner: "0x4fC003a348D6b244B01170D08CF69373c11FBf01"
         arbitrum:
-          type: trustedRelayerIsm
-          relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+          type: defaultFallbackRoutingIsm
+          domains: {}
+          owner: "0x4fC003a348D6b244B01170D08CF69373c11FBf01"
         base:
-          type: trustedRelayerIsm
-          relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+          type: defaultFallbackRoutingIsm
+          domains: {}
+          owner: "0x4fC003a348D6b244B01170D08CF69373c11FBf01"
         ethereum:
           type: trustedRelayerIsm
           relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
@@ -211,31 +226,23 @@ ethereum:
   token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
   owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
   hook:
-    type: fallbackRoutingHook
-    owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
-    domains:
-      arbitrum:
-        type: amountRoutingHook
-        threshold: 100000000000
-        lowerHook:
-          type: aggregationHook
-          hooks:
-            - type: defaultHook
-            - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-        upperHook:
-          type: defaultHook
-      base:
-        type: amountRoutingHook
-        threshold: 100000000000
-        lowerHook:
-          type: aggregationHook
-          hooks:
-            - type: defaultHook
-            - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-        upperHook:
-          type: defaultHook
-    fallback:
-      type: defaultHook
+    type: aggregationHook
+    hooks:
+      - type: defaultHook
+      - type: fallbackRoutingHook
+        owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
+        domains:
+          arbitrum:
+            type: amountRoutingHook
+            threshold: 100000000000
+            lowerHook: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+            upperHook: "0x0000000000000000000000000000000000000000"
+          base:
+            type: amountRoutingHook
+            threshold: 100000000000
+            lowerHook: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+            upperHook: "0x0000000000000000000000000000000000000000"
+        fallback: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     type: amountRoutingIsm
     threshold: 100000000000
@@ -244,13 +251,27 @@ ethereum:
       owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
       domains:
         solanamainnet:
-          type: trustedRelayerIsm
-          relayer: "0x74cae0ecc47b02ed9b9d32e000fd70b9417970c5"
-        arbitrum: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-        base: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+          type: defaultFallbackRoutingIsm
+          domains: {}
+          owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
+        arbitrum:
+          type: staticAggregationIsm
+          threshold: 2
+          modules:
+            - type: trustedRelayerIsm
+              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+            - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+        base:
+          type: staticAggregationIsm
+          threshold: 2
+          modules:
+            - type: trustedRelayerIsm
+              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+            - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
         citrea:
-          type: trustedRelayerIsm
-          relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+          type: defaultFallbackRoutingIsm
+          domains: {}
+          owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
     upperIsm:
       type: defaultFallbackRoutingIsm
       domains: {}
