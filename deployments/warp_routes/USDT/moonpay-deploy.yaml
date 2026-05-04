@@ -1,12 +1,3 @@
-solanamainnet:
-  type: crossCollateral
-  token: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
-  owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-  hook: BhNcatUDC2D5JTyeaqrdSukiVFsEHK7e3hVmKMztwefv
-  gas: 300000
-  name: USDT
-  symbol: USDT
-  decimals: 6
 arbitrum:
   type: crossCollateral
   token: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
@@ -33,50 +24,47 @@ arbitrum:
     upperHook:
       type: defaultHook
   interchainSecurityModule:
-    type: amountRoutingIsm
-    threshold: 100000000000
-    lowerIsm:
-      type: domainRoutingIsm
-      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-      domains:
-        solanamainnet:
+    type: staticAggregationIsm
+    threshold: 1
+    modules:
+      - type: defaultFallbackRoutingIsm
+        domains: {}
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+      - type: amountRoutingIsm
+        threshold: 100000000000
+        lowerIsm:
+          type: domainRoutingIsm
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          domains:
+            base:
+              type: staticAggregationIsm
+              threshold: 2
+              modules:
+                - type: trustedRelayerIsm
+                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+                - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+            ethereum:
+              type: staticAggregationIsm
+              threshold: 2
+              modules:
+                - type: trustedRelayerIsm
+                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+                - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+        upperIsm:
           type: defaultFallbackRoutingIsm
           domains: {}
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        base:
-          type: staticAggregationIsm
-          threshold: 2
-          modules:
-            - type: trustedRelayerIsm
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-            - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-        ethereum:
-          type: staticAggregationIsm
-          threshold: 2
-          modules:
-            - type: trustedRelayerIsm
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-            - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-    upperIsm:
-      type: defaultFallbackRoutingIsm
-      domains: {}
-      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   tokenFee:
     type: RoutingFee
     owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
     feeContracts:
-      solanamainnet:
+      base:
         type: OffchainQuotedLinearFee
         owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
         bps: 3
         quoteSigners: &a1
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
-      base:
-        type: OffchainQuotedLinearFee
-        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        bps: 3
-        quoteSigners: *a1
       ethereum:
         type: OffchainQuotedLinearFee
         owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
@@ -108,43 +96,40 @@ base:
     upperHook:
       type: defaultHook
   interchainSecurityModule:
-    type: amountRoutingIsm
-    threshold: 100000000000
-    lowerIsm:
-      type: domainRoutingIsm
-      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-      domains:
-        solanamainnet:
+    type: staticAggregationIsm
+    threshold: 1
+    modules:
+      - type: defaultFallbackRoutingIsm
+        domains: {}
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+      - type: amountRoutingIsm
+        threshold: 100000000000
+        lowerIsm:
+          type: domainRoutingIsm
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          domains:
+            arbitrum:
+              type: staticAggregationIsm
+              threshold: 2
+              modules:
+                - type: trustedRelayerIsm
+                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+                - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+            ethereum:
+              type: staticAggregationIsm
+              threshold: 2
+              modules:
+                - type: trustedRelayerIsm
+                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+                - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+        upperIsm:
           type: defaultFallbackRoutingIsm
           domains: {}
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        arbitrum:
-          type: staticAggregationIsm
-          threshold: 2
-          modules:
-            - type: trustedRelayerIsm
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-            - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-        ethereum:
-          type: staticAggregationIsm
-          threshold: 2
-          modules:
-            - type: trustedRelayerIsm
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-            - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-    upperIsm:
-      type: defaultFallbackRoutingIsm
-      domains: {}
-      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   tokenFee:
     type: RoutingFee
     owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
     feeContracts:
-      solanamainnet:
-        type: OffchainQuotedLinearFee
-        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        bps: 3
-        quoteSigners: *a1
       arbitrum:
         type: OffchainQuotedLinearFee
         owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
@@ -181,43 +166,40 @@ ethereum:
     upperHook:
       type: defaultHook
   interchainSecurityModule:
-    type: amountRoutingIsm
-    threshold: 100000000000
-    lowerIsm:
-      type: domainRoutingIsm
-      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-      domains:
-        solanamainnet:
+    type: staticAggregationIsm
+    threshold: 1
+    modules:
+      - type: defaultFallbackRoutingIsm
+        domains: {}
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+      - type: amountRoutingIsm
+        threshold: 100000000000
+        lowerIsm:
+          type: domainRoutingIsm
+          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+          domains:
+            arbitrum:
+              type: staticAggregationIsm
+              threshold: 2
+              modules:
+                - type: trustedRelayerIsm
+                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+                - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+            base:
+              type: staticAggregationIsm
+              threshold: 2
+              modules:
+                - type: trustedRelayerIsm
+                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+                - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+        upperIsm:
           type: defaultFallbackRoutingIsm
           domains: {}
           owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        arbitrum:
-          type: staticAggregationIsm
-          threshold: 2
-          modules:
-            - type: trustedRelayerIsm
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-            - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-        base:
-          type: staticAggregationIsm
-          threshold: 2
-          modules:
-            - type: trustedRelayerIsm
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-            - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-    upperIsm:
-      type: defaultFallbackRoutingIsm
-      domains: {}
-      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
   tokenFee:
     type: RoutingFee
     owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
     feeContracts:
-      solanamainnet:
-        type: OffchainQuotedLinearFee
-        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-        bps: 3
-        quoteSigners: *a1
       arbitrum:
         type: OffchainQuotedLinearFee
         owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
