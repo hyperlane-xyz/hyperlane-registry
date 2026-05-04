@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94"
+    chainName: igra
+    logoURI: /deployments/warp_routes/USDe/logo.png
+    connections:
+      - token: ethereum|ethereum|0x54B904c3Cb5C6Aa19a5292aCC72eCE1c285e7EAb
+    decimals: 18
+    name: Ethena USDe
+    standard: EvmHypSynthetic
+    symbol: USDe
+  - addressOrDenom: "0x54B904c3Cb5C6Aa19a5292aCC72eCE1c285e7EAb"
+    chainName: ethereum
+    coinGeckoId: ethena-usde
+    logoURI: /deployments/warp_routes/USDe/logo.png
+    collateralAddressOrDenom: "0x46e5d6A33C8Bd8eD38F3c95991C78C9B2FF3bC99"
+    connections:
+      - token: ethereum|igra|0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94
+    decimals: 18
+    name: Ethena USDe
+    standard: EvmHypOwnerCollateral
+    symbol: USDe
