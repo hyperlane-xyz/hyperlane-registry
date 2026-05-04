@@ -1,7 +1,11 @@
 arbitrum:
   allowedRebalancers:
+    - "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
     - "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    "4114":
+      - bridge: "0x669c7f297071FB300c62f4490F55b5De97a1a786"
   crossCollateralRouters:
     "42161":
       - "0x000000000000000000000000824353938ee1361265097acc9e329828e3455c15"
@@ -32,11 +36,13 @@ arbitrum:
   type: crossCollateral
 base:
   allowedRebalancers:
+    - "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
     - "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
     "4114":
       - bridge: "0x1c9DA8e9077323B5bb0Af96b94092992B59cE175" # slow
+      - bridge: "0xc112C320C6dC360d17DEdEBf8cc2d2B7075016d1"
   crossCollateralRouters:
     "42161":
       - "0x000000000000000000000000824353938ee1361265097acc9e329828e3455c15"
@@ -67,13 +73,18 @@ base:
   type: crossCollateral
 citrea:
   allowedRebalancers:
+    - "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
     - "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
     "1":
       - bridge: "0xeBEB7F52892dF3066885F4D31137a76327f6348b"
+      - bridge: "0x4833e03427541F897521F1FE3eB40c7BFF3C1FD7"
+    "42161":
+      - bridge: "0x4833e03427541F897521F1FE3eB40c7BFF3C1FD7"
     "8453":
       - bridge: "0x1a559f3D0753A07BB1dc597E4c2b4C7723CB27F4" # slow
+      - bridge: "0x4833e03427541F897521F1FE3eB40c7BFF3C1FD7"
   crossCollateralRouters:
     "42161":
       - "0x000000000000000000000000824353938ee1361265097acc9e329828e3455c15"
@@ -104,11 +115,13 @@ citrea:
   type: crossCollateral
 ethereum:
   allowedRebalancers:
+    - "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
     - "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
     "4114":
       - bridge: "0x6372e1C8a08940C7e95AF2891B9201aC48De6519"
+      - bridge: "0x5327F2d9964c0cBDFaB99A1EE0Db33494D7e89BD"
   crossCollateralRouters:
     "42161":
       - "0x000000000000000000000000824353938ee1361265097acc9e329828e3455c15"
