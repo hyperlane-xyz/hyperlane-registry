@@ -11448,6 +11448,28 @@ USDTSTAGE/mode:
       name: USDT
       standard: SealevelHypCollateral
       symbol: USDTSTAGE
+USDe/igra:
+  tokens:
+    - addressOrDenom: "0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94"
+      chainName: igra
+      connections:
+        - token: ethereum|ethereum|0x54B904c3Cb5C6Aa19a5292aCC72eCE1c285e7EAb
+      decimals: 18
+      logoURI: /deployments/warp_routes/USDe/logo.png
+      name: Ethena USDe
+      standard: EvmHypSynthetic
+      symbol: USDe
+    - addressOrDenom: "0x54B904c3Cb5C6Aa19a5292aCC72eCE1c285e7EAb"
+      chainName: ethereum
+      coinGeckoId: ethena-usde
+      collateralAddressOrDenom: "0x46e5d6A33C8Bd8eD38F3c95991C78C9B2FF3bC99"
+      connections:
+        - token: ethereum|igra|0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94
+      decimals: 18
+      logoURI: /deployments/warp_routes/USDe/logo.png
+      name: Ethena USDe
+      standard: EvmHypOwnerCollateral
+      symbol: USDe
 USDnr/usdnr:
   tokens:
     - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
