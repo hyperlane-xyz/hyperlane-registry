@@ -12,23 +12,26 @@ arbitrum:
   token: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
   owner: "0x7379D7bB2ccA68982E467632B6554fD4e72e9431"
   hook:
-    type: aggregationHook
-    hooks:
-      - type: defaultHook
-      - type: fallbackRoutingHook
-        owner: "0x7379D7bB2ccA68982E467632B6554fD4e72e9431"
-        domains:
-          base:
-            type: amountRoutingHook
-            threshold: 100000000000
-            lowerHook: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-            upperHook: "0x0000000000000000000000000000000000000000"
-          ethereum:
-            type: amountRoutingHook
-            threshold: 100000000000
-            lowerHook: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-            upperHook: "0x0000000000000000000000000000000000000000"
-        fallback: "0x0000000000000000000000000000000000000000"
+    type: amountRoutingHook
+    threshold: 100000000000
+    lowerHook:
+      type: fallbackRoutingHook
+      owner: "0x7379D7bB2ccA68982E467632B6554fD4e72e9431"
+      domains:
+        base:
+          type: aggregationHook
+          hooks:
+            - type: defaultHook
+            - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+        ethereum:
+          type: aggregationHook
+          hooks:
+            - type: defaultHook
+            - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+      fallback:
+        type: defaultHook
+    upperHook:
+      type: defaultHook
   interchainSecurityModule:
     type: amountRoutingIsm
     threshold: 100000000000
@@ -84,23 +87,26 @@ base:
   token: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
   owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
   hook:
-    type: aggregationHook
-    hooks:
-      - type: defaultHook
-      - type: fallbackRoutingHook
-        owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
-        domains:
-          arbitrum:
-            type: amountRoutingHook
-            threshold: 100000000000
-            lowerHook: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-            upperHook: "0x0000000000000000000000000000000000000000"
-          ethereum:
-            type: amountRoutingHook
-            threshold: 100000000000
-            lowerHook: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-            upperHook: "0x0000000000000000000000000000000000000000"
-        fallback: "0x0000000000000000000000000000000000000000"
+    type: amountRoutingHook
+    threshold: 100000000000
+    lowerHook:
+      type: fallbackRoutingHook
+      owner: "0x890ac177Fe3052B8676A65f32C1589Bc329f3d50"
+      domains:
+        arbitrum:
+          type: aggregationHook
+          hooks:
+            - type: defaultHook
+            - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+        ethereum:
+          type: aggregationHook
+          hooks:
+            - type: defaultHook
+            - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+      fallback:
+        type: defaultHook
+    upperHook:
+      type: defaultHook
   interchainSecurityModule:
     type: amountRoutingIsm
     threshold: 100000000000
@@ -154,23 +160,26 @@ ethereum:
   token: "0xdac17f958d2ee523a2206206994597c13d831ec7"
   owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
   hook:
-    type: aggregationHook
-    hooks:
-      - type: defaultHook
-      - type: fallbackRoutingHook
-        owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
-        domains:
-          arbitrum:
-            type: amountRoutingHook
-            threshold: 100000000000
-            lowerHook: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-            upperHook: "0x0000000000000000000000000000000000000000"
-          base:
-            type: amountRoutingHook
-            threshold: 100000000000
-            lowerHook: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-            upperHook: "0x0000000000000000000000000000000000000000"
-        fallback: "0x0000000000000000000000000000000000000000"
+    type: amountRoutingHook
+    threshold: 100000000000
+    lowerHook:
+      type: fallbackRoutingHook
+      owner: "0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7"
+      domains:
+        arbitrum:
+          type: aggregationHook
+          hooks:
+            - type: defaultHook
+            - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+        base:
+          type: aggregationHook
+          hooks:
+            - type: defaultHook
+            - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+      fallback:
+        type: defaultHook
+    upperHook:
+      type: defaultHook
   interchainSecurityModule:
     type: amountRoutingIsm
     threshold: 100000000000
