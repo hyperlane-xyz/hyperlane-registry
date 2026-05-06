@@ -9,45 +9,31 @@ arbitrum:
       - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
       - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
   hook:
-    lowerHook:
-      domains:
-        base:
-          hooks:
-            - type: defaultHook
-            - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-          type: aggregationHook
-        ethereum:
-          hooks:
-            - type: defaultHook
-            - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-          type: aggregationHook
-      fallback:
-        type: defaultHook
-      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-      type: fallbackRoutingHook
-    threshold: 1000000000
-    type: amountRoutingHook
-    upperHook:
+    domains:
+      base:
+        hooks:
+          - type: defaultHook
+          - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+        type: aggregationHook
+      ethereum:
+        hooks:
+          - type: defaultHook
+          - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+        type: aggregationHook
+    fallback:
       type: defaultHook
+    owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+    type: fallbackRoutingHook
   interchainSecurityModule:
     modules:
       - domains: {}
         owner: "0x0000000000000000000000000000000000000000"
         type: defaultFallbackRoutingIsm
-      - lowerIsm:
-          domains:
-            base:
-              "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-            ethereum:
-              "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-          type: domainRoutingIsm
-        threshold: 1000000000
-        type: amountRoutingIsm
-        upperIsm:
-          domains: {}
-          owner: "0x0000000000000000000000000000000000000000"
-          type: defaultFallbackRoutingIsm
+      - domains:
+          base: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+          ethereum: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+        type: domainRoutingIsm
     threshold: 1
     type: staticAggregationIsm
   mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
@@ -97,45 +83,31 @@ base:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
   hook:
-    lowerHook:
-      domains:
-        arbitrum:
-          hooks:
-            - type: defaultHook
-            - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-          type: aggregationHook
-        ethereum:
-          hooks:
-            - type: defaultHook
-            - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-          type: aggregationHook
-      fallback:
-        type: defaultHook
-      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-      type: fallbackRoutingHook
-    threshold: 1000000000
-    type: amountRoutingHook
-    upperHook:
+    domains:
+      arbitrum:
+        hooks:
+          - type: defaultHook
+          - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+        type: aggregationHook
+      ethereum:
+        hooks:
+          - type: defaultHook
+          - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+        type: aggregationHook
+    fallback:
       type: defaultHook
+    owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+    type: fallbackRoutingHook
   interchainSecurityModule:
     modules:
       - domains: {}
         owner: "0x0000000000000000000000000000000000000000"
         type: defaultFallbackRoutingIsm
-      - lowerIsm:
-          domains:
-            arbitrum:
-              "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-            ethereum:
-              "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-          type: domainRoutingIsm
-        threshold: 1000000000
-        type: amountRoutingIsm
-        upperIsm:
-          domains: {}
-          owner: "0x0000000000000000000000000000000000000000"
-          type: defaultFallbackRoutingIsm
+      - domains:
+          arbitrum: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+          ethereum: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+        type: domainRoutingIsm
     threshold: 1
     type: staticAggregationIsm
   mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
@@ -180,19 +152,12 @@ citrea:
       - domains: {}
         owner: "0x0000000000000000000000000000000000000000"
         type: defaultFallbackRoutingIsm
-      - lowerIsm:
-          domains:
-            ethereum:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-          type: domainRoutingIsm
-        threshold: 1000000000
-        type: amountRoutingIsm
-        upperIsm:
-          domains: {}
-          owner: "0x0000000000000000000000000000000000000000"
-          type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
+            type: trustedRelayerIsm
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+        type: domainRoutingIsm
     threshold: 1
     type: staticAggregationIsm
   mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
@@ -242,45 +207,31 @@ ethereum:
       - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
       - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
   hook:
-    lowerHook:
-      domains:
-        arbitrum:
-          hooks:
-            - type: defaultHook
-            - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-          type: aggregationHook
-        base:
-          hooks:
-            - type: defaultHook
-            - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-          type: aggregationHook
-      fallback:
-        type: defaultHook
-      owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-      type: fallbackRoutingHook
-    threshold: 1000000000
-    type: amountRoutingHook
-    upperHook:
+    domains:
+      arbitrum:
+        hooks:
+          - type: defaultHook
+          - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+        type: aggregationHook
+      base:
+        hooks:
+          - type: defaultHook
+          - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+        type: aggregationHook
+    fallback:
       type: defaultHook
+    owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+    type: fallbackRoutingHook
   interchainSecurityModule:
     modules:
       - domains: {}
         owner: "0x0000000000000000000000000000000000000000"
         type: defaultFallbackRoutingIsm
-      - lowerIsm:
-          domains:
-            arbitrum:
-              "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-            base:
-              "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-          owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
-          type: domainRoutingIsm
-        threshold: 1000000000
-        type: amountRoutingIsm
-        upperIsm:
-          domains: {}
-          owner: "0x0000000000000000000000000000000000000000"
-          type: defaultFallbackRoutingIsm
+      - domains:
+          arbitrum: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+          base: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+        owner: "0xEA2117b24F7947647Bec60527B68f4244AE40c01"
+        type: domainRoutingIsm
     threshold: 1
     type: staticAggregationIsm
   mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
