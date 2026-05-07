@@ -1,0 +1,20 @@
+tokens:
+  - addressOrDenom: "0x726f757465725f6170700000000000000000000000000002000000000000000b"
+    chainName: celestia
+    connections:
+      - token: ethereum|ethereum|0x26Cba9F11119892a7540a26b67cBcB9c08F586cD
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: CosmosNativeHypSynthetic
+    symbol: ETH
+  - addressOrDenom: "0x26Cba9F11119892a7540a26b67cBcB9c08F586cD"
+    chainName: ethereum
+    coinGeckoId: ethereum
+    connections:
+      - token: cosmosnative|celestia|0x726f757465725f6170700000000000000000000000000002000000000000000b
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH
