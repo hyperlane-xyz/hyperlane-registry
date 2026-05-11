@@ -1,0 +1,282 @@
+arbitrum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    "1":
+      - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
+      - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+    "4114":
+      - bridge: "0xa7f5cc2CD457D2CC236Dc10460F14767fd135518"
+    "8453":
+      - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
+      - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+  crossCollateralRouters:
+    "1":
+      - "0x000000000000000000000000eb1b48b238e15a62e1858a601b6bffdf41163ae3"
+    "42161":
+      - "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4"
+    "8453":
+      - "0x0000000000000000000000007abbb4ea8a5895127500cf0c15830c9eb9f61f96"
+  hook: "0xa17f241a706e4a28f87136FCF999FAdc4b7c7429"
+  interchainSecurityModule: "0x679485a77881Be742165267C368d1bcfcfEE14b3"
+  mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
+  owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+  token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+      base:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+      citrea:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+      ethereum:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+      solanamainnet:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+    owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+    type: CrossCollateralRoutingFee
+  type: crossCollateral
+base:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    "1":
+      - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
+      - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+    "4114":
+      - bridge: "0x4adAf07A84B32F86288e05c4f4A09D830fcf8B71"
+    "42161":
+      - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
+      - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+  crossCollateralRouters:
+    "1":
+      - "0x000000000000000000000000eb1b48b238e15a62e1858a601b6bffdf41163ae3"
+    "42161":
+      - "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4"
+    "8453":
+      - "0x0000000000000000000000007abbb4ea8a5895127500cf0c15830c9eb9f61f96"
+  hook: "0xFAEC58635CF597b39C6EcBB7d6A6E28860c0c99D"
+  interchainSecurityModule: "0x3e2D8BDC378Dbd83D3B962Fb779772885f1dB05e"
+  mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
+  owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+  token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+      base:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+      citrea:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+      ethereum:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+      solanamainnet:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+    owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+    type: CrossCollateralRoutingFee
+  type: crossCollateral
+citrea:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    "1":
+      - bridge: "0x5eF92fe56Db2d7c6934fD160a88099fF91F93907"
+    "42161":
+      - bridge: "0x5eF92fe56Db2d7c6934fD160a88099fF91F93907"
+    "8453":
+      - bridge: "0x5eF92fe56Db2d7c6934fD160a88099fF91F93907"
+  crossCollateralRouters:
+    "1":
+      - "0x000000000000000000000000eb1b48b238e15a62e1858a601b6bffdf41163ae3"
+    "42161":
+      - "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4"
+    "8453":
+      - "0x0000000000000000000000007abbb4ea8a5895127500cf0c15830c9eb9f61f96"
+  interchainSecurityModule: "0x4532C53d62984B3751Fb50Ade28737B9c7b2F9C5"
+  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
+  owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+  token: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+      base:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+      ethereum:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+      solanamainnet:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+    owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+    type: CrossCollateralRoutingFee
+  type: crossCollateral
+ethereum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    "4114":
+      - bridge: "0x01874aF1507FA27129716c3bD82C28F7531cdcdF"
+    "42161":
+      - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
+      - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+    "8453":
+      - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
+      - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+  crossCollateralRouters:
+    "1":
+      - "0x000000000000000000000000eb1b48b238e15a62e1858a601b6bffdf41163ae3"
+    "42161":
+      - "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4"
+    "8453":
+      - "0x0000000000000000000000007abbb4ea8a5895127500cf0c15830c9eb9f61f96"
+  hook: "0x2AF2DBe7a0FdEAd94834Cb23c5eDF1E235A235Ae"
+  interchainSecurityModule: "0x650Bcb803200eBD6b3A6E8edF2E03D4E637f874e"
+  mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
+  owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+  token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+      base:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+      citrea:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+      ethereum:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+      solanamainnet:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+          quoteSigners:
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+          type: OffchainQuotedLinearFee
+    owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+    type: CrossCollateralRoutingFee
+  type: crossCollateral
+solanamainnet:
+  crossCollateralRouters:
+    "1":
+      - "0x000000000000000000000000eb1b48b238e15a62e1858a601b6bffdf41163ae3"
+    "42161":
+      - "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4"
+    "8453":
+      - "0x0000000000000000000000007abbb4ea8a5895127500cf0c15830c9eb9f61f96"
+  decimals: 6
+  gas: 300000
+  hook: BhNcatUDC2D5JTyeaqrdSukiVFsEHK7e3hVmKMztwefv
+  mailbox: E588QtVUvresuXq2KoNEwAmoifCzYGpRBdHByN9KQMbi
+  name: XO Cash
+  owner: GhX4cjAaRAPRTb9fkgLtLq9cYTLncRBGN3pa4KSKUv4J
+  symbol: XO
+  token: xoUSDq85Rjsb6SbUwJyreFgeWQvxdkT7R3c3g7s6p5Y
+  type: crossCollateral
