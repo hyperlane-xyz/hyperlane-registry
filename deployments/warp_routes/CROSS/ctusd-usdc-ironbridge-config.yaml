@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xa7f5cc2CD457D2CC236Dc10460F14767fd135518"
+    chainName: arbitrum
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+    connections:
+      - token: ethereum|citrea|0x5eF92fe56Db2d7c6934fD160a88099fF91F93907
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x4adAf07A84B32F86288e05c4f4A09D830fcf8B71"
+    chainName: base
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    connections:
+      - token: ethereum|citrea|0x5eF92fe56Db2d7c6934fD160a88099fF91F93907
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x01874aF1507FA27129716c3bD82C28F7531cdcdF"
+    chainName: ethereum
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    connections:
+      - token: ethereum|citrea|0x5eF92fe56Db2d7c6934fD160a88099fF91F93907
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0x5eF92fe56Db2d7c6934fD160a88099fF91F93907"
+    chainName: citrea
+    coinGeckoId: citrea-usd
+    collateralAddressOrDenom: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
+    connections:
+      - token: ethereum|arbitrum|0xa7f5cc2CD457D2CC236Dc10460F14767fd135518
+      - token: ethereum|base|0x4adAf07A84B32F86288e05c4f4A09D830fcf8B71
+      - token: ethereum|ethereum|0x01874aF1507FA27129716c3bD82C28F7531cdcdF
+    decimals: 6
+    logoURI: /deployments/warp_routes/ctUSD/logo.svg
+    name: Citrea USD
+    standard: EvmHypCollateral
+    symbol: ctUSD
