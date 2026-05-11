@@ -764,26 +764,6 @@ CROSS/ctusd-usdc-ironbridge:
       name: Citrea USD
       standard: EvmHypCollateral
       symbol: ctUSD
-CROSS/ctusd-usdt-ironbridge:
-  tokens:
-    - addressOrDenom: "0x91b1F9DE8f67063FB429ea2c1B4ea2A4aC58eB1B"
-      chainName: citrea
-      collateralAddressOrDenom: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
-      connections:
-        - token: ethereum|ethereum|0x4b99C26626d59b9f855B6Accc7F72d40844e6FaF
-      decimals: 6
-      name: Citrea USD
-      standard: EvmHypCollateral
-      symbol: ctUSD
-    - addressOrDenom: "0x4b99C26626d59b9f855B6Accc7F72d40844e6FaF"
-      chainName: ethereum
-      collateralAddressOrDenom: "0xdac17f958d2ee523a2206206994597c13d831ec7"
-      connections:
-        - token: ethereum|citrea|0x91b1F9DE8f67063FB429ea2c1B4ea2A4aC58eB1B
-      decimals: 6
-      name: Tether USD
-      standard: EvmHypCollateral
-      symbol: USDT
 CROSS/moonpay:
   tokens:
     - addressOrDenom: "0xeBC079D41C41a0ef7e54aa7Af867df9a621C9bE0"
