@@ -1,9 +1,7 @@
-import {
-  ChainMetadataSchema,
-  ChainName,
-  type WarpCoreConfig,
-  type WarpRouteDeployConfig,
-} from '@hyperlane-xyz/sdk';
+import { ChainMetadataSchema } from '@hyperlane-xyz/sdk/metadata/chainMetadataTypes';
+import type { WarpRouteDeployConfig } from '@hyperlane-xyz/sdk/token/types';
+import type { ChainName } from '@hyperlane-xyz/sdk/types';
+import type { WarpCoreConfig } from '@hyperlane-xyz/sdk/warp/types';
 import { z } from 'zod';
 
 import { WARP_ROUTE_ID_REGEX } from './consts.js';
