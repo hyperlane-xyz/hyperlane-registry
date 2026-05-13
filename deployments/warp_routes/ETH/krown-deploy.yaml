@@ -1,12 +1,77 @@
 base:
   decimals: 18
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x349B20024DD7EECc872BA6C203d8A77EAcF043EC"
+        type: defaultFallbackRoutingIsm
+      - relayer: "0x74cae0ecc47b02ed9b9d32e000fd70b9417970c5"
+        type: trustedRelayerIsm
+      - blacklistedMessageIds:
+          - "0xc1f409b71e923793532c9677367e0ce087f472a5ccc7b96076727df854ad80de"
+        owner: "0x349B20024DD7EECc872BA6C203d8A77EAcF043EC"
+        type: blacklistIsm
+    threshold: 3
+    type: staticAggregationIsm
   owner: "0x349B20024DD7EECc872BA6C203d8A77EAcF043EC"
-  interchainSecurityModule: "0xdfB59Dee89062F2f5AD1eb1f2b20d262A555CfE1"
   type: native
 ethereum:
   decimals: 18
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x3Ea04C1cDDebf600dA09e6FE0654835F27258f30"
+        type: defaultFallbackRoutingIsm
+      - relayer: "0x74cae0ecc47b02ed9b9d32e000fd70b9417970c5"
+        type: trustedRelayerIsm
+      - blacklistedMessageIds:
+          - "0x53735ead21dba1a1047e9b8f5d72422d478dbddb92fd78ef85592e51122fa572"
+          - "0x3464506446c0006340084410d406e258fdb221aea8d2ba4f6778fd4e10f97c5f"
+          - "0xe2aa30e825233c0c0bd408fac39c082391635baeb6f54886361510064908a3a3"
+          - "0xd55a95c6e0d4f97de7be7ac5052e064bb12aa4a00baa42c1a640d3d8e41193cb"
+          - "0x447d2beaeeb449abbfba7feb2db322fdc43efffbe170bb378a84d9ccad438cf8"
+          - "0x98a90ea3164612f5068f8078422e023bdfbae442d4fa23cf6c2e89834d3921e6"
+          - "0xb203b097ee2786c7a10185e8701d95de0a77120d4ca113c215721c134abf3aa3"
+          - "0x82d1c589d0d73aea5625c5ed9d4d88b6193d233d55d010366085811d1cdacc61"
+          - "0x415ac49e258ca3f1ed37cc7f4294e9122b561412e4413d9101c6b238e80b9627"
+          - "0x1970dc167e6380eb503ca7ef9f8d33d931aaca82928e475e12fd0b522495c0ee"
+          - "0xcdf9f3942663dc89123bb9681d9061de12183987ecffefd646bf50f672642046"
+          - "0xf04de7ffd655bd3a1e9b627b54f0e3c26f9b271dc19a2bacd1747db274f840c7"
+          - "0xe8c81d7fa1bbe5a80ea4c5f15db8c49510415d99bddacd0cf7fa7fd4b8429359"
+          - "0x77e4a1fc3ded3596c1ddaddadd12500d051d8276d760ae95c009f06b53b95213"
+          - "0x9573f7286bfa535de3427eff6dbe53b313054237e1e1d8175b0cb15e72d0b655"
+          - "0xaef224e6e57df79ca3211cb13efc200c3d16a8234ef94d7568e1a4f802136590"
+          - "0x69f3bf64e9707ff31805bc3a72e1c938afbbe5d4d7832f8267635fbfd70a1308"
+          - "0xa08329f58d8ce672880441f2d18a63c12216cd560c660d811c1dda60807f9671"
+          - "0x27fc3ee2873259be597a6efa4ebb9f2af544edaf6dc2426871705fe1550fa83f"
+          - "0x92805ce4f9146e8519bfb7e004c4dc7de7397210dde63b65a3c1e52042b1dccf"
+          - "0x1c5ffbdffba3fd808c4a85b8b4d17989891d77e4dfb3b738d0ba3438cfa6ae98"
+          - "0xa02707d962740adbf5847fdae0036a02f65007073998ed808ef7ffea8bd12113"
+          - "0xc1f2f12de065b26d7c8b08a3c0be72a3a877535222644106fc37002a926cff95"
+          - "0xa4483dbaecae7337914abca4e68e02a50e0af23068b7bf0a340043ad7c7eb3c1"
+          - "0xb4107ead18ff05e0eba36494f447cc6e92fc59caa43c14350b193c067f40b9f2"
+          - "0xcb78db338473d49dc079d7990a1b6b68f9ba1b886e36242cbcb66c48871ddd76"
+          - "0x972fa5e226deeec1605441ef0a922ef90afa00484ec0d3a9d9a80885a76cc304"
+          - "0xb2af49e24572ab400f7ee39897ae5b9b33ab0b79c3eaacb0dc8935ae053673bb"
+          - "0x6c8773c3c207abb21e3516ebf0b9695426664176073646cb44ead9a96a41bd34"
+          - "0x5043428756d7ebf3b98b427be9fbcf0511f109afec588905ed93cfa8d48fb535"
+          - "0x84d015f0522d173f9a578fe0f36b9eac0a9dbdaa659151434da5eb5fd57027bf"
+          - "0x172cb8f2bb0dcdf6e8b01f66ac3492897e6f27048de058ea6ec076a78d24bee7"
+          - "0x0c165323abbbcd4168c2f455b513c460a70e4ad85d7a40873a770c3909bc17c6"
+          - "0x11d2d98ad70171c26ddd41062a6cdf97bd36095d0ffbb810f78528de828c5f9d"
+          - "0x51fc0eaf0e427ada0fa20ffa3b0bba1befab5a6f4f3cb0384ef72396f2c77b18"
+          - "0x3362bc0c149b5ce13b40648e02a359ebb0d6f5ba77bc99065a7e6fba44776bef"
+          - "0x2ce8cd2d5922793d4f45a968f32bdd799c52ed83dd4f4b0e0ee5952b5c65c998"
+          - "0x2fe0b1acd72b8f46b1f6e51928bd2496a0bcdfc313509c6296c510c0e23075eb"
+          - "0x11b1e465ff91da5079de23e2af42464a7e75ef36f11c2245e3582499ead929bd"
+          - "0xd93856ad80308052a9da711ab93c4e39b440475c7265437e275197839a586f9a"
+          - "0x3c1609c6b56beb4527772c5297445ff304dafeab146ad13f21e620c213862737"
+          - "0xd2fcd418e23b38581e19b4a58cf8c377aabd420c4f7abd7fafd83c4260cfd9e4"
+        owner: "0x3Ea04C1cDDebf600dA09e6FE0654835F27258f30"
+        type: blacklistIsm
+    threshold: 3
+    type: staticAggregationIsm
   owner: "0x3Ea04C1cDDebf600dA09e6FE0654835F27258f30"
-  interchainSecurityModule: "0xffF93bD9150568DEAD040c1D33c8E9c7dDeD7683"
   type: native
 krown:
   decimals: 18
