@@ -1,9 +1,9 @@
+import type { ChainMetadata } from '@hyperlane-xyz/sdk/metadata/chainMetadataTypes';
 import {
-  ChainMetadata,
-  NormalizedScale,
-  ScaleInput,
+  type NormalizedScale,
+  type ScaleInput,
   normalizeScale as sdkNormalizeScale,
-} from '@hyperlane-xyz/sdk';
+} from '@hyperlane-xyz/sdk/utils/decimals';
 import { isNullish } from '@hyperlane-xyz/utils';
 import { stringify } from 'yaml';
 
