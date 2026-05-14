@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - chainName: bsc
+    standard: EvmHypSynthetic
+    decimals: 18
+    symbol: NEX
+    name: Nexus
+    addressOrDenom: "0x365DE036A1F7dcCb621530d517133521debB2013"
+    logoURI: /deployments/warp_routes/NEX/logo.png
+    connections:
+      - token: ethereum|ethereum|0xb71183f48F7f7789D40551149bE28a51f9A97F9A
+  - chainName: ethereum
+    standard: EvmHypCollateral
+    decimals: 18
+    symbol: NEX
+    name: Nexus
+    addressOrDenom: "0xb71183f48F7f7789D40551149bE28a51f9A97F9A"
+    collateralAddressOrDenom: "0xf57D49646621F563b0B905aFc8336923AC569Ec5"
+    coinGeckoId: nexus-4
+    logoURI: /deployments/warp_routes/NEX/logo.png
+    connections:
+      - token: ethereum|bsc|0x365DE036A1F7dcCb621530d517133521debB2013
