@@ -12768,6 +12768,30 @@ lrtsSOL/solanamainnet-sonicsvm:
       symbol: lrtsSOL
 mUSD/musd:
   tokens:
+    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xaca92e438df0b2401ff60da7e4337b687a2435da"
+      connections:
+        - token: ethereum|monad|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
+      decimals: 6
+      logoURI: /deployments/warp_routes/mUSD/logo.svg
+      name: MetaMask USD
+      standard: EvmM0Portal
+      symbol: mUSD
+      warpRouteId: mUSD/musd
+    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
+      chainName: monad
+      collateralAddressOrDenom: "0xaca92e438df0b2401ff60da7e4337b687a2435da"
+      connections:
+        - token: ethereum|ethereum|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
+      decimals: 6
+      logoURI: /deployments/warp_routes/mUSD/logo.svg
+      name: MetaMask USD
+      standard: EvmM0Portal
+      symbol: mUSD
+      warpRouteId: mUSD/musd
+mUSD/musd-portal-lite:
+  tokens:
     - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
       chainName: bsc
       collateralAddressOrDenom: "0xaca92e438df0b2401ff60da7e4337b687a2435da"
@@ -12779,7 +12803,7 @@ mUSD/musd:
       name: MetaMask USD
       standard: EvmM0PortalLite
       symbol: mUSD
-      warpRouteId: mUSD/musd
+      warpRouteId: mUSD/musd-portal-lite
     - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
       chainName: ethereum
       collateralAddressOrDenom: "0xaca92e438df0b2401ff60da7e4337b687a2435da"
@@ -12791,7 +12815,7 @@ mUSD/musd:
       name: MetaMask USD
       standard: EvmM0PortalLite
       symbol: mUSD
-      warpRouteId: mUSD/musd
+      warpRouteId: mUSD/musd-portal-lite
     - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
       chainName: linea
       collateralAddressOrDenom: "0xaca92e438df0b2401ff60da7e4337b687a2435da"
@@ -12803,7 +12827,7 @@ mUSD/musd:
       name: MetaMask USD
       standard: EvmM0PortalLite
       symbol: mUSD
-      warpRouteId: mUSD/musd
+      warpRouteId: mUSD/musd-portal-lite
 milkTIA/mantapacific-osmosis:
   options:
     interchainFeeConstants:
