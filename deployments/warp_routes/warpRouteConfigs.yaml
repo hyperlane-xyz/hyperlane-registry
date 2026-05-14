@@ -4833,6 +4833,28 @@ MONEY/sonicsvm:
       name: Money
       standard: SealevelHypCollateral
       symbol: MONEY
+NEX/bsc:
+  tokens:
+    - addressOrDenom: "0x365DE036A1F7dcCb621530d517133521debB2013"
+      chainName: bsc
+      connections:
+        - token: ethereum|ethereum|0xb71183f48F7f7789D40551149bE28a51f9A97F9A
+      decimals: 18
+      logoURI: /deployments/warp_routes/NEX/logo.png
+      name: Nexus
+      standard: EvmHypSynthetic
+      symbol: NEX
+    - addressOrDenom: "0xb71183f48F7f7789D40551149bE28a51f9A97F9A"
+      chainName: ethereum
+      coinGeckoId: nexus-4
+      collateralAddressOrDenom: "0xf57D49646621F563b0B905aFc8336923AC569Ec5"
+      connections:
+        - token: ethereum|bsc|0x365DE036A1F7dcCb621530d517133521debB2013
+      decimals: 18
+      logoURI: /deployments/warp_routes/NEX/logo.png
+      name: Nexus
+      standard: EvmHypCollateral
+      symbol: NEX
 NTN/holesky-piccadilly:
   tokens:
     - addressOrDenom: "0xdF73856d44C1f7b3B14Fd0DaD8B0792fCf1c3f68"
