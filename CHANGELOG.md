@@ -1,5 +1,21 @@
 # @hyperlane-xyz/registry
 
+## 25.2.0
+
+### Minor Changes
+
+- 6caf1d0: added Nexus NEX warp route on ethereum and bsc
+- 52b2814: added predicate testnet route
+
+### Patch Changes
+
+- 01622b5: Add mUSD (Ethereum, Monad) warp route on the new EvmM0Portal. Split mUSD into two route configs: musd (Ethereum/Monad on EvmM0Portal) and musd-portal-lite (BSC/Ethereum/Linea on EvmM0PortalLite, to be deprecated).
+- 6f42435: Removed warp fees from NEX/bsc route
+- 73a4fe6: Update Eden interchainSecurityModule address and add quotedCalls address.
+- ae70d4a: Updated Krown reorgPeriod to finalized.
+- f4dc4ab: Update Zero Network block explorer to https://explorer.zero.network
+- 8287b6a: The WARD/ward-base route now points at the production Base↔Warden deployment (Base 0xf09e4C8193F16019F0573F370F9A997b11f56638 ↔ Warden 0xc5ADACe5E2250e5497CF1eF7B4f100e10099e4c4).
+
 ## 25.1.0
 
 ### Minor Changes
