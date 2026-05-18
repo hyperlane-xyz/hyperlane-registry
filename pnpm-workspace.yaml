@@ -1,4 +1,12 @@
 # Reject packages published less than 7 days ago (supply chain protection)
 minimumReleaseAge: 10080
 minimumReleaseAgeExclude:
-  - '@hyperlane-xyz/*'
+  - "@hyperlane-xyz/*"
+allowBuilds:
+  bigint-buffer: true
+  bufferutil: true
+  core-js: true
+  esbuild: true
+  protobufjs: true
+  secp256k1: true
+  utf-8-validate: true
