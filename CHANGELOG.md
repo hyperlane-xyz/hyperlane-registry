@@ -1,5 +1,99 @@
 # @hyperlane-xyz/registry
 
+## 25.1.0
+
+### Minor Changes
+
+- d6c2ebb: added moonpay route
+- 5022bba: added nara chain and USDC/USDT/SOL warp routes between nara and solanamainnet
+- 1ceea2c: added Ribbita by Virtuals (TIBBIR) warp route on Base and Igra
+- 52f9bc9: added USDe warp route on ethereum and igra
+- 260dcd8: Mark molten, artela, fluence, and zoramainnet as deprecated.
+- 977c4d4: Update Hyperlane dependencies to SDK 33.0.2 and Utils 33.0.2
+- 8ddc609: Update Hyperlane dependencies to SDK 33.1.1 and Utils 33.1.1
+- 0581af5: Mark everclear as deprecated.
+- dc12521: Mark milkyway as deprecated.
+- 8708102: renamed BLEND to Fluent
+- 08b134c: redeployed KII warp route on kiichain, ethereum, base, polygon, and bsc
+
+### Patch Changes
+
+- c945277: Update Ethereum interchainSecurityModule and add quotedCalls address; disable polynomialfi chain (deprecated)
+- 8f72d82: Update Lisk logo and add dark mode variants for Lisk and Hyperliquid (hyperevm + testnet)
+- 8708102: rename BLEND token name to Fluent
+- 3464a9e: Avoid importing the SDK root from registry runtime modules so bundled services do not pull unused SDK protocol artifacts.
+- 254dc69: Update scale for bsc in VRA/bsc-ethereum from 10 to 1
+- 3866723: Enable missing connections for USDT/eclipsemainnet route
+- 502db64: Updated Safe transaction service URLs to current Safe-supported API endpoints.
+- a4801f0: Added missing scale field to USDT/eni, update deploy file to .yaml
+- c7b1d53: Added coinGeckoId to USDC/lukso
+- 71cded3: Fix USDnr token logo
+- c36267e: Removed connections to fraxtal in EZETH/renzo
+- f716ca7: Updated Zero Network RPC URLs to use Zerion and dRPC providers.
+
+## 25.0.0
+
+### Major Changes
+
+- 798d33a: Rename USDT/eclipsemainnet-ethereum-solanamainnet route to USDT/eclipsemainnet and extend route
+
+### Minor Changes
+
+- ea3b41c: added BLEND warp route on Fluent (collateral) and Solana (synthetic)
+- f3ed361: added KII warp route on kiichain, ethereum, base, polygon, and bsc
+- 54fe917: Added missing scale fields to warp route config files for TRUMP, USDC (aleo, carrchain, matchain), USDT (aleo, carrchain, eclipsemainnet), and WBTC (carrchain) routes. These are needed by the UI and SDK to correctly compute destination amounts for routes with different decimals.
+- ab1ae00: added SOL warp route on solanamainnet and igra
+- 44df768: added USDS warp route on ethereum and igra
+- eea67a7: added USDT warp route on ethereum and igra
+- 232b400: added WETH warp route on ethereum and igra
+- 305d3f2: Update Hyperlane dependencies to SDK 31.0.0 and Utils 31.0.0
+- f0c3369: Update Hyperlane dependencies to SDK 31.1.0 and Utils 31.1.0
+- 8e80f68: Update Hyperlane dependencies to SDK 31.2.1 and Utils 31.2.1
+- 6933fa5: Update Hyperlane dependencies to SDK 32.0.1 and Utils 32.0.1
+- ed3a4b8: Extended eclipse usdc warp route to katana and bsc
+- 9061e91: Remove withdrawal capabilities for zircuit, blast, swell, taiko, berachain and sei for EZETH/renzo
+- 5f9a4de: feat: added testnet cctp v2 fast transfer warp route for testing
+- 5084ac3: Removed v2 suffix from hyperevm block explorer api url + added monadscan explorer info
+- 8eecd1d: Remove wM routes between Ethereum, Linea and BSC
+- 709f357: Added USDT/oft-legacy collateralOft warp route deployment artifacts for ethereum, arbitrum, and tron using LayerZero Legacy Mesh OFT bridge contracts.
+- 4d4deeb: Added USDT/oft collateralOft warp route deployment artifacts for ethereum, arbitrum, and plasma using LayerZero OFT bridge contracts.
+
+### Patch Changes
+
+- fae314d: CI warp route checks were switched from the Docker-based infra script to the published Hyperlane CLI, with the CLI version pinned to the registry's SDK dependency.
+- 72e1e69: The warp deploy check was updated to exempt M0 artifacts from deploy-config enforcement.
+- 63de335: Added missing scale fields to USDC/eclipsemainnet warp route config tokens to match the scales defined in the corresponding deploy file.
+- e3725bb: swap ctUSD logo from jpg to svg
+- 0fdb3e8: rename BLEND token name to Fluent in configs
+- 590bf23: rename BLEND token name to Fluent
+- 9ba14fe: Update CCTP warp route config
+- 7defecd: Migrate wM (Mantra, Soneium) and USDSC (Ethereum, Soneium) warp routes to the new EvmM0Portal. Split wM into two route configs: wrapped-m (Ethereum/Mantra/Soneium on EvmM0Portal) and wrapped-m-portal-lite (BSC/Ethereum/Linea on EvmM0PortalLite, to be deprecated).
+- 65ccf42: Fixed usdc fpwr metadata
+- 42133ee: Add USDnr (Nerona USD) warp route between Ethereum and FLuent using EvmM0Portal standard
+- d5132be: update USDnr logo
+
+## 24.3.0
+
+### Minor Changes
+
+- 50dbbde: added cbBTC warp route on base and igra
+- 4bcf8c8: added iKAS warp route on igra and ethereum
+- 8db446a: added USDC warp route on arbitrum, avalanche, base, ethereum, igra, optimism, and polygon
+- 9e39b85: added wstETH warp route on ethereum and igra
+- 4b67326: April 2nd multisig batch.
+- 3f790c7: Mark 17 chains as deprecated: story, merlin, degenchain, dogechain, tangle, harmony, superpositionmainnet, arbitrumnova, polygonzkevm, aurora, fantom, b3, bsquared, scroll, zeronetwork, moonbeam, arcadiatestnet2.
+- 01002be: extended paradex usdc route to hyperevm
+- 9f323e6: Added 1Piece/eni deployment artifacts
+- 7449c91: Deploy to mocachain, tempo, fluent, kiichain.
+- a2b0063: Updated tron & tronshasta explorer family to tronscan
+- 178b511: Allow merged registries to tolerate recognized not-found read misses when another registry succeeds, while still throwing when every registry misses.
+- cf2bd52: feat: added RISE/bsc-ethereum warp route
+
+### Patch Changes
+
+- 423f682: Replace ESLint and Prettier with oxlint and oxfmt for linting and formatting
+- 057e756: The sealevel ISM addresses are updated for eclipsemainnet, sonicsvm, and soon after the multisig ISM redeployments.
+
 ## 24.2.0
 
 ### Minor Changes

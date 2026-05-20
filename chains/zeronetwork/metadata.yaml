@@ -1,9 +1,12 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [deprecated]
+  status: disabled
 blockExplorers:
-  - apiUrl: https://zero-network.calderaexplorer.xyz/verification/contract_verification
-    family: etherscan
+  - apiUrl: https://explorer.zero.network
+    family: other
     name: Zero Network Explorer
-    url: https://zerion-explorer.vercel.app
+    url: https://explorer.zero.network
 blocks:
   confirmations: 1
   estimateBlockTime: 1
@@ -23,5 +26,6 @@ nativeToken:
   symbol: ETH
 protocol: ethereum
 rpcUrls:
-  - http: https://zero-network.calderachain.xyz
+  - http: https://rpc.zerion.io/v1/zero
+  - http: https://zero.drpc.org
 technicalStack: zksync

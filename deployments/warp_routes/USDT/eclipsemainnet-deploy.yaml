@@ -1,0 +1,219 @@
+arbitrum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    ethereum:
+      - bridge: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
+      - bridge: "0x9323793FB9a071ce5fE839079925c0e39f37170F"
+    plasma:
+      - bridge: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
+    tron:
+      - bridge: "0x9323793FB9a071ce5fE839079925c0e39f37170F"
+  decimals: 6
+  name: USD₮0
+  owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
+  proxyAdmin:
+    address: "0x33465314CbD880976B7A9f86062d615DE5E4Fa8A"
+    owner: "0x03fD5BE9DF85F0017dC7F4DC3068dDF64fffF25e"
+  scale:
+    denominator: 1
+    numerator: 1
+  symbol: USD₮0
+  token: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+  tokenFee:
+    feeContracts:
+      bsc:
+        bps: 15
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        type: LinearFee
+      ethereum:
+        bps: 6.4
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        type: LinearFee
+      plasma:
+        bps: 10
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        type: LinearFee
+      tron:
+        bps: 15
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        type: LinearFee
+    owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+    type: RoutingFee
+  type: collateral
+bsc:
+  decimals: 18
+  name: Tether USD
+  owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
+  proxyAdmin:
+    address: "0x9C5a42CBA06D818945df8D798C98F41EA1d88BDA"
+    owner: "0x7bB2ADeDdC342ffb611dDC073095cc4B8C547170"
+  scale:
+    denominator: 1000000000000
+    numerator: 1
+  symbol: USDT
+  token: "0x55d398326f99059fF775485246999027B3197955"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 15
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        type: LinearFee
+      ethereum:
+        bps: 15
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        type: LinearFee
+      plasma:
+        bps: 15
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        type: LinearFee
+      tron:
+        bps: 15
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        type: LinearFee
+    owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+    type: RoutingFee
+  type: collateral
+eclipsemainnet:
+  decimals: 6
+  foreignDeployment: 5g5ujyYUNvdydwyDVCpZwPpgYRqH5RYJRi156cxyE3me
+  gas: 300000
+  hook: Hs7KVBU67nBnWhDPZkEFwWqrFMUfJbmY2DQ4gmCZfaZp
+  name: USDT
+  owner: E4TncCw3WMqQZbkACVcomX3HqcSzLfNyhTnqKN1DimGr
+  symbol: USDT
+  type: synthetic
+ethereum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
+      - bridge: "0xC0dA8EF1225145E0b720d8A33471fa6360b7e73B"
+    plasma:
+      - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
+    tron:
+      - bridge: "0xC0dA8EF1225145E0b720d8A33471fa6360b7e73B"
+  contractVersion: 11.1.0
+  decimals: 6
+  name: Tether USD
+  owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+  proxyAdmin:
+    address: "0x692e50577fAaBF10F824Dc8Ce581e3Af93785175"
+    owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+  scale:
+    denominator: 1
+    numerator: 1
+  symbol: USDT
+  token: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 3.1
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        type: LinearFee
+      bsc:
+        bps: 15
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        type: LinearFee
+      plasma:
+        bps: 10
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        type: LinearFee
+      tron:
+        bps: 15
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        type: LinearFee
+    owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+    type: RoutingFee
+  type: collateral
+plasma:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0x93bfFA2231fbA5029997603fb68D9aC08024Baa2"
+    ethereum:
+      - bridge: "0x93bfFA2231fbA5029997603fb68D9aC08024Baa2"
+  decimals: 6
+  name: USDT0
+  owner: "0x5f132a9a16F8e4AE1E2ec2F2bcEdf074d1496c3f"
+  proxyAdmin:
+    address: "0x0587E4E093Cd820eda59EcF0FD73544cE65B4775"
+    owner: "0xCcf5e9862D486e71aA47B87Cb3a7eEB1e1f2F624"
+  scale:
+    denominator: 1
+    numerator: 1
+  symbol: USDT0
+  token: "0xb8ce59fc3717ada4c02eadf9682a9e934f625ebb"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 10
+        owner: "0x5BeF46e59b0D12C8C9806b05dA9cdcB7064a0Da9"
+        type: LinearFee
+      bsc:
+        bps: 15
+        owner: "0x5BeF46e59b0D12C8C9806b05dA9cdcB7064a0Da9"
+        type: LinearFee
+      ethereum:
+        bps: 10
+        owner: "0x5BeF46e59b0D12C8C9806b05dA9cdcB7064a0Da9"
+        type: LinearFee
+      tron:
+        bps: 15
+        owner: "0x5BeF46e59b0D12C8C9806b05dA9cdcB7064a0Da9"
+        type: LinearFee
+    owner: "0x5BeF46e59b0D12C8C9806b05dA9cdcB7064a0Da9"
+    type: RoutingFee
+  type: collateral
+solanamainnet:
+  decimals: 6
+  foreignDeployment: Bk79wMjvpPCh5iQcCEjPWFcG1V2TfgdwaBsWBEYFYSNU
+  gas: 300000
+  hook: BhNcatUDC2D5JTyeaqrdSukiVFsEHK7e3hVmKMztwefv
+  name: USDT
+  owner: BNGDJ1h9brgt6FFVd8No1TVAH48Fp44d7jkuydr1URwJ
+  symbol: USDT
+  token: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+  type: collateral
+tron:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0x43Bb7C9C64a05af94d67B52883a60756950058D7"
+    ethereum:
+      - bridge: "0x43Bb7C9C64a05af94d67B52883a60756950058D7"
+  decimals: 6
+  name: Tether USD
+  owner: "0xB960616C7E2ee0F2a296A4b2B9D0b3308E23A69D"
+  proxyAdmin:
+    address: "0x0d558DbF548fB9df2b62740b8a4C79A7160971DB"
+    owner: "0xB960616C7E2ee0F2a296A4b2B9D0b3308E23A69D"
+  scale:
+    denominator: 1
+    numerator: 1
+  symbol: USDT
+  token: "0xa614f803b6fd780986a42c78ec9c7f77e6ded13c"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 15
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        type: LinearFee
+      bsc:
+        bps: 15
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        type: LinearFee
+      ethereum:
+        bps: 15
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        type: LinearFee
+      plasma:
+        bps: 15
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        type: LinearFee
+    owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+    type: RoutingFee
+  type: collateral

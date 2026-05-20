@@ -1,10 +1,7 @@
-import type {
-  ChainMap,
-  ChainMetadata,
-  ChainName,
-  WarpCoreConfig,
-  WarpRouteDeployConfig,
-} from '@hyperlane-xyz/sdk';
+import type { ChainMetadata } from '@hyperlane-xyz/sdk/metadata/chainMetadataTypes';
+import type { WarpRouteDeployConfig } from '@hyperlane-xyz/sdk/token/types';
+import type { ChainMap, ChainName } from '@hyperlane-xyz/sdk/types';
+import type { WarpCoreConfig } from '@hyperlane-xyz/sdk/warp/types';
 import type { Logger } from 'pino';
 
 import {
@@ -149,7 +146,28 @@ export class MergedRegistry implements IRegistry {
   }
 
   protected multiRegistryRead<R>(readFn: (registry: IRegistry) => Promise<R> | R) {
-    return Promise.all(this.registries.map(readFn));
+    return Promise.all(
+      this.registries.map(async (registry) => {
+        try {
+          return { ok: true as const, value: await readFn(registry) };
+        } catch (error) {
+          if (isNotFoundError(error)) {
+            this.logger.debug(
+              `Tolerating not-found read miss from ${registry.type} registry at ${registry.uri}`,
+            );
+            return { ok: false as const, error };
+          }
+          throw error;
+        }
+      }),
+    ).then((results) => {
+      const successResults = results.filter((result) => result.ok);
+      if (!successResults.length) {
+        const notFoundResult = results.find((result) => !result.ok);
+        if (notFoundResult) throw notFoundResult.error;
+      }
+      return results.map((result) => (result.ok ? result.value : (null as R)));
+    });
   }
 
   protected async multiRegistryWrite(
@@ -179,4 +197,22 @@ export class MergedRegistry implements IRegistry {
       logger: this.logger,
     });
   }
+}
+
+function isNotFoundError(error: unknown): boolean {
+  if (!error || typeof error !== 'object') return false;
+  const { code, message, status, statusCode, response } = error as {
+    code?: unknown;
+    message?: unknown;
+    status?: unknown;
+    statusCode?: unknown;
+    response?: { status?: unknown; statusCode?: unknown };
+  };
+  return (
+    [status, statusCode, response?.status, response?.statusCode].some(
+      (candidate) => Number(candidate) === 404,
+    ) ||
+    code === 'ENOENT' ||
+    (typeof message === 'string' && /^File not found(?:\b|:)/i.test(message))
+  );
 }

@@ -366,7 +366,7 @@ arbitrum:
   displayName: Arbitrum
   domainId: 42161
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-arbitrum.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/arb1
   index:
     from: 143649797
   name: arbitrum
@@ -381,6 +381,10 @@ arbitrum:
     - http: https://arbitrum.drpc.org
   technicalStack: arbitrumnitro
 arbitrumnova:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://arbitrum-nova.blockscout.com/api
       family: blockscout
@@ -467,6 +471,10 @@ arcadia:
     - http: https://arcadia.khalani.network
   technicalStack: other
 arcadiatestnet2:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.khalani.network/api
       family: blockscout
@@ -517,6 +525,10 @@ argochaintestnet:
   rpcUrls:
     - http: https://test-rpc.devolvedai.com
 artela:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://artscan.artela.network/api
       family: blockscout
@@ -680,6 +692,10 @@ astarzkevm:
     - http: https://astar-zkevm-rpc.dwellir.com
   technicalStack: polygoncdk
 aurora:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.mainnet.aurora.dev/api
       family: blockscout
@@ -756,7 +772,7 @@ avalanche:
   displayName: Avalanche
   domainId: 43114
   gasCurrencyCoinGeckoId: avalanche-2
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-avalanche.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/avax
   name: avalanche
   nativeToken:
     decimals: 18
@@ -773,6 +789,10 @@ avalanche:
         minBlockNumber: 6765067
   technicalStack: other
 b3:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.b3.fun/api
       family: blockscout
@@ -824,7 +844,7 @@ base:
   displayName: Base
   domainId: 8453
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-base.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/base
   name: base
   nativeToken:
     decimals: 18
@@ -944,7 +964,7 @@ berachain:
   displayName: Berachain
   domainId: 80094
   gasCurrencyCoinGeckoId: berachain-bera
-  gnosisSafeTransactionServiceUrl: https://transaction.safe.berachain.com
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/berachain
   name: berachain
   nativeToken:
     decimals: 18
@@ -1206,7 +1226,7 @@ bsc:
   displayNameShort: Binance
   domainId: 56
   gasCurrencyCoinGeckoId: binancecoin
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-bsc.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/bnb
   name: bsc
   nativeToken:
     decimals: 18
@@ -1248,6 +1268,10 @@ bsctestnet:
     - http: https://bsc-testnet.publicnode.com
     - http: https://bsc-testnet.drpc.org
 bsquared:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.bsquared.network/api
       family: etherscan
@@ -1549,7 +1573,7 @@ celo:
   displayName: Celo
   domainId: 42220
   gasCurrencyCoinGeckoId: celo
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-celo.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/celo
   name: celo
   nativeToken:
     decimals: 18
@@ -2059,6 +2083,7 @@ cyber:
   displayName: Cyber
   domainId: 7560
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://transaction-cyber.safe.optimism.io
   name: cyber
   nativeToken:
     decimals: 18
@@ -2122,6 +2147,10 @@ deepbrainchaintestnet:
   rpcUrls:
     - http: https://rpc-testnet.dbcwallet.io
 degenchain:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.degen.tips/api/eth-rpc
       family: blockscout
@@ -2442,6 +2471,10 @@ dodotestnet:
     - http: https://dodochain-testnet.alt.technology
   technicalStack: arbitrumnitro
 dogechain:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.dogechain.dog/api
       family: blockscout
@@ -2834,7 +2867,7 @@ ethereum:
   displayName: Ethereum
   domainId: 1
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-mainnet.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/eth
   name: ethereum
   nativeToken:
     decimals: 18
@@ -2874,6 +2907,10 @@ euphoriatestnet:
   rpcUrls:
     - http: https://jsonrpc.euphoria.aura.network
 everclear:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://scan.everclear.org/api
       family: blockscout
@@ -2932,6 +2969,10 @@ evmos:
     - http: https://evmos.drpc.org
   technicalStack: other
 fantom:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://api.ftmscan.com/api
       family: etherscan
@@ -3129,6 +3170,10 @@ flowmainnet:
   transactionOverrides:
     gasPrice: 16038000000
 fluence:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://blockscout.mainnet.fluence.dev/api
       family: blockscout
@@ -3589,7 +3634,7 @@ gnosis:
   displayName: Gnosis
   domainId: 100
   gasCurrencyCoinGeckoId: xdai
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-gnosis-chain.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/gno
   name: gnosis
   nativeToken:
     decimals: 18
@@ -3707,6 +3752,10 @@ ham:
   rpcUrls:
     - http: https://rpc.ham.fun
 harmony:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.harmony.one/api
       family: blockscout
@@ -3886,7 +3935,7 @@ humanitytestnet:
     - http: https://rpc.testnet.humanity.org
 hyperevm:
   blockExplorers:
-    - apiUrl: https://www.hyperscan.com/api/v2
+    - apiUrl: https://www.hyperscan.com/api
       family: blockscout
       name: HyperEVM Explorer
       url: https://www.hyperscan.com
@@ -3901,7 +3950,7 @@ hyperevm:
   displayName: HyperEVM
   domainId: 999
   gasCurrencyCoinGeckoId: hyperliquid
-  gnosisSafeTransactionServiceUrl: https://prod.hyperliquid.keypersafe.xyz
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/hyper
   name: hyperevm
   nativeToken:
     decimals: 18
@@ -4255,7 +4304,7 @@ ink:
   displayName: Ink
   domainId: 57073
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-ink.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/ink
   name: ink
   nativeToken:
     decimals: 18
@@ -4285,6 +4334,7 @@ inksepolia:
     url: https://www.hyperlane.xyz
   displayName: Ink Sepolia
   domainId: 763373
+  gnosisSafeTransactionServiceUrl: https://kraken-sepolia.superchain.safe.protofire.io
   isTestnet: true
   name: inksepolia
   nativeToken:
@@ -4504,7 +4554,7 @@ krown:
   blocks:
     confirmations: 1
     estimateBlockTime: 12
-    reorgPeriod: 5
+    reorgPeriod: finalized
   chainId: 1983
   deployer:
     name: Abacus Works
@@ -4655,7 +4705,7 @@ linea:
   displayName: Linea
   domainId: 59144
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-linea.safe.global
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/linea
   name: linea
   nativeToken:
     decimals: 18
@@ -4733,6 +4783,7 @@ lisksepolia:
     url: https://github.com/guy93354
   displayName: Lisk Sepolia
   domainId: 4202
+  gnosisSafeTransactionServiceUrl: https://transaction-lisk-sepolia.safe.optimism.io
   isTestnet: true
   name: lisksepolia
   nativeToken:
@@ -4954,7 +5005,7 @@ mantle:
   displayName: Mantle
   domainId: 5000
   gasCurrencyCoinGeckoId: mantle
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-mantle.safe.global
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/mantle
   name: mantle
   nativeToken:
     decimals: 18
@@ -5096,6 +5147,10 @@ megaethtestnet:
     - http: https://carrot.megaeth.com/rpc
   technicalStack: other
 merlin:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://scan.merlinchain.io/api
       family: other
@@ -5251,6 +5306,10 @@ mevmdevnet:
   rpcUrls:
     - http: https://mevm.devnet.imola.movementlabs.xyz
 milkyway:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   bech32Prefix: milk
   blocks:
     confirmations: 1
@@ -5528,6 +5587,7 @@ modetestnet:
     url: https://www.hyperlane.xyz
   displayName: Mode Testnet
   domainId: 919
+  gnosisSafeTransactionServiceUrl: https://transaction-mode-sepolia.safe.optimism.io
   isTestnet: true
   name: modetestnet
   nativeToken:
@@ -5539,6 +5599,10 @@ modetestnet:
     - http: https://sepolia.mode.network
   technicalStack: opstack
 molten:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://molten.calderaexplorer.xyz/api
       family: blockscout
@@ -5568,6 +5632,11 @@ molten:
   technicalStack: arbitrumnitro
 monad:
   blockExplorers:
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=143
+      family: etherscan
+      name: MonadScan
+      url: https://monadscan.com
     - apiUrl: https://mainnet-beta.monvision.io/api
       family: other
       name: Monad Explorer
@@ -5646,6 +5715,10 @@ moonbase:
     - http: https://moonbase-alpha.drpc.org
     - http: https://rpc.testnet.moonbeam.network
 moonbeam:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiKey: DDAT4TGIUSSV8MR489UJ21R34WGA1MM2GG
       apiUrl: https://api-moonbeam.moonscan.io/api
@@ -5722,6 +5795,32 @@ morph:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.morphl2.io
+  technicalStack: other
+nara:
+  blockExplorers:
+    - apiUrl: https://explorer.nara.build
+      family: other
+      name: Nara Explorer
+      url: https://explorer.nara.build
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 0.4
+    reorgPeriod: 0
+  chainId: 40778959
+  deployer:
+    name: Nara
+    url: https://nara.build
+  displayName: Nara
+  domainId: 40778959
+  name: nara
+  nativeToken:
+    decimals: 9
+    denom: lamport
+    name: Nara
+    symbol: NARA
+  protocol: sealevel
+  rpcUrls:
+    - http: https://mainnet-api.nara.build/
   technicalStack: other
 nautilus:
   blocks:
@@ -5804,6 +5903,32 @@ nero:
   transactionOverrides:
     maxFeePerGas: 10000000000
     maxPriorityFeePerGas: 1000000000
+nesa:
+  blockExplorers:
+    - apiUrl: https://explorer-evm.nesa.ai/api
+      family: blockscout
+      name: Nesa Explorer
+      url: https://explorer-evm.nesa.ai
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 41443
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Nesa
+  domainId: 41443
+  gasCurrencyCoinGeckoId: nesa-ai-token
+  name: nesa
+  nativeToken:
+    decimals: 18
+    name: NES
+    symbol: NES
+  protocol: ethereum
+  rpcUrls:
+    - http: https://erpc.nesa.ai
+  technicalStack: other
 neuratestnet:
   availability:
     reasons:
@@ -6187,7 +6312,7 @@ optimism:
   displayName: Optimism
   domainId: 10
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-optimism.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/oeth
   name: optimism
   nativeToken:
     decimals: 18
@@ -6218,6 +6343,7 @@ optimismsepolia:
   displayName: Optimism Sepolia
   domainId: 11155420
   gasCurrencyCoinGeckoId: ethereum
+  gnosisSafeTransactionServiceUrl: https://transaction-optimism-sepolia.safe.optimism.io
   isTestnet: true
   name: optimismsepolia
   nativeToken:
@@ -6510,7 +6636,7 @@ polygon:
   displayName: Polygon
   domainId: 137
   gasCurrencyCoinGeckoId: polygon-ecosystem-token
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-polygon.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/pol
   name: polygon
   nativeToken:
     decimals: 18
@@ -6553,6 +6679,10 @@ polygonamoy:
     - http: https://polygon-amoy.drpc.org
     - http: https://polygon-amoy.gateway.tenderly.co
 polygonzkevm:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
       apiUrl: https://api.etherscan.io/v2/api?chainid=1101
@@ -6571,7 +6701,7 @@ polygonzkevm:
   displayNameShort: zkEVM
   domainId: 1101
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-zkevm.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/zkevm
   name: polygonzkevm
   nativeToken:
     decimals: 18
@@ -6583,6 +6713,10 @@ polygonzkevm:
     - http: https://rpc.ankr.com/polygon_zkevm
   technicalStack: polygoncdk
 polynomialfi:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://polynomialscan.io/api
       family: routescan
@@ -7193,6 +7327,10 @@ sapphiretestnet:
     - http: https://testnet.sapphire.oasis.io
   technicalStack: other
 scroll:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
       apiUrl: https://api.etherscan.io/v2/api?chainid=534352
@@ -7210,7 +7348,7 @@ scroll:
   displayName: Scroll
   domainId: 534352
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-scroll.safe.global
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/scr
   name: scroll
   nativeToken:
     decimals: 18
@@ -7303,7 +7441,7 @@ sepolia:
   displayName: Sepolia
   domainId: 11155111
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-sepolia.safe.global
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/sep
   isTestnet: true
   name: sepolia
   nativeToken:
@@ -7627,7 +7765,7 @@ soneium:
   displayName: Soneium
   domainId: 1868
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://trx-soneium.safe.protofire.io
+  gnosisSafeTransactionServiceUrl: https://soneium.superchain.safe.protofire.io
   name: soneium
   nativeToken:
     decimals: 18
@@ -7685,7 +7823,7 @@ sonic:
   displayName: Sonic
   domainId: 146
   gasCurrencyCoinGeckoId: fantom
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-sonic.safe.global/
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/sonic
   name: sonic
   nativeToken:
     decimals: 18
@@ -8028,6 +8166,10 @@ starknetsepolia:
     - http: https://starknet-sepolia-rpc.publicnode.com
     - http: https://rpc.starknet-testnet.lava.build/
 story:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://www.storyscan.xyz/api
       family: blockscout
@@ -8260,6 +8402,10 @@ subtensortestnet:
     - http: https://test.finney.opentensor.ai
   technicalStack: other
 superpositionmainnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.superposition.so/api
       family: blockscout
@@ -8341,7 +8487,7 @@ superseed:
   displayName: Superseed
   domainId: 5330
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://trx-superseed.safe.protofire.io
+  gnosisSafeTransactionServiceUrl: https://superseed.superchain.safe.protofire.io
   name: superseed
   nativeToken:
     decimals: 18
@@ -8419,7 +8565,7 @@ swell:
   displayName: Swell
   domainId: 1923
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://trx-swell.safe.protofire.io
+  gnosisSafeTransactionServiceUrl: https://swell.superchain.safe.protofire.io
   name: swell
   nativeToken:
     decimals: 18
@@ -8559,6 +8705,10 @@ taikohekla:
     - http: https://taiko-hekla.drpc.org
     - http: https://rpc.hekla.taiko.xyz
 tangle:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.tangle.tools/api
       family: blockscout
@@ -8927,7 +9077,7 @@ unichain:
   displayName: Unichain
   domainId: 130
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-unichain.safe.global
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/unichain
   name: unichain
   nativeToken:
     decimals: 18
@@ -9126,7 +9276,7 @@ worldchain:
   displayName: World Chain
   domainId: 480
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-worldchain.safe.global
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/wc
   name: worldchain
   nativeToken:
     decimals: 18
@@ -9275,11 +9425,15 @@ zerogravity:
     - http: https://evmrpc.0g.ai
   technicalStack: other
 zeronetwork:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
-    - apiUrl: https://zero-network.calderaexplorer.xyz/verification/contract_verification
-      family: etherscan
+    - apiUrl: https://explorer.zero.network
+      family: other
       name: Zero Network Explorer
-      url: https://zerion-explorer.vercel.app
+      url: https://explorer.zero.network
   blocks:
     confirmations: 1
     estimateBlockTime: 1
@@ -9299,7 +9453,8 @@ zeronetwork:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://zero-network.calderachain.xyz
+    - http: https://rpc.zerion.io/v1/zero
+    - http: https://zero.drpc.org
   technicalStack: zksync
 zetachain:
   blockExplorers:
@@ -9404,7 +9559,7 @@ zksync:
   displayName: zkSync
   domainId: 324
   gasCurrencyCoinGeckoId: ethereum
-  gnosisSafeTransactionServiceUrl: https://safe-transaction-zksync.safe.global
+  gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/zksync
   name: zksync
   nativeToken:
     decimals: 18
@@ -9437,6 +9592,10 @@ zksyncsepolia:
     - http: https://sepolia.era.zksync.dev
   technicalStack: zksync
 zoramainnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.zora.energy/api
       family: blockscout
@@ -9475,6 +9634,7 @@ zoratestnet:
     url: https://github.com/guy93354
   displayName: Zora Testnet
   domainId: 999999999
+  gnosisSafeTransactionServiceUrl: https://transaction-zora-sepolia.safe.optimism.io
   isTestnet: true
   name: zoratestnet
   nativeToken:

@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x75a9297db5F0349fd1d6f4030953Fe17175e06d4"
+    chainName: arbitrum
+    coinGeckoId: tether
+    collateralAddressOrDenom: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+    connections:
+      - token: ethereum|base|0x7abBb4ea8a5895127500CF0C15830C9Eb9f61F96
+      - token: ethereum|ethereum|0xeB1b48b238E15A62e1858a601B6BfFdf41163AE3
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: USD₮0
+    standard: EvmHypCrossCollateralRouter
+    symbol: USD₮0
+  - addressOrDenom: "0x7abBb4ea8a5895127500CF0C15830C9Eb9f61F96"
+    chainName: base
+    coinGeckoId: tether
+    collateralAddressOrDenom: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
+    connections:
+      - token: ethereum|arbitrum|0x75a9297db5F0349fd1d6f4030953Fe17175e06d4
+      - token: ethereum|ethereum|0xeB1b48b238E15A62e1858a601B6BfFdf41163AE3
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDT
+  - addressOrDenom: "0xeB1b48b238E15A62e1858a601B6BfFdf41163AE3"
+    chainName: ethereum
+    coinGeckoId: tether
+    collateralAddressOrDenom: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+    connections:
+      - token: ethereum|arbitrum|0x75a9297db5F0349fd1d6f4030953Fe17175e06d4
+      - token: ethereum|base|0x7abBb4ea8a5895127500CF0C15830C9Eb9f61F96
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDT

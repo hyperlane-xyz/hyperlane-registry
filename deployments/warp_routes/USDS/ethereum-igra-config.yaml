@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x5a19b7B45C3DF3D436f1010Fb5B95755800F22f3"
+    chainName: igra
+    connections:
+      - token: ethereum|ethereum|0xd5d8aEdf73f0e453C551b8CFd722c78F05FC4279
+    decimals: 18
+    logoURI: /deployments/warp_routes/USDS/logo.png
+    name: USDS Stablecoin
+    standard: EvmHypSynthetic
+    symbol: USDS
+  - addressOrDenom: "0xd5d8aEdf73f0e453C551b8CFd722c78F05FC4279"
+    chainName: ethereum
+    coinGeckoId: usds
+    collateralAddressOrDenom: "0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD"
+    connections:
+      - token: ethereum|igra|0x5a19b7B45C3DF3D436f1010Fb5B95755800F22f3
+    decimals: 18
+    logoURI: /deployments/warp_routes/USDS/logo.png
+    name: USDS Stablecoin
+    standard: EvmHypOwnerCollateral
+    symbol: USDS

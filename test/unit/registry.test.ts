@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { use as chaiUse, expect } from 'chai';
-import chaiAsPromised from 'chai-as-promised';
-import sinon from 'sinon';
+import fs from 'fs';
+
 import { faker } from '@faker-js/faker';
 import {
   type ChainMetadata,
@@ -10,10 +8,18 @@ import {
   TokenType,
   TokenStandard,
 } from '@hyperlane-xyz/sdk';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { use as chaiUse, expect } from 'chai';
+import chaiAsPromised from 'chai-as-promised';
 import type { Logger } from 'pino';
-import fs from 'fs';
+import RandExp from 'randexp';
+import sinon from 'sinon';
+
 import { CHAIN_FILE_REGEX, WARP_ROUTE_ID_REGEX } from '../../src/consts.js';
+import { DEFAULT_GITHUB_REGISTRY, PROXY_DEPLOYED_URL } from '../../src/consts.js';
 import { FileSystemRegistry } from '../../src/fs/FileSystemRegistry.js';
+import { getRegistry } from '../../src/fs/registry-utils.js';
+import { BaseRegistry } from '../../src/registry/BaseRegistry.js';
 import { GITHUB_API_URL, GithubRegistry } from '../../src/registry/GithubRegistry.js';
 import {
   RegistryType,
@@ -23,11 +29,7 @@ import {
 import { MergedRegistry } from '../../src/registry/MergedRegistry.js';
 import { PartialRegistry } from '../../src/registry/PartialRegistry.js';
 import { ChainAddresses, WarpRouteId } from '../../src/types.js';
-import { getRegistry } from '../../src/fs/registry-utils.js';
-import { DEFAULT_GITHUB_REGISTRY, PROXY_DEPLOYED_URL } from '../../src/consts.js';
 import { parseGitHubPath } from '../../src/utils.js';
-import { BaseRegistry } from '../../src/registry/BaseRegistry.js';
-import RandExp from 'randexp';
 
 const GITHUB_REGISTRY_BRANCH = 'main';
 
@@ -240,6 +242,16 @@ describe('Registry utilities', () => {
   }
 
   describe('MergedRegistry', async () => {
+    const notFoundError = (status: unknown = 404) =>
+      Object.assign(new Error('not found'), { status });
+
+    const responseNotFoundError = (status: unknown = 404) =>
+      Object.assign(new Error('not found'), { response: { status } });
+
+    const enoentError = () => Object.assign(new Error('missing file'), { code: 'ENOENT' });
+
+    const httpError = () => Object.assign(new Error('server error'), { status: 500 });
+
     it('Merges metadata from multiple registries', async () => {
       const mergedMetadata = await mergedRegistry.getMetadata();
       const localMetadata = await localRegistry.getMetadata();
@@ -259,6 +271,139 @@ describe('Registry utilities', () => {
       expect(localAddresses['ethereum'].mailbox).to.not.eql(MOCK_ADDRESS);
       // Confirm other chains are not affected
       expect(localAddresses['arbitrum']).to.eql(localAddresses['arbitrum']);
+    });
+
+    it('ignores 404 misses from overlay registries on tolerant reads', async () => {
+      const primaryRegistry = new PartialRegistry({
+        chainMetadata: { ethereum: { chainId: 1, displayName: 'Ethereum' } },
+      });
+      const overlayRegistry = new PartialRegistry({});
+      sinon.stub(overlayRegistry, 'getMetadata').throws(notFoundError());
+
+      const registry = new MergedRegistry({
+        registries: [primaryRegistry, overlayRegistry],
+      });
+
+      expect(await registry.getMetadata()).to.eql({
+        ethereum: { chainId: 1, displayName: 'Ethereum' },
+      });
+    });
+
+    it('ignores response-shaped string 404 misses from overlay registries', async () => {
+      const primaryRegistry = new PartialRegistry({
+        chainMetadata: { ethereum: { chainId: 1, displayName: 'Ethereum' } },
+      });
+      const overlayRegistry = new PartialRegistry({});
+      sinon.stub(overlayRegistry, 'getMetadata').throws(responseNotFoundError('404'));
+
+      const registry = new MergedRegistry({
+        registries: [primaryRegistry, overlayRegistry],
+      });
+
+      expect(await registry.getMetadata()).to.eql({
+        ethereum: { chainId: 1, displayName: 'Ethereum' },
+      });
+    });
+
+    it('ignores 404 misses from the primary registry when another registry succeeds', async () => {
+      const primaryRegistry = new PartialRegistry({});
+      const overlayRegistry = new PartialRegistry({
+        chainMetadata: { ethereum: { chainId: 1, displayName: 'Ethereum' } },
+      });
+      sinon.stub(primaryRegistry, 'getMetadata').throws(notFoundError());
+
+      const registry = new MergedRegistry({
+        registries: [primaryRegistry, overlayRegistry],
+      });
+
+      expect(await registry.getMetadata()).to.eql({
+        ethereum: { chainId: 1, displayName: 'Ethereum' },
+      });
+    });
+
+    it('throws if all registries miss with not-found errors', async () => {
+      const primaryRegistry = new PartialRegistry({});
+      const overlayRegistry = new PartialRegistry({});
+      const error = notFoundError();
+      sinon.stub(primaryRegistry, 'getMetadata').throws(error);
+      sinon.stub(overlayRegistry, 'getMetadata').throws(enoentError());
+
+      const registry = new MergedRegistry({
+        registries: [primaryRegistry, overlayRegistry],
+      });
+
+      await expect(registry.getMetadata()).to.be.rejectedWith(error);
+    });
+
+    it('propagates non-404 errors from overlay registries', async () => {
+      const primaryRegistry = new PartialRegistry({});
+      const overlayRegistry = new PartialRegistry({});
+      const error = httpError();
+      sinon.stub(overlayRegistry, 'getMetadata').throws(error);
+
+      const registry = new MergedRegistry({
+        registries: [primaryRegistry, overlayRegistry],
+      });
+
+      await expect(registry.getMetadata()).to.be.rejectedWith(error);
+    });
+
+    it('ignores filesystem missing file errors from overlay registries', async () => {
+      const primaryRegistry = new PartialRegistry({
+        chainMetadata: { ethereum: { chainId: 1, displayName: 'Ethereum' } },
+      });
+      const overlayRegistry = new PartialRegistry({});
+      sinon.stub(overlayRegistry, 'getMetadata').throws(enoentError());
+
+      const registry = new MergedRegistry({
+        registries: [primaryRegistry, overlayRegistry],
+      });
+
+      expect(await registry.getMetadata()).to.eql({
+        ethereum: { chainId: 1, displayName: 'Ethereum' },
+      });
+    });
+
+    it('ignores 404 misses from overlay registries on collection reads', async () => {
+      const primaryRegistry = new PartialRegistry({
+        chainMetadata: { ethereum: { chainId: 1 } },
+      });
+      const overlayRegistry = new PartialRegistry({});
+      sinon.stub(overlayRegistry, 'listRegistryContent').throws(notFoundError());
+
+      const registry = new MergedRegistry({
+        registries: [primaryRegistry, overlayRegistry],
+      });
+
+      expect(await registry.listRegistryContent()).to.eql(
+        await primaryRegistry.listRegistryContent(),
+      );
+    });
+
+    it('ignores not-found errors on logo reads', async () => {
+      const primaryRegistry = new PartialRegistry({});
+      const overlayRegistry = new PartialRegistry({});
+      sinon.stub(primaryRegistry, 'getChainLogoUri').rejects(notFoundError());
+      sinon.stub(overlayRegistry, 'getChainLogoUri').resolves('logo.svg');
+
+      const registry = new MergedRegistry({
+        registries: [primaryRegistry, overlayRegistry],
+      });
+
+      expect(await registry.getChainLogoUri('ethereum')).to.eql('logo.svg');
+    });
+
+    it('propagates non-not-found errors on logo reads', async () => {
+      const primaryRegistry = new PartialRegistry({});
+      const overlayRegistry = new PartialRegistry({});
+      const error = new Error('Method not implemented.');
+      sinon.stub(primaryRegistry, 'getChainLogoUri').rejects(error);
+
+      const registry = new MergedRegistry({
+        registries: [primaryRegistry, overlayRegistry],
+      });
+
+      await expect(registry.getChainLogoUri('ethereum')).to.be.rejectedWith(error);
     });
   });
 

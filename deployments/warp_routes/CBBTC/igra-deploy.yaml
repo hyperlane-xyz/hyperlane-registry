@@ -1,0 +1,23 @@
+base:
+  decimals: 8
+  mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
+  name: Coinbase Wrapped BTC
+  owner: "0xba1E27ECE55Ff3B2aCbDB1DD06924C65078D220c"
+  symbol: cbBTC
+  token: "0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf"
+  type: collateral
+igra:
+  decimals: 8
+  mailbox: "0x3a867fCfFeC2B790970eeBDC9023E75B0a172aa7"
+  name: Coinbase Wrapped BTC
+  owner: "0xe1C9B631fD776442b7E2c91a58C6d713Bb13FF03"
+  symbol: cbBTC
+  tokenFee:
+    feeContracts:
+      base:
+        bps: 6
+        owner: "0x42cb788529463B1F41de9E3cd3d2906930aCd32F"
+        type: LinearFee
+    owner: "0x42cb788529463B1F41de9E3cd3d2906930aCd32F"
+    type: RoutingFee
+  type: synthetic

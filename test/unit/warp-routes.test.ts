@@ -1,4 +1,5 @@
-import { expect } from 'chai';
+import fs from 'fs';
+import path from 'path';
 
 import {
   MultiProtocolProvider,
@@ -6,10 +7,11 @@ import {
   WarpCore,
   WarpRouteDeployConfigSchema,
 } from '@hyperlane-xyz/sdk';
-import { FileSystemRegistry } from '../../src/fs/FileSystemRegistry.js';
-import path from 'path';
-import fs from 'fs';
+import { expect } from 'chai';
+
 import { WARP_ROUTE_SYMBOL_DIRECTORY_REGEX } from '../../src/consts.js';
+import { FileSystemRegistry } from '../../src/fs/FileSystemRegistry.js';
+import { normalizeScale } from '../../src/utils.js';
 
 const BASE_URI = './';
 
@@ -119,6 +121,28 @@ describe('Warp Deploy Configs', () => {
   for (const id of configs) {
     it(`Deploy config ${id} is valid`, async () => {
       WarpRouteDeployConfigSchema.parse(warpDeploys[id]);
+    });
+  }
+});
+
+describe('Warp scale consistency', () => {
+  const localRegistry = new FileSystemRegistry({ uri: BASE_URI });
+  const cores = localRegistry.getWarpRoutes();
+  const deploys = localRegistry.getWarpDeployConfigs();
+
+  for (const id of Object.keys(deploys)) {
+    it(`${id} deploy scale matches config scale per chain`, () => {
+      const deploy = deploys[id];
+      const core = cores[id];
+      if (!core) return;
+      for (const [chain, cfg] of Object.entries(deploy)) {
+        if (!cfg || typeof cfg !== 'object' || !('scale' in cfg)) continue;
+        const token = core.tokens.find((t) => t.chainName === chain);
+        expect(
+          normalizeScale(token?.scale),
+          `Scale mismatch on ${id} chain ${chain}: deploy has scale but config does not match`,
+        ).to.deep.equal(normalizeScale(cfg.scale));
+      }
     });
   }
 });
