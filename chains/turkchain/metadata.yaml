@@ -1,37 +1,37 @@
-blockExplorers:
-  - apiUrl: https://turkscan.com/api
-    family: blockscout
-    name: TurkScan
-    url: https://turkscan.com
+name: turkchain
 
-blocks:
-  confirmations: 2
-  estimateBlockTime: 2
-  reorgPeriod: finalized
+displayName: Turkchain
 
 chainId: 1919
 
-deployer:
-  name: Turkchain
-  url: https://www.turkscan.com
-
-displayName: Turkchain
 domainId: 1919
-isTestnet: false
-name: turkchain
-
-nativeToken:
-  decimals: 18
-  name: TC
-  symbol: TURK
 
 protocol: ethereum
 
-rpcUrls:
-  - http: https://rpc.turkscan.com
-
 technicalStack: other
 
-transactionOverrides:
-  maxFeePerGas: 20000000000
-  maxPriorityFeePerGas: 2000000000
+rpcUrls:
+  - http: https://rpc.turkscan.com
+    webSocket: ws://evm-ws.turkscan.com
+
+blockExplorers:
+  - name: Turkscan
+    url: https://turkscan.com
+    apiUrl: https://turkscan.com/api
+
+nativeToken:
+  name: TC
+  symbol: TURK
+  decimals: 18
+
+blocks:
+  confirmations: 1
+  reorgPeriod: 1
+  estimateBlockTime: 2
+
+gasCurrencyCoinGeckoId: ethereum
+
+isTestnet: false
+
+index:
+  from: 0
