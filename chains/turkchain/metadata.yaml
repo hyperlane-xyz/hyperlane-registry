@@ -1,23 +1,23 @@
-name: turkchain
-displayName: Turkchain
-chainId: 1919
-domainId: 1919
-protocol: ethereum
-technicalStack: evm
-rpcUrls:
-  - http: https://rpc.turkscan.com
-    webSocket: ws://evm-ws.turkscan.com
 blockExplorers:
-  - name: Turkscan
+  - apiUrl: https://turkscan.com/api
+    name: Turkscan
     url: https://turkscan.com
-    apiUrl: https://turkscan.com/api
-nativeToken:
-  name: Turkchain
-  symbol: TURK
-  decimals: 18
 blocks:
   confirmations: 1
-  reorgPeriod: 1
   estimateBlockTime: 2
+  reorgPeriod: 1
+chainId: 1919
+displayName: Turkchain
+domainId: 1919
 gasCurrencyCoinGeckoId: ethereum
 isTestnet: false
+name: turkchain
+nativeToken:
+  decimals: 18
+  name: TC
+  symbol: TURK
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.turkscan.com
+    webSocket: wss://evm-ws.turkscan.com
+technicalStack: evm
