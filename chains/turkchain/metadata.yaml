@@ -1,23 +1,39 @@
+# yaml-language-server: $schema=../schema.json
+
 blockExplorers:
   - apiUrl: https://turkscan.com/api
+    family: blockscout
     name: Turkscan
     url: https://turkscan.com
+
 blocks:
   confirmations: 1
   estimateBlockTime: 2
   reorgPeriod: 1
+
 chainId: 1919
+
+deployer:
+  name: Turkchain
+  url: https://turkscan.com
+
 displayName: Turkchain
+
 domainId: 1919
-gasCurrencyCoinGeckoId: TURK
+
+gasCurrencyCoinGeckoId: ethereum
+
 isTestnet: false
+
 name: turkchain
+
 nativeToken:
   decimals: 18
   name: TC
   symbol: TURK
+
 protocol: ethereum
+
 rpcUrls:
   - http: https://rpc.turkscan.com
     webSocket: wss://evm-ws.turkscan.com
-technicalStack: evm
