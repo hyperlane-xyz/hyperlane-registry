@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886"
+    chainName: nesa
+    connections:
+      - token: ethereum|bsc|0x3131f6B80C26936aB03F7d9D29Eb4Ddf36AC3FB5
+    decimals: 18
+    name: NES
+    standard: EvmHypNative
+    symbol: NES
+  - addressOrDenom: "0x3131f6B80C26936aB03F7d9D29Eb4Ddf36AC3FB5"
+    chainName: bsc
+    connections:
+      - token: ethereum|nesa|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+    decimals: 18
+    name: Nesa
+    standard: EvmHypSynthetic
+    symbol: NES
