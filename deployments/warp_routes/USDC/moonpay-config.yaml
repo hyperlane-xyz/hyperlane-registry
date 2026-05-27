@@ -9,6 +9,7 @@ tokens:
       - token: ethereum|citrea|0x2bef59e84615371304bd731601f6344F5F304504
       - token: ethereum|ethereum|0xA9C9a8FB36Ce3e5ffBAC3757dA7141262723541F
       - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
+      - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
     name: USD Coin
@@ -23,6 +24,7 @@ tokens:
       - token: ethereum|citrea|0x2bef59e84615371304bd731601f6344F5F304504
       - token: ethereum|ethereum|0xA9C9a8FB36Ce3e5ffBAC3757dA7141262723541F
       - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
+      - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
     name: USD Coin
@@ -37,6 +39,7 @@ tokens:
       - token: ethereum|base|0x253821543C24623ecD3ceBCEd704359AF16CF38f
       - token: ethereum|ethereum|0xA9C9a8FB36Ce3e5ffBAC3757dA7141262723541F
       - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
+      - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
     decimals: 6
     logoURI: /deployments/warp_routes/ctUSD/logo.svg
     name: Citrea USD
@@ -51,6 +54,7 @@ tokens:
       - token: ethereum|base|0x253821543C24623ecD3ceBCEd704359AF16CF38f
       - token: ethereum|citrea|0x2bef59e84615371304bd731601f6344F5F304504
       - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
+      - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
     name: USD Coin
@@ -65,8 +69,22 @@ tokens:
       - token: ethereum|base|0x253821543C24623ecD3ceBCEd704359AF16CF38f
       - token: ethereum|citrea|0x2bef59e84615371304bd731601f6344F5F304504
       - token: ethereum|ethereum|0xA9C9a8FB36Ce3e5ffBAC3757dA7141262723541F
+      - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
     decimals: 6
     logoURI: /deployments/warp_routes/XO/logo.png
     name: XO Cash
     standard: SealevelHypCrossCollateral
     symbol: XO
+  - addressOrDenom: "0x28a96f9928dB06317356caACd5641C4Fde4424C7"
+    chainName: polygon
+    collateralAddressOrDenom: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+    connections:
+      - token: ethereum|arbitrum|0xeBC079D41C41a0ef7e54aa7Af867df9a621C9bE0
+      - token: ethereum|base|0x253821543C24623ecD3ceBCEd704359AF16CF38f
+      - token: ethereum|citrea|0x2bef59e84615371304bd731601f6344F5F304504
+      - token: ethereum|ethereum|0xA9C9a8FB36Ce3e5ffBAC3757dA7141262723541F
+      - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDC
