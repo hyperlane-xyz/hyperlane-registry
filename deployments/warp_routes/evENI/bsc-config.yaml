@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886"
+    chainName: eni
+    collateralAddressOrDenom: "0xb751DCFFd17D9b97d3b5D711e130De5B8c11F52F"
+    connections:
+      - token: ethereum|bsc|0x911075978d7439BCE27d1681c1eBCfD4526f6F13
+    decimals: 18
+    logoURI: /deployments/warp_routes/evENI/logo.png
+    name: ECO Voucher ENI 1
+    standard: EvmHypCollateral
+    symbol: evENI
+  - addressOrDenom: "0x911075978d7439BCE27d1681c1eBCfD4526f6F13"
+    chainName: bsc
+    connections:
+      - token: ethereum|eni|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+    decimals: 18
+    logoURI: /deployments/warp_routes/evENI/logo.png
+    name: ECO Voucher ENI 1
+    standard: EvmHypSynthetic
+    symbol: evENI
