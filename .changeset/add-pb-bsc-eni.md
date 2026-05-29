@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Mark milkyway as deprecated.
+added PB warp route on bsc and eni

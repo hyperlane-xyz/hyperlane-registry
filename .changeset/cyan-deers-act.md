@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Fix USDnr token logo
+Removed warp fees from NEX/bsc route

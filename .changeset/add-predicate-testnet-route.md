@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-renamed BLEND to Fluent
+added predicate testnet route

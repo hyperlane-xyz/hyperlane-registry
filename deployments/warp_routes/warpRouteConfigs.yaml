@@ -4833,6 +4833,28 @@ MONEY/sonicsvm:
       name: Money
       standard: SealevelHypCollateral
       symbol: MONEY
+NEX/bsc:
+  tokens:
+    - addressOrDenom: "0x365DE036A1F7dcCb621530d517133521debB2013"
+      chainName: bsc
+      connections:
+        - token: ethereum|ethereum|0xb71183f48F7f7789D40551149bE28a51f9A97F9A
+      decimals: 18
+      logoURI: /deployments/warp_routes/NEX/logo.png
+      name: Nexus
+      standard: EvmHypSynthetic
+      symbol: NEX
+    - addressOrDenom: "0xb71183f48F7f7789D40551149bE28a51f9A97F9A"
+      chainName: ethereum
+      coinGeckoId: nexus-4
+      collateralAddressOrDenom: "0xf57D49646621F563b0B905aFc8336923AC569Ec5"
+      connections:
+        - token: ethereum|bsc|0x365DE036A1F7dcCb621530d517133521debB2013
+      decimals: 18
+      logoURI: /deployments/warp_routes/NEX/logo.png
+      name: Nexus
+      standard: EvmHypCollateral
+      symbol: NEX
 NTN/holesky-piccadilly:
   tokens:
     - addressOrDenom: "0xdF73856d44C1f7b3B14Fd0DaD8B0792fCf1c3f68"
@@ -4956,6 +4978,27 @@ PAXG/arbitrum-ethereum:
       name: Paxos Gold
       standard: EvmHypCollateral
       symbol: PAXG
+PB/eni:
+  tokens:
+    - addressOrDenom: "0x4281aB13c3Df511818407F98F712b50299506BCb"
+      chainName: eni
+      connections:
+        - token: ethereum|bsc|0xA5bD573fC00A2683F108b8F04220ca530321436c
+      decimals: 18
+      logoURI: /deployments/warp_routes/PB/logo.png
+      name: PB
+      standard: EvmHypSynthetic
+      symbol: PB
+    - addressOrDenom: "0xA5bD573fC00A2683F108b8F04220ca530321436c"
+      chainName: bsc
+      collateralAddressOrDenom: "0x54b56889aae88d88d4a5e8c5cf4e1bc706a5127a"
+      connections:
+        - token: ethereum|eni|0x4281aB13c3Df511818407F98F712b50299506BCb
+      decimals: 18
+      logoURI: /deployments/warp_routes/PB/logo.png
+      name: PB
+      standard: EvmHypCollateral
+      symbol: PB
 PENGU/apechain-solanamainnet:
   tokens:
     - addressOrDenom: "0x9Eaf39A97d56119236a356225B339fE7383549B3"
@@ -9641,6 +9684,24 @@ USDC/paradexsepolia:
       name: USDC
       standard: StarknetHypCollateral
       symbol: USDC
+USDC/predicate-sepolia-basesepolia:
+  tokens:
+    - addressOrDenom: "0x1D39722592a8FaB912Aa582416F1f1b21bda2E30"
+      chainName: basesepolia
+      connections:
+        - token: ethereum|sepolia|0x79B42902Ef4D9532d9EB4c1E6e064Cd79Da87B3B
+      decimals: 18
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
+    - addressOrDenom: "0x79B42902Ef4D9532d9EB4c1E6e064Cd79Da87B3B"
+      chainName: sepolia
+      connections:
+        - token: ethereum|basesepolia|0x1D39722592a8FaB912Aa582416F1f1b21bda2E30
+      decimals: 18
+      name: Ether
+      standard: EvmHypSynthetic
+      symbol: ETH
 USDC/pulsechain:
   tokens:
     - addressOrDenom: "0xf73436AB044AAA679fb619D0DEe4a1dAfE84ac1a"
@@ -11837,19 +11898,19 @@ VRA/bsc-ethereum:
       symbol: VRA
 WARD/ward-base:
   tokens:
-    - addressOrDenom: "0x6252BefAc2E1a8f7CbD3d43C6B8479790F37a98f"
+    - addressOrDenom: "0xf09e4C8193F16019F0573F370F9A997b11f56638"
       chainName: base
       connections:
-        - token: ethereum|wardenprotocol|0x6252BefAc2E1a8f7CbD3d43C6B8479790F37a98f
+        - token: ethereum|wardenprotocol|0xc5ADACe5E2250e5497CF1eF7B4f100e10099e4c4
       decimals: 18
       logoURI: /deployments/warp_routes/WARD/logo.svg
       name: WARD
       standard: EvmHypSynthetic
       symbol: WARD
-    - addressOrDenom: "0x6252BefAc2E1a8f7CbD3d43C6B8479790F37a98f"
+    - addressOrDenom: "0xc5ADACe5E2250e5497CF1eF7B4f100e10099e4c4"
       chainName: wardenprotocol
       connections:
-        - token: ethereum|base|0x6252BefAc2E1a8f7CbD3d43C6B8479790F37a98f
+        - token: ethereum|base|0xf09e4C8193F16019F0573F370F9A997b11f56638
       decimals: 18
       logoURI: /deployments/warp_routes/WARD/logo.svg
       name: WARD
@@ -12663,6 +12724,27 @@ enzoBTC/bsc-hyperevm:
       name: Lorenzo Wrapped Bitcoin
       standard: EvmHypSynthetic
       symbol: enzoBTC
+evENI/bsc:
+  tokens:
+    - addressOrDenom: "0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886"
+      chainName: eni
+      collateralAddressOrDenom: "0xb751DCFFd17D9b97d3b5D711e130De5B8c11F52F"
+      connections:
+        - token: ethereum|bsc|0x911075978d7439BCE27d1681c1eBCfD4526f6F13
+      decimals: 18
+      logoURI: /deployments/warp_routes/evENI/logo.png
+      name: ECO Voucher ENI 1
+      standard: EvmHypCollateral
+      symbol: evENI
+    - addressOrDenom: "0x911075978d7439BCE27d1681c1eBCfD4526f6F13"
+      chainName: bsc
+      connections:
+        - token: ethereum|eni|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+      decimals: 18
+      logoURI: /deployments/warp_routes/evENI/logo.png
+      name: ECO Voucher ENI 1
+      standard: EvmHypSynthetic
+      symbol: evENI
 jitoSOL/eclipsemainnet-solanamainnet:
   tokens:
     - addressOrDenom: G3hWozA3c4iK5oSX9rTWFFDo5rS9W49bjhWDgg3gDPk8
@@ -12746,6 +12828,30 @@ lrtsSOL/solanamainnet-sonicsvm:
       symbol: lrtsSOL
 mUSD/musd:
   tokens:
+    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xaca92e438df0b2401ff60da7e4337b687a2435da"
+      connections:
+        - token: ethereum|monad|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
+      decimals: 6
+      logoURI: /deployments/warp_routes/mUSD/logo.svg
+      name: MetaMask USD
+      standard: EvmM0Portal
+      symbol: mUSD
+      warpRouteId: mUSD/musd
+    - addressOrDenom: "0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd"
+      chainName: monad
+      collateralAddressOrDenom: "0xaca92e438df0b2401ff60da7e4337b687a2435da"
+      connections:
+        - token: ethereum|ethereum|0xD925C84b55E4e44a53749fF5F2a5A13F63D128fd
+      decimals: 6
+      logoURI: /deployments/warp_routes/mUSD/logo.svg
+      name: MetaMask USD
+      standard: EvmM0Portal
+      symbol: mUSD
+      warpRouteId: mUSD/musd
+mUSD/musd-portal-lite:
+  tokens:
     - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
       chainName: bsc
       collateralAddressOrDenom: "0xaca92e438df0b2401ff60da7e4337b687a2435da"
@@ -12757,7 +12863,7 @@ mUSD/musd:
       name: MetaMask USD
       standard: EvmM0PortalLite
       symbol: mUSD
-      warpRouteId: mUSD/musd
+      warpRouteId: mUSD/musd-portal-lite
     - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
       chainName: ethereum
       collateralAddressOrDenom: "0xaca92e438df0b2401ff60da7e4337b687a2435da"
@@ -12769,7 +12875,7 @@ mUSD/musd:
       name: MetaMask USD
       standard: EvmM0PortalLite
       symbol: mUSD
-      warpRouteId: mUSD/musd
+      warpRouteId: mUSD/musd-portal-lite
     - addressOrDenom: "0x36f586A30502AE3afb555b8aA4dCc05d233c2ecE"
       chainName: linea
       collateralAddressOrDenom: "0xaca92e438df0b2401ff60da7e4337b687a2435da"
@@ -12781,7 +12887,7 @@ mUSD/musd:
       name: MetaMask USD
       standard: EvmM0PortalLite
       symbol: mUSD
-      warpRouteId: mUSD/musd
+      warpRouteId: mUSD/musd-portal-lite
 milkTIA/mantapacific-osmosis:
   options:
     interchainFeeConstants:

@@ -1,11 +1,7 @@
-import {
-  ChainMap,
-  ChainMetadata,
-  ChainName,
-  HypTokenRouterConfig,
-  WarpCoreConfig,
-  WarpRouteDeployConfig,
-} from '@hyperlane-xyz/sdk';
+import type { ChainMetadata } from '@hyperlane-xyz/sdk/metadata/chainMetadataTypes';
+import type { HypTokenRouterConfig, WarpRouteDeployConfig } from '@hyperlane-xyz/sdk/token/types';
+import type { ChainMap, ChainName } from '@hyperlane-xyz/sdk/types';
+import type { WarpCoreConfig } from '@hyperlane-xyz/sdk/warp/types';
 import { assert, objFilter, objLength } from '@hyperlane-xyz/utils';
 import type { Logger } from 'pino';
 

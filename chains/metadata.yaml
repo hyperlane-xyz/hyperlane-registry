@@ -162,7 +162,7 @@ aleotestnet:
     symbol: ALEO
   protocol: aleo
   rpcUrls:
-    - http: https://api.explorer.provable.com/v1
+    - http: https://api.explorer.provable.com/v2
 alephzeroevmmainnet:
   availability:
     reasons:
@@ -4554,7 +4554,7 @@ krown:
   blocks:
     confirmations: 1
     estimateBlockTime: 12
-    reorgPeriod: 5
+    reorgPeriod: finalized
   chainId: 1983
   deployer:
     name: Abacus Works
@@ -5903,6 +5903,32 @@ nero:
   transactionOverrides:
     maxFeePerGas: 10000000000
     maxPriorityFeePerGas: 1000000000
+nesa:
+  blockExplorers:
+    - apiUrl: https://explorer-evm.nesa.ai/api
+      family: blockscout
+      name: Nesa Explorer
+      url: https://explorer-evm.nesa.ai
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 41443
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Nesa
+  domainId: 41443
+  gasCurrencyCoinGeckoId: nesa-ai-token
+  name: nesa
+  nativeToken:
+    decimals: 18
+    name: NES
+    symbol: NES
+  protocol: ethereum
+  rpcUrls:
+    - http: https://erpc.nesa.ai
+  technicalStack: other
 neuratestnet:
   availability:
     reasons:
@@ -7008,6 +7034,10 @@ real:
     - http: https://tangible-real.gateway.tenderly.co
   technicalStack: arbitrumnitro
 redstone:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.redstone.xyz/api
       family: blockscout
@@ -9404,10 +9434,10 @@ zeronetwork:
       - deprecated
     status: disabled
   blockExplorers:
-    - apiUrl: https://zero-network.calderaexplorer.xyz/verification/contract_verification
-      family: etherscan
+    - apiUrl: https://explorer.zero.network
+      family: other
       name: Zero Network Explorer
-      url: https://zerion-explorer.vercel.app
+      url: https://explorer.zero.network
   blocks:
     confirmations: 1
     estimateBlockTime: 1
