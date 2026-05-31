@@ -1762,6 +1762,24 @@ ETH/arbitrum-bsc-kalychain-polygon:
       name: Ether
       standard: EvmHypCollateral
       symbol: ETH
+ETH/arbitrumsepolia-basesepolia-cctp-v2:
+  tokens:
+    - addressOrDenom: "0xfEB318cE88828B79468eD612Bb438Cf2a9CFA66d"
+      chainName: basesepolia
+      connections:
+        - token: ethereum|arbitrumsepolia|0x7faeEA0Ca3aEae2AeD8c2307B11203E0f9713EE4
+      decimals: 18
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
+    - addressOrDenom: "0x7faeEA0Ca3aEae2AeD8c2307B11203E0f9713EE4"
+      chainName: arbitrumsepolia
+      connections:
+        - token: ethereum|basesepolia|0xfEB318cE88828B79468eD612Bb438Cf2a9CFA66d
+      decimals: 18
+      name: Ether
+      standard: EvmHypSynthetic
+      symbol: ETH
 ETH/coti-ethereum:
   tokens:
     - addressOrDenom: "0x639aCc80569c5FC83c6FBf2319A6Cc38bBfe26d1"
@@ -7495,6 +7513,24 @@ USDC/arbitrum-ethereum-optimism-polygon-prom:
       logoURI: /deployments/warp_routes/USDC/logo.svg
       name: USD Coin
       standard: EvmHypSynthetic
+      symbol: USDC
+USDC/arbitrumsepolia-basesepolia-cctp-v2:
+  tokens:
+    - addressOrDenom: "0xbfcE950a54a2052aec323c8884F034373Ca9CAbD"
+      chainName: arbitrumsepolia
+      connections:
+        - token: ethereum|basesepolia|0x6AD4F1CCBB4e897eFbBb2A62c7ccbBd7fe941848
+      decimals: 6
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x6AD4F1CCBB4e897eFbBb2A62c7ccbBd7fe941848"
+      chainName: basesepolia
+      connections:
+        - token: ethereum|arbitrumsepolia|0xbfcE950a54a2052aec323c8884F034373Ca9CAbD
+      decimals: 6
+      name: USD Coin
+      standard: EvmHypCollateral
       symbol: USDC
 USDC/artela-base:
   tokens:
