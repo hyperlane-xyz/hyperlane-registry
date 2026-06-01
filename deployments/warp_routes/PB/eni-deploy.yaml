@@ -1,0 +1,50 @@
+bsc:
+  decimals: 18
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
+        paused: false
+        type: pausableIsm
+      - maxCapacity: "199999999999999999999929600"
+        owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
+        type: rateLimitedIsm
+    threshold: 3
+    type: staticAggregationIsm
+  mailbox: "0x2971b9Aec44bE4eb673DF1B88cDB57b96eefe8a4"
+  name: PB
+  owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
+  symbol: PB
+  token: "0x54b56889aae88d88d4a5e8c5cf4e1bc706a5127a"
+  type: collateral
+
+eni:
+  decimals: 18
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
+        paused: false
+        type: pausableIsm
+      - maxCapacity: "199999999999999999999929600"
+        owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
+        type: rateLimitedIsm
+    threshold: 3
+    type: staticAggregationIsm
+  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
+  name: PB
+  owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
+  symbol: PB
+  tokenFee:
+    feeContracts:
+      bsc:
+        bps: 8
+        owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
+        type: LinearFee
+    owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
+    type: RoutingFee
+  type: synthetic

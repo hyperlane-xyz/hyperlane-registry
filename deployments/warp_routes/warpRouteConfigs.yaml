@@ -1762,6 +1762,24 @@ ETH/arbitrum-bsc-kalychain-polygon:
       name: Ether
       standard: EvmHypCollateral
       symbol: ETH
+ETH/arbitrumsepolia-basesepolia-cctp-v2:
+  tokens:
+    - addressOrDenom: "0xfEB318cE88828B79468eD612Bb438Cf2a9CFA66d"
+      chainName: basesepolia
+      connections:
+        - token: ethereum|arbitrumsepolia|0x7faeEA0Ca3aEae2AeD8c2307B11203E0f9713EE4
+      decimals: 18
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
+    - addressOrDenom: "0x7faeEA0Ca3aEae2AeD8c2307B11203E0f9713EE4"
+      chainName: arbitrumsepolia
+      connections:
+        - token: ethereum|basesepolia|0xfEB318cE88828B79468eD612Bb438Cf2a9CFA66d
+      decimals: 18
+      name: Ether
+      standard: EvmHypSynthetic
+      symbol: ETH
 ETH/coti-ethereum:
   tokens:
     - addressOrDenom: "0x639aCc80569c5FC83c6FBf2319A6Cc38bBfe26d1"
@@ -4978,6 +4996,27 @@ PAXG/arbitrum-ethereum:
       name: Paxos Gold
       standard: EvmHypCollateral
       symbol: PAXG
+PB/eni:
+  tokens:
+    - addressOrDenom: "0x4281aB13c3Df511818407F98F712b50299506BCb"
+      chainName: eni
+      connections:
+        - token: ethereum|bsc|0xA5bD573fC00A2683F108b8F04220ca530321436c
+      decimals: 18
+      logoURI: /deployments/warp_routes/PB/logo.png
+      name: PB
+      standard: EvmHypSynthetic
+      symbol: PB
+    - addressOrDenom: "0xA5bD573fC00A2683F108b8F04220ca530321436c"
+      chainName: bsc
+      collateralAddressOrDenom: "0x54b56889aae88d88d4a5e8c5cf4e1bc706a5127a"
+      connections:
+        - token: ethereum|eni|0x4281aB13c3Df511818407F98F712b50299506BCb
+      decimals: 18
+      logoURI: /deployments/warp_routes/PB/logo.png
+      name: PB
+      standard: EvmHypCollateral
+      symbol: PB
 PENGU/apechain-solanamainnet:
   tokens:
     - addressOrDenom: "0x9Eaf39A97d56119236a356225B339fE7383549B3"
@@ -5719,6 +5758,26 @@ SOL/aleo:
       connections:
         - token: aleo|aleo|hyp_warp_token_sol.aleo/aleo1m3f6d2sp07ca6cpjw20xw7tv9qhvhu5t33ak6c830kjmxwl6s5zq5qswg8
         - token: ethereum|hyperevm|0xEe3147deeDFC0c6DDD7c65D4e9ff9a48632BE645
+      decimals: 9
+      logoURI: /deployments/warp_routes/SOL/logo.svg
+      name: Solana
+      standard: SealevelHypNative
+      symbol: SOL
+SOL/aleotestnet:
+  tokens:
+    - addressOrDenom: test_hyp_warp_token_sol.aleo/aleo19nf6jcxryza3v5rwxchx7g5ew2wy44pqkeys7v4pmy29v3scdszqnyw5pl
+      chainName: aleotestnet
+      connections:
+        - token: sealevel|solanatestnet|84nEGHMEeP1qSyD8Bw2KZPeW4JXjeFRRMiuzwTvt83Yz
+      decimals: 9
+      logoURI: /deployments/warp_routes/SOL/logo.svg
+      name: Solana
+      standard: AleoHypSynthetic
+      symbol: SOL
+    - addressOrDenom: 84nEGHMEeP1qSyD8Bw2KZPeW4JXjeFRRMiuzwTvt83Yz
+      chainName: solanatestnet
+      connections:
+        - token: aleo|aleotestnet|test_hyp_warp_token_sol.aleo/aleo19nf6jcxryza3v5rwxchx7g5ew2wy44pqkeys7v4pmy29v3scdszqnyw5pl
       decimals: 9
       logoURI: /deployments/warp_routes/SOL/logo.svg
       name: Solana
@@ -7138,6 +7197,28 @@ USDC/aleo:
       scale: 1000000000000
       standard: SealevelHypCollateral
       symbol: USDC
+USDC/aleotestnet:
+  tokens:
+    - addressOrDenom: test_hyp_warp_token_usdc.aleo/aleo1ces3t09qgag66vm3el5lacruyxtankzdrtrfpctwz54etvksnqpqqmhjeu
+      chainName: aleotestnet
+      connections:
+        - token: ethereum|sepolia|0x6dC0a1C88C50444DD6097c354dEc639483EC780D
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: AleoHypSynthetic
+      symbol: USDC
+    - addressOrDenom: "0x6dC0a1C88C50444DD6097c354dEc639483EC780D"
+      chainName: sepolia
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238"
+      connections:
+        - token: aleo|aleotestnet|test_hyp_warp_token_usdc.aleo/aleo1ces3t09qgag66vm3el5lacruyxtankzdrtrfpctwz54etvksnqpqqmhjeu
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USDC
+      standard: EvmHypCollateral
+      symbol: USDC
 USDC/ancient8-ethereum:
   tokens:
     - addressOrDenom: "0x97423A68BAe94b5De52d767a17aBCc54c157c0E5"
@@ -7432,6 +7513,24 @@ USDC/arbitrum-ethereum-optimism-polygon-prom:
       logoURI: /deployments/warp_routes/USDC/logo.svg
       name: USD Coin
       standard: EvmHypSynthetic
+      symbol: USDC
+USDC/arbitrumsepolia-basesepolia-cctp-v2:
+  tokens:
+    - addressOrDenom: "0xbfcE950a54a2052aec323c8884F034373Ca9CAbD"
+      chainName: arbitrumsepolia
+      connections:
+        - token: ethereum|basesepolia|0x6AD4F1CCBB4e897eFbBb2A62c7ccbBd7fe941848
+      decimals: 6
+      name: USD Coin
+      standard: EvmHypCollateral
+      symbol: USDC
+    - addressOrDenom: "0x6AD4F1CCBB4e897eFbBb2A62c7ccbBd7fe941848"
+      chainName: basesepolia
+      connections:
+        - token: ethereum|arbitrumsepolia|0xbfcE950a54a2052aec323c8884F034373Ca9CAbD
+      decimals: 6
+      name: USD Coin
+      standard: EvmHypCollateral
       symbol: USDC
 USDC/artela-base:
   tokens:
@@ -10788,6 +10887,28 @@ USDT/aleo:
       scale: 1000000000000
       standard: SealevelHypCollateral
       symbol: USDT
+USDT/aleotestnet:
+  tokens:
+    - addressOrDenom: test_hyp_warp_token_usdt.aleo/aleo17tth7t5psc44pe230y7zcxl32wzhq8452sya4v7gxc406ln5pggspn9jwe
+      chainName: aleotestnet
+      connections:
+        - token: ethereum|sepolia|0xF6B589bA1610c1779c1d7F660aAf743b7cE6f0ae
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDT/logo.svg
+      name: Tether USD
+      standard: AleoHypSynthetic
+      symbol: USDT
+    - addressOrDenom: "0xF6B589bA1610c1779c1d7F660aAf743b7cE6f0ae"
+      chainName: sepolia
+      coinGeckoId: tether
+      collateralAddressOrDenom: "0xaa8e23fb1079ea71e0a56f48a2aa51851d8433d0"
+      connections:
+        - token: aleo|aleotestnet|test_hyp_warp_token_usdt.aleo/aleo17tth7t5psc44pe230y7zcxl32wzhq8452sya4v7gxc406ln5pggspn9jwe
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDT/logo.svg
+      name: USDT
+      standard: EvmHypCollateral
+      symbol: USDT
 USDT/arbitrum-bsc-kalychain-polygon:
   tokens:
     - addressOrDenom: "0xFDb3307a16442ed5A7C040AE1600a3B3D3C8e7D9"
@@ -11951,6 +12072,27 @@ WBTC/aleo:
       name: Wrapped BTC
       standard: EvmHypCollateral
       symbol: WBTC
+WBTC/aleotestnet:
+  tokens:
+    - addressOrDenom: test_hyp_warp_token_wbtc.aleo/aleo1x29rhydhtnjaekxma5hnhmgy2q36vx244rqrmpqmecc4wg3uyu9q0sll0m
+      chainName: aleotestnet
+      connections:
+        - token: ethereum|sepolia|0x2A872Ae01375A5ca7e044cb0e75cb97621Ca954A
+      decimals: 8
+      logoURI: /deployments/warp_routes/WBTC/logo.svg
+      name: Wrapped BTC
+      standard: AleoHypSynthetic
+      symbol: WBTC
+    - addressOrDenom: "0x2A872Ae01375A5ca7e044cb0e75cb97621Ca954A"
+      chainName: sepolia
+      collateralAddressOrDenom: "0x52eea312378ef46140ebe67de8a143ba2304fd7c"
+      connections:
+        - token: aleo|aleotestnet|test_hyp_warp_token_wbtc.aleo/aleo1x29rhydhtnjaekxma5hnhmgy2q36vx244rqrmpqmecc4wg3uyu9q0sll0m
+      decimals: 8
+      logoURI: /deployments/warp_routes/WBTC/logo.svg
+      name: Wrapped BTC
+      standard: EvmHypCollateral
+      symbol: WBTC
 WBTC/arbitrum-bsc-kalychain-polygon:
   tokens:
     - addressOrDenom: "0x3CDbaBE5Bf4E6cfE10A2A326E0ad31b2d16398D4"
@@ -12703,6 +12845,27 @@ enzoBTC/bsc-hyperevm:
       name: Lorenzo Wrapped Bitcoin
       standard: EvmHypSynthetic
       symbol: enzoBTC
+evENI/bsc:
+  tokens:
+    - addressOrDenom: "0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886"
+      chainName: eni
+      collateralAddressOrDenom: "0xb751DCFFd17D9b97d3b5D711e130De5B8c11F52F"
+      connections:
+        - token: ethereum|bsc|0x911075978d7439BCE27d1681c1eBCfD4526f6F13
+      decimals: 18
+      logoURI: /deployments/warp_routes/evENI/logo.png
+      name: ECO Voucher ENI 1
+      standard: EvmHypCollateral
+      symbol: evENI
+    - addressOrDenom: "0x911075978d7439BCE27d1681c1eBCfD4526f6F13"
+      chainName: bsc
+      connections:
+        - token: ethereum|eni|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+      decimals: 18
+      logoURI: /deployments/warp_routes/evENI/logo.png
+      name: ECO Voucher ENI 1
+      standard: EvmHypSynthetic
+      symbol: evENI
 jitoSOL/eclipsemainnet-solanamainnet:
   tokens:
     - addressOrDenom: G3hWozA3c4iK5oSX9rTWFFDo5rS9W49bjhWDgg3gDPk8
