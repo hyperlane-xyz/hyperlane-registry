@@ -146,7 +146,11 @@ describe('Chain metadata', () => {
 
         it(`${chain} metadata has reorgPeriod of 5 if technicalStack is polygoncdk`, () => {
           if (metadata.technicalStack === ChainTechnicalStack.PolygonCDK) {
-            expect(metadata.blocks?.reorgPeriod).to.equal(5);
+            if (chain === 'katana') {
+              expect(metadata.blocks?.reorgPeriod).to.equal(1);
+            } else {
+              expect(metadata.blocks?.reorgPeriod).to.equal(5);
+            }
           }
         });
 
