@@ -1,5 +1,33 @@
 # @hyperlane-xyz/registry
 
+## 25.2.0
+
+### Minor Changes
+
+- 965c92d: added SOL, WBTC, USDC and USDT warp routes connecting aleotestnet to solanatestnet and sepolia; updated sepolia etherscan API key
+- 954ded3: added ETH warp route for basesepolia and arbitrumsepolia
+- dc1a0ab: added ECO Voucher ENI 1 warp route on eni and bsc
+- a1fd905: added Nesa NES warp route on nesa and bsc
+- 6caf1d0: added Nexus NEX warp route on ethereum and bsc
+- 556a4cc: added PB warp route on bsc and eni
+- 52b2814: added predicate testnet route
+- 6499d16: Update Hyperlane dependencies to SDK 35.1.0 and Utils 35.1.0
+- 0bfdba1: Deployed to nesa.
+
+### Patch Changes
+
+- f591f81: Upgrade aleotestnet RPC endpoint from https://api.explorer.provable.com/v1 to https://api.explorer.provable.com/v2.
+- 01622b5: Add mUSD (Ethereum, Monad) warp route on the new EvmM0Portal. Split mUSD into two route configs: musd (Ethereum/Monad on EvmM0Portal) and musd-portal-lite (BSC/Ethereum/Linea on EvmM0PortalLite, to be deprecated).
+- 6f42435: Removed warp fees from NEX/bsc route
+- 73a4fe6: Update Eden interchainSecurityModule address and add quotedCalls address.
+- 095c940: Lowered katana reorgPeriod from 5 to 1.
+- ae70d4a: Updated Krown reorgPeriod to finalized.
+- 326ef81: migrate to latest pnpm
+- 1c5daff: Lowered monad reorgPeriod from 5 to 1 to better reflect MonadBFT's deterministic finality.
+- 5177063: Update interchainSecurityModule addresses across mainnet chains, add quotedCalls addresses, and mark redstone as deprecated.
+- f4dc4ab: Update Zero Network block explorer to https://explorer.zero.network
+- 8287b6a: The WARD/ward-base route now points at the production Base↔Warden deployment (Base 0xf09e4C8193F16019F0573F370F9A997b11f56638 ↔ Warden 0xc5ADACe5E2250e5497CF1eF7B4f100e10099e4c4).
+
 ## 25.1.0
 
 ### Minor Changes
