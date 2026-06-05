@@ -98,6 +98,23 @@ describe('Warp Core Configs', () => {
         ).to.be.true;
       }
     });
+
+    it(`WarpCore ${id} non-native collateralized tokens have collateralAddressOrDenom`, () => {
+      const config = routes[id];
+      const warpCore = WarpCore.FromConfig(multiProvider, config);
+      for (const token of warpCore.tokens) {
+        // Only HypNative is legitimately collateralized without an explicit
+        // collateral address; every other collateralized standard must point
+        // at its underlying so dedup and route resolution can match across
+        // routes that share the same underlying asset.
+        if (token.isCollateralized() && !token.isHypNative()) {
+          expect(
+            token.collateralAddressOrDenom,
+            `${token.symbol} on ${token.chainName} (${token.standard}) is collateralized but missing collateralAddressOrDenom`,
+          ).to.be.a('string').and.not.empty;
+        }
+      }
+    });
   }
 });
 
