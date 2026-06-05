@@ -75,6 +75,7 @@ tokens:
     name: USD Coin
     addressOrDenom: "0x28a96f9928dB06317356caACd5641C4Fde4424C7"
     collateralAddressOrDenom: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+    logoURI: /deployments/warp_routes/USDC/logo.svg
     connections:
       - token: ethereum|arbitrum|0xeBC079D41C41a0ef7e54aa7Af867df9a621C9bE0
       - token: ethereum|base|0x253821543C24623ecD3ceBCEd704359AF16CF38f
@@ -83,6 +84,7 @@ tokens:
       - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
       - token: ethereum|bsc|0x6E66a10Ce72fBdFA45Ab7de3693321246E254123
       - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
+    coinGeckoId: usd-coin
   - chainName: solanamainnet
     standard: SealevelHypCrossCollateral
     decimals: 6
@@ -107,6 +109,7 @@ tokens:
     name: USD Coin
     addressOrDenom: "0x6E66a10Ce72fBdFA45Ab7de3693321246E254123"
     collateralAddressOrDenom: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
+    logoURI: /deployments/warp_routes/USDC/logo.svg
     scale:
       numerator: 1
       denominator: 1000000000000
@@ -118,6 +121,7 @@ tokens:
       - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
       - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
       - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
+    coinGeckoId: usd-coin
   - chainName: katana
     standard: EvmHypCrossCollateralRouter
     decimals: 6
@@ -125,6 +129,7 @@ tokens:
     name: Vault Bridge USDC
     addressOrDenom: "0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6"
     collateralAddressOrDenom: "0x203A662b0BD271A6ed5a60EdFbd04bFce608FD36"
+    logoURI: /deployments/warp_routes/USDC/logo.svg
     connections:
       - token: ethereum|arbitrum|0xeBC079D41C41a0ef7e54aa7Af867df9a621C9bE0
       - token: ethereum|base|0x253821543C24623ecD3ceBCEd704359AF16CF38f
@@ -133,3 +138,4 @@ tokens:
       - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
       - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
       - token: ethereum|bsc|0x6E66a10Ce72fBdFA45Ab7de3693321246E254123
+    coinGeckoId: usd-coin
