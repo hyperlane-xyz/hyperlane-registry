@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x4281aB13c3Df511818407F98F712b50299506BCb"
+    chainName: eni
+    connections:
+      - token: ethereum|bsc|0xA5bD573fC00A2683F108b8F04220ca530321436c
+    decimals: 18
+    logoURI: /deployments/warp_routes/PB/logo.png
+    name: PB
+    standard: EvmHypSynthetic
+    symbol: PB
+  - addressOrDenom: "0xA5bD573fC00A2683F108b8F04220ca530321436c"
+    chainName: bsc
+    collateralAddressOrDenom: "0x54b56889aae88d88d4a5e8c5cf4e1bc706a5127a"
+    connections:
+      - token: ethereum|eni|0x4281aB13c3Df511818407F98F712b50299506BCb
+    decimals: 18
+    logoURI: /deployments/warp_routes/PB/logo.png
+    name: PB
+    standard: EvmHypCollateral
+    symbol: PB

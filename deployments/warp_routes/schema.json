@@ -87,6 +87,33 @@
                 ],
                 "description": "The type of token. See TokenStandard for valid values."
               },
+              "tokenType": {
+                "type": "string",
+                "enum": [
+                  "synthetic",
+                  "syntheticRebase",
+                  "syntheticUri",
+                  "collateral",
+                  "collateralVault",
+                  "collateralVaultRebase",
+                  "xERC20",
+                  "xERC20Lockbox",
+                  "collateralFiat",
+                  "collateralUri",
+                  "collateralCctp",
+                  "collateralEverclear",
+                  "collateralDepositAddress",
+                  "collateralOft",
+                  "native",
+                  "nativeOpL2",
+                  "nativeOpL1",
+                  "ethEverclear",
+                  "nativeScaled",
+                  "crossCollateral",
+                  "unknown"
+                ],
+                "description": "The warp route deploy token type. Used to preserve route implementation semantics when multiple deploy token types share the same token standard."
+              },
               "decimals": {
                 "type": "integer",
                 "minimum": 0,

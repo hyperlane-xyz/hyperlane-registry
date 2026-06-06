@@ -162,7 +162,7 @@ aleotestnet:
     symbol: ALEO
   protocol: aleo
   rpcUrls:
-    - http: https://api.explorer.provable.com/v1
+    - http: https://api.explorer.provable.com/v2
 alephzeroevmmainnet:
   availability:
     reasons:
@@ -4072,6 +4072,10 @@ incentiv:
     - http: https://rpc-archive.incentiv.io
   technicalStack: other
 incentivtestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer-testnet.incentiv.io/api
       family: blockscout
@@ -4404,7 +4408,7 @@ katana:
   blocks:
     confirmations: 1
     estimateBlockTime: 1
-    reorgPeriod: 5
+    reorgPeriod: 1
   chainId: 747474
   deployer:
     name: Abacus Works
@@ -5644,7 +5648,7 @@ monad:
   blocks:
     confirmations: 1
     estimateBlockTime: 1
-    reorgPeriod: 5
+    reorgPeriod: 1
   chainId: 143
   deployer:
     name: Abacus Works
@@ -7034,6 +7038,10 @@ real:
     - http: https://tangible-real.gateway.tenderly.co
   technicalStack: arbitrumnitro
 redstone:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.redstone.xyz/api
       family: blockscout
@@ -7423,9 +7431,35 @@ sei:
   rpcUrls:
     - http: https://evm-rpc.sei-apis.com
   technicalStack: other
+seismictestnet:
+  blockExplorers:
+    - apiUrl: https://seismic-testnet.socialscan.io/api
+      family: other
+      name: Seismic Testnet Explorer
+      url: https://seismic-testnet.socialscan.io
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 5124
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Seismic Testnet
+  domainId: 5124
+  isTestnet: true
+  name: seismictestnet
+  nativeToken:
+    decimals: 18
+    name: SIZE
+    symbol: SIZE
+  protocol: ethereum
+  rpcUrls:
+    - http: https://testnet-1.seismictest.net/rpc
+  technicalStack: seismic
 sepolia:
   blockExplorers:
-    - apiKey: CYUPN3Q66JIMRGQWYUDXJKQH4SX8YIYZMW
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
       apiUrl: https://api-sepolia.etherscan.io/api
       family: etherscan
       name: Etherscan
@@ -8736,6 +8770,10 @@ tangle:
     - http: https://rpc.tangle.tools
   technicalStack: polkadotsubstrate
 tangletestnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://testnet-explorer.tangle.tools/api
       family: blockscout
