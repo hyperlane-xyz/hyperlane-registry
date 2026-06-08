@@ -1,5 +1,6 @@
 arbitrum:
   decimals: 6
+  mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
   name: Tether USD
   owner: "0x38C2c361E81C89e9cD0FD7f5c305e60C2A039054"
   scale: 1000000000000
@@ -8,6 +9,7 @@ arbitrum:
   type: collateral
 base:
   decimals: 6
+  mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
   name: Tether USD
   owner: "0x83bD81deFEC483194f7c5c8E161DFC535c794167"
   scale: 1000000000000
@@ -16,6 +18,7 @@ base:
   type: collateral
 bsc:
   decimals: 18
+  mailbox: "0x2971b9Aec44bE4eb673DF1B88cDB57b96eefe8a4"
   name: Tether USD
   owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
   symbol: USDT
@@ -23,6 +26,7 @@ bsc:
   type: collateral
 eni:
   decimals: 6
+  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
   name: Tether USD
   owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
   scale: 1000000000000
@@ -53,11 +57,16 @@ eni:
         bps: 8
         owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
         type: LinearFee
+      tron:
+        bps: 8
+        owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
+        type: LinearFee
     owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
     type: RoutingFee
   type: synthetic
 ethereum:
   decimals: 6
+  mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
   name: Tether USD
   owner: "0x409dcC6874919D2194236e2F10b403E15CC7F149"
   scale: 1000000000000
@@ -66,6 +75,7 @@ ethereum:
   type: collateral
 optimism:
   decimals: 6
+  mailbox: "0xd4C1905BB1D26BC93DAC913e13CaCC278CdCC80D"
   name: Tether USD
   owner: "0xd1219aef6eA190f6aD48525664C33ceE0169c7a8"
   scale: 1000000000000
@@ -74,9 +84,19 @@ optimism:
   type: collateral
 polygon:
   decimals: 6
+  mailbox: "0x5d934f4e2f797775e53561bB72aca21ba36B96BB"
   name: Tether USD
   owner: "0x3211A1Fea94cd4000Bd82D7C9E9334E51938De1b"
   scale: 1000000000000
   symbol: USDT
   token: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
+  type: collateral
+tron:
+  decimals: 6
+  mailbox: "0x6d5BeE57A58E282150c236ed8985550492a69788"
+  name: Tether USD
+  owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+  scale: 1000000000000
+  symbol: USDT
+  token: "0xa614f803b6fd780986a42c78ec9c7f77e6ded13c"
   type: collateral
