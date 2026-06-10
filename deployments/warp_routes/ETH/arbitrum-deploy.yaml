@@ -1,0 +1,28 @@
+arbitrum:
+  decimals: 18
+  mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
+  name: Ether
+  owner: "0xC92c781F59b6452e7879e1e0317444c5B7Bb651c"
+  symbol: ETH
+  tokenFee:
+    feeContracts:
+      base:
+        bps: 10
+        owner: "0xC92c781F59b6452e7879e1e0317444c5B7Bb651c"
+        type: LinearFee
+    owner: "0xC92c781F59b6452e7879e1e0317444c5B7Bb651c"
+    type: RoutingFee
+  type: synthetic
+base:
+  decimals: 18
+  mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
+  owner: "0x645FE06507C8a188494d3E755B248a8dbF3bd875"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 10
+        owner: "0x645FE06507C8a188494d3E755B248a8dbF3bd875"
+        type: LinearFee
+    owner: "0x645FE06507C8a188494d3E755B248a8dbF3bd875"
+    type: RoutingFee
+  type: native
