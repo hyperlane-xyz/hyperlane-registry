@@ -1,4 +1,31 @@
 # yaml-language-server: $schema=../schema.json
+options:
+  interchainFeeConstants:
+    - addressOrDenom: uluna
+      amount: 99000000
+      destination: bsc
+      origin: terraclassic
+    - addressOrDenom: uluna
+      amount: 113000000
+      destination: ethereum
+      origin: terraclassic
+    - addressOrDenom: uluna
+      amount: 11500000
+      destination: solanamainnet
+      origin: terraclassic
+  localFeeConstants:
+    - addressOrDenom: uluna
+      amount: 283215
+      destination: bsc
+      origin: terraclassic
+    - addressOrDenom: uluna
+      amount: 283215
+      destination: ethereum
+      origin: terraclassic
+    - addressOrDenom: uluna
+      amount: 283215
+      destination: solanamainnet
+      origin: terraclassic
 tokens:
   - addressOrDenom: terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel
     chainName: terraclassic
@@ -36,30 +63,3 @@ tokens:
     name: IGORFAKE
     standard: SealevelHypSynthetic
     symbol: IGORFAKE
-options:
-  interchainFeeConstants:
-    - origin: terraclassic
-      destination: bsc
-      amount: 99000000
-      addressOrDenom: uluna
-    - origin: terraclassic
-      destination: ethereum
-      amount: 113000000
-      addressOrDenom: uluna
-    - origin: terraclassic
-      destination: solanamainnet
-      amount: 11500000
-      addressOrDenom: uluna
-  localFeeConstants:
-    - origin: terraclassic
-      destination: bsc
-      amount: 283215
-      addressOrDenom: uluna
-    - origin: terraclassic
-      destination: ethereum
-      amount: 283215
-      addressOrDenom: uluna
-    - origin: terraclassic
-      destination: solanamainnet
-      amount: 283215
-      addressOrDenom: uluna
