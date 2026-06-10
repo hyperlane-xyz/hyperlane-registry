@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: terra1dnflusc7slapvals97em3fj4vrfyx90npr3znq6y45qjy7hhd6jqchqsgx
+    chainName: terraclassictestnet
+    collateralAddressOrDenom: terra1f2jw36hc7fzeu7dz2fhk250ezec7e80c2s6uxt3ry5ujjjslf9nqwvpu88
+    connections:
+      - token: ethereum|sepolia|0x6a573cba0f06B3994bc8B31b737Ab50cdfc0aB8f
+      - token: ethereum|bsctestnet|0x11D6aa52d60611a513ab783842Dc397C86E7fff0
+    decimals: 6
+    name: XPV Teste
+    standard: CwHypCollateral
+    symbol: XPV
+  - addressOrDenom: "0x6a573cba0f06B3994bc8B31b737Ab50cdfc0aB8f"
+    chainName: sepolia
+    connections:
+      - token: cosmos|terraclassictestnet|terra1dnflusc7slapvals97em3fj4vrfyx90npr3znq6y45qjy7hhd6jqchqsgx
+    decimals: 6
+    name: XPV Teste
+    standard: EvmHypSynthetic
+    symbol: XPV
+  - addressOrDenom: "0x11D6aa52d60611a513ab783842Dc397C86E7fff0"
+    chainName: bsctestnet
+    connections:
+      - token: cosmos|terraclassictestnet|terra1dnflusc7slapvals97em3fj4vrfyx90npr3znq6y45qjy7hhd6jqchqsgx
+    decimals: 6
+    name: XPV Teste
+    standard: EvmHypSynthetic
+    symbol: XPV
