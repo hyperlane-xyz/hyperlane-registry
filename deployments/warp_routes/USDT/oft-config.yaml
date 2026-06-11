@@ -2,9 +2,11 @@
 tokens:
   - addressOrDenom: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
     chainName: arbitrum
+    collateralAddressOrDenom: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
     connections:
       - token: ethereum|ethereum|0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6
       - token: ethereum|plasma|0x93bfFA2231fbA5029997603fb68D9aC08024Baa2
+      - token: ethereum|polygon|0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94
     decimals: 6
     name: Tether USD
     standard: EvmHypCollateral
@@ -12,9 +14,11 @@ tokens:
     symbol: USDT
   - addressOrDenom: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
     chainName: ethereum
+    collateralAddressOrDenom: "0xdac17f958d2ee523a2206206994597c13d831ec7"
     connections:
       - token: ethereum|arbitrum|0xE4c1A1E54C232454311cF68610c3885FdD991c0E
       - token: ethereum|plasma|0x93bfFA2231fbA5029997603fb68D9aC08024Baa2
+      - token: ethereum|polygon|0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94
     decimals: 6
     name: Tether USD
     standard: EvmHypCollateral
@@ -22,9 +26,23 @@ tokens:
     symbol: USDT
   - addressOrDenom: "0x93bfFA2231fbA5029997603fb68D9aC08024Baa2"
     chainName: plasma
+    collateralAddressOrDenom: "0xb8ce59fc3717ada4c02eadf9682a9e934f625ebb"
     connections:
       - token: ethereum|arbitrum|0xE4c1A1E54C232454311cF68610c3885FdD991c0E
       - token: ethereum|ethereum|0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6
+      - token: ethereum|polygon|0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94
+    decimals: 6
+    name: Tether USD
+    standard: EvmHypCollateral
+    tokenType: collateralOft
+    symbol: USDT
+  - addressOrDenom: "0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94"
+    chainName: polygon
+    collateralAddressOrDenom: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
+    connections:
+      - token: ethereum|arbitrum|0xE4c1A1E54C232454311cF68610c3885FdD991c0E
+      - token: ethereum|ethereum|0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6
+      - token: ethereum|plasma|0x93bfFA2231fbA5029997603fb68D9aC08024Baa2
     decimals: 6
     name: Tether USD
     standard: EvmHypCollateral

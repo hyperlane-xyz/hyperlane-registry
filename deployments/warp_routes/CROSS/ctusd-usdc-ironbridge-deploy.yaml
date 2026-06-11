@@ -6,6 +6,7 @@ arbitrum:
         feeBps: "0"
   mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
   owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
+  remoteRouters: {}
   token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
   type: collateralDepositAddress
 base:
@@ -16,6 +17,7 @@ base:
         feeBps: "0"
   mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
   owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
+  remoteRouters: {}
   token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
   type: collateralDepositAddress
 citrea:
@@ -23,6 +25,10 @@ citrea:
     "1":
       "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f":
         depositAddress: "0x080a35df853adf546c237b2e24b4178f03f9aa6d"
+        feeBps: "0"
+    "137":
+      "0x00000000000000000000000028a96f9928db06317356caacd5641c4fde4424c7":
+        depositAddress: "0x5b1527569edcefc2f178b995dc5e83ed5b225ee3"
         feeBps: "0"
     "42161":
       "0x000000000000000000000000ebc079d41c41a0ef7e54aa7af867df9a621c9be0":
@@ -34,6 +40,7 @@ citrea:
         feeBps: "0"
   mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
   owner: "0x682bc0Aca87491ECB3683911996F1d573F989141"
+  remoteRouters: {}
   token: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
   type: collateralDepositAddress
 ethereum:
@@ -44,5 +51,17 @@ ethereum:
         feeBps: "0"
   mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
   owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+  remoteRouters: {}
   token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+  type: collateralDepositAddress
+polygon:
+  destinationConfigs:
+    "4114":
+      "0x0000000000000000000000002bef59e84615371304bd731601f6344f5f304504":
+        depositAddress: "0x78bd5a96fdeae542f9e8511e14831ddbe8df2298"
+        feeBps: "0"
+  mailbox: "0x5d934f4e2f797775e53561bB72aca21ba36B96BB"
+  owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
+  remoteRouters: {}
+  token: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
   type: collateralDepositAddress

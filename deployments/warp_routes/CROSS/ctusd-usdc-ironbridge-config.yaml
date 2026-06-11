@@ -22,6 +22,20 @@ tokens:
     name: USD Coin
     standard: EvmHypCollateral
     symbol: USDC
+  - addressOrDenom: "0x5eF92fe56Db2d7c6934fD160a88099fF91F93907"
+    chainName: citrea
+    coinGeckoId: citrea-usd
+    collateralAddressOrDenom: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
+    connections:
+      - token: ethereum|arbitrum|0xa7f5cc2CD457D2CC236Dc10460F14767fd135518
+      - token: ethereum|base|0x4adAf07A84B32F86288e05c4f4A09D830fcf8B71
+      - token: ethereum|ethereum|0x01874aF1507FA27129716c3bD82C28F7531cdcdF
+      - token: ethereum|polygon|0x9E70c8eF4B62fba0da0Fb9430e82b7ca96a262E2
+    decimals: 6
+    logoURI: /deployments/warp_routes/ctUSD/logo.svg
+    name: Citrea USD
+    standard: EvmHypCollateral
+    symbol: ctUSD
   - addressOrDenom: "0x01874aF1507FA27129716c3bD82C28F7531cdcdF"
     chainName: ethereum
     coinGeckoId: usd-coin
@@ -33,16 +47,13 @@ tokens:
     name: USD Coin
     standard: EvmHypCollateral
     symbol: USDC
-  - addressOrDenom: "0x5eF92fe56Db2d7c6934fD160a88099fF91F93907"
-    chainName: citrea
-    coinGeckoId: citrea-usd
-    collateralAddressOrDenom: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
+  - addressOrDenom: "0x9E70c8eF4B62fba0da0Fb9430e82b7ca96a262E2"
+    chainName: polygon
+    collateralAddressOrDenom: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
     connections:
-      - token: ethereum|arbitrum|0xa7f5cc2CD457D2CC236Dc10460F14767fd135518
-      - token: ethereum|base|0x4adAf07A84B32F86288e05c4f4A09D830fcf8B71
-      - token: ethereum|ethereum|0x01874aF1507FA27129716c3bD82C28F7531cdcdF
+      - token: ethereum|citrea|0x5eF92fe56Db2d7c6934fD160a88099fF91F93907
     decimals: 6
-    logoURI: /deployments/warp_routes/ctUSD/logo.svg
-    name: Citrea USD
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
     standard: EvmHypCollateral
-    symbol: ctUSD
+    symbol: USDC
