@@ -1,28 +1,152 @@
 arbitrum:
   decimals: 6
+  mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
   name: Tether USD
   owner: "0x38C2c361E81C89e9cD0FD7f5c305e60C2A039054"
   scale: 1000000000000
   symbol: USDT
   token: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+  tokenFee:
+    feeContracts:
+      base:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bsc:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      polygon:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+    owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+    type: RoutingFee
   type: collateral
 base:
   decimals: 6
+  mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
   name: Tether USD
   owner: "0x83bD81deFEC483194f7c5c8E161DFC535c794167"
   scale: 1000000000000
   symbol: USDT
   token: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bsc:
+        bps: 5
+        owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 5
+        owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 5
+        owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      polygon:
+        bps: 5
+        owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 5
+        owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+    owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+    type: RoutingFee
   type: collateral
 bsc:
   decimals: 18
+  mailbox: "0x2971b9Aec44bE4eb673DF1B88cDB57b96eefe8a4"
   name: Tether USD
   owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
   symbol: USDT
   token: "0x55d398326f99059fF775485246999027B3197955"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      base:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      polygon:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+    owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+    type: RoutingFee
   type: collateral
 eni:
   decimals: 6
+  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
   name: Tether USD
   owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
   scale: 1000000000000
@@ -53,30 +177,194 @@ eni:
         bps: 8
         owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
         type: LinearFee
+      tron:
+        bps: 8
+        owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
+        type: LinearFee
     owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
     type: RoutingFee
   type: synthetic
 ethereum:
   decimals: 6
+  mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
   name: Tether USD
   owner: "0x409dcC6874919D2194236e2F10b403E15CC7F149"
   scale: 1000000000000
   symbol: USDT
   token: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      base:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bsc:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      polygon:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+    owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+    type: RoutingFee
   type: collateral
 optimism:
   decimals: 6
+  mailbox: "0xd4C1905BB1D26BC93DAC913e13CaCC278CdCC80D"
   name: Tether USD
   owner: "0xd1219aef6eA190f6aD48525664C33ceE0169c7a8"
   scale: 1000000000000
   symbol: USDT
   token: "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      base:
+        bps: 5
+        owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bsc:
+        bps: 5
+        owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 5
+        owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      polygon:
+        bps: 5
+        owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 5
+        owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+    owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
+    type: RoutingFee
   type: collateral
 polygon:
   decimals: 6
+  mailbox: "0x5d934f4e2f797775e53561bB72aca21ba36B96BB"
   name: Tether USD
   owner: "0x3211A1Fea94cd4000Bd82D7C9E9334E51938De1b"
   scale: 1000000000000
   symbol: USDT
   token: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      base:
+        bps: 5
+        owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bsc:
+        bps: 5
+        owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 5
+        owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 5
+        owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 5
+        owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+    owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+    type: RoutingFee
+  type: collateral
+tron:
+  decimals: 6
+  mailbox: "0x6d5BeE57A58E282150c236ed8985550492a69788"
+  name: Tether USD
+  owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
+  scale: 1000000000000
+  symbol: USDT
+  token: "0xa614f803b6fd780986a42c78ec9c7f77e6ded13c"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        type: LinearFee
+      base:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        type: LinearFee
+      bsc:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        type: LinearFee
+      ethereum:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        type: LinearFee
+      optimism:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        type: LinearFee
+      polygon:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        type: LinearFee
+    owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+    type: RoutingFee
   type: collateral
