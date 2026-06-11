@@ -740,6 +740,20 @@ CROSS/ctusd-usdc-ironbridge:
       name: USD Coin
       standard: EvmHypCollateral
       symbol: USDC
+    - addressOrDenom: "0x5eF92fe56Db2d7c6934fD160a88099fF91F93907"
+      chainName: citrea
+      coinGeckoId: citrea-usd
+      collateralAddressOrDenom: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
+      connections:
+        - token: ethereum|arbitrum|0xa7f5cc2CD457D2CC236Dc10460F14767fd135518
+        - token: ethereum|base|0x4adAf07A84B32F86288e05c4f4A09D830fcf8B71
+        - token: ethereum|ethereum|0x01874aF1507FA27129716c3bD82C28F7531cdcdF
+        - token: ethereum|polygon|0x9E70c8eF4B62fba0da0Fb9430e82b7ca96a262E2
+      decimals: 6
+      logoURI: /deployments/warp_routes/ctUSD/logo.svg
+      name: Citrea USD
+      standard: EvmHypCollateral
+      symbol: ctUSD
     - addressOrDenom: "0x01874aF1507FA27129716c3bD82C28F7531cdcdF"
       chainName: ethereum
       coinGeckoId: usd-coin
@@ -751,19 +765,16 @@ CROSS/ctusd-usdc-ironbridge:
       name: USD Coin
       standard: EvmHypCollateral
       symbol: USDC
-    - addressOrDenom: "0x5eF92fe56Db2d7c6934fD160a88099fF91F93907"
-      chainName: citrea
-      coinGeckoId: citrea-usd
-      collateralAddressOrDenom: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
+    - addressOrDenom: "0x9E70c8eF4B62fba0da0Fb9430e82b7ca96a262E2"
+      chainName: polygon
+      collateralAddressOrDenom: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
       connections:
-        - token: ethereum|arbitrum|0xa7f5cc2CD457D2CC236Dc10460F14767fd135518
-        - token: ethereum|base|0x4adAf07A84B32F86288e05c4f4A09D830fcf8B71
-        - token: ethereum|ethereum|0x01874aF1507FA27129716c3bD82C28F7531cdcdF
+        - token: ethereum|citrea|0x5eF92fe56Db2d7c6934fD160a88099fF91F93907
       decimals: 6
-      logoURI: /deployments/warp_routes/ctUSD/logo.svg
-      name: Citrea USD
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
       standard: EvmHypCollateral
-      symbol: ctUSD
+      symbol: USDC
 CROSS/moonpay:
   tokens:
     - addressOrDenom: "0xeBC079D41C41a0ef7e54aa7Af867df9a621C9bE0"
@@ -9652,8 +9663,11 @@ USDC/moonpay:
       collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
       connections:
         - token: ethereum|base|0x253821543C24623ecD3ceBCEd704359AF16CF38f
+        - token: ethereum|bsc|0x6E66a10Ce72fBdFA45Ab7de3693321246E254123
         - token: ethereum|citrea|0x2bef59e84615371304bd731601f6344F5F304504
         - token: ethereum|ethereum|0xA9C9a8FB36Ce3e5ffBAC3757dA7141262723541F
+        - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
+        - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
         - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
       decimals: 6
       logoURI: /deployments/warp_routes/USDC/logo.svg
@@ -9666,12 +9680,35 @@ USDC/moonpay:
       collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
       connections:
         - token: ethereum|arbitrum|0xeBC079D41C41a0ef7e54aa7Af867df9a621C9bE0
+        - token: ethereum|bsc|0x6E66a10Ce72fBdFA45Ab7de3693321246E254123
         - token: ethereum|citrea|0x2bef59e84615371304bd731601f6344F5F304504
         - token: ethereum|ethereum|0xA9C9a8FB36Ce3e5ffBAC3757dA7141262723541F
+        - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
+        - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
         - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
       decimals: 6
       logoURI: /deployments/warp_routes/USDC/logo.svg
       name: USD Coin
+      standard: EvmHypCrossCollateralRouter
+      symbol: USDC
+    - addressOrDenom: "0x6E66a10Ce72fBdFA45Ab7de3693321246E254123"
+      chainName: bsc
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
+      connections:
+        - token: ethereum|arbitrum|0xeBC079D41C41a0ef7e54aa7Af867df9a621C9bE0
+        - token: ethereum|base|0x253821543C24623ecD3ceBCEd704359AF16CF38f
+        - token: ethereum|citrea|0x2bef59e84615371304bd731601f6344F5F304504
+        - token: ethereum|ethereum|0xA9C9a8FB36Ce3e5ffBAC3757dA7141262723541F
+        - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
+        - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
+        - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
+      decimals: 18
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      scale:
+        denominator: 1000000000000
+        numerator: 1
       standard: EvmHypCrossCollateralRouter
       symbol: USDC
     - addressOrDenom: "0x2bef59e84615371304bd731601f6344F5F304504"
@@ -9681,7 +9718,10 @@ USDC/moonpay:
       connections:
         - token: ethereum|arbitrum|0xeBC079D41C41a0ef7e54aa7Af867df9a621C9bE0
         - token: ethereum|base|0x253821543C24623ecD3ceBCEd704359AF16CF38f
+        - token: ethereum|bsc|0x6E66a10Ce72fBdFA45Ab7de3693321246E254123
         - token: ethereum|ethereum|0xA9C9a8FB36Ce3e5ffBAC3757dA7141262723541F
+        - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
+        - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
         - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
       decimals: 6
       logoURI: /deployments/warp_routes/ctUSD/logo.svg
@@ -9695,7 +9735,44 @@ USDC/moonpay:
       connections:
         - token: ethereum|arbitrum|0xeBC079D41C41a0ef7e54aa7Af867df9a621C9bE0
         - token: ethereum|base|0x253821543C24623ecD3ceBCEd704359AF16CF38f
+        - token: ethereum|bsc|0x6E66a10Ce72fBdFA45Ab7de3693321246E254123
         - token: ethereum|citrea|0x2bef59e84615371304bd731601f6344F5F304504
+        - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
+        - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
+        - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypCrossCollateralRouter
+      symbol: USDC
+    - addressOrDenom: "0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6"
+      chainName: katana
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0x203A662b0BD271A6ed5a60EdFbd04bFce608FD36"
+      connections:
+        - token: ethereum|arbitrum|0xeBC079D41C41a0ef7e54aa7Af867df9a621C9bE0
+        - token: ethereum|base|0x253821543C24623ecD3ceBCEd704359AF16CF38f
+        - token: ethereum|bsc|0x6E66a10Ce72fBdFA45Ab7de3693321246E254123
+        - token: ethereum|citrea|0x2bef59e84615371304bd731601f6344F5F304504
+        - token: ethereum|ethereum|0xA9C9a8FB36Ce3e5ffBAC3757dA7141262723541F
+        - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
+        - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: Vault Bridge USDC
+      standard: EvmHypCrossCollateralRouter
+      symbol: vbUSDC
+    - addressOrDenom: "0x28a96f9928dB06317356caACd5641C4Fde4424C7"
+      chainName: polygon
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+      connections:
+        - token: ethereum|arbitrum|0xeBC079D41C41a0ef7e54aa7Af867df9a621C9bE0
+        - token: ethereum|base|0x253821543C24623ecD3ceBCEd704359AF16CF38f
+        - token: ethereum|bsc|0x6E66a10Ce72fBdFA45Ab7de3693321246E254123
+        - token: ethereum|citrea|0x2bef59e84615371304bd731601f6344F5F304504
+        - token: ethereum|ethereum|0xA9C9a8FB36Ce3e5ffBAC3757dA7141262723541F
+        - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
         - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
       decimals: 6
       logoURI: /deployments/warp_routes/USDC/logo.svg
@@ -9709,8 +9786,11 @@ USDC/moonpay:
       connections:
         - token: ethereum|arbitrum|0xeBC079D41C41a0ef7e54aa7Af867df9a621C9bE0
         - token: ethereum|base|0x253821543C24623ecD3ceBCEd704359AF16CF38f
+        - token: ethereum|bsc|0x6E66a10Ce72fBdFA45Ab7de3693321246E254123
         - token: ethereum|citrea|0x2bef59e84615371304bd731601f6344F5F304504
         - token: ethereum|ethereum|0xA9C9a8FB36Ce3e5ffBAC3757dA7141262723541F
+        - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
+        - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
       decimals: 6
       logoURI: /deployments/warp_routes/XO/logo.png
       name: XO Cash
@@ -11842,7 +11922,10 @@ USDT/moonpay:
       collateralAddressOrDenom: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
       connections:
         - token: ethereum|base|0x7abBb4ea8a5895127500CF0C15830C9Eb9f61F96
+        - token: ethereum|bsc|0x050dcc964BCA53eF1A98A2347995cabC73cE25b9
         - token: ethereum|ethereum|0xeB1b48b238E15A62e1858a601B6BfFdf41163AE3
+        - token: ethereum|katana|0x0b51aFdd3F43446a621C555B16A1cb781D8443Ad
+        - token: ethereum|polygon|0x766A80a7a6BBA555731DC1726DB5BFa030631270
       decimals: 6
       logoURI: /deployments/warp_routes/USDT/logo.svg
       name: USD₮0
@@ -11854,10 +11937,31 @@ USDT/moonpay:
       collateralAddressOrDenom: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
       connections:
         - token: ethereum|arbitrum|0x75a9297db5F0349fd1d6f4030953Fe17175e06d4
+        - token: ethereum|bsc|0x050dcc964BCA53eF1A98A2347995cabC73cE25b9
         - token: ethereum|ethereum|0xeB1b48b238E15A62e1858a601B6BfFdf41163AE3
+        - token: ethereum|katana|0x0b51aFdd3F43446a621C555B16A1cb781D8443Ad
+        - token: ethereum|polygon|0x766A80a7a6BBA555731DC1726DB5BFa030631270
       decimals: 6
       logoURI: /deployments/warp_routes/USDT/logo.svg
       name: Tether USD
+      standard: EvmHypCrossCollateralRouter
+      symbol: USDT
+    - addressOrDenom: "0x050dcc964BCA53eF1A98A2347995cabC73cE25b9"
+      chainName: bsc
+      coinGeckoId: tether
+      collateralAddressOrDenom: "0x55d398326f99059fF775485246999027B3197955"
+      connections:
+        - token: ethereum|arbitrum|0x75a9297db5F0349fd1d6f4030953Fe17175e06d4
+        - token: ethereum|base|0x7abBb4ea8a5895127500CF0C15830C9Eb9f61F96
+        - token: ethereum|ethereum|0xeB1b48b238E15A62e1858a601B6BfFdf41163AE3
+        - token: ethereum|katana|0x0b51aFdd3F43446a621C555B16A1cb781D8443Ad
+        - token: ethereum|polygon|0x766A80a7a6BBA555731DC1726DB5BFa030631270
+      decimals: 18
+      logoURI: /deployments/warp_routes/USDT/logo.svg
+      name: Tether USD
+      scale:
+        denominator: 1000000000000
+        numerator: 1
       standard: EvmHypCrossCollateralRouter
       symbol: USDT
     - addressOrDenom: "0xeB1b48b238E15A62e1858a601B6BfFdf41163AE3"
@@ -11867,18 +11971,53 @@ USDT/moonpay:
       connections:
         - token: ethereum|arbitrum|0x75a9297db5F0349fd1d6f4030953Fe17175e06d4
         - token: ethereum|base|0x7abBb4ea8a5895127500CF0C15830C9Eb9f61F96
+        - token: ethereum|bsc|0x050dcc964BCA53eF1A98A2347995cabC73cE25b9
+        - token: ethereum|katana|0x0b51aFdd3F43446a621C555B16A1cb781D8443Ad
+        - token: ethereum|polygon|0x766A80a7a6BBA555731DC1726DB5BFa030631270
       decimals: 6
       logoURI: /deployments/warp_routes/USDT/logo.svg
       name: Tether USD
       standard: EvmHypCrossCollateralRouter
       symbol: USDT
+    - addressOrDenom: "0x0b51aFdd3F43446a621C555B16A1cb781D8443Ad"
+      chainName: katana
+      coinGeckoId: tether
+      collateralAddressOrDenom: "0x2DCa96907fde857dd3D816880A0df407eeB2D2F2"
+      connections:
+        - token: ethereum|arbitrum|0x75a9297db5F0349fd1d6f4030953Fe17175e06d4
+        - token: ethereum|base|0x7abBb4ea8a5895127500CF0C15830C9Eb9f61F96
+        - token: ethereum|bsc|0x050dcc964BCA53eF1A98A2347995cabC73cE25b9
+        - token: ethereum|ethereum|0xeB1b48b238E15A62e1858a601B6BfFdf41163AE3
+        - token: ethereum|polygon|0x766A80a7a6BBA555731DC1726DB5BFa030631270
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDT/logo.svg
+      name: Vault Bridge USDT
+      standard: EvmHypCrossCollateralRouter
+      symbol: vbUSDT
+    - addressOrDenom: "0x766A80a7a6BBA555731DC1726DB5BFa030631270"
+      chainName: polygon
+      coinGeckoId: tether
+      collateralAddressOrDenom: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
+      connections:
+        - token: ethereum|arbitrum|0x75a9297db5F0349fd1d6f4030953Fe17175e06d4
+        - token: ethereum|base|0x7abBb4ea8a5895127500CF0C15830C9Eb9f61F96
+        - token: ethereum|bsc|0x050dcc964BCA53eF1A98A2347995cabC73cE25b9
+        - token: ethereum|ethereum|0xeB1b48b238E15A62e1858a601B6BfFdf41163AE3
+        - token: ethereum|katana|0x0b51aFdd3F43446a621C555B16A1cb781D8443Ad
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDT/logo.svg
+      name: USDT0
+      standard: EvmHypCrossCollateralRouter
+      symbol: USDT0
 USDT/oft:
   tokens:
     - addressOrDenom: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
       chainName: arbitrum
+      collateralAddressOrDenom: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
       connections:
         - token: ethereum|ethereum|0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6
         - token: ethereum|plasma|0x93bfFA2231fbA5029997603fb68D9aC08024Baa2
+        - token: ethereum|polygon|0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94
       decimals: 6
       name: Tether USD
       standard: EvmHypCollateral
@@ -11886,9 +12025,11 @@ USDT/oft:
       tokenType: collateralOft
     - addressOrDenom: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
       chainName: ethereum
+      collateralAddressOrDenom: "0xdac17f958d2ee523a2206206994597c13d831ec7"
       connections:
         - token: ethereum|arbitrum|0xE4c1A1E54C232454311cF68610c3885FdD991c0E
         - token: ethereum|plasma|0x93bfFA2231fbA5029997603fb68D9aC08024Baa2
+        - token: ethereum|polygon|0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94
       decimals: 6
       name: Tether USD
       standard: EvmHypCollateral
@@ -11896,9 +12037,23 @@ USDT/oft:
       tokenType: collateralOft
     - addressOrDenom: "0x93bfFA2231fbA5029997603fb68D9aC08024Baa2"
       chainName: plasma
+      collateralAddressOrDenom: "0xb8ce59fc3717ada4c02eadf9682a9e934f625ebb"
       connections:
         - token: ethereum|arbitrum|0xE4c1A1E54C232454311cF68610c3885FdD991c0E
         - token: ethereum|ethereum|0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6
+        - token: ethereum|polygon|0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94
+      decimals: 6
+      name: Tether USD
+      standard: EvmHypCollateral
+      symbol: USDT
+      tokenType: collateralOft
+    - addressOrDenom: "0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94"
+      chainName: polygon
+      collateralAddressOrDenom: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
+      connections:
+        - token: ethereum|arbitrum|0xE4c1A1E54C232454311cF68610c3885FdD991c0E
+        - token: ethereum|ethereum|0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6
+        - token: ethereum|plasma|0x93bfFA2231fbA5029997603fb68D9aC08024Baa2
       decimals: 6
       name: Tether USD
       standard: EvmHypCollateral
