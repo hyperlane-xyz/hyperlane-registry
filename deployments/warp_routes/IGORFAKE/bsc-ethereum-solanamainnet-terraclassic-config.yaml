@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=../schema.json
+options:
+  interchainFeeConstants:
+    - addressOrDenom: uluna
+      amount: 99000000
+      destination: bsc
+      origin: terraclassic
+    - addressOrDenom: uluna
+      amount: 113000000
+      destination: ethereum
+      origin: terraclassic
+    - addressOrDenom: uluna
+      amount: 11500000
+      destination: solanamainnet
+      origin: terraclassic
+  localFeeConstants:
+    - addressOrDenom: uluna
+      amount: 283215
+      destination: bsc
+      origin: terraclassic
+    - addressOrDenom: uluna
+      amount: 283215
+      destination: ethereum
+      origin: terraclassic
+    - addressOrDenom: uluna
+      amount: 283215
+      destination: solanamainnet
+      origin: terraclassic
+tokens:
+  - addressOrDenom: terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel
+    chainName: terraclassic
+    collateralAddressOrDenom: terra1lpkaaqjaq8zfwktge3vy0zg46nxxsynsge2wxa7addpweu2w6gmsy3lhkr
+    connections:
+      - token: ethereum|bsc|0x3605d8946fC6f5a75D89D92173100F59743b5318
+      - token: ethereum|ethereum|0xA687a4C4Ca49795999b36fDC8A18D1ddD63EdfB5
+      - token: sealevel|solanamainnet|Hs4FrEgigJaabS5HtdkzceFdCPNmPhntWbbdWBJcXyCn
+    decimals: 6
+    name: IGORFAKE
+    standard: CwHypCollateral
+    symbol: IGORFAKE
+  - addressOrDenom: "0x3605d8946fC6f5a75D89D92173100F59743b5318"
+    chainName: bsc
+    connections:
+      - token: cosmos|terraclassic|terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel
+    decimals: 6
+    name: IGORFAKE
+    standard: EvmHypSynthetic
+    symbol: IGORFAKE
+  - addressOrDenom: "0xA687a4C4Ca49795999b36fDC8A18D1ddD63EdfB5"
+    chainName: ethereum
+    connections:
+      - token: cosmos|terraclassic|terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel
+    decimals: 6
+    name: IGORFAKE
+    standard: EvmHypSynthetic
+    symbol: IGORFAKE
+  - addressOrDenom: Hs4FrEgigJaabS5HtdkzceFdCPNmPhntWbbdWBJcXyCn
+    chainName: solanamainnet
+    collateralAddressOrDenom: 5s6DL6pYGxLNXNf1U915BLzLxNkRjnWCzqyzEfXuYDQT
+    connections:
+      - token: cosmos|terraclassic|terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel
+    decimals: 6
+    name: IGORFAKE
+    standard: SealevelHypSynthetic
+    symbol: IGORFAKE
