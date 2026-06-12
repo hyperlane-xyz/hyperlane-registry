@@ -6014,6 +6014,32 @@ neutron:
   technicalStack: other
   transactionOverrides:
     gasPrice: "0.0075"
+nexus:
+  blockExplorers:
+    - apiUrl: https://explorer.nexus.xyz/api
+      family: blockscout
+      name: Nexus Explorer
+      url: https://explorer.nexus.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 3946
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Nexus
+  domainId: 3946
+  gasCurrencyCoinGeckoId: nexus-4
+  name: nexus
+  nativeToken:
+    decimals: 18
+    name: NEX
+    symbol: NEX
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet.rpc.nexus.xyz
+  technicalStack: other
 nibiru:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/6900/etherscan/api
@@ -7126,6 +7152,32 @@ rivalz:
   rpcUrls:
     - http: https://rivalz.calderachain.xyz/http
   technicalStack: arbitrumnitro
+robinhood:
+  blockExplorers:
+    - apiUrl: https://explorer.chain.robinhood.com/api
+      family: blockscout
+      name: RHC
+      url: https://explorer.chain.robinhood.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 4663
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Robinhood Chain
+  domainId: 4663
+  gasCurrencyCoinGeckoId: ethereum
+  name: robinhood
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.chain.robinhood.com
+  technicalStack: other
 rometestnet:
   availability:
     reasons:
@@ -8854,6 +8906,32 @@ tatara:
   rpcUrls:
     - http: https://rpc.tatara.katanarpc.com
   technicalStack: other
+tea:
+  blockExplorers:
+    - apiUrl: https://explorer.tea.xyz/api
+      family: blockscout
+      name: Tea Explorer
+      url: https://explorer.tea.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 6122
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Tea
+  domainId: 6122
+  gasCurrencyCoinGeckoId: tea-protocol
+  name: tea
+  nativeToken:
+    decimals: 18
+    name: TEA
+    symbol: TEA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.tea.xyz
+  technicalStack: opstack
 telos:
   availability:
     reasons:
