@@ -1,5 +1,18 @@
 # @hyperlane-xyz/registry
 
+## 25.3.0
+
+### Minor Changes
+
+- 5fe4dc5: Deploy to seismictestnet. Deprecate incentivtestnet.
+- fc4671a: Deploy to nexus, tea.
+
+### Patch Changes
+
+- 3c74eb2: Backfilled USDC mainnet CCTP v2 and USDT OFT warp route configs with deploy token types.
+- cb1cd06: Extended moonpay route with polygon, bsc and katana
+- 13c8ade: chore: add changeset for turkchain files
+
 ## 25.2.0
 
 ### Minor Changes
