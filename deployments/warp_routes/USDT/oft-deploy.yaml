@@ -3,7 +3,9 @@ arbitrum:
   domainMappings:
     ethereum: 30101
     plasma: 30383
+    polygon: 30109
   extraOptions: 0x
+  mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
   name: Tether USD
   oft: "0x14E4A1B13bf7F943c8ff7C51fb60FA964A298D92"
   owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
@@ -15,7 +17,9 @@ ethereum:
   domainMappings:
     arbitrum: 30110
     plasma: 30383
+    polygon: 30109
   extraOptions: 0x
+  mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
   name: Tether USD
   oft: "0x6C96dE32CEa08842dcc4058c14d3aaAD7Fa41dee"
   owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
@@ -27,10 +31,26 @@ plasma:
   domainMappings:
     arbitrum: 30110
     ethereum: 30101
+    polygon: 30109
   extraOptions: 0x
+  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
   name: Tether USD
   oft: "0x02ca37966753bDdDf11216B73B16C1dE756A7CF9"
   owner: "0x5f132a9a16F8e4AE1E2ec2F2bcEdf074d1496c3f"
   symbol: USDT
   token: "0xb8ce59fc3717ada4c02eadf9682a9e934f625ebb"
+  type: collateralOft
+polygon:
+  decimals: 6
+  domainMappings:
+    arbitrum: 30110
+    ethereum: 30101
+    plasma: 30383
+  extraOptions: 0x
+  mailbox: "0x5d934f4e2f797775e53561bB72aca21ba36B96BB"
+  name: Tether USD
+  oft: "0x6ba10300f0dc58b7a1e4c0e41f5dabb7d7829e13"
+  owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
+  symbol: USDT
+  token: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
   type: collateralOft

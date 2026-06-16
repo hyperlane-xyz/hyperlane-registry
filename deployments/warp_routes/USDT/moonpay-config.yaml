@@ -6,7 +6,10 @@ tokens:
     collateralAddressOrDenom: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
     connections:
       - token: ethereum|base|0x7abBb4ea8a5895127500CF0C15830C9Eb9f61F96
+      - token: ethereum|bsc|0x050dcc964BCA53eF1A98A2347995cabC73cE25b9
       - token: ethereum|ethereum|0xeB1b48b238E15A62e1858a601B6BfFdf41163AE3
+      - token: ethereum|katana|0x0b51aFdd3F43446a621C555B16A1cb781D8443Ad
+      - token: ethereum|polygon|0x766A80a7a6BBA555731DC1726DB5BFa030631270
     decimals: 6
     logoURI: /deployments/warp_routes/USDT/logo.svg
     name: USD₮0
@@ -18,10 +21,31 @@ tokens:
     collateralAddressOrDenom: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
     connections:
       - token: ethereum|arbitrum|0x75a9297db5F0349fd1d6f4030953Fe17175e06d4
+      - token: ethereum|bsc|0x050dcc964BCA53eF1A98A2347995cabC73cE25b9
       - token: ethereum|ethereum|0xeB1b48b238E15A62e1858a601B6BfFdf41163AE3
+      - token: ethereum|katana|0x0b51aFdd3F43446a621C555B16A1cb781D8443Ad
+      - token: ethereum|polygon|0x766A80a7a6BBA555731DC1726DB5BFa030631270
     decimals: 6
     logoURI: /deployments/warp_routes/USDT/logo.svg
     name: Tether USD
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDT
+  - addressOrDenom: "0x050dcc964BCA53eF1A98A2347995cabC73cE25b9"
+    chainName: bsc
+    coinGeckoId: tether
+    collateralAddressOrDenom: "0x55d398326f99059fF775485246999027B3197955"
+    connections:
+      - token: ethereum|arbitrum|0x75a9297db5F0349fd1d6f4030953Fe17175e06d4
+      - token: ethereum|base|0x7abBb4ea8a5895127500CF0C15830C9Eb9f61F96
+      - token: ethereum|ethereum|0xeB1b48b238E15A62e1858a601B6BfFdf41163AE3
+      - token: ethereum|katana|0x0b51aFdd3F43446a621C555B16A1cb781D8443Ad
+      - token: ethereum|polygon|0x766A80a7a6BBA555731DC1726DB5BFa030631270
+    decimals: 18
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Tether USD
+    scale:
+      denominator: 1000000000000
+      numerator: 1
     standard: EvmHypCrossCollateralRouter
     symbol: USDT
   - addressOrDenom: "0xeB1b48b238E15A62e1858a601B6BfFdf41163AE3"
@@ -31,8 +55,41 @@ tokens:
     connections:
       - token: ethereum|arbitrum|0x75a9297db5F0349fd1d6f4030953Fe17175e06d4
       - token: ethereum|base|0x7abBb4ea8a5895127500CF0C15830C9Eb9f61F96
+      - token: ethereum|bsc|0x050dcc964BCA53eF1A98A2347995cabC73cE25b9
+      - token: ethereum|katana|0x0b51aFdd3F43446a621C555B16A1cb781D8443Ad
+      - token: ethereum|polygon|0x766A80a7a6BBA555731DC1726DB5BFa030631270
     decimals: 6
     logoURI: /deployments/warp_routes/USDT/logo.svg
     name: Tether USD
     standard: EvmHypCrossCollateralRouter
     symbol: USDT
+  - addressOrDenom: "0x0b51aFdd3F43446a621C555B16A1cb781D8443Ad"
+    chainName: katana
+    coinGeckoId: tether
+    collateralAddressOrDenom: "0x2DCa96907fde857dd3D816880A0df407eeB2D2F2"
+    connections:
+      - token: ethereum|arbitrum|0x75a9297db5F0349fd1d6f4030953Fe17175e06d4
+      - token: ethereum|base|0x7abBb4ea8a5895127500CF0C15830C9Eb9f61F96
+      - token: ethereum|bsc|0x050dcc964BCA53eF1A98A2347995cabC73cE25b9
+      - token: ethereum|ethereum|0xeB1b48b238E15A62e1858a601B6BfFdf41163AE3
+      - token: ethereum|polygon|0x766A80a7a6BBA555731DC1726DB5BFa030631270
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: Vault Bridge USDT
+    standard: EvmHypCrossCollateralRouter
+    symbol: vbUSDT
+  - addressOrDenom: "0x766A80a7a6BBA555731DC1726DB5BFa030631270"
+    chainName: polygon
+    coinGeckoId: tether
+    collateralAddressOrDenom: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
+    connections:
+      - token: ethereum|arbitrum|0x75a9297db5F0349fd1d6f4030953Fe17175e06d4
+      - token: ethereum|base|0x7abBb4ea8a5895127500CF0C15830C9Eb9f61F96
+      - token: ethereum|bsc|0x050dcc964BCA53eF1A98A2347995cabC73cE25b9
+      - token: ethereum|ethereum|0xeB1b48b238E15A62e1858a601B6BfFdf41163AE3
+      - token: ethereum|katana|0x0b51aFdd3F43446a621C555B16A1cb781D8443Ad
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDT/logo.svg
+    name: USDT0
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDT0

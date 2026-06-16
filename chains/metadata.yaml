@@ -4425,6 +4425,9 @@ katana:
   rpcUrls:
     - http: https://rpc.katana.network
   technicalStack: polygoncdk
+  transactionOverrides:
+    maxFeePerGas: 10000000
+    maxPriorityFeePerGas: 10000000
 kava:
   blockExplorers:
     - apiUrl: https://explorer.kava.io/api
@@ -6011,6 +6014,32 @@ neutron:
   technicalStack: other
   transactionOverrides:
     gasPrice: "0.0075"
+nexus:
+  blockExplorers:
+    - apiUrl: https://explorer.nexus.xyz/api
+      family: blockscout
+      name: Nexus Explorer
+      url: https://explorer.nexus.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 3946
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Nexus
+  domainId: 3946
+  gasCurrencyCoinGeckoId: nexus-4
+  name: nexus
+  nativeToken:
+    decimals: 18
+    name: NEX
+    symbol: NEX
+  protocol: ethereum
+  rpcUrls:
+    - http: https://mainnet.rpc.nexus.xyz
+  technicalStack: other
 nibiru:
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/6900/etherscan/api
@@ -7123,6 +7152,32 @@ rivalz:
   rpcUrls:
     - http: https://rivalz.calderachain.xyz/http
   technicalStack: arbitrumnitro
+robinhood:
+  blockExplorers:
+    - apiUrl: https://explorer.chain.robinhood.com/api
+      family: blockscout
+      name: RHC
+      url: https://explorer.chain.robinhood.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 5
+  chainId: 4663
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Robinhood Chain
+  domainId: 4663
+  gasCurrencyCoinGeckoId: ethereum
+  name: robinhood
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.chain.robinhood.com
+  technicalStack: other
 rometestnet:
   availability:
     reasons:
@@ -8851,6 +8906,32 @@ tatara:
   rpcUrls:
     - http: https://rpc.tatara.katanarpc.com
   technicalStack: other
+tea:
+  blockExplorers:
+    - apiUrl: https://explorer.tea.xyz/api
+      family: blockscout
+      name: Tea Explorer
+      url: https://explorer.tea.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 5
+  chainId: 6122
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Tea
+  domainId: 6122
+  gasCurrencyCoinGeckoId: tea-protocol
+  name: tea
+  nativeToken:
+    decimals: 18
+    name: TEA
+    symbol: TEA
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.tea.xyz
+  technicalStack: opstack
 telos:
   availability:
     reasons:
@@ -9072,6 +9153,33 @@ trumpchain:
   rpcUrls:
     - http: https://rpc.trumpchain.dev
   technicalStack: arbitrumnitro
+turkchain:
+  blockExplorers:
+    - apiUrl: https://turkscan.com/api
+      family: blockscout
+      name: Turkscan
+      url: https://turkscan.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 1
+  chainId: 1919
+  deployer:
+    address: 3.618698821484354e+47
+    name: Turkchain
+    url: https://turkscan.com
+  displayName: Turkchain
+  domainId: 1919
+  isTestnet: false
+  name: turkchain
+  nativeToken:
+    decimals: 18
+    name: TC
+    symbol: TURK
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.turkscan.com
+      webSocket: wss://evm-ws.turkscan.com
 u2utestnet:
   blockExplorers:
     - apiUrl: https://testnet.u2uscan.xyz/api
