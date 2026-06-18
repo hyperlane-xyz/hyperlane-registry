@@ -1,5 +1,21 @@
 # @hyperlane-xyz/registry
 
+## 25.3.0
+
+### Minor Changes
+
+- 5fe4dc5: Deploy to seismictestnet. Deprecate incentivtestnet.
+- fc4671a: Deploy to nexus, tea.
+
+### Patch Changes
+
+- 3c74eb2: Backfilled USDC mainnet CCTP v2 and USDT OFT warp route configs with deploy token types.
+- 3b1ba84: Mark torus availability as disabled (deprecated).
+- cb1cd06: Extended moonpay route with polygon, bsc and katana
+- 9c80a8b: Migrate mUSD bsc and linea routes to EvmM0Portal standard, connecting ethereum, linea, bsc and monad in a full mesh. Remove the deprecated mUSD/musd-portal-lite route.
+- 584a046: Fixed moonpay bsc owner by using the bsc ica instead of safe address
+- 13c8ade: chore: add changeset for turkchain files
+
 ## 25.2.0
 
 ### Minor Changes
