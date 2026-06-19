@@ -1,18 +1,22 @@
 bsc:
   decimals: 18
   interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
-        paused: false
-        type: pausableIsm
-      - maxCapacity: "4999999999999999999968000"
-        owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
-        type: rateLimitedIsm
-    threshold: 3
+    address: "0xe0c91455e83f5F71ed73D36466C3b7d3FB9a55E5"
     type: staticAggregationIsm
+    modules:
+      - owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
+        address: "0x51DE40d57873c4C6aeFD58cC9D782E15426A8CaA"
+        type: defaultFallbackRoutingIsm
+        domains: {}
+      - address: "0x766A80a7a6BBA555731DC1726DB5BFa030631270"
+        owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
+        type: pausableIsm
+        paused: false
+      - address: "0x972fBEDDF3f6c88B413796090E18EC34fe467901"
+        type: rateLimitedIsm
+        maxCapacity: "20999999999999999999952000"
+        owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
+    threshold: 3
   mailbox: "0x2971b9Aec44bE4eb673DF1B88cDB57b96eefe8a4"
   name: ECO Voucher ENI 1
   owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
@@ -29,18 +33,22 @@ bsc:
 eni:
   decimals: 18
   interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
-        paused: false
-        type: pausableIsm
-      - maxCapacity: "4999999999999999999968000"
-        owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
-        type: rateLimitedIsm
-    threshold: 3
+    address: "0x57078Bc6516A3385b11e883FF13c5E5618290269"
     type: staticAggregationIsm
+    modules:
+      - address: "0x3b9486c24784936cb7b8EfaC0AF14B9AAa0df215"
+        type: rateLimitedIsm
+        maxCapacity: "20999999999999999999952000"
+        owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
+      - owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
+        address: "0x58E16564F60A7C16669B076d239A23d8C5164918"
+        type: defaultFallbackRoutingIsm
+        domains: {}
+      - address: "0x67a1910e73B097E30a678C7616F20e6a4F72CBb6"
+        owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
+        type: pausableIsm
+        paused: false
+    threshold: 3
   mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
   name: ECO Voucher ENI 1
   owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"

@@ -1,10 +1,48 @@
 base:
   decimals: 6
+  interchainSecurityModule:
+    owner: "0x349B20024DD7EECc872BA6C203d8A77EAcF043EC"
+    address: "0x8889cA7DA10F30C548ab4Bdaa6df610781BD2bBf"
+    type: defaultFallbackRoutingIsm
+    domains:
+      krown:
+        address: "0xa1D3E750Ca5E0D2C4e0B54bfD6C6715B5343b4d0"
+        type: staticAggregationIsm
+        modules:
+          - address: "0x1fEd3c0640e3791be181183fe008dA759a7Ed11a"
+            type: testIsm
+          - owner: "0x349B20024DD7EECc872BA6C203d8A77EAcF043EC"
+            address: "0x3399F53B18e8c59574dE918eacdC941D9aD8Db57"
+            type: defaultFallbackRoutingIsm
+            domains: {}
+          - address: "0xE228C42F3962ef2603084e282ab38957E56c8ae6"
+            relayer: "0x74Cae0ECC47B02Ed9B9D32E000Fd70B9417970C5"
+            type: trustedRelayerIsm
+        threshold: 3
   owner: "0x349B20024DD7EECc872BA6C203d8A77EAcF043EC"
   token: "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913"
   type: collateral
 ethereum:
   decimals: 6
+  interchainSecurityModule:
+    owner: "0x3Ea04C1cDDebf600dA09e6FE0654835F27258f30"
+    address: "0xa23b481B609CbB4C2589D32C4d3080A90926D95f"
+    type: defaultFallbackRoutingIsm
+    domains:
+      krown:
+        address: "0x14B255dB1Fc61a680ae322097028B2089d14d04A"
+        type: staticAggregationIsm
+        modules:
+          - address: "0x075DA912914E2B60fEc86780f57182132F30FBbc"
+            type: testIsm
+          - owner: "0x3Ea04C1cDDebf600dA09e6FE0654835F27258f30"
+            address: "0xaCf1dDaB1a8998438B4bc4F2D16CECe7Bd2B7d3a"
+            type: defaultFallbackRoutingIsm
+            domains: {}
+          - address: "0xeC2cc153f977618dF577BC60cca1b6dD0C7F21a8"
+            relayer: "0x74Cae0ECC47B02Ed9B9D32E000Fd70B9417970C5"
+            type: trustedRelayerIsm
+        threshold: 3
   name: USD Coin
   owner: "0x3Ea04C1cDDebf600dA09e6FE0654835F27258f30"
   symbol: USDC
