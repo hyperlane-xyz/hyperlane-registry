@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x726f757465725f6170700000000000000000000000000002000000000000000e"
+    chainName: celestia
+    connections:
+      - token: ethereum|ethereum|0x02D28685e808A962aF327180AD55cEE32Eb94C94
+    decimals: 8
+    logoURI: /deployments/warp_routes/BTC/logo.svg
+    name: BTC
+    standard: CosmosNativeHypSynthetic
+    symbol: BTC
+  - addressOrDenom: "0x02D28685e808A962aF327180AD55cEE32Eb94C94"
+    chainName: ethereum
+    coinGeckoId: lombard-staked-btc
+    collateralAddressOrDenom: "0x8236a87084f8B84306f72007F36F2618A5634494"
+    connections:
+      - token: cosmosnative|celestia|0x726f757465725f6170700000000000000000000000000002000000000000000e
+    decimals: 8
+    logoURI: /deployments/warp_routes/BTC/lbtc-logo.svg
+    name: Lombard Staked Bitcoin
+    standard: EvmHypCollateral
+    symbol: LBTC
