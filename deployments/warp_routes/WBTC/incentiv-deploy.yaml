@@ -1,8 +1,24 @@
 ethereum:
+  interchainSecurityModule:
+    address: "0xEE3a7cBF5a28fAA173d346a4B7DD4904218710d4"
+    threshold: 2
+    type: merkleRootMultisigIsm
+    validators:
+      - "0x7177e97c220DdCfE2DFA73D1aDd1929c4B033832"
+      - "0xB6D0CAA8e08dA05a3543E163c998Ae6E5eF2FfCE"
+      - "0xEFfb8D9B7666Cf85Dd5B45B0cB90Ef76d7CB6128"
   owner: "0x64F6C20eAeaF8418F73E1D399d8b86B9eA26e6F2"
   token: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
   type: collateral
 incentiv:
+  interchainSecurityModule:
+    address: "0x9fDe79BD608AfB4B95E271a03019e4A4629dd003"
+    threshold: 2
+    type: merkleRootMultisigIsm
+    validators:
+      - "0x0475e5B9a3769fdBcDa78965c5b50E5B4fcDb204"
+      - "0x614571a2c8E4575da493eBed053fDe32Bf519c32"
+      - "0xC2061992603E9a638Db3A1f070a118a792B77888"
   isNft: false
   owner: "0x4c1B3430ec07F2D58b07a18c53B6f92603C2eF3F"
   type: synthetic

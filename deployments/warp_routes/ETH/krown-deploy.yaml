@@ -1,9 +1,47 @@
 base:
   decimals: 18
+  interchainSecurityModule:
+    address: "0x9ceFf810Cfc69922F706300bFa888C56B16bA8ad"
+    domains:
+      krown:
+        address: "0x3B8B75D6cd187F6258aCE17cb34352CD6F61a806"
+        modules:
+          - address: "0x8Fe9c48DCE94690a383DbE8311189682B4c87F7a"
+            type: testIsm
+          - address: "0xA63520eE179f07644feB4575B0F7576c3421b59E"
+            relayer: "0x74Cae0ECC47B02Ed9B9D32E000Fd70B9417970C5"
+            type: trustedRelayerIsm
+          - address: "0xB3f8D3251D91FE5b1621e413E9a5160B8C2e9bf1"
+            domains: {}
+            owner: "0x349B20024DD7EECc872BA6C203d8A77EAcF043EC"
+            type: defaultFallbackRoutingIsm
+        threshold: 3
+        type: staticAggregationIsm
+    owner: "0x349B20024DD7EECc872BA6C203d8A77EAcF043EC"
+    type: defaultFallbackRoutingIsm
   owner: "0x349B20024DD7EECc872BA6C203d8A77EAcF043EC"
   type: native
 ethereum:
   decimals: 18
+  interchainSecurityModule:
+    address: "0xf2044cF2Cf21cC0213201Bc1E6a031C71c425971"
+    domains:
+      krown:
+        address: "0x69d01C7F05be9De9f67E20B0A3697DB8F1aA688B"
+        modules:
+          - address: "0x5d4C14B895392BD935583ebFfE0f5159540FE8bC"
+            type: testIsm
+          - address: "0xEf52dBb32eaa5307A4802317695ECB77d37077Ec"
+            relayer: "0x74Cae0ECC47B02Ed9B9D32E000Fd70B9417970C5"
+            type: trustedRelayerIsm
+          - address: "0xc304CcEe62944D07fb462BB9690fBAe0D91fA8B6"
+            domains: {}
+            owner: "0x3Ea04C1cDDebf600dA09e6FE0654835F27258f30"
+            type: defaultFallbackRoutingIsm
+        threshold: 3
+        type: staticAggregationIsm
+    owner: "0x3Ea04C1cDDebf600dA09e6FE0654835F27258f30"
+    type: defaultFallbackRoutingIsm
   owner: "0x3Ea04C1cDDebf600dA09e6FE0654835F27258f30"
   type: native
 krown:
