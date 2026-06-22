@@ -1,5 +1,20 @@
 # @hyperlane-xyz/registry
 
+## 25.4.0
+
+### Minor Changes
+
+- aaf4c69: - Add nexus and tea to default ISMs
+  - Add enigma to aleo and tron
+  - Add luganodes to aleo and tron
+
+### Patch Changes
+
+- 80b00aa: Extended USDT/eni with tron
+- 9b7fa21: - Fixed igra's gasCurrencyCoinGeckoId, which pointed at the unrelated IGRA governance token instead of the native iKAS gas token. Repointed to wrapped-ikas-zealous-swap so the IGP gas oracle prices iKAS correctly.
+- 0627679: Connected the moonpay combined cross-collateral warp config to the bsc, katana, and polygon USDC/USDT routers so the CCR route is a fully-connected mesh across all 14 tokens.
+- 427cd09: Add USDC/USDT eclipsemainnet FPWR and USDC/paradex, USDC/igra, USDC/radix FPWRs as allowedRebalancingBridges for CROSS/moonpay routes across all overlapping chains (arbitrum, base, ethereum, polygon), enabling BSC rebalancing and additional bridge redundancy.
+
 ## 25.3.0
 
 ### Minor Changes
