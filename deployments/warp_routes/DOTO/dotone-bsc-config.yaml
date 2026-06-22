@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x1a5e91bbcb458ff14860025fd508ae3176f5491d"
+    chainName: dotone
+    connections:
+      - token: ethereum|bsc|0xe41ee0a417ee43da540eed7b7f30a73df8c43e6e
+    decimals: 18
+    name: DOTO
+    standard: EvmHypNative
+    symbol: DOTO
+  - addressOrDenom: "0xe41ee0a417ee43da540eed7b7f30a73df8c43e6e"
+    chainName: bsc
+    connections:
+      - token: ethereum|dotone|0x1a5e91bbcb458ff14860025fd508ae3176f5491d
+    decimals: 18
+    name: Wrapped DOTO
+    standard: EvmHypXERC20
+    symbol: WDOTO
