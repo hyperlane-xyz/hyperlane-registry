@@ -2246,6 +2246,30 @@ EURC/matchain:
       name: EURC
       standard: EvmHypCollateralFiat
       symbol: EURC
+EXA/base-optimism:
+  tokens:
+    - addressOrDenom: "0x12eDAc9B50F1014997c1bddAD23Df58b6d82De3B"
+      chainName: base
+      coinGeckoId: exa
+      collateralAddressOrDenom: "0x1e925De1c68ef83bD98eE3E130eF14a50309C01B"
+      connections:
+        - token: ethereum|optimism|0x12eDAc9B50F1014997c1bddAD23Df58b6d82De3B
+      decimals: 18
+      logoURI: /deployments/warp_routes/EXA/logo.svg
+      name: exactly
+      standard: EvmHypCollateral
+      symbol: EXA
+    - addressOrDenom: "0x12eDAc9B50F1014997c1bddAD23Df58b6d82De3B"
+      chainName: optimism
+      coinGeckoId: exa
+      collateralAddressOrDenom: "0x1e925De1c68ef83bD98eE3E130eF14a50309C01B"
+      connections:
+        - token: ethereum|base|0x12eDAc9B50F1014997c1bddAD23Df58b6d82De3B
+      decimals: 18
+      logoURI: /deployments/warp_routes/EXA/logo.svg
+      name: exactly
+      standard: EvmHypCollateral
+      symbol: EXA
 EZETH/renzo-prod:
   tokens:
     - addressOrDenom: "0xB26bBfC6d1F469C821Ea25099017862e7368F4E8"
