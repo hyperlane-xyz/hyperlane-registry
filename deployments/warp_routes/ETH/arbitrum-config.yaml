@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xA2cB89330E057a2cF76C6945aEAD22631c4df061"
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    chainName: arbitrum
+    connections:
+      - token: ethereum|base|0xfBB4EE517Ed80C027Fd8217Db53ffD8190792522
+    decimals: 18
+    name: Ether
+    standard: EvmHypSynthetic
+    symbol: ETH
+    tokenType: synthetic
+  - addressOrDenom: "0xfBB4EE517Ed80C027Fd8217Db53ffD8190792522"
+    coinGeckoId: ethereum
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    chainName: base
+    connections:
+      - token: ethereum|arbitrum|0xA2cB89330E057a2cF76C6945aEAD22631c4df061
+    decimals: 18
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH
+    tokenType: native

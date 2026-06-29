@@ -1,0 +1,83 @@
+arbitrum:
+  contractVersion: 11.3.1
+  decimals: 18
+  destinationGas:
+    "8453": "44000"
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    address: "0x832B54Be22f94917Becf10486D5F08027fd290bA"
+    modules:
+      - address: "0x3FdE1aC2d31563f93acB9727b0d5b5FdfDfF8bf6"
+        owner: "0xC92c781F59b6452e7879e1e0317444c5B7Bb651c"
+        paused: false
+        type: pausableIsm
+      - address: "0x52102b061da4BF2f27a23403834095fcf9E1a887"
+        domains: {}
+        owner: "0xC92c781F59b6452e7879e1e0317444c5B7Bb651c"
+        type: defaultFallbackRoutingIsm
+    threshold: 2
+    type: staticAggregationIsm
+  isNft: false
+  mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
+  name: Ether
+  owner: "0xC92c781F59b6452e7879e1e0317444c5B7Bb651c"
+  proxyAdmin:
+    address: "0xF50286Fc7487c8945fFc257ca0fb0d299978fFfC"
+    owner: "0xC92c781F59b6452e7879e1e0317444c5B7Bb651c"
+  remoteRouters:
+    "8453":
+      address: "0x000000000000000000000000fbb4ee517ed80c027fd8217db53ffd8190792522"
+  symbol: ETH
+  tokenFee:
+    address: "0xeafb93d921e4557bECdA567927f36ad28854Aae1"
+    feeContracts:
+      base:
+        address: "0x16BF93e259ee7f7074453a2948379C35C6851b71"
+        bps: 15
+        halfAmount: "38597363079105398474523661669562635951089333"
+        maxFee: "115792089237316195423570985008687907853269"
+        owner: "0xC92c781F59b6452e7879e1e0317444c5B7Bb651c"
+        token: "0xA2cB89330E057a2cF76C6945aEAD22631c4df061"
+        type: LinearFee
+    owner: "0xC92c781F59b6452e7879e1e0317444c5B7Bb651c"
+    token: "0xA2cB89330E057a2cF76C6945aEAD22631c4df061"
+    type: RoutingFee
+  type: synthetic
+base:
+  allowedRebalancers: []
+  allowedRebalancingBridges: {}
+  contractVersion: 11.3.1
+  decimals: 18
+  destinationGas:
+    "42161": "64000"
+  hook:
+    hooks:
+      - type: defaultHook
+      - owner: "0x645FE06507C8a188494d3E755B248a8dbF3bd875"
+        paused: false
+        type: pausableHook
+    type: aggregationHook
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  isNft: false
+  mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
+  name: Ether
+  owner: "0x645FE06507C8a188494d3E755B248a8dbF3bd875"
+  proxyAdmin:
+    address: "0x6E0C98A9Efd2bDCD5acbc42b2E9de91994b06FE5"
+    owner: "0x645FE06507C8a188494d3E755B248a8dbF3bd875"
+  remoteRouters:
+    "42161":
+      address: "0x000000000000000000000000a2cb89330e057a2cf76c6945aead22631c4df061"
+  symbol: ETH
+  tokenFee:
+    address: "0x5A8237b0cf741b4b62fe40ee2711bF158E25750c"
+    feeContracts:
+      arbitrum:
+        bps: 11
+        owner: "0x645FE06507C8a188494d3E755B248a8dbF3bd875"
+        token: "0x0000000000000000000000000000000000000000"
+        type: LinearFee
+    owner: "0x645FE06507C8a188494d3E755B248a8dbF3bd875"
+    token: "0x0000000000000000000000000000000000000000"
+    type: RoutingFee
+  type: native
