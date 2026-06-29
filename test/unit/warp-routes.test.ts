@@ -8,12 +8,23 @@ import {
   WarpRouteDeployConfigSchema,
 } from '@hyperlane-xyz/sdk';
 import { expect } from 'chai';
+import { parse } from 'yaml';
 
-import { WARP_ROUTE_SYMBOL_DIRECTORY_REGEX } from '../../src/consts.js';
+import { WARP_ROUTE_ID_REGEX, WARP_ROUTE_SYMBOL_DIRECTORY_REGEX } from '../../src/consts.js';
 import { FileSystemRegistry } from '../../src/fs/FileSystemRegistry.js';
 import { normalizeScale } from '../../src/utils.js';
 
 const BASE_URI = './';
+const WARP_ROUTE_ALLOWLIST_PATH = path.join(
+  BASE_URI,
+  'deployments',
+  'warp_routes',
+  'warpRouteAllowlist.yaml',
+);
+
+interface WarpRouteAllowlist {
+  warpRouteIds: string[];
+}
 
 describe('Warp Core Configs', () => {
   const localRegistry = new FileSystemRegistry({ uri: BASE_URI });
@@ -99,6 +110,22 @@ describe('Warp Core Configs', () => {
       }
     });
   }
+
+  it('Warp route allowlist only references existing route ids', () => {
+    const allowlist = parse(fs.readFileSync(WARP_ROUTE_ALLOWLIST_PATH, 'utf8')) as
+      | WarpRouteAllowlist
+      | undefined;
+    expect(allowlist?.warpRouteIds).to.be.an('array').that.is.not.empty;
+
+    const seen = new Set<string>();
+    for (const id of allowlist!.warpRouteIds) {
+      expect(id, 'Allowlist route id must be a string').to.be.a('string');
+      expect(id, `Invalid allowlist route id format ${id}`).to.match(WARP_ROUTE_ID_REGEX);
+      expect(seen.has(id), `Duplicate allowlist route id ${id}`).to.be.false;
+      seen.add(id);
+      expect(routes, `Allowlist route id ${id} does not exist`).to.have.property(id);
+    }
+  });
 });
 
 describe('Warp Deploy Configs', () => {
