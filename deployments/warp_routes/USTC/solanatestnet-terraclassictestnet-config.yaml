@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: terra1rnpvpwvqcf94keldtm2udt4tqhwthpw5cu94m443rz5ue7rvvkjq9nklml
+    chainName: terraclassictestnet
+    collateralAddressOrDenom: uusd
+    connections:
+      - token: sealevel|solanatestnet|7PtxvK2AB8TmhygeWDyVjkCKvBST16QFb8j6tdSLtoha
+    decimals: 6
+    logoURI: https://raw.githubusercontent.com/classic-terra/assets/refs/heads/master/icon/svg/Terra/UST.svg
+    name: Terra UST Classic
+    standard: CwHypCollateral
+    symbol: USTC
+  - addressOrDenom: 7PtxvK2AB8TmhygeWDyVjkCKvBST16QFb8j6tdSLtoha
+    chainName: solanatestnet
+    collateralAddressOrDenom: GDzqsfF9NHdeZXNnWZrjxFhzyUaCgG7PsBSz2Nr89xdy
+    connections:
+      - token: cosmos|terraclassictestnet|terra1rnpvpwvqcf94keldtm2udt4tqhwthpw5cu94m443rz5ue7rvvkjq9nklml
+    decimals: 6
+    logoURI: https://raw.githubusercontent.com/classic-terra/assets/refs/heads/master/icon/svg/Terra/UST.svg
+    name: Terra UST Classic
+    standard: SealevelHypSynthetic
+    symbol: USTC

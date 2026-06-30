@@ -15582,3 +15582,227 @@ wpFLT/fluence:
       name: wrapped pFLT
       standard: EvmHypSynthetic
       symbol: wpFLT
+
+IGORFAKE/bsc-ethereum-solanamainnet-terraclassic:
+  options:
+    interchainFeeConstants:
+      - addressOrDenom: "uluna"
+        amount: 99000000
+        destination: "bsc"
+        origin: "terraclassic"
+      - addressOrDenom: "uluna"
+        amount: 113000000
+        destination: "ethereum"
+        origin: "terraclassic"
+      - addressOrDenom: "uluna"
+        amount: 11500000
+        destination: "solanamainnet"
+        origin: "terraclassic"
+    localFeeConstants:
+      - addressOrDenom: "uluna"
+        amount: 283215
+        destination: "bsc"
+        origin: "terraclassic"
+      - addressOrDenom: "uluna"
+        amount: 283215
+        destination: "ethereum"
+        origin: "terraclassic"
+      - addressOrDenom: "uluna"
+        amount: 283215
+        destination: "solanamainnet"
+        origin: "terraclassic"
+  tokens:
+    - addressOrDenom: "terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel"
+      chainName: "terraclassic"
+      collateralAddressOrDenom: "terra1lpkaaqjaq8zfwktge3vy0zg46nxxsynsge2wxa7addpweu2w6gmsy3lhkr"
+      connections:
+        - token: "ethereum|bsc|0x3605d8946fC6f5a75D89D92173100F59743b5318"
+        - token: "ethereum|ethereum|0xA687a4C4Ca49795999b36fDC8A18D1ddD63EdfB5"
+        - token: "sealevel|solanamainnet|Hs4FrEgigJaabS5HtdkzceFdCPNmPhntWbbdWBJcXyCn"
+      decimals: 6
+      name: "IGORFAKE"
+      standard: "CwHypCollateral"
+      symbol: "IGORFAKE"
+    - addressOrDenom: "0x3605d8946fC6f5a75D89D92173100F59743b5318"
+      chainName: "bsc"
+      connections:
+        - token: "cosmos|terraclassic|terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel"
+      decimals: 6
+      name: "IGORFAKE"
+      standard: "EvmHypSynthetic"
+      symbol: "IGORFAKE"
+    - addressOrDenom: "0xA687a4C4Ca49795999b36fDC8A18D1ddD63EdfB5"
+      chainName: "ethereum"
+      connections:
+        - token: "cosmos|terraclassic|terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel"
+      decimals: 6
+      name: "IGORFAKE"
+      standard: "EvmHypSynthetic"
+      symbol: "IGORFAKE"
+    - addressOrDenom: "Hs4FrEgigJaabS5HtdkzceFdCPNmPhntWbbdWBJcXyCn"
+      chainName: "solanamainnet"
+      collateralAddressOrDenom: "5s6DL6pYGxLNXNf1U915BLzLxNkRjnWCzqyzEfXuYDQT"
+      connections:
+        - token: "cosmos|terraclassic|terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel"
+      decimals: 6
+      name: "IGORFAKE"
+      standard: "SealevelHypSynthetic"
+      symbol: "IGORFAKE"
+LUNC/bsctestnet-sepolia-solanatestnet-terraclassictestnet:
+  tokens:
+    - addressOrDenom: "terra1zlm0h2xu6rhnjchn29hxnpvr74uxxqetar9y75zcehyx2mqezg9slj09ml"
+      chainName: "terraclassictestnet"
+      collateralAddressOrDenom: "uluna"
+      connections:
+        - token: "ethereum|bsctestnet|0x2144be4477202ba2d50c9a8be3181241878cf7d8"
+        - token: "ethereum|sepolia|0x224a4419D7FA69D3bEbAbce574c7c84B48D829b4"
+        - token: "sealevel|solanatestnet|HNxN3ZSBtD5J2nNF4AATMhuvTWVeHQf18nTtzKtsnkyw"
+      decimals: 6
+      logoURI: "https://raw.githubusercontent.com/classic-terra/assets/60d34b97178cfdcd77fb87d7deeb7d3ab0ede6ee/icon/svg/LUNC.svg"
+      name: "Luna Classic"
+      standard: "CwHypCollateral"
+      symbol: "LUNC"
+    - addressOrDenom: "0x2144be4477202ba2d50c9a8be3181241878cf7d8"
+      chainName: "bsctestnet"
+      connections:
+        - token: "cosmos|terraclassictestnet|terra1zlm0h2xu6rhnjchn29hxnpvr74uxxqetar9y75zcehyx2mqezg9slj09ml"
+      decimals: 6
+      name: "Luna Classic"
+      standard: "EvmHypSynthetic"
+      symbol: "LUNC"
+    - addressOrDenom: "0x224a4419D7FA69D3bEbAbce574c7c84B48D829b4"
+      chainName: "sepolia"
+      connections:
+        - token: "cosmos|terraclassictestnet|terra1zlm0h2xu6rhnjchn29hxnpvr74uxxqetar9y75zcehyx2mqezg9slj09ml"
+      decimals: 6
+      name: "Luna Classic"
+      standard: "EvmHypSynthetic"
+      symbol: "LUNC"
+    - addressOrDenom: "HNxN3ZSBtD5J2nNF4AATMhuvTWVeHQf18nTtzKtsnkyw"
+      chainName: "solanatestnet"
+      collateralAddressOrDenom: "3yhG9dDHVX6K1duf8znEcaJcuTiKSLYvfBD4xy6akxfu"
+      connections:
+        - token: "cosmos|terraclassictestnet|terra1zlm0h2xu6rhnjchn29hxnpvr74uxxqetar9y75zcehyx2mqezg9slj09ml"
+      decimals: 6
+      name: "Luna Classic"
+      standard: "SealevelHypSynthetic"
+      symbol: "LUNC"
+USTC/solanatestnet-terraclassictestnet:
+  tokens:
+    - addressOrDenom: "terra1rnpvpwvqcf94keldtm2udt4tqhwthpw5cu94m443rz5ue7rvvkjq9nklml"
+      chainName: "terraclassictestnet"
+      collateralAddressOrDenom: "uusd"
+      connections:
+        - token: "sealevel|solanatestnet|7PtxvK2AB8TmhygeWDyVjkCKvBST16QFb8j6tdSLtoha"
+      decimals: 6
+      name: "Terra UST Classic"
+      standard: "CwHypCollateral"
+      symbol: "USTC"
+    - addressOrDenom: "7PtxvK2AB8TmhygeWDyVjkCKvBST16QFb8j6tdSLtoha"
+      chainName: "solanatestnet"
+      connections:
+        - token: "cosmos|terraclassictestnet|terra1rnpvpwvqcf94keldtm2udt4tqhwthpw5cu94m443rz5ue7rvvkjq9nklml"
+      decimals: 6
+      name: "Terra UST Classic"
+      standard: "SealevelHypSynthetic"
+      symbol: "USTC"
+JURIS/sepolia-solanatestnet-terraclassictestnet:
+  tokens:
+    - addressOrDenom: "terra1stu3cl7mhtsc2mf9cputawfd6v6e4a2nkmhhphh47lsrr3j6ktdqlcfe2l"
+      chainName: "terraclassictestnet"
+      collateralAddressOrDenom: "terra1w7d0jqehn0ja3hkzsm0psk6z2hjz06lsq0nxnwkzkkq4fqwgq6tqa5te8e"
+      connections:
+        - token: "sealevel|solanatestnet|G3eEYHv2GrBJ6KTS3XQhRd7QYdwnfWjisQrSVWedQK4y"
+        - token: "ethereum|sepolia|0xc2Da334D32724B97D5990229a9752a0d31087bC9"
+      decimals: 6
+      name: "Juris Protocol"
+      standard: "CwHypCollateral"
+      symbol: "JURIS"
+    - addressOrDenom: "G3eEYHv2GrBJ6KTS3XQhRd7QYdwnfWjisQrSVWedQK4y"
+      chainName: "solanatestnet"
+      connections:
+        - token: "cosmos|terraclassictestnet|terra1stu3cl7mhtsc2mf9cputawfd6v6e4a2nkmhhphh47lsrr3j6ktdqlcfe2l"
+      decimals: 6
+      name: "Juris Protocol"
+      standard: "SealevelHypSynthetic"
+      symbol: "JURIS"
+    - addressOrDenom: "0xc2Da334D32724B97D5990229a9752a0d31087bC9"
+      chainName: "sepolia"
+      connections:
+        - token: "cosmos|terraclassictestnet|terra1stu3cl7mhtsc2mf9cputawfd6v6e4a2nkmhhphh47lsrr3j6ktdqlcfe2l"
+      decimals: 6
+      name: "Juris Protocol"
+      standard: "EvmHypSynthetic"
+      symbol: "JURIS"
+XPTO/sepolia-solanatestnet-terraclassictestnet:
+  tokens:
+    - addressOrDenom: "terra16ql6l4fuudg0fxarcm4ukxlw0jalg5ljv8kg6h8f7dk9t2e7y6ssq2hqrm"
+      chainName: "terraclassictestnet"
+      connections:
+        - token: "ethereum|sepolia|0xbF43aA4878f5Ad0fcAC12Cd3A835DD3506981048"
+        - token: "sealevel|solanatestnet|jNkiNLXQetj9L2tDX6xTgx9QP1tgtNgYXamouNbbwx9"
+      decimals: 6
+      name: "XPTO Teste"
+      standard: "CwHypCollateral"
+      symbol: "XPTO"
+    - addressOrDenom: "0xbF43aA4878f5Ad0fcAC12Cd3A835DD3506981048"
+      chainName: "sepolia"
+      connections:
+        - token: "cosmos|terraclassictestnet|terra16ql6l4fuudg0fxarcm4ukxlw0jalg5ljv8kg6h8f7dk9t2e7y6ssq2hqrm"
+      decimals: 6
+      name: "XPTO Teste"
+      standard: "EvmHypSynthetic"
+      symbol: "XPTO"
+    - addressOrDenom: "jNkiNLXQetj9L2tDX6xTgx9QP1tgtNgYXamouNbbwx9"
+      chainName: "solanatestnet"
+      connections:
+        - token: "cosmos|terraclassictestnet|terra16ql6l4fuudg0fxarcm4ukxlw0jalg5ljv8kg6h8f7dk9t2e7y6ssq2hqrm"
+      decimals: 6
+      name: "XPTO"
+      standard: "SealevelHypSynthetic"
+      symbol: "XPTO"
+XPV/bsctestnet-sepolia-terraclassictestnet:
+  tokens:
+    - addressOrDenom: "terra1dnflusc7slapvals97em3fj4vrfyx90npr3znq6y45qjy7hhd6jqchqsgx"
+      chainName: "terraclassictestnet"
+      connections:
+        - token: "ethereum|sepolia|0x6a573cba0f06B3994bc8B31b737Ab50cdfc0aB8f"
+        - token: "ethereum|bsctestnet|0x11D6aa52d60611a513ab783842Dc397C86E7fff0"
+      decimals: 6
+      name: "XPV Teste"
+      standard: "CwHypCollateral"
+      symbol: "XPV"
+    - addressOrDenom: "0x6a573cba0f06B3994bc8B31b737Ab50cdfc0aB8f"
+      chainName: "sepolia"
+      connections:
+        - token: "cosmos|terraclassictestnet|terra1dnflusc7slapvals97em3fj4vrfyx90npr3znq6y45qjy7hhd6jqchqsgx"
+      decimals: 6
+      name: "XPV Teste"
+      standard: "EvmHypSynthetic"
+      symbol: "XPV"
+    - addressOrDenom: "0x11D6aa52d60611a513ab783842Dc397C86E7fff0"
+      chainName: "bsctestnet"
+      connections:
+        - token: "cosmos|terraclassictestnet|terra1dnflusc7slapvals97em3fj4vrfyx90npr3znq6y45qjy7hhd6jqchqsgx"
+      decimals: 6
+      name: "XPV Teste"
+      standard: "EvmHypSynthetic"
+      symbol: "XPV"
+XPTV/sepolia-terraclassictestnet:
+  tokens:
+    - addressOrDenom: "terra1n8y4sj9lrqq66pf7je0nm7s6nhln5z4s3accw9g2aassdh8dzqts9y0928"
+      chainName: "terraclassictestnet"
+      connections:
+        - token: "ethereum|sepolia|0x7d92c2E01933F1C651845152DBd4222d475Bd9f0"
+      decimals: 6
+      name: "XPTV Teste"
+      standard: "CwHypCollateral"
+      symbol: "XPTV"
+    - addressOrDenom: "0x7d92c2E01933F1C651845152DBd4222d475Bd9f0"
+      chainName: "sepolia"
+      connections:
+        - token: "cosmos|terraclassictestnet|terra1n8y4sj9lrqq66pf7je0nm7s6nhln5z4s3accw9g2aassdh8dzqts9y0928"
+      decimals: 6
+      name: "XPTV Teste"
+      standard: "EvmHypSynthetic"
+      symbol: "XPTV"
