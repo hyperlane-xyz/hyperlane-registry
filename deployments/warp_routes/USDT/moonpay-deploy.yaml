@@ -54,40 +54,15 @@ arbitrum:
         type: defaultFallbackRoutingIsm
       - domains:
           base: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-          bsc:
-            modules:
-              - lowerIsm:
-                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-                  type: trustedRelayerIsm
-                threshold: 1000000000
-                type: amountRoutingIsm
-                upperIsm:
-                  domains: {}
-                  owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
-                  type: defaultFallbackRoutingIsm
-              - domains: {}
-                owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
-                type: defaultFallbackRoutingIsm
-            threshold: 1
-            type: staticAggregationIsm
+          bsc: "0x13fB0357DaE8491B359B16feeC5fA7Cddd30eb67"
+          citrea: "0x13fB0357DaE8491B359B16feeC5fA7Cddd30eb67"
           ethereum: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-          katana:
-            modules:
-              - lowerIsm:
-                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-                  type: trustedRelayerIsm
-                threshold: 1000000000
-                type: amountRoutingIsm
-                upperIsm:
-                  domains: {}
-                  owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
-                  type: defaultFallbackRoutingIsm
-              - domains: {}
-                owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
-                type: defaultFallbackRoutingIsm
-            threshold: 1
-            type: staticAggregationIsm
+          katana: "0x13fB0357DaE8491B359B16feeC5fA7Cddd30eb67"
           polygon: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+          solanamainnet:
+            domains: {}
+            owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
+            type: defaultFallbackRoutingIsm
         owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
         type: domainRoutingIsm
     threshold: 1
@@ -307,40 +282,15 @@ base:
         type: defaultFallbackRoutingIsm
       - domains:
           arbitrum: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-          bsc:
-            modules:
-              - lowerIsm:
-                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-                  type: trustedRelayerIsm
-                threshold: 1000000000
-                type: amountRoutingIsm
-                upperIsm:
-                  domains: {}
-                  owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
-                  type: defaultFallbackRoutingIsm
-              - domains: {}
-                owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
-                type: defaultFallbackRoutingIsm
-            threshold: 1
-            type: staticAggregationIsm
+          bsc: "0x6D4293B1F18C40ED51a797d4B027056Ae0675325"
+          citrea: "0x6D4293B1F18C40ED51a797d4B027056Ae0675325"
           ethereum: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-          katana:
-            modules:
-              - lowerIsm:
-                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-                  type: trustedRelayerIsm
-                threshold: 1000000000
-                type: amountRoutingIsm
-                upperIsm:
-                  domains: {}
-                  owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
-                  type: defaultFallbackRoutingIsm
-              - domains: {}
-                owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
-                type: defaultFallbackRoutingIsm
-            threshold: 1
-            type: staticAggregationIsm
+          katana: "0x6D4293B1F18C40ED51a797d4B027056Ae0675325"
           polygon: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+          solanamainnet:
+            domains: {}
+            owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
+            type: defaultFallbackRoutingIsm
         owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
         type: domainRoutingIsm
     threshold: 1
@@ -547,37 +497,22 @@ bsc:
     type: fallbackRoutingHook
   interchainSecurityModule:
     modules:
-      - lowerIsm:
-          domains:
-            arbitrum:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            base:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            citrea:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            ethereum:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            katana:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            polygon:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-          owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
-          type: domainRoutingIsm
-        threshold: 1000000000
-        type: amountRoutingIsm
-        upperIsm:
-          domains: {}
-          owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
-          type: defaultFallbackRoutingIsm
       - domains: {}
         owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
         type: defaultFallbackRoutingIsm
+      - domains:
+          arbitrum: "0x0a9cba4aF90C3fcB8EDBC7DB9c0d75D9D838d6D1"
+          base: "0x0a9cba4aF90C3fcB8EDBC7DB9c0d75D9D838d6D1"
+          citrea: "0x0a9cba4aF90C3fcB8EDBC7DB9c0d75D9D838d6D1"
+          ethereum: "0x0a9cba4aF90C3fcB8EDBC7DB9c0d75D9D838d6D1"
+          katana: "0x0a9cba4aF90C3fcB8EDBC7DB9c0d75D9D838d6D1"
+          polygon: "0x0a9cba4aF90C3fcB8EDBC7DB9c0d75D9D838d6D1"
+          solanamainnet:
+            domains: {}
+            owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
+            type: defaultFallbackRoutingIsm
+        owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
+        type: domainRoutingIsm
     threshold: 1
     type: staticAggregationIsm
   owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
@@ -809,39 +744,14 @@ ethereum:
       - domains:
           arbitrum: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
           base: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-          bsc:
-            modules:
-              - lowerIsm:
-                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-                  type: trustedRelayerIsm
-                threshold: 1000000000
-                type: amountRoutingIsm
-                upperIsm:
-                  domains: {}
-                  owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
-                  type: defaultFallbackRoutingIsm
-              - domains: {}
-                owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
-                type: defaultFallbackRoutingIsm
-            threshold: 1
-            type: staticAggregationIsm
-          katana:
-            modules:
-              - lowerIsm:
-                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-                  type: trustedRelayerIsm
-                threshold: 1000000000
-                type: amountRoutingIsm
-                upperIsm:
-                  domains: {}
-                  owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
-                  type: defaultFallbackRoutingIsm
-              - domains: {}
-                owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
-                type: defaultFallbackRoutingIsm
-            threshold: 1
-            type: staticAggregationIsm
+          bsc: "0x6717A3d66e85AaE09B3a16115A14B4385f19BaF8"
+          citrea: "0x6717A3d66e85AaE09B3a16115A14B4385f19BaF8"
+          katana: "0x6717A3d66e85AaE09B3a16115A14B4385f19BaF8"
           polygon: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+          solanamainnet:
+            domains: {}
+            owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+            type: defaultFallbackRoutingIsm
         owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
         type: domainRoutingIsm
     threshold: 1
@@ -1041,37 +951,22 @@ katana:
     type: fallbackRoutingHook
   interchainSecurityModule:
     modules:
-      - lowerIsm:
-          domains:
-            arbitrum:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            base:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            bsc:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            citrea:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            ethereum:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            polygon:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-          owner: "0x956993Aee1CFFA32942b5ddC6Db2E8620b85cfbC"
-          type: domainRoutingIsm
-        threshold: 1000000000
-        type: amountRoutingIsm
-        upperIsm:
-          domains: {}
-          owner: "0x956993Aee1CFFA32942b5ddC6Db2E8620b85cfbC"
-          type: defaultFallbackRoutingIsm
       - domains: {}
         owner: "0x956993Aee1CFFA32942b5ddC6Db2E8620b85cfbC"
         type: defaultFallbackRoutingIsm
+      - domains:
+          arbitrum: "0xF33e8332B42310477748fD28553aF5B5aA57f5d6"
+          base: "0xF33e8332B42310477748fD28553aF5B5aA57f5d6"
+          bsc: "0xF33e8332B42310477748fD28553aF5B5aA57f5d6"
+          citrea: "0xF33e8332B42310477748fD28553aF5B5aA57f5d6"
+          ethereum: "0xF33e8332B42310477748fD28553aF5B5aA57f5d6"
+          polygon: "0xF33e8332B42310477748fD28553aF5B5aA57f5d6"
+          solanamainnet:
+            domains: {}
+            owner: "0x956993Aee1CFFA32942b5ddC6Db2E8620b85cfbC"
+            type: defaultFallbackRoutingIsm
+        owner: "0x956993Aee1CFFA32942b5ddC6Db2E8620b85cfbC"
+        type: domainRoutingIsm
     threshold: 1
     type: staticAggregationIsm
   owner: "0x956993Aee1CFFA32942b5ddC6Db2E8620b85cfbC"
@@ -1297,39 +1192,14 @@ polygon:
       - domains:
           arbitrum: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
           base: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
-          bsc:
-            modules:
-              - lowerIsm:
-                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-                  type: trustedRelayerIsm
-                threshold: 1000000000
-                type: amountRoutingIsm
-                upperIsm:
-                  domains: {}
-                  owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
-                  type: defaultFallbackRoutingIsm
-              - domains: {}
-                owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
-                type: defaultFallbackRoutingIsm
-            threshold: 1
-            type: staticAggregationIsm
+          bsc: "0x71a659969853e409C89b74AF61Cd1Dd5e64aBFBe"
+          citrea: "0x71a659969853e409C89b74AF61Cd1Dd5e64aBFBe"
           ethereum: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
-          katana:
-            modules:
-              - lowerIsm:
-                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-                  type: trustedRelayerIsm
-                threshold: 1000000000
-                type: amountRoutingIsm
-                upperIsm:
-                  domains: {}
-                  owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
-                  type: defaultFallbackRoutingIsm
-              - domains: {}
-                owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
-                type: defaultFallbackRoutingIsm
-            threshold: 1
-            type: staticAggregationIsm
+          katana: "0x71a659969853e409C89b74AF61Cd1Dd5e64aBFBe"
+          solanamainnet:
+            domains: {}
+            owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
+            type: defaultFallbackRoutingIsm
         owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
         type: domainRoutingIsm
     threshold: 1
