@@ -1,19 +1,21 @@
+# yaml-language-server: $schema=../schema.json
 tokens:
-  - addressOrDenom: test_hyp_warp_token_eth.aleo/aleo1n6g5lvv7706pmcy2lsfta7k5d7tx522ly50ykr5frneq4pvkugzqqqtjav
-    chainName: aleotestnet
-    connections:
-      - token: ethereum|sepolia|0x7c4aAAaB1f846881af95f5736d127F3F3F07F25F
-    decimals: 18
-    logoURI: /deployments/warp_routes/ETH/logo.svg
-    name: Ether
-    standard: AleoHypSynthetic
-    symbol: ETH
   - addressOrDenom: "0x7c4aAAaB1f846881af95f5736d127F3F3F07F25F"
     chainName: sepolia
     connections:
-      - token: aleo|aleotestnet|test_hyp_warp_token_eth.aleo/aleo1n6g5lvv7706pmcy2lsfta7k5d7tx522ly50ykr5frneq4pvkugzqqqtjav
+      - token: aleo|aleotestnet|test_hyp_warp_token_eth_v2.aleo/aleo1lmdxa8hgfwmdn7llh60k36j870jsmsc3wy6dmltu8enwpa4fsvyskdh4sg
     decimals: 18
     logoURI: /deployments/warp_routes/ETH/logo.svg
     name: Ether
     standard: EvmHypNative
     symbol: ETH
+    tokenType: native
+  - addressOrDenom: test_hyp_warp_token_eth_v2.aleo/aleo1lmdxa8hgfwmdn7llh60k36j870jsmsc3wy6dmltu8enwpa4fsvyskdh4sg
+    chainName: aleotestnet
+    connections:
+      - token: ethereum|sepolia|0x7c4aAAaB1f846881af95f5736d127F3F3F07F25F
+    decimals: 18
+    name: Ether
+    standard: AleoHypSynthetic
+    symbol: ETH
+    tokenType: synthetic
