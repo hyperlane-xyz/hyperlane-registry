@@ -1,0 +1,130 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x92636a0A8AF8896809FCfb509c21F0d10a15304F"
+    chainName: citrea
+    collateralAddressOrDenom: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
+    connections:
+      - token: ethereum|katana|0x927093cb2328d8632E8e7f63D562CE1f492E4436
+      - token: ethereum|bsc|0x3382D9253eE54d49A90cBA41Cfc7b2704e713cEf
+      - token: ethereum|arbitrum|0x9fb176528AdF0Bb7524CE752B2345C80eD24243F
+      - token: ethereum|polygon|0xa539EF6eF471c2D00d258540AB0bc38eD0B1F2ab
+      - token: ethereum|base|0x146Fb3Fcc2C9F547Ee4f85A5b0497274cBD380D0
+      - token: ethereum|ethereum|0xB58C85C143f2032A77e2C2B08603453ebA6C12aF
+      - token: sealevel|solanamainnet|H5z84yTVCQNiQcFTJ4LCgPhx7b8ddQSZGSDqPuDdoG5P
+    decimals: 6
+    name: Citrea USD
+    standard: EvmHypCrossCollateralRouter
+    symbol: ctUSD
+    tokenType: crossCollateral
+  - addressOrDenom: "0x927093cb2328d8632E8e7f63D562CE1f492E4436"
+    chainName: katana
+    collateralAddressOrDenom: "0x203A662b0BD271A6ed5a60EdFbd04bFce608FD36"
+    connections:
+      - token: ethereum|citrea|0x92636a0A8AF8896809FCfb509c21F0d10a15304F
+      - token: ethereum|bsc|0x3382D9253eE54d49A90cBA41Cfc7b2704e713cEf
+      - token: ethereum|arbitrum|0x9fb176528AdF0Bb7524CE752B2345C80eD24243F
+      - token: ethereum|polygon|0xa539EF6eF471c2D00d258540AB0bc38eD0B1F2ab
+      - token: ethereum|base|0x146Fb3Fcc2C9F547Ee4f85A5b0497274cBD380D0
+      - token: ethereum|ethereum|0xB58C85C143f2032A77e2C2B08603453ebA6C12aF
+      - token: sealevel|solanamainnet|H5z84yTVCQNiQcFTJ4LCgPhx7b8ddQSZGSDqPuDdoG5P
+    decimals: 6
+    name: Vault Bridge USDC
+    standard: EvmHypCrossCollateralRouter
+    symbol: vbUSDC
+    tokenType: crossCollateral
+  - addressOrDenom: "0x3382D9253eE54d49A90cBA41Cfc7b2704e713cEf"
+    chainName: bsc
+    collateralAddressOrDenom: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
+    connections:
+      - token: ethereum|citrea|0x92636a0A8AF8896809FCfb509c21F0d10a15304F
+      - token: ethereum|katana|0x927093cb2328d8632E8e7f63D562CE1f492E4436
+      - token: ethereum|arbitrum|0x9fb176528AdF0Bb7524CE752B2345C80eD24243F
+      - token: ethereum|polygon|0xa539EF6eF471c2D00d258540AB0bc38eD0B1F2ab
+      - token: ethereum|base|0x146Fb3Fcc2C9F547Ee4f85A5b0497274cBD380D0
+      - token: ethereum|ethereum|0xB58C85C143f2032A77e2C2B08603453ebA6C12aF
+      - token: sealevel|solanamainnet|H5z84yTVCQNiQcFTJ4LCgPhx7b8ddQSZGSDqPuDdoG5P
+    decimals: 18
+    name: USD Coin
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDC
+    tokenType: crossCollateral
+  - addressOrDenom: "0x9fb176528AdF0Bb7524CE752B2345C80eD24243F"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+    connections:
+      - token: ethereum|citrea|0x92636a0A8AF8896809FCfb509c21F0d10a15304F
+      - token: ethereum|katana|0x927093cb2328d8632E8e7f63D562CE1f492E4436
+      - token: ethereum|bsc|0x3382D9253eE54d49A90cBA41Cfc7b2704e713cEf
+      - token: ethereum|polygon|0xa539EF6eF471c2D00d258540AB0bc38eD0B1F2ab
+      - token: ethereum|base|0x146Fb3Fcc2C9F547Ee4f85A5b0497274cBD380D0
+      - token: ethereum|ethereum|0xB58C85C143f2032A77e2C2B08603453ebA6C12aF
+      - token: sealevel|solanamainnet|H5z84yTVCQNiQcFTJ4LCgPhx7b8ddQSZGSDqPuDdoG5P
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDC
+    tokenType: crossCollateral
+  - addressOrDenom: "0xa539EF6eF471c2D00d258540AB0bc38eD0B1F2ab"
+    chainName: polygon
+    collateralAddressOrDenom: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+    connections:
+      - token: ethereum|citrea|0x92636a0A8AF8896809FCfb509c21F0d10a15304F
+      - token: ethereum|katana|0x927093cb2328d8632E8e7f63D562CE1f492E4436
+      - token: ethereum|bsc|0x3382D9253eE54d49A90cBA41Cfc7b2704e713cEf
+      - token: ethereum|arbitrum|0x9fb176528AdF0Bb7524CE752B2345C80eD24243F
+      - token: ethereum|base|0x146Fb3Fcc2C9F547Ee4f85A5b0497274cBD380D0
+      - token: ethereum|ethereum|0xB58C85C143f2032A77e2C2B08603453ebA6C12aF
+      - token: sealevel|solanamainnet|H5z84yTVCQNiQcFTJ4LCgPhx7b8ddQSZGSDqPuDdoG5P
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDC
+    tokenType: crossCollateral
+  - addressOrDenom: "0x146Fb3Fcc2C9F547Ee4f85A5b0497274cBD380D0"
+    chainName: base
+    collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    connections:
+      - token: ethereum|citrea|0x92636a0A8AF8896809FCfb509c21F0d10a15304F
+      - token: ethereum|katana|0x927093cb2328d8632E8e7f63D562CE1f492E4436
+      - token: ethereum|bsc|0x3382D9253eE54d49A90cBA41Cfc7b2704e713cEf
+      - token: ethereum|arbitrum|0x9fb176528AdF0Bb7524CE752B2345C80eD24243F
+      - token: ethereum|polygon|0xa539EF6eF471c2D00d258540AB0bc38eD0B1F2ab
+      - token: ethereum|ethereum|0xB58C85C143f2032A77e2C2B08603453ebA6C12aF
+      - token: sealevel|solanamainnet|H5z84yTVCQNiQcFTJ4LCgPhx7b8ddQSZGSDqPuDdoG5P
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDC
+    tokenType: crossCollateral
+  - addressOrDenom: "0xB58C85C143f2032A77e2C2B08603453ebA6C12aF"
+    chainName: ethereum
+    collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    connections:
+      - token: ethereum|citrea|0x92636a0A8AF8896809FCfb509c21F0d10a15304F
+      - token: ethereum|katana|0x927093cb2328d8632E8e7f63D562CE1f492E4436
+      - token: ethereum|bsc|0x3382D9253eE54d49A90cBA41Cfc7b2704e713cEf
+      - token: ethereum|arbitrum|0x9fb176528AdF0Bb7524CE752B2345C80eD24243F
+      - token: ethereum|polygon|0xa539EF6eF471c2D00d258540AB0bc38eD0B1F2ab
+      - token: ethereum|base|0x146Fb3Fcc2C9F547Ee4f85A5b0497274cBD380D0
+      - token: sealevel|solanamainnet|H5z84yTVCQNiQcFTJ4LCgPhx7b8ddQSZGSDqPuDdoG5P
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDC
+    tokenType: crossCollateral
+  - addressOrDenom: H5z84yTVCQNiQcFTJ4LCgPhx7b8ddQSZGSDqPuDdoG5P
+    chainName: solanamainnet
+    collateralAddressOrDenom: xoUSDq85Rjsb6SbUwJyreFgeWQvxdkT7R3c3g7s6p5Y
+    connections:
+      - token: ethereum|citrea|0x92636a0A8AF8896809FCfb509c21F0d10a15304F
+      - token: ethereum|katana|0x927093cb2328d8632E8e7f63D562CE1f492E4436
+      - token: ethereum|bsc|0x3382D9253eE54d49A90cBA41Cfc7b2704e713cEf
+      - token: ethereum|arbitrum|0x9fb176528AdF0Bb7524CE752B2345C80eD24243F
+      - token: ethereum|polygon|0xa539EF6eF471c2D00d258540AB0bc38eD0B1F2ab
+      - token: ethereum|base|0x146Fb3Fcc2C9F547Ee4f85A5b0497274cBD380D0
+      - token: ethereum|ethereum|0xB58C85C143f2032A77e2C2B08603453ebA6C12aF
+    decimals: 6
+    name: XO Cash
+    standard: SealevelHypCrossCollateral
+    symbol: XO
+    tokenType: crossCollateral

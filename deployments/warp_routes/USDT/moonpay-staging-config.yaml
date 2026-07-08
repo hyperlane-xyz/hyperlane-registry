@@ -1,0 +1,86 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x05A02Ed293e5828cA431B6921Ad4084844709cb1"
+    chainName: katana
+    collateralAddressOrDenom: "0x2DCa96907fde857dd3D816880A0df407eeB2D2F2"
+    connections:
+      - token: ethereum|bsc|0xaC9e83a1bDbC86a26aDf331785d3CaCF18963a6C
+      - token: ethereum|arbitrum|0xACe9bF07AaCfE54a14129561d09394850F3A5dDb
+      - token: ethereum|polygon|0x3382D9253eE54d49A90cBA41Cfc7b2704e713cEf
+      - token: ethereum|base|0xF147AAE190F01aaB67152D97Ad3b157c3957BD77
+      - token: ethereum|ethereum|0x4628D301C4A1A32B4C7E753621b0787C32ee7475
+    decimals: 6
+    name: Vault Bridge USDT
+    standard: EvmHypCrossCollateralRouter
+    symbol: vbUSDT
+    tokenType: crossCollateral
+  - addressOrDenom: "0xaC9e83a1bDbC86a26aDf331785d3CaCF18963a6C"
+    chainName: bsc
+    collateralAddressOrDenom: "0x55d398326f99059fF775485246999027B3197955"
+    connections:
+      - token: ethereum|katana|0x05A02Ed293e5828cA431B6921Ad4084844709cb1
+      - token: ethereum|arbitrum|0xACe9bF07AaCfE54a14129561d09394850F3A5dDb
+      - token: ethereum|polygon|0x3382D9253eE54d49A90cBA41Cfc7b2704e713cEf
+      - token: ethereum|base|0xF147AAE190F01aaB67152D97Ad3b157c3957BD77
+      - token: ethereum|ethereum|0x4628D301C4A1A32B4C7E753621b0787C32ee7475
+    decimals: 18
+    name: Tether USD
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDT
+    tokenType: crossCollateral
+  - addressOrDenom: "0xACe9bF07AaCfE54a14129561d09394850F3A5dDb"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+    connections:
+      - token: ethereum|katana|0x05A02Ed293e5828cA431B6921Ad4084844709cb1
+      - token: ethereum|bsc|0xaC9e83a1bDbC86a26aDf331785d3CaCF18963a6C
+      - token: ethereum|polygon|0x3382D9253eE54d49A90cBA41Cfc7b2704e713cEf
+      - token: ethereum|base|0xF147AAE190F01aaB67152D97Ad3b157c3957BD77
+      - token: ethereum|ethereum|0x4628D301C4A1A32B4C7E753621b0787C32ee7475
+    decimals: 6
+    name: USD₮0
+    standard: EvmHypCrossCollateralRouter
+    symbol: USD₮0
+    tokenType: crossCollateral
+  - addressOrDenom: "0x3382D9253eE54d49A90cBA41Cfc7b2704e713cEf"
+    chainName: polygon
+    collateralAddressOrDenom: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
+    connections:
+      - token: ethereum|katana|0x05A02Ed293e5828cA431B6921Ad4084844709cb1
+      - token: ethereum|bsc|0xaC9e83a1bDbC86a26aDf331785d3CaCF18963a6C
+      - token: ethereum|arbitrum|0xACe9bF07AaCfE54a14129561d09394850F3A5dDb
+      - token: ethereum|base|0xF147AAE190F01aaB67152D97Ad3b157c3957BD77
+      - token: ethereum|ethereum|0x4628D301C4A1A32B4C7E753621b0787C32ee7475
+    decimals: 6
+    name: USDT0
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDT0
+    tokenType: crossCollateral
+  - addressOrDenom: "0xF147AAE190F01aaB67152D97Ad3b157c3957BD77"
+    chainName: base
+    collateralAddressOrDenom: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
+    connections:
+      - token: ethereum|katana|0x05A02Ed293e5828cA431B6921Ad4084844709cb1
+      - token: ethereum|bsc|0xaC9e83a1bDbC86a26aDf331785d3CaCF18963a6C
+      - token: ethereum|arbitrum|0xACe9bF07AaCfE54a14129561d09394850F3A5dDb
+      - token: ethereum|polygon|0x3382D9253eE54d49A90cBA41Cfc7b2704e713cEf
+      - token: ethereum|ethereum|0x4628D301C4A1A32B4C7E753621b0787C32ee7475
+    decimals: 6
+    name: Tether USD
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDT
+    tokenType: crossCollateral
+  - addressOrDenom: "0x4628D301C4A1A32B4C7E753621b0787C32ee7475"
+    chainName: ethereum
+    collateralAddressOrDenom: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+    connections:
+      - token: ethereum|katana|0x05A02Ed293e5828cA431B6921Ad4084844709cb1
+      - token: ethereum|bsc|0xaC9e83a1bDbC86a26aDf331785d3CaCF18963a6C
+      - token: ethereum|arbitrum|0xACe9bF07AaCfE54a14129561d09394850F3A5dDb
+      - token: ethereum|polygon|0x3382D9253eE54d49A90cBA41Cfc7b2704e713cEf
+      - token: ethereum|base|0xF147AAE190F01aaB67152D97Ad3b157c3957BD77
+    decimals: 6
+    name: Tether USD
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDT
+    tokenType: crossCollateral
