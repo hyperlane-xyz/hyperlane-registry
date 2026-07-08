@@ -1,4 +1,14 @@
 arbitrum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    "1":
+      - bridge: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
+      - bridge: "0x42B794FbF2Ae97d7E9001e21D36B0A5595B51B11"
+    "137":
+      - bridge: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
+    "56":
+      - bridge: "0x42B794FbF2Ae97d7E9001e21D36B0A5595B51B11"
   crossCollateralRouters: {}
   mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
   owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
@@ -11,6 +21,13 @@ base:
   token: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
   type: crossCollateral
 bsc:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    "1":
+      - bridge: "0xc13d466B9E196AfdE472856923E857cc298EDf1b"
+    "42161":
+      - bridge: "0xc13d466B9E196AfdE472856923E857cc298EDf1b"
   crossCollateralRouters: {}
   mailbox: "0x2971b9Aec44bE4eb673DF1B88cDB57b96eefe8a4"
   owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
@@ -20,6 +37,16 @@ bsc:
   token: "0x55d398326f99059fF775485246999027B3197955"
   type: crossCollateral
 ethereum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    "137":
+      - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
+    "42161":
+      - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
+      - bridge: "0x647C621CEb36853Ef6A907E397Adf18568E70543"
+    "56":
+      - bridge: "0x647C621CEb36853Ef6A907E397Adf18568E70543"
   crossCollateralRouters: {}
   mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
   owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
@@ -32,6 +59,13 @@ katana:
   token: "0x2DCa96907fde857dd3D816880A0df407eeB2D2F2"
   type: crossCollateral
 polygon:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    "1":
+      - bridge: "0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94"
+    "42161":
+      - bridge: "0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94"
   crossCollateralRouters: {}
   mailbox: "0x5d934f4e2f797775e53561bB72aca21ba36B96BB"
   owner: "0x1cFd6A81e98de59e3eeB3AE35c3cb13FCb586E1E"
