@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x1109B37B4d56887bc5CfD0A3C6E1424fB6F05E84"
+    chainName: robinhood
+    collateralAddressOrDenom: "0x4D682739a8bB0aBc136Bcae8064AC172746fAF8d"
+    connections:
+      - token: ethereum|base|0x9b7b16fE778245946a0644a1D7eAd107cAA1C924
+    decimals: 18
+    logoURI: /deployments/warp_routes/ARROW/logo.jpg
+    name: Arrow
+    standard: EvmHypCollateral
+    symbol: ARROW
+  - addressOrDenom: "0x9b7b16fE778245946a0644a1D7eAd107cAA1C924"
+    chainName: base
+    connections:
+      - token: ethereum|robinhood|0x1109B37B4d56887bc5CfD0A3C6E1424fB6F05E84
+    decimals: 18
+    logoURI: /deployments/warp_routes/ARROW/logo.jpg
+    name: Arrow
+    standard: EvmHypSynthetic
+    symbol: ARROW
