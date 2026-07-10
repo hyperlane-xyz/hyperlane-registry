@@ -47,6 +47,7 @@ base:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
     - "0x2cB236403574301029c7bDDfda133c6e0338a857"
+    - "0x7b1449c0e9A9123465C39e499Fc8d0a53867d163"
   allowedRebalancingBridges:
     "1":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
@@ -71,6 +72,9 @@ base:
       - bridge: "0x151B328Ca752C67C9a4C6E0CA329bE0c00B12A24"
     "56":
       - bridge: "0x37e637891A558B5b621723cbf8Fc771525f280C1"
+    "8453":
+      - bridge: "0x7b1449c0e9A9123465C39e499Fc8d0a53867d163"
+  contractVersion: 12.0.0
   crossCollateralRouters:
     "1":
       - "0x0000000000000000000000004628d301c4a1a32b4c7e753621b0787c32ee7475"
@@ -86,6 +90,9 @@ base:
       - "0x000000000000000000000000f147aae190f01aab67152d97ad3b157c3957bd77"
   mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  rebalanceTargets:
+    "8453":
+      - "0xF147AAE190F01aaB67152D97Ad3b157c3957BD77"
   token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
   type: crossCollateral
 bsc:
@@ -114,11 +121,14 @@ bsc:
       - "0x00000000000000000000000005a02ed293e5828ca431b6921ad4084844709cb1"
     "8453":
       - "0x000000000000000000000000f147aae190f01aab67152d97ad3b157c3957bd77"
+  decimals: 18
   mailbox: "0x2971b9Aec44bE4eb673DF1B88cDB57b96eefe8a4"
+  name: USD Coin
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   scale:
     denominator: 1000000000000
     numerator: 1
+  symbol: USDC
   token: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
   type: crossCollateral
 citrea:
