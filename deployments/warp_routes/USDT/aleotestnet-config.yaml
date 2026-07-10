@@ -1,5 +1,14 @@
 # yaml-language-server: $schema=../schema.json
 tokens:
+  - addressOrDenom: test_hyp_warp_token_usdt_v2.aleo/aleo10z2uet2fcxk9qjcvea0ez7fzvy3aack0h6328qmquu2kqftd9g8scs5vht
+    chainName: aleotestnet
+    connections:
+      - token: ethereum|sepolia|0xF6B589bA1610c1779c1d7F660aAf743b7cE6f0ae
+    decimals: 6
+    name: Tether USD
+    standard: AleoHypSynthetic
+    symbol: USDT
+    tokenType: synthetic
   - addressOrDenom: "0xF6B589bA1610c1779c1d7F660aAf743b7cE6f0ae"
     chainName: sepolia
     coinGeckoId: tether
@@ -12,12 +21,3 @@ tokens:
     standard: EvmHypCollateral
     symbol: USDT
     tokenType: collateral
-  - addressOrDenom: test_hyp_warp_token_usdt_v2.aleo/aleo10z2uet2fcxk9qjcvea0ez7fzvy3aack0h6328qmquu2kqftd9g8scs5vht
-    chainName: aleotestnet
-    connections:
-      - token: ethereum|sepolia|0xF6B589bA1610c1779c1d7F660aAf743b7cE6f0ae
-    decimals: 6
-    name: Tether USD
-    standard: AleoHypSynthetic
-    symbol: USDT
-    tokenType: synthetic

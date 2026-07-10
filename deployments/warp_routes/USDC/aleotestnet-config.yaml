@@ -1,5 +1,14 @@
 # yaml-language-server: $schema=../schema.json
 tokens:
+  - addressOrDenom: test_hyp_warp_token_usdc_v2.aleo/aleo18u5acm8s3gzvt60ws9gw65fgqsm90v9y35vrl8l6y7jktwf6tgysz85hc2
+    chainName: aleotestnet
+    connections:
+      - token: ethereum|sepolia|0x6dC0a1C88C50444DD6097c354dEc639483EC780D
+    decimals: 6
+    name: USD Coin
+    standard: AleoHypSynthetic
+    symbol: USDC
+    tokenType: synthetic
   - addressOrDenom: "0x6dC0a1C88C50444DD6097c354dEc639483EC780D"
     chainName: sepolia
     coinGeckoId: usd-coin
@@ -12,12 +21,3 @@ tokens:
     standard: EvmHypCollateral
     symbol: USDC
     tokenType: collateral
-  - addressOrDenom: test_hyp_warp_token_usdc_v2.aleo/aleo18u5acm8s3gzvt60ws9gw65fgqsm90v9y35vrl8l6y7jktwf6tgysz85hc2
-    chainName: aleotestnet
-    connections:
-      - token: ethereum|sepolia|0x6dC0a1C88C50444DD6097c354dEc639483EC780D
-    decimals: 6
-    name: USD Coin
-    standard: AleoHypSynthetic
-    symbol: USDC
-    tokenType: synthetic

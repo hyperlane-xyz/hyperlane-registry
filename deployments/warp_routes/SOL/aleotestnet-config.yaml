@@ -1,5 +1,14 @@
 # yaml-language-server: $schema=../schema.json
 tokens:
+  - addressOrDenom: test_hyp_warp_token_sol_v2.aleo/aleo15dkmslq9ddas7sut6lh4r509tzgcv20sp382y7l95w97fxn9r5pssgwxwk
+    chainName: aleotestnet
+    connections:
+      - token: sealevel|solanatestnet|84nEGHMEeP1qSyD8Bw2KZPeW4JXjeFRRMiuzwTvt83Yz
+    decimals: 9
+    name: Solana
+    standard: AleoHypSynthetic
+    symbol: SOL
+    tokenType: synthetic
   - addressOrDenom: 84nEGHMEeP1qSyD8Bw2KZPeW4JXjeFRRMiuzwTvt83Yz
     chainName: solanatestnet
     connections:
@@ -10,12 +19,3 @@ tokens:
     standard: SealevelHypNative
     symbol: SOL
     tokenType: native
-  - addressOrDenom: test_hyp_warp_token_sol_v2.aleo/aleo15dkmslq9ddas7sut6lh4r509tzgcv20sp382y7l95w97fxn9r5pssgwxwk
-    chainName: aleotestnet
-    connections:
-      - token: sealevel|solanatestnet|84nEGHMEeP1qSyD8Bw2KZPeW4JXjeFRRMiuzwTvt83Yz
-    decimals: 9
-    name: Solana
-    standard: AleoHypSynthetic
-    symbol: SOL
-    tokenType: synthetic
