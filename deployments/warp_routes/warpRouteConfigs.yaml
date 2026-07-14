@@ -1793,7 +1793,7 @@ ES/eclipse:
       symbol: ES
 ETH/aleo:
   tokens:
-    - addressOrDenom: hyp_warp_token_eth.aleo/aleo1uw2g90m8qhlf4cdfs34rtg4n83z2l8hu80fg7f027en56v3yrvfqdqhvn9
+    - addressOrDenom: hyp_warp_token_eth_v2.aleo/aleo1t7f29tq9qng2lfvrkpcuvu59jn24hrmzqdyqfn6p0u5p80npfvqqecmkj8
       chainName: aleo
       connections:
         - token: ethereum|ethereum|0x38D447694f5c1f773ae3132cf93bF30B7Ec1Fa5A
@@ -1803,32 +1803,35 @@ ETH/aleo:
       name: Ether
       standard: AleoHypSynthetic
       symbol: ETH
+      tokenType: synthetic
     - addressOrDenom: "0x38D447694f5c1f773ae3132cf93bF30B7Ec1Fa5A"
       chainName: ethereum
       coinGeckoId: ethereum
       connections:
-        - token: aleo|aleo|hyp_warp_token_eth.aleo/aleo1uw2g90m8qhlf4cdfs34rtg4n83z2l8hu80fg7f027en56v3yrvfqdqhvn9
+        - token: aleo|aleo|hyp_warp_token_eth_v2.aleo/aleo1t7f29tq9qng2lfvrkpcuvu59jn24hrmzqdyqfn6p0u5p80npfvqqecmkj8
         - token: ethereum|hyperevm|0x2a848D76f075033D4D69b9c18ef2C44753a38DBC
       decimals: 18
       logoURI: /deployments/warp_routes/ETH/logo.svg
       name: Ether
       standard: EvmHypNative
       symbol: ETH
+      tokenType: native
     - addressOrDenom: "0x2a848D76f075033D4D69b9c18ef2C44753a38DBC"
       chainName: hyperevm
       coinGeckoId: unit-ethereum
       collateralAddressOrDenom: "0xBe6727B535545C67d5cAa73dEa54865B92CF7907"
       connections:
-        - token: aleo|aleo|hyp_warp_token_eth.aleo/aleo1uw2g90m8qhlf4cdfs34rtg4n83z2l8hu80fg7f027en56v3yrvfqdqhvn9
+        - token: aleo|aleo|hyp_warp_token_eth_v2.aleo/aleo1t7f29tq9qng2lfvrkpcuvu59jn24hrmzqdyqfn6p0u5p80npfvqqecmkj8
         - token: ethereum|ethereum|0x38D447694f5c1f773ae3132cf93bF30B7Ec1Fa5A
       decimals: 18
       logoURI: /deployments/warp_routes/ETH/logo.svg
       name: Unit Ethereum
       standard: EvmHypCollateral
       symbol: UETH
+      tokenType: collateral
 ETH/aleotestnet:
   tokens:
-    - addressOrDenom: test_hyp_warp_token_eth.aleo/aleo1n6g5lvv7706pmcy2lsfta7k5d7tx522ly50ykr5frneq4pvkugzqqqtjav
+    - addressOrDenom: test_hyp_warp_token_eth_v2.aleo/aleo1lmdxa8hgfwmdn7llh60k36j870jsmsc3wy6dmltu8enwpa4fsvyskdh4sg
       chainName: aleotestnet
       connections:
         - token: ethereum|sepolia|0x7c4aAAaB1f846881af95f5736d127F3F3F07F25F
@@ -1837,15 +1840,17 @@ ETH/aleotestnet:
       name: Ether
       standard: AleoHypSynthetic
       symbol: ETH
+      tokenType: synthetic
     - addressOrDenom: "0x7c4aAAaB1f846881af95f5736d127F3F3F07F25F"
       chainName: sepolia
       connections:
-        - token: aleo|aleotestnet|test_hyp_warp_token_eth.aleo/aleo1n6g5lvv7706pmcy2lsfta7k5d7tx522ly50ykr5frneq4pvkugzqqqtjav
+        - token: aleo|aleotestnet|test_hyp_warp_token_eth_v2.aleo/aleo1lmdxa8hgfwmdn7llh60k36j870jsmsc3wy6dmltu8enwpa4fsvyskdh4sg
       decimals: 18
       logoURI: /deployments/warp_routes/ETH/logo.svg
       name: Ether
       standard: EvmHypNative
       symbol: ETH
+      tokenType: native
 ETH/alfajores-sepolia:
   tokens:
     - addressOrDenom: "0x78fe869f19f917fde4192c51c446Fbd3721788ee"
@@ -4788,7 +4793,6 @@ LITKEY/litchain:
         - token: ethereum|bsc|0x0bBeA6812fb3fcBcA126eDb558e551B3f1702026
         - token: ethereum|ethereum|0x733BC1F0D76AB8f0AB7C1c8044ECc4720Cd402AD
         - token: ethereum|linea|0x94930Cbfed2483b69DfBed9d96a9CdD7c27D1393
-        - token: ethereum|litchain|0x94930Cbfed2483b69DfBed9d96a9CdD7c27D1393
         - token: ethereum|optimism|0x56aE521E18a7de66b2e3AcE3A0b71e716a61D34d
         - token: ethereum|polygon|0x5bEd1A06b26853360D9D1a6a27eaCE1b85206867
       decimals: 18
@@ -4804,7 +4808,6 @@ LITKEY/litchain:
         - token: ethereum|bsc|0x0bBeA6812fb3fcBcA126eDb558e551B3f1702026
         - token: ethereum|ethereum|0x733BC1F0D76AB8f0AB7C1c8044ECc4720Cd402AD
         - token: ethereum|linea|0x94930Cbfed2483b69DfBed9d96a9CdD7c27D1393
-        - token: ethereum|litchain|0x94930Cbfed2483b69DfBed9d96a9CdD7c27D1393
         - token: ethereum|optimism|0x56aE521E18a7de66b2e3AcE3A0b71e716a61D34d
         - token: ethereum|polygon|0x5bEd1A06b26853360D9D1a6a27eaCE1b85206867
       decimals: 18
@@ -4822,7 +4825,6 @@ LITKEY/litchain:
         - token: ethereum|bsc|0x0bBeA6812fb3fcBcA126eDb558e551B3f1702026
         - token: ethereum|ethereum|0x733BC1F0D76AB8f0AB7C1c8044ECc4720Cd402AD
         - token: ethereum|linea|0x94930Cbfed2483b69DfBed9d96a9CdD7c27D1393
-        - token: ethereum|litchain|0x94930Cbfed2483b69DfBed9d96a9CdD7c27D1393
         - token: ethereum|optimism|0x56aE521E18a7de66b2e3AcE3A0b71e716a61D34d
         - token: ethereum|polygon|0x5bEd1A06b26853360D9D1a6a27eaCE1b85206867
       decimals: 18
@@ -4838,7 +4840,6 @@ LITKEY/litchain:
         - token: ethereum|base|0x9D132d5678253FD88f7DB51Ac2AC13FC40a63547
         - token: ethereum|ethereum|0x733BC1F0D76AB8f0AB7C1c8044ECc4720Cd402AD
         - token: ethereum|linea|0x94930Cbfed2483b69DfBed9d96a9CdD7c27D1393
-        - token: ethereum|litchain|0x94930Cbfed2483b69DfBed9d96a9CdD7c27D1393
         - token: ethereum|optimism|0x56aE521E18a7de66b2e3AcE3A0b71e716a61D34d
         - token: ethereum|polygon|0x5bEd1A06b26853360D9D1a6a27eaCE1b85206867
       decimals: 18
@@ -4856,7 +4857,6 @@ LITKEY/litchain:
         - token: ethereum|base|0x9D132d5678253FD88f7DB51Ac2AC13FC40a63547
         - token: ethereum|bsc|0x0bBeA6812fb3fcBcA126eDb558e551B3f1702026
         - token: ethereum|linea|0x94930Cbfed2483b69DfBed9d96a9CdD7c27D1393
-        - token: ethereum|litchain|0x94930Cbfed2483b69DfBed9d96a9CdD7c27D1393
         - token: ethereum|optimism|0x56aE521E18a7de66b2e3AcE3A0b71e716a61D34d
         - token: ethereum|polygon|0x5bEd1A06b26853360D9D1a6a27eaCE1b85206867
       decimals: 18
@@ -4872,7 +4872,6 @@ LITKEY/litchain:
         - token: ethereum|base|0x9D132d5678253FD88f7DB51Ac2AC13FC40a63547
         - token: ethereum|bsc|0x0bBeA6812fb3fcBcA126eDb558e551B3f1702026
         - token: ethereum|ethereum|0x733BC1F0D76AB8f0AB7C1c8044ECc4720Cd402AD
-        - token: ethereum|litchain|0x94930Cbfed2483b69DfBed9d96a9CdD7c27D1393
         - token: ethereum|optimism|0x56aE521E18a7de66b2e3AcE3A0b71e716a61D34d
         - token: ethereum|polygon|0x5bEd1A06b26853360D9D1a6a27eaCE1b85206867
       decimals: 18
@@ -4908,7 +4907,6 @@ LITKEY/litchain:
         - token: ethereum|bsc|0x0bBeA6812fb3fcBcA126eDb558e551B3f1702026
         - token: ethereum|ethereum|0x733BC1F0D76AB8f0AB7C1c8044ECc4720Cd402AD
         - token: ethereum|linea|0x94930Cbfed2483b69DfBed9d96a9CdD7c27D1393
-        - token: ethereum|litchain|0x94930Cbfed2483b69DfBed9d96a9CdD7c27D1393
         - token: ethereum|polygon|0x5bEd1A06b26853360D9D1a6a27eaCE1b85206867
       decimals: 18
       logoURI: /deployments/warp_routes/LITKEY/logo.svg
@@ -4924,7 +4922,6 @@ LITKEY/litchain:
         - token: ethereum|bsc|0x0bBeA6812fb3fcBcA126eDb558e551B3f1702026
         - token: ethereum|ethereum|0x733BC1F0D76AB8f0AB7C1c8044ECc4720Cd402AD
         - token: ethereum|linea|0x94930Cbfed2483b69DfBed9d96a9CdD7c27D1393
-        - token: ethereum|litchain|0x94930Cbfed2483b69DfBed9d96a9CdD7c27D1393
         - token: ethereum|optimism|0x56aE521E18a7de66b2e3AcE3A0b71e716a61D34d
       decimals: 18
       logoURI: /deployments/warp_routes/LITKEY/logo.svg
@@ -6353,7 +6350,7 @@ SMOL/arbitrum-abstract-ethereum-solanamainnet-base:
       symbol: SMOL
 SOL/aleo:
   tokens:
-    - addressOrDenom: hyp_warp_token_sol.aleo/aleo1m3f6d2sp07ca6cpjw20xw7tv9qhvhu5t33ak6c830kjmxwl6s5zq5qswg8
+    - addressOrDenom: hyp_warp_token_sol_v2.aleo/aleo1aa0zt0vg9uwknekpqeefkvad55swp7833wc5crp2prv0lm4djuxs5r7k6v
       chainName: aleo
       connections:
         - token: ethereum|hyperevm|0xEe3147deeDFC0c6DDD7c65D4e9ff9a48632BE645
@@ -6363,32 +6360,35 @@ SOL/aleo:
       name: Solana
       standard: AleoHypSynthetic
       symbol: SOL
+      tokenType: synthetic
     - addressOrDenom: "0xEe3147deeDFC0c6DDD7c65D4e9ff9a48632BE645"
       chainName: hyperevm
       coinGeckoId: unit-solana
       collateralAddressOrDenom: "0x068f321Fa8Fb9f0D135f290Ef6a3e2813e1c8A29"
       connections:
-        - token: aleo|aleo|hyp_warp_token_sol.aleo/aleo1m3f6d2sp07ca6cpjw20xw7tv9qhvhu5t33ak6c830kjmxwl6s5zq5qswg8
+        - token: aleo|aleo|hyp_warp_token_sol_v2.aleo/aleo1aa0zt0vg9uwknekpqeefkvad55swp7833wc5crp2prv0lm4djuxs5r7k6v
         - token: sealevel|solanamainnet|8YGT2pZwyZe94qBpGzWfY2TMEVcwaQ1bXAE7YAgpUaM7
       decimals: 9
       logoURI: /deployments/warp_routes/SOL/logo.svg
       name: Unit Solana
       standard: EvmHypCollateral
       symbol: USOL
+      tokenType: collateral
     - addressOrDenom: 8YGT2pZwyZe94qBpGzWfY2TMEVcwaQ1bXAE7YAgpUaM7
       chainName: solanamainnet
       coinGeckoId: solana
       connections:
-        - token: aleo|aleo|hyp_warp_token_sol.aleo/aleo1m3f6d2sp07ca6cpjw20xw7tv9qhvhu5t33ak6c830kjmxwl6s5zq5qswg8
+        - token: aleo|aleo|hyp_warp_token_sol_v2.aleo/aleo1aa0zt0vg9uwknekpqeefkvad55swp7833wc5crp2prv0lm4djuxs5r7k6v
         - token: ethereum|hyperevm|0xEe3147deeDFC0c6DDD7c65D4e9ff9a48632BE645
       decimals: 9
       logoURI: /deployments/warp_routes/SOL/logo.svg
       name: Solana
       standard: SealevelHypNative
       symbol: SOL
+      tokenType: native
 SOL/aleotestnet:
   tokens:
-    - addressOrDenom: test_hyp_warp_token_sol.aleo/aleo19nf6jcxryza3v5rwxchx7g5ew2wy44pqkeys7v4pmy29v3scdszqnyw5pl
+    - addressOrDenom: test_hyp_warp_token_sol_v2.aleo/aleo15dkmslq9ddas7sut6lh4r509tzgcv20sp382y7l95w97fxn9r5pssgwxwk
       chainName: aleotestnet
       connections:
         - token: sealevel|solanatestnet|84nEGHMEeP1qSyD8Bw2KZPeW4JXjeFRRMiuzwTvt83Yz
@@ -6397,15 +6397,17 @@ SOL/aleotestnet:
       name: Solana
       standard: AleoHypSynthetic
       symbol: SOL
+      tokenType: synthetic
     - addressOrDenom: 84nEGHMEeP1qSyD8Bw2KZPeW4JXjeFRRMiuzwTvt83Yz
       chainName: solanatestnet
       connections:
-        - token: aleo|aleotestnet|test_hyp_warp_token_sol.aleo/aleo19nf6jcxryza3v5rwxchx7g5ew2wy44pqkeys7v4pmy29v3scdszqnyw5pl
+        - token: aleo|aleotestnet|test_hyp_warp_token_sol_v2.aleo/aleo15dkmslq9ddas7sut6lh4r509tzgcv20sp382y7l95w97fxn9r5pssgwxwk
       decimals: 9
       logoURI: /deployments/warp_routes/SOL/logo.svg
       name: Solana
       standard: SealevelHypNative
       symbol: SOL
+      tokenType: native
 SOL/apechain-solanamainnet:
   tokens:
     - addressOrDenom: "0x16eE589E237f2c70aBE91F87a6C0712C836941bb"
@@ -7651,7 +7653,7 @@ USDB/blast-zeronetwork:
       symbol: USDB
 USDC/aleo:
   tokens:
-    - addressOrDenom: hyp_warp_token_usdc.aleo/aleo1txwxlgnmnvwualftnewhf8nyxhv5544dn0uaj9er0ktmx3ysvg9qcld8mx
+    - addressOrDenom: hyp_warp_token_usdc_v2.aleo/aleo1g7d0296ju7p3chy0ctxc9n9msxs3shw7ylcxmxwznsn84q60lqpssf7xk0
       chainName: aleo
       connections:
         - token: ethereum|arbitrum|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
@@ -7668,12 +7670,13 @@ USDC/aleo:
       scale: 1000000000000
       standard: AleoHypSynthetic
       symbol: USDC
+      tokenType: synthetic
     - addressOrDenom: "0x1FdA66FA15A261F01F1E09228D41bD0A806d7529"
       chainName: arbitrum
       coinGeckoId: usd-coin
       collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
       connections:
-        - token: aleo|aleo|hyp_warp_token_usdc.aleo/aleo1txwxlgnmnvwualftnewhf8nyxhv5544dn0uaj9er0ktmx3ysvg9qcld8mx
+        - token: aleo|aleo|hyp_warp_token_usdc_v2.aleo/aleo1g7d0296ju7p3chy0ctxc9n9msxs3shw7ylcxmxwznsn84q60lqpssf7xk0
         - token: ethereum|avalanche|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|base|0xB46930ca998587A95D9Ee000FA73A071ADD56B64
         - token: ethereum|bsc|0x5284D803a4563DC5eE83feA80c688b096d70eb75
@@ -7687,12 +7690,13 @@ USDC/aleo:
       scale: 1000000000000
       standard: EvmHypCollateral
       symbol: USDC
+      tokenType: collateral
     - addressOrDenom: "0x1FdA66FA15A261F01F1E09228D41bD0A806d7529"
       chainName: avalanche
       coinGeckoId: usd-coin
       collateralAddressOrDenom: "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E"
       connections:
-        - token: aleo|aleo|hyp_warp_token_usdc.aleo/aleo1txwxlgnmnvwualftnewhf8nyxhv5544dn0uaj9er0ktmx3ysvg9qcld8mx
+        - token: aleo|aleo|hyp_warp_token_usdc_v2.aleo/aleo1g7d0296ju7p3chy0ctxc9n9msxs3shw7ylcxmxwznsn84q60lqpssf7xk0
         - token: ethereum|arbitrum|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|base|0xB46930ca998587A95D9Ee000FA73A071ADD56B64
         - token: ethereum|bsc|0x5284D803a4563DC5eE83feA80c688b096d70eb75
@@ -7706,12 +7710,13 @@ USDC/aleo:
       scale: 1000000000000
       standard: EvmHypCollateral
       symbol: USDC
+      tokenType: collateral
     - addressOrDenom: "0xB46930ca998587A95D9Ee000FA73A071ADD56B64"
       chainName: base
       coinGeckoId: usd-coin
       collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
       connections:
-        - token: aleo|aleo|hyp_warp_token_usdc.aleo/aleo1txwxlgnmnvwualftnewhf8nyxhv5544dn0uaj9er0ktmx3ysvg9qcld8mx
+        - token: aleo|aleo|hyp_warp_token_usdc_v2.aleo/aleo1g7d0296ju7p3chy0ctxc9n9msxs3shw7ylcxmxwznsn84q60lqpssf7xk0
         - token: ethereum|arbitrum|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|avalanche|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|bsc|0x5284D803a4563DC5eE83feA80c688b096d70eb75
@@ -7725,12 +7730,13 @@ USDC/aleo:
       scale: 1000000000000
       standard: EvmHypCollateral
       symbol: USDC
+      tokenType: collateral
     - addressOrDenom: "0x5284D803a4563DC5eE83feA80c688b096d70eb75"
       chainName: bsc
       coinGeckoId: usd-coin
       collateralAddressOrDenom: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d"
       connections:
-        - token: aleo|aleo|hyp_warp_token_usdc.aleo/aleo1txwxlgnmnvwualftnewhf8nyxhv5544dn0uaj9er0ktmx3ysvg9qcld8mx
+        - token: aleo|aleo|hyp_warp_token_usdc_v2.aleo/aleo1g7d0296ju7p3chy0ctxc9n9msxs3shw7ylcxmxwznsn84q60lqpssf7xk0
         - token: ethereum|arbitrum|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|avalanche|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|base|0xB46930ca998587A95D9Ee000FA73A071ADD56B64
@@ -7744,12 +7750,13 @@ USDC/aleo:
       scale: 1
       standard: EvmHypCollateral
       symbol: USDC
+      tokenType: collateral
     - addressOrDenom: "0x78Ac7FECD1857f5BEEe98AB39096c9781F976D97"
       chainName: ethereum
       coinGeckoId: usd-coin
       collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
       connections:
-        - token: aleo|aleo|hyp_warp_token_usdc.aleo/aleo1txwxlgnmnvwualftnewhf8nyxhv5544dn0uaj9er0ktmx3ysvg9qcld8mx
+        - token: aleo|aleo|hyp_warp_token_usdc_v2.aleo/aleo1g7d0296ju7p3chy0ctxc9n9msxs3shw7ylcxmxwznsn84q60lqpssf7xk0
         - token: ethereum|arbitrum|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|avalanche|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|base|0xB46930ca998587A95D9Ee000FA73A071ADD56B64
@@ -7763,12 +7770,13 @@ USDC/aleo:
       scale: 1000000000000
       standard: EvmHypCollateral
       symbol: USDC
+      tokenType: collateral
     - addressOrDenom: "0x1FdA66FA15A261F01F1E09228D41bD0A806d7529"
       chainName: optimism
       coinGeckoId: usd-coin
       collateralAddressOrDenom: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
       connections:
-        - token: aleo|aleo|hyp_warp_token_usdc.aleo/aleo1txwxlgnmnvwualftnewhf8nyxhv5544dn0uaj9er0ktmx3ysvg9qcld8mx
+        - token: aleo|aleo|hyp_warp_token_usdc_v2.aleo/aleo1g7d0296ju7p3chy0ctxc9n9msxs3shw7ylcxmxwznsn84q60lqpssf7xk0
         - token: ethereum|arbitrum|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|avalanche|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|base|0xB46930ca998587A95D9Ee000FA73A071ADD56B64
@@ -7782,12 +7790,13 @@ USDC/aleo:
       scale: 1000000000000
       standard: EvmHypCollateral
       symbol: USDC
+      tokenType: collateral
     - addressOrDenom: "0x1FdA66FA15A261F01F1E09228D41bD0A806d7529"
       chainName: polygon
       coinGeckoId: usd-coin
       collateralAddressOrDenom: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
       connections:
-        - token: aleo|aleo|hyp_warp_token_usdc.aleo/aleo1txwxlgnmnvwualftnewhf8nyxhv5544dn0uaj9er0ktmx3ysvg9qcld8mx
+        - token: aleo|aleo|hyp_warp_token_usdc_v2.aleo/aleo1g7d0296ju7p3chy0ctxc9n9msxs3shw7ylcxmxwznsn84q60lqpssf7xk0
         - token: ethereum|arbitrum|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|avalanche|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|base|0xB46930ca998587A95D9Ee000FA73A071ADD56B64
@@ -7801,12 +7810,13 @@ USDC/aleo:
       scale: 1000000000000
       standard: EvmHypCollateral
       symbol: USDC
+      tokenType: collateral
     - addressOrDenom: EiUymjh3vJ2486ozY24s1A1YWXoH6QnSGjWuP95ph35G
       chainName: solanamainnet
       coinGeckoId: usd-coin
       collateralAddressOrDenom: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
       connections:
-        - token: aleo|aleo|hyp_warp_token_usdc.aleo/aleo1txwxlgnmnvwualftnewhf8nyxhv5544dn0uaj9er0ktmx3ysvg9qcld8mx
+        - token: aleo|aleo|hyp_warp_token_usdc_v2.aleo/aleo1g7d0296ju7p3chy0ctxc9n9msxs3shw7ylcxmxwznsn84q60lqpssf7xk0
         - token: ethereum|arbitrum|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|avalanche|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|base|0xB46930ca998587A95D9Ee000FA73A071ADD56B64
@@ -7820,9 +7830,10 @@ USDC/aleo:
       scale: 1000000000000
       standard: SealevelHypCollateral
       symbol: USDC
+      tokenType: collateral
 USDC/aleotestnet:
   tokens:
-    - addressOrDenom: test_hyp_warp_token_usdc.aleo/aleo1ces3t09qgag66vm3el5lacruyxtankzdrtrfpctwz54etvksnqpqqmhjeu
+    - addressOrDenom: test_hyp_warp_token_usdc_v2.aleo/aleo18u5acm8s3gzvt60ws9gw65fgqsm90v9y35vrl8l6y7jktwf6tgysz85hc2
       chainName: aleotestnet
       connections:
         - token: ethereum|sepolia|0x6dC0a1C88C50444DD6097c354dEc639483EC780D
@@ -7831,17 +7842,19 @@ USDC/aleotestnet:
       name: USD Coin
       standard: AleoHypSynthetic
       symbol: USDC
+      tokenType: synthetic
     - addressOrDenom: "0x6dC0a1C88C50444DD6097c354dEc639483EC780D"
       chainName: sepolia
       coinGeckoId: usd-coin
       collateralAddressOrDenom: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238"
       connections:
-        - token: aleo|aleotestnet|test_hyp_warp_token_usdc.aleo/aleo1ces3t09qgag66vm3el5lacruyxtankzdrtrfpctwz54etvksnqpqqmhjeu
+        - token: aleo|aleotestnet|test_hyp_warp_token_usdc_v2.aleo/aleo18u5acm8s3gzvt60ws9gw65fgqsm90v9y35vrl8l6y7jktwf6tgysz85hc2
       decimals: 6
       logoURI: /deployments/warp_routes/USDC/logo.svg
       name: USDC
       standard: EvmHypCollateral
       symbol: USDC
+      tokenType: collateral
 USDC/ancient8-ethereum:
   tokens:
     - addressOrDenom: "0x97423A68BAe94b5De52d767a17aBCc54c157c0E5"
@@ -11667,7 +11680,7 @@ USDStar/solanamainnet-sonicsvm:
       symbol: USD*
 USDT/aleo:
   tokens:
-    - addressOrDenom: hyp_warp_token_usdt.aleo/aleo1t8xqj2q5lem2jr5gj6036am9hu69t59554cl5gd2pasxnjxmdsgsh98eqg
+    - addressOrDenom: hyp_warp_token_usdt_v2.aleo/aleo18yynfz0lrfx0tund540vy2z7gju7ekgqsueg5jgu28mpm2z42ufq7qua8y
       chainName: aleo
       connections:
         - token: ethereum|bsc|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
@@ -11680,12 +11693,13 @@ USDT/aleo:
       scale: 1000000000000
       standard: AleoHypSynthetic
       symbol: USDT
+      tokenType: synthetic
     - addressOrDenom: "0x1FdA66FA15A261F01F1E09228D41bD0A806d7529"
       chainName: bsc
       coinGeckoId: tether
       collateralAddressOrDenom: "0x55d398326f99059ff775485246999027b3197955"
       connections:
-        - token: aleo|aleo|hyp_warp_token_usdt.aleo/aleo1t8xqj2q5lem2jr5gj6036am9hu69t59554cl5gd2pasxnjxmdsgsh98eqg
+        - token: aleo|aleo|hyp_warp_token_usdt_v2.aleo/aleo18yynfz0lrfx0tund540vy2z7gju7ekgqsueg5jgu28mpm2z42ufq7qua8y
         - token: ethereum|ethereum|0x3C2064D78e4578E8F936E3db42aEF044E33FBF31
         - token: ethereum|hyperevm|0x36E437699E3658396Bf6229ddDaE54884cf28779
         - token: sealevel|solanamainnet|GZ5zWtLNbQ2qJPymkS9My4AYatQx5HV7MQ9f68vG6GNi
@@ -11695,12 +11709,13 @@ USDT/aleo:
       scale: 1
       standard: EvmHypCollateral
       symbol: USDT
+      tokenType: collateral
     - addressOrDenom: "0x3C2064D78e4578E8F936E3db42aEF044E33FBF31"
       chainName: ethereum
       coinGeckoId: tether
       collateralAddressOrDenom: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
       connections:
-        - token: aleo|aleo|hyp_warp_token_usdt.aleo/aleo1t8xqj2q5lem2jr5gj6036am9hu69t59554cl5gd2pasxnjxmdsgsh98eqg
+        - token: aleo|aleo|hyp_warp_token_usdt_v2.aleo/aleo18yynfz0lrfx0tund540vy2z7gju7ekgqsueg5jgu28mpm2z42ufq7qua8y
         - token: ethereum|bsc|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|hyperevm|0x36E437699E3658396Bf6229ddDaE54884cf28779
         - token: sealevel|solanamainnet|GZ5zWtLNbQ2qJPymkS9My4AYatQx5HV7MQ9f68vG6GNi
@@ -11710,12 +11725,13 @@ USDT/aleo:
       scale: 1000000000000
       standard: EvmHypCollateral
       symbol: USDT
+      tokenType: collateral
     - addressOrDenom: "0x36E437699E3658396Bf6229ddDaE54884cf28779"
       chainName: hyperevm
       coinGeckoId: tether
       collateralAddressOrDenom: "0xB8CE59FC3717ada4C02eaDF9682A9e934F625ebb"
       connections:
-        - token: aleo|aleo|hyp_warp_token_usdt.aleo/aleo1t8xqj2q5lem2jr5gj6036am9hu69t59554cl5gd2pasxnjxmdsgsh98eqg
+        - token: aleo|aleo|hyp_warp_token_usdt_v2.aleo/aleo18yynfz0lrfx0tund540vy2z7gju7ekgqsueg5jgu28mpm2z42ufq7qua8y
         - token: ethereum|bsc|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|ethereum|0x3C2064D78e4578E8F936E3db42aEF044E33FBF31
         - token: sealevel|solanamainnet|GZ5zWtLNbQ2qJPymkS9My4AYatQx5HV7MQ9f68vG6GNi
@@ -11725,12 +11741,13 @@ USDT/aleo:
       scale: 1000000000000
       standard: EvmHypCollateral
       symbol: USD₮0
+      tokenType: collateral
     - addressOrDenom: GZ5zWtLNbQ2qJPymkS9My4AYatQx5HV7MQ9f68vG6GNi
       chainName: solanamainnet
       coinGeckoId: tether
       collateralAddressOrDenom: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
       connections:
-        - token: aleo|aleo|hyp_warp_token_usdt.aleo/aleo1t8xqj2q5lem2jr5gj6036am9hu69t59554cl5gd2pasxnjxmdsgsh98eqg
+        - token: aleo|aleo|hyp_warp_token_usdt_v2.aleo/aleo18yynfz0lrfx0tund540vy2z7gju7ekgqsueg5jgu28mpm2z42ufq7qua8y
         - token: ethereum|bsc|0x1FdA66FA15A261F01F1E09228D41bD0A806d7529
         - token: ethereum|ethereum|0x3C2064D78e4578E8F936E3db42aEF044E33FBF31
         - token: ethereum|hyperevm|0x36E437699E3658396Bf6229ddDaE54884cf28779
@@ -11740,9 +11757,10 @@ USDT/aleo:
       scale: 1000000000000
       standard: SealevelHypCollateral
       symbol: USDT
+      tokenType: collateral
 USDT/aleotestnet:
   tokens:
-    - addressOrDenom: test_hyp_warp_token_usdt.aleo/aleo17tth7t5psc44pe230y7zcxl32wzhq8452sya4v7gxc406ln5pggspn9jwe
+    - addressOrDenom: test_hyp_warp_token_usdt_v2.aleo/aleo10z2uet2fcxk9qjcvea0ez7fzvy3aack0h6328qmquu2kqftd9g8scs5vht
       chainName: aleotestnet
       connections:
         - token: ethereum|sepolia|0xF6B589bA1610c1779c1d7F660aAf743b7cE6f0ae
@@ -11751,17 +11769,19 @@ USDT/aleotestnet:
       name: Tether USD
       standard: AleoHypSynthetic
       symbol: USDT
+      tokenType: synthetic
     - addressOrDenom: "0xF6B589bA1610c1779c1d7F660aAf743b7cE6f0ae"
       chainName: sepolia
       coinGeckoId: tether
       collateralAddressOrDenom: "0xaa8e23fb1079ea71e0a56f48a2aa51851d8433d0"
       connections:
-        - token: aleo|aleotestnet|test_hyp_warp_token_usdt.aleo/aleo17tth7t5psc44pe230y7zcxl32wzhq8452sya4v7gxc406ln5pggspn9jwe
+        - token: aleo|aleotestnet|test_hyp_warp_token_usdt_v2.aleo/aleo10z2uet2fcxk9qjcvea0ez7fzvy3aack0h6328qmquu2kqftd9g8scs5vht
       decimals: 6
       logoURI: /deployments/warp_routes/USDT/logo.svg
       name: USDT
       standard: EvmHypCollateral
       symbol: USDT
+      tokenType: collateral
 USDT/arbitrum-bsc-kalychain-polygon:
   tokens:
     - addressOrDenom: "0xFDb3307a16442ed5A7C040AE1600a3B3D3C8e7D9"
@@ -13076,7 +13096,7 @@ WARD/ward-bsc:
       symbol: WARD
 WBTC/aleo:
   tokens:
-    - addressOrDenom: hyp_warp_token_wbtc.aleo/aleo1gxp4wr92ya52kqdhe87kquj8s7xkllyks4jk44qw0539pxjjhqrshd3svx
+    - addressOrDenom: hyp_warp_token_wbtc_v2.aleo/aleo1240fsvz2dhmj0cdtt8mc0yc8um9fmu236rqcl2qnlj9703hd2vpsdwyrtf
       chainName: aleo
       connections:
         - token: ethereum|ethereum|0x20CDC85778b732073F7EecEF3DF25c0d310f8772
@@ -13086,33 +13106,36 @@ WBTC/aleo:
       name: Wrapped BTC
       standard: AleoHypSynthetic
       symbol: WBTC
+      tokenType: synthetic
     - addressOrDenom: "0x20CDC85778b732073F7EecEF3DF25c0d310f8772"
       chainName: ethereum
       coinGeckoId: wrapped-bitcoin
       collateralAddressOrDenom: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
       connections:
-        - token: aleo|aleo|hyp_warp_token_wbtc.aleo/aleo1gxp4wr92ya52kqdhe87kquj8s7xkllyks4jk44qw0539pxjjhqrshd3svx
+        - token: aleo|aleo|hyp_warp_token_wbtc_v2.aleo/aleo1240fsvz2dhmj0cdtt8mc0yc8um9fmu236rqcl2qnlj9703hd2vpsdwyrtf
         - token: ethereum|hyperevm|0xefafEE2F52c083c5aaB09c4AF65Adc966bbf1479
       decimals: 8
       logoURI: /deployments/warp_routes/WBTC/logo.svg
       name: Wrapped BTC
       standard: EvmHypCollateral
       symbol: WBTC
+      tokenType: collateral
     - addressOrDenom: "0xefafEE2F52c083c5aaB09c4AF65Adc966bbf1479"
       chainName: hyperevm
       coinGeckoId: wrapped-bitcoin
       collateralAddressOrDenom: "0x9FDBdA0A5e284c32744D2f17Ee5c74B284993463"
       connections:
-        - token: aleo|aleo|hyp_warp_token_wbtc.aleo/aleo1gxp4wr92ya52kqdhe87kquj8s7xkllyks4jk44qw0539pxjjhqrshd3svx
+        - token: aleo|aleo|hyp_warp_token_wbtc_v2.aleo/aleo1240fsvz2dhmj0cdtt8mc0yc8um9fmu236rqcl2qnlj9703hd2vpsdwyrtf
         - token: ethereum|ethereum|0x20CDC85778b732073F7EecEF3DF25c0d310f8772
       decimals: 8
       logoURI: /deployments/warp_routes/WBTC/logo.svg
       name: Wrapped BTC
       standard: EvmHypCollateral
       symbol: WBTC
+      tokenType: collateral
 WBTC/aleotestnet:
   tokens:
-    - addressOrDenom: test_hyp_warp_token_wbtc.aleo/aleo1x29rhydhtnjaekxma5hnhmgy2q36vx244rqrmpqmecc4wg3uyu9q0sll0m
+    - addressOrDenom: test_hyp_warp_token_wbtc_v2.aleo/aleo13w9329cdg63mh8rt8aa94hc8mkkv6f5a23qk6lyug72m029mjgpqw8m5ts
       chainName: aleotestnet
       connections:
         - token: ethereum|sepolia|0x2A872Ae01375A5ca7e044cb0e75cb97621Ca954A
@@ -13121,16 +13144,18 @@ WBTC/aleotestnet:
       name: Wrapped BTC
       standard: AleoHypSynthetic
       symbol: WBTC
+      tokenType: synthetic
     - addressOrDenom: "0x2A872Ae01375A5ca7e044cb0e75cb97621Ca954A"
       chainName: sepolia
       collateralAddressOrDenom: "0x52eea312378ef46140ebe67de8a143ba2304fd7c"
       connections:
-        - token: aleo|aleotestnet|test_hyp_warp_token_wbtc.aleo/aleo1x29rhydhtnjaekxma5hnhmgy2q36vx244rqrmpqmecc4wg3uyu9q0sll0m
+        - token: aleo|aleotestnet|test_hyp_warp_token_wbtc_v2.aleo/aleo13w9329cdg63mh8rt8aa94hc8mkkv6f5a23qk6lyug72m029mjgpqw8m5ts
       decimals: 8
       logoURI: /deployments/warp_routes/WBTC/logo.svg
       name: Wrapped BTC
       standard: EvmHypCollateral
       symbol: WBTC
+      tokenType: collateral
 WBTC/arbitrum-bsc-kalychain-polygon:
   tokens:
     - addressOrDenom: "0x3CDbaBE5Bf4E6cfE10A2A326E0ad31b2d16398D4"
