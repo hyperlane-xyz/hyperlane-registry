@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x726f757465725f61707000000000000000000000000000020000000000000000"
+    chainName: dymension
+    coinGeckoId: kaspa
+    connections:
+      - token: ethereum|ethereum|0x18e6C30487e61B117bDE1218aEf2D9Bd7742c4CF
+    decimals: 8
+    logoURI: /deployments/warp_routes/KAS/logo.svg
+    name: Kaspa
+    standard: CosmosNativeHypSynthetic
+    symbol: KAS
+  - addressOrDenom: "0x18e6C30487e61B117bDE1218aEf2D9Bd7742c4CF"
+    chainName: ethereum
+    coinGeckoId: kaspa
+    connections:
+      - token: cosmosnative|dymension|0x726f757465725f61707000000000000000000000000000020000000000000000
+    decimals: 8
+    logoURI: /deployments/warp_routes/KAS/logo.svg
+    name: Kaspa
+    standard: EvmHypSynthetic
+    symbol: KAS
