@@ -1,8 +1,9 @@
+# yaml-language-server: $schema=../schema.json
 aleo:
   decimals: 9
   gas: 60000
   name: Solana
-  owner: aleo1p80tcvlpwagclweksdl6d8egcxumak9m6ut22y4x8gx2te9casps8zs6dp
+  owner: aleo1mx0tldt5qsqymn5a3whnmf9rx2whp837jjn0tvqgxqf86zg6dvyqnc8spm
   symbol: SOL
   type: synthetic
 hyperevm:
@@ -13,6 +14,9 @@ hyperevm:
   type: collateral
 solanamainnet:
   decimals: 9
+  destinationGas:
+    "999": "64000"
+    "1634493807": "64000"
   foreignDeployment: 8YGT2pZwyZe94qBpGzWfY2TMEVcwaQ1bXAE7YAgpUaM7
   gas: 300000
   owner: ABJnd4eWexNte9GYy21ud5hvSwFKWedveP6GCFxXKkCw

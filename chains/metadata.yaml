@@ -260,6 +260,10 @@ alfajores:
   rpcUrls:
     - http: https://alfajores-forno.celo-testnet.org
 ancient8:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://scan.ancient8.gg/api
       family: blockscout
@@ -445,6 +449,10 @@ arbitrumsepolia:
     - http: https://sepolia-rollup.arbitrum.io/rpc
   technicalStack: arbitrumnitro
 arcadia:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.arcadia.khalani.network/api
       family: blockscout
@@ -638,6 +646,10 @@ artheratestnet:
       pagination:
         maxBlockRange: 10000
 astar:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://astar.blockscout.com/api
       family: blockscout
@@ -1646,6 +1658,10 @@ cheesechain:
     - http: https://cheesechain.calderachain.xyz/http
   technicalStack: arbitrumnitro
 chilizmainnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/88888/etherscan/api
       family: routescan
@@ -1876,6 +1892,10 @@ conwai:
     - http: https://conwai.calderachain.xyz/http
   technicalStack: arbitrumnitro
 coredao:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://scan.coredao.org/api
       family: other
@@ -2067,6 +2087,10 @@ cronoszkevm:
   rpcUrls:
     - http: https://mainnet.zkevm.cronos.org
 cyber:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://api.socialscan.io/cyber
       family: other
@@ -3114,6 +3138,10 @@ flametestnet:
     - http: https://rpc.flame.dawn-1.astria.org
   technicalStack: other
 flare:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://flare-explorer.flare.network/api
       family: blockscout
@@ -3451,6 +3479,10 @@ funki:
   rpcUrls:
     - http: https://rpc-mainnet.funkichain.com
 fusemainnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.fuse.io/api
       family: etherscan
@@ -3678,6 +3710,10 @@ gnosischiadotestnet:
     - http: https://gnosis-chiado-rpc.publicnode.com
   technicalStack: other
 gravity:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.gravity.xyz/api
       family: blockscout
@@ -4358,6 +4394,10 @@ inksepolia:
     - http: https://rpc-qnd-sepolia.inkonchain.com
   technicalStack: opstack
 kaia:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://api-cypress.klaytnscope.com/api
       family: etherscan
@@ -5462,6 +5502,10 @@ mintsepoliatest:
   rpcUrls:
     - http: https://sepolia-testnet-rpc.mintchain.io
 miraclechain:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.miracleplay.io/api
       family: blockscout
@@ -6207,6 +6251,10 @@ odysseytestnet:
   rpcUrls:
     - http: https://odyssey.ithaca.xyz
 ontology:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.ont.io/api
       family: other
@@ -6259,6 +6307,10 @@ oortmainnet:
     - http: https://mainnet-rpc.oortech.com
   technicalStack: other
 opbnb:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
       apiUrl: https://api.etherscan.io/v2/api?chainid=204
@@ -6403,6 +6455,10 @@ optimismsepolia:
   rpcUrls:
     - http: https://sepolia.optimism.io
 orderly:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.orderly.network/api
       family: blockscout
@@ -6971,6 +7027,10 @@ radixtestnet:
   rpcUrls:
     - http: https://stokenet.radixdlt.com
 rarichain:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://mainnet.explorer.rarichain.org/api
       family: blockscout
@@ -7560,6 +7620,10 @@ sepolia:
     - http: https://sepolia.drpc.org
     - http: https://1rpc.io/sepolia
 shibarium:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://shibariumscan.io/api
       family: blockscout
@@ -8081,6 +8145,10 @@ soon:
     - http: https://rpc.mainnet.soo.network/rpc
   technicalStack: other
 sophon:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://verification-explorer.sophon.xyz/contract_verification
       family: etherscan
@@ -8356,6 +8424,10 @@ storytestnet:
   transactionOverrides:
     gasPrice: 16000000000
 stride:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   bech32Prefix: stride
   blockExplorers:
     - apiUrl: https://apis.mintscan.io/v1/stride
@@ -9003,9 +9075,10 @@ tempo:
   gasCurrencyCoinGeckoId: usd-coin
   name: tempo
   nativeToken:
-    decimals: 18
-    name: USD
-    symbol: USD
+    address: "0x20c0000000000000000000000000000000000000"
+    decimals: 6
+    name: pathUSD
+    symbol: pathUSD
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.tempo.xyz
@@ -9463,6 +9536,10 @@ worldchain:
     - http: https://worldchain-mainnet.g.alchemy.com/public
   technicalStack: opstack
 xai:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.xai-chain.net/api
       family: blockscout
@@ -9547,6 +9624,10 @@ xpla:
     - http: https://dimension-evm-rpc.xpla.dev
   technicalStack: other
 xrplevm:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.xrplevm.org/api
       family: blockscout
@@ -9631,6 +9712,10 @@ zeronetwork:
     - http: https://zero.drpc.org
   technicalStack: zksync
 zetachain:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.zetachain.com
       family: other
