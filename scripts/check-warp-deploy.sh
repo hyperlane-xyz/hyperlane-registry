@@ -22,6 +22,29 @@ is_m0_warp_route() {
     grep -Eq 'standard:[[:space:]]*EvmM0Portal(Lite)?' "$config_file"
 }
 
+# Warp routes the published `hyperlane warp check` CLI cannot verify on-chain,
+# so they are excluded from this PR check to avoid unactionable failures:
+# - celestia-solanamainnet / celestia-eclipsemainnet: no EVM chain in the route,
+#   so `warp check` throws "requires at least one EVM chain in the selected route
+#   config" and can never pass.
+# - abstract-celestia: no abstract block explorer is configured in CI, so the
+#   contractVerificationStatus lookup fails the check. Revisit if an abstract
+#   explorer is added.
+ROUTES_TO_SKIP=(
+    "TIA/celestia-solanamainnet"
+    "TIA/celestia-eclipsemainnet"
+    "TIA/abstract-celestia"
+)
+
+is_skipped_warp_route() {
+    local warp_route_id="$1"
+    local skip
+    for skip in "${ROUTES_TO_SKIP[@]}"; do
+        [ "$skip" = "$warp_route_id" ] && return 0
+    done
+    return 1
+}
+
 WARP_ROUTE_IDS=$(
     # ARM = Additions, Renames, Modifications
     # Use three-dot syntax to only show changes from the branch, not changes from main
@@ -58,6 +81,13 @@ for WARP_ROUTE_ID in $WARP_ROUTE_IDS; do
     if is_m0_warp_route "$WARP_ROUTE_ID"; then
       ONCHAIN_STATUS="N/A (M0 exempt)"
       CONFIG_SYNC_STATUS="N/A (M0 exempt)"
+      JOB_SUMMARY+="| $WARP_ROUTE_ID | $ONCHAIN_STATUS | $CONFIG_SYNC_STATUS |\n"
+      continue
+    fi
+
+    if is_skipped_warp_route "$WARP_ROUTE_ID"; then
+      ONCHAIN_STATUS="N/A (skipped)"
+      CONFIG_SYNC_STATUS="N/A (skipped)"
       JOB_SUMMARY+="| $WARP_ROUTE_ID | $ONCHAIN_STATUS | $CONFIG_SYNC_STATUS |\n"
       continue
     fi
