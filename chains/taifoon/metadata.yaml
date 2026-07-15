@@ -16,5 +16,7 @@ nativeToken:
   symbol: FOON
 protocol: ethereum
 rpcUrls:
-  - http: https://rpc.taifoon.dev
+  # TODO(taifoon): the Taifoon PARACHAIN Frontier-EVM RPC, set once the collator is live.
+  # This is NOT rpc.taifoon.dev — that is the separate standalone EVM devnet (a different chain).
+  - http: https://<taifoon-parachain-evm-rpc>
 technicalStack: polkadotsubstrate
