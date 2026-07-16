@@ -1,16 +1,20 @@
 bsc:
   decimals: 18
   interchainSecurityModule:
+    address: "0x3C7C56581932AD0D463f97B175E93DFB39118D4F"
     modules:
-      - domains: {}
-        owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
-        paused: false
-        type: pausableIsm
-      - maxCapacity: "199999999999999999999929600"
+      - address: "0x54f5Bf8DFF1D0197fBEB6398AfEC759433bBeAef"
+        maxCapacity: "999999999999999999999993600"
         owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
         type: rateLimitedIsm
+      - address: "0x5d50888811c39e58ca90E91fAbBd348892Bbab18"
+        domains: {}
+        owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
+        type: defaultFallbackRoutingIsm
+      - address: "0x6b39a2039532Ee1F3B5081E87317C4AFeb3Db175"
+        owner: "0xb8d4b6B1f402Cf9C525e6c167B3Efa59BCb718A9"
+        paused: false
+        type: pausableIsm
     threshold: 3
     type: staticAggregationIsm
   mailbox: "0x2971b9Aec44bE4eb673DF1B88cDB57b96eefe8a4"
@@ -23,16 +27,20 @@ bsc:
 eni:
   decimals: 18
   interchainSecurityModule:
+    address: "0xe39f74604d53408caE95ADf555E869B4EC173E4A"
     modules:
-      - domains: {}
-        owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
-        paused: false
-        type: pausableIsm
-      - maxCapacity: "199999999999999999999929600"
+      - address: "0x132916B82A48D383EC70F3347fCD680C67364621"
+        maxCapacity: "999999999999999999999993600"
         owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
         type: rateLimitedIsm
+      - address: "0xB934d19F39Ce0eD9bc3915E7aE0Aa95F6581e79A"
+        owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
+        paused: false
+        type: pausableIsm
+      - address: "0xac357910cE7fDD735de1fBE470408D78bdcdba51"
+        domains: {}
+        owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
+        type: defaultFallbackRoutingIsm
     threshold: 3
     type: staticAggregationIsm
   mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"

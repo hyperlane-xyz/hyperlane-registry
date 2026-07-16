@@ -4,8 +4,11 @@ arbitrum:
   allowedRebalancingBridges:
     "1":
       - bridge: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
+      - bridge: "0x42B794FbF2Ae97d7E9001e21D36B0A5595B51B11"
     "137":
       - bridge: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
+    "56":
+      - bridge: "0x42B794FbF2Ae97d7E9001e21D36B0A5595B51B11"
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
@@ -51,40 +54,15 @@ arbitrum:
         type: defaultFallbackRoutingIsm
       - domains:
           base: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-          bsc:
-            modules:
-              - lowerIsm:
-                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-                  type: trustedRelayerIsm
-                threshold: 1000000000
-                type: amountRoutingIsm
-                upperIsm:
-                  domains: {}
-                  owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
-                  type: defaultFallbackRoutingIsm
-              - domains: {}
-                owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
-                type: defaultFallbackRoutingIsm
-            threshold: 1
-            type: staticAggregationIsm
+          bsc: "0xee8D5aeB5E486c57c54B1B9D2b82614D4131ddE1"
+          citrea: "0xee8D5aeB5E486c57c54B1B9D2b82614D4131ddE1"
           ethereum: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-          katana:
-            modules:
-              - lowerIsm:
-                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-                  type: trustedRelayerIsm
-                threshold: 1000000000
-                type: amountRoutingIsm
-                upperIsm:
-                  domains: {}
-                  owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
-                  type: defaultFallbackRoutingIsm
-              - domains: {}
-                owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
-                type: defaultFallbackRoutingIsm
-            threshold: 1
-            type: staticAggregationIsm
+          katana: "0xee8D5aeB5E486c57c54B1B9D2b82614D4131ddE1"
           polygon: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+          solanamainnet:
+            domains: {}
+            owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
+            type: defaultFallbackRoutingIsm
         owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
         type: domainRoutingIsm
     threshold: 1
@@ -94,6 +72,20 @@ arbitrum:
   tokenFee:
     feeContracts:
       arbitrum:
+        "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4":
+          bps: 3
+          owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000ebc079d41c41a0ef7e54aa7af867df9a621c9be0":
+          bps: 3
+          owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
@@ -102,6 +94,20 @@ arbitrum:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       base:
+        "0x000000000000000000000000253821543c24623ecd3cebced704359af16cf38f":
+          bps: 3
+          owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x0000000000000000000000007abbb4ea8a5895127500cf0c15830c9eb9f61f96":
+          bps: 3
+          owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
@@ -110,6 +116,20 @@ arbitrum:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       bsc:
+        "0x000000000000000000000000050dcc964bca53ef1a98a2347995cabc73ce25b9":
+          bps: 3
+          owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x0000000000000000000000006e66a10ce72fbdfa45ab7de3693321246e254123":
+          bps: 3
+          owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
@@ -118,6 +138,13 @@ arbitrum:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       citrea:
+        "0x0000000000000000000000002bef59e84615371304bd731601f6344f5f304504":
+          bps: 3
+          owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
@@ -126,6 +153,20 @@ arbitrum:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       ethereum:
+        "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f":
+          bps: 3
+          owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000eb1b48b238e15a62e1858a601b6bffdf41163ae3":
+          bps: 3
+          owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
@@ -134,6 +175,20 @@ arbitrum:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       katana:
+        "0x0000000000000000000000000b51afdd3f43446a621c555b16a1cb781d8443ad":
+          bps: 3
+          owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000936e8a1fbd8317be59a9b8924a300993c8bf7ce6":
+          bps: 3
+          owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
@@ -142,6 +197,20 @@ arbitrum:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       polygon:
+        "0x00000000000000000000000028a96f9928db06317356caacd5641c4fde4424c7":
+          bps: 3
+          owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000766a80a7a6bba555731dc1726db5bfa030631270":
+          bps: 3
+          owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
@@ -151,6 +220,13 @@ arbitrum:
           type: OffchainQuotedLinearFee
       solanamainnet:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0xf5324d5c5be7eb842fb738d13de87ee39cb9b6629ea6566c14241cd27a9b788b":
           bps: 3
           owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
           quoteSigners:
@@ -206,40 +282,15 @@ base:
         type: defaultFallbackRoutingIsm
       - domains:
           arbitrum: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-          bsc:
-            modules:
-              - lowerIsm:
-                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-                  type: trustedRelayerIsm
-                threshold: 1000000000
-                type: amountRoutingIsm
-                upperIsm:
-                  domains: {}
-                  owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
-                  type: defaultFallbackRoutingIsm
-              - domains: {}
-                owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
-                type: defaultFallbackRoutingIsm
-            threshold: 1
-            type: staticAggregationIsm
+          bsc: "0xCC7D3771aD7c52eA5AB929482e43dBbb866FDbe5"
+          citrea: "0xCC7D3771aD7c52eA5AB929482e43dBbb866FDbe5"
           ethereum: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-          katana:
-            modules:
-              - lowerIsm:
-                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-                  type: trustedRelayerIsm
-                threshold: 1000000000
-                type: amountRoutingIsm
-                upperIsm:
-                  domains: {}
-                  owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
-                  type: defaultFallbackRoutingIsm
-              - domains: {}
-                owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
-                type: defaultFallbackRoutingIsm
-            threshold: 1
-            type: staticAggregationIsm
+          katana: "0xCC7D3771aD7c52eA5AB929482e43dBbb866FDbe5"
           polygon: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+          solanamainnet:
+            domains: {}
+            owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
+            type: defaultFallbackRoutingIsm
         owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
         type: domainRoutingIsm
     threshold: 1
@@ -249,6 +300,20 @@ base:
   tokenFee:
     feeContracts:
       arbitrum:
+        "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4":
+          bps: 3
+          owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000ebc079d41c41a0ef7e54aa7af867df9a621c9be0":
+          bps: 3
+          owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
@@ -257,6 +322,20 @@ base:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       base:
+        "0x000000000000000000000000253821543c24623ecd3cebced704359af16cf38f":
+          bps: 3
+          owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x0000000000000000000000007abbb4ea8a5895127500cf0c15830c9eb9f61f96":
+          bps: 3
+          owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
@@ -265,6 +344,20 @@ base:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       bsc:
+        "0x000000000000000000000000050dcc964bca53ef1a98a2347995cabc73ce25b9":
+          bps: 3
+          owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x0000000000000000000000006e66a10ce72fbdfa45ab7de3693321246e254123":
+          bps: 3
+          owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
@@ -273,6 +366,13 @@ base:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       citrea:
+        "0x0000000000000000000000002bef59e84615371304bd731601f6344f5f304504":
+          bps: 3
+          owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
@@ -281,6 +381,20 @@ base:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       ethereum:
+        "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f":
+          bps: 3
+          owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000eb1b48b238e15a62e1858a601b6bffdf41163ae3":
+          bps: 3
+          owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
@@ -289,6 +403,20 @@ base:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       katana:
+        "0x0000000000000000000000000b51afdd3f43446a621c555b16a1cb781d8443ad":
+          bps: 3
+          owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000936e8a1fbd8317be59a9b8924a300993c8bf7ce6":
+          bps: 3
+          owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
@@ -297,6 +425,20 @@ base:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       polygon:
+        "0x00000000000000000000000028a96f9928db06317356caacd5641c4fde4424c7":
+          bps: 3
+          owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000766a80a7a6bba555731dc1726db5bfa030631270":
+          bps: 3
+          owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
@@ -312,10 +454,24 @@ base:
             - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
+        "0xf5324d5c5be7eb842fb738d13de87ee39cb9b6629ea6566c14241cd27a9b788b":
+          bps: 3
+          owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
     owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
     type: CrossCollateralRoutingFee
   type: crossCollateral
 bsc:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    "1":
+      - bridge: "0xc13d466B9E196AfdE472856923E857cc298EDf1b"
+    "42161":
+      - bridge: "0xc13d466B9E196AfdE472856923E857cc298EDf1b"
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
@@ -341,37 +497,22 @@ bsc:
     type: fallbackRoutingHook
   interchainSecurityModule:
     modules:
-      - lowerIsm:
-          domains:
-            arbitrum:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            base:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            citrea:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            ethereum:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            katana:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            polygon:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-          owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
-          type: domainRoutingIsm
-        threshold: 1000000000
-        type: amountRoutingIsm
-        upperIsm:
-          domains: {}
-          owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
-          type: defaultFallbackRoutingIsm
       - domains: {}
         owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
         type: defaultFallbackRoutingIsm
+      - domains:
+          arbitrum: "0x0e6d21a2DEf40E24d7Eb20aA3bECADf8eC7756b0"
+          base: "0x0e6d21a2DEf40E24d7Eb20aA3bECADf8eC7756b0"
+          citrea: "0x0e6d21a2DEf40E24d7Eb20aA3bECADf8eC7756b0"
+          ethereum: "0x0e6d21a2DEf40E24d7Eb20aA3bECADf8eC7756b0"
+          katana: "0x0e6d21a2DEf40E24d7Eb20aA3bECADf8eC7756b0"
+          polygon: "0x0e6d21a2DEf40E24d7Eb20aA3bECADf8eC7756b0"
+          solanamainnet:
+            domains: {}
+            owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
+            type: defaultFallbackRoutingIsm
+        owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
+        type: domainRoutingIsm
     threshold: 1
     type: staticAggregationIsm
   owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
@@ -382,6 +523,20 @@ bsc:
   tokenFee:
     feeContracts:
       arbitrum:
+        "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4":
+          bps: 3
+          owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000ebc079d41c41a0ef7e54aa7af867df9a621c9be0":
+          bps: 3
+          owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
@@ -390,6 +545,20 @@ bsc:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       base:
+        "0x000000000000000000000000253821543c24623ecd3cebced704359af16cf38f":
+          bps: 3
+          owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x0000000000000000000000007abbb4ea8a5895127500cf0c15830c9eb9f61f96":
+          bps: 3
+          owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
@@ -398,6 +567,20 @@ bsc:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       bsc:
+        "0x000000000000000000000000050dcc964bca53ef1a98a2347995cabc73ce25b9":
+          bps: 3
+          owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x0000000000000000000000006e66a10ce72fbdfa45ab7de3693321246e254123":
+          bps: 3
+          owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
@@ -406,6 +589,13 @@ bsc:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       citrea:
+        "0x0000000000000000000000002bef59e84615371304bd731601f6344f5f304504":
+          bps: 3
+          owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
@@ -414,6 +604,20 @@ bsc:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       ethereum:
+        "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f":
+          bps: 3
+          owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000eb1b48b238e15a62e1858a601b6bffdf41163ae3":
+          bps: 3
+          owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
@@ -422,6 +626,20 @@ bsc:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       katana:
+        "0x0000000000000000000000000b51afdd3f43446a621c555b16a1cb781d8443ad":
+          bps: 3
+          owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000936e8a1fbd8317be59a9b8924a300993c8bf7ce6":
+          bps: 3
+          owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
@@ -430,6 +648,20 @@ bsc:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       polygon:
+        "0x00000000000000000000000028a96f9928db06317356caacd5641c4fde4424c7":
+          bps: 3
+          owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000766a80a7a6bba555731dc1726db5bfa030631270":
+          bps: 3
+          owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
@@ -439,6 +671,13 @@ bsc:
           type: OffchainQuotedLinearFee
       solanamainnet:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0xf5324d5c5be7eb842fb738d13de87ee39cb9b6629ea6566c14241cd27a9b788b":
           bps: 3
           owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
           quoteSigners:
@@ -456,6 +695,9 @@ ethereum:
       - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
     "42161":
       - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
+      - bridge: "0x647C621CEb36853Ef6A907E397Adf18568E70543"
+    "56":
+      - bridge: "0x647C621CEb36853Ef6A907E397Adf18568E70543"
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
@@ -502,39 +744,14 @@ ethereum:
       - domains:
           arbitrum: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
           base: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-          bsc:
-            modules:
-              - lowerIsm:
-                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-                  type: trustedRelayerIsm
-                threshold: 1000000000
-                type: amountRoutingIsm
-                upperIsm:
-                  domains: {}
-                  owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
-                  type: defaultFallbackRoutingIsm
-              - domains: {}
-                owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
-                type: defaultFallbackRoutingIsm
-            threshold: 1
-            type: staticAggregationIsm
-          katana:
-            modules:
-              - lowerIsm:
-                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-                  type: trustedRelayerIsm
-                threshold: 1000000000
-                type: amountRoutingIsm
-                upperIsm:
-                  domains: {}
-                  owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
-                  type: defaultFallbackRoutingIsm
-              - domains: {}
-                owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
-                type: defaultFallbackRoutingIsm
-            threshold: 1
-            type: staticAggregationIsm
+          bsc: "0xFfD28a634c51262F129FeD217c11E9bA166e2508"
+          citrea: "0xFfD28a634c51262F129FeD217c11E9bA166e2508"
+          katana: "0xFfD28a634c51262F129FeD217c11E9bA166e2508"
           polygon: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+          solanamainnet:
+            domains: {}
+            owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+            type: defaultFallbackRoutingIsm
         owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
         type: domainRoutingIsm
     threshold: 1
@@ -544,6 +761,20 @@ ethereum:
   tokenFee:
     feeContracts:
       arbitrum:
+        "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4":
+          bps: 3
+          owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000ebc079d41c41a0ef7e54aa7af867df9a621c9be0":
+          bps: 3
+          owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
@@ -552,6 +783,20 @@ ethereum:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       base:
+        "0x000000000000000000000000253821543c24623ecd3cebced704359af16cf38f":
+          bps: 3
+          owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x0000000000000000000000007abbb4ea8a5895127500cf0c15830c9eb9f61f96":
+          bps: 3
+          owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
@@ -560,6 +805,20 @@ ethereum:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       bsc:
+        "0x000000000000000000000000050dcc964bca53ef1a98a2347995cabc73ce25b9":
+          bps: 3
+          owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x0000000000000000000000006e66a10ce72fbdfa45ab7de3693321246e254123":
+          bps: 3
+          owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
@@ -568,6 +827,13 @@ ethereum:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       citrea:
+        "0x0000000000000000000000002bef59e84615371304bd731601f6344f5f304504":
+          bps: 3
+          owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
@@ -576,6 +842,20 @@ ethereum:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       ethereum:
+        "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f":
+          bps: 3
+          owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000eb1b48b238e15a62e1858a601b6bffdf41163ae3":
+          bps: 3
+          owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
@@ -584,6 +864,20 @@ ethereum:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       katana:
+        "0x0000000000000000000000000b51afdd3f43446a621c555b16a1cb781d8443ad":
+          bps: 3
+          owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000936e8a1fbd8317be59a9b8924a300993c8bf7ce6":
+          bps: 3
+          owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
@@ -592,6 +886,20 @@ ethereum:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       polygon:
+        "0x00000000000000000000000028a96f9928db06317356caacd5641c4fde4424c7":
+          bps: 3
+          owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000766a80a7a6bba555731dc1726db5bfa030631270":
+          bps: 3
+          owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
@@ -601,6 +909,13 @@ ethereum:
           type: OffchainQuotedLinearFee
       solanamainnet:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0xf5324d5c5be7eb842fb738d13de87ee39cb9b6629ea6566c14241cd27a9b788b":
           bps: 3
           owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
           quoteSigners:
@@ -636,37 +951,22 @@ katana:
     type: fallbackRoutingHook
   interchainSecurityModule:
     modules:
-      - lowerIsm:
-          domains:
-            arbitrum:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            base:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            bsc:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            citrea:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            ethereum:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-            polygon:
-              relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-              type: trustedRelayerIsm
-          owner: "0x956993Aee1CFFA32942b5ddC6Db2E8620b85cfbC"
-          type: domainRoutingIsm
-        threshold: 1000000000
-        type: amountRoutingIsm
-        upperIsm:
-          domains: {}
-          owner: "0x956993Aee1CFFA32942b5ddC6Db2E8620b85cfbC"
-          type: defaultFallbackRoutingIsm
       - domains: {}
         owner: "0x956993Aee1CFFA32942b5ddC6Db2E8620b85cfbC"
         type: defaultFallbackRoutingIsm
+      - domains:
+          arbitrum: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
+          base: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
+          bsc: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
+          citrea: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
+          ethereum: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
+          polygon: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
+          solanamainnet:
+            domains: {}
+            owner: "0x956993Aee1CFFA32942b5ddC6Db2E8620b85cfbC"
+            type: defaultFallbackRoutingIsm
+        owner: "0x956993Aee1CFFA32942b5ddC6Db2E8620b85cfbC"
+        type: domainRoutingIsm
     threshold: 1
     type: staticAggregationIsm
   owner: "0x956993Aee1CFFA32942b5ddC6Db2E8620b85cfbC"
@@ -674,6 +974,20 @@ katana:
   tokenFee:
     feeContracts:
       arbitrum:
+        "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4":
+          bps: 3
+          owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000ebc079d41c41a0ef7e54aa7af867df9a621c9be0":
+          bps: 3
+          owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
@@ -682,6 +996,20 @@ katana:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       base:
+        "0x000000000000000000000000253821543c24623ecd3cebced704359af16cf38f":
+          bps: 3
+          owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x0000000000000000000000007abbb4ea8a5895127500cf0c15830c9eb9f61f96":
+          bps: 3
+          owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
@@ -690,6 +1018,20 @@ katana:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       bsc:
+        "0x000000000000000000000000050dcc964bca53ef1a98a2347995cabc73ce25b9":
+          bps: 3
+          owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x0000000000000000000000006e66a10ce72fbdfa45ab7de3693321246e254123":
+          bps: 3
+          owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
@@ -698,6 +1040,13 @@ katana:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       citrea:
+        "0x0000000000000000000000002bef59e84615371304bd731601f6344f5f304504":
+          bps: 3
+          owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
@@ -706,6 +1055,20 @@ katana:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       ethereum:
+        "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f":
+          bps: 3
+          owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000eb1b48b238e15a62e1858a601b6bffdf41163ae3":
+          bps: 3
+          owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
@@ -714,6 +1077,20 @@ katana:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       katana:
+        "0x0000000000000000000000000b51afdd3f43446a621c555b16a1cb781d8443ad":
+          bps: 3
+          owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000936e8a1fbd8317be59a9b8924a300993c8bf7ce6":
+          bps: 3
+          owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
@@ -722,6 +1099,20 @@ katana:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       polygon:
+        "0x00000000000000000000000028a96f9928db06317356caacd5641c4fde4424c7":
+          bps: 3
+          owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000766a80a7a6bba555731dc1726db5bfa030631270":
+          bps: 3
+          owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
@@ -731,6 +1122,13 @@ katana:
           type: OffchainQuotedLinearFee
       solanamainnet:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0xf5324d5c5be7eb842fb738d13de87ee39cb9b6629ea6566c14241cd27a9b788b":
           bps: 3
           owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
           quoteSigners:
@@ -794,39 +1192,14 @@ polygon:
       - domains:
           arbitrum: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
           base: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
-          bsc:
-            modules:
-              - lowerIsm:
-                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-                  type: trustedRelayerIsm
-                threshold: 1000000000
-                type: amountRoutingIsm
-                upperIsm:
-                  domains: {}
-                  owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
-                  type: defaultFallbackRoutingIsm
-              - domains: {}
-                owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
-                type: defaultFallbackRoutingIsm
-            threshold: 1
-            type: staticAggregationIsm
+          bsc: "0xdd7Ed4C267913E54868039FBa09e6Cd3d0Ac7Dcd"
+          citrea: "0xdd7Ed4C267913E54868039FBa09e6Cd3d0Ac7Dcd"
           ethereum: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
-          katana:
-            modules:
-              - lowerIsm:
-                  relayer: "0x1e100476e9360b11a592eafe1c90328368e547b6"
-                  type: trustedRelayerIsm
-                threshold: 1000000000
-                type: amountRoutingIsm
-                upperIsm:
-                  domains: {}
-                  owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
-                  type: defaultFallbackRoutingIsm
-              - domains: {}
-                owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
-                type: defaultFallbackRoutingIsm
-            threshold: 1
-            type: staticAggregationIsm
+          katana: "0xdd7Ed4C267913E54868039FBa09e6Cd3d0Ac7Dcd"
+          solanamainnet:
+            domains: {}
+            owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
+            type: defaultFallbackRoutingIsm
         owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
         type: domainRoutingIsm
     threshold: 1
@@ -836,6 +1209,20 @@ polygon:
   tokenFee:
     feeContracts:
       arbitrum:
+        "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4":
+          bps: 3
+          owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000ebc079d41c41a0ef7e54aa7af867df9a621c9be0":
+          bps: 3
+          owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
@@ -844,6 +1231,20 @@ polygon:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       base:
+        "0x000000000000000000000000253821543c24623ecd3cebced704359af16cf38f":
+          bps: 3
+          owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x0000000000000000000000007abbb4ea8a5895127500cf0c15830c9eb9f61f96":
+          bps: 3
+          owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
@@ -852,6 +1253,20 @@ polygon:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       bsc:
+        "0x000000000000000000000000050dcc964bca53ef1a98a2347995cabc73ce25b9":
+          bps: 3
+          owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x0000000000000000000000006e66a10ce72fbdfa45ab7de3693321246e254123":
+          bps: 3
+          owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
@@ -860,6 +1275,13 @@ polygon:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       citrea:
+        "0x0000000000000000000000002bef59e84615371304bd731601f6344f5f304504":
+          bps: 3
+          owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
@@ -868,6 +1290,20 @@ polygon:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       ethereum:
+        "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f":
+          bps: 3
+          owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000eb1b48b238e15a62e1858a601b6bffdf41163ae3":
+          bps: 3
+          owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
@@ -876,6 +1312,20 @@ polygon:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       katana:
+        "0x0000000000000000000000000b51afdd3f43446a621c555b16a1cb781d8443ad":
+          bps: 3
+          owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000936e8a1fbd8317be59a9b8924a300993c8bf7ce6":
+          bps: 3
+          owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
@@ -884,6 +1334,20 @@ polygon:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
       polygon:
+        "0x00000000000000000000000028a96f9928db06317356caacd5641c4fde4424c7":
+          bps: 3
+          owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000766a80a7a6bba555731dc1726db5bfa030631270":
+          bps: 3
+          owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
@@ -893,6 +1357,13 @@ polygon:
           type: OffchainQuotedLinearFee
       solanamainnet:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0xf5324d5c5be7eb842fb738d13de87ee39cb9b6629ea6566c14241cd27a9b788b":
           bps: 3
           owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
           quoteSigners:

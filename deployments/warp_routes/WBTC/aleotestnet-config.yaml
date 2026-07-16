@@ -1,5 +1,6 @@
+# yaml-language-server: $schema=../schema.json
 tokens:
-  - addressOrDenom: test_hyp_warp_token_wbtc.aleo/aleo1x29rhydhtnjaekxma5hnhmgy2q36vx244rqrmpqmecc4wg3uyu9q0sll0m
+  - addressOrDenom: test_hyp_warp_token_wbtc_v2.aleo/aleo13w9329cdg63mh8rt8aa94hc8mkkv6f5a23qk6lyug72m029mjgpqw8m5ts
     chainName: aleotestnet
     connections:
       - token: ethereum|sepolia|0x2A872Ae01375A5ca7e044cb0e75cb97621Ca954A
@@ -8,13 +9,15 @@ tokens:
     name: Wrapped BTC
     standard: AleoHypSynthetic
     symbol: WBTC
+    tokenType: synthetic
   - addressOrDenom: "0x2A872Ae01375A5ca7e044cb0e75cb97621Ca954A"
     chainName: sepolia
     collateralAddressOrDenom: "0x52eea312378ef46140ebe67de8a143ba2304fd7c"
     connections:
-      - token: aleo|aleotestnet|test_hyp_warp_token_wbtc.aleo/aleo1x29rhydhtnjaekxma5hnhmgy2q36vx244rqrmpqmecc4wg3uyu9q0sll0m
+      - token: aleo|aleotestnet|test_hyp_warp_token_wbtc_v2.aleo/aleo13w9329cdg63mh8rt8aa94hc8mkkv6f5a23qk6lyug72m029mjgpqw8m5ts
     decimals: 8
     logoURI: /deployments/warp_routes/WBTC/logo.svg
     name: Wrapped BTC
     standard: EvmHypCollateral
     symbol: WBTC
+    tokenType: collateral
