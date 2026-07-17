@@ -6541,6 +6541,28 @@ SOL/radix:
       name: Solana
       standard: SealevelHypNative
       symbol: SOL
+SOL/solanadevnet:
+  tokens:
+    - addressOrDenom: "0x9E70c8eF4B62fba0da0Fb9430e82b7ca96a262E2"
+      chainName: sepolia
+      connections:
+        - token: sealevel|solanadevnet|8KqtoUt5ybA9Cmg2QynyDG2i8jBjyr2bNJvHZ9UD3N1E
+      decimals: 9
+      logoURI: /deployments/warp_routes/SOL/logo.svg
+      name: Solana
+      standard: EvmHypSynthetic
+      symbol: SOL
+      tokenType: synthetic
+    - addressOrDenom: 8KqtoUt5ybA9Cmg2QynyDG2i8jBjyr2bNJvHZ9UD3N1E
+      chainName: solanadevnet
+      connections:
+        - token: ethereum|sepolia|0x9E70c8eF4B62fba0da0Fb9430e82b7ca96a262E2
+      decimals: 9
+      logoURI: /deployments/warp_routes/SOL/logo.svg
+      name: Solana
+      standard: SealevelHypNative
+      symbol: SOL
+      tokenType: native
 SOL/solanamainnet-nara:
   tokens:
     - addressOrDenom: 46MmAWwKRAt9uvn7m44NXbVq2DCWBQE2r1TDw25nyXrt
