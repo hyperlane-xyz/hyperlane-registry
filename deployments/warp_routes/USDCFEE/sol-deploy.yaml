@@ -1,0 +1,91 @@
+arbitrum:
+  crossCollateralRouters:
+    "1399811149":
+      - "0x46dbb179282a58d3b5f85f7d436ec43253174001931778721af8feb374eef6c0"
+    "42161":
+      - "0x000000000000000000000000d038faba8cbd0552d2cf8ce09c8f046a2d088653"
+  decimals: 6
+  name: USDCFEE
+  owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+  symbol: USDCFEE
+  token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 30
+          owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+          quoteSigners:
+            - "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+            - "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+          type: OffchainQuotedLinearFee
+      base:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 30
+          owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+          quoteSigners:
+            - "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+            - "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+          type: OffchainQuotedLinearFee
+      solanamainnet:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 30
+          owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+          quoteSigners:
+            - "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+            - "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+          type: OffchainQuotedLinearFee
+    owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+    type: CrossCollateralRoutingFee
+  type: crossCollateral
+base:
+  type: synthetic
+  owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+  name: USDCFEE
+  symbol: USDCFEE
+  decimals: 6
+solanamainnet:
+  crossCollateralRouters:
+    "1399811149":
+      - "0x46dbb179282a58d3b5f85f7d436ec43253174001931778721af8feb374eef6c0"
+    "42161":
+      - "0x000000000000000000000000d038faba8cbd0552d2cf8ce09c8f046a2d088653"
+  decimals: 6
+  hook: BhNcatUDC2D5JTyeaqrdSukiVFsEHK7e3hVmKMztwefv
+  name: USDC
+  owner: Fkf5uWVPjj8Dvg716mUYQ2tRpeZpGhib8qme4k34uZy3
+  symbol: USDC
+  token: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+  tokenFee:
+    beneficiary: 8YKXFZM2URQjgi1hU97Fm96PAJR5cwK92rdsUvyuZ4pb
+    feeContracts:
+      arbitrum:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          beneficiary: 8YKXFZM2URQjgi1hU97Fm96PAJR5cwK92rdsUvyuZ4pb
+          bps: 30
+          owner: Fkf5uWVPjj8Dvg716mUYQ2tRpeZpGhib8qme4k34uZy3
+          quoteSigners:
+            - "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+            - "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+          type: OffchainQuotedLinearFee
+      base:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          beneficiary: 8YKXFZM2URQjgi1hU97Fm96PAJR5cwK92rdsUvyuZ4pb
+          bps: 30
+          owner: Fkf5uWVPjj8Dvg716mUYQ2tRpeZpGhib8qme4k34uZy3
+          quoteSigners:
+            - "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+            - "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+          type: OffchainQuotedLinearFee
+      solanamainnet:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          beneficiary: 8YKXFZM2URQjgi1hU97Fm96PAJR5cwK92rdsUvyuZ4pb
+          bps: 30
+          owner: Fkf5uWVPjj8Dvg716mUYQ2tRpeZpGhib8qme4k34uZy3
+          quoteSigners:
+            - "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+            - "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+          type: OffchainQuotedLinearFee
+    owner: Fkf5uWVPjj8Dvg716mUYQ2tRpeZpGhib8qme4k34uZy3
+    type: CrossCollateralRoutingFee
+  type: crossCollateral

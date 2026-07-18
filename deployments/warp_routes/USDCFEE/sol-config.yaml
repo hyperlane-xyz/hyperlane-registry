@@ -1,0 +1,40 @@
+tokens:
+  - chainName: arbitrum
+    standard: EvmHypCrossCollateralRouter
+    decimals: 6
+    symbol: USDCFEE
+    name: USD Coin
+    addressOrDenom: "0x04DA04589AcdecC29696d7FE05Af09be6C68D542"
+    collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+    connections:
+      - token: ethereum|base|0x2079997E72ffE2B4E455D94Cd88b5Eca0D9155e4
+      - token: sealevel|solanamainnet|Ent1k9zxcyKui4KQA7w1F67VYxU1GB3Efakji5txgTGN
+    tokenType: crossCollateral
+  - chainName: base
+    standard: EvmHypSynthetic
+    decimals: 6
+    symbol: USDCFEE
+    name: USDCFEE
+    addressOrDenom: "0x2079997E72ffE2B4E455D94Cd88b5Eca0D9155e4"
+    connections:
+      - token: ethereum|arbitrum|0x04DA04589AcdecC29696d7FE05Af09be6C68D542
+      - token: sealevel|solanamainnet|Ent1k9zxcyKui4KQA7w1F67VYxU1GB3Efakji5txgTGN
+    tokenType: synthetic
+  - chainName: solanamainnet
+    standard: SealevelHypCrossCollateral
+    tokenType: crossCollateral
+    decimals: 6
+    symbol: USDC
+    name: USDC
+    addressOrDenom: Ent1k9zxcyKui4KQA7w1F67VYxU1GB3Efakji5txgTGN
+    collateralAddressOrDenom: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    connections:
+      - token: ethereum|arbitrum|0x04DA04589AcdecC29696d7FE05Af09be6C68D542
+      - token: ethereum|base|0x2079997E72ffE2B4E455D94Cd88b5Eca0D9155e4
+options:
+  sealevel:
+    altAddresses:
+      solanamainnet:
+        core: HiDVe1J4Q4HXh6krfmr5KbDVpUx8tCfXwGRJz8p9TGhE
+        warpSpecific:
+          - DZDnwoUHegvr8XtdoFYTjiycAvDFeqiKQQmywjtz2Hir

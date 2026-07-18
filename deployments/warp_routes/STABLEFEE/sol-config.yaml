@@ -1,0 +1,58 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xd038FAba8CBD0552d2cf8CE09c8f046A2D088653"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+    connections:
+      - token: sealevel|solanamainnet|5mbqXZgj1SmzLpQngvhwhVzdDkxkrYGPFQSBGka2sfWP
+      - token: ethereum|arbitrum|0x04DA04589AcdecC29696d7FE05Af09be6C68D542
+      - token: sealevel|solanamainnet|Ent1k9zxcyKui4KQA7w1F67VYxU1GB3Efakji5txgTGN
+    decimals: 6
+    name: USDTFEE
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDTFEE
+    tokenType: crossCollateral
+  - addressOrDenom: 5mbqXZgj1SmzLpQngvhwhVzdDkxkrYGPFQSBGka2sfWP
+    chainName: solanamainnet
+    collateralAddressOrDenom: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+    connections:
+      - token: ethereum|arbitrum|0xd038FAba8CBD0552d2cf8CE09c8f046A2D088653
+      - token: ethereum|arbitrum|0x04DA04589AcdecC29696d7FE05Af09be6C68D542
+      - token: sealevel|solanamainnet|Ent1k9zxcyKui4KQA7w1F67VYxU1GB3Efakji5txgTGN
+    decimals: 6
+    name: USDTFEE
+    standard: SealevelHypCrossCollateral
+    symbol: USDTFEE
+    tokenType: crossCollateral
+  - addressOrDenom: "0x04DA04589AcdecC29696d7FE05Af09be6C68D542"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+    connections:
+      - token: ethereum|arbitrum|0xd038FAba8CBD0552d2cf8CE09c8f046A2D088653
+      - token: sealevel|solanamainnet|5mbqXZgj1SmzLpQngvhwhVzdDkxkrYGPFQSBGka2sfWP
+      - token: sealevel|solanamainnet|Ent1k9zxcyKui4KQA7w1F67VYxU1GB3Efakji5txgTGN
+    decimals: 6
+    name: USDCFEE
+    standard: EvmHypCrossCollateralRouter
+    symbol: USDCFEE
+    tokenType: crossCollateral
+  - addressOrDenom: Ent1k9zxcyKui4KQA7w1F67VYxU1GB3Efakji5txgTGN
+    chainName: solanamainnet
+    collateralAddressOrDenom: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    connections:
+      - token: ethereum|arbitrum|0xd038FAba8CBD0552d2cf8CE09c8f046A2D088653
+      - token: sealevel|solanamainnet|5mbqXZgj1SmzLpQngvhwhVzdDkxkrYGPFQSBGka2sfWP
+      - token: ethereum|arbitrum|0x04DA04589AcdecC29696d7FE05Af09be6C68D542
+    decimals: 6
+    name: USDCFEE
+    standard: SealevelHypCrossCollateral
+    symbol: USDCFEE
+    tokenType: crossCollateral
+options:
+  sealevel:
+    altAddresses:
+      solanamainnet:
+        core: ATwfDAK9hoYDWGVh5YJP6dQiavt33AneXjaoif7moyQz
+        warpSpecific:
+          - CQCmdBQ46XVE7KAEDLhXaEJprvQnM7NeVi1KL4QwuHdf
+          - DZDnwoUHegvr8XtdoFYTjiycAvDFeqiKQQmywjtz2Hir

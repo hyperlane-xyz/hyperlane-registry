@@ -1,0 +1,40 @@
+tokens:
+  - chainName: arbitrum
+    standard: EvmHypCrossCollateralRouter
+    tokenType: crossCollateral
+    decimals: 6
+    symbol: USDTFEE
+    name: USDTFEE
+    addressOrDenom: "0xd038FAba8CBD0552d2cf8CE09c8f046A2D088653"
+    collateralAddressOrDenom: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+    connections:
+      - token: ethereum|base|0x3edE2f2E4Ba434242Eb1865F52d279dA43CBFd02
+      - token: sealevel|solanamainnet|5mbqXZgj1SmzLpQngvhwhVzdDkxkrYGPFQSBGka2sfWP
+  - chainName: base
+    standard: EvmHypSynthetic
+    tokenType: synthetic
+    decimals: 6
+    symbol: USDTFEE
+    name: USDTFEE
+    addressOrDenom: "0x3edE2f2E4Ba434242Eb1865F52d279dA43CBFd02"
+    connections:
+      - token: ethereum|arbitrum|0xd038FAba8CBD0552d2cf8CE09c8f046A2D088653
+      - token: sealevel|solanamainnet|5mbqXZgj1SmzLpQngvhwhVzdDkxkrYGPFQSBGka2sfWP
+  - chainName: solanamainnet
+    standard: SealevelHypCrossCollateral
+    tokenType: crossCollateral
+    decimals: 6
+    symbol: USDTFEE
+    name: USDTFEE
+    addressOrDenom: 5mbqXZgj1SmzLpQngvhwhVzdDkxkrYGPFQSBGka2sfWP
+    collateralAddressOrDenom: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+    connections:
+      - token: ethereum|arbitrum|0xd038FAba8CBD0552d2cf8CE09c8f046A2D088653
+      - token: ethereum|base|0x3edE2f2E4Ba434242Eb1865F52d279dA43CBFd02
+options:
+  sealevel:
+    altAddresses:
+      solanamainnet:
+        core: ATwfDAK9hoYDWGVh5YJP6dQiavt33AneXjaoif7moyQz
+        warpSpecific:
+          - CQCmdBQ46XVE7KAEDLhXaEJprvQnM7NeVi1KL4QwuHdf
