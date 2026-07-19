@@ -1,0 +1,35 @@
+ethereum:
+  interchainSecurityModule:
+    modules:
+      - relayer: "0x3F62cE857EDb2E2B2ee80a4FbcE59fE7B943088a"
+        type: trustedRelayerIsm
+      - domains: {}
+        owner: "0x3F62cE857EDb2E2B2ee80a4FbcE59fE7B943088a"
+        type: defaultFallbackRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
+  isNft: false
+  mailbox: "0xeeA9fEf5e41845a12e0C3C929a2203750C301c1e"
+  owner: "0x3F62cE857EDb2E2B2ee80a4FbcE59fE7B943088a"
+  proxyAdmin:
+    address: "0xa52f464A701B98D6df0947402DEe049c63531fC6"
+    owner: "0x3F62cE857EDb2E2B2ee80a4FbcE59fE7B943088a"
+  type: synthetic
+
+turkchain:
+  interchainSecurityModule:
+    modules:
+      - relayer: "0x3F62cE857EDb2E2B2ee80a4FbcE59fE7B943088a"
+        type: trustedRelayerIsm
+      - domains: {}
+        owner: "0x3F62cE857EDb2E2B2ee80a4FbcE59fE7B943088a"
+        type: defaultFallbackRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
+  isNft: false
+  mailbox: "0x92421580c1d960c320C0FDE0849D4400B6A78455"
+  owner: "0x3F62cE857EDb2E2B2ee80a4FbcE59fE7B943088a"
+  proxyAdmin:
+    address: "0xDd58c6410a995857fa10db73792d3AA6b4c44Db6"
+    owner: "0x3F62cE857EDb2E2B2ee80a4FbcE59fE7B943088a"
+  type: native
