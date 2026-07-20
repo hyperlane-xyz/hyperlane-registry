@@ -24,3 +24,18 @@ sepolia:
   type: collateralCctp
   urls:
     - https://testnet-offchain-lookup.services.hyperlane.xyz/cctp/getCctpAttestation
+solanadevnet:
+  mailbox: "5yM5YrrzHCrp4ZPLKN9Y2eUAqEWsTbBqaorgbngQcR54"
+  owner: "D4jZ2sNktKgTrhWVMnjZb5BXP7MMh9N3y5ZLwkyKfozb"
+  # Circle's official CCTP v2 pre-mint USDC address on Solana Devnet.
+  token: "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU"
+  type: collateralCctp
+  remoteConfigs:
+    arbitrumsepolia:
+      circleDomain: 3
+      maxFee: "1000"
+      minFinalityThreshold: 1000
+    sepolia:
+      circleDomain: 0
+      maxFee: "1000"
+      minFinalityThreshold: 1000
