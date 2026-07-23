@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: terra16ql6l4fuudg0fxarcm4ukxlw0jalg5ljv8kg6h8f7dk9t2e7y6ssq2hqrm
+    chainName: terraclassictestnet
+    collateralAddressOrDenom: terra1zle6pwm9aztwu228e0spxrydlvmhj2qrq8ap3x2wrjc52kdvu4fs20rkch
+    connections:
+      - token: ethereum|sepolia|0xbF43aA4878f5Ad0fcAC12Cd3A835DD3506981048
+      - token: sealevel|solanatestnet|jNkiNLXQetj9L2tDX6xTgx9QP1tgtNgYXamouNbbwx9
+    decimals: 6
+    name: XPTO Teste
+    standard: CwHypCollateral
+    symbol: XPTO
+  - addressOrDenom: "0xbF43aA4878f5Ad0fcAC12Cd3A835DD3506981048"
+    chainName: sepolia
+    connections:
+      - token: cosmos|terraclassictestnet|terra16ql6l4fuudg0fxarcm4ukxlw0jalg5ljv8kg6h8f7dk9t2e7y6ssq2hqrm
+    decimals: 6
+    name: XPTO Teste
+    standard: EvmHypSynthetic
+    symbol: XPTO
+  - addressOrDenom: jNkiNLXQetj9L2tDX6xTgx9QP1tgtNgYXamouNbbwx9
+    chainName: solanatestnet
+    collateralAddressOrDenom: Db8VbMerYxksYwSSdetpy6Jhp2BrE4hk9Sh9dYJT5dQ2
+    connections:
+      - token: cosmos|terraclassictestnet|terra16ql6l4fuudg0fxarcm4ukxlw0jalg5ljv8kg6h8f7dk9t2e7y6ssq2hqrm
+    decimals: 6
+    name: XPTO
+    standard: SealevelHypSynthetic
+    symbol: XPTO
