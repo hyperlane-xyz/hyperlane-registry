@@ -1,4 +1,5 @@
 arbitrum:
+  contractVersion: 11.1.0
   decimals: 6
   interchainSecurityModule: "0x0000000000000000000000000000000000000000"
   name: Tether USD STAGE
@@ -6,7 +7,20 @@ arbitrum:
   symbol: USDTSTAGE
   token: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
   type: collateral
+bsc:
+  contractVersion: 11.1.0
+  decimals: 18
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  name: Tether USD STAGE
+  owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+  scale:
+    denominator: 1000000000000
+    numerator: 1
+  symbol: USDTSTAGE
+  token: "0x55d398326f99059fF775485246999027B3197955"
+  type: collateral
 ethereum:
+  contractVersion: 11.1.0
   decimals: 6
   interchainSecurityModule: "0x0000000000000000000000000000000000000000"
   name: Tether USD STAGE
@@ -15,6 +29,7 @@ ethereum:
   token: "0xdac17f958d2ee523a2206206994597c13d831ec7"
   type: collateral
 mode:
+  contractVersion: 11.1.0
   decimals: 6
   interchainSecurityModule: "0x0000000000000000000000000000000000000000"
   name: Tether USD STAGE
@@ -22,6 +37,7 @@ mode:
   symbol: USDTSTAGE
   type: synthetic
 plasma:
+  contractVersion: 11.1.0
   decimals: 6
   interchainSecurityModule: "0x0000000000000000000000000000000000000000"
   name: Tether USD STAGE
@@ -33,6 +49,16 @@ solanamainnet:
   decimals: 6
   foreignDeployment: 7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
   gas: 300000
+  hook: BhNcatUDC2D5JTyeaqrdSukiVFsEHK7e3hVmKMztwefv
   owner: 5seKh2p3B8Kq9nAE7X4svfX9uLt81wWAiDJuLK1XNgXf
   token: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+  type: collateral
+tron:
+  contractVersion: 11.1.0
+  decimals: 6
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
+  name: Tether USD STAGE
+  owner: "0x3e0A78A330F2b97059A4D507ca9d8292b65B6FB5"
+  symbol: USDTSTAGE
+  token: "0xa614f803b6fd780986a42c78ec9c7f77e6ded13c"
   type: collateral
