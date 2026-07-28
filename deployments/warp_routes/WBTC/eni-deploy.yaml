@@ -1,0 +1,19 @@
+eni:
+  decimals: 8
+  name: Wrapped BTC
+  owner: "0xf0004476DDC8985C067b6BDf94a1759f7b230809"
+  symbol: WBTC
+  tokenFee:
+    feeContracts:
+      ethereum:
+        bps: 8
+        owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
+        type: LinearFee
+    owner: "0xCB561B87731B2fedB704a3b56d59123277a5A181"
+    type: RoutingFee
+  type: synthetic
+ethereum:
+  decimals: 8
+  owner: "0x409dcC6874919D2194236e2F10b403E15CC7F149"
+  token: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+  type: collateral
