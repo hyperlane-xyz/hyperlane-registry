@@ -13,6 +13,16 @@ fi
 export BASE_COMMIT="$1"
 export HEAD_COMMIT="$2"
 
+# Registry args for the CLI. When RPC_OVERLAY_DIR is set (by build-rpc-overlay.sh)
+# it is appended as a second `--registry` so its private rpcUrls override the
+# public ones via MergedRegistry (later registry wins) without mutating the
+# committed metadata.
+REGISTRY_ARGS=(--registry "$(pwd)")
+if [ -n "${RPC_OVERLAY_DIR:-}" ]; then
+    REGISTRY_ARGS+=(--registry "$RPC_OVERLAY_DIR")
+    echo "Using private RPC overlay registry at ${RPC_OVERLAY_DIR}"
+fi
+
 is_m0_warp_route() {
     local warp_route_id="$1"
     local config_file="deployments/warp_routes/${warp_route_id}-config.yaml"
@@ -94,7 +104,7 @@ for WARP_ROUTE_ID in $WARP_ROUTE_IDS; do
     
     # Check 1: Registry YAML vs on-chain via published CLI
     if hyperlane \
-        --registry "$(pwd)" \
+        "${REGISTRY_ARGS[@]}" \
         -y \
         warp check \
         --warp-route-id "$WARP_ROUTE_ID"; then
