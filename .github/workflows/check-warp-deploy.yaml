@@ -57,6 +57,14 @@ jobs:
           echo "base_sha=${{ github.event.pull_request.base.sha }}" >> $GITHUB_OUTPUT
           echo "current_sha=${{ github.event.pull_request.head.sha }}" >> $GITHUB_OUTPUT
 
+      - name: Apply private RPC overrides
+        env:
+          # Prepends private RPC URLs onto the affected chains' metadata so the
+          # on-chain checks do not fail on flaky/paywalled public endpoints.
+          # Empty on fork PRs (no secret access) — the script no-ops then.
+          RPC_OVERRIDES_JSON: ${{ secrets.CHECK_WARP_DEPLOY_RPC_OVERRIDES }}
+        run: ./scripts/apply-rpc-overrides.sh
+
       - name: Check Warp Deploy
         env:
           HYPERLANE_SKIP_VERSION_CHECK: "1"
