@@ -30,16 +30,10 @@ is_m0_warp_route() {
 # - abstract-celestia: no abstract block explorer is configured in CI, so the
 #   contractVerificationStatus lookup fails the check. Revisit if an abstract
 #   explorer is added.
-# - CARR/carrchain: carrchain's only block explorer (CarrScan) has
-#   `family: other`, which the CLI verification client does not support, so the
-#   contractVerificationStatus lookup returns `error` and can never be
-#   `verified`. Revisit if CarrScan gains a supported explorer family
-#   (etherscan/blockscout/routescan).
 ROUTES_TO_SKIP=(
     "TIA/celestia-solanamainnet"
     "TIA/celestia-eclipsemainnet"
     "TIA/abstract-celestia"
-    "CARR/carrchain"
 )
 
 is_skipped_warp_route() {
