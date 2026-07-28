@@ -57,9 +57,22 @@ jobs:
           echo "base_sha=${{ github.event.pull_request.base.sha }}" >> $GITHUB_OUTPUT
           echo "current_sha=${{ github.event.pull_request.head.sha }}" >> $GITHUB_OUTPUT
 
+      - name: Build private RPC overlay registry
+        env:
+          # Builds a throwaway overlay registry of private RPC URLs for the
+          # affected chains and exports its path as RPC_OVERLAY_DIR, so the
+          # on-chain checks do not fail on flaky/paywalled public endpoints.
+          # The committed registry metadata is never mutated. Empty on fork PRs
+          # (no secret access) — the script no-ops then.
+          RPC_OVERRIDES_JSON: ${{ secrets.CHECK_WARP_DEPLOY_RPC_OVERRIDES }}
+        run: ./scripts/build-rpc-overlay.sh
+
       - name: Check Warp Deploy
         env:
           HYPERLANE_SKIP_VERSION_CHECK: "1"
+          # Set by the overlay step above; consumed by check-warp-deploy.sh as a
+          # second `--registry`. Empty when no overrides were provided.
+          RPC_OVERLAY_DIR: ${{ env.RPC_OVERLAY_DIR }}
           # Only set PR_NUMBER for non-fork PRs (enables PR commenting)
           PR_NUMBER: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.number || '' }}
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
