@@ -52,6 +52,22 @@ kiichain:
   owner: "0x30C48d3F3650C3f4A741588672CDc811Ed5303bd"
   type: native
 
+mantle:
+  decimals: 18
+  mailbox: "0x398633D19f4371e1DB5a8EFE90468eB70B1176AA"
+  name: Kiichain
+  owner: "0xcBDbef893cadc6B44E89f18b5fb45EA5554DC389"
+  symbol: KII
+  tokenFee:
+    feeContracts:
+      kiichain:
+        bps: 10
+        owner: "0x58c320539EfA1c81d93DD01156481FC58eb4457F"
+        type: LinearFee
+    owner: "0x58c320539EfA1c81d93DD01156481FC58eb4457F"
+    type: RoutingFee
+  type: synthetic
+
 polygon:
   decimals: 18
   mailbox: "0x5d934f4e2f797775e53561bB72aca21ba36B96BB"
