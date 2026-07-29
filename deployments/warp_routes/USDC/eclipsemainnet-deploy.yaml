@@ -2,34 +2,34 @@ arbitrum:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
-    avalanche:
+    "1":
       - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
       - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-    base:
+    "10":
       - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
       - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-    ethereum:
+    "130":
       - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
       - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-    hyperevm:
+    "137":
       - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
       - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-    ink:
+    "43114":
       - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
       - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-    linea:
+    "480":
       - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
       - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-    optimism:
+    "57073":
       - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
       - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-    polygon:
+    "59144":
       - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
       - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-    unichain:
+    "8453":
       - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
       - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-    worldchain:
+    "999":
       - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
       - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
   contractVersion: 10.1.3
@@ -48,55 +48,81 @@ arbitrum:
       avalanche:
         bps: 1.5
         owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       base:
         bps: 1.5
         owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       bsc:
         bps: 1.5
         owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         bps: 1.5
         owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       hyperevm:
         bps: 1.5
         owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ink:
         bps: 1.5
         owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       katana:
         bps: 1.5
         owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       linea:
         bps: 1.5
         owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       monad:
         bps: 1.5
         owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       optimism:
         bps: 1.5
         owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       polygon:
         bps: 1.5
         owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       unichain:
         bps: 1.5
         owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       worldchain:
         bps: 1.5
         owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
     type: RoutingFee
   type: collateral
@@ -104,34 +130,34 @@ avalanche:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
-    arbitrum:
+    "1":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    base:
+    "10":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    ethereum:
+    "130":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    hyperevm:
+    "137":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    ink:
+    "42161":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    linea:
+    "480":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    optimism:
+    "57073":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    polygon:
+    "59144":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    unichain:
+    "8453":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    worldchain:
+    "999":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
   contractVersion: 10.1.5
@@ -150,55 +176,81 @@ avalanche:
       arbitrum:
         bps: 1.5
         owner: "0xDE41E9C00B8aCb0e0013Bc197560e6bA5E7c3E67"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       base:
         bps: 1.5
         owner: "0xDE41E9C00B8aCb0e0013Bc197560e6bA5E7c3E67"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       bsc:
         bps: 1.5
         owner: "0xDE41E9C00B8aCb0e0013Bc197560e6bA5E7c3E67"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         bps: 1.5
         owner: "0xDE41E9C00B8aCb0e0013Bc197560e6bA5E7c3E67"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       hyperevm:
         bps: 1.5
         owner: "0xDE41E9C00B8aCb0e0013Bc197560e6bA5E7c3E67"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ink:
         bps: 1.5
         owner: "0xDE41E9C00B8aCb0e0013Bc197560e6bA5E7c3E67"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       katana:
         bps: 1.5
         owner: "0xDE41E9C00B8aCb0e0013Bc197560e6bA5E7c3E67"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       linea:
         bps: 1.5
         owner: "0xDE41E9C00B8aCb0e0013Bc197560e6bA5E7c3E67"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       monad:
         bps: 1.5
         owner: "0xDE41E9C00B8aCb0e0013Bc197560e6bA5E7c3E67"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       optimism:
         bps: 1.5
         owner: "0xDE41E9C00B8aCb0e0013Bc197560e6bA5E7c3E67"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       polygon:
         bps: 1.5
         owner: "0xDE41E9C00B8aCb0e0013Bc197560e6bA5E7c3E67"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       unichain:
         bps: 1.5
         owner: "0xDE41E9C00B8aCb0e0013Bc197560e6bA5E7c3E67"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       worldchain:
         bps: 1.5
         owner: "0xDE41E9C00B8aCb0e0013Bc197560e6bA5E7c3E67"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0xDE41E9C00B8aCb0e0013Bc197560e6bA5E7c3E67"
     type: RoutingFee
   type: collateral
@@ -206,34 +258,34 @@ base:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
-    arbitrum:
+    "1":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-    avalanche:
+    "10":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-    ethereum:
+    "130":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-    hyperevm:
+    "137":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-    ink:
+    "42161":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-    linea:
+    "43114":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-    optimism:
+    "480":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-    polygon:
+    "57073":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-    unichain:
+    "59144":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-    worldchain:
+    "999":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
   contractVersion: 10.1.3
@@ -252,55 +304,81 @@ base:
       arbitrum:
         bps: 1.5
         owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       avalanche:
         bps: 1.5
         owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       bsc:
         bps: 1.5
         owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         bps: 1.5
         owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       hyperevm:
         bps: 1.5
         owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ink:
         bps: 1.5
         owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       katana:
         bps: 1.5
         owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       linea:
         bps: 1.5
         owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       monad:
         bps: 1.5
         owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       optimism:
         bps: 1.5
         owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       polygon:
         bps: 1.5
         owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       unichain:
         bps: 1.5
         owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       worldchain:
         bps: 1.5
         owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
     type: RoutingFee
   type: collateral
@@ -321,55 +399,81 @@ bsc:
       arbitrum:
         bps: 1.5
         owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       avalanche:
         bps: 1.5
         owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       base:
         bps: 1.5
         owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         bps: 1.5
         owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       hyperevm:
         bps: 1.5
         owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ink:
         bps: 1.5
         owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       katana:
         bps: 1.5
         owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       linea:
         bps: 1.5
         owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       monad:
         bps: 1.5
         owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       optimism:
         bps: 1.5
         owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       polygon:
         bps: 1.5
         owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       unichain:
         bps: 1.5
         owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       worldchain:
         bps: 1.5
         owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
     type: RoutingFee
   type: collateral
@@ -383,34 +487,34 @@ ethereum:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
-    arbitrum:
+    "10":
       - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
       - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-    avalanche:
+    "130":
       - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
       - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-    base:
+    "137":
       - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
       - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-    hyperevm:
+    "42161":
       - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
       - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-    ink:
+    "43114":
       - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
       - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-    linea:
+    "480":
       - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
       - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-    optimism:
+    "57073":
       - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
       - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-    polygon:
+    "59144":
       - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
       - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-    unichain:
+    "8453":
       - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
       - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
-    worldchain:
+    "999":
       - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
       - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
   contractVersion: 10.1.3
@@ -429,55 +533,81 @@ ethereum:
       arbitrum:
         bps: 1.5
         owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       avalanche:
         bps: 1.5
         owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       base:
         bps: 1.5
         owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       bsc:
         bps: 1.5
         owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       hyperevm:
         bps: 1.5
         owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ink:
         bps: 1.5
         owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       katana:
         bps: 1.5
         owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       linea:
         bps: 1.5
         owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       monad:
         bps: 1.5
         owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       optimism:
         bps: 1.5
         owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       polygon:
         bps: 1.5
         owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       unichain:
         bps: 1.5
         owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       worldchain:
         bps: 1.5
         owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
     type: RoutingFee
   type: collateral
@@ -485,34 +615,34 @@ hyperevm:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
-    arbitrum:
+    "1":
       - bridge: "0xDdf252a063f8c5C399B9ccDBbaDBA55225F53Da1"
       - bridge: "0xe10b7b030C75C80359841CB0ec892E233F03f145"
-    avalanche:
+    "10":
       - bridge: "0xDdf252a063f8c5C399B9ccDBbaDBA55225F53Da1"
       - bridge: "0xe10b7b030C75C80359841CB0ec892E233F03f145"
-    base:
+    "130":
       - bridge: "0xDdf252a063f8c5C399B9ccDBbaDBA55225F53Da1"
       - bridge: "0xe10b7b030C75C80359841CB0ec892E233F03f145"
-    ethereum:
+    "137":
       - bridge: "0xDdf252a063f8c5C399B9ccDBbaDBA55225F53Da1"
       - bridge: "0xe10b7b030C75C80359841CB0ec892E233F03f145"
-    ink:
+    "42161":
       - bridge: "0xDdf252a063f8c5C399B9ccDBbaDBA55225F53Da1"
       - bridge: "0xe10b7b030C75C80359841CB0ec892E233F03f145"
-    linea:
+    "43114":
       - bridge: "0xDdf252a063f8c5C399B9ccDBbaDBA55225F53Da1"
       - bridge: "0xe10b7b030C75C80359841CB0ec892E233F03f145"
-    optimism:
+    "480":
       - bridge: "0xDdf252a063f8c5C399B9ccDBbaDBA55225F53Da1"
       - bridge: "0xe10b7b030C75C80359841CB0ec892E233F03f145"
-    polygon:
+    "57073":
       - bridge: "0xDdf252a063f8c5C399B9ccDBbaDBA55225F53Da1"
       - bridge: "0xe10b7b030C75C80359841CB0ec892E233F03f145"
-    unichain:
+    "59144":
       - bridge: "0xDdf252a063f8c5C399B9ccDBbaDBA55225F53Da1"
       - bridge: "0xe10b7b030C75C80359841CB0ec892E233F03f145"
-    worldchain:
+    "8453":
       - bridge: "0xDdf252a063f8c5C399B9ccDBbaDBA55225F53Da1"
       - bridge: "0xe10b7b030C75C80359841CB0ec892E233F03f145"
   contractVersion: 10.1.5
@@ -531,55 +661,81 @@ hyperevm:
       arbitrum:
         bps: 1.5
         owner: "0x4831E1E44E907B5f12C660252f3B3b5483213C44"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       avalanche:
         bps: 1.5
         owner: "0x4831E1E44E907B5f12C660252f3B3b5483213C44"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       base:
         bps: 1.5
         owner: "0x4831E1E44E907B5f12C660252f3B3b5483213C44"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       bsc:
         bps: 1.5
         owner: "0x4831E1E44E907B5f12C660252f3B3b5483213C44"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         bps: 1.5
         owner: "0x4831E1E44E907B5f12C660252f3B3b5483213C44"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ink:
         bps: 1.5
         owner: "0x4831E1E44E907B5f12C660252f3B3b5483213C44"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       katana:
         bps: 1.5
         owner: "0x4831E1E44E907B5f12C660252f3B3b5483213C44"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       linea:
         bps: 1.5
         owner: "0x4831E1E44E907B5f12C660252f3B3b5483213C44"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       monad:
         bps: 1.5
         owner: "0x4831E1E44E907B5f12C660252f3B3b5483213C44"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       optimism:
         bps: 1.5
         owner: "0x4831E1E44E907B5f12C660252f3B3b5483213C44"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       polygon:
         bps: 1.5
         owner: "0x4831E1E44E907B5f12C660252f3B3b5483213C44"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       unichain:
         bps: 1.5
         owner: "0x4831E1E44E907B5f12C660252f3B3b5483213C44"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       worldchain:
         bps: 1.5
         owner: "0x4831E1E44E907B5f12C660252f3B3b5483213C44"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0x4831E1E44E907B5f12C660252f3B3b5483213C44"
     type: RoutingFee
   type: collateral
@@ -587,34 +743,34 @@ ink:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
-    arbitrum:
+    "1":
       - bridge: "0x92dFEB6f7Daa532de0F3c75c2091e1607c6593b7"
       - bridge: "0x70CF23d09784fCA62be304c928BCA9F1801B1F21"
-    avalanche:
+    "10":
       - bridge: "0x92dFEB6f7Daa532de0F3c75c2091e1607c6593b7"
       - bridge: "0x70CF23d09784fCA62be304c928BCA9F1801B1F21"
-    base:
+    "130":
       - bridge: "0x92dFEB6f7Daa532de0F3c75c2091e1607c6593b7"
       - bridge: "0x70CF23d09784fCA62be304c928BCA9F1801B1F21"
-    ethereum:
+    "137":
       - bridge: "0x92dFEB6f7Daa532de0F3c75c2091e1607c6593b7"
       - bridge: "0x70CF23d09784fCA62be304c928BCA9F1801B1F21"
-    hyperevm:
+    "42161":
       - bridge: "0x92dFEB6f7Daa532de0F3c75c2091e1607c6593b7"
       - bridge: "0x70CF23d09784fCA62be304c928BCA9F1801B1F21"
-    linea:
+    "43114":
       - bridge: "0x92dFEB6f7Daa532de0F3c75c2091e1607c6593b7"
       - bridge: "0x70CF23d09784fCA62be304c928BCA9F1801B1F21"
-    optimism:
+    "480":
       - bridge: "0x92dFEB6f7Daa532de0F3c75c2091e1607c6593b7"
       - bridge: "0x70CF23d09784fCA62be304c928BCA9F1801B1F21"
-    polygon:
+    "59144":
       - bridge: "0x92dFEB6f7Daa532de0F3c75c2091e1607c6593b7"
       - bridge: "0x70CF23d09784fCA62be304c928BCA9F1801B1F21"
-    unichain:
+    "8453":
       - bridge: "0x92dFEB6f7Daa532de0F3c75c2091e1607c6593b7"
       - bridge: "0x70CF23d09784fCA62be304c928BCA9F1801B1F21"
-    worldchain:
+    "999":
       - bridge: "0x92dFEB6f7Daa532de0F3c75c2091e1607c6593b7"
       - bridge: "0x70CF23d09784fCA62be304c928BCA9F1801B1F21"
   contractVersion: 10.1.5
@@ -633,55 +789,81 @@ ink:
       arbitrum:
         bps: 1.5
         owner: "0x77B326B3AE95973e875b2cb48C992e3F9B0A03d4"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       avalanche:
         bps: 1.5
         owner: "0x77B326B3AE95973e875b2cb48C992e3F9B0A03d4"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       base:
         bps: 1.5
         owner: "0x77B326B3AE95973e875b2cb48C992e3F9B0A03d4"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       bsc:
         bps: 1.5
         owner: "0x77B326B3AE95973e875b2cb48C992e3F9B0A03d4"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         bps: 1.5
         owner: "0x77B326B3AE95973e875b2cb48C992e3F9B0A03d4"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       hyperevm:
         bps: 1.5
         owner: "0x77B326B3AE95973e875b2cb48C992e3F9B0A03d4"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       katana:
         bps: 1.5
         owner: "0x77B326B3AE95973e875b2cb48C992e3F9B0A03d4"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       linea:
         bps: 1.5
         owner: "0x77B326B3AE95973e875b2cb48C992e3F9B0A03d4"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       monad:
         bps: 1.5
         owner: "0x77B326B3AE95973e875b2cb48C992e3F9B0A03d4"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       optimism:
         bps: 1.5
         owner: "0x77B326B3AE95973e875b2cb48C992e3F9B0A03d4"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       polygon:
         bps: 1.5
         owner: "0x77B326B3AE95973e875b2cb48C992e3F9B0A03d4"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       unichain:
         bps: 1.5
         owner: "0x77B326B3AE95973e875b2cb48C992e3F9B0A03d4"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       worldchain:
         bps: 1.5
         owner: "0x77B326B3AE95973e875b2cb48C992e3F9B0A03d4"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0x77B326B3AE95973e875b2cb48C992e3F9B0A03d4"
     type: RoutingFee
   type: collateral
@@ -702,55 +884,81 @@ katana:
       arbitrum:
         bps: 1.5
         owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       avalanche:
         bps: 1.5
         owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       base:
         bps: 1.5
         owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       bsc:
         bps: 1.5
         owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         bps: 1.5
         owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       hyperevm:
         bps: 1.5
         owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ink:
         bps: 1.5
         owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       linea:
         bps: 1.5
         owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       monad:
         bps: 1.5
         owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       optimism:
         bps: 1.5
         owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       polygon:
         bps: 1.5
         owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       unichain:
         bps: 1.5
         owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       worldchain:
         bps: 1.5
         owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
     type: RoutingFee
   type: collateral
@@ -758,34 +966,34 @@ linea:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
-    arbitrum:
+    "1":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    avalanche:
+    "10":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    base:
+    "130":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    ethereum:
+    "137":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    hyperevm:
+    "42161":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    ink:
+    "43114":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    optimism:
+    "480":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    polygon:
+    "57073":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    unichain:
+    "8453":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    worldchain:
+    "999":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
   contractVersion: 10.1.5
@@ -804,55 +1012,81 @@ linea:
       arbitrum:
         bps: 1.5
         owner: "0x0085f0Cd2B9c7faadee696496E110687841628BD"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       avalanche:
         bps: 1.5
         owner: "0x0085f0Cd2B9c7faadee696496E110687841628BD"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       base:
         bps: 1.5
         owner: "0x0085f0Cd2B9c7faadee696496E110687841628BD"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       bsc:
         bps: 1.5
         owner: "0x0085f0Cd2B9c7faadee696496E110687841628BD"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         bps: 1.5
         owner: "0x0085f0Cd2B9c7faadee696496E110687841628BD"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       hyperevm:
         bps: 1.5
         owner: "0x0085f0Cd2B9c7faadee696496E110687841628BD"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ink:
         bps: 1.5
         owner: "0x0085f0Cd2B9c7faadee696496E110687841628BD"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       katana:
         bps: 1.5
         owner: "0x0085f0Cd2B9c7faadee696496E110687841628BD"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       monad:
         bps: 1.5
         owner: "0x0085f0Cd2B9c7faadee696496E110687841628BD"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       optimism:
         bps: 1.5
         owner: "0x0085f0Cd2B9c7faadee696496E110687841628BD"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       polygon:
         bps: 1.5
         owner: "0x0085f0Cd2B9c7faadee696496E110687841628BD"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       unichain:
         bps: 1.5
         owner: "0x0085f0Cd2B9c7faadee696496E110687841628BD"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       worldchain:
         bps: 1.5
         owner: "0x0085f0Cd2B9c7faadee696496E110687841628BD"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0x0085f0Cd2B9c7faadee696496E110687841628BD"
     type: RoutingFee
   type: collateral
@@ -873,55 +1107,81 @@ monad:
       arbitrum:
         bps: 1.5
         owner: "0x439d4a5b5F756d305354C41EB297B4d1f571ef56"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       avalanche:
         bps: 1.5
         owner: "0x439d4a5b5F756d305354C41EB297B4d1f571ef56"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       base:
         bps: 1.5
         owner: "0x439d4a5b5F756d305354C41EB297B4d1f571ef56"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       bsc:
         bps: 1.5
         owner: "0x439d4a5b5F756d305354C41EB297B4d1f571ef56"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         bps: 1.5
         owner: "0x439d4a5b5F756d305354C41EB297B4d1f571ef56"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       hyperevm:
         bps: 1.5
         owner: "0x439d4a5b5F756d305354C41EB297B4d1f571ef56"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ink:
         bps: 1.5
         owner: "0x439d4a5b5F756d305354C41EB297B4d1f571ef56"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       katana:
         bps: 1.5
         owner: "0x439d4a5b5F756d305354C41EB297B4d1f571ef56"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       linea:
         bps: 1.5
         owner: "0x439d4a5b5F756d305354C41EB297B4d1f571ef56"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       optimism:
         bps: 1.5
         owner: "0x439d4a5b5F756d305354C41EB297B4d1f571ef56"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       polygon:
         bps: 1.5
         owner: "0x439d4a5b5F756d305354C41EB297B4d1f571ef56"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       unichain:
         bps: 1.5
         owner: "0x439d4a5b5F756d305354C41EB297B4d1f571ef56"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       worldchain:
         bps: 1.5
         owner: "0x439d4a5b5F756d305354C41EB297B4d1f571ef56"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0x439d4a5b5F756d305354C41EB297B4d1f571ef56"
     type: RoutingFee
   type: collateral
@@ -929,34 +1189,34 @@ optimism:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
-    arbitrum:
+    "1":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x4eFaacbf0D3d57b401Cb6B559e84b344448b0C30"
-    avalanche:
+    "130":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x4eFaacbf0D3d57b401Cb6B559e84b344448b0C30"
-    base:
+    "137":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x4eFaacbf0D3d57b401Cb6B559e84b344448b0C30"
-    ethereum:
+    "42161":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x4eFaacbf0D3d57b401Cb6B559e84b344448b0C30"
-    hyperevm:
+    "43114":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x4eFaacbf0D3d57b401Cb6B559e84b344448b0C30"
-    ink:
+    "480":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x4eFaacbf0D3d57b401Cb6B559e84b344448b0C30"
-    linea:
+    "57073":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x4eFaacbf0D3d57b401Cb6B559e84b344448b0C30"
-    polygon:
+    "59144":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x4eFaacbf0D3d57b401Cb6B559e84b344448b0C30"
-    unichain:
+    "8453":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x4eFaacbf0D3d57b401Cb6B559e84b344448b0C30"
-    worldchain:
+    "999":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x4eFaacbf0D3d57b401Cb6B559e84b344448b0C30"
   contractVersion: 10.1.3
@@ -975,55 +1235,81 @@ optimism:
       arbitrum:
         bps: 1.5
         owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       avalanche:
         bps: 1.5
         owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       base:
         bps: 1.5
         owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       bsc:
         bps: 1.5
         owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         bps: 1.5
         owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       hyperevm:
         bps: 1.5
         owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ink:
         bps: 1.5
         owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       katana:
         bps: 1.5
         owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       linea:
         bps: 1.5
         owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       monad:
         bps: 1.5
         owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       polygon:
         bps: 1.5
         owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       unichain:
         bps: 1.5
         owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       worldchain:
         bps: 1.5
         owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0xEB5745ce8dB26a5A93541F83db7d1F4223e13175"
     type: RoutingFee
   type: collateral
@@ -1031,34 +1317,34 @@ polygon:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
-    arbitrum:
+    "1":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
-    avalanche:
+    "10":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
-    base:
+    "130":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
-    ethereum:
+    "42161":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
-    hyperevm:
+    "43114":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
-    ink:
+    "480":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
-    linea:
+    "57073":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
-    optimism:
+    "59144":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
-    unichain:
+    "8453":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
-    worldchain:
+    "999":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
   contractVersion: 10.1.3
@@ -1077,55 +1363,81 @@ polygon:
       arbitrum:
         bps: 1.5
         owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       avalanche:
         bps: 1.5
         owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       base:
         bps: 1.5
         owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       bsc:
         bps: 1.5
         owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         bps: 1.5
         owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       hyperevm:
         bps: 1.5
         owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ink:
         bps: 1.5
         owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       katana:
         bps: 1.5
         owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       linea:
         bps: 1.5
         owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       monad:
         bps: 1.5
         owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       optimism:
         bps: 1.5
         owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       unichain:
         bps: 1.5
         owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       worldchain:
         bps: 1.5
         owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
     type: RoutingFee
   type: collateral
@@ -1140,34 +1452,34 @@ unichain:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
-    arbitrum:
+    "1":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    avalanche:
+    "10":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    base:
+    "137":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    ethereum:
+    "42161":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    hyperevm:
+    "43114":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    ink:
+    "480":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    linea:
+    "57073":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    optimism:
+    "59144":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    polygon:
+    "8453":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
-    worldchain:
+    "999":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
   contractVersion: 10.1.3
@@ -1186,55 +1498,81 @@ unichain:
       arbitrum:
         bps: 1.5
         owner: "0x7AAe345547E3DCf10d907F04202D454f82Ae3525"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       avalanche:
         bps: 1.5
         owner: "0x7AAe345547E3DCf10d907F04202D454f82Ae3525"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       base:
         bps: 1.5
         owner: "0x7AAe345547E3DCf10d907F04202D454f82Ae3525"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       bsc:
         bps: 1.5
         owner: "0x7AAe345547E3DCf10d907F04202D454f82Ae3525"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         bps: 1.5
         owner: "0x7AAe345547E3DCf10d907F04202D454f82Ae3525"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       hyperevm:
         bps: 1.5
         owner: "0x7AAe345547E3DCf10d907F04202D454f82Ae3525"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ink:
         bps: 1.5
         owner: "0x7AAe345547E3DCf10d907F04202D454f82Ae3525"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       katana:
         bps: 1.5
         owner: "0x7AAe345547E3DCf10d907F04202D454f82Ae3525"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       linea:
         bps: 1.5
         owner: "0x7AAe345547E3DCf10d907F04202D454f82Ae3525"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       monad:
         bps: 1.5
         owner: "0x7AAe345547E3DCf10d907F04202D454f82Ae3525"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       optimism:
         bps: 1.5
         owner: "0x7AAe345547E3DCf10d907F04202D454f82Ae3525"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       polygon:
         bps: 1.5
         owner: "0x7AAe345547E3DCf10d907F04202D454f82Ae3525"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       worldchain:
         bps: 1.5
         owner: "0x7AAe345547E3DCf10d907F04202D454f82Ae3525"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0x7AAe345547E3DCf10d907F04202D454f82Ae3525"
     type: RoutingFee
   type: collateral
@@ -1242,34 +1580,34 @@ worldchain:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
-    arbitrum:
+    "1":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    avalanche:
+    "10":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    base:
+    "130":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    ethereum:
+    "137":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    hyperevm:
+    "42161":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    ink:
+    "43114":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    linea:
+    "57073":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    optimism:
+    "59144":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    polygon:
+    "8453":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
-    unichain:
+    "999":
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
   contractVersion: 10.1.5
@@ -1288,55 +1626,81 @@ worldchain:
       arbitrum:
         bps: 1.5
         owner: "0xD9F36efa46100fB11AE6546CAb532e52974E4c18"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       avalanche:
         bps: 1.5
         owner: "0xD9F36efa46100fB11AE6546CAb532e52974E4c18"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       base:
         bps: 1.5
         owner: "0xD9F36efa46100fB11AE6546CAb532e52974E4c18"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       bsc:
         bps: 1.5
         owner: "0xD9F36efa46100fB11AE6546CAb532e52974E4c18"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         bps: 1.5
         owner: "0xD9F36efa46100fB11AE6546CAb532e52974E4c18"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       hyperevm:
         bps: 1.5
         owner: "0xD9F36efa46100fB11AE6546CAb532e52974E4c18"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ink:
         bps: 1.5
         owner: "0xD9F36efa46100fB11AE6546CAb532e52974E4c18"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       katana:
         bps: 1.5
         owner: "0xD9F36efa46100fB11AE6546CAb532e52974E4c18"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       linea:
         bps: 1.5
         owner: "0xD9F36efa46100fB11AE6546CAb532e52974E4c18"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       monad:
         bps: 1.5
         owner: "0xD9F36efa46100fB11AE6546CAb532e52974E4c18"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       optimism:
         bps: 1.5
         owner: "0xD9F36efa46100fB11AE6546CAb532e52974E4c18"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       polygon:
         bps: 1.5
         owner: "0xD9F36efa46100fB11AE6546CAb532e52974E4c18"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       unichain:
         bps: 1.5
         owner: "0xD9F36efa46100fB11AE6546CAb532e52974E4c18"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0xD9F36efa46100fB11AE6546CAb532e52974E4c18"
     type: RoutingFee
   type: collateral
