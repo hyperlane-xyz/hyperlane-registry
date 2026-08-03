@@ -12,6 +12,12 @@ bsc:
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
+      solanamainnet:
+        bps: 10
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       tron:
         bps: 10
         owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
@@ -35,6 +41,12 @@ ethereum:
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
+      solanamainnet:
+        bps: 10
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       tron:
         bps: 10
         owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
@@ -52,6 +64,28 @@ solanamainnet:
   owner: BNGDJ1h9brgt6FFVd8No1TVAH48Fp44d7jkuydr1URwJ
   symbol: WBTC
   token: 5XZw2LKTyrfvfiskJ78AMpackRjPcyCif1WhUsPDuVqQ
+  tokenFee:
+    feeContracts:
+      bsc:
+        bps: 10
+        owner: BNGDJ1h9brgt6FFVd8No1TVAH48Fp44d7jkuydr1URwJ
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 10
+        owner: BNGDJ1h9brgt6FFVd8No1TVAH48Fp44d7jkuydr1URwJ
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 10
+        owner: BNGDJ1h9brgt6FFVd8No1TVAH48Fp44d7jkuydr1URwJ
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+    owner: BNGDJ1h9brgt6FFVd8No1TVAH48Fp44d7jkuydr1URwJ
+    type: RoutingFee
   type: collateral
 tron:
   decimals: 8
@@ -64,11 +98,21 @@ tron:
       bsc:
         bps: 10
         owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         bps: 10
         owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
-        type: LinearFee
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      solanamainnet:
+        bps: 10
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
     type: RoutingFee
   type: collateral

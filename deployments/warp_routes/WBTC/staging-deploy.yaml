@@ -13,6 +13,13 @@ bsc:
           - "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
+      solanamainnet:
+        bps: 10
+        owner: "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+        quoteSigners:
+          - "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       tron:
         bps: 10
         owner: "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
@@ -38,6 +45,13 @@ ethereum:
           - "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
+      solanamainnet:
+        bps: 10
+        owner: "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+        quoteSigners:
+          - "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       tron:
         bps: 10
         owner: "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
@@ -56,6 +70,31 @@ solanamainnet:
   owner: DSdGzZZ8G9LcVJFpBwFgBVcY5nMM8g3DMRqzW7WwpDvR
   symbol: WBTC
   token: 5XZw2LKTyrfvfiskJ78AMpackRjPcyCif1WhUsPDuVqQ
+  tokenFee:
+    feeContracts:
+      bsc:
+        bps: 10
+        owner: DSdGzZZ8G9LcVJFpBwFgBVcY5nMM8g3DMRqzW7WwpDvR
+        quoteSigners:
+          - "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 10
+        owner: DSdGzZZ8G9LcVJFpBwFgBVcY5nMM8g3DMRqzW7WwpDvR
+        quoteSigners:
+          - "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 10
+        owner: DSdGzZZ8G9LcVJFpBwFgBVcY5nMM8g3DMRqzW7WwpDvR
+        quoteSigners:
+          - "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+    owner: DSdGzZZ8G9LcVJFpBwFgBVcY5nMM8g3DMRqzW7WwpDvR
+    type: RoutingFee
   type: collateral
 tron:
   decimals: 8
@@ -68,11 +107,24 @@ tron:
       bsc:
         bps: 10
         owner: "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
-        type: LinearFee
+        quoteSigners:
+          - "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         bps: 10
         owner: "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
-        type: LinearFee
+        quoteSigners:
+          - "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      solanamainnet:
+        bps: 10
+        owner: "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+        quoteSigners:
+          - "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0x22EA0e66c9aFe2879135f4d16B5627454C53877e"
     type: RoutingFee
   type: collateral
