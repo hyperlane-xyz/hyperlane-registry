@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: terra1stu3cl7mhtsc2mf9cputawfd6v6e4a2nkmhhphh47lsrr3j6ktdqlcfe2l
+    chainName: terraclassictestnet
+    collateralAddressOrDenom: terra1w7d0jqehn0ja3hkzsm0psk6z2hjz06lsq0nxnwkzkkq4fqwgq6tqa5te8e
+    connections:
+      - token: sealevel|solanatestnet|G3eEYHv2GrBJ6KTS3XQhRd7QYdwnfWjisQrSVWedQK4y
+      - token: ethereum|sepolia|0xc2Da334D32724B97D5990229a9752a0d31087bC9
+    decimals: 6
+    logoURI: https://raw.githubusercontent.com/JurisProtocol/assets/refs/heads/main/jurislogo.png
+    name: Juris Protocol
+    standard: CwHypCollateral
+    symbol: JURIS
+  - addressOrDenom: G3eEYHv2GrBJ6KTS3XQhRd7QYdwnfWjisQrSVWedQK4y
+    chainName: solanatestnet
+    collateralAddressOrDenom: ExzEij8z7xc71kvjuMHmejRkmM4ACgKjDWuEaXdDubRa
+    connections:
+      - token: cosmos|terraclassictestnet|terra1stu3cl7mhtsc2mf9cputawfd6v6e4a2nkmhhphh47lsrr3j6ktdqlcfe2l
+    decimals: 6
+    logoURI: https://raw.githubusercontent.com/JurisProtocol/assets/refs/heads/main/jurislogo.png
+    name: Juris Protocol
+    standard: SealevelHypSynthetic
+    symbol: JURIS
+  - addressOrDenom: "0xc2Da334D32724B97D5990229a9752a0d31087bC9"
+    chainName: sepolia
+    connections:
+      - token: cosmos|terraclassictestnet|terra1stu3cl7mhtsc2mf9cputawfd6v6e4a2nkmhhphh47lsrr3j6ktdqlcfe2l
+    decimals: 6
+    logoURI: https://raw.githubusercontent.com/JurisProtocol/assets/refs/heads/main/jurislogo.png
+    name: Juris Protocol
+    standard: EvmHypSynthetic
+    symbol: JURIS
