@@ -1,7 +1,8 @@
-# A list of warp route config IDs to be included in the app
+# Warp route config IDs to include as bridge-only routes in the universal router engine
 # Warp Route IDs use format `SYMBOL/chainname1-chainname2...` where chains are ordered alphabetically
-# If left null, all warp routes in the configured registry will be included
-# If set to a list (including an empty list), only the specified routes will be included
+# `warpRouteIds` must be an array; `null` is invalid
+# An empty array adds no bridge-only routes; statically configured swap routes remain included
+# Load failures use the last-known-good allowlist or the engine's built-in fallback
 warpRouteIds:
   # TIA routes
   - TIA/eclipsemainnet-stride
