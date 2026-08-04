@@ -108,7 +108,7 @@ adichain:
     symbol: ADI
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.adichain
+    - http: https://rpc.adifoundation.ai
   technicalStack: other
 aleo:
   blockExplorers:
@@ -381,8 +381,8 @@ arbitrum:
   protocol: ethereum
   rpcUrls:
     - http: https://arb1.arbitrum.io/rpc
-    - http: https://arbitrum.rpc.subquery.network/public
     - http: https://arbitrum.drpc.org
+    - http: https://arbitrum-one-rpc.publicnode.com
   technicalStack: arbitrumnitro
 arbitrumnova:
   availability:
@@ -864,12 +864,13 @@ base:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://base.drpc.org
-    - http: https://mainnet.base.org
-    - http: https://base.public.blockpi.network/v1/rpc/public
-    - http: https://base.llamarpc.com
-    - http: https://1rpc.io/base
     - http: https://base-pokt.nodies.app
+    - http: https://base.public.blockpi.network/v1/rpc/public
+    - http: https://mainnet.base.org
+    - http: https://base.drpc.org
+    - http: https://1rpc.io/base
+    - http: https://base.gateway.tenderly.co
+    - http: https://base-rpc.publicnode.com
   technicalStack: opstack
 basecamptestnet:
   availability:
@@ -1046,7 +1047,7 @@ blast:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.blast.io
-    - http: https://rpc.ankr.com/blast
+    - http: https://blast-rpc.publicnode.com
   technicalStack: opstack
 blastsepolia:
   blockExplorers:
@@ -1247,10 +1248,8 @@ bsc:
   protocol: ethereum
   rpcUrls:
     - http: https://bsc.drpc.org
-    - http: https://bnb.rpc.subquery.network/public
-    - http: https://binance.llamarpc.com
-    - http: https://bsc.blockrazor.xyz
-    - http: https://bsc-pokt.nodies.app
+    - http: https://bsc-rpc.publicnode.com
+    - http: https://bsc.rpc.blxrbdn.com
   technicalStack: other
 bsctestnet:
   blockExplorers:
@@ -2726,6 +2725,11 @@ ecotestnet:
   rpcUrls:
     - http: https://eco-testnet.rpc.caldera.xyz/http
 eden:
+  blockExplorers:
+    - apiUrl: https://eden.blockscout.com/api
+      family: blockscout
+      name: Eden Explorer
+      url: https://eden.blockscout.com
   blocks:
     confirmations: 1
     estimateBlockTime: 1
@@ -3975,6 +3979,11 @@ humanitytestnet:
     - http: https://rpc.testnet.humanity.org
 hyperevm:
   blockExplorers:
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=999
+      family: etherscan
+      name: HyperEVM Scan
+      url: https://hyperevmscan.io
     - apiUrl: https://www.hyperscan.com/api
       family: blockscout
       name: HyperEVM Explorer
@@ -6750,9 +6759,8 @@ polygon:
   protocol: ethereum
   rpcUrls:
     - http: https://polygon-bor.publicnode.com
-    - http: https://polygon-rpc.com
     - http: https://polygon.drpc.org
-    - http: https://polygon-pokt.nodies.app
+    - http: https://polygon.gateway.tenderly.co
   technicalStack: other
 polygonamoy:
   blockExplorers:
@@ -7245,6 +7253,8 @@ robinhood:
   displayName: Robinhood Chain
   domainId: 4663
   gasCurrencyCoinGeckoId: ethereum
+  index:
+    from: 47247
   name: robinhood
   nativeToken:
     decimals: 18
@@ -7252,8 +7262,8 @@ robinhood:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.chain.robinhood.com
-  technicalStack: other
+    - http: https://rpc.mainnet.chain.robinhood.com
+  technicalStack: arbitrumnitro
 rometestnet:
   availability:
     reasons:
@@ -9442,7 +9452,7 @@ viction:
   rpcUrls:
     - http: https://rpc.viction.xyz
     - http: https://viction.drpc.org
-    - http: https://viction.blockpi.network/v1/rpc/public
+    - http: https://88.rpc.thirdweb.com
   technicalStack: other
 wardenprotocol:
   blockExplorers:

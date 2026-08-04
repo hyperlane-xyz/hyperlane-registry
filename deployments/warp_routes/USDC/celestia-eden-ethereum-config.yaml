@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x726f757465725f61707000000000000000000000000000020000000000000015"
+    chainName: celestia
+    connections:
+      - token: ethereum|eden|0x67266e82cbc6185d555D0842eD81dF4026E7F66f
+      - token: ethereum|ethereum|0x6CF5640464BE070157D3173C69ca8F294c7595dF
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: CosmosNativeHypSynthetic
+    symbol: USDC
+  - addressOrDenom: "0x67266e82cbc6185d555D0842eD81dF4026E7F66f"
+    chainName: eden
+    connections:
+      - token: cosmosnative|celestia|0x726f757465725f61707000000000000000000000000000020000000000000015
+      - token: ethereum|ethereum|0x6CF5640464BE070157D3173C69ca8F294c7595dF
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypSynthetic
+    symbol: USDC
+  - addressOrDenom: "0x6CF5640464BE070157D3173C69ca8F294c7595dF"
+    chainName: ethereum
+    coinGeckoId: usd-coin
+    collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    connections:
+      - token: cosmosnative|celestia|0x726f757465725f61707000000000000000000000000000020000000000000015
+      - token: ethereum|eden|0x67266e82cbc6185d555D0842eD81dF4026E7F66f
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC

@@ -1,9 +1,12 @@
 ethereum:
   # Bump up gas cost due to withdrawing from the Vault
   gas: 100000
+  hook: "0xb044808982E45Fb4e6F34225FcdbFCf83875A031"
+  interchainSecurityModule: "0xEE3a7cBF5a28fAA173d346a4B7DD4904218710d4"
   owner: "0x64F6C20eAeaF8418F73E1D399d8b86B9eA26e6F2"
   token: "0xB1ea329f0B79d0b213957569594ca2a9dE637215"
   type: collateralVault
 incentiv:
+  interchainSecurityModule: "0x9fDe79BD608AfB4B95E271a03019e4A4629dd003"
   owner: "0x4c1B3430ec07F2D58b07a18c53B6f92603C2eF3F"
   type: synthetic

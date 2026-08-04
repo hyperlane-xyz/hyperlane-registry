@@ -13,6 +13,16 @@ fi
 export BASE_COMMIT="$1"
 export HEAD_COMMIT="$2"
 
+# Registry args for the CLI. When RPC_OVERLAY_DIR is set (by build-rpc-overlay.sh)
+# it is appended as a second `--registry` so its private rpcUrls override the
+# public ones via MergedRegistry (later registry wins) without mutating the
+# committed metadata.
+REGISTRY_ARGS=(--registry "$(pwd)")
+if [ -n "${RPC_OVERLAY_DIR:-}" ]; then
+    REGISTRY_ARGS+=(--registry "$RPC_OVERLAY_DIR")
+    echo "Using private RPC overlay registry at ${RPC_OVERLAY_DIR}"
+fi
+
 is_m0_warp_route() {
     local warp_route_id="$1"
     local config_file="deployments/warp_routes/${warp_route_id}-config.yaml"
@@ -20,6 +30,29 @@ is_m0_warp_route() {
     [ -f "$config_file" ] || return 1
 
     grep -Eq 'standard:[[:space:]]*EvmM0Portal(Lite)?' "$config_file"
+}
+
+# Warp routes the published `hyperlane warp check` CLI cannot verify on-chain,
+# so they are excluded from this PR check to avoid unactionable failures:
+# - celestia-solanamainnet / celestia-eclipsemainnet: no EVM chain in the route,
+#   so `warp check` throws "requires at least one EVM chain in the selected route
+#   config" and can never pass.
+# - abstract-celestia: no abstract block explorer is configured in CI, so the
+#   contractVerificationStatus lookup fails the check. Revisit if an abstract
+#   explorer is added.
+ROUTES_TO_SKIP=(
+    "TIA/celestia-solanamainnet"
+    "TIA/celestia-eclipsemainnet"
+    "TIA/abstract-celestia"
+)
+
+is_skipped_warp_route() {
+    local warp_route_id="$1"
+    local skip
+    for skip in "${ROUTES_TO_SKIP[@]}"; do
+        [ "$skip" = "$warp_route_id" ] && return 0
+    done
+    return 1
 }
 
 WARP_ROUTE_IDS=$(
@@ -61,10 +94,17 @@ for WARP_ROUTE_ID in $WARP_ROUTE_IDS; do
       JOB_SUMMARY+="| $WARP_ROUTE_ID | $ONCHAIN_STATUS | $CONFIG_SYNC_STATUS |\n"
       continue
     fi
+
+    if is_skipped_warp_route "$WARP_ROUTE_ID"; then
+      ONCHAIN_STATUS="N/A (skipped)"
+      CONFIG_SYNC_STATUS="N/A (skipped)"
+      JOB_SUMMARY+="| $WARP_ROUTE_ID | $ONCHAIN_STATUS | $CONFIG_SYNC_STATUS |\n"
+      continue
+    fi
     
     # Check 1: Registry YAML vs on-chain via published CLI
     if hyperlane \
-        --registry "$(pwd)" \
+        "${REGISTRY_ARGS[@]}" \
         -y \
         warp check \
         --warp-route-id "$WARP_ROUTE_ID"; then

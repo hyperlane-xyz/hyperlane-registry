@@ -170,6 +170,7 @@ APXETH/eclipsemainnet-ethereum:
       decimals: 9
       logoURI: /deployments/warp_routes/APXETH/logo.svg
       name: Autocompounding Pirex Ether
+      scale: 1000000000
       standard: SealevelHypSynthetic
       symbol: apxETH
     - addressOrDenom: "0xd34FE1685c28A68Bb4B8fAaadCb2769962AE737c"
@@ -650,6 +651,7 @@ CDX/base-solanamainnet-sophon:
       decimals: 9
       logoURI: /deployments/warp_routes/CDX/logo.svg
       name: Cod3x Token
+      scale: 1000000000
       standard: SealevelHypSynthetic
       symbol: CDX
     - addressOrDenom: "0x6ce50f6536fe864952d5aB9abAA3A52E4a7A125F"
@@ -2734,6 +2736,7 @@ ETN/electroneum:
       decimals: 9
       logoURI: /deployments/warp_routes/ETN/logo.svg
       name: ETN
+      scale: 1000000000
       standard: SealevelHypSynthetic
       symbol: ETN
 EURC/matchain:
@@ -4198,6 +4201,7 @@ GNET/galactica:
       decimals: 9
       logoURI: /deployments/warp_routes/GNET/logo.svg
       name: GNET
+      scale: 1000000000
       standard: SealevelHypSynthetic
       symbol: GNET
 GOAT/solanamainnet-soon:
@@ -4287,6 +4291,7 @@ HOLO/bsc-solanamainnet:
       decimals: 9
       logoURI: /deployments/warp_routes/HOLO/logo.svg
       name: Holoworld AI
+      scale: 1000000000
       standard: SealevelHypSynthetic
       symbol: HOLO
 HYPE/mantra:
@@ -4579,6 +4584,7 @@ KII/kiichain:
         - token: ethereum|polygon|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
         - token: ethereum|base|0x3EBA6644819546C44Eb3e7c3A92f034f921dcA80
         - token: ethereum|ethereum|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|mantle|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
       decimals: 18
       logoURI: /deployments/warp_routes/KII/logo.png
       name: Kiichain
@@ -4591,6 +4597,7 @@ KII/kiichain:
         - token: ethereum|polygon|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
         - token: ethereum|base|0x3EBA6644819546C44Eb3e7c3A92f034f921dcA80
         - token: ethereum|ethereum|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|mantle|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
       decimals: 18
       logoURI: /deployments/warp_routes/KII/logo.png
       name: Kiichain
@@ -4603,6 +4610,7 @@ KII/kiichain:
         - token: ethereum|bsc|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
         - token: ethereum|base|0x3EBA6644819546C44Eb3e7c3A92f034f921dcA80
         - token: ethereum|ethereum|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|mantle|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
       decimals: 18
       logoURI: /deployments/warp_routes/KII/logo.png
       name: Kiichain
@@ -4615,6 +4623,7 @@ KII/kiichain:
         - token: ethereum|bsc|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
         - token: ethereum|polygon|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
         - token: ethereum|ethereum|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|mantle|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
       decimals: 18
       logoURI: /deployments/warp_routes/KII/logo.png
       name: Kiichain
@@ -4627,6 +4636,20 @@ KII/kiichain:
         - token: ethereum|bsc|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
         - token: ethereum|polygon|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
         - token: ethereum|base|0x3EBA6644819546C44Eb3e7c3A92f034f921dcA80
+        - token: ethereum|mantle|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+      decimals: 18
+      logoURI: /deployments/warp_routes/KII/logo.png
+      name: Kiichain
+      standard: EvmHypSynthetic
+      symbol: KII
+    - addressOrDenom: "0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886"
+      chainName: mantle
+      connections:
+        - token: ethereum|kiichain|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|bsc|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|polygon|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|base|0x3EBA6644819546C44Eb3e7c3A92f034f921dcA80
+        - token: ethereum|ethereum|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
       decimals: 18
       logoURI: /deployments/warp_routes/KII/logo.png
       name: Kiichain
@@ -6346,6 +6369,7 @@ SMOL/arbitrum-abstract-ethereum-solanamainnet-base:
       decimals: 9
       logoURI: /deployments/warp_routes/SMOL/logo.svg
       name: SMOL
+      scale: 1000000000
       standard: SealevelHypSynthetic
       symbol: SMOL
 SOL/aleo:
@@ -6536,6 +6560,28 @@ SOL/radix:
       name: Solana
       standard: SealevelHypNative
       symbol: SOL
+SOL/solanadevnet:
+  tokens:
+    - addressOrDenom: "0x9E70c8eF4B62fba0da0Fb9430e82b7ca96a262E2"
+      chainName: sepolia
+      connections:
+        - token: sealevel|solanadevnet|8KqtoUt5ybA9Cmg2QynyDG2i8jBjyr2bNJvHZ9UD3N1E
+      decimals: 9
+      logoURI: /deployments/warp_routes/SOL/logo.svg
+      name: Solana
+      standard: EvmHypSynthetic
+      symbol: SOL
+      tokenType: synthetic
+    - addressOrDenom: 8KqtoUt5ybA9Cmg2QynyDG2i8jBjyr2bNJvHZ9UD3N1E
+      chainName: solanadevnet
+      connections:
+        - token: ethereum|sepolia|0x9E70c8eF4B62fba0da0Fb9430e82b7ca96a262E2
+      decimals: 9
+      logoURI: /deployments/warp_routes/SOL/logo.svg
+      name: Solana
+      standard: SealevelHypNative
+      symbol: SOL
+      tokenType: native
 SOL/solanamainnet-nara:
   tokens:
     - addressOrDenom: 46MmAWwKRAt9uvn7m44NXbVq2DCWBQE2r1TDw25nyXrt
@@ -7281,6 +7327,7 @@ TONY/base-solanamainnet:
       decimals: 9
       logoURI: /deployments/warp_routes/TONY/logo.png
       name: Big Tony
+      scale: 1000000000
       standard: SealevelHypSynthetic
       symbol: TONY
 TORUS/torus:
@@ -8300,6 +8347,40 @@ USDC/carrchain:
       logoURI: /deployments/warp_routes/USDC/logo.svg
       name: USD Coin
       scale: 1000000000000
+      standard: EvmHypCollateral
+      symbol: USDC
+USDC/celestia-eden-ethereum:
+  tokens:
+    - addressOrDenom: "0x726f757465725f61707000000000000000000000000000020000000000000015"
+      chainName: celestia
+      connections:
+        - token: ethereum|eden|0x67266e82cbc6185d555D0842eD81dF4026E7F66f
+        - token: ethereum|ethereum|0x6CF5640464BE070157D3173C69ca8F294c7595dF
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: CosmosNativeHypSynthetic
+      symbol: USDC
+    - addressOrDenom: "0x67266e82cbc6185d555D0842eD81dF4026E7F66f"
+      chainName: eden
+      connections:
+        - token: cosmosnative|celestia|0x726f757465725f61707000000000000000000000000000020000000000000015
+        - token: ethereum|ethereum|0x6CF5640464BE070157D3173C69ca8F294c7595dF
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
+      standard: EvmHypSynthetic
+      symbol: USDC
+    - addressOrDenom: "0x6CF5640464BE070157D3173C69ca8F294c7595dF"
+      chainName: ethereum
+      coinGeckoId: usd-coin
+      collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+      connections:
+        - token: cosmosnative|celestia|0x726f757465725f61707000000000000000000000000000020000000000000015
+        - token: ethereum|eden|0x67266e82cbc6185d555D0842eD81dF4026E7F66f
+      decimals: 6
+      logoURI: /deployments/warp_routes/USDC/logo.svg
+      name: USD Coin
       standard: EvmHypCollateral
       symbol: USDC
 USDC/coti-ethereum:
@@ -15932,6 +16013,7 @@ weETHs/eclipsemainnet-ethereum:
       decimals: 9
       logoURI: /deployments/warp_routes/weETHs/logo.svg
       name: Super Symbiotic LRT
+      scale: 1000000000
       standard: SealevelHypSynthetic
       symbol: weETHs
     - addressOrDenom: "0xef899e92DA472E014bE795Ecce948308958E25A2"
