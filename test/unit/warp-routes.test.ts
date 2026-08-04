@@ -112,13 +112,19 @@ describe('Warp Core Configs', () => {
   }
 
   it('Warp route allowlist only references existing route ids', () => {
-    const allowlist = parse(fs.readFileSync(WARP_ROUTE_ALLOWLIST_PATH, 'utf8')) as
-      | WarpRouteAllowlist
-      | undefined;
+    let allowlist: WarpRouteAllowlist | undefined;
+    try {
+      allowlist = parse(fs.readFileSync(WARP_ROUTE_ALLOWLIST_PATH, 'utf8')) as
+        | WarpRouteAllowlist
+        | undefined;
+    } catch (error) {
+      console.error(`Failed to load warp route allowlist at ${WARP_ROUTE_ALLOWLIST_PATH}`, error);
+      throw error;
+    }
     expect(allowlist?.warpRouteIds).to.be.an('array').that.is.not.empty;
 
     const seen = new Set<string>();
-    for (const id of allowlist!.warpRouteIds) {
+    for (const id of [...allowlist!.warpRouteIds].sort()) {
       expect(id, 'Allowlist route id must be a string').to.be.a('string');
       expect(id, `Invalid allowlist route id format ${id}`).to.match(WARP_ROUTE_ID_REGEX);
       expect(seen.has(id), `Duplicate allowlist route id ${id}`).to.be.false;
