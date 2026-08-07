@@ -1,4 +1,34 @@
+arbitrum:
+  contractVersion: 12.0.0
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
+  tokenFee:
+    bps: 5
+    owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    quoteSigners:
+      - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+      - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+    type: OffchainQuotedLinearFee
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      bufferCap: "25000000000"
+      rateLimitPerSecond: "120000000"
+      type: velo
 base:
+  contractVersion: 12.0.0
   hook:
     domains:
       mode:
@@ -57,26 +87,7 @@ base:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
-bitlayer:
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
+  mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
@@ -86,6 +97,7 @@ bitlayer:
       rateLimitPerSecond: "120000000"
       type: velo
 bob:
+  contractVersion: 12.0.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -97,6 +109,7 @@ bob:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
+  mailbox: "0x8358D8291e3bEDb04804975eEa0fe9fe0fAfB147"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
@@ -105,7 +118,8 @@ bob:
       bufferCap: "25000000000"
       rateLimitPerSecond: "120000000"
       type: velo
-botanix:
+bsc:
+  contractVersion: 12.0.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -117,8 +131,16 @@ botanix:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
+  mailbox: "0x2971b9Aec44bE4eb673DF1B88cDB57b96eefe8a4"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
+  tokenFee:
+    bps: 5
+    owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    quoteSigners:
+      - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+      - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+    type: OffchainQuotedLinearFee
   type: xERC20
   xERC20:
     warpRouteLimits:
@@ -126,6 +148,7 @@ botanix:
       rateLimitPerSecond: "120000000"
       type: velo
 celo:
+  contractVersion: 12.0.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -137,8 +160,16 @@ celo:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
+  mailbox: "0x50da3B3907A08a24fe4999F4Dcf337E8dC7954bb"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x9a3D8d7E931679374448FB2B661F664D42d05057"
+  tokenFee:
+    bps: 5
+    owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    quoteSigners:
+      - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+      - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+    type: OffchainQuotedLinearFee
   type: xERC20Lockbox
   xERC20:
     warpRouteLimits:
@@ -146,6 +177,7 @@ celo:
       rateLimitPerSecond: "120000000"
       type: velo
 ethereum:
+  contractVersion: 12.0.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -157,8 +189,16 @@ ethereum:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
+  mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x935EAaAb78B491Cd9281f438E413767893913983"
+  tokenFee:
+    bps: 5
+    owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    quoteSigners:
+      - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+      - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+    type: OffchainQuotedLinearFee
   type: xERC20Lockbox
   xERC20:
     extraBridges:
@@ -172,6 +212,7 @@ ethereum:
       rateLimitPerSecond: "120000000"
       type: velo
 fraxtal:
+  contractVersion: 12.0.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -183,26 +224,7 @@ fraxtal:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
-hashkey:
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
+  mailbox: "0x2f9DB5616fa3fAd1aB06cB2C906830BA63d135e3"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
@@ -212,6 +234,7 @@ hashkey:
       rateLimitPerSecond: "120000000"
       type: velo
 ink:
+  contractVersion: 12.0.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -223,26 +246,7 @@ ink:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
-linea:
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
+  mailbox: "0x7f50C5776722630a0024fAE05fDe8b47571D7B39"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
@@ -252,6 +256,7 @@ linea:
       rateLimitPerSecond: "120000000"
       type: velo
 lisk:
+  contractVersion: 12.0.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -263,26 +268,7 @@ lisk:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
-mantle:
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
+  mailbox: "0x2f2aFaE1139Ce54feFC03593FeE8AB2aDF4a85A7"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
@@ -292,6 +278,7 @@ mantle:
       rateLimitPerSecond: "120000000"
       type: velo
 metal:
+  contractVersion: 12.0.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -303,26 +290,7 @@ metal:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
-metis:
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
+  mailbox: "0x730f8a4128Fa8c53C777B62Baa1abeF94cAd34a9"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
@@ -332,6 +300,7 @@ metis:
       rateLimitPerSecond: "120000000"
       type: velo
 mode:
+  contractVersion: 12.0.0
   hook:
     domains:
       base:
@@ -390,6 +359,7 @@ mode:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
+  mailbox: "0x2f2aFaE1139Ce54feFC03593FeE8AB2aDF4a85A7"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
@@ -399,6 +369,7 @@ mode:
       rateLimitPerSecond: "120000000"
       type: velo
 optimism:
+  contractVersion: 12.0.0
   hook:
     domains:
       base:
@@ -457,26 +428,7 @@ optimism:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
-ronin:
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
+  mailbox: "0xd4C1905BB1D26BC93DAC913e13CaCC278CdCC80D"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
@@ -486,6 +438,7 @@ ronin:
       rateLimitPerSecond: "120000000"
       type: velo
 soneium:
+  contractVersion: 12.0.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -497,6 +450,7 @@ soneium:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
+  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
@@ -505,7 +459,8 @@ soneium:
       bufferCap: "25000000000"
       rateLimitPerSecond: "120000000"
       type: velo
-sonic:
+tea:
+  contractVersion: 12.0.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -517,15 +472,24 @@ sonic:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
+  mailbox: "0x3a867fCfFeC2B790970eeBDC9023E75B0a172aa7"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
+  tokenFee:
+    bps: 5
+    owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    quoteSigners:
+      - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+      - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+    type: OffchainQuotedLinearFee
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "25000000000"
       rateLimitPerSecond: "120000000"
       type: velo
-superseed:
+tron:
+  contractVersion: 12.0.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -537,28 +501,16 @@ superseed:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
+  mailbox: "0x6d5BeE57A58E282150c236ed8985550492a69788"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
-swell:
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
+  token: TF1cXmd5e7CfWp2jgBaVQz1TYgda4omzDy
+  tokenFee:
+    bps: 5
+    owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    quoteSigners:
+      - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+      - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+    type: OffchainQuotedLinearFee
   type: xERC20
   xERC20:
     warpRouteLimits:
@@ -566,6 +518,7 @@ swell:
       rateLimitPerSecond: "120000000"
       type: velo
 unichain:
+  contractVersion: 12.0.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -577,26 +530,7 @@ unichain:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
-worldchain:
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
+  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
@@ -606,6 +540,7 @@ worldchain:
       rateLimitPerSecond: "120000000"
       type: velo
 zerogravity:
+  contractVersion: 12.0.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -617,6 +552,7 @@ zerogravity:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
+  mailbox: "0x8428a1a7E97Fc75Fb7Ba5c4aec31B55e52bbe9D6"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
