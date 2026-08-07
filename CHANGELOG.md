@@ -1,5 +1,13 @@
 # @hyperlane-xyz/registry
 
+## 25.4.1
+
+### Patch Changes
+
+- deae018: Added the solanamainnet synthetic leg (owner, decimals, and destination gas) to the DIME/paradex warp route deploy config so the route can be evaluated by check-warp-deploy.
+- ae0198e: Removed the ronin leg from the MAGIC warp route, dropping its synthetic token and all connections to it, and renamed the route from `MAGIC/arbitrum-abstract-ronin-base` to `MAGIC/abstract`. The universal-router allowlist entry was updated to the new ID.
+- e4592c6: Pointed the USDT/eni warp route RoutingFee owners to the Turnkey warp-fees key (`0xe95C605096A1AD38BaC3E5210e145952Cbdc6998`) on the arbitrum, base, bsc, eni, ethereum, optimism, and polygon legs, reflecting the on-chain owner rotation. The tron leg's RoutingFee owner is intentionally left with governance (EVM ICA tooling cannot drive tron), and the inner per-destination fee-contract owners are unchanged.
+
 ## 25.4.0
 
 ### Minor Changes
