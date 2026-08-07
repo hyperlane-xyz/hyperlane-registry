@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Added Base deployment configs for the production Moonpay USDC- and USDT-sourced atomic local rebalancing bridges.
+Added deployment config for production Moonpay USDT-to-USDC atomic local rebalancing bridges on Arbitrum, Base, BSC, Ethereum, and Polygon.
