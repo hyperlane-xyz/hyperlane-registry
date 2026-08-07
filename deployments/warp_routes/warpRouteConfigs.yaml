@@ -1107,6 +1107,63 @@ CROSS/moonpay:
       name: USDT0
       standard: EvmHypCrossCollateralRouter
       symbol: USDT0
+CROSS/moonpay-localbridge-usdt:
+  tokens:
+    - addressOrDenom: "0x42090C67b41a51101a5Bb6ef16450898c42F5D76"
+      chainName: arbitrum
+      connections:
+        - token: ethereum|base|0x710520ae6da8638e1C8e2FB89Df79359e6bCE0f6
+        - token: ethereum|bsc|0x20Af529061af6D038448f900B23BB19F613c6d3b
+        - token: ethereum|ethereum|0x4B53fF6a975F0f887d4Df3F4C9B5815B54e4Ed1E
+        - token: ethereum|polygon|0xBBBDD95a46EEbB4021Fb96AfAe360fa7779d9265
+      decimals: 6
+      name: Moonpay Local Rebalancing Bridge
+      standard: EvmHypCollateral
+      symbol: mpALRB
+    - addressOrDenom: "0x710520ae6da8638e1C8e2FB89Df79359e6bCE0f6"
+      chainName: base
+      connections:
+        - token: ethereum|arbitrum|0x42090C67b41a51101a5Bb6ef16450898c42F5D76
+        - token: ethereum|bsc|0x20Af529061af6D038448f900B23BB19F613c6d3b
+        - token: ethereum|ethereum|0x4B53fF6a975F0f887d4Df3F4C9B5815B54e4Ed1E
+        - token: ethereum|polygon|0xBBBDD95a46EEbB4021Fb96AfAe360fa7779d9265
+      decimals: 6
+      name: Moonpay Local Rebalancing Bridge
+      standard: EvmHypCollateral
+      symbol: mpALRB
+    - addressOrDenom: "0x20Af529061af6D038448f900B23BB19F613c6d3b"
+      chainName: bsc
+      connections:
+        - token: ethereum|arbitrum|0x42090C67b41a51101a5Bb6ef16450898c42F5D76
+        - token: ethereum|base|0x710520ae6da8638e1C8e2FB89Df79359e6bCE0f6
+        - token: ethereum|ethereum|0x4B53fF6a975F0f887d4Df3F4C9B5815B54e4Ed1E
+        - token: ethereum|polygon|0xBBBDD95a46EEbB4021Fb96AfAe360fa7779d9265
+      decimals: 18
+      name: Moonpay Local Rebalancing Bridge
+      standard: EvmHypCollateral
+      symbol: mpALRB
+    - addressOrDenom: "0x4B53fF6a975F0f887d4Df3F4C9B5815B54e4Ed1E"
+      chainName: ethereum
+      connections:
+        - token: ethereum|arbitrum|0x42090C67b41a51101a5Bb6ef16450898c42F5D76
+        - token: ethereum|base|0x710520ae6da8638e1C8e2FB89Df79359e6bCE0f6
+        - token: ethereum|bsc|0x20Af529061af6D038448f900B23BB19F613c6d3b
+        - token: ethereum|polygon|0xBBBDD95a46EEbB4021Fb96AfAe360fa7779d9265
+      decimals: 6
+      name: Moonpay Local Rebalancing Bridge
+      standard: EvmHypCollateral
+      symbol: mpALRB
+    - addressOrDenom: "0xBBBDD95a46EEbB4021Fb96AfAe360fa7779d9265"
+      chainName: polygon
+      connections:
+        - token: ethereum|arbitrum|0x42090C67b41a51101a5Bb6ef16450898c42F5D76
+        - token: ethereum|base|0x710520ae6da8638e1C8e2FB89Df79359e6bCE0f6
+        - token: ethereum|bsc|0x20Af529061af6D038448f900B23BB19F613c6d3b
+        - token: ethereum|ethereum|0x4B53fF6a975F0f887d4Df3F4C9B5815B54e4Ed1E
+      decimals: 6
+      name: Moonpay Local Rebalancing Bridge
+      standard: EvmHypCollateral
+      symbol: mpALRB
 CROSS/moonpay-staging:
   tokens:
     - addressOrDenom: "0x92636a0A8AF8896809FCfb509c21F0d10a15304F"
