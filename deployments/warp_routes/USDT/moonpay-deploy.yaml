@@ -1,6 +1,8 @@
 arbitrum:
+  contractVersion: 12.0.0
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+    - "0x42090C67b41a51101a5Bb6ef16450898c42F5D76"
   allowedRebalancingBridges:
     "1":
       - bridge: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
@@ -9,6 +11,13 @@ arbitrum:
       - bridge: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
     "56":
       - bridge: "0x42B794FbF2Ae97d7E9001e21D36B0A5595B51B11"
+    "42161":
+      - bridge: "0x42090C67b41a51101a5Bb6ef16450898c42F5D76"
+  rebalanceTargets:
+    "42161":
+      - "0x000000000000000000000000ebc079d41c41a0ef7e54aa7af867df9a621c9be0"
+  rebalanceRecipients:
+    "42161": "0x000000000000000000000000ebc079d41c41a0ef7e54aa7af867df9a621c9be0"
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
@@ -237,6 +246,18 @@ arbitrum:
     type: CrossCollateralRoutingFee
   type: crossCollateral
 base:
+  contractVersion: 12.0.0
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+    - "0x710520ae6da8638e1C8e2FB89Df79359e6bCE0f6"
+  allowedRebalancingBridges:
+    "8453":
+      - bridge: "0x710520ae6da8638e1C8e2FB89Df79359e6bCE0f6"
+  rebalanceTargets:
+    "8453":
+      - "0x000000000000000000000000253821543c24623ecd3cebced704359af16cf38f"
+  rebalanceRecipients:
+    "8453": "0x000000000000000000000000253821543c24623ecd3cebced704359af16cf38f"
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
@@ -465,13 +486,22 @@ base:
     type: CrossCollateralRoutingFee
   type: crossCollateral
 bsc:
+  contractVersion: 12.0.0
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+    - "0x20Af529061af6D038448f900B23BB19F613c6d3b"
   allowedRebalancingBridges:
     "1":
       - bridge: "0xc13d466B9E196AfdE472856923E857cc298EDf1b"
     "42161":
       - bridge: "0xc13d466B9E196AfdE472856923E857cc298EDf1b"
+    "56":
+      - bridge: "0x20Af529061af6D038448f900B23BB19F613c6d3b"
+  rebalanceTargets:
+    "56":
+      - "0x0000000000000000000000006e66a10ce72fbdfa45ab7de3693321246e254123"
+  rebalanceRecipients:
+    "56": "0x0000000000000000000000006e66a10ce72fbdfa45ab7de3693321246e254123"
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
@@ -688,9 +718,13 @@ bsc:
     type: CrossCollateralRoutingFee
   type: crossCollateral
 ethereum:
+  contractVersion: 12.0.0
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+    - "0x4B53fF6a975F0f887d4Df3F4C9B5815B54e4Ed1E"
   allowedRebalancingBridges:
+    "1":
+      - bridge: "0x4B53fF6a975F0f887d4Df3F4C9B5815B54e4Ed1E"
     "137":
       - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
     "42161":
@@ -698,6 +732,11 @@ ethereum:
       - bridge: "0x647C621CEb36853Ef6A907E397Adf18568E70543"
     "56":
       - bridge: "0x647C621CEb36853Ef6A907E397Adf18568E70543"
+  rebalanceTargets:
+    "1":
+      - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
+  rebalanceRecipients:
+    "1": "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
@@ -1139,13 +1178,22 @@ katana:
     type: CrossCollateralRoutingFee
   type: crossCollateral
 polygon:
+  contractVersion: 12.0.0
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+    - "0xBBBDD95a46EEbB4021Fb96AfAe360fa7779d9265"
   allowedRebalancingBridges:
+    "137":
+      - bridge: "0xBBBDD95a46EEbB4021Fb96AfAe360fa7779d9265"
     "1":
       - bridge: "0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94"
     "42161":
       - bridge: "0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94"
+  rebalanceTargets:
+    "137":
+      - "0x00000000000000000000000028a96f9928db06317356caacd5641c4fde4424c7"
+  rebalanceRecipients:
+    "137": "0x00000000000000000000000028a96f9928db06317356caacd5641c4fde4424c7"
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
