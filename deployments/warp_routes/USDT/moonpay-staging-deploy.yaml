@@ -55,6 +55,11 @@ base:
     "8453":
       - "0x000000000000000000000000146fb3fcc2c9f547ee4f85a5b0497274cbd380d0"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  rebalanceRecipients:
+    "8453": "0x000000000000000000000000146fb3fcc2c9f547ee4f85a5b0497274cbd380d0"
+  rebalanceTargets:
+    "8453":
+      - "0x000000000000000000000000146fb3fcc2c9f547ee4f85a5b0497274cbd380d0"
   token: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
   type: crossCollateral
 bsc:
@@ -89,6 +94,90 @@ bsc:
     denominator: 1000000000000
     numerator: 1
   token: "0x55d398326f99059fF775485246999027B3197955"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        "0x0000000000000000000000009fb176528adf0bb7524ce752b2345c80ed24243f":
+          fallbackCurve:
+            breakpoints:
+              - "250000000000000000"
+              - "750000000000000000"
+            issuedAt: 0
+            marginalBps:
+              - 4
+              - 10
+              - 20
+          maxBands: 4
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedPiecewiseLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      base:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      bsc:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      citrea:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      ethereum:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      katana:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      polygon:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      solanamainnet:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+    owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    type: CrossCollateralRoutingFee
   type: crossCollateral
 ethereum:
   allowedRebalancers:
