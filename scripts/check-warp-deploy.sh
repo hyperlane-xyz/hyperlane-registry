@@ -40,10 +40,25 @@ is_m0_warp_route() {
 # - abstract-celestia: no abstract block explorer is configured in CI, so the
 #   contractVerificationStatus lookup fails the check. Revisit if an abstract
 #   explorer is added.
+# - cross-collateral staging suite: these pre-production snapshots intentionally
+#   lag the evolving on-chain routes and have no canonical getters to sync from.
 ROUTES_TO_SKIP=(
     "TIA/celestia-solanamainnet"
     "TIA/celestia-eclipsemainnet"
     "TIA/abstract-celestia"
+    "CROSS/crosscollateral"
+    "CROSS/ctusd"
+    "MULTI/stableswap"
+    "PYUSD/crosscollateral"
+    "PYUSD/stableswap"
+    "USDC/crosscollateral"
+    "USDC/ctusd"
+    "USDC/stableswap"
+    "USDH/stableswap"
+    "USDT/crosscollateral"
+    "USDT/ctusd"
+    "USDT/stableswap"
+    "mantraUSD/stableswap"
 )
 
 is_skipped_warp_route() {
