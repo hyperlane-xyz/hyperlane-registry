@@ -40,10 +40,14 @@ is_m0_warp_route() {
 # - abstract-celestia: no abstract block explorer is configured in CI, so the
 #   contractVerificationStatus lookup fails the check. Revisit if an abstract
 #   explorer is added.
+# - arbitrum-cheesechain: historical team-managed deployment has no checked-in
+#   deploy config, so the CLI's cross-collateral check cannot reconstruct the
+#   route. Bytecode/source attestation is tracked separately by Heimdall.
 ROUTES_TO_SKIP=(
     "TIA/celestia-solanamainnet"
     "TIA/celestia-eclipsemainnet"
     "TIA/abstract-celestia"
+    "USDC/arbitrum-cheesechain"
 )
 
 is_skipped_warp_route() {
