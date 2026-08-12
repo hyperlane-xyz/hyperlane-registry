@@ -11,19 +11,111 @@ arbitrum:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
   owner: "0x8abE651230Ce65f546eb78C9Ed7fe54e15650224"
   ownerOverrides:
     collateralProxyAdmin: "0x8abE651230Ce65f546eb78C9Ed7fe54e15650224"
     collateralToken: "0x8abE651230Ce65f546eb78C9Ed7fe54e15650224"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   tokenFee:
-    bps: 5
+    feeContracts:
+      base:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bob:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bsc:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      celo:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      fraxtal:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ink:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      lisk:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      metal:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      mode:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      soneium:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tea:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      unichain:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      zerogravity:
+        bps: 5
+        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-    quoteSigners:
-      - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-      - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
-    type: OffchainQuotedLinearFee
+    type: RoutingFee
   type: xERC20
   xERC20:
     warpRouteLimits:
@@ -90,7 +182,6 @@ base:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
   owner: "0xe38714D00cAa906065D872D177C1374C847035fF"
   ownerOverrides:
     collateralProxyAdmin: "0xe38714D00cAa906065D872D177C1374C847035fF"
@@ -131,7 +222,6 @@ bob:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0x8358D8291e3bEDb04804975eEa0fe9fe0fAfB147"
   owner: "0x790306c30eFeeAF3943ee3700C71D7B7812c85a1"
   ownerOverrides:
     collateralProxyAdmin: "0x790306c30eFeeAF3943ee3700C71D7B7812c85a1"
@@ -162,19 +252,111 @@ bsc:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0x2971b9Aec44bE4eb673DF1B88cDB57b96eefe8a4"
   owner: "0x09F4D4e765A911B867263d4Ff5e73323281De80D"
   ownerOverrides:
     collateralProxyAdmin: "0x09F4D4e765A911B867263d4Ff5e73323281De80D"
     collateralToken: "0x09F4D4e765A911B867263d4Ff5e73323281De80D"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   tokenFee:
-    bps: 5
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      base:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bob:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      celo:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      fraxtal:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ink:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      lisk:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      metal:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      mode:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      soneium:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tea:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      unichain:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      zerogravity:
+        bps: 5
+        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-    quoteSigners:
-      - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-      - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
-    type: OffchainQuotedLinearFee
+    type: RoutingFee
   type: xERC20
   xERC20:
     warpRouteLimits:
@@ -194,19 +376,111 @@ celo:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0x50da3B3907A08a24fe4999F4Dcf337E8dC7954bb"
   owner: "0xb527ea7ff1B14fEb9FFF98b5Cd750Bd311cD598F"
   ownerOverrides:
     collateralProxyAdmin: "0xb527ea7ff1B14fEb9FFF98b5Cd750Bd311cD598F"
     collateralToken: "0xb527ea7ff1B14fEb9FFF98b5Cd750Bd311cD598F"
   token: "0x5e5F4d6B03db16E7f00dE7C9AFAA53b92C8d1D42"
   tokenFee:
-    bps: 5
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      base:
+        bps: 5
+        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bob:
+        bps: 5
+        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bsc:
+        bps: 5
+        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 5
+        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      fraxtal:
+        bps: 5
+        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ink:
+        bps: 5
+        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      lisk:
+        bps: 5
+        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      metal:
+        bps: 5
+        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      mode:
+        bps: 5
+        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 5
+        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      soneium:
+        bps: 5
+        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tea:
+        bps: 5
+        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 5
+        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      unichain:
+        bps: 5
+        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      zerogravity:
+        bps: 5
+        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
-    quoteSigners:
-      - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-      - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
-    type: OffchainQuotedLinearFee
+    type: RoutingFee
   type: xERC20Lockbox
   xERC20:
     extraBridges:
@@ -232,19 +506,111 @@ ethereum:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
   owner: "0x469f45d05F8C3B3cE40d1640ffE66b795B1d2d22"
   ownerOverrides:
     collateralProxyAdmin: "0x469f45d05F8C3B3cE40d1640ffE66b795B1d2d22"
     collateralToken: "0x469f45d05F8C3B3cE40d1640ffE66b795B1d2d22"
   token: "0x6D265C7dD8d76F25155F1a7687C693FDC1220D12"
   tokenFee:
-    bps: 5
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      base:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bob:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bsc:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      celo:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      fraxtal:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ink:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      lisk:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      metal:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      mode:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      soneium:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tea:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      unichain:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      zerogravity:
+        bps: 5
+        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-    quoteSigners:
-      - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-      - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
-    type: OffchainQuotedLinearFee
+    type: RoutingFee
   type: xERC20Lockbox
   xERC20:
     extraBridges:
@@ -275,7 +641,6 @@ fraxtal:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0x2f9DB5616fa3fAd1aB06cB2C906830BA63d135e3"
   owner: "0x09F478e8dEB9Ef466025bf96d13cd9DC56881E18"
   ownerOverrides:
     collateralProxyAdmin: "0x09F478e8dEB9Ef466025bf96d13cd9DC56881E18"
@@ -300,7 +665,6 @@ ink:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0x7f50C5776722630a0024fAE05fDe8b47571D7B39"
   owner: "0xED56728fb977b0bBdacf65bCdD5e17Bb7e84504f"
   ownerOverrides:
     collateralProxyAdmin: "0xED56728fb977b0bBdacf65bCdD5e17Bb7e84504f"
@@ -325,7 +689,6 @@ lisk:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0x2f2aFaE1139Ce54feFC03593FeE8AB2aDF4a85A7"
   owner: "0xfA96BCb61C7CbD7839689E807CD6d7FC27754Af3"
   ownerOverrides:
     collateralProxyAdmin: "0xfA96BCb61C7CbD7839689E807CD6d7FC27754Af3"
@@ -350,7 +713,6 @@ metal:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0x730f8a4128Fa8c53C777B62Baa1abeF94cAd34a9"
   owner: "0xA312a8329bCDc2e5EA5dc2849326a45D40C58e8F"
   ownerOverrides:
     collateralProxyAdmin: "0xA312a8329bCDc2e5EA5dc2849326a45D40C58e8F"
@@ -422,7 +784,6 @@ mode:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0x2f2aFaE1139Ce54feFC03593FeE8AB2aDF4a85A7"
   owner: "0x5CC74C639310B6865d2Ef2E92ed4B68fcd96Ff88"
   ownerOverrides:
     collateralProxyAdmin: "0x5CC74C639310B6865d2Ef2E92ed4B68fcd96Ff88"
@@ -494,7 +855,6 @@ optimism:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0xd4C1905BB1D26BC93DAC913e13CaCC278CdCC80D"
   owner: "0x1C9192aB4aDc226FF20121624590650b076492BE"
   ownerOverrides:
     collateralProxyAdmin: "0x1C9192aB4aDc226FF20121624590650b076492BE"
@@ -535,7 +895,6 @@ soneium:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
   owner: "0x39d3c2Cf646447ee302178EDBe5a15E13B6F33aC"
   ownerOverrides:
     collateralProxyAdmin: "0x39d3c2Cf646447ee302178EDBe5a15E13B6F33aC"
@@ -560,19 +919,111 @@ tea:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0x3a867fCfFeC2B790970eeBDC9023E75B0a172aa7"
   owner: "0x33AA12b4e8E79cA551Ca9D1F2eC7d2cE02129dd4"
   ownerOverrides:
     collateralProxyAdmin: "0x33AA12b4e8E79cA551Ca9D1F2eC7d2cE02129dd4"
     collateralToken: "0x33AA12b4e8E79cA551Ca9D1F2eC7d2cE02129dd4"
   token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
   tokenFee:
-    bps: 5
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      base:
+        bps: 5
+        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bob:
+        bps: 5
+        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bsc:
+        bps: 5
+        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      celo:
+        bps: 5
+        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 5
+        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      fraxtal:
+        bps: 5
+        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ink:
+        bps: 5
+        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      lisk:
+        bps: 5
+        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      metal:
+        bps: 5
+        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      mode:
+        bps: 5
+        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 5
+        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      soneium:
+        bps: 5
+        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 5
+        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      unichain:
+        bps: 5
+        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      zerogravity:
+        bps: 5
+        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
-    quoteSigners:
-      - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-      - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
-    type: OffchainQuotedLinearFee
+    type: RoutingFee
   type: xERC20
   xERC20:
     warpRouteLimits:
@@ -592,19 +1043,111 @@ tron:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0x6d5BeE57A58E282150c236ed8985550492a69788"
   owner: "0xf354dE0536da38537fe751B586eB5CCc81101741"
   ownerOverrides:
     collateralProxyAdmin: "0xf354dE0536da38537fe751B586eB5CCc81101741"
     collateralToken: "0xf354dE0536da38537fe751B586eB5CCc81101741"
   token: "0xcf961fD920a2f49E46dcF78812a5a9De35972748"
   tokenFee:
-    bps: 5
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      base:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bob:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bsc:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      celo:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      fraxtal:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ink:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      lisk:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      metal:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      mode:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      soneium:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      tea:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      unichain:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      zerogravity:
+        bps: 5
+        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
-    quoteSigners:
-      - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-      - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
-    type: OffchainQuotedLinearFee
+    type: RoutingFee
   type: xERC20
   xERC20:
     warpRouteLimits:
@@ -624,7 +1167,6 @@ unichain:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
   owner: "0x6291596339A6EDD6cD68aca1d1c08B1fa2115F8C"
   ownerOverrides:
     collateralProxyAdmin: "0x6291596339A6EDD6cD68aca1d1c08B1fa2115F8C"
@@ -649,7 +1191,6 @@ zerogravity:
         type: pausableIsm
     threshold: 2
     type: staticAggregationIsm
-  mailbox: "0x8428a1a7E97Fc75Fb7Ba5c4aec31B55e52bbe9D6"
   owner: "0x11EF91d17c5ad3330DbCa709a8841743d3Af6819"
   ownerOverrides:
     collateralProxyAdmin: "0x11EF91d17c5ad3330DbCa709a8841743d3Af6819"
