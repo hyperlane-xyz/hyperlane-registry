@@ -1,5 +1,21 @@
 # @hyperlane-xyz/registry
 
+## 25.5.0
+
+### Minor Changes
+
+- 1c5c7e3: Update Hyperlane dependencies to SDK 41.0.0 and Utils 41.0.0
+- aa6a264: Deprecated 11 mainnet chains that are ready for removal in H1 2026. Marked the following chains as disabled in their metadata: boba, botanix, hemi, morph, nibiru, noble, peaq, plume, prom, reactive, vana.
+
+### Patch Changes
+
+- 6f09fb2: Recorded the deployed Cheesechain USDC collateral router type explicitly.
+- deae018: Added the solanamainnet synthetic leg (owner, decimals, and destination gas) to the DIME/paradex warp route deploy config so the route can be evaluated by check-warp-deploy.
+- ae0198e: Removed the ronin leg from the MAGIC warp route, dropping its synthetic token and all connections to it, and renamed the route from `MAGIC/arbitrum-abstract-ronin-base` to `MAGIC/abstract`. The universal-router allowlist entry was updated to the new ID.
+- 7d05cbe: Declared Pino as a runtime dependency so published logger types resolve consistently for consumers.
+- 62d783f: Configured Matchain RPC log pagination to respect its 1,000-block range limit.
+- e4592c6: Pointed the USDT/eni warp route RoutingFee owners to the Turnkey warp-fees key (`0xe95C605096A1AD38BaC3E5210e145952Cbdc6998`) on the arbitrum, base, bsc, eni, ethereum, optimism, and polygon legs, reflecting the on-chain owner rotation. The tron leg's RoutingFee owner is intentionally left with governance (EVM ICA tooling cannot drive tron), and the inner per-destination fee-contract owners are unchanged.
+
 ## 25.4.0
 
 ### Minor Changes
