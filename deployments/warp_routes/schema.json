@@ -385,6 +385,40 @@
                 ],
                 "additionalProperties": false
               }
+            },
+            "sealevel": {
+              "type": "object",
+              "properties": {
+                "altAddresses": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "properties": {
+                      "core": {
+                        "type": "string"
+                      },
+                      "warpSpecific": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/options/properties/sealevel/properties/altAddresses/additionalProperties/properties/core"
+                        },
+                        "minItems": 1
+                      }
+                    },
+                    "required": [
+                      "core",
+                      "warpSpecific"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "propertyNames": {
+                    "pattern": "^[a-z][a-z0-9]*$"
+                  },
+                  "description": "Sealevel Address Lookup Table addresses per chain. `core` is the chain-shared ALT; `warpSpecific` lists the warp-route-specific ALTs."
+                }
+              },
+              "additionalProperties": false,
+              "description": "Sealevel-specific options for this warp route."
             }
           },
           "additionalProperties": false

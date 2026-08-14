@@ -1,5 +1,84 @@
 # @hyperlane-xyz/registry
 
+## 25.5.0
+
+### Minor Changes
+
+- 1c5c7e3: Update Hyperlane dependencies to SDK 41.0.0 and Utils 41.0.0
+- aa6a264: Deprecated 11 mainnet chains that are ready for removal in H1 2026. Marked the following chains as disabled in their metadata: boba, botanix, hemi, morph, nibiru, noble, peaq, plume, prom, reactive, vana.
+
+### Patch Changes
+
+- 6f09fb2: Recorded the deployed Cheesechain USDC collateral router type explicitly.
+- deae018: Added the solanamainnet synthetic leg (owner, decimals, and destination gas) to the DIME/paradex warp route deploy config so the route can be evaluated by check-warp-deploy.
+- ae0198e: Removed the ronin leg from the MAGIC warp route, dropping its synthetic token and all connections to it, and renamed the route from `MAGIC/arbitrum-abstract-ronin-base` to `MAGIC/abstract`. The universal-router allowlist entry was updated to the new ID.
+- 7d05cbe: Declared Pino as a runtime dependency so published logger types resolve consistently for consumers.
+- 62d783f: Configured Matchain RPC log pagination to respect its 1,000-block range limit.
+- e4592c6: Pointed the USDT/eni warp route RoutingFee owners to the Turnkey warp-fees key (`0xe95C605096A1AD38BaC3E5210e145952Cbdc6998`) on the arbitrum, base, bsc, eni, ethereum, optimism, and polygon legs, reflecting the on-chain owner rotation. The tron leg's RoutingFee owner is intentionally left with governance (EVM ICA tooling cannot drive tron), and the inner per-destination fee-contract owners are unchanged.
+
+## 25.4.0
+
+### Minor Changes
+
+- aaf4c69: - Add nexus and tea to default ISMs
+  - Add enigma to aleo and tron
+  - Add luganodes to aleo and tron
+- 07ab71e: Update Hyperlane dependencies to SDK 40.0.0 and Utils 40.0.0 so `check-warp-deploy` runs a CLI that includes the warp-check fixes for synthetic `token` (monorepo #9084) and governance-ICA `ownerStatus` (monorepo #9100/#9104), clearing the false-positive On-Chain violations on the eclipse USDC/USDT synthetic legs.
+- a4576a8: Deprecated 21 mainnet chains that are ready for removal in H1 2026. Marked the following chains as disabled in their metadata: ancient8, arcadia, astar, chilizmainnet, coredao, cyber, flare, fusemainnet, gravity, kaia, miraclechain, ontology, opbnb, orderly, rarichain, shibarium, sophon, stride, xai, xrplevm, zetachain.
+- 656b25f: Added core deployment addresses for solanadevnet (mailbox, IGP, ISM, merkleTreeHook, validatorAnnounce). Updated the interchainSecurityModule address for arbitrumsepolia, basesepolia, bsctestnet, celosepolia, fuji, hyperliquidevmtestnet, modetestnet, optimismsepolia, polygonamoy, sepolia, somniatestnet, and tronshasta to match redeployed default ISMs.
+- 0d1c760: Add Universal Router deployments to swap-capable chain addresses.
+
+  Sources: universal-router-engine PR #42 for the shared CreateX EVM and Solana deployments, and PR #55 for the current Tron deployment.
+
+- 7996bfe: Unenrolled litchain from the LITKEY warp route ahead of litchain deprecation. Removed the `ethereum|litchain|...` connection from every other spoke's `connections` list.
+- b9e5422: Add USDC/celestia-eden-ethereum warp route deployment artifacts (Ethereum collateral, Celestia and Eden synthetics, routed through Celestia)
+
+### Patch Changes
+
+- 291366b: Added missing destinationGas entries for the Aleo SOL, USDC, and USDT warp routes' solanamainnet leg.
+- fe308be: Updated the aleo owner for the ETH, SOL, USDC, USDT, and WBTC warp routes to the newly deployed v2 admin programs (hyp*warp_token*{eth,sol,wbtc,usdc,usdt}\_v2.aleo).
+- 418056e: Migrated the ETH, SOL, USDC, USDT, and WBTC Aleo warp routes (mainnet and aleotestnet) to v2 (ARC-20) token programs, added the aleo USDC v2 config, corrected owner addresses on the aleo mainnet, aleotestnet, and sepolia legs (including the WBTC owner), and added missing mailbox and tokenType fields.
+- 8c054e9: Reordered Base rpcUrls to prioritize healthy public endpoints (mainnet.base.org, base-pokt.nodies.app, base.public.blockpi.network) over the rate-limited base.drpc.org, mirroring the earlier BSC reorder.
+- b947cd7: Reordered BSC rpcUrls to prioritize healthy public endpoints (bsc.blockrazor.xyz, bsc-pokt.nodies.app) over the rate-limited bsc.drpc.org.
+- 561263d: Updated the arbitrum and base owners of the USDC CCTP warp routes (mainnet-cctp, mainnet-cctp-v2-fast, mainnet-cctp-v2-standard) to match the on-chain transfer of ownership from the AW Safes to the AW Interchain Accounts. mainnet-cctp arbitrum owner is now 0xaB547e6cde21a5cC3247b8F80e6CeC3a030FAD4A and base 0xA6D9Aa3878423C266480B5a7cEe74917220a1ad2; mainnet-cctp-v2-fast and mainnet-cctp-v2-standard arbitrum owners are now 0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45 and base 0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7.
+- 9719c06: Added router specific warp fees for moonpay routes
+- 02adfde: Added deploy configs for the CROSS/moonpay staging warp route (USDC/moonpay-staging and USDT/moonpay-staging), deployer-owned crossCollateral mimics of the production route with default ISM, zero fee, and no rebalancing for testing.
+- f766d77: Re-keyed the ctUSD/citrea route's allowedRebalancingBridges by domain id (ethereum=1, citrea=4114) to match the on-chain state.
+- 07ab71e: Pointed the eclipse USDC and USDT warp route RoutingFee owners to the Turnkey warp-fees key (`0xe95C605096A1AD38BaC3E5210e145952Cbdc6998`) in the deployment manifests, reflecting the on-chain owner rotation. The tron USDT leg's RoutingFee owner is intentionally left with governance (EVM ICA tooling cannot drive tron).
+- 80b00aa: Extended USDT/eni with tron
+- d1df686: The interchainSecurityModule config is added for WBTC/incentiv, ETH/krown, USDC/krown, USDT/krown, PB/eni, and evENI/bsc warp routes to match their on-chain custom ISM deployments.
+- 90bf0b0: Fixed the tempo native token metadata: decimals corrected from 18 to 6, and name/symbol updated to pathUSD.
+- 3ea8693: Added fast validator isms to moonpay routes
+- 4f62b2e: Made hyperevmscan.io (Etherscan V2) the canonical hyperevm block explorer, ahead of the Blockscout-based hyperscan.com fallback, so warp route contract verification checks run against an Etherscan-compatible explorer.
+- 9b7fa21: - Fixed igra's gasCurrencyCoinGeckoId, which pointed at the unrelated IGRA governance token instead of the native iKAS gas token. Repointed to wrapped-ikas-zealous-swap so the IGP gas oracle prices iKAS correctly.
+- aace15e: Pinned the Incentiv CENT, SOL, USDT, WBTC, WETH, and USDC warp route deploy configs to their on-chain state. Added the on-chain hook and interchainSecurityModule addresses that were unset in the registry, the second allowedRebalancer and base proxyAdmin owner on the USDC route, so `warp check` reconciles against chain. The ENI PB and evENI routes were verified against chain and required no changes.
+
+  Why these changed: the Incentiv team now owns these routes and configured hooks/ISMs on-chain that the registry had left unset; on-chain is source of truth, so no security parameters are being changed here — the live config is just being recorded. All pinned collateral/synthetic hooks are AGGREGATION hooks (hookType 2). All multisig ISMs are 2-of-3 merkle-root multisig (moduleType 4); the Incentiv-side CENT and USDC ISMs are per-origin domain-routing ISMs (moduleType 1) that delegate to 2-of-3 merkle-root multisig sub-modules. Full quorum/validator breakdown is in the PR description.
+
+- 136c3c6: Added mantle to the KII/kiichain warp route.
+- 7f5af19: Pinned the `kyve` leg of the KYVE/base-kyve warp route to its on-chain collateral configuration (`type: collateral`, `token: ukyve`) to clear the check-warp-deploy ConfigMismatch. The record previously declared `type: native`, but the deployed router is a collateral token backed by the `ukyve` denom.
+- 5efefe9: The LUMIA warp route config was updated to pin the bsc, ethereum, and lumiaprism proxyAdmin owners to their on-chain values, clearing the check-warp-deploy ownership mismatch.
+- 3951456: Updated the MITO/mitosis warp route proxyAdmin owners on bsc and mitosis to the customer governance timelocks, matching the 2025-09-23 on-chain ownership handoff from the Mitosis customer EOA. bsc proxyAdmin.owner and ownerOverrides.proxyAdmin are now 0x1248163214D9A0D6F02932A245370D3fD9613A82; mitosis are now 0x1248163200964459971c7cC9631909132AD28C27.
+- 0627679: Connected the moonpay combined cross-collateral warp config to the bsc, katana, and polygon USDC/USDT routers so the CCR route is a fully-connected mesh across all 14 tokens.
+- 427cd09: Add USDC/USDT eclipsemainnet FPWR and USDC/paradex, USDC/igra, USDC/radix FPWRs as allowedRebalancingBridges for CROSS/moonpay routes across all overlapping chains (arbitrum, base, ethereum, polygon), enabling BSC rebalancing and additional bridge redundancy.
+- 33638d4: Added 0x2cB236403574301029c7bDDfda133c6e0338a857 as an allowedRebalancer on every EVM leg of the USDC/moonpay-staging and USDT/moonpay-staging routes, alongside the existing MCR signer. The Solana leg is unchanged.
+- a8342d6: Transferred ownership of the USDC/moonpay-staging and USDT/moonpay-staging routes from the personal deployer keys to the standard Hyperlane deployer key. EVM legs are now owned by 0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba and the Solana leg by 9bRSUPjfS3xS6n5EfkJzHFTRDa4AHLda8BU2pP4HoWnf.
+- aecda8b: Removed the H/humanity warp route (bsc synthetic + ethereum collateral) as a compromised route.
+- c1b7e8c: Rotated dead public RPC entries for arbitrum, base, blast, bsc, polygon, and viction, and replaced the sole (and dead) public RPC for adichain and robinhood with a live alternative. All removed entries were confirmed dead (DNS no longer resolves, verified directly against 1.1.1.1 to rule out local resolver artifacts, or the endpoint now returns 401/403/5xx) and every remaining/added entry was live-tested immediately before merge, including a 100-block Mailbox-filtered `eth_getLogs` check matching `test/health/rpc-health.test.ts`. bsc's official `bnbchain.org`/`defibit.io`/`ninicoin.io` dataseed nodes and the pre-existing `blockrazor.xyz` entry all reject that query with a block-range limit despite responding to basic calls, so they were dropped in favor of `drpc.org`, `publicnode.com`, and `blxrbdn.com` (bloXroute), which all support it. oortmainnet's sole public RPC is also dead but no alternative could be found anywhere; left unchanged.
+- 8fbdd4a: Pinned the Bonk/JUP/TRUMP starknet routes' `starknet` leg `gas` to the on-chain value (5000000) to clear the check-warp-deploy destinationGas ConfigMismatch. The solanamainnet routers deliberately forward 5000000 gas to the Starknet destination, but the registry never declared an explicit `gas`, so the checker derived the EVM default `gasOverhead(synthetic)` = 64000 and flagged every solanamainnet→starknet leg.
+- 5889ce0: - Added the `nativeToken.address` field to tempo metadata, pointing at the pathUSD TIP-20 contract (0x20c0000000000000000000000000000000000000). This flags that tempo's gas token is an ERC20 contract rather than a protocol-level native token, so funding/balance tooling should use balanceOf / ERC20 transfers instead of eth_getBalance / native sends.
+- e5964be: Updated the Nesa chain logo.
+- 1747cc2: Updated the NESA (NES) warp route token logo.
+- 5685ff8: Raised `maxFeeBps` on the USDC/mainnet-cctp-v2-fast route for arbitrum (1.3→1.4), linea (11→13), and unichain (1.5→2) to match Circle's current live CCTP V2 fast-transfer fee minimums. These three chains' configured caps had fallen below Circle's live fee for their most expensive destination lane (all currently `-> ethereum`), causing `depositForBurn` fast-transfer attestations to fail with `insufficient_fee` and fall back to slow standard-finality attestation instead of fast.
+- cfc750a: The USDC/subtensor warp route config was updated to record the subtensor and solanamainnet rebalancing bridges on the arbitrum, base, ethereum, polygon, and unichain collateral routers, matching on-chain state.
+- 903a6c5: Added interchainAccountRouter address for viction chain.
+- 7f273db: Pinned warp route gas and destinationGas config to on-chain values to clear check-warp-deploy drift for the ALEO, ETH/USDT/WBTC (radix), KYVE, tUSD, and TIA warp routes.
+- 7db585d: Pinned the HOLO/bsc-solanamainnet SVM synthetic `scale` field to its on-chain value (10^9) to clear check-warp-deploy scale drift. The Solana leg has 9 decimals against the 18-decimal BSC counterpart, so the previously missing scale was being treated as identity.
+- 7db585d: Pinned direction-sensitive warp route owner drifts to their on-chain values to clear check-warp-deploy ConfigMismatch alerts: Bonk/JUP/TRUMP starknet routes (starknet + solanamainnet owners) and Fartcoin/PENGU/UFD apechain-solanamainnet routes (solanamainnet owner). These records were ratified against the deployed contracts rather than the previously-assumed canonical owners.
+- 0d1c760: Add a curated warp route allowlist.
+- 062179e: Pinned the SVM synthetic `scale` field to on-chain values (10^9) to clear check-warp-deploy scale drift for the APXETH, CDX, ETN, GNET, SMOL, TONY, and weETHs warp routes. Each route's Solana/Eclipse leg has 9 decimals against an 18-decimal EVM counterpart, so the previously missing scale was being treated as identity.
+- 4ca1138: Pinned the ethereum `ownerOverrides.proxyAdmin` on WBTC/eclipsemainnet-ethereum and USDC/ancient8-ethereum to the on-chain ProxyAdmin owner (0x562Dfaac27A84be6C96273F5c9594DA1681C0DA7, a legacy Abacus Works Gnosis Safe) to clear the check-warp-deploy ConfigMismatch. Both routes share the same on-chain ProxyAdmin (0x75ee15…), and their overrides previously pointed at the current standard AW Safe (0x3965AC…C5b6) while both the on-chain ProxyAdmin and each record's own `proxyAdmin.owner` field already used the legacy Safe.
+
 ## 25.3.0
 
 ### Minor Changes

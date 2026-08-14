@@ -108,7 +108,7 @@ adichain:
     symbol: ADI
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.adichain
+    - http: https://rpc.adifoundation.ai
   technicalStack: other
 aleo:
   blockExplorers:
@@ -381,8 +381,8 @@ arbitrum:
   protocol: ethereum
   rpcUrls:
     - http: https://arb1.arbitrum.io/rpc
-    - http: https://arbitrum.rpc.subquery.network/public
     - http: https://arbitrum.drpc.org
+    - http: https://arbitrum-one-rpc.publicnode.com
   technicalStack: arbitrumnitro
 arbitrumnova:
   availability:
@@ -864,12 +864,13 @@ base:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://base.drpc.org
-    - http: https://mainnet.base.org
-    - http: https://base.public.blockpi.network/v1/rpc/public
-    - http: https://base.llamarpc.com
-    - http: https://1rpc.io/base
     - http: https://base-pokt.nodies.app
+    - http: https://base.public.blockpi.network/v1/rpc/public
+    - http: https://mainnet.base.org
+    - http: https://base.drpc.org
+    - http: https://1rpc.io/base
+    - http: https://base.gateway.tenderly.co
+    - http: https://base-rpc.publicnode.com
   technicalStack: opstack
 basecamptestnet:
   availability:
@@ -1046,7 +1047,7 @@ blast:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.blast.io
-    - http: https://rpc.ankr.com/blast
+    - http: https://blast-rpc.publicnode.com
   technicalStack: opstack
 blastsepolia:
   blockExplorers:
@@ -1097,6 +1098,10 @@ bob:
     - http: https://rpc.gobob.xyz
   technicalStack: opstack
 boba:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/288/etherscan/api
       family: routescan
@@ -1167,6 +1172,10 @@ bobabnbtestnet:
   rpcUrls:
     - http: https://testnet.bnb.boba.network
 botanix:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/3637/etherscan/api
       family: routescan
@@ -1247,10 +1256,8 @@ bsc:
   protocol: ethereum
   rpcUrls:
     - http: https://bsc.drpc.org
-    - http: https://bnb.rpc.subquery.network/public
-    - http: https://binance.llamarpc.com
-    - http: https://bsc.blockrazor.xyz
-    - http: https://bsc-pokt.nodies.app
+    - http: https://bsc-rpc.publicnode.com
+    - http: https://bsc.rpc.blxrbdn.com
   technicalStack: other
 bsctestnet:
   blockExplorers:
@@ -2726,6 +2733,11 @@ ecotestnet:
   rpcUrls:
     - http: https://eco-testnet.rpc.caldera.xyz/http
 eden:
+  blockExplorers:
+    - apiUrl: https://eden.blockscout.com/api
+      family: blockscout
+      name: Eden Explorer
+      url: https://eden.blockscout.com
   blocks:
     confirmations: 1
     estimateBlockTime: 1
@@ -3872,6 +3884,10 @@ hashkey:
     - http: https://mainnet.hsk.xyz
   technicalStack: other
 hemi:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.hemi.xyz/api
       family: blockscout
@@ -3975,6 +3991,11 @@ humanitytestnet:
     - http: https://rpc.testnet.humanity.org
 hyperevm:
   blockExplorers:
+    - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
+      apiUrl: https://api.etherscan.io/v2/api?chainid=999
+      family: etherscan
+      name: HyperEVM Scan
+      url: https://hyperevmscan.io
     - apiUrl: https://www.hyperscan.com/api
       family: blockscout
       name: HyperEVM Explorer
@@ -5151,6 +5172,8 @@ matchain:
   protocol: ethereum
   rpcUrls:
     - http: https://rpc.matchain.io
+      pagination:
+        maxBlockRange: 1000
   technicalStack: opstack
 megaeth:
   blockExplorers:
@@ -5838,6 +5861,10 @@ moonriver:
     - http: https://rpc.api.moonriver.moonbeam.network
     - http: https://moonriver.drpc.org
 morph:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer-api.morphl2.io/api
       family: blockscout
@@ -6101,6 +6128,10 @@ nexus:
     - http: https://mainnet.rpc.nexus.xyz
   technicalStack: other
 nibiru:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://api.routescan.io/v2/network/mainnet/evm/6900/etherscan/api
       family: routescan
@@ -6127,6 +6158,10 @@ nibiru:
     - http: https://evm-rpc.nibiru.fi
   technicalStack: other
 noble:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   bech32Prefix: noble
   blockExplorers:
     - apiUrl: https://www.mintscan.io/noble
@@ -6584,6 +6619,10 @@ paradexsepolia:
   rpcUrls:
     - http: https://pathfinder.api.testnet.paradex.trade/rpc/v0_8
 peaq:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://peaq.subscan.io/api
       family: other
@@ -6663,6 +6702,10 @@ plasma:
     - http: https://rpc.plasma.to
   technicalStack: other
 plume:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.plume.org/api
       family: blockscout
@@ -6750,9 +6793,8 @@ polygon:
   protocol: ethereum
   rpcUrls:
     - http: https://polygon-bor.publicnode.com
-    - http: https://polygon-rpc.com
     - http: https://polygon.drpc.org
-    - http: https://polygon-pokt.nodies.app
+    - http: https://polygon.gateway.tenderly.co
   technicalStack: other
 polygonamoy:
   blockExplorers:
@@ -6874,6 +6916,10 @@ poseidontestnet:
     - http: https://poseidon-testnet.rpc.caldera.xyz/http
   technicalStack: opstack
 prom:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://prom-blockscout.eu-north-2.gateway.fm/api/eth-rpc
       family: blockscout
@@ -7059,6 +7105,10 @@ rarichain:
     - http: https://mainnet.rpc.rarichain.org/http
   technicalStack: arbitrumnitro
 reactive:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://reactscan.net/api
       family: other
@@ -7245,6 +7295,8 @@ robinhood:
   displayName: Robinhood Chain
   domainId: 4663
   gasCurrencyCoinGeckoId: ethereum
+  index:
+    from: 47247
   name: robinhood
   nativeToken:
     decimals: 18
@@ -7252,8 +7304,8 @@ robinhood:
     symbol: ETH
   protocol: ethereum
   rpcUrls:
-    - http: https://rpc.chain.robinhood.com
-  technicalStack: other
+    - http: https://rpc.mainnet.chain.robinhood.com
+  technicalStack: arbitrumnitro
 rometestnet:
   availability:
     reasons:
@@ -9391,6 +9443,10 @@ unitzero:
     - http: https://rpc.unit0.dev
   technicalStack: other
 vana:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://vanascan.io/api/eth-rpc
       family: blockscout
@@ -9442,7 +9498,7 @@ viction:
   rpcUrls:
     - http: https://rpc.viction.xyz
     - http: https://viction.drpc.org
-    - http: https://viction.blockpi.network/v1/rpc/public
+    - http: https://88.rpc.thirdweb.com
   technicalStack: other
 wardenprotocol:
   blockExplorers:
