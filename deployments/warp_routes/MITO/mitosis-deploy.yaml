@@ -39,16 +39,13 @@ bsc:
   owner: "0x1248163214D9A0D6F02932A245370D3fD9613A82"
   ownerOverrides:
     proxyAdmin: "0x1248163214D9A0D6F02932A245370D3fD9613A82"
-  proxyAdmin:
-    address: "0xb80d5c3DDF890C39c84ed487Ed95794560addb66"
-    owner: "0x1248163214D9A0D6F02932A245370D3fD9613A82"
   symbol: MITO
   type: synthetic
 mitosis:
   hook:
     hooks:
       - type: defaultHook
-      - owner: "0x1248163200964459971c7cc9631909132ad28c27"
+      - owner: "0x1248163200964459971c7cC9631909132AD28C27"
         paused: false
         type: pausableHook
     type: aggregationHook
@@ -65,7 +62,4 @@ mitosis:
   owner: "0x1248163200964459971c7cC9631909132AD28C27"
   ownerOverrides:
     proxyAdmin: "0x1248163200964459971c7cC9631909132AD28C27"
-  proxyAdmin:
-    address: "0x8452363d5c78bf95538614441Dc8B465e03A89ca"
-    owner: "0x1248163200964459971c7cC9631909132AD28C27"
   type: native

@@ -2,13 +2,13 @@ arbitrum:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
-    "1":
+    bsc:
+      - bridge: "0x42B794FbF2Ae97d7E9001e21D36B0A5595B51B11"
+    ethereum:
       - bridge: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
       - bridge: "0x42B794FbF2Ae97d7E9001e21D36B0A5595B51B11"
-    "137":
+    polygon:
       - bridge: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
-    "56":
-      - bridge: "0x42B794FbF2Ae97d7E9001e21D36B0A5595B51B11"
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
@@ -468,9 +468,9 @@ bsc:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
-    "1":
+    arbitrum:
       - bridge: "0xc13d466B9E196AfdE472856923E857cc298EDf1b"
-    "42161":
+    ethereum:
       - bridge: "0xc13d466B9E196AfdE472856923E857cc298EDf1b"
   crossCollateralRouters:
     "1":
@@ -691,13 +691,13 @@ ethereum:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
-    "137":
-      - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
-    "42161":
+    arbitrum:
       - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
       - bridge: "0x647C621CEb36853Ef6A907E397Adf18568E70543"
-    "56":
+    bsc:
       - bridge: "0x647C621CEb36853Ef6A907E397Adf18568E70543"
+    polygon:
+      - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
@@ -1142,9 +1142,9 @@ polygon:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
-    "1":
+    arbitrum:
       - bridge: "0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94"
-    "42161":
+    ethereum:
       - bridge: "0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94"
   crossCollateralRouters:
     "1":
