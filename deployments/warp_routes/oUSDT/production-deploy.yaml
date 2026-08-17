@@ -1,4 +1,9 @@
 arbitrum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    tron:
+      - bridge: "0x9323793FB9a071ce5fE839079925c0e39f37170F"
   contractVersion: 12.0.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -12,10 +17,7 @@ arbitrum:
     threshold: 2
     type: staticAggregationIsm
   owner: "0x8abE651230Ce65f546eb78C9Ed7fe54e15650224"
-  ownerOverrides:
-    collateralProxyAdmin: "0x8abE651230Ce65f546eb78C9Ed7fe54e15650224"
-    collateralToken: "0x8abE651230Ce65f546eb78C9Ed7fe54e15650224"
-  token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
+  token: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
   tokenFee:
     feeContracts:
       base:
@@ -116,12 +118,7 @@ arbitrum:
         type: OffchainQuotedLinearFee
     owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
     type: RoutingFee
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "20000000000000"
-      rateLimitPerSecond: "5000000000"
-      type: velo
+  type: collateral
 base:
   contractVersion: 12.0.0
   hook:
@@ -1031,6 +1028,11 @@ tea:
       rateLimitPerSecond: "500000000"
       type: velo
 tron:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0x43Bb7C9C64a05af94d67B52883a60756950058D7"
   contractVersion: 12.0.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
@@ -1044,22 +1046,14 @@ tron:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xf354dE0536da38537fe751B586eB5CCc81101741"
-  ownerOverrides:
-    collateralProxyAdmin: "0xf354dE0536da38537fe751B586eB5CCc81101741"
-    collateralToken: "0xf354dE0536da38537fe751B586eB5CCc81101741"
-  token: "0xcf961fD920a2f49E46dcF78812a5a9De35972748"
+  token: "0xa614f803b6fd780986a42c78ec9c7f77e6ded13c"
   tokenFee:
     bps: 5
     owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
     quoteSigners:
       - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
     type: OffchainQuotedLinearFee
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "20000000000000"
-      rateLimitPerSecond: "5000000000"
-      type: velo
+  type: collateral
 unichain:
   contractVersion: 12.0.0
   hook: "0x0000000000000000000000000000000000000000"
