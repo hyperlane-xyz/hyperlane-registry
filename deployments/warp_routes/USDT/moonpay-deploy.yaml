@@ -12,6 +12,7 @@ arbitrum:
       - bridge: "0x42B794FbF2Ae97d7E9001e21D36B0A5595B51B11"
     arbitrum:
       - bridge: "0xD171C42548c185605BD157AbF427bBc965DE8d81"
+  contractVersion: "12.0.0"
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
@@ -71,6 +72,11 @@ arbitrum:
     threshold: 1
     type: staticAggregationIsm
   owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
+  rebalanceRecipients:
+    "42161": "0x000000000000000000000000ebc079d41c41a0ef7e54aa7af867df9a621c9be0"
+  rebalanceTargets:
+    "42161":
+      - "0x000000000000000000000000ebc079d41c41a0ef7e54aa7af867df9a621c9be0"
   token: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
   tokenFee:
     feeContracts:
@@ -239,13 +245,14 @@ arbitrum:
     owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
     type: CrossCollateralRoutingFee
   type: crossCollateral
-  contractVersion: "12.0.0"
-  rebalanceTargets:
-    arbitrum:
-      - "0x000000000000000000000000ebc079d41c41a0ef7e54aa7af867df9a621c9be0"
-  rebalanceRecipients:
-    arbitrum: "0x000000000000000000000000ebc079d41c41a0ef7e54aa7af867df9a621c9be0"
 base:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+    - "0xB3c707946DB9AC7048Fe88d402E6941a12E92020"
+  allowedRebalancingBridges:
+    base:
+      - bridge: "0xB3c707946DB9AC7048Fe88d402E6941a12E92020"
+  contractVersion: "12.0.0"
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
@@ -305,6 +312,11 @@ base:
     threshold: 1
     type: staticAggregationIsm
   owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
+  rebalanceRecipients:
+    "8453": "0x000000000000000000000000253821543c24623ecd3cebced704359af16cf38f"
+  rebalanceTargets:
+    "8453":
+      - "0x000000000000000000000000253821543c24623ecd3cebced704359af16cf38f"
   token: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
   tokenFee:
     feeContracts:
@@ -473,18 +485,6 @@ base:
     owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
     type: CrossCollateralRoutingFee
   type: crossCollateral
-  contractVersion: "12.0.0"
-  allowedRebalancers:
-    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
-    - "0xB3c707946DB9AC7048Fe88d402E6941a12E92020"
-  allowedRebalancingBridges:
-    base:
-      - bridge: "0xB3c707946DB9AC7048Fe88d402E6941a12E92020"
-  rebalanceTargets:
-    base:
-      - "0x000000000000000000000000253821543c24623ecd3cebced704359af16cf38f"
-  rebalanceRecipients:
-    base: "0x000000000000000000000000253821543c24623ecd3cebced704359af16cf38f"
 bsc:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
@@ -496,6 +496,7 @@ bsc:
       - bridge: "0xc13d466B9E196AfdE472856923E857cc298EDf1b"
     bsc:
       - bridge: "0x17332Cd9198bC16bdfd164e0C6C60F22c2E53724"
+  contractVersion: "12.0.0"
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
@@ -540,6 +541,11 @@ bsc:
     threshold: 1
     type: staticAggregationIsm
   owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
+  rebalanceRecipients:
+    "56": "0x0000000000000000000000006e66a10ce72fbdfa45ab7de3693321246e254123"
+  rebalanceTargets:
+    "56":
+      - "0x0000000000000000000000006e66a10ce72fbdfa45ab7de3693321246e254123"
   scale:
     denominator: 1000000000000
     numerator: 1
@@ -711,12 +717,6 @@ bsc:
     owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
     type: CrossCollateralRoutingFee
   type: crossCollateral
-  contractVersion: "12.0.0"
-  rebalanceTargets:
-    bsc:
-      - "0x0000000000000000000000006e66a10ce72fbdfa45ab7de3693321246e254123"
-  rebalanceRecipients:
-    bsc: "0x0000000000000000000000006e66a10ce72fbdfa45ab7de3693321246e254123"
 ethereum:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
@@ -731,6 +731,7 @@ ethereum:
       - bridge: "0x647C621CEb36853Ef6A907E397Adf18568E70543"
     ethereum:
       - bridge: "0xdbB90710A5Fe76C0ddDc6445FF8C815a0ac94e11"
+  contractVersion: "12.0.0"
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
@@ -790,6 +791,11 @@ ethereum:
     threshold: 1
     type: staticAggregationIsm
   owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+  rebalanceRecipients:
+    "1": "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
+  rebalanceTargets:
+    "1":
+      - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
   token: "0xdac17f958d2ee523a2206206994597c13d831ec7"
   tokenFee:
     feeContracts:
@@ -958,12 +964,6 @@ ethereum:
     owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
     type: CrossCollateralRoutingFee
   type: crossCollateral
-  contractVersion: "12.0.0"
-  rebalanceTargets:
-    ethereum:
-      - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
-  rebalanceRecipients:
-    ethereum: "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
 katana:
   crossCollateralRouters:
     "1":
@@ -1188,6 +1188,7 @@ polygon:
       - bridge: "0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94"
     polygon:
       - bridge: "0x5ac869Ea4eb878001eCF882E471a447D57DE1968"
+  contractVersion: "12.0.0"
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f"
@@ -1247,6 +1248,11 @@ polygon:
     threshold: 1
     type: staticAggregationIsm
   owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
+  rebalanceRecipients:
+    "137": "0x00000000000000000000000028a96f9928db06317356caacd5641c4fde4424c7"
+  rebalanceTargets:
+    "137":
+      - "0x00000000000000000000000028a96f9928db06317356caacd5641c4fde4424c7"
   token: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
   tokenFee:
     feeContracts:
@@ -1415,9 +1421,3 @@ polygon:
     owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
     type: CrossCollateralRoutingFee
   type: crossCollateral
-  contractVersion: "12.0.0"
-  rebalanceTargets:
-    polygon:
-      - "0x00000000000000000000000028a96f9928db06317356caacd5641c4fde4424c7"
-  rebalanceRecipients:
-    polygon: "0x00000000000000000000000028a96f9928db06317356caacd5641c4fde4424c7"
