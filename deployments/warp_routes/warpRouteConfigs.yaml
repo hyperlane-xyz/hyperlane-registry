@@ -1107,6 +1107,46 @@ CROSS/moonpay:
       name: USDT0
       standard: EvmHypCrossCollateralRouter
       symbol: USDT0
+CROSS/moonpay-localbridge-usdt:
+  tokens:
+    - addressOrDenom: "0xD171C42548c185605BD157AbF427bBc965DE8d81"
+      chainName: arbitrum
+      decimals: 6
+      name: USD₮0
+      standard: EvmAtomicLocalRebalancingBridge
+      symbol: mpALRB
+      tokenType: atomicLocalRebalancing
+    - addressOrDenom: "0xB3c707946DB9AC7048Fe88d402E6941a12E92020"
+      chainName: base
+      decimals: 6
+      name: Tether USD
+      standard: EvmAtomicLocalRebalancingBridge
+      symbol: mpALRB
+      tokenType: atomicLocalRebalancing
+    - addressOrDenom: "0x17332Cd9198bC16bdfd164e0C6C60F22c2E53724"
+      chainName: bsc
+      decimals: 18
+      name: Tether USD
+      scale:
+        denominator: 1000000000000
+        numerator: 1
+      standard: EvmAtomicLocalRebalancingBridge
+      symbol: mpALRB
+      tokenType: atomicLocalRebalancing
+    - addressOrDenom: "0xdbB90710A5Fe76C0ddDc6445FF8C815a0ac94e11"
+      chainName: ethereum
+      decimals: 6
+      name: Tether USD
+      standard: EvmAtomicLocalRebalancingBridge
+      symbol: mpALRB
+      tokenType: atomicLocalRebalancing
+    - addressOrDenom: "0x5ac869Ea4eb878001eCF882E471a447D57DE1968"
+      chainName: polygon
+      decimals: 6
+      name: USDT0
+      standard: EvmAtomicLocalRebalancingBridge
+      symbol: mpALRB
+      tokenType: atomicLocalRebalancing
 CROSS/moonpay-staging:
   tokens:
     - addressOrDenom: "0x92636a0A8AF8896809FCfb509c21F0d10a15304F"
