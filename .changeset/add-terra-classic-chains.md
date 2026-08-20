@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': minor
 ---
 
-Add Terra Classic (columbus-5, domain 132556) and Terra Classic Testnet (rebel-2, domain 1325) CosmWasm (cw-hyperlane) chains, plus their warp route configs.
+Add Terra Classic (columbus-5, domain 132556) and Terra Classic Testnet (rebel-2, domain 1325) CosmWasm (cw-hyperlane) chains, plus six testnet warp route configs (LUNC, USTC, JURIS, XPTO, XPTV, XPV).
