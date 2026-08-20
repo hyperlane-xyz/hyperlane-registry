@@ -4415,6 +4415,71 @@ HYPERSTAGE/arbitrum-base-bsc-ethereum-optimism:
       name: Hyperlane
       standard: EvmHypSynthetic
       symbol: HYPERSTAGE
+IGORFAKE/bsc-ethereum-solanamainnet-terraclassic:
+  options:
+    interchainFeeConstants:
+      - addressOrDenom: uluna
+        amount: 1650000000
+        destination: bsc
+        origin: terraclassic
+      - addressOrDenom: uluna
+        amount: 1650000000
+        destination: ethereum
+        origin: terraclassic
+      - addressOrDenom: uluna
+        amount: 1650000000
+        destination: solanamainnet
+        origin: terraclassic
+    localFeeConstants:
+      - addressOrDenom: uluna
+        amount: 283215
+        destination: bsc
+        origin: terraclassic
+      - addressOrDenom: uluna
+        amount: 283215
+        destination: ethereum
+        origin: terraclassic
+      - addressOrDenom: uluna
+        amount: 283215
+        destination: solanamainnet
+        origin: terraclassic
+  tokens:
+    - addressOrDenom: terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel
+      chainName: terraclassic
+      collateralAddressOrDenom: terra1lpkaaqjaq8zfwktge3vy0zg46nxxsynsge2wxa7addpweu2w6gmsy3lhkr
+      connections:
+        - token: ethereum|bsc|0x3605d8946fC6f5a75D89D92173100F59743b5318
+        - token: ethereum|ethereum|0xA687a4C4Ca49795999b36fDC8A18D1ddD63EdfB5
+        - token: sealevel|solanamainnet|EPJNrrpCeZGqDPoFtdV9u9uDWBNW3Xqh84LfM7345zcL
+      decimals: 6
+      name: IGORFAKE
+      standard: CwHypCollateral
+      symbol: IGORFAKE
+    - addressOrDenom: "0x3605d8946fC6f5a75D89D92173100F59743b5318"
+      chainName: bsc
+      connections:
+        - token: cosmos|terraclassic|terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel
+      decimals: 6
+      name: IGORFAKE
+      standard: EvmHypSynthetic
+      symbol: IGORFAKE
+    - addressOrDenom: "0xA687a4C4Ca49795999b36fDC8A18D1ddD63EdfB5"
+      chainName: ethereum
+      connections:
+        - token: cosmos|terraclassic|terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel
+      decimals: 6
+      name: IGORFAKE
+      standard: EvmHypSynthetic
+      symbol: IGORFAKE
+    - addressOrDenom: EPJNrrpCeZGqDPoFtdV9u9uDWBNW3Xqh84LfM7345zcL
+      chainName: solanamainnet
+      collateralAddressOrDenom: CeLHx5Wm9AzuWRnP4URMfNqNa9kDDrnsNGoATCS96QwD
+      connections:
+        - token: cosmos|terraclassic|terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel
+      decimals: 6
+      name: IGORFAKE
+      standard: SealevelHypSynthetic
+      symbol: IGORFAKE
 IKAS/igra:
   tokens:
     - addressOrDenom: "0xeAC17188D29665f57e31a0d9808a9173B9d9d632"
@@ -4555,38 +4620,6 @@ JUP/starknet:
       name: Jupiter
       standard: StarknetHypSynthetic
       symbol: JUP
-JURIS/sepolia-solanatestnet-terraclassictestnet:
-  tokens:
-    - addressOrDenom: terra1stu3cl7mhtsc2mf9cputawfd6v6e4a2nkmhhphh47lsrr3j6ktdqlcfe2l
-      chainName: terraclassictestnet
-      collateralAddressOrDenom: terra1w7d0jqehn0ja3hkzsm0psk6z2hjz06lsq0nxnwkzkkq4fqwgq6tqa5te8e
-      connections:
-        - token: sealevel|solanatestnet|G3eEYHv2GrBJ6KTS3XQhRd7QYdwnfWjisQrSVWedQK4y
-        - token: ethereum|sepolia|0xc2Da334D32724B97D5990229a9752a0d31087bC9
-      decimals: 6
-      logoURI: /deployments/warp_routes/JURIS/logo.png
-      name: Juris Protocol
-      standard: CwHypCollateral
-      symbol: JURIS
-    - addressOrDenom: G3eEYHv2GrBJ6KTS3XQhRd7QYdwnfWjisQrSVWedQK4y
-      chainName: solanatestnet
-      collateralAddressOrDenom: ExzEij8z7xc71kvjuMHmejRkmM4ACgKjDWuEaXdDubRa
-      connections:
-        - token: cosmos|terraclassictestnet|terra1stu3cl7mhtsc2mf9cputawfd6v6e4a2nkmhhphh47lsrr3j6ktdqlcfe2l
-      decimals: 6
-      logoURI: /deployments/warp_routes/JURIS/logo.png
-      name: Juris Protocol
-      standard: SealevelHypSynthetic
-      symbol: JURIS
-    - addressOrDenom: "0xc2Da334D32724B97D5990229a9752a0d31087bC9"
-      chainName: sepolia
-      connections:
-        - token: cosmos|terraclassictestnet|terra1stu3cl7mhtsc2mf9cputawfd6v6e4a2nkmhhphh47lsrr3j6ktdqlcfe2l
-      decimals: 6
-      logoURI: /deployments/warp_routes/JURIS/logo.png
-      name: Juris Protocol
-      standard: EvmHypSynthetic
-      symbol: JURIS
 KII/kiichain:
   tokens:
     - addressOrDenom: "0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886"
@@ -5111,48 +5144,6 @@ LUMIA/arbitrum-avalanche-base-bsc-ethereum-lumiaprism-optimism-polygon:
       name: Lumia Token
       standard: EvmHypSynthetic
       symbol: LUMIA
-LUNC/bsctestnet-sepolia-solanatestnet-terraclassictestnet:
-  tokens:
-    - addressOrDenom: terra1zlm0h2xu6rhnjchn29hxnpvr74uxxqetar9y75zcehyx2mqezg9slj09ml
-      chainName: terraclassictestnet
-      collateralAddressOrDenom: uluna
-      connections:
-        - token: ethereum|bsctestnet|0x2144be4477202ba2d50c9a8be3181241878cf7d8
-        - token: ethereum|sepolia|0x224a4419D7FA69D3bEbAbce574c7c84B48D829b4
-        - token: sealevel|solanatestnet|62FHbCoeg3sRy4yurm6MUisLtAD7HM7vkJVyjM1BdhcK
-      decimals: 6
-      logoURI: /deployments/warp_routes/LUNC/logo.svg
-      name: Luna Classic
-      standard: CwHypCollateral
-      symbol: LUNC
-    - addressOrDenom: "0x2144be4477202ba2d50c9a8be3181241878cf7d8"
-      chainName: bsctestnet
-      connections:
-        - token: cosmos|terraclassictestnet|terra1zlm0h2xu6rhnjchn29hxnpvr74uxxqetar9y75zcehyx2mqezg9slj09ml
-      decimals: 6
-      logoURI: /deployments/warp_routes/LUNC/logo.svg
-      name: Luna Classic
-      standard: EvmHypSynthetic
-      symbol: LUNC
-    - addressOrDenom: "0x224a4419D7FA69D3bEbAbce574c7c84B48D829b4"
-      chainName: sepolia
-      connections:
-        - token: cosmos|terraclassictestnet|terra1zlm0h2xu6rhnjchn29hxnpvr74uxxqetar9y75zcehyx2mqezg9slj09ml
-      decimals: 6
-      logoURI: /deployments/warp_routes/LUNC/logo.svg
-      name: Luna Classic
-      standard: EvmHypSynthetic
-      symbol: LUNC
-    - addressOrDenom: 62FHbCoeg3sRy4yurm6MUisLtAD7HM7vkJVyjM1BdhcK
-      chainName: solanatestnet
-      collateralAddressOrDenom: CjJkBpL2QKyXmFUzb3uzNQZLQcAr5hLtThvpgM2NERnL
-      connections:
-        - token: cosmos|terraclassictestnet|terra1zlm0h2xu6rhnjchn29hxnpvr74uxxqetar9y75zcehyx2mqezg9slj09ml
-      decimals: 6
-      logoURI: /deployments/warp_routes/LUNC/logo.svg
-      name: Luna Classic
-      standard: SealevelHypSynthetic
-      symbol: LUNC
 LYX/lukso:
   tokens:
     - addressOrDenom: "0xC210B2cB65ed3484892167F5e05F7ab496Ab0598"
@@ -13131,28 +13122,6 @@ USDnr/usdnr:
       standard: EvmM0Portal
       symbol: USDnr
       warpRouteId: USDnr/usdnr
-USTC/solanatestnet-terraclassictestnet:
-  tokens:
-    - addressOrDenom: terra1rnpvpwvqcf94keldtm2udt4tqhwthpw5cu94m443rz5ue7rvvkjq9nklml
-      chainName: terraclassictestnet
-      collateralAddressOrDenom: uusd
-      connections:
-        - token: sealevel|solanatestnet|7PtxvK2AB8TmhygeWDyVjkCKvBST16QFb8j6tdSLtoha
-      decimals: 6
-      logoURI: /deployments/warp_routes/USTC/logo.svg
-      name: Terra UST Classic
-      standard: CwHypCollateral
-      symbol: USTC
-    - addressOrDenom: 7PtxvK2AB8TmhygeWDyVjkCKvBST16QFb8j6tdSLtoha
-      chainName: solanatestnet
-      collateralAddressOrDenom: GDzqsfF9NHdeZXNnWZrjxFhzyUaCgG7PsBSz2Nr89xdy
-      connections:
-        - token: cosmos|terraclassictestnet|terra1rnpvpwvqcf94keldtm2udt4tqhwthpw5cu94m443rz5ue7rvvkjq9nklml
-      decimals: 6
-      logoURI: /deployments/warp_routes/USTC/logo.svg
-      name: Terra UST Classic
-      standard: SealevelHypSynthetic
-      symbol: USTC
 VANA/ethereum-vana:
   tokens:
     - addressOrDenom: "0x177778F19E89dD1012BdBe603F144088A95C4B53"
@@ -13822,35 +13791,6 @@ WSTETH/igra:
       name: Wrapped liquid staked Ether 2.0
       standard: EvmHypCollateral
       symbol: wstETH
-XPTO/sepolia-solanatestnet-terraclassictestnet:
-  tokens:
-    - addressOrDenom: terra16ql6l4fuudg0fxarcm4ukxlw0jalg5ljv8kg6h8f7dk9t2e7y6ssq2hqrm
-      chainName: terraclassictestnet
-      collateralAddressOrDenom: terra1zle6pwm9aztwu228e0spxrydlvmhj2qrq8ap3x2wrjc52kdvu4fs20rkch
-      connections:
-        - token: ethereum|sepolia|0xbF43aA4878f5Ad0fcAC12Cd3A835DD3506981048
-        - token: sealevel|solanatestnet|jNkiNLXQetj9L2tDX6xTgx9QP1tgtNgYXamouNbbwx9
-      decimals: 6
-      name: XPTO Teste
-      standard: CwHypCollateral
-      symbol: XPTO
-    - addressOrDenom: "0xbF43aA4878f5Ad0fcAC12Cd3A835DD3506981048"
-      chainName: sepolia
-      connections:
-        - token: cosmos|terraclassictestnet|terra16ql6l4fuudg0fxarcm4ukxlw0jalg5ljv8kg6h8f7dk9t2e7y6ssq2hqrm
-      decimals: 6
-      name: XPTO Teste
-      standard: EvmHypSynthetic
-      symbol: XPTO
-    - addressOrDenom: jNkiNLXQetj9L2tDX6xTgx9QP1tgtNgYXamouNbbwx9
-      chainName: solanatestnet
-      collateralAddressOrDenom: Db8VbMerYxksYwSSdetpy6Jhp2BrE4hk9Sh9dYJT5dQ2
-      connections:
-        - token: cosmos|terraclassictestnet|terra16ql6l4fuudg0fxarcm4ukxlw0jalg5ljv8kg6h8f7dk9t2e7y6ssq2hqrm
-      decimals: 6
-      name: XPTO
-      standard: SealevelHypSynthetic
-      symbol: XPTO
 XPTV/sepolia-terraclassictestnet:
   tokens:
     - addressOrDenom: terra1n8y4sj9lrqq66pf7je0nm7s6nhln5z4s3accw9g2aassdh8dzqts9y0928
