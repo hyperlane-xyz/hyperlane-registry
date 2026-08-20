@@ -4455,6 +4455,71 @@ HYPERSTAGE/arbitrum-base-bsc-ethereum-optimism:
       name: Hyperlane
       standard: EvmHypSynthetic
       symbol: HYPERSTAGE
+IGORFAKE/bsc-ethereum-solanamainnet-terraclassic:
+  options:
+    interchainFeeConstants:
+      - addressOrDenom: uluna
+        amount: 1650000000
+        destination: bsc
+        origin: terraclassic
+      - addressOrDenom: uluna
+        amount: 1650000000
+        destination: ethereum
+        origin: terraclassic
+      - addressOrDenom: uluna
+        amount: 1650000000
+        destination: solanamainnet
+        origin: terraclassic
+    localFeeConstants:
+      - addressOrDenom: uluna
+        amount: 283215
+        destination: bsc
+        origin: terraclassic
+      - addressOrDenom: uluna
+        amount: 283215
+        destination: ethereum
+        origin: terraclassic
+      - addressOrDenom: uluna
+        amount: 283215
+        destination: solanamainnet
+        origin: terraclassic
+  tokens:
+    - addressOrDenom: terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel
+      chainName: terraclassic
+      collateralAddressOrDenom: terra1lpkaaqjaq8zfwktge3vy0zg46nxxsynsge2wxa7addpweu2w6gmsy3lhkr
+      connections:
+        - token: ethereum|bsc|0x3605d8946fC6f5a75D89D92173100F59743b5318
+        - token: ethereum|ethereum|0xA687a4C4Ca49795999b36fDC8A18D1ddD63EdfB5
+        - token: sealevel|solanamainnet|EPJNrrpCeZGqDPoFtdV9u9uDWBNW3Xqh84LfM7345zcL
+      decimals: 6
+      name: IGORFAKE
+      standard: CwHypCollateral
+      symbol: IGORFAKE
+    - addressOrDenom: "0x3605d8946fC6f5a75D89D92173100F59743b5318"
+      chainName: bsc
+      connections:
+        - token: cosmos|terraclassic|terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel
+      decimals: 6
+      name: IGORFAKE
+      standard: EvmHypSynthetic
+      symbol: IGORFAKE
+    - addressOrDenom: "0xA687a4C4Ca49795999b36fDC8A18D1ddD63EdfB5"
+      chainName: ethereum
+      connections:
+        - token: cosmos|terraclassic|terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel
+      decimals: 6
+      name: IGORFAKE
+      standard: EvmHypSynthetic
+      symbol: IGORFAKE
+    - addressOrDenom: EPJNrrpCeZGqDPoFtdV9u9uDWBNW3Xqh84LfM7345zcL
+      chainName: solanamainnet
+      collateralAddressOrDenom: CeLHx5Wm9AzuWRnP4URMfNqNa9kDDrnsNGoATCS96QwD
+      connections:
+        - token: cosmos|terraclassic|terra1wr7krp8lpfddpzxfkxvmhfnxd06vkz34e7f0tk2vyau36j3d4pvs6pjpel
+      decimals: 6
+      name: IGORFAKE
+      standard: SealevelHypSynthetic
+      symbol: IGORFAKE
 IKAS/igra:
   tokens:
     - addressOrDenom: "0xeAC17188D29665f57e31a0d9808a9173B9d9d632"
@@ -13786,6 +13851,53 @@ WSTETH/igra:
       name: Wrapped liquid staked Ether 2.0
       standard: EvmHypCollateral
       symbol: wstETH
+XPTV/sepolia-terraclassictestnet:
+  tokens:
+    - addressOrDenom: terra1n8y4sj9lrqq66pf7je0nm7s6nhln5z4s3accw9g2aassdh8dzqts9y0928
+      chainName: terraclassictestnet
+      collateralAddressOrDenom: terra19ujvy60tjeyehjrwlrdpqlp0gxmtt4qv452nwjqc6w6m38pm8xmq22lux3
+      connections:
+        - token: ethereum|sepolia|0x7d92c2E01933F1C651845152DBd4222d475Bd9f0
+      decimals: 6
+      name: XPTV Teste
+      standard: CwHypCollateral
+      symbol: XPTV
+    - addressOrDenom: "0x7d92c2E01933F1C651845152DBd4222d475Bd9f0"
+      chainName: sepolia
+      connections:
+        - token: cosmos|terraclassictestnet|terra1n8y4sj9lrqq66pf7je0nm7s6nhln5z4s3accw9g2aassdh8dzqts9y0928
+      decimals: 6
+      name: XPTV Teste
+      standard: EvmHypSynthetic
+      symbol: XPTV
+XPV/bsctestnet-sepolia-terraclassictestnet:
+  tokens:
+    - addressOrDenom: terra1dnflusc7slapvals97em3fj4vrfyx90npr3znq6y45qjy7hhd6jqchqsgx
+      chainName: terraclassictestnet
+      collateralAddressOrDenom: terra1f2jw36hc7fzeu7dz2fhk250ezec7e80c2s6uxt3ry5ujjjslf9nqwvpu88
+      connections:
+        - token: ethereum|sepolia|0x6a573cba0f06B3994bc8B31b737Ab50cdfc0aB8f
+        - token: ethereum|bsctestnet|0x11D6aa52d60611a513ab783842Dc397C86E7fff0
+      decimals: 6
+      name: XPV Teste
+      standard: CwHypCollateral
+      symbol: XPV
+    - addressOrDenom: "0x6a573cba0f06B3994bc8B31b737Ab50cdfc0aB8f"
+      chainName: sepolia
+      connections:
+        - token: cosmos|terraclassictestnet|terra1dnflusc7slapvals97em3fj4vrfyx90npr3znq6y45qjy7hhd6jqchqsgx
+      decimals: 6
+      name: XPV Teste
+      standard: EvmHypSynthetic
+      symbol: XPV
+    - addressOrDenom: "0x11D6aa52d60611a513ab783842Dc397C86E7fff0"
+      chainName: bsctestnet
+      connections:
+        - token: cosmos|terraclassictestnet|terra1dnflusc7slapvals97em3fj4vrfyx90npr3znq6y45qjy7hhd6jqchqsgx
+      decimals: 6
+      name: XPV Teste
+      standard: EvmHypSynthetic
+      symbol: XPV
 XRD/radix:
   tokens:
     - addressOrDenom: "0x574134917E3d78705Ed865b6EC58Fa67F95F9a7E"

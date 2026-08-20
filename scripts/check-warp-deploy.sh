@@ -48,6 +48,12 @@ ROUTES_TO_SKIP=(
     "TIA/celestia-eclipsemainnet"
     "TIA/abstract-celestia"
     "USDC/arbitrum-cheesechain"
+    # bsc-ethereum-solanamainnet-terraclassic: the EVM routers use a custom IGP
+    # hook (TerraClassicIGPStandalone) inside an aggregation hook that does not
+    # implement hookType(), so the published CLI fails to derive the hook config
+    # and `warp check` always throws. On-chain state was verified manually via
+    # RPC/LCD queries (owners, ISMs, enrolled routers) — see PR #1559.
+    "IGORFAKE/bsc-ethereum-solanamainnet-terraclassic"
 )
 
 is_skipped_warp_route() {

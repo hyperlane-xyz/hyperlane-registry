@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: terra1n8y4sj9lrqq66pf7je0nm7s6nhln5z4s3accw9g2aassdh8dzqts9y0928
+    chainName: terraclassictestnet
+    collateralAddressOrDenom: terra19ujvy60tjeyehjrwlrdpqlp0gxmtt4qv452nwjqc6w6m38pm8xmq22lux3
+    connections:
+      - token: ethereum|sepolia|0x7d92c2E01933F1C651845152DBd4222d475Bd9f0
+    decimals: 6
+    name: XPTV Teste
+    standard: CwHypCollateral
+    symbol: XPTV
+  - addressOrDenom: "0x7d92c2E01933F1C651845152DBd4222d475Bd9f0"
+    chainName: sepolia
+    connections:
+      - token: cosmos|terraclassictestnet|terra1n8y4sj9lrqq66pf7je0nm7s6nhln5z4s3accw9g2aassdh8dzqts9y0928
+    decimals: 6
+    name: XPTV Teste
+    standard: EvmHypSynthetic
+    symbol: XPTV
