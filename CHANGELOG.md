@@ -1,5 +1,26 @@
 # @hyperlane-xyz/registry
 
+## 25.6.0
+
+### Minor Changes
+
+- e5c21d1: Add Terra Classic (columbus-5, domain 132556) and Terra Classic Testnet (rebel-2, domain 1325) CosmWasm (cw-hyperlane) chains, plus warp route configs and deploy configs: IGORFAKE (mainnet) and XPTV, XPV (testnet).
+- e6557dc: Deprecated 8 mainnet chains that are ready for removal in H2 2026. Arcadia was already disabled; marked bitlayer, hashkey, lumiaprism, matchain, oortmainnet, ronin, and sonic as disabled in their metadata.
+- 2ba214b: Added deployment config for production Moonpay USDT-to-USDC atomic local rebalancing bridges on Arbitrum, Base, BSC, Ethereum, and Polygon.
+
+### Patch Changes
+
+- 79fa0db: Added underlying USDC collateral addresses and CoinGecko metadata to the CCTP V2 fast and standard warp routes.
+- e78f2f3: The legacy Krown Blacklist ISM configs were corrected to include their live blacklisted message IDs.
+- 5623090: The Kiichain block explorer was switched to Blockscout (https://blockscout.kiichain.io).
+- 2aca108: The flowmainnet leg of the TRUMP warp route was restored in the registry config to match on-chain router enrollment, which was never removed. This re-surfaces the leg in tooling and the Nexus UI so holders can bridge their Flow TRUMP out ahead of the Flow agent shutdown.
+- 1e16dfa: added the edge.provable.com/api/v2 rpc as the primary aleo endpoint and kept api.explorer.provable.com/v2 as a fallback
+- b34b59e: The Eclipse USDC and USDT EVM fee leaves were updated to use offchain-quoted linear fees. The 13 Katana-origin USDC fallback fee targets were aligned from 1.5 bps to the live 10 bps configuration.
+- e78f2f3: Hyperlane dependencies were updated to SDK 41.2.0 and Utils 41.2.0.
+- 2ba214b: Hyperlane dependencies were updated to SDK 41.3.0 and Utils 41.3.0 for atomic local rebalancing bridge support.
+- 2ba214b: katana explorer metadata was updated to use KatanaScan and the Etherscan V2 API
+- 794a6f2: The USDC/appchain-base deploy config was updated to record the appchain-team-operated MESSAGE_ID_MULTISIG ISM (0x049B9DEa8276856812129c7b146E514Dd46B6634) on the base collateral leg, replacing the placeholder mailbox-default zero address, to match the on-chain configuration set during appchain's self-host handover.
+
 ## 25.5.0
 
 ### Minor Changes
