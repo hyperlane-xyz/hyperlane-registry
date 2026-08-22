@@ -1,6 +1,15 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
   - apiUrl: https://chainscan.0g.ai/open/api
+    # Deliberately `other`, not `routescan`. The API is not a routescan
+    # deployment; it exposes an etherscan-compatible contract module, but its
+    # logs module answers eth_getLogs with `status: 1` and an empty result
+    # instead of an error. Marking it compatible makes the SDK treat that empty
+    # answer as authoritative and skip the RPC fallback, which silently hides
+    # any bridge not already declared in config. `other` keeps log reads on the
+    # RPC, where they work. The only thing the compatible marking would buy is a
+    # contractVerificationStatus signal, and the infra warp-deploy cron discards
+    # every one of those before it alerts.
     family: other
     name: 0G Explorer
     url: https://chainscan.0g.ai
