@@ -1,19 +1,9 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
   - apiUrl: https://chainscan.0g.ai/open/api
-    # Must stay `routescan`, not `other`. The API is not a routescan
-    # deployment but exposes a compatible interface, and the explorer is
-    # load-bearing here: evmrpc.0g.ai is not an archive node, so eth_getCode at
-    # any historical block fails with "missing trie node". Without an explorer
-    # the SDK resolves a contract's deployment block by binary-searching
-    # eth_getCode, which cannot work, and every log-derived read on this chain
-    # throws instead of answering -- taking the whole warp route with it.
-    # The explorer's getcontractcreation answers it in one call.
-    #
-    # Its logs module is separately broken: eth_getLogs returns `status: 1`
-    # with an empty result rather than an error, so log discovery here finds
-    # nothing. That is the lesser problem of the two.
-    family: routescan
+    # Not `routescan`: chainscan answers eth_getLogs with `status: 1` and an
+    # empty result, which the SDK would take as authoritative.
+    family: other
     name: 0G Explorer
     url: https://chainscan.0g.ai
 blocks:
@@ -34,5 +24,6 @@ nativeToken:
   symbol: 0G
 protocol: ethereum
 rpcUrls:
+  - http: https://0g.drpc.org
   - http: https://evmrpc.0g.ai
 technicalStack: other
