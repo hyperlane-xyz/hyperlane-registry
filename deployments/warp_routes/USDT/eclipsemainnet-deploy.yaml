@@ -23,21 +23,33 @@ arbitrum:
   tokenFee:
     feeContracts:
       bsc:
+        address: "0xB825843ef06D8f974894fF73aC0A4eaD1e27340C"
         bps: 15
-        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
+        address: "0xBDe3c4b03125B4B30b38164562c0efD6131Ee4e9"
         bps: 6.4
-        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       plasma:
+        address: "0xC814441c14CeCCEA55810097cc31CA9Ecf0b44A2"
         bps: 10
-        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       tron:
+        address: "0x1eFbBFa7f376264a921b835e79Cd65463e8252D1"
         bps: 15
-        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        type: LinearFee
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
     type: RoutingFee
   type: collateral
@@ -56,21 +68,33 @@ bsc:
   tokenFee:
     feeContracts:
       arbitrum:
+        address: "0x679E79B772Df35396Cb644C09C387C294b6c4495"
         bps: 15
-        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
+        address: "0x1403e4Da6a459162BBC5163FE79Bf1Dc28058168"
         bps: 15
-        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       plasma:
+        address: "0xBDbbCdFc69854f781e90548C7d9d48fc59584508"
         bps: 15
-        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       tron:
+        address: "0x06AE6e3Cc4cFf657323bC90b55A43e42C6a2D21E"
         bps: 15
-        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        type: LinearFee
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
     type: RoutingFee
   type: collateral
@@ -109,21 +133,33 @@ ethereum:
   tokenFee:
     feeContracts:
       arbitrum:
+        address: "0x403651923E79C22C8d04a75ad8Ea92077c0c932b"
         bps: 3.1
-        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       bsc:
+        address: "0x7aEA5Ecc2011B1F90bCDEf7d6faBb42E4e266c50"
         bps: 15
-        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       plasma:
+        address: "0xAA4aD2596D9C4390770600E7D93fcb08da867D7B"
         bps: 10
-        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       tron:
+        address: "0xb1C18875d674557776475f96441BD09D41Eed8dd"
         bps: 15
-        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        type: LinearFee
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
     type: RoutingFee
   type: collateral
@@ -149,21 +185,33 @@ plasma:
   tokenFee:
     feeContracts:
       arbitrum:
+        address: "0x4c50799aD95eF0DF91fF26dd406a068D0a28b4E8"
         bps: 10
-        owner: "0x5BeF46e59b0D12C8C9806b05dA9cdcB7064a0Da9"
-        type: LinearFee
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       bsc:
+        address: "0xB504EA900302C7Faf24Cc4F155006d6c0357Dc35"
         bps: 15
-        owner: "0x5BeF46e59b0D12C8C9806b05dA9cdcB7064a0Da9"
-        type: LinearFee
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
+        address: "0x6d93817FF18DFe745b8C268F8cf22CD9F5E2CDAb"
         bps: 10
-        owner: "0x5BeF46e59b0D12C8C9806b05dA9cdcB7064a0Da9"
-        type: LinearFee
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       tron:
+        address: "0x64D8b60C2d5F4FF35D61B3f039df327618FD0896"
         bps: 15
-        owner: "0x5BeF46e59b0D12C8C9806b05dA9cdcB7064a0Da9"
-        type: LinearFee
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
     owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
     type: RoutingFee
   type: collateral
