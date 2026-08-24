@@ -1,5 +1,35 @@
 arbitrum:
   decimals: 18
+  hook:
+    domains:
+      nesa:
+        hooks:
+          - owner: "0xAe04Fbe024FB2F807ee59CC14f101273665d2577"
+            paused: true
+            type: pausableHook
+          - type: defaultHook
+        type: aggregationHook
+      solanamainnet:
+        hooks:
+          - owner: "0xAe04Fbe024FB2F807ee59CC14f101273665d2577"
+            paused: true
+            type: pausableHook
+          - type: defaultHook
+        type: aggregationHook
+    fallback:
+      type: defaultHook
+    owner: "0xAe04Fbe024FB2F807ee59CC14f101273665d2577"
+    type: fallbackRoutingHook
+  interchainSecurityModule:
+    modules:
+      - owner: "0xAe04Fbe024FB2F807ee59CC14f101273665d2577"
+        paused: true
+        type: pausableIsm
+      - domains: {}
+        owner: "0xAe04Fbe024FB2F807ee59CC14f101273665d2577"
+        type: defaultFallbackRoutingIsm
+    threshold: 2
+    type: staticAggregationIsm
   mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
   name: Nesa
   owner: "0xAe04Fbe024FB2F807ee59CC14f101273665d2577"
@@ -7,6 +37,36 @@ arbitrum:
   type: synthetic
 base:
   decimals: 18
+  hook:
+    domains:
+      nesa:
+        hooks:
+          - owner: "0x755B06Ef10B8e1b1D834E18B66BEb97391A79faE"
+            paused: true
+            type: pausableHook
+          - type: defaultHook
+        type: aggregationHook
+      solanamainnet:
+        hooks:
+          - owner: "0x755B06Ef10B8e1b1D834E18B66BEb97391A79faE"
+            paused: true
+            type: pausableHook
+          - type: defaultHook
+        type: aggregationHook
+    fallback:
+      type: defaultHook
+    owner: "0x755B06Ef10B8e1b1D834E18B66BEb97391A79faE"
+    type: fallbackRoutingHook
+  interchainSecurityModule:
+    modules:
+      - owner: "0x755B06Ef10B8e1b1D834E18B66BEb97391A79faE"
+        paused: true
+        type: pausableIsm
+      - domains: {}
+        owner: "0x755B06Ef10B8e1b1D834E18B66BEb97391A79faE"
+        type: defaultFallbackRoutingIsm
+    threshold: 2
+    type: staticAggregationIsm
   mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
   name: Nesa
   owner: "0x755B06Ef10B8e1b1D834E18B66BEb97391A79faE"
@@ -14,6 +74,36 @@ base:
   type: synthetic
 bsc:
   decimals: 18
+  hook:
+    domains:
+      nesa:
+        hooks:
+          - owner: "0x12C940009B062EB489acBcaFacCb018F44aB8526"
+            paused: true
+            type: pausableHook
+          - type: defaultHook
+        type: aggregationHook
+      solanamainnet:
+        hooks:
+          - owner: "0x12C940009B062EB489acBcaFacCb018F44aB8526"
+            paused: true
+            type: pausableHook
+          - type: defaultHook
+        type: aggregationHook
+    fallback:
+      type: defaultHook
+    owner: "0x12C940009B062EB489acBcaFacCb018F44aB8526"
+    type: fallbackRoutingHook
+  interchainSecurityModule:
+    modules:
+      - owner: "0x12C940009B062EB489acBcaFacCb018F44aB8526"
+        paused: true
+        type: pausableIsm
+      - domains: {}
+        owner: "0x12C940009B062EB489acBcaFacCb018F44aB8526"
+        type: defaultFallbackRoutingIsm
+    threshold: 2
+    type: staticAggregationIsm
   mailbox: "0x2971b9Aec44bE4eb673DF1B88cDB57b96eefe8a4"
   name: Nesa
   owner: "0x12C940009B062EB489acBcaFacCb018F44aB8526"
@@ -21,6 +111,36 @@ bsc:
   type: synthetic
 ethereum:
   decimals: 18
+  hook:
+    domains:
+      nesa:
+        hooks:
+          - owner: "0x13a39383303aD4ce340C2f949D82394515418eCd"
+            paused: true
+            type: pausableHook
+          - type: defaultHook
+        type: aggregationHook
+      solanamainnet:
+        hooks:
+          - owner: "0x13a39383303aD4ce340C2f949D82394515418eCd"
+            paused: true
+            type: pausableHook
+          - type: defaultHook
+        type: aggregationHook
+    fallback:
+      type: defaultHook
+    owner: "0x13a39383303aD4ce340C2f949D82394515418eCd"
+    type: fallbackRoutingHook
+  interchainSecurityModule:
+    modules:
+      - owner: "0x13a39383303aD4ce340C2f949D82394515418eCd"
+        paused: true
+        type: pausableIsm
+      - domains: {}
+        owner: "0x13a39383303aD4ce340C2f949D82394515418eCd"
+        type: defaultFallbackRoutingIsm
+    threshold: 2
+    type: staticAggregationIsm
   mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
   name: Nesa
   owner: "0x13a39383303aD4ce340C2f949D82394515418eCd"
@@ -28,6 +148,36 @@ ethereum:
   type: synthetic
 hyperevm:
   decimals: 18
+  hook:
+    domains:
+      nesa:
+        hooks:
+          - owner: "0x2900d3549716Cc3806A55173DF56DC11AD17f045"
+            paused: true
+            type: pausableHook
+          - type: defaultHook
+        type: aggregationHook
+      solanamainnet:
+        hooks:
+          - owner: "0x2900d3549716Cc3806A55173DF56DC11AD17f045"
+            paused: true
+            type: pausableHook
+          - type: defaultHook
+        type: aggregationHook
+    fallback:
+      type: defaultHook
+    owner: "0x2900d3549716Cc3806A55173DF56DC11AD17f045"
+    type: fallbackRoutingHook
+  interchainSecurityModule:
+    modules:
+      - owner: "0x2900d3549716Cc3806A55173DF56DC11AD17f045"
+        paused: true
+        type: pausableIsm
+      - domains: {}
+        owner: "0x2900d3549716Cc3806A55173DF56DC11AD17f045"
+        type: defaultFallbackRoutingIsm
+    threshold: 2
+    type: staticAggregationIsm
   mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
   name: Nesa
   owner: "0x2900d3549716Cc3806A55173DF56DC11AD17f045"
@@ -35,6 +185,19 @@ hyperevm:
   type: synthetic
 nesa:
   decimals: 18
+  hook:
+    domains:
+      solanamainnet:
+        hooks:
+          - owner: "0xD0C88AF1AA3353fC24078545d8d7D7e7c7BE6fca"
+            paused: true
+            type: pausableHook
+          - type: defaultHook
+        type: aggregationHook
+    fallback:
+      type: defaultHook
+    owner: "0xD0C88AF1AA3353fC24078545d8d7D7e7c7BE6fca"
+    type: fallbackRoutingHook
   mailbox: "0x3a867fCfFeC2B790970eeBDC9023E75B0a172aa7"
   owner: "0xD0C88AF1AA3353fC24078545d8d7D7e7c7BE6fca"
   type: native
