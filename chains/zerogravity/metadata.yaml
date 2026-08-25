@@ -1,6 +1,8 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
   - apiUrl: https://chainscan.0g.ai/open/api
+    # Not `routescan`: chainscan answers eth_getLogs with `status: 1` and an
+    # empty result, which the SDK would take as authoritative.
     family: other
     name: 0G Explorer
     url: https://chainscan.0g.ai
@@ -22,5 +24,6 @@ nativeToken:
   symbol: 0G
 protocol: ethereum
 rpcUrls:
+  - http: https://0g.drpc.org
   - http: https://evmrpc.0g.ai
 technicalStack: other
