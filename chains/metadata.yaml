@@ -798,7 +798,7 @@ avalanche:
     - http: https://avalanche-c-chain-rpc.publicnode.com
     - http: https://api.avax.network/ext/bc/C/rpc
       pagination:
-        maxBlockRange: 100000
+        maxBlockRange: 2048
         minBlockNumber: 6765067
   technicalStack: other
 b3:
@@ -9847,6 +9847,7 @@ zerogravity:
     symbol: 0G
   protocol: ethereum
   rpcUrls:
+    - http: https://0g.drpc.org
     - http: https://evmrpc.0g.ai
   technicalStack: other
 zeronetwork:
