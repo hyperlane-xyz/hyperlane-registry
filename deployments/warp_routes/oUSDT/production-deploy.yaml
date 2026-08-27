@@ -240,10 +240,10 @@ bsc:
     threshold: 2
     type: staticAggregationIsm
   owner: "0x09F4D4e765A911B867263d4Ff5e73323281De80D"
-  ownerOverrides:
-    collateralProxyAdmin: "0x09F4D4e765A911B867263d4Ff5e73323281De80D"
-    collateralToken: "0x09F4D4e765A911B867263d4Ff5e73323281De80D"
-  token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
+  scale:
+    denominator: 1000000000000
+    numerator: 1
+  token: "0x55d398326f99059fF775485246999027B3197955"
   tokenFee:
     feeContracts:
       arbitrum:
@@ -344,12 +344,7 @@ bsc:
         type: OffchainQuotedLinearFee
     owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
     type: RoutingFee
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "20000000000000"
-      rateLimitPerSecond: "5000000000"
-      type: velo
+  type: collateral
 celo:
   contractVersion: 12.1.0
   hook: "0x0000000000000000000000000000000000000000"
