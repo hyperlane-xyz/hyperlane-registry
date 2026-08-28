@@ -326,6 +326,10 @@ apechain:
     - http: https://rpc.apechain.com/http
   technicalStack: arbitrumnitro
 appchain:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.appchain.xyz/api
       family: blockscout
@@ -3190,6 +3194,10 @@ flare:
     - http: https://rpc.ankr.com/flare
   technicalStack: other
 flowmainnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://evm.flowscan.io/api
       family: blockscout
@@ -4086,6 +4094,10 @@ igra:
   transactionOverrides:
     gasPrice: 1000000000000
 immutablezkevmmainnet:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.immutable.com/api
       family: blockscout
