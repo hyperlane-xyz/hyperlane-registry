@@ -1,5 +1,46 @@
 # @hyperlane-xyz/registry
 
+## 25.6.0
+
+### Minor Changes
+
+- bc87343: deployed to Nesachain; added Arc metadata and factories
+- e5c21d1: Add Terra Classic (columbus-5, domain 132556) and Terra Classic Testnet (rebel-2, domain 1325) CosmWasm (cw-hyperlane) chains, plus warp route configs and deploy configs: IGORFAKE (mainnet) and XPTV, XPV (testnet).
+- e6557dc: Deprecated 8 mainnet chains that are ready for removal in H2 2026. Arcadia was already disabled; marked bitlayer, hashkey, lumiaprism, matchain, oortmainnet, ronin, and sonic as disabled in their metadata.
+- 5a5c44f: Aug 29 ism rotations.
+- 2ba214b: Added deployment config for production Moonpay USDT-to-USDC atomic local rebalancing bridges on Arbitrum, Base, BSC, Ethereum, and Polygon.
+
+### Patch Changes
+
+- 79fa0db: Added underlying USDC collateral addresses and CoinGecko metadata to the CCTP V2 fast and standard warp routes.
+- 3bd6f60: Added kiichain timelocks
+- 86963d7: Added resilient public RPC fallbacks for Sei.
+- e78f2f3: The legacy Krown Blacklist ISM configs were corrected to include their live blacklisted message IDs.
+- b8e8874: corrected the Forma default ISM and Paradex protocol fee hook addresses to their live Mailbox configuration
+- 02ccb84: appchain, flowmainnet, and immutablezkevmmainnet were marked as deprecated
+- a8b48a2: the avalanche pagination.maxBlockRange is corrected from 100000 to 2048, which is the range the api.avax.network endpoint actually enforces on eth_getLogs
+- c35734b: Recorded the on-chain interchainSecurityModule for the KII/kiichain warp route's kiichain leg. The kiichain leg was left out of #1666 while the chain was halted, but the router has the same staticAggregationIsm (threshold = all) wrapping a rateLimitedIsm (1M KII/day), a pausableIsm, and a defaultFallbackRoutingIsm as the EVM legs. The rate-limit and fallback modules are owned by the kiichain token owner; the pausable module is owned by the dedicated Turnkey pauser key. This aligns the registry with on-chain state now that kiichain is live.
+- 5c043e6: Added a staticAggregationIsm (threshold = all) wrapping a rateLimitedIsm (1M KII/day), a pausableIsm, and a defaultFallbackRoutingIsm to the KII/kiichain warp route on the base, bsc, ethereum, mantle, and polygon legs. The rate-limit and fallback modules are owned by each leg's existing token owner; the pausable module is owned by the dedicated Turnkey pauser key. The kiichain leg is intentionally left unchanged for now while that chain is halted.
+- 5623090: The Kiichain block explorer was switched to Blockscout (https://blockscout.kiichain.io).
+- a8b48a2: the oUSDT production warp route is expanded onto arbitrum, bsc, tea and tron, and pruned to match its deploy config: the bitlayer, botanix, hashkey, linea, mantle, metis, ronin, sonic, superseed, swell and worldchain legs are removed along with every connection pointing at them. every leg is pinned to contractVersion 12.1.0
+- a8b48a2: the four deactivated extra bridges on the oUSDT production warp route, two on base and two on optimism, are removed from the deploy config. their mint and burn limits are zero on chain, which the SDK treats as deactivated and therefore omits when it reads the token, so declaring them could only ever read as drift
+- a8b48a2: the arbitrum, bsc, tea and tron legs of the oUSDT production warp route config are given the logoURI the other thirteen legs already carry, so the route no longer mixes tokens with and without a logo
+- a8b48a2: the tea leg of the oUSDT production warp route config is unlinked: every connection pointing at tea is removed from the other sixteen legs, and tea's own connections are removed. the tea token entry itself is kept
+- a8b48a2: The oUSDT production and staging warp route deploy configs are regenerated so each fee chain (ethereum, celo, bsc, arbitrum, tea) uses a RoutingFee wrapping per-destination OffchainQuotedLinearFee contracts at 5 bps instead of a single bare OffchainQuotedLinearFee. Tron keeps a single bare OffchainQuotedLinearFee at 5 bps, because a RoutingFee fan-out was prohibitively expensive to deploy on TVM. The production quote signer set is corrected to drop the moonpay signer key, leaving the sole production signer.
+- 5a13f00: the NES/bsc warp route was removed from the universal router engine allowlist to stop bridging the route
+- 2aca108: The flowmainnet leg of the TRUMP warp route was restored in the registry config to match on-chain router enrollment, which was never removed. This re-surfaces the leg in tooling and the Nexus UI so holders can bridge their Flow TRUMP out ahead of the Flow agent shutdown.
+- 4194fe7: The Starknet Lava and Paradex mainnet RPC URLs were migrated to the JSON-RPC v0_9 spec path ahead of the Alchemy Starknet v0_8 endpoint removal on September 1.
+- 1e16dfa: added the edge.provable.com/api/v2 rpc as the primary aleo endpoint and kept api.explorer.provable.com/v2 as a fallback
+- b34b59e: The Eclipse USDC and USDT EVM fee leaves were updated to use offchain-quoted linear fees. The 13 Katana-origin USDC fallback fee targets were aligned from 1.5 bps to the live 10 bps configuration.
+- e78f2f3: Hyperlane dependencies were updated to SDK 41.2.0 and Utils 41.2.0.
+- 2ba214b: Hyperlane dependencies were updated to SDK 41.3.0 and Utils 41.3.0 for atomic local rebalancing bridge support.
+- 2ba214b: katana explorer metadata was updated to use KatanaScan and the Etherscan V2 API
+- 696a107: the NES warp route deploy config sets a 2/2 static aggregation ISM (pausable + default fallback routing) on every EVM leg, with the pausable module initially paused to halt the route
+- 4573d75: the NES warp route deploy config now sets a fallback routing hook on every EVM leg that routes transfers destined for nesa and solanamainnet through a 2/2 aggregation hook (pausable + default), with the pausable hook initially paused to block those transfers
+- a8b48a2: the oUSDT staging warp route config is pruned to match its deploy config: the bitlayer, botanix, hashkey, linea, mantle, metis, ronin, sonic, superseed, swell and worldchain legs are removed along with every connection pointing at them
+- 794a6f2: The USDC/appchain-base deploy config was updated to record the appchain-team-operated MESSAGE_ID_MULTISIG ISM (0x049B9DEa8276856812129c7b146E514Dd46B6634) on the base collateral leg, replacing the placeholder mailbox-default zero address, to match the on-chain configuration set during appchain's self-host handover.
+- a8b48a2: the 0g drpc endpoint is added ahead of evmrpc.0g.ai in the zerogravity rpcUrls. evmrpc.0g.ai serves no archive state, so eth_getCode at a historical block fails with "missing trie node" and the SDK cannot resolve a contract's deployment block, which makes every log-derived read on this chain throw. the drpc endpoint serves it. the explorer stays marked `other`: chainscan answers eth_getLogs with `status: 1` and an empty result rather than an error, so marking it compatible would make the SDK take that empty answer as authoritative and skip the RPC
+
 ## 25.5.0
 
 ### Minor Changes
