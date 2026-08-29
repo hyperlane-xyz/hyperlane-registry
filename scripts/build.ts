@@ -1,14 +1,32 @@
+import fs from 'fs';
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ChainMetadataSchemaObject, WarpCoreConfigSchema } from '@hyperlane-xyz/sdk';
-import fs from 'fs';
 import { parse, stringify } from 'yaml';
-import { zodToJsonSchema } from 'zod-to-json-schema';
+import { z } from 'zod/v4';
 
-import { BaseRegistry } from '../src/registry/BaseRegistry';
 import { WARP_ROUTE_ID_REGEX } from '../src/consts';
+import { BaseRegistry } from '../src/registry/BaseRegistry';
 const chainMetadata = {};
 const chainAddresses = {};
 const warpRouteConfigs = {};
+
+const JSON_SCHEMA_OPTIONS = {
+  target: 'draft-07',
+  io: 'input',
+  reused: 'ref',
+  unrepresentable: ({ zodSchema }) => {
+    if (zodSchema instanceof z.ZodBigInt) {
+      return { type: 'integer', format: 'int64' };
+    }
+    return 'throw';
+  },
+  override: ({ jsonSchema }) => {
+    if (jsonSchema.type === 'object' && !Object.hasOwn(jsonSchema, 'additionalProperties')) {
+      jsonSchema.additionalProperties = false;
+    }
+  },
+} satisfies z.core.ToJSONSchemaParams;
 
 function genJsExport(data, exportName) {
   return `export const ${exportName} = ${JSON.stringify(data, null, 2)}`;
@@ -196,16 +214,21 @@ function generateWarpConfigTsCode() {
 
 function updateJsonSchemas() {
   console.log('Updating & copying chain JSON schemas');
-  const chainSchema = zodToJsonSchema(ChainMetadataSchemaObject, 'hyperlaneChainMetadata');
+  const chainSchema = z.toJSONSchema(
+    ChainMetadataSchemaObject.meta({ id: 'hyperlaneChainMetadata' }),
+    JSON_SCHEMA_OPTIONS,
+  );
   fs.writeFileSync(`./chains/schema.json`, JSON.stringify(chainSchema, null, 2), 'utf8');
   fs.copyFileSync(`./chains/schema.json`, `./dist/chains/schema.json`);
-  const warpSchema = zodToJsonSchema(WarpCoreConfigSchema, 'hyperlaneWarpCoreConfig');
+  const warpSchema = z.toJSONSchema(
+    WarpCoreConfigSchema.meta({ id: 'hyperlaneWarpCoreConfig' }),
+    JSON_SCHEMA_OPTIONS,
+  );
   fs.writeFileSync(
     `./deployments/warp_routes/schema.json`,
     JSON.stringify(warpSchema, null, 2),
     'utf8',
   );
-  // Warp Deploy schema should not be attempted until this is resolved: https://github.com/StefanTerdell/zod-to-json-schema/issues/68
 }
 
 createTmpDir();

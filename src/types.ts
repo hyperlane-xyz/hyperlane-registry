@@ -2,26 +2,24 @@ import { ChainMetadataSchema } from '@hyperlane-xyz/sdk/metadata/chainMetadataTy
 import type { WarpRouteDeployConfig } from '@hyperlane-xyz/sdk/token/types';
 import type { ChainName } from '@hyperlane-xyz/sdk/types';
 import type { WarpCoreConfig } from '@hyperlane-xyz/sdk/warp/types';
-import { z } from 'zod';
+import { z } from 'zod/v4';
 
 import { WARP_ROUTE_ID_REGEX } from './consts.js';
 
 // https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-5.html#the-awaited-type-and-promise-improvements
 export type MaybePromise<T> = T | Promise<T> | PromiseLike<T>;
 
-export const ChainAddressesSchema = z.record(z.string());
+export const ChainAddressesSchema = z.record(z.string(), z.string());
 export type ChainAddresses = z.infer<typeof ChainAddressesSchema>;
 
 /**
  * Schema for warp route filter parameters.
  * This serves as the single source of truth for both TypeScript types and validation.
  */
-export const WarpRouteFilterSchema = z
-  .object({
-    symbol: z.string().optional(),
-    label: z.string().optional(),
-  })
-  .strict();
+export const WarpRouteFilterSchema = z.strictObject({
+  symbol: z.string().optional(),
+  label: z.string().optional(),
+});
 
 /**
  * TypeScript type inferred from the schema.
