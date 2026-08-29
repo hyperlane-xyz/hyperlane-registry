@@ -453,6 +453,32 @@ arbitrumsepolia:
     - http: https://arbitrum-sepolia.gateway.tenderly.co
     - http: https://sepolia-rollup.arbitrum.io/rpc
   technicalStack: arbitrumnitro
+arc:
+  blockExplorers:
+    - apiUrl: https://arcscan.app/api
+      family: other
+      name: Arcscan
+      url: https://arcscan.app
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 1
+    reorgPeriod: 1
+  chainId: 5042
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Arc
+  domainId: 5042
+  gasCurrencyCoinGeckoId: usd-coin
+  name: arc
+  nativeToken:
+    decimals: 18
+    name: USDC
+    symbol: USDC
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.arc.io
+  technicalStack: other
 arcadia:
   availability:
     reasons:
@@ -6044,6 +6070,32 @@ nesa:
   domainId: 41443
   gasCurrencyCoinGeckoId: nesa-ai-token
   name: nesa
+  nativeToken:
+    decimals: 18
+    name: NES
+    symbol: NES
+  protocol: ethereum
+  rpcUrls:
+    - http: https://erpc.nesa.ai
+  technicalStack: other
+nesachain:
+  blockExplorers:
+    - apiUrl: https://explorer-evm.ns.onyxpro.ai/api
+      family: blockscout
+      name: Nesa Explorer
+      url: https://explorer-evm.ns.onyxpro.ai
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 41444
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Nesa
+  domainId: 41444
+  gasCurrencyCoinGeckoId: nesa-ai-token
+  name: nesachain
   nativeToken:
     decimals: 18
     name: NES
