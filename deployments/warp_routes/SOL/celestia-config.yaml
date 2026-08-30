@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x726f757465725f6170700000000000000000000000000002000000000000000a"
+    chainName: celestia
+    connections:
+      - token: sealevel|solanamainnet|4Acwq4Sw8Y7rZT8traFYmYsxZ86MAe2pQtGgkjh1mHP6
+    decimals: 9
+    name: SOL
+    standard: CosmosNativeHypSynthetic
+    symbol: SOL
+  - addressOrDenom: 4Acwq4Sw8Y7rZT8traFYmYsxZ86MAe2pQtGgkjh1mHP6
+    chainName: solanamainnet
+    connections:
+      - token: cosmosnative|celestia|0x726f757465725f6170700000000000000000000000000002000000000000000a
+    decimals: 9
+    name: SOL
+    standard: SealevelHypNative
+    symbol: SOL
