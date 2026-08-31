@@ -1,11 +1,31 @@
 base:
   decimals: 18
+  interchainSecurityModule:
+    type: staticAggregationIsm
+    threshold: 2
+    modules:
+      - type: defaultFallbackRoutingIsm
+        owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+        domains: {}
+      - type: pausableIsm
+        paused: false
+        owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
   name: E-RADIX
   owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
   symbol: eXRD
   type: synthetic
 ethereum:
   decimals: 18
+  interchainSecurityModule:
+    type: staticAggregationIsm
+    threshold: 2
+    modules:
+      - type: defaultFallbackRoutingIsm
+        owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+        domains: {}
+      - type: pausableIsm
+        paused: false
+        owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
   owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
   token: "0x6468e79A80C0eaB0F9A2B574c8d5bC374Af59414"
   type: collateralFiat
