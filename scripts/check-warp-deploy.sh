@@ -57,6 +57,10 @@ ROUTES_TO_SKIP=(
     "USTC/bsc-ethereum-solanamainnet-terraclassic"
 )
 
+# is_skipped_warp_route <warp_route_id>
+# Checks whether the given warp route ID is listed in ROUTES_TO_SKIP, i.e. it is
+# exempt from the automated `warp check` run (see the rationale comments on each
+# entry above). Returns 0 when the route must be skipped, 1 otherwise.
 is_skipped_warp_route() {
     local warp_route_id="$1"
     local skip
