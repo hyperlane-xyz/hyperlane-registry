@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema.json
+options:
+  interchainFeeConstants:
+    - addressOrDenom: uluna
+      amount: 1650000000
+      destination: bsc
+      origin: terraclassic
+    - addressOrDenom: uluna
+      amount: 1650000000
+      destination: ethereum
+      origin: terraclassic
+    - addressOrDenom: uluna
+      amount: 1650000000
+      destination: solanamainnet
+      origin: terraclassic
+  localFeeConstants:
+    - addressOrDenom: uluna
+      amount: 283215
+      destination: bsc
+      origin: terraclassic
+    - addressOrDenom: uluna
+      amount: 283215
+      destination: ethereum
+      origin: terraclassic
+    - addressOrDenom: uluna
+      amount: 283215
+      destination: solanamainnet
+      origin: terraclassic
+tokens:
+  - addressOrDenom: terra1qu3x6vhk4y6w6erhmedzfp2ug53qm5nwpyarxveqa7tvwg0telxqvd3ccf
+    chainName: terraclassic
+    coinGeckoId: terrausd
+    connections:
+      - token: ethereum|bsc|0xfC067fd98FD123fC2cAd72d040AF60a523274339
+      - token: ethereum|ethereum|0xf49408beb319aeCe3E8B3550a5C750C19b3F1e51
+      - token: sealevel|solanamainnet|7CUdBt1Qn2R2StE7MDPhQW2EhmnGg8zKK8oJXwAGEoyf
+    decimals: 6
+    logoURI: /deployments/warp_routes/USTC/logo.svg
+    name: Terra Classic USD
+    standard: CwHypNative
+    symbol: USTC
+  - addressOrDenom: "0xfC067fd98FD123fC2cAd72d040AF60a523274339"
+    chainName: bsc
+    connections:
+      - token: cosmos|terraclassic|terra1qu3x6vhk4y6w6erhmedzfp2ug53qm5nwpyarxveqa7tvwg0telxqvd3ccf
+    decimals: 6
+    logoURI: /deployments/warp_routes/USTC/logo.svg
+    name: Terra Classic USD
+    standard: EvmHypSynthetic
+    symbol: USTC
+  - addressOrDenom: "0xf49408beb319aeCe3E8B3550a5C750C19b3F1e51"
+    chainName: ethereum
+    connections:
+      - token: cosmos|terraclassic|terra1qu3x6vhk4y6w6erhmedzfp2ug53qm5nwpyarxveqa7tvwg0telxqvd3ccf
+    decimals: 6
+    logoURI: /deployments/warp_routes/USTC/logo.svg
+    name: Terra Classic USD
+    standard: EvmHypSynthetic
+    symbol: USTC
+  - addressOrDenom: 7CUdBt1Qn2R2StE7MDPhQW2EhmnGg8zKK8oJXwAGEoyf
+    chainName: solanamainnet
+    collateralAddressOrDenom: GNUbsF5mrurtDzNc65HipN5Fyzzzqbj5UonLNhj9frjF
+    connections:
+      - token: cosmos|terraclassic|terra1qu3x6vhk4y6w6erhmedzfp2ug53qm5nwpyarxveqa7tvwg0telxqvd3ccf
+    decimals: 6
+    logoURI: /deployments/warp_routes/USTC/logo.svg
+    name: Terra Classic USD
+    standard: SealevelHypSynthetic
+    symbol: USTC
