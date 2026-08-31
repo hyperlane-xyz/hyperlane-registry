@@ -52,8 +52,9 @@ ROUTES_TO_SKIP=(
     # hook (TerraClassicIGPStandalone) inside an aggregation hook that does not
     # implement hookType(), so the published CLI fails to derive the hook config
     # and `warp check` always throws. On-chain state was verified manually via
-    # RPC/LCD queries (owners, ISMs, enrolled routers) — see PR #1559.
-    "IGORFAKE/bsc-ethereum-solanamainnet-terraclassic"
+    # RPC/LCD queries (owners, ISMs, enrolled routers) — see PRs #1559 and #1687.
+    "LUNC/bsc-ethereum-solanamainnet-terraclassic"
+    "USTC/bsc-ethereum-solanamainnet-terraclassic"
 )
 
 is_skipped_warp_route() {
