@@ -1,6 +1,16 @@
 bsc:
   decimals: 18
   gas: 300000
+  interchainSecurityModule:
+    type: staticAggregationIsm
+    threshold: 2
+    modules:
+      - type: defaultFallbackRoutingIsm
+        owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+        domains: {}
+      - type: pausableIsm
+        paused: false
+        owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
   owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
   proxyAdmin:
     owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
