@@ -1,437 +1,569 @@
 {
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "$ref": "#/definitions/hyperlaneWarpCoreConfig",
   "definitions": {
     "hyperlaneWarpCoreConfig": {
       "type": "object",
       "properties": {
         "tokens": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "chainName": {
-                "type": "string",
-                "pattern": "^[a-z][a-z0-9]*$",
-                "description": "The name of the chain, must correspond to a chain in the multiProvider chainMetadata"
-              },
-              "standard": {
-                "type": "string",
-                "enum": [
-                  "ERC20",
-                  "ERC721",
-                  "EvmNative",
-                  "EvmHypNative",
-                  "EvmHypCollateral",
-                  "EvmHypOwnerCollateral",
-                  "EvmHypRebaseCollateral",
-                  "EvmHypCollateralFiat",
-                  "EvmHypSynthetic",
-                  "EvmHypSyntheticRebase",
-                  "EvmHypXERC20",
-                  "EvmHypXERC20Lockbox",
-                  "EvmHypVSXERC20",
-                  "EvmHypVSXERC20Lockbox",
-                  "EvmM0PortalLite",
-                  "EvmM0Portal",
-                  "EvmHypEverclearCollateral",
-                  "EvmHypEverclearEth",
-                  "EvmHypCrossCollateralRouter",
-                  "EvmAtomicLocalRebalancingBridge",
-                  "SealevelSpl",
-                  "SealevelSpl2022",
-                  "SealevelNative",
-                  "SealevelHypNative",
-                  "SealevelHypCollateral",
-                  "SealevelHypSynthetic",
-                  "SealevelHypCrossCollateral",
-                  "CosmosIcs20",
-                  "CosmosIcs721",
-                  "CosmosNative",
-                  "CosmosIbc",
-                  "CW20",
-                  "CWNative",
-                  "CW721",
-                  "CwHypNative",
-                  "CwHypCollateral",
-                  "CwHypSynthetic",
-                  "CosmosNativeHypCollateral",
-                  "CosmosNativeHypSynthetic",
-                  "StarknetNative",
-                  "StarknetHypNative",
-                  "StarknetHypCollateral",
-                  "StarknetHypSynthetic",
-                  "RadixNative",
-                  "RadixHypCollateral",
-                  "RadixHypSynthetic",
-                  "AleoNative",
-                  "AleoHypNative",
-                  "AleoHypCollateral",
-                  "AleoHypSynthetic",
-                  "TRC20",
-                  "TRC721",
-                  "TronNative",
-                  "TronHypNative",
-                  "TronHypCollateral",
-                  "TronHypOwnerCollateral",
-                  "TronHypRebaseCollateral",
-                  "TronHypCollateralFiat",
-                  "TronHypSynthetic",
-                  "TronHypSyntheticRebase",
-                  "TronHypXERC20",
-                  "TronHypXERC20Lockbox",
-                  "TronHypVSXERC20",
-                  "TronHypVSXERC20Lockbox",
-                  "TronM0PortalLite",
-                  "TronHypEverclearCollateral",
-                  "TronHypEverclearEth",
-                  "TronHypCrossCollateralRouter",
-                  "TronAtomicLocalRebalancingBridge"
-                ],
-                "description": "The type of token. See TokenStandard for valid values."
-              },
-              "tokenType": {
-                "type": "string",
-                "enum": [
-                  "synthetic",
-                  "syntheticRebase",
-                  "syntheticUri",
-                  "collateral",
-                  "collateralVault",
-                  "collateralVaultRebase",
-                  "xERC20",
-                  "xERC20Lockbox",
-                  "collateralFiat",
-                  "collateralUri",
-                  "collateralCctp",
-                  "collateralEverclear",
-                  "collateralDepositAddress",
-                  "collateralOft",
-                  "atomicLocalRebalancing",
-                  "native",
-                  "nativeOpL2",
-                  "nativeOpL1",
-                  "ethEverclear",
-                  "nativeScaled",
-                  "crossCollateral",
-                  "unknown"
-                ],
-                "description": "The warp route deploy token type. Used to preserve route implementation semantics when multiple deploy token types share the same token standard."
-              },
-              "decimals": {
-                "type": "integer",
-                "minimum": 0,
-                "exclusiveMaximum": 256,
-                "description": "The decimals value (e.g. 18 for Eth)"
-              },
-              "symbol": {
-                "type": "string",
-                "minLength": 1,
-                "description": "The symbol of the token"
-              },
-              "name": {
-                "type": "string",
-                "minLength": 1,
-                "description": "The name of the token"
-              },
-              "addressOrDenom": {
-                "anyOf": [
-                  {
-                    "type": "string",
-                    "minLength": 1
-                  },
-                  {
-                    "type": "null"
-                  }
-                ],
-                "description": "The address or denom; null config values are normalized to an empty string for native tokens"
-              },
-              "collateralAddressOrDenom": {
-                "type": "string",
-                "minLength": 1,
-                "description": "The address or denom of the collateralized token"
-              },
-              "igpTokenAddressOrDenom": {
-                "type": "string",
-                "minLength": 1,
-                "description": "The address or denom of the token for IGP payments"
-              },
-              "logoURI": {
-                "type": "string",
-                "description": "The URI of the token logo"
-              },
-              "connections": {
-                "type": "array",
-                "items": {
-                  "anyOf": [
-                    {
-                      "anyOf": [
-                        {
-                          "type": "object",
-                          "properties": {
-                            "type": {
-                              "type": "string",
-                              "const": "hyperlane"
-                            },
-                            "token": {
-                              "type": "string",
-                              "pattern": "^(.+)\\|(.+)\\|(.+)$"
-                            }
-                          },
-                          "required": [
-                            "token"
-                          ],
-                          "additionalProperties": false
-                        },
-                        {
-                          "type": "object",
-                          "properties": {
-                            "type": {
-                              "type": "string",
-                              "const": "ibc"
-                            },
-                            "token": {
-                              "type": "string",
-                              "pattern": "^(.+)\\|(.+)\\|(.+)$"
-                            },
-                            "sourcePort": {
-                              "type": "string"
-                            },
-                            "sourceChannel": {
-                              "type": "string"
-                            }
-                          },
-                          "required": [
-                            "type",
-                            "token",
-                            "sourcePort",
-                            "sourceChannel"
-                          ],
-                          "additionalProperties": false
-                        }
-                      ]
-                    },
-                    {
-                      "type": "object",
-                      "properties": {
-                        "type": {
-                          "type": "string",
-                          "const": "ibc-hyperlane"
-                        },
-                        "token": {
-                          "type": "string",
-                          "pattern": "^(.+)\\|(.+)\\|(.+)$"
-                        },
-                        "sourcePort": {
-                          "type": "string"
-                        },
-                        "sourceChannel": {
-                          "type": "string"
-                        },
-                        "intermediateChainName": {
-                          "type": "string",
-                          "pattern": "^[a-z][a-z0-9]*$"
-                        },
-                        "intermediateIbcDenom": {
-                          "type": "string"
-                        },
-                        "intermediateRouterAddress": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "type",
-                        "token",
-                        "sourcePort",
-                        "sourceChannel",
-                        "intermediateChainName",
-                        "intermediateIbcDenom",
-                        "intermediateRouterAddress"
-                      ],
-                      "additionalProperties": false
-                    }
-                  ]
-                },
-                "description": "The list of token connections (e.g. warp or IBC)"
-              },
-              "coinGeckoId": {
-                "type": "string",
-                "description": "The CoinGecko id of the token, used for price lookups"
-              },
-              "scale": {
-                "anyOf": [
-                  {
-                    "type": "integer",
-                    "exclusiveMinimum": 0
-                  },
-                  {
-                    "type": "object",
-                    "properties": {
-                      "numerator": {
-                        "type": "integer",
-                        "exclusiveMinimum": 0
-                      },
-                      "denominator": {
-                        "type": "integer",
-                        "exclusiveMinimum": 0
-                      }
-                    },
-                    "required": [
-                      "numerator",
-                      "denominator"
-                    ],
-                    "additionalProperties": false
-                  },
-                  {
-                    "type": "object",
-                    "properties": {
-                      "numerator": {
-                        "anyOf": [
-                          {
-                            "anyOf": [
-                              {
-                                "type": "integer",
-                                "format": "int64"
-                              },
-                              {
-                                "type": "integer",
-                                "minimum": 0
-                              }
-                            ]
-                          },
-                          {
-                            "type": "string",
-                            "pattern": "^[0-9]+$"
-                          }
-                        ]
-                      },
-                      "denominator": {
-                        "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/tokens/items/properties/scale/anyOf/2/properties/numerator"
-                      }
-                    },
-                    "required": [
-                      "numerator",
-                      "denominator"
-                    ],
-                    "additionalProperties": false
-                  }
-                ],
-                "description": "The scaling factor of the token"
-              },
-              "warpRouteId": {
-                "type": "string",
-                "minLength": 1,
-                "description": "Unique warp route identifier, used to disambiguate tokens that share the same addressOrDenom on the same chain (e.g. M0 Portal tokens)"
-              }
-            },
-            "required": [
-              "chainName",
-              "standard",
-              "decimals",
-              "symbol",
-              "name",
-              "addressOrDenom"
-            ],
-            "additionalProperties": false
-          }
+          "$ref": "#/definitions/__schema0"
         },
         "options": {
-          "type": "object",
-          "properties": {
-            "localFeeConstants": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "origin": {
-                    "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/tokens/items/properties/connections/items/anyOf/1/properties/intermediateChainName"
-                  },
-                  "destination": {
-                    "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/tokens/items/properties/connections/items/anyOf/1/properties/intermediateChainName"
-                  },
-                  "amount": {
-                    "type": [
-                      "string",
-                      "number",
-                      "integer"
-                    ]
-                  },
-                  "addressOrDenom": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "origin",
-                  "destination",
-                  "amount"
-                ],
-                "additionalProperties": false
-              }
-            },
-            "interchainFeeConstants": {
-              "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/options/properties/localFeeConstants"
-            },
-            "routeBlacklist": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "origin": {
-                    "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/tokens/items/properties/connections/items/anyOf/1/properties/intermediateChainName"
-                  },
-                  "destination": {
-                    "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/tokens/items/properties/connections/items/anyOf/1/properties/intermediateChainName"
-                  }
-                },
-                "required": [
-                  "origin",
-                  "destination"
-                ],
-                "additionalProperties": false
-              }
-            },
-            "sealevel": {
-              "type": "object",
-              "properties": {
-                "altAddresses": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "object",
-                    "properties": {
-                      "core": {
-                        "type": "string"
-                      },
-                      "warpSpecific": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/definitions/hyperlaneWarpCoreConfig/properties/options/properties/sealevel/properties/altAddresses/additionalProperties/properties/core"
-                        },
-                        "minItems": 1
-                      }
-                    },
-                    "required": [
-                      "core",
-                      "warpSpecific"
-                    ],
-                    "additionalProperties": false
-                  },
-                  "propertyNames": {
-                    "pattern": "^[a-z][a-z0-9]*$"
-                  },
-                  "description": "Sealevel Address Lookup Table addresses per chain. `core` is the chain-shared ALT; `warpSpecific` lists the warp-route-specific ALTs."
-                }
-              },
-              "additionalProperties": false,
-              "description": "Sealevel-specific options for this warp route."
-            }
-          },
-          "additionalProperties": false
+          "$ref": "#/definitions/__schema14"
         }
       },
       "required": [
         "tokens"
       ],
       "additionalProperties": false
+    },
+    "__schema0": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "chainName": {
+            "description": "The name of the chain, must correspond to a chain in the multiProvider chainMetadata",
+            "allOf": [
+              {
+                "$ref": "#/definitions/__schema1"
+              }
+            ]
+          },
+          "standard": {
+            "type": "string",
+            "enum": [
+              "ERC20",
+              "ERC721",
+              "EvmNative",
+              "EvmHypNative",
+              "EvmHypCollateral",
+              "EvmHypOwnerCollateral",
+              "EvmHypRebaseCollateral",
+              "EvmHypCollateralFiat",
+              "EvmHypSynthetic",
+              "EvmHypSyntheticRebase",
+              "EvmHypXERC20",
+              "EvmHypXERC20Lockbox",
+              "EvmHypVSXERC20",
+              "EvmHypVSXERC20Lockbox",
+              "EvmM0PortalLite",
+              "EvmM0Portal",
+              "EvmHypEverclearCollateral",
+              "EvmHypEverclearEth",
+              "EvmHypCrossCollateralRouter",
+              "EvmAtomicLocalRebalancingBridge",
+              "SealevelSpl",
+              "SealevelSpl2022",
+              "SealevelNative",
+              "SealevelHypNative",
+              "SealevelHypCollateral",
+              "SealevelHypSynthetic",
+              "SealevelHypCrossCollateral",
+              "CosmosIcs20",
+              "CosmosIcs721",
+              "CosmosNative",
+              "CosmosIbc",
+              "CW20",
+              "CWNative",
+              "CW721",
+              "CwHypNative",
+              "CwHypCollateral",
+              "CwHypSynthetic",
+              "CosmosNativeHypCollateral",
+              "CosmosNativeHypSynthetic",
+              "StarknetNative",
+              "StarknetHypNative",
+              "StarknetHypCollateral",
+              "StarknetHypSynthetic",
+              "RadixNative",
+              "RadixHypCollateral",
+              "RadixHypSynthetic",
+              "AleoNative",
+              "AleoHypNative",
+              "AleoHypCollateral",
+              "AleoHypSynthetic",
+              "TRC20",
+              "TRC721",
+              "TronNative",
+              "TronHypNative",
+              "TronHypCollateral",
+              "TronHypOwnerCollateral",
+              "TronHypRebaseCollateral",
+              "TronHypCollateralFiat",
+              "TronHypSynthetic",
+              "TronHypSyntheticRebase",
+              "TronHypXERC20",
+              "TronHypXERC20Lockbox",
+              "TronHypVSXERC20",
+              "TronHypVSXERC20Lockbox",
+              "TronM0PortalLite",
+              "TronHypEverclearCollateral",
+              "TronHypEverclearEth",
+              "TronHypCrossCollateralRouter",
+              "TronAtomicLocalRebalancingBridge"
+            ],
+            "description": "The type of token. See TokenStandard for valid values."
+          },
+          "tokenType": {
+            "description": "The warp route deploy token type. Used to preserve route implementation semantics when multiple deploy token types share the same token standard.",
+            "allOf": [
+              {
+                "$ref": "#/definitions/__schema2"
+              }
+            ]
+          },
+          "decimals": {
+            "type": "integer",
+            "minimum": 0,
+            "exclusiveMaximum": 256,
+            "description": "The decimals value (e.g. 18 for Eth)",
+            "allOf": [
+              {
+                "$ref": "#/definitions/__schema3"
+              }
+            ]
+          },
+          "symbol": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The symbol of the token"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The name of the token"
+          },
+          "addressOrDenom": {
+            "description": "The address or denom; null config values are normalized to an empty string for native tokens",
+            "allOf": [
+              {
+                "$ref": "#/definitions/__schema4"
+              }
+            ]
+          },
+          "collateralAddressOrDenom": {
+            "description": "The address or denom of the collateralized token",
+            "allOf": [
+              {
+                "$ref": "#/definitions/__schema5"
+              }
+            ]
+          },
+          "igpTokenAddressOrDenom": {
+            "description": "The address or denom of the token for IGP payments",
+            "allOf": [
+              {
+                "$ref": "#/definitions/__schema6"
+              }
+            ]
+          },
+          "logoURI": {
+            "description": "The URI of the token logo",
+            "allOf": [
+              {
+                "$ref": "#/definitions/__schema7"
+              }
+            ]
+          },
+          "connections": {
+            "description": "The list of token connections (e.g. warp or IBC)",
+            "allOf": [
+              {
+                "$ref": "#/definitions/__schema8"
+              }
+            ]
+          },
+          "coinGeckoId": {
+            "description": "The CoinGecko id of the token, used for price lookups",
+            "allOf": [
+              {
+                "$ref": "#/definitions/__schema9"
+              }
+            ]
+          },
+          "scale": {
+            "description": "The scaling factor of the token",
+            "allOf": [
+              {
+                "$ref": "#/definitions/__schema10"
+              }
+            ]
+          },
+          "warpRouteId": {
+            "description": "Unique warp route identifier, used to disambiguate tokens that share the same addressOrDenom on the same chain (e.g. M0 Portal tokens)",
+            "allOf": [
+              {
+                "$ref": "#/definitions/__schema13"
+              }
+            ]
+          }
+        },
+        "required": [
+          "chainName",
+          "standard",
+          "decimals",
+          "symbol",
+          "name",
+          "addressOrDenom"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "__schema1": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*$"
+    },
+    "__schema2": {
+      "type": "string",
+      "enum": [
+        "synthetic",
+        "syntheticRebase",
+        "syntheticUri",
+        "collateral",
+        "collateralVault",
+        "collateralVaultRebase",
+        "xERC20",
+        "xERC20Lockbox",
+        "collateralFiat",
+        "collateralUri",
+        "collateralCctp",
+        "collateralEverclear",
+        "collateralDepositAddress",
+        "collateralOft",
+        "atomicLocalRebalancing",
+        "native",
+        "nativeOpL2",
+        "nativeOpL1",
+        "ethEverclear",
+        "nativeScaled",
+        "crossCollateral",
+        "unknown"
+      ]
+    },
+    "__schema3": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "__schema4": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "__schema5": {
+      "type": "string",
+      "minLength": 1
+    },
+    "__schema6": {
+      "type": "string",
+      "minLength": 1
+    },
+    "__schema7": {
+      "type": "string"
+    },
+    "__schema8": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "hyperlane"
+                  },
+                  "token": {
+                    "type": "string",
+                    "pattern": "^(.+)\\|(.+)\\|(.+)$"
+                  }
+                },
+                "required": [
+                  "token"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "ibc"
+                  },
+                  "token": {
+                    "type": "string",
+                    "pattern": "^(.+)\\|(.+)\\|(.+)$"
+                  },
+                  "sourcePort": {
+                    "type": "string"
+                  },
+                  "sourceChannel": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "token",
+                  "sourcePort",
+                  "sourceChannel"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "ibc-hyperlane"
+              },
+              "token": {
+                "type": "string",
+                "pattern": "^(.+)\\|(.+)\\|(.+)$"
+              },
+              "sourcePort": {
+                "type": "string"
+              },
+              "sourceChannel": {
+                "type": "string"
+              },
+              "intermediateChainName": {
+                "$ref": "#/definitions/__schema1"
+              },
+              "intermediateIbcDenom": {
+                "type": "string"
+              },
+              "intermediateRouterAddress": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "token",
+              "sourcePort",
+              "sourceChannel",
+              "intermediateChainName",
+              "intermediateIbcDenom",
+              "intermediateRouterAddress"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "__schema9": {
+      "type": "string"
+    },
+    "__schema10": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+        },
+        {
+          "type": "object",
+          "properties": {
+            "numerator": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991
+            },
+            "denominator": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991
+            }
+          },
+          "required": [
+            "numerator",
+            "denominator"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "numerator": {
+              "$ref": "#/definitions/__schema11"
+            },
+            "denominator": {
+              "$ref": "#/definitions/__schema11"
+            }
+          },
+          "required": [
+            "numerator",
+            "denominator"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "__schema11": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/__schema12"
+        }
+      ]
+    },
+    "__schema12": {
+      "anyOf": [
+        {
+          "anyOf": [
+            {
+              "type": "integer",
+              "format": "int64"
+            },
+            {
+              "$ref": "#/definitions/__schema3"
+            }
+          ]
+        },
+        {
+          "type": "string",
+          "pattern": "^[0-9]+$"
+        }
+      ]
+    },
+    "__schema13": {
+      "type": "string",
+      "minLength": 1
+    },
+    "__schema14": {
+      "type": "object",
+      "properties": {
+        "localFeeConstants": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/__schema15"
+            }
+          ]
+        },
+        "interchainFeeConstants": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/__schema15"
+            }
+          ]
+        },
+        "routeBlacklist": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "origin": {
+                "$ref": "#/definitions/__schema1"
+              },
+              "destination": {
+                "$ref": "#/definitions/__schema1"
+              }
+            },
+            "required": [
+              "origin",
+              "destination"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "sealevel": {
+          "description": "Sealevel-specific options for this warp route.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/__schema16"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "__schema15": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "origin": {
+            "$ref": "#/definitions/__schema1"
+          },
+          "destination": {
+            "$ref": "#/definitions/__schema1"
+          },
+          "amount": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "integer",
+                "format": "int64"
+              }
+            ]
+          },
+          "addressOrDenom": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "origin",
+          "destination",
+          "amount"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "__schema16": {
+      "type": "object",
+      "properties": {
+        "altAddresses": {
+          "description": "Sealevel Address Lookup Table addresses per chain. `core` is the chain-shared ALT; `warpSpecific` lists the warp-route-specific ALTs.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/__schema17"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "__schema17": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "#/definitions/__schema1"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "core": {
+            "$ref": "#/definitions/__schema18"
+          },
+          "warpSpecific": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/__schema18"
+            }
+          }
+        },
+        "required": [
+          "core",
+          "warpSpecific"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "__schema18": {
+      "type": "string"
     }
-  },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  }
 }
