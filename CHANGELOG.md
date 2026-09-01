@@ -1,5 +1,23 @@
 # @hyperlane-xyz/registry
 
+## 26.0.0
+
+### Major Changes
+
+- 5c2e8fc: Zod was upgraded to 4.5.2, and the registry's exported schemas, SDK validation dependencies, and generated JSON schemas were migrated to Zod 4.
+
+### Minor Changes
+
+- 06f3313: Deploy to arc.
+
+### Patch Changes
+
+- 7a000cf: added dark mode logo variants for the Nesa chain and NES Warp route
+- a798db2: restored the NES/bsc Warp route to the Universal Router Engine allowlist after the Nesachain cutover
+- c3f91a6: Add the LUNC (uluna) and USTC (uusd) Terra Classic native-collateral warp routes (Terra Classic ↔ BSC · Ethereum · Solana) and remove the discontinued IGORFAKE, XPTV and XPV test-token routes.
+- 27c1513: the bsc leg of the oUSDT staging and production warp routes is converted from a synthetic xERC20 to a collateral route backed by BSC-USD (0x55d398326f99059fF775485246999027B3197955), replacing the previous synthetic routers with the newly deployed collateral ones on staging (0x54599E9872AfC75C6bF70825B636F021641fa3a3) and production (0xc283600F0A84162C0a062f7273ABB1F8F111b40C) and relinking every other leg to them. every leg of both routes also carries an explicit scale now: 1/1 on the six-decimal legs and 1/1000000000000 on bsc so its eighteen-decimal collateral matches the six-decimal message encoding. the staging deploy config is pinned to contractVersion 12.1.0
+- c389e9f: redeployed NES synthetics and moved the native leg to Nesachain
+
 ## 25.6.0
 
 ### Minor Changes
