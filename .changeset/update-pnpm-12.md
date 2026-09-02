@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Upgraded pnpm to 12.1.0
+Upgraded pnpm to 12.3.0
