@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 26.0.1
+
+### Patch Changes
+
+- 7bb6224: Zod was updated to 4.5.4 to prevent function-valued default factories from running during schema cycle detection.
+
 ## 26.0.0
 
 ### Major Changes
