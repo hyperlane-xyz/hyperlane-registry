@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 26.1.0
+
+### Minor Changes
+
+- 9957daf: Update Hyperlane dependencies to SDK 44.0.1 and Utils 44.0.1
+
 ## 26.0.1
 
 ### Patch Changes
