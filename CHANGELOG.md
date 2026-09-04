@@ -1,5 +1,13 @@
 # @hyperlane-xyz/registry
 
+## 26.1.1
+
+### Patch Changes
+
+- c0ba086: Deprecate remaining H2 2026 chain removals: superseed, tac, carrchain, blast, sei, taiko, megaeth, berachain, lisk, forma.
+- c62df47: Re-added the original nesa-chain NES deployment as the `NES/legacy` warp route id. The `NES/bsc` id was cut over to the new nesachain deployment in #1673, so the legacy nesa (domain 41443) route was preserved under a dedicated id to keep it referenceable for relayer blacklisting while it remains paused.
+- e6b9c05: Upgraded pnpm to 12.3.0
+
 ## 26.1.0
 
 ### Minor Changes
