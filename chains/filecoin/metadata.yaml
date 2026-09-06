@@ -10,6 +10,7 @@ blocks:
 chainId: 314
 displayName: Filecoin
 domainId: 314
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: filecoin
 name: filecoin
 nativeToken:
@@ -17,6 +18,7 @@ nativeToken:
   name: Filecoin
   symbol: FIL
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://api.node.glif.io/rpc/v1
   - http: https://rpc.ankr.com/filecoin

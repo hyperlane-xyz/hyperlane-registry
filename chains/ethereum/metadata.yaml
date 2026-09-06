@@ -23,6 +23,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Ethereum
 domainId: 1
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/eth
 name: ethereum
@@ -31,6 +32,7 @@ nativeToken:
   name: Ether
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://ethereum.publicnode.com
   - http: https://eth.drpc.org

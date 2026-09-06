@@ -14,6 +14,7 @@ deployer:
   url: https://goblins.cash
 displayName: Smartbch
 domainId: 10000
+fallbackHedgeDelayMillis: 250
 isTestnet: false
 name: smartbch
 nativeToken:
@@ -21,6 +22,7 @@ nativeToken:
   name: BCH
   symbol: BCH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://smartbch.greyh.at
   - http: https://rpc.smartbch.org

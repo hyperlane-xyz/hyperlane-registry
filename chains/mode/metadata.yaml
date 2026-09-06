@@ -18,6 +18,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Mode
 domainId: 34443
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 gnosisSafeTransactionServiceUrl: https://transaction-mode.safe.optimism.io
 name: mode
@@ -26,6 +27,7 @@ nativeToken:
   name: Ether
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://mainnet.mode.network
   - http: https://mode.drpc.org

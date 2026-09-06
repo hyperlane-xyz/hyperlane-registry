@@ -15,6 +15,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Arbitrum
 domainId: 42161
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/arb1
 index:
@@ -29,6 +30,7 @@ nativeToken:
   name: Ether
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://arb1.arbitrum.io/rpc
   - http: https://arbitrum.drpc.org

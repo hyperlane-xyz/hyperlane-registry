@@ -15,6 +15,7 @@ deployer:
 displayName: XLayer
 displayNameShort: XLayer
 domainId: 196
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: okb
 gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/okb/
 name: xlayer
@@ -23,6 +24,7 @@ nativeToken:
   name: OKB
   symbol: OKB
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://xlayerrpc.okx.com
   - http: https://rpc.xlayer.tech

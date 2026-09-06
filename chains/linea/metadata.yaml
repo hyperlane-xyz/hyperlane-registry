@@ -19,6 +19,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Linea
 domainId: 59144
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/linea
 name: linea
@@ -27,6 +28,7 @@ nativeToken:
   name: Ether
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.linea.build
   - http: https://1rpc.io/linea

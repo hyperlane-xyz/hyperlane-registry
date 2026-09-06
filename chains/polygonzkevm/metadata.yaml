@@ -19,6 +19,7 @@ deployer:
 displayName: Polygon zkEVM
 displayNameShort: zkEVM
 domainId: 1101
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/zkevm
 name: polygonzkevm
@@ -27,6 +28,7 @@ nativeToken:
   name: Ether
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://zkevm-rpc.com
   - http: https://rpc.ankr.com/polygon_zkevm

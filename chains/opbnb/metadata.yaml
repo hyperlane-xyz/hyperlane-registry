@@ -18,6 +18,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: opBNB
 domainId: 204
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: binancecoin
 name: opbnb
 nativeToken:
@@ -25,6 +26,7 @@ nativeToken:
   name: BNB
   symbol: BNB
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://opbnb-mainnet-rpc.bnbchain.org
   - http: https://opbnb-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3

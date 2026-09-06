@@ -18,6 +18,7 @@ deployer:
 displayName: re.al
 domainId: 111188
 # https://www.coingecko.com/en/coins/real-ether is in preview mode, so we use ethereum as a close proxy
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 index:
   from: 363159
@@ -27,6 +28,7 @@ nativeToken:
   name: Real Ether
   symbol: reETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.realforreal.gelato.digital
   - http: https://tangible-real.gateway.tenderly.co

@@ -19,6 +19,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Celo
 domainId: 42220
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: celo
 gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/celo
 name: celo
@@ -27,6 +28,7 @@ nativeToken:
   name: Celo
   symbol: CELO
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://forno.celo.org
   - http: https://rpc.ankr.com/celo

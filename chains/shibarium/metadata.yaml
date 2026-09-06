@@ -16,6 +16,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Shibarium
 domainId: 109
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: bone-shibaswap
 name: shibarium
 nativeToken:
@@ -23,6 +24,7 @@ nativeToken:
   name: Bone ShibaSwap
   symbol: BONE
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://www.shibrpc.com
   - http: https://rpc.shibrpc.com

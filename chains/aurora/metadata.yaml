@@ -16,6 +16,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Aurora
 domainId: 1313161554
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 name: aurora
 nativeToken:
@@ -23,6 +24,7 @@ nativeToken:
   name: Ether
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://mainnet.aurora.dev
   - http: https://aurora.drpc.org

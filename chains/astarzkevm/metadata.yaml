@@ -13,6 +13,7 @@ blocks:
 chainId: 3776
 displayName: Astar zkEVM
 domainId: 3776
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 name: astarzkevm
 nativeToken:
@@ -20,6 +21,7 @@ nativeToken:
   name: Ethereum
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.startale.com/astar-zkevm
   - http: https://astar-zkevm-rpc.dwellir.com

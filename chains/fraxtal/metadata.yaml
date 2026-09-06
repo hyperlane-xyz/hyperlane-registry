@@ -19,6 +19,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Fraxtal
 domainId: 252
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: frax-share
 gnosisSafeTransactionServiceUrl: https://safe.mainnet.frax.com/txs
 name: fraxtal
@@ -27,6 +28,7 @@ nativeToken:
   name: FRAX
   symbol: FRAX
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.frax.com
   - http: https://fraxtal.drpc.org

@@ -13,6 +13,7 @@ blocks:
 chainId: 255
 displayName: Kroma
 domainId: 255
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 name: kroma
 nativeToken:
@@ -20,6 +21,7 @@ nativeToken:
   name: Ether
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc-kroma.rockx.com
   - http: https://api.kroma.network

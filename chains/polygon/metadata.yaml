@@ -15,6 +15,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Polygon
 domainId: 137
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: polygon-ecosystem-token
 gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/pol
 name: polygon
@@ -23,6 +24,7 @@ nativeToken:
   name: Polygon Ecosystem Token
   symbol: POL
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://polygon-bor.publicnode.com
   - http: https://polygon.drpc.org

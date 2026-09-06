@@ -17,6 +17,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Bitlayer
 domainId: 200901
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: bitcoin
 gnosisSafeTransactionServiceUrl: https://multisign.bitlayer.org/txs/
 name: bitlayer
@@ -25,6 +26,7 @@ nativeToken:
   name: Bitcoin
   symbol: BTC
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.bitlayer.org
   - http: https://rpc.bitlayer-rpc.com

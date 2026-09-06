@@ -17,6 +17,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Core
 domainId: 1116
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: coredaoorg
 name: coredao
 nativeToken:
@@ -24,6 +25,7 @@ nativeToken:
   name: CoreDAO
   symbol: CORE
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.coredao.org
   - http: https://rpc.ankr.com/core

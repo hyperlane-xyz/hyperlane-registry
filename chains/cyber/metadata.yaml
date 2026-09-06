@@ -16,6 +16,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Cyber
 domainId: 7560
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 gnosisSafeTransactionServiceUrl: https://transaction-cyber.safe.optimism.io
 name: cyber
@@ -24,6 +25,7 @@ nativeToken:
   name: Ether
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.cyber.co
   - http: https://cyber.alt.technology

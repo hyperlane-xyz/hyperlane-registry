@@ -16,6 +16,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Immutable zkEVM
 domainId: 1000013371
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: immutable-x
 name: immutablezkevmmainnet
 nativeToken:
@@ -23,6 +24,7 @@ nativeToken:
   name: Immutable
   symbol: IMX
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.immutable.com
   - http: https://immutable.gateway.tenderly.co

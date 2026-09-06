@@ -17,6 +17,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Sophon
 domainId: 50104
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: sophon
 gnosisSafeTransactionServiceUrl: https://transaction.safe.sophon.xyz
 name: sophon
@@ -25,6 +26,7 @@ nativeToken:
   name: sophon
   symbol: SOPH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.sophon.xyz
   - http: https://sophon-mainnet-public.unifra.io

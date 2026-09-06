@@ -19,6 +19,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: World Chain
 domainId: 480
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/wc
 name: worldchain
@@ -27,6 +28,7 @@ nativeToken:
   name: Ether
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://worldchain.drpc.org
   - http: https://worldchain-mainnet.gateway.tenderly.co

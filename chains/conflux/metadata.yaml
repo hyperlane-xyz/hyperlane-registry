@@ -13,6 +13,7 @@ blocks:
 chainId: 1030
 displayName: Conflux eSpace
 domainId: 1030
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: conflux-token
 name: conflux
 nativeToken:
@@ -20,6 +21,7 @@ nativeToken:
   name: Ethereum
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://evm.confluxrpc.com
   - http: https://conflux-espace-public.unifra.io

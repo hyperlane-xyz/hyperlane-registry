@@ -16,6 +16,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: B² Network
 domainId: 223
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: bitcoin
 gnosisSafeTransactionServiceUrl: https://safe-gateway.bsquared.network/txs/
 name: bsquared
@@ -24,6 +25,7 @@ nativeToken:
   name: Bitcoin
   symbol: BTC
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.bsquared.network
   - http: https://rpc.ankr.com/b2

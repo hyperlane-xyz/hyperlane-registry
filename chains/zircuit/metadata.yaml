@@ -16,6 +16,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Zircuit
 domainId: 48900
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 gnosisSafeTransactionServiceUrl: https://transaction.safe.zircuit.com
 name: zircuit
@@ -24,6 +25,7 @@ nativeToken:
   name: Ether
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://zircuit1-mainnet.p2pify.com
   - http: https://zircuit1-mainnet.liquify.com

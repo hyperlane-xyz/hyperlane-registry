@@ -16,6 +16,7 @@ deployer:
 displayName: Binance Smart Chain
 displayNameShort: Binance
 domainId: 56
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: binancecoin
 gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/bnb
 name: bsc
@@ -24,6 +25,7 @@ nativeToken:
   name: BNB
   symbol: BNB
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://bsc.drpc.org
   - http: https://bsc-rpc.publicnode.com

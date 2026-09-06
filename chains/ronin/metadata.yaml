@@ -17,6 +17,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Ronin
 domainId: 2020
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ronin
 gnosisSafeTransactionServiceUrl: https://safe-transaction-ronin.safe.onchainden.com
 name: ronin
@@ -25,6 +26,7 @@ nativeToken:
   name: Ronin
   symbol: RON
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://api.roninchain.com/rpc
   - http: https://ronin.drpc.org

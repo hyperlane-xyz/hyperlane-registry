@@ -14,6 +14,7 @@ blocks:
 chainId: 5545
 displayName: DuckChain
 domainId: 5545
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: the-open-network
 index:
   from: 1149918
@@ -23,6 +24,7 @@ nativeToken:
   name: Toncoin
   symbol: TON
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.duckchain.io
   - http: https://rpc-hk.duckchain.io

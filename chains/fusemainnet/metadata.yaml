@@ -17,6 +17,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Fuse
 domainId: 122
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: fuse-network-token
 gnosisSafeTransactionServiceUrl: https://transaction-fuse.safe.fuse.io
 name: fusemainnet
@@ -25,6 +26,7 @@ nativeToken:
   name: FUSE
   symbol: FUSE
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.fuse.io
   - http: https://fuse.drpc.org

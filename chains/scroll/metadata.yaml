@@ -18,6 +18,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Scroll
 domainId: 534352
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/scr
 name: scroll
@@ -26,6 +27,7 @@ nativeToken:
   name: Ether
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.scroll.io
   - http: https://rpc.ankr.com/scroll

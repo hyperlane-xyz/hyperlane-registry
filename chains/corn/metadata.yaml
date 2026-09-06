@@ -14,6 +14,7 @@ blocks:
 chainId: 21000000
 displayName: Corn
 domainId: 21000000
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: bitcoin
 index:
   from: 55636
@@ -23,6 +24,7 @@ nativeToken:
   name: Bitcorn
   symbol: BTCN
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://mainnet.corn-rpc.com
   - http: https://maizenet-rpc.usecorn.com

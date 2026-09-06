@@ -16,6 +16,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Merlin
 domainId: 4200
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: merlin-chain-bridged-wrapped-btc-merlin
 name: merlin
 nativeToken:
@@ -23,6 +24,7 @@ nativeToken:
   name: Bitcoin
   symbol: BTC
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.merlinchain.io
   - http: https://merlin.blockpi.network/v1/rpc/public

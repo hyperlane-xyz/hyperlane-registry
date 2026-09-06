@@ -17,6 +17,7 @@ deployer:
 displayName: Aleph Zero EVM
 displayNameShort: Aleph Zero EVM
 domainId: 1000041455
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: aleph-zero
 index:
   from: 4243354
@@ -26,6 +27,7 @@ nativeToken:
   name: AZERO
   symbol: AZERO
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.alephzero.raas.gelato.cloud
   - http: https://alephzero.drpc.org

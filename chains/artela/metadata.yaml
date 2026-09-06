@@ -17,6 +17,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Artela
 domainId: 11820
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: artela-network
 name: artela
 nativeToken:
@@ -24,6 +25,7 @@ nativeToken:
   name: Artela
   symbol: ART
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://node-euro.artela.network/rpc
   - http: https://node-hongkong.artela.network/rpc

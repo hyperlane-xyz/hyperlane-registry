@@ -17,6 +17,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Harmony One
 domainId: 1666600000
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: harmony
 name: harmony
 nativeToken:
@@ -24,6 +25,7 @@ nativeToken:
   name: ONE
   symbol: ONE
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://api.harmony.one
   - http: https://api.s0.t.hmny.io

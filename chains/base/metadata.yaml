@@ -23,6 +23,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Base
 domainId: 8453
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/base
 name: base
@@ -31,6 +32,7 @@ nativeToken:
   name: Ether
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://base-pokt.nodies.app
   - http: https://base.public.blockpi.network/v1/rpc/public

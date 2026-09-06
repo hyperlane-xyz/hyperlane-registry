@@ -14,6 +14,7 @@ blocks:
 chainId: 9001
 displayName: Evmos EVM
 domainId: 9001
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: evmos
 name: evmos
 nativeToken:
@@ -21,6 +22,7 @@ nativeToken:
   name: Evmos
   symbol: EVMOS
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://evmos.lava.build
   - http: https://evmos-json-rpc.stakely.io

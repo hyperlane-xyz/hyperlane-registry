@@ -15,6 +15,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Avalanche
 domainId: 43114
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: avalanche-2
 gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/avax
 name: avalanche
@@ -23,6 +24,7 @@ nativeToken:
   name: Avalanche
   symbol: AVAX
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://avalanche.drpc.org
   - http: https://1rpc.io/avax/c

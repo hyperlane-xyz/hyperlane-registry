@@ -17,6 +17,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Fantom Opera
 domainId: 250
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: fantom
 name: fantom
 nativeToken:
@@ -24,6 +25,7 @@ nativeToken:
   name: Fantom
   symbol: FTM
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpcapi.fantom.network
   - http: https://fantom-rpc.publicnode.com

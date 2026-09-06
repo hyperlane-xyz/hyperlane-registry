@@ -17,6 +17,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: ZetaChain
 domainId: 7000
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: zetachain
 gnosisSafeTransactionServiceUrl: https://transaction.safe.zetachain.com
 name: zetachain
@@ -25,6 +26,7 @@ nativeToken:
   name: ZetaChain
   symbol: ZETA
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://zetachain-evm.blockpi.network/v1/rpc/public
   - http: https://zetachain-mainnet.g.allthatnode.com/archive/evm

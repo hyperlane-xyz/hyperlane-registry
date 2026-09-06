@@ -17,6 +17,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Chiliz
 domainId: 1000088888
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: chiliz
 name: chilizmainnet
 nativeToken:
@@ -24,6 +25,7 @@ nativeToken:
   name: Chiliz
   symbol: CHZ
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.ankr.com/chiliz
   - http: https://chiliz.publicnode.com

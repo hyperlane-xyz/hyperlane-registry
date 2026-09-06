@@ -23,6 +23,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Optimism
 domainId: 10
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 gnosisSafeTransactionServiceUrl: https://api.safe.global/tx-service/oeth
 name: optimism
@@ -31,6 +32,7 @@ nativeToken:
   name: Ether
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://mainnet.optimism.io
   - http: https://optimism.drpc.org

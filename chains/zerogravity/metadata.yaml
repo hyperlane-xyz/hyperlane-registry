@@ -16,6 +16,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: 0G
 domainId: 16661
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: zero-gravity
 name: zerogravity
 nativeToken:
@@ -23,6 +24,7 @@ nativeToken:
   name: 0G
   symbol: 0G
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://0g.drpc.org
   - http: https://evmrpc.0g.ai

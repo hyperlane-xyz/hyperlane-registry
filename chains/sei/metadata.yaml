@@ -18,6 +18,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Sei
 domainId: 1329
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: sei-network
 gnosisSafeTransactionServiceUrl: https://transaction.sei-safe.protofire.io
 name: sei
@@ -26,6 +27,7 @@ nativeToken:
   name: Sei
   symbol: SEI
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://evm-rpc.sei-apis.com
   - http: https://evm-rpc-sei.stingray.plus

@@ -18,6 +18,7 @@ deployer:
 displayName: Manta Pacific
 displayNameShort: Manta
 domainId: 169
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 gnosisSafeTransactionServiceUrl: https://transaction.safe.manta.network
 isTestnet: false
@@ -27,6 +28,7 @@ nativeToken:
   name: Ether
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://pacific-rpc.manta.network/http
   - http: https://manta.nirvanalabs.xyz/mantapublic

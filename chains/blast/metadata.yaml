@@ -23,6 +23,7 @@ deployer:
   url: https://www.hyperlane.xyz
 displayName: Blast
 domainId: 81457
+fallbackHedgeDelayMillis: 250
 gasCurrencyCoinGeckoId: ethereum
 gnosisSafeTransactionServiceUrl: https://safe-transaction-blast.safe.global
 name: blast
@@ -31,6 +32,7 @@ nativeToken:
   name: Ether
   symbol: ETH
 protocol: ethereum
+rpcConsensusType: fallback
 rpcUrls:
   - http: https://rpc.blast.io
   - http: https://blast-rpc.publicnode.com
