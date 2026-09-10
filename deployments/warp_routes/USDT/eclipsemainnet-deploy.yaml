@@ -5,11 +5,23 @@ arbitrum:
     ethereum:
       - bridge: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
       - bridge: "0x9323793FB9a071ce5fE839079925c0e39f37170F"
-    plasma:
-      - bridge: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
     tron:
       - bridge: "0x9323793FB9a071ce5fE839079925c0e39f37170F"
   decimals: 6
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
+        type: defaultFallbackRoutingIsm
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableIsm
+      - duration: "86400"
+        maxCapacity: "49999939200"
+        owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        type: rateLimitedIsm
+    threshold: 3
+    type: staticAggregationIsm
   name: USD₮0
   owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
   proxyAdmin:
@@ -23,28 +35,18 @@ arbitrum:
   tokenFee:
     feeContracts:
       bsc:
-        address: "0xB825843ef06D8f974894fF73aC0A4eaD1e27340C"
         bps: 15
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
       ethereum:
-        address: "0xBDe3c4b03125B4B30b38164562c0efD6131Ee4e9"
         bps: 6.4
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
-      plasma:
-        address: "0xC814441c14CeCCEA55810097cc31CA9Ecf0b44A2"
-        bps: 10
-        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
       tron:
-        address: "0x1eFbBFa7f376264a921b835e79Cd65463e8252D1"
         bps: 15
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
         quoteSigners:
@@ -55,6 +57,20 @@ arbitrum:
   type: collateral
 bsc:
   decimals: 18
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
+        type: defaultFallbackRoutingIsm
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableIsm
+      - duration: "86400"
+        maxCapacity: "49999939200"
+        owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        type: rateLimitedIsm
+    threshold: 3
+    type: staticAggregationIsm
   name: Tether USD
   owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
   proxyAdmin:
@@ -68,28 +84,18 @@ bsc:
   tokenFee:
     feeContracts:
       arbitrum:
-        address: "0x679E79B772Df35396Cb644C09C387C294b6c4495"
         bps: 15
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
       ethereum:
-        address: "0x1403e4Da6a459162BBC5163FE79Bf1Dc28058168"
-        bps: 15
-        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
-      plasma:
-        address: "0xBDbbCdFc69854f781e90548C7d9d48fc59584508"
         bps: 15
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
       tron:
-        address: "0x06AE6e3Cc4cFf657323bC90b55A43e42C6a2D21E"
         bps: 15
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
         quoteSigners:
@@ -114,12 +120,24 @@ ethereum:
     arbitrum:
       - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
       - bridge: "0xC0dA8EF1225145E0b720d8A33471fa6360b7e73B"
-    plasma:
-      - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
     tron:
       - bridge: "0xC0dA8EF1225145E0b720d8A33471fa6360b7e73B"
   contractVersion: 11.1.0
   decimals: 6
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+        type: defaultFallbackRoutingIsm
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableIsm
+      - duration: "86400"
+        maxCapacity: "49999939200"
+        owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        type: rateLimitedIsm
+    threshold: 3
+    type: staticAggregationIsm
   name: Tether USD
   owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
   proxyAdmin:
@@ -133,80 +151,18 @@ ethereum:
   tokenFee:
     feeContracts:
       arbitrum:
-        address: "0x403651923E79C22C8d04a75ad8Ea92077c0c932b"
         bps: 3.1
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
       bsc:
-        address: "0x7aEA5Ecc2011B1F90bCDEf7d6faBb42E4e266c50"
         bps: 15
-        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
-      plasma:
-        address: "0xAA4aD2596D9C4390770600E7D93fcb08da867D7B"
-        bps: 10
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
       tron:
-        address: "0xb1C18875d674557776475f96441BD09D41Eed8dd"
-        bps: 15
-        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
-    owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
-    type: RoutingFee
-  type: collateral
-plasma:
-  allowedRebalancers:
-    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
-  allowedRebalancingBridges:
-    arbitrum:
-      - bridge: "0x93bfFA2231fbA5029997603fb68D9aC08024Baa2"
-    ethereum:
-      - bridge: "0x93bfFA2231fbA5029997603fb68D9aC08024Baa2"
-  decimals: 6
-  name: USDT0
-  owner: "0x5f132a9a16F8e4AE1E2ec2F2bcEdf074d1496c3f"
-  proxyAdmin:
-    address: "0x0587E4E093Cd820eda59EcF0FD73544cE65B4775"
-    owner: "0xCcf5e9862D486e71aA47B87Cb3a7eEB1e1f2F624"
-  scale:
-    denominator: 1
-    numerator: 1
-  symbol: USDT0
-  token: "0xb8ce59fc3717ada4c02eadf9682a9e934f625ebb"
-  tokenFee:
-    feeContracts:
-      arbitrum:
-        address: "0x4c50799aD95eF0DF91fF26dd406a068D0a28b4E8"
-        bps: 10
-        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
-      bsc:
-        address: "0xB504EA900302C7Faf24Cc4F155006d6c0357Dc35"
-        bps: 15
-        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
-      ethereum:
-        address: "0x6d93817FF18DFe745b8C268F8cf22CD9F5E2CDAb"
-        bps: 10
-        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
-      tron:
-        address: "0x64D8b60C2d5F4FF35D61B3f039df327618FD0896"
         bps: 15
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
         quoteSigners:
@@ -234,6 +190,20 @@ tron:
     ethereum:
       - bridge: "0x43Bb7C9C64a05af94d67B52883a60756950058D7"
   decimals: 6
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xB960616C7E2ee0F2a296A4b2B9D0b3308E23A69D"
+        type: defaultFallbackRoutingIsm
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableIsm
+      - duration: "86400"
+        maxCapacity: "49999939200"
+        owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        type: rateLimitedIsm
+    threshold: 3
+    type: staticAggregationIsm
   name: Tether USD
   owner: "0xB960616C7E2ee0F2a296A4b2B9D0b3308E23A69D"
   proxyAdmin:
@@ -255,10 +225,6 @@ tron:
         owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
         type: LinearFee
       ethereum:
-        bps: 15
-        owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
-        type: LinearFee
-      plasma:
         bps: 15
         owner: "0xa5A136994e739E9042820C88F24041165767cBF9"
         type: LinearFee
