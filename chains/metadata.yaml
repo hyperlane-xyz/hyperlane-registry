@@ -8210,10 +8210,10 @@ sonicblaze:
     - http: https://rpc.ankr.com/sonic_blaze_testnet
 sonicsvm:
   blockExplorers:
-    - apiUrl: https://explorer.sonic.game/?cluster=custom&customUrl=https%3A%2F%2Fapi.mainnet-alpha.sonic.game
+    - apiUrl: https://explorer.sonic.game/?cluster=custom&customUrl=https%3A%2F%2Frpc.mainnet-alpha.sonic.game
       family: other
       name: Sonic SVM Explorer
-      url: https://explorer.sonic.game/?cluster=custom&customUrl=https%3A%2F%2Fapi.mainnet-alpha.sonic.game
+      url: https://explorer.sonic.game/?cluster=custom&customUrl=https%3A%2F%2Frpc.mainnet-alpha.sonic.game
   blocks:
     confirmations: 1
     estimateBlockTime: 0.4
@@ -8233,7 +8233,8 @@ sonicsvm:
     symbol: SOL
   protocol: sealevel
   rpcUrls:
-    - http: https://api.mainnet-alpha.sonic.game
+    - http: https://rpc.mainnet-alpha.sonic.game
+    - http: https://sonic.helius-rpc.com
   technicalStack: other
 sonicsvmtestnet:
   blockExplorers:
