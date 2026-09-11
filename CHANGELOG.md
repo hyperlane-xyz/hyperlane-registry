@@ -1,5 +1,23 @@
 # @hyperlane-xyz/registry
 
+## 26.2.0
+
+### Minor Changes
+
+- 96789f3: Update `interchainSecurityModule` addresses on 10 testnets (arbitrumsepolia, basesepolia, bsctestnet, hyperliquidevmtestnet, optimismsepolia, polygonamoy, seismictestnet, sepolia, somniatestnet, tronshasta) to match the testnet default ISM validator rotation in hyperlane-monorepo#9559.
+
+### Patch Changes
+
+- c0ba086: Deprecate remaining H2 2026 chain removals: superseed, tac, carrchain, blast, sei, taiko, megaeth, berachain, lisk, forma.
+- 8c1decf: disconnected the plasma leg from the USDT/eclipsemainnet warp route by emptying plasma's connections and removing plasma from every other token's connections.
+- 983d830: metal's rpcUrls were rotated to make https://metall2.drpc.org the primary endpoint, with the previous https://rpc.metall2.com kept as a fallback, after rpc.metall2.com stalled while drpc served a fresh tip.
+- 84e90ed: Replaced dead sonicsvm RPC with healthy quorum backends (official mainnet-alpha plus Helius fallback).
+- c62df47: Re-added the original nesa-chain NES deployment as the `NES/legacy` warp route id. The `NES/bsc` id was cut over to the new nesachain deployment in #1673, so the legacy nesa (domain 41443) route was preserved under a dedicated id to keep it referenceable for relayer blacklisting while it remains paused.
+- 1ea15b9: updated block-time estimates for fifteen supported chains using current block history and network documentation, including sub-second intervals
+- ebc1353: Added resilient public RPC fallbacks for Starknet mainnet ahead of the discontinued Lava endpoint.
+- e6b9c05: Upgraded pnpm to 12.3.0
+- 08f54a2: The USDT/eni warp route nested OffchainQuotedLinearFee owners on the arbitrum, base, bsc, ethereum, optimism, and polygon collateral legs were set to the WarpFees Turnkey treasury key so a warp apply transfers fee-contract ownership to Turnkey. The tron leg keeps its WarpFees ICA.
+
 ## 26.1.0
 
 ### Minor Changes
