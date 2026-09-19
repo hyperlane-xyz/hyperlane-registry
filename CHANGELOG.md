@@ -1,5 +1,33 @@
 # @hyperlane-xyz/registry
 
+## 26.2.0
+
+### Minor Changes
+
+- 96789f3: Update `interchainSecurityModule` addresses on 10 testnets (arbitrumsepolia, basesepolia, bsctestnet, hyperliquidevmtestnet, optimismsepolia, polygonamoy, seismictestnet, sepolia, somniatestnet, tronshasta) to match the testnet default ISM validator rotation in hyperlane-monorepo#9559.
+
+### Patch Changes
+
+- 8e463e7: updated Abstract, zkSync and Tempo ISM addresses for the validator rotation and current core origin lists
+- 41db64c: Arc gained transactionOverrides setting maxFeePerGas to 60 gwei and maxPriorityFeePerGas to 2 gwei so transactions are included promptly. Previously txs used a ~0.1 gwei tip and lingered in the mempool for up to an hour or were dropped, causing key funder IGP-claim/top-up timeouts. Gas is paid in USDC so the higher ceiling costs a fraction of a cent per tx.
+- 8e463e7: corrected Celestia's ISM address to match its existing on-chain default routing module
+- 8e463e7: updated core ISM addresses across 53 chains for the validator rotation and Viction governance migration
+- c0ba086: Deprecate remaining H2 2026 chain removals: superseed, tac, carrchain, blast, sei, taiko, megaeth, berachain, lisk, forma.
+- 8c1decf: disconnected the plasma leg from the USDT/eclipsemainnet warp route by emptying plasma's connections and removing plasma from every other token's connections.
+- ad30613: Arc's rpcUrls were corrected to https://rpc.mainnet.arc.io, replacing the unreachable https://rpc.arc.io endpoint that returned no response.
+- 983d830: metal's rpcUrls were rotated to make https://metall2.drpc.org the primary endpoint, with the previous https://rpc.metall2.com kept as a fallback, after rpc.metall2.com stalled while drpc served a fresh tip.
+- 84e90ed: Replaced dead sonicsvm RPC with healthy quorum backends (official mainnet-alpha plus Helius fallback).
+- 2b71f23: updated Eclipse, Solana, and Sonic SVM ISM addresses to corrected validator configurations
+- c62df47: Re-added the original nesa-chain NES deployment as the `NES/legacy` warp route id. The `NES/bsc` id was cut over to the new nesachain deployment in #1673, so the legacy nesa (domain 41443) route was preserved under a dedicated id to keep it referenceable for relayer blacklisting while it remains paused.
+- 1ea15b9: updated block-time estimates for fifteen supported chains using current block history and network documentation, including sub-second intervals
+- 7fe457f: Removed the plasma leg (domain 9745) from the USDT/eclipsemainnet warp route config and regenerated the deploy artifact, and added a threshold-3 static aggregation ISM (defaultFallbackRoutingIsm + pausableIsm + rateLimitedIsm) to the EVM legs.
+- 8e463e7: updated Solaxy's ISM address for the validator rotation
+- 8e463e7: updated Starknet's default ISM address for the validator rotation and removal of 81 deprecated origins
+- ebc1353: Added resilient public RPC fallbacks for Starknet mainnet ahead of the discontinued Lava endpoint.
+- 26fb0a5: Removed the discontinued Lava Starknet mainnet RPC and pinned the Cartridge endpoint to JSON-RPC v0.9.
+- e6b9c05: Upgraded pnpm to 12.3.0
+- 08f54a2: The USDT/eni warp route nested OffchainQuotedLinearFee owners on the arbitrum, base, bsc, ethereum, optimism, and polygon collateral legs were set to the WarpFees Turnkey treasury key so a warp apply transfers fee-contract ownership to Turnkey. The tron leg keeps its WarpFees ICA.
+
 ## 26.1.0
 
 ### Minor Changes
