@@ -4,10 +4,34 @@ arbitrum:
   allowedRebalancingBridges:
     base:
       - bridge: "0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2"
+      - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
+      - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
     ethereum:
       - bridge: "0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2"
+      - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
+      - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+    hyperevm:
+      - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
+      - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+  contractVersion: 11.1.0
   owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
   token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+  tokenFee:
+    feeContracts:
+      base:
+        bps: 10
+        owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+        type: LinearFee
+      ethereum:
+        bps: 10
+        owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+        type: LinearFee
+      hyperevm:
+        bps: 10
+        owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+        type: LinearFee
+    owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+    type: RoutingFee
   type: collateral
 base:
   allowedRebalancers:
@@ -15,10 +39,34 @@ base:
   allowedRebalancingBridges:
     arbitrum:
       - bridge: "0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975"
+      - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
+      - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
     ethereum:
       - bridge: "0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975"
+      - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
+      - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+    hyperevm:
+      - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
+      - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+  contractVersion: 11.1.0
   owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
   token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 10
+        owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+        type: LinearFee
+      ethereum:
+        bps: 10
+        owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+        type: LinearFee
+      hyperevm:
+        bps: 10
+        owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+        type: LinearFee
+    owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+    type: RoutingFee
   type: collateral
 ethereum:
   allowedRebalancers:
@@ -26,11 +74,90 @@ ethereum:
   allowedRebalancingBridges:
     arbitrum:
       - bridge: "0xedCBAa585FD0F80f20073F9958246476466205b8"
+      - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
+      - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
     base:
       - bridge: "0xedCBAa585FD0F80f20073F9958246476466205b8"
+      - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
+      - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+    hyperevm:
+      - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
+      - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+  contractVersion: 11.1.0
   owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
   token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 10
+        owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+        type: LinearFee
+      base:
+        bps: 10
+        owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+        type: LinearFee
+      hyperevm:
+        bps: 10
+        owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+        type: LinearFee
+    owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+    type: RoutingFee
+  type: collateral
+hyperevm:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0xDdf252a063f8c5C399B9ccDBbaDBA55225F53Da1"
+      - bridge: "0xe10b7b030C75C80359841CB0ec892E233F03f145"
+    base:
+      - bridge: "0xDdf252a063f8c5C399B9ccDBbaDBA55225F53Da1"
+      - bridge: "0xe10b7b030C75C80359841CB0ec892E233F03f145"
+    ethereum:
+      - bridge: "0xDdf252a063f8c5C399B9ccDBbaDBA55225F53Da1"
+      - bridge: "0xe10b7b030C75C80359841CB0ec892E233F03f145"
+  contractVersion: 11.1.0
+  # owner: "0x85E9F6f98163af72f44E5dEb64bf26e110D3ea82" team ica owned by ethereum safe
+  owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+  token: "0xb88339CB7199b77E23DB6E890353E22632Ba630f"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 10
+        owner: "0x85E9F6f98163af72f44E5dEb64bf26e110D3ea82"
+        type: LinearFee
+      base:
+        bps: 10
+        owner: "0x85E9F6f98163af72f44E5dEb64bf26e110D3ea82"
+        type: LinearFee
+      ethereum:
+        bps: 10
+        owner: "0x85E9F6f98163af72f44E5dEb64bf26e110D3ea82"
+        type: LinearFee
+    owner: "0x85E9F6f98163af72f44E5dEb64bf26e110D3ea82"
+    type: RoutingFee
   type: collateral
 mantra:
+  contractVersion: 11.1.0
   owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 10
+        owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+        type: LinearFee
+      base:
+        bps: 10
+        owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+        type: LinearFee
+      ethereum:
+        bps: 10
+        owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+        type: LinearFee
+      hyperevm:
+        bps: 10
+        owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+        type: LinearFee
+    owner: "0x66B6FF38b988759E57509f00c7B9717b1a94DA4D"
+    type: RoutingFee
   type: synthetic
