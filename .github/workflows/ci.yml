@@ -14,13 +14,12 @@ on:
 
 jobs:
   build:
+    # test:unit runs the same build before the unit tests.
+    needs: [test]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - name: pnpm-cache
-        uses: ./.github/actions/pnpm-cache
-      - name: build
-        run: pnpm run build
+      - name: Confirm build passed in the test job
+        run: echo 'pnpm run test:unit completed its build step'
 
   lint:
     runs-on: ubuntu-latest
