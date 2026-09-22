@@ -1,0 +1,17 @@
+name: 'PNPM Setup'
+description: 'Install the locked dependencies without restoring or saving a store cache'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v6
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v7
+      with:
+        node-version-file: '.nvmrc'
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install --frozen-lockfile

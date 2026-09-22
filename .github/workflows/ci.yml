@@ -17,8 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: pnpm-cache
-        uses: ./.github/actions/pnpm-cache
+      - name: pnpm-setup
+        uses: ./.github/actions/pnpm-setup
       - name: build
         run: pnpm run build
 
@@ -26,8 +26,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: pnpm-cache
-        uses: ./.github/actions/pnpm-cache
+      - name: pnpm-setup
+        uses: ./.github/actions/pnpm-setup
       - name: lint
         run: pnpm run lint
 
@@ -35,8 +35,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: pnpm-cache
-        uses: ./.github/actions/pnpm-cache
+      - name: pnpm-setup
+        uses: ./.github/actions/pnpm-setup
       - name: format
         run: |
           pnpm run format
@@ -50,8 +50,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: pnpm-cache
-        uses: ./.github/actions/pnpm-cache
+      - name: pnpm-setup
+        uses: ./.github/actions/pnpm-setup
       - name: test
         run: pnpm run test:unit
 
@@ -75,7 +75,7 @@ jobs:
         with:
           # check out full history
           fetch-depth: 0
-      - name: pnpm-cache
-        uses: ./.github/actions/pnpm-cache
+      - name: pnpm-setup
+        uses: ./.github/actions/pnpm-setup
       - name: changeset
         run: pnpm exec changeset status --since origin/main
