@@ -1,5 +1,39 @@
 # @hyperlane-xyz/registry
 
+## 26.2.0
+
+### Minor Changes
+
+- 1298ed2: arc was added to the USDC CCTP v2 standard and fast routes and the deprecated plume leg was removed from both, and new USDC CCTP v2 standard and fast staging routes were added for mainnet testing.
+- 96789f3: Update `interchainSecurityModule` addresses on 10 testnets (arbitrumsepolia, basesepolia, bsctestnet, hyperliquidevmtestnet, optimismsepolia, polygonamoy, seismictestnet, sepolia, somniatestnet, tronshasta) to match the testnet default ISM validator rotation in hyperlane-monorepo#9559.
+
+### Patch Changes
+
+- 8e463e7: updated Abstract, zkSync and Tempo ISM addresses for the validator rotation and current core origin lists
+- 41db64c: Arc gained transactionOverrides setting maxFeePerGas to 60 gwei and maxPriorityFeePerGas to 2 gwei so transactions are included promptly. Previously txs used a ~0.1 gwei tip and lingered in the mempool for up to an hour or were dropped, causing key funder IGP-claim/top-up timeouts. Gas is paid in USDC so the higher ceiling costs a fraction of a cent per tx.
+- 8e463e7: corrected Celestia's ISM address to match its existing on-chain default routing module
+- 8e463e7: updated core ISM addresses across 53 chains for the validator rotation and Viction governance migration
+- c0ba086: Deprecate remaining H2 2026 chain removals: superseed, tac, carrchain, blast, sei, taiko, megaeth, berachain, lisk, forma.
+- 8c1decf: disconnected the plasma leg from the USDT/eclipsemainnet warp route by emptying plasma's connections and removing plasma from every other token's connections.
+- ad30613: Arc's rpcUrls were corrected to https://rpc.mainnet.arc.io, replacing the unreachable https://rpc.arc.io endpoint that returned no response.
+- 983d830: metal's rpcUrls were rotated to make https://metall2.drpc.org the primary endpoint, with the previous https://rpc.metall2.com kept as a fallback, after rpc.metall2.com stalled while drpc served a fresh tip.
+- a742d9d: updated the Solaxy ISM address to the corrected validator configuration
+- 84e90ed: Replaced dead sonicsvm RPC with healthy quorum backends (official mainnet-alpha plus Helius fallback).
+- 2b71f23: updated Eclipse, Solana, and Sonic SVM ISM addresses to corrected validator configurations
+- c62df47: Re-added the original nesa-chain NES deployment as the `NES/legacy` warp route id. The `NES/bsc` id was cut over to the new nesachain deployment in #1673, so the legacy nesa (domain 41443) route was preserved under a dedicated id to keep it referenceable for relayer blacklisting while it remains paused.
+- 1ea15b9: updated block-time estimates for fifteen supported chains using current block history and network documentation, including sub-second intervals
+- a599287: Removed all igra warp routes from the universal router engine allowlist (USDC/igra, USDS/ethereum-igra, USDe/igra, USDT/ethereum-igra, IKAS/igra, TIBBIR/igra, SOL/igra, CBBTC/igra, WSTETH/igra, WETH/ethereum-igra) so igra routes no longer surface in Nexus.
+- 7fe457f: Removed the plasma leg (domain 9745) from the USDT/eclipsemainnet warp route config and regenerated the deploy artifact, and added a threshold-3 static aggregation ISM (defaultFallbackRoutingIsm + pausableIsm + rateLimitedIsm) to the EVM legs.
+- 2306cc3: The tETH eclipsemainnet↔ethereum warp route was removed from the Nexus universal-router allowlist. Eclipse is sunsetting tETH (redeem-only, no new mints), and the tETH token's before-transfer hook was set to a codeless contract on Sep 11, which reverts every transfer and blocks all bridging. The route is delisted from Nexus until the token becomes transferable again.
+- 8e463e7: updated Solaxy's ISM address for the validator rotation
+- 8e463e7: updated Starknet's default ISM address for the validator rotation and removal of 81 deprecated origins
+- ebc1353: Added resilient public RPC fallbacks for Starknet mainnet ahead of the discontinued Lava endpoint.
+- 26fb0a5: Removed the discontinued Lava Starknet mainnet RPC and pinned the Cartridge endpoint to JSON-RPC v0.9.
+- 2d6fa12: The tETH eclipsemainnet↔ethereum warp route was missing the `scale: 1000000000` field on its Eclipse SealevelHypSynthetic token (9 decimals bridging to an 18-decimal Ethereum collateral). Without it, consumers reading the message amount with the origin token's 9 decimals displayed transfers inflated by 1e9 (e.g. a 0.0115 tETH transfer shown as ~11.5M). The scale was added to match the sibling eclipsemainnet↔ethereum routes (weETHs, apxETH).
+- e6b9c05: Upgraded pnpm to 12.3.0
+- 75e2b3c: The USDC/igra RoutingFee and nested LinearFee owners are pointed to the Turnkey warp-fees key (`0xe95C605096A1AD38BaC3E5210e145952Cbdc6998`), reflecting the on-chain owner rotation.
+- 08f54a2: The USDT/eni warp route nested OffchainQuotedLinearFee owners on the arbitrum, base, bsc, ethereum, optimism, and polygon collateral legs were set to the WarpFees Turnkey treasury key so a warp apply transfers fee-contract ownership to Turnkey. The tron leg keeps its WarpFees ICA.
+
 ## 26.1.0
 
 ### Minor Changes
