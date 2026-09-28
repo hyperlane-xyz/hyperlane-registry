@@ -27,6 +27,16 @@ arbitrum:
       - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
       - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
   decimals: 6
+  hook:
+    domains:
+      aleo:
+        owner: "0x63C65aFC66C7247a3d43197744Da7F5838ACbf77"
+        paused: true
+        type: pausableHook
+    fallback:
+      type: defaultHook
+    owner: "0x63C65aFC66C7247a3d43197744Da7F5838ACbf77"
+    type: fallbackRoutingHook
   mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
   name: USD Coin
   owner: "0x63C65aFC66C7247a3d43197744Da7F5838ACbf77"
@@ -54,6 +64,16 @@ avalanche:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
   decimals: 6
+  hook:
+    domains:
+      aleo:
+        owner: "0x117f4a84f98b3C8BEF00a2371672031694C1Fa0A"
+        paused: true
+        type: pausableHook
+    fallback:
+      type: defaultHook
+    owner: "0x117f4a84f98b3C8BEF00a2371672031694C1Fa0A"
+    type: fallbackRoutingHook
   mailbox: "0xFf06aFcaABaDDd1fb08371f9ccA15D73D51FeBD6"
   name: USD Coin
   owner: "0x117f4a84f98b3C8BEF00a2371672031694C1Fa0A"
@@ -81,6 +101,16 @@ base:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
   decimals: 6
+  hook:
+    domains:
+      aleo:
+        owner: "0xc88297c52BED07aecAec13BD3bB21647C319a73d"
+        paused: true
+        type: pausableHook
+    fallback:
+      type: defaultHook
+    owner: "0xc88297c52BED07aecAec13BD3bB21647C319a73d"
+    type: fallbackRoutingHook
   mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
   name: USD Coin
   owner: "0xc88297c52BED07aecAec13BD3bB21647C319a73d"
@@ -90,6 +120,16 @@ base:
   type: collateral
 bsc:
   decimals: 18
+  hook:
+    domains:
+      aleo:
+        owner: "0x157515A5Fe21FBC4e22479B5FA59344D0bC8bc58"
+        paused: true
+        type: pausableHook
+    fallback:
+      type: defaultHook
+    owner: "0x157515A5Fe21FBC4e22479B5FA59344D0bC8bc58"
+    type: fallbackRoutingHook
   mailbox: "0x2971b9Aec44bE4eb673DF1B88cDB57b96eefe8a4"
   name: USD Coin
   owner: "0x157515A5Fe21FBC4e22479B5FA59344D0bC8bc58"
@@ -117,6 +157,16 @@ ethereum:
       - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
       - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
   decimals: 6
+  hook:
+    domains:
+      aleo:
+        owner: "0x738Bb9f27B5757797ba730390b4e43A9F4C2A011"
+        paused: true
+        type: pausableHook
+    fallback:
+      type: defaultHook
+    owner: "0x738Bb9f27B5757797ba730390b4e43A9F4C2A011"
+    type: fallbackRoutingHook
   mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
   name: USD Coin
   owner: "0x738Bb9f27B5757797ba730390b4e43A9F4C2A011"
@@ -144,6 +194,16 @@ optimism:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x4eFaacbf0D3d57b401Cb6B559e84b344448b0C30"
   decimals: 6
+  hook:
+    domains:
+      aleo:
+        owner: "0x17e9199682D987D61784F8105018fa30e04Aa886"
+        paused: true
+        type: pausableHook
+    fallback:
+      type: defaultHook
+    owner: "0x17e9199682D987D61784F8105018fa30e04Aa886"
+    type: fallbackRoutingHook
   mailbox: "0xd4C1905BB1D26BC93DAC913e13CaCC278CdCC80D"
   name: USD Coin
   owner: "0x17e9199682D987D61784F8105018fa30e04Aa886"
@@ -171,6 +231,16 @@ polygon:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
   decimals: 6
+  hook:
+    domains:
+      aleo:
+        owner: "0xac4AB5850b8dE9c07A2756c1c79266aB36183822"
+        paused: true
+        type: pausableHook
+    fallback:
+      type: defaultHook
+    owner: "0xac4AB5850b8dE9c07A2756c1c79266aB36183822"
+    type: fallbackRoutingHook
   mailbox: "0x5d934f4e2f797775e53561bB72aca21ba36B96BB"
   name: USD Coin
   owner: "0xac4AB5850b8dE9c07A2756c1c79266aB36183822"
@@ -194,6 +264,21 @@ solanamainnet:
   mailbox: E588QtVUvresuXq2KoNEwAmoifCzYGpRBdHByN9KQMbi
   name: USD Coin
   owner: ABJnd4eWexNte9GYy21ud5hvSwFKWedveP6GCFxXKkCw
+  remoteRouters:
+    "1":
+      address: "0x78Ac7FECD1857f5BEEe98AB39096c9781F976D97"
+    "10":
+      address: "0x1FdA66FA15A261F01F1E09228D41bD0A806d7529"
+    "56":
+      address: "0x5284D803a4563DC5eE83feA80c688b096d70eb75"
+    "137":
+      address: "0x1FdA66FA15A261F01F1E09228D41bD0A806d7529"
+    "8453":
+      address: "0xB46930ca998587A95D9Ee000FA73A071ADD56B64"
+    "42161":
+      address: "0x1FdA66FA15A261F01F1E09228D41bD0A806d7529"
+    "43114":
+      address: "0x1FdA66FA15A261F01F1E09228D41bD0A806d7529"
   scale: 1000000000000
   symbol: USDC
   token: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
