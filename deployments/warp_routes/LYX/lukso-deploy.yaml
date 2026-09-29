@@ -1,16 +1,48 @@
+# The LYX router is also deployed on base (domain 8453) at the same address and
+# is enrolled on-chain on both legs below. It was created on 2025-08-14 as part
+# of the original LUKSO rollout, but the route was added to the registry as
+# lukso-ethereum only (#1097), and no messages have been sent through the base
+# router. Base is therefore intentionally NOT a leg of this route (see
+# lukso-config.yaml), so it is not exposed in UIs.
+#
+# The 8453 entries in remoteRouters/destinationGas below only describe the
+# existing on-chain enrollment so that `warp check` does not report it as drift.
+# An explicit remoteRouters/destinationGas replaces the computed one entirely,
+# so every remote must be listed, not just base.
+#
+# If LUKSO unenrolls base, remove the 8453 entries. If base launches, add a
+# base leg here and in lukso-config.yaml instead.
 ethereum:
+  decimals: 18
+  destinationGas:
+    "42": "68000"
+    "8453": "68000"
   isNft: false
   name: Bridged LUKSO (Hyperlane)
   owner: "0x1f6327208f6B682deB1dE14B2faF52804ed69692"
   proxyAdmin:
     address: "0x32fDda6b6Cfe7571c25e3eADeFC9F4faD60C912B"
     owner: "0xA3f6b9c3C1d2b2d49e8fa8ABCa49C4286150b525"
+  remoteRouters:
+    "42":
+      address: "0xC210B2cB65ed3484892167F5e05F7ab496Ab0598"
+    "8453":
+      address: "0xC210B2cB65ed3484892167F5e05F7ab496Ab0598"
   symbol: LYX
   type: synthetic
 lukso:
+  decimals: 18
+  destinationGas:
+    "1": "68000"
+    "8453": "68000"
   isNft: false
   owner: "0x1f6327208f6B682deB1dE14B2faF52804ed69692"
   proxyAdmin:
     address: "0x32fDda6b6Cfe7571c25e3eADeFC9F4faD60C912B"
     owner: "0xA3f6b9c3C1d2b2d49e8fa8ABCa49C4286150b525"
+  remoteRouters:
+    "1":
+      address: "0xC210B2cB65ed3484892167F5e05F7ab496Ab0598"
+    "8453":
+      address: "0xC210B2cB65ed3484892167F5e05F7ab496Ab0598"
   type: native
