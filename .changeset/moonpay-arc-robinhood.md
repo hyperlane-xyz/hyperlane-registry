@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Extend the USDC MoonPay warp route deployment config to Arc USDC and Robinhood USDG.
+Extend the production and staging USDC MoonPay warp route deployment configs to Arc USDC and Robinhood USDG.
