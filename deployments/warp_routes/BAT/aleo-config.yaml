@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: hyp_warp_token_bat_v2.aleo/aleo1n6kjmle3t0prrwjgpwc87zytasmjdeud5rrwuuawk57ex85qr5fqcv8xzg
+    chainName: aleo
+    connections:
+      - token: ethereum|ethereum|0x516e156e987175d74614cc2bC960f148A610f0b3
+      - token: sealevel|solanamainnet|7CJFBsNC49upnVfMga2gj53deAjuuVchdceJQrJg5oA5
+    decimals: 18
+    name: Basic Attention
+    standard: AleoHypSynthetic
+    symbol: BAT
+    tokenType: synthetic
+  - addressOrDenom: "0x516e156e987175d74614cc2bC960f148A610f0b3"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x0D8775F648430679A709E98d2b0Cb6250d2887EF"
+    connections:
+      - token: aleo|aleo|hyp_warp_token_bat_v2.aleo/aleo1n6kjmle3t0prrwjgpwc87zytasmjdeud5rrwuuawk57ex85qr5fqcv8xzg
+      - token: sealevel|solanamainnet|7CJFBsNC49upnVfMga2gj53deAjuuVchdceJQrJg5oA5
+    decimals: 18
+    name: Basic Attention Token
+    standard: EvmHypCollateral
+    symbol: BAT
+    tokenType: collateral
+  - addressOrDenom: 7CJFBsNC49upnVfMga2gj53deAjuuVchdceJQrJg5oA5
+    chainName: solanamainnet
+    collateralAddressOrDenom: EPeUFDgHRxs9xxEPVaL6kfGQvCon7jmAWKVUHuux1Tpz
+    connections:
+      - token: aleo|aleo|hyp_warp_token_bat_v2.aleo/aleo1n6kjmle3t0prrwjgpwc87zytasmjdeud5rrwuuawk57ex85qr5fqcv8xzg
+      - token: ethereum|ethereum|0x516e156e987175d74614cc2bC960f148A610f0b3
+    decimals: 8
+    name: Basic Attention
+    standard: SealevelHypCollateral
+    symbol: BAT
+    tokenType: collateral
