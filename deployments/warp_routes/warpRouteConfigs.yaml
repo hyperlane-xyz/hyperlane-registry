@@ -2353,7 +2353,9 @@ ETH/coti-ethereum:
       chainName: coti
       connections:
         - token: ethereum|ethereum|0x07C747b0D99aBE8132f771cf6D2365D19ED1FfbA
-        - token: ethereum|robinhood|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|arbitrum|0x2011d8fDd34F07a292C7aB6b1f4e4046a98842a6
+        - token: ethereum|base|0x7c15d85933aEE2e721220F2bfd6afCEAfd357BEB
+        - token: ethereum|robinhood|0x2bef59e84615371304bd731601f6344F5F304504
       decimals: 18
       logoURI: /deployments/warp_routes/ETH/logo.svg
       name: Wrapped Ether
@@ -2365,20 +2367,47 @@ ETH/coti-ethereum:
       coinGeckoId: ethereum
       connections:
         - token: ethereum|coti|0x639aCc80569c5FC83c6FBf2319A6Cc38bBfe26d1
-        - token: ethereum|robinhood|0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886
+        - token: ethereum|arbitrum|0x2011d8fDd34F07a292C7aB6b1f4e4046a98842a6
+        - token: ethereum|base|0x7c15d85933aEE2e721220F2bfd6afCEAfd357BEB
+        - token: ethereum|robinhood|0x2bef59e84615371304bd731601f6344F5F304504
       decimals: 18
       logoURI: /deployments/warp_routes/ETH/logo.svg
       name: Ether
       standard: EvmHypNative
       symbol: ETH
       tokenType: native
-    - addressOrDenom: "0xEEC6574eAbBa52bac3f0277F2cD5Ac7e67197886"
+    - addressOrDenom: "0x2011d8fDd34F07a292C7aB6b1f4e4046a98842a6"
+      chainName: arbitrum
+      connections:
+        - token: ethereum|coti|0x639aCc80569c5FC83c6FBf2319A6Cc38bBfe26d1
+        - token: ethereum|ethereum|0x07C747b0D99aBE8132f771cf6D2365D19ED1FfbA
+        - token: ethereum|base|0x7c15d85933aEE2e721220F2bfd6afCEAfd357BEB
+        - token: ethereum|robinhood|0x2bef59e84615371304bd731601f6344F5F304504
+      decimals: 18
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
+      tokenType: native
+    - addressOrDenom: "0x7c15d85933aEE2e721220F2bfd6afCEAfd357BEB"
+      chainName: base
+      connections:
+        - token: ethereum|coti|0x639aCc80569c5FC83c6FBf2319A6Cc38bBfe26d1
+        - token: ethereum|ethereum|0x07C747b0D99aBE8132f771cf6D2365D19ED1FfbA
+        - token: ethereum|arbitrum|0x2011d8fDd34F07a292C7aB6b1f4e4046a98842a6
+        - token: ethereum|robinhood|0x2bef59e84615371304bd731601f6344F5F304504
+      decimals: 18
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
+      tokenType: native
+    - addressOrDenom: "0x2bef59e84615371304bd731601f6344F5F304504"
       chainName: robinhood
       connections:
         - token: ethereum|coti|0x639aCc80569c5FC83c6FBf2319A6Cc38bBfe26d1
         - token: ethereum|ethereum|0x07C747b0D99aBE8132f771cf6D2365D19ED1FfbA
+        - token: ethereum|arbitrum|0x2011d8fDd34F07a292C7aB6b1f4e4046a98842a6
+        - token: ethereum|base|0x7c15d85933aEE2e721220F2bfd6afCEAfd357BEB
       decimals: 18
-      logoURI: /deployments/warp_routes/ETH/logo.svg
       name: Ether
       standard: EvmHypNative
       symbol: ETH
