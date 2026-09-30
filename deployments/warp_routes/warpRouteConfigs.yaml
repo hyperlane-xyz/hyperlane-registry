@@ -236,6 +236,49 @@ ATN/holesky-piccadilly:
       name: Auton
       standard: EvmHypNative
       symbol: ATN
+BAT/aleo:
+  tokens:
+    - addressOrDenom: hyp_warp_token_bat_v2.aleo/aleo1n6kjmle3t0prrwjgpwc87zytasmjdeud5rrwuuawk57ex85qr5fqcv8xzg
+      chainName: aleo
+      connections:
+        - token: ethereum|ethereum|0x516e156e987175d74614cc2bC960f148A610f0b3
+        - token: sealevel|solanamainnet|7CJFBsNC49upnVfMga2gj53deAjuuVchdceJQrJg5oA5
+      decimals: 18
+      name: Basic Attention
+      scale:
+        denominator: 1
+        numerator: 1
+      standard: AleoHypSynthetic
+      symbol: BAT
+      tokenType: synthetic
+    - addressOrDenom: "0x516e156e987175d74614cc2bC960f148A610f0b3"
+      chainName: ethereum
+      collateralAddressOrDenom: "0x0D8775F648430679A709E98d2b0Cb6250d2887EF"
+      connections:
+        - token: aleo|aleo|hyp_warp_token_bat_v2.aleo/aleo1n6kjmle3t0prrwjgpwc87zytasmjdeud5rrwuuawk57ex85qr5fqcv8xzg
+        - token: sealevel|solanamainnet|7CJFBsNC49upnVfMga2gj53deAjuuVchdceJQrJg5oA5
+      decimals: 18
+      name: Basic Attention Token
+      scale:
+        denominator: 1
+        numerator: 1
+      standard: EvmHypCollateral
+      symbol: BAT
+      tokenType: collateral
+    - addressOrDenom: 7CJFBsNC49upnVfMga2gj53deAjuuVchdceJQrJg5oA5
+      chainName: solanamainnet
+      collateralAddressOrDenom: EPeUFDgHRxs9xxEPVaL6kfGQvCon7jmAWKVUHuux1Tpz
+      connections:
+        - token: aleo|aleo|hyp_warp_token_bat_v2.aleo/aleo1n6kjmle3t0prrwjgpwc87zytasmjdeud5rrwuuawk57ex85qr5fqcv8xzg
+        - token: ethereum|ethereum|0x516e156e987175d74614cc2bC960f148A610f0b3
+      decimals: 8
+      name: Basic Attention
+      scale:
+        denominator: 1
+        numerator: 10000000000
+      standard: SealevelHypCollateral
+      symbol: BAT
+      tokenType: collateral
 BEST/ethereum:
   tokens:
     - addressOrDenom: "0x2E3B0f8eb2a98bC4ddF55477CC3B49bdd1da4EAF"
@@ -12552,6 +12595,40 @@ USDCSTAGE/eclipsemainnet:
       name: USDC
       standard: EvmHypCollateral
       symbol: USDCSTAGE
+USDG/aleo:
+  tokens:
+    - addressOrDenom: hyp_warp_token_usdg_v2.aleo/aleo1s4r80dv7pcggdnzsavjv45r54zjydl2jn64dejerpk6pgnfj5cysj7zzuu
+      chainName: aleo
+      connections:
+        - token: ethereum|ethereum|0xe5A2cCf532919f93855F324c1F8a7996065f53Da
+        - token: sealevel|solanamainnet|AhNVa6VpZwDwgD3U66CGUwCMRcFSFiTfBse2D495SPxW
+      decimals: 6
+      name: Global Dollar
+      standard: AleoHypSynthetic
+      symbol: USDG
+      tokenType: synthetic
+    - addressOrDenom: "0xe5A2cCf532919f93855F324c1F8a7996065f53Da"
+      chainName: ethereum
+      collateralAddressOrDenom: "0xe343167631d89B6Ffc58B88d6b7fB0228795491D"
+      connections:
+        - token: aleo|aleo|hyp_warp_token_usdg_v2.aleo/aleo1s4r80dv7pcggdnzsavjv45r54zjydl2jn64dejerpk6pgnfj5cysj7zzuu
+        - token: sealevel|solanamainnet|AhNVa6VpZwDwgD3U66CGUwCMRcFSFiTfBse2D495SPxW
+      decimals: 6
+      name: Global Dollar
+      standard: EvmHypCollateral
+      symbol: USDG
+      tokenType: collateral
+    - addressOrDenom: AhNVa6VpZwDwgD3U66CGUwCMRcFSFiTfBse2D495SPxW
+      chainName: solanamainnet
+      collateralAddressOrDenom: 2u1tszSeqZ3qBWF3uNGPFc8TzMk2tdiwknnRMWGWjGWH
+      connections:
+        - token: aleo|aleo|hyp_warp_token_usdg_v2.aleo/aleo1s4r80dv7pcggdnzsavjv45r54zjydl2jn64dejerpk6pgnfj5cysj7zzuu
+        - token: ethereum|ethereum|0xe5A2cCf532919f93855F324c1F8a7996065f53Da
+      decimals: 6
+      name: Global Dollar
+      standard: SealevelHypCollateral
+      symbol: USDG
+      tokenType: collateral
 USDN/auroratestnet-nobletestnet:
   tokens:
     - addressOrDenom: "0x2d10ad108d26384329Ac879476Ae0F4cc0531DEC"
@@ -14722,6 +14799,27 @@ XRD/radix:
       name: Radix
       standard: RadixHypCollateral
       symbol: XRD
+ZEC/aleo:
+  tokens:
+    - addressOrDenom: hyp_warp_token_zec_v2.aleo/aleo1m3z3en2msfdk62yje9ty7fqydxeakgx0ec6ze672q86p2yxq0sqqyjr9jd
+      chainName: aleo
+      connections:
+        - token: sealevel|solanamainnet|2RBzic8nUNJ8KngRRbsCEjkeM9CtpQN2CCqU1cs1n2y5
+      decimals: 8
+      name: Zcash
+      standard: AleoHypSynthetic
+      symbol: ZEC
+      tokenType: synthetic
+    - addressOrDenom: 2RBzic8nUNJ8KngRRbsCEjkeM9CtpQN2CCqU1cs1n2y5
+      chainName: solanamainnet
+      collateralAddressOrDenom: A7bdiYdS5GjqGFtxf17ppRHtDKPkkRqbKtR27dxvQXaS
+      connections:
+        - token: aleo|aleo|hyp_warp_token_zec_v2.aleo/aleo1m3z3en2msfdk62yje9ty7fqydxeakgx0ec6ze672q86p2yxq0sqqyjr9jd
+      decimals: 8
+      name: Zcash
+      standard: SealevelHypCollateral
+      symbol: ZEC
+      tokenType: collateral
 adraSOL/solanamainnet-sonicsvm:
   tokens:
     - addressOrDenom: cFZCgMoWSoohWMJDmfLZBSLiTwNVszRM13dVnqa63cd
