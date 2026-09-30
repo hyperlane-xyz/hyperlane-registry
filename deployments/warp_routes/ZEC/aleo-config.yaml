@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: hyp_warp_token_zec_v2.aleo/aleo1m3z3en2msfdk62yje9ty7fqydxeakgx0ec6ze672q86p2yxq0sqqyjr9jd
+    chainName: aleo
+    connections:
+      - token: sealevel|solanamainnet|2RBzic8nUNJ8KngRRbsCEjkeM9CtpQN2CCqU1cs1n2y5
+    decimals: 8
+    name: Zcash
+    standard: AleoHypSynthetic
+    symbol: ZEC
+    tokenType: synthetic
+  - addressOrDenom: 2RBzic8nUNJ8KngRRbsCEjkeM9CtpQN2CCqU1cs1n2y5
+    chainName: solanamainnet
+    collateralAddressOrDenom: A7bdiYdS5GjqGFtxf17ppRHtDKPkkRqbKtR27dxvQXaS
+    connections:
+      - token: aleo|aleo|hyp_warp_token_zec_v2.aleo/aleo1m3z3en2msfdk62yje9ty7fqydxeakgx0ec6ze672q86p2yxq0sqqyjr9jd
+    decimals: 8
+    name: Zcash
+    standard: SealevelHypCollateral
+    symbol: ZEC
+    tokenType: collateral
