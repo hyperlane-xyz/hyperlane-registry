@@ -2668,11 +2668,13 @@ ETH/viction:
         - token: ethereum|ethereum|0x7DCA030594C6695fc24b874917d0beAA38715639
         - token: ethereum|optimism|0xEF096995d7C4FE68abF9C96042521A61bEdd596D
         - token: ethereum|viction|0x182e8d7c5f1b06201b102123fc7df0eaeb445a7b
+        - token: ethereum|robinhood|0x4000b76E3d95947DdA57C20B42bD20b70deCD522
       decimals: 18
       logoURI: /deployments/warp_routes/ETH/logo.svg
       name: Ether
       standard: EvmHypNative
       symbol: ETH
+      tokenType: native
     - addressOrDenom: "0xD3b9dDaC349E808B07845e01bae3Bf3464FB45b3"
       chainName: base
       coinGeckoId: ethereum
@@ -2681,11 +2683,13 @@ ETH/viction:
         - token: ethereum|ethereum|0x7DCA030594C6695fc24b874917d0beAA38715639
         - token: ethereum|optimism|0xEF096995d7C4FE68abF9C96042521A61bEdd596D
         - token: ethereum|viction|0x182e8d7c5f1b06201b102123fc7df0eaeb445a7b
+        - token: ethereum|robinhood|0x4000b76E3d95947DdA57C20B42bD20b70deCD522
       decimals: 18
       logoURI: /deployments/warp_routes/ETH/logo.svg
       name: Ether
       standard: EvmHypNative
       symbol: ETH
+      tokenType: native
     - addressOrDenom: "0x7DCA030594C6695fc24b874917d0beAA38715639"
       chainName: ethereum
       coinGeckoId: ethereum
@@ -2694,11 +2698,13 @@ ETH/viction:
         - token: ethereum|base|0xD3b9dDaC349E808B07845e01bae3Bf3464FB45b3
         - token: ethereum|optimism|0xEF096995d7C4FE68abF9C96042521A61bEdd596D
         - token: ethereum|viction|0x182e8d7c5f1b06201b102123fc7df0eaeb445a7b
+        - token: ethereum|robinhood|0x4000b76E3d95947DdA57C20B42bD20b70deCD522
       decimals: 18
       logoURI: /deployments/warp_routes/ETH/logo.svg
       name: Ether
       standard: EvmHypNative
       symbol: ETH
+      tokenType: native
     - addressOrDenom: "0xEF096995d7C4FE68abF9C96042521A61bEdd596D"
       chainName: optimism
       coinGeckoId: ethereum
@@ -2707,11 +2713,13 @@ ETH/viction:
         - token: ethereum|base|0xD3b9dDaC349E808B07845e01bae3Bf3464FB45b3
         - token: ethereum|ethereum|0x7DCA030594C6695fc24b874917d0beAA38715639
         - token: ethereum|viction|0x182e8d7c5f1b06201b102123fc7df0eaeb445a7b
+        - token: ethereum|robinhood|0x4000b76E3d95947DdA57C20B42bD20b70deCD522
       decimals: 18
       logoURI: /deployments/warp_routes/ETH/logo.svg
       name: Ether
       standard: EvmHypNative
       symbol: ETH
+      tokenType: native
     - addressOrDenom: "0x182e8d7c5f1b06201b102123fc7df0eaeb445a7b"
       chainName: viction
       connections:
@@ -2719,11 +2727,26 @@ ETH/viction:
         - token: ethereum|base|0xD3b9dDaC349E808B07845e01bae3Bf3464FB45b3
         - token: ethereum|ethereum|0x7DCA030594C6695fc24b874917d0beAA38715639
         - token: ethereum|optimism|0xEF096995d7C4FE68abF9C96042521A61bEdd596D
+        - token: ethereum|robinhood|0x4000b76E3d95947DdA57C20B42bD20b70deCD522
       decimals: 18
       logoURI: /deployments/warp_routes/ETH/logo.svg
-      name: Ethereum
+      name: ETH
       standard: EvmHypSynthetic
       symbol: ETH
+      tokenType: synthetic
+    - addressOrDenom: "0x4000b76E3d95947DdA57C20B42bD20b70deCD522"
+      chainName: robinhood
+      connections:
+        - token: ethereum|arbitrum|0xbcDAA686CD93188527A6020ba3D75f926f9e3c92
+        - token: ethereum|base|0xD3b9dDaC349E808B07845e01bae3Bf3464FB45b3
+        - token: ethereum|ethereum|0x7DCA030594C6695fc24b874917d0beAA38715639
+        - token: ethereum|optimism|0xEF096995d7C4FE68abF9C96042521A61bEdd596D
+        - token: ethereum|viction|0x182e8d7c5f1b06201b102123fc7df0eaeb445a7b
+      decimals: 18
+      name: Ether
+      standard: EvmHypNative
+      symbol: ETH
+      tokenType: native
 ETHSTAGE/stage:
   tokens:
     - addressOrDenom: "0x5b4172Eed2886bC3623a9ed9CCC98DBE2832B7d2"
