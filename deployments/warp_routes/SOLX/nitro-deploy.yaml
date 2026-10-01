@@ -4,12 +4,21 @@ ethereum:
   token: "0xe0B7AD7F8F26e2b00C8b47b5Df370f15F90fCF48"
   type: collateral
 solanamainnet:
+  destinationGas:
+    ethereum: "68000"
+    solaxy: "44000"
   foreignDeployment: DaF4pYDy5d6mhwEcMrenpNAjx1gfA9BgcYruUYTsZibE
   gas: 300000
+  interchainSecurityModule: CByGdnzmr9Gt3RNPXx9ZiM1RzEvrMnBsLTEWUbw1yT6v
   owner: 8MnEQtXQvpNkQGW5QHZYS5m621FubwGyK3qDphcZqmay
+  scale: 1000000000000
   type: synthetic
 solaxy:
+  destinationGas:
+    ethereum: "68000"
+    solanamainnet: "64000"
   foreignDeployment: 7HZ5A89rQyd3gpSLCFCsAzpap4SZJx3eC2AUMXKJBnfh
   gas: 300000
   owner: 8MnEQtXQvpNkQGW5QHZYS5m621FubwGyK3qDphcZqmay
+  scale: 1000000000000
   type: native
