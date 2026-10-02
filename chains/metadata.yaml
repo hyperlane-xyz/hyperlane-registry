@@ -85,6 +85,10 @@ acala:
     - http: https://eth-rpc-acala.aca-api.network
   technicalStack: polkadotsubstrate
 adichain:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://explorer.adichain/api
       family: other
@@ -10087,6 +10091,10 @@ zklink:
     - http: https://rpc.zklink.io
   technicalStack: zksync
 zksync:
+  availability:
+    reasons:
+      - deprecated
+    status: disabled
   blockExplorers:
     - apiUrl: https://zksync2-mainnet-explorer.zksync.io/contract_verification
       family: etherscan
