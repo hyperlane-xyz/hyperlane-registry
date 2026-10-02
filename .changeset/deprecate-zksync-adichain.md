@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Deprecate zkSync and ADI Chain.
+Marked zkSync and ADI Chain as deprecated and disabled so consumers exclude them from available chains.
