@@ -1,0 +1,75 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x43636903c308F8452B5115dAEd53cfD726F14Ac6"
+    chainName: mode
+    connections:
+      - token: ethereum|bsc|0x86EE36D7545B8CAEba6d058b95C0b07eE4D62E79
+      - token: ethereum|ethereum|0xF294f8dCe5d9E1c80B9c9bCA443d731F442692a5
+      - token: sealevel|solanamainnet|2CDsqN5XBVxqSYJVM6BfxQYWzu9u3KRwVrU6B8AN1vmv
+      - token: tron|tron|0x5b800342F5D9737f41EAb9706eB924C0E4E670B0
+    decimals: 8
+    logoURI: /deployments/warp_routes/WBTC/logo.svg
+    name: Wrapped BTC
+    standard: EvmHypSynthetic
+    symbol: WBTC
+    tokenType: synthetic
+  - addressOrDenom: "0x86EE36D7545B8CAEba6d058b95C0b07eE4D62E79"
+    chainName: bsc
+    coinGeckoId: wrapped-bitcoin
+    collateralAddressOrDenom: "0x0555E30da8f98308EdB960aa94C0Db47230d2B9c"
+    connections:
+      - token: ethereum|mode|0x43636903c308F8452B5115dAEd53cfD726F14Ac6
+      - token: ethereum|ethereum|0xF294f8dCe5d9E1c80B9c9bCA443d731F442692a5
+      - token: sealevel|solanamainnet|2CDsqN5XBVxqSYJVM6BfxQYWzu9u3KRwVrU6B8AN1vmv
+      - token: tron|tron|0x5b800342F5D9737f41EAb9706eB924C0E4E670B0
+    decimals: 8
+    logoURI: /deployments/warp_routes/WBTC/logo.svg
+    name: Wrapped BTC
+    standard: EvmHypCollateral
+    symbol: WBTC
+    tokenType: collateral
+  - addressOrDenom: "0xF294f8dCe5d9E1c80B9c9bCA443d731F442692a5"
+    chainName: ethereum
+    coinGeckoId: wrapped-bitcoin
+    collateralAddressOrDenom: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+    connections:
+      - token: ethereum|mode|0x43636903c308F8452B5115dAEd53cfD726F14Ac6
+      - token: ethereum|bsc|0x86EE36D7545B8CAEba6d058b95C0b07eE4D62E79
+      - token: sealevel|solanamainnet|2CDsqN5XBVxqSYJVM6BfxQYWzu9u3KRwVrU6B8AN1vmv
+      - token: tron|tron|0x5b800342F5D9737f41EAb9706eB924C0E4E670B0
+    decimals: 8
+    logoURI: /deployments/warp_routes/WBTC/logo.svg
+    name: Wrapped BTC
+    standard: EvmHypCollateral
+    symbol: WBTC
+    tokenType: collateral
+  - addressOrDenom: 2CDsqN5XBVxqSYJVM6BfxQYWzu9u3KRwVrU6B8AN1vmv
+    chainName: solanamainnet
+    coinGeckoId: wrapped-bitcoin
+    collateralAddressOrDenom: 5XZw2LKTyrfvfiskJ78AMpackRjPcyCif1WhUsPDuVqQ
+    connections:
+      - token: ethereum|mode|0x43636903c308F8452B5115dAEd53cfD726F14Ac6
+      - token: ethereum|bsc|0x86EE36D7545B8CAEba6d058b95C0b07eE4D62E79
+      - token: ethereum|ethereum|0xF294f8dCe5d9E1c80B9c9bCA443d731F442692a5
+      - token: tron|tron|0x5b800342F5D9737f41EAb9706eB924C0E4E670B0
+    decimals: 8
+    logoURI: /deployments/warp_routes/WBTC/logo.svg
+    name: Wrapped BTC
+    standard: SealevelHypCollateral
+    symbol: WBTC
+    tokenType: collateral
+  - addressOrDenom: "0x5b800342F5D9737f41EAb9706eB924C0E4E670B0"
+    chainName: tron
+    coinGeckoId: wrapped-bitcoin
+    collateralAddressOrDenom: "0xf95335a4d42db4b70a9688a393279f2c90fa1025"
+    connections:
+      - token: ethereum|mode|0x43636903c308F8452B5115dAEd53cfD726F14Ac6
+      - token: ethereum|bsc|0x86EE36D7545B8CAEba6d058b95C0b07eE4D62E79
+      - token: ethereum|ethereum|0xF294f8dCe5d9E1c80B9c9bCA443d731F442692a5
+      - token: sealevel|solanamainnet|2CDsqN5XBVxqSYJVM6BfxQYWzu9u3KRwVrU6B8AN1vmv
+    decimals: 8
+    logoURI: /deployments/warp_routes/WBTC/logo.svg
+    name: Wrapped BTC
+    standard: TronHypCollateral
+    symbol: WBTC
+    tokenType: collateral
