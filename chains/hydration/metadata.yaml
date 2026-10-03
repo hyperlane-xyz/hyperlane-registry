@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://hydration.api.subscan.io/api
+    family: other
+    name: Subscan
+    url: https://hydration.subscan.io
+blocks:
+  confirmations: 1
+  estimateBlockTime: 6
+  reorgPeriod: finalized
+chainId: 222222
+deployer:
+  name: Hydration
+  url: https://hydration.net
+displayName: Hydration
+domainId: 222222
+gasCurrencyCoinGeckoId: weth
+isTestnet: false
+name: hydration
+nativeToken:
+  decimals: 18
+  name: Wrapped Ether
+  symbol: WETH
+protocol: ethereum
+rpcUrls:
+  - http: https://hydration-rpc.n.dwellir.com
+  - http: https://hydration.rotko.net
+  - http: https://subway.sin.hydration.cloud
+  - http: https://subway.coke.hydration.cloud
+technicalStack: polkadotsubstrate
