@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x726f757465725f61707000000000000000000000000000010000000000000001"
+    chainName: dymension
+    coinGeckoId: dymension
+    collateralAddressOrDenom: adym
+    connections:
+      - token: ethereum|ethereum|0x408C4ECBe5D68a135be87e01aDaf91906e982127
+    decimals: 18
+    logoURI: /deployments/warp_routes/DYM/logo.svg
+    name: Dymension
+    standard: CosmosNativeHypCollateral
+    symbol: DYM
+  - addressOrDenom: "0x408C4ECBe5D68a135be87e01aDaf91906e982127"
+    chainName: ethereum
+    coinGeckoId: dymension
+    connections:
+      - token: cosmosnative|dymension|0x726f757465725f61707000000000000000000000000000010000000000000001
+    decimals: 18
+    logoURI: /deployments/warp_routes/DYM/logo.svg
+    name: Dymension
+    standard: EvmHypSynthetic
+    symbol: DYM
