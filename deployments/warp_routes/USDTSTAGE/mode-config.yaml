@@ -4,12 +4,28 @@ tokens:
     chainName: arbitrum
     collateralAddressOrDenom: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
     connections:
+      - token: ethereum|bsc|0x46fC549830F47E93684141e38756382FfB9ec0d1
       - token: ethereum|ethereum|0x4f7635A2F9795c10DF260C2fc0A23e0F60B4829C
       - token: ethereum|mode|0x01419427C18cC14d66817E90d2e550760230Cf3D
       - token: ethereum|plasma|0xa7E4dC4078bAc6e97Eec52a4F7642fF51cbb17C1
       - token: sealevel|solanamainnet|7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
+      - token: tron|tron|0x079f2b83892b5675888Eb28191dC171874B49AC8
     decimals: 6
     name: USD₮0
+    standard: EvmHypCollateral
+    symbol: USDTSTAGE
+  - addressOrDenom: "0x46fC549830F47E93684141e38756382FfB9ec0d1"
+    chainName: bsc
+    collateralAddressOrDenom: "0x55d398326f99059fF775485246999027B3197955"
+    connections:
+      - token: ethereum|arbitrum|0x22eF52C822329E96C3bE0bBB165805603777296C
+      - token: ethereum|ethereum|0x4f7635A2F9795c10DF260C2fc0A23e0F60B4829C
+      - token: ethereum|mode|0x01419427C18cC14d66817E90d2e550760230Cf3D
+      - token: ethereum|plasma|0xa7E4dC4078bAc6e97Eec52a4F7642fF51cbb17C1
+      - token: sealevel|solanamainnet|7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
+      - token: tron|tron|0x079f2b83892b5675888Eb28191dC171874B49AC8
+    decimals: 18
+    name: Tether USD
     standard: EvmHypCollateral
     symbol: USDTSTAGE
   - addressOrDenom: "0x4f7635A2F9795c10DF260C2fc0A23e0F60B4829C"
@@ -17,9 +33,11 @@ tokens:
     collateralAddressOrDenom: "0xdac17f958d2ee523a2206206994597c13d831ec7"
     connections:
       - token: ethereum|arbitrum|0x22eF52C822329E96C3bE0bBB165805603777296C
+      - token: ethereum|bsc|0x46fC549830F47E93684141e38756382FfB9ec0d1
       - token: ethereum|mode|0x01419427C18cC14d66817E90d2e550760230Cf3D
       - token: ethereum|plasma|0xa7E4dC4078bAc6e97Eec52a4F7642fF51cbb17C1
       - token: sealevel|solanamainnet|7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
+      - token: tron|tron|0x079f2b83892b5675888Eb28191dC171874B49AC8
     decimals: 6
     name: Tether USD
     standard: EvmHypCollateral
@@ -28,9 +46,11 @@ tokens:
     chainName: mode
     connections:
       - token: ethereum|arbitrum|0x22eF52C822329E96C3bE0bBB165805603777296C
+      - token: ethereum|bsc|0x46fC549830F47E93684141e38756382FfB9ec0d1
       - token: ethereum|ethereum|0x4f7635A2F9795c10DF260C2fc0A23e0F60B4829C
       - token: ethereum|plasma|0xa7E4dC4078bAc6e97Eec52a4F7642fF51cbb17C1
       - token: sealevel|solanamainnet|7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
+      - token: tron|tron|0x079f2b83892b5675888Eb28191dC171874B49AC8
     decimals: 6
     name: Tether USD STAGE
     standard: EvmHypSynthetic
@@ -40,9 +60,11 @@ tokens:
     collateralAddressOrDenom: "0xb8ce59fc3717ada4c02eadf9682a9e934f625ebb"
     connections:
       - token: ethereum|arbitrum|0x22eF52C822329E96C3bE0bBB165805603777296C
+      - token: ethereum|bsc|0x46fC549830F47E93684141e38756382FfB9ec0d1
       - token: ethereum|ethereum|0x4f7635A2F9795c10DF260C2fc0A23e0F60B4829C
       - token: ethereum|mode|0x01419427C18cC14d66817E90d2e550760230Cf3D
       - token: sealevel|solanamainnet|7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
+      - token: tron|tron|0x079f2b83892b5675888Eb28191dC171874B49AC8
     decimals: 6
     name: USDT0
     standard: EvmHypCollateral
@@ -52,10 +74,26 @@ tokens:
     collateralAddressOrDenom: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
     connections:
       - token: ethereum|arbitrum|0x22eF52C822329E96C3bE0bBB165805603777296C
+      - token: ethereum|bsc|0x46fC549830F47E93684141e38756382FfB9ec0d1
       - token: ethereum|ethereum|0x4f7635A2F9795c10DF260C2fc0A23e0F60B4829C
       - token: ethereum|mode|0x01419427C18cC14d66817E90d2e550760230Cf3D
       - token: ethereum|plasma|0xa7E4dC4078bAc6e97Eec52a4F7642fF51cbb17C1
+      - token: tron|tron|0x079f2b83892b5675888Eb28191dC171874B49AC8
     decimals: 6
-    name: USDT
+    name: USD₮0
     standard: SealevelHypCollateral
+    symbol: USD₮0
+  - addressOrDenom: "0x079f2b83892b5675888Eb28191dC171874B49AC8"
+    chainName: tron
+    collateralAddressOrDenom: "0xa614f803b6fd780986a42c78ec9c7f77e6ded13c"
+    connections:
+      - token: ethereum|arbitrum|0x22eF52C822329E96C3bE0bBB165805603777296C
+      - token: ethereum|bsc|0x46fC549830F47E93684141e38756382FfB9ec0d1
+      - token: ethereum|ethereum|0x4f7635A2F9795c10DF260C2fc0A23e0F60B4829C
+      - token: ethereum|mode|0x01419427C18cC14d66817E90d2e550760230Cf3D
+      - token: ethereum|plasma|0xa7E4dC4078bAc6e97Eec52a4F7642fF51cbb17C1
+      - token: sealevel|solanamainnet|7xQYs3RZvycfk3nwDPGZhbkA9318xx324xhWDcENVfjg
+    decimals: 6
+    name: Tether USD
+    standard: TronHypCollateral
     symbol: USDTSTAGE
