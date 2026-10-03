@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x0357d61eDe1cbCB38981B11117cFcA1854CA28Ad"
+    chainName: base
+    connections:
+      - token: cosmosnative|bitsong|0x726f757465725f61707000000000000000000000000000010000000000000000
+    decimals: 6
+    logoURI: /deployments/warp_routes/BTSG/logo.svg
+    name: BitSong
+    standard: EvmHypSynthetic
+    symbol: BTSG
+  - addressOrDenom: "0x726f757465725f61707000000000000000000000000000010000000000000000"
+    chainName: bitsong
+    coinGeckoId: bitsong
+    connections:
+      - token: ethereum|base|0x0357d61eDe1cbCB38981B11117cFcA1854CA28Ad
+    decimals: 6
+    logoURI: /deployments/warp_routes/BTSG/logo.svg
+    name: BitSong
+    standard: CosmosNativeHypCollateral
+    symbol: BTSG
