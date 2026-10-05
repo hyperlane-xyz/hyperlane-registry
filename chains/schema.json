@@ -5,86 +5,98 @@
     "hyperlaneChainMetadata": {
       "type": "object",
       "properties": {
-        "availability": {
+        "maxSupportedTransactionVersion": {
           "$ref": "#/definitions/__schema0"
         },
+        "sealevelV1TransactionsEnabled": {
+          "$ref": "#/definitions/__schema2"
+        },
+        "sealevelTransactionVersion": {
+          "$ref": "#/definitions/__schema4"
+        },
+        "availability": {
+          "$ref": "#/definitions/__schema6"
+        },
         "bech32Prefix": {
-          "$ref": "#/definitions/__schema3"
-        },
-        "blockExplorers": {
-          "$ref": "#/definitions/__schema5"
-        },
-        "blocks": {
           "$ref": "#/definitions/__schema9"
         },
+        "blockExplorers": {
+          "$ref": "#/definitions/__schema11"
+        },
+        "blocks": {
+          "$ref": "#/definitions/__schema15"
+        },
         "bypassBatchSimulation": {
-          "$ref": "#/definitions/__schema14"
-        },
-        "chainId": {
-          "$ref": "#/definitions/__schema16"
-        },
-        "customGrpcUrls": {
-          "$ref": "#/definitions/__schema18"
-        },
-        "deployer": {
           "$ref": "#/definitions/__schema20"
         },
-        "displayName": {
+        "chainId": {
+          "$ref": "#/definitions/__schema22"
+        },
+        "customGrpcUrls": {
           "$ref": "#/definitions/__schema24"
         },
-        "displayNameShort": {
+        "deployer": {
           "$ref": "#/definitions/__schema26"
         },
-        "domainId": {
-          "$ref": "#/definitions/__schema28"
-        },
-        "gasCurrencyCoinGeckoId": {
+        "displayName": {
           "$ref": "#/definitions/__schema30"
         },
-        "gnosisSafeTransactionServiceUrl": {
+        "displayNameShort": {
           "$ref": "#/definitions/__schema32"
         },
-        "gnosisSafeApiKey": {
+        "domainId": {
           "$ref": "#/definitions/__schema34"
         },
-        "grpcUrls": {
+        "gasCurrencyCoinGeckoId": {
           "$ref": "#/definitions/__schema36"
         },
+        "gnosisSafeTransactionServiceUrl": {
+          "$ref": "#/definitions/__schema38"
+        },
+        "gnosisSafeApiKey": {
+          "$ref": "#/definitions/__schema40"
+        },
+        "gatewayUrls": {
+          "$ref": "#/definitions/__schema42"
+        },
+        "grpcUrls": {
+          "$ref": "#/definitions/__schema49"
+        },
         "index": {
-          "$ref": "#/definitions/__schema43"
-        },
-        "isTestnet": {
-          "$ref": "#/definitions/__schema46"
-        },
-        "logoURI": {
-          "$ref": "#/definitions/__schema48"
-        },
-        "name": {
           "$ref": "#/definitions/__schema50"
         },
-        "nativeToken": {
-          "$ref": "#/definitions/__schema51"
-        },
-        "protocol": {
+        "isTestnet": {
           "$ref": "#/definitions/__schema53"
         },
-        "restUrls": {
+        "logoURI": {
           "$ref": "#/definitions/__schema55"
         },
-        "rpcUrls": {
-          "$ref": "#/definitions/__schema56"
-        },
-        "slip44": {
+        "name": {
           "$ref": "#/definitions/__schema57"
         },
+        "nativeToken": {
+          "$ref": "#/definitions/__schema58"
+        },
+        "protocol": {
+          "$ref": "#/definitions/__schema60"
+        },
+        "restUrls": {
+          "$ref": "#/definitions/__schema62"
+        },
+        "rpcUrls": {
+          "$ref": "#/definitions/__schema63"
+        },
+        "slip44": {
+          "$ref": "#/definitions/__schema64"
+        },
         "technicalStack": {
-          "$ref": "#/definitions/__schema59"
+          "$ref": "#/definitions/__schema66"
         },
         "transactionOverrides": {
-          "$ref": "#/definitions/__schema61"
+          "$ref": "#/definitions/__schema68"
         },
         "gasPrice": {
-          "$ref": "#/definitions/__schema63"
+          "$ref": "#/definitions/__schema70"
         }
       },
       "required": [
@@ -97,7 +109,7 @@
       "additionalProperties": false
     },
     "__schema0": {
-      "description": "Specifies if the chain is available and the reasons why it is disabled.",
+      "description": "Highest supported SVM transaction version; defaults to 0.",
       "allOf": [
         {
           "$ref": "#/definitions/__schema1"
@@ -105,6 +117,57 @@
       ]
     },
     "__schema1": {
+      "anyOf": [
+        {
+          "type": "number",
+          "const": 0
+        },
+        {
+          "type": "number",
+          "const": 1
+        }
+      ]
+    },
+    "__schema2": {
+      "description": "Enable v1 submission only after this SVM activates the feature; defaults to false.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/__schema3"
+        }
+      ]
+    },
+    "__schema3": {
+      "type": "boolean"
+    },
+    "__schema4": {
+      "description": "Default Sealevel signer transaction version; defaults to 0. V1 requires sealevelV1TransactionsEnabled and maxSupportedTransactionVersion 1.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/__schema5"
+        }
+      ]
+    },
+    "__schema5": {
+      "anyOf": [
+        {
+          "type": "number",
+          "const": 0
+        },
+        {
+          "type": "number",
+          "const": 1
+        }
+      ]
+    },
+    "__schema6": {
+      "description": "Specifies if the chain is available and the reasons why it is disabled.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/__schema7"
+        }
+      ]
+    },
+    "__schema7": {
       "anyOf": [
         {
           "type": "object",
@@ -118,7 +181,7 @@
               "minItems": 1,
               "type": "array",
               "items": {
-                "$ref": "#/definitions/__schema2"
+                "$ref": "#/definitions/__schema8"
               },
               "description": "List of reasons explaining why the chain is disabled."
             }
@@ -145,7 +208,7 @@
         }
       ]
     },
-    "__schema2": {
+    "__schema8": {
       "type": "string",
       "enum": [
         "badrpc",
@@ -155,26 +218,26 @@
         "other"
       ]
     },
-    "__schema3": {
+    "__schema9": {
       "description": "The human readable address prefix for the chains using bech32.",
       "allOf": [
         {
-          "$ref": "#/definitions/__schema4"
+          "$ref": "#/definitions/__schema10"
         }
       ]
     },
-    "__schema4": {
+    "__schema10": {
       "type": "string"
     },
-    "__schema5": {
+    "__schema11": {
       "description": "A list of block explorers with data for this chain",
       "allOf": [
         {
-          "$ref": "#/definitions/__schema6"
+          "$ref": "#/definitions/__schema12"
         }
       ]
     },
-    "__schema6": {
+    "__schema12": {
       "type": "array",
       "items": {
         "type": "object",
@@ -197,7 +260,7 @@
             "description": "An API key for the explorer (recommended for better reliability).",
             "allOf": [
               {
-                "$ref": "#/definitions/__schema7"
+                "$ref": "#/definitions/__schema13"
               }
             ]
           },
@@ -205,7 +268,7 @@
             "description": "The type of the block explorer. See ExplorerFamily for valid values.",
             "allOf": [
               {
-                "$ref": "#/definitions/__schema8"
+                "$ref": "#/definitions/__schema14"
               }
             ]
           }
@@ -218,10 +281,10 @@
         "additionalProperties": false
       }
     },
-    "__schema7": {
+    "__schema13": {
       "type": "string"
     },
-    "__schema8": {
+    "__schema14": {
       "anyOf": [
         {
           "type": "string",
@@ -242,22 +305,22 @@
         }
       ]
     },
-    "__schema9": {
+    "__schema15": {
       "description": "Block settings for the chain/deployment.",
       "allOf": [
         {
-          "$ref": "#/definitions/__schema10"
+          "$ref": "#/definitions/__schema16"
         }
       ]
     },
-    "__schema10": {
+    "__schema16": {
       "type": "object",
       "properties": {
         "confirmations": {
           "description": "Number of blocks to wait before considering a transaction confirmed.",
           "allOf": [
             {
-              "$ref": "#/definitions/__schema11"
+              "$ref": "#/definitions/__schema17"
             }
           ]
         },
@@ -265,7 +328,7 @@
           "description": "Number of blocks before a transaction has a near-zero chance of reverting or block tag.",
           "allOf": [
             {
-              "$ref": "#/definitions/__schema12"
+              "$ref": "#/definitions/__schema18"
             }
           ]
         },
@@ -273,7 +336,7 @@
           "description": "Rough estimate of time per block in seconds.",
           "allOf": [
             {
-              "$ref": "#/definitions/__schema13"
+              "$ref": "#/definitions/__schema19"
             }
           ]
         }
@@ -283,63 +346,27 @@
       ],
       "additionalProperties": false
     },
-    "__schema11": {
+    "__schema17": {
       "type": "integer",
       "minimum": 0,
       "maximum": 9007199254740991
     },
-    "__schema12": {
+    "__schema18": {
       "anyOf": [
         {
-          "$ref": "#/definitions/__schema11"
+          "$ref": "#/definitions/__schema17"
         },
         {
           "type": "string"
         }
       ]
     },
-    "__schema13": {
+    "__schema19": {
       "type": "number",
       "exclusiveMinimum": 0
     },
-    "__schema14": {
-      "description": "Whether to bypass batch simulation for this chain.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/__schema15"
-        }
-      ]
-    },
-    "__schema15": {
-      "type": "boolean"
-    },
-    "__schema16": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/__schema11"
-        },
-        {
-          "$ref": "#/definitions/__schema17"
-        }
-      ],
-      "description": "The chainId of the chain. Uses EIP-155 for EVM chains"
-    },
-    "__schema17": {
-      "type": "string"
-    },
-    "__schema18": {
-      "description": "Specify a comma separated list of custom GRPC URLs to use for this chain. If not specified, the default GRPC urls will be used.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/__schema19"
-        }
-      ]
-    },
-    "__schema19": {
-      "type": "string"
-    },
     "__schema20": {
-      "description": "Identity information of the deployer of a Hyperlane instance to this chain",
+      "description": "Whether to bypass batch simulation for this chain.",
       "allOf": [
         {
           "$ref": "#/definitions/__schema21"
@@ -347,45 +374,24 @@
       ]
     },
     "__schema21": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "The name of the deployer."
-        },
-        "email": {
-          "description": "The email address of the deployer.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/__schema22"
-            }
-          ]
-        },
-        "url": {
-          "description": "The URL of the deployer.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/__schema23"
-            }
-          ]
-        }
-      },
-      "required": [
-        "name"
-      ],
-      "additionalProperties": false
+      "type": "boolean"
     },
     "__schema22": {
-      "type": "string",
-      "format": "email",
-      "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+      "anyOf": [
+        {
+          "$ref": "#/definitions/__schema17"
+        },
+        {
+          "$ref": "#/definitions/__schema23"
+        }
+      ],
+      "description": "The chainId of the chain. Uses EIP-155 for EVM chains"
     },
     "__schema23": {
-      "type": "string",
-      "format": "uri"
+      "type": "string"
     },
     "__schema24": {
-      "description": "Human-readable name of the chain.",
+      "description": "Specify a comma separated list of custom GRPC URLs to use for this chain. If not specified, the default GRPC urls will be used.",
       "allOf": [
         {
           "$ref": "#/definitions/__schema25"
@@ -396,7 +402,7 @@
       "type": "string"
     },
     "__schema26": {
-      "description": "A shorter human-readable name of the chain for use in user interfaces.",
+      "description": "Identity information of the deployer of a Hyperlane instance to this chain",
       "allOf": [
         {
           "$ref": "#/definitions/__schema27"
@@ -404,23 +410,45 @@
       ]
     },
     "__schema27": {
-      "type": "string"
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the deployer."
+        },
+        "email": {
+          "description": "The email address of the deployer.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/__schema28"
+            }
+          ]
+        },
+        "url": {
+          "description": "The URL of the deployer.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/__schema29"
+            }
+          ]
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
     },
     "__schema28": {
-      "description": "The domainId of the chain, should generally default to `chainId`. Consumer of `ChainMetadata` should use this value or `name` as a unique identifier.",
-      "allOf": [
-        {
-          "$ref": "#/definitions/__schema29"
-        }
-      ]
+      "type": "string",
+      "format": "email",
+      "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
     },
     "__schema29": {
-      "type": "integer",
-      "exclusiveMinimum": 0,
-      "maximum": 9007199254740991
+      "type": "string",
+      "format": "uri"
     },
     "__schema30": {
-      "description": "The ID on CoinGecko of the token used for gas payments.",
+      "description": "Human-readable name of the chain.",
       "allOf": [
         {
           "$ref": "#/definitions/__schema31"
@@ -431,7 +459,7 @@
       "type": "string"
     },
     "__schema32": {
-      "description": "The URL of the gnosis safe transaction service.",
+      "description": "A shorter human-readable name of the chain for use in user interfaces.",
       "allOf": [
         {
           "$ref": "#/definitions/__schema33"
@@ -442,7 +470,7 @@
       "type": "string"
     },
     "__schema34": {
-      "description": "The API key for the gnosis safe transaction service.",
+      "description": "The domainId of the chain, should generally default to `chainId`. Consumer of `ChainMetadata` should use this value or `name` as a unique identifier.",
       "allOf": [
         {
           "$ref": "#/definitions/__schema35"
@@ -450,16 +478,51 @@
       ]
     },
     "__schema35": {
-      "type": "string"
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
     },
     "__schema36": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/__schema37"
-      },
-      "description": "For cosmos chains only, a list of gRPC API URLs"
+      "description": "The ID on CoinGecko of the token used for gas payments.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/__schema37"
+        }
+      ]
     },
     "__schema37": {
+      "type": "string"
+    },
+    "__schema38": {
+      "description": "The URL of the gnosis safe transaction service.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/__schema39"
+        }
+      ]
+    },
+    "__schema39": {
+      "type": "string"
+    },
+    "__schema40": {
+      "description": "The API key for the gnosis safe transaction service.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/__schema41"
+        }
+      ]
+    },
+    "__schema41": {
+      "type": "string"
+    },
+    "__schema42": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/__schema43"
+      },
+      "description": "For Radix chains, a list of Gateway API URLs."
+    },
+    "__schema43": {
       "type": "object",
       "properties": {
         "http": {
@@ -471,7 +534,7 @@
           "description": "Maximum number of concurrent RPC requests.",
           "allOf": [
             {
-              "$ref": "#/definitions/__schema38"
+              "$ref": "#/definitions/__schema44"
             }
           ]
         },
@@ -479,7 +542,7 @@
           "description": "The WSS URL if the endpoint also supports websockets.",
           "allOf": [
             {
-              "$ref": "#/definitions/__schema39"
+              "$ref": "#/definitions/__schema45"
             }
           ]
         },
@@ -487,7 +550,7 @@
           "description": "Limitations on the block range/age that can be queried.",
           "allOf": [
             {
-              "$ref": "#/definitions/__schema40"
+              "$ref": "#/definitions/__schema46"
             }
           ]
         },
@@ -495,7 +558,7 @@
           "description": "Default retry settings to be used by a provider such as MultiProvider.",
           "allOf": [
             {
-              "$ref": "#/definitions/__schema41"
+              "$ref": "#/definitions/__schema47"
             }
           ]
         },
@@ -503,7 +566,7 @@
           "description": "Flag if the RPC is publicly available.",
           "allOf": [
             {
-              "$ref": "#/definitions/__schema42"
+              "$ref": "#/definitions/__schema48"
             }
           ]
         }
@@ -513,22 +576,22 @@
       ],
       "additionalProperties": false
     },
-    "__schema38": {
+    "__schema44": {
       "type": "integer",
       "exclusiveMinimum": 0,
       "maximum": 9007199254740991
     },
-    "__schema39": {
+    "__schema45": {
       "type": "string"
     },
-    "__schema40": {
+    "__schema46": {
       "type": "object",
       "properties": {
         "maxBlockRange": {
           "description": "The maximum range between block numbers for which the RPC can query data",
           "allOf": [
             {
-              "$ref": "#/definitions/__schema29"
+              "$ref": "#/definitions/__schema35"
             }
           ]
         },
@@ -536,7 +599,7 @@
           "description": "The absolute minimum block number that this RPC supports.",
           "allOf": [
             {
-              "$ref": "#/definitions/__schema11"
+              "$ref": "#/definitions/__schema17"
             }
           ]
         },
@@ -544,21 +607,21 @@
           "description": "The relative different from latest block that this RPC supports.",
           "allOf": [
             {
-              "$ref": "#/definitions/__schema29"
+              "$ref": "#/definitions/__schema35"
             }
           ]
         }
       },
       "additionalProperties": false
     },
-    "__schema41": {
+    "__schema47": {
       "type": "object",
       "properties": {
         "maxRequests": {
           "description": "The maximum number of requests to attempt before failing.",
           "allOf": [
             {
-              "$ref": "#/definitions/__schema29"
+              "$ref": "#/definitions/__schema35"
             }
           ]
         },
@@ -566,7 +629,7 @@
           "description": "The base retry delay in milliseconds.",
           "allOf": [
             {
-              "$ref": "#/definitions/__schema29"
+              "$ref": "#/definitions/__schema35"
             }
           ]
         }
@@ -577,70 +640,77 @@
       ],
       "additionalProperties": false
     },
-    "__schema42": {
+    "__schema48": {
       "type": "boolean"
     },
-    "__schema43": {
+    "__schema49": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/__schema43"
+      },
+      "description": "For cosmos chains only, a list of gRPC API URLs"
+    },
+    "__schema50": {
       "description": "Indexing settings for the chain.",
       "allOf": [
         {
-          "$ref": "#/definitions/__schema44"
+          "$ref": "#/definitions/__schema51"
         }
       ]
     },
-    "__schema44": {
+    "__schema51": {
       "type": "object",
       "properties": {
         "from": {
           "description": "The block to start any indexing from.",
           "allOf": [
             {
-              "$ref": "#/definitions/__schema45"
+              "$ref": "#/definitions/__schema52"
             }
           ]
         }
       },
       "additionalProperties": false
     },
-    "__schema45": {
+    "__schema52": {
       "type": "number"
     },
-    "__schema46": {
+    "__schema53": {
       "description": "Whether the chain is considered a testnet or a mainnet.",
       "allOf": [
         {
-          "$ref": "#/definitions/__schema47"
+          "$ref": "#/definitions/__schema54"
         }
       ]
     },
-    "__schema47": {
+    "__schema54": {
       "type": "boolean"
     },
-    "__schema48": {
+    "__schema55": {
       "description": "A URI to a logo image for this chain for use in user interfaces.",
       "allOf": [
         {
-          "$ref": "#/definitions/__schema49"
+          "$ref": "#/definitions/__schema56"
         }
       ]
     },
-    "__schema49": {
+    "__schema56": {
       "type": "string"
     },
-    "__schema50": {
+    "__schema57": {
       "type": "string",
       "pattern": "^[a-z][a-z0-9]*$",
       "description": "The unique string identifier of the chain, used as the key in ChainMap dictionaries."
     },
-    "__schema51": {
+    "__schema58": {
       "description": "The metadata of the native token of the chain (e.g. ETH for Ethereum).",
       "allOf": [
         {
-          "$ref": "#/definitions/__schema52"
+          "$ref": "#/definitions/__schema59"
         }
       ]
     },
-    "__schema52": {
+    "__schema59": {
       "type": "object",
       "properties": {
         "name": {
@@ -653,7 +723,7 @@
           "exclusiveMaximum": 256,
           "allOf": [
             {
-              "$ref": "#/definitions/__schema11"
+              "$ref": "#/definitions/__schema17"
             }
           ]
         },
@@ -668,15 +738,15 @@
       ],
       "additionalProperties": false
     },
-    "__schema53": {
+    "__schema60": {
       "description": "The type of protocol used by this chain. See ProtocolType for valid values.",
       "allOf": [
         {
-          "$ref": "#/definitions/__schema54"
+          "$ref": "#/definitions/__schema61"
         }
       ]
     },
-    "__schema54": {
+    "__schema61": {
       "anyOf": [
         {
           "type": "string",
@@ -697,41 +767,41 @@
         }
       ]
     },
-    "__schema55": {
+    "__schema62": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/__schema37"
+        "$ref": "#/definitions/__schema43"
       },
       "description": "For cosmos chains only, a list of Rest API URLs"
     },
-    "__schema56": {
+    "__schema63": {
       "minItems": 1,
       "type": "array",
       "items": {
-        "$ref": "#/definitions/__schema37"
+        "$ref": "#/definitions/__schema43"
       },
       "description": "The list of RPC endpoints for interacting with the chain."
     },
-    "__schema57": {
+    "__schema64": {
       "description": "The SLIP-0044 coin type.",
       "allOf": [
         {
-          "$ref": "#/definitions/__schema58"
+          "$ref": "#/definitions/__schema65"
         }
       ]
     },
-    "__schema58": {
+    "__schema65": {
       "type": "number"
     },
-    "__schema59": {
+    "__schema66": {
       "description": "The technical stack of the chain. See ChainTechnicalStack for valid values.",
       "allOf": [
         {
-          "$ref": "#/definitions/__schema60"
+          "$ref": "#/definitions/__schema67"
         }
       ]
     },
-    "__schema60": {
+    "__schema67": {
       "anyOf": [
         {
           "type": "string",
@@ -751,30 +821,30 @@
         }
       ]
     },
-    "__schema61": {
+    "__schema68": {
       "description": "Properties to include when forming transaction requests.",
       "allOf": [
         {
-          "$ref": "#/definitions/__schema62"
+          "$ref": "#/definitions/__schema69"
         }
       ]
     },
-    "__schema62": {
+    "__schema69": {
       "type": "object",
       "propertyNames": {
         "type": "string"
       },
       "additionalProperties": {}
     },
-    "__schema63": {
+    "__schema70": {
       "description": "The gas price of Cosmos chains.",
       "allOf": [
         {
-          "$ref": "#/definitions/__schema64"
+          "$ref": "#/definitions/__schema71"
         }
       ]
     },
-    "__schema64": {
+    "__schema71": {
       "type": "object",
       "properties": {
         "denom": {
