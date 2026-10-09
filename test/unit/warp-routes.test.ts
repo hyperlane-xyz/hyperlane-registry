@@ -12,6 +12,7 @@ import { parse } from 'yaml';
 
 import { WARP_ROUTE_ID_REGEX, WARP_ROUTE_SYMBOL_DIRECTORY_REGEX } from '../../src/consts.js';
 import { FileSystemRegistry } from '../../src/fs/FileSystemRegistry.js';
+import { WarpRouteAllowlistSchema } from '../../src/types.js';
 import { normalizeScale } from '../../src/utils.js';
 
 const BASE_URI = './';
@@ -21,10 +22,6 @@ const WARP_ROUTE_ALLOWLIST_PATH = path.join(
   'warp_routes',
   'warpRouteAllowlist.yaml',
 );
-
-interface WarpRouteAllowlist {
-  warpRouteIds: string[];
-}
 
 describe('Warp Core Configs', () => {
   const localRegistry = new FileSystemRegistry({ uri: BASE_URI });
@@ -112,11 +109,11 @@ describe('Warp Core Configs', () => {
   }
 
   it('Warp route allowlist only references existing route ids', () => {
-    let allowlist: WarpRouteAllowlist | undefined;
+    let allowlist;
     try {
-      allowlist = parse(fs.readFileSync(WARP_ROUTE_ALLOWLIST_PATH, 'utf8')) as
-        | WarpRouteAllowlist
-        | undefined;
+      allowlist = WarpRouteAllowlistSchema.parse(
+        parse(fs.readFileSync(WARP_ROUTE_ALLOWLIST_PATH, 'utf8')),
+      );
     } catch (error) {
       console.error(`Failed to load warp route allowlist at ${WARP_ROUTE_ALLOWLIST_PATH}`, error);
       throw error;
@@ -124,7 +121,10 @@ describe('Warp Core Configs', () => {
     expect(allowlist?.warpRouteIds).to.be.an('array').that.is.not.empty;
 
     const seen = new Set<string>();
-    for (const id of [...allowlist!.warpRouteIds].sort()) {
+    const routeIds = allowlist.warpRouteIds
+      .map((entry) => (typeof entry === 'string' ? entry : entry.id))
+      .sort();
+    for (const id of routeIds) {
       expect(id, 'Allowlist route id must be a string').to.be.a('string');
       expect(id, `Invalid allowlist route id format ${id}`).to.match(WARP_ROUTE_ID_REGEX);
       expect(seen.has(id), `Duplicate allowlist route id ${id}`).to.be.false;
