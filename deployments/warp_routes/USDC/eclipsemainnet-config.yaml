@@ -31,6 +31,7 @@ tokens:
     tokenType: collateral
   - addressOrDenom: "0x56a255A080584de4433D0Fe6587F4C0105715589"
     chainName: arc
+    coinGeckoId: usd-coin
     collateralAddressOrDenom: "0x3600000000000000000000000000000000000000"
     connections:
       - token: ethereum|arbitrum|0xAd4350Ee0f9f5b85BaB115425426086Ae8384ebb
@@ -49,7 +50,11 @@ tokens:
       - token: ethereum|unichain|0xa7E4dC4078bAc6e97Eec52a4F7642fF51cbb17C1
       - token: ethereum|worldchain|0x485dE5Aa437d46B925D800929CcCA587e6e9d2c3
     decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
     name: USDC
+    scale:
+      denominator: 1
+      numerator: 1
     standard: EvmHypCollateral
     symbol: USDC
     tokenType: collateral
