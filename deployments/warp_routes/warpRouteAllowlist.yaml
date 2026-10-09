@@ -396,7 +396,11 @@ warpRouteIds:
   - DIME/paradex
 
   # NEX routes
-  - NEX/bsc
+  - id: NEX/bsc
+    notices:
+      - blocksTransfer: true
+        message: This route is unavailable because Nexus Chain has been shut down.
+        severity: error
 
   # Nesa routes
   - NES/bsc
