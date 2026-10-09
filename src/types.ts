@@ -45,6 +45,30 @@ export type WarpRouteId = z.infer<typeof WarpRouteIdSchema>;
 export type WarpRouteConfigMap = Record<WarpRouteId, WarpCoreConfig>;
 export type WarpDeployConfigMap = Record<WarpRouteId, WarpRouteDeployConfig>;
 
+export const WarpRouteNoticeSeveritySchema = z.enum(['error', 'warning', 'info']);
+export type WarpRouteNoticeSeverity = z.infer<typeof WarpRouteNoticeSeveritySchema>;
+
+export const WarpRouteNoticeSchema = z.strictObject({
+  blocksTransfer: z.boolean(),
+  message: z.string().trim().min(1),
+  severity: WarpRouteNoticeSeveritySchema,
+});
+export type WarpRouteNotice = z.infer<typeof WarpRouteNoticeSchema>;
+
+export const WarpRouteAllowlistEntrySchema = z.union([
+  WarpRouteIdSchema,
+  z.strictObject({
+    id: WarpRouteIdSchema,
+    notices: z.array(WarpRouteNoticeSchema).min(1),
+  }),
+]);
+export type WarpRouteAllowlistEntry = z.infer<typeof WarpRouteAllowlistEntrySchema>;
+
+export const WarpRouteAllowlistSchema = z.strictObject({
+  warpRouteIds: z.array(WarpRouteAllowlistEntrySchema),
+});
+export type WarpRouteAllowlist = z.infer<typeof WarpRouteAllowlistSchema>;
+
 export const AddWarpRouteConfigOptionsSchema = z.union([
   z.object({ symbol: z.string() }),
   z.object({ warpRouteId: WarpRouteIdSchema }),

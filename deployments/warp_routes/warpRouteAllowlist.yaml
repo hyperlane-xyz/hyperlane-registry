@@ -3,6 +3,7 @@
 # `warpRouteIds` must be an array; `null` is invalid
 # An empty array adds no bridge-only routes; statically configured swap routes remain included
 # Load failures use the last-known-good allowlist or the engine's built-in fallback
+# Entries with notices use { id, notices }; blocksTransfer controls behavior, severity controls styling.
 warpRouteIds:
   # TIA routes
   - TIA/eclipsemainnet-stride
