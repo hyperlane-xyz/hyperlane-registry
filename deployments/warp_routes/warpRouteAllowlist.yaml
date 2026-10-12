@@ -47,11 +47,35 @@ warpRouteIds:
   - USDC/lumia
   - USDC/matchain
   - USDC/paradex
+  - id: USDC/igra
+    notices:
+      - blocksTransfer: false
+        message: This route contains custom code from the Igra team.
+        severity: warning
   - USDC/lukso
+
+  # USDS routes
+  - id: USDS/ethereum-igra
+    notices:
+      - blocksTransfer: false
+        message: This route contains custom code from the Igra team.
+        severity: warning
+
+  # USDe routes
+  - id: USDe/igra
+    notices:
+      - blocksTransfer: false
+        message: This route contains custom code from the Igra team.
+        severity: warning
 
   # USDT routes
   - USDT/ethereum-hyperevm
   - USDT/ethereum-inevm
+  - id: USDT/ethereum-igra
+    notices:
+      - blocksTransfer: false
+        message: This route contains custom code from the Igra team.
+        severity: warning
   - USDT/ethereum-lumiaprism
   - USDT/ethereum-viction
   - USDT/matchain
@@ -63,6 +87,20 @@ warpRouteIds:
   # oXAUT routes
   - oXAUT/production
 
+  # IKAS routes
+  - id: IKAS/igra
+    notices:
+      - blocksTransfer: false
+        message: This route contains custom code from the Igra team.
+        severity: warning
+
+  # TIBBIR routes
+  - id: TIBBIR/igra
+    notices:
+      - blocksTransfer: false
+        message: This route contains custom code from the Igra team.
+        severity: warning
+
   # INJ routes
   - INJ/inevm-injective
 
@@ -71,6 +109,11 @@ warpRouteIds:
   - SOL/solanamainnet-soon
   - SOL/hyperevm-solanamainnet
   - SOL/solanamainnet-sonicsvm
+  - id: SOL/igra
+    notices:
+      - blocksTransfer: false
+        message: This route contains custom code from the Igra team.
+        severity: warning
 
   # ezSOL routes
   - EZSOL/eclipsemainnet-solanamainnet
@@ -81,6 +124,20 @@ warpRouteIds:
   # WBTC routes
   - WBTC/eclipsemainnet-ethereum
   - WBTC/coti-ethereum
+
+  # CBBTC routes
+  - id: CBBTC/igra
+    notices:
+      - blocksTransfer: false
+        message: This route contains custom code from the Igra team.
+        severity: warning
+
+  # wstETH routes
+  - id: WSTETH/igra
+    notices:
+      - blocksTransfer: false
+        message: This route contains custom code from the Igra team.
+        severity: warning
 
   # ORCA routes
   - ORCA/eclipsemainnet-solanamainnet
@@ -117,6 +174,11 @@ warpRouteIds:
 
   # WETH routes
   - WETH/artela-base
+  - id: WETH/ethereum-igra
+    notices:
+      - blocksTransfer: false
+        message: This route contains custom code from the Igra team.
+        severity: warning
 
   # fastUSD routes
   - FASTUSD/ethereum-sei
