@@ -1,0 +1,85 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xe9B6dE71aE942C157F3A74fe568c3769c88b6c7F"
+    chainName: ink
+    collateralAddressOrDenom: "0x0200C29006150606B650577BBE7B6248F58470c1"
+    connections:
+      - token: ethereum|bsc|0x136A9B756F0D789fF3dDAE46D9A64E41DBf7bB5D
+      - token: ethereum|arbitrum|0x4534BAa4C58eE78Bcff6bAaD9010B5AE2A3cB81f
+      - token: ethereum|optimism|0xa85EFbE23e614E1745E5F39b05be3FC04B1BcBA7
+      - token: ethereum|base|0xE7b78516B09478cF3fbE1761b4E22a36505B6adc
+      - token: ethereum|ethereum|0xC63a29aB9F4FC53CaC0350083c5586B615aA3b39
+    decimals: 6
+    name: Token IGP Test USDT
+    standard: EvmHypCollateral
+    symbol: IGP-USDT
+    tokenType: collateral
+  - addressOrDenom: "0x136A9B756F0D789fF3dDAE46D9A64E41DBf7bB5D"
+    chainName: bsc
+    connections:
+      - token: ethereum|ink|0xe9B6dE71aE942C157F3A74fe568c3769c88b6c7F
+      - token: ethereum|arbitrum|0x4534BAa4C58eE78Bcff6bAaD9010B5AE2A3cB81f
+      - token: ethereum|optimism|0xa85EFbE23e614E1745E5F39b05be3FC04B1BcBA7
+      - token: ethereum|base|0xE7b78516B09478cF3fbE1761b4E22a36505B6adc
+      - token: ethereum|ethereum|0xC63a29aB9F4FC53CaC0350083c5586B615aA3b39
+    decimals: 6
+    name: Token IGP Test USDT
+    standard: EvmHypSynthetic
+    symbol: IGP-USDT
+    tokenType: synthetic
+  - addressOrDenom: "0x4534BAa4C58eE78Bcff6bAaD9010B5AE2A3cB81f"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+    connections:
+      - token: ethereum|ink|0xe9B6dE71aE942C157F3A74fe568c3769c88b6c7F
+      - token: ethereum|bsc|0x136A9B756F0D789fF3dDAE46D9A64E41DBf7bB5D
+      - token: ethereum|optimism|0xa85EFbE23e614E1745E5F39b05be3FC04B1BcBA7
+      - token: ethereum|base|0xE7b78516B09478cF3fbE1761b4E22a36505B6adc
+      - token: ethereum|ethereum|0xC63a29aB9F4FC53CaC0350083c5586B615aA3b39
+    decimals: 6
+    name: Token IGP Test USDT
+    standard: EvmHypCollateral
+    symbol: IGP-USDT
+    tokenType: collateral
+  - addressOrDenom: "0xa85EFbE23e614E1745E5F39b05be3FC04B1BcBA7"
+    chainName: optimism
+    collateralAddressOrDenom: "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58"
+    connections:
+      - token: ethereum|ink|0xe9B6dE71aE942C157F3A74fe568c3769c88b6c7F
+      - token: ethereum|bsc|0x136A9B756F0D789fF3dDAE46D9A64E41DBf7bB5D
+      - token: ethereum|arbitrum|0x4534BAa4C58eE78Bcff6bAaD9010B5AE2A3cB81f
+      - token: ethereum|base|0xE7b78516B09478cF3fbE1761b4E22a36505B6adc
+      - token: ethereum|ethereum|0xC63a29aB9F4FC53CaC0350083c5586B615aA3b39
+    decimals: 6
+    name: Token IGP Test USDT
+    standard: EvmHypCollateral
+    symbol: IGP-USDT
+    tokenType: collateral
+  - addressOrDenom: "0xE7b78516B09478cF3fbE1761b4E22a36505B6adc"
+    chainName: base
+    collateralAddressOrDenom: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
+    connections:
+      - token: ethereum|ink|0xe9B6dE71aE942C157F3A74fe568c3769c88b6c7F
+      - token: ethereum|bsc|0x136A9B756F0D789fF3dDAE46D9A64E41DBf7bB5D
+      - token: ethereum|arbitrum|0x4534BAa4C58eE78Bcff6bAaD9010B5AE2A3cB81f
+      - token: ethereum|optimism|0xa85EFbE23e614E1745E5F39b05be3FC04B1BcBA7
+      - token: ethereum|ethereum|0xC63a29aB9F4FC53CaC0350083c5586B615aA3b39
+    decimals: 6
+    name: Token IGP Test USDT
+    standard: EvmHypCollateral
+    symbol: IGP-USDT
+    tokenType: collateral
+  - addressOrDenom: "0xC63a29aB9F4FC53CaC0350083c5586B615aA3b39"
+    chainName: ethereum
+    collateralAddressOrDenom: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    connections:
+      - token: ethereum|ink|0xe9B6dE71aE942C157F3A74fe568c3769c88b6c7F
+      - token: ethereum|bsc|0x136A9B756F0D789fF3dDAE46D9A64E41DBf7bB5D
+      - token: ethereum|arbitrum|0x4534BAa4C58eE78Bcff6bAaD9010B5AE2A3cB81f
+      - token: ethereum|optimism|0xa85EFbE23e614E1745E5F39b05be3FC04B1BcBA7
+      - token: ethereum|base|0xE7b78516B09478cF3fbE1761b4E22a36505B6adc
+    decimals: 6
+    name: Token IGP Test USDT
+    standard: EvmHypCollateral
+    symbol: IGP-USDT
+    tokenType: collateral

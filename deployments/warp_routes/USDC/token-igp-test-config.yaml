@@ -1,0 +1,106 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x680e8ECB908A2040232ef139A0A52cbE47b9F15B"
+    chainName: arc
+    collateralAddressOrDenom: "0x3600000000000000000000000000000000000000"
+    connections:
+      - token: ethereum|ink|0xB0415E9a78fA0c3E9363D222365a42729fECe8A5
+      - token: ethereum|optimism|0xb3e3E67E0A06FDFE576fe95C57b53b5E0176CB60
+      - token: ethereum|arbitrum|0xb5E8Cd725f4CA40161bee9eCbB1299C111C3e707
+      - token: ethereum|bsc|0x11A483d69Cc67140fb98a0082837aeC11246A0ba
+      - token: ethereum|base|0x5ff3c3aaD59b590e7989092bA37F02F263DB8791
+      - token: ethereum|ethereum|0x62883205EEbc88ed39496A572B095C6A2673F107
+    decimals: 6
+    name: Token IGP Test USDC
+    standard: EvmHypCollateral
+    symbol: IGP-USDC
+    tokenType: collateral
+  - addressOrDenom: "0xB0415E9a78fA0c3E9363D222365a42729fECe8A5"
+    chainName: ink
+    collateralAddressOrDenom: "0x2D270e6886d130D724215A266106e6832161EAEd"
+    connections:
+      - token: ethereum|arc|0x680e8ECB908A2040232ef139A0A52cbE47b9F15B
+      - token: ethereum|optimism|0xb3e3E67E0A06FDFE576fe95C57b53b5E0176CB60
+      - token: ethereum|arbitrum|0xb5E8Cd725f4CA40161bee9eCbB1299C111C3e707
+      - token: ethereum|bsc|0x11A483d69Cc67140fb98a0082837aeC11246A0ba
+      - token: ethereum|base|0x5ff3c3aaD59b590e7989092bA37F02F263DB8791
+      - token: ethereum|ethereum|0x62883205EEbc88ed39496A572B095C6A2673F107
+    decimals: 6
+    name: Token IGP Test USDC
+    standard: EvmHypCollateral
+    symbol: IGP-USDC
+    tokenType: collateral
+  - addressOrDenom: "0xb3e3E67E0A06FDFE576fe95C57b53b5E0176CB60"
+    chainName: optimism
+    collateralAddressOrDenom: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
+    connections:
+      - token: ethereum|arc|0x680e8ECB908A2040232ef139A0A52cbE47b9F15B
+      - token: ethereum|ink|0xB0415E9a78fA0c3E9363D222365a42729fECe8A5
+      - token: ethereum|arbitrum|0xb5E8Cd725f4CA40161bee9eCbB1299C111C3e707
+      - token: ethereum|bsc|0x11A483d69Cc67140fb98a0082837aeC11246A0ba
+      - token: ethereum|base|0x5ff3c3aaD59b590e7989092bA37F02F263DB8791
+      - token: ethereum|ethereum|0x62883205EEbc88ed39496A572B095C6A2673F107
+    decimals: 6
+    name: Token IGP Test USDC
+    standard: EvmHypCollateral
+    symbol: IGP-USDC
+    tokenType: collateral
+  - addressOrDenom: "0xb5E8Cd725f4CA40161bee9eCbB1299C111C3e707"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+    connections:
+      - token: ethereum|arc|0x680e8ECB908A2040232ef139A0A52cbE47b9F15B
+      - token: ethereum|ink|0xB0415E9a78fA0c3E9363D222365a42729fECe8A5
+      - token: ethereum|optimism|0xb3e3E67E0A06FDFE576fe95C57b53b5E0176CB60
+      - token: ethereum|bsc|0x11A483d69Cc67140fb98a0082837aeC11246A0ba
+      - token: ethereum|base|0x5ff3c3aaD59b590e7989092bA37F02F263DB8791
+      - token: ethereum|ethereum|0x62883205EEbc88ed39496A572B095C6A2673F107
+    decimals: 6
+    name: Token IGP Test USDC
+    standard: EvmHypCollateral
+    symbol: IGP-USDC
+    tokenType: collateral
+  - addressOrDenom: "0x11A483d69Cc67140fb98a0082837aeC11246A0ba"
+    chainName: bsc
+    connections:
+      - token: ethereum|arc|0x680e8ECB908A2040232ef139A0A52cbE47b9F15B
+      - token: ethereum|ink|0xB0415E9a78fA0c3E9363D222365a42729fECe8A5
+      - token: ethereum|optimism|0xb3e3E67E0A06FDFE576fe95C57b53b5E0176CB60
+      - token: ethereum|arbitrum|0xb5E8Cd725f4CA40161bee9eCbB1299C111C3e707
+      - token: ethereum|base|0x5ff3c3aaD59b590e7989092bA37F02F263DB8791
+      - token: ethereum|ethereum|0x62883205EEbc88ed39496A572B095C6A2673F107
+    decimals: 6
+    name: Token IGP Test USDC
+    standard: EvmHypSynthetic
+    symbol: IGP-USDC
+    tokenType: synthetic
+  - addressOrDenom: "0x5ff3c3aaD59b590e7989092bA37F02F263DB8791"
+    chainName: base
+    collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    connections:
+      - token: ethereum|arc|0x680e8ECB908A2040232ef139A0A52cbE47b9F15B
+      - token: ethereum|ink|0xB0415E9a78fA0c3E9363D222365a42729fECe8A5
+      - token: ethereum|optimism|0xb3e3E67E0A06FDFE576fe95C57b53b5E0176CB60
+      - token: ethereum|arbitrum|0xb5E8Cd725f4CA40161bee9eCbB1299C111C3e707
+      - token: ethereum|bsc|0x11A483d69Cc67140fb98a0082837aeC11246A0ba
+      - token: ethereum|ethereum|0x62883205EEbc88ed39496A572B095C6A2673F107
+    decimals: 6
+    name: Token IGP Test USDC
+    standard: EvmHypCollateral
+    symbol: IGP-USDC
+    tokenType: collateral
+  - addressOrDenom: "0x62883205EEbc88ed39496A572B095C6A2673F107"
+    chainName: ethereum
+    collateralAddressOrDenom: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    connections:
+      - token: ethereum|arc|0x680e8ECB908A2040232ef139A0A52cbE47b9F15B
+      - token: ethereum|ink|0xB0415E9a78fA0c3E9363D222365a42729fECe8A5
+      - token: ethereum|optimism|0xb3e3E67E0A06FDFE576fe95C57b53b5E0176CB60
+      - token: ethereum|arbitrum|0xb5E8Cd725f4CA40161bee9eCbB1299C111C3e707
+      - token: ethereum|bsc|0x11A483d69Cc67140fb98a0082837aeC11246A0ba
+      - token: ethereum|base|0x5ff3c3aaD59b590e7989092bA37F02F263DB8791
+    decimals: 6
+    name: Token IGP Test USDC
+    standard: EvmHypCollateral
+    symbol: IGP-USDC
+    tokenType: collateral
