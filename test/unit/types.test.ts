@@ -5,6 +5,7 @@ import { z } from 'zod/v4';
 
 import {
   UpdateChainSchema,
+  WarpRouteAllowlistSchema,
   WarpRouteFilterSchema,
   chainMetadata,
   warpRouteConfigs,
@@ -37,6 +38,37 @@ describe('Registry schemas', () => {
 
   it('rejects unknown warp route filters', () => {
     expect(WarpRouteFilterSchema.safeParse({ unknown: true }).success).to.equal(false);
+  });
+
+  it('validates route notices', () => {
+    const result = WarpRouteAllowlistSchema.safeParse({
+      warpRouteIds: [
+        'TEST/plain',
+        {
+          id: 'TEST/example',
+          notices: [
+            { blocksTransfer: true, message: 'Route unavailable', severity: 'error' },
+            { blocksTransfer: false, message: 'Custom unaudited code', severity: 'warning' },
+            { blocksTransfer: false, message: 'Additional context', severity: 'info' },
+          ],
+        },
+      ],
+    });
+
+    expect(result.success).to.equal(true);
+  });
+
+  it('rejects invalid route notices', () => {
+    expect(
+      WarpRouteAllowlistSchema.safeParse({
+        warpRouteIds: [
+          {
+            id: 'invalid',
+            notices: [{ blocksTransfer: false, message: '', severity: 'warning' }],
+          },
+        ],
+      }).success,
+    ).to.equal(false);
   });
 
   it('generates a chain JSON schema that accepts valid metadata', () => {

@@ -7,6 +7,9 @@ minimumReleaseAgeExclude:
   - oxfmt
   - oxlint
   - zod@4.5.4
+  # Required by @hyperlane-xyz/sdk 45.0.0 (aleo); drop once 7 days old.
+  - "@provablehq/sdk@0.12.0"
+  - "@provablehq/wasm@0.12.0"
 allowBuilds:
   bigint-buffer: true
   bufferutil: true
