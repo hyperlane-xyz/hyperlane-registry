@@ -48,11 +48,17 @@ ethereum:
       - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
   decimals: 6
   interchainSecurityModule:
+    address: "0xA076bf16992ef5e54A52B4002e3A1B5353A5f14F"
     modules:
-      - type: defaultIsm
-      # Reuse the Safe-owned, append-only BlacklistIsm deployed for recovery.
-      - "0x435E9F0e54Af1E0C37A6075233059f7625f2CFC9"
-      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+      - address: "0x3edE2f2E4Ba434242Eb1865F52d279dA43CBFd02"
+        type: defaultIsm
+      - address: "0x435E9F0e54Af1E0C37A6075233059f7625f2CFC9"
+        blacklistedIds:
+          - "0x8960c5e41eb0d91973140ebc196892f5f07f512dd86047e8536e71424462c5d3"
+        owner: "0x995A921d333029512aa166885856c8AF760E9381"
+        type: blacklistIsm
+      - address: "0x52d10C47E9E4A20E4561271a8440E32C44C00F45"
+        owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
         paused: true
         type: pausableIsm
     threshold: 3
