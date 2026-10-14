@@ -4,8 +4,12 @@ arbitrum:
   allowedRebalancingBridges:
     base:
       - bridge: "0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2"
+      - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
+      - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
     ethereum:
       - bridge: "0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2"
+      - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
+      - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
   decimals: 6
   owner: "0x72B5EC6EEE0B358FB1F77d40D469a63530A91DB3"
   proxyAdmin:
@@ -18,8 +22,12 @@ base:
   allowedRebalancingBridges:
     arbitrum:
       - bridge: "0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975"
+      - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
+      - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
     ethereum:
       - bridge: "0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975"
+      - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
+      - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
   decimals: 6
   owner: "0x1f6E345a67b3BD0277410887d732b2d0E4699d11"
   proxyAdmin:
@@ -32,18 +40,22 @@ ethereum:
   allowedRebalancingBridges:
     arbitrum:
       - bridge: "0xedCBAa585FD0F80f20073F9958246476466205b8"
+      - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
+      - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
     base:
       - bridge: "0xedCBAa585FD0F80f20073F9958246476466205b8"
+      - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
+      - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
   decimals: 6
   interchainSecurityModule:
     modules:
-      - domains: {}
-        owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
-        type: defaultFallbackRoutingIsm
+      - type: defaultIsm
+      # Reuse the Safe-owned, append-only BlacklistIsm deployed for recovery.
+      - "0x435E9F0e54Af1E0C37A6075233059f7625f2CFC9"
       - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
         paused: true
         type: pausableIsm
-    threshold: 2
+    threshold: 3
     type: staticAggregationIsm
   owner: "0x995A921d333029512aa166885856c8AF760E9381"
   proxyAdmin:
