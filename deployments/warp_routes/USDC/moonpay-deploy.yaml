@@ -16,6 +16,8 @@ arbitrum:
       - bridge: "0xee9CB26259E98A8F24fc8D265AEfa09B4f3AcAb7"
     "4114":
       - bridge: "0xa7f5cc2CD457D2CC236Dc10460F14767fd135518"
+    "5042":
+      - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
     "56":
       - bridge: "0xAd4350Ee0f9f5b85BaB115425426086Ae8384ebb"
     "8453":
@@ -32,6 +34,8 @@ arbitrum:
       - "0x000000000000000000000000766a80a7a6bba555731dc1726db5bfa030631270"
     "42161":
       - "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4"
+    "4663":
+      - "0x0000000000000000000000000179d2f23e86ac42cc83d0e3bfe73e835f75e3e9"
     "56":
       - "0x000000000000000000000000050dcc964bca53ef1a98a2347995cabc73ce25b9"
     "747474":
@@ -40,6 +44,11 @@ arbitrum:
       - "0x0000000000000000000000007abbb4ea8a5895127500cf0c15830c9eb9f61f96"
   hook:
     domains:
+      arc:
+        hooks:
+          - type: defaultHook
+          - "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+        type: aggregationHook
       base:
         hooks:
           - type: defaultHook
@@ -65,12 +74,17 @@ arbitrum:
         owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
         type: defaultFallbackRoutingIsm
       - domains:
+          arc: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
           base: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
           bsc: "0xee8D5aeB5E486c57c54B1B9D2b82614D4131ddE1"
           citrea: "0xee8D5aeB5E486c57c54B1B9D2b82614D4131ddE1"
           ethereum: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
           katana: "0xee8D5aeB5E486c57c54B1B9D2b82614D4131ddE1"
           polygon: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
+          robinhood:
+            domains: {}
+            owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
+            type: defaultFallbackRoutingIsm
           solanamainnet:
             domains: {}
             owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
@@ -79,6 +93,7 @@ arbitrum:
         type: domainRoutingIsm
     threshold: 1
     type: staticAggregationIsm
+  mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
   owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
   token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
   tokenFee:
@@ -98,6 +113,14 @@ arbitrum:
             - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      arc:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
@@ -230,6 +253,14 @@ arbitrum:
             - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
+      robinhood:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
       solanamainnet:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
@@ -246,6 +277,279 @@ arbitrum:
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
     owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
+    type: CrossCollateralRoutingFee
+  type: crossCollateral
+arc:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    "1":
+      - bridge: "0x16BF93e259ee7f7074453a2948379C35C6851b71"
+    "137":
+      - bridge: "0x16BF93e259ee7f7074453a2948379C35C6851b71"
+    "42161":
+      - bridge: "0x16BF93e259ee7f7074453a2948379C35C6851b71"
+    "8453":
+      - bridge: "0x16BF93e259ee7f7074453a2948379C35C6851b71"
+  crossCollateralRouters:
+    "1":
+      - "0x000000000000000000000000eb1b48b238e15a62e1858a601b6bffdf41163ae3"
+    "137":
+      - "0x000000000000000000000000766a80a7a6bba555731dc1726db5bfa030631270"
+    "42161":
+      - "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4"
+    "4663":
+      - "0x0000000000000000000000000179d2f23e86ac42cc83d0e3bfe73e835f75e3e9"
+    "56":
+      - "0x000000000000000000000000050dcc964bca53ef1a98a2347995cabc73ce25b9"
+    "747474":
+      - "0x0000000000000000000000000b51afdd3f43446a621c555b16a1cb781d8443ad"
+    "8453":
+      - "0x0000000000000000000000007abbb4ea8a5895127500cf0c15830c9eb9f61f96"
+  hook:
+    domains:
+      arbitrum:
+        hooks:
+          - type: defaultHook
+          - "0x879f13a642642E938151d79Ec12E808B16E02e28"
+        type: aggregationHook
+      base:
+        hooks:
+          - type: defaultHook
+          - "0x879f13a642642E938151d79Ec12E808B16E02e28"
+        type: aggregationHook
+      ethereum:
+        hooks:
+          - type: defaultHook
+          - "0x879f13a642642E938151d79Ec12E808B16E02e28"
+        type: aggregationHook
+      polygon:
+        hooks:
+          - type: defaultHook
+          - "0x879f13a642642E938151d79Ec12E808B16E02e28"
+        type: aggregationHook
+    fallback:
+      type: defaultHook
+    owner: "0x70905eBe9BA33Ab72ab2C51059B4048B835Ae744"
+    type: fallbackRoutingHook
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x70905eBe9BA33Ab72ab2C51059B4048B835Ae744"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          arbitrum: "0x879f13a642642E938151d79Ec12E808B16E02e28"
+          base: "0x879f13a642642E938151d79Ec12E808B16E02e28"
+          bsc:
+            domains: {}
+            owner: "0x70905eBe9BA33Ab72ab2C51059B4048B835Ae744"
+            type: defaultFallbackRoutingIsm
+          citrea:
+            domains: {}
+            owner: "0x70905eBe9BA33Ab72ab2C51059B4048B835Ae744"
+            type: defaultFallbackRoutingIsm
+          ethereum: "0x879f13a642642E938151d79Ec12E808B16E02e28"
+          katana:
+            domains: {}
+            owner: "0x70905eBe9BA33Ab72ab2C51059B4048B835Ae744"
+            type: defaultFallbackRoutingIsm
+          polygon: "0x879f13a642642E938151d79Ec12E808B16E02e28"
+          robinhood:
+            domains: {}
+            owner: "0x70905eBe9BA33Ab72ab2C51059B4048B835Ae744"
+            type: defaultFallbackRoutingIsm
+          solanamainnet:
+            domains: {}
+            owner: "0x70905eBe9BA33Ab72ab2C51059B4048B835Ae744"
+            type: defaultFallbackRoutingIsm
+        owner: "0x70905eBe9BA33Ab72ab2C51059B4048B835Ae744"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
+  mailbox: "0x7f50C5776722630a0024fAE05fDe8b47571D7B39"
+  owner: "0x70905eBe9BA33Ab72ab2C51059B4048B835Ae744"
+  token: "0x3600000000000000000000000000000000000000"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000ebc079d41c41a0ef7e54aa7af867df9a621c9be0":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      arc:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      base:
+        "0x000000000000000000000000253821543c24623ecd3cebced704359af16cf38f":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x0000000000000000000000007abbb4ea8a5895127500cf0c15830c9eb9f61f96":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      bsc:
+        "0x000000000000000000000000050dcc964bca53ef1a98a2347995cabc73ce25b9":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x0000000000000000000000006e66a10ce72fbdfa45ab7de3693321246e254123":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      citrea:
+        "0x0000000000000000000000002bef59e84615371304bd731601f6344f5f304504":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      ethereum:
+        "0x000000000000000000000000a9c9a8fb36ce3e5ffbac3757da7141262723541f":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000eb1b48b238e15a62e1858a601b6bffdf41163ae3":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      katana:
+        "0x0000000000000000000000000b51afdd3f43446a621c555b16a1cb781d8443ad":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000936e8a1fbd8317be59a9b8924a300993c8bf7ce6":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      polygon:
+        "0x00000000000000000000000028a96f9928db06317356caacd5641c4fde4424c7":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x000000000000000000000000766a80a7a6bba555731dc1726db5bfa030631270":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      robinhood:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      solanamainnet:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+        "0xf5324d5c5be7eb842fb738d13de87ee39cb9b6629ea6566c14241cd27a9b788b":
+          bps: 3
+          owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+    owner: "0xDE1d71FCccf8a67332B281ce57FcE22Cf786Ad8C"
     type: CrossCollateralRoutingFee
   type: crossCollateral
 base:
@@ -273,6 +577,8 @@ base:
       - bridge: "0x0BA30bdd7D3C510De16c47385102c0B7068f4f33"
       - bridge: "0x84e1dF3553B16452AeD7060A4266E4E434f418cC"
       - bridge: "0x151B328Ca752C67C9a4C6E0CA329bE0c00B12A24"
+    "5042":
+      - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
     "56":
       - bridge: "0x37e637891A558B5b621723cbf8Fc771525f280C1"
   crossCollateralRouters:
@@ -282,6 +588,8 @@ base:
       - "0x000000000000000000000000766a80a7a6bba555731dc1726db5bfa030631270"
     "42161":
       - "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4"
+    "4663":
+      - "0x0000000000000000000000000179d2f23e86ac42cc83d0e3bfe73e835f75e3e9"
     "56":
       - "0x000000000000000000000000050dcc964bca53ef1a98a2347995cabc73ce25b9"
     "747474":
@@ -291,6 +599,11 @@ base:
   hook:
     domains:
       arbitrum:
+        hooks:
+          - type: defaultHook
+          - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+        type: aggregationHook
+      arc:
         hooks:
           - type: defaultHook
           - "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
@@ -316,11 +629,16 @@ base:
         type: defaultFallbackRoutingIsm
       - domains:
           arbitrum: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+          arc: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
           bsc: "0xCC7D3771aD7c52eA5AB929482e43dBbb866FDbe5"
           citrea: "0xCC7D3771aD7c52eA5AB929482e43dBbb866FDbe5"
           ethereum: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
           katana: "0xCC7D3771aD7c52eA5AB929482e43dBbb866FDbe5"
           polygon: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
+          robinhood:
+            domains: {}
+            owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
+            type: defaultFallbackRoutingIsm
           solanamainnet:
             domains: {}
             owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
@@ -329,6 +647,7 @@ base:
         type: domainRoutingIsm
     threshold: 1
     type: staticAggregationIsm
+  mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
   owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
   token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
   tokenFee:
@@ -348,6 +667,14 @@ base:
             - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      arc:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
@@ -473,6 +800,14 @@ base:
             - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      robinhood:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x957019c916D05dDF70816Cad43ebF5D417bE81C8"
@@ -517,6 +852,8 @@ bsc:
       - "0x000000000000000000000000766a80a7a6bba555731dc1726db5bfa030631270"
     "42161":
       - "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4"
+    "4663":
+      - "0x0000000000000000000000000179d2f23e86ac42cc83d0e3bfe73e835f75e3e9"
     "56":
       - "0x000000000000000000000000050dcc964bca53ef1a98a2347995cabc73ce25b9"
     "747474":
@@ -530,11 +867,19 @@ bsc:
         type: defaultFallbackRoutingIsm
       - domains:
           arbitrum: "0x0e6d21a2DEf40E24d7Eb20aA3bECADf8eC7756b0"
+          arc:
+            domains: {}
+            owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
+            type: defaultFallbackRoutingIsm
           base: "0x0e6d21a2DEf40E24d7Eb20aA3bECADf8eC7756b0"
           citrea: "0x0e6d21a2DEf40E24d7Eb20aA3bECADf8eC7756b0"
           ethereum: "0x0e6d21a2DEf40E24d7Eb20aA3bECADf8eC7756b0"
           katana: "0x0e6d21a2DEf40E24d7Eb20aA3bECADf8eC7756b0"
           polygon: "0x0e6d21a2DEf40E24d7Eb20aA3bECADf8eC7756b0"
+          robinhood:
+            domains: {}
+            owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
+            type: defaultFallbackRoutingIsm
           solanamainnet:
             domains: {}
             owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
@@ -543,6 +888,7 @@ bsc:
         type: domainRoutingIsm
     threshold: 1
     type: staticAggregationIsm
+  mailbox: "0x2971b9Aec44bE4eb673DF1B88cDB57b96eefe8a4"
   owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
   scale:
     denominator: 1000000000000
@@ -565,6 +911,14 @@ bsc:
             - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      arc:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
@@ -690,6 +1044,14 @@ bsc:
             - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      robinhood:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
@@ -734,6 +1096,8 @@ citrea:
       - "0x000000000000000000000000766a80a7a6bba555731dc1726db5bfa030631270"
     "42161":
       - "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4"
+    "4663":
+      - "0x0000000000000000000000000179d2f23e86ac42cc83d0e3bfe73e835f75e3e9"
     "56":
       - "0x000000000000000000000000050dcc964bca53ef1a98a2347995cabc73ce25b9"
     "747474":
@@ -747,11 +1111,19 @@ citrea:
         type: defaultFallbackRoutingIsm
       - domains:
           arbitrum: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
+          arc:
+            domains: {}
+            owner: "0x682bc0Aca87491ECB3683911996F1d573F989141"
+            type: defaultFallbackRoutingIsm
           base: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
           bsc: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
           ethereum: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
           katana: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
           polygon: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
+          robinhood:
+            domains: {}
+            owner: "0x682bc0Aca87491ECB3683911996F1d573F989141"
+            type: defaultFallbackRoutingIsm
           solanamainnet:
             domains: {}
             owner: "0x682bc0Aca87491ECB3683911996F1d573F989141"
@@ -760,6 +1132,7 @@ citrea:
         type: domainRoutingIsm
     threshold: 1
     type: staticAggregationIsm
+  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
   owner: "0x682bc0Aca87491ECB3683911996F1d573F989141"
   token: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D"
   tokenFee:
@@ -779,6 +1152,14 @@ citrea:
             - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x656ced4a881e4D618B635984Cf0D1D1e051E8513"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      arc:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x656ced4a881e4D618B635984Cf0D1D1e051E8513"
@@ -889,6 +1270,14 @@ citrea:
             - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x656ced4a881e4D618B635984Cf0D1D1e051E8513"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      robinhood:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x656ced4a881e4D618B635984Cf0D1D1e051E8513"
@@ -932,6 +1321,8 @@ ethereum:
       - bridge: "0x6912088890254E69970baEdB03284fB3D8fBCDA0"
       - bridge: "0xC3f8B34587EB403FC30a161d6A35cB724A3b273E"
       - bridge: "0x67899664446CCfAdf75e0D3F5668be262aCd1069"
+    "5042":
+      - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
     "56":
       - bridge: "0xe1De9910fe71cC216490AC7FCF019e13a34481D7"
     "8453":
@@ -948,6 +1339,8 @@ ethereum:
       - "0x000000000000000000000000766a80a7a6bba555731dc1726db5bfa030631270"
     "42161":
       - "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4"
+    "4663":
+      - "0x0000000000000000000000000179d2f23e86ac42cc83d0e3bfe73e835f75e3e9"
     "56":
       - "0x000000000000000000000000050dcc964bca53ef1a98a2347995cabc73ce25b9"
     "747474":
@@ -957,6 +1350,11 @@ ethereum:
   hook:
     domains:
       arbitrum:
+        hooks:
+          - type: defaultHook
+          - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+        type: aggregationHook
+      arc:
         hooks:
           - type: defaultHook
           - "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
@@ -982,11 +1380,16 @@ ethereum:
         type: defaultFallbackRoutingIsm
       - domains:
           arbitrum: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+          arc: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
           base: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
           bsc: "0xFfD28a634c51262F129FeD217c11E9bA166e2508"
           citrea: "0xFfD28a634c51262F129FeD217c11E9bA166e2508"
           katana: "0xFfD28a634c51262F129FeD217c11E9bA166e2508"
           polygon: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
+          robinhood:
+            domains: {}
+            owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
+            type: defaultFallbackRoutingIsm
           solanamainnet:
             domains: {}
             owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
@@ -995,6 +1398,7 @@ ethereum:
         type: domainRoutingIsm
     threshold: 1
     type: staticAggregationIsm
+  mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
   owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
   token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
   tokenFee:
@@ -1014,6 +1418,14 @@ ethereum:
             - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      arc:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
@@ -1139,6 +1551,14 @@ ethereum:
             - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      robinhood:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
@@ -1172,6 +1592,8 @@ katana:
       - "0x000000000000000000000000766a80a7a6bba555731dc1726db5bfa030631270"
     "42161":
       - "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4"
+    "4663":
+      - "0x0000000000000000000000000179d2f23e86ac42cc83d0e3bfe73e835f75e3e9"
     "56":
       - "0x000000000000000000000000050dcc964bca53ef1a98a2347995cabc73ce25b9"
     "747474":
@@ -1185,11 +1607,19 @@ katana:
         type: defaultFallbackRoutingIsm
       - domains:
           arbitrum: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
+          arc:
+            domains: {}
+            owner: "0x956993Aee1CFFA32942b5ddC6Db2E8620b85cfbC"
+            type: defaultFallbackRoutingIsm
           base: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
           bsc: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
           citrea: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
           ethereum: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
           polygon: "0x7BfaF6e40560b6DB6A1540F71203ae7bD2BC7711"
+          robinhood:
+            domains: {}
+            owner: "0x956993Aee1CFFA32942b5ddC6Db2E8620b85cfbC"
+            type: defaultFallbackRoutingIsm
           solanamainnet:
             domains: {}
             owner: "0x956993Aee1CFFA32942b5ddC6Db2E8620b85cfbC"
@@ -1198,6 +1628,7 @@ katana:
         type: domainRoutingIsm
     threshold: 1
     type: staticAggregationIsm
+  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
   owner: "0x956993Aee1CFFA32942b5ddC6Db2E8620b85cfbC"
   token: "0x203A662b0BD271A6ed5a60EdFbd04bFce608FD36"
   tokenFee:
@@ -1217,6 +1648,14 @@ katana:
             - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      arc:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
@@ -1342,6 +1781,14 @@ katana:
             - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      robinhood:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xB022F0D905ECa6e5272cE4ab0B0DEd9cD8441bF5"
@@ -1383,6 +1830,8 @@ polygon:
       - bridge: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
       - bridge: "0xCb9F833f4d6D9Bb9767CDb25c487DA54D67731D6"
       - bridge: "0x9f8F71F139C354B7b17E4D8DCb29ddd2A377733D"
+    "5042":
+      - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
     "56":
       - bridge: "0xCb9F833f4d6D9Bb9767CDb25c487DA54D67731D6"
     "8453":
@@ -1397,6 +1846,8 @@ polygon:
       - "0x000000000000000000000000766a80a7a6bba555731dc1726db5bfa030631270"
     "42161":
       - "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4"
+    "4663":
+      - "0x0000000000000000000000000179d2f23e86ac42cc83d0e3bfe73e835f75e3e9"
     "56":
       - "0x000000000000000000000000050dcc964bca53ef1a98a2347995cabc73ce25b9"
     "747474":
@@ -1406,6 +1857,11 @@ polygon:
   hook:
     domains:
       arbitrum:
+        hooks:
+          - type: defaultHook
+          - "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
+        type: aggregationHook
+      arc:
         hooks:
           - type: defaultHook
           - "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
@@ -1431,11 +1887,16 @@ polygon:
         type: defaultFallbackRoutingIsm
       - domains:
           arbitrum: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
+          arc: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
           base: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
           bsc: "0xdd7Ed4C267913E54868039FBa09e6Cd3d0Ac7Dcd"
           citrea: "0xdd7Ed4C267913E54868039FBa09e6Cd3d0Ac7Dcd"
           ethereum: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
           katana: "0xdd7Ed4C267913E54868039FBa09e6Cd3d0Ac7Dcd"
+          robinhood:
+            domains: {}
+            owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
+            type: defaultFallbackRoutingIsm
           solanamainnet:
             domains: {}
             owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
@@ -1444,6 +1905,7 @@ polygon:
         type: domainRoutingIsm
     threshold: 1
     type: staticAggregationIsm
+  mailbox: "0x5d934f4e2f797775e53561bB72aca21ba36B96BB"
   owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
   token: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
   tokenFee:
@@ -1463,6 +1925,14 @@ polygon:
             - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      arc:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
           owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
@@ -1595,6 +2065,14 @@ polygon:
             - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
             - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
           type: OffchainQuotedLinearFee
+      robinhood:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xdb1E550BcD5CDFF11ede39d042e38DD947dAAD0a"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
       solanamainnet:
         "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
           bps: 3
@@ -1621,6 +2099,8 @@ solanamainnet:
       - "0x000000000000000000000000766a80a7a6bba555731dc1726db5bfa030631270"
     "42161":
       - "0x00000000000000000000000075a9297db5f0349fd1d6f4030953fe17175e06d4"
+    "4663":
+      - "0x0000000000000000000000000179d2f23e86ac42cc83d0e3bfe73e835f75e3e9"
     "56":
       - "0x000000000000000000000000050dcc964bca53ef1a98a2347995cabc73ce25b9"
     "747474":
@@ -1630,6 +2110,7 @@ solanamainnet:
   decimals: 6
   gas: 300000
   hook: BhNcatUDC2D5JTyeaqrdSukiVFsEHK7e3hVmKMztwefv
+  mailbox: E588QtVUvresuXq2KoNEwAmoifCzYGpRBdHByN9KQMbi
   name: XO Cash
   owner: BNGDJ1h9brgt6FFVd8No1TVAH48Fp44d7jkuydr1URwJ
   symbol: XO
