@@ -36,6 +36,23 @@ arbitrum:
       - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
       - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
   contractVersion: 10.1.3
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   name: USD Coin
   owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
   proxyAdmin:
@@ -180,6 +197,23 @@ arc:
       - bridge: "0x16BF93e259ee7f7074453a2948379C35C6851b71"
       - bridge: "0x879f13a642642E938151d79Ec12E808B16E02e28"
   contractVersion: 12.1.0
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x70905eBe9BA33Ab72ab2C51059B4048B835Ae744"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0x70905eBe9BA33Ab72ab2C51059B4048B835Ae744"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   name: USD Coin
   owner: "0x70905eBe9BA33Ab72ab2C51059B4048B835Ae744"
   proxyAdmin:
@@ -324,6 +358,23 @@ avalanche:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
   contractVersion: 10.1.5
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xe9232de913DfB7AC5E3e8dC3c3f48e2b7480889D"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0xe9232de913DfB7AC5E3e8dC3c3f48e2b7480889D"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   name: USD Coin
   owner: "0xe9232de913DfB7AC5E3e8dC3c3f48e2b7480889D"
   proxyAdmin:
@@ -468,6 +519,23 @@ base:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
   contractVersion: 10.1.3
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   name: USD Coin
   owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
   proxyAdmin:
@@ -576,6 +644,23 @@ base:
   type: collateral
 bsc:
   contractVersion: 11.1.0
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   name: USD Coin
   owner: "0x269Af9E53192AF49a22ff47e30b89dE1375AE1fd"
   proxyAdmin:
@@ -870,6 +955,23 @@ hyperevm:
       - bridge: "0xDdf252a063f8c5C399B9ccDBbaDBA55225F53Da1"
       - bridge: "0xe10b7b030C75C80359841CB0ec892E233F03f145"
   contractVersion: 10.1.5
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x7934e65283455BF25e6E9a6E3C48350D66944812"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0x7934e65283455BF25e6E9a6E3C48350D66944812"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   name: USD Coin
   owner: "0x7934e65283455BF25e6E9a6E3C48350D66944812"
   proxyAdmin:
@@ -1014,6 +1116,23 @@ ink:
       - bridge: "0x92dFEB6f7Daa532de0F3c75c2091e1607c6593b7"
       - bridge: "0x70CF23d09784fCA62be304c928BCA9F1801B1F21"
   contractVersion: 10.1.5
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x92EdF061E46Dcf15941CA4D5F2d168f643079343"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0x92EdF061E46Dcf15941CA4D5F2d168f643079343"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   name: USD Coin
   owner: "0x92EdF061E46Dcf15941CA4D5F2d168f643079343"
   proxyAdmin:
@@ -1158,6 +1277,23 @@ linea:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
   contractVersion: 10.1.5
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x7b3d694BdeAE8F496Cc5eD0736c5f734cd231079"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0x7b3d694BdeAE8F496Cc5eD0736c5f734cd231079"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   name: USD Coin
   owner: "0x7b3d694BdeAE8F496Cc5eD0736c5f734cd231079"
   proxyAdmin:
@@ -1266,6 +1402,23 @@ linea:
   type: collateral
 monad:
   contractVersion: 10.1.5
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x40DdDF59209dAA5aE927207ab697e66D51581D87"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0x40DdDF59209dAA5aE927207ab697e66D51581D87"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   name: USD Coin
   owner: "0x40DdDF59209dAA5aE927207ab697e66D51581D87"
   proxyAdmin:
@@ -1410,6 +1563,23 @@ optimism:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x4eFaacbf0D3d57b401Cb6B559e84b344448b0C30"
   contractVersion: 10.1.3
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x1E2afA8d1B841c53eDe9474D188Cd4FcfEd40dDC"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0x1E2afA8d1B841c53eDe9474D188Cd4FcfEd40dDC"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   name: USD Coin
   owner: "0x1E2afA8d1B841c53eDe9474D188Cd4FcfEd40dDC"
   proxyAdmin:
@@ -1554,6 +1724,23 @@ polygon:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x07d89DE0F7E18c9bcAAE81F44aee9CA02EBeE872"
   contractVersion: 10.1.3
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   name: USD Coin
   owner: "0x8708C96f9879805c2E54818865cbFF27fb64000D"
   proxyAdmin:
@@ -1705,6 +1892,23 @@ unichain:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0xCB35d7730843F770625bE36A0E4228c17fDcBC09"
   contractVersion: 10.1.3
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x20c2B4B4C7409D08AD70D5F9e317E98cfA9F49f7"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0x20c2B4B4C7409D08AD70D5F9e317E98cfA9F49f7"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   name: USD Coin
   owner: "0x20c2B4B4C7409D08AD70D5F9e317E98cfA9F49f7"
   proxyAdmin:
@@ -1849,6 +2053,23 @@ worldchain:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x89aAa89D36F995b41d929f2D29b8Ee7C9c8e54cA"
   contractVersion: 10.1.5
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xF618140B147beeD17cB83d4Bb8343484D5295cd2"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0xF618140B147beeD17cB83d4Bb8343484D5295cd2"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   name: USD Coin
   owner: "0xF618140B147beeD17cB83d4Bb8343484D5295cd2"
   proxyAdmin:
