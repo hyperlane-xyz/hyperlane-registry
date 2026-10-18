@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+
+tokens:
+  - addressOrDenom: "0xbD1C15e8E9F9c73804C3620E7615DD65016c35bF"
+    chainName: turkchain
+    connections:
+      - token: ethereum|ethereum|0x1fEabcA65D66Be8E1f9ef2DDBB1906cd64ca9872
+    decimals: 18
+    name: TC
+    standard: EvmHypNative
+    symbol: TURK
+    tokenType: native
+
+  - addressOrDenom: "0x1fEabcA65D66Be8E1f9ef2DDBB1906cd64ca9872"
+    chainName: ethereum
+    connections:
+      - token: ethereum|turkchain|0xbD1C15e8E9F9c73804C3620E7615DD65016c35bF
+    decimals: 18
+    name: TC
+    standard: EvmHypSynthetic
+    symbol: TURK
+    tokenType: synthetic
