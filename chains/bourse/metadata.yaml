@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://explorer.capitalexchange.se/api
+    family: blockscout
+    name: Bourse BOD Explorer
+    url: https://explorer.capitalexchange.se
+blocks:
+  confirmations: 1
+  estimateBlockTime: 1
+  reorgPeriod: 0
+chainId: 343
+deployer:
+  name: Capital Exchange Markets | Digital
+  url: https://www.capitalexchange.digital
+displayName: Bourse
+domainId: 343
+isTestnet: false
+name: bourse
+nativeToken:
+  decimals: 18
+  name: Bourse
+  symbol: BOURSE
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.capitalexchange.digital
+transactionOverrides:
+  gasPrice: 1
