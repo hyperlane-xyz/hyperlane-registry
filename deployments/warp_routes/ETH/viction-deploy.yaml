@@ -199,23 +199,7 @@ robinhood:
 viction:
   decimals: 18
   gas: 50000
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xacabBBa51DB75161274950aB57a466EAFB5F13B8"
-        type: defaultFallbackRoutingIsm
-      - domains:
-          ethereum:
-            threshold: 2
-            type: messageIdMultisigIsm
-            validators:
-              - "0x93911a19cd8914220f6287d515187e7751817683"
-              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
-              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
-        owner: "0xacabBBa51DB75161274950aB57a466EAFB5F13B8"
-        type: domainRoutingIsm
-    threshold: 1
-    type: staticAggregationIsm
+  interchainSecurityModule: "0x0000000000000000000000000000000000000000"
   name: ETH
   owner: "0xacabBBa51DB75161274950aB57a466EAFB5F13B8"
   symbol: ETH
