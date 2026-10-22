@@ -47,11 +47,35 @@ warpRouteIds:
   - USDC/lumia
   - USDC/matchain
   - USDC/paradex
+  - id: USDC/igra
+    notices:
+      - blocksTransfer: false
+        message: This route uses custom [contracts](https://igra-labs.gitbook.io/igralabs-docs/for-developers/hyperlane-bridge-security) maintained by the Igra team.
+        severity: info
   - USDC/lukso
+
+  # USDS routes
+  - id: USDS/ethereum-igra
+    notices:
+      - blocksTransfer: false
+        message: This route uses custom [contracts](https://igra-labs.gitbook.io/igralabs-docs/for-developers/hyperlane-bridge-security) maintained by the Igra team.
+        severity: info
+
+  # USDe routes
+  - id: USDe/igra
+    notices:
+      - blocksTransfer: false
+        message: This route uses custom [contracts](https://igra-labs.gitbook.io/igralabs-docs/for-developers/hyperlane-bridge-security) maintained by the Igra team.
+        severity: info
 
   # USDT routes
   - USDT/ethereum-hyperevm
   - USDT/ethereum-inevm
+  - id: USDT/ethereum-igra
+    notices:
+      - blocksTransfer: false
+        message: This route uses custom [contracts](https://igra-labs.gitbook.io/igralabs-docs/for-developers/hyperlane-bridge-security) maintained by the Igra team.
+        severity: info
   - USDT/ethereum-lumiaprism
   - USDT/ethereum-viction
   - USDT/matchain
@@ -63,6 +87,20 @@ warpRouteIds:
   # oXAUT routes
   - oXAUT/production
 
+  # IKAS routes
+  - id: IKAS/igra
+    notices:
+      - blocksTransfer: false
+        message: This route uses custom [contracts](https://igra-labs.gitbook.io/igralabs-docs/for-developers/hyperlane-bridge-security) maintained by the Igra team.
+        severity: info
+
+  # TIBBIR routes
+  - id: TIBBIR/igra
+    notices:
+      - blocksTransfer: false
+        message: This route uses custom [contracts](https://igra-labs.gitbook.io/igralabs-docs/for-developers/hyperlane-bridge-security) maintained by the Igra team.
+        severity: info
+
   # INJ routes
   - INJ/inevm-injective
 
@@ -71,6 +109,11 @@ warpRouteIds:
   - SOL/solanamainnet-soon
   - SOL/hyperevm-solanamainnet
   - SOL/solanamainnet-sonicsvm
+  - id: SOL/igra
+    notices:
+      - blocksTransfer: false
+        message: This route uses custom [contracts](https://igra-labs.gitbook.io/igralabs-docs/for-developers/hyperlane-bridge-security) maintained by the Igra team.
+        severity: info
 
   # ezSOL routes
   - EZSOL/eclipsemainnet-solanamainnet
@@ -81,6 +124,20 @@ warpRouteIds:
   # WBTC routes
   - WBTC/eclipsemainnet-ethereum
   - WBTC/coti-ethereum
+
+  # CBBTC routes
+  - id: CBBTC/igra
+    notices:
+      - blocksTransfer: false
+        message: This route uses custom [contracts](https://igra-labs.gitbook.io/igralabs-docs/for-developers/hyperlane-bridge-security) maintained by the Igra team.
+        severity: info
+
+  # wstETH routes
+  - id: WSTETH/igra
+    notices:
+      - blocksTransfer: false
+        message: This route uses custom [contracts](https://igra-labs.gitbook.io/igralabs-docs/for-developers/hyperlane-bridge-security) maintained by the Igra team.
+        severity: info
 
   # ORCA routes
   - ORCA/eclipsemainnet-solanamainnet
@@ -117,6 +174,11 @@ warpRouteIds:
 
   # WETH routes
   - WETH/artela-base
+  - id: WETH/ethereum-igra
+    notices:
+      - blocksTransfer: false
+        message: This route uses custom [contracts](https://igra-labs.gitbook.io/igralabs-docs/for-developers/hyperlane-bridge-security) maintained by the Igra team.
+        severity: info
 
   # fastUSD routes
   - FASTUSD/ethereum-sei

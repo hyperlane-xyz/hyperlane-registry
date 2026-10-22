@@ -16,7 +16,9 @@ tokens:
       - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
       - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
       - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
+      - token: ethereum|arc|0x91c3FFE1E85a21B94Ac45A50DD4ccC666f572f05
     coinGeckoId: usd-coin
+    tokenType: crossCollateral
   - chainName: base
     standard: EvmHypCrossCollateralRouter
     decimals: 6
@@ -33,7 +35,9 @@ tokens:
       - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
       - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
       - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
+      - token: ethereum|arc|0x91c3FFE1E85a21B94Ac45A50DD4ccC666f572f05
     coinGeckoId: usd-coin
+    tokenType: crossCollateral
   - chainName: bsc
     standard: EvmHypCrossCollateralRouter
     decimals: 18
@@ -53,7 +57,9 @@ tokens:
       - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
       - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
       - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
+      - token: ethereum|arc|0x91c3FFE1E85a21B94Ac45A50DD4ccC666f572f05
     coinGeckoId: usd-coin
+    tokenType: crossCollateral
   - chainName: citrea
     standard: EvmHypCrossCollateralRouter
     decimals: 6
@@ -70,7 +76,9 @@ tokens:
       - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
       - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
       - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
+      - token: ethereum|arc|0x91c3FFE1E85a21B94Ac45A50DD4ccC666f572f05
     coinGeckoId: citrea-usd
+    tokenType: crossCollateral
   - chainName: ethereum
     standard: EvmHypCrossCollateralRouter
     decimals: 6
@@ -87,7 +95,9 @@ tokens:
       - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
       - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
       - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
+      - token: ethereum|arc|0x91c3FFE1E85a21B94Ac45A50DD4ccC666f572f05
     coinGeckoId: usd-coin
+    tokenType: crossCollateral
   - chainName: katana
     standard: EvmHypCrossCollateralRouter
     decimals: 6
@@ -104,7 +114,9 @@ tokens:
       - token: ethereum|ethereum|0xA9C9a8FB36Ce3e5ffBAC3757dA7141262723541F
       - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
       - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
+      - token: ethereum|arc|0x91c3FFE1E85a21B94Ac45A50DD4ccC666f572f05
     coinGeckoId: usd-coin
+    tokenType: crossCollateral
   - chainName: polygon
     standard: EvmHypCrossCollateralRouter
     decimals: 6
@@ -121,7 +133,9 @@ tokens:
       - token: ethereum|ethereum|0xA9C9a8FB36Ce3e5ffBAC3757dA7141262723541F
       - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
       - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
+      - token: ethereum|arc|0x91c3FFE1E85a21B94Ac45A50DD4ccC666f572f05
     coinGeckoId: usd-coin
+    tokenType: crossCollateral
   - chainName: solanamainnet
     standard: SealevelHypCrossCollateral
     decimals: 6
@@ -138,4 +152,25 @@ tokens:
       - token: ethereum|ethereum|0xA9C9a8FB36Ce3e5ffBAC3757dA7141262723541F
       - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
       - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
+      - token: ethereum|arc|0x91c3FFE1E85a21B94Ac45A50DD4ccC666f572f05
     coinGeckoId: xo-cash
+    tokenType: crossCollateral
+  - chainName: arc
+    standard: EvmHypCrossCollateralRouter
+    decimals: 6
+    symbol: USDC
+    name: USDC
+    addressOrDenom: "0x91c3FFE1E85a21B94Ac45A50DD4ccC666f572f05"
+    collateralAddressOrDenom: "0x3600000000000000000000000000000000000000"
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    connections:
+      - token: ethereum|arbitrum|0xeBC079D41C41a0ef7e54aa7Af867df9a621C9bE0
+      - token: ethereum|base|0x253821543C24623ecD3ceBCEd704359AF16CF38f
+      - token: ethereum|bsc|0x6E66a10Ce72fBdFA45Ab7de3693321246E254123
+      - token: ethereum|citrea|0x2bef59e84615371304bd731601f6344F5F304504
+      - token: ethereum|ethereum|0xA9C9a8FB36Ce3e5ffBAC3757dA7141262723541F
+      - token: ethereum|katana|0x936e8A1fBD8317Be59A9B8924a300993c8Bf7ce6
+      - token: ethereum|polygon|0x28a96f9928dB06317356caACd5641C4Fde4424C7
+      - token: sealevel|solanamainnet|HW9NfLGo6YMoM6o5auTvn5h26tWJPpsroUDfGFwvsQsU
+    coinGeckoId: usd-coin
+    tokenType: crossCollateral

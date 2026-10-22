@@ -459,10 +459,10 @@ arbitrumsepolia:
   technicalStack: arbitrumnitro
 arc:
   blockExplorers:
-    - apiUrl: https://arcscan.app/api
-      family: other
-      name: Arcscan
-      url: https://arcscan.app
+    - apiUrl: https://explorer.arc.io/api
+      family: blockscout
+      name: Arc Explorer
+      url: https://explorer.arc.io
   blocks:
     confirmations: 1
     estimateBlockTime: 1
@@ -7426,10 +7426,10 @@ robinhood:
       family: etherscan
       name: Robinhood Explorer
       url: https://robin.etherscan.io
-    - apiUrl: https://explorer.chain.robinhood.com/api
+    - apiUrl: https://robinhoodchain.blockscout.com/api
       family: blockscout
       name: RHC
-      url: https://explorer.chain.robinhood.com
+      url: https://robinhoodchain.blockscout.com
   blocks:
     confirmations: 1
     estimateBlockTime: 0.1
@@ -9740,7 +9740,7 @@ viction:
   blocks:
     confirmations: 1
     estimateBlockTime: 2
-    reorgPeriod: 3
+    reorgPeriod: 15
   chainId: 88
   deployer:
     name: Abacus Works

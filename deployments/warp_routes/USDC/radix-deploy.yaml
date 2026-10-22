@@ -4,12 +4,16 @@ arbitrum:
   allowedRebalancingBridges:
     base:
       - bridge: "0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2"
+      - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
+      - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
     ethereum:
       - bridge: "0x8a82186EA618b91D13A2041fb7aC31Bf01C02aD2"
+      - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
+      - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
   decimals: 6
-  owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+  owner: "0x72B5EC6EEE0B358FB1F77d40D469a63530A91DB3"
   proxyAdmin:
-    owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+    owner: "0x72B5EC6EEE0B358FB1F77d40D469a63530A91DB3"
   token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
   type: collateral
 base:
@@ -18,12 +22,16 @@ base:
   allowedRebalancingBridges:
     arbitrum:
       - bridge: "0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975"
+      - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
+      - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
     ethereum:
       - bridge: "0x5C4aFb7e23B1Dc1B409dc1702f89C64527b25975"
+      - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
+      - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
   decimals: 6
-  owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+  owner: "0x1f6E345a67b3BD0277410887d732b2d0E4699d11"
   proxyAdmin:
-    owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+    owner: "0x1f6E345a67b3BD0277410887d732b2d0E4699d11"
   token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
   type: collateral
 ethereum:
@@ -32,22 +40,32 @@ ethereum:
   allowedRebalancingBridges:
     arbitrum:
       - bridge: "0xedCBAa585FD0F80f20073F9958246476466205b8"
+      - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
+      - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
     base:
       - bridge: "0xedCBAa585FD0F80f20073F9958246476466205b8"
+      - bridge: "0x8c8D831E1e879604b4B304a2c951B8AEe3aB3a23"
+      - bridge: "0x7A576Bb5291567cfDbB4585B1911CF7C9891ea07"
   decimals: 6
   interchainSecurityModule:
+    address: "0xA076bf16992ef5e54A52B4002e3A1B5353A5f14F"
     modules:
-      - domains: {}
-        owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
-        type: defaultFallbackRoutingIsm
-      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+      - address: "0x3edE2f2E4Ba434242Eb1865F52d279dA43CBFd02"
+        type: defaultIsm
+      - address: "0x435E9F0e54Af1E0C37A6075233059f7625f2CFC9"
+        blacklistedIds:
+          - "0x8960c5e41eb0d91973140ebc196892f5f07f512dd86047e8536e71424462c5d3"
+        owner: "0x995A921d333029512aa166885856c8AF760E9381"
+        type: blacklistIsm
+      - address: "0x52d10C47E9E4A20E4561271a8440E32C44C00F45"
+        owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
         paused: true
         type: pausableIsm
-    threshold: 2
+    threshold: 3
     type: staticAggregationIsm
-  owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+  owner: "0x995A921d333029512aa166885856c8AF760E9381"
   proxyAdmin:
-    owner: "0xA365Bf3Da1f1B01E2a80f9261Ec717B305b2Eb8F"
+    owner: "0x995A921d333029512aa166885856c8AF760E9381"
   token: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
   type: collateral
 radix:
