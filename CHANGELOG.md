@@ -1,5 +1,11 @@
 # @hyperlane-xyz/registry
 
+## 26.2.1
+
+### Patch Changes
+
+- c02f061: The Arc block explorer was switched from the unresolvable arcscan.app to the official Blockscout explorer at explorer.arc.io.
+
 ## 26.2.0
 
 ### Minor Changes
