@@ -1,6 +1,22 @@
 arbitrum:
   decimals: 18
-  mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   owner: "0xD2757Bbc28C80789Ed679f22Ac65597Cacf51A45"
   proxyAdmin:
     owner: "0x03fD5BE9DF85F0017dC7F4DC3068dDF64fffF25e"
@@ -27,7 +43,23 @@ arbitrum:
   type: native
 base:
   decimals: 18
-  mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   owner: "0x61756c4beBC1BaaC09d89729E2cbaD8BD30c62B7"
   proxyAdmin:
     owner: "0x3949eD0CD036D9FF662d97BD7aC1686051c4aeBF"
@@ -54,7 +86,6 @@ base:
   type: native
 ethereum:
   decimals: 18
-  mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
   owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
   proxyAdmin:
     owner: "0x3965AC3D295641E452E0ea896a086A9cD7C6C5b6"
@@ -81,7 +112,23 @@ ethereum:
   type: native
 optimism:
   decimals: 18
-  mailbox: "0xd4C1905BB1D26BC93DAC913e13CaCC278CdCC80D"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x1E2afA8d1B841c53eDe9474D188Cd4FcfEd40dDC"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0x1E2afA8d1B841c53eDe9474D188Cd4FcfEd40dDC"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   owner: "0x1E2afA8d1B841c53eDe9474D188Cd4FcfEd40dDC"
   proxyAdmin:
     owner: "0xbd7db3821806bc72D223F0AE521Bf82FcBd6Ef4d"
@@ -108,7 +155,23 @@ optimism:
   type: native
 robinhood:
   decimals: 18
-  mailbox: "0x3a867fCfFeC2B790970eeBDC9023E75B0a172aa7"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xaE3B79d7c9FBE5905fc5638Bb070dd356513d6fc"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0xaE3B79d7c9FBE5905fc5638Bb070dd356513d6fc"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
   owner: "0xaE3B79d7c9FBE5905fc5638Bb070dd356513d6fc"
   proxyAdmin:
     owner: "0xaE3B79d7c9FBE5905fc5638Bb070dd356513d6fc"
@@ -137,7 +200,6 @@ viction:
   decimals: 18
   gas: 50000
   interchainSecurityModule: "0x0000000000000000000000000000000000000000"
-  mailbox: "0x2f2aFaE1139Ce54feFC03593FeE8AB2aDF4a85A7"
   name: ETH
   owner: "0xacabBBa51DB75161274950aB57a466EAFB5F13B8"
   symbol: ETH
