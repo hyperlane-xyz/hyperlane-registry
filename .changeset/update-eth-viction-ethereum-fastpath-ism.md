@@ -2,4 +2,4 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-configured the Arbitrum, Base, Optimism, and Robinhood legs of ETH/viction to accept Ethereum-origin fastpath validation with standard-validation fallback, while retaining mailbox-default validation on Viction, generated from the monorepo config getter
+configured the native ETH/viction legs to accept Ethereum-, Base-, and Arbitrum-origin fastpath validation with the current 2-of-3 validator set and standard-validation fallback; retained mailbox-default validation on Viction
