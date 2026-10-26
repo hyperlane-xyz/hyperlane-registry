@@ -1,7 +1,11 @@
 import fs from 'fs';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ChainMetadataSchemaObject, WarpCoreConfigSchema } from '@hyperlane-xyz/sdk';
+import {
+  ChainMetadataSchemaObject,
+  RadixChainMetadataSchemaObject,
+  WarpCoreConfigSchema,
+} from '@hyperlane-xyz/sdk';
 import { parse, stringify } from 'yaml';
 import { z } from 'zod/v4';
 
@@ -215,7 +219,9 @@ function generateWarpConfigTsCode() {
 function updateJsonSchemas() {
   console.log('Updating & copying chain JSON schemas');
   const chainSchema = z.toJSONSchema(
-    ChainMetadataSchemaObject.meta({ id: 'hyperlaneChainMetadata' }),
+    z
+      .union([ChainMetadataSchemaObject, RadixChainMetadataSchemaObject])
+      .meta({ id: 'hyperlaneChainMetadata' }),
     JSON_SCHEMA_OPTIONS,
   );
   fs.writeFileSync(`./chains/schema.json`, JSON.stringify(chainSchema, null, 2), 'utf8');
