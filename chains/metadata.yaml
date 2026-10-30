@@ -2075,6 +2075,8 @@ coti:
   rpcUrls:
     - http: https://mainnet.coti.io/rpc
   technicalStack: other
+  transactionOverrides:
+    priorityFeeCap: 50000000000
 cotitestnet:
   blockExplorers:
     - apiUrl: https://mainnet.cotiscan.io/api
@@ -6911,6 +6913,9 @@ polygon:
     - http: https://polygon.drpc.org
     - http: https://polygon.gateway.tenderly.co
   technicalStack: other
+  transactionOverrides:
+    minPriorityFeePerGas: 25000000000
+    priorityFeeCap: 250000000000
 polygonamoy:
   blockExplorers:
     - apiUrl: https://api-amoy.polygonscan.com/api
@@ -9969,6 +9974,9 @@ zerogravity:
     - http: https://0g.drpc.org
     - http: https://evmrpc.0g.ai
   technicalStack: other
+  transactionOverrides:
+    minPriorityFeePerGas: 2000000000
+    priorityFeeCap: 30000000000
 zeronetwork:
   availability:
     reasons:
