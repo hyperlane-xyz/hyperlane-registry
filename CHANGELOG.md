@@ -1,5 +1,24 @@
 # @hyperlane-xyz/registry
 
+## 26.2.1
+
+### Patch Changes
+
+- fd1acc2: Added the ZEC/aleo warp route to the Nexus universal router allowlist.
+- e45a9e3: The Arc block explorer family was set to other because the explorer.arc.io API sits behind a Cloudflare challenge, which made contract verification checks return errors.
+- e45a9e3: added monad CCTP v2 standard rebalancing bridges and the rebalancer to the USDC/eclipsemainnet deploy config
+- c02f061: The Arc block explorer was switched from the unresolvable arcscan.app to the official Blockscout explorer at explorer.arc.io.
+- 9a77902: removed Katana's fixed transaction fee overrides so fee estimates follow network conditions.
+- 98b0a34: MAGIC/abstract base expected config was synced after the base owner unenrolled ronin
+- cb50e2e: migrated the Aleo USDT route and peer connections to the v3 ARC-22 router and updated its deployment configuration
+- 4251adb: Aleo warp routes on Nexus were re-enabled by removing the temporary disabled notice.
+- 853a5e6: updated core ISM deployment addresses and Tempo's active ISM component aliases for the governance rollout
+- 05582ad: configured the native ETH/viction legs to accept Ethereum-, Base-, and Arbitrum-origin fastpath validation with the current 2-of-3 validator set and standard-validation fallback; retained mailbox-default validation on Viction
+- 243ce55: updated Tempo's default and routing ISMs, deployed its current aggregation hook factory and hook, and registered its V3 ICA router and QuotedCalls
+- 7e8ac68: extended USDC/eclipsemainnet Fast Path validation to Base and Arbitrum origins on EVM destinations, retaining mailbox validation as a fallback and excluding Eclipse and Solana destinations
+- 2e4b876: viction reorgPeriod was raised from 15 to 90 after a 25-block reorg
+- 7cba3b8: The USDC/radix Ethereum leg pausableIsm was set to unpaused.
+
 ## 26.2.0
 
 ### Minor Changes
