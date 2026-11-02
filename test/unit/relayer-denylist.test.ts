@@ -20,16 +20,43 @@ const EXACT_MATCH_KEYS = [
   'recipientAddress',
 ] as const;
 
-const Scalar = z.union([z.string().min(1), z.number().int().nonnegative()]);
-const Filter = z.union([Scalar, z.array(Scalar).min(1)]);
+// Per-field rules from the relayer's `Filter` deserializers: a field is `*`
+// or specific values; `*` isn't allowed inside a list, and an empty list
+// (which matches nothing) is rejected.
+const DomainId = z.union([
+  z
+    .number()
+    .int()
+    .nonnegative()
+    .max(2 ** 32 - 1),
+  z.string().regex(/^\d+$/, 'decimal domain ID'),
+]);
+const DomainFilter = z.union([z.literal('*'), DomainId, z.array(DomainId).min(1)]);
+const AddressValue = z.string().refine(isValidDenylistAddress, 'EVM hex, base58 or bech32 address');
+const AddressFilter = z.union([z.literal('*'), AddressValue, z.array(AddressValue).min(1)]);
+const MessageId = z.string().regex(/^0x[0-9a-fA-F]{64}$/, '0x-prefixed 32-byte message ID');
+const MessageIdFilter = z.union([z.literal('*'), MessageId, z.array(MessageId).min(1)]);
+// The relayer uses Rust's `regex` crate: no lookaround or backreferences.
+const BodyRegex = z
+  .string()
+  .min(1)
+  .refine((pattern) => {
+    try {
+      new RegExp(pattern);
+    } catch {
+      return false;
+    }
+    return !/\(\?<?[=!]|\\[1-9]/.test(pattern);
+  }, 'must compile as a Rust regex (no lookaround or backreferences)');
+
 const Match = z
   .strictObject({
-    messageId: Filter.optional(),
-    originDomain: Filter.optional(),
-    senderAddress: Filter.optional(),
-    destinationDomain: Filter.optional(),
-    recipientAddress: Filter.optional(),
-    bodyRegex: z.string().min(1).optional(),
+    messageId: MessageIdFilter.optional(),
+    originDomain: DomainFilter.optional(),
+    senderAddress: AddressFilter.optional(),
+    destinationDomain: DomainFilter.optional(),
+    recipientAddress: AddressFilter.optional(),
+    bodyRegex: BodyRegex.optional(),
   })
   // Missing fields are wildcards and bodyRegex alone can match anything.
   .refine(
@@ -102,6 +129,12 @@ describe('Relayer denylist', () => {
       { ...base, match: { originDomain: '*' } },
       { ...base, match: { bodyRegex: '.*' } },
       { ...base, match: { messageId: null } },
+      { ...base, match: { messageId: 123 } },
+      { ...base, match: { messageId: ['*'] } },
+      { ...base, match: { originDomain: ['*', 1] } },
+      { ...base, match: { messageId: [] } },
+      { ...base, match: { originDomain: 1, bodyRegex: '(' } },
+      { ...base, match: { originDomain: 1, bodyRegex: 'ab(?=cd)' } },
       // One character changed from a valid Tron address.
       { ...base, address: 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6u' },
       { ...base, match: { messageID: '0x01' } },
