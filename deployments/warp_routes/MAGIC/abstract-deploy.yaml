@@ -1,9 +1,10 @@
 # Ronin (domain 2020) was intentionally removed from this route (#1641) after
 # Hyperlane's Ronin support was sunset and Treasure asked to close the bridge,
 # so it is not a leg here or in abstract-config.yaml (and not exposed in UIs).
-# Ronin is still enrolled on-chain on the abstract and arbitrum routers until
-# each owner executes `unenrollRemoteRouter(2020)`. The base owner already did
-# (2026-10-30), so base no longer lists ronin. We do not control
+# Ronin is still enrolled on-chain on the abstract, arbitrum and base routers
+# until each owner executes `unenrollRemoteRouter(2020)`. The base owner briefly
+# unenrolled it, then re-enrolled it on 2026-10-30 (tx 0xe34453cf...) before
+# transferring base ownership to Safe 0x142417ca.... We do not control
 # these routers, so the ronin entries in remoteRouters/destinationGas below
 # temporarily mirror that enrollment to keep `warp check` from alerting on it.
 #
@@ -53,12 +54,15 @@ base:
   destinationGas:
     abstract: "70000"
     arbitrum: "70000"
+    ronin: "70000"
   gas: 70000
   interchainSecurityModule: "0x7C74Dd1674450406b6AB3fa37184Bc73E8675242"
-  owner: "0x76D0fa3bF99D0a6cBdD906115f26A05A4cFB2297"
+  owner: "0x142417ca4604750675250f4aad4e8e429df48b44"
   remoteRouters:
     abstract:
       address: "0x263D8f36Bb8d0d9526255E205868C26690b04B88"
     arbitrum:
+      address: "0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3"
+    ronin:
       address: "0x37687d638EA2D25Df5350D37d5BccBF7Fff1F2B3"
   type: synthetic
