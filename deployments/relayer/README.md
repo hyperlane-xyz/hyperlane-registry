@@ -1,6 +1,8 @@
 # Relayer denylist
 
-`mainnet-denylist.json` is the runtime denylist for Hyperlane's mainnet relayers. Relayers configured with `runtimeDenylistUrl` poll this file. Merged changes then apply without a relayer deploy, within about 6 minutes: `raw.githubusercontent.com` caches files for 5 minutes, and relayers poll every minute.
+`mainnet-denylist.json` is the runtime denylist for Hyperlane's mainnet relayers; `testnet-denylist.json` is the separate feed for testnet relayers.
+
+Polling requires an initial relayer deployment with runtime denylist support and `runtimeDenylistUrl` configured for the environment's feed in hyperlane, rc, and fastpath. [hyperlane-monorepo#9957](https://github.com/hyperlane-xyz/hyperlane-monorepo/pull/9957) prepares that rollout; merging a feed or rule change does not deploy agents or enable polling. Once the configured agents are deployed, subsequent merged rule changes apply without a redeploy, within about 6 minutes: `raw.githubusercontent.com` caches files for 5 minutes, and relayers poll every minute.
 
 Each rule needs `reason` and `addedBy`, and optionally `expiresAt` (RFC 3339). It also needs exactly one of:
 
