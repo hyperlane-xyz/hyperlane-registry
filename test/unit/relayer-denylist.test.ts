@@ -2,11 +2,13 @@ import { createHash } from 'crypto';
 import fs from 'fs';
 
 import {
+  addressToBytesCosmos,
   isValidAddressCosmos,
   isValidAddressEvm,
   isValidAddressSealevel,
 } from '@hyperlane-xyz/utils';
 import { expect } from 'chai';
+import { RRegex } from 'rregex';
 import { z } from 'zod';
 
 import { chainMetadata } from '../../dist/index.js';
@@ -40,18 +42,19 @@ const AddressValue = z.string().refine(isValidDenylistAddress, 'EVM hex, base58 
 const AddressFilter = z.union([z.literal('*'), AddressValue, z.array(AddressValue).min(1)]);
 const MessageId = z.string().regex(/^0x[0-9a-fA-F]{64}$/, '0x-prefixed 32-byte message ID');
 const MessageIdFilter = z.union([z.literal('*'), MessageId, z.array(MessageId).min(1)]);
-// The relayer uses Rust's `regex` crate: no lookaround or backreferences.
-const BodyRegex = z
-  .string()
-  .min(1)
-  .refine((pattern) => {
-    try {
-      new RegExp(pattern);
-    } catch {
-      return false;
-    }
-    return !/\(\?<?[=!]|\\[1-9]/.test(pattern);
-  }, 'must compile as a Rust regex (no lookaround or backreferences)');
+// rregex 1.10.12 bundles regex 1.10.5; the relayer's 1.10.6 patch only
+// fixes the unstable Pattern trait, without changing regex syntax.
+// Compile with Rust's regex engine, as the relayer does. JavaScript's
+// RegExp accepts escapes Rust rejects and rejects Rust's inline flags.
+const BodyRegex = z.string().refine((pattern) => {
+  try {
+    const regex = new RRegex(pattern);
+    regex.free();
+    return true;
+  } catch {
+    return false;
+  }
+}, 'must compile as a Rust regex');
 
 const Match = z
   .strictObject({
@@ -90,32 +93,35 @@ const sha256 = (bytes: Uint8Array) => createHash('sha256').update(bytes).digest(
 
 // Same formats as the relayer: EVM hex (20 or 32 bytes), Tron base58check
 // (0x41 prefix and checksum verified), 32-byte base58 (Solana) or bech32.
-function isValidDenylistAddress(address: string): boolean {
+function decodeDenylistAddress(address: string): Uint8Array | undefined {
   if (address.startsWith('0x')) {
-    return /^0x[0-9a-fA-F]{64}$/.test(address) || isValidAddressEvm(address);
+    if (!/^0x[0-9a-fA-F]{64}$/.test(address) && !isValidAddressEvm(address)) return undefined;
+    return Buffer.from(address.slice(2), 'hex');
   }
   const bytes = base58Decode(address);
   if (bytes?.length === 25) {
     const checksum = sha256(sha256(bytes.subarray(0, 21))).subarray(0, 4);
-    return bytes[0] === 0x41 && Buffer.from(bytes.subarray(21)).equals(checksum);
+    if (bytes[0] !== 0x41 || !Buffer.from(bytes.subarray(21)).equals(checksum)) return undefined;
+    return bytes.subarray(1, 21);
   }
-  if (bytes?.length === 32) return isValidAddressSealevel(address);
-  // The shape check rules out denoms, which the Cosmos validator also accepts;
-  // the validator checks the bech32 checksum.
-  return /^[a-z0-9]+1[02-9ac-hj-np-z]+$/.test(address) && isValidAddressCosmos(address);
+  if (bytes?.length === 32 && isValidAddressSealevel(address)) return bytes;
+  // Rule out denoms, then verify the checksum and Rust's maximum payload size.
+  if (!/^[a-z0-9]+1[02-9ac-hj-np-z]+$/.test(address) || !isValidAddressCosmos(address))
+    return undefined;
+  const decoded = addressToBytesCosmos(address);
+  return decoded.length <= 32 ? decoded : undefined;
 }
 
-// The relayer rejects an `address` rule that decodes to zero.
-function isZeroAddress(address: string): boolean {
-  if (address.startsWith('0x')) return /^0x0+$/.test(address);
-  const bytes = base58Decode(address);
-  return !!bytes && bytes.length > 0 && bytes.every((byte) => byte === 0);
+function isValidDenylistAddress(address: string): boolean {
+  return decodeDenylistAddress(address) !== undefined;
 }
 
-const Address = z
-  .string()
-  .refine(isValidDenylistAddress, 'EVM hex (20 or 32 bytes), Tron or Solana base58, or bech32')
-  .refine((address) => !isZeroAddress(address), 'must not be the zero address');
+// Rust rejects the decoded zero address, excluding Tron framing bytes and
+// bech32 encoding. Zero values remain valid in sender/recipient match filters.
+const Address = AddressValue.refine(
+  (address) => decodeDenylistAddress(address)?.some((byte) => byte !== 0) ?? false,
+  'must not be the zero address',
+);
 
 const Rule = z
   .strictObject({
@@ -148,6 +154,21 @@ describe('Relayer denylist', () => {
       { ...base, match: { messageId: [] } },
       { ...base, match: { originDomain: 1, bodyRegex: '(' } },
       { ...base, match: { originDomain: 1, bodyRegex: 'ab(?=cd)' } },
+      { ...base, match: { originDomain: 1, bodyRegex: '\\k<name>' } },
+      { ...base, match: { originDomain: 1, bodyRegex: '\\cA' } },
+      { ...base, match: { originDomain: 1, bodyRegex: '\\uD800' } },
+      { ...base, match: { originDomain: 1, bodyRegex: 'a{1000000000}' } },
+      { ...base, address: 'T9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb' },
+      { ...base, address: 'cosmos1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqnrql8a' },
+      // Valid bech32 checksum, but a 33-byte payload does not fit Rust's H256.
+      { ...base, address: 'cosmos1qyqszqgpqyqszqgpqyqszqgpqyqszqgpqyqszqgpqyqszqgpqyqsz9w522u' },
+      {
+        ...base,
+        match: {
+          originDomain: 1,
+          senderAddress: 'cosmos1qyqszqgpqyqszqgpqyqszqgpqyqszqgpqyqszqgpqyqszqgpqyqsz9w522u',
+        },
+      },
       // Solana's all-zero pubkey, and a bech32 address with its last character changed.
       { ...base, address: '11111111111111111111111111111111' },
       { ...base, address: 'cosmos18888888888888888888888888888888824y2mq' },
@@ -177,6 +198,26 @@ describe('Relayer denylist', () => {
       '0xA97bF7836F8A08F9Ed91D41453D371493FAE8d10',
     ]) {
       expect(Denylist.safeParse({ rules: [{ ...base, address }] }).success, address).to.be.true;
+    }
+  });
+
+  it('allows decoded zero addresses only in match filters', () => {
+    for (const address of [
+      '0x0000000000000000000000000000000000000000',
+      'T9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb',
+      'cosmos1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqnrql8a',
+    ]) {
+      const base = { reason: 'r', addedBy: 'a' };
+      expect(Denylist.safeParse({ rules: [{ ...base, address }] }).success, address).to.be.false;
+      const rule = { ...base, match: { originDomain: 1, senderAddress: address } };
+      expect(Denylist.safeParse({ rules: [rule] }).success, address).to.be.true;
+    }
+  });
+
+  it('accepts Rust regex syntax', () => {
+    for (const bodyRegex of ['(?i)^ab[0-9a-f]{2}$', '\\Aab\\z', '']) {
+      const rule = { reason: 'r', addedBy: 'a', match: { originDomain: 1, bodyRegex } };
+      expect(Denylist.safeParse({ rules: [rule] }).success, bodyRegex).to.be.true;
     }
   });
 
