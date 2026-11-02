@@ -5,7 +5,7 @@
 Each rule needs `reason` and `addedBy`, and optionally `expiresAt` (RFC 3339). It also needs exactly one of:
 
 - `match`: `MatchingList` fields (`messageId`, `originDomain`, `senderAddress`, `destinationDomain`, `recipientAddress`, `bodyRegex`). It must constrain at least one field.
-- `address`: EVM hex, Solana or Tron base58, or bech32. It matches the message sender, the recipient, the warp transfer recipient, or the origin tx sender.
+- `address`: EVM hex, Solana or Tron base58, or bech32. It matches the message sender, the recipient, the warp transfer recipient, or any signer of the origin transaction (catches warp depositors).
 
 ```json
 {
