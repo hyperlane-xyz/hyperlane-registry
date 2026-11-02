@@ -1,5 +1,7 @@
+import { createHash } from 'crypto';
 import fs from 'fs';
 
+import { isValidAddressEvm, isValidAddressSealevel } from '@hyperlane-xyz/utils';
 import { expect } from 'chai';
 import { z } from 'zod';
 
@@ -9,6 +11,14 @@ import { chainMetadata } from '../../dist/index.js';
 // (rust/main/agents/relayer/src/msg/runtime_denylist.rs in hyperlane-monorepo),
 // which rejects the whole file if any rule is invalid.
 const DENYLIST_PATH = './deployments/relayer/mainnet-denylist.json';
+
+const EXACT_MATCH_KEYS = [
+  'messageId',
+  'originDomain',
+  'senderAddress',
+  'destinationDomain',
+  'recipientAddress',
+] as const;
 
 const Scalar = z.union([z.string().min(1), z.number().int().nonnegative()]);
 const Filter = z.union([Scalar, z.array(Scalar).min(1)]);
@@ -21,15 +31,50 @@ const Match = z
     recipientAddress: Filter.optional(),
     bodyRegex: z.string().min(1).optional(),
   })
-  .refine((match) => Object.values(match).some((value) => value !== '*'), {
-    message: '`match` must constrain at least one field; it would block every message',
-  });
+  // Missing fields are wildcards and bodyRegex alone can match anything.
+  .refine(
+    (match) => EXACT_MATCH_KEYS.some((key) => match[key] !== undefined && match[key] !== '*'),
+    {
+      message:
+        '`match` must set messageId, originDomain, senderAddress, destinationDomain or recipientAddress',
+    },
+  );
 
-const ADDRESS_REGEX =
-  /^(0x([0-9a-fA-F]{40}|[0-9a-fA-F]{64})|[1-9A-HJ-NP-Za-km-z]{32,44}|[a-z0-9]+1[02-9ac-hj-np-z]+)$/;
+const BASE58_ALPHABET = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
+
+function base58Decode(value: string): Uint8Array | undefined {
+  let n = 0n;
+  for (const char of value) {
+    const digit = BASE58_ALPHABET.indexOf(char);
+    if (digit < 0) return undefined;
+    n = n * 58n + BigInt(digit);
+  }
+  const bytes: number[] = [];
+  for (; n > 0n; n /= 256n) bytes.unshift(Number(n % 256n));
+  const leadingZeros = value.length - value.replace(/^1+/, '').length;
+  return Uint8Array.from([...new Array(leadingZeros).fill(0), ...bytes]);
+}
+
+const sha256 = (bytes: Uint8Array) => createHash('sha256').update(bytes).digest();
+
+// Same formats as the relayer: EVM hex (20 or 32 bytes), Tron base58check
+// (0x41 prefix and checksum verified), 32-byte base58 (Solana) or bech32.
+function isValidDenylistAddress(address: string): boolean {
+  if (address.startsWith('0x')) {
+    return /^0x[0-9a-fA-F]{64}$/.test(address) || isValidAddressEvm(address);
+  }
+  const bytes = base58Decode(address);
+  if (bytes?.length === 25) {
+    const checksum = sha256(sha256(bytes.subarray(0, 21))).subarray(0, 4);
+    return bytes[0] === 0x41 && Buffer.from(bytes.subarray(21)).equals(checksum);
+  }
+  if (bytes?.length === 32) return isValidAddressSealevel(address);
+  return /^[a-z0-9]+1[02-9ac-hj-np-z]+$/.test(address);
+}
+
 const Address = z
   .string()
-  .regex(ADDRESS_REGEX, 'EVM hex (20 or 32 bytes), base58 or bech32')
+  .refine(isValidDenylistAddress, 'EVM hex (20 or 32 bytes), Tron or Solana base58, or bech32')
   .refine((address) => !/^0x0+$/.test(address), 'must not be the zero address');
 
 const Rule = z
@@ -55,6 +100,10 @@ describe('Relayer denylist', () => {
     const invalid = [
       { ...base, match: {} },
       { ...base, match: { originDomain: '*' } },
+      { ...base, match: { bodyRegex: '.*' } },
+      { ...base, match: { messageId: null } },
+      // One character changed from a valid Tron address.
+      { ...base, address: 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6u' },
       { ...base, match: { messageID: '0x01' } },
       { ...base, address: '0x0000000000000000000000000000000000000000' },
       { ...base, address: 'not an address' },
