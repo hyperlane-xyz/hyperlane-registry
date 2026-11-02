@@ -1,7 +1,11 @@
 import { createHash } from 'crypto';
 import fs from 'fs';
 
-import { isValidAddressEvm, isValidAddressSealevel } from '@hyperlane-xyz/utils';
+import {
+  isValidAddressCosmos,
+  isValidAddressEvm,
+  isValidAddressSealevel,
+} from '@hyperlane-xyz/utils';
 import { expect } from 'chai';
 import { z } from 'zod';
 
@@ -96,13 +100,22 @@ function isValidDenylistAddress(address: string): boolean {
     return bytes[0] === 0x41 && Buffer.from(bytes.subarray(21)).equals(checksum);
   }
   if (bytes?.length === 32) return isValidAddressSealevel(address);
-  return /^[a-z0-9]+1[02-9ac-hj-np-z]+$/.test(address);
+  // The shape check rules out denoms, which the Cosmos validator also accepts;
+  // the validator checks the bech32 checksum.
+  return /^[a-z0-9]+1[02-9ac-hj-np-z]+$/.test(address) && isValidAddressCosmos(address);
+}
+
+// The relayer rejects an `address` rule that decodes to zero.
+function isZeroAddress(address: string): boolean {
+  if (address.startsWith('0x')) return /^0x0+$/.test(address);
+  const bytes = base58Decode(address);
+  return !!bytes && bytes.length > 0 && bytes.every((byte) => byte === 0);
 }
 
 const Address = z
   .string()
   .refine(isValidDenylistAddress, 'EVM hex (20 or 32 bytes), Tron or Solana base58, or bech32')
-  .refine((address) => !/^0x0+$/.test(address), 'must not be the zero address');
+  .refine((address) => !isZeroAddress(address), 'must not be the zero address');
 
 const Rule = z
   .strictObject({
@@ -135,6 +148,9 @@ describe('Relayer denylist', () => {
       { ...base, match: { messageId: [] } },
       { ...base, match: { originDomain: 1, bodyRegex: '(' } },
       { ...base, match: { originDomain: 1, bodyRegex: 'ab(?=cd)' } },
+      // Solana's all-zero pubkey, and a bech32 address with its last character changed.
+      { ...base, address: '11111111111111111111111111111111' },
+      { ...base, address: 'cosmos18888888888888888888888888888888824y2mq' },
       // One character changed from a valid Tron address.
       { ...base, address: 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6u' },
       { ...base, match: { messageID: '0x01' } },
@@ -150,6 +166,17 @@ describe('Relayer denylist', () => {
     ];
     for (const rule of invalid) {
       expect(Denylist.safeParse({ rules: [rule] }).success, JSON.stringify(rule)).to.be.false;
+    }
+  });
+
+  it('accepts each address format the relayer accepts', () => {
+    const base = { reason: 'r', addedBy: 'a' };
+    for (const address of [
+      'cosmos18888888888888888888888888888888824y2mu',
+      'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
+      '0xA97bF7836F8A08F9Ed91D41453D371493FAE8d10',
+    ]) {
+      expect(Denylist.safeParse({ rules: [{ ...base, address }] }).success, address).to.be.true;
     }
   });
 
