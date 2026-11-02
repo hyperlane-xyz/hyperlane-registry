@@ -85,6 +85,14 @@ hyperevm:
   type: synthetic
 nesachain:
   decimals: 18
+  hook:
+    hooks:
+      - type: defaultHook
+      - duration: "86400"
+        maxCapacity: "2000000000000000000073600"
+        owner: "0x80902abA042EFe99179FDC0Ba997028335A847E8"
+        type: rateLimitedHook
+    type: aggregationHook
   interchainSecurityModule:
     modules:
       - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
@@ -93,7 +101,11 @@ nesachain:
       - domains: {}
         owner: "0x80902abA042EFe99179FDC0Ba997028335A847E8"
         type: defaultFallbackRoutingIsm
-    threshold: 2
+      - duration: "86400"
+        maxCapacity: "2000000000000000000073600"
+        owner: "0x80902abA042EFe99179FDC0Ba997028335A847E8"
+        type: rateLimitedIsm
+    threshold: 3
     type: staticAggregationIsm
   mailbox: "0x7f50C5776722630a0024fAE05fDe8b47571D7B39"
   owner: "0x80902abA042EFe99179FDC0Ba997028335A847E8"
