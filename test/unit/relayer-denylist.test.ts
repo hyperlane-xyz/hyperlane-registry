@@ -16,7 +16,10 @@ import { chainMetadata } from '../../dist/index.js';
 // Mirrors the relayer's runtime denylist parser
 // (rust/main/agents/relayer/src/msg/runtime_denylist.rs in hyperlane-monorepo),
 // which rejects the whole file if any rule is invalid.
-const DENYLIST_PATH = './deployments/relayer/mainnet-denylist.json';
+const DENYLIST_PATHS = [
+  './deployments/relayer/mainnet-denylist.json',
+  './deployments/relayer/testnet-denylist.json',
+];
 
 const EXACT_MATCH_KEYS = [
   'messageId',
@@ -150,9 +153,6 @@ function duplicateRuleKey(rule: z.infer<typeof Rule>): string {
 }
 
 describe('Relayer denylist', () => {
-  const raw = JSON.parse(fs.readFileSync(DENYLIST_PATH, 'utf8'));
-  const { rules } = Denylist.parse(raw);
-
   it('rejects rules the relayer would reject', () => {
     const base = { reason: 'r', addedBy: 'a' };
     const invalid = [
@@ -233,15 +233,6 @@ describe('Relayer denylist', () => {
     }
   });
 
-  it('uses only known domain IDs', () => {
-    const domainIds = new Set(Object.values(chainMetadata).map((metadata) => metadata.domainId));
-    const unknown = rules
-      .flatMap((rule) => [rule.match?.originDomain, rule.match?.destinationDomain])
-      .flatMap((filter) => (Array.isArray(filter) ? filter : [filter]))
-      .filter((domain) => domain !== undefined && domain !== '*' && !domainIds.has(Number(domain)));
-    expect(unknown).to.deep.equal([]);
-  });
-
   it('preserves regex and base58 case when checking duplicates', () => {
     const base = { reason: 'r', addedBy: 'a' };
     const keyForMatch = (bodyRegex: string) =>
@@ -264,10 +255,28 @@ describe('Relayer denylist', () => {
       duplicateRuleKey(Rule.parse({ ...base, match: { messageId } }));
     expect(keyForMessage('0x' + 'AB'.repeat(32))).to.equal(keyForMessage('0x' + 'ab'.repeat(32)));
   });
-
-  it('has no duplicate message IDs or addresses', () => {
-    const keys = rules.map(duplicateRuleKey);
-    const duplicates = keys.filter((key, index) => keys.indexOf(key) !== index);
-    expect(duplicates).to.deep.equal([]);
-  });
 });
+
+for (const path of DENYLIST_PATHS) {
+  describe(`Relayer denylist file: ${path}`, () => {
+    const raw = JSON.parse(fs.readFileSync(path, 'utf8'));
+    const { rules } = Denylist.parse(raw);
+
+    it('uses only known domain IDs', () => {
+      const domainIds = new Set(Object.values(chainMetadata).map((metadata) => metadata.domainId));
+      const unknown = rules
+        .flatMap((rule) => [rule.match?.originDomain, rule.match?.destinationDomain])
+        .flatMap((filter) => (Array.isArray(filter) ? filter : [filter]))
+        .filter(
+          (domain) => domain !== undefined && domain !== '*' && !domainIds.has(Number(domain)),
+        );
+      expect(unknown).to.deep.equal([]);
+    });
+
+    it('has no duplicate message IDs or addresses', () => {
+      const keys = rules.map(duplicateRuleKey);
+      const duplicates = keys.filter((key, index) => keys.indexOf(key) !== index);
+      expect(duplicates).to.deep.equal([]);
+    });
+  });
+}

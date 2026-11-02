@@ -1,6 +1,6 @@
 # Relayer denylist
 
-`mainnet-denylist.json` is the runtime denylist for Hyperlane's mainnet relayers. Relayers configured with `runtimeDenylistUrl` poll this file. Merged changes then apply without a relayer deploy, within about 6 minutes: `raw.githubusercontent.com` caches files for 5 minutes, and relayers poll every minute.
+`mainnet-denylist.json` is the runtime denylist for Hyperlane's mainnet relayers; `testnet-denylist.json` is the separate feed for testnet relayers. Each environment's hyperlane, rc, and fastpath contexts poll their own file through `runtimeDenylistUrl`. Merged changes then apply without a relayer deploy, within about 6 minutes: `raw.githubusercontent.com` caches files for 5 minutes, and relayers poll every minute.
 
 Each rule needs `reason` and `addedBy`, and optionally `expiresAt` (RFC 3339). It also needs exactly one of:
 
