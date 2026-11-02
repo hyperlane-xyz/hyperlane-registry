@@ -137,6 +137,18 @@ const Rule = z
 
 const Denylist = z.strictObject({ rules: z.array(Rule) });
 
+function duplicateRuleKey(rule: z.infer<typeof Rule>): string {
+  if (rule.address !== undefined) {
+    return rule.address.startsWith('0x') ? rule.address.toLowerCase() : rule.address;
+  }
+  // Only hex IDs/addresses are case-insensitive. Regex text and base58 are not.
+  return JSON.stringify(rule.match, (key: string, value: unknown) =>
+    key !== 'bodyRegex' && typeof value === 'string' && value.startsWith('0x')
+      ? value.toLowerCase()
+      : value,
+  );
+}
+
 describe('Relayer denylist', () => {
   const raw = JSON.parse(fs.readFileSync(DENYLIST_PATH, 'utf8'));
   const { rules } = Denylist.parse(raw);
@@ -230,12 +242,31 @@ describe('Relayer denylist', () => {
     expect(unknown).to.deep.equal([]);
   });
 
+  it('preserves regex and base58 case when checking duplicates', () => {
+    const base = { reason: 'r', addedBy: 'a' };
+    const keyForMatch = (bodyRegex: string) =>
+      duplicateRuleKey(Rule.parse({ ...base, match: { originDomain: 1, bodyRegex } }));
+    expect(keyForMatch('\\D+')).not.to.equal(keyForMatch('\\d+'));
+    expect(keyForMatch('0xAB')).not.to.equal(keyForMatch('0xab'));
+
+    const native = 'AffzFDKZbyMiU11zmVBoAqD25ugpr7xoWWyRyGigBEaU';
+    const nativeVariant = native.slice(0, 1) + native.slice(1).toLowerCase();
+    const keyForAddress = (address: string) => duplicateRuleKey(Rule.parse({ ...base, address }));
+    expect(keyForAddress(native)).not.to.equal(keyForAddress(nativeVariant));
+    const keyForSender = (senderAddress: string) =>
+      duplicateRuleKey(Rule.parse({ ...base, match: { originDomain: 1, senderAddress } }));
+    expect(keyForSender(native)).not.to.equal(keyForSender(nativeVariant));
+
+    const hex = '0xA97bF7836F8A08F9Ed91D41453D371493FAE8d10';
+    expect(keyForAddress(hex)).to.equal(keyForAddress(hex.toLowerCase()));
+    expect(keyForSender(hex)).to.equal(keyForSender(hex.toLowerCase()));
+    const keyForMessage = (messageId: string) =>
+      duplicateRuleKey(Rule.parse({ ...base, match: { messageId } }));
+    expect(keyForMessage('0x' + 'AB'.repeat(32))).to.equal(keyForMessage('0x' + 'ab'.repeat(32)));
+  });
+
   it('has no duplicate message IDs or addresses', () => {
-    const keys = rules.map((rule) =>
-      rule.address !== undefined
-        ? rule.address.toLowerCase()
-        : JSON.stringify(rule.match).toLowerCase(),
-    );
+    const keys = rules.map(duplicateRuleKey);
     const duplicates = keys.filter((key, index) => keys.indexOf(key) !== index);
     expect(duplicates).to.deep.equal([]);
   });
