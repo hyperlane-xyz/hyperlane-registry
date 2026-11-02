@@ -1,6 +1,6 @@
 # Relayer denylist
 
-`mainnet-denylist.json` is polled by Hyperlane's mainnet relayers (one of `runtimeDenylistUrls`). Merged changes apply within about a minute, without a relayer deploy.
+`mainnet-denylist.json` is polled by Hyperlane's mainnet relayers (`runtimeDenylistUrl`). Merged changes apply within about a minute, without a relayer deploy.
 
 Each rule needs `reason` and `addedBy`, and optionally `expiresAt` (RFC 3339). It also needs exactly one of:
 
