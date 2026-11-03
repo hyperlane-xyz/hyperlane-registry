@@ -261,6 +261,62 @@ for (const path of DENYLIST_PATHS) {
   describe(`Relayer denylist file: ${path}`, () => {
     const raw = JSON.parse(fs.readFileSync(path, 'utf8'));
     const { rules } = Denylist.parse(raw);
+    const legacyAddresses = rules
+      .filter((rule) => rule.reason.includes('[from relayer.ts,'))
+      .flatMap((rule) => (rule.address === undefined ? [] : [rule.address.slice(2).toLowerCase()]));
+    const bodyRule = rules.find((rule) =>
+      rule.reason.startsWith('Legacy exploit-address body coverage '),
+    );
+
+    it('keeps legacy body coverage synchronized with address rules and registered origins', () => {
+      const domains = [
+        ...new Set(
+          Object.values(chainMetadata)
+            .filter((metadata) => Boolean(metadata.isTestnet) === path.includes('testnet-'))
+            .map((metadata) => metadata.domainId),
+        ),
+      ].sort((a, b) => a - b);
+      expect(bodyRule?.match).to.deep.equal({
+        originDomain: domains,
+        bodyRegex: `^(?:[0-9a-f]{2})*(?:${legacyAddresses.join('|')})`,
+      });
+    });
+
+    it('blocks legacy addresses anywhere in the body without matching between bytes', () => {
+      const pattern = bodyRule?.match?.bodyRegex;
+      if (pattern === undefined) throw new Error('Missing legacy body rule');
+      const regex = new RRegex(pattern);
+      try {
+        for (const address of legacyAddresses) {
+          for (const offset of [0, 1, 31, 32, 337, 512]) {
+            const body = 'ab'.repeat(offset) + address + 'cd'.repeat(32);
+            expect(regex.isMatch(body), `${address} at byte ${offset}`).to.be.true;
+          }
+          expect(regex.isMatch('0' + address + '0'), `${address} between bytes`).to.be.false;
+          const changed = address.slice(0, -1) + (address.endsWith('0') ? '1' : '0');
+          expect(regex.isMatch('ab'.repeat(337) + changed), `${address} changed`).to.be.false;
+        }
+        expect(regex.isMatch('')).to.be.false;
+        expect(regex.isMatch('ab'.repeat(512))).to.be.false;
+      } finally {
+        regex.free();
+      }
+    });
+
+    it('allows each legacy address to be removed from body policy independently', () => {
+      for (const removed of legacyAddresses) {
+        const remaining = legacyAddresses.filter((address) => address !== removed);
+        const regex = new RRegex(`^(?:[0-9a-f]{2})*(?:${remaining.join('|')})`);
+        try {
+          expect(regex.isMatch('ab'.repeat(337) + removed), removed).to.be.false;
+          for (const address of remaining) {
+            expect(regex.isMatch('ab'.repeat(337) + address), address).to.be.true;
+          }
+        } finally {
+          regex.free();
+        }
+      }
+    });
 
     it('uses only known domain IDs', () => {
       const domainIds = new Set(Object.values(chainMetadata).map((metadata) => metadata.domainId));
