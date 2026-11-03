@@ -133,9 +133,16 @@ const Rule = z
     expiresAt: z.iso.datetime({ offset: true }).optional(),
     match: Match.optional(),
     address: Address.optional(),
+    matchBody: z.boolean().optional(),
   })
   .refine((rule) => (rule.match === undefined) !== (rule.address === undefined), {
     message: 'exactly one of `match` or `address` must be set',
+  })
+  .refine((rule) => rule.matchBody === undefined || rule.address !== undefined, {
+    message: '`matchBody` is only valid on an `address` rule',
+  })
+  .refine((rule) => rule.matchBody !== true || /^0x[0-9a-fA-F]{40}$/.test(rule.address ?? ''), {
+    message: '`matchBody` requires a 20-byte EVM hex address',
   });
 
 const Denylist = z.strictObject({ rules: z.array(Rule) });
@@ -153,10 +160,28 @@ function duplicateRuleKey(rule: z.infer<typeof Rule>): string {
 }
 
 describe('Relayer denylist', () => {
+  it('accepts explicit body scanning only for 20-byte EVM address rules', () => {
+    const base = { reason: 'r', addedBy: 'a' };
+    for (const matchBody of [false, true]) {
+      const rule = { ...base, address: '0xA97bF7836F8A08F9Ed91D41453D371493FAE8d10', matchBody };
+      expect(Denylist.safeParse({ rules: [rule] }).success).to.be.true;
+    }
+    expect(
+      Denylist.safeParse({
+        rules: [{ ...base, address: 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t', matchBody: false }],
+      }).success,
+    ).to.be.true;
+  });
+
   it('rejects rules the relayer would reject', () => {
     const base = { reason: 'r', addedBy: 'a' };
     const invalid = [
       { ...base, match: {} },
+      { ...base, match: { originDomain: 1 }, matchBody: false },
+      { ...base, address: 'AffzFDKZbyMiU11zmVBoAqD25ugpr7xoWWyRyGigBEaU', matchBody: true },
+      { ...base, address: 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t', matchBody: true },
+      { ...base, address: '0x' + 'aa'.repeat(32), matchBody: true },
+      { ...base, address: '0x' + 'aa'.repeat(20), matchBody: 'true' },
       { ...base, match: { originDomain: '*' } },
       { ...base, match: { bodyRegex: '.*' } },
       { ...base, match: { messageId: null } },
@@ -261,6 +286,13 @@ for (const path of DENYLIST_PATHS) {
   describe(`Relayer denylist file: ${path}`, () => {
     const raw = JSON.parse(fs.readFileSync(path, 'utf8'));
     const { rules } = Denylist.parse(raw);
+    it('opts legacy exploit addresses into body scanning without duplicating policy', () => {
+      const legacyRules = rules.filter((rule) => rule.reason.includes('[from relayer.ts,'));
+      expect(legacyRules.length).to.be.greaterThan(0);
+      for (const rule of legacyRules) {
+        expect(rule.matchBody, rule.address).to.equal(true);
+      }
+    });
 
     it('uses only known domain IDs', () => {
       const domainIds = new Set(Object.values(chainMetadata).map((metadata) => metadata.domainId));

@@ -11,6 +11,10 @@ Each rule needs `reason` and `addedBy`, and optionally `expiresAt` (RFC 3339). I
 
 Origin transaction signer matching, including Tron depositor matching, requires a deployed relayer release containing [hyperlane-monorepo#9952](https://github.com/hyperlane-xyz/hyperlane-monorepo/pull/9952). Adding an address here does not enable signer matching on older relayers.
 
+The seven legacy exploit addresses set `matchBody: true` on their existing `address` rules. This opts a 20-byte EVM hex address into scanning the entire message body at byte boundaries, including nested ICA calldata. Other address rules keep exact field and origin-signer matching. Removal and expiry apply to the whole rule, so there is no separate regex or domain list to maintain. `matchBody` is invalid on `match` rules; `true` is rejected for 32-byte hex, base58 and bech32 addresses.
+
+This option requires the relayer implementation in [hyperlane-monorepo#9957](https://github.com/hyperlane-xyz/hyperlane-monorepo/pull/9957). Older parsers reject the new field and retain their previous policy. Use a compatible image for the initial rollout; upgrade any existing runtime-feed consumers before publishing this field to their feed.
+
 ```json
 {
   "reason": "Binance hot wallet exploit 2026-10-29",
