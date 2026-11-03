@@ -133,9 +133,16 @@ const Rule = z
     expiresAt: z.iso.datetime({ offset: true }).optional(),
     match: Match.optional(),
     address: Address.optional(),
+    matchBody: z.boolean().optional(),
   })
   .refine((rule) => (rule.match === undefined) !== (rule.address === undefined), {
     message: 'exactly one of `match` or `address` must be set',
+  })
+  .refine((rule) => rule.matchBody === undefined || rule.address !== undefined, {
+    message: '`matchBody` is only valid on an `address` rule',
+  })
+  .refine((rule) => rule.matchBody !== true || /^0x[0-9a-fA-F]{40}$/.test(rule.address ?? ''), {
+    message: '`matchBody` requires a 20-byte EVM hex address',
   });
 
 const Denylist = z.strictObject({ rules: z.array(Rule) });
@@ -153,10 +160,28 @@ function duplicateRuleKey(rule: z.infer<typeof Rule>): string {
 }
 
 describe('Relayer denylist', () => {
+  it('accepts explicit body scanning only for 20-byte EVM address rules', () => {
+    const base = { reason: 'r', addedBy: 'a' };
+    for (const matchBody of [false, true]) {
+      const rule = { ...base, address: '0xA97bF7836F8A08F9Ed91D41453D371493FAE8d10', matchBody };
+      expect(Denylist.safeParse({ rules: [rule] }).success).to.be.true;
+    }
+    expect(
+      Denylist.safeParse({
+        rules: [{ ...base, address: 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t', matchBody: false }],
+      }).success,
+    ).to.be.true;
+  });
+
   it('rejects rules the relayer would reject', () => {
     const base = { reason: 'r', addedBy: 'a' };
     const invalid = [
       { ...base, match: {} },
+      { ...base, match: { originDomain: 1 }, matchBody: false },
+      { ...base, address: 'AffzFDKZbyMiU11zmVBoAqD25ugpr7xoWWyRyGigBEaU', matchBody: true },
+      { ...base, address: 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t', matchBody: true },
+      { ...base, address: '0x' + 'aa'.repeat(32), matchBody: true },
+      { ...base, address: '0x' + 'aa'.repeat(20), matchBody: 'true' },
       { ...base, match: { originDomain: '*' } },
       { ...base, match: { bodyRegex: '.*' } },
       { ...base, match: { messageId: null } },
@@ -261,60 +286,11 @@ for (const path of DENYLIST_PATHS) {
   describe(`Relayer denylist file: ${path}`, () => {
     const raw = JSON.parse(fs.readFileSync(path, 'utf8'));
     const { rules } = Denylist.parse(raw);
-    const legacyAddresses = rules
-      .filter((rule) => rule.reason.includes('[from relayer.ts,'))
-      .flatMap((rule) => (rule.address === undefined ? [] : [rule.address.slice(2).toLowerCase()]));
-    const bodyRule = rules.find((rule) =>
-      rule.reason.startsWith('Legacy exploit-address body coverage '),
-    );
-
-    it('keeps legacy body coverage synchronized with address rules and registered origins', () => {
-      const domains = [
-        ...new Set(
-          Object.values(chainMetadata)
-            .filter((metadata) => Boolean(metadata.isTestnet) === path.includes('testnet-'))
-            .map((metadata) => metadata.domainId),
-        ),
-      ].sort((a, b) => a - b);
-      expect(bodyRule?.match).to.deep.equal({
-        originDomain: domains,
-        bodyRegex: `^(?:[0-9a-f]{2})*(?:${legacyAddresses.join('|')})`,
-      });
-    });
-
-    it('blocks legacy addresses anywhere in the body without matching between bytes', () => {
-      const pattern = bodyRule?.match?.bodyRegex;
-      if (pattern === undefined) throw new Error('Missing legacy body rule');
-      const regex = new RRegex(pattern);
-      try {
-        for (const address of legacyAddresses) {
-          for (const offset of [0, 1, 31, 32, 337, 512]) {
-            const body = 'ab'.repeat(offset) + address + 'cd'.repeat(32);
-            expect(regex.isMatch(body), `${address} at byte ${offset}`).to.be.true;
-          }
-          expect(regex.isMatch('0' + address + '0'), `${address} between bytes`).to.be.false;
-          const changed = address.slice(0, -1) + (address.endsWith('0') ? '1' : '0');
-          expect(regex.isMatch('ab'.repeat(337) + changed), `${address} changed`).to.be.false;
-        }
-        expect(regex.isMatch('')).to.be.false;
-        expect(regex.isMatch('ab'.repeat(512))).to.be.false;
-      } finally {
-        regex.free();
-      }
-    });
-
-    it('allows each legacy address to be removed from body policy independently', () => {
-      for (const removed of legacyAddresses) {
-        const remaining = legacyAddresses.filter((address) => address !== removed);
-        const regex = new RRegex(`^(?:[0-9a-f]{2})*(?:${remaining.join('|')})`);
-        try {
-          expect(regex.isMatch('ab'.repeat(337) + removed), removed).to.be.false;
-          for (const address of remaining) {
-            expect(regex.isMatch('ab'.repeat(337) + address), address).to.be.true;
-          }
-        } finally {
-          regex.free();
-        }
+    it('opts legacy exploit addresses into body scanning without duplicating policy', () => {
+      const legacyRules = rules.filter((rule) => rule.reason.includes('[from relayer.ts,'));
+      expect(legacyRules.length).to.be.greaterThan(0);
+      for (const rule of legacyRules) {
+        expect(rule.matchBody, rule.address).to.equal(true);
       }
     });
 
