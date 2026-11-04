@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../schema.json
+# Observed deployment only: both routers are unenrolled. Do not enable transfers.
+# Connections intentionally empty; see docs/turkchain-eth-route.md.
+
+tokens:
+  - addressOrDenom: "0xD13d97C537620ed5762343B78534c7581ED3a2fC"
+    chainName: ethereum
+    coinGeckoId: ethereum
+    connections: []
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ether
+    standard: EvmHypNative
+    symbol: ETH
+    tokenType: native
+  - addressOrDenom: "0xBf9569B06bCb6ccF776302b0697c79B8407d8e3f"
+    chainName: turkchain
+    connections: []
+    decimals: 18
+    logoURI: /deployments/warp_routes/ETH/logo.svg
+    name: Ethereum
+    standard: EvmHypSynthetic
+    symbol: ETH
+    tokenType: synthetic
