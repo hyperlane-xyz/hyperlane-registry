@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [deprecated]
+  status: disabled
 blockExplorers:
   - apiKey: 487e1ac5-03f4-4473-9e73-cee721b782b5
     apiUrl: https://seitrace.com/pacific-1/api
@@ -7,7 +10,7 @@ blockExplorers:
     url: https://seitrace.com
 blocks:
   confirmations: 1
-  estimateBlockTime: 1
+  estimateBlockTime: 0.4
   reorgPeriod: 1
 chainId: 1329
 deployer:
@@ -25,4 +28,6 @@ nativeToken:
 protocol: ethereum
 rpcUrls:
   - http: https://evm-rpc.sei-apis.com
+  - http: https://evm-rpc-sei.stingray.plus
+  - http: https://sei-evm-rpc.publicnode.com
 technicalStack: other

@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=../schema.json
 blockExplorers:
-  - apiUrl: https://explorer.katanarpc.com/api
-    family: blockscout
-    name: Katana Explorer
-    url: https://explorer.katanarpc.com
+  - apiUrl: https://api.etherscan.io/v2/api?chainid=747474
+    family: etherscan
+    name: KatanaScan
+    url: https://katanascan.com
 blocks:
   confirmations: 1
   estimateBlockTime: 1
@@ -24,6 +24,3 @@ protocol: ethereum
 rpcUrls:
   - http: https://rpc.katana.network
 technicalStack: polygoncdk
-transactionOverrides:
-  maxFeePerGas: 10000000
-  maxPriorityFeePerGas: 10000000

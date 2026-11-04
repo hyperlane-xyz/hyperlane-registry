@@ -1,4 +1,145 @@
+arbitrum:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    tron:
+      - bridge: "0x9323793FB9a071ce5fE839079925c0e39f37170F"
+  contractVersion: 12.1.0
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: defaultFallbackRoutingIsm
+      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        paused: false
+        type: pausableIsm
+    threshold: 2
+    type: staticAggregationIsm
+  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  scale:
+    denominator: 1
+    numerator: 1
+  token: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
+  tokenFee:
+    feeContracts:
+      base:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      bob:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      bsc:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      celo:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      fraxtal:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      ink:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      lisk:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      metal:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      mode:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      soneium:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      tea:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      unichain:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      zerogravity:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+    owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    type: RoutingFee
+  type: collateral
 base:
+  contractVersion: 12.1.0
   hook:
     domains:
       mode:
@@ -58,26 +199,9 @@ base:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
-bitlayer:
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  scale:
+    denominator: 1
+    numerator: 1
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
   xERC20:
@@ -86,6 +210,7 @@ bitlayer:
       rateLimitPerSecond: "120000000"
       type: velo
 bob:
+  contractVersion: 12.1.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -98,6 +223,9 @@ bob:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  scale:
+    denominator: 1
+    numerator: 1
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
   xERC20:
@@ -105,7 +233,8 @@ bob:
       bufferCap: "25000000000"
       rateLimitPerSecond: "120000000"
       type: velo
-botanix:
+bsc:
+  contractVersion: 12.1.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -118,14 +247,129 @@ botanix:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
+  scale:
+    denominator: 1000000000000
+    numerator: 1
+  token: "0x55d398326f99059fF775485246999027B3197955"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      base:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      bob:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      celo:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      fraxtal:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      ink:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      lisk:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      metal:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      mode:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      soneium:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      tea:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      unichain:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      zerogravity:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+    owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    type: RoutingFee
+  type: collateral
 celo:
+  contractVersion: 12.1.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -138,7 +382,126 @@ celo:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  scale:
+    denominator: 1
+    numerator: 1
   token: "0x9a3D8d7E931679374448FB2B661F664D42d05057"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      base:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      bob:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      bsc:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      fraxtal:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      ink:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      lisk:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      metal:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      mode:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      soneium:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      tea:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      unichain:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      zerogravity:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+    owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    type: RoutingFee
   type: xERC20Lockbox
   xERC20:
     warpRouteLimits:
@@ -146,6 +509,7 @@ celo:
       rateLimitPerSecond: "120000000"
       type: velo
 ethereum:
+  contractVersion: 12.1.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -158,7 +522,126 @@ ethereum:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  scale:
+    denominator: 1
+    numerator: 1
   token: "0x935EAaAb78B491Cd9281f438E413767893913983"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      base:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      bob:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      bsc:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      celo:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      fraxtal:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      ink:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      lisk:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      metal:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      mode:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      soneium:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      tea:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      unichain:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      zerogravity:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+    owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    type: RoutingFee
   type: xERC20Lockbox
   xERC20:
     extraBridges:
@@ -172,6 +655,7 @@ ethereum:
       rateLimitPerSecond: "120000000"
       type: velo
 fraxtal:
+  contractVersion: 12.1.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -184,26 +668,9 @@ fraxtal:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
-hashkey:
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  scale:
+    denominator: 1
+    numerator: 1
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
   xERC20:
@@ -212,6 +679,7 @@ hashkey:
       rateLimitPerSecond: "120000000"
       type: velo
 ink:
+  contractVersion: 12.1.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -224,26 +692,9 @@ ink:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
-linea:
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  scale:
+    denominator: 1
+    numerator: 1
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
   xERC20:
@@ -252,6 +703,7 @@ linea:
       rateLimitPerSecond: "120000000"
       type: velo
 lisk:
+  contractVersion: 12.1.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -264,26 +716,9 @@ lisk:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
-mantle:
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  scale:
+    denominator: 1
+    numerator: 1
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
   xERC20:
@@ -292,6 +727,7 @@ mantle:
       rateLimitPerSecond: "120000000"
       type: velo
 metal:
+  contractVersion: 12.1.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -304,26 +740,9 @@ metal:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
-metis:
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  scale:
+    denominator: 1
+    numerator: 1
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
   xERC20:
@@ -332,6 +751,7 @@ metis:
       rateLimitPerSecond: "120000000"
       type: velo
 mode:
+  contractVersion: 12.1.0
   hook:
     domains:
       base:
@@ -391,6 +811,9 @@ mode:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  scale:
+    denominator: 1
+    numerator: 1
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
   xERC20:
@@ -399,6 +822,7 @@ mode:
       rateLimitPerSecond: "120000000"
       type: velo
 optimism:
+  contractVersion: 12.1.0
   hook:
     domains:
       base:
@@ -458,26 +882,9 @@ optimism:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
-ronin:
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  scale:
+    denominator: 1
+    numerator: 1
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
   xERC20:
@@ -486,6 +893,7 @@ ronin:
       rateLimitPerSecond: "120000000"
       type: velo
 soneium:
+  contractVersion: 12.1.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -498,6 +906,9 @@ soneium:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  scale:
+    denominator: 1
+    numerator: 1
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
   xERC20:
@@ -505,7 +916,8 @@ soneium:
       bufferCap: "25000000000"
       rateLimitPerSecond: "120000000"
       type: velo
-sonic:
+tea:
+  contractVersion: 12.1.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -518,14 +930,139 @@ sonic:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  scale:
+    denominator: 1
+    numerator: 1
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      base:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      bob:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      bsc:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      celo:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      fraxtal:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      ink:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      lisk:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      metal:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      mode:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      soneium:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      tron:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      unichain:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+      zerogravity:
+        bps: 5
+        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+        type: OffchainQuotedLinearFee
+    owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    type: RoutingFee
   type: xERC20
   xERC20:
     warpRouteLimits:
       bufferCap: "25000000000"
       rateLimitPerSecond: "120000000"
       type: velo
-superseed:
+tron:
+  allowedRebalancers:
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    arbitrum:
+      - bridge: "0x43Bb7C9C64a05af94d67B52883a60756950058D7"
+  contractVersion: 12.1.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -538,34 +1075,20 @@ superseed:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
-swell:
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
+  scale:
+    denominator: 1
+    numerator: 1
+  token: "0xa614f803b6fd780986a42c78ec9c7f77e6ded13c"
+  tokenFee:
+    bps: 5
+    owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    quoteSigners:
+      - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+      - "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    type: OffchainQuotedLinearFee
+  type: collateral
 unichain:
+  contractVersion: 12.1.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -578,26 +1101,9 @@ unichain:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-  token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "25000000000"
-      rateLimitPerSecond: "120000000"
-      type: velo
-worldchain:
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  scale:
+    denominator: 1
+    numerator: 1
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
   xERC20:
@@ -606,6 +1112,7 @@ worldchain:
       rateLimitPerSecond: "120000000"
       type: velo
 zerogravity:
+  contractVersion: 12.1.0
   hook: "0x0000000000000000000000000000000000000000"
   interchainSecurityModule:
     modules:
@@ -618,6 +1125,9 @@ zerogravity:
     threshold: 2
     type: staticAggregationIsm
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  scale:
+    denominator: 1
+    numerator: 1
   token: "0x0290B74980C051EB46b84b1236645444e77da0E9"
   type: xERC20
   xERC20:

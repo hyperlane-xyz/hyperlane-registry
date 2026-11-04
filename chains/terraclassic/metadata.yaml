@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: terra
+blockExplorers:
+  - apiUrl: https://api.terra-classic.hexxagon.io
+    family: other
+    name: Terra Finder
+    url: https://finder.terraclassic.community
+blocks:
+  confirmations: 1
+  estimateBlockTime: 3
+  reorgPeriod: 1
+chainId: columbus-5
+contractAddressBytes: 32
+deployer:
+  name: Terra Classic Community
+  url: https://github.com/terra-classic-hyperlane
+displayName: Terra Classic
+displayNameShort: Terra Classic
+domainId: 132556
+gasPrice:
+  amount: "28325"
+  denom: uluna
+grpcUrls:
+  - http: https://terra-classic-grpc.publicnode.com:443
+index:
+  from: 28905457
+logoURI: /chains/terraclassic/logo.svg
+name: terraclassic
+nativeToken:
+  decimals: 6
+  denom: uluna
+  name: Luna Classic
+  symbol: LUNC
+protocol: cosmos
+restUrls:
+  - http: https://terra-classic-lcd.publicnode.com
+  - http: https://lcd.terraclassic.community
+  - http: https://terra-classic-lcd.polkachu.com
+rpcUrls:
+  - http: https://rpc.terra-classic.hexxagon.io
+  - http: https://terra-classic-rpc.publicnode.com
+  - http: https://api-lunc-rpc.binodes.com
+slip44: 330
+technicalStack: other

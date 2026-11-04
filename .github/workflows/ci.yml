@@ -14,18 +14,17 @@ on:
 
 jobs:
   build:
+    # test:unit runs the same build before the unit tests.
+    needs: [test]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - name: pnpm-cache
-        uses: ./.github/actions/pnpm-cache
-      - name: build
-        run: pnpm run build
+      - name: Confirm build passed in the test job
+        run: echo 'pnpm run test:unit completed its build step'
 
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: pnpm-cache
         uses: ./.github/actions/pnpm-cache
       - name: lint
@@ -34,7 +33,7 @@ jobs:
   format:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: pnpm-cache
         uses: ./.github/actions/pnpm-cache
       - name: format
@@ -49,7 +48,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: pnpm-cache
         uses: ./.github/actions/pnpm-cache
       - name: test
@@ -71,7 +70,7 @@ jobs:
     if: ${{ github.event_name == 'pull_request' && github.head_ref != 'changeset-release/main' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           # check out full history
           fetch-depth: 0

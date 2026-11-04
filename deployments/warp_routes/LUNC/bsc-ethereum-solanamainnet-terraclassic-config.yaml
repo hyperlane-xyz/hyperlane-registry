@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=../schema.json
+options:
+  interchainFeeConstants:
+    - addressOrDenom: uluna
+      amount: 2020000000
+      destination: bsc
+      origin: terraclassic
+    - addressOrDenom: uluna
+      amount: 1400000000
+      destination: ethereum
+      origin: terraclassic
+    - addressOrDenom: uluna
+      amount: 2330000000
+      destination: solanamainnet
+      origin: terraclassic
+  localFeeConstants:
+    - addressOrDenom: uluna
+      amount: 283215
+      destination: bsc
+      origin: terraclassic
+    - addressOrDenom: uluna
+      amount: 283215
+      destination: ethereum
+      origin: terraclassic
+    - addressOrDenom: uluna
+      amount: 283215
+      destination: solanamainnet
+      origin: terraclassic
+tokens:
+  - addressOrDenom: terra1m7jcqxfn4hd7q4sywhw508nxshaf078c4vh83y0ts43y9tlp9dcs50cggy
+    chainName: terraclassic
+    coinGeckoId: terra-luna
+    connections:
+      - token: ethereum|bsc|0x481095ecEd7A907e7f390b6226F53a66D379e6e2
+      - token: ethereum|ethereum|0xA4bc47a4C5461eB0E59A585a21A1222EF7544Ac6
+      - token: sealevel|solanamainnet|Dd3ajD8WbEyx7z3HqPnDyvUgFqEBzvF1VePjYd1NGnbr
+    decimals: 6
+    logoURI: /deployments/warp_routes/LUNC/logo.svg
+    name: Luna Classic
+    standard: CwHypNative
+    symbol: LUNC
+  - addressOrDenom: "0x481095ecEd7A907e7f390b6226F53a66D379e6e2"
+    chainName: bsc
+    connections:
+      - token: cosmos|terraclassic|terra1m7jcqxfn4hd7q4sywhw508nxshaf078c4vh83y0ts43y9tlp9dcs50cggy
+    decimals: 6
+    logoURI: /deployments/warp_routes/LUNC/logo.svg
+    name: Luna Classic
+    standard: EvmHypSynthetic
+    symbol: LUNC
+  - addressOrDenom: "0xA4bc47a4C5461eB0E59A585a21A1222EF7544Ac6"
+    chainName: ethereum
+    connections:
+      - token: cosmos|terraclassic|terra1m7jcqxfn4hd7q4sywhw508nxshaf078c4vh83y0ts43y9tlp9dcs50cggy
+    decimals: 6
+    logoURI: /deployments/warp_routes/LUNC/logo.svg
+    name: Luna Classic
+    standard: EvmHypSynthetic
+    symbol: LUNC
+  - addressOrDenom: Dd3ajD8WbEyx7z3HqPnDyvUgFqEBzvF1VePjYd1NGnbr
+    chainName: solanamainnet
+    collateralAddressOrDenom: 8dxTo5reLtvRDx3Q8WEP33Uj2C5u6372EygJdNbsLFKG
+    connections:
+      - token: cosmos|terraclassic|terra1m7jcqxfn4hd7q4sywhw508nxshaf078c4vh83y0ts43y9tlp9dcs50cggy
+    decimals: 6
+    logoURI: /deployments/warp_routes/LUNC/logo.svg
+    name: Luna Classic
+    standard: SealevelHypSynthetic
+    symbol: LUNC

@@ -13,6 +13,16 @@ fi
 export BASE_COMMIT="$1"
 export HEAD_COMMIT="$2"
 
+# Registry args for the CLI. When RPC_OVERLAY_DIR is set (by build-rpc-overlay.sh)
+# it is appended as a second `--registry` so its private rpcUrls override the
+# public ones via MergedRegistry (later registry wins) without mutating the
+# committed metadata.
+REGISTRY_ARGS=(--registry "$(pwd)")
+if [ -n "${RPC_OVERLAY_DIR:-}" ]; then
+    REGISTRY_ARGS+=(--registry "$RPC_OVERLAY_DIR")
+    echo "Using private RPC overlay registry at ${RPC_OVERLAY_DIR}"
+fi
+
 is_m0_warp_route() {
     local warp_route_id="$1"
     local config_file="deployments/warp_routes/${warp_route_id}-config.yaml"
@@ -30,12 +40,27 @@ is_m0_warp_route() {
 # - abstract-celestia: no abstract block explorer is configured in CI, so the
 #   contractVerificationStatus lookup fails the check. Revisit if an abstract
 #   explorer is added.
+# - arbitrum-cheesechain: historical team-managed deployment has no checked-in
+#   deploy config, so the CLI's cross-collateral check cannot reconstruct the
+#   route. Bytecode/source attestation is tracked separately by Heimdall.
 ROUTES_TO_SKIP=(
     "TIA/celestia-solanamainnet"
     "TIA/celestia-eclipsemainnet"
     "TIA/abstract-celestia"
+    "USDC/arbitrum-cheesechain"
+    # bsc-ethereum-solanamainnet-terraclassic: the EVM routers use a custom IGP
+    # hook (TerraClassicIGPStandalone) inside an aggregation hook that does not
+    # implement hookType(), so the published CLI fails to derive the hook config
+    # and `warp check` always throws. On-chain state was verified manually via
+    # RPC/LCD queries (owners, ISMs, enrolled routers) — see PRs #1559 and #1687.
+    "LUNC/bsc-ethereum-solanamainnet-terraclassic"
+    "USTC/bsc-ethereum-solanamainnet-terraclassic"
 )
 
+# is_skipped_warp_route <warp_route_id>
+# Checks whether the given warp route ID is listed in ROUTES_TO_SKIP, i.e. it is
+# exempt from the automated `warp check` run (see the rationale comments on each
+# entry above). Returns 0 when the route must be skipped, 1 otherwise.
 is_skipped_warp_route() {
     local warp_route_id="$1"
     local skip
@@ -94,7 +119,7 @@ for WARP_ROUTE_ID in $WARP_ROUTE_IDS; do
     
     # Check 1: Registry YAML vs on-chain via published CLI
     if hyperlane \
-        --registry "$(pwd)" \
+        "${REGISTRY_ARGS[@]}" \
         -y \
         warp check \
         --warp-route-id "$WARP_ROUTE_ID"; then

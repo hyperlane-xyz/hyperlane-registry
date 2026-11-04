@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=../schema.json
+blockExplorers:
+  - apiUrl: https://explorer.arc.io/api
+    family: other
+    name: Arc Explorer
+    url: https://explorer.arc.io
+blocks:
+  confirmations: 1
+  estimateBlockTime: 1
+  reorgPeriod: 1
+chainId: 5042
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Arc
+domainId: 5042
+gasCurrencyCoinGeckoId: usd-coin
+name: arc
+nativeToken:
+  decimals: 18
+  name: USDC
+  symbol: USDC
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc.mainnet.arc.io
+technicalStack: other
+transactionOverrides:
+  maxFeePerGas: 60000000000
+  maxPriorityFeePerGas: 2000000000

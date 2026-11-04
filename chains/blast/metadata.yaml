@@ -1,5 +1,8 @@
 ---
 # yaml-language-server: $schema=../schema.json
+availability:
+  reasons: [deprecated]
+  status: disabled
 blockExplorers:
   - apiKey: GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN
     apiUrl: https://api.etherscan.io/v2/api?chainid=81457
@@ -30,5 +33,5 @@ nativeToken:
 protocol: ethereum
 rpcUrls:
   - http: https://rpc.blast.io
-  - http: https://rpc.ankr.com/blast
+  - http: https://blast-rpc.publicnode.com
 technicalStack: opstack
