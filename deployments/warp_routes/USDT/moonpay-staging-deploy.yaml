@@ -1,15 +1,19 @@
 arbitrum:
   allowedRebalancers:
-    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
     - "0x2cB236403574301029c7bDDfda133c6e0338a857"
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+    - "0xbe103Cb39B205d8AcB9E71E29dF3A7FDB87716E2"
   allowedRebalancingBridges:
-    "1":
+    arbitrum:
+      - bridge: "0xbe103Cb39B205d8AcB9E71E29dF3A7FDB87716E2"
+    bsc:
+      - bridge: "0x42B794FbF2Ae97d7E9001e21D36B0A5595B51B11"
+    ethereum:
       - bridge: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
       - bridge: "0x42B794FbF2Ae97d7E9001e21D36B0A5595B51B11"
-    "137":
+    polygon:
       - bridge: "0xE4c1A1E54C232454311cF68610c3885FdD991c0E"
-    "56":
-      - bridge: "0x42B794FbF2Ae97d7E9001e21D36B0A5595B51B11"
+  contractVersion: 12.0.0
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000b58c85c143f2032a77e2c2b08603453eba6c12af"
@@ -27,13 +31,23 @@ arbitrum:
       - "0x000000000000000000000000927093cb2328d8632e8e7f63d562ce1f492e4436"
     "8453":
       - "0x000000000000000000000000146fb3fcc2c9f547ee4f85a5b0497274cbd380d0"
-  mailbox: "0x979Ca5202784112f4738403dBec5D0F3B9daabB9"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  rebalanceRecipients:
+    "42161": "0x0000000000000000000000009fb176528adf0bb7524ce752b2345c80ed24243f"
+  rebalanceTargets:
+    "42161":
+      - "0x0000000000000000000000009fb176528adf0bb7524ce752b2345c80ed24243f"
   token: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9"
   type: crossCollateral
 base:
   allowedRebalancers:
     - "0x2cB236403574301029c7bDDfda133c6e0338a857"
+    - "0xFb2727dD89f39D5527d6ff4e05D61b02BF8cd492"
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+  allowedRebalancingBridges:
+    base:
+      - bridge: "0xFb2727dD89f39D5527d6ff4e05D61b02BF8cd492"
+  contractVersion: 12.0.0
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000b58c85c143f2032a77e2c2b08603453eba6c12af"
@@ -51,19 +65,27 @@ base:
       - "0x000000000000000000000000927093cb2328d8632e8e7f63d562ce1f492e4436"
     "8453":
       - "0x000000000000000000000000146fb3fcc2c9f547ee4f85a5b0497274cbd380d0"
-  mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  rebalanceRecipients:
+    "8453": "0x000000000000000000000000146fb3fcc2c9f547ee4f85a5b0497274cbd380d0"
+  rebalanceTargets:
+    "8453":
+      - "0x000000000000000000000000146fb3fcc2c9f547ee4f85a5b0497274cbd380d0"
   token: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
   type: crossCollateral
 bsc:
   allowedRebalancers:
-    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
     - "0x2cB236403574301029c7bDDfda133c6e0338a857"
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+    - "0xb2638bD8B1D06255a9e8dBFdeec9af9Af718e8ac"
   allowedRebalancingBridges:
-    "1":
+    arbitrum:
       - bridge: "0xc13d466B9E196AfdE472856923E857cc298EDf1b"
-    "42161":
+    bsc:
+      - bridge: "0xb2638bD8B1D06255a9e8dBFdeec9af9Af718e8ac"
+    ethereum:
       - bridge: "0xc13d466B9E196AfdE472856923E857cc298EDf1b"
+  contractVersion: 12.0.0
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000b58c85c143f2032a77e2c2b08603453eba6c12af"
@@ -81,25 +103,117 @@ bsc:
       - "0x000000000000000000000000927093cb2328d8632e8e7f63d562ce1f492e4436"
     "8453":
       - "0x000000000000000000000000146fb3fcc2c9f547ee4f85a5b0497274cbd380d0"
-  mailbox: "0x2971b9Aec44bE4eb673DF1B88cDB57b96eefe8a4"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  rebalanceRecipients:
+    "56": "0x0000000000000000000000003382d9253ee54d49a90cba41cfc7b2704e713cef"
+  rebalanceTargets:
+    "56":
+      - "0x0000000000000000000000003382d9253ee54d49a90cba41cfc7b2704e713cef"
   scale:
     denominator: 1000000000000
     numerator: 1
   token: "0x55d398326f99059fF775485246999027B3197955"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        "0x0000000000000000000000009fb176528adf0bb7524ce752b2345c80ed24243f":
+          fallbackCurve:
+            breakpoints:
+              - "250000000000000000"
+              - "750000000000000000"
+            issuedAt: 0
+            marginalBps:
+              - 4
+              - 10
+              - 20
+          maxBands: 4
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedPiecewiseLinearFee
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      base:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      bsc:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      citrea:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      ethereum:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      katana:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      polygon:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+      solanamainnet:
+        "0x6e086cd647d6eb8b516856666e2c1465fb8a6a58d3a75938362acc674eacaf47":
+          bps: 3
+          owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+          quoteSigners:
+            - "0x6bb7818bbE8d88094Cf3620e58BC6BbEd542B867"
+            - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+          type: OffchainQuotedLinearFee
+    owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+    type: CrossCollateralRoutingFee
   type: crossCollateral
 ethereum:
   allowedRebalancers:
-    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
     - "0x2cB236403574301029c7bDDfda133c6e0338a857"
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
+    - "0xbBa1938ff861c77eA1687225B9C33554379Ef327"
   allowedRebalancingBridges:
-    "137":
-      - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
-    "42161":
+    arbitrum:
       - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
       - bridge: "0x647C621CEb36853Ef6A907E397Adf18568E70543"
-    "56":
+    bsc:
       - bridge: "0x647C621CEb36853Ef6A907E397Adf18568E70543"
+    ethereum:
+      - bridge: "0xbBa1938ff861c77eA1687225B9C33554379Ef327"
+    polygon:
+      - bridge: "0x7Bb4fe8f406fB7B22487Fa2e3BCbCb6A38cF29E6"
+  contractVersion: 12.0.0
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000b58c85c143f2032a77e2c2b08603453eba6c12af"
@@ -117,8 +231,12 @@ ethereum:
       - "0x000000000000000000000000927093cb2328d8632e8e7f63d562ce1f492e4436"
     "8453":
       - "0x000000000000000000000000146fb3fcc2c9f547ee4f85a5b0497274cbd380d0"
-  mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  rebalanceRecipients:
+    "1": "0x000000000000000000000000b58c85c143f2032a77e2c2b08603453eba6c12af"
+  rebalanceTargets:
+    "1":
+      - "0x000000000000000000000000b58c85c143f2032a77e2c2b08603453eba6c12af"
   token: "0xdac17f958d2ee523a2206206994597c13d831ec7"
   type: crossCollateral
 katana:
@@ -141,19 +259,22 @@ katana:
       - "0x000000000000000000000000927093cb2328d8632e8e7f63d562ce1f492e4436"
     "8453":
       - "0x000000000000000000000000146fb3fcc2c9f547ee4f85a5b0497274cbd380d0"
-  mailbox: "0x3a464f746D23Ab22155710f44dB16dcA53e0775E"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
   token: "0x2DCa96907fde857dd3D816880A0df407eeB2D2F2"
   type: crossCollateral
 polygon:
   allowedRebalancers:
-    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
     - "0x2cB236403574301029c7bDDfda133c6e0338a857"
+    - "0x72ad40cAc1c1128B04Fea4fb07fd2449ba19Fe3e"
+    - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
   allowedRebalancingBridges:
-    "1":
+    arbitrum:
       - bridge: "0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94"
-    "42161":
+    ethereum:
       - bridge: "0x361A7DA84A1f4A0c565772C45Ed838C6a0fAea94"
+    polygon:
+      - bridge: "0x72ad40cAc1c1128B04Fea4fb07fd2449ba19Fe3e"
+  contractVersion: 12.0.0
   crossCollateralRouters:
     "1":
       - "0x000000000000000000000000b58c85c143f2032a77e2c2b08603453eba6c12af"
@@ -171,7 +292,11 @@ polygon:
       - "0x000000000000000000000000927093cb2328d8632e8e7f63d562ce1f492e4436"
     "8453":
       - "0x000000000000000000000000146fb3fcc2c9f547ee4f85a5b0497274cbd380d0"
-  mailbox: "0x5d934f4e2f797775e53561bB72aca21ba36B96BB"
   owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  rebalanceRecipients:
+    "137": "0x000000000000000000000000a539ef6ef471c2d00d258540ab0bc38ed0b1f2ab"
+  rebalanceTargets:
+    "137":
+      - "0x000000000000000000000000a539ef6ef471c2d00d258540ab0bc38ed0b1f2ab"
   token: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
   type: crossCollateral
