@@ -13,4 +13,12 @@ robinhood:
   name: Igra Token
   owner: "0x311C375a29285154Fd12EFD3c2167F4A41b226A3"
   symbol: IGRA
+  tokenFee:
+    feeContracts:
+      igra:
+        bps: 6
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        type: LinearFee
+    owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+    type: RoutingFee
   type: synthetic
