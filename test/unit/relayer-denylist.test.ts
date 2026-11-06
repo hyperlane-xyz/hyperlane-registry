@@ -49,15 +49,56 @@ const MessageIdFilter = z.union([z.literal('*'), MessageId, z.array(MessageId).m
 // fixes the unstable Pattern trait, without changing regex syntax.
 // Compile with Rust's regex engine, as the relayer does. JavaScript's
 // RegExp accepts escapes Rust rejects and rejects Rust's inline flags.
-const BodyRegex = z.string().refine((pattern) => {
-  try {
-    const regex = new RRegex(pattern);
-    regex.free();
-    return true;
-  } catch {
-    return false;
+// The rebalancer matches bodyRegex with re2js (RE2), whose syntax differs from
+// Rust's regex crate: e.g. `[a-f&&b-f]` is a class intersection in Rust but
+// literal `&` characters in RE2. Only allow syntax both engines read the same
+// way, so every rule behaves identically in the relayer and the rebalancer.
+const COMPATIBLE_REGEX_TOKEN =
+  /\(\?i\)|\\[AzdD]|\^|\$|\.|[0-9a-zA-Z]|\[\^?(?:[0-9a-zA-Z](?:-[0-9a-zA-Z])?)+\]|\(\?:|\(|\)|\||[*+?]|\{(0|[1-9]\d{0,3})(,(0|[1-9]\d{0,3})?)?\}/y;
+// RE2's repetition limit; Rust's is higher.
+const MAX_REGEX_REPETITION = 1000;
+const NON_ATOM_TOKENS = new Set(['^', '$', '\\A', '\\z', '(?i)', '(', '(?:', '|']);
+
+function usesCompatibleRegexSyntax(pattern: string): boolean {
+  COMPATIBLE_REGEX_TOKEN.lastIndex = 0;
+  let afterAtom = false;
+  while (COMPATIBLE_REGEX_TOKEN.lastIndex < pattern.length) {
+    const match = COMPATIBLE_REGEX_TOKEN.exec(pattern);
+    if (!match) return false;
+
+    const [token, min, , max] = match;
+    if (!/^[*+?{]/.test(token)) {
+      afterAtom = !NON_ATOM_TOKENS.has(token);
+      continue;
+    }
+
+    // A quantifier must follow an atom: no stacked or lazy quantifiers.
+    if (!afterAtom) return false;
+    if (min !== undefined) {
+      const counts = [min, max].filter((count) => count !== undefined).map(Number);
+      if (counts.some((count) => count > MAX_REGEX_REPETITION)) return false;
+    }
+    afterAtom = false;
   }
-}, 'must compile as a Rust regex');
+
+  return true;
+}
+
+const BodyRegex = z
+  .string()
+  .refine((pattern) => {
+    try {
+      const regex = new RRegex(pattern);
+      regex.free();
+      return true;
+    } catch {
+      return false;
+    }
+  }, 'must compile as a Rust regex')
+  .refine(
+    usesCompatibleRegexSyntax,
+    'must only use regex syntax the rebalancer reads like the relayer',
+  );
 
 const Match = z
   .strictObject({
@@ -255,6 +296,25 @@ describe('Relayer denylist', () => {
     for (const bodyRegex of ['(?i)^ab[0-9a-f]{2}$', '\\Aab\\z', '']) {
       const rule = { reason: 'r', addedBy: 'a', match: { originDomain: 1, bodyRegex } };
       expect(Denylist.safeParse({ rules: [rule] }).success, bodyRegex).to.be.true;
+    }
+  });
+
+  it('rejects Rust regex syntax the rebalancer reads differently or not at all', () => {
+    for (const bodyRegex of [
+      '[a-f&&b-f]',
+      '[a-f--b]',
+      '[a[bc]]',
+      '(?x)a b',
+      '\\<ab\\>',
+      '\\b{start}ab',
+      '\\u{61}',
+      'a**',
+      'a*?',
+      'a{1001}',
+      '(?P<n>a)',
+    ]) {
+      const rule = { reason: 'r', addedBy: 'a', match: { originDomain: 1, bodyRegex } };
+      expect(Denylist.safeParse({ rules: [rule] }).success, bodyRegex).to.be.false;
     }
   });
 
