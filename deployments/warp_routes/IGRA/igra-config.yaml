@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x11b7A6899d7322b83a79B79a0cAdf76bfbe10189"
+    chainName: igra
+    coinGeckoId: igra
+    collateralAddressOrDenom: "0x093d77d397F8acCbaee0820345E9E700B1233cD1"
+    connections:
+      - token: ethereum|robinhood|0xfeb406c267De7C31CaDC4eBE5Ed171d739b05dCc
+    decimals: 18
+    logoURI: /deployments/warp_routes/IGRA/logo.png
+    name: Igra Token
+    standard: EvmHypCollateral
+    symbol: IGRA
+  - addressOrDenom: "0xfeb406c267De7C31CaDC4eBE5Ed171d739b05dCc"
+    chainName: robinhood
+    connections:
+      - token: ethereum|igra|0x11b7A6899d7322b83a79B79a0cAdf76bfbe10189
+    decimals: 18
+    logoURI: /deployments/warp_routes/IGRA/logo.png
+    name: Igra Token
+    standard: EvmHypSynthetic
+    symbol: IGRA
