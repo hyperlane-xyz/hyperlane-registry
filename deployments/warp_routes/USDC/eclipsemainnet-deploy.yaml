@@ -102,6 +102,12 @@ arbitrum:
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
+      elysium:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         address: "0x881936f95d37db4873770fe9fdd70517d1cf9063"
         bps: 1.5
@@ -274,6 +280,12 @@ arc:
         type: OffchainQuotedLinearFee
       bsc:
         address: "0xbBE7E4a784c516E0CFC344D28dfE477f792011AF"
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      elysium:
         bps: 1.5
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
         quoteSigners:
@@ -456,6 +468,12 @@ avalanche:
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
+      elysium:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         address: "0x659f87e27bd6077a431b8cd67a6cd396e392c2fc"
         bps: 1.5
@@ -626,6 +644,12 @@ base:
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
+      elysium:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         address: "0x80ec25b6a65937f94d00b808b3f398b1d2ea76fc"
         bps: 1.5
@@ -765,6 +789,12 @@ bsc:
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
+      elysium:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         address: "0xcc4ffd9c2350064a3b5ee4701b44c0a9e5159cd8"
         bps: 1.5
@@ -837,6 +867,137 @@ eclipsemainnet:
   hook: Hs7KVBU67nBnWhDPZkEFwWqrFMUfJbmY2DQ4gmCZfaZp
   owner: E4TncCw3WMqQZbkACVcomX3HqcSzLfNyhTnqKN1DimGr
   type: synthetic
+elysium:
+  contractVersion: 12.1.0
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0xfA858c3c2352dE6fd77614544691F7704744F461"
+        type: defaultFallbackRoutingIsm
+      - domains:
+          arbitrum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+          base:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+          ethereum:
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0x93911a19cd8914220f6287d515187e7751817683"
+              - "0xee56ba244c9e9bbead3a30c3d51a93d8da4ad7f3"
+              - "0xf9c6519dbd9a42bc6a60ea8daec3fa3830f40241"
+        owner: "0xfA858c3c2352dE6fd77614544691F7704744F461"
+        type: domainRoutingIsm
+    threshold: 1
+    type: staticAggregationIsm
+  name: USD Coin
+  owner: "0xfA858c3c2352dE6fd77614544691F7704744F461"
+  proxyAdmin:
+    owner: "0xfA858c3c2352dE6fd77614544691F7704744F461"
+  scale:
+    denominator: 1
+    numerator: 1
+  symbol: USDC
+  token: "0xb47c4C8F73F009CC0C0d3f92B388d13E293F0B65"
+  tokenFee:
+    feeContracts:
+      arbitrum:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      arc:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      avalanche:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      base:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      bsc:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ethereum:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      hyperevm:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      ink:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      linea:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      monad:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      optimism:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      polygon:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      unichain:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      worldchain:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+    owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+    type: RoutingFee
+  type: collateral
 ethereum:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
@@ -943,6 +1104,12 @@ ethereum:
         type: OffchainQuotedLinearFee
       bsc:
         address: "0xbe3b37604ce7f76025696ef5809f45c470e789a3"
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      elysium:
         bps: 1.5
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
         quoteSigners:
@@ -1125,6 +1292,12 @@ hyperevm:
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
+      elysium:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         address: "0x13af971621321e42c009a7b9fee8f15e53a2a789"
         bps: 1.5
@@ -1297,6 +1470,12 @@ ink:
         type: OffchainQuotedLinearFee
       bsc:
         address: "0x9f4a2d9f762faea363fff225b6518db07c8801de"
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      elysium:
         bps: 1.5
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
         quoteSigners:
@@ -1479,6 +1658,12 @@ linea:
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
+      elysium:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         address: "0xba415982043d9affb488d36d6b2797a893025b53"
         bps: 1.5
@@ -1640,6 +1825,12 @@ monad:
         type: OffchainQuotedLinearFee
       bsc:
         address: "0x094c609bfae070e07a465448491090edc796773e"
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      elysium:
         bps: 1.5
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
         quoteSigners:
@@ -1822,6 +2013,12 @@ optimism:
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
+      elysium:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         address: "0x8f4f46a59672dff36c168ebb3cf5871435815a14"
         bps: 1.5
@@ -1994,6 +2191,12 @@ polygon:
         type: OffchainQuotedLinearFee
       bsc:
         address: "0xad0b70cc608a662a59175245111f66d916c5c01f"
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      elysium:
         bps: 1.5
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
         quoteSigners:
@@ -2183,6 +2386,12 @@ unichain:
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
+      elysium:
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         address: "0x70683303cb16d5f3e8a7034486f87b2018116c75"
         bps: 1.5
@@ -2355,6 +2564,12 @@ worldchain:
         type: OffchainQuotedLinearFee
       bsc:
         address: "0x4fe98d56ea08f554c57035f7719670b7278ee941"
+        bps: 1.5
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+      elysium:
         bps: 1.5
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
         quoteSigners:
