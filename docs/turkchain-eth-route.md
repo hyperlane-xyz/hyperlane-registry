@@ -25,8 +25,8 @@ The deploy YAML is a live read snapshot, including current hook/ISM settings. It
 ## Pending integration gates
 
 1. Review exact source verification; runtime and creation executable code match locally after excluding compiler metadata, but full metadata reproduction is pending the original Remix compilation artifact.
-2. Complete Ethereum-origin checkpoint discovery/announcement and proof tests.
-3. Configure separate Relayer signers/funding and an explicit two-way fee/delivery policy. Merkle-only dispatch does not prepay destination gas.
+2. Ethereum-origin checkpoints are publicly readable and independently signature-verified. Standard origin announcement/discovery and live end-to-end delivery still require completion.
+3. Separate Relayer signing identities have been verified off-chain. Destination funding and live delivery remain disabled pending explicit owner/operator approval. Merkle-only dispatch does not prepay destination gas.
 4. Obtain separate owner approval for reciprocal enrollment and any hook/gas changes. Keep the recorded peers empty until transactions are confirmed and re-read.
 5. Complete independent application security review and controlled end-to-end testing before allowlisting or advertising live transfers.
 
@@ -40,3 +40,11 @@ A single validator with threshold 1 is a pilot trust assumption, not a multi-par
 - `pnpm exec tsx scripts/check-turkchain-eth-sdk.ts`: read/populate adapter test; never signs or submits.
 
 The existing TURK route uses its verified legacy Mailboxes. It must not be silently rebound to the new ETH route or canonical Core deployment. No USDT data is changed.
+
+## 2026-11-06 official-tool readback
+
+- Hyperlane SDK/CLI 45.0.1 reads the existing deployments as `native` / `synthetic`; adapters are `EvmHypNativeAdapter` / `EvmHypSyntheticAdapter`. No Router redeployment is proposed by this record.
+- Both `remoteRouters` remain empty in the live readback. SDK-populated enrollment transactions were simulated separately; none were submitted.
+- Official `warp read` completed successfully. `warp check` did **not** pass: it reported unverified implementation/proxyAdmin surfaces and inactive owner accounts. These diagnostics must not be confused with successful chain delivery or a proof of owner-wallet control.
+- Local focused regression tests: 8 passing; full unit suite: 8337 passing, 1 pending. The standalone file-data validator reports a missing unrelated `XO` route configuration; that failure is not hidden or changed in this ETH PR.
+- Neither a live round trip nor public activation is claimed. Nexus listing prerequisites and the integration request are tracked in `docs/turkchain-eth-nexus.md`.
