@@ -8,6 +8,7 @@ import {
   isValidAddressSealevel,
 } from '@hyperlane-xyz/utils';
 import { expect } from 'chai';
+import { RE2JS } from 're2js';
 import { RRegex } from 'rregex';
 import { z } from 'zod';
 
@@ -55,18 +56,41 @@ const MessageIdFilter = z.union([z.literal('*'), MessageId, z.array(MessageId).m
 // way, so every rule behaves identically in the relayer and the rebalancer.
 const COMPATIBLE_REGEX_TOKEN =
   /\(\?i\)|\\[AzdD]|\^|\$|\.|[0-9a-zA-Z]|\[\^?(?:[0-9a-zA-Z](?:-[0-9a-zA-Z])?)+\]|\(\?:|\(|\)|\||[*+?]|\{(0|[1-9]\d{0,3})(,(0|[1-9]\d{0,3})?)?\}/y;
-// RE2's repetition limit; Rust's is higher.
+// RE2's per-count repetition limit, checked at the syntax level; compiling
+// with RE2JS also enforces it across nested repetitions.
 const MAX_REGEX_REPETITION = 1000;
+// The rebalancer's group-depth cap, which also counts the `(` of `(?i)`.
+const MAX_REGEX_GROUP_DEPTH = 60;
 const NON_ATOM_TOKENS = new Set(['^', '$', '\\A', '\\z', '(?i)', '(', '(?:', '|']);
+// Rust's compiled-size limit, in units of the cheapest atom.
+const MAX_RELAYER_REGEX_SIZE = 10_000;
 
-function usesCompatibleRegexSyntax(pattern: string): boolean {
+function tokenizeRegex(pattern: string): RegExpExecArray[] | undefined {
+  const tokens: RegExpExecArray[] = [];
   COMPATIBLE_REGEX_TOKEN.lastIndex = 0;
-  let afterAtom = false;
   while (COMPATIBLE_REGEX_TOKEN.lastIndex < pattern.length) {
     const match = COMPATIBLE_REGEX_TOKEN.exec(pattern);
-    if (!match) return false;
+    if (!match) return undefined;
+    tokens.push(match);
+  }
 
-    const [token, min, , max] = match;
+  return tokens;
+}
+
+function usesCompatibleRegexSyntax(pattern: string): boolean {
+  const tokens = tokenizeRegex(pattern);
+  if (!tokens) return false;
+
+  let afterAtom = false;
+  let depth = 0;
+  for (const [token, min, , max] of tokens) {
+    if (token.startsWith('(')) {
+      if (depth + 1 > MAX_REGEX_GROUP_DEPTH) return false;
+      if (token !== '(?i)') depth++;
+    } else if (token === ')') {
+      depth--;
+    }
+
     if (!/^[*+?{]/.test(token)) {
       afterAtom = !NON_ATOM_TOKENS.has(token);
       continue;
@@ -84,6 +108,57 @@ function usesCompatibleRegexSyntax(pattern: string): boolean {
   return true;
 }
 
+function atomSize(token: string): number {
+  if (token === '|') return 0;
+  if (token === '\\D') return 100;
+  if (token === '\\d') return 10;
+  if (token.startsWith('[')) {
+    const negated = token[1] === '^';
+    return Math.max(negated ? 100 : 2, token.length - (negated ? 3 : 2));
+  }
+
+  return 1;
+}
+
+// Mirrors the rebalancer's `exceedsRelayerRegexSize` (same costs and limit),
+// since rregex does not enforce Rust's compiled-size limit: a repetition
+// multiplies its atom or group by its largest count, and alternatives add up.
+function fitsRelayerRegexSize(pattern: string): boolean {
+  // Unsupported syntax is rejected by usesCompatibleRegexSyntax.
+  const tokens = tokenizeRegex(pattern) ?? [];
+  const groupSizes = [0];
+  let lastSize = 0;
+  for (const [token, min, range, max] of tokens) {
+    const top = groupSizes.length - 1;
+    if (token === '(?i)') {
+      lastSize = 0;
+      continue;
+    }
+    if (token === '(' || token === '(?:') {
+      groupSizes.push(0);
+      lastSize = 0;
+    } else if (token === ')') {
+      lastSize = groupSizes.pop() ?? 0;
+      groupSizes[groupSizes.length - 1] += lastSize;
+    } else if (/^[*+?{]/.test(token)) {
+      let copies = token === '+' ? 2 : 1;
+      if (min !== undefined) {
+        if (range === undefined) copies = Number(min);
+        else copies = max === undefined ? Number(min) + 1 : Number(max);
+      }
+      groupSizes[top] += lastSize * (copies - 1);
+      lastSize *= copies;
+    } else {
+      lastSize = atomSize(token);
+      groupSizes[top] += lastSize;
+    }
+
+    if (groupSizes.some((size) => size > MAX_RELAYER_REGEX_SIZE)) return false;
+  }
+
+  return true;
+}
+
 const BodyRegex = z
   .string()
   .refine((pattern) => {
@@ -95,10 +170,19 @@ const BodyRegex = z
       return false;
     }
   }, 'must compile as a Rust regex')
+  .refine((pattern) => {
+    try {
+      RE2JS.compile(pattern);
+      return true;
+    } catch {
+      return false;
+    }
+  }, "must compile as an RE2 regex (the rebalancer's engine)")
   .refine(
     usesCompatibleRegexSyntax,
     'must only use regex syntax the rebalancer reads like the relayer',
-  );
+  )
+  .refine(fitsRelayerRegexSize, "may exceed the relayer's regex size limit");
 
 const Match = z
   .strictObject({
@@ -293,7 +377,21 @@ describe('Relayer denylist', () => {
   });
 
   it('accepts Rust regex syntax', () => {
-    for (const bodyRegex of ['(?i)^ab[0-9a-f]{2}$', '\\Aab\\z', '']) {
+    for (const bodyRegex of [
+      '(?i)^ab[0-9a-f]{2}$',
+      '\\Aab\\z',
+      '',
+      '(?:a{500}){2}',
+      '\\D{100}',
+      '[0-9a-f]{1000}',
+      '(?:\\D{50})+',
+      '\\D{99,}',
+      '\\D{50}|\\D{50}',
+      '\\d{1000}',
+      '('.repeat(60) + 'a' + ')'.repeat(60),
+      '(?:'.repeat(60) + 'a' + ')'.repeat(60),
+      '(?i)' + '('.repeat(60) + 'a' + ')'.repeat(60),
+    ]) {
       const rule = { reason: 'r', addedBy: 'a', match: { originDomain: 1, bodyRegex } };
       expect(Denylist.safeParse({ rules: [rule] }).success, bodyRegex).to.be.true;
     }
@@ -312,6 +410,18 @@ describe('Relayer denylist', () => {
       'a*?',
       'a{1001}',
       '(?P<n>a)',
+      '(a{1000}){2}',
+      '((a{10}){10}){11}',
+      '(a{500,1000}){2}',
+      '\\D{900}',
+      '[^a]{101}',
+      '(?:\\D{51})+',
+      '\\D{100,}',
+      '\\D{50}|\\D{51}',
+      '\\d{1000}a',
+      '('.repeat(61) + 'a' + ')'.repeat(61),
+      '(?:'.repeat(61) + 'a' + ')'.repeat(61),
+      '('.repeat(60) + '(?i)a' + ')'.repeat(60),
     ]) {
       const rule = { reason: 'r', addedBy: 'a', match: { originDomain: 1, bodyRegex } };
       expect(Denylist.safeParse({ rules: [rule] }).success, bodyRegex).to.be.false;

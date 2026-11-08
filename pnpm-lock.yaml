@@ -170,6 +170,9 @@ importers:
       randexp:
         specifier: ^0.5.3
         version: 0.5.3
+      re2js:
+        specifier: 2.9.1
+        version: 2.9.1
       rregex:
         specifier: 1.10.12
         version: 1.10.12
@@ -3457,6 +3460,10 @@ packages:
 
   randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
+
+  re2js@2.9.1:
+    resolution: {integrity: sha512-JIT3bEEUZTOR2YS1walNEIfH4cF/cQeZcBUFq7ldqO6lR6g0X5CBq/S8rsa9omzZcsNf8qc36jCkWpKKtncrZg==}
+    engines: {node: '>=20.0.0'}
 
   read-yaml-file@1.1.0:
     resolution: {integrity: sha512-VIMnQi/Z4HT2Fxuwg5KrY174U1VdUIASQVWXXyqtNRtxSr9IYkn1rsI6Tb6HsrHCmB7gVpNwX6JxPTHcH6IoTA==}
@@ -8616,6 +8623,8 @@ snapshots:
   randombytes@2.1.0:
     dependencies:
       safe-buffer: 5.2.1
+
+  re2js@2.9.1: {}
 
   read-yaml-file@1.1.0:
     dependencies:
