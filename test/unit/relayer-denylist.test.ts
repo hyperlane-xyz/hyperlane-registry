@@ -109,7 +109,6 @@ function usesCompatibleRegexSyntax(pattern: string): boolean {
 }
 
 function atomSize(token: string): number {
-  if (token === '|') return 0;
   if (token === '\\D') return 100;
   if (token === '\\d') return 10;
   if (token.startsWith('[')) {
@@ -123,6 +122,7 @@ function atomSize(token: string): number {
 // Mirrors the rebalancer's `exceedsRelayerRegexSize` (same costs and limit),
 // since rregex does not enforce Rust's compiled-size limit: a repetition
 // multiplies its atom or group by its largest count, and alternatives add up.
+// Capture groups, `|`, `?`, `*` and `{0,n}`/`{0,}` cost 1 unit each.
 function fitsRelayerRegexSize(pattern: string): boolean {
   // Unsupported syntax is rejected by usesCompatibleRegexSyntax.
   const tokens = tokenizeRegex(pattern) ?? [];
@@ -135,7 +135,7 @@ function fitsRelayerRegexSize(pattern: string): boolean {
       continue;
     }
     if (token === '(' || token === '(?:') {
-      groupSizes.push(0);
+      groupSizes.push(token === '(' ? 1 : 0);
       lastSize = 0;
     } else if (token === ')') {
       lastSize = groupSizes.pop() ?? 0;
@@ -146,8 +146,10 @@ function fitsRelayerRegexSize(pattern: string): boolean {
         if (range === undefined) copies = Number(min);
         else copies = max === undefined ? Number(min) + 1 : Number(max);
       }
-      groupSizes[top] += lastSize * (copies - 1);
-      lastSize *= copies;
+      const optional = token === '?' || token === '*' || (min === '0' && range !== undefined);
+      const surcharge = optional ? 1 : 0;
+      groupSizes[top] += lastSize * (copies - 1) + surcharge;
+      lastSize = lastSize * copies + surcharge;
     } else {
       lastSize = atomSize(token);
       groupSizes[top] += lastSize;
@@ -386,8 +388,13 @@ describe('Relayer denylist', () => {
       '[0-9a-f]{1000}',
       '(?:\\D{50})+',
       '\\D{99,}',
-      '\\D{50}|\\D{50}',
+      '\\D{50}|\\D{49}',
       '\\d{1000}',
+      '(a)'.repeat(5000),
+      '(?:a)'.repeat(10000),
+      '.?'.repeat(5000),
+      '(?:)?'.repeat(10000),
+      'a{0}'.repeat(20000),
       '('.repeat(60) + 'a' + ')'.repeat(60),
       '(?:'.repeat(60) + 'a' + ')'.repeat(60),
       '(?i)' + '('.repeat(60) + 'a' + ')'.repeat(60),
@@ -417,8 +424,20 @@ describe('Relayer denylist', () => {
       '[^a]{101}',
       '(?:\\D{51})+',
       '\\D{100,}',
+      '\\D{50}|\\D{50}',
       '\\D{50}|\\D{51}',
       '\\d{1000}a',
+      ('('.repeat(60) + '.' + ')'.repeat(60)).repeat(3000),
+      'a' + '|'.repeat(300000),
+      '(?:|)'.repeat(80000),
+      '(a)'.repeat(5001),
+      '.?'.repeat(10000),
+      '.{0,1}'.repeat(10000),
+      '(?:.?){1000}'.repeat(10),
+      '(?:)?'.repeat(150000),
+      '(?:)*'.repeat(150000),
+      '(?:){0,}'.repeat(150000),
+      ('(?:'.repeat(59) + 'a?' + ')?'.repeat(59)).repeat(5000),
       '('.repeat(61) + 'a' + ')'.repeat(61),
       '(?:'.repeat(61) + 'a' + ')'.repeat(61),
       '('.repeat(60) + '(?i)a' + ')'.repeat(60),
@@ -426,7 +445,7 @@ describe('Relayer denylist', () => {
       const rule = { reason: 'r', addedBy: 'a', match: { originDomain: 1, bodyRegex } };
       expect(Denylist.safeParse({ rules: [rule] }).success, bodyRegex).to.be.false;
     }
-  });
+  }).timeout(10_000);
 
   it('preserves regex and base58 case when checking duplicates', () => {
     const base = { reason: 'r', addedBy: 'a' };
