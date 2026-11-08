@@ -1,11 +1,17 @@
 coti:
   decimals: 18
+  # CommitteeMessageIdMultisigIsm, live-eligible-set BFT supermajority.
+  # Declared as an address on purpose: the validator set is the L1 eligible
+  # snapshot, so a hardcoded validator list here would be stale by design.
+  interchainSecurityModule: "0x006B3b87f8340B76576261003Dd716495d401679"
   name: Wrapped OmniCoin
   owner: "0x021868f2E3D49C059EF52B539AAa933B437e0321"
   symbol: wXOM
   type: synthetic
 omnicoinl1:
   decimals: 18
+  # Same module type on the L1 side; threshold reads 4 at the current 5-validator set.
+  interchainSecurityModule: "0x49AB7E7d792b279C85692287850dFbe766F38856"
   name: OmniCoin
   owner: "0x021868f2E3D49C059EF52B539AAa933B437e0321"
   symbol: XOM
