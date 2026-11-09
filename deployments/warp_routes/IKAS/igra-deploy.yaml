@@ -15,6 +15,22 @@ ethereum:
   type: synthetic
 igra:
   decimals: 18
+  hook: "0x8C9FAAA1eA219A5eAfDaa07d662689F47E90797B"
   mailbox: "0x3a867fCfFeC2B790970eeBDC9023E75B0a172aa7"
   owner: "0xe1C9B631fD776442b7E2c91a58C6d713Bb13FF03"
   type: native
+robinhood:
+  decimals: 18
+  mailbox: "0x3a867fCfFeC2B790970eeBDC9023E75B0a172aa7"
+  name: iKAS
+  owner: "0x311C375a29285154Fd12EFD3c2167F4A41b226A3"
+  symbol: iKAS
+  tokenFee:
+    feeContracts:
+      igra:
+        bps: 6
+        owner: "0x89d295dBB62aAb434BEd1D372b04c468e828eC9b"
+        type: LinearFee
+    owner: "0x89d295dBB62aAb434BEd1D372b04c468e828eC9b"
+    type: RoutingFee
+  type: synthetic
