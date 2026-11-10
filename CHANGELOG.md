@@ -1,5 +1,12 @@
 # @hyperlane-xyz/registry
 
+## 26.4.0
+
+### Minor Changes
+
+- 84a4c50: added Aevo mainnet metadata and Hyperlane core deployment addresses
+- 774cf8f: extended USDC/eclipsemainnet to Elysium with bridged USDC collateral, Fast Path validation, and reciprocal EVM routing fees; included EVM-to-Solana quoted fees and preserved the Eclipse synthetic mint
+
 ## 26.3.0
 
 ### Minor Changes
