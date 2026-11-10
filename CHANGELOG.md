@@ -1,5 +1,41 @@
 # @hyperlane-xyz/registry
 
+## 26.3.0
+
+### Minor Changes
+
+- a03afaa: added Elysium mainnet metadata and Hyperlane core deployment addresses
+- 70cb793: A mainnet relayer denylist was added at `deployments/relayer/mainnet-denylist.json`, seeded from the monorepo's static relayer blacklists, with a unit test enforcing the relayer's rule schema.
+- 6a04d58: Extended the IKAS/igra warp route with a Robinhood synthetic iKAS leg and recorded Igra's existing composed hook.
+
+  Added the IGRA/igra deployment configuration for collateral IGRA on Igra and synthetic IGRA on Robinhood, along with the official IGRA token logo and Nexus allowlist entry.
+
+- 6c634a5: A separate testnet relayer runtime denylist was added, preserving the nine testnet match rules and seven shared exploit-address entries from the monorepo. Both environment feeds were covered by schema, domain, and duplicate validation.
+
+### Patch Changes
+
+- 8fe9e0f: Added the USDG/aleo warp route to the Nexus universal router allowlist.
+- fd1acc2: Added the ZEC/aleo warp route to the Nexus universal router allowlist.
+- e45a9e3: The Arc block explorer family was set to other because the explorer.arc.io API sits behind a Cloudflare challenge, which made contract verification checks return errors.
+- e45a9e3: added monad CCTP v2 standard rebalancing bridges and the rebalancer to the USDC/eclipsemainnet deploy config
+- e8246a3: updated EVM core ISM addresses for Elysium enrollment with the Abacus Works and Luganodes 2-of-2 validator set
+- c02f061: The Arc block explorer was switched from the unresolvable arcscan.app to the official Blockscout explorer at explorer.arc.io.
+- 9a77902: removed Katana's fixed transaction fee overrides so fee estimates follow network conditions.
+- 41cbe81: preserved whole-body matching for the seven migrated exploit addresses in both relayer denylist feeds
+- d350acb: MAGIC/abstract base expected config was synced after the base owner re-enrolled ronin and transferred ownership to a Safe.
+- 98b0a34: MAGIC/abstract base expected config was synced after the base owner unenrolled ronin
+- cb50e2e: migrated the Aleo USDT route and peer connections to the v3 ARC-22 router and updated its deployment configuration
+- d60d213: The NES/bsc nesachain deploy config was updated with the owner-applied 2M NES/day rate-limited hook and ISM.
+- 4251adb: Aleo warp routes on Nexus were re-enabled by removing the temporary disabled notice.
+- 53094a4: relayer denylist `bodyRegex` patterns were restricted to regex syntax that the rebalancer reads like the relayer
+- 853a5e6: updated core ISM deployment addresses and Tempo's active ISM component aliases for the governance rollout
+- 05582ad: configured the native ETH/viction legs to accept Ethereum-, Base-, and Arbitrum-origin fastpath validation with the current 2-of-3 validator set and standard-validation fallback; retained mailbox-default validation on Viction
+- 243ce55: updated Tempo's default and routing ISMs, deployed its current aggregation hook factory and hook, and registered its V3 ICA router and QuotedCalls
+- 7e8ac68: extended USDC/eclipsemainnet Fast Path validation to Base and Arbitrum origins on EVM destinations, retaining mailbox validation as a fallback and excluding Eclipse and Solana destinations
+- 7304d00: CCTP v2 standard and fast rebalancing bridges were added to the USDC/electroneum warp route deploy config. CCTP v1 bridges were kept. The avalanche and base owners were moved to ICAs controlled by the Electroneum team Safe on ethereum.
+- 2e4b876: viction reorgPeriod was raised from 15 to 90 after a 25-block reorg
+- 7cba3b8: The USDC/radix Ethereum leg pausableIsm was set to unpaused.
+
 ## 26.2.0
 
 ### Minor Changes
