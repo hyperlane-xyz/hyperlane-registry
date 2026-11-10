@@ -1029,6 +1029,32 @@ berachain:
   rpcUrls:
     - http: https://rpc.berachain.com
   technicalStack: other
+bitcoinswap:
+  blockExplorers:
+    - apiUrl: https://explorer.btcw.tech/api
+      family: blockscout
+      name: Bitcoin Swap Explorer
+      url: https://explorer.btcw.tech
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 5
+    reorgPeriod: 0
+  chainId: 482120
+  deployer:
+    name: Bitcoin Swap
+    url: https://btcw.tech
+  displayName: Bitcoin Swap
+  domainId: 482120
+  isTestnet: false
+  name: bitcoinswap
+  nativeToken:
+    decimals: 18
+    name: Bitcoin Swap
+    symbol: BTCw
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.btcw.tech
+  technicalStack: other
 bitlayer:
   availability:
     reasons:
