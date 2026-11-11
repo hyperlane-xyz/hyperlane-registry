@@ -832,11 +832,25 @@ bsc:
     type: RoutingFee
   type: collateral
 eclipsemainnet:
+  contractVersion: 1.0.0
   foreignDeployment: EqRSt9aUDMKYKhzd1DGMderr3KNp29VZH3x5P7LFTC8m
   gas: 300000
   hook: Hs7KVBU67nBnWhDPZkEFwWqrFMUfJbmY2DQ4gmCZfaZp
   mailbox: EitxJuv2iBjsg2d7jVy2LDC1e2zBrx4GB5Y9h2Ko3A9Y
   owner: E4TncCw3WMqQZbkACVcomX3HqcSzLfNyhTnqKN1DimGr
+  tokenFee:
+    beneficiary: E4TncCw3WMqQZbkACVcomX3HqcSzLfNyhTnqKN1DimGr
+    feeContracts:
+      elysium:
+        # Nonzero parameters required by SVM; floor(amount / (2 * u64::MAX)) is zero for every supported amount.
+        halfAmount: "18446744073709551615"
+        maxFee: "1"
+        owner: E4TncCw3WMqQZbkACVcomX3HqcSzLfNyhTnqKN1DimGr
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+    owner: E4TncCw3WMqQZbkACVcomX3HqcSzLfNyhTnqKN1DimGr
+    type: RoutingFee
   type: synthetic
 elysium:
   contractVersion: 12.2.0
@@ -913,6 +927,13 @@ elysium:
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
+      eclipsemainnet:
+        halfAmount: "57896044618658097711785492504343953926634992332820282019728792003956564819967"
+        maxFee: "1"
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
       ethereum:
         bps: 1.5
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
@@ -956,7 +977,8 @@ elysium:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
       solanamainnet:
-        bps: 1.5
+        halfAmount: "57896044618658097711785492504343953926634992332820282019728792003956564819967"
+        maxFee: "1"
         owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
@@ -2198,12 +2220,26 @@ polygon:
     type: RoutingFee
   type: collateral
 solanamainnet:
+  contractVersion: 1.0.0
   foreignDeployment: 3EpVCPUgyjq2MfGeCttyey6bs5zya5wjYZ2BE6yDg6bm
   gas: 300000
   hook: BhNcatUDC2D5JTyeaqrdSukiVFsEHK7e3hVmKMztwefv
   mailbox: E588QtVUvresuXq2KoNEwAmoifCzYGpRBdHByN9KQMbi
   owner: BNGDJ1h9brgt6FFVd8No1TVAH48Fp44d7jkuydr1URwJ
   token: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+  tokenFee:
+    beneficiary: BNGDJ1h9brgt6FFVd8No1TVAH48Fp44d7jkuydr1URwJ
+    feeContracts:
+      elysium:
+        # Nonzero parameters required by SVM; floor(amount / (2 * u64::MAX)) is zero for every supported amount.
+        halfAmount: "18446744073709551615"
+        maxFee: "1"
+        owner: BNGDJ1h9brgt6FFVd8No1TVAH48Fp44d7jkuydr1URwJ
+        quoteSigners:
+          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
+        type: OffchainQuotedLinearFee
+    owner: BNGDJ1h9brgt6FFVd8No1TVAH48Fp44d7jkuydr1URwJ
+    type: RoutingFee
   type: collateral
 unichain:
   allowedRebalancers:
