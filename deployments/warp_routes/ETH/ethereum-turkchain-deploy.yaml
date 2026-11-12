@@ -1,0 +1,53 @@
+# Read-only deployment record, not instructions to deploy/apply.
+# Token/router proxy and implementation are separate; see docs/turkchain-eth-route.md.
+ethereum:
+  allowedRebalancers: []
+  allowedRebalancingBridges: {}
+  contractVersion: 12.2.0
+  decimals: 18
+  destinationGas:
+    "1919": "0"
+  hook:
+    address: "0x48e6c30B97748d1e2e03bf3e9FbE3890ca5f8CCA"
+    type: merkleTreeHook
+  interchainSecurityModule:
+    address: "0xF0c446012cB1Eb2F1E6b44aB923377eA24554413"
+    threshold: 1
+    type: messageIdMultisigIsm
+    validators:
+      - "0xbff48C3Deca205D53384C02409b44d6536e9207a"
+  isNft: false
+  mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
+  name: Ether
+  owner: "0xb3A776BfC1Ba98ec9255E091aAFe3aEB76d48c6b"
+  remoteRouters:
+    "1919":
+      address: "0xBf9569B06bCb6ccF776302b0697c79B8407d8e3f"
+  symbol: ETH
+  type: native
+turkchain:
+  contractVersion: 12.2.0
+  decimals: 18
+  destinationGas:
+    "1": "0"
+  hook:
+    address: "0x9e4B06541476b56f6DFC83A20057b11A7940c114"
+    type: merkleTreeHook
+  interchainSecurityModule:
+    address: "0xDE841d6e6Eb20Ce112248e1F1Ead665e491a7231"
+    threshold: 1
+    type: messageIdMultisigIsm
+    validators:
+      - "0xbff48C3Deca205D53384C02409b44d6536e9207a"
+  isNft: false
+  mailbox: "0x5a1a042619AAE32c5282dB94769f78DF93AEeE6d"
+  name: Ethereum
+  owner: "0xb3A776BfC1Ba98ec9255E091aAFe3aEB76d48c6b"
+  proxyAdmin:
+    address: "0xDb32dC96F68c5F48aBA4d0decfa489f6EEde1C9b"
+    owner: "0x8b00ecb1e8BF59F5Ab4Ba0F0c528c4F4d850280E"
+  remoteRouters:
+    "1":
+      address: "0xD13d97C537620ed5762343B78534c7581ED3a2fC"
+  symbol: ETH
+  type: synthetic
