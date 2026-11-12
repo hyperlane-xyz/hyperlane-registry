@@ -42,7 +42,7 @@ Users pay source gas (ETH or TURK); project-funded destination relayers pay TURK
 
 ## Outstanding activation blockers
 
-Real relayer broadcast-layer per-message fee cap and daily spend enforcement; nonce/inflight reconciliation; signed fresh operational evidence; finalized checkpoint policy; independent custom contract/accounting/quote compatibility and deployment verification. Current `gasPaymentEnforcement=none` plus a gas-unit limit is not a daily monetary budget. Historical successful deliveries do not prove public readiness.
+Broadcast-layer monetary caps, durable nonce/inflight reconciliation, signed operational evidence and finalized checkpoint gates are now implemented on the project deployment. Project portal readiness is public in both directions. Remaining Nexus blockers are acceptance/deployment of the custom-accounting/quote execution compatibility in UI PR #1265 and the route engine, Registry/Core merge/approval, and explorer/custom-code verification review. `gasPaymentEnforcement=none` plus a gas-unit limit alone would not be a daily monetary budget; the separate signed-raw broadcast gate now supplies that enforcement. Historical successful deliveries alone are not used as readiness proof.
 
 The Registry route request therefore includes a `blocksTransfer: true` error notice for engine review. It is not a wallet allowlist or pilot restriction: execution is blocked globally until safety requirements are met. Maintainer review, merge, engine deployment and actual Nexus discovery remain separate acceptance steps.
 
@@ -60,9 +60,9 @@ Backward compatibility: **Yes** for existing Registry entries and existing ETH t
 
 ## Testing — actual execution, not inferred validation
 
-Hyperlane CLI executed: **Yes**, version45.0.1, current warp read PASS. Current warp check executed: **Yes**, exit1 for contractVerificationStatus implementation on both legs and proxyAdmin on Turkchain. SDK read/populate and9 focused route tests PASS. New real ETH transfer performed: **No**. Full suite after upstream synchronization:8384passing,1pending,1failing (unchanged upstream relayer-denylist regex test exceeds its explicit10s timeout; reproduced on unmodified main). These results supersede earlier pre-sync passing counts.
+Hyperlane CLI executed: **Yes**, version45.0.1, current warp read PASS. Current warp check executed: **Yes**, exit1 for contractVerificationStatus implementation on both legs and proxyAdmin on Turkchain. SDK read/populate and11 focused route tests PASS. New real ETH transfer performed: **No**. Latest full Registry suite:8387passing/1pending. Build, lint and TypeScript PASS. The earlier upstream regex timeout no longer reproduces in this latest run; no test/timeout was weakened.
 
-Nexus public transfer activation: **No**; the block is temporary while completing the public-route security implementation, not a discovery-only final scope.
+Project portal public activation: **Yes**, both directions with live fail-closed readiness. Nexus public transfer activation: **No**; the block is temporary while completing the public-route security implementation, not a discovery-only final scope.
 
 ### Preservation baseline
 
