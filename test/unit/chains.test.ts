@@ -4,12 +4,12 @@ import {
   EthJsonRpcBlockParameterTag,
 } from '@hyperlane-xyz/sdk';
 import { ProtocolType } from '@hyperlane-xyz/utils';
+import { expect } from 'chai';
+
 import { chainAddresses, chainMetadata } from '../../dist/index.js';
+import { ABACUS_WORKS_DEPLOYER_NAME } from '../../src/consts.js';
 import { ChainAddressesSchema } from '../../src/types.js';
 import { isAbacusWorksChain } from '../../src/utils.js';
-
-import { expect } from 'chai';
-import { ABACUS_WORKS_DEPLOYER_NAME } from '../../src/consts.js';
 
 const icaUnsupportedChains = ['igra', 'viction', 'ontology'];
 
@@ -134,6 +134,9 @@ describe('Chain metadata', () => {
           if (metadata.technicalStack === ChainTechnicalStack.OpStack) {
             if (chain === 'base' || chain === 'optimism') {
               expect(metadata.blocks?.reorgPeriod).to.equal(10);
+            } else if (chain === 'aevo') {
+              // Aevo has 10-second blocks; the deployment policy waits 30 seconds.
+              expect(metadata.blocks?.reorgPeriod).to.equal(3);
             } else if (chain === 'mantle') {
               expect(metadata.blocks?.reorgPeriod).to.equal(2);
             } else if (chain === 'zircuit') {

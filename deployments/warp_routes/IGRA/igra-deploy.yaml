@@ -1,0 +1,24 @@
+igra:
+  decimals: 18
+  hook: "0x8C9FAAA1eA219A5eAfDaa07d662689F47E90797B"
+  mailbox: "0x3a867fCfFeC2B790970eeBDC9023E75B0a172aa7"
+  name: Igra Token
+  owner: "0xe1C9B631fD776442b7E2c91a58C6d713Bb13FF03"
+  symbol: IGRA
+  token: "0x093d77d397F8acCbaee0820345E9E700B1233cD1"
+  type: collateral
+robinhood:
+  decimals: 18
+  mailbox: "0x3a867fCfFeC2B790970eeBDC9023E75B0a172aa7"
+  name: Igra Token
+  owner: "0x311C375a29285154Fd12EFD3c2167F4A41b226A3"
+  symbol: IGRA
+  tokenFee:
+    feeContracts:
+      igra:
+        bps: 6
+        owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+        type: LinearFee
+    owner: "0xe95C605096A1AD38BaC3E5210e145952Cbdc6998"
+    type: RoutingFee
+  type: synthetic

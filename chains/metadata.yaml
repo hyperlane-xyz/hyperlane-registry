@@ -114,6 +114,34 @@ adichain:
   rpcUrls:
     - http: https://rpc.adifoundation.ai
   technicalStack: other
+aevo:
+  blockExplorers:
+    - apiUrl: https://contracts.conduit.xyz
+      family: other
+      name: Aevo Explorer
+      url: https://explorer.aevo.xyz
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 10
+    reorgPeriod: 3
+  chainId: 2999
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Aevo
+  domainId: 2999
+  gasCurrencyCoinGeckoId: ethereum
+  index:
+    from: 11513711
+  name: aevo
+  nativeToken:
+    decimals: 18
+    name: Ether
+    symbol: ETH
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc-aevo-mainnet-prod-0.t.conduit.xyz
+  technicalStack: opstack
 aleo:
   blockExplorers:
     - apiUrl: https://explorer.provable.com
@@ -2878,6 +2906,34 @@ electroneum:
   rpcUrls:
     - http: https://rpc.ankr.com/electroneum
   technicalStack: other
+elysium:
+  blockExplorers:
+    - apiUrl: https://elysium.kinetiq.xyz/api
+      family: other
+      name: Elysium Explorer
+      url: https://elysium.kinetiq.xyz/explorer
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 0.1
+    reorgPeriod: 5
+  chainId: 99901
+  deployer:
+    name: Abacus Works
+    url: https://www.hyperlane.xyz
+  displayName: Elysium
+  domainId: 99901
+  gasCurrencyCoinGeckoId: hyperliquid
+  index:
+    from: 412977
+  name: elysium
+  nativeToken:
+    decimals: 18
+    name: Hyperliquid
+    symbol: HYPE
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc-elysium-mainnet.t.conduit.xyz
+  technicalStack: arbitrumnitro
 endurance:
   availability:
     reasons:

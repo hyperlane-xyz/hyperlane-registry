@@ -170,6 +170,12 @@ importers:
       randexp:
         specifier: ^0.5.3
         version: 0.5.3
+      re2js:
+        specifier: 2.9.1
+        version: 2.9.1
+      rregex:
+        specifier: 1.10.12
+        version: 1.10.12
       sinon:
         specifier: ^22.1.0
         version: 22.1.0
@@ -3455,6 +3461,10 @@ packages:
   randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
 
+  re2js@2.9.1:
+    resolution: {integrity: sha512-JIT3bEEUZTOR2YS1walNEIfH4cF/cQeZcBUFq7ldqO6lR6g0X5CBq/S8rsa9omzZcsNf8qc36jCkWpKKtncrZg==}
+    engines: {node: '>=20.0.0'}
+
   read-yaml-file@1.1.0:
     resolution: {integrity: sha512-VIMnQi/Z4HT2Fxuwg5KrY174U1VdUIASQVWXXyqtNRtxSr9IYkn1rsI6Tb6HsrHCmB7gVpNwX6JxPTHcH6IoTA==}
     engines: {node: '>=6'}
@@ -3507,6 +3517,9 @@ packages:
 
   rpc-websockets@9.0.4:
     resolution: {integrity: sha512-yWZWN0M+bivtoNLnaDbtny4XchdAIF5Q4g/ZsC5UC61Ckbp0QczwO8fg44rV3uYmY4WHd+EZQbn90W1d8ojzqQ==}
+
+  rregex@1.10.12:
+    resolution: {integrity: sha512-IaDyjhFWQ3oQrr1feZM/BoTtkOjI0VZv9xsHDVanvyPsI73XYjcQOUioEE+9TrMPYS0pISg7dnv7Nt8YlcU6QQ==}
 
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
@@ -8611,6 +8624,8 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
+  re2js@2.9.1: {}
+
   read-yaml-file@1.1.0:
     dependencies:
       graceful-fs: 4.2.11
@@ -8672,6 +8687,8 @@ snapshots:
     optionalDependencies:
       bufferutil: 4.0.8
       utf-8-validate: 5.0.10
+
+  rregex@1.10.12: {}
 
   run-parallel@1.2.0:
     dependencies:
