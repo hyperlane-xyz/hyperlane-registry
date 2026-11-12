@@ -109,18 +109,32 @@ describe('Turkchain ETH observed deployment', () => {
     expect(m.nativeToken.symbol).to.equal('TURK');
     expect(m.nativeToken.decimals).to.equal(18);
   });
-  it('preserves the logo, global Ethereum Core, and both legacy TURK files byte-for-byte', () => {
+  it('preserves every existing protected baseline file byte-for-byte', () => {
+    expect(Object.keys(expected.protectedFileSha256)).to.have.members([
+      'chains/turkchain/logo.svg',
+      'chains/ethereum/addresses.yaml',
+    ]);
     for (const [file, hash] of Object.entries(expected.protectedFileSha256)) {
-      if (file.startsWith('deployments/warp_routes/TURK/') && !fs.existsSync(file)) continue;
       expect(
         crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'),
         file,
       ).to.equal(hash);
     }
-    if (!fs.existsSync('deployments/warp_routes/TURK/ethereum-turkchain-deploy.yaml')) return;
-    const legacy = read('deployments/warp_routes/TURK/ethereum-turkchain-deploy.yaml');
-    for (const chain of ['ethereum', 'turkchain'])
-      expect(legacy[chain].mailbox).to.equal(expected.legacyTurkMailboxes[chain]);
+  });
+  it('records absent upstream TURK files without claiming they are preserved deployments', () => {
+    expect(expected.upstreamBaseline.commit).to.equal('d36ac66ef726bdce6691d4ce4be8ab3dab39cb29');
+    expect(expected.upstreamBaseline.absentTurkRouteFiles).to.deep.equal([
+      'deployments/warp_routes/TURK/ethereum-turkchain-config.yaml',
+      'deployments/warp_routes/TURK/ethereum-turkchain-deploy.yaml',
+    ]);
+    for (const file of expected.upstreamBaseline.absentTurkRouteFiles) {
+      expect(expected.protectedFileSha256).not.to.have.property(file);
+      expect(fs.existsSync(file), file + ' is absent from the documented baseline').to.equal(false);
+    }
+  });
+  it('always checks both ETH route Mailboxes', () => {
+    expect(deploy.ethereum.mailbox).to.equal(expected.ethereumMailbox);
+    expect(deploy.turkchain.mailbox).to.equal(expected.turkchainCoreCandidate.mailbox);
   });
   it('has checksum-correct addresses and no duplicate registration of either new ETH Router', () => {
     for (const t of core.tokens)

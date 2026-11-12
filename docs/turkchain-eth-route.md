@@ -63,3 +63,7 @@ Backward compatibility: **Yes** for existing Registry entries and existing ETH t
 Hyperlane CLI executed: **Yes**, version45.0.1, current warp read PASS. Current warp check executed: **Yes**, exit1 for contractVerificationStatus implementation on both legs and proxyAdmin on Turkchain. SDK read/populate and9 focused route tests PASS. New real ETH transfer performed: **No**. Full suite after upstream synchronization:8384passing,1pending,1failing (unchanged upstream relayer-denylist regex test exceeds its explicit10s timeout; reproduced on unmodified main). These results supersede earlier pre-sync passing counts.
 
 Nexus public transfer activation: **No**; the block is temporary while completing the public-route security implementation, not a discovery-only final scope.
+
+### Preservation baseline
+
+The protected hashes cover files that actually exist in upstream main `d36ac66ef726bdce6691d4ce4be8ab3dab39cb29`: the Turkchain SVG and global Ethereum addresses. Missing protected files fail the test through an unconditional read. The two historical `TURK/ethereum-turkchain-*` paths are absent from that baseline and are explicitly recorded as absent, not claimed as preserved active deployments. Both new ETH route Mailboxes have unconditional assertions independent of historical files.
