@@ -51,3 +51,15 @@ The Registry route request therefore includes a `blocksTransfer: true` error not
 `pnpm run test:unit`; focused `pnpm exec mocha --require dotenv/config --config .mocharc.json test/unit/turkchain-eth.test.ts --exit`; read-only SDK audit `pnpm exec tsx scripts/check-turkchain-eth-sdk.ts` (read/populate only; no submission). Fixture block numbers are snapshots, not assertions about forever-current state.
 
 Legacy USDT/TURK routes and historical deployment evidence are not repurposed by this ETH PR.
+
+## Upstream dependencies and compatibility
+
+Backward compatibility: **Yes** for existing Registry entries and existing ETH token/router identifiers. This adds/updates the ETH route record and keeps transfer execution blocked; it does not change existing deployed contracts. The separate Core-address replacement in #1781 is explicitly a breaking change for consumers of the old Turkchain Mailbox.
+
+#1791 is merged. Its Ethereum global default ISM is0xb05bbc4793D8Db2b87115Bb7E6304F0216a8c6eB; the route-specific0xF0c446012cB1Eb2F1E6b44aB923377eA24554413 remains separate. Branches were synchronized with current main, and the protected Ethereum-address fixture hash was updated to match upstream. #1781 remains the canonical Turkchain Core-address dependency. No legacy application is silently migrated.
+
+## Testing — actual execution, not inferred validation
+
+Hyperlane CLI executed: **Yes**, version45.0.1, current warp read PASS. Current warp check executed: **Yes**, exit1 for contractVerificationStatus implementation on both legs and proxyAdmin on Turkchain. SDK read/populate and9 focused route tests PASS. New real ETH transfer performed: **No**. Full suite after upstream synchronization:8384passing,1pending,1failing (unchanged upstream relayer-denylist regex test exceeds its explicit10s timeout; reproduced on unmodified main). These results supersede earlier pre-sync passing counts.
+
+Nexus public transfer activation: **No**; the block is temporary while completing the public-route security implementation, not a discovery-only final scope.

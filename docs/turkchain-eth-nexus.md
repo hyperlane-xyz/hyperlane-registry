@@ -1,6 +1,6 @@
-# Nexus integration review request — ETH/ethereum-turkchain
+# Public Ethereum–Turkchain ETH route integration — work in progress
 
-This updates the existing #1786 request; no duplicate integration issue is needed. The data now records reciprocal enrollment, current synthetic implementation and MerkleTreeHook, and two historical successful deliveries. See [route evidence](turkchain-eth-route.md).
+The requested outcome is a public bidirectional ETH route, not discovery-only listing. There is no wallet allowlist, invitation requirement or pilot-user restriction. This updates existing #1786; no duplicate issue is needed. The data now records reciprocal enrollment, current synthetic implementation and MerkleTreeHook, and two historical successful deliveries. See [route evidence](turkchain-eth-route.md).
 
 ## Current discovery mechanism
 
@@ -14,7 +14,7 @@ Official sources:
 
 ## Submitted integration proposal
 
-Add `ETH/ethereum-turkchain` with an error notice and `blocksTransfer: true`. This requests chain/token/route discovery and custom-route integration review while preventing transfer activation. Do not remove the block merely because Registry schemas or historical deliveries pass.
+Add `ETH/ethereum-turkchain` with an error notice and `blocksTransfer: true`. This is a temporary execution safety block while completing the public-route feature, not its final product scope. Remove it only after the broadcast-layer spend guard, signed evidence, finalized checkpoint selection and custom-accounting/engine compatibility checks pass. Historical transfers and fork/SDK tests are used; no new mainnet transfer will be generated. Do not remove the block merely because Registry schemas or historical deliveries pass.
 
 Please confirm:
 
@@ -27,3 +27,9 @@ Please confirm:
 ## Status boundaries
 
 Registry PRs submitted: yes. Maintainer acceptance/merge: pending. Conditional engine discovery request: included here. Public transfer readiness: blocked. Nexus listing/live visibility: not verified. No new live transfer, synthetic mint, test message or funding transaction was created. Two prior deliveries are documented, never repeated.
+
+## Dependency and CLI validation
+
+#1791 is merged and main was synchronized into this branch. The Ethereum global default ISM is0xb05bbc4793D8Db2b87115Bb7E6304F0216a8c6eB, distinct from this route-specific0xF0c446012cB1Eb2F1E6b44aB923377eA24554413. The protected Ethereum address-file fixture hash is updated to current upstream. #1781 supplies the canonical Turkchain Core deployment; it remains a separate open PR.
+
+Hyperlane CLI45.0.1 was actually executed against current artifacts: warp read PASS; warp check FAIL because it reports unverified native/synthetic implementation and synthetic ProxyAdmin surfaces. No check failure is hidden. SDK unsigned population and nine focused ETH tests pass. Full current-main integration runs reproduce a10-second timeout in an unchanged upstream relayer-denylist regex test; no timeout was increased and no test was skipped to claim success. Maintainer-controlled fork CI approval remains pending.

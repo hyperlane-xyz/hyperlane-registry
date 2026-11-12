@@ -84,6 +84,7 @@ describe('Turkchain ETH observed deployment', () => {
   it('keeps custom Router ISM out of global Ethereum Core addresses', () => {
     const eth = read('chains/ethereum/addresses.yaml');
     expect(eth.mailbox).to.equal(expected.ethereumMailbox);
+    expect(eth.interchainSecurityModule).to.equal(expected.ethereumCoreDefaultIsm);
     expect(eth.interchainSecurityModule).not.to.equal(expected.ethereumIsm);
     expect(deploy.ethereum.interchainSecurityModule.address).to.equal(expected.ethereumIsm);
     expect(deploy.ethereum.interchainSecurityModule.threshold).to.equal(1);
