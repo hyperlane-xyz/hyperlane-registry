@@ -1,13 +1,12 @@
-# Read-only SDK-derived configuration. Not an instruction to redeploy/apply.
-# Custom native implementation and existing synthetic proxy; no enrollment performed.
-# See docs/turkchain-eth-route.md for blockers and provenance.
-
+# Read-only deployment record, not instructions to deploy/apply.
+# Token/router proxy and implementation are separate; see docs/turkchain-eth-route.md.
 ethereum:
   allowedRebalancers: []
   allowedRebalancingBridges: {}
   contractVersion: 12.2.0
   decimals: 18
-  destinationGas: {}
+  destinationGas:
+    "1919": "0"
   hook:
     address: "0x48e6c30B97748d1e2e03bf3e9FbE3890ca5f8CCA"
     type: merkleTreeHook
@@ -21,26 +20,19 @@ ethereum:
   mailbox: "0xc005dc82818d67AF737725bD4bf75435d065D239"
   name: Ether
   owner: "0xb3A776BfC1Ba98ec9255E091aAFe3aEB76d48c6b"
-  remoteRouters: {}
+  remoteRouters:
+    "1919":
+      address: "0xBf9569B06bCb6ccF776302b0697c79B8407d8e3f"
   symbol: ETH
   type: native
 turkchain:
   contractVersion: 12.2.0
   decimals: 18
-  destinationGas: {}
+  destinationGas:
+    "1": "0"
   hook:
-    address: "0x1ad4aeA7240Ea973963E965D63F91b2825d11b76"
-    hooks:
-      - address: "0x9e4B06541476b56f6DFC83A20057b11A7940c114"
-        type: merkleTreeHook
-      - address: "0xe6FD7030A10CDA22eD8Ea7802e5f30e9e0Eb9894"
-        beneficiary: "0x8b00ecb1e8BF59F5Ab4Ba0F0c528c4F4d850280E"
-        oracleConfig: {}
-        oracleKey: "0x8b00ecb1e8BF59F5Ab4Ba0F0c528c4F4d850280E"
-        overhead: {}
-        owner: "0x8b00ecb1e8BF59F5Ab4Ba0F0c528c4F4d850280E"
-        type: interchainGasPaymaster
-    type: aggregationHook
+    address: "0x9e4B06541476b56f6DFC83A20057b11A7940c114"
+    type: merkleTreeHook
   interchainSecurityModule:
     address: "0xDE841d6e6Eb20Ce112248e1F1Ead665e491a7231"
     threshold: 1
@@ -54,6 +46,8 @@ turkchain:
   proxyAdmin:
     address: "0xDb32dC96F68c5F48aBA4d0decfa489f6EEde1C9b"
     owner: "0x8b00ecb1e8BF59F5Ab4Ba0F0c528c4F4d850280E"
-  remoteRouters: {}
+  remoteRouters:
+    "1":
+      address: "0xD13d97C537620ed5762343B78534c7581ED3a2fC"
   symbol: ETH
   type: synthetic

@@ -84,6 +84,7 @@ for (const token of core.tokens) {
   }
   report.chains[token.chainName] = r;
 }
+fs.mkdirSync('.audit', { recursive: true });
 fs.writeFileSync('.audit/turkchain-eth-sdk.json', JSON.stringify(report, null, 2));
 console.log(JSON.stringify(report, null, 2));
 if (Object.values(report.chains).some((r: any) => !r.ok)) process.exitCode = 1;

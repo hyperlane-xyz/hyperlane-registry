@@ -37,16 +37,38 @@ describe('Turkchain ETH observed deployment', () => {
       warp.tokens.find((t) => t.chainName === 'turkchain')!.getHypAdapter(mp).constructor.name,
     ).to.equal('EvmHypSyntheticAdapter');
   });
-  it('does not advertise enrollment that has not happened', () => {
-    for (const t of core.tokens) expect(t.connections).to.deep.equal([]);
-    for (const chain of ['ethereum', 'turkchain']) {
-      expect(deploy[chain].remoteRouters).to.deep.equal({});
-      expect(deploy[chain].destinationGas).to.deep.equal({});
+  it('records observed reciprocal enrollment without enabling engine transfers', () => {
+    for (const [chain, destination] of [
+      ['ethereum', 'turkchain'],
+      ['turkchain', 'ethereum'],
+    ]) {
+      const token = core.tokens.find((t: any) => t.chainName === chain);
+      const target = core.tokens.find((t: any) => t.chainName === destination);
+      const domain = destination === 'ethereum' ? 1 : 1919;
+      expect(token.connections).to.deep.equal([
+        { token: 'ethereum|' + destination + '|' + target.addressOrDenom },
+      ]);
+      expect(deploy[chain].remoteRouters).to.deep.equal({
+        [domain]: { address: target.addressOrDenom },
+      });
+      expect(deploy[chain].destinationGas).to.deep.equal({ [domain]: '0' });
     }
     const allow = read('deployments/warp_routes/warpRouteAllowlist.yaml');
-    expect(allow.warpRouteIds.map((x: any) => (typeof x === 'string' ? x : x.id))).not.to.include(
-      'ETH/ethereum-turkchain',
+    const entry = allow.warpRouteIds.find((x: any) => x.id === 'ETH/ethereum-turkchain');
+    expect(
+      entry.notices.some((x: any) => x.blocksTransfer === true && x.severity === 'error'),
+    ).to.equal(true);
+  });
+  it('keeps the synthetic implementation distinct and records isolated accounting evidence', () => {
+    expect(expected.turkchainImplementation.toLowerCase()).not.to.equal(
+      expected.turkchainTokenRouter.toLowerCase(),
     );
+    expect(expected.liveReadback.turkchain.isolationActive).to.equal(true);
+    expect(expected.liveReadback.turkchain.totalRedemptionCredit).to.equal('0');
+    expect(expected.liveReadback.turkchain.legacySupply).to.equal('500000000000000000000');
+    expect(expected.transferEvidence).to.have.length(2);
+    for (const ev of expected.transferEvidence)
+      for (const value of Object.values(ev)) expect(value).to.match(/^0x[0-9a-f]{64}$/);
   });
   it('records the native Router and the combined synthetic-token Router proxy separately', () => {
     const eth = core.tokens.find((t: any) => t.chainName === 'ethereum'),

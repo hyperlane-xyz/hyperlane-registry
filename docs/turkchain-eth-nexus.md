@@ -1,28 +1,29 @@
-# Turkchain ETH Nexus integration request (draft)
+# Nexus integration review request — ETH/ethereum-turkchain
 
-Requested route ID: `ETH/ethereum-turkchain`. This document requests maintainer review of the future listing path; it does not request immediate transfer activation.
+This updates the existing #1786 request; no duplicate integration issue is needed. The data now records reciprocal enrollment, current synthetic implementation and MerkleTreeHook, and two historical successful deliveries. See [route evidence](turkchain-eth-route.md).
 
-## Current official integration path
+## Current discovery mechanism
 
-At Nexus branch commit `59065ce593de4e1957d683a5c1a0134961fb34dd`, the UI pins Registry 26.2.0 and SDK 45.1.0. `CUSTOMIZE.md` states that token discovery, route availability, quotes and executable transactions come from the Universal Router API. The registry's `deployments/warp_routes/warpRouteAllowlist.yaml` lists engine bridge-only route IDs. The historical UI-local `warpRouteWhitelist.ts` workflow must not be assumed current.
+The current official UI states in CUSTOMIZE.md that token discovery, route availability, quotes and executable transactions come from the Universal Router API; local UI Registry overrides alone do not list an executable route. The Registry `deployments/warp_routes/warpRouteAllowlist.yaml` supplies bridge-only route IDs to the engine. Route IDs are not user-wallet allowlists.
 
-Sources:
+Official sources:
 
-- https://github.com/hyperlane-xyz/hyperlane-warp-ui-template/blob/59065ce593de4e1957d683a5c1a0134961fb34dd/CUSTOMIZE.md
-- https://github.com/hyperlane-xyz/hyperlane-registry/blob/e8246a3c78eb0a1c054ce61076a84986c03c3419/deployments/warp_routes/warpRouteAllowlist.yaml
+- https://github.com/hyperlane-xyz/hyperlane-warp-ui-template/blob/5744e7eeee8e3cd1320ca2fd3f7461c1f26999a4/CUSTOMIZE.md
+- https://github.com/hyperlane-xyz/hyperlane-registry/blob/d36ac66ef726bdce6691d4ce4be8ab3dab39cb29/deployments/warp_routes/warpRouteAllowlist.yaml
+- https://github.com/hyperlane-xyz/hyperlane-registry/blob/main/src/types.ts
 
-## Requested maintainer guidance
+## Submitted integration proposal
 
-Please review the observed native/synthetic deployment in this draft PR and confirm the engine/listing review requirements once the application activation gates are complete. We have not added the route to the engine allowlist. Route allowlisting is distinct from a user-wallet allowlist.
+Add `ETH/ethereum-turkchain` with an error notice and `blocksTransfer: true`. This requests chain/token/route discovery and custom-route integration review while preventing transfer activation. Do not remove the block merely because Registry schemas or historical deliveries pass.
 
-Before requesting activation of an allowlist entry, supply:
+Please confirm:
 
-1. Merged canonical chain/Core metadata and ETH route artifacts.
-2. Confirmed reciprocal enrollment and a passing route check, with explorer verification and funded owners/operators.
-3. Verified two-way fee/quote/delivery behavior and the route's custom minimum constraints.
-4. Successful source/destination mainnet transaction and message-ID evidence for both directions.
-5. Operational monitoring, route-specific security review, public RPC availability and incident contacts.
+1. Core metadata #1781 and this native/synthetic route are accepted; TURK symbol, chainId/domain1919,18decimals, explorer/RPC and existing SVG are correct.
+2. Engine adapters/quoting enforce0.000044ETH minimum, direct release, isolated genesis/redemption-credit accounting, reserves and source user gas. Display-only ETH metadata must not mask a custom execution incompatibility.
+3. Message ISM/checkpoint verification and operational gas-budget/evidence gates pass before removing the transfer block.
+4. Explorer source verification/custom-code review, monitoring and incident ownership meet listing requirements.
+5. Whether an additional engine repository PR is necessary; no evidence yet establishes that a separate UI code PR or form is required beyond Registry/engine review.
 
-Current statuses: Registry PR submitted (draft); merge pending; Nexus review request prepared in this PR; engine allowlist not requested for immediate activation; approval pending; route visibility not verified; live bidirectional Nexus transfer not run.
+## Status boundaries
 
-The existing TURK route, logo and global Ethereum Core entries are unchanged.
+Registry PRs submitted: yes. Maintainer acceptance/merge: pending. Conditional engine discovery request: included here. Public transfer readiness: blocked. Nexus listing/live visibility: not verified. No new live transfer, synthetic mint, test message or funding transaction was created. Two prior deliveries are documented, never repeated.

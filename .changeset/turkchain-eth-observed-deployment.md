@@ -2,6 +2,6 @@
 '@hyperlane-xyz/registry': patch
 ---
 
-Add the observed Ethereum/Turkchain ETH router configuration using verified deployed addresses.
+Record the reciprocally enrolled Ethereum/Turkchain ETH native/synthetic route and current MerkleTreeHook. Keep the combined synthetic token/router proxy distinct from its implementation.
 
-The ETH routers are not enrolled. Connections remain empty and the route is not added to the bridge allowlist. Registry data does not enable transfers. Existing TURK deployments retain their verified legacy Mailboxes.
+Request Nexus engine integration review with a blocksTransfer notice: public execution remains blocked pending operational gas enforcement, signed evidence, finalized checkpoint validation and custom-code review. Historical receipts are evidence, not fresh test transfers. No genesis supply, ownership, Core Ethereum, USDT or legacy TURK changes.

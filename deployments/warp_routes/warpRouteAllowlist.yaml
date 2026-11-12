@@ -20,6 +20,11 @@ warpRouteIds:
   - stTIA/eclipsemainnet-stride
 
   # ETH routes
+  - id: ETH/ethereum-turkchain
+    notices:
+      - blocksTransfer: true
+        message: Transfers are blocked pending bounded relayer gas enforcement, signed operational evidence, finalized checkpoint validation, and custom-contract integration review.
+        severity: error
   - ETH/ethereum-hyperevm
   - ETH/arbitrum-base-ethereum-lumiaprism-optimism-polygon
   - ETH/coti-ethereum

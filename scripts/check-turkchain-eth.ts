@@ -102,9 +102,10 @@ report.core.defaultIsm = await read(
   data.turkchainCoreCandidate.mailbox,
   'defaultIsm() view returns(address)',
 );
-const registryRoute = parse(
-  fs.readFileSync('deployments/warp_routes/TURK/ethereum-turkchain-config.yaml', 'utf8'),
-);
+const legacyPath = 'deployments/warp_routes/TURK/ethereum-turkchain-config.yaml';
+const registryRoute = fs.existsSync(legacyPath)
+  ? parse(fs.readFileSync(legacyPath, 'utf8'))
+  : { tokens: [] };
 for (const t of registryRoute.tokens) {
   const p = providers[t.chainName as keyof typeof providers],
     code = await p.getCode(t.addressOrDenom);
@@ -182,6 +183,7 @@ report.ethereumIsm = {
     ['0x'],
   ),
 };
+fs.mkdirSync('.audit', { recursive: true });
 fs.mkdirSync('.audit', { recursive: true });
 fs.writeFileSync('.audit/turkchain-eth-live.json', JSON.stringify(report, null, 2));
 console.log(
