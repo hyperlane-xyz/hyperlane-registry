@@ -29,12 +29,6 @@ arbitrum:
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
-      bob:
-        bps: 5
-        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
       bsc:
         bps: 5
         owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
@@ -60,12 +54,6 @@ arbitrum:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
       ink:
-        bps: 5
-        owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
-      lisk:
         bps: 5
         owner: "0x6f0Cfe5fD2E4188AD68b7f8ceB135DD68DF629C7"
         quoteSigners:
@@ -202,39 +190,6 @@ base:
       bufferCap: "20000000000000"
       rateLimitPerSecond: "5000000000"
       type: velo
-bob:
-  contractVersion: 12.1.0
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0x790306c30eFeeAF3943ee3700C71D7B7812c85a1"
-        type: defaultFallbackRoutingIsm
-      - owner: "0x790306c30eFeeAF3943ee3700C71D7B7812c85a1"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
-  owner: "0x790306c30eFeeAF3943ee3700C71D7B7812c85a1"
-  ownerOverrides:
-    collateralProxyAdmin: "0x790306c30eFeeAF3943ee3700C71D7B7812c85a1"
-    collateralToken: "0x790306c30eFeeAF3943ee3700C71D7B7812c85a1"
-  scale:
-    denominator: 1
-    numerator: 1
-  token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
-  type: xERC20
-  xERC20:
-    extraBridges:
-      - limits:
-          bufferCap: "20000000000000"
-          rateLimitPerSecond: "5000000000"
-          type: velo
-        lockbox: "0xAFEd606Bd2CAb6983fC6F10167c98aaC2173D77f"
-    warpRouteLimits:
-      bufferCap: "2000000000000"
-      rateLimitPerSecond: "500000000"
-      type: velo
 bsc:
   contractVersion: 12.1.0
   hook: "0x0000000000000000000000000000000000000000"
@@ -267,12 +222,6 @@ bsc:
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
-      bob:
-        bps: 5
-        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
       celo:
         bps: 5
         owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
@@ -292,12 +241,6 @@ bsc:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
       ink:
-        bps: 5
-        owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
-      lisk:
         bps: 5
         owner: "0xA0e41Ab972294A8f7CD1599BB76AdDB6bAE24556"
         quoteSigners:
@@ -389,12 +332,6 @@ celo:
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
-      bob:
-        bps: 5
-        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
       bsc:
         bps: 5
         owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
@@ -414,12 +351,6 @@ celo:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
       ink:
-        bps: 5
-        owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
-      lisk:
         bps: 5
         owner: "0x7E0F248B8329Feb5c6c7ab5a1613dFf337d908e8"
         quoteSigners:
@@ -522,12 +453,6 @@ ethereum:
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
-      bob:
-        bps: 5
-        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
       bsc:
         bps: 5
         owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
@@ -547,12 +472,6 @@ ethereum:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
       ink:
-        bps: 5
-        owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
-      lisk:
         bps: 5
         owner: "0x8Ff4c563f26db00e65bD93d9f662A51c304C09b0"
         quoteSigners:
@@ -678,33 +597,6 @@ ink:
     warpRouteLimits:
       bufferCap: "8000000000000"
       rateLimitPerSecond: "2000000000"
-      type: velo
-lisk:
-  contractVersion: 12.1.0
-  hook: "0x0000000000000000000000000000000000000000"
-  interchainSecurityModule:
-    modules:
-      - domains: {}
-        owner: "0xfA96BCb61C7CbD7839689E807CD6d7FC27754Af3"
-        type: defaultFallbackRoutingIsm
-      - owner: "0xfA96BCb61C7CbD7839689E807CD6d7FC27754Af3"
-        paused: false
-        type: pausableIsm
-    threshold: 2
-    type: staticAggregationIsm
-  owner: "0xfA96BCb61C7CbD7839689E807CD6d7FC27754Af3"
-  ownerOverrides:
-    collateralProxyAdmin: "0xfA96BCb61C7CbD7839689E807CD6d7FC27754Af3"
-    collateralToken: "0xfA96BCb61C7CbD7839689E807CD6d7FC27754Af3"
-  scale:
-    denominator: 1
-    numerator: 1
-  token: "0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189"
-  type: xERC20
-  xERC20:
-    warpRouteLimits:
-      bufferCap: "2000000000000"
-      rateLimitPerSecond: "500000000"
       type: velo
 metal:
   contractVersion: 12.1.0
@@ -949,12 +841,6 @@ tea:
         quoteSigners:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
-      bob:
-        bps: 5
-        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
       bsc:
         bps: 5
         owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
@@ -980,12 +866,6 @@ tea:
           - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
         type: OffchainQuotedLinearFee
       ink:
-        bps: 5
-        owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
-        quoteSigners:
-          - "0xEd1829805De615eEFC7303766D395Ea0a1B2b04d"
-        type: OffchainQuotedLinearFee
-      lisk:
         bps: 5
         owner: "0x37a5630cF1C8DCf2F8E1F601a2Ea9700ADaAff60"
         quoteSigners:
