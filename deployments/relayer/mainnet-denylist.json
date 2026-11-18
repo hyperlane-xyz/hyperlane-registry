@@ -3383,6 +3383,13 @@
       "reason": "Binance hot wallet exploit 2026-10-29 (not in the ZeroShadow report 2026-10-31; inferred linked because it sent to the same Ethereum recipient) [from #9942, 2026-11-02]",
       "addedBy": "Haggis (Hyperlane)",
       "address": "TQrzMj8eKRAhizejiejaQVjiL95XsbxcAD"
+    },
+    {
+      "reason": "USDC/radix: radix->ethereum user withdrawal permanently undeliverable; withdrawal recipient 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (the USDC token contract) is on Circle's USDC blacklist, so collateral router USDC.transfer reverts 'Blacklistable: account is blacklisted'. Wedged ethereum prepare queue (PD Q12B9V7GMI58Y2) [2026-11-16]",
+      "addedBy": "Haggis (Hyperlane)",
+      "match": {
+        "messageId": "0x72181b6d20ed848864b7e5f17e72f36a33da6886ffc66c9d0bdcb82aecacfa24"
+      }
     }
   ]
 }
