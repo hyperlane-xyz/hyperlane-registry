@@ -20,6 +20,30 @@
       name: OnePiece
       standard: EvmHypSynthetic
       symbol: 1Piece
+ADX/bsc-ethereum:
+  tokens:
+    - addressOrDenom: "0x3db228c4A52093b82CE51059741436f88A594bE9"
+      chainName: bsc
+      coinGeckoId: adex
+      collateralAddressOrDenom: "0x6bfF4Fb161347ad7de4A625AE5aa3A1CA7077819"
+      connections:
+        - token: ethereum|ethereum|0x3db228c4A52093b82CE51059741436f88A594bE9
+      decimals: 18
+      logoURI: /deployments/warp_routes/ADX/logo.svg
+      name: AdEx Network
+      standard: EvmHypCollateral
+      symbol: ADX
+    - addressOrDenom: "0x3db228c4A52093b82CE51059741436f88A594bE9"
+      chainName: ethereum
+      coinGeckoId: adex
+      collateralAddressOrDenom: "0xADE00C28244d5CE17D72E40330B1c318cD12B7c3"
+      connections:
+        - token: ethereum|bsc|0x3db228c4A52093b82CE51059741436f88A594bE9
+      decimals: 18
+      logoURI: /deployments/warp_routes/ADX/logo.svg
+      name: AdEx Network
+      standard: EvmHypCollateral
+      symbol: ADX
 AIXBT/base-form:
   tokens:
     - addressOrDenom: "0xa6536c88A7f86d2b189c58A5a19BF5F03241d6A0"
