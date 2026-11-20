@@ -1,5 +1,36 @@
 # @hyperlane-xyz/registry
 
+## 26.4.0
+
+### Minor Changes
+
+- 84a4c50: added Aevo mainnet metadata and Hyperlane core deployment addresses
+- ef7a664: added Collect mainnet metadata and Hyperlane core and ICA deployment addresses
+- 774cf8f: extended USDC/eclipsemainnet to Elysium with bridged USDC collateral, Fast Path validation, and reciprocal EVM routing fees; included EVM-to-Solana quoted fees and preserved the Eclipse synthetic mint
+- 632b889: Add the existing heyAura ADX collateral route between BNB Chain and Ethereum, with its deployed security settings.
+
+### Patch Changes
+
+- e290ba0: added tea.drpc.org as a fallback rpc for the tea chain so agents have a healthy endpoint when rpc.tea.xyz is unreachable
+- aa7cc3d: updated default ISM deployment addresses for Aevo 3-of-4 and Elysium 2-of-3 validator enrollment
+- 6ab090d: added a relayer denylist rule for a permanently-undeliverable USDC/radix message (radix->ethereum) whose withdrawal recipient is on Circle's USDC blacklist.
+- b4b655f: marked bob, mantra, legacy nesa, nexus, somnia, and tea as deprecated
+- bbcd25d: The Ethereum/Turkchain ETH warp route was added.
+- 52f0787: Update Turkchain Mainnet (Chain ID 1919, Domain ID 1919) Hyperlane Core deployment addresses to the newly deployed contracts.
+
+  Register the new Interchain Gas Paymaster (IGP) at `0xe6FD7030A10CDA22eD8Ea7802e5f30e9e0Eb9894`.
+
+  This update replaces the previous Turkchain Mailbox address and is a breaking change for integrations referencing the earlier deployment. Existing messages and contract state are not automatically migrated.
+
+  Current validators and relayer use this deployment; historical ETH message delivery is confirmed in both directions. This does not certify public readiness, gas oracle configuration, or migration of legacy applications.
+
+  Deployment provenance:
+
+  - Turkchain Mainnet Mailbox creation transaction: https://turkscan.com/tx/0xa18fd0730c137a4bd3362dfb7d650ef35d456f68f7932a0ba46145afb421f950
+  - Deployed Mailbox: 0x5a1a042619AAE32c5282dB94769f78DF93AEeE6d
+
+  Read-only provenance recheck: Mailbox localDomain=1919, deployed bytecode and linked contracts at Turkchain block 3103698 (`0x0de565200c8d8817b0fb94098d6f184f434f9900d5507443ec00ff5a703dd68a`). Ethereum→Turkchain delivery transaction: https://turkscan.com/tx/0x363ffd72a933807eb373f1ad7fb5a575ee083835444f1b3cef798a26d09029a7. The existing quotedCalls utility is retained; no deployment is performed by this Registry change.
+
 ## 26.3.0
 
 ### Minor Changes
