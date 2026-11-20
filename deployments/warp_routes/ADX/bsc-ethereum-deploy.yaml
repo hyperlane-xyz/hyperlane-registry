@@ -4,8 +4,37 @@ bsc:
   decimals: 18
   destinationGas:
     "1": "68000"
-  hook: "0x0c329fb706B45089791ce0434ee95ea9DD6E168e"
-  interchainSecurityModule: "0x6B9f245dCA7065c0cAAa71Ec5AC32B307e168933"
+  hook:
+    address: "0x0c329fb706B45089791ce0434ee95ea9DD6E168e"
+    hooks:
+      - address: "0x5495c13BDb5d269e7aE03Ce128516cF2E9009484"
+        type: defaultHook
+      - address: "0xecc99a4A446F9bCC1A83cE6443f10113A70a22d1"
+        duration: "86400"
+        maxCapacity: "499999999999999999996800"
+        owner: "0x7fe97ec8C3831b8148AF87bc9e271D2eE9759816"
+        type: rateLimitedHook
+    type: aggregationHook
+  interchainSecurityModule:
+    address: "0x6B9f245dCA7065c0cAAa71Ec5AC32B307e168933"
+    modules:
+      - address: "0x121DDE2A29A8A6beBF5BAA6d0CfaD1E531E3A6e2"
+        modules:
+          - address: "0x97798B8E64bA23b21f1Eca0f38dF001715D85BC7"
+            type: defaultIsm
+          - address: "0xe0045AaCf79BfBAe44066CE051311359b0955a81"
+            owner: "0x7fe97ec8C3831b8148AF87bc9e271D2eE9759816"
+            paused: false
+            type: pausableIsm
+        threshold: 2
+        type: staticAggregationIsm
+      - address: "0x610736b7F3CBe1417344C79e3d75F8d38908ec81"
+        duration: "86400"
+        maxCapacity: "499999999999999999996800"
+        owner: "0x7fe97ec8C3831b8148AF87bc9e271D2eE9759816"
+        type: rateLimitedIsm
+    threshold: 2
+    type: staticAggregationIsm
   name: AdEx Network
   owner: "0x7fe97ec8C3831b8148AF87bc9e271D2eE9759816"
   proxyAdmin:
@@ -23,8 +52,37 @@ ethereum:
   decimals: 18
   destinationGas:
     "56": "68000"
-  hook: "0x3B07233F61F06f97adB99402608Bda663689F685"
-  interchainSecurityModule: "0xfAeba00A09E0353c7058802f44e2849cE943858F"
+  hook:
+    address: "0x3B07233F61F06f97adB99402608Bda663689F685"
+    hooks:
+      - address: "0x2a4aADfCAd27D1cFADD0BF84Fcc74aCC56142bb2"
+        duration: "86400"
+        maxCapacity: "499999999999999999996800"
+        owner: "0x7fe97ec8C3831b8148AF87bc9e271D2eE9759816"
+        type: rateLimitedHook
+      - address: "0xc9d399A97E9E7566a0E461f28639b7854618823d"
+        type: defaultHook
+    type: aggregationHook
+  interchainSecurityModule:
+    address: "0xfAeba00A09E0353c7058802f44e2849cE943858F"
+    modules:
+      - address: "0x7c30bcabA8218896FbFdcA8F3c129Cf50305BD42"
+        modules:
+          - address: "0x97798B8E64bA23b21f1Eca0f38dF001715D85BC7"
+            owner: "0x7fe97ec8C3831b8148AF87bc9e271D2eE9759816"
+            paused: false
+            type: pausableIsm
+          - address: "0xb9e324c03Ea281007307cA8491cc34881C53F39F"
+            type: defaultIsm
+        threshold: 2
+        type: staticAggregationIsm
+      - address: "0xF096Ed5a6aE335990Cb22eC857246a8A1515CE3A"
+        duration: "86400"
+        maxCapacity: "499999999999999999996800"
+        owner: "0x7fe97ec8C3831b8148AF87bc9e271D2eE9759816"
+        type: rateLimitedIsm
+    threshold: 2
+    type: staticAggregationIsm
   name: AdEx Network
   owner: "0x7fe97ec8C3831b8148AF87bc9e271D2eE9759816"
   proxyAdmin:
