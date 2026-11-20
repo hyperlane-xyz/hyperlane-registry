@@ -18,6 +18,11 @@ bsc:
   interchainSecurityModule:
     address: "0x6B9f245dCA7065c0cAAa71Ec5AC32B307e168933"
     modules:
+      - address: "0x610736b7F3CBe1417344C79e3d75F8d38908ec81"
+        duration: "86400"
+        maxCapacity: "499999999999999999996800"
+        owner: "0x7fe97ec8C3831b8148AF87bc9e271D2eE9759816"
+        type: rateLimitedIsm
       - address: "0x121DDE2A29A8A6beBF5BAA6d0CfaD1E531E3A6e2"
         modules:
           - address: "0x97798B8E64bA23b21f1Eca0f38dF001715D85BC7"
@@ -28,11 +33,6 @@ bsc:
             type: pausableIsm
         threshold: 2
         type: staticAggregationIsm
-      - address: "0x610736b7F3CBe1417344C79e3d75F8d38908ec81"
-        duration: "86400"
-        maxCapacity: "499999999999999999996800"
-        owner: "0x7fe97ec8C3831b8148AF87bc9e271D2eE9759816"
-        type: rateLimitedIsm
     threshold: 2
     type: staticAggregationIsm
   name: AdEx Network
@@ -66,6 +66,11 @@ ethereum:
   interchainSecurityModule:
     address: "0xfAeba00A09E0353c7058802f44e2849cE943858F"
     modules:
+      - address: "0xF096Ed5a6aE335990Cb22eC857246a8A1515CE3A"
+        duration: "86400"
+        maxCapacity: "499999999999999999996800"
+        owner: "0x7fe97ec8C3831b8148AF87bc9e271D2eE9759816"
+        type: rateLimitedIsm
       - address: "0x7c30bcabA8218896FbFdcA8F3c129Cf50305BD42"
         modules:
           - address: "0x97798B8E64bA23b21f1Eca0f38dF001715D85BC7"
@@ -76,11 +81,6 @@ ethereum:
             type: defaultIsm
         threshold: 2
         type: staticAggregationIsm
-      - address: "0xF096Ed5a6aE335990Cb22eC857246a8A1515CE3A"
-        duration: "86400"
-        maxCapacity: "499999999999999999996800"
-        owner: "0x7fe97ec8C3831b8148AF87bc9e271D2eE9759816"
-        type: rateLimitedIsm
     threshold: 2
     type: staticAggregationIsm
   name: AdEx Network
