@@ -1,7 +1,11 @@
 aevo:
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
   token: "0xC06Ed0eB5c0e25fa71B37A3F33CFa62C7d9dD542"
   type: xERC20
+  xERC20:
+    warpRouteLimits:
+      authorized: false
+      type: aevo
 arbitrum:
   allowedRebalancers:
     - "0xa3948a15e1d0778a7d53268b651B2411AF198FE3"
@@ -12,7 +16,8 @@ arbitrum:
     optimism:
       - bridge: "0x4c19c653a8419A475d9B6735511cB81C15b8d9b2"
       - bridge: "0xE086378F7f0afd5C3ff95E10B5e7806a0901b33f"
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  interchainSecurityModule: "0xe08e6993E946934a93cD0ffE29AE1265A7b98065"
+  owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
   token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
   type: collateral
 base:
@@ -25,7 +30,8 @@ base:
     optimism:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x31169ee5A8C0D680de74461d7B5394fFc7C3576B"
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  interchainSecurityModule: "0x9C04E41a7648286240B0dF165F783128e08C119b"
+  owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
   token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
   type: collateral
 optimism:
@@ -38,6 +44,7 @@ optimism:
     base:
       - bridge: "0x33e94B6D2ae697c16a750dB7c3d9443622C4405a"
       - bridge: "0x4eFaacbf0D3d57b401Cb6B559e84b344448b0C30"
-  owner: "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba"
+  interchainSecurityModule: "0x3a0FD1C31cF56B8C39362b18E6FF16070B97aE81"
+  owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
   token: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
   type: collateral
