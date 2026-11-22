@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x07e23179737C28978647aF252D5D1E4a89E3728A"
+    chainName: base
+    coinGeckoId: coinbase-wrapped-btc
+    collateralAddressOrDenom: "0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf"
+    connections:
+      - token: ethereum|robinhood|0x07e23179737C28978647aF252D5D1E4a89E3728A
+    decimals: 8
+    logoURI: /deployments/warp_routes/CBBTC/logo.svg
+    name: Coinbase Wrapped BTC
+    standard: EvmHypCollateral
+    symbol: cbBTC
+  - addressOrDenom: "0x07e23179737C28978647aF252D5D1E4a89E3728A"
+    chainName: robinhood
+    collateralAddressOrDenom: "0xCEC185eB182c47d1bA1EFc84e6959e18cd620Be4"
+    connections:
+      - token: ethereum|base|0x07e23179737C28978647aF252D5D1E4a89E3728A
+    decimals: 8
+    logoURI: /deployments/warp_routes/CBBTC/logo.svg
+    name: Coinbase Wrapped BTC
+    standard: EvmHypCollateral
+    symbol: cbBTC
