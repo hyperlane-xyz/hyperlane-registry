@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=../schema.json
+# Mainnet explorer/API paths are inferred from testnet pending confirmation.
+# Keep family "other" until a supported verification API is available.
+blockExplorers:
+  - apiUrl: https://elysium.kinetiq.xyz/api
+    family: other
+    name: Elysium Explorer
+    url: https://elysium.kinetiq.xyz/explorer
+blocks:
+  confirmations: 1
+  estimateBlockTime: 0.1
+  reorgPeriod: 5
+chainId: 99901
+deployer:
+  name: Abacus Works
+  url: https://www.hyperlane.xyz
+displayName: Elysium
+domainId: 99901
+gasCurrencyCoinGeckoId: hyperliquid
+index:
+  from: 412977
+name: elysium
+nativeToken:
+  decimals: 18
+  name: Hyperliquid
+  symbol: HYPE
+protocol: ethereum
+rpcUrls:
+  - http: https://rpc-elysium-mainnet.t.conduit.xyz
+technicalStack: arbitrumnitro

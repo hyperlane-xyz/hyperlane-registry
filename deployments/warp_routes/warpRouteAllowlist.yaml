@@ -94,6 +94,13 @@ warpRouteIds:
         message: This route uses custom [contracts](https://igra-labs.gitbook.io/igralabs-docs/for-developers/hyperlane-bridge-security) maintained by the Igra team.
         severity: info
 
+  # IGRA routes
+  - id: IGRA/igra
+    notices:
+      - blocksTransfer: false
+        message: This route uses custom [contracts](https://igra-labs.gitbook.io/igralabs-docs/for-developers/hyperlane-bridge-security) maintained by the Igra team.
+        severity: info
+
   # TIBBIR routes
   - id: TIBBIR/igra
     notices:
@@ -453,15 +460,14 @@ warpRouteIds:
   - USAD/aleo
   - SOL/aleo
   - WBTC/aleo
+  - ZEC/aleo
+  - USDG/aleo
 
   # paradex
   - DIME/paradex
 
   # NEX routes
   - NEX/bsc
-
-  # Nesa routes
-  - NES/bsc
 
   # rise
   - RISE/bsc-ethereum

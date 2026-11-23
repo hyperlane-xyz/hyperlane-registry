@@ -1,5 +1,109 @@
 # @hyperlane-xyz/registry
 
+## 26.3.0
+
+### Minor Changes
+
+- a03afaa: added Elysium mainnet metadata and Hyperlane core deployment addresses
+- 70cb793: A mainnet relayer denylist was added at `deployments/relayer/mainnet-denylist.json`, seeded from the monorepo's static relayer blacklists, with a unit test enforcing the relayer's rule schema.
+- 6a04d58: Extended the IKAS/igra warp route with a Robinhood synthetic iKAS leg and recorded Igra's existing composed hook.
+
+  Added the IGRA/igra deployment configuration for collateral IGRA on Igra and synthetic IGRA on Robinhood, along with the official IGRA token logo and Nexus allowlist entry.
+
+- 6c634a5: A separate testnet relayer runtime denylist was added, preserving the nine testnet match rules and seven shared exploit-address entries from the monorepo. Both environment feeds were covered by schema, domain, and duplicate validation.
+
+### Patch Changes
+
+- 8fe9e0f: Added the USDG/aleo warp route to the Nexus universal router allowlist.
+- fd1acc2: Added the ZEC/aleo warp route to the Nexus universal router allowlist.
+- e45a9e3: The Arc block explorer family was set to other because the explorer.arc.io API sits behind a Cloudflare challenge, which made contract verification checks return errors.
+- e45a9e3: added monad CCTP v2 standard rebalancing bridges and the rebalancer to the USDC/eclipsemainnet deploy config
+- e8246a3: updated EVM core ISM addresses for Elysium enrollment with the Abacus Works and Luganodes 2-of-2 validator set
+- c02f061: The Arc block explorer was switched from the unresolvable arcscan.app to the official Blockscout explorer at explorer.arc.io.
+- 9a77902: removed Katana's fixed transaction fee overrides so fee estimates follow network conditions.
+- 41cbe81: preserved whole-body matching for the seven migrated exploit addresses in both relayer denylist feeds
+- d350acb: MAGIC/abstract base expected config was synced after the base owner re-enrolled ronin and transferred ownership to a Safe.
+- 98b0a34: MAGIC/abstract base expected config was synced after the base owner unenrolled ronin
+- cb50e2e: migrated the Aleo USDT route and peer connections to the v3 ARC-22 router and updated its deployment configuration
+- d60d213: The NES/bsc nesachain deploy config was updated with the owner-applied 2M NES/day rate-limited hook and ISM.
+- 4251adb: Aleo warp routes on Nexus were re-enabled by removing the temporary disabled notice.
+- 53094a4: relayer denylist `bodyRegex` patterns were restricted to regex syntax that the rebalancer reads like the relayer
+- 853a5e6: updated core ISM deployment addresses and Tempo's active ISM component aliases for the governance rollout
+- 05582ad: configured the native ETH/viction legs to accept Ethereum-, Base-, and Arbitrum-origin fastpath validation with the current 2-of-3 validator set and standard-validation fallback; retained mailbox-default validation on Viction
+- 243ce55: updated Tempo's default and routing ISMs, deployed its current aggregation hook factory and hook, and registered its V3 ICA router and QuotedCalls
+- 7e8ac68: extended USDC/eclipsemainnet Fast Path validation to Base and Arbitrum origins on EVM destinations, retaining mailbox validation as a fallback and excluding Eclipse and Solana destinations
+- 7304d00: CCTP v2 standard and fast rebalancing bridges were added to the USDC/electroneum warp route deploy config. CCTP v1 bridges were kept. The avalanche and base owners were moved to ICAs controlled by the Electroneum team Safe on ethereum.
+- 2e4b876: viction reorgPeriod was raised from 15 to 90 after a 25-block reorg
+- 7cba3b8: The USDC/radix Ethereum leg pausableIsm was set to unpaused.
+
+## 26.2.0
+
+### Minor Changes
+
+- fb0521f: added Aleo warp route deployment configs for BAT, USDG, and ZEC
+- 1298ed2: arc was added to the USDC CCTP v2 standard and fast routes and the deprecated plume leg was removed from both, and new USDC CCTP v2 standard and fast staging routes were added for mainnet testing.
+- c480ac6: added Arc to the USDC/eclipsemainnet warp route and removed the Katana leg
+- 3035f88: added monad to and removed sei from the USDC/mainnet-cctp-v2-standard warp route
+- 21b076f: added Arc and Robinhood to the MoonPay staging USDC warp route
+- 56c0ddc: added v3 ICA routers and QuotedCalls addresses alongside existing v2 deployments
+- 66d29ed: Added typed inline route notices with severity, message, and transfer-blocking behavior to Warp route allowlist entries.
+- fe66faf: Extend the Coti–Ethereum ETH warp route to Arbitrum, Base, and Robinhood.
+- d7ca80c: Extend the Viction ETH warp route to Robinhood Chain and migrate its Viction
+  owner to the current Abacus Works ICA.
+- 96789f3: Update `interchainSecurityModule` addresses on 10 testnets (arbitrumsepolia, basesepolia, bsctestnet, hyperliquidevmtestnet, optimismsepolia, polygonamoy, seismictestnet, sepolia, somniatestnet, tronshasta) to match the testnet default ISM validator rotation in hyperlane-monorepo#9559.
+
+### Patch Changes
+
+- 8e463e7: updated Abstract, zkSync and Tempo ISM addresses for the validator rotation and current core origin lists
+- dd03567: Registered Solana address lookup tables for the BAT, USDG, and ZEC Aleo warp routes.
+- 41db64c: Arc gained transactionOverrides setting maxFeePerGas to 60 gwei and maxPriorityFeePerGas to 2 gwei so transactions are included promptly. Previously txs used a ~0.1 gwei tip and lingered in the mempool for up to an hour or were dropped, causing key funder IGP-claim/top-up timeouts. Gas is paid in USDC so the higher ceiling costs a fraction of a cent per tx.
+- 8e463e7: corrected Celestia's ISM address to match its existing on-chain default routing module
+- 8e463e7: updated core ISM addresses across 53 chains for the validator rotation and Viction governance migration
+- c0ba086: Deprecate remaining H2 2026 chain removals: superseed, tac, carrchain, blast, sei, taiko, megaeth, berachain, lisk, forma.
+- 1077bdf: Marked zkSync and ADI Chain as deprecated and disabled so consumers exclude them from available chains.
+- 8c1decf: disconnected the plasma leg from the USDT/eclipsemainnet warp route by emptying plasma's connections and removing plasma from every other token's connections.
+- ad30613: Arc's rpcUrls were corrected to https://rpc.mainnet.arc.io, replacing the unreachable https://rpc.arc.io endpoint that returned no response.
+- 6fa446f: restored the Eclipse USDC synthetic mint address
+- 2cc863c: updated mainnet and testnet aggregation hook factories and aggregators to support ERC20 IGP payments
+- 983d830: metal's rpcUrls were rotated to make https://metall2.drpc.org the primary endpoint, with the previous https://rpc.metall2.com kept as a fallback, after rpc.metall2.com stalled while drpc served a fresh tip.
+- a742d9d: updated the Solaxy ISM address to the corrected validator configuration
+- 84e90ed: Replaced dead sonicsvm RPC with healthy quorum backends (official mainnet-alpha plus Helius fallback).
+- 2b71f23: updated Eclipse, Solana, and Sonic SVM ISM addresses to corrected validator configurations
+- 6d0c15e: The Igra route notices were changed to link the word contracts to the Igra bridge security docs.
+- 73a8b47: The igra warp route notices were changed to informational severity with softer wording.
+- 09aa835: The KII/kiichain rate-limited ISM maxCapacity was updated to 250K KII on all legs to match onchain state (AW-754).
+- 21b076f: Extend the production and staging USDC MoonPay warp route deployment configs to Arc USDC and Robinhood USDG.
+- c62df47: Re-added the original nesa-chain NES deployment as the `NES/legacy` warp route id. The `NES/bsc` id was cut over to the new nesachain deployment in #1673, so the legacy nesa (domain 41443) route was preserved under a dedicated id to keep it referenceable for relayer blacklisting while it remains paused.
+- ca041a6: The Nesachain block explorer URL was updated to explorer-evm.nesa.ai.
+- 8f944b8: The Nesachain RPC URL was updated to https://erpc.nesa.ai.
+- 1ea15b9: updated block-time estimates for fifteen supported chains using current block history and network documentation, including sub-second intervals
+- a599287: Removed all igra warp routes from the universal router engine allowlist (USDC/igra, USDS/ethereum-igra, USDe/igra, USDT/ethereum-igra, IKAS/igra, TIBBIR/igra, SOL/igra, CBBTC/igra, WSTETH/igra, WETH/ethereum-igra) so igra routes no longer surface in Nexus.
+- 7fe457f: Removed the plasma leg (domain 9745) from the USDT/eclipsemainnet warp route config and regenerated the deploy artifact, and added a threshold-3 static aggregation ISM (defaultFallbackRoutingIsm + pausableIsm + rateLimitedIsm) to the EVM legs.
+- 2306cc3: The tETH eclipsemainnet↔ethereum warp route was removed from the Nexus universal-router allowlist. Eclipse is sunsetting tETH (redeem-only, no new mints), and the tETH token's before-transfer hook was set to a codeless contract on Sep 11, which reverts every transfer and blocks all bridging. The route is delisted from Nexus until the token becomes transferable again.
+- d5990db: Restored all igra warp routes to the warp route allowlist with a warning notice that the routes contain custom code from the Igra team.
+- 47f3fa9: Restored the tETH eclipsemainnet↔ethereum warp route to the Nexus universal-router allowlist.
+- d7ba403: Replace robinhood's dead Blockscout explorer (explorer.chain.robinhood.com, no TLS certificate) with robinhoodchain.blockscout.com.
+- 8e463e7: updated Solaxy's ISM address for the validator rotation
+- 8e463e7: updated Starknet's default ISM address for the validator rotation and removal of 81 deprecated origins
+- ebc1353: Added resilient public RPC fallbacks for Starknet mainnet ahead of the discontinued Lava endpoint.
+- 26fb0a5: Removed the discontinued Lava Starknet mainnet RPC and pinned the Cartridge endpoint to JSON-RPC v0.9.
+- 09aa835: The USDC/aleo solanamainnet router set, the USDC/radix ethereum ISM, and the carrchain batch route bsc/ethereum hooks and ISMs were synced to on-chain state.
+- 50f31f4: The LYX/lukso, USDC/lukso, MAGIC/abstract and SOLX/nitro warp route deploy configs were synced to on-chain state by adding the missing token decimals, scale and destination gas, the enrolled LYX base remote router and the still-enrolled MAGIC ronin remote router as temporary explicit mappings, the SOLX solanamainnet routing message-id multisig ISM program, and by removing the redundant MAGIC synthetic token addresses. The SOLX scale was also added to its core config. Comments documenting the base and ronin decisions were added. The `@hyperlane-xyz/sdk` and `@hyperlane-xyz/utils` development dependencies were updated to 45.0.1, so the warp route check runs on the CLI release that can read these routes.
+- 2d6fa12: The tETH eclipsemainnet↔ethereum warp route was missing the `scale: 1000000000` field on its Eclipse SealevelHypSynthetic token (9 decimals bridging to an 18-decimal Ethereum collateral). Without it, consumers reading the message amount with the origin token's 9 decimals displayed transfers inflated by 1e9 (e.g. a 0.0115 tETH transfer shown as ~11.5M). The scale was added to match the sibling eclipsemainnet↔ethereum routes (weETHs, apxETH).
+- 872021d: Updated the Aleo BAT, USDG, and ZEC warp route owners, CoinGecko IDs, and token logos.
+- 468315c: the KII/kiichain bsc rate limit ISM maxCapacity was synced to the onchain value of 1M KII
+- 3df169f: KII/kiichain ethereum rate-limit ISM maxCapacity was synced back to the onchain 250K value
+- 445c0a3: the KII/kiichain ethereum rate-limited ISM maxCapacity was synced to the onchain value of 4.5M KII
+- cd1b803: added the Eclipse USDC route as an Arc rebalancing path for MoonPay, rotated all MoonPay warp fee owners to Turnkey
+- e6b9c05: Upgraded pnpm to 12.3.0
+- 09aa835: added paused fallbackRoutingHook on all EVM legs of the USDC/aleo route that routes the aleo destination to a pausableHook (paused: true), so transfers to aleo fail immediately.
+- 0ca1765: configured every EVM destination leg of USDC/eclipsemainnet to use fastpath validation for Ethereum-origin transfers with standard-validation fallback
+- 396dea9: updated the USDC/radix EVM router and ProxyAdmin owners, Ethereum paused 3-of-3 ISM with the recovery blacklist, and standard/fast CCTP v2 bridges while preserving existing bridges
+- 8ecf6dc: CCTP v2 standard and fast rebalancing bridges were added to the USDC/subtensor warp route deploy config, and non-ethereum EVM owners were moved to AW ICA 2.0 accounts.
+- a24bd88: viction reorgPeriod was raised from 3 to 15 after two reorgs 7 and 8 blocks deep halted the scraper
+- 75e2b3c: The USDC/igra RoutingFee and nested LinearFee owners are pointed to the Turnkey warp-fees key (`0xe95C605096A1AD38BaC3E5210e145952Cbdc6998`), reflecting the on-chain owner rotation.
+- 08f54a2: The USDT/eni warp route nested OffchainQuotedLinearFee owners on the arbitrum, base, bsc, ethereum, optimism, and polygon collateral legs were set to the WarpFees Turnkey treasury key so a warp apply transfers fee-contract ownership to Turnkey. The tron leg keeps its WarpFees ICA.
+
 ## 26.1.0
 
 ### Minor Changes
