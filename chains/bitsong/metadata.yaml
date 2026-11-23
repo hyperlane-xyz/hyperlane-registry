@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: bitsong
+blockExplorers:
+  - apiUrl: https://ping.pub/bitsong
+    family: other
+    name: Ping.Pub
+    url: https://ping.pub/bitsong
+blocks:
+  confirmations: 1
+  estimateBlockTime: 6
+  reorgPeriod: 1
+canonicalAsset: ubtsg
+chainId: bitsong-2b
+contractAddressBytes: 32
+deployer:
+  name: BitSong
+  url: https://bitsong.io
+displayName: BitSong
+domainId: 639639
+gasCurrencyCoinGeckoId: bitsong
+gasPrice:
+  amount: "0.025"
+  denom: ubtsg
+grpcUrls:
+  - http: http://bitsong-grpc.polkachu.com:16090
+index:
+  chunk: 500
+  from: 28762000
+name: bitsong
+nativeToken:
+  decimals: 6
+  denom: ubtsg
+  name: BitSong
+  symbol: BTSG
+protocol: cosmosnative
+restUrls:
+  - http: https://lcd.explorebitsong.com
+rpcUrls:
+  - http: https://rpc.explorebitsong.com
+slip44: 639
+technicalStack: other
+transactionOverrides:
+  gasPrice: "0.025"
