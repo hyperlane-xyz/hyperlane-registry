@@ -6,6 +6,7 @@ tokens:
     connections:
       - token: ethereum|base|0xC898fb26Eb0Bb3144964e15F544F3C68495b00d6
       - token: ethereum|ethereum|0x11A483d69Cc67140fb98a0082837aeC11246A0ba
+      - token: ethereum|hyperevm|0xC648b01b484F5f331DAe1a54A1a6926dF0568BE8
       - token: ethereum|mantra|0x5E76be0F4e09057D75140216F70fd4cE3365bb29
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
@@ -19,6 +20,7 @@ tokens:
     connections:
       - token: ethereum|arbitrum|0x82B0d43eFE1aa9877b8C35319006Af2916203e52
       - token: ethereum|ethereum|0x11A483d69Cc67140fb98a0082837aeC11246A0ba
+      - token: ethereum|hyperevm|0xC648b01b484F5f331DAe1a54A1a6926dF0568BE8
       - token: ethereum|mantra|0x5E76be0F4e09057D75140216F70fd4cE3365bb29
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
@@ -32,10 +34,24 @@ tokens:
     connections:
       - token: ethereum|arbitrum|0x82B0d43eFE1aa9877b8C35319006Af2916203e52
       - token: ethereum|base|0xC898fb26Eb0Bb3144964e15F544F3C68495b00d6
+      - token: ethereum|hyperevm|0xC648b01b484F5f331DAe1a54A1a6926dF0568BE8
       - token: ethereum|mantra|0x5E76be0F4e09057D75140216F70fd4cE3365bb29
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
     name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+  - addressOrDenom: "0xC648b01b484F5f331DAe1a54A1a6926dF0568BE8"
+    chainName: hyperevm
+    collateralAddressOrDenom: "0xb88339CB7199b77E23DB6E890353E22632Ba630f"
+    connections:
+      - token: ethereum|arbitrum|0x82B0d43eFE1aa9877b8C35319006Af2916203e52
+      - token: ethereum|base|0xC898fb26Eb0Bb3144964e15F544F3C68495b00d6
+      - token: ethereum|ethereum|0x11A483d69Cc67140fb98a0082837aeC11246A0ba
+      - token: ethereum|mantra|0x5E76be0F4e09057D75140216F70fd4cE3365bb29
+    decimals: 6
+    logoURI: /deployments/warp_routes/USDC/logo.svg
+    name: USDC
     standard: EvmHypCollateral
     symbol: USDC
   - addressOrDenom: "0x5E76be0F4e09057D75140216F70fd4cE3365bb29"
@@ -44,6 +60,7 @@ tokens:
       - token: ethereum|arbitrum|0x82B0d43eFE1aa9877b8C35319006Af2916203e52
       - token: ethereum|base|0xC898fb26Eb0Bb3144964e15F544F3C68495b00d6
       - token: ethereum|ethereum|0x11A483d69Cc67140fb98a0082837aeC11246A0ba
+      - token: ethereum|hyperevm|0xC648b01b484F5f331DAe1a54A1a6926dF0568BE8
     decimals: 6
     logoURI: /deployments/warp_routes/USDC/logo.svg
     name: USD Coin
