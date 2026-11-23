@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../schema.json
+bech32Prefix: dungeon
+blockExplorers:
+  - apiUrl: https://api.dungeongames.io
+    family: other
+    name: Dungeon Explorer
+    url: https://explorer.dungeongames.io
+blocks:
+  confirmations: 1
+  estimateBlockTime: 6
+  reorgPeriod: 1
+canonicalAsset: udgn
+chainId: dungeon-1
+contractAddressBytes: 32
+deployer:
+  name: Crypto Dungeon LLC
+  url: https://dungeongames.io
+displayName: Dungeon Chain
+# Generated from: console.log(parseInt('0x'+Buffer.from('dung').toString('hex')))
+domainId: 1685417575
+gasCurrencyCoinGeckoId: dragon-coin-2
+gasPrice:
+  amount: "0.07"
+  denom: udgn
+grpcUrls:
+  - http: https://grpc.dungeon.chaintools.tech:443
+index:
+  chunk: 5
+  from: 17100000
+name: dungeon
+nativeToken:
+  decimals: 6
+  denom: udgn
+  name: Dragon Coin
+  symbol: DGN
+protocol: cosmosnative
+restUrls:
+  - http: https://api.dungeongames.io
+  - http: https://api.dungeon.chaintools.tech
+rpcUrls:
+  - http: https://rpc.dungeongames.io
+  - http: https://rpc.dungeon.chaintools.tech
+slip44: 118
+technicalStack: other
+transactionOverrides:
+  gasPrice: "0.07"
