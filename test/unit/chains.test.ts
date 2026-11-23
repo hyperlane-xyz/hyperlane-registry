@@ -169,10 +169,14 @@ describe('Chain metadata', () => {
           }
         });
 
-        it(`${chain} metadata has reorgPeriod between 0 and 5 if technicalStack is arbitrumnitro`, () => {
+        it(`${chain} metadata has the expected Arbitrum Nitro reorgPeriod`, () => {
           if (metadata.technicalStack === ChainTechnicalStack.ArbitrumNitro) {
-            expect(metadata.blocks?.reorgPeriod).to.be.at.least(0);
-            expect(metadata.blocks?.reorgPeriod).to.be.at.most(5);
+            if (chain === 'apechain') {
+              // The scraper's last observed head was 56 blocks above its verified common checkpoint.
+              expect(metadata.blocks?.reorgPeriod).to.equal(90);
+            } else {
+              expect(metadata.blocks?.reorgPeriod).to.be.within(0, 5);
+            }
           }
         });
       }
