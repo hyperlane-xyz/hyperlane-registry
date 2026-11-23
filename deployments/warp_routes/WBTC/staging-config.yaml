@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x50723e9e809398DEaCB4F170B09978C2681beC9b"
+    chainName: bsc
+    collateralAddressOrDenom: "0x39665e85a68a4d7328b8799135E2ff301a0Ca86f"
+    connections:
+      - token: ethereum|ethereum|0xDb5a42547F91D94AEB54c8BfaB8B99d1003ac3FE
+      - token: sealevel|solanamainnet|RD2cq4eHmfzgh77WjHCjyjdnL3W9jqNyeRgirNxDQ6W
+      - token: tron|tron|0xB3864a98Df2b2171f83975aCB2890EB5aCb59909
+    decimals: 8
+    name: Wrapped BTC
+    standard: EvmHypCollateral
+    symbol: WBTC
+    tokenType: collateral
+  - addressOrDenom: "0xDb5a42547F91D94AEB54c8BfaB8B99d1003ac3FE"
+    chainName: ethereum
+    collateralAddressOrDenom: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+    connections:
+      - token: ethereum|bsc|0x50723e9e809398DEaCB4F170B09978C2681beC9b
+      - token: sealevel|solanamainnet|RD2cq4eHmfzgh77WjHCjyjdnL3W9jqNyeRgirNxDQ6W
+      - token: tron|tron|0xB3864a98Df2b2171f83975aCB2890EB5aCb59909
+    decimals: 8
+    name: Wrapped BTC
+    standard: EvmHypCollateral
+    symbol: WBTC
+    tokenType: collateral
+  - addressOrDenom: RD2cq4eHmfzgh77WjHCjyjdnL3W9jqNyeRgirNxDQ6W
+    chainName: solanamainnet
+    collateralAddressOrDenom: 5XZw2LKTyrfvfiskJ78AMpackRjPcyCif1WhUsPDuVqQ
+    connections:
+      - token: ethereum|bsc|0x50723e9e809398DEaCB4F170B09978C2681beC9b
+      - token: ethereum|ethereum|0xDb5a42547F91D94AEB54c8BfaB8B99d1003ac3FE
+      - token: tron|tron|0xB3864a98Df2b2171f83975aCB2890EB5aCb59909
+    decimals: 8
+    name: Wrapped BTC
+    standard: SealevelHypCollateral
+    symbol: WBTC
+    tokenType: collateral
+  - addressOrDenom: "0xB3864a98Df2b2171f83975aCB2890EB5aCb59909"
+    chainName: tron
+    collateralAddressOrDenom: "0xf95335a4d42db4b70a9688a393279f2c90fa1025"
+    connections:
+      - token: ethereum|bsc|0x50723e9e809398DEaCB4F170B09978C2681beC9b
+      - token: ethereum|ethereum|0xDb5a42547F91D94AEB54c8BfaB8B99d1003ac3FE
+      - token: sealevel|solanamainnet|RD2cq4eHmfzgh77WjHCjyjdnL3W9jqNyeRgirNxDQ6W
+    decimals: 8
+    name: Wrapped BTC
+    standard: TronHypCollateral
+    symbol: WBTC
+    tokenType: collateral
