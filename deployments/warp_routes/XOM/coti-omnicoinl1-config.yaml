@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x71A765c59C3cdE31b6F0b5d501a9500b0FF667A0"
+    chainName: coti
+    connections:
+      - token: ethereum|omnicoinl1|0x3591a63d34cf14986b438e100043bf3c170bccfd
+    decimals: 18
+    name: Wrapped OmniCoin
+    standard: EvmHypSynthetic
+    symbol: wXOM
+  - addressOrDenom: "0x3591a63d34cf14986b438e100043bf3c170bccfd"
+    chainName: omnicoinl1
+    collateralAddressOrDenom: "0x1eE61487F08F715055358A1F020A86c9E571ED78"
+    connections:
+      - token: ethereum|coti|0x71A765c59C3cdE31b6F0b5d501a9500b0FF667A0
+    decimals: 18
+    name: OmniCoin
+    standard: EvmHypCollateral
+    symbol: XOM
