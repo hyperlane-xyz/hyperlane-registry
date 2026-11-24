@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xF4414fDfA7FD376d1d73E4e0735626AE243c3f62"
+    chainName: aevo
+    collateralAddressOrDenom: "0xEB5eAb7315f6721d90ED8DD007F802ecbFb99cE8"
+    connections:
+      - token: ethereum|arbitrum|0x37306F0C41bfDa6AFBd9a5eeC4B3F2C891bAfc84
+      - token: ethereum|base|0x2d1b3aBCe6698D4Da626aBcD7ad0C72F68c0d3B5
+      - token: ethereum|optimism|0x1D7C125CEF3A9fd0ea66CEA91994bde76Bd6ffe1
+    decimals: 18
+    name: Wrapped Ether
+    standard: EvmHypAevoXERC20
+    symbol: WETH
+    tokenType: xERC20
+  - addressOrDenom: "0x37306F0C41bfDa6AFBd9a5eeC4B3F2C891bAfc84"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1"
+    connections:
+      - token: ethereum|aevo|0xF4414fDfA7FD376d1d73E4e0735626AE243c3f62
+      - token: ethereum|base|0x2d1b3aBCe6698D4Da626aBcD7ad0C72F68c0d3B5
+      - token: ethereum|optimism|0x1D7C125CEF3A9fd0ea66CEA91994bde76Bd6ffe1
+    decimals: 18
+    name: Wrapped Ether
+    standard: EvmHypCollateral
+    symbol: WETH
+    tokenType: collateral
+  - addressOrDenom: "0x2d1b3aBCe6698D4Da626aBcD7ad0C72F68c0d3B5"
+    chainName: base
+    collateralAddressOrDenom: "0x4200000000000000000000000000000000000006"
+    connections:
+      - token: ethereum|aevo|0xF4414fDfA7FD376d1d73E4e0735626AE243c3f62
+      - token: ethereum|arbitrum|0x37306F0C41bfDa6AFBd9a5eeC4B3F2C891bAfc84
+      - token: ethereum|optimism|0x1D7C125CEF3A9fd0ea66CEA91994bde76Bd6ffe1
+    decimals: 18
+    name: Wrapped Ether
+    standard: EvmHypCollateral
+    symbol: WETH
+    tokenType: collateral
+  - addressOrDenom: "0x1D7C125CEF3A9fd0ea66CEA91994bde76Bd6ffe1"
+    chainName: optimism
+    collateralAddressOrDenom: "0x4200000000000000000000000000000000000006"
+    connections:
+      - token: ethereum|aevo|0xF4414fDfA7FD376d1d73E4e0735626AE243c3f62
+      - token: ethereum|arbitrum|0x37306F0C41bfDa6AFBd9a5eeC4B3F2C891bAfc84
+      - token: ethereum|base|0x2d1b3aBCe6698D4Da626aBcD7ad0C72F68c0d3B5
+    decimals: 18
+    name: Wrapped Ether
+    standard: EvmHypCollateral
+    symbol: WETH
+    tokenType: collateral
