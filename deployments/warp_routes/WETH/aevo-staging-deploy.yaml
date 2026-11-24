@@ -1,4 +1,29 @@
 aevo:
+  hook:
+    hooks:
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableHook
+      - duration: "86400"
+        maxCapacity: "1499999999999990400"
+        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+        type: rateLimitedHook
+      - type: defaultHook
+    type: aggregationHook
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+        type: defaultFallbackRoutingIsm
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableIsm
+      - duration: "86400"
+        maxCapacity: "2999999999999980800"
+        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+        type: rateLimitedIsm
+    threshold: 3
+    type: staticAggregationIsm
   owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
   token: "0xEB5eAb7315f6721d90ED8DD007F802ecbFb99cE8"
   type: xERC20
@@ -7,17 +32,89 @@ aevo:
       authorized: false
       type: aevo
 arbitrum:
-  interchainSecurityModule: "0x4dE6d7cbb8302BFcb899aD87Bdbf1f93faeED241"
+  hook:
+    hooks:
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableHook
+      - duration: "86400"
+        maxCapacity: "2999999999999980800"
+        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+        type: rateLimitedHook
+      - type: defaultHook
+    type: aggregationHook
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+        type: defaultFallbackRoutingIsm
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableIsm
+      - duration: "86400"
+        maxCapacity: "2999999999999980800"
+        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+        type: rateLimitedIsm
+    threshold: 3
+    type: staticAggregationIsm
   owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
   token: "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1"
   type: collateral
 base:
-  interchainSecurityModule: "0x044763a308fBCE5acBB304605108835c156ef93D"
+  hook:
+    hooks:
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableHook
+      - duration: "86400"
+        maxCapacity: "2999999999999980800"
+        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+        type: rateLimitedHook
+      - type: defaultHook
+    type: aggregationHook
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+        type: defaultFallbackRoutingIsm
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableIsm
+      - duration: "86400"
+        maxCapacity: "2999999999999980800"
+        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+        type: rateLimitedIsm
+    threshold: 3
+    type: staticAggregationIsm
   owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
   token: "0x4200000000000000000000000000000000000006"
   type: collateral
 optimism:
-  interchainSecurityModule: "0xA7C95c8f3065215e82F554732C244dBfB16Accf9"
+  hook:
+    hooks:
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableHook
+      - duration: "86400"
+        maxCapacity: "2999999999999980800"
+        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+        type: rateLimitedHook
+      - type: defaultHook
+    type: aggregationHook
+  interchainSecurityModule:
+    modules:
+      - domains: {}
+        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+        type: defaultFallbackRoutingIsm
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableIsm
+      - duration: "86400"
+        maxCapacity: "2999999999999980800"
+        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
+        type: rateLimitedIsm
+    threshold: 3
+    type: staticAggregationIsm
   owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
   token: "0x4200000000000000000000000000000000000006"
   type: collateral
