@@ -1,6 +1,3 @@
-# Temporary owner for the first deploy. To hand ownership over, delete each
-# temporary `owner` line and uncomment the real-owner line right below it,
-# then run `warp apply`.
 aevo:
   gas: 300000
   hook:
@@ -10,8 +7,7 @@ aevo:
         type: pausableHook
       - duration: "86400"
         maxCapacity: "124999977600"
-        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
-        # owner: "0x0f1B55D0de6CFE5A54496f583722D174ecE2EA61" # real owner: ICA of Aevo's Ethereum Safe on aevo
+        owner: "0x0f1B55D0de6CFE5A54496f583722D174ecE2EA61"
         type: rateLimitedHook
       - type: defaultHook
     type: aggregationHook
@@ -23,13 +19,11 @@ aevo:
         type: pausableIsm
       - duration: "86400"
         maxCapacity: "99999964800"
-        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
-        # owner: "0x0f1B55D0de6CFE5A54496f583722D174ecE2EA61" # real owner: ICA of Aevo's Ethereum Safe on aevo
+        owner: "0x0f1B55D0de6CFE5A54496f583722D174ecE2EA61"
         type: rateLimitedIsm
     threshold: 3
     type: staticAggregationIsm
-  owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
-  # owner: "0x0f1B55D0de6CFE5A54496f583722D174ecE2EA61" # real owner: ICA of Aevo's Ethereum Safe on aevo
+  owner: "0x0f1B55D0de6CFE5A54496f583722D174ecE2EA61"
   token: "0xC06Ed0eB5c0e25fa71B37A3F33CFa62C7d9dD542"
   type: xERC20
   xERC20:
@@ -53,8 +47,7 @@ arbitrum:
         type: pausableHook
       - duration: "86400"
         maxCapacity: "74999952000"
-        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
-        # owner: "0x7e994bdc9E75faA8F52f2D1259dbEA7046887B16" # real owner: ICA of Aevo's Ethereum Safe on arbitrum
+        owner: "0x7e994bdc9E75faA8F52f2D1259dbEA7046887B16"
         type: rateLimitedHook
       - type: defaultHook
     type: aggregationHook
@@ -66,13 +59,11 @@ arbitrum:
         type: pausableIsm
       - duration: "86400"
         maxCapacity: "124999977600"
-        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
-        # owner: "0x7e994bdc9E75faA8F52f2D1259dbEA7046887B16" # real owner: ICA of Aevo's Ethereum Safe on arbitrum
+        owner: "0x7e994bdc9E75faA8F52f2D1259dbEA7046887B16"
         type: rateLimitedIsm
     threshold: 3
     type: staticAggregationIsm
-  owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
-  # owner: "0x7e994bdc9E75faA8F52f2D1259dbEA7046887B16" # real owner: ICA of Aevo's Ethereum Safe on arbitrum
+  owner: "0x7e994bdc9E75faA8F52f2D1259dbEA7046887B16"
   token: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
   type: collateral
 base:
@@ -92,8 +83,7 @@ base:
         type: pausableHook
       - duration: "86400"
         maxCapacity: "19999958400"
-        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
-        # owner: "0x4798e55ef729c2a645B14b3AC4fAda6d1FCA27fA" # real owner: ICA of Aevo's Ethereum Safe on base
+        owner: "0x4798e55ef729c2a645B14b3AC4fAda6d1FCA27fA"
         type: rateLimitedHook
       - type: defaultHook
     type: aggregationHook
@@ -105,13 +95,11 @@ base:
         type: pausableIsm
       - duration: "86400"
         maxCapacity: "124999977600"
-        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
-        # owner: "0x4798e55ef729c2a645B14b3AC4fAda6d1FCA27fA" # real owner: ICA of Aevo's Ethereum Safe on base
+        owner: "0x4798e55ef729c2a645B14b3AC4fAda6d1FCA27fA"
         type: rateLimitedIsm
     threshold: 3
     type: staticAggregationIsm
-  owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
-  # owner: "0x4798e55ef729c2a645B14b3AC4fAda6d1FCA27fA" # real owner: ICA of Aevo's Ethereum Safe on base
+  owner: "0x4798e55ef729c2a645B14b3AC4fAda6d1FCA27fA"
   token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
   type: collateral
 optimism:
@@ -131,8 +119,7 @@ optimism:
         type: pausableHook
       - duration: "86400"
         maxCapacity: "19999958400"
-        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
-        # owner: "0x7C92F6dA945FA4Be9E86Da7d03542b2fA9c99e49" # real owner: ICA of Aevo's Ethereum Safe on optimism
+        owner: "0x7C92F6dA945FA4Be9E86Da7d03542b2fA9c99e49"
         type: rateLimitedHook
       - type: defaultHook
     type: aggregationHook
@@ -144,12 +131,10 @@ optimism:
         type: pausableIsm
       - duration: "86400"
         maxCapacity: "124999977600"
-        owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
-        # owner: "0x7C92F6dA945FA4Be9E86Da7d03542b2fA9c99e49" # real owner: ICA of Aevo's Ethereum Safe on optimism
+        owner: "0x7C92F6dA945FA4Be9E86Da7d03542b2fA9c99e49"
         type: rateLimitedIsm
     threshold: 3
     type: staticAggregationIsm
-  owner: "0x3f13C1351AC66ca0f4827c607a94c93c82AD0913"
-  # owner: "0x7C92F6dA945FA4Be9E86Da7d03542b2fA9c99e49" # real owner: ICA of Aevo's Ethereum Safe on optimism
+  owner: "0x7C92F6dA945FA4Be9E86Da7d03542b2fA9c99e49"
   token: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
   type: collateral
