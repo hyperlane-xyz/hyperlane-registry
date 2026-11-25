@@ -1,0 +1,113 @@
+aevo:
+  gas: 300000
+  hook:
+    hooks:
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableHook
+      - duration: "86400"
+        maxCapacity: "1499999999999990400"
+        owner: "0x0f1B55D0de6CFE5A54496f583722D174ecE2EA61"
+        type: rateLimitedHook
+      - type: defaultHook
+    type: aggregationHook
+  interchainSecurityModule:
+    modules:
+      - type: defaultIsm
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableIsm
+      - duration: "86400"
+        maxCapacity: "2999999999999980800"
+        owner: "0x0f1B55D0de6CFE5A54496f583722D174ecE2EA61"
+        type: rateLimitedIsm
+    threshold: 3
+    type: staticAggregationIsm
+  owner: "0x0f1B55D0de6CFE5A54496f583722D174ecE2EA61"
+  token: "0xEB5eAb7315f6721d90ED8DD007F802ecbFb99cE8"
+  type: xERC20
+  xERC20:
+    warpRouteLimits:
+      authorized: false
+      type: aevo
+arbitrum:
+  hook:
+    hooks:
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableHook
+      - duration: "86400"
+        maxCapacity: "2999999999999980800"
+        owner: "0x7e994bdc9E75faA8F52f2D1259dbEA7046887B16"
+        type: rateLimitedHook
+      - type: defaultHook
+    type: aggregationHook
+  interchainSecurityModule:
+    modules:
+      - type: defaultIsm
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableIsm
+      - duration: "86400"
+        maxCapacity: "2999999999999980800"
+        owner: "0x7e994bdc9E75faA8F52f2D1259dbEA7046887B16"
+        type: rateLimitedIsm
+    threshold: 3
+    type: staticAggregationIsm
+  owner: "0x7e994bdc9E75faA8F52f2D1259dbEA7046887B16"
+  token: "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1"
+  type: collateral
+base:
+  hook:
+    hooks:
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableHook
+      - duration: "86400"
+        maxCapacity: "2999999999999980800"
+        owner: "0x4798e55ef729c2a645B14b3AC4fAda6d1FCA27fA"
+        type: rateLimitedHook
+      - type: defaultHook
+    type: aggregationHook
+  interchainSecurityModule:
+    modules:
+      - type: defaultIsm
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableIsm
+      - duration: "86400"
+        maxCapacity: "2999999999999980800"
+        owner: "0x4798e55ef729c2a645B14b3AC4fAda6d1FCA27fA"
+        type: rateLimitedIsm
+    threshold: 3
+    type: staticAggregationIsm
+  owner: "0x4798e55ef729c2a645B14b3AC4fAda6d1FCA27fA"
+  token: "0x4200000000000000000000000000000000000006"
+  type: collateral
+optimism:
+  hook:
+    hooks:
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableHook
+      - duration: "86400"
+        maxCapacity: "2999999999999980800"
+        owner: "0x7C92F6dA945FA4Be9E86Da7d03542b2fA9c99e49"
+        type: rateLimitedHook
+      - type: defaultHook
+    type: aggregationHook
+  interchainSecurityModule:
+    modules:
+      - type: defaultIsm
+      - owner: "0x60Cc386C85717CB51C2827A75e14826883dF5da4"
+        paused: false
+        type: pausableIsm
+      - duration: "86400"
+        maxCapacity: "2999999999999980800"
+        owner: "0x7C92F6dA945FA4Be9E86Da7d03542b2fA9c99e49"
+        type: rateLimitedIsm
+    threshold: 3
+    type: staticAggregationIsm
+  owner: "0x7C92F6dA945FA4Be9E86Da7d03542b2fA9c99e49"
+  token: "0x4200000000000000000000000000000000000006"
+  type: collateral

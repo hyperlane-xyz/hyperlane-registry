@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x81Db8B4Bc6F2e95781eeA2a21D0A453Ac046eFc0"
+    chainName: aevo
+    collateralAddressOrDenom: "0xC06Ed0eB5c0e25fa71B37A3F33CFa62C7d9dD542"
+    connections:
+      - token: ethereum|arbitrum|0xBD69a52e43FEeBAF07Bd4D0DD5560e99364d4534
+      - token: ethereum|base|0x34A5Acee33458a87F74b057b40FD906EE234e557
+      - token: ethereum|optimism|0x5161622eDbC753cF8792b6029B7757d04893C72f
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypAevoXERC20
+    symbol: USDC
+    tokenType: xERC20
+  - addressOrDenom: "0xBD69a52e43FEeBAF07Bd4D0DD5560e99364d4534"
+    chainName: arbitrum
+    collateralAddressOrDenom: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831"
+    connections:
+      - token: ethereum|aevo|0x81Db8B4Bc6F2e95781eeA2a21D0A453Ac046eFc0
+      - token: ethereum|base|0x34A5Acee33458a87F74b057b40FD906EE234e557
+      - token: ethereum|optimism|0x5161622eDbC753cF8792b6029B7757d04893C72f
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+    tokenType: collateral
+  - addressOrDenom: "0x34A5Acee33458a87F74b057b40FD906EE234e557"
+    chainName: base
+    collateralAddressOrDenom: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    connections:
+      - token: ethereum|aevo|0x81Db8B4Bc6F2e95781eeA2a21D0A453Ac046eFc0
+      - token: ethereum|arbitrum|0xBD69a52e43FEeBAF07Bd4D0DD5560e99364d4534
+      - token: ethereum|optimism|0x5161622eDbC753cF8792b6029B7757d04893C72f
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+    tokenType: collateral
+  - addressOrDenom: "0x5161622eDbC753cF8792b6029B7757d04893C72f"
+    chainName: optimism
+    collateralAddressOrDenom: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"
+    connections:
+      - token: ethereum|aevo|0x81Db8B4Bc6F2e95781eeA2a21D0A453Ac046eFc0
+      - token: ethereum|arbitrum|0xBD69a52e43FEeBAF07Bd4D0DD5560e99364d4534
+      - token: ethereum|base|0x34A5Acee33458a87F74b057b40FD906EE234e557
+    decimals: 6
+    name: USD Coin
+    standard: EvmHypCollateral
+    symbol: USDC
+    tokenType: collateral
