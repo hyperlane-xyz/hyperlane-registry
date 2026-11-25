@@ -2,6 +2,7 @@ import {
   ChainMetadataSchema,
   ChainTechnicalStack,
   EthJsonRpcBlockParameterTag,
+  ExplorerFamily,
 } from '@hyperlane-xyz/sdk';
 import { ProtocolType } from '@hyperlane-xyz/utils';
 import { expect } from 'chai';
@@ -35,6 +36,16 @@ describe('Chain metadata', () => {
       blockExplorers.forEach((blockExplorer) => {
         expect(blockExplorer.apiUrl.endsWith('/')).to.be.false;
         expect(blockExplorer.url.endsWith('/')).to.be.false;
+      });
+    });
+
+    it(`${chain} block explorer with a Routescan API url uses the routescan family`, () => {
+      const blockExplorers = metadata.blockExplorers ?? [];
+
+      blockExplorers.forEach((blockExplorer) => {
+        if (new URL(blockExplorer.apiUrl).hostname === 'api.routescan.io') {
+          expect(blockExplorer.family).to.equal(ExplorerFamily.Routescan);
+        }
       });
     });
 
