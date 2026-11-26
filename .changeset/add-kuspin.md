@@ -1,4 +1,4 @@
-﻿---
+---
 '@hyperlane-xyz/registry': minor
 ---
 
