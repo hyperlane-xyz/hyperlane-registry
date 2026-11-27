@@ -1,0 +1,107 @@
+basesepolia:
+  allowedRebalancers: []
+  allowedRebalancingBridges: {}
+  contractVersion: 12.3.0
+  decimals: 18
+  destinationGas:
+    "4221": "44000"
+  hook:
+    address: "0x86fb9F1c124fB20ff130C41a79a432F770f67AFD"
+    type: merkleTreeHook
+  interchainSecurityModule:
+    address: "0x418064Ee4585614A04B0fE2B2c75FB91bD1a470d"
+    modules:
+      - address: "0x5699E47cd474998a90EBC4C8b12Aa5359F1d303C"
+        domains:
+          genlayertestnet:
+            address: "0xe2ca377D97a2232EC5e32407AD6F4Cf348300Fc0"
+            threshold: 1
+            type: messageIdMultisigIsm
+            validators:
+              - "0xDdbA11D7654D35750294515f6a708cF2E1A115EF"
+        owner: "0x6fcb38fA6978f0eE86c9C74C2BA8c0dcE73E9436"
+        type: domainRoutingIsm
+      - address: "0x58Ca6557e9e2aabB16d2Dbe4612479166e274712"
+        owner: "0x6fcb38fA6978f0eE86c9C74C2BA8c0dcE73E9436"
+        paused: false
+        type: pausableIsm
+      - address: "0x817aee997fDb426f9a3A5b4936F96d2aBF3afee2"
+        duration: "86400"
+        maxCapacity: "999999999999999999993600"
+        owner: "0x6fcb38fA6978f0eE86c9C74C2BA8c0dcE73E9436"
+        type: rateLimitedIsm
+    threshold: 3
+    type: staticAggregationIsm
+  isNft: false
+  mailbox: "0x6966b0E55883d49BFB24539356a2f8A673E02039"
+  name: GenLayer
+  owner: "0x6fcb38fA6978f0eE86c9C74C2BA8c0dcE73E9436"
+  proxyAdmin:
+    address: "0xD9182e15d881Cd6D32433811718CA057970FD274"
+    owner: "0x6fcb38fA6978f0eE86c9C74C2BA8c0dcE73E9436"
+  remoteRouters:
+    "4221":
+      address: "0x000000000000000000000000cb3a198f68d560c96383b076afdb079538737a1e"
+  symbol: GEN
+  token: "0x11D020691eA5E7c3e3C681d14Eb4e82Acd04F571"
+  tokenFee:
+    address: "0xBAD50d43229755ebA468E7c8BBcC03fC96C4410f"
+    bps: 2.5000000000000002e+22
+    halfAmount: "1"
+    maxFee: "5000000000000000000"
+    owner: "0x821782EB1f479195Df9318f1B06E487c2A144e5e"
+    token: "0x11D020691eA5E7c3e3C681d14Eb4e82Acd04F571"
+    type: LinearFee
+  type: collateral
+genlayertestnet:
+  allowedRebalancers: []
+  allowedRebalancingBridges: {}
+  contractVersion: 12.3.0
+  decimals: 18
+  destinationGas:
+    "84532": "68000"
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    address: "0xC5e25895e7c64C843Dc65f822729646B827641F6"
+    modules:
+      - address: "0x58Ca6557e9e2aabB16d2Dbe4612479166e274712"
+        owner: "0x6fcb38fA6978f0eE86c9C74C2BA8c0dcE73E9436"
+        paused: false
+        type: pausableIsm
+      - address: "0x817aee997fDb426f9a3A5b4936F96d2aBF3afee2"
+        duration: "86400"
+        maxCapacity: "329999999999999999961600"
+        owner: "0x6fcb38fA6978f0eE86c9C74C2BA8c0dcE73E9436"
+        type: rateLimitedIsm
+      - address: "0xc7408375Eb827df0F6D249a4358F317061746a5D"
+        domains:
+          basesepolia:
+            address: "0x83C5D8d82cA30c0d45007BE15ce480674CAA3Cc7"
+            threshold: 1
+            type: messageIdMultisigIsm
+            validators:
+              - "0x3c659E0FE8d01B80d7828b421630085777346e7c"
+        owner: "0x6fcb38fA6978f0eE86c9C74C2BA8c0dcE73E9436"
+        type: domainRoutingIsm
+    threshold: 3
+    type: staticAggregationIsm
+  isNft: false
+  mailbox: "0x6Ee210B4c78D03cE422da56ccfA7f89e7bCfDc38"
+  name: GenLayer
+  owner: "0x6fcb38fA6978f0eE86c9C74C2BA8c0dcE73E9436"
+  proxyAdmin:
+    address: "0xD9182e15d881Cd6D32433811718CA057970FD274"
+    owner: "0x6fcb38fA6978f0eE86c9C74C2BA8c0dcE73E9436"
+  remoteRouters:
+    "84532":
+      address: "0x000000000000000000000000cb3a198f68d560c96383b076afdb079538737a1e"
+  symbol: GEN
+  tokenFee:
+    address: "0xfB5E1d89E60437C4e7dFbaE9a6348400254A126B"
+    bps: 2.5000000000000002e+22
+    halfAmount: "1"
+    maxFee: "5000000000000000000"
+    owner: "0xBAD50d43229755ebA468E7c8BBcC03fC96C4410f"
+    token: "0x0000000000000000000000000000000000000000"
+    type: LinearFee
+  type: native
