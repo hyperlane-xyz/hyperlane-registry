@@ -1,0 +1,112 @@
+base:
+  allowedRebalancers: []
+  allowedRebalancingBridges: {}
+  contractVersion: 12.3.0
+  decimals: 18
+  destinationGas:
+    "42424242": "44000"
+  hook:
+    address: "0x19dc38aeae620380430C200a6E990D5Af5480117"
+    type: merkleTreeHook
+  interchainSecurityModule:
+    address: "0xBcC110c073A08A31748FC1f6C1457d6C645CaCa7"
+    modules:
+      - address: "0x12D38Ff39966FdeC731E225d29604c499948389B"
+        duration: "86400"
+        maxCapacity: "999999999999999999993600"
+        owner: "0xED5e6ffDFCd6F3FD59C9f0b79c6033ecBe69447E"
+        type: rateLimitedIsm
+      - address: "0x7EF35B3285AcAd37335B10C3952dD4934A911aC8"
+        owner: "0xED5e6ffDFCd6F3FD59C9f0b79c6033ecBe69447E"
+        paused: false
+        type: pausableIsm
+      - address: "0xC4ad313294C417332D3369C07A3C633e5860301B"
+        domains:
+          genlayer:
+            address: "0x269A2A99Bc60d4C911648BCbB78b588f3fb8912D"
+            threshold: 2
+            type: messageIdMultisigIsm
+            validators:
+              - "0xF523E9429A514b2F29Cf6162284c07768D679541"
+              - "0xf3FAbB76CF357220AC141B9fbb563fc5a2F1Cdc2"
+        owner: "0xED5e6ffDFCd6F3FD59C9f0b79c6033ecBe69447E"
+        type: domainRoutingIsm
+    threshold: 3
+    type: staticAggregationIsm
+  isNft: false
+  mailbox: "0xeA87ae93Fa0019a82A727bfd3eBd1cFCa8f64f1D"
+  name: GenLayer
+  owner: "0xED5e6ffDFCd6F3FD59C9f0b79c6033ecBe69447E"
+  proxyAdmin:
+    address: "0x226a0b652E303688c98b0873775c0358e9f49Dd0"
+    owner: "0xED5e6ffDFCd6F3FD59C9f0b79c6033ecBe69447E"
+  remoteRouters:
+    "42424242":
+      address: "0x000000000000000000000000161a04366139f9fda8a2a05db589b9210b62920d"
+  symbol: GEN
+  token: "0xDcDd3A0425770Fea7f4D90FD8810e08FDe6b2CA9"
+  tokenFee:
+    address: "0xC4ccaA734E024B9714D38fc02995dB04Fe062e6a"
+    bps: 2.5000000000000002e+22
+    halfAmount: "1"
+    maxFee: "5000000000000000000"
+    owner: "0xD01ff1cB86a10B5BD03e5Eaa56c2064AE88EA6d3"
+    token: "0xDcDd3A0425770Fea7f4D90FD8810e08FDe6b2CA9"
+    type: LinearFee
+  type: collateral
+genlayer:
+  allowedRebalancers: []
+  allowedRebalancingBridges: {}
+  contractVersion: 12.3.0
+  decimals: 18
+  destinationGas:
+    "8453": "68000"
+  hook: "0x0000000000000000000000000000000000000000"
+  interchainSecurityModule:
+    address: "0x264DDa05937CBb7883654DBf821B943d3ccEF5bB"
+    modules:
+      - address: "0x30BaC4634749011aDDF1Fb540FAd8F332166f29e"
+        duration: "86400"
+        maxCapacity: "329999999999999999961600"
+        owner: "0xED5e6ffDFCd6F3FD59C9f0b79c6033ecBe69447E"
+        type: rateLimitedIsm
+      - address: "0xF48850F4B43241E0DCcf6a5e3a9dE87D496b37c0"
+        domains:
+          base:
+            address: "0x10cCA802E5Dee81bd20466034E9356b8805d0711"
+            threshold: 3
+            type: messageIdMultisigIsm
+            validators:
+              - "0x34A14934D7C18A21440b59Dfe9bF132cE601457D"
+              - "0x5450447aeE7B544c462C9352bEF7cAD049B0C2Dc"
+              - "0xA5962eFA3ec138Bf7CA8f7fDe86b7ee32E24bf03"
+              - "0xb8Cf45d7bAB79c965843206d5f4D83BB866D6e86"
+              - "0xE957310e17730F29862e896709cce62D24e4B773"
+        owner: "0xED5e6ffDFCd6F3FD59C9f0b79c6033ecBe69447E"
+        type: domainRoutingIsm
+      - address: "0xb5102D6c020c577947dd03DE10D569f08681b614"
+        owner: "0xED5e6ffDFCd6F3FD59C9f0b79c6033ecBe69447E"
+        paused: false
+        type: pausableIsm
+    threshold: 3
+    type: staticAggregationIsm
+  isNft: false
+  mailbox: "0x908804fF07e7c095743CE024c453F687e670Fb77"
+  name: GenLayer
+  owner: "0xED5e6ffDFCd6F3FD59C9f0b79c6033ecBe69447E"
+  proxyAdmin:
+    address: "0x16c1E9790B3e3db70B3E90215C24497bAcFD962e"
+    owner: "0xED5e6ffDFCd6F3FD59C9f0b79c6033ecBe69447E"
+  remoteRouters:
+    "8453":
+      address: "0x000000000000000000000000b2de2313a23112ba89e71423357b32beacfffdb7"
+  symbol: GEN
+  tokenFee:
+    address: "0x7c6757985e757AdDB12D1c85f6dB50Eb73cA29eA"
+    bps: 2.5000000000000002e+22
+    halfAmount: "1"
+    maxFee: "5000000000000000000"
+    owner: "0xF09102A2F9a83A5134289fDFAE27b55ed77f7c98"
+    token: "0x0000000000000000000000000000000000000000"
+    type: LinearFee
+  type: native

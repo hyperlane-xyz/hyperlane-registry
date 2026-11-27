@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0xB2De2313A23112ba89e71423357B32BeaCfFFDB7"
+    chainName: base
+    collateralAddressOrDenom: "0xDcDd3A0425770Fea7f4D90FD8810e08FDe6b2CA9"
+    connections:
+      - token: ethereum|genlayer|0x161a04366139f9FDA8a2A05Db589b9210b62920d
+    decimals: 18
+    logoURI: /deployments/warp_routes/GEN/logo.svg
+    name: GenLayer
+    standard: EvmHypCollateral
+    symbol: GEN
+  - addressOrDenom: "0x161a04366139f9FDA8a2A05Db589b9210b62920d"
+    chainName: genlayer
+    connections:
+      - token: ethereum|base|0xB2De2313A23112ba89e71423357B32BeaCfFFDB7
+    decimals: 18
+    logoURI: /deployments/warp_routes/GEN/logo.svg
+    name: GenLayer
+    standard: EvmHypNative
+    symbol: GEN
